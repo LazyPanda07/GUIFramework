@@ -28,11 +28,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />
-    <ClInclude Include="src\Window.h" />
+    <ClInclude Include="src\SeparateWindow.h" />
+    <ClInclude Include="src\WindowMessages.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\pch.cpp" />
-    <ClCompile Include="src\Window.cpp" />
+    <ClCompile Include="src\SeparateWindow.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
