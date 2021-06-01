@@ -1,7 +1,8 @@
 #include <iostream>
 
-#include "Composites/BaseSeparateWindow.h"
-#include "Composites/BaseChildWindow.h"
+#include "BaseComposites/BaseSeparateWindow.h"
+#include "BaseComposites/BaseChildWindow.h"
+#include "Components/StandardButton.h"
 
 #pragma comment (lib, "GUIFramework.lib")
 
@@ -15,7 +16,10 @@ void test(const wstring& className, const wstring& title, const string& function
 	
 	BaseSeparateWindow window(className, title, settings, functionName);
 	BaseChildWindow* inside = new BaseChildWindow(L"Inside", L"Inside", insideWindowSettings, &window, "insideWindow");
+	StandardButton* button = new StandardButton(L"Button", insideWindowSettings, inside, 50, [](WPARAM wparam, LPARAM lparam) { cout << "Rofl" << endl; });
 	
+	inside.addChild(button);
+
 	window.addChild(inside);
 
 	MSG msg = {};
