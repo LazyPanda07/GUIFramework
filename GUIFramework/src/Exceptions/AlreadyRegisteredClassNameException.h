@@ -6,12 +6,12 @@ namespace gui_framework
 {
 	namespace exceptions
 	{
-		class AlreadyRegisteredclassNameException : public BaseGUIFrameworkException
+		class AlreadyRegisteredClassNameException : public BaseGUIFrameworkException
 		{
 		public:
-			AlreadyRegisteredclassNameException();
+			AlreadyRegisteredClassNameException();
 
-			~AlreadyRegisteredclassNameException() = default;
+			~AlreadyRegisteredClassNameException() = default;
 		};
 	}
 }

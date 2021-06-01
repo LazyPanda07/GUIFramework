@@ -27,20 +27,30 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Components\BaseComponent.h" />
+    <ClInclude Include="src\Composites\BaseComposite.h" />
+    <ClInclude Include="src\Composites\BaseWindow.h" />
+    <ClInclude Include="src\Composites\BaseChildWindow.h" />
     <ClInclude Include="src\Constants.h" />
     <ClInclude Include="src\Exceptions\AlreadyRegisteredClassNameException.h" />
     <ClInclude Include="src\Exceptions\BaseGUIFrameworkException.h" />
     <ClInclude Include="src\Exceptions\CantFindSeparateWindowFunctionException.h" />
     <ClInclude Include="src\pch.h" />
-    <ClInclude Include="src\SeparateWindow.h" />
+    <ClInclude Include="src\Composites\BaseSeparateWindow.h" />
+    <ClInclude Include="src\Utility\ComponentSettings.h" />
     <ClInclude Include="src\WindowMessages.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Components\BaseComponent.cpp" />
+    <ClCompile Include="src\Composites\BaseChildWindow.cpp" />
+    <ClCompile Include="src\Composites\BaseComposite.cpp" />
+    <ClCompile Include="src\Composites\BaseWindow.cpp" />
     <ClCompile Include="src\Exceptions\BaseGUIFrameworkException.cpp" />
     <ClCompile Include="src\Exceptions\AlreadyRegisteredClassNameException.cpp" />
     <ClCompile Include="src\Exceptions\CantFindSeparateWindowFunctionException.cpp" />
     <ClCompile Include="src\pch.cpp" />
-    <ClCompile Include="src\SeparateWindow.cpp" />
+    <ClCompile Include="src\Composites\BaseSeparateWindow.cpp" />
+    <ClCompile Include="src\Utility\ComponentSettings.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
