@@ -5,24 +5,6 @@ using namespace std;
 
 namespace gui_framework
 {
-	SeparateWindow* windowPointer = nullptr;
-
-	LRESULT SeparateWindow::windowFunction(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam)
-	{
-		switch (msg)
-		{
-		case WM_DESTROY:
-			PostQuitMessage(0);
-
-			return 0;
-
-		default:
-			return windowPointer ?
-				windowPointer->windowMessagesHandle(handle, msg, wparam, lparam) :
-				DefWindowProcW(handle, msg, wparam, lparam);
-		}
-	}
-
 	SeparateWindow::SeparateWindow(const wstring& className, const wstring& titleName, int x, int y, int width, int height, int showMode, bool unregisterAfterDestroy) :
 		className(className),
 		titleName(titleName),
@@ -35,14 +17,32 @@ namespace gui_framework
 		{
 			classStruct.cbSize = sizeof(WNDCLASSEXW);
 			classStruct.lpszClassName = className.data();
-			classStruct.lpfnWndProc = windowFunction;
 			classStruct.hInstance = module;
 			classStruct.hbrBackground = HBRUSH(COLOR_WINDOW);
 
+			classStruct.lpfnWndProc = [](HWND handle, UINT msg, WPARAM wparam, LPARAM lparam) -> LRESULT
+			{
+				static SeparateWindow* topLevelWindow = nullptr;
+
+				switch (msg)
+				{
+				case WM_DESTROY:
+					PostQuitMessage(0);
+
+					return 0;
+
+				case custom_window_messages::initTopLevelWindowPointer:
+					topLevelWindow = reinterpret_cast<SeparateWindow*>(wparam);
+
+					return 0;
+
+				default:
+					return topLevelWindow->windowMessagesHandle(handle, msg, wparam, lparam);
+				}
+			};
+
 			RegisterClassExW(&classStruct);
 		}
-
-		windowPointer = this;
 
 		handle = CreateWindowExW
 		(
@@ -57,6 +57,8 @@ namespace gui_framework
 			module,
 			nullptr
 		);
+
+		SendMessageW(handle, custom_window_messages::initTopLevelWindowPointer, reinterpret_cast<WPARAM>(this), NULL);
 
 		ShowWindow(handle, showMode);
 	}
