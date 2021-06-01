@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Components/BaseComponent.h"
+#include "BaseComponents/BaseComponent.h"
 
 namespace gui_framework
 {
@@ -19,6 +19,8 @@ namespace gui_framework
 		virtual void removeChild(BaseComponent* child) final;
 
 		virtual bool isComposite() const final override;
+
+		virtual LRESULT windowMessagesHandle(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
 
 		virtual ~BaseComposite() = default;
 	};

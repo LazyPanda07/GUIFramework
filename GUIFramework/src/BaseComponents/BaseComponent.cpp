@@ -70,7 +70,7 @@ namespace gui_framework
 		return false;
 	}
 
-	LRESULT BaseComponent::windowMessagesHandle(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam)
+	LRESULT BaseComponent::windowMessagesHandle(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam, bool& isUsed)
 	{
 		return DefWindowProcW(handle, msg, wparam, lparam);
 	}

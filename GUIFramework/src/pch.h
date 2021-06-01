@@ -6,6 +6,7 @@
 #include <memory>
 #include <cstdint>
 #include <stdexcept>
+#include <functional>
 
 #include <thread>
 #include <condition_variable>
