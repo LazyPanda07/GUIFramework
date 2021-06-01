@@ -37,7 +37,9 @@ namespace gui_framework
 					return 0;
 
 				default:
-					return topLevelWindow->windowMessagesHandle(handle, msg, wparam, lparam);
+					return topLevelWindow ?
+						topLevelWindow->windowMessagesHandle(handle, msg, wparam, lparam) :
+						DefWindowProcW(handle, msg, wparam, lparam);
 				}
 			};
 
