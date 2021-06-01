@@ -7,9 +7,9 @@
 using namespace std;
 using namespace gui_framework;
 
-void test(const pair<wstring, wstring>& data, int x, int y)
+void test(const wstring& className, const wstring& title, const string& functionName, int x, int y)
 {
-	SeparateWindow window(data.first, data.second, x, y, 800, 600);
+	SeparateWindow window(className, title, functionName, x, y, 800, 600);
 
 	MSG msg = {};
 
@@ -21,24 +21,17 @@ void test(const pair<wstring, wstring>& data, int x, int y)
 	}
 }
 
+CREATE_DEFAULT_SEPARATE_WINDOW_FUNCTION(mainWindow)
+
 int main(int argc, char** argv)
 {
+	thread(test, L"Main window", L"Title", "mainWindow", 600, 450).detach();
+
 	string s;
-	vector<pair<wstring, wstring>> windows =
-	{
-		{ L"First", L"First" },
-		{ L"Second", L"Second" },
-		{ L"Third", L"Third" },
-		{ L"Fourth", L"Fourth" }
-	};
-	size_t i = 0;
 
 	while (cin >> s)
 	{
-		if (i < windows.size())
-		{
-			thread(test, ref(windows[i++]), rand() % 1600, rand() % 900).detach();
-		}
+
 	}
 
 
