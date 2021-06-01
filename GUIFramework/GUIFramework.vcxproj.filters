@@ -18,7 +18,7 @@
     <ClInclude Include="src\pch.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Composites\BaseSeparateWindow.h">
+    <ClInclude Include="src\BaseComposites\BaseSeparateWindow.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\WindowMessages.h">
@@ -36,19 +36,25 @@
     <ClInclude Include="src\Exceptions\CantFindSeparateWindowFunctionException.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Components\BaseComponent.h">
+    <ClInclude Include="src\BaseComponents\BaseComponent.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Utility\ComponentSettings.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Composites\BaseComposite.h">
+    <ClInclude Include="src\BaseComposites\BaseComposite.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Composites\BaseWindow.h">
+    <ClInclude Include="src\BaseComposites\BaseWindow.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Composites\BaseChildWindow.h">
+    <ClInclude Include="src\BaseComposites\BaseChildWindow.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BaseComponents\BaseButton.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Components\StandardButton.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
@@ -56,7 +62,7 @@
     <ClCompile Include="src\pch.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Composites\BaseSeparateWindow.cpp">
+    <ClCompile Include="src\BaseComposites\BaseSeparateWindow.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Exceptions\BaseGUIFrameworkException.cpp">
@@ -68,19 +74,25 @@
     <ClCompile Include="src\Exceptions\CantFindSeparateWindowFunctionException.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Components\BaseComponent.cpp">
+    <ClCompile Include="src\BaseComponents\BaseComponent.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Utility\ComponentSettings.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Composites\BaseComposite.cpp">
+    <ClCompile Include="src\BaseComposites\BaseComposite.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Composites\BaseWindow.cpp">
+    <ClCompile Include="src\BaseComposites\BaseWindow.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Composites\BaseChildWindow.cpp">
+    <ClCompile Include="src\BaseComposites\BaseChildWindow.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BaseComponents\BaseButton.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Components\StandardButton.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

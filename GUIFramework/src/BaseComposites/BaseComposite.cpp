@@ -40,4 +40,21 @@ namespace gui_framework
 	{
 		return true;
 	}
+
+	LRESULT BaseComposite::windowMessagesHandle(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam, bool& isUsed)
+	{
+		for (const auto& i : children)
+		{
+			LRESULT result = i->windowMessagesHandle(handle, msg, wparam, lparam, isUsed);
+
+			if (isUsed)
+			{
+				return result;
+			}
+		}
+
+		isUsed = false;
+
+		return -1;
+	}
 }

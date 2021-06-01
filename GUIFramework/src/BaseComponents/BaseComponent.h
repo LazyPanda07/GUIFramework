@@ -18,7 +18,7 @@ namespace gui_framework
 
 		virtual bool isComposite() const;
 
-		virtual LRESULT windowMessagesHandle(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam);
+		virtual LRESULT windowMessagesHandle(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam, bool& isUsed);
 
 		virtual BaseComponent* getParent() const final;
 
@@ -41,10 +41,16 @@ namespace gui_framework
 		topLevelWindow = reinterpret_cast<gui_framework::BaseComponent*>(wparam); \
 			\
 		return 0; \
+	} \
 		\
-	default: \
-		return topLevelWindow ? \
-			topLevelWindow->windowMessagesHandle(handle, msg, wparam, lparam) : \
+	if (topLevelWindow) \
+	{ \
+		bool isUsed = false; \
+			\
+		LRESULT result = topLevelWindow->windowMessagesHandle(handle, msg, wparam, lparam, isUsed) : \
+			\
+		return isUsed ? \
+			result : \
 			DefWindowProcW(handle, msg, wparam, lparam); \
 	} \
 }
