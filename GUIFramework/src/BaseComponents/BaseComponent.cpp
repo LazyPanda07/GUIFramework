@@ -41,7 +41,10 @@ namespace gui_framework
 		}
 		else
 		{
-			throw exceptions::AlreadyRegisteredClassNameException();
+			if (windowFunctionName.size())
+			{
+				throw exceptions::AlreadyRegisteredClassNameException();
+			}
 		}
 
 		handle = CreateWindowExW
