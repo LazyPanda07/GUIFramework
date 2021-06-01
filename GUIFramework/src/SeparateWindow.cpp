@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "SeparateWindow.h"
 
+#include "Exceptions/AlreadyRegisteredClassNameException.h"
+
 using namespace std;
 
 namespace gui_framework
@@ -44,6 +46,10 @@ namespace gui_framework
 			};
 
 			RegisterClassExW(&classStruct);
+		}
+		else
+		{
+			throw exceptions::AlreadyRegisteredclassNameException();
 		}
 
 		handle = CreateWindowExW
