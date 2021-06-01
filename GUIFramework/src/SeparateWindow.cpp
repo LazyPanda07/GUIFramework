@@ -2,12 +2,13 @@
 #include "SeparateWindow.h"
 
 #include "Exceptions/AlreadyRegisteredClassNameException.h"
+#include "Exceptions/CantFindSeparateWindowFunctionException.h"
 
 using namespace std;
 
 namespace gui_framework
 {
-	SeparateWindow::SeparateWindow(const wstring& className, const wstring& titleName, int x, int y, int width, int height, int showMode, bool unregisterAfterDestroy) :
+	SeparateWindow::SeparateWindow(const wstring& className, const wstring& titleName, const string& windowFunctionName, int x, int y, int width, int height, int showMode, bool unregisterAfterDestroy) :
 		className(className),
 		titleName(titleName),
 		unregisterAfterDestroy(unregisterAfterDestroy),
@@ -17,33 +18,18 @@ namespace gui_framework
 
 		if (!GetClassInfoExW(module, className.data(), &classStruct))
 		{
+			WNDPROC windowFunction = reinterpret_cast<WNDPROC>(GetProcAddress(nullptr, (windowFunctionName + "WindowFunction").data()));
+
+			if (!windowFunction)
+			{
+				throw exceptions::CantFindSeparateWindowFunctionException(windowFunctionName + "WindowFunction");
+			}
+
 			classStruct.cbSize = sizeof(WNDCLASSEXW);
 			classStruct.lpszClassName = className.data();
 			classStruct.hInstance = module;
+			classStruct.lpfnWndProc = windowFunction;
 			classStruct.hbrBackground = HBRUSH(COLOR_WINDOW);
-
-			classStruct.lpfnWndProc = [](HWND handle, UINT msg, WPARAM wparam, LPARAM lparam) -> LRESULT
-			{
-				static SeparateWindow* topLevelWindow = nullptr;
-
-				switch (msg)
-				{
-				case WM_DESTROY:
-					PostQuitMessage(0);
-
-					return 0;
-
-				case custom_window_messages::initTopLevelWindowPointer:
-					topLevelWindow = reinterpret_cast<SeparateWindow*>(wparam);
-
-					return 0;
-
-				default:
-					return topLevelWindow ?
-						topLevelWindow->windowMessagesHandle(handle, msg, wparam, lparam) :
-						DefWindowProcW(handle, msg, wparam, lparam);
-				}
-			};
 
 			RegisterClassExW(&classStruct);
 		}
