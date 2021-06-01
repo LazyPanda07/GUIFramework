@@ -53,4 +53,8 @@ namespace gui_framework
 			result : \
 			DefWindowProcW(handle, msg, wparam, lparam); \
 	} \
+	else \
+	{ \
+		return DefWindowProcW(handle, msg, wparam, lparam); \
+	} \
 }
