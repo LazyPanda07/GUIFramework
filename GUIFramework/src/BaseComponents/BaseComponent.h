@@ -47,7 +47,7 @@ namespace gui_framework
 	{ \
 		bool isUsed = false; \
 			\
-		LRESULT result = topLevelWindow->windowMessagesHandle(handle, msg, wparam, lparam, isUsed) : \
+		LRESULT result = topLevelWindow->windowMessagesHandle(handle, msg, wparam, lparam, isUsed); \
 			\
 		return isUsed ? \
 			result : \
