@@ -7,7 +7,7 @@ namespace gui_framework
 {
 	namespace exceptions
 	{
-		AlreadyRegisteredclassNameException::AlreadyRegisteredclassNameException() :
+		AlreadyRegisteredClassNameException::AlreadyRegisteredClassNameException() :
 			BaseGUIFrameworkException(string(exception_messages::alreadyRegisteredClassName))
 		{
 
