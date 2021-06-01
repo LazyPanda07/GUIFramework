@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <memory>
 #include <cstdint>
+#include <stdexcept>
 
 #include <thread>
 #include <condition_variable>
@@ -23,6 +24,7 @@
 #include <CommCtrl.h>
 
 #include "WindowMessages.h"
+#include "Constants.h"
 
 #pragma comment(linker,"\"/manifestdependency:type='win32' \
 name='Microsoft.Windows.Common-Controls' version='6.0.0.0' \
