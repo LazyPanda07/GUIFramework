@@ -30,6 +30,7 @@
     <ClInclude Include="src\Constants.h" />
     <ClInclude Include="src\Exceptions\AlreadyRegisteredClassNameException.h" />
     <ClInclude Include="src\Exceptions\BaseGUIFrameworkException.h" />
+    <ClInclude Include="src\Exceptions\CantFindSeparateWindowFunctionException.h" />
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\SeparateWindow.h" />
     <ClInclude Include="src\WindowMessages.h" />
@@ -37,6 +38,7 @@
   <ItemGroup>
     <ClCompile Include="src\Exceptions\BaseGUIFrameworkException.cpp" />
     <ClCompile Include="src\Exceptions\AlreadyRegisteredClassNameException.cpp" />
+    <ClCompile Include="src\Exceptions\CantFindSeparateWindowFunctionException.cpp" />
     <ClCompile Include="src\pch.cpp" />
     <ClCompile Include="src\SeparateWindow.cpp" />
   </ItemGroup>
