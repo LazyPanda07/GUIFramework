@@ -9,7 +9,7 @@ namespace gui_framework
 		BaseComponent
 		(
 			wstring(standard_classes::button),
-			windowName,
+			buttonName,
 			settings,
 			parent
 		),

@@ -22,7 +22,7 @@ namespace gui_framework
 			/// @param x Top left corner x coordinate
 			/// @param y Top left corner y coordinate
 			/// @param extendedStyles Values from https://docs.microsoft.com/en-us/windows/win32/winmsg/extended-window-styles
-			ComponentSettings(DWORD styles, int x, int y, int width, int height, HMENU id = HMENU(-1), DWORD extendedStyles = {});
+			ComponentSettings(DWORD styles, int x, int y, int width, int height, HMENU id = HMENU(NULL), DWORD extendedStyles = {});
 
 			~ComponentSettings() = default;
 		};
