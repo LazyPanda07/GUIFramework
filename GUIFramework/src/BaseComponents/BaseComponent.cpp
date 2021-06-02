@@ -58,7 +58,7 @@ namespace gui_framework
 			settings.width,
 			settings.height,
 			parent ? parent->handle : nullptr,
-			nullptr,
+			settings.id,
 			GetModuleHandleW(nullptr),
 			nullptr
 		);

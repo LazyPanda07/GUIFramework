@@ -5,13 +5,14 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		ComponentSettings::ComponentSettings(DWORD styles, int x, int y, int width, int height, DWORD extendedStyles) :
+		ComponentSettings::ComponentSettings(DWORD styles, int x, int y, int width, int height, HMENU id, DWORD extendedStyles) :
 			extendedStyles(extendedStyles),
 			styles(styles),
 			x(x),
 			y(y),
 			width(width),
-			height(height)
+			height(height),
+			id(id)
 		{
 
 		}
