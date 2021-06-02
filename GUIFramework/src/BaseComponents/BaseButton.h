@@ -4,6 +4,7 @@
 
 namespace gui_framework
 {
+	/// @brief Base class for all buttons
 	class BaseButton : public BaseComponent
 	{
 	protected:
@@ -18,6 +19,8 @@ namespace gui_framework
 		virtual void setOnClick(const std::function<LRESULT(WPARAM, LPARAM)>& onClick) final;
 
 		virtual const std::function<LRESULT(WPARAM, LPARAM)>& getOnClick() const final;
+
+		virtual uint32_t getButtonId() const;
 
 		~BaseButton() = default;
 	};

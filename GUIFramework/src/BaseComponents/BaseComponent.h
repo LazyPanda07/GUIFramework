@@ -4,6 +4,7 @@
 
 namespace gui_framework
 {
+	/// @brief Base class for all windows, controllers, etc.
 	class BaseComponent
 	{
 	protected:
@@ -14,6 +15,9 @@ namespace gui_framework
 		HINSTANCE module;
 
 	public:
+		/// @param windowFunctionName Value that you pass in CREATE_DEFAULT_SEPARATE_WINDOW_FUNCTION macro
+		/// @param moduleName Executable name for finding classes
+		/// @exception gui_framework::exceptions::AlreadyRegisteredClassNameException
 		BaseComponent(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, BaseComponent* parent = nullptr, const std::string& windowFunctionName = "", const std::wstring& moduleName = L"");
 
 		virtual bool isComposite() const;
@@ -23,6 +27,10 @@ namespace gui_framework
 		virtual BaseComponent* getParent() const final;
 
 		virtual HWND getHandle() const final;
+
+		virtual const std::wstring& getWindowName() const final;
+
+		virtual const std::wstring& getClassName() const final;
 
 		virtual ~BaseComponent();
 	};

@@ -4,6 +4,7 @@
 
 namespace gui_framework
 {
+	/// @brief Base class for all windows that has children windows
 	class BaseComposite : public BaseComponent
 	{
 	protected:
@@ -18,9 +19,15 @@ namespace gui_framework
 
 		virtual void removeChild(BaseComponent* child) final;
 
+		virtual BaseComponent* findChild(const std::wstring& windowName) const final;
+
+		virtual std::vector<BaseComponent*> findChildren(const std::wstring& windowName) const final;
+
 		virtual bool isComposite() const final override;
 
-		virtual LRESULT windowMessagesHandle(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
+		virtual LRESULT compositeWindowMessagesHandle(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam, bool& isUsed);
+
+		virtual LRESULT windowMessagesHandle(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam, bool& isUsed) final override;
 
 		virtual ~BaseComposite() = default;
 	};
