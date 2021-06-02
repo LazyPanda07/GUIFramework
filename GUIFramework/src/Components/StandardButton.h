@@ -4,6 +4,7 @@
 
 namespace gui_framework
 {
+	/// @brief Standard button
 	class StandardButton : public BaseButton
 	{
 	public:

@@ -4,6 +4,7 @@
 
 namespace gui_framework
 {
+	/// @brief Base class for composite windows
 	class BaseWindow : public BaseComposite
 	{
 	public:

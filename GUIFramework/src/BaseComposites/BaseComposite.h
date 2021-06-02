@@ -4,6 +4,7 @@
 
 namespace gui_framework
 {
+	/// @brief Base class for all windows that has children windows
 	class BaseComposite : public BaseComponent
 	{
 	protected:

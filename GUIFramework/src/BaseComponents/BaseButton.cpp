@@ -16,7 +16,7 @@ namespace gui_framework
 		buttonId(buttonId),
 		onClick(onClick)
 	{
-		SetMenu(this->parent->getHandle(), reinterpret_cast<HMENU>(buttonId));
+		
 	}
 
 	void BaseButton::setOnClick(const function<LRESULT(WPARAM, LPARAM)>& onClick)
