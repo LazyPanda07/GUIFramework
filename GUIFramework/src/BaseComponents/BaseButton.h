@@ -20,6 +20,8 @@ namespace gui_framework
 
 		virtual const std::function<LRESULT(WPARAM, LPARAM)>& getOnClick() const final;
 
+		virtual uint32_t getButtonId() const;
+
 		~BaseButton() = default;
 	};
 }

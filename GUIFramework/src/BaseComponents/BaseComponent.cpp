@@ -88,6 +88,17 @@ namespace gui_framework
 		return handle;
 	}
 
+	const wstring& BaseComponent::getWindowName() const
+	{
+		return windowName;
+	}
+
+	const wstring& BaseComponent::getClassName() const
+	{
+		return className;
+	}
+
+
 	BaseComponent::~BaseComponent()
 	{
 		DestroyWindow(handle);

@@ -36,16 +36,77 @@ namespace gui_framework
 		}
 	}
 
+	BaseComponent* BaseComposite::findChild(const wstring& windowName) const
+	{
+		BaseComponent* result = nullptr;
+
+		for (const auto& i : children)
+		{
+			if (i->getWindowName() == windowName)
+			{
+				result = i.get();
+
+				break;
+			}
+			else if (i->isComposite())
+			{
+				result = static_cast<BaseComposite*>(i.get())->findChild(windowName);
+
+				if (result)
+				{
+					break;
+				}
+			}
+		}
+
+		return result;
+	}
+
+	vector<BaseComponent*> BaseComposite::findChildren(const wstring& windowName) const
+	{
+		vector<BaseComponent*> result;
+
+		for (const auto& i : children)
+		{
+			if (i->getWindowName() == windowName)
+			{
+				result.push_back(i.get());
+			}
+			else if (i->isComposite())
+			{
+				vector<BaseComponent*> subChildren = static_cast<BaseComposite*>(i.get())->findChildren(windowName);
+
+				copy(subChildren.begin(), subChildren.end(), back_inserter(result));
+			}
+		}
+
+		return result;
+	}
+
 	bool BaseComposite::isComposite() const
 	{
 		return true;
 	}
 
+	LRESULT BaseComposite::compositeWindowMessagesHandle(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam, bool& isUsed)
+	{
+		isUsed = false;
+
+		return -1;
+	}
+
 	LRESULT BaseComposite::windowMessagesHandle(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam, bool& isUsed)
 	{
+		LRESULT result = this->compositeWindowMessagesHandle(handle, msg, wparam, lparam, isUsed);
+
+		if (isUsed)
+		{
+			return result;
+		}
+
 		for (const auto& i : children)
 		{
-			LRESULT result = i->windowMessagesHandle(handle, msg, wparam, lparam, isUsed);
+			result = i->windowMessagesHandle(handle, msg, wparam, lparam, isUsed);
 
 			if (isUsed)
 			{

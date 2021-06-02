@@ -28,4 +28,9 @@ namespace gui_framework
 	{
 		return onClick;
 	}
+
+	uint32_t BaseButton::getButtonId() const
+	{
+		return buttonId;
+	}
 }

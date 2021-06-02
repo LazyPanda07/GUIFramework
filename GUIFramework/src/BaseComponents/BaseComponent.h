@@ -28,6 +28,10 @@ namespace gui_framework
 
 		virtual HWND getHandle() const final;
 
+		virtual const std::wstring& getWindowName() const final;
+
+		virtual const std::wstring& getClassName() const final;
+
 		virtual ~BaseComponent();
 	};
 }
