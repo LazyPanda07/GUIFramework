@@ -1,0 +1,3 @@
+[submodule "GUIFramework/JSON"]
+	path = GUIFramework/JSON
+	url = https://github.com/LazyPanda07/JSON.git

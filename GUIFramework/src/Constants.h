@@ -13,4 +13,9 @@ namespace gui_framework
 	{
 		inline constexpr std::wstring_view button = L"Button";
 	}
+
+	namespace settings
+	{
+		inline constexpr std::string_view settingsJSONFile = "gui_framework.json";
+	}
 }
