@@ -20,7 +20,7 @@ namespace gui_framework
 
 	LRESULT StandardButton::windowMessagesHandle(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam, bool& isUsed)
 	{
-		if (msg == buttonId)
+		if (msg == WM_COMMAND && buttonId == wparam)
 		{
 			isUsed = true;
 

@@ -22,6 +22,8 @@ namespace gui_framework
 
 		virtual BaseComponent* getParent() const final;
 
+		virtual HWND getHandle() const final;
+
 		virtual ~BaseComponent();
 	};
 }

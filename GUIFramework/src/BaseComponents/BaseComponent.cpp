@@ -83,6 +83,11 @@ namespace gui_framework
 		return parent;
 	}
 
+	HWND BaseComponent::getHandle() const
+	{
+		return handle;
+	}
+
 	BaseComponent::~BaseComponent()
 	{
 		DestroyWindow(handle);
