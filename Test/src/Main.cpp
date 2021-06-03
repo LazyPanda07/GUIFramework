@@ -14,16 +14,20 @@ void test(const wstring& className, const wstring& title, const string& function
 
 	utility::ComponentSettings settings(WS_BORDER, x, y, 800, 600);
 	utility::ComponentSettings insideWindowSettings(WS_BORDER, 100, 100, 400, 400);
-	utility::ComponentSettings buttonSettings(WS_BORDER, 100, 100, 200, 20, HMENU(50));
 
 	BaseSeparateWindow window(className, title, settings, functionName);
 	BaseChildWindow* inside = new BaseChildWindow(L"Inside", L"Inside", insideWindowSettings, &window, "insideWindow");
-	StandardButton* button = new StandardButton(L"Êíîïêà", buttonSettings, inside, 50, [&](WPARAM wparam, LPARAM lparam)
+	StandardButton* button = new StandardButton(L"Êíîïêà", 100, 100, inside, 50);
+
+	button->setOnClick
+	(
+		[&](WPARAM wparam, LPARAM lparam)
 		{
 			cout << "Click" << endl;
 
 			return 10;
-		});
+		}
+	);
 
 	inside->addChild(button);
 
