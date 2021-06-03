@@ -5,10 +5,11 @@ using namespace std;
 
 namespace gui_framework
 {
-	StandardButton::StandardButton(const wstring& buttonName, int x, int y, BaseComponent* parent, uint32_t buttonId, const function<LRESULT(WPARAM, LPARAM)>& onClick, int width, int height) :
+	StandardButton::StandardButton(const wstring& buttonName, const wstring& buttonText, int x, int y, BaseComponent* parent, uint32_t buttonId, const function<LRESULT(WPARAM, LPARAM)>& onClick, int width, int height) :
 		BaseButton
 		(
 			buttonName,
+			buttonText,
 			utility::ComponentSettings
 			(
 				NULL,
