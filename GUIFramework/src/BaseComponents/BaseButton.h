@@ -12,15 +12,19 @@ namespace gui_framework
 		std::function<LRESULT(WPARAM, LPARAM)> onClick;
 
 	public:
-		BaseButton(const std::wstring& buttonName, const utility::ComponentSettings& settings, BaseComponent* parent, uint32_t buttonId, const std::function<LRESULT(WPARAM, LPARAM)>& onClick = nullptr);
+		BaseButton(const std::wstring& buttonName, const std::wstring& buttonText, const utility::ComponentSettings& settings, BaseComponent* parent, uint32_t buttonId, const std::function<LRESULT(WPARAM, LPARAM)>& onClick = nullptr);
 
 		virtual LRESULT windowMessagesHandle(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam, bool& isUsed) = 0;
 
 		virtual void setOnClick(const std::function<LRESULT(WPARAM, LPARAM)>& onClick) final;
 
+		virtual void setText(const std::wstring& buttonText) const final;
+
 		virtual const std::function<LRESULT(WPARAM, LPARAM)>& getOnClick() const final;
 
 		virtual uint32_t getButtonId() const;
+
+		virtual std::wstring getText() const final;
 
 		~BaseButton() = default;
 	};

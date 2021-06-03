@@ -39,7 +39,7 @@ namespace gui_framework
 			}
 		}
 
-		text.resize(--textLength);
+		text.resize(++textLength);
 
 		GetWindowTextW(handle, text.data(), textLength);
 
