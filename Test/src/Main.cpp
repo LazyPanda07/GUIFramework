@@ -20,11 +20,16 @@ void test(const wstring& className, const wstring& title, const string& function
 	BaseChildWindow* inside = new BaseChildWindow(L"Inside", L"Inside", insideWindowSettings, &window, "insideWindow");
 	StandardButton* button = new StandardButton(L"Кнопка", 100, 100, inside, 50, [&](WPARAM wparam, LPARAM lparam)
 		{
-			cout << "Click" << endl;
+			StandardEditControl* edit = dynamic_cast<StandardEditControl*>(window.findChild(L"Edit"));
+
+			if (edit)
+			{
+				wcout << edit->getText() << endl;
+			}
 
 			return 10;
 		});
-	StandardEditControl* edit = new StandardEditControl(L"Хамэ", 0, 20, &window);
+	StandardEditControl* edit = new StandardEditControl(L"Edit", 0, 0, &window);
 
 	inside->addChild(button);
 
