@@ -4,6 +4,7 @@
 #include "BaseComposites/BaseChildWindow.h"
 #include "Components/StandardButton.h"
 #include "Components/StandardEditControl.h"
+#include "Components/StandardStaticControl.h"
 
 #pragma comment (lib, "GUIFramework.lib")
 
@@ -17,32 +18,8 @@ void test(const wstring& className, const wstring& title, const string& function
 	utility::ComponentSettings insideWindowSettings(WS_BORDER, 100, 100, 400, 400);
 
 	BaseSeparateWindow window(className, title, settings, functionName);
-	BaseChildWindow* inside = new BaseChildWindow(L"Inside", L"Inside", insideWindowSettings, &window, "insideWindow");
-	StandardButton* button = new StandardButton(L"Button", L" нопка", 100, 100, inside, 50, [&](WPARAM wparam, LPARAM lparam)
-		{
-			StandardEditControl* edit = dynamic_cast<StandardEditControl*>(window.findChild(L"Edit"));
-
-			if (edit)
-			{
-				try
-				{
-					wcout << edit->getText() << endl;
-				}
-				catch (const std::exception& e)
-				{
-					cout << e.what() << endl;
-				}
-			}
-
-			return 10;
-		});
-	StandardEditControl* edit = new StandardEditControl(L"Edit", 0, 0, &window);
-
-	inside->addChild(button);
-
-	window.addChild(inside);
-
-	window.addChild(edit);
+	
+	window.addChild(new StandardStaticControl(L"Message", L"Ёто тестовое сообщение", 0, 0, &window));
 
 	MSG msg = {};
 
