@@ -16,7 +16,7 @@ namespace gui_framework
 			parent
 		)
 	{
-
+		this->setText(L"");
 	}
 
 	void BaseEditControl::setText(const wstring& text) const
