@@ -14,35 +14,9 @@ namespace gui_framework
 			editControlName,
 			settings,
 			parent
-		)
+		),
+		ITextOperations(handle)
 	{
 		this->setText(L"");
-	}
-
-	void BaseEditControl::setText(const wstring& text) const
-	{
-		SetWindowTextW(handle, text.data());
-	}
-
-	wstring BaseEditControl::getText() const
-	{
-		int textLength = GetWindowTextLengthW(handle);
-		wstring text;
-
-		if (!textLength)
-		{
-			DWORD errorCode = GetLastError();
-
-			if (!errorCode)
-			{
-				throw exceptions::GetLastErrorException(errorCode);
-			}
-		}
-
-		text.resize(++textLength);
-
-		GetWindowTextW(handle, text.data(), textLength);
-
-		return text;
 	}
 }

@@ -41,6 +41,7 @@
     <ClInclude Include="src\Exceptions\CantFindSeparateWindowFunctionException.h" />
     <ClInclude Include="src\Exceptions\GetLastErrorException.h" />
     <ClInclude Include="src\GUIFramework.h" />
+    <ClInclude Include="src\Interfaces\Components\ITextOperations.h" />
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\BaseComposites\BaseSeparateWindow.h" />
     <ClInclude Include="src\Utility\ComponentSettings.h" />
@@ -60,6 +61,7 @@
     <ClCompile Include="src\Exceptions\CantFindSeparateWindowFunctionException.cpp" />
     <ClCompile Include="src\Exceptions\GetLastErrorException.cpp" />
     <ClCompile Include="src\GUIFramework.cpp" />
+    <ClCompile Include="src\Interfaces\Components\ITextOperations.cpp" />
     <ClCompile Include="src\pch.cpp" />
     <ClCompile Include="src\BaseComposites\BaseSeparateWindow.cpp" />
     <ClCompile Include="src\Utility\ComponentSettings.cpp" />

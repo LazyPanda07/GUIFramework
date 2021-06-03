@@ -1,11 +1,14 @@
 #pragma once
 
 #include "BaseComponent.h"
+#include "Interfaces/Components/ITextOperations.h"
 
 namespace gui_framework
 {
 	/// @brief Base class for all buttons
-	class BaseButton : public BaseComponent
+	class BaseButton :
+		public BaseComponent,
+		public interfaces::ITextOperations
 	{
 	protected:
 		uint32_t buttonId;
@@ -18,13 +21,9 @@ namespace gui_framework
 
 		virtual void setOnClick(const std::function<LRESULT(WPARAM, LPARAM)>& onClick) final;
 
-		virtual void setText(const std::wstring& buttonText) const final;
-
 		virtual const std::function<LRESULT(WPARAM, LPARAM)>& getOnClick() const final;
 
 		virtual uint32_t getButtonId() const;
-
-		virtual std::wstring getText() const final;
 
 		~BaseButton() = default;
 	};

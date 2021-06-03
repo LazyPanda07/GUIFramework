@@ -15,6 +15,7 @@ namespace gui_framework
 			settings,
 			parent
 		),
+		ITextOperations(handle),
 		buttonId(buttonId),
 		onClick(onClick)
 	{
@@ -26,11 +27,6 @@ namespace gui_framework
 		this->onClick = onClick;
 	}
 
-	void BaseButton::setText(const wstring& buttonText) const
-	{
-		SetWindowTextW(handle, buttonText.data());
-	}
-
 	const function<LRESULT(WPARAM, LPARAM)>& BaseButton::getOnClick() const
 	{
 		return onClick;
@@ -39,27 +35,5 @@ namespace gui_framework
 	uint32_t BaseButton::getButtonId() const
 	{
 		return buttonId;
-	}
-
-	wstring BaseButton::getText() const
-	{
-		int textLength = GetWindowTextLengthW(handle);
-		wstring text;
-
-		if (!textLength)
-		{
-			DWORD errorCode = GetLastError();
-
-			if (!errorCode)
-			{
-				throw exceptions::GetLastErrorException(errorCode);
-			}
-		}
-
-		text.resize(++textLength);
-
-		GetWindowTextW(handle, text.data(), textLength);
-
-		return text;
 	}
 }
