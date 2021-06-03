@@ -5,7 +5,7 @@ using namespace std;
 
 namespace gui_framework
 {
-	StandardButton::StandardButton(const wstring& buttonName, int x, int y, BaseComponent* parent, uint32_t buttonId, int width, int height, const function<LRESULT(WPARAM, LPARAM)>& onClick) :
+	StandardButton::StandardButton(const wstring& buttonName, int x, int y, BaseComponent* parent, uint32_t buttonId, const function<LRESULT(WPARAM, LPARAM)>& onClick, int width, int height) :
 		BaseButton
 		(
 			buttonName,
@@ -28,7 +28,7 @@ namespace gui_framework
 
 	LRESULT StandardButton::windowMessagesHandle(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam, bool& isUsed)
 	{
-		if ((msg == WM_COMMAND || msg == WM_NOTIFY) && buttonId == wparam)
+		if (msg == WM_COMMAND && buttonId == wparam)
 		{
 			isUsed = true;
 
@@ -36,7 +36,7 @@ namespace gui_framework
 		}
 
 		isUsed = false;
-		
+
 		return -1;
 	}
 }
