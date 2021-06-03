@@ -5,11 +5,19 @@ using namespace std;
 
 namespace gui_framework
 {
-	StandardButton::StandardButton(const wstring& buttonName, const utility::ComponentSettings& settings, BaseComponent* parent, uint32_t buttonId, const function<LRESULT(WPARAM, LPARAM)>& onClick) :
+	StandardButton::StandardButton(const wstring& buttonName, int x, int y, BaseComponent* parent, uint32_t buttonId, int width, int height, const function<LRESULT(WPARAM, LPARAM)>& onClick) :
 		BaseButton
 		(
 			buttonName,
-			settings,
+			utility::ComponentSettings
+			(
+				NULL,
+				x,
+				y,
+				width,
+				height,
+				HMENU(buttonId)
+			),
 			parent,
 			buttonId,
 			onClick
@@ -20,7 +28,7 @@ namespace gui_framework
 
 	LRESULT StandardButton::windowMessagesHandle(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam, bool& isUsed)
 	{
-		if (msg == WM_COMMAND && buttonId == wparam)
+		if ((msg == WM_COMMAND || msg == WM_NOTIFY) && buttonId == wparam)
 		{
 			isUsed = true;
 

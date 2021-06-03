@@ -29,14 +29,17 @@
   <ItemGroup>
     <ClInclude Include="src\BaseComponents\BaseComponent.h" />
     <ClInclude Include="src\BaseComponents\BaseButton.h" />
+    <ClInclude Include="src\BaseComponents\BaseEditControl.h" />
     <ClInclude Include="src\BaseComposites\BaseComposite.h" />
     <ClInclude Include="src\BaseComposites\BaseWindow.h" />
     <ClInclude Include="src\BaseComposites\BaseChildWindow.h" />
     <ClInclude Include="src\Components\StandardButton.h" />
+    <ClInclude Include="src\Components\StandardEditControl.h" />
     <ClInclude Include="src\Constants.h" />
     <ClInclude Include="src\Exceptions\AlreadyRegisteredClassNameException.h" />
     <ClInclude Include="src\Exceptions\BaseGUIFrameworkException.h" />
     <ClInclude Include="src\Exceptions\CantFindSeparateWindowFunctionException.h" />
+    <ClInclude Include="src\Exceptions\GetLastErrorException.h" />
     <ClInclude Include="src\GUIFramework.h" />
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\BaseComposites\BaseSeparateWindow.h" />
@@ -46,13 +49,16 @@
   <ItemGroup>
     <ClCompile Include="src\BaseComponents\BaseComponent.cpp" />
     <ClCompile Include="src\BaseComponents\BaseButton.cpp" />
+    <ClCompile Include="src\BaseComponents\BaseEditControl.cpp" />
     <ClCompile Include="src\BaseComposites\BaseChildWindow.cpp" />
     <ClCompile Include="src\BaseComposites\BaseComposite.cpp" />
     <ClCompile Include="src\BaseComposites\BaseWindow.cpp" />
     <ClCompile Include="src\Components\StandardButton.cpp" />
+    <ClCompile Include="src\Components\StandardEditControl.cpp" />
     <ClCompile Include="src\Exceptions\BaseGUIFrameworkException.cpp" />
     <ClCompile Include="src\Exceptions\AlreadyRegisteredClassNameException.cpp" />
     <ClCompile Include="src\Exceptions\CantFindSeparateWindowFunctionException.cpp" />
+    <ClCompile Include="src\Exceptions\GetLastErrorException.cpp" />
     <ClCompile Include="src\GUIFramework.cpp" />
     <ClCompile Include="src\pch.cpp" />
     <ClCompile Include="src\BaseComposites\BaseSeparateWindow.cpp" />
