@@ -18,13 +18,20 @@ void test(const wstring& className, const wstring& title, const string& function
 
 	BaseSeparateWindow window(className, title, settings, functionName);
 	BaseChildWindow* inside = new BaseChildWindow(L"Inside", L"Inside", insideWindowSettings, &window, "insideWindow");
-	StandardButton* button = new StandardButton(L"Кнопка", 100, 100, inside, 50, [&](WPARAM wparam, LPARAM lparam)
+	StandardButton* button = new StandardButton(L"Button", L"Кнопка", 100, 100, inside, 50, [&](WPARAM wparam, LPARAM lparam)
 		{
 			StandardEditControl* edit = dynamic_cast<StandardEditControl*>(window.findChild(L"Edit"));
 
 			if (edit)
 			{
-				wcout << edit->getText() << endl;
+				try
+				{
+					wcout << edit->getText() << endl;
+				}
+				catch (const std::exception& e)
+				{
+					cout << e.what() << endl;
+				}
 			}
 
 			return 10;
