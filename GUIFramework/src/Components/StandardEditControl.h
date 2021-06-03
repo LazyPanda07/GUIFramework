@@ -4,6 +4,7 @@
 
 namespace gui_framework
 {
+	/// @brief Standard edit control
 	class StandardEditControl : public BaseEditControl
 	{
 	public:
