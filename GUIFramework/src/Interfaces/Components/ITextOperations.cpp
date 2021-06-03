@@ -29,7 +29,7 @@ namespace gui_framework
 			{
 				DWORD errorCode = GetLastError();
 
-				if (!errorCode)
+				if (errorCode)
 				{
 					throw exceptions::GetLastErrorException(errorCode);
 				}
