@@ -7,7 +7,7 @@ namespace gui_framework
 {
 	/// @brief Base class for all edit controls
 	class BaseEditControl :
-		public BaseComponent,
+		virtual public BaseComponent,
 		public interfaces::ITextOperations
 	{
 	public:

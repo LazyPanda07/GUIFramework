@@ -7,15 +7,15 @@ namespace gui_framework
 {
 	/// @brief Base class for all buttons
 	class BaseButton :
-		public BaseComponent,
+		virtual public BaseComponent,
 		public interfaces::ITextOperations
 	{
 	protected:
-		uint32_t buttonId;
+		uint64_t buttonId;
 		std::function<LRESULT(WPARAM, LPARAM)> onClick;
 
 	public:
-		BaseButton(const std::wstring& buttonName, const std::wstring& buttonText, const utility::ComponentSettings& settings, BaseComponent* parent, uint32_t buttonId, const std::function<LRESULT(WPARAM, LPARAM)>& onClick = nullptr);
+		BaseButton(const std::wstring& buttonName, const std::wstring& buttonText, const utility::ComponentSettings& settings, BaseComponent* parent, uint64_t buttonId, const std::function<LRESULT(WPARAM, LPARAM)>& onClick = nullptr);
 
 		virtual LRESULT windowMessagesHandle(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam, bool& isUsed) = 0;
 
@@ -23,7 +23,7 @@ namespace gui_framework
 
 		virtual const std::function<LRESULT(WPARAM, LPARAM)>& getOnClick() const final;
 
-		virtual uint32_t getButtonId() const;
+		virtual uint64_t getButtonId() const;
 
 		~BaseButton() = default;
 	};

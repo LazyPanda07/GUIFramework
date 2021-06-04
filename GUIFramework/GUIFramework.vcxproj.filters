@@ -54,7 +54,7 @@
     <ClInclude Include="src\BaseComponents\BaseButton.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Components\StandardButton.h">
+    <ClInclude Include="src\Components\Button.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\GUIFramework.h">
@@ -63,7 +63,7 @@
     <ClInclude Include="src\BaseComponents\BaseEditControl.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Components\StandardEditControl.h">
+    <ClInclude Include="src\Components\EditControl.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Exceptions\GetLastErrorException.h">
@@ -75,7 +75,16 @@
     <ClInclude Include="src\BaseComponents\BaseStaticControl.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Components\StandardStaticControl.h">
+    <ClInclude Include="src\Components\StaticControl.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Interfaces\Components\IResizableComponent.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BaseComponents\BaseResizableComponent.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BaseComponents\BaseNonResizableComponent.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
@@ -113,7 +122,7 @@
     <ClCompile Include="src\BaseComponents\BaseButton.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Components\StandardButton.cpp">
+    <ClCompile Include="src\Components\Button.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\GUIFramework.cpp">
@@ -122,7 +131,7 @@
     <ClCompile Include="src\BaseComponents\BaseEditControl.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Components\StandardEditControl.cpp">
+    <ClCompile Include="src\Components\EditControl.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Exceptions\GetLastErrorException.cpp">
@@ -134,7 +143,16 @@
     <ClCompile Include="src\BaseComponents\BaseStaticControl.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Components\StandardStaticControl.cpp">
+    <ClCompile Include="src\Components\StaticControl.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Interfaces\Components\IResizableComponent.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BaseComponents\BaseResizableComponent.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BaseComponents\BaseNonResizableComponent.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

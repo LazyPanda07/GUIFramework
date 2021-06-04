@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <cstdint>
 
 namespace gui_framework
 {
@@ -18,14 +19,14 @@ namespace gui_framework
 
 	namespace standard_sizes
 	{
-		inline constexpr int buttonWidth = 200;
-		inline constexpr int buttonHeight = 20;
+		inline constexpr uint16_t buttonWidth = 200;
+		inline constexpr uint16_t buttonHeight = 20;
 
-		inline constexpr int editControlWidth = 200;
-		inline constexpr int editControlHeight = 20;
+		inline constexpr uint16_t editControlWidth = 200;
+		inline constexpr uint16_t editControlHeight = 20;
 
-		inline constexpr int staticControlWidth = 200;
-		inline constexpr int staticControlHeight = 40;
+		inline constexpr uint16_t staticControlWidth = 200;
+		inline constexpr uint16_t staticControlHeight = 40;
 	}
 
 	namespace settings

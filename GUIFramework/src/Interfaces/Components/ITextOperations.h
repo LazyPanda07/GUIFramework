@@ -6,6 +6,7 @@ namespace gui_framework
 {
 	namespace interfaces
 	{
+		/// @brief Provides setText and getText methods
 		class ITextOperations
 		{
 		protected:

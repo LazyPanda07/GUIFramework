@@ -13,8 +13,8 @@ namespace gui_framework
 			DWORD styles;
 			int x;
 			int y;
-			int width;
-			int height;
+			uint16_t width;
+			uint16_t height;
 			HMENU id;
 
 			/// @brief Create settings for createing all windows
@@ -23,7 +23,7 @@ namespace gui_framework
 			/// @param x Top left corner x coordinate
 			/// @param y Top left corner y coordinate
 			/// @param extendedStyles Values from https://docs.microsoft.com/en-us/windows/win32/winmsg/extended-window-styles
-			ComponentSettings(DWORD styles, int x, int y, int width, int height, HMENU id = HMENU(NULL), DWORD extendedStyles = {});
+			ComponentSettings(DWORD styles, int x, int y, uint16_t width, uint16_t height, HMENU id = HMENU(NULL), DWORD extendedStyles = {});
 
 			~ComponentSettings() = default;
 		};

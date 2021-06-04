@@ -13,9 +13,16 @@ namespace gui_framework
 		const std::wstring windowName;
 		HWND handle;
 		HINSTANCE module;
+		uint16_t desiredWidth;
+		uint16_t desiredHeight;
+		int desiredX;
+		int desiredY;
+
+	protected:
+		virtual LRESULT preWindowMessagesHandle(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam, bool& isUsed);
 
 	public:
-		/// @param windowFunctionName Value that you pass in CREATE_DEFAULT_SEPARATE_WINDOW_FUNCTION macro
+		/// @param windowFunctionName Value that you pass in CREATE_DEFAULT_WINDOW_FUNCTION macro
 		/// @param moduleName Executable name for finding classes
 		/// @exception gui_framework::exceptions::AlreadyRegisteredClassNameException
 		BaseComponent(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, BaseComponent* parent = nullptr, const std::string& windowFunctionName = "", const std::wstring& moduleName = L"");
@@ -24,6 +31,16 @@ namespace gui_framework
 
 		virtual LRESULT windowMessagesHandle(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam, bool& isUsed);
 
+		virtual LRESULT handleMessages(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam, bool& isUsed) final;
+
+		virtual void setDesiredWidth(uint16_t desiredWidth) final;
+
+		virtual void setDesiredHeight(uint16_t desiredHeight) final;
+
+		virtual void setDesiredX(int desiredX) final;
+
+		virtual void setDesiredY(int desiredY) final;
+
 		virtual BaseComponent* getParent() const final;
 
 		virtual HWND getHandle() const final;
@@ -31,6 +48,20 @@ namespace gui_framework
 		virtual const std::wstring& getWindowName() const final;
 
 		virtual const std::wstring& getClassName() const final;
+
+		virtual uint16_t getDesiredWidth() const final;
+
+		virtual uint16_t getDesiredHeight() const final;
+
+		virtual uint16_t getActualWidth() const final;
+
+		virtual uint16_t getActualHeight() const final;
+		
+		virtual RECT getActualCoordinates() const final;
+
+		virtual int getDesiredX() const final;
+
+		virtual int getDesiredY() const final;
 
 		virtual ~BaseComponent();
 	};
@@ -57,7 +88,7 @@ namespace gui_framework
 	{ \
 		bool isUsed = false; \
 			\
-		LRESULT result = topLevelWindow->windowMessagesHandle(handle, msg, wparam, lparam, isUsed); \
+		LRESULT result = topLevelWindow->handleMessages(handle, msg, wparam, lparam, isUsed); \
 			\
 		return isUsed ? \
 			result : \
