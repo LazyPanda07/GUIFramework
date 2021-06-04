@@ -15,7 +15,11 @@ namespace gui_framework
 		className(className),
 		windowName(windowName),
 		handle(nullptr),
-		module(GetModuleHandleW(moduleName.data()))
+		module(GetModuleHandleW(moduleName.data())),
+		desiredWidth(settings.width),
+		desiredHeight(settings.height),
+		desiredX(settings.x),
+		desiredY(settings.y)
 	{
 		WNDCLASSEXW classStruct = {};
 
@@ -33,6 +37,7 @@ namespace gui_framework
 				classStruct.cbSize = sizeof(WNDCLASSEXW);
 				classStruct.lpszClassName = className.data();
 				classStruct.hInstance = module;
+				classStruct.hCursor = LoadCursorW(module, IDC_ARROW);
 				classStruct.lpfnWndProc = windowFunction;
 				classStruct.hbrBackground = HBRUSH(COLOR_WINDOW);
 
@@ -78,6 +83,26 @@ namespace gui_framework
 		return DefWindowProcW(handle, msg, wparam, lparam);
 	}
 
+	void BaseComponent::setDesiredWidth(uint16_t desiredWidth)
+	{
+		this->desiredWidth = desiredWidth;
+	}
+
+	void BaseComponent::setDesiredHeight(uint16_t desiredHeight)
+	{
+		this->desiredHeight = desiredHeight;
+	}
+
+	void BaseComponent::setDesiredX(int desiredX)
+	{
+		this->desiredX = desiredX;
+	}
+
+	void BaseComponent::setDesiredY(int desiredY)
+	{
+		this->desiredY = desiredY;
+	}
+
 	BaseComponent* BaseComponent::getParent() const
 	{
 		return parent;
@@ -98,6 +123,52 @@ namespace gui_framework
 		return className;
 	}
 
+	uint16_t BaseComponent::getDesiredWidth() const
+	{
+		return desiredWidth;
+	}
+
+	uint16_t BaseComponent::getDesiredHeight() const
+	{
+		return desiredHeight;
+	}
+
+	uint16_t BaseComponent::getActualWidth() const
+	{
+		RECT sizes;
+
+		GetClientRect(handle, &sizes);
+
+		return static_cast<uint16_t>(sizes.right - sizes.left);
+	}
+
+	uint16_t BaseComponent::getActualHeight() const
+	{
+		RECT sizes;
+
+		GetClientRect(handle, &sizes);
+
+		return static_cast<uint16_t>(sizes.bottom - sizes.top);
+	}
+
+	RECT BaseComponent::getActualCoordinates() const
+	{
+		RECT coordinates;
+
+		GetWindowRect(handle, &coordinates);
+
+		return coordinates;
+	}
+
+	int BaseComponent::getDesiredX() const
+	{
+		return desiredX;
+	}
+
+	int BaseComponent::getDesiredY() const
+	{
+		return desiredY;
+	}
 
 	BaseComponent::~BaseComponent()
 	{

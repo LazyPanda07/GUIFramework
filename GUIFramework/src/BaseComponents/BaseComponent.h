@@ -13,6 +13,10 @@ namespace gui_framework
 		const std::wstring windowName;
 		HWND handle;
 		HINSTANCE module;
+		uint16_t desiredWidth;
+		uint16_t desiredHeight;
+		int desiredX;
+		int desiredY;
 
 	public:
 		/// @param windowFunctionName Value that you pass in CREATE_DEFAULT_SEPARATE_WINDOW_FUNCTION macro
@@ -24,6 +28,14 @@ namespace gui_framework
 
 		virtual LRESULT windowMessagesHandle(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam, bool& isUsed);
 
+		virtual void setDesiredWidth(uint16_t desiredWidth) final;
+
+		virtual void setDesiredHeight(uint16_t desiredHeight) final;
+
+		virtual void setDesiredX(int desiredX) final;
+
+		virtual void setDesiredY(int desiredY) final;
+
 		virtual BaseComponent* getParent() const final;
 
 		virtual HWND getHandle() const final;
@@ -31,6 +43,20 @@ namespace gui_framework
 		virtual const std::wstring& getWindowName() const final;
 
 		virtual const std::wstring& getClassName() const final;
+
+		virtual uint16_t getDesiredWidth() const final;
+
+		virtual uint16_t getDesiredHeight() const final;
+
+		virtual uint16_t getActualWidth() const final;
+
+		virtual uint16_t getActualHeight() const final;
+		
+		virtual RECT getActualCoordinates() const final;
+
+		virtual int getDesiredX() const final;
+
+		virtual int getDesiredY() const final;
 
 		virtual ~BaseComponent();
 	};
