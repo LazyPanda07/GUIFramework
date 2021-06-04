@@ -6,7 +6,7 @@
 namespace gui_framework
 {
 	class BaseResizableComponent :
-		public BaseComponent,
+		virtual public BaseComponent,
 		public interfaces::IResizableComponent
 	{
 	protected:

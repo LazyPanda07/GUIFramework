@@ -7,7 +7,7 @@ namespace gui_framework
 {
 	/// @brief Base class for all buttons
 	class BaseButton :
-		public BaseComponent,
+		virtual public BaseComponent,
 		public interfaces::ITextOperations
 	{
 	protected:

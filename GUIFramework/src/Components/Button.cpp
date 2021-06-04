@@ -6,6 +6,21 @@ using namespace std;
 namespace gui_framework
 {
 	Button::Button(const wstring& buttonName, const wstring& buttonText, int x, int y, BaseComponent* parent, uint64_t buttonId, const function<LRESULT(WPARAM, LPARAM)>& onClick, int width, int height) :
+		BaseResizableComponent
+		(
+			wstring(standard_classes::button),
+			buttonName,
+			utility::ComponentSettings
+			(
+				NULL,
+				x,
+				y,
+				width,
+				height,
+				HMENU(buttonId)
+			),
+			parent
+		),
 		BaseButton
 		(
 			buttonName,
