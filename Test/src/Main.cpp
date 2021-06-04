@@ -2,9 +2,9 @@
 
 #include "BaseComposites/BaseSeparateWindow.h"
 #include "BaseComposites/BaseChildWindow.h"
-#include "Components/StandardButton.h"
-#include "Components/StandardEditControl.h"
-#include "Components/StandardStaticControl.h"
+#include "Components/Button.h"
+#include "Components/EditControl.h"
+#include "Components/StaticControl.h"
 
 #pragma comment (lib, "GUIFramework.lib")
 
@@ -19,7 +19,7 @@ void test(const wstring& className, const wstring& title, const string& function
 
 	BaseSeparateWindow window(className, title, settings, functionName);
 	
-	window.addChild(new StandardStaticControl(L"Message", L"Это тестовое сообщение", 0, 0, &window));
+	window.addChild(new StaticControl(L"Message", L"Это тестовое сообщение", 0, 0, &window));
 
 	MSG msg = {};
 
