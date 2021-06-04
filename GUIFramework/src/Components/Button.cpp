@@ -1,11 +1,11 @@
 #include "pch.h"
-#include "StandardButton.h"
+#include "Button.h"
 
 using namespace std;
 
 namespace gui_framework
 {
-	StandardButton::StandardButton(const wstring& buttonName, const wstring& buttonText, int x, int y, BaseComponent* parent, uint32_t buttonId, const function<LRESULT(WPARAM, LPARAM)>& onClick, int width, int height) :
+	Button::Button(const wstring& buttonName, const wstring& buttonText, int x, int y, BaseComponent* parent, uint64_t buttonId, const function<LRESULT(WPARAM, LPARAM)>& onClick, int width, int height) :
 		BaseButton
 		(
 			buttonName,
@@ -27,7 +27,7 @@ namespace gui_framework
 
 	}
 
-	LRESULT StandardButton::windowMessagesHandle(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam, bool& isUsed)
+	LRESULT Button::windowMessagesHandle(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam, bool& isUsed)
 	{
 		if (msg == WM_COMMAND && buttonId == wparam)
 		{

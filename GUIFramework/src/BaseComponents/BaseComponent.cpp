@@ -3,6 +3,7 @@
 
 #include "Exceptions/AlreadyRegisteredClassNameException.h"
 #include "Exceptions/CantFindSeparateWindowFunctionException.h"
+#include "Interfaces/Components/IResizableComponent.h"
 
 #pragma warning(disable: 6387)
 
@@ -10,6 +11,13 @@ using namespace std;
 
 namespace gui_framework
 {
+	LRESULT BaseComponent::preWindowMessagesHandle(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam, bool& isUsed)
+	{
+		isUsed = true;
+
+		return DefWindowProcW(handle, msg, wparam, lparam);
+	}
+
 	BaseComponent::BaseComponent(const wstring& className, const wstring& windowName, const utility::ComponentSettings& settings, BaseComponent* parent, const string& windowFunctionName, const std::wstring& moduleName) :
 		parent(parent),
 		className(className),
@@ -80,7 +88,22 @@ namespace gui_framework
 
 	LRESULT BaseComponent::windowMessagesHandle(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam, bool& isUsed)
 	{
+		isUsed = true;
+
 		return DefWindowProcW(handle, msg, wparam, lparam);
+	}
+
+	LRESULT BaseComponent::handleMessages(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam, bool& isUsed)
+	{
+		isUsed = false;
+		LRESULT result = this->preWindowMessagesHandle(handle, msg, wparam, lparam, isUsed);
+		
+		if (isUsed)
+		{
+			return result;
+		}
+
+		return this->windowMessagesHandle(handle, msg, wparam, lparam, isUsed);
 	}
 
 	void BaseComponent::setDesiredWidth(uint16_t desiredWidth)

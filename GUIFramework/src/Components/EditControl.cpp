@@ -1,11 +1,11 @@
 #include "pch.h"
-#include "StandardEditControl.h"
+#include "EditControl.h"
 
 using namespace std;
 
 namespace gui_framework
 {
-	StandardEditControl::StandardEditControl(const wstring& editControlName, int x, int y, BaseComponent* parent, int width, int height) :
+	EditControl::EditControl(const wstring& editControlName, int x, int y, BaseComponent* parent, int width, int height) :
 		BaseEditControl
 		(
 			editControlName,

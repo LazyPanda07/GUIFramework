@@ -1,11 +1,11 @@
 #include "pch.h"
-#include "StandardStaticControl.h"
+#include "StaticControl.h"
 
 using namespace std;
 
 namespace gui_framework
 {
-	StandardStaticControl::StandardStaticControl(const wstring& staticControlName, const wstring& editControlText, int x, int y, BaseComponent* parent, int width, int height) :
+	StaticControl::StaticControl(const wstring& staticControlName, const wstring& editControlText, int x, int y, BaseComponent* parent, int width, int height) :
 		BaseStaticControl
 		(
 			staticControlName,

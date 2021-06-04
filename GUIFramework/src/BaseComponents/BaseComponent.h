@@ -18,8 +18,11 @@ namespace gui_framework
 		int desiredX;
 		int desiredY;
 
+	protected:
+		virtual LRESULT preWindowMessagesHandle(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam, bool& isUsed);
+
 	public:
-		/// @param windowFunctionName Value that you pass in CREATE_DEFAULT_SEPARATE_WINDOW_FUNCTION macro
+		/// @param windowFunctionName Value that you pass in CREATE_DEFAULT_WINDOW_FUNCTION macro
 		/// @param moduleName Executable name for finding classes
 		/// @exception gui_framework::exceptions::AlreadyRegisteredClassNameException
 		BaseComponent(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, BaseComponent* parent = nullptr, const std::string& windowFunctionName = "", const std::wstring& moduleName = L"");
@@ -27,6 +30,8 @@ namespace gui_framework
 		virtual bool isComposite() const;
 
 		virtual LRESULT windowMessagesHandle(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam, bool& isUsed);
+
+		virtual LRESULT handleMessages(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam, bool& isUsed) final;
 
 		virtual void setDesiredWidth(uint16_t desiredWidth) final;
 
@@ -83,7 +88,7 @@ namespace gui_framework
 	{ \
 		bool isUsed = false; \
 			\
-		LRESULT result = topLevelWindow->windowMessagesHandle(handle, msg, wparam, lparam, isUsed); \
+		LRESULT result = topLevelWindow->handleMessages(handle, msg, wparam, lparam, isUsed); \
 			\
 		return isUsed ? \
 			result : \
