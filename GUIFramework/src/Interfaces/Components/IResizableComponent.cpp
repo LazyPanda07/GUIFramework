@@ -15,12 +15,14 @@ namespace gui_framework
 		{
 			RECT sizes;
 
-			GetWindowRect(parent ? parent : GetDesktopWindow(), &sizes);
+			GetWindowRect(resizeableHandle, &sizes);
 
 			initWidth = static_cast<uint16_t>(sizes.right) - static_cast<uint16_t>(sizes.left);
 			initHeight = static_cast<uint16_t>(sizes.bottom) - static_cast<uint16_t>(sizes.top);
 
 			GetClientRect(resizeableHandle, &sizes);
+
+			MapWindowPoints(HWND_DESKTOP, parent ? parent : HWND_DESKTOP, reinterpret_cast<POINT*>(&sizes), 2);
 
 			initX = sizes.left;
 			initY = sizes.top;
