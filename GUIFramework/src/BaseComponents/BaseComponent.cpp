@@ -15,7 +15,7 @@ namespace gui_framework
 	{
 		isUsed = false;
 
-		return DefWindowProcW(handle, msg, wparam, lparam);
+		return -1;
 	}
 
 	BaseComponent::BaseComponent(const wstring& className, const wstring& windowName, const utility::ComponentSettings& settings, BaseComponent* parent, const string& windowFunctionName, const std::wstring& moduleName) :
@@ -95,7 +95,6 @@ namespace gui_framework
 
 	LRESULT BaseComponent::handleMessages(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam, bool& isUsed)
 	{
-		isUsed = false;
 		LRESULT result = this->preWindowMessagesHandle(handle, msg, wparam, lparam, isUsed);
 		
 		if (isUsed)
