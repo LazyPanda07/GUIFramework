@@ -14,6 +14,14 @@ namespace gui_framework
 			parent,
 			windowFunctionName
 		),
+		BaseResizableComposite
+		(
+			className,
+			windowName,
+			settings,
+			parent,
+			windowFunctionName
+		),
 		BaseChildWindow
 		(
 			className,

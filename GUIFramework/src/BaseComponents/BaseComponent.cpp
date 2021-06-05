@@ -13,7 +13,7 @@ namespace gui_framework
 {
 	LRESULT BaseComponent::preWindowMessagesHandle(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam, bool& isUsed)
 	{
-		isUsed = true;
+		isUsed = false;
 
 		return DefWindowProcW(handle, msg, wparam, lparam);
 	}

@@ -14,6 +14,14 @@ namespace gui_framework
 			nullptr,
 			windowFunctionName
 		),
+		BaseResizableComposite
+		(
+			className,
+			titleName,
+			settings,
+			nullptr,
+			windowFunctionName
+		),
 		BaseSeparateWindow
 		(
 			className,
