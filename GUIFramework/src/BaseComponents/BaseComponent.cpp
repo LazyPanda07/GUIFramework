@@ -11,7 +11,7 @@ using namespace std;
 
 namespace gui_framework
 {
-	LRESULT BaseComponent::preWindowMessagesHandle(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam, bool& isUsed)
+	LRESULT BaseComponent::preWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
 	{
 		isUsed = false;
 
@@ -86,23 +86,23 @@ namespace gui_framework
 		return false;
 	}
 
-	LRESULT BaseComponent::windowMessagesHandle(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam, bool& isUsed)
+	LRESULT BaseComponent::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
 	{
 		isUsed = true;
 
-		return DefWindowProcW(handle, msg, wparam, lparam);
+		return DefWindowProcW(handle, message, wparam, lparam);
 	}
 
-	LRESULT BaseComponent::handleMessages(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam, bool& isUsed)
+	LRESULT BaseComponent::handleMessages(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
 	{
-		LRESULT result = this->preWindowMessagesHandle(handle, msg, wparam, lparam, isUsed);
+		LRESULT result = this->preWindowMessagesHandle(handle, message, wparam, lparam, isUsed);
 		
 		if (isUsed)
 		{
 			return result;
 		}
 
-		return this->windowMessagesHandle(handle, msg, wparam, lparam, isUsed);
+		return this->windowMessagesHandle(handle, message, wparam, lparam, isUsed);
 	}
 
 	void BaseComponent::setDesiredWidth(uint16_t desiredWidth)

@@ -93,16 +93,16 @@ namespace gui_framework
 		return true;
 	}
 
-	LRESULT BaseComposite::compositeWindowMessagesHandle(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam, bool& isUsed)
+	LRESULT BaseComposite::compositeWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
 	{
 		isUsed = false;
 
 		return -1;
 	}
 
-	LRESULT BaseComposite::windowMessagesHandle(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam, bool& isUsed)
+	LRESULT BaseComposite::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
 	{
-		LRESULT result = this->compositeWindowMessagesHandle(handle, msg, wparam, lparam, isUsed);
+		LRESULT result = this->compositeWindowMessagesHandle(handle, message, wparam, lparam, isUsed);
 
 		if (isUsed)
 		{
@@ -111,7 +111,7 @@ namespace gui_framework
 
 		for (const auto& i : children)
 		{
-			result = i->windowMessagesHandle(handle, msg, wparam, lparam, isUsed);
+			result = i->windowMessagesHandle(handle, message, wparam, lparam, isUsed);
 
 			if (isUsed)
 			{

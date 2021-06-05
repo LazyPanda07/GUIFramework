@@ -9,6 +9,9 @@ namespace gui_framework
 		public BaseResizableComposite,
 		public BaseSeparateWindow
 	{
+	private:
+		LRESULT preWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
+
 	public:
 		SeparateWindow(const std::wstring& className, const std::wstring& titleName, const utility::ComponentSettings& settings, const std::string& windowFunctionName);
 

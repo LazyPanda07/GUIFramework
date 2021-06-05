@@ -10,7 +10,7 @@ namespace gui_framework
 		public BaseStaticControl
 	{
 	private:
-		LRESULT preWindowMessagesHandle(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
+		LRESULT preWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
 
 	public:
 		StaticControl(const std::wstring& staticControlName, const std::wstring& editControlText, int x, int y, BaseComponent* parent, int width = standard_sizes::staticControlWidth, int height = standard_sizes::staticControlHeight);
