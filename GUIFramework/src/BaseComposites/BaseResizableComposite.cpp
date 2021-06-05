@@ -14,7 +14,7 @@ namespace gui_framework
 			isUsed = true;
 
 			uint16_t width = LOWORD(lparam);
-			uint16_t height = HIWORD(wparam);
+			uint16_t height = HIWORD(lparam);
 
 			this->resize(width, height);
 
