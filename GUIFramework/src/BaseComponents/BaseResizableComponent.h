@@ -15,8 +15,6 @@ namespace gui_framework
 	public:
 		BaseResizableComponent(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, BaseComponent* parent = nullptr, const std::string& windowFunctionName = "", const std::wstring& moduleName = L"");
 
-		virtual void resize(uint16_t width, uint16_t height) override;
-
 		virtual ~BaseResizableComponent() = default;
 	};
 }

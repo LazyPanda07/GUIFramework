@@ -9,7 +9,7 @@ namespace gui_framework
 	{
 		isUsed = false;
 
-		if (message == WM_SIZE)
+		if (message == WM_SIZE && !this->getBlockResize())
 		{
 			isUsed = true;
 
@@ -57,11 +57,6 @@ namespace gui_framework
 			handle,
 			parent ? parent->getHandle() : GetDesktopWindow()
 		)
-	{
-
-	}
-
-	void BaseResizableComposite::resize(uint16_t width, uint16_t height)
 	{
 
 	}

@@ -48,18 +48,4 @@ namespace gui_framework
 	{
 
 	}
-
-	void BaseResizableComponent::resize(uint16_t width, uint16_t height)
-	{
-		SetWindowPos
-		(
-			handle,
-			HWND_BOTTOM,
-			desiredX,
-			desiredY,
-			desiredWidth,
-			desiredHeight,
-			SWP_SHOWWINDOW
-		);
-	}
 }
