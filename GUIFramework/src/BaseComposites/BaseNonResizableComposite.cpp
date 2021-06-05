@@ -10,20 +10,16 @@ namespace gui_framework
 		(
 			className,
 			windowName,
-			utility::ComponentSettings
-			(
-				settings.styles ^ WS_THICKFRAME,
-				settings.x,
-				settings.y,
-				settings.width,
-				settings.height,
-				settings.id,
-				settings.extendedStyles
-			),
+			settings,
 			parent,
 			windowFunctionName
 		)
 	{
-
+		SetWindowLongPtrW	// disable resize
+		(
+			handle,
+			GWL_STYLE,
+			GetWindowLongPtrW(handle,GWL_STYLE) ^ WS_THICKFRAME
+		);
 	}
 }
