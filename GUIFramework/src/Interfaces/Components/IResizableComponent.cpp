@@ -15,12 +15,12 @@ namespace gui_framework
 		{
 			RECT sizes;
 
-			GetClientRect(resizeableHandle, &sizes);
+			GetWindowRect(parent ? parent : GetDesktopWindow(), &sizes);
 
 			initWidth = static_cast<uint16_t>(sizes.right) - static_cast<uint16_t>(sizes.left);
 			initHeight = static_cast<uint16_t>(sizes.bottom) - static_cast<uint16_t>(sizes.top);
 
-			GetWindowRect(resizeableHandle, &sizes);
+			GetClientRect(resizeableHandle, &sizes);
 
 			initX = sizes.left;
 			initY = sizes.top;
@@ -32,16 +32,17 @@ namespace gui_framework
 			{
 				RECT newSizes = this->calculateNewSizes(width, height);
 
-				SetWindowPos
+				MoveWindow
 				(
 					resizeableHandle,
-					parent,
 					newSizes.left,
 					newSizes.top,
 					newSizes.right - newSizes.left,
 					newSizes.bottom - newSizes.top,
-					SWP_SHOWWINDOW
+					true
 				);
+
+				ShowWindow(resizeableHandle, SW_SHOW);
 			}
 		}
 
