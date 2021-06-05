@@ -19,13 +19,11 @@ void test(const wstring& className, const wstring& title, const string& function
 
 	SeparateWindow window(className, title, settings, functionName);
 	ChildWindow* childWindow = new ChildWindow(className + L"Child", title + L"Child", childWindowSettings, &window, "childWindow");
-	Button* button = new Button(L"ChildButton", L"Кнопка внутри", 25, 25, childWindow, 1);
+	Button* button = new Button(L"ChildButton", L"Кнопка", 25, 25, childWindow, 1);
 	
 	button->setOnClick([&](WPARAM, LPARAM) -> LRESULT 
 		{
-			RECT sizes = window.getActualCoordinates();
-
-			cout << format("({}, {}) ({}, {})", sizes.left, sizes.top, sizes.right, sizes.bottom) << endl;
+			cout << "Click" << endl;
 
 			return 0; 
 		});
