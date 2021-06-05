@@ -207,7 +207,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\PrecompiledHeaders\pch.pch</PrecompiledHeaderOutputFile>
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
       <AdditionalIncludeDirectories>$(ProjectDir)src;$(ProjectDir)JSON\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -226,7 +226,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\PrecompiledHeaders\pch.pch</PrecompiledHeaderOutputFile>
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
       <AdditionalIncludeDirectories>$(ProjectDir)src;$(ProjectDir)JSON\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -247,7 +247,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\PrecompiledHeaders\pch.pch</PrecompiledHeaderOutputFile>
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
       <AdditionalIncludeDirectories>$(ProjectDir)src;$(ProjectDir)JSON\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -270,7 +270,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\PrecompiledHeaders\pch.pch</PrecompiledHeaderOutputFile>
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
       <AdditionalIncludeDirectories>$(ProjectDir)src;$(ProjectDir)JSON\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -293,7 +293,7 @@
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\PrecompiledHeaders\pch.pch</PrecompiledHeaderOutputFile>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
       <AdditionalIncludeDirectories>$(ProjectDir)src;$(ProjectDir)JSON\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -316,7 +316,7 @@
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\PrecompiledHeaders\pch.pch</PrecompiledHeaderOutputFile>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
       <AdditionalIncludeDirectories>$(ProjectDir)src;$(ProjectDir)JSON\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
