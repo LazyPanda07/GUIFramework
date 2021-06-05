@@ -17,8 +17,8 @@ namespace gui_framework
 
 			GetClientRect(resizeableHandle, &sizes);
 
-			initWidth = sizes.right - sizes.left;
-			initHeight = sizes.bottom - sizes.top;
+			initWidth = static_cast<uint16_t>(sizes.right) - static_cast<uint16_t>(sizes.left);
+			initHeight = static_cast<uint16_t>(sizes.bottom) - static_cast<uint16_t>(sizes.top);
 
 			GetWindowRect(resizeableHandle, &sizes);
 
@@ -35,7 +35,7 @@ namespace gui_framework
 				SetWindowPos
 				(
 					resizeableHandle,
-					HWND_BOTTOM,
+					parent,
 					newSizes.left,
 					newSizes.top,
 					newSizes.right - newSizes.left,
@@ -50,13 +50,13 @@ namespace gui_framework
 			RECT result;
 
 			double widthCoefficient = static_cast<double>(width) / initWidth;
-			double heightCoefficient =  static_cast<double>(height) / initHeight;
+			double heightCoefficient = static_cast<double>(height) / initHeight;
 
-			result.left = widthCoefficient * initX;
-			result.top = heightCoefficient * initY;
+			result.left = static_cast<uint16_t>(widthCoefficient * initX);
+			result.top = static_cast<uint16_t>(heightCoefficient * initY);
 
-			result.right = result.left + widthCoefficient * width;
-			result.bottom = result.top + heightCoefficient * height;
+			result.right = static_cast<uint16_t>(result.left + widthCoefficient * width);
+			result.bottom = static_cast<uint16_t>(result.top + heightCoefficient * height);
 
 			return result;
 		}
