@@ -3,8 +3,7 @@
 #include "Composites/SeparateWindow.h"
 #include "Composites/ChildWindow.h"
 #include "Components/Button.h"
-#include "Components/EditControl.h"
-#include "Components/StaticControl.h"
+#include "BaseComposites/BaseNonResizableComposite.h"
 
 #pragma comment (lib, "GUIFramework.lib")
 
@@ -17,7 +16,7 @@ void test(const wstring& className, const wstring& title, const string& function
 	utility::ComponentSettings settings(WS_BORDER, x, y, 800, 600);
 	utility::ComponentSettings childWindowSettings(WS_BORDER, 100, 100, 400, 400);
 
-	SeparateWindow window(className, title, settings, functionName);
+	BaseNonResizableComposite window(className, title, settings, nullptr, functionName);
 	ChildWindow* childWindow = new ChildWindow(className + L"Child", title + L"Child", childWindowSettings, &window, "childWindow");
 	Button* button = new Button(L"ChildButton", L"Кнопка", 25, 25, childWindow, 1);
 	
