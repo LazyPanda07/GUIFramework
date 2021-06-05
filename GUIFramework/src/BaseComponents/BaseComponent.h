@@ -19,7 +19,7 @@ namespace gui_framework
 		int desiredY;
 
 	protected:
-		virtual LRESULT preWindowMessagesHandle(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam, bool& isUsed);
+		virtual LRESULT preWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed);
 
 	public:
 		/// @param windowFunctionName Value that you pass in CREATE_DEFAULT_WINDOW_FUNCTION macro
@@ -29,9 +29,9 @@ namespace gui_framework
 
 		virtual bool isComposite() const;
 
-		virtual LRESULT windowMessagesHandle(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam, bool& isUsed);
+		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed);
 
-		virtual LRESULT handleMessages(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam, bool& isUsed) final;
+		virtual LRESULT handleMessages(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) final;
 
 		virtual void setDesiredWidth(uint16_t desiredWidth) final;
 
@@ -67,11 +67,11 @@ namespace gui_framework
 	};
 }
 
-#define CREATE_DEFAULT_WINDOW_FUNCTION(className) extern "C" __declspec(dllexport) LRESULT className##WindowFunction (HWND handle, UINT msg, WPARAM wparam, LPARAM lparam)  \
+#define CREATE_DEFAULT_WINDOW_FUNCTION(className) extern "C" __declspec(dllexport) LRESULT className##WindowFunction (HWND handle, UINT message, WPARAM wparam, LPARAM lparam)  \
 { \
 	static gui_framework::BaseComponent* topLevelWindow = nullptr; \
 	\
-	switch(msg) \
+	switch(message) \
 	{ \
 	case WM_DESTROY: \
 		PostQuitMessage(0); \
@@ -88,14 +88,14 @@ namespace gui_framework
 	{ \
 		bool isUsed = false; \
 			\
-		LRESULT result = topLevelWindow->handleMessages(handle, msg, wparam, lparam, isUsed); \
+		LRESULT result = topLevelWindow->handleMessages(handle, message, wparam, lparam, isUsed); \
 			\
 		return isUsed ? \
 			result : \
-			DefWindowProcW(handle, msg, wparam, lparam); \
+			DefWindowProcW(handle, message, wparam, lparam); \
 	} \
 	else \
 	{ \
-		return DefWindowProcW(handle, msg, wparam, lparam); \
+		return DefWindowProcW(handle, message, wparam, lparam); \
 	} \
 }

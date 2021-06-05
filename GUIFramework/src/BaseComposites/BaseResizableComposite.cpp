@@ -5,9 +5,11 @@ using namespace std;
 
 namespace gui_framework
 {
-	LRESULT BaseResizableComposite::preWindowMessagesHandle(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam, bool& isUsed)
+	LRESULT BaseResizableComposite::preWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
 	{
-		if (msg == WM_SIZE)
+		isUsed = false;
+
+		if (message == WM_SIZE)
 		{
 			isUsed = true;
 
@@ -29,7 +31,7 @@ namespace gui_framework
 			return 0;
 		}
 
-		return DefWindowProcW(handle, msg, wparam, lparam);
+		return -1;
 	}
 
 	BaseResizableComposite::BaseResizableComposite(const wstring& className, const wstring& windowName, const utility::ComponentSettings& settings, BaseComponent* parent, const string& windowFunctionName) :

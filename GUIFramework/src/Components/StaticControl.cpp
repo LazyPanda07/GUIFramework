@@ -5,9 +5,9 @@ using namespace std;
 
 namespace gui_framework
 {
-	LRESULT StaticControl::preWindowMessagesHandle(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam, bool& isUsed)
+	LRESULT StaticControl::preWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
 	{
-		return BaseResizableComponent::preWindowMessagesHandle(handle, msg, wparam, lparam, isUsed);
+		return BaseResizableComponent::preWindowMessagesHandle(handle, message, wparam, lparam, isUsed);
 	}
 
 	StaticControl::StaticControl(const wstring& staticControlName, const wstring& editControlText, int x, int y, BaseComponent* parent, int width, int height) :
