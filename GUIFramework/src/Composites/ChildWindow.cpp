@@ -1,11 +1,11 @@
 #include "pch.h"
-#include "BaseChildWindow.h"
+#include "ChildWindow.h"
 
 using namespace std;
 
 namespace gui_framework
 {
-	BaseChildWindow::BaseChildWindow(const wstring& className, const wstring& windowName, const utility::ComponentSettings& settings, BaseComponent* parent, const string& windowFunctionName) :
+	ChildWindow::ChildWindow(const wstring& className, const wstring& windowName, const utility::ComponentSettings& settings, BaseComponent* parent, const string& windowFunctionName) :
 		BaseComposite
 		(
 			className,
@@ -14,7 +14,7 @@ namespace gui_framework
 			parent,
 			windowFunctionName
 		),
-		BaseWindow
+		BaseChildWindow
 		(
 			className,
 			windowName,

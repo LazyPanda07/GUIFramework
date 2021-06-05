@@ -29,6 +29,7 @@
 #include "WindowMessages.h"
 #include "Constants.h"
 #include "Utility/ComponentSettings.h"
+#include "Utility/Utility.h"
 
 #include "JSONUtility.h"
 #include "JSONParser.h"
