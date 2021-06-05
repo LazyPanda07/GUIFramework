@@ -179,6 +179,8 @@ namespace gui_framework
 
 		GetWindowRect(handle, &coordinates);
 
+		MapWindowPoints(HWND_DESKTOP, parent ? parent->getHandle() : HWND_DESKTOP, reinterpret_cast<POINT*>(&coordinates), 2);
+
 		return coordinates;
 	}
 
