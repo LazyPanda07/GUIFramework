@@ -19,6 +19,8 @@ namespace gui_framework
 
 		virtual void removeChild(BaseComponent* child) final;
 
+		virtual void removeComponents(const std::wstring& componentName) final;
+
 		virtual BaseComponent* findChild(const std::wstring& windowName) const final;
 
 		virtual std::vector<BaseComponent*> findChildren(const std::wstring& windowName) const final;

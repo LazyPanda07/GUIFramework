@@ -36,6 +36,11 @@ namespace gui_framework
 		}
 	}
 
+	void BaseComposite::removeComponents(const wstring& componentName)
+	{
+		erase_if(children, [&componentName](const unique_ptr<BaseComponent>& child) { return child->getWindowName() == componentName; });
+	}
+
 	BaseComponent* BaseComposite::findChild(const wstring& windowName) const
 	{
 		BaseComponent* result = nullptr;

@@ -1,11 +1,11 @@
 #include "pch.h"
-#include "BaseSeparateWindow.h"
+#include "SeparateWindow.h"
 
 using namespace std;
 
 namespace gui_framework
 {
-	BaseSeparateWindow::BaseSeparateWindow(const wstring& className, const wstring& titleName, const utility::ComponentSettings& settings, const string& windowFunctionName) :
+	SeparateWindow::SeparateWindow(const std::wstring& className, const std::wstring& titleName, const utility::ComponentSettings& settings, const std::string& windowFunctionName) :
 		BaseComposite
 		(
 			className,
@@ -14,16 +14,14 @@ namespace gui_framework
 			nullptr,
 			windowFunctionName
 		),
-		BaseWindow
+		BaseSeparateWindow
 		(
 			className,
 			titleName,
 			settings,
-			nullptr,
 			windowFunctionName
 		)
 	{
-		
+
 	}
 }
-

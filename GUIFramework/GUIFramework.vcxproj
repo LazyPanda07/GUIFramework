@@ -34,11 +34,15 @@
     <ClInclude Include="src\BaseComponents\BaseResizableComponent.h" />
     <ClInclude Include="src\BaseComponents\BaseStaticControl.h" />
     <ClInclude Include="src\BaseComposites\BaseComposite.h" />
+    <ClInclude Include="src\BaseComposites\BaseNonResizableComposite.h" />
+    <ClInclude Include="src\BaseComposites\BaseResizableComposite.h" />
     <ClInclude Include="src\BaseComposites\BaseWindow.h" />
     <ClInclude Include="src\BaseComposites\BaseChildWindow.h" />
     <ClInclude Include="src\Components\Button.h" />
     <ClInclude Include="src\Components\EditControl.h" />
     <ClInclude Include="src\Components\StaticControl.h" />
+    <ClInclude Include="src\Composites\ChildWindow.h" />
+    <ClInclude Include="src\Composites\SeparateWindow.h" />
     <ClInclude Include="src\Constants.h" />
     <ClInclude Include="src\Exceptions\AlreadyRegisteredClassNameException.h" />
     <ClInclude Include="src\Exceptions\BaseGUIFrameworkException.h" />
@@ -50,6 +54,7 @@
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\BaseComposites\BaseSeparateWindow.h" />
     <ClInclude Include="src\Utility\ComponentSettings.h" />
+    <ClInclude Include="src\Utility\Utility.h" />
     <ClInclude Include="src\WindowMessages.h" />
   </ItemGroup>
   <ItemGroup>
@@ -61,10 +66,14 @@
     <ClCompile Include="src\BaseComponents\BaseStaticControl.cpp" />
     <ClCompile Include="src\BaseComposites\BaseChildWindow.cpp" />
     <ClCompile Include="src\BaseComposites\BaseComposite.cpp" />
+    <ClCompile Include="src\BaseComposites\BaseNonResizableComposite.cpp" />
+    <ClCompile Include="src\BaseComposites\BaseResizableComposite.cpp" />
     <ClCompile Include="src\BaseComposites\BaseWindow.cpp" />
     <ClCompile Include="src\Components\Button.cpp" />
     <ClCompile Include="src\Components\EditControl.cpp" />
     <ClCompile Include="src\Components\StaticControl.cpp" />
+    <ClCompile Include="src\Composites\ChildWindow.cpp" />
+    <ClCompile Include="src\Composites\SeparateWindow.cpp" />
     <ClCompile Include="src\Exceptions\BaseGUIFrameworkException.cpp" />
     <ClCompile Include="src\Exceptions\AlreadyRegisteredClassNameException.cpp" />
     <ClCompile Include="src\Exceptions\CantFindSeparateWindowFunctionException.cpp" />
@@ -75,6 +84,7 @@
     <ClCompile Include="src\pch.cpp" />
     <ClCompile Include="src\BaseComposites\BaseSeparateWindow.cpp" />
     <ClCompile Include="src\Utility\ComponentSettings.cpp" />
+    <ClCompile Include="src\Utility\Utility.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="JSON\JSON.vcxproj">
