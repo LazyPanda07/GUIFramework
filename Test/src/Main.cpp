@@ -22,6 +22,8 @@ void test(const wstring& className, const wstring& title, const string& function
 	
 	window.addChild(childWindow);
 
+	childWindow->setAutoResize(true);
+
 	childWindow->addChild(new Button(L"ChildButton", L"Кнопка внутри", 25, 25, childWindow, 1, [&](WPARAM, LPARAM) ->LRESULT { wcout << childWindow->getWindowName() << endl; return 0; }));
 
 	MSG msg = {};
