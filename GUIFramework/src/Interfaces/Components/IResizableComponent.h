@@ -18,6 +18,8 @@ namespace gui_framework
 			int initY;
 			uint16_t initWidth;
 			uint16_t initHeight;
+			uint16_t parentWidth;
+			uint16_t parentHeight;
 
 		public:
 			IResizableComponent(HWND resizeableHandle, HWND parent, bool autoResize = false, bool blockResize = false);
