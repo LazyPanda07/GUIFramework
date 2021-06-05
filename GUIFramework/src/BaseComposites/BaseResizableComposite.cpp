@@ -16,8 +16,6 @@ namespace gui_framework
 			uint16_t width = LOWORD(lparam);
 			uint16_t height = HIWORD(lparam);
 
-			this->resize(width, height);
-
 			for (const auto& i : children)
 			{
 				interfaces::IResizableComponent* resizable = dynamic_cast<interfaces::IResizableComponent*>(i.get());
