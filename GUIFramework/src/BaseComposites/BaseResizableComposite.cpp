@@ -31,4 +31,9 @@ namespace gui_framework
 	{
 
 	}
+
+	void BaseResizableComposite::resize(uint16_t width, uint16_t height)
+	{
+
+	}
 }
