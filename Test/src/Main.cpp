@@ -1,7 +1,7 @@
 #include <iostream>
 
-#include "BaseComposites/BaseSeparateWindow.h"
-#include "BaseComposites/BaseChildWindow.h"
+#include "Composites/SeparateWindow.h"
+#include "Composites/ChildWindow.h"
 #include "Components/Button.h"
 #include "Components/EditControl.h"
 #include "Components/StaticControl.h"
@@ -15,11 +15,14 @@ void test(const wstring& className, const wstring& title, const string& function
 	using namespace gui_framework;
 
 	utility::ComponentSettings settings(WS_BORDER, x, y, 800, 600);
-	utility::ComponentSettings insideWindowSettings(WS_BORDER, 100, 100, 400, 400);
+	utility::ComponentSettings childWindowSettings(WS_BORDER, 100, 100, 400, 400);
 
-	BaseSeparateWindow window(className, title, settings, functionName);
+	SeparateWindow window(className, title, settings, functionName);
+	ChildWindow* childWindow = new ChildWindow(className + L"Child", title + L"Child", childWindowSettings, &window, "childWindow");
 	
-	window.addChild(new StaticControl(L"Message", L"Ёто тестовое сообщение", 0, 0, &window));
+	window.addChild(childWindow);
+
+	childWindow->addChild(new Button(L"ChildButton", L" нопка внутри", 25, 25, childWindow, 1, [&](WPARAM, LPARAM) ->LRESULT { wcout << childWindow->getParent()->getClassName() << endl; return 0; }));
 
 	MSG msg = {};
 
@@ -33,10 +36,12 @@ void test(const wstring& className, const wstring& title, const string& function
 
 CREATE_DEFAULT_WINDOW_FUNCTION(mainWindow)
 
-CREATE_DEFAULT_WINDOW_FUNCTION(insideWindow)
+CREATE_DEFAULT_WINDOW_FUNCTION(childWindow)
 
 int main(int argc, char** argv)
 {
+	SetConsoleOutputCP(1251);
+
 	thread(test, L"Main window", L"Title", "mainWindow", 300, 200).detach();
 
 	string s;
