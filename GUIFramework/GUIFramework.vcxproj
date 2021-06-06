@@ -28,16 +28,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\BaseComponents\BaseComponent.h" />
-    <ClInclude Include="src\BaseComponents\BaseButton.h" />
-    <ClInclude Include="src\BaseComponents\BaseEditControl.h" />
+    <ClInclude Include="src\BaseComponents\StandardComponents\BaseButton.h" />
+    <ClInclude Include="src\BaseComponents\StandardComponents\BaseEditControl.h" />
     <ClInclude Include="src\BaseComponents\BaseNonResizableComponent.h" />
     <ClInclude Include="src\BaseComponents\BaseResizableComponent.h" />
-    <ClInclude Include="src\BaseComponents\BaseStaticControl.h" />
+    <ClInclude Include="src\BaseComponents\StandardComponents\BaseStaticControl.h" />
     <ClInclude Include="src\BaseComposites\BaseComposite.h" />
     <ClInclude Include="src\BaseComposites\BaseNonResizableComposite.h" />
     <ClInclude Include="src\BaseComposites\BaseResizableComposite.h" />
     <ClInclude Include="src\BaseComposites\BaseWindow.h" />
-    <ClInclude Include="src\BaseComposites\BaseChildWindow.h" />
+    <ClInclude Include="src\BaseComposites\StandardComposites\BaseChildWindow.h" />
     <ClInclude Include="src\Components\Button.h" />
     <ClInclude Include="src\Components\EditControl.h" />
     <ClInclude Include="src\Components\StaticControl.h" />
@@ -52,19 +52,19 @@
     <ClInclude Include="src\Interfaces\Components\IResizableComponent.h" />
     <ClInclude Include="src\Interfaces\Components\ITextOperations.h" />
     <ClInclude Include="src\pch.h" />
-    <ClInclude Include="src\BaseComposites\BaseSeparateWindow.h" />
+    <ClInclude Include="src\BaseComposites\StandardComposites\BaseSeparateWindow.h" />
     <ClInclude Include="src\Utility\ComponentSettings.h" />
     <ClInclude Include="src\Utility\Utility.h" />
     <ClInclude Include="src\WindowMessages.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\BaseComponents\BaseComponent.cpp" />
-    <ClCompile Include="src\BaseComponents\BaseButton.cpp" />
-    <ClCompile Include="src\BaseComponents\BaseEditControl.cpp" />
+    <ClCompile Include="src\BaseComponents\StandardComponents\BaseButton.cpp" />
+    <ClCompile Include="src\BaseComponents\StandardComponents\BaseEditControl.cpp" />
     <ClCompile Include="src\BaseComponents\BaseNonResizableComponent.cpp" />
     <ClCompile Include="src\BaseComponents\BaseResizableComponent.cpp" />
-    <ClCompile Include="src\BaseComponents\BaseStaticControl.cpp" />
-    <ClCompile Include="src\BaseComposites\BaseChildWindow.cpp" />
+    <ClCompile Include="src\BaseComponents\StandardComponents\BaseStaticControl.cpp" />
+    <ClCompile Include="src\BaseComposites\StandardComposites\BaseChildWindow.cpp" />
     <ClCompile Include="src\BaseComposites\BaseComposite.cpp" />
     <ClCompile Include="src\BaseComposites\BaseNonResizableComposite.cpp" />
     <ClCompile Include="src\BaseComposites\BaseResizableComposite.cpp" />
@@ -82,7 +82,7 @@
     <ClCompile Include="src\Interfaces\Components\IResizableComponent.cpp" />
     <ClCompile Include="src\Interfaces\Components\ITextOperations.cpp" />
     <ClCompile Include="src\pch.cpp" />
-    <ClCompile Include="src\BaseComposites\BaseSeparateWindow.cpp" />
+    <ClCompile Include="src\BaseComposites\StandardComposites\BaseSeparateWindow.cpp" />
     <ClCompile Include="src\Utility\ComponentSettings.cpp" />
     <ClCompile Include="src\Utility\Utility.cpp" />
   </ItemGroup>

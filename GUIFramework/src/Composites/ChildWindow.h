@@ -1,6 +1,6 @@
 #pragma once
 
-#include "BaseComposites/BaseChildWindow.h"
+#include "BaseComposites/StandardComposites/BaseChildWindow.h"
 #include "BaseComposites/BaseResizableComposite.h"
 
 namespace gui_framework

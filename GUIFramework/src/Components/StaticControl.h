@@ -1,6 +1,6 @@
 #pragma once
 
-#include "BaseComponents/BaseStaticControl.h"
+#include "BaseComponents/StandardComponents/BaseStaticControl.h"
 #include "BaseComponents/BaseResizableComponent.h"
 
 namespace gui_framework
