@@ -105,7 +105,7 @@
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseComboBox.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Components\ComboBox.h">
+    <ClInclude Include="src\Components\SimpleComboBox.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
@@ -194,7 +194,7 @@
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseComboBox.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Components\ComboBox.cpp">
+    <ClCompile Include="src\Components\SimpleComboBox.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
