@@ -29,6 +29,7 @@
   <ItemGroup>
     <ClInclude Include="src\BaseComponents\BaseComponent.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseButton.h" />
+    <ClInclude Include="src\BaseComponents\StandardComponents\BaseComboBox.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseEditControl.h" />
     <ClInclude Include="src\BaseComponents\BaseNonResizableComponent.h" />
     <ClInclude Include="src\BaseComponents\BaseResizableComponent.h" />
@@ -39,6 +40,7 @@
     <ClInclude Include="src\BaseComposites\BaseWindow.h" />
     <ClInclude Include="src\BaseComposites\StandardComposites\BaseChildWindow.h" />
     <ClInclude Include="src\Components\Button.h" />
+    <ClInclude Include="src\Components\ComboBox.h" />
     <ClInclude Include="src\Components\EditControl.h" />
     <ClInclude Include="src\Components\StaticControl.h" />
     <ClInclude Include="src\Composites\ChildWindow.h" />
@@ -60,6 +62,7 @@
   <ItemGroup>
     <ClCompile Include="src\BaseComponents\BaseComponent.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseButton.cpp" />
+    <ClCompile Include="src\BaseComponents\StandardComponents\BaseComboBox.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseEditControl.cpp" />
     <ClCompile Include="src\BaseComponents\BaseNonResizableComponent.cpp" />
     <ClCompile Include="src\BaseComponents\BaseResizableComponent.cpp" />
@@ -70,6 +73,7 @@
     <ClCompile Include="src\BaseComposites\BaseResizableComposite.cpp" />
     <ClCompile Include="src\BaseComposites\BaseWindow.cpp" />
     <ClCompile Include="src\Components\Button.cpp" />
+    <ClCompile Include="src\Components\ComboBox.cpp" />
     <ClCompile Include="src\Components\EditControl.cpp" />
     <ClCompile Include="src\Components\StaticControl.cpp" />
     <ClCompile Include="src\Composites\ChildWindow.cpp" />
