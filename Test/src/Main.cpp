@@ -2,8 +2,7 @@
 
 #include "Composites/SeparateWindow.h"
 #include "Composites/ChildWindow.h"
-#include "Components/Button.h"
-#include "BaseComposites/BaseNonResizableComposite.h"
+#include "Components/ComboBox.h"
 
 #pragma comment (lib, "GUIFramework.lib")
 
@@ -14,24 +13,12 @@ void test(const wstring& className, const wstring& title, const string& function
 	using namespace gui_framework;
 
 	utility::ComponentSettings settings(WS_BORDER, x, y, 800, 600);
-	utility::ComponentSettings childWindowSettings(WS_BORDER, 100, 100, 400, 400);
+	utility::ComponentSettings childWindowSettings(WS_BORDER | CBS_SIMPLE, 25, 25, 40, 120);
 
-	BaseNonResizableComposite window(className, title, settings, nullptr, functionName);
-	ChildWindow* childWindow = new ChildWindow(className + L"Child", title + L"Child", childWindowSettings, &window, "childWindow");
-	Button* button = new Button(L"ChildButton", L"Êíîïêà", 25, 25, childWindow, 1);
-	
-	button->setOnClick([&](WPARAM, LPARAM) -> LRESULT 
-		{
-			cout << "Click" << endl;
+	unique_ptr<SeparateWindow> mainWindow(make_unique<SeparateWindow>(className, title, settings, functionName));
+	BaseComboBox* comboBox = new BaseComboBox(L"Combo", childWindowSettings, mainWindow.get());
 
-			return 0; 
-		});
-
-	window.addChild(childWindow);
-
-	childWindow->setAutoResize(true);
-
-	childWindow->addChild(button);
+	mainWindow->addChild(comboBox);
 
 	MSG msg = {};
 
