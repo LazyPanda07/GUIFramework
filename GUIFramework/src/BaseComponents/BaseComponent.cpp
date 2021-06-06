@@ -88,9 +88,9 @@ namespace gui_framework
 
 	LRESULT BaseComponent::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
 	{
-		isUsed = true;
+		isUsed = false;
 
-		return DefWindowProcW(handle, message, wparam, lparam);
+		return -1;
 	}
 
 	LRESULT BaseComponent::handleMessages(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
