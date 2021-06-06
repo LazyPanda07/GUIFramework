@@ -9,6 +9,9 @@ namespace gui_framework
 		virtual public BaseComponent,
 		public interfaces::IResizableComponent
 	{
+	protected:
+		SIZE requiredSize;
+
 	public:
 		enum class itemHeightEnum
 		{
@@ -30,6 +33,8 @@ namespace gui_framework
 		virtual std::wstring findSubString(const std::wstring& subStringToFind) final;
 
 		virtual std::wstring findString(const std::wstring& stringToFind) final;
+
+		virtual std::wstring getValue(size_t index) const final;
 
 		virtual LRESULT getCurrentSelectionIndex() const final;
 
