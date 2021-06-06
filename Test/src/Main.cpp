@@ -3,6 +3,7 @@
 #include "Composites/SeparateWindow.h"
 #include "Composites/ChildWindow.h"
 #include "Components/SimpleComboBox.h"
+#include "Components/Button.h"
 
 #pragma comment (lib, "GUIFramework.lib")
 
@@ -16,12 +17,22 @@ void test(const wstring& className, const wstring& title, const string& function
 
 	unique_ptr<SeparateWindow> mainWindow(make_unique<SeparateWindow>(className, title, settings, functionName));
 	SimpleComboBox* comboBox = new SimpleComboBox(L"Combo", 25, 25, 40, 120, mainWindow.get());
+	Button* button = new Button(L"Button", L"Текст", 200, 25, mainWindow.get(), 1);
+
+	button->setOnClick([&](WPARAM, LPARAM) -> LRESULT
+		{
+			cout << comboBox->getActualWidth() << endl;
+
+			return 0;
+		});
 
 	comboBox->addValue(L"First");
 	comboBox->addValue(L"Second");
 	comboBox->addValue(L"Third");
 
 	mainWindow->addChild(comboBox);
+
+	mainWindow->addChild(button);
 
 	MSG msg = {};
 
