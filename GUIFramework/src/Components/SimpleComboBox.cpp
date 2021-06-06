@@ -1,18 +1,18 @@
 #include "pch.h"
-#include "ComboBox.h"
+#include "SimpleComboBox.h"
 
 using namespace std;
 
 namespace gui_framework
 {
-	ComboBox::ComboBox(const wstring& comboBoxName, int x, int y, BaseComponent* parent, uint16_t width, uint16_t height) :
+	SimpleComboBox::SimpleComboBox(const wstring& comboBoxName, int x, int y, uint16_t width, uint16_t height, BaseComponent* parent) :
 		BaseComponent
 		(
 			wstring(standard_classes::comboBox),
 			comboBoxName,
 			utility::ComponentSettings
 			(
-				NULL,
+				CBS_SIMPLE,
 				x,
 				y,
 				width,
@@ -25,7 +25,7 @@ namespace gui_framework
 			comboBoxName,
 			utility::ComponentSettings
 			(
-				NULL,
+				CBS_SIMPLE,
 				x,
 				y,
 				width,

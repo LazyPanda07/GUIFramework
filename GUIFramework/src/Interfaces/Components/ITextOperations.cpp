@@ -39,6 +39,8 @@ namespace gui_framework
 
 			GetWindowTextW(textHandle, text.data(), textLength);
 
+			text.pop_back();
+
 			return text;
 		}
 	}
