@@ -1,6 +1,6 @@
 #pragma once
 
-#include "BaseComponents/BaseEditControl.h"
+#include "BaseComponents/StandardComponents/BaseEditControl.h"
 #include "BaseComponents/BaseResizableComponent.h"
 
 namespace gui_framework

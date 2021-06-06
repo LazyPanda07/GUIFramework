@@ -15,6 +15,7 @@ namespace gui_framework
 		inline constexpr std::wstring_view button = L"Button";
 		inline constexpr std::wstring_view editControl = L"Edit";
 		inline constexpr std::wstring_view staticControl = L"Static";
+		inline constexpr std::wstring_view comboBox = L"ComboBox";
 	}
 
 	namespace standard_sizes
@@ -27,6 +28,9 @@ namespace gui_framework
 
 		inline constexpr uint16_t staticControlWidth = 200;
 		inline constexpr uint16_t staticControlHeight = 40;
+
+		inline constexpr uint16_t comboBoxWidth = 40;
+		inline constexpr uint16_t comboBoxHeight = 120;
 	}
 
 	namespace settings

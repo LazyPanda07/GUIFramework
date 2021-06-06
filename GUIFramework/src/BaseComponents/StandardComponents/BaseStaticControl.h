@@ -1,6 +1,6 @@
 #pragma once
 
-#include "BaseComponent.h"
+#include "BaseComponents/BaseComponent.h"
 #include "Interfaces/Components/ITextOperations.h"
 
 namespace gui_framework
