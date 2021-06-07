@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "BaseComboBox.h"
 
+#include "Exceptions/ComboBoxException.h"
+
 #pragma warning(disable: 4018)
 #pragma warning(disable: 4267)
 
@@ -34,6 +36,15 @@ namespace gui_framework
 	{
 		LRESULT result = SendMessageW(handle, CB_ADDSTRING, NULL, reinterpret_cast<LPARAM>(value.data()));
 
+		if (result == CB_ERR)
+		{
+			throw exceptions::ComboBoxException(__FUNCTION__, result);
+		}
+		else if (result == CB_ERRSPACE)
+		{
+			throw exceptions::ComboBoxException(__FUNCTION__, result, exception_messages::notEnoughSpace);
+		}
+
 		this->resize(NULL, NULL);
 
 		return result;
@@ -42,6 +53,11 @@ namespace gui_framework
 	LRESULT BaseComboBox::removeValue(size_t index)
 	{
 		LRESULT result = SendMessageW(handle, CB_DELETESTRING, index, NULL);
+
+		if (result == CB_ERR)
+		{
+			throw exceptions::ComboBoxException(__FUNCTION__, result);
+		}
 
 		this->resize(NULL, NULL);
 
@@ -52,6 +68,15 @@ namespace gui_framework
 	{
 		LRESULT result = SendMessageW(handle, CB_INSERTSTRING, index, reinterpret_cast<LPARAM>(value.data()));
 
+		if (result == CB_ERR)
+		{
+			throw exceptions::ComboBoxException(__FUNCTION__, result);
+		}
+		else if (result == CB_ERRSPACE)
+		{
+			throw exceptions::ComboBoxException(__FUNCTION__, result, exception_messages::notEnoughSpace);
+		}
+
 		this->resize(NULL, NULL);
 
 		return result;
@@ -60,6 +85,11 @@ namespace gui_framework
 	LRESULT BaseComboBox::changeValue(const wstring& newValue, LRESULT index)
 	{
 		LRESULT result = SendMessageW(handle, CB_SETITEMDATA, index, reinterpret_cast<LPARAM>(newValue.data()));
+
+		if (result == CB_ERR)
+		{
+			throw exceptions::ComboBoxException(__FUNCTION__, result);
+		}
 
 		this->resize(NULL, NULL);
 
@@ -70,12 +100,22 @@ namespace gui_framework
 	{
 		LRESULT findedIndex = SendMessageW(handle, CB_FINDSTRING, 0, reinterpret_cast<LPARAM>(subStringToFind.data()));
 
+		if (findedIndex == CB_ERR)
+		{
+			throw exceptions::ComboBoxException(__FUNCTION__, findedIndex);
+		}
+
 		return this->getValue(findedIndex);
 	}
 
 	wstring BaseComboBox::findString(const wstring& stringToFind)
 	{
 		LRESULT findedIndex = SendMessageW(handle, CB_FINDSTRINGEXACT, 0, reinterpret_cast<LPARAM>(stringToFind.data()));
+
+		if (findedIndex == CB_ERR)
+		{
+			throw exceptions::ComboBoxException(__FUNCTION__, findedIndex);
+		}
 
 		return this->getValue(findedIndex);
 	}
@@ -85,9 +125,19 @@ namespace gui_framework
 		wstring result;
 		LRESULT size = SendMessageW(handle, CB_GETLBTEXTLEN, index, NULL);
 
+		if (size == CB_ERR)
+		{
+			throw exceptions::ComboBoxException(__FUNCTION__, size);
+		}
+
 		result.resize(++size);
 
-		SendMessageW(handle, CB_GETLBTEXT, index, reinterpret_cast<LPARAM>(result.data()));
+		LRESULT errorCode = SendMessageW(handle, CB_GETLBTEXT, index, reinterpret_cast<LPARAM>(result.data()));
+
+		if (errorCode == CB_ERR)
+		{
+			throw exceptions::ComboBoxException(__FUNCTION__, errorCode);
+		}
 
 		result.pop_back();
 
@@ -101,12 +151,26 @@ namespace gui_framework
 
 	LRESULT BaseComboBox::setCurrentSelection(LRESULT index) const
 	{
-		return SendMessageW(handle, CB_SETCURSEL, index, NULL);
+		LRESULT result = SendMessageW(handle, CB_SETCURSEL, index, NULL);
+
+		if (result == CB_ERR)
+		{
+			throw exceptions::ComboBoxException(__FUNCTION__, result);
+		}
+
+		return result;
 	}
 
 	LRESULT BaseComboBox::size() const
 	{
-		return SendMessageW(handle, CB_GETCOUNT, NULL, NULL);
+		LRESULT result = SendMessageW(handle, CB_GETCOUNT, NULL, NULL);
+
+		if (result == CB_ERR)
+		{
+			throw exceptions::ComboBoxException(__FUNCTION__, result);
+		}
+
+		return result;
 	}
 
 	void BaseComboBox::clear()
@@ -116,22 +180,50 @@ namespace gui_framework
 
 	LRESULT BaseComboBox::setItemHeight(itemHeightEnum value, uint16_t height)
 	{
-		return SendMessageW(handle, CB_SETITEMHEIGHT, static_cast<WPARAM>(value), height);
+		LRESULT result = SendMessageW(handle, CB_SETITEMHEIGHT, static_cast<WPARAM>(value), height);
+
+		if (result == CB_ERR)
+		{
+			throw exceptions::ComboBoxException(__FUNCTION__, result);
+		}
+
+		return result;
 	}
 
 	LRESULT BaseComboBox::setDroppedWidth(uint16_t width)
 	{
-		return SendMessageW(handle, CB_SETDROPPEDWIDTH, width, NULL);
+		LRESULT result = SendMessageW(handle, CB_SETDROPPEDWIDTH, width, NULL);
+
+		if (result == CB_ERR)
+		{
+			throw exceptions::ComboBoxException(__FUNCTION__, result);
+		}
+
+		return result;
 	}
 
 	LRESULT BaseComboBox::getItemHeight(itemHeightEnum value) const
 	{
-		return SendMessageW(handle, CB_GETITEMHEIGHT, static_cast<WPARAM>(value), NULL);
+		LRESULT result = SendMessageW(handle, CB_GETITEMHEIGHT, static_cast<WPARAM>(value), NULL);
+
+		if (result == CB_ERR)
+		{
+			throw exceptions::ComboBoxException(__FUNCTION__, result);
+		}
+
+		return result;
 	}
 
 	LRESULT BaseComboBox::getDroppedWidth() const
 	{
-		return SendMessageW(handle, CB_GETDROPPEDWIDTH, NULL, NULL);
+		LRESULT result = SendMessageW(handle, CB_GETDROPPEDWIDTH, NULL, NULL);
+
+		if (result == CB_ERR)
+		{
+			throw exceptions::ComboBoxException(__FUNCTION__, result);
+		}
+
+		return result;
 	}
 
 	void BaseComboBox::resize(uint16_t width, uint16_t height)
