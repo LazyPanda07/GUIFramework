@@ -28,6 +28,8 @@ namespace gui_framework
 
 		inline constexpr uint16_t staticControlWidth = 200;
 		inline constexpr uint16_t staticControlHeight = 40;
+
+		inline constexpr uint16_t comboBoxAdditionalWidth = 10;
 	}
 
 	namespace settings
