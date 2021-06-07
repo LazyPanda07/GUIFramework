@@ -3,6 +3,8 @@
 #include "Composites/SeparateWindow.h"
 #include "Composites/ChildWindow.h"
 #include "Components/SimpleComboBox.h"
+#include "Components/DropDownComboBox.h"
+#include "Components/DropDownListComboBox.h"
 #include "Components/Button.h"
 
 #pragma comment (lib, "GUIFramework.lib")
@@ -16,12 +18,12 @@ void test(const wstring& className, const wstring& title, const string& function
 	utility::ComponentSettings settings(WS_BORDER, x, y, 800, 600);
 
 	unique_ptr<SeparateWindow> mainWindow(make_unique<SeparateWindow>(className, title, settings, functionName));
-	SimpleComboBox* comboBox = new SimpleComboBox(L"Combo", 25, 25, 40, 120, mainWindow.get());
+	BaseComboBox* comboBox = new DropDownListComboBox(L"Combo", 25, 25, 40, 120, mainWindow.get());
 	Button* button = new Button(L"Button", L"Текст", 200, 25, mainWindow.get(), 1);
 
 	button->setOnClick([&](WPARAM, LPARAM) -> LRESULT
 		{
-			cout << comboBox->getActualWidth() << endl;
+			cout << comboBox->getActualHeight() << endl;
 
 			return 0;
 		});
