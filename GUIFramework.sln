@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.31321.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GUIFramework", "GUIFramework\GUIFramework.vcxproj", "{4ABC2B87-48DB-4481-8D94-4DE3DE15A82E}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JSON", "GUIFramework\JSON\JSON.vcxproj", "{F6B57139-D9F3-4B02-AA92-4E1F417649DA}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -29,18 +27,6 @@ Global
 		{4ABC2B87-48DB-4481-8D94-4DE3DE15A82E}.Release|x64.Build.0 = Release|x64
 		{4ABC2B87-48DB-4481-8D94-4DE3DE15A82E}.ReleaseDLL|x64.ActiveCfg = ReleaseDLL|x64
 		{4ABC2B87-48DB-4481-8D94-4DE3DE15A82E}.ReleaseDLL|x64.Build.0 = ReleaseDLL|x64
-		{F6B57139-D9F3-4B02-AA92-4E1F417649DA}.Debug|x64.ActiveCfg = Debug|x64
-		{F6B57139-D9F3-4B02-AA92-4E1F417649DA}.Debug|x64.Build.0 = Debug|x64
-		{F6B57139-D9F3-4B02-AA92-4E1F417649DA}.DebugDLL|x64.ActiveCfg = Debug|x64
-		{F6B57139-D9F3-4B02-AA92-4E1F417649DA}.DebugDLL|x64.Build.0 = Debug|x64
-		{F6B57139-D9F3-4B02-AA92-4E1F417649DA}.ProductionRelease|x64.ActiveCfg = ProductionRelease|x64
-		{F6B57139-D9F3-4B02-AA92-4E1F417649DA}.ProductionRelease|x64.Build.0 = ProductionRelease|x64
-		{F6B57139-D9F3-4B02-AA92-4E1F417649DA}.ProductionReleaseDLL|x64.ActiveCfg = ProductionRelease|x64
-		{F6B57139-D9F3-4B02-AA92-4E1F417649DA}.ProductionReleaseDLL|x64.Build.0 = ProductionRelease|x64
-		{F6B57139-D9F3-4B02-AA92-4E1F417649DA}.Release|x64.ActiveCfg = Release|x64
-		{F6B57139-D9F3-4B02-AA92-4E1F417649DA}.Release|x64.Build.0 = Release|x64
-		{F6B57139-D9F3-4B02-AA92-4E1F417649DA}.ReleaseDLL|x64.ActiveCfg = Release|x64
-		{F6B57139-D9F3-4B02-AA92-4E1F417649DA}.ReleaseDLL|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
