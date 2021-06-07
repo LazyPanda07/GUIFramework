@@ -2,9 +2,7 @@
 
 #include "Composites/SeparateWindow.h"
 #include "Composites/ChildWindow.h"
-#include "Components/SimpleComboBox.h"
-#include "Components/DropDownComboBox.h"
-#include "Components/DropDownListComboBox.h"
+#include "BaseComponents/StandardComponents/BaseListBox.h"
 #include "Components/Button.h"
 
 #pragma comment (lib, "GUIFramework.lib")
@@ -16,23 +14,24 @@ void test(const wstring& className, const wstring& title, const string& function
 	using namespace gui_framework;
 
 	utility::ComponentSettings settings(WS_BORDER, x, y, 800, 600);
+	utility::ComponentSettings anotherSettings(WS_BORDER, 25, 25, 40, 120);
 
 	unique_ptr<SeparateWindow> mainWindow(make_unique<SeparateWindow>(className, title, settings, functionName));
-	BaseComboBox* comboBox = new DropDownListComboBox(L"Combo", 25, 25, 40, 120, mainWindow.get());
+	BaseListBox* listBox = new BaseListBox(L"List", anotherSettings, mainWindow.get());
 	Button* button = new Button(L"Button", L"Текст", 200, 25, mainWindow.get(), 1);
 
 	button->setOnClick([&](WPARAM, LPARAM) -> LRESULT
 		{
-			cout << comboBox->getActualHeight() << endl;
+			cout << listBox->getActualHeight() << endl;
 
 			return 0;
 		});
 
-	comboBox->addValue(L"First");
-	comboBox->addValue(L"Second");
-	comboBox->addValue(L"Third");
+	listBox->addValue(L"First");
+	listBox->addValue(L"Second");
+	listBox->addValue(L"Third");
 
-	mainWindow->addChild(comboBox);
+	mainWindow->addChild(listBox);
 
 	mainWindow->addChild(button);
 
