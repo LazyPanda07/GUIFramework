@@ -33,6 +33,7 @@
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseEditControl.h" />
     <ClInclude Include="src\BaseComponents\BaseNonResizableComponent.h" />
     <ClInclude Include="src\BaseComponents\BaseResizableComponent.h" />
+    <ClInclude Include="src\BaseComponents\StandardComponents\BaseListBox.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseStaticControl.h" />
     <ClInclude Include="src\BaseComposites\BaseComposite.h" />
     <ClInclude Include="src\BaseComposites\BaseNonResizableComposite.h" />
@@ -51,6 +52,8 @@
     <ClInclude Include="src\Exceptions\AlreadyRegisteredClassNameException.h" />
     <ClInclude Include="src\Exceptions\BaseGUIFrameworkException.h" />
     <ClInclude Include="src\Exceptions\CantFindSeparateWindowFunctionException.h" />
+    <ClInclude Include="src\Exceptions\SelectListException.h" />
+    <ClInclude Include="src\Exceptions\ExceptionConstants.h" />
     <ClInclude Include="src\Exceptions\GetLastErrorException.h" />
     <ClInclude Include="src\GUIFramework.h" />
     <ClInclude Include="src\Interfaces\Components\IResizableComponent.h" />
@@ -68,6 +71,7 @@
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseEditControl.cpp" />
     <ClCompile Include="src\BaseComponents\BaseNonResizableComponent.cpp" />
     <ClCompile Include="src\BaseComponents\BaseResizableComponent.cpp" />
+    <ClCompile Include="src\BaseComponents\StandardComponents\BaseListBox.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseStaticControl.cpp" />
     <ClCompile Include="src\BaseComposites\StandardComposites\BaseChildWindow.cpp" />
     <ClCompile Include="src\BaseComposites\BaseComposite.cpp" />
@@ -85,6 +89,7 @@
     <ClCompile Include="src\Exceptions\BaseGUIFrameworkException.cpp" />
     <ClCompile Include="src\Exceptions\AlreadyRegisteredClassNameException.cpp" />
     <ClCompile Include="src\Exceptions\CantFindSeparateWindowFunctionException.cpp" />
+    <ClCompile Include="src\Exceptions\SelectListException.cpp" />
     <ClCompile Include="src\Exceptions\GetLastErrorException.cpp" />
     <ClCompile Include="src\GUIFramework.cpp" />
     <ClCompile Include="src\Interfaces\Components\IResizableComponent.cpp" />
@@ -95,12 +100,12 @@
     <ClCompile Include="src\Utility\Utility.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="JSON\JSON.vcxproj">
-      <Project>{f6b57139-d9f3-4b02-aa92-4e1f417649da}</Project>
-    </ProjectReference>
+    <None Include="gui_framework.json" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="gui_framework.json" />
+    <ProjectReference Include="..\JSON\JSON.vcxproj">
+      <Project>{f6b57139-d9f3-4b02-aa92-4e1f417649da}</Project>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -214,9 +219,9 @@
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\PrecompiledHeaders\pch.pch</PrecompiledHeaderOutputFile>
-      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>$(ProjectDir)src;$(ProjectDir)JSON\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;$(SolutionDir)JSON\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -233,9 +238,9 @@
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\PrecompiledHeaders\pch.pch</PrecompiledHeaderOutputFile>
-      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>$(ProjectDir)src;$(ProjectDir)JSON\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;$(SolutionDir)JSON\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -254,9 +259,9 @@
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\PrecompiledHeaders\pch.pch</PrecompiledHeaderOutputFile>
-      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>$(ProjectDir)src;$(ProjectDir)JSON\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;$(SolutionDir)JSON\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -277,9 +282,9 @@
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\PrecompiledHeaders\pch.pch</PrecompiledHeaderOutputFile>
-      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>$(ProjectDir)src;$(ProjectDir)JSON\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;$(SolutionDir)JSON\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -302,7 +307,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\PrecompiledHeaders\pch.pch</PrecompiledHeaderOutputFile>
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>$(ProjectDir)src;$(ProjectDir)JSON\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;$(SolutionDir)JSON\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -325,7 +330,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\PrecompiledHeaders\pch.pch</PrecompiledHeaderOutputFile>
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>$(ProjectDir)src;$(ProjectDir)JSON\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;$(SolutionDir)JSON\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

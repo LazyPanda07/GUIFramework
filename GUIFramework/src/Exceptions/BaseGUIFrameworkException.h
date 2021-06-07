@@ -1,6 +1,7 @@
 #pragma once
 
 #include "pch.h"
+#include "ExceptionConstants.h"
 
 namespace gui_framework
 {

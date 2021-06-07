@@ -7,7 +7,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GUIFramework", "GUIFramewor
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test", "Test\Test.vcxproj", "{27AA96A0-0CF2-4A2B-85F0-8712D90B5562}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JSON", "GUIFramework\JSON\JSON.vcxproj", "{F6B57139-D9F3-4B02-AA92-4E1F417649DA}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JSON", "JSON\JSON.vcxproj", "{F6B57139-D9F3-4B02-AA92-4E1F417649DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
