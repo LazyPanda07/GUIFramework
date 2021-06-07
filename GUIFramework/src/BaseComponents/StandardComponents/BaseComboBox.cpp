@@ -140,6 +140,7 @@ namespace gui_framework
 		{
 			LRESULT currentSize = this->size();
 			HDC deviceContext = GetDC(handle);
+			int heightSum = 0;
 
 			if (currentSize == CB_ERR)
 			{
@@ -162,18 +163,20 @@ namespace gui_framework
 					{
 						requiredSize.cy = valueSizes.cy;
 					}
+
+					heightSum += valueSizes.cy;
 				}
 			}
 
 			this->setItemHeight(itemHeightEnum::forAllItems, static_cast<uint16_t>(requiredSize.cy));
-			
+
 			MoveWindow
 			(
 				handle,
 				desiredX,
 				desiredY,
-				requiredSize.cx,
-				desiredHeight,
+				requiredSize.cx + standard_sizes::comboBoxAdditionalWidth,
+				heightSum,
 				true
 			);
 
