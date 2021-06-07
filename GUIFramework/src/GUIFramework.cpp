@@ -9,7 +9,7 @@ namespace gui_framework
 	{
 		InitCommonControlsEx(&comm);
 
-		// json::JSONParser json(ifstream(settings::settingsJSONFile.data()));
+		json::JSONParser json(ifstream(settings::settingsJSONFile.data()));
 	}
 
 	GUIFramework& GUIFramework::get()
