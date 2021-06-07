@@ -5,22 +5,16 @@
 
 namespace gui_framework
 {
-	class BaseComboBox :
+	class BaseListBox :
 		virtual public BaseComponent,
 		public interfaces::IResizableComponent
 	{
 	protected:
 		SIZE requiredSize;
+		uint8_t columnsWidth;
 
 	public:
-		enum class itemHeightEnum
-		{
-			forAllItems,
-			selectionFieldItem
-		};
-
-	public:
-		BaseComboBox(const std::wstring& comboBoxName, const utility::ComponentSettings& settings, BaseComponent* parent);
+		BaseListBox(const std::wstring& listBoxName, const utility::ComponentSettings& settings, BaseComponent* parent);
 
 		/// @brief 
 		/// @param value 
@@ -65,7 +59,7 @@ namespace gui_framework
 		/// @return 
 		/// @exception gui_framework::exceptions::SelectListException 
 		virtual std::wstring getValue(size_t index) const final;
-		
+
 		/// @brief 
 		/// @return 
 		/// @exception gui_framework::exceptions::SelectListException 
@@ -90,24 +84,24 @@ namespace gui_framework
 		/// @param height 
 		/// @return 
 		/// @exception gui_framework::exceptions::SelectListException 
-		virtual LRESULT setItemHeight(itemHeightEnum value, uint16_t height) final;
+		virtual LRESULT setItemsHeight(uint8_t height) final;
 
 		/// @brief 
 		/// @param width 
 		/// @return 
 		/// @exception gui_framework::exceptions::SelectListException 
-		virtual LRESULT setDroppedWidth(uint16_t width) final;
+		virtual LRESULT setColumnsWidth(uint8_t width) final;
 
 		/// @brief 
 		/// @param value 
 		/// @return 
 		/// @exception gui_framework::exceptions::SelectListException 
-		virtual LRESULT getItemHeight(itemHeightEnum value) const final;
+		virtual LRESULT getItemsHeight() const final;
 
 		/// @brief 
 		/// @return 
 		/// @exception gui_framework::exceptions::SelectListException 
-		virtual LRESULT getDroppedWidth() const final;
+		virtual uint8_t getColumnsWidth() const final;
 
 		/// @brief 
 		/// @param width 
@@ -115,6 +109,6 @@ namespace gui_framework
 		/// @exception gui_framework::exceptions::SelectListException 
 		virtual void resize(uint16_t width, uint16_t height) override;
 
-		virtual ~BaseComboBox() = default;
+		virtual ~BaseListBox() = default;
 	};
 }

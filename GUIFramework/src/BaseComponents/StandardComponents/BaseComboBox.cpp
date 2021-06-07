@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "BaseComboBox.h"
 
-#include "Exceptions/ComboBoxException.h"
+#include "Exceptions/SelectListException.h"
 
 #pragma warning(disable: 4018)
 #pragma warning(disable: 4267)
@@ -38,11 +38,11 @@ namespace gui_framework
 
 		if (result == CB_ERR)
 		{
-			throw exceptions::ComboBoxException(__FUNCTION__, result);
+			throw exceptions::SelectListException(__FUNCTION__, result);
 		}
 		else if (result == CB_ERRSPACE)
 		{
-			throw exceptions::ComboBoxException(__FUNCTION__, result, exception_messages::notEnoughSpace);
+			throw exceptions::SelectListException(__FUNCTION__, result, exception_messages::notEnoughSpace);
 		}
 
 		this->resize(NULL, NULL);
@@ -56,7 +56,7 @@ namespace gui_framework
 
 		if (result == CB_ERR)
 		{
-			throw exceptions::ComboBoxException(__FUNCTION__, result);
+			throw exceptions::SelectListException(__FUNCTION__, result);
 		}
 
 		this->resize(NULL, NULL);
@@ -70,11 +70,11 @@ namespace gui_framework
 
 		if (result == CB_ERR)
 		{
-			throw exceptions::ComboBoxException(__FUNCTION__, result);
+			throw exceptions::SelectListException(__FUNCTION__, result);
 		}
 		else if (result == CB_ERRSPACE)
 		{
-			throw exceptions::ComboBoxException(__FUNCTION__, result, exception_messages::notEnoughSpace);
+			throw exceptions::SelectListException(__FUNCTION__, result, exception_messages::notEnoughSpace);
 		}
 
 		this->resize(NULL, NULL);
@@ -88,7 +88,7 @@ namespace gui_framework
 
 		if (result == CB_ERR)
 		{
-			throw exceptions::ComboBoxException(__FUNCTION__, result);
+			throw exceptions::SelectListException(__FUNCTION__, result);
 		}
 
 		this->resize(NULL, NULL);
@@ -102,7 +102,7 @@ namespace gui_framework
 
 		if (findedIndex == CB_ERR)
 		{
-			throw exceptions::ComboBoxException(__FUNCTION__, findedIndex);
+			throw exceptions::SelectListException(__FUNCTION__, findedIndex);
 		}
 
 		return this->getValue(findedIndex);
@@ -114,7 +114,7 @@ namespace gui_framework
 
 		if (findedIndex == CB_ERR)
 		{
-			throw exceptions::ComboBoxException(__FUNCTION__, findedIndex);
+			throw exceptions::SelectListException(__FUNCTION__, findedIndex);
 		}
 
 		return this->getValue(findedIndex);
@@ -127,7 +127,7 @@ namespace gui_framework
 
 		if (size == CB_ERR)
 		{
-			throw exceptions::ComboBoxException(__FUNCTION__, size);
+			throw exceptions::SelectListException(__FUNCTION__, size);
 		}
 
 		result.resize(++size);
@@ -136,7 +136,7 @@ namespace gui_framework
 
 		if (errorCode == CB_ERR)
 		{
-			throw exceptions::ComboBoxException(__FUNCTION__, errorCode);
+			throw exceptions::SelectListException(__FUNCTION__, errorCode);
 		}
 
 		result.pop_back();
@@ -155,7 +155,7 @@ namespace gui_framework
 
 		if (result == CB_ERR)
 		{
-			throw exceptions::ComboBoxException(__FUNCTION__, result);
+			throw exceptions::SelectListException(__FUNCTION__, result);
 		}
 
 		return result;
@@ -167,7 +167,7 @@ namespace gui_framework
 
 		if (result == CB_ERR)
 		{
-			throw exceptions::ComboBoxException(__FUNCTION__, result);
+			throw exceptions::SelectListException(__FUNCTION__, result);
 		}
 
 		return result;
@@ -184,7 +184,7 @@ namespace gui_framework
 
 		if (result == CB_ERR)
 		{
-			throw exceptions::ComboBoxException(__FUNCTION__, result);
+			throw exceptions::SelectListException(__FUNCTION__, result);
 		}
 
 		return result;
@@ -196,7 +196,7 @@ namespace gui_framework
 
 		if (result == CB_ERR)
 		{
-			throw exceptions::ComboBoxException(__FUNCTION__, result);
+			throw exceptions::SelectListException(__FUNCTION__, result);
 		}
 
 		return result;
@@ -208,7 +208,7 @@ namespace gui_framework
 
 		if (result == CB_ERR)
 		{
-			throw exceptions::ComboBoxException(__FUNCTION__, result);
+			throw exceptions::SelectListException(__FUNCTION__, result);
 		}
 
 		return result;
@@ -220,7 +220,7 @@ namespace gui_framework
 
 		if (result == CB_ERR)
 		{
-			throw exceptions::ComboBoxException(__FUNCTION__, result);
+			throw exceptions::SelectListException(__FUNCTION__, result);
 		}
 
 		return result;

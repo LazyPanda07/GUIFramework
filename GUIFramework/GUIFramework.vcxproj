@@ -33,6 +33,7 @@
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseEditControl.h" />
     <ClInclude Include="src\BaseComponents\BaseNonResizableComponent.h" />
     <ClInclude Include="src\BaseComponents\BaseResizableComponent.h" />
+    <ClInclude Include="src\BaseComponents\StandardComponents\BaseListBox.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseStaticControl.h" />
     <ClInclude Include="src\BaseComposites\BaseComposite.h" />
     <ClInclude Include="src\BaseComposites\BaseNonResizableComposite.h" />
@@ -51,7 +52,7 @@
     <ClInclude Include="src\Exceptions\AlreadyRegisteredClassNameException.h" />
     <ClInclude Include="src\Exceptions\BaseGUIFrameworkException.h" />
     <ClInclude Include="src\Exceptions\CantFindSeparateWindowFunctionException.h" />
-    <ClInclude Include="src\Exceptions\ComboBoxException.h" />
+    <ClInclude Include="src\Exceptions\SelectListException.h" />
     <ClInclude Include="src\Exceptions\ExceptionConstants.h" />
     <ClInclude Include="src\Exceptions\GetLastErrorException.h" />
     <ClInclude Include="src\GUIFramework.h" />
@@ -70,6 +71,7 @@
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseEditControl.cpp" />
     <ClCompile Include="src\BaseComponents\BaseNonResizableComponent.cpp" />
     <ClCompile Include="src\BaseComponents\BaseResizableComponent.cpp" />
+    <ClCompile Include="src\BaseComponents\StandardComponents\BaseListBox.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseStaticControl.cpp" />
     <ClCompile Include="src\BaseComposites\StandardComposites\BaseChildWindow.cpp" />
     <ClCompile Include="src\BaseComposites\BaseComposite.cpp" />
@@ -87,7 +89,7 @@
     <ClCompile Include="src\Exceptions\BaseGUIFrameworkException.cpp" />
     <ClCompile Include="src\Exceptions\AlreadyRegisteredClassNameException.cpp" />
     <ClCompile Include="src\Exceptions\CantFindSeparateWindowFunctionException.cpp" />
-    <ClCompile Include="src\Exceptions\ComboBoxException.cpp" />
+    <ClCompile Include="src\Exceptions\SelectListException.cpp" />
     <ClCompile Include="src\Exceptions\GetLastErrorException.cpp" />
     <ClCompile Include="src\GUIFramework.cpp" />
     <ClCompile Include="src\Interfaces\Components\IResizableComponent.cpp" />
