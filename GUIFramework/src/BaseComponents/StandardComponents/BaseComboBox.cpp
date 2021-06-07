@@ -176,7 +176,7 @@ namespace gui_framework
 				desiredX,
 				desiredY,
 				requiredSize.cx + standard_sizes::comboBoxAdditionalWidth,
-				heightSum,
+				heightSum + requiredSize.cy * 2,
 				true
 			);
 
