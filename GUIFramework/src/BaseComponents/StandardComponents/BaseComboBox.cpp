@@ -178,6 +178,13 @@ namespace gui_framework
 		SendMessageW(handle, CB_RESETCONTENT, NULL, NULL);
 	}
 
+	void BaseComboBox::setSortingMode(bool isSorting)
+	{
+		isSorting ?
+			SetWindowLongPtrW(handle, GWL_STYLE, GetWindowLongPtrW(handle, GWL_STYLE) | CBS_SORT) :
+			SetWindowLongPtrW(handle, GWL_STYLE, GetWindowLongPtrW(handle, GWL_STYLE) ^ CBS_SORT);
+	}
+
 	LRESULT BaseComboBox::setItemHeight(itemHeightEnum value, uint16_t height)
 	{
 		LRESULT result = SendMessageW(handle, CB_SETITEMHEIGHT, static_cast<WPARAM>(value), height);

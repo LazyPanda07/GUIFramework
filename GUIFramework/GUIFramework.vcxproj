@@ -41,11 +41,9 @@
     <ClInclude Include="src\BaseComposites\BaseWindow.h" />
     <ClInclude Include="src\BaseComposites\StandardComposites\BaseChildWindow.h" />
     <ClInclude Include="src\Components\Button.h" />
-    <ClInclude Include="src\Components\ComboListBox.h" />
     <ClInclude Include="src\Components\DropDownComboBox.h" />
     <ClInclude Include="src\Components\DropDownListComboBox.h" />
     <ClInclude Include="src\Components\ListBox.h" />
-    <ClInclude Include="src\Components\MultiColumnListBox.h" />
     <ClInclude Include="src\Components\SimpleComboBox.h" />
     <ClInclude Include="src\Components\EditControl.h" />
     <ClInclude Include="src\Components\StaticControl.h" />
@@ -82,11 +80,9 @@
     <ClCompile Include="src\BaseComposites\BaseResizableComposite.cpp" />
     <ClCompile Include="src\BaseComposites\BaseWindow.cpp" />
     <ClCompile Include="src\Components\Button.cpp" />
-    <ClCompile Include="src\Components\ComboListBox.cpp" />
     <ClCompile Include="src\Components\DropDownComboBox.cpp" />
     <ClCompile Include="src\Components\DropDownListComboBox.cpp" />
     <ClCompile Include="src\Components\ListBox.cpp" />
-    <ClCompile Include="src\Components\MultiColumnListBox.cpp" />
     <ClCompile Include="src\Components\SimpleComboBox.cpp" />
     <ClCompile Include="src\Components\EditControl.cpp" />
     <ClCompile Include="src\Components\StaticControl.cpp" />

@@ -86,6 +86,10 @@ namespace gui_framework
 		virtual void clear() final;
 
 		/// @brief 
+		/// @param isSorting 
+		virtual void setSortingMode(bool isSorting) final;
+
+		/// @brief 
 		/// @param value 
 		/// @param height 
 		/// @return 
