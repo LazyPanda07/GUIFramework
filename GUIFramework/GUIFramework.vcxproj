@@ -61,7 +61,6 @@
     <ClInclude Include="src\Exceptions\ExceptionConstants.h" />
     <ClInclude Include="src\Exceptions\GetLastErrorException.h" />
     <ClInclude Include="src\GUIFramework.h" />
-    <ClInclude Include="src\Interfaces\Components\IPlaceholder.h" />
     <ClInclude Include="src\Interfaces\Components\IResizableComponent.h" />
     <ClInclude Include="src\Interfaces\Components\ITextOperations.h" />
     <ClInclude Include="src\pch.h" />
@@ -103,7 +102,6 @@
     <ClCompile Include="src\Exceptions\SelectListException.cpp" />
     <ClCompile Include="src\Exceptions\GetLastErrorException.cpp" />
     <ClCompile Include="src\GUIFramework.cpp" />
-    <ClCompile Include="src\Interfaces\Components\IPlaceholder.cpp" />
     <ClCompile Include="src\Interfaces\Components\IResizableComponent.cpp" />
     <ClCompile Include="src\Interfaces\Components\ITextOperations.cpp" />
     <ClCompile Include="src\pch.cpp" />

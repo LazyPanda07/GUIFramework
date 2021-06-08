@@ -15,9 +15,25 @@ namespace gui_framework
 			settings,
 			parent
 		),
-		ITextOperations(handle),
-		IPlaceholder(handle)
+		ITextOperations(handle)
 	{
 		this->setText(L"");
+	}
+
+	bool BaseEditControl::setPlaceholder(const std::wstring& placeholder)
+	{
+		bool result = SendMessageW(handle, EM_SETCUEBANNER, false, reinterpret_cast<LPARAM>(placeholder.data()));
+
+		if (result)
+		{
+			this->placeholder = placeholder;
+		}
+
+		return result;
+	}
+
+	const wstring& BaseEditControl::getPlaceholder() const
+	{
+		return placeholder;
 	}
 }
