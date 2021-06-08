@@ -1,9 +1,9 @@
 #include <iostream>
 
+#include "GUIFramework.h"
 #include "Composites/SeparateWindow.h"
 #include "Composites/ChildWindow.h"
-#include "Components/ListBox.h"
-#include "Components/MultipleSelectListBox.h"
+#include "Components/RichEdit.h"
 #include "Components/Button.h"
 
 #pragma comment (lib, "GUIFramework.lib")
@@ -17,7 +17,7 @@ void test(const wstring& className, const wstring& title, const string& function
 	utility::ComponentSettings settings(WS_BORDER, x, y, 800, 600);
 
 	unique_ptr<SeparateWindow> mainWindow(make_unique<SeparateWindow>(className, title, settings, functionName));
-	BaseListBox* listBox = new ListBox(L"List", 25, 25, 200, 200, mainWindow.get());
+	RichEdit* richEdit = new RichEdit(L"Rich", 0, 0, 150, 150, mainWindow.get(), true);
 	Button* button = new Button(L"Button", L"Текст", 200, 25, mainWindow.get(), 1);
 
 	button->setOnClick([&](WPARAM, LPARAM) -> LRESULT
@@ -27,13 +27,7 @@ void test(const wstring& className, const wstring& title, const string& function
 			return 0;
 		});
 
-	UpdateWindow(listBox->getHandle());
-
-	listBox->addValue(L"First");
-	listBox->addValue(L"Second");
-	listBox->addValue(L"Third");
-
-	mainWindow->addChild(listBox);
+	mainWindow->addChild(richEdit);
 
 	mainWindow->addChild(button);
 
@@ -54,6 +48,8 @@ CREATE_DEFAULT_WINDOW_FUNCTION(childWindow)
 int main(int argc, char** argv)
 {
 	setlocale(LC_CTYPE, "RU");
+
+	gui_framework::GUIFramework::get();
 
 	thread(test, L"Main window", L"Title", "mainWindow", 300, 200).detach();
 
