@@ -179,8 +179,8 @@ namespace gui_framework
 	void BaseListBox::setSortingMode(bool isSorting)
 	{
 		isSorting ?
-			SetWindowLongPtrW(handle, GWL_STYLE, GetWindowLongPtrW(handle, GWL_STYLE) | LBS_SORT) :
-			SetWindowLongPtrW(handle, GWL_STYLE, GetWindowLongPtrW(handle, GWL_STYLE) ^ LBS_SORT);
+			utility::appendStyle(handle, LBS_SORT) :
+			utility::removeStyle(handle, LBS_SORT);
 	}
 
 	LRESULT BaseListBox::setItemsHeight(uint8_t height)
@@ -239,12 +239,12 @@ namespace gui_framework
 				return;
 			}
 
-			for (size_t i = 0; i < currentSize; i++)
+			for (size_t i = 0; i < static_cast<size_t>(currentSize); i++)
 			{
 				wstring value = this->getValue(i);
 				SIZE valueSizes;
 
-				if (GetTextExtentPoint32W(deviceContext, value.data(), value.size(), &valueSizes))
+				if (GetTextExtentPoint32W(deviceContext, value.data(), static_cast<int>(value.size()), &valueSizes))
 				{
 					if (valueSizes.cx > requiredSize.cx)
 					{
@@ -260,15 +260,44 @@ namespace gui_framework
 				}
 			}
 
-			this->setItemsHeight(static_cast<uint16_t>(requiredSize.cy));
+			uint16_t width = 0;
+			uint16_t height = 0;
+
+			if (requiredSize.cx > desiredWidth)
+			{
+				utility::appendStyle(handle, WS_HSCROLL);
+
+				width = desiredWidth;
+			}
+			else
+			{
+				utility::removeStyle(handle, WS_HSCROLL);
+
+				width = static_cast<uint16_t>(requiredSize.cx + standard_sizes::listBoxAdditionalWidth);
+			}
+
+			if (requiredSize.cy > desiredHeight)
+			{
+				utility::appendStyle(handle, WS_VSCROLL);
+
+				height = desiredHeight;
+			}
+			else
+			{
+				utility::removeStyle(handle, WS_VSCROLL);
+
+				this->setItemsHeight(static_cast<uint8_t>(requiredSize.cy));
+
+				height = static_cast<uint16_t>(heightSum + requiredSize.cy * 2);
+			}
 
 			MoveWindow
 			(
 				handle,
 				desiredX,
 				desiredY,
-				requiredSize.cx + standard_sizes::listBoxAdditionalWidth,
-				heightSum + requiredSize.cy * 2,
+				width,
+				height,
 				true
 			);
 

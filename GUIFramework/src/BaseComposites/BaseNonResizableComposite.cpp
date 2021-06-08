@@ -15,11 +15,6 @@ namespace gui_framework
 			windowFunctionName
 		)
 	{
-		SetWindowLongPtrW	// disable resize
-		(
-			handle,
-			GWL_STYLE,
-			GetWindowLongPtrW(handle,GWL_STYLE) ^ WS_THICKFRAME
-		);
+		utility::removeStyle(handle, WS_THICKFRAME);
 	}
 }

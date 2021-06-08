@@ -12,7 +12,7 @@ namespace gui_framework
 			listBoxName,
 			utility::ComponentSettings
 			(
-				multipleSelect ? LBS_MULTIPLESEL : NULL,
+				WS_BORDER | (multipleSelect ? LBS_MULTIPLESEL : NULL),
 				x,
 				y,
 				width,
@@ -25,7 +25,7 @@ namespace gui_framework
 			listBoxName,
 			utility::ComponentSettings
 			(
-				multipleSelect ? LBS_MULTIPLESEL : NULL,
+				WS_BORDER | (multipleSelect ? LBS_MULTIPLESEL : NULL),
 				x,
 				y,
 				width,
