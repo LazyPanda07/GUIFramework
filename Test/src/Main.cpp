@@ -2,7 +2,7 @@
 
 #include "Composites/SeparateWindow.h"
 #include "Composites/ChildWindow.h"
-#include "BaseComponents/StandardComponents/BaseListBox.h"
+#include "Components/ListBox.h"
 #include "Components/Button.h"
 
 #pragma comment (lib, "GUIFramework.lib")
@@ -14,10 +14,9 @@ void test(const wstring& className, const wstring& title, const string& function
 	using namespace gui_framework;
 
 	utility::ComponentSettings settings(WS_BORDER, x, y, 800, 600);
-	utility::ComponentSettings anotherSettings(WS_BORDER, 25, 25, 40, 120);
 
 	unique_ptr<SeparateWindow> mainWindow(make_unique<SeparateWindow>(className, title, settings, functionName));
-	BaseListBox* listBox = new BaseListBox(L"List", anotherSettings, mainWindow.get());
+	ListBox* listBox = new ListBox(L"List", 25, 25, 40, 120, mainWindow.get());
 	Button* button = new Button(L"Button", L"Текст", 200, 25, mainWindow.get(), 1);
 
 	button->setOnClick([&](WPARAM, LPARAM) -> LRESULT
