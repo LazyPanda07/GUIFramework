@@ -12,7 +12,7 @@ namespace gui_framework
 			windowName,
 			utility::ComponentSettings
 			(
-				WS_BORDER | (isMultiLine ? ES_MULTILINE : NULL),
+				WS_BORDER | WS_VSCROLL | WS_HSCROLL | (isMultiLine ? ES_MULTILINE : NULL),
 				x,
 				y,
 				width,
@@ -25,7 +25,7 @@ namespace gui_framework
 			richEditName,
 			utility::ComponentSettings
 			(
-				WS_BORDER | (isMultiLine ? ES_MULTILINE : NULL),
+				WS_BORDER | WS_VSCROLL | WS_HSCROLL | (isMultiLine ? ES_MULTILINE : NULL),
 				x,
 				y,
 				width,
