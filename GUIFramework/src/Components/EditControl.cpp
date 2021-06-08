@@ -13,11 +13,11 @@ namespace gui_framework
 	EditControl::EditControl(const wstring& editControlName, int x, int y, BaseComponent* parent, int width, int height) :
 		BaseComponent
 		(
-			wstring(standard_classes::button),
+			wstring(standard_classes::editControl),
 			editControlName,
 			utility::ComponentSettings
 			(
-				NULL,
+				WS_BORDER,
 				x,
 				y,
 				width,
