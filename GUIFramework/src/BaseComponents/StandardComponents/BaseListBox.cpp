@@ -176,13 +176,6 @@ namespace gui_framework
 		SendMessageW(handle, LB_RESETCONTENT, NULL, NULL);
 	}
 
-	void BaseListBox::setSortingMode(bool isSorting)
-	{
-		isSorting ?
-			utility::appendStyle(handle, LBS_SORT) :
-			utility::removeStyle(handle, LBS_SORT);
-	}
-
 	LRESULT BaseListBox::setItemsHeight(uint8_t height)
 	{
 		LRESULT result = SendMessageW(handle, LB_SETITEMHEIGHT, NULL, height);

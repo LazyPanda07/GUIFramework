@@ -5,14 +5,14 @@ using namespace std;
 
 namespace gui_framework
 {
-	ListBox::ListBox(const wstring& listBoxName, int x, int y, uint16_t width, uint16_t height, BaseComponent* parent) :
+	ListBox::ListBox(const wstring& listBoxName, int x, int y, uint16_t width, uint16_t height, BaseComponent* parent, bool isSorting) :
 		BaseComponent
 		(
 			wstring(standard_classes::listBox),
 			listBoxName,
 			utility::ComponentSettings
 			(
-				WS_BORDER,
+				WS_BORDER | (isSorting ? LBS_SORT : NULL),
 				x,
 				y,
 				width,
@@ -25,7 +25,7 @@ namespace gui_framework
 			listBoxName,
 			utility::ComponentSettings
 			(
-				WS_BORDER,
+				WS_BORDER | (isSorting ? LBS_SORT : NULL),
 				x,
 				y,
 				width,

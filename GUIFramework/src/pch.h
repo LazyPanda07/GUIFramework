@@ -25,6 +25,7 @@
 
 #include <Windows.h>
 #include <CommCtrl.h>
+#include <Richedit.h>
 
 #include "WindowMessages.h"
 #include "Constants.h"
