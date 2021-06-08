@@ -34,6 +34,7 @@
     <ClInclude Include="src\BaseComponents\BaseNonResizableComponent.h" />
     <ClInclude Include="src\BaseComponents\BaseResizableComponent.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseListBox.h" />
+    <ClInclude Include="src\BaseComponents\StandardComponents\BaseMultipleSelectListBox.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseStaticControl.h" />
     <ClInclude Include="src\BaseComposites\BaseComposite.h" />
     <ClInclude Include="src\BaseComposites\BaseNonResizableComposite.h" />
@@ -44,6 +45,7 @@
     <ClInclude Include="src\Components\DropDownComboBox.h" />
     <ClInclude Include="src\Components\DropDownListComboBox.h" />
     <ClInclude Include="src\Components\ListBox.h" />
+    <ClInclude Include="src\Components\MultipleSelectListBox.h" />
     <ClInclude Include="src\Components\SimpleComboBox.h" />
     <ClInclude Include="src\Components\EditControl.h" />
     <ClInclude Include="src\Components\StaticControl.h" />
@@ -73,6 +75,7 @@
     <ClCompile Include="src\BaseComponents\BaseNonResizableComponent.cpp" />
     <ClCompile Include="src\BaseComponents\BaseResizableComponent.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseListBox.cpp" />
+    <ClCompile Include="src\BaseComponents\StandardComponents\BaseMultipleSelectListBox.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseStaticControl.cpp" />
     <ClCompile Include="src\BaseComposites\StandardComposites\BaseChildWindow.cpp" />
     <ClCompile Include="src\BaseComposites\BaseComposite.cpp" />
@@ -83,6 +86,7 @@
     <ClCompile Include="src\Components\DropDownComboBox.cpp" />
     <ClCompile Include="src\Components\DropDownListComboBox.cpp" />
     <ClCompile Include="src\Components\ListBox.cpp" />
+    <ClCompile Include="src\Components\MultipleSelectListBox.cpp" />
     <ClCompile Include="src\Components\SimpleComboBox.cpp" />
     <ClCompile Include="src\Components\EditControl.cpp" />
     <ClCompile Include="src\Components\StaticControl.cpp" />

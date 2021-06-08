@@ -1,18 +1,18 @@
 #include "pch.h"
-#include "ListBox.h"
+#include "MultipleSelectListBox.h"
 
 using namespace std;
 
 namespace gui_framework
 {
-	ListBox::ListBox(const wstring& listBoxName, int x, int y, uint16_t width, uint16_t height, BaseComponent* parent) :
+	MultipleSelectListBox::MultipleSelectListBox(const wstring& listBoxName, int x, int y, uint16_t width, uint16_t height, BaseComponent* parent) :
 		BaseComponent
 		(
 			wstring(standard_classes::listBox),
 			listBoxName,
 			utility::ComponentSettings
 			(
-				WS_BORDER,
+				WS_BORDER | LBS_MULTIPLESEL,
 				x,
 				y,
 				width,
@@ -20,7 +20,7 @@ namespace gui_framework
 			),
 			parent
 		),
-		BaseListBox
+		BaseMultipleSelectListBox
 		(
 			listBoxName,
 			utility::ComponentSettings
