@@ -260,23 +260,9 @@ namespace gui_framework
 				}
 			}
 
-			uint16_t width = 0;
 			uint16_t height = 0;
 
-			if (requiredSize.cx > desiredWidth)
-			{
-				utility::appendStyle(handle, WS_HSCROLL);
-
-				width = desiredWidth;
-			}
-			else
-			{
-				utility::removeStyle(handle, WS_HSCROLL);
-
-				width = static_cast<uint16_t>(requiredSize.cx + standard_sizes::listBoxAdditionalWidth);
-			}
-
-			if (requiredSize.cy > desiredHeight)
+			if (heightSum > desiredHeight)
 			{
 				utility::appendStyle(handle, WS_VSCROLL);
 
@@ -296,7 +282,7 @@ namespace gui_framework
 				handle,
 				desiredX,
 				desiredY,
-				width,
+				requiredSize.cx + standard_sizes::listBoxAdditionalWidth,
 				height,
 				true
 			);
