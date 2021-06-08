@@ -28,7 +28,7 @@ namespace gui_framework
 			(
 				handle,
 				GWL_STYLE,
-				GetWindowLongPtrW(handle, GWL_STYLE) ^ styleToRemove
+				GetWindowLongPtrW(handle, GWL_STYLE) & ~styleToRemove
 			);
 		}
 	}
