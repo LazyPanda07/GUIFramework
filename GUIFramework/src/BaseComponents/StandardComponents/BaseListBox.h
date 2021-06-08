@@ -107,7 +107,7 @@ namespace gui_framework
 		/// @param width 
 		/// @param height 
 		/// @exception gui_framework::exceptions::SelectListException 
-		virtual void resize(uint16_t width, uint16_t height) override;
+		virtual void resize(uint16_t width, uint16_t height) = 0;
 
 		virtual ~BaseListBox() = default;
 	};
