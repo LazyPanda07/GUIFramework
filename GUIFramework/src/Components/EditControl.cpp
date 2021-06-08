@@ -10,7 +10,7 @@ namespace gui_framework
 		return BaseResizableComponent::preWindowMessagesHandle(handle, message, wparam, lparam, isUsed);
 	}
 
-	EditControl::EditControl(const wstring& editControlName, int x, int y, BaseComponent* parent, int width, int height) :
+	EditControl::EditControl(const wstring& editControlName, int x, int y, BaseComponent* parent, uint16_t width, uint16_t height) :
 		BaseComponent
 		(
 			wstring(standard_classes::editControl),

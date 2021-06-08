@@ -14,7 +14,7 @@ namespace gui_framework
 		LRESULT preWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
 
 	public:
-		EditControl(const std::wstring& editControlName, int x, int y, BaseComponent* parent, int width = standard_sizes::editControlWidth, int height = standard_sizes::editControlHeight);
+		EditControl(const std::wstring& editControlName, int x, int y, BaseComponent* parent, uint16_t width = standard_sizes::editControlWidth, uint16_t height = standard_sizes::editControlHeight);
 
 		~EditControl() = default;
 	};
