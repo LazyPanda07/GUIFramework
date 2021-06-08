@@ -10,7 +10,7 @@ namespace gui_framework
 		return BaseResizableComponent::preWindowMessagesHandle(handle, message, wparam, lparam, isUsed);
 	}
 
-	Button::Button(const wstring& buttonName, const wstring& buttonText, int x, int y, BaseComponent* parent, uint64_t buttonId, const function<LRESULT(WPARAM, LPARAM)>& onClick, int width, int height) :
+	Button::Button(const wstring& buttonName, const wstring& buttonText, int x, int y, BaseComponent* parent, uint64_t buttonId, const function<LRESULT(WPARAM, LPARAM)>& onClick, uint16_t width, uint16_t height) :
 		BaseComponent
 		(
 			wstring(standard_classes::button),

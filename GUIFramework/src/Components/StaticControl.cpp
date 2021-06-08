@@ -10,14 +10,14 @@ namespace gui_framework
 		return BaseResizableComponent::preWindowMessagesHandle(handle, message, wparam, lparam, isUsed);
 	}
 
-	StaticControl::StaticControl(const wstring& staticControlName, const wstring& editControlText, int x, int y, BaseComponent* parent, int width, int height) :
+	StaticControl::StaticControl(const wstring& staticControlName, const wstring& editControlText, int x, int y, BaseComponent* parent, uint16_t width, uint16_t height) :
 		BaseComponent
 		(
 			wstring(standard_classes::button),
 			staticControlName,
 			utility::ComponentSettings
 			(
-				NULL,
+				WS_BORDER,
 				x,
 				y,
 				width,
