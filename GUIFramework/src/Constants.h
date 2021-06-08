@@ -14,7 +14,7 @@ namespace gui_framework
 		inline constexpr std::wstring_view staticControl = L"Static";
 		inline constexpr std::wstring_view comboBox = L"ComboBox";
 		inline constexpr std::wstring_view listBox = L"ListBox";
-		inline constexpr std::wstring_view richEdit = RICHEDIT_CLASSW;
+		inline constexpr std::wstring_view richEdit = MSFTEDIT_CLASS;
 	}
 
 	namespace standard_sizes
@@ -36,5 +36,10 @@ namespace gui_framework
 	namespace settings
 	{
 		inline constexpr std::string_view settingsJSONFile = "gui_framework.json";
+	}
+
+	namespace libraries
+	{
+		inline constexpr std::wstring_view msftEditLibrary = L"MsftEdit.dll";
 	}
 }

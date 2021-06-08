@@ -12,11 +12,12 @@ namespace gui_framework
 	{
 	private:
 		INITCOMMONCONTROLSEX comm;
+		HMODULE msftEditModule;
 
 	private:
 		GUIFramework();
 
-		~GUIFramework() = default;
+		~GUIFramework();
 
 	public:
 		static GUIFramework& get();
