@@ -69,7 +69,7 @@ namespace gui_framework
 		/// @param index 
 		/// @return 
 		/// @exception gui_framework::exceptions::SelectListException 
-		virtual LRESULT setCurrentSelection(LRESULT index) const final;
+		virtual LRESULT setCurrentSelection(LRESULT index) const;
 
 		/// @brief 
 		/// @return 
