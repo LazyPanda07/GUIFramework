@@ -15,7 +15,8 @@ namespace gui_framework
 			settings,
 			parent
 		),
-		ITextOperations(handle)
+		ITextOperations(handle),
+		IPlaceholder(handle)
 	{
 		this->setText(L"");
 	}

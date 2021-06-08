@@ -18,10 +18,8 @@ namespace gui_framework
 			handle,
 			parent ? parent->getHandle() : nullptr
 		),
-		ITextOperations
-		(
-			handle
-		)
+		ITextOperations(handle),
+		IPlaceholder(handle)
 	{
 
 	}
