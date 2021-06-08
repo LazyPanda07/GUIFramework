@@ -3,6 +3,8 @@
 #include <string>
 #include <cstdint>
 
+#include <Richedit.h>
+
 namespace gui_framework
 {
 	namespace standard_classes
@@ -12,6 +14,7 @@ namespace gui_framework
 		inline constexpr std::wstring_view staticControl = L"Static";
 		inline constexpr std::wstring_view comboBox = L"ComboBox";
 		inline constexpr std::wstring_view listBox = L"ListBox";
+		inline constexpr std::wstring_view richEdit = RICHEDIT_CLASSW;
 	}
 
 	namespace standard_sizes
