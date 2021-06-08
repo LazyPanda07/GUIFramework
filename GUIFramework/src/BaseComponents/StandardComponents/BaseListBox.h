@@ -80,6 +80,10 @@ namespace gui_framework
 		virtual void clear() final;
 
 		/// @brief 
+		/// @param isSorting 
+		virtual void setSortingMode(bool isSorting) final;
+
+		/// @brief 
 		/// @param value 
 		/// @param height 
 		/// @return 
@@ -107,7 +111,7 @@ namespace gui_framework
 		/// @param width 
 		/// @param height 
 		/// @exception gui_framework::exceptions::SelectListException 
-		virtual void resize(uint16_t width, uint16_t height) = 0;
+		virtual void resize(uint16_t width, uint16_t height);
 
 		virtual ~BaseListBox() = default;
 	};

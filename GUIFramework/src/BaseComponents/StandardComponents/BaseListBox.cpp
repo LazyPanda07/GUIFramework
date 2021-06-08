@@ -176,6 +176,13 @@ namespace gui_framework
 		SendMessageW(handle, LB_RESETCONTENT, NULL, NULL);
 	}
 
+	void BaseListBox::setSortingMode(bool isSorting)
+	{
+		isSorting ?
+			SetWindowLongPtrW(handle, GWL_STYLE, GetWindowLongPtrW(handle, GWL_STYLE) | LBS_SORT) :
+			SetWindowLongPtrW(handle, GWL_STYLE, GetWindowLongPtrW(handle, GWL_STYLE) ^ LBS_SORT);
+	}
+
 	LRESULT BaseListBox::setItemsHeight(uint8_t height)
 	{
 		LRESULT result = SendMessageW(handle, LB_SETITEMHEIGHT, NULL, height);
@@ -217,6 +224,56 @@ namespace gui_framework
 	uint8_t BaseListBox::getColumnsWidth() const
 	{
 		return columnsWidth;
+	}
+
+	void BaseListBox::resize(uint16_t width, uint16_t height)
+	{
+		if (autoResize && !blockResize)
+		{
+			LRESULT currentSize = this->size();
+			HDC deviceContext = GetDC(handle);
+			int heightSum = 0;
+
+			if (currentSize == CB_ERR)
+			{
+				return;
+			}
+
+			for (size_t i = 0; i < currentSize; i++)
+			{
+				wstring value = this->getValue(i);
+				SIZE valueSizes;
+
+				if (GetTextExtentPoint32W(deviceContext, value.data(), value.size(), &valueSizes))
+				{
+					if (valueSizes.cx > requiredSize.cx)
+					{
+						requiredSize.cx = valueSizes.cx;
+					}
+
+					if (valueSizes.cy > requiredSize.cy)
+					{
+						requiredSize.cy = valueSizes.cy;
+					}
+
+					heightSum += valueSizes.cy;
+				}
+			}
+
+			this->setItemsHeight(static_cast<uint16_t>(requiredSize.cy));
+
+			MoveWindow
+			(
+				handle,
+				desiredX,
+				desiredY,
+				requiredSize.cx + standard_sizes::listBoxAdditionalWidth,
+				heightSum + requiredSize.cy * 2,
+				true
+			);
+
+			ShowWindow(handle, SW_SHOW);
+		}
 	}
 }
 

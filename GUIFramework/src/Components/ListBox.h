@@ -9,8 +9,6 @@ namespace gui_framework
 	public:
 		ListBox(const std::wstring& listBoxName, int x, int y, uint16_t width, uint16_t height, BaseComponent* parent, bool multipleSelect = false);
 
-		void resize(uint16_t width, uint16_t height) override;
-
 		~ListBox() = default;
 	};
 }

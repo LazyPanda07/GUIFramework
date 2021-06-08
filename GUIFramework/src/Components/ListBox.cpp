@@ -36,12 +36,4 @@ namespace gui_framework
 	{
 
 	}
-
-	void ListBox::resize(uint16_t width, uint16_t height)
-	{
-		if (autoResize && !blockResize)
-		{
-
-		}
-	}
 }
