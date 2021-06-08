@@ -3,6 +3,7 @@
 #include "Composites/SeparateWindow.h"
 #include "Composites/ChildWindow.h"
 #include "Components/ListBox.h"
+#include "Components/MultipleSelectListBox.h"
 #include "Components/Button.h"
 
 #pragma comment (lib, "GUIFramework.lib")
@@ -16,15 +17,17 @@ void test(const wstring& className, const wstring& title, const string& function
 	utility::ComponentSettings settings(WS_BORDER, x, y, 800, 600);
 
 	unique_ptr<SeparateWindow> mainWindow(make_unique<SeparateWindow>(className, title, settings, functionName));
-	ListBox* listBox = new ListBox(L"List", 25, 25, 40, 120, mainWindow.get());
+	BaseListBox* listBox = new ListBox(L"List", 25, 25, 200, 200, mainWindow.get());
 	Button* button = new Button(L"Button", L"Текст", 200, 25, mainWindow.get(), 1);
 
 	button->setOnClick([&](WPARAM, LPARAM) -> LRESULT
 		{
-			cout << listBox->getActualHeight() << endl;
+			
 
 			return 0;
 		});
+
+	UpdateWindow(listBox->getHandle());
 
 	listBox->addValue(L"First");
 	listBox->addValue(L"Second");
