@@ -30,7 +30,7 @@ namespace gui_framework
 		std::unordered_map<urlDetectEvent, std::function<void(const std::wstring&)>> callbacks;
 
 	protected:
-		virtual LRESULT preWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
+		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
 
 	public:
 		BaseRichEdit(const std::wstring& windowName, const utility::ComponentSettings& settings, BaseComponent* parent);
@@ -38,6 +38,10 @@ namespace gui_framework
 		virtual void addUrlDetectEvent(urlDetectEvent event, const std::function<void(const std::wstring&)>& eventCallback) final;
 
 		virtual void removeUrlDetectEvent(urlDetectEvent event) final;
+
+		virtual LRESULT findSubstring(const std::wstring& subStringToFind, bool isMatchCase = true) final;
+
+		virtual LRESULT findString(const std::wstring& stringToFind, bool isMatchCase = true) final;
 
 		virtual void setAutoURLDetect(bool autoURLDetect) final;
 

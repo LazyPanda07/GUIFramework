@@ -5,7 +5,7 @@ using namespace std;
 
 namespace gui_framework
 {
-	LRESULT BaseRichEdit::preWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
+	LRESULT BaseRichEdit::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
 	{
 		isUsed = false;
 
@@ -67,11 +67,44 @@ namespace gui_framework
 		callbacks.erase(event);
 	}
 
+	LRESULT BaseRichEdit::findSubstring(const wstring& subStringToFind, bool isMatchCase)
+	{
+		FINDTEXTW findText;
+
+		findText.chrg.cpMin = 0;
+		findText.chrg.cpMax = -1;
+
+		findText.lpstrText = subStringToFind.data();
+
+		return SendMessageW(handle, EM_FINDTEXTEXW, NULL | (isMatchCase ? FR_MATCHCASE : NULL), reinterpret_cast<LPARAM>(&findText));
+	}
+
+	LRESULT BaseRichEdit::findString(const wstring& stringToFind, bool isMatchCase)
+	{
+		FINDTEXTW findText;
+
+		findText.chrg.cpMin = 0;
+		findText.chrg.cpMax = -1;
+
+		findText.lpstrText = stringToFind.data();
+
+		return SendMessageW(handle, EM_FINDTEXTEXW, FR_WHOLEWORD | (isMatchCase ? FR_MATCHCASE : NULL), reinterpret_cast<LPARAM>(&findText));
+	}
+
 	void BaseRichEdit::setAutoURLDetect(bool autoURLDetect)
 	{
-		autoURLDetect ?
-			SendMessageW(handle, EM_AUTOURLDETECT, AURL_ENABLEURL, NULL) :
+		if (autoURLDetect)
+		{
+			SendMessageW(handle, EM_SETEVENTMASK, NULL, SendMessageW(handle, EM_GETEVENTMASK, NULL, NULL) | ENM_LINK);
+
+			SendMessageW(handle, EM_AUTOURLDETECT, AURL_ENABLEURL, NULL);
+		}
+		else
+		{
+			SendMessageW(handle, EM_SETEVENTMASK, NULL, SendMessageW(handle, EM_GETEVENTMASK, NULL, NULL) & ~ENM_LINK);
+
 			SendMessageW(handle, EM_AUTOURLDETECT, NULL, NULL);
+		}
 	}
 
 	bool BaseRichEdit::getAutoURLDetect() const

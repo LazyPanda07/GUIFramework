@@ -94,7 +94,7 @@ namespace gui_framework
 		return result;
 	}
 
-	wstring BaseListBox::findSubString(const wstring& subStringToFind)
+	LRESULT BaseListBox::findSubstring(const wstring& subStringToFind)
 	{
 		LRESULT findedIndex = SendMessageW(handle, LB_FINDSTRING, 0, reinterpret_cast<LPARAM>(subStringToFind.data()));
 
@@ -103,10 +103,10 @@ namespace gui_framework
 			throw exceptions::SelectListException(__FUNCTION__, findedIndex);
 		}
 
-		return this->getValue(findedIndex);
+		return findedIndex;
 	}
 
-	wstring BaseListBox::findString(const wstring& stringToFind)
+	LRESULT BaseListBox::findString(const wstring& stringToFind)
 	{
 		LRESULT findedIndex = SendMessageW(handle, LB_FINDSTRINGEXACT, 0, reinterpret_cast<LPARAM>(stringToFind.data()));
 
@@ -115,7 +115,7 @@ namespace gui_framework
 			throw exceptions::SelectListException(__FUNCTION__, findedIndex);
 		}
 
-		return this->getValue(findedIndex);
+		return findedIndex;
 	}
 
 	wstring BaseListBox::getValue(size_t index) const

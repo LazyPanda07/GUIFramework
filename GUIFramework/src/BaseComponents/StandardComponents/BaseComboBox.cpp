@@ -96,19 +96,19 @@ namespace gui_framework
 		return result;
 	}
 
-	wstring BaseComboBox::findSubString(const wstring& subStringToFind)
+	LRESULT BaseComboBox::findSubstring(const wstring& substringToFind)
 	{
-		LRESULT findedIndex = SendMessageW(handle, CB_FINDSTRING, 0, reinterpret_cast<LPARAM>(subStringToFind.data()));
+		LRESULT findedIndex = SendMessageW(handle, CB_FINDSTRING, 0, reinterpret_cast<LPARAM>(substringToFind.data()));
 
 		if (findedIndex == CB_ERR)
 		{
 			throw exceptions::SelectListException(__FUNCTION__, findedIndex);
 		}
 
-		return this->getValue(findedIndex);
+		return findedIndex;
 	}
 
-	wstring BaseComboBox::findString(const wstring& stringToFind)
+	LRESULT BaseComboBox::findString(const wstring& stringToFind)
 	{
 		LRESULT findedIndex = SendMessageW(handle, CB_FINDSTRINGEXACT, 0, reinterpret_cast<LPARAM>(stringToFind.data()));
 
@@ -117,7 +117,7 @@ namespace gui_framework
 			throw exceptions::SelectListException(__FUNCTION__, findedIndex);
 		}
 
-		return this->getValue(findedIndex);
+		return findedIndex;
 	}
 
 	wstring BaseComboBox::getValue(size_t index) const

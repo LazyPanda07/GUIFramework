@@ -48,17 +48,17 @@ namespace gui_framework
 		/// @exception gui_framework::exceptions::SelectListException 
 		virtual LRESULT changeValue(const std::wstring& newValue, LRESULT index);
 
-		/// @brief 
+		/// @brief Find not case sensitive substring
 		/// @param subStringToFind 
 		/// @return 
 		/// @exception gui_framework::exceptions::SelectListException 
-		virtual std::wstring findSubString(const std::wstring& subStringToFind) final;
+		virtual LRESULT findSubstring(const std::wstring& substringToFind) final;
 
-		/// @brief 
+		/// @brief Find not case sensitive string
 		/// @param stringToFind 
 		/// @return 
 		/// @exception gui_framework::exceptions::SelectListException 
-		virtual std::wstring findString(const std::wstring& stringToFind) final;
+		virtual LRESULT findString(const std::wstring& stringToFind) final;
 
 		/// @brief 
 		/// @param index 
