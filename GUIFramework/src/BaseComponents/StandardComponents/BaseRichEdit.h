@@ -45,7 +45,11 @@ namespace gui_framework
 
 		virtual void setAutoURLDetect(bool autoURLDetect) final;
 
+		virtual void setLimitText(uint64_t count) final;
+
 		virtual bool getAutoURLDetect() const final;
+
+		virtual std::wstring getSelectedText() const final;
 
 		virtual ~BaseRichEdit() = default;
 	};

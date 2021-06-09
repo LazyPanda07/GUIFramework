@@ -107,8 +107,22 @@ namespace gui_framework
 		}
 	}
 
+	void BaseRichEdit::setLimitText(uint64_t count)
+	{
+		SendMessageW(handle, EM_EXLIMITTEXT, NULL, count);
+	}
+
 	bool BaseRichEdit::getAutoURLDetect() const
 	{
 		return SendMessageW(handle, EM_GETAUTOURLDETECT, NULL, NULL);
+	}
+
+	wstring BaseRichEdit::getSelectedText() const
+	{
+		CHARRANGE range;
+
+		SendMessageW(handle, EM_EXGETSEL, NULL, reinterpret_cast<LPARAM>(&range));
+
+		return this->getText().substr(range.cpMin, static_cast<size_t>(range.cpMax) - range.cpMin);
 	}
 }
