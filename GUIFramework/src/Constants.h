@@ -36,6 +36,8 @@ namespace gui_framework
 	namespace settings
 	{
 		inline constexpr std::string_view settingsJSONFile = "gui_framework.json";
+
+		inline const std::string threadsCountSetting = "threadsCount";
 	}
 
 	namespace libraries

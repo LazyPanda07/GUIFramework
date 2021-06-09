@@ -116,6 +116,9 @@
     <ProjectReference Include="..\JSON\JSON.vcxproj">
       <Project>{f6b57139-d9f3-4b02-aa92-4e1f417649da}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\ThreadPool\ThreadPool.vcxproj">
+      <Project>{bde48484-5593-484f-9f84-fc01f8cf83a9}</Project>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -231,7 +234,7 @@
       <PrecompiledHeaderOutputFile>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\PrecompiledHeaders\pch.pch</PrecompiledHeaderOutputFile>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>$(ProjectDir)src;$(SolutionDir)JSON\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;$(SolutionDir)JSON\src;$(SolutionDir)ThreadPool\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -250,7 +253,7 @@
       <PrecompiledHeaderOutputFile>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\PrecompiledHeaders\pch.pch</PrecompiledHeaderOutputFile>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>$(ProjectDir)src;$(SolutionDir)JSON\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;$(SolutionDir)JSON\src;$(SolutionDir)ThreadPool\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -271,7 +274,7 @@
       <PrecompiledHeaderOutputFile>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\PrecompiledHeaders\pch.pch</PrecompiledHeaderOutputFile>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>$(ProjectDir)src;$(SolutionDir)JSON\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;$(SolutionDir)JSON\src;$(SolutionDir)ThreadPool\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -294,7 +297,7 @@
       <PrecompiledHeaderOutputFile>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\PrecompiledHeaders\pch.pch</PrecompiledHeaderOutputFile>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>$(ProjectDir)src;$(SolutionDir)JSON\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;$(SolutionDir)JSON\src;$(SolutionDir)ThreadPool\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -317,7 +320,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\PrecompiledHeaders\pch.pch</PrecompiledHeaderOutputFile>
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>$(ProjectDir)src;$(SolutionDir)JSON\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;$(SolutionDir)JSON\src;$(SolutionDir)ThreadPool\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -340,7 +343,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\PrecompiledHeaders\pch.pch</PrecompiledHeaderOutputFile>
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>$(ProjectDir)src;$(SolutionDir)JSON\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;$(SolutionDir)JSON\src;$(SolutionDir)ThreadPool\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
