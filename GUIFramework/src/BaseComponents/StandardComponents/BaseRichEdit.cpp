@@ -67,6 +67,30 @@ namespace gui_framework
 		callbacks.erase(event);
 	}
 
+	LRESULT BaseRichEdit::findSubstring(const wstring& subStringToFind, bool isMatchCase)
+	{
+		FINDTEXTW findText;
+
+		findText.chrg.cpMin = 0;
+		findText.chrg.cpMax = -1;
+
+		findText.lpstrText = subStringToFind.data();
+
+		return SendMessageW(handle, EM_FINDTEXTEXW, NULL | (isMatchCase ? FR_MATCHCASE : NULL), reinterpret_cast<LPARAM>(&findText));
+	}
+
+	LRESULT BaseRichEdit::findString(const wstring& stringToFind, bool isMatchCase)
+	{
+		FINDTEXTW findText;
+
+		findText.chrg.cpMin = 0;
+		findText.chrg.cpMax = -1;
+
+		findText.lpstrText = stringToFind.data();
+
+		return SendMessageW(handle, EM_FINDTEXTEXW, FR_WHOLEWORD | (isMatchCase ? FR_MATCHCASE : NULL), reinterpret_cast<LPARAM>(&findText));
+	}
+
 	void BaseRichEdit::setAutoURLDetect(bool autoURLDetect)
 	{
 		if (autoURLDetect)

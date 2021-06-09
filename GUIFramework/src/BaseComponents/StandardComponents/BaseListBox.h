@@ -46,13 +46,13 @@ namespace gui_framework
 		/// @param subStringToFind 
 		/// @return 
 		/// @exception gui_framework::exceptions::SelectListException 
-		virtual std::wstring findSubString(const std::wstring& subStringToFind) final;
+		virtual LRESULT findSubstring(const std::wstring& subStringToFind) final;
 
 		/// @brief 
 		/// @param stringToFind 
 		/// @return 
 		/// @exception gui_framework::exceptions::SelectListException 
-		virtual std::wstring findString(const std::wstring& stringToFind) final;
+		virtual LRESULT findString(const std::wstring& stringToFind) final;
 
 		/// @brief 
 		/// @param index 

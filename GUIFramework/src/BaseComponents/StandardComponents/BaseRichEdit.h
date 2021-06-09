@@ -39,6 +39,10 @@ namespace gui_framework
 
 		virtual void removeUrlDetectEvent(urlDetectEvent event) final;
 
+		virtual LRESULT findSubstring(const std::wstring& subStringToFind, bool isMatchCase = true) final;
+
+		virtual LRESULT findString(const std::wstring& stringToFind, bool isMatchCase = true) final;
+
 		virtual void setAutoURLDetect(bool autoURLDetect) final;
 
 		virtual bool getAutoURLDetect() const final;
