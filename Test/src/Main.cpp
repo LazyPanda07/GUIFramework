@@ -22,7 +22,7 @@ void test(const wstring& className, const wstring& title, const string& function
 
 	button->setOnClick([&](WPARAM, LPARAM) -> LRESULT
 		{
-			
+
 
 			return 0;
 		});
