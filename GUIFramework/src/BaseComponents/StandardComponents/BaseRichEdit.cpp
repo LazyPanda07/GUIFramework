@@ -69,26 +69,26 @@ namespace gui_framework
 
 	LRESULT BaseRichEdit::findSubstring(const wstring& subStringToFind, bool isMatchCase)
 	{
-		FINDTEXTW findText;
+		FINDTEXTEXW findText;
 
 		findText.chrg.cpMin = 0;
 		findText.chrg.cpMax = -1;
 
 		findText.lpstrText = subStringToFind.data();
 
-		return SendMessageW(handle, EM_FINDTEXTEXW, NULL | (isMatchCase ? FR_MATCHCASE : NULL), reinterpret_cast<LPARAM>(&findText));
+		return SendMessageW(handle, EM_FINDTEXTEXW, NULL | FR_DOWN | (isMatchCase ? FR_MATCHCASE : NULL), reinterpret_cast<LPARAM>(&findText));
 	}
 
 	LRESULT BaseRichEdit::findString(const wstring& stringToFind, bool isMatchCase)
 	{
-		FINDTEXTW findText;
+		FINDTEXTEXW findText;
 
 		findText.chrg.cpMin = 0;
 		findText.chrg.cpMax = -1;
 
 		findText.lpstrText = stringToFind.data();
 
-		return SendMessageW(handle, EM_FINDTEXTEXW, FR_WHOLEWORD | (isMatchCase ? FR_MATCHCASE : NULL), reinterpret_cast<LPARAM>(&findText));
+		return SendMessageW(handle, EM_FINDTEXTEXW, FR_WHOLEWORD | FR_DOWN | (isMatchCase ? FR_MATCHCASE : NULL), reinterpret_cast<LPARAM>(&findText));
 	}
 
 	void BaseRichEdit::setAutoURLDetect(bool autoURLDetect)
