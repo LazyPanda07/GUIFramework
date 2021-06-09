@@ -5,7 +5,7 @@ using namespace std;
 
 namespace gui_framework
 {
-	LRESULT BaseRichEdit::preWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
+	LRESULT BaseRichEdit::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
 	{
 		isUsed = false;
 
@@ -69,9 +69,18 @@ namespace gui_framework
 
 	void BaseRichEdit::setAutoURLDetect(bool autoURLDetect)
 	{
-		autoURLDetect ?
-			SendMessageW(handle, EM_AUTOURLDETECT, AURL_ENABLEURL, NULL) :
+		if (autoURLDetect)
+		{
+			SendMessageW(handle, EM_SETEVENTMASK, NULL, SendMessageW(handle, EM_GETEVENTMASK, NULL, NULL) | ENM_LINK);
+
+			SendMessageW(handle, EM_AUTOURLDETECT, AURL_ENABLEURL, NULL);
+		}
+		else
+		{
+			SendMessageW(handle, EM_SETEVENTMASK, NULL, SendMessageW(handle, EM_GETEVENTMASK, NULL, NULL) & ~ENM_LINK);
+
 			SendMessageW(handle, EM_AUTOURLDETECT, NULL, NULL);
+		}
 	}
 
 	bool BaseRichEdit::getAutoURLDetect() const
