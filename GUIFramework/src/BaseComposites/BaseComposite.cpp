@@ -111,6 +111,11 @@ namespace gui_framework
 
 		for (const auto& i : children)
 		{
+			if (!i)
+			{
+				continue;
+			}
+
 			result = i->windowMessagesHandle(handle, message, wparam, lparam, isUsed);
 
 			if (isUsed)
@@ -122,5 +127,10 @@ namespace gui_framework
 		isUsed = false;
 
 		return -1;
+	}
+
+	const vector<unique_ptr<BaseComponent>>& BaseComposite::getChildren() const
+	{
+		return children;
 	}
 }
