@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "BaseComponent.h"
 
+#include "BaseComposites/BaseComposite.h"
 #include "Exceptions/AlreadyRegisteredClassNameException.h"
 #include "Exceptions/CantFindSeparateWindowFunctionException.h"
 #include "Interfaces/Components/IResizableComponent.h"
@@ -107,7 +108,16 @@ namespace gui_framework
 
 	bool BaseComponent::destroyComponent()
 	{
-		return DestroyWindow(handle);
+		bool result = DestroyWindow(handle);
+
+		BaseComposite* parentComposite = dynamic_cast<BaseComposite*>(parent);
+
+		if (parentComposite)
+		{
+			parentComposite->removeChild(this);
+		}
+
+		return result;
 	}
 
 	bool BaseComponent::asyncDestroyComponent()
