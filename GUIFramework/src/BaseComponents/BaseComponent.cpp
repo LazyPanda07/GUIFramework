@@ -110,11 +110,14 @@ namespace gui_framework
 	{
 		bool result = DestroyWindow(handle);
 
-		BaseComposite* parentComposite = dynamic_cast<BaseComposite*>(parent);
-
-		if (parentComposite)
+		if (result)
 		{
-			parentComposite->removeChild(this);
+			BaseComposite* parentComposite = dynamic_cast<BaseComposite*>(parent);
+
+			if (parentComposite)
+			{
+				parentComposite->removeChild(this);
+			}
 		}
 
 		return result;
@@ -122,7 +125,19 @@ namespace gui_framework
 
 	bool BaseComponent::asyncDestroyComponent()
 	{
-		return PostMessageW(handle, WM_DESTROY, NULL, NULL);
+		bool result = PostMessageW(handle, WM_CLOSE, NULL, NULL);
+
+		if (result)
+		{
+			BaseComposite* parentComposite = dynamic_cast<BaseComposite*>(parent);
+
+			if (parentComposite)
+			{
+				parentComposite->removeChild(this);
+			}
+		}
+
+		return result;
 	}
 
 	void BaseComponent::setDesiredWidth(uint16_t desiredWidth)
