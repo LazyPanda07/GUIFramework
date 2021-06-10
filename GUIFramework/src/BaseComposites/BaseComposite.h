@@ -33,6 +33,6 @@ namespace gui_framework
 
 		virtual const std::vector<std::unique_ptr<BaseComponent>>& getChildren() const final;
 
-		virtual ~BaseComposite() = default;
+		virtual ~BaseComposite();
 	};
 }

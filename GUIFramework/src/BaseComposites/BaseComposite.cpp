@@ -133,4 +133,13 @@ namespace gui_framework
 	{
 		return children;
 	}
+
+	BaseComposite::~BaseComposite()
+	{
+		vector<BaseComponent*> components;
+
+		for_each(children.begin(), children.end(), [&components](const unique_ptr<BaseComponent>& component) { components.push_back(component.get()); });
+
+		for_each(components.begin(), components.end(), [this](BaseComponent* component) { this->removeChild(component); });
+	}
 }
