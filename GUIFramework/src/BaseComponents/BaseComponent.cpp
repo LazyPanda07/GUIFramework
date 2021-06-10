@@ -105,6 +105,16 @@ namespace gui_framework
 		return this->windowMessagesHandle(handle, message, wparam, lparam, isUsed);
 	}
 
+	bool BaseComponent::destroyComponent()
+	{
+		return DestroyWindow(handle);
+	}
+
+	bool BaseComponent::asyncDestroyComponent()
+	{
+		return PostMessageW(handle, WM_DESTROY, NULL, NULL);
+	}
+
 	void BaseComponent::setDesiredWidth(uint16_t desiredWidth)
 	{
 		this->desiredWidth = desiredWidth;
@@ -196,6 +206,9 @@ namespace gui_framework
 
 	BaseComponent::~BaseComponent()
 	{
-		DestroyWindow(handle);
+		if (!this->destroyComponent())
+		{
+			this->asyncDestroyComponent();
+		}
 	}
 }

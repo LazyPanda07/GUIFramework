@@ -33,6 +33,10 @@ namespace gui_framework
 
 		virtual LRESULT handleMessages(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) final;
 
+		virtual bool destroyComponent() final;
+
+		virtual bool asyncDestroyComponent() final;
+
 		virtual void setDesiredWidth(uint16_t desiredWidth) final;
 
 		virtual void setDesiredHeight(uint16_t desiredHeight) final;
