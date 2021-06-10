@@ -31,6 +31,8 @@ namespace gui_framework
 
 		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) final override;
 
+		virtual const std::vector<std::unique_ptr<BaseComponent>>& getChildren() const final;
+
 		virtual ~BaseComposite() = default;
 	};
 }
