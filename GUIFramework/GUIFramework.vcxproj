@@ -63,6 +63,10 @@
     <ClInclude Include="src\GUIFramework.h" />
     <ClInclude Include="src\Interfaces\Components\IResizableComponent.h" />
     <ClInclude Include="src\Interfaces\Components\ITextOperations.h" />
+    <ClInclude Include="src\Interfaces\Iterators\IBaseConstIterator.h" />
+    <ClInclude Include="src\Interfaces\Iterators\IBaseIterator.h" />
+    <ClInclude Include="src\Interfaces\Iterators\IComponentsIterator.h" />
+    <ClInclude Include="src\Interfaces\Iterators\IIterable.h" />
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\BaseComposites\StandardComposites\BaseSeparateWindow.h" />
     <ClInclude Include="src\Utility\ComponentSettings.h" />
