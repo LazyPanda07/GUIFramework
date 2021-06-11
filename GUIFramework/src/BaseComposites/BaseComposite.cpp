@@ -136,24 +136,24 @@ namespace gui_framework
 		return true;
 	}
 
-	iterators::iterator BaseComposite::begin() noexcept
+	iterators::forward_iterator BaseComposite::begin() noexcept
 	{
-		return iterators::iterator(this);
+		return iterators::forward_iterator(this);
 	}
 
-	iterators::const_iterator BaseComposite::cbegin() const noexcept
+	iterators::const_forward_iterator BaseComposite::cbegin() const noexcept
 	{
-		return iterators::const_iterator(static_cast<BaseComponent*>(const_cast<BaseComposite*>(this)));
+		return iterators::const_forward_iterator(static_cast<BaseComponent*>(const_cast<BaseComposite*>(this)));
 	}
 
-	iterators::iterator BaseComposite::end() noexcept
+	iterators::forward_iterator BaseComposite::end() noexcept
 	{
-		return iterators::iterator(nullptr);
+		return iterators::forward_iterator(nullptr);
 	}
 
-	iterators::const_iterator BaseComposite::cend() const noexcept
+	iterators::const_forward_iterator BaseComposite::cend() const noexcept
 	{
-		return iterators::const_iterator(nullptr);
+		return iterators::const_forward_iterator(nullptr);
 	}
 
 	BaseComposite::~BaseComposite()

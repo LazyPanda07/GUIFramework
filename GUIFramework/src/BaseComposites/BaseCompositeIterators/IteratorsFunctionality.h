@@ -9,8 +9,6 @@ namespace gui_framework
 		namespace utility
 		{
 			void getNextComponent(BaseComponent*& currentComponent, std::stack<BaseComponent*>& parents, std::stack<size_t>& indices);
-
-			void getPreviousComponent(BaseComponent*& currentComponent, std::stack<BaseComponent*>& parents, std::stack<size_t>& indices);
 		}
 	}
 }

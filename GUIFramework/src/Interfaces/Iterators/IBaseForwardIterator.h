@@ -1,22 +1,22 @@
 #pragma once
 
-#include "IBaseConstIterator.h"
+#include "IBaseConstForwardIterator.h"
 
 namespace gui_framework
 {
 	namespace interfaces
 	{
 		template<typename T, typename IBaseConstIteratorSubclass>
-		class IBaseIterator : public IBaseConstIterator<T, IBaseConstIteratorSubclass>
+		class IBaseForwardIterator : public IBaseConstForwardIterator<T, IBaseConstIteratorSubclass>
 		{
 		public:
-			IBaseIterator() = default;
+			IBaseForwardIterator() = default;
 
 			virtual T* operator * () noexcept = 0;
 
 			virtual T* operator -> () noexcept = 0;
 
-			virtual ~IBaseIterator() = default;
+			virtual ~IBaseForwardIterator() = default;
 		};
 	}
 }
