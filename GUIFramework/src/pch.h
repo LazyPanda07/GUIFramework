@@ -22,6 +22,7 @@
 #include <unordered_set>
 #include <map>
 #include <unordered_map>
+#include <stack>
 
 #include <Windows.h>
 #include <CommCtrl.h>
