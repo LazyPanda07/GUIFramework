@@ -2,15 +2,15 @@
 
 #include "BaseComponents/BaseComponent.h"
 #include "Interfaces/Iterators/IIterable.h"
-#include "BaseCompositeIterators/iterator.h"
-#include "BaseCompositeIterators/const_iterator.h"
+#include "BaseCompositeIterators/forward_iterator.h"
+#include "BaseCompositeIterators/const_forward_iterator.h"
 
 namespace gui_framework
 {
 	/// @brief Base class for all windows that has children windows
 	class BaseComposite :
 		public BaseComponent,
-		public interfaces::IIterable<BaseComponent, iterators::iterator, iterators::const_iterator>
+		public interfaces::IIterable<BaseComponent, iterators::forward_iterator, iterators::const_forward_iterator>
 	{
 	protected:
 		std::vector<std::unique_ptr<BaseComponent>> children;
@@ -38,13 +38,13 @@ namespace gui_framework
 
 		virtual bool isComposite() const final override;
 
-		virtual iterators::iterator begin() noexcept override;
+		virtual iterators::forward_iterator begin() noexcept override;
 
-		virtual iterators::const_iterator cbegin() const noexcept override;
+		virtual iterators::const_forward_iterator cbegin() const noexcept override;
 
-		virtual iterators::iterator end() noexcept override;
+		virtual iterators::forward_iterator end() noexcept override;
 
-		virtual iterators::const_iterator cend() const noexcept override;
+		virtual iterators::const_forward_iterator cend() const noexcept override;
 
 		virtual ~BaseComposite();
 	};
