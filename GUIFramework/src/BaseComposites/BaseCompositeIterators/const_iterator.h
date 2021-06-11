@@ -7,7 +7,7 @@ namespace gui_framework
 {
 	namespace iterators
 	{
-		class const_iterator : public interfaces::IBaseConstIterator<BaseComponent>
+		class const_iterator : public interfaces::IBaseConstIterator<BaseComponent, const_iterator>
 		{
 		private:
 			BaseComponent* currentComponent;
@@ -21,17 +21,17 @@ namespace gui_framework
 
 			const BaseComponent* operator -> () const noexcept override;
 
-			IBaseConstIterator<BaseComponent>& operator ++ () noexcept override;
+			IBaseConstIterator<BaseComponent, const_iterator>& operator ++ () noexcept override;
 
-			std::unique_ptr<IBaseConstIterator<BaseComponent>> operator ++ (int) noexcept override;
+			const_iterator operator ++ (int) noexcept override;
 
-			IBaseConstIterator<BaseComponent>& operator -- () noexcept override;
+			IBaseConstIterator<BaseComponent, const_iterator>& operator -- () noexcept override;
 
-			std::unique_ptr<IBaseConstIterator<BaseComponent>> operator -- (int) noexcept override;
+			const_iterator operator -- (int) noexcept override;
 
-			bool operator == (const IBaseConstIterator<BaseComponent>& iterator) const noexcept override;
+			bool operator == (const IBaseConstIterator<BaseComponent, const_iterator>& iterator) const noexcept override;
 
-			bool operator != (const IBaseConstIterator<BaseComponent>& iterator) const noexcept override;
+			bool operator != (const IBaseConstIterator<BaseComponent, const_iterator>& iterator) const noexcept override;
 
 			~const_iterator() = default;
 		};
