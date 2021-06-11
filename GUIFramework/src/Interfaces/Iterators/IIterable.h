@@ -6,19 +6,19 @@ namespace gui_framework
 {
 	namespace interfaces
 	{
-		template<typename T>
+		template<typename T, std::derived_from<IBaseIterator<T>> TIterator, std::derived_from<IBaseConstIterator<T>> TConstIterator>
 		class IIterable
 		{
 		public:
 			IIterable() = default;
 
-			virtual std::unique_ptr<IBaseIterator<T>> begin() noexcept = 0;
+			virtual TIterator begin() noexcept = 0;
 
-			virtual std::unique_ptr<IBaseConstIterator<T>> cbegin() const noexcept = 0;
+			virtual TConstIterator cbegin() const noexcept = 0;
 
-			virtual std::unique_ptr<IBaseIterator<T>> end() noexcept = 0;
+			virtual TIterator end() noexcept = 0;
 
-			virtual std::unique_ptr<IBaseConstIterator<T>> cend() const noexcept = 0;
+			virtual TConstIterator cend() const noexcept = 0;
 
 			virtual ~IIterable() = default;
 		};

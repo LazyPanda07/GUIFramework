@@ -2,77 +2,16 @@
 
 #include "BaseComponents/BaseComponent.h"
 #include "Interfaces/Iterators/IIterable.h"
+#include "BaseCompositeIterators/iterator.h"
+#include "BaseCompositeIterators/const_iterator.h"
 
 namespace gui_framework
 {
 	/// @brief Base class for all windows that has children windows
 	class BaseComposite :
 		public BaseComponent,
-		public interfaces::IIterable<BaseComponent>
+		public interfaces::IIterable<BaseComponent, iterators::iterator, iterators::const_iterator>
 	{
-	public:
-		class iterator : public interfaces::IBaseIterator<BaseComponent>
-		{
-		private:
-			BaseComponent* currentComponent;
-			std::stack<BaseComposite*> parents;
-			std::stack<size_t> indices;
-
-		public:
-			iterator(BaseComponent* component);
-
-			BaseComponent* operator * () noexcept override;
-
-			const BaseComponent* operator * () const noexcept override;
-
-			BaseComponent* operator -> () noexcept override;
-
-			const BaseComponent* operator -> () const noexcept override;
-
-			IBaseConstIterator<BaseComponent>& operator ++ () noexcept override;
-
-			std::unique_ptr<IBaseConstIterator<BaseComponent>> operator ++ (int) noexcept override;
-
-			IBaseConstIterator<BaseComponent>& operator -- () noexcept override;
-
-			std::unique_ptr<IBaseConstIterator<BaseComponent>> operator -- (int) noexcept override;
-
-			bool operator == (const IBaseConstIterator<BaseComponent>& iterator) const noexcept override;
-
-			bool operator != (const IBaseConstIterator<BaseComponent>& iterator) const noexcept override;
-
-			~iterator() = default;
-		};
-
-		class const_iterator : public interfaces::IBaseConstIterator<BaseComponent>
-		{
-		private:
-			BaseComponent* currentComponent;
-			std::stack<BaseComposite*> parents;
-			std::stack<size_t> indices;
-
-		public:
-			const_iterator(BaseComponent* component);
-
-			const BaseComponent* operator * () const noexcept override;
-
-			const BaseComponent* operator -> () const noexcept override;
-
-			IBaseConstIterator<BaseComponent>& operator ++ () noexcept override;
-
-			std::unique_ptr<IBaseConstIterator<BaseComponent>> operator ++ (int) noexcept override;
-
-			IBaseConstIterator<BaseComponent>& operator -- () noexcept override;
-
-			std::unique_ptr<IBaseConstIterator<BaseComponent>> operator -- (int) noexcept override;
-
-			bool operator == (const IBaseConstIterator<BaseComponent>& iterator) const noexcept override;
-
-			bool operator != (const IBaseConstIterator<BaseComponent>& iterator) const noexcept override;
-
-			~const_iterator() = default;
-		};
-
 	protected:
 		std::vector<std::unique_ptr<BaseComponent>> children;
 
@@ -99,13 +38,13 @@ namespace gui_framework
 
 		virtual bool isComposite() const final override;
 
-		virtual std::unique_ptr<interfaces::IBaseIterator<BaseComponent>> begin() noexcept override;
+		virtual iterators::iterator begin() noexcept override;
 
-		virtual std::unique_ptr<interfaces::IBaseConstIterator<BaseComponent>> cbegin() const noexcept override;
+		virtual iterators::const_iterator cbegin() const noexcept override;
 
-		virtual std::unique_ptr<interfaces::IBaseIterator<BaseComponent>> end() noexcept override;
+		virtual iterators::iterator end() noexcept override;
 
-		virtual std::unique_ptr<interfaces::IBaseConstIterator<BaseComponent>> cend() const noexcept override;
+		virtual iterators::const_iterator cend() const noexcept override;
 
 		virtual ~BaseComposite();
 	};
