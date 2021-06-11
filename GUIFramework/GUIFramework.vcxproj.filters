@@ -150,6 +150,15 @@
     <ClInclude Include="src\Interfaces\Iterators\IBaseConstIterator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="src\BaseComposites\BaseCompositeIterators\iterator.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BaseComposites\BaseCompositeIterators\const_iterator.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BaseComposites\BaseCompositeIterators\IteratorsFunctionality.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\pch.cpp">
@@ -264,6 +273,15 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Components\RichEdit.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BaseComposites\BaseCompositeIterators\iterator.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BaseComposites\BaseCompositeIterators\const_iterator.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BaseComposites\BaseCompositeIterators\IteratorsFunctionality.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

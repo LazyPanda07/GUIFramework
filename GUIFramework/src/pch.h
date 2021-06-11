@@ -9,6 +9,7 @@
 #include <functional>
 #include <fstream>
 #include <sstream>
+#include <concepts>
 
 #include <thread>
 #include <condition_variable>
