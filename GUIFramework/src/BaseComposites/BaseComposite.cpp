@@ -164,6 +164,8 @@ namespace gui_framework
 		{
 			if (it->get() == child)
 			{
+				it->reset();
+
 				children.erase(it);
 
 				break;
