@@ -22,11 +22,13 @@ void test(const wstring& className, const wstring& title, const string& function
 
 	button->setOnClick([&](WPARAM, LPARAM) -> LRESULT
 		{
-			auto it = mainWindow->begin();
+			auto it = mainWindow->end();
 
-			for (; it != mainWindow->end(); ++(*it))
+			--it;
+
+			for (; it != mainWindow->begin(); --it)
 			{
-				wcout << (*it)->getClassName() << endl;
+				wcout << it->getClassName() << endl;
 			}
 
 			return 0;
