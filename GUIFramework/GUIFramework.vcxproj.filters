@@ -138,9 +138,6 @@
     <ClInclude Include="src\Components\RichEdit.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Interfaces\Iterators\IComponentsIterator.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="src\Interfaces\Iterators\IBaseIterator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>

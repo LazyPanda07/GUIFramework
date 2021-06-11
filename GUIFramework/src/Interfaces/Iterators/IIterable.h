@@ -6,7 +6,7 @@ namespace gui_framework
 {
 	namespace interfaces
 	{
-		template<typename T, std::derived_from<IBaseIterator<T>> TIterator, std::derived_from<IBaseConstIterator<T>> TConstIterator>
+		template<typename T, typename TIterator, typename TConstIterator> requires (std::is_base_of_v<IBaseIterator<T, TIterator>, TIterator> && std::is_base_of_v<IBaseConstIterator<T, TConstIterator>, TConstIterator>)
 		class IIterable
 		{
 		public:

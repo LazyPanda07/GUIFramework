@@ -25,44 +25,44 @@ namespace gui_framework
 			return currentComponent;
 		}
 
-		interfaces::IBaseConstIterator<BaseComponent>& const_iterator::operator ++ () noexcept
+		interfaces::IBaseConstIterator<BaseComponent, const_iterator>& const_iterator::operator ++ () noexcept
 		{
 			utility::getNextComponent(currentComponent, parents, indices);
 
 			return *this;
 		}
 
-		unique_ptr<interfaces::IBaseConstIterator<BaseComponent>> const_iterator::operator ++ (int) noexcept
+		const_iterator const_iterator::operator ++ (int) noexcept
 		{
-			unique_ptr<const_iterator> tem(make_unique<const_iterator>(*this));
+			const_iterator tem(*this);
 
 			utility::getNextComponent(currentComponent, parents, indices);
 
 			return tem;
 		}
 
-		interfaces::IBaseConstIterator<BaseComponent>& const_iterator::operator -- () noexcept
+		interfaces::IBaseConstIterator<BaseComponent, const_iterator>& const_iterator::operator -- () noexcept
 		{
 			utility::getPreviousComponent(currentComponent, parents, indices);
 
 			return *this;
 		}
 
-		unique_ptr<interfaces::IBaseConstIterator<BaseComponent>> const_iterator::operator -- (int) noexcept
+		const_iterator const_iterator::operator -- (int) noexcept
 		{
-			unique_ptr<const_iterator> tem(make_unique<const_iterator>(*this));
+			const_iterator tem(*this);
 
 			utility::getPreviousComponent(currentComponent, parents, indices);
 
 			return tem;
 		}
 
-		bool const_iterator::operator == (const IBaseConstIterator<BaseComponent>& iterator) const noexcept
+		bool const_iterator::operator == (const IBaseConstIterator<BaseComponent, const_iterator>& iterator) const noexcept
 		{
 			return currentComponent == *iterator;
 		}
 
-		bool const_iterator::operator != (const IBaseConstIterator<BaseComponent>& iterator) const noexcept
+		bool const_iterator::operator != (const IBaseConstIterator<BaseComponent, const_iterator>& iterator) const noexcept
 		{
 			return currentComponent != *iterator;
 		}

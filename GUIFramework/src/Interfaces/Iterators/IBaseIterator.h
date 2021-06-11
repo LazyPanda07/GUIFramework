@@ -6,8 +6,8 @@ namespace gui_framework
 {
 	namespace interfaces
 	{
-		template<typename T>
-		class IBaseIterator : public IBaseConstIterator<T>
+		template<typename T, typename IBaseConstIteratorSubclass>
+		class IBaseIterator : public IBaseConstIterator<T, IBaseConstIteratorSubclass>
 		{
 		public:
 			IBaseIterator() = default;
