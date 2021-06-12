@@ -54,7 +54,7 @@ namespace gui_framework
 		ITextOperations(handle),
 		callbacks(urlDetectEventSize)
 	{
-
+		this->setText(L"");
 	}
 
 	void BaseRichEdit::addUrlDetectEvent(urlDetectEvent event, const function<void(const wstring&)>& eventCallback)
