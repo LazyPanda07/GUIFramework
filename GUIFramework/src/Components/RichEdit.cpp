@@ -9,7 +9,7 @@ namespace gui_framework
 		BaseComponent
 		(
 			wstring(standard_classes::richEdit),
-			windowName,
+			richEditName,
 			utility::ComponentSettings
 			(
 				WS_BORDER | WS_VSCROLL | WS_HSCROLL | (isMultiLine ? ES_MULTILINE : NULL),
