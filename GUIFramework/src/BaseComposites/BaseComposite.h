@@ -18,7 +18,7 @@ namespace gui_framework
 	public:
 		BaseComposite(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, BaseComponent* parent = nullptr, const std::string& windowFunctionName = "");
 
-		/// @brief Add child window
+		/// @brief BaseComponent's constructor calls this method if parent != nullptr, there is no need to explicitly call this method
 		/// @param child BaseComposite takes control for all children
 		virtual void addChild(BaseComponent* child) final;
 
