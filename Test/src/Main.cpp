@@ -21,10 +21,6 @@ void test(const wstring& className, const wstring& title, const string& function
 	RichEdit* richEdit = new RichEdit(L"Rich", 0, 0, 150, 150, mainWindow.get(), true);
 	Button* button = new Button(L"Button", L"Текст", 200, 25, mainWindow.get(), 1);
 
-	ChildWindow* childWindow = new ChildWindow(L"ChildWindow", L"Child window", childWindowSettings, mainWindow.get(), "child");
-
-	childWindow->addChild(new Button(L"Btn", L"Button", 0, 0, childWindow, 150));
-
 	button->setOnClick([&](WPARAM, LPARAM) -> LRESULT
 		{
 			for (const auto& i : *mainWindow)
@@ -36,8 +32,6 @@ void test(const wstring& className, const wstring& title, const string& function
 		});
 
 	mainWindow->addChild(richEdit);
-
-	mainWindow->addChild(childWindow);
 
 	mainWindow->addChild(button);
 
