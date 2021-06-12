@@ -13,10 +13,9 @@ namespace gui_framework
 		{
 			void getNextComponent(BaseComponent*& currentComponent, stack<BaseComponent*>& parents, stack<size_t>& indices)
 			{
-				BaseComposite* composite = dynamic_cast<BaseComposite*>(currentComponent);
-
-				if (composite)
+				if (currentComponent->isComposite())
 				{
+					BaseComposite* composite = static_cast<BaseComposite*>(currentComponent);
 					const vector<unique_ptr<BaseComponent>>& components = composite->getChildren();
 
 					if (components.size())
@@ -29,7 +28,7 @@ namespace gui_framework
 					}
 					else if (parents.size())
 					{
-						BaseComposite* composite = dynamic_cast<BaseComposite*>(parents.top());
+						BaseComposite* composite = static_cast<BaseComposite*>(parents.top());
 						size_t nextIndex = indices.top();
 						const vector<unique_ptr<BaseComponent>>& components = composite->getChildren();
 
@@ -48,12 +47,16 @@ namespace gui_framework
 							getNextComponent(currentComponent, parents, indices);
 						}
 					}
+					else
+					{
+						currentComponent = nullptr;
+					}
 				}
 				else
 				{
 					if (parents.size())
 					{
-						BaseComposite* composite = dynamic_cast<BaseComposite*>(parents.top());
+						BaseComposite* composite = static_cast<BaseComposite*>(parents.top());
 						size_t nextIndex = indices.top();
 						const vector<unique_ptr<BaseComponent>>& components = composite->getChildren();
 
@@ -69,8 +72,12 @@ namespace gui_framework
 						}
 						else
 						{
-							currentComponent = nullptr;
+							getNextComponent(currentComponent, parents, indices);
 						}
+					}
+					else
+					{
+						currentComponent = nullptr;
 					}
 				}
 			}
