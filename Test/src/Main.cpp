@@ -15,26 +15,29 @@ void test(const wstring& className, const wstring& title, const string& function
 	using namespace gui_framework;
 
 	utility::ComponentSettings settings(WS_BORDER, x, y, 800, 600);
+	utility::ComponentSettings childWindowSettings(WS_BORDER, 600, 400, 200, 200);
 
 	unique_ptr<SeparateWindow> mainWindow(make_unique<SeparateWindow>(className, title, settings, functionName));
 	RichEdit* richEdit = new RichEdit(L"Rich", 0, 0, 150, 150, mainWindow.get(), true);
 	Button* button = new Button(L"Button", L"Текст", 200, 25, mainWindow.get(), 1);
 
+	ChildWindow* childWindow = new ChildWindow(L"ChildWindow", L"Child window", childWindowSettings, mainWindow.get(), "child");
+
+	childWindow->addChild(new Button(L"Btn", L"Button", 0, 0, childWindow, 150));
+
 	button->setOnClick([&](WPARAM, LPARAM) -> LRESULT
 		{
-			auto it = mainWindow->end();
-
-			--it;
-
-			for (; it != mainWindow->begin(); --it)
+			for (const auto& i : *mainWindow)
 			{
-				wcout << it->getClassName() << endl;
+				wcout << i->getWindowName() << endl;
 			}
 
 			return 0;
 		});
 
 	mainWindow->addChild(richEdit);
+
+	mainWindow->addChild(childWindow);
 
 	mainWindow->addChild(button);
 
@@ -48,9 +51,9 @@ void test(const wstring& className, const wstring& title, const string& function
 	}
 }
 
-CREATE_DEFAULT_WINDOW_FUNCTION(mainWindow)
+CREATE_DEFAULT_WINDOW_FUNCTION(main)
 
-CREATE_DEFAULT_WINDOW_FUNCTION(childWindow)
+CREATE_DEFAULT_WINDOW_FUNCTION(child)
 
 int main(int argc, char** argv)
 {
@@ -58,7 +61,7 @@ int main(int argc, char** argv)
 
 	gui_framework::GUIFramework::get();
 
-	thread(test, L"Main window", L"Title", "mainWindow", 300, 200).detach();
+	thread(test, L"Main window", L"Title", "main", 300, 200).detach();
 
 	string s;
 
