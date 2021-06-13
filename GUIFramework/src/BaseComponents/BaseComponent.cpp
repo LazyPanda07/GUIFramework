@@ -88,7 +88,7 @@ namespace gui_framework
 			composite->addChild(this);
 		}
 
-		ShowWindow(handle, SW_SHOW);
+		ShowWindowAsync(handle, SW_SHOW);
 	}
 
 	bool BaseComponent::isComposite() const
