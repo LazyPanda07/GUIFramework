@@ -56,7 +56,7 @@
     <ClInclude Include="src\Components\StaticControl.h" />
     <ClInclude Include="src\Composites\ChildWindow.h" />
     <ClInclude Include="src\Composites\SeparateWindow.h" />
-    <ClInclude Include="src\Constants.h" />
+    <ClInclude Include="src\GUIFrameworkConstants.h" />
     <ClInclude Include="src\Exceptions\AlreadyRegisteredClassNameException.h" />
     <ClInclude Include="src\Exceptions\BaseGUIFrameworkException.h" />
     <ClInclude Include="src\Exceptions\CantFindSeparateWindowFunctionException.h" />

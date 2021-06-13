@@ -77,7 +77,16 @@ namespace gui_framework
 			nullptr
 		);
 
-		SendMessageW(handle, custom_window_messages::initTopLevelWindowPointer, reinterpret_cast<WPARAM>(this), NULL);
+		if (!parent)
+		{
+			SendMessageW(handle, custom_window_messages::initTopLevelWindowPointer, reinterpret_cast<WPARAM>(this), NULL);
+		}
+		else if(parent->isComposite())
+		{
+			BaseComposite* composite = static_cast<BaseComposite*>(parent);
+
+			composite->addChild(this);
+		}
 
 		ShowWindow(handle, SW_SHOW);
 	}
@@ -97,7 +106,7 @@ namespace gui_framework
 	LRESULT BaseComponent::handleMessages(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
 	{
 		LRESULT result = this->preWindowMessagesHandle(handle, message, wparam, lparam, isUsed);
-		
+
 		if (isUsed)
 		{
 			return result;
@@ -110,14 +119,11 @@ namespace gui_framework
 	{
 		bool result = DestroyWindow(handle);
 
-		if (result)
+		if (result && parent && parent->isComposite())
 		{
-			BaseComposite* parentComposite = dynamic_cast<BaseComposite*>(parent);
+			BaseComposite* parentComposite = static_cast<BaseComposite*>(parent);
 
-			if (parentComposite)
-			{
-				parentComposite->removeChild(this);
-			}
+			parentComposite->removeChild(this);
 		}
 
 		return result;
@@ -127,14 +133,11 @@ namespace gui_framework
 	{
 		bool result = PostMessageW(handle, WM_CLOSE, NULL, NULL);
 
-		if (result)
+		if (result && parent && parent->isComposite())
 		{
-			BaseComposite* parentComposite = dynamic_cast<BaseComposite*>(parent);
+			BaseComposite* parentComposite = static_cast<BaseComposite*>(parent);
 
-			if (parentComposite)
-			{
-				parentComposite->removeChild(this);
-			}
+			parentComposite->removeChild(this);
 		}
 
 		return result;

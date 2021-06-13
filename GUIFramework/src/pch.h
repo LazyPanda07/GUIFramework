@@ -30,7 +30,7 @@
 #include <Richedit.h>
 
 #include "WindowMessages.h"
-#include "Constants.h"
+#include "GUIFrameworkConstants.h"
 #include "Utility/ComponentSettings.h"
 #include "Utility/Utility.h"
 
@@ -39,6 +39,8 @@
 #include "JSONBuilder.h"
 #include "ThreadPool.h"
 #include "SingletonThreadPool.h"
+
+#include "GUIFramework.h"
 
 #pragma comment(linker,"\"/manifestdependency:type='win32' \
 name='Microsoft.Windows.Common-Controls' version='6.0.0.0' \

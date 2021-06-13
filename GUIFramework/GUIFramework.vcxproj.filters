@@ -30,7 +30,7 @@
     <ClInclude Include="src\Exceptions\AlreadyRegisteredClassNameException.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Constants.h">
+    <ClInclude Include="src\GUIFrameworkConstants.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Exceptions\CantFindSeparateWindowFunctionException.h">

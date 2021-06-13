@@ -7,16 +7,31 @@ using namespace std;
 
 namespace gui_framework
 {
-	BaseButton::BaseButton(const wstring& buttonName, const wstring& buttonText, const utility::ComponentSettings& settings, BaseComponent* parent, uint64_t buttonId, const function<LRESULT(WPARAM, LPARAM)>& onClick) :
+	HMENU BaseButton::initButtonId(uint64_t buttonId)
+	{
+		this->buttonId = buttonId;
+
+		return HMENU(buttonId);
+	}
+
+	BaseButton::BaseButton(const wstring& buttonName, const wstring& buttonText, const utility::ComponentSettings& settings, BaseComponent* parent, const function<LRESULT(WPARAM, LPARAM)>& onClick) :
 		BaseComponent
 		(
 			wstring(standard_classes::button),
 			buttonName,
-			settings,
+			utility::ComponentSettings
+			(
+				settings.styles,
+				settings.x,
+				settings.y,
+				settings.width,
+				settings.height,
+				this->initButtonId(GUIFramework::get().generateHMENU(buttonName)),
+				settings.extendedStyles
+			),
 			parent
 		),
 		ITextOperations(handle),
-		buttonId(buttonId),
 		onClick(onClick)
 	{
 		this->setText(buttonText);
