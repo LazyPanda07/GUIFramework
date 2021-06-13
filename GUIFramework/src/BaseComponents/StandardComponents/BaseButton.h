@@ -14,8 +14,11 @@ namespace gui_framework
 		uint64_t buttonId;
 		std::function<LRESULT(WPARAM, LPARAM)> onClick;
 
+	private:
+		HMENU initButtonId(uint64_t buttonId);
+
 	public:
-		BaseButton(const std::wstring& buttonName, const std::wstring& buttonText, const utility::ComponentSettings& settings, BaseComponent* parent, uint64_t buttonId, const std::function<LRESULT(WPARAM, LPARAM)>& onClick = nullptr);
+		BaseButton(const std::wstring& buttonName, const std::wstring& buttonText, const utility::ComponentSettings& settings, BaseComponent* parent, const std::function<LRESULT(WPARAM, LPARAM)>& onClick = nullptr);
 
 		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) = 0;
 
