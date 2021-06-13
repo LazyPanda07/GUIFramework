@@ -14,7 +14,7 @@ namespace gui_framework
 		uint64_t buttonId;
 		std::function<LRESULT(WPARAM, LPARAM)> onClick;
 
-	private:
+	protected:
 		HMENU initButtonId(uint64_t buttonId);
 
 	public:
