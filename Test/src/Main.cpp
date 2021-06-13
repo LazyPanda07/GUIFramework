@@ -18,22 +18,24 @@ void test(const wstring& className, const wstring& title, const string& function
 	utility::ComponentSettings childWindowSettings(WS_BORDER, 600, 400, 200, 200);
 
 	unique_ptr<SeparateWindow> mainWindow(make_unique<SeparateWindow>(className, title, settings, functionName));
-	RichEdit* richEdit = new RichEdit(L"Rich", 0, 0, 150, 150, mainWindow.get(), true);
-	Button* button = new Button(L"Button", L"Текст", 200, 25, mainWindow.get(), 1);
+	// RichEdit* richEdit = new RichEdit(L"Rich", 0, 0, 150, 150, mainWindow.get(), true);
+	vector<function<LRESULT(WPARAM, LPARAM)>> callbacks =
+	{
+		[](WPARAM, LPARAM) -> LRESULT { cout << "First" << endl; return 0; },
+		[](WPARAM, LPARAM) -> LRESULT { cout << "Second" << endl; return 0; },
+		[](WPARAM, LPARAM) -> LRESULT { cout << "Third" << endl; return 0; }
+	};
+	vector<pair<wstring, wstring>> names =
+	{
+		{ L"First button", L"Ито жи первая кнопка" },
+		{ L"Second button", L"Ито жи вторая кнопка" },
+		{ L"Third button", L"Ито жи третья кнопка" },
+	};
 
-	button->setOnClick([&](WPARAM, LPARAM) -> LRESULT
-		{
-			for (const auto& i : *mainWindow)
-			{
-				wcout << i->getWindowName() << endl;
-			}
-
-			return 0;
-		});
-
-	mainWindow->addChild(richEdit);
-
-	mainWindow->addChild(button);
+	for (size_t i = 0; i < 3; i++)
+	{
+		Button* button = new Button(names[i].first, names[i].second, 0, 20 * i, mainWindow.get(), callbacks[i]);
+	}
 
 	MSG msg = {};
 
