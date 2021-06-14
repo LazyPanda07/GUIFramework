@@ -37,6 +37,10 @@ namespace gui_framework
 	public:
 		BaseDialogBox(const std::wstring& className, const std::wstring& title, const utility::ComponentSettings& settings, BaseComponent* parent = nullptr, const std::string& dialogBoxFunctionName = "");
 
+		virtual void hide() const final;
+
+		virtual void show() const final;
+
 		virtual ~BaseDialogBox() = default;
 	};
 }

@@ -29,6 +29,16 @@ namespace gui_framework
 			dialogBoxFunctionName
 		)
 	{
+		this->hide();
+	}
 
+	void BaseDialogBox::hide() const
+	{
+		ShowWindow(handle, SW_HIDE);
+	}
+
+	void BaseDialogBox::show() const
+	{
+		ShowWindow(handle, SW_SHOW);
 	}
 }

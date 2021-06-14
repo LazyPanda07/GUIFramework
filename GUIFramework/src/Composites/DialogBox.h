@@ -2,12 +2,13 @@
 
 #include "BaseComposites/BaseDialogBox.h"
 #include "BaseComposites/BaseNonResizableComposite.h"
+#include "Composites/AdditionalCreationData/AdditionalCreationData.h"
 
 #undef DialogBox
 
 namespace gui_framework
 {
-	class DialogBox : 
+	class DialogBox :
 		public BaseNonResizableComposite,
 		public BaseDialogBox
 	{
@@ -25,12 +26,16 @@ namespace gui_framework
 		private:
 			struct builderComponentData
 			{
-				//TODO: pointer to creation function
+				std::wstring componentName;
+				std::wstring text;
+				RECT offsets;
+				size_t typeHash;
 				uint16_t width;
 				uint16_t height;
 				alignment type;
+				std::any additionalData;
 
-				builderComponentData(uint16_t width, uint16_t height, alignment type);
+				builderComponentData(const std::wstring& componentName, const std::wstring& text, RECT&& offsets, size_t typeHash, uint16_t width, uint16_t height, alignment type, std::any&& additionalData);
 			};
 
 		private:
@@ -47,7 +52,7 @@ namespace gui_framework
 			void clear();
 
 			template<std::derived_from<BaseComponent> T>
-			void addComponent(uint16_t width, uint16_t height, alignment type);
+			void addComponent(const std::wstring& componentName, uint16_t width, uint16_t height, alignment type, const utility::AdditionalCreationData<T>& additionalData, int leftOffset = 0, int topOffset = 0, int rightOffset = 0, int bottomOffset = 0, const std::wstring& text = L"");
 
 			void addDialogBoxFunction(const std::string& functionName);
 
@@ -65,8 +70,18 @@ namespace gui_framework
 	};
 
 	template<std::derived_from<BaseComponent> T>
-	void DialogBox::DialogBoxBuilder::addComponent(uint16_t width, uint16_t height, alignment type)
+	void DialogBox::DialogBoxBuilder::addComponent(const std::wstring& componentName, uint16_t width, uint16_t height, alignment type, const utility::AdditionalCreationData<T>& additionalData, int leftOffset, int topOffset, int rightOffset, int bottomOffset, const std::wstring& text)
 	{
-		components.emplace_back(width, height, type);
+		if (settings.width < width + leftOffset + rightOffset)
+		{
+			settings.width = width + leftOffset + rightOffset;
+		}
+
+		if (settings.height < height + topOffset + bottomOffset)
+		{
+			settings.height = height + topOffset + bottomOffset;
+		}
+
+		components.emplace_back(componentName, text, RECT(leftOffset, topOffset, rightOffset, bottomOffset), typeid(T).hash_code(), width, height, type, additionalData.getData());
 	}
 }

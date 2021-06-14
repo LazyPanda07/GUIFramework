@@ -13,8 +13,8 @@ namespace gui_framework
 			NULL,
 			x,
 			y,
-			NULL,
-			NULL
+			0,
+			0
 		),
 		className(className),
 		dialogBoxName(dialogBoxName),
@@ -25,20 +25,7 @@ namespace gui_framework
 
 	void DialogBoxBuilder::clear()
 	{
-		settings = utility::ComponentSettings
-			(
-				NULL,
-				settings.x,
-				settings.y,
-				settings.width,
-				settings.height
-			);
-
-		className.clear();
-		dialogBoxName.clear();
-		functionName.clear();
-
-		parent = nullptr;
+		(*this) = DialogBoxBuilder(className, dialogBoxName, settings.x, settings.y);
 	}
 
 	void DialogBoxBuilder::addDialogBoxFunction(const string& functionName)
@@ -54,14 +41,38 @@ namespace gui_framework
 	DialogBox* DialogBoxBuilder::build() const
 	{
 		DialogBox* result = new DialogBox(className, dialogBoxName, settings, parent, functionName);
+		GUIFramework& reference = GUIFramework::get();
 
-		return new DialogBox(className, dialogBoxName, settings, parent, functionName);
+		for (const auto& i : components)
+		{
+			reference.getCreators().at(i.typeHash)->create
+			(
+				i.componentName,
+				utility::ComponentSettings
+				(
+					NULL,
+					i.offsets.left,
+					i.offsets.top,
+					i.width,
+					i.height
+				),
+				i.additionalData,
+				result
+			);
+		}
+
+		return result;
 	}
 
-	DialogBoxBuilder::builderComponentData::builderComponentData(uint16_t width, uint16_t height, alignment type) :
+	DialogBoxBuilder::builderComponentData::builderComponentData(const wstring& componentName, const wstring& text, RECT&& offsets, size_t typeHash, uint16_t width, uint16_t height, alignment type, any&& additionalData) :
+		componentName(componentName),
+		text(text),
+		offsets(move(offsets)),
+		typeHash(typeHash),		
 		width(width),
 		height(height),
-		type(type)
+		type(type),
+		additionalData(move(additionalData))
 	{
 
 	}
