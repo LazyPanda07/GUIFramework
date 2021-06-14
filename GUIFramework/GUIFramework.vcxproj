@@ -41,6 +41,7 @@
     <ClInclude Include="src\BaseComposites\BaseCompositeIterators\const_forward_iterator.h" />
     <ClInclude Include="src\BaseComposites\BaseCompositeIterators\forward_iterator.h" />
     <ClInclude Include="src\BaseComposites\BaseCompositeIterators\IteratorsFunctionality.h" />
+    <ClInclude Include="src\BaseComposites\BaseDialogBox.h" />
     <ClInclude Include="src\BaseComposites\BaseNonResizableComposite.h" />
     <ClInclude Include="src\BaseComposites\BaseResizableComposite.h" />
     <ClInclude Include="src\BaseComposites\BaseWindow.h" />
@@ -55,6 +56,7 @@
     <ClInclude Include="src\Components\EditControl.h" />
     <ClInclude Include="src\Components\StaticControl.h" />
     <ClInclude Include="src\Composites\ChildWindow.h" />
+    <ClInclude Include="src\Composites\DialogBox.h" />
     <ClInclude Include="src\Composites\SeparateWindow.h" />
     <ClInclude Include="src\GUIFrameworkConstants.h" />
     <ClInclude Include="src\Exceptions\AlreadyRegisteredClassNameException.h" />
@@ -89,6 +91,7 @@
     <ClCompile Include="src\BaseComposites\BaseCompositeIterators\const_forward_iterator.cpp" />
     <ClCompile Include="src\BaseComposites\BaseCompositeIterators\forward_iterator.cpp" />
     <ClCompile Include="src\BaseComposites\BaseCompositeIterators\IteratorsFunctionality.cpp" />
+    <ClCompile Include="src\BaseComposites\BaseDialogBox.cpp" />
     <ClCompile Include="src\BaseComposites\StandardComposites\BaseChildWindow.cpp" />
     <ClCompile Include="src\BaseComposites\BaseComposite.cpp" />
     <ClCompile Include="src\BaseComposites\BaseNonResizableComposite.cpp" />
@@ -104,6 +107,7 @@
     <ClCompile Include="src\Components\EditControl.cpp" />
     <ClCompile Include="src\Components\StaticControl.cpp" />
     <ClCompile Include="src\Composites\ChildWindow.cpp" />
+    <ClCompile Include="src\Composites\DialogBox.cpp" />
     <ClCompile Include="src\Composites\SeparateWindow.cpp" />
     <ClCompile Include="src\Exceptions\BaseGUIFrameworkException.cpp" />
     <ClCompile Include="src\Exceptions\AlreadyRegisteredClassNameException.cpp" />

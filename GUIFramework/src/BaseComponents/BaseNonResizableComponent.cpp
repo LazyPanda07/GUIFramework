@@ -14,8 +14,20 @@ namespace gui_framework
 			parent,
 			windowFunctionName,
 			moduleName
+		),
+		IResizableComponent
+		(
+			handle,
+			parent ? parent->getHandle() : nullptr,
+			false,
+			true
 		)
 	{
 		utility::removeStyle(handle, WS_THICKFRAME);
+	}
+
+	void BaseNonResizableComponent::resize(uint16_t width, uint16_t height)
+	{
+
 	}
 }

@@ -7,7 +7,7 @@ namespace gui_framework
 {
 	GUIFramework::GUIFramework() :
 		jsonSettings(ifstream(settings::settingsJSONFile.data())),
-		threadPool(jsonSettings.get<int64_t>(settings::threadsCountSetting)),
+		threadPool(static_cast<uint32_t>(jsonSettings.get<int64_t>(settings::threadsCountSetting))),
 		msftEditModule(LoadLibraryW(libraries::msftEditLibrary.data())),
 		nextHMENU(0)
 	{
