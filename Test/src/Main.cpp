@@ -2,8 +2,8 @@
 
 #include "GUIFramework.h"
 #include "Composites/SeparateWindow.h"
-#include "Composites/ChildWindow.h"
-#include "Components/RichEdit.h"
+#include "Composites/DialogBox.h"
+#include "Composites/AdditionalCreationData/ButtonAdditionalCreationData.h"
 #include "Components/Button.h"
 
 #pragma comment (lib, "GUIFramework.lib")
@@ -15,10 +15,23 @@ void test(const wstring& className, const wstring& title, const string& function
 	using namespace gui_framework;
 
 	utility::ComponentSettings settings(WS_BORDER, x, y, 800, 600);
-	utility::ComponentSettings childWindowSettings(WS_BORDER, 600, 400, 200, 200);
 
 	unique_ptr<SeparateWindow> mainWindow(make_unique<SeparateWindow>(className, title, settings, functionName));
-	new RichEdit(L"Rich", 0, 0, 150, 150, mainWindow.get(), true);
+	DialogBox::DialogBoxBuilder builder(L"TestDialog", L"DialogTitle", 300, 300);
+	auto onClick = [](WPARAM, LPARAM) -> LRESULT
+	{
+		cout << "WOW" << endl;
+
+		return 0;
+	};
+
+	builder.addDialogBoxFunction("child");
+
+	builder.addComponent<Button>(L"Button", 200, 20, DialogBox::DialogBoxBuilder::alignment::left, utility::AdditionalCreationData<Button>(L"Текст", onClick));
+
+	unique_ptr<DialogBox> dialog(builder.build());
+
+	dialog->show();
 
 	MSG msg = {};
 
