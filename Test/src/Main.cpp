@@ -18,16 +18,24 @@ void test(const wstring& className, const wstring& title, const string& function
 
 	unique_ptr<SeparateWindow> mainWindow(make_unique<SeparateWindow>(className, title, settings, functionName));
 	DialogBox::DialogBoxBuilder builder(L"TestDialog", L"DialogTitle", 300, 300);
-	auto onClick = [](WPARAM, LPARAM) -> LRESULT
+	auto onClick1 = [](WPARAM, LPARAM) -> LRESULT
 	{
-		cout << "WOW" << endl;
+		cout << "First" << endl;
+
+		return 0;
+	};
+	auto onClick2 = [](WPARAM, LPARAM) -> LRESULT
+	{
+		cout << "Second" << endl;
 
 		return 0;
 	};
 
 	builder.addDialogBoxFunction("child");
 
-	builder.addComponent<Button>(L"Button", 200, 20, DialogBox::DialogBoxBuilder::alignment::left, utility::AdditionalCreationData<Button>(L"Текст", onClick));
+	builder.addComponent<Button>(L"Button1", 200, 20, DialogBox::DialogBoxBuilder::alignment::left, utility::AdditionalCreationData<Button>(L"Первая кнопка", onClick1));
+
+	builder.addComponent<Button>(L"Button2", 200, 20, DialogBox::DialogBoxBuilder::alignment::left, utility::AdditionalCreationData<Button>(L"Вторая кнопка", onClick2));
 
 	unique_ptr<DialogBox> dialog(builder.build());
 
