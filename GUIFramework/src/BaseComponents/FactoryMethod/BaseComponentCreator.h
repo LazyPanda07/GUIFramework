@@ -11,7 +11,7 @@ namespace gui_framework
 		public:
 			BaseComponentCreator() = default;
 
-			virtual BaseComponent* create(const std::wstring& windowName, const utility::ComponentSettings& settings, const std::any& additionalData, BaseComponent* parent = nullptr) = 0;
+			virtual BaseComponent* create(const std::wstring& windowName, const utility::ComponentSettings& settings, const std::any& additionalData, BaseComponent* parent) = 0;
 
 			virtual ~BaseComponentCreator() = default;
 		};

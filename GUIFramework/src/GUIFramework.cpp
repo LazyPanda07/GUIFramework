@@ -10,6 +10,8 @@
 #include "BaseComponents/FactoryMethod/MultipleSelectListBoxCreator.h"
 #include "BaseComponents/FactoryMethod/RichEditCreator.h"
 #include "BaseComponents/FactoryMethod/StaticControlCreator.h"
+#include "BaseComponents/FactoryMethod/SeparateWindowCreator.h"
+#include "BaseComponents/FactoryMethod/ChildWindowCreator.h"
 
 #include "Components/Button.h"
 #include "Components/EditControl.h"
@@ -20,6 +22,8 @@
 #include "Components/MultipleSelectListBox.h"
 #include "Components/RichEdit.h"
 #include "Components/StaticControl.h"
+#include "Composites/SeparateWindow.h"
+#include "Composites/ChildWindow.h"
 
 using namespace std;
 
@@ -44,6 +48,10 @@ namespace gui_framework
 		creators[typeid(RichEdit).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::RichEditCreator());
 
 		creators[typeid(StaticControl).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::StaticControlCreator());
+
+		creators[typeid(SeparateWindow).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::SeparateWindowCreator());
+
+		creators[typeid(ChildWindow).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::ChildWindowCreator());
 	}
 
 	GUIFramework::GUIFramework() :

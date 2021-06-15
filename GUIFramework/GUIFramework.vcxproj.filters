@@ -210,6 +210,18 @@
     <ClInclude Include="src\Composites\AdditionalCreationData\StaticControlAdditionalCreationData.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="src\BaseComponents\FactoryMethod\SeparateWindowCreator.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BaseComponents\FactoryMethod\ChildWindowCreator.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Composites\AdditionalCreationData\SeparateWindowAdditionalCreationData.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Composites\AdditionalCreationData\ChildWindowAdditionalCreationData.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\pch.cpp">
@@ -381,6 +393,18 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Composites\AdditionalCreationData\StaticControlAdditionalCreationData.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BaseComponents\FactoryMethod\SeparateWindowCreator.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BaseComponents\FactoryMethod\ChildWindowCreator.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Composites\AdditionalCreationData\SeparateWindowAdditionalCreationData.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Composites\AdditionalCreationData\ChildWindowAdditionalCreationData.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
