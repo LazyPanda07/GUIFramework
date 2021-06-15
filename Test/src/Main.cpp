@@ -31,6 +31,8 @@ void test(const wstring& className, const wstring& title, const string& function
 		return 0;
 	};
 
+	mainWindow->setExitMode(BaseComponent::exitMode::quit);
+
 	builder.addDialogBoxFunction("child");
 
 	builder.addComponent<Button>(L"Button1", 200, 20, DialogBox::DialogBoxBuilder::alignment::left, utility::AdditionalCreationData<Button>(L"Первая кнопка", onClick1));
