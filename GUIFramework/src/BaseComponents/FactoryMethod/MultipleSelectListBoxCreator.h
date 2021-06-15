@@ -11,7 +11,7 @@ namespace gui_framework
 		public:
 			MultipleSelectListBoxCreator() = default;
 
-			BaseComponent* create(const std::wstring& windowName, const utility::ComponentSettings& settings, const std::any& additionalData, BaseComponent* parent = nullptr) override;
+			BaseComponent* create(const std::wstring& windowName, const utility::ComponentSettings& settings, const std::any& additionalData, BaseComponent* parent) override;
 
 			~MultipleSelectListBoxCreator() = default;
 		};
