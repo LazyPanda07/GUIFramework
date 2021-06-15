@@ -1,7 +1,7 @@
 #pragma once
 
 #include "pch.h"
-#include "BaseComponents/FactoryMethod/BaseComponentCreator.h"
+#include "BaseComponents/Creators/BaseComponentCreator.h"
 
 #pragma comment (lib, "Comctl32.lib")
 
