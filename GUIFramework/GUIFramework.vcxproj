@@ -32,6 +32,7 @@
     <ClInclude Include="src\BaseComponents\FactoryMethod\DropDownListComboBoxCreator.h" />
     <ClInclude Include="src\BaseComponents\FactoryMethod\EditControlCreator.h" />
     <ClInclude Include="src\BaseComponents\FactoryMethod\ListBoxCreator.h" />
+    <ClInclude Include="src\BaseComponents\FactoryMethod\MultipleSelectListBoxCreator.h" />
     <ClInclude Include="src\BaseComponents\FactoryMethod\SimpleComboBoxCreator.h" />
     <ClInclude Include="src\Composites\AdditionalCreationData\AdditionalCreationData.h" />
     <ClInclude Include="src\BaseComponents\FactoryMethod\BaseComponentCreator.h" />
@@ -95,6 +96,7 @@
     <ClCompile Include="src\BaseComponents\FactoryMethod\DropDownListComboBoxCreator.cpp" />
     <ClCompile Include="src\BaseComponents\FactoryMethod\EditControlCreator.cpp" />
     <ClCompile Include="src\BaseComponents\FactoryMethod\ListBoxCreator.cpp" />
+    <ClCompile Include="src\BaseComponents\FactoryMethod\MultipleSelectListBoxCreator.cpp" />
     <ClCompile Include="src\BaseComponents\FactoryMethod\SimpleComboBoxCreator.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseButton.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseComboBox.cpp" />

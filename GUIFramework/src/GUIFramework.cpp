@@ -6,12 +6,16 @@
 #include "BaseComponents/FactoryMethod/DropDownComboBoxCreator.h"
 #include "BaseComponents/FactoryMethod/DropDownListComboBoxCreator.h"
 #include "BaseComponents/FactoryMethod/SimpleComboBoxCreator.h"
+#include "BaseComponents/FactoryMethod/ListBoxCreator.h"
+#include "BaseComponents/FactoryMethod/MultipleSelectListBoxCreator.h"
 
 #include "Components/Button.h"
 #include "Components/EditControl.h"
 #include "Components/DropDownComboBox.h"
 #include "Components/DropDownListComboBox.h"
 #include "Components/SimpleComboBox.h"
+#include "Components/ListBox.h"
+#include "Components/MultipleSelectListBox.h"
 
 using namespace std;
 
@@ -28,6 +32,10 @@ namespace gui_framework
 		creators[typeid(DropDownListComboBox).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::DropDownListComboBoxCreator());
 
 		creators[typeid(SimpleComboBox).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::SimpleComboBoxCreator());
+
+		creators[typeid(ListBox).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::ListBoxCreator());
+
+		creators[typeid(MultipleSelectListBox).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::MultipleSelectListBoxCreator());
 	}
 
 	GUIFramework::GUIFramework() :
