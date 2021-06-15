@@ -9,6 +9,7 @@
 #include "BaseComponents/FactoryMethod/ListBoxCreator.h"
 #include "BaseComponents/FactoryMethod/MultipleSelectListBoxCreator.h"
 #include "BaseComponents/FactoryMethod/RichEditCreator.h"
+#include "BaseComponents/FactoryMethod/StaticControlCreator.h"
 
 #include "Components/Button.h"
 #include "Components/EditControl.h"
@@ -18,6 +19,7 @@
 #include "Components/ListBox.h"
 #include "Components/MultipleSelectListBox.h"
 #include "Components/RichEdit.h"
+#include "Components/StaticControl.h"
 
 using namespace std;
 
@@ -40,6 +42,8 @@ namespace gui_framework
 		creators[typeid(MultipleSelectListBox).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::MultipleSelectListBoxCreator());
 
 		creators[typeid(RichEdit).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::RichEditCreator());
+
+		creators[typeid(StaticControl).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::StaticControlCreator());
 	}
 
 	GUIFramework::GUIFramework() :
