@@ -53,6 +53,23 @@ namespace gui_framework
 		for (const auto& i : components)
 		{
 			currentTopOffset += static_cast<uint16_t>(i.offsets.top);
+			int xPosition = 0;
+
+			switch (i.type)
+			{
+			case gui_framework::DialogBox::DialogBoxBuilder::alignment::left:
+				xPosition = i.offsets.left;
+
+				break;
+			case gui_framework::DialogBox::DialogBoxBuilder::alignment::center:
+				xPosition = (settings.width - i.width) / 2;
+
+				break;
+			case gui_framework::DialogBox::DialogBoxBuilder::alignment::right:
+				xPosition = settings.width - i.width - i.offsets.right;
+
+				break;
+			}
 
 			reference.getCreators().at(i.typeHash)->create
 			(
@@ -60,7 +77,7 @@ namespace gui_framework
 				utility::ComponentSettings
 				(
 					NULL,
-					i.offsets.left,
+					xPosition,
 					currentTopOffset,
 					i.width,
 					i.height
