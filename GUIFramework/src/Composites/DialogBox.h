@@ -49,14 +49,14 @@ namespace gui_framework
 		public:
 			DialogBoxBuilder(const std::wstring& className, const std::wstring& dialogBoxName, int x, int y);
 
-			void clear();
+			DialogBoxBuilder& clear();
 
 			template<std::derived_from<BaseComponent> T>
-			void addComponent(const std::wstring& componentName, uint16_t width, uint16_t height, alignment type, const utility::AdditionalCreationData<T>& additionalData, int leftOffset = 0, int topOffset = 0, int rightOffset = 0, int bottomOffset = 0, const std::wstring& text = L"");
+			DialogBoxBuilder& addComponent(const std::wstring& componentName, uint16_t width, uint16_t height, alignment type, const utility::AdditionalCreationData<T>& additionalData, int leftOffset = 0, int topOffset = 0, int rightOffset = 0, int bottomOffset = 0, const std::wstring& text = L"");
 
-			void addDialogBoxFunction(const std::string& functionName);
+			DialogBoxBuilder& addDialogBoxFunction(const std::string& functionName);
 
-			void addParent(BaseComposite* parent);
+			DialogBoxBuilder& addParent(BaseComposite* parent);
 
 			DialogBox* build() const;
 
@@ -70,18 +70,17 @@ namespace gui_framework
 	};
 
 	template<std::derived_from<BaseComponent> T>
-	void DialogBox::DialogBoxBuilder::addComponent(const std::wstring& componentName, uint16_t width, uint16_t height, alignment type, const utility::AdditionalCreationData<T>& additionalData, int leftOffset, int topOffset, int rightOffset, int bottomOffset, const std::wstring& text)
+	DialogBox::DialogBoxBuilder& DialogBox::DialogBoxBuilder::addComponent(const std::wstring& componentName, uint16_t width, uint16_t height, alignment type, const utility::AdditionalCreationData<T>& additionalData, int leftOffset, int topOffset, int rightOffset, int bottomOffset, const std::wstring& text)
 	{
-		if (settings.width < width + leftOffset + rightOffset)
+		if (settings.width < leftOffset + width + rightOffset)
 		{
-			settings.width = width + leftOffset + rightOffset;
+			settings.width = leftOffset + width + rightOffset;
 		}
 
-		if (settings.height < height + topOffset + bottomOffset)
-		{
-			settings.height = height + topOffset + bottomOffset;
-		}
+		settings.height += topOffset + height + bottomOffset;
 
 		components.emplace_back(componentName, text, RECT(leftOffset, topOffset, rightOffset, bottomOffset), typeid(T).hash_code(), width, height, type, additionalData.getData());
+
+		return *this;
 	}
 }

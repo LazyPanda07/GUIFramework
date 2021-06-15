@@ -13,8 +13,8 @@ namespace gui_framework
 			NULL,
 			x,
 			y,
-			0,
-			0
+			standard_sizes::dialogBoxBuilderMinWidth,
+			standard_sizes::dialogBoxBuilderMinHeight
 		),
 		className(className),
 		dialogBoxName(dialogBoxName),
@@ -23,28 +23,37 @@ namespace gui_framework
 
 	}
 
-	void DialogBoxBuilder::clear()
+	DialogBoxBuilder& DialogBoxBuilder::clear()
 	{
 		(*this) = DialogBoxBuilder(className, dialogBoxName, settings.x, settings.y);
+
+		return *this;
 	}
 
-	void DialogBoxBuilder::addDialogBoxFunction(const string& functionName)
+	DialogBoxBuilder& DialogBoxBuilder::addDialogBoxFunction(const string& functionName)
 	{
 		this->functionName = functionName;
+
+		return *this;
 	}
 
-	void DialogBoxBuilder::addParent(BaseComposite* parent)
+	DialogBoxBuilder& DialogBoxBuilder::addParent(BaseComposite* parent)
 	{
 		this->parent = parent;
+
+		return *this;
 	}
 
 	DialogBox* DialogBoxBuilder::build() const
 	{
 		DialogBox* result = new DialogBox(className, dialogBoxName, settings, parent, functionName);
 		GUIFramework& reference = GUIFramework::get();
+		uint16_t currentTopOffset = 0;
 
 		for (const auto& i : components)
 		{
+			currentTopOffset += static_cast<uint16_t>(i.offsets.top);
+
 			reference.getCreators().at(i.typeHash)->create
 			(
 				i.componentName,
@@ -52,13 +61,15 @@ namespace gui_framework
 				(
 					NULL,
 					i.offsets.left,
-					i.offsets.top,
+					currentTopOffset,
 					i.width,
 					i.height
 				),
 				i.additionalData,
 				result
 			);
+
+			currentTopOffset += static_cast<uint16_t>(i.height + i.offsets.bottom);
 		}
 
 		return result;
@@ -86,7 +97,7 @@ namespace gui_framework
 			dialogBoxName,
 			utility::ComponentSettings
 			(
-				settings.styles | WS_SYSMENU | WS_CAPTION,
+				settings.styles,
 				settings.x,
 				settings.y,
 				settings.width,
@@ -103,7 +114,7 @@ namespace gui_framework
 			dialogBoxName,
 			utility::ComponentSettings
 			(
-				settings.styles | WS_SYSMENU | WS_CAPTION,
+				settings.styles,
 				settings.x,
 				settings.y,
 				settings.width,
@@ -120,7 +131,7 @@ namespace gui_framework
 			dialogBoxName,
 			utility::ComponentSettings
 			(
-				settings.styles | WS_SYSMENU | WS_CAPTION,
+				settings.styles,
 				settings.x,
 				settings.y,
 				settings.width,
