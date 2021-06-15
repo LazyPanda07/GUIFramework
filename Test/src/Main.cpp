@@ -17,7 +17,7 @@ void test(const wstring& className, const wstring& title, const string& function
 	utility::ComponentSettings settings(WS_BORDER, x, y, 800, 600);
 
 	unique_ptr<SeparateWindow> mainWindow(make_unique<SeparateWindow>(className, title, settings, functionName));
-	DialogBox::DialogBoxBuilder builder(L"TestDialog", L"DialogTitle", 300, 300);
+	DialogBox::DialogBoxBuilder builder(L"TestDialog", L"DialogTitle", 50, 50);
 	auto onClick1 = [](WPARAM, LPARAM) -> LRESULT
 	{
 		cout << "First" << endl;
@@ -30,6 +30,12 @@ void test(const wstring& className, const wstring& title, const string& function
 
 		return 0;
 	};
+	auto onClick3 = [](WPARAM, LPARAM) -> LRESULT
+	{
+		cout << "Third" << endl;
+
+		return 0;
+	};
 
 	mainWindow->setExitMode(BaseComponent::exitMode::quit);
 
@@ -37,7 +43,9 @@ void test(const wstring& className, const wstring& title, const string& function
 
 	builder.addComponent<Button>(L"Button1", 200, 20, DialogBox::DialogBoxBuilder::alignment::left, utility::AdditionalCreationData<Button>(L"Первая кнопка", onClick1));
 
-	builder.addComponent<Button>(L"Button2", 200, 20, DialogBox::DialogBoxBuilder::alignment::left, utility::AdditionalCreationData<Button>(L"Вторая кнопка", onClick2));
+	builder.addComponent<Button>(L"Button2", 200, 20, DialogBox::DialogBoxBuilder::alignment::right, utility::AdditionalCreationData<Button>(L"Вторая кнопка", onClick2));
+
+	builder.addComponent<Button>(L"Button3", 200, 20, DialogBox::DialogBoxBuilder::alignment::center, utility::AdditionalCreationData<Button>(L"Третья кнопка", onClick3));
 
 	unique_ptr<DialogBox> dialog(builder.build());
 
