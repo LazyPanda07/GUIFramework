@@ -2,8 +2,24 @@
 #include "GUIFramework.h"
 
 #include "BaseComponents/FactoryMethod/ButtonCreator.h"
+#include "BaseComponents/FactoryMethod/EditControlCreator.h"
+#include "BaseComponents/FactoryMethod/DropDownComboBoxCreator.h"
+#include "BaseComponents/FactoryMethod/DropDownListComboBoxCreator.h"
+#include "BaseComponents/FactoryMethod/SimpleComboBoxCreator.h"
+#include "BaseComponents/FactoryMethod/ListBoxCreator.h"
+#include "BaseComponents/FactoryMethod/MultipleSelectListBoxCreator.h"
+#include "BaseComponents/FactoryMethod/RichEditCreator.h"
+#include "BaseComponents/FactoryMethod/StaticControlCreator.h"
 
 #include "Components/Button.h"
+#include "Components/EditControl.h"
+#include "Components/DropDownComboBox.h"
+#include "Components/DropDownListComboBox.h"
+#include "Components/SimpleComboBox.h"
+#include "Components/ListBox.h"
+#include "Components/MultipleSelectListBox.h"
+#include "Components/RichEdit.h"
+#include "Components/StaticControl.h"
 
 using namespace std;
 
@@ -12,6 +28,22 @@ namespace gui_framework
 	void GUIFramework::initCreators()
 	{
 		creators[typeid(Button).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::ButtonCreator());
+
+		creators[typeid(EditControl).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::EditControlCreator());
+
+		creators[typeid(DropDownComboBox).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::DropDownComboBoxCreator());
+
+		creators[typeid(DropDownListComboBox).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::DropDownListComboBoxCreator());
+
+		creators[typeid(SimpleComboBox).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::SimpleComboBoxCreator());
+
+		creators[typeid(ListBox).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::ListBoxCreator());
+
+		creators[typeid(MultipleSelectListBox).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::MultipleSelectListBoxCreator());
+
+		creators[typeid(RichEdit).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::RichEditCreator());
+
+		creators[typeid(StaticControl).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::StaticControlCreator());
 	}
 
 	GUIFramework::GUIFramework() :
@@ -22,7 +54,17 @@ namespace gui_framework
 	{
 		InitCommonControlsEx(&comm);
 
-		this->initCreators();
+		try
+		{
+			if (jsonSettings.get<bool>("usingDefaultCreators"))
+			{
+				this->initCreators();
+			}
+		}
+		catch (const json::exceptions::CantFindValueException&)
+		{
+
+		}
 	}
 
 	GUIFramework::~GUIFramework()
@@ -74,6 +116,11 @@ namespace gui_framework
 				break;
 			}
 		}
+	}
+
+	void GUIFramework::addCreator(size_t hash, unique_ptr<utility::BaseComponentCreator>&& creator)
+	{
+		creators[hash] = move(creator);
 	}
 
 	vector<uint64_t> GUIFramework::getHMENUs(const wstring& windowName)

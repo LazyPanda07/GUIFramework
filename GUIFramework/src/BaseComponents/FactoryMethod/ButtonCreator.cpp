@@ -11,9 +11,9 @@ namespace gui_framework
 	{
 		BaseComponent* ButtonCreator::create(const wstring& windowName, const utility::ComponentSettings& settings, const any& additionalData, BaseComponent* parent)
 		{
-			tuple<wstring, function<LRESULT(WPARAM, LPARAM)>> buttonData = any_cast<tuple<wstring, function<LRESULT(WPARAM, LPARAM)>>> (additionalData);
+			auto[text, onClick] = any_cast<tuple<wstring, function<LRESULT(WPARAM, LPARAM)>>>(additionalData);
 
-			return new Button(windowName, get<wstring>(buttonData), settings.x, settings.y, parent, get<function<LRESULT(WPARAM, LPARAM)>>(buttonData), settings.width, settings.height);
+			return new Button(windowName, text, settings.x, settings.y, parent, onClick, settings.width, settings.height);
 		}
 	}
 }

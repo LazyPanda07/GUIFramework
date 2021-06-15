@@ -38,6 +38,8 @@
 #include "JSONUtility.h"
 #include "JSONParser.h"
 #include "JSONBuilder.h"
+#include "Exceptions/CantFindValueException.h"
+#include "Exceptions/WrongEncodingException.h"
 #include "ThreadPool.h"
 #include "SingletonThreadPool.h"
 
