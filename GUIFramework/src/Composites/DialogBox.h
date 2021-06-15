@@ -52,12 +52,15 @@ namespace gui_framework
 			DialogBoxBuilder& clear();
 
 			template<std::derived_from<BaseComponent> T>
-			DialogBoxBuilder& addComponent(const std::wstring& componentName, uint16_t width, uint16_t height, alignment type, const utility::AdditionalCreationData<T>& additionalData, int leftOffset = 0, int topOffset = 0, int rightOffset = 0, int bottomOffset = 0, const std::wstring& text = L"");
+			DialogBoxBuilder& addComponent(const std::wstring& componentName, uint16_t width, uint16_t height, alignment type, const utility::AdditionalCreationData<T>& additionalData = utility::AdditionalCreationData<T>(), int leftOffset = 0, int topOffset = 0, int rightOffset = 0, int bottomOffset = 0, const std::wstring& text = L"");
 
 			DialogBoxBuilder& addDialogBoxFunction(const std::string& functionName);
 
 			DialogBoxBuilder& addParent(BaseComposite* parent);
 
+			/// @brief 
+			/// @return
+			/// @exception std::out_of_range Can't find creator for one of components 
 			DialogBox* build() const;
 
 			~DialogBoxBuilder() = default;
@@ -72,9 +75,9 @@ namespace gui_framework
 	template<std::derived_from<BaseComponent> T>
 	DialogBox::DialogBoxBuilder& DialogBox::DialogBoxBuilder::addComponent(const std::wstring& componentName, uint16_t width, uint16_t height, alignment type, const utility::AdditionalCreationData<T>& additionalData, int leftOffset, int topOffset, int rightOffset, int bottomOffset, const std::wstring& text)
 	{
-		if (settings.width < leftOffset + width + rightOffset)
+		if (settings.width < leftOffset + width + rightOffset + standard_sizes::dialogBoxBuilderMinWidth)
 		{
-			settings.width = leftOffset + width + rightOffset;
+			settings.width = leftOffset + width + rightOffset + standard_sizes::dialogBoxBuilderMinWidth;
 		}
 
 		settings.height += topOffset + height + bottomOffset;

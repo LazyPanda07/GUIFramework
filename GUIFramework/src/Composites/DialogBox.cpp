@@ -50,7 +50,7 @@ namespace gui_framework
 		GUIFramework& reference = GUIFramework::get();
 		uint16_t currentTopOffset = 0;
 
-		for (const auto& i : components)
+		for (const builderComponentData& i : components)
 		{
 			currentTopOffset += static_cast<uint16_t>(i.offsets.top);
 			int xPosition = 0;

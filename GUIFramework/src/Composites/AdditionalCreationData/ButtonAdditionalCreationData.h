@@ -15,7 +15,7 @@ namespace gui_framework
 			std::function<LRESULT(WPARAM, LPARAM)> onClick;
 
 		public:
-			AdditionalCreationData() = delete;
+			AdditionalCreationData() = default;
 
 			AdditionalCreationData(const std::wstring text, const std::function<LRESULT(WPARAM, LPARAM)>& onClick);
 

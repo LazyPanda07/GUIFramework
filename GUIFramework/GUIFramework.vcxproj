@@ -28,6 +28,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\BaseComponents\BaseComponent.h" />
+    <ClInclude Include="src\BaseComponents\FactoryMethod\EditControlCreator.h" />
     <ClInclude Include="src\Composites\AdditionalCreationData\AdditionalCreationData.h" />
     <ClInclude Include="src\BaseComponents\FactoryMethod\BaseComponentCreator.h" />
     <ClInclude Include="src\BaseComponents\FactoryMethod\ButtonCreator.h" />
@@ -83,6 +84,7 @@
   <ItemGroup>
     <ClCompile Include="src\BaseComponents\BaseComponent.cpp" />
     <ClCompile Include="src\BaseComponents\FactoryMethod\ButtonCreator.cpp" />
+    <ClCompile Include="src\BaseComponents\FactoryMethod\EditControlCreator.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseButton.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseComboBox.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseEditControl.cpp" />

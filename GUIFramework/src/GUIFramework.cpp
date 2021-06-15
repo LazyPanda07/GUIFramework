@@ -2,8 +2,10 @@
 #include "GUIFramework.h"
 
 #include "BaseComponents/FactoryMethod/ButtonCreator.h"
+#include "BaseComponents/FactoryMethod/EditControlCreator.h"
 
 #include "Components/Button.h"
+#include "Components/EditControl.h"
 
 using namespace std;
 
@@ -12,6 +14,7 @@ namespace gui_framework
 	void GUIFramework::initCreators()
 	{
 		creators[typeid(Button).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::ButtonCreator());
+		creators[typeid(EditControl).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::EditControlCreator());
 	}
 
 	GUIFramework::GUIFramework() :
