@@ -91,6 +91,8 @@
     <ClInclude Include="src\Interfaces\Iterators\IBaseConstForwardIterator.h" />
     <ClInclude Include="src\Interfaces\Iterators\IBaseForwardIterator.h" />
     <ClInclude Include="src\Interfaces\Iterators\IIterable.h" />
+    <ClInclude Include="src\Interfaces\Menu\IMenuItem.h" />
+    <ClInclude Include="src\Menu\Menu.h" />
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\BaseComposites\StandardComposites\BaseSeparateWindow.h" />
     <ClInclude Include="src\Utility\ComponentSettings.h" />
@@ -155,6 +157,8 @@
     <ClCompile Include="src\GUIFramework.cpp" />
     <ClCompile Include="src\Interfaces\Components\IResizableComponent.cpp" />
     <ClCompile Include="src\Interfaces\Components\ITextOperations.cpp" />
+    <ClCompile Include="src\Interfaces\Menu\IMenuItem.cpp" />
+    <ClCompile Include="src\Menu\Menu.cpp" />
     <ClCompile Include="src\pch.cpp" />
     <ClCompile Include="src\BaseComposites\StandardComposites\BaseSeparateWindow.cpp" />
     <ClCompile Include="src\Utility\ComponentSettings.cpp" />

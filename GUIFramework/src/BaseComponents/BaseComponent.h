@@ -4,7 +4,7 @@
 
 namespace gui_framework
 {
-	/// @brief Base class for all windows, controllers, etc.
+	/// @brief Base class for all windows, controls, etc.
 	class BaseComponent
 	{
 	public:
