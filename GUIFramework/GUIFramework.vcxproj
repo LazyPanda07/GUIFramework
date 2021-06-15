@@ -29,7 +29,9 @@
   <ItemGroup>
     <ClInclude Include="src\BaseComponents\BaseComponent.h" />
     <ClInclude Include="src\BaseComponents\FactoryMethod\DropDownComboBoxCreator.h" />
+    <ClInclude Include="src\BaseComponents\FactoryMethod\DropDownListComboBoxCreator.h" />
     <ClInclude Include="src\BaseComponents\FactoryMethod\EditControlCreator.h" />
+    <ClInclude Include="src\BaseComponents\FactoryMethod\SimpleComboBoxCreator.h" />
     <ClInclude Include="src\Composites\AdditionalCreationData\AdditionalCreationData.h" />
     <ClInclude Include="src\BaseComponents\FactoryMethod\BaseComponentCreator.h" />
     <ClInclude Include="src\BaseComponents\FactoryMethod\ButtonCreator.h" />
@@ -61,7 +63,7 @@
     <ClInclude Include="src\Components\EditControl.h" />
     <ClInclude Include="src\Components\StaticControl.h" />
     <ClInclude Include="src\Composites\AdditionalCreationData\ButtonAdditionalCreationData.h" />
-    <ClInclude Include="src\Composites\AdditionalCreationData\DropDownComboBoxAdditionalCreationData.h" />
+    <ClInclude Include="src\Composites\AdditionalCreationData\ComboBoxAdditionalCreationData.h" />
     <ClInclude Include="src\Composites\AdditionalCreationData\EditControlAdditionalCreationData.h" />
     <ClInclude Include="src\Composites\ChildWindow.h" />
     <ClInclude Include="src\Composites\DialogBox.h" />
@@ -88,7 +90,9 @@
     <ClCompile Include="src\BaseComponents\BaseComponent.cpp" />
     <ClCompile Include="src\BaseComponents\FactoryMethod\ButtonCreator.cpp" />
     <ClCompile Include="src\BaseComponents\FactoryMethod\DropDownComboBoxCreator.cpp" />
+    <ClCompile Include="src\BaseComponents\FactoryMethod\DropDownListComboBoxCreator.cpp" />
     <ClCompile Include="src\BaseComponents\FactoryMethod\EditControlCreator.cpp" />
+    <ClCompile Include="src\BaseComponents\FactoryMethod\SimpleComboBoxCreator.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseButton.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseComboBox.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseEditControl.cpp" />
@@ -117,7 +121,7 @@
     <ClCompile Include="src\Components\EditControl.cpp" />
     <ClCompile Include="src\Components\StaticControl.cpp" />
     <ClCompile Include="src\Composites\AdditionalCreationData\ButtonAdditionalCreationData.cpp" />
-    <ClCompile Include="src\Composites\AdditionalCreationData\DropDownComboBoxAdditionalCreationData.cpp" />
+    <ClCompile Include="src\Composites\AdditionalCreationData\ComboBoxAdditionalCreationData.cpp" />
     <ClCompile Include="src\Composites\AdditionalCreationData\EditControlAdditionalCreationData.cpp" />
     <ClCompile Include="src\Composites\ChildWindow.cpp" />
     <ClCompile Include="src\Composites\DialogBox.cpp" />

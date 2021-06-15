@@ -3,9 +3,15 @@
 
 #include "BaseComponents/FactoryMethod/ButtonCreator.h"
 #include "BaseComponents/FactoryMethod/EditControlCreator.h"
+#include "BaseComponents/FactoryMethod/DropDownComboBoxCreator.h"
+#include "BaseComponents/FactoryMethod/DropDownListComboBoxCreator.h"
+#include "BaseComponents/FactoryMethod/SimpleComboBoxCreator.h"
 
 #include "Components/Button.h"
 #include "Components/EditControl.h"
+#include "Components/DropDownComboBox.h"
+#include "Components/DropDownListComboBox.h"
+#include "Components/SimpleComboBox.h"
 
 using namespace std;
 
@@ -14,7 +20,14 @@ namespace gui_framework
 	void GUIFramework::initCreators()
 	{
 		creators[typeid(Button).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::ButtonCreator());
+
 		creators[typeid(EditControl).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::EditControlCreator());
+
+		creators[typeid(DropDownComboBox).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::DropDownComboBoxCreator());
+
+		creators[typeid(DropDownListComboBox).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::DropDownListComboBoxCreator());
+
+		creators[typeid(SimpleComboBox).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::SimpleComboBoxCreator());
 	}
 
 	GUIFramework::GUIFramework() :

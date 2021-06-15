@@ -177,10 +177,16 @@
     <ClInclude Include="src\BaseComponents\FactoryMethod\DropDownComboBoxCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Composites\AdditionalCreationData\DropDownComboBoxAdditionalCreationData.h">
+    <ClInclude Include="src\Composites\AdditionalCreationData\ComboBoxAdditionalCreationData.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Composites\AdditionalCreationData\EditControlAdditionalCreationData.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BaseComponents\FactoryMethod\DropDownListComboBoxCreator.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BaseComponents\FactoryMethod\SimpleComboBoxCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
@@ -323,10 +329,16 @@
     <ClCompile Include="src\BaseComponents\FactoryMethod\DropDownComboBoxCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Composites\AdditionalCreationData\DropDownComboBoxAdditionalCreationData.cpp">
+    <ClCompile Include="src\Composites\AdditionalCreationData\ComboBoxAdditionalCreationData.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Composites\AdditionalCreationData\EditControlAdditionalCreationData.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BaseComponents\FactoryMethod\DropDownListComboBoxCreator.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BaseComponents\FactoryMethod\SimpleComboBoxCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
