@@ -1,0 +1,26 @@
+#include "pch.h"
+#include "ListBoxCreator.h"
+
+#include "Components/ListBox.h"
+
+using namespace std;
+
+namespace gui_framework
+{
+	namespace utility
+	{
+		BaseComponent* ListBoxCreator::create(const wstring& windowName, const utility::ComponentSettings& settings, const any& additionalData, BaseComponent* parent)
+		{
+			auto [values, isSorting] = any_cast<tuple<vector<wstring>, bool>>(additionalData);
+			
+			ListBox* result = new ListBox(windowName, settings.x, settings.y, settings.width, settings.height, parent, isSorting);
+
+			for (const auto& i : values)
+			{
+				result->addValue(i);
+			}
+
+			return result;
+		}
+	}
+}

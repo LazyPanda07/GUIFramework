@@ -13,18 +13,11 @@ namespace gui_framework
 		{
 			BaseComboBox* result = new DropDownListComboBox(windowName, settings.x, settings.y, settings.width, settings.height, parent);
 
-			try
-			{
-				vector<wstring> values = any_cast<vector<wstring>>(additionalData);
+			vector<wstring> values = any_cast<vector<wstring>>(additionalData);
 
-				for (const auto& i : values)
-				{
-					result->addValue(i);
-				}
-			}
-			catch (const std::exception&)
+			for (const auto& i : values)
 			{
-
+				result->addValue(i);
 			}
 
 			return result;
