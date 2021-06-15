@@ -23,6 +23,8 @@ namespace gui_framework
 		)
 	{
 		utility::removeStyle(handle, WS_THICKFRAME);
+
+		utility::removeStyle(handle, WS_MAXIMIZEBOX);
 	}
 
 	void BaseNonResizableComposite::resize(uint16_t width, uint16_t height)

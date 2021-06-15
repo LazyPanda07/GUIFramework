@@ -31,6 +31,9 @@ namespace gui_framework
 		inline constexpr uint16_t comboBoxAdditionalWidth = 10;
 		
 		inline constexpr uint16_t listBoxAdditionalWidth = 20;
+
+		inline constexpr uint16_t dialogBoxBuilderMinWidth = 400;
+		inline constexpr uint16_t dialogBoxBuilderMinHeight = 300;
 	}
 
 	namespace settings
