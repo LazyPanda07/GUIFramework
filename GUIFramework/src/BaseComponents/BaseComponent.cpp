@@ -2,7 +2,6 @@
 #include "BaseComponent.h"
 
 #include "BaseComposites/BaseComposite.h"
-#include "Exceptions/AlreadyRegisteredClassNameException.h"
 #include "Exceptions/CantFindSeparateWindowFunctionException.h"
 #include "Interfaces/Components/IResizableComponent.h"
 
@@ -28,7 +27,8 @@ namespace gui_framework
 		desiredWidth(settings.width),
 		desiredHeight(settings.height),
 		desiredX(settings.x),
-		desiredY(settings.y)
+		desiredY(settings.y),
+		mode(exitMode::destroyWindow)
 	{
 		WNDCLASSEXW classStruct = {};
 
@@ -51,13 +51,6 @@ namespace gui_framework
 				classStruct.hbrBackground = HBRUSH(COLOR_WINDOW);
 
 				RegisterClassExW(&classStruct);
-			}
-		}
-		else
-		{
-			if (windowFunctionName.size())
-			{
-				throw exceptions::AlreadyRegisteredClassNameException();
 			}
 		}
 
@@ -163,6 +156,11 @@ namespace gui_framework
 		this->desiredY = desiredY;
 	}
 
+	void BaseComponent::setExitMode(exitMode mode)
+	{
+		this->mode = mode;
+	}
+
 	BaseComponent* BaseComponent::getParent() const
 	{
 		return parent;
@@ -230,6 +228,11 @@ namespace gui_framework
 	int BaseComponent::getDesiredY() const
 	{
 		return desiredY;
+	}
+
+	BaseComponent::exitMode BaseComponent::getExitMode() const
+	{
+		return mode;
 	}
 
 	BaseComponent::~BaseComponent()

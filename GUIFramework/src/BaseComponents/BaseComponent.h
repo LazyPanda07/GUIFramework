@@ -7,6 +7,13 @@ namespace gui_framework
 	/// @brief Base class for all windows, controllers, etc.
 	class BaseComponent
 	{
+	public:
+		enum class exitMode
+		{
+			destroyWindow,
+			quit
+		};
+
 	protected:
 		BaseComponent* parent;
 		const std::wstring className;
@@ -17,6 +24,7 @@ namespace gui_framework
 		uint16_t desiredHeight;
 		int desiredX;
 		int desiredY;
+		exitMode mode;
 
 	protected:
 		virtual LRESULT preWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed);
@@ -24,7 +32,6 @@ namespace gui_framework
 	public:
 		/// @param windowFunctionName Value that you pass in CREATE_DEFAULT_WINDOW_FUNCTION macro
 		/// @param moduleName Executable name for finding classes
-		/// @exception gui_framework::exceptions::AlreadyRegisteredClassNameException
 		BaseComponent(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, BaseComponent* parent = nullptr, const std::string& windowFunctionName = "", const std::wstring& moduleName = L"");
 
 		virtual bool isComposite() const;
@@ -44,6 +51,8 @@ namespace gui_framework
 		virtual void setDesiredX(int desiredX) final;
 
 		virtual void setDesiredY(int desiredY) final;
+
+		virtual void setExitMode(exitMode mode) final;
 
 		virtual BaseComponent* getParent() const final;
 
@@ -67,6 +76,8 @@ namespace gui_framework
 
 		virtual int getDesiredY() const final;
 
+		virtual exitMode getExitMode() const final;
+
 		virtual ~BaseComponent();
 	};
 }
@@ -78,7 +89,17 @@ namespace gui_framework
 	switch(message) \
 	{ \
 	case WM_DESTROY: \
-		PostQuitMessage(0); \
+		if(topLevelWindow) \
+		{ \
+			if (topLevelWindow->getExitMode() == gui_framework::BaseComponent::exitMode::quit) \
+			{ \
+				PostQuitMessage(0); \
+			} \
+		} \
+		else \
+		{ \
+			PostQuitMessage(0); \
+		} \
 			\
 		return 0; \
 		\

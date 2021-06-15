@@ -27,9 +27,6 @@
     <ClInclude Include="src\Exceptions\BaseGUIFrameworkException.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Exceptions\AlreadyRegisteredClassNameException.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="src\GUIFrameworkConstants.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
@@ -183,9 +180,6 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Exceptions\BaseGUIFrameworkException.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Exceptions\AlreadyRegisteredClassNameException.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Exceptions\CantFindSeparateWindowFunctionException.cpp">
