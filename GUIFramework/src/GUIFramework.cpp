@@ -54,7 +54,17 @@ namespace gui_framework
 	{
 		InitCommonControlsEx(&comm);
 
-		this->initCreators();
+		try
+		{
+			if (jsonSettings.get<bool>("usingDefaultCreators"))
+			{
+				this->initCreators();
+			}
+		}
+		catch (const json::exceptions::CantFindValueException&)
+		{
+
+		}
 	}
 
 	GUIFramework::~GUIFramework()
@@ -106,6 +116,11 @@ namespace gui_framework
 				break;
 			}
 		}
+	}
+
+	void GUIFramework::addCreator(size_t hash, unique_ptr<utility::BaseComponentCreator>&& creator)
+	{
+		creators[hash] = move(creator);
 	}
 
 	vector<uint64_t> GUIFramework::getHMENUs(const wstring& windowName)

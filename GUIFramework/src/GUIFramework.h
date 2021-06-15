@@ -46,6 +46,8 @@ namespace gui_framework
 
 		void removeHMENU(const std::wstring& windowName, uint64_t hmenu);
 
+		void addCreator(size_t hash, std::unique_ptr<utility::BaseComponentCreator>&& creator);
+
 		std::vector<uint64_t> getHMENUs(const std::wstring& windowName);
 
 		const std::unordered_map<size_t, std::unique_ptr<utility::BaseComponentCreator>>& getCreators() const;
