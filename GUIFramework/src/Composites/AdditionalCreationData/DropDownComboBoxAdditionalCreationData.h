@@ -1,23 +1,22 @@
 #pragma once
 
 #include "AdditionalCreationData.h"
-#include "Components/Button.h"
+#include "Components/DropDownComboBox.h"
 
 namespace gui_framework
 {
 	namespace utility
 	{
 		template<>
-		class AdditionalCreationData<Button>
+		class AdditionalCreationData<DropDownComboBox>
 		{
 		protected:
-			std::wstring text;
-			std::function<LRESULT(WPARAM, LPARAM)> onClick;
+			std::vector<std::wstring> values;
 
 		public:
 			AdditionalCreationData() = default;
 
-			AdditionalCreationData(const std::wstring text, const std::function<LRESULT(WPARAM, LPARAM)>& onClick);
+			AdditionalCreationData(const std::vector<std::wstring>& values);
 
 			virtual std::any getData() const;
 

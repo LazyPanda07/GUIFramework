@@ -6,14 +6,14 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		class EditControlCreator : public BaseComponentCreator
+		class DropDownComboBoxCreator : public BaseComponentCreator
 		{
 		public:
-			EditControlCreator() = default;
+			DropDownComboBoxCreator() = default;
 
 			BaseComponent* create(const std::wstring& windowName, const utility::ComponentSettings& settings, const std::any& additionalData, BaseComponent* parent = nullptr) override;
 
-			~EditControlCreator() = default;
+			~DropDownComboBoxCreator() = default;
 		};
 	}
 }

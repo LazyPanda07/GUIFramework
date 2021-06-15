@@ -1,23 +1,22 @@
 #pragma once
 
 #include "AdditionalCreationData.h"
-#include "Components/Button.h"
+#include "Components/EditControl.h"
 
 namespace gui_framework
 {
 	namespace utility
 	{
 		template<>
-		class AdditionalCreationData<Button>
+		class AdditionalCreationData<EditControl>
 		{
 		protected:
-			std::wstring text;
-			std::function<LRESULT(WPARAM, LPARAM)> onClick;
+			std::wstring placeholder;
 
 		public:
 			AdditionalCreationData() = default;
 
-			AdditionalCreationData(const std::wstring text, const std::function<LRESULT(WPARAM, LPARAM)>& onClick);
+			AdditionalCreationData(const std::wstring& placeholder);
 
 			virtual std::any getData() const;
 
