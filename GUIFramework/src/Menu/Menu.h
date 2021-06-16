@@ -1,25 +1,37 @@
 #pragma once
 
-#include "BaseComponents/BaseComponent.h"
 #include "Interfaces/Menu/IMenuItem.h"
 
 namespace gui_framework
 {
-	class Menu
+	class Menu final
 	{
 	private:
 		HMENU handle;
-		BaseComponent* parent;
 		std::vector<std::unique_ptr<interfaces::IMenuItem>> items;
 
 	public:
-		Menu(BaseComponent* parent);
+		Menu() = default;
+
+		Menu(HWND parent);
+
+		Menu(const Menu&) = delete;
+
+		Menu(Menu&& other) noexcept;
+
+		Menu& operator = (const Menu&) = delete;
+
+		Menu& operator = (Menu&& other) noexcept;
 
 		void addMenuItem(std::unique_ptr<interfaces::IMenuItem>&& item);
 
 		void removeMenuItem(uint32_t index);
 
+		void handleMessage(uint32_t index);
+
 		const std::vector<std::unique_ptr<interfaces::IMenuItem>>& getItems() const;
+
+		HMENU getHandle() const;
 
 		~Menu();
 	};

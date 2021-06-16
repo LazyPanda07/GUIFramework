@@ -5,11 +5,35 @@ using namespace std;
 
 namespace gui_framework
 {
-	Menu::Menu(BaseComponent* parent) :
-		handle(CreateMenu()),
-		parent(parent)
+	Menu::Menu(HWND parent) :
+		handle(CreateMenu())
 	{
-		SetMenu(parent->getHandle(), handle);
+		MENUINFO info = {};
+
+		info.cbSize = sizeof(info);
+		info.dwStyle = MIM_APPLYTOSUBMENUS | MNS_NOTIFYBYPOS;
+		info.fMask = MIM_STYLE;
+
+		SetMenuInfo(handle, &info);
+
+		SetMenu(parent, handle);
+	}
+
+	Menu::Menu(Menu&& other) noexcept :
+		handle(other.handle),
+		items(move(other.items))
+	{
+		other.handle = nullptr;
+	}
+
+	Menu& Menu::operator = (Menu&& other) noexcept
+	{
+		handle = other.handle;
+		items = move(other.items);
+
+		other.handle = nullptr;
+
+		return *this;
 	}
 
 	void Menu::addMenuItem(unique_ptr<interfaces::IMenuItem>&& item)
@@ -30,9 +54,19 @@ namespace gui_framework
 		}
 	}
 
+	void Menu::handleMessage(uint32_t index)
+	{
+		items[index]->processMessage();
+	}
+
 	const vector<unique_ptr<interfaces::IMenuItem>>& Menu::getItems() const
 	{
 		return items;
+	}
+
+	HMENU Menu::getHandle() const
+	{
+		return handle;
 	}
 
 	Menu::~Menu()

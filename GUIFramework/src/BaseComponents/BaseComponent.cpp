@@ -74,7 +74,7 @@ namespace gui_framework
 		{
 			SendMessageW(handle, custom_window_messages::initTopLevelWindowPointer, reinterpret_cast<WPARAM>(this), NULL);
 		}
-		else if(parent->isComposite())
+		else if (parent->isComposite())
 		{
 			BaseComposite* composite = static_cast<BaseComposite*>(parent);
 
@@ -91,6 +91,15 @@ namespace gui_framework
 
 	LRESULT BaseComponent::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
 	{
+		if (message == WM_MENUCOMMAND)
+		{
+			isUsed = true;
+
+			menus[reinterpret_cast<HMENU>(lparam)].handleMessage(static_cast<uint32_t>(wparam));
+
+			return 0;
+		}
+
 		isUsed = false;
 
 		return -1;
@@ -134,6 +143,15 @@ namespace gui_framework
 		}
 
 		return result;
+	}
+
+	Menu& BaseComponent::createMenu()
+	{
+		Menu menu(handle);
+
+		auto it = menus.emplace(menu.getHandle(), move(menu)).first;
+
+		return menus.at(it->first);
 	}
 
 	void BaseComponent::setDesiredWidth(uint16_t desiredWidth)
@@ -233,6 +251,20 @@ namespace gui_framework
 	BaseComponent::exitMode BaseComponent::getExitMode() const
 	{
 		return mode;
+	}
+
+	vector<Menu*> BaseComponent::getMenus()
+	{
+		vector<Menu*> result;
+
+		result.reserve(menus.size());
+
+		for (auto& [_, menu] : menus)
+		{
+			result.push_back(&menu);
+		}
+
+		return result;
 	}
 
 	BaseComponent::~BaseComponent()

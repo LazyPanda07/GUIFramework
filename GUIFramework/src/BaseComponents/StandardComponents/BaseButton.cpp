@@ -11,7 +11,7 @@ namespace gui_framework
 	{
 		this->buttonId = buttonId;
 
-		return HMENU(buttonId);
+		return reinterpret_cast<HMENU>(static_cast<uint64_t>(buttonId));
 	}
 
 	BaseButton::BaseButton(const wstring& buttonName, const wstring& buttonText, const utility::ComponentSettings& settings, BaseComponent* parent, const function<LRESULT(WPARAM, LPARAM)>& onClick) :

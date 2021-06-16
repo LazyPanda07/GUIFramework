@@ -1,6 +1,7 @@
 #pragma once
 
 #include "pch.h"
+#include "Menu/Menu.h"
 
 namespace gui_framework
 {
@@ -16,6 +17,7 @@ namespace gui_framework
 
 	protected:
 		BaseComponent* parent;
+		std::unordered_map<HMENU, Menu> menus;
 		const std::wstring className;
 		const std::wstring windowName;
 		HWND handle;
@@ -43,6 +45,10 @@ namespace gui_framework
 		virtual bool destroyComponent() final;
 
 		virtual bool asyncDestroyComponent() final;
+
+		/// @brief Don't use move operator with return value
+		/// @return Created menu
+		virtual Menu& createMenu() final;
 
 		virtual void setDesiredWidth(uint16_t desiredWidth) final;
 
@@ -77,6 +83,8 @@ namespace gui_framework
 		virtual int getDesiredY() const final;
 
 		virtual exitMode getExitMode() const final;
+
+		virtual std::vector<Menu*> getMenus() final;
 
 		virtual ~BaseComponent();
 	};

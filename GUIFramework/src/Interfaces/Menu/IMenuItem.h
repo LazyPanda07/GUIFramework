@@ -16,6 +16,8 @@ namespace gui_framework
 		public:
 			IMenuItem(const std::string& type);
 
+			virtual void processMessage() = 0;
+
 			virtual void setParent(HMENU parent) final;
 
 			virtual void setIndex(uint32_t index) final;
