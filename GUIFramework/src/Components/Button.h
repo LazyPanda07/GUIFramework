@@ -3,6 +3,9 @@
 #include "BaseComponents/StandardComponents/BaseButton.h"
 #include "BaseComponents/BaseResizableComponent.h"
 
+#pragma warning(push)
+#pragma warning(disable: 4250)
+
 namespace gui_framework
 {
 	/// @brief Standard button
@@ -16,8 +19,8 @@ namespace gui_framework
 	public:
 		Button(const std::wstring& buttonName, const std::wstring& buttonText, int x, int y, BaseComponent* parent, const std::function<LRESULT(WPARAM, LPARAM)>& onClick = nullptr, uint16_t width = standard_sizes::buttonWidth, uint16_t height = standard_sizes::buttonHeight);
 
-		LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
-
 		~Button() = default;
 	};
 }
+
+#pragma warning(pop)

@@ -58,18 +58,4 @@ namespace gui_framework
 	{
 
 	}
-
-	LRESULT Button::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
-	{
-		if (message == WM_COMMAND && buttonId == wparam)
-		{
-			isUsed = true;
-
-			return onClick(wparam, lparam);
-		}
-
-		isUsed = false;
-
-		return -1;
-	}
 }

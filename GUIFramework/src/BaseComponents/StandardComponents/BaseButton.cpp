@@ -7,7 +7,7 @@ using namespace std;
 
 namespace gui_framework
 {
-	HMENU BaseButton::initButtonId(uint64_t buttonId)
+	HMENU BaseButton::initButtonId(uint32_t buttonId)
 	{
 		this->buttonId = buttonId;
 
@@ -37,6 +37,20 @@ namespace gui_framework
 		this->setText(buttonText);
 	}
 
+	LRESULT BaseButton::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
+	{
+		if (message == WM_COMMAND && buttonId == LOWORD(wparam))
+		{
+			isUsed = true;
+
+			return onClick(wparam, lparam);
+		}
+
+		isUsed = false;
+
+		return -1;
+	}
+
 	void BaseButton::setOnClick(const function<LRESULT(WPARAM, LPARAM)>& onClick)
 	{
 		this->onClick = onClick;
@@ -47,7 +61,7 @@ namespace gui_framework
 		return onClick;
 	}
 
-	uint64_t BaseButton::getButtonId() const
+	uint32_t BaseButton::getButtonId() const
 	{
 		return buttonId;
 	}
