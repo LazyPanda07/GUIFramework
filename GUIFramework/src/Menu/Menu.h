@@ -9,10 +9,11 @@ namespace gui_framework
 	private:
 		std::wstring name;
 		HMENU handle;
+		HWND parent;
 		std::vector<std::unique_ptr<interfaces::IMenuItem>> items;
 
 	public:
-		Menu() = default;
+		Menu();
 
 		Menu(const std::wstring& name, HWND parent);
 
@@ -31,6 +32,8 @@ namespace gui_framework
 		void removeMenuItem(uint32_t index);
 
 		void handleMessage(uint32_t index);
+
+		void updateMenu() const;
 
 		const std::wstring& getName() const;
 

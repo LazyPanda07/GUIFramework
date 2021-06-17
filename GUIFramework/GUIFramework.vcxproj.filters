@@ -228,10 +228,13 @@
     <ClInclude Include="src\Interfaces\Menu\IMenuItem.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Menu\MenuItems\BaseDropDownMenuItem.h">
+    <ClInclude Include="src\MenuItems\DropDownMenuItem.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Menu\MenuItems\BaseMenuItem.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MenuItems\MenuItem.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
@@ -425,10 +428,13 @@
     <ClCompile Include="src\Interfaces\Menu\IMenuItem.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Menu\MenuItems\BaseDropDownMenuItem.cpp">
+    <ClCompile Include="src\MenuItems\DropDownMenuItem.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Menu\MenuItems\BaseMenuItem.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MenuItems\MenuItem.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
