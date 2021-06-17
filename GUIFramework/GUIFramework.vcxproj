@@ -297,7 +297,7 @@
       <PrecompiledHeaderOutputFile>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\PrecompiledHeaders\pch.pch</PrecompiledHeaderOutputFile>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>$(ProjectDir)src;$(SolutionDir)JSON\src;$(SolutionDir)ThreadPool\src;GUIFrameworkLibrary\JSON\src;GUIFrameworkLibrary\ThreadPool\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;$(SolutionDir)JSON\src;$(SolutionDir)ThreadPool\src;$(GUIFrameworkLibraryDir)JSON\src;$(GUIFrameworkLibraryDir)ThreadPool\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -316,7 +316,7 @@
       <PrecompiledHeaderOutputFile>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\PrecompiledHeaders\pch.pch</PrecompiledHeaderOutputFile>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>$(ProjectDir)src;$(SolutionDir)JSON\src;$(SolutionDir)ThreadPool\src;GUIFrameworkLibrary\JSON\src;GUIFrameworkLibrary\ThreadPool\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;$(SolutionDir)JSON\src;$(SolutionDir)ThreadPool\src;$(GUIFrameworkLibraryDir)JSON\src;$(GUIFrameworkLibraryDir)ThreadPool\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -337,7 +337,7 @@
       <PrecompiledHeaderOutputFile>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\PrecompiledHeaders\pch.pch</PrecompiledHeaderOutputFile>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>$(ProjectDir)src;$(SolutionDir)JSON\src;$(SolutionDir)ThreadPool\src;GUIFrameworkLibrary\JSON\src;GUIFrameworkLibrary\ThreadPool\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;$(SolutionDir)JSON\src;$(SolutionDir)ThreadPool\src;$(GUIFrameworkLibraryDir)JSON\src;$(GUIFrameworkLibraryDir)ThreadPool\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -360,7 +360,7 @@
       <PrecompiledHeaderOutputFile>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\PrecompiledHeaders\pch.pch</PrecompiledHeaderOutputFile>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>$(ProjectDir)src;$(SolutionDir)JSON\src;$(SolutionDir)ThreadPool\src;GUIFrameworkLibrary\JSON\src;GUIFrameworkLibrary\ThreadPool\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;$(SolutionDir)JSON\src;$(SolutionDir)ThreadPool\src;$(GUIFrameworkLibraryDir)JSON\src;$(GUIFrameworkLibraryDir)ThreadPool\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -383,7 +383,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\PrecompiledHeaders\pch.pch</PrecompiledHeaderOutputFile>
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>$(ProjectDir)src;$(SolutionDir)JSON\src;$(SolutionDir)ThreadPool\src;GUIFrameworkLibrary\JSON\src;GUIFrameworkLibrary\ThreadPool\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;$(SolutionDir)JSON\src;$(SolutionDir)ThreadPool\src;$(GUIFrameworkLibraryDir)JSON\src;$(GUIFrameworkLibraryDir)ThreadPool\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -406,7 +406,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\PrecompiledHeaders\pch.pch</PrecompiledHeaderOutputFile>
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>$(ProjectDir)src;$(SolutionDir)JSON\src;$(SolutionDir)ThreadPool\src;GUIFrameworkLibrary\JSON\src;GUIFrameworkLibrary\ThreadPool\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;$(SolutionDir)JSON\src;$(SolutionDir)ThreadPool\src;$(GUIFrameworkLibraryDir)JSON\src;$(GUIFrameworkLibraryDir)ThreadPool\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
