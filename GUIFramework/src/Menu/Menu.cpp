@@ -5,9 +5,17 @@ using namespace std;
 
 namespace gui_framework
 {
+	Menu::Menu() :
+		handle(nullptr),
+		parent(nullptr)
+	{
+
+	}
+
 	Menu::Menu(const wstring& name, HWND parent) :
 		name(name),
-		handle(CreateMenu())
+		handle(CreateMenu()),
+		parent(parent)
 	{
 		MENUINFO info = {};
 
@@ -25,17 +33,21 @@ namespace gui_framework
 
 	Menu::Menu(Menu&& other) noexcept :
 		handle(other.handle),
-		items(move(other.items))
+		items(move(other.items)),
+		parent(other.parent)
 	{
 		other.handle = nullptr;
+		other.parent = nullptr;
 	}
 
 	Menu& Menu::operator = (Menu&& other) noexcept
 	{
 		handle = other.handle;
 		items = move(other.items);
+		parent = other.parent;
 
 		other.handle = nullptr;
+		other.parent = nullptr;
 
 		return *this;
 	}
@@ -46,6 +58,8 @@ namespace gui_framework
 
 		items.back()->createMenuItem(handle);
 		items.back()->setIndex(static_cast<uint32_t>(items.size() - 1));
+
+		this->updateMenu();
 
 		return *this;
 	}
@@ -58,11 +72,18 @@ namespace gui_framework
 		{
 			items[i]->setIndex(i);
 		}
+
+		this->updateMenu();
 	}
 
 	void Menu::handleMessage(uint32_t index)
 	{
 		items[index]->processMessage();
+	}
+
+	void Menu::updateMenu() const
+	{
+		DrawMenuBar(parent);
 	}
 
 	const wstring& Menu::getName() const

@@ -4,18 +4,18 @@
 
 namespace gui_framework
 {
-	class BaseDropDownMenuItem : public interfaces::IMenuItem
+	class DropDownMenuItem : public interfaces::IMenuItem
 	{
 	protected:
 		HMENU popupMenuHandle;
 
 	public:
-		BaseDropDownMenuItem(const std::wstring& text, HMENU popupMenuHandle);
+		DropDownMenuItem(const std::wstring& text, HMENU popupMenuHandle);
 
-		virtual void processMessage() = 0;
+		virtual void processMessage() final;
 
 		virtual std::tuple<uint32_t, uint64_t> getCreationData() const final override;
 
-		virtual ~BaseDropDownMenuItem() = default;
+		virtual ~DropDownMenuItem() = default;
 	};
 }
