@@ -37,5 +37,11 @@
 # Binaries
 bin/
 
+# Build folder
+build/
+
 # GUIFrameworkBuilder
 !GUIFrameworkBuilder.exe
+
+# CustomBuildSteps
+!CustomBuildSteps.exe
