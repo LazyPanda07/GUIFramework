@@ -36,3 +36,6 @@
 
 # Binaries
 bin/
+
+# GUIFrameworkBuilder
+!GUIFrameworkBuilder.exe
