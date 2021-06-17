@@ -17,7 +17,8 @@ namespace gui_framework
 
 	protected:
 		BaseComponent* parent;
-		std::unordered_map<HMENU, Menu> menus;
+		std::unordered_map<HMENU, Menu> popupMenus;
+		std::unique_ptr<Menu> mainMenu;
 		const std::wstring className;
 		const std::wstring windowName;
 		HWND handle;
@@ -46,9 +47,17 @@ namespace gui_framework
 
 		virtual bool asyncDestroyComponent() final;
 
-		/// @brief Don't use move operator with return value
-		/// @return Created menu
-		virtual Menu& createMenu() final;
+		/// @brief It needs to be called once
+		/// @return Created main menu
+		virtual std::unique_ptr<Menu>& createMainMenu(const std::wstring& menuName) final;
+
+		/// @brief Don't call move operator with return value
+		/// @return Created pop-up menu
+		virtual Menu& addPopupMenu(const std::wstring& menuName) final;
+
+		/// @brief Remove all pop-up menus with menuName
+		/// @param menuName 
+		virtual void removePopupMenus(const std::wstring& menuName);
 
 		virtual void setDesiredWidth(uint16_t desiredWidth) final;
 
@@ -84,7 +93,11 @@ namespace gui_framework
 
 		virtual exitMode getExitMode() const final;
 
-		virtual std::vector<Menu*> getMenus() final;
+		virtual const std::unique_ptr<Menu>& getMainMenu() const final;
+
+		virtual std::unique_ptr<Menu>& getMainMenu() final;
+
+		virtual std::vector<const Menu*> getPopupMenus() const final;
 
 		virtual ~BaseComponent();
 	};

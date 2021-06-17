@@ -7,13 +7,14 @@ namespace gui_framework
 	class Menu final
 	{
 	private:
+		std::wstring name;
 		HMENU handle;
 		std::vector<std::unique_ptr<interfaces::IMenuItem>> items;
 
 	public:
 		Menu() = default;
 
-		Menu(HWND parent);
+		Menu(const std::wstring& name, HWND parent);
 
 		Menu(const Menu&) = delete;
 
@@ -23,11 +24,15 @@ namespace gui_framework
 
 		Menu& operator = (Menu&& other) noexcept;
 
-		void addMenuItem(std::unique_ptr<interfaces::IMenuItem>&& item);
+		/// @brief Also calls item's createMenuItem method
+		/// @return self
+		Menu& addMenuItem(std::unique_ptr<interfaces::IMenuItem>&& item);
 
 		void removeMenuItem(uint32_t index);
 
 		void handleMessage(uint32_t index);
+
+		const std::wstring& getName() const;
 
 		const std::vector<std::unique_ptr<interfaces::IMenuItem>>& getItems() const;
 

@@ -95,7 +95,14 @@ namespace gui_framework
 		{
 			isUsed = true;
 
-			menus[reinterpret_cast<HMENU>(lparam)].handleMessage(static_cast<uint32_t>(wparam));
+			if (mainMenu->getHandle() == reinterpret_cast<HMENU>(lparam))
+			{
+				mainMenu->handleMessage(static_cast<uint32_t>(wparam));
+			}
+			else
+			{
+				popupMenus[reinterpret_cast<HMENU>(lparam)].handleMessage(static_cast<uint32_t>(wparam));
+			}
 
 			return 0;
 		}
@@ -145,13 +152,40 @@ namespace gui_framework
 		return result;
 	}
 
-	Menu& BaseComponent::createMenu()
+	unique_ptr<Menu>& BaseComponent::createMainMenu(const wstring& menuName)
 	{
-		Menu menu(handle);
+		popupMenus.clear();
 
-		auto it = menus.emplace(menu.getHandle(), move(menu)).first;
+		mainMenu = make_unique<Menu>(menuName, handle);
 
-		return menus.at(it->first);
+		return mainMenu;
+	}
+
+	Menu& BaseComponent::addPopupMenu(const wstring& menuName)
+	{
+		Menu menu(menuName, nullptr);
+
+		auto it = popupMenus.emplace(menu.getHandle(), move(menu)).first;
+
+		return popupMenus.at(it->first);
+	}
+
+	void BaseComponent::removePopupMenus(const wstring& menuName)
+	{
+		vector<HMENU> itemsToRemove;
+
+		for (const auto& [handle, popupMenu] : popupMenus)
+		{
+			if (popupMenu.getName() == menuName)
+			{
+				itemsToRemove.push_back(handle);
+			}
+		}
+
+		for (const auto& i : itemsToRemove)
+		{
+			popupMenus.erase(i);
+		}
 	}
 
 	void BaseComponent::setDesiredWidth(uint16_t desiredWidth)
@@ -253,15 +287,25 @@ namespace gui_framework
 		return mode;
 	}
 
-	vector<Menu*> BaseComponent::getMenus()
+	const unique_ptr<Menu>& BaseComponent::getMainMenu() const
 	{
-		vector<Menu*> result;
+		return mainMenu;
+	}
 
-		result.reserve(menus.size());
+	unique_ptr<Menu>& BaseComponent::getMainMenu()
+	{
+		return mainMenu;
+	}
 
-		for (auto& [_, menu] : menus)
+	vector<const Menu*> BaseComponent::getPopupMenus() const
+	{
+		vector<const Menu*> result;
+
+		result.reserve(popupMenus.size());
+
+		for (const auto& [_, popupMenu] : popupMenus)
 		{
-			result.push_back(&menu);
+			result.push_back(&popupMenu);
 		}
 
 		return result;

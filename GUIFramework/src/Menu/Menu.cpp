@@ -5,18 +5,22 @@ using namespace std;
 
 namespace gui_framework
 {
-	Menu::Menu(HWND parent) :
+	Menu::Menu(const wstring& name, HWND parent) :
+		name(name),
 		handle(CreateMenu())
 	{
 		MENUINFO info = {};
 
 		info.cbSize = sizeof(info);
-		info.dwStyle = MIM_APPLYTOSUBMENUS | MNS_NOTIFYBYPOS;
+		info.dwStyle = MNS_NOTIFYBYPOS;
 		info.fMask = MIM_STYLE;
 
 		SetMenuInfo(handle, &info);
 
-		SetMenu(parent, handle);
+		if (parent)
+		{
+			SetMenu(parent, handle);
+		}
 	}
 
 	Menu::Menu(Menu&& other) noexcept :
@@ -36,12 +40,14 @@ namespace gui_framework
 		return *this;
 	}
 
-	void Menu::addMenuItem(unique_ptr<interfaces::IMenuItem>&& item)
+	Menu& Menu::addMenuItem(unique_ptr<interfaces::IMenuItem>&& item)
 	{
-		items.back()->setParent(handle);
-		items.back()->setIndex(static_cast<uint32_t>(items.size()));
-
 		items.push_back(move(item));
+
+		items.back()->createMenuItem(handle);
+		items.back()->setIndex(static_cast<uint32_t>(items.size() - 1));
+
+		return *this;
 	}
 
 	void Menu::removeMenuItem(uint32_t index)
@@ -57,6 +63,11 @@ namespace gui_framework
 	void Menu::handleMessage(uint32_t index)
 	{
 		items[index]->processMessage();
+	}
+
+	const wstring& Menu::getName() const
+	{
+		return name;
 	}
 
 	const vector<unique_ptr<interfaces::IMenuItem>>& Menu::getItems() const
