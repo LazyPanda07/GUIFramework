@@ -441,5 +441,6 @@
   <ItemGroup>
     <None Include="gui_framework.json" />
     <None Include="GUIFrameworkMacros.props" />
+    <None Include="CustomBuildSteps.exe" />
   </ItemGroup>
 </Project>

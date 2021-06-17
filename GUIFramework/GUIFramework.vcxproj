@@ -171,6 +171,7 @@
     <ClCompile Include="src\Utility\Utility.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="CustomBuildSteps.exe" />
     <None Include="GUIFrameworkMacros.props" />
     <None Include="gui_framework.json" />
   </ItemGroup>
@@ -310,7 +311,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <CustomBuildStep>
-      <Command>start CustomBuildSteps.exe $(Outdir) $(ProjectDir)src $(SolutionDir)build $(SolutionDir)docs $(Configuration)-$(Platform)</Command>
+      <Command>start CustomBuildSteps.exe $(Outdir) $(ProjectDir)src $(SolutionDir)build $(SolutionDir)docs $(Configuration)-$(Platform) $(SolutionDir)JSON\src $(SolutionDir)ThreadPool\src</Command>
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>output.txt</Outputs>
@@ -335,7 +336,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <CustomBuildStep>
-      <Command>start CustomBuildSteps.exe $(Outdir) $(ProjectDir)src $(SolutionDir)build $(SolutionDir)docs $(Configuration)-$(Platform)</Command>
+      <Command>start CustomBuildSteps.exe $(Outdir) $(ProjectDir)src $(SolutionDir)build $(SolutionDir)docs $(Configuration)-$(Platform) $(SolutionDir)JSON\src $(SolutionDir)ThreadPool\src</Command>
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>output.txt</Outputs>
@@ -364,7 +365,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <CustomBuildStep>
-      <Command>start CustomBuildSteps.exe $(Outdir) $(ProjectDir)src $(SolutionDir)build $(SolutionDir)docs $(Configuration)-$(Platform)</Command>
+      <Command>start CustomBuildSteps.exe $(Outdir) $(ProjectDir)src $(SolutionDir)build $(SolutionDir)docs $(Configuration)-$(Platform) $(SolutionDir)JSON\src $(SolutionDir)ThreadPool\src</Command>
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>output.txt</Outputs>
@@ -393,7 +394,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <CustomBuildStep>
-      <Command>start CustomBuildSteps.exe $(Outdir) $(ProjectDir)src $(SolutionDir)build $(SolutionDir)docs $(Configuration)-$(Platform)</Command>
+      <Command>start CustomBuildSteps.exe $(Outdir) $(ProjectDir)src $(SolutionDir)build $(SolutionDir)docs $(Configuration)-$(Platform) $(SolutionDir)JSON\src $(SolutionDir)ThreadPool\src</Command>
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>output.txt</Outputs>
@@ -422,7 +423,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <CustomBuildStep>
-      <Command>start CustomBuildSteps.exe $(Outdir) $(ProjectDir)src $(SolutionDir)build $(SolutionDir)docs $(Configuration)-$(Platform)</Command>
+      <Command>start CustomBuildSteps.exe $(Outdir) $(ProjectDir)src $(SolutionDir)build $(SolutionDir)docs $(Configuration)-$(Platform) $(SolutionDir)JSON\src $(SolutionDir)ThreadPool\src</Command>
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>output.txt</Outputs>
@@ -451,7 +452,7 @@
       <GenerateDebugInformation>false</GenerateDebugInformation>
     </Link>
     <CustomBuildStep>
-      <Command>start CustomBuildSteps.exe $(Outdir) $(ProjectDir)src $(SolutionDir)build $(SolutionDir)docs $(Configuration)-$(Platform)</Command>
+      <Command>start CustomBuildSteps.exe $(Outdir) $(ProjectDir)src $(SolutionDir)build $(SolutionDir)docs $(Configuration)-$(Platform) $(SolutionDir)JSON\src $(SolutionDir)ThreadPool\src</Command>
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>output.txt</Outputs>
