@@ -111,6 +111,13 @@ namespace gui_framework
 			return result;
 		}
 
+		result = BaseComponent::windowMessagesHandle(handle, message, wparam, lparam, isUsed);
+
+		if (isUsed)
+		{
+			return result;
+		}
+
 		for (const auto& i : children)
 		{
 			if (!i)

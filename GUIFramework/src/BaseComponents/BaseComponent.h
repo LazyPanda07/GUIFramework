@@ -1,10 +1,11 @@
 #pragma once
 
 #include "pch.h"
+#include "Menu/Menu.h"
 
 namespace gui_framework
 {
-	/// @brief Base class for all windows, controllers, etc.
+	/// @brief Base class for all windows, controls, etc.
 	class BaseComponent
 	{
 	public:
@@ -16,6 +17,8 @@ namespace gui_framework
 
 	protected:
 		BaseComponent* parent;
+		std::unordered_map<HMENU, Menu> popupMenus;
+		std::unique_ptr<Menu> mainMenu;
 		const std::wstring className;
 		const std::wstring windowName;
 		HWND handle;
@@ -43,6 +46,18 @@ namespace gui_framework
 		virtual bool destroyComponent() final;
 
 		virtual bool asyncDestroyComponent() final;
+
+		/// @brief It needs to be called once
+		/// @return Created main menu
+		virtual std::unique_ptr<Menu>& createMainMenu(const std::wstring& menuName) final;
+
+		/// @brief Don't call move operator with return value
+		/// @return Created pop-up menu
+		virtual Menu& addPopupMenu(const std::wstring& menuName) final;
+
+		/// @brief Remove all pop-up menus with menuName
+		/// @param menuName 
+		virtual void removePopupMenus(const std::wstring& menuName);
 
 		virtual void setDesiredWidth(uint16_t desiredWidth) final;
 
@@ -77,6 +92,12 @@ namespace gui_framework
 		virtual int getDesiredY() const final;
 
 		virtual exitMode getExitMode() const final;
+
+		virtual const std::unique_ptr<Menu>& getMainMenu() const final;
+
+		virtual std::unique_ptr<Menu>& getMainMenu() final;
+
+		virtual std::vector<const Menu*> getPopupMenus() const final;
 
 		virtual ~BaseComponent();
 	};

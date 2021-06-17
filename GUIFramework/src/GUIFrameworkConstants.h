@@ -17,6 +17,12 @@ namespace gui_framework
 		inline constexpr std::wstring_view richEdit = MSFTEDIT_CLASS;
 	}
 
+	namespace standard_menu_items
+	{
+		inline constexpr std::string_view dropDownMenuItem = "DropDown";
+		inline constexpr std::string_view menuItem = "MenuItem";
+	}
+
 	namespace standard_sizes
 	{
 		inline constexpr uint16_t buttonWidth = 200;

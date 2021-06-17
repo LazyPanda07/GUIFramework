@@ -159,10 +159,10 @@
     <ClInclude Include="src\Composites\DialogBox.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\FactoryMethod\BaseComponentCreator.h">
+    <ClInclude Include="src\BaseComponents\Creators\BaseComponentCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\FactoryMethod\ButtonCreator.h">
+    <ClInclude Include="src\BaseComponents\Creators\ButtonCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Composites\AdditionalCreationData\AdditionalCreationData.h">
@@ -171,10 +171,10 @@
     <ClInclude Include="src\Composites\AdditionalCreationData\ButtonAdditionalCreationData.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\FactoryMethod\EditControlCreator.h">
+    <ClInclude Include="src\BaseComponents\Creators\EditControlCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\FactoryMethod\DropDownComboBoxCreator.h">
+    <ClInclude Include="src\BaseComponents\Creators\DropDownComboBoxCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Composites\AdditionalCreationData\ComboBoxAdditionalCreationData.h">
@@ -183,43 +183,55 @@
     <ClInclude Include="src\Composites\AdditionalCreationData\EditControlAdditionalCreationData.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\FactoryMethod\DropDownListComboBoxCreator.h">
+    <ClInclude Include="src\BaseComponents\Creators\DropDownListComboBoxCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\FactoryMethod\SimpleComboBoxCreator.h">
+    <ClInclude Include="src\BaseComponents\Creators\SimpleComboBoxCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\FactoryMethod\ListBoxCreator.h">
+    <ClInclude Include="src\BaseComponents\Creators\ListBoxCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Composites\AdditionalCreationData\ListBoxAdditionalCreationData.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\FactoryMethod\MultipleSelectListBoxCreator.h">
+    <ClInclude Include="src\BaseComponents\Creators\MultipleSelectListBoxCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\FactoryMethod\RichEditCreator.h">
+    <ClInclude Include="src\BaseComponents\Creators\RichEditCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Composites\AdditionalCreationData\RichEditAdditionalCreationData.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\FactoryMethod\StaticControlCreator.h">
+    <ClInclude Include="src\BaseComponents\Creators\StaticControlCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Composites\AdditionalCreationData\StaticControlAdditionalCreationData.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\FactoryMethod\SeparateWindowCreator.h">
+    <ClInclude Include="src\BaseComponents\Creators\SeparateWindowCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\FactoryMethod\ChildWindowCreator.h">
+    <ClInclude Include="src\BaseComponents\Creators\ChildWindowCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Composites\AdditionalCreationData\SeparateWindowAdditionalCreationData.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Composites\AdditionalCreationData\ChildWindowAdditionalCreationData.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Menu\Menu.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Interfaces\Menu\IMenuItem.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Menu\MenuItems\BaseDropDownMenuItem.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Menu\MenuItems\BaseMenuItem.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
@@ -350,16 +362,16 @@
     <ClCompile Include="src\Composites\DialogBox.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComponents\FactoryMethod\ButtonCreator.cpp">
+    <ClCompile Include="src\BaseComponents\Creators\ButtonCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Composites\AdditionalCreationData\ButtonAdditionalCreationData.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComponents\FactoryMethod\EditControlCreator.cpp">
+    <ClCompile Include="src\BaseComponents\Creators\EditControlCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComponents\FactoryMethod\DropDownComboBoxCreator.cpp">
+    <ClCompile Include="src\BaseComponents\Creators\DropDownComboBoxCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Composites\AdditionalCreationData\ComboBoxAdditionalCreationData.cpp">
@@ -368,43 +380,55 @@
     <ClCompile Include="src\Composites\AdditionalCreationData\EditControlAdditionalCreationData.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComponents\FactoryMethod\DropDownListComboBoxCreator.cpp">
+    <ClCompile Include="src\BaseComponents\Creators\DropDownListComboBoxCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComponents\FactoryMethod\SimpleComboBoxCreator.cpp">
+    <ClCompile Include="src\BaseComponents\Creators\SimpleComboBoxCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComponents\FactoryMethod\ListBoxCreator.cpp">
+    <ClCompile Include="src\BaseComponents\Creators\ListBoxCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Composites\AdditionalCreationData\ListBoxAdditionalCreationData.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComponents\FactoryMethod\MultipleSelectListBoxCreator.cpp">
+    <ClCompile Include="src\BaseComponents\Creators\MultipleSelectListBoxCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComponents\FactoryMethod\RichEditCreator.cpp">
+    <ClCompile Include="src\BaseComponents\Creators\RichEditCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Composites\AdditionalCreationData\RichEditAdditionalCreationData.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComponents\FactoryMethod\StaticControlCreator.cpp">
+    <ClCompile Include="src\BaseComponents\Creators\StaticControlCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Composites\AdditionalCreationData\StaticControlAdditionalCreationData.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComponents\FactoryMethod\SeparateWindowCreator.cpp">
+    <ClCompile Include="src\BaseComponents\Creators\SeparateWindowCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComponents\FactoryMethod\ChildWindowCreator.cpp">
+    <ClCompile Include="src\BaseComponents\Creators\ChildWindowCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Composites\AdditionalCreationData\SeparateWindowAdditionalCreationData.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Composites\AdditionalCreationData\ChildWindowAdditionalCreationData.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Menu\Menu.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Interfaces\Menu\IMenuItem.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Menu\MenuItems\BaseDropDownMenuItem.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Menu\MenuItems\BaseMenuItem.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

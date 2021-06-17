@@ -28,19 +28,19 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\BaseComponents\BaseComponent.h" />
-    <ClInclude Include="src\BaseComponents\FactoryMethod\ChildWindowCreator.h" />
-    <ClInclude Include="src\BaseComponents\FactoryMethod\DropDownComboBoxCreator.h" />
-    <ClInclude Include="src\BaseComponents\FactoryMethod\DropDownListComboBoxCreator.h" />
-    <ClInclude Include="src\BaseComponents\FactoryMethod\EditControlCreator.h" />
-    <ClInclude Include="src\BaseComponents\FactoryMethod\ListBoxCreator.h" />
-    <ClInclude Include="src\BaseComponents\FactoryMethod\MultipleSelectListBoxCreator.h" />
-    <ClInclude Include="src\BaseComponents\FactoryMethod\RichEditCreator.h" />
-    <ClInclude Include="src\BaseComponents\FactoryMethod\SeparateWindowCreator.h" />
-    <ClInclude Include="src\BaseComponents\FactoryMethod\SimpleComboBoxCreator.h" />
-    <ClInclude Include="src\BaseComponents\FactoryMethod\StaticControlCreator.h" />
+    <ClInclude Include="src\BaseComponents\Creators\ChildWindowCreator.h" />
+    <ClInclude Include="src\BaseComponents\Creators\DropDownComboBoxCreator.h" />
+    <ClInclude Include="src\BaseComponents\Creators\DropDownListComboBoxCreator.h" />
+    <ClInclude Include="src\BaseComponents\Creators\EditControlCreator.h" />
+    <ClInclude Include="src\BaseComponents\Creators\ListBoxCreator.h" />
+    <ClInclude Include="src\BaseComponents\Creators\MultipleSelectListBoxCreator.h" />
+    <ClInclude Include="src\BaseComponents\Creators\RichEditCreator.h" />
+    <ClInclude Include="src\BaseComponents\Creators\SeparateWindowCreator.h" />
+    <ClInclude Include="src\BaseComponents\Creators\SimpleComboBoxCreator.h" />
+    <ClInclude Include="src\BaseComponents\Creators\StaticControlCreator.h" />
     <ClInclude Include="src\Composites\AdditionalCreationData\AdditionalCreationData.h" />
-    <ClInclude Include="src\BaseComponents\FactoryMethod\BaseComponentCreator.h" />
-    <ClInclude Include="src\BaseComponents\FactoryMethod\ButtonCreator.h" />
+    <ClInclude Include="src\BaseComponents\Creators\BaseComponentCreator.h" />
+    <ClInclude Include="src\BaseComponents\Creators\ButtonCreator.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseButton.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseComboBox.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseEditControl.h" />
@@ -91,6 +91,10 @@
     <ClInclude Include="src\Interfaces\Iterators\IBaseConstForwardIterator.h" />
     <ClInclude Include="src\Interfaces\Iterators\IBaseForwardIterator.h" />
     <ClInclude Include="src\Interfaces\Iterators\IIterable.h" />
+    <ClInclude Include="src\Interfaces\Menu\IMenuItem.h" />
+    <ClInclude Include="src\Menu\Menu.h" />
+    <ClInclude Include="src\Menu\MenuItems\BaseDropDownMenuItem.h" />
+    <ClInclude Include="src\Menu\MenuItems\BaseMenuItem.h" />
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\BaseComposites\StandardComposites\BaseSeparateWindow.h" />
     <ClInclude Include="src\Utility\ComponentSettings.h" />
@@ -99,17 +103,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\BaseComponents\BaseComponent.cpp" />
-    <ClCompile Include="src\BaseComponents\FactoryMethod\ButtonCreator.cpp" />
-    <ClCompile Include="src\BaseComponents\FactoryMethod\ChildWindowCreator.cpp" />
-    <ClCompile Include="src\BaseComponents\FactoryMethod\DropDownComboBoxCreator.cpp" />
-    <ClCompile Include="src\BaseComponents\FactoryMethod\DropDownListComboBoxCreator.cpp" />
-    <ClCompile Include="src\BaseComponents\FactoryMethod\EditControlCreator.cpp" />
-    <ClCompile Include="src\BaseComponents\FactoryMethod\ListBoxCreator.cpp" />
-    <ClCompile Include="src\BaseComponents\FactoryMethod\MultipleSelectListBoxCreator.cpp" />
-    <ClCompile Include="src\BaseComponents\FactoryMethod\RichEditCreator.cpp" />
-    <ClCompile Include="src\BaseComponents\FactoryMethod\SeparateWindowCreator.cpp" />
-    <ClCompile Include="src\BaseComponents\FactoryMethod\SimpleComboBoxCreator.cpp" />
-    <ClCompile Include="src\BaseComponents\FactoryMethod\StaticControlCreator.cpp" />
+    <ClCompile Include="src\BaseComponents\Creators\ButtonCreator.cpp" />
+    <ClCompile Include="src\BaseComponents\Creators\ChildWindowCreator.cpp" />
+    <ClCompile Include="src\BaseComponents\Creators\DropDownComboBoxCreator.cpp" />
+    <ClCompile Include="src\BaseComponents\Creators\DropDownListComboBoxCreator.cpp" />
+    <ClCompile Include="src\BaseComponents\Creators\EditControlCreator.cpp" />
+    <ClCompile Include="src\BaseComponents\Creators\ListBoxCreator.cpp" />
+    <ClCompile Include="src\BaseComponents\Creators\MultipleSelectListBoxCreator.cpp" />
+    <ClCompile Include="src\BaseComponents\Creators\RichEditCreator.cpp" />
+    <ClCompile Include="src\BaseComponents\Creators\SeparateWindowCreator.cpp" />
+    <ClCompile Include="src\BaseComponents\Creators\SimpleComboBoxCreator.cpp" />
+    <ClCompile Include="src\BaseComponents\Creators\StaticControlCreator.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseButton.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseComboBox.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseEditControl.cpp" />
@@ -155,6 +159,10 @@
     <ClCompile Include="src\GUIFramework.cpp" />
     <ClCompile Include="src\Interfaces\Components\IResizableComponent.cpp" />
     <ClCompile Include="src\Interfaces\Components\ITextOperations.cpp" />
+    <ClCompile Include="src\Interfaces\Menu\IMenuItem.cpp" />
+    <ClCompile Include="src\Menu\Menu.cpp" />
+    <ClCompile Include="src\Menu\MenuItems\BaseDropDownMenuItem.cpp" />
+    <ClCompile Include="src\Menu\MenuItems\BaseMenuItem.cpp" />
     <ClCompile Include="src\pch.cpp" />
     <ClCompile Include="src\BaseComposites\StandardComposites\BaseSeparateWindow.cpp" />
     <ClCompile Include="src\Utility\ComponentSettings.cpp" />
