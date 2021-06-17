@@ -2,6 +2,7 @@
 
 #include "GUIFramework.h"
 #include "Composites/SeparateWindow.h"
+#include "Components/Button.h"
 
 #pragma comment (lib, "GUIFramework.lib")
 
@@ -17,7 +18,7 @@ void test(const wstring& className, const wstring& title, const string& function
 
 	mainWindow->setExitMode(BaseComponent::exitMode::quit);
 
-	unique_ptr<Menu>& menu = mainWindow->createMainMenu(L"Main menu");
+	new Button(L"SimpleButton", L"Some text on button", 0, 0, mainWindow.get(), [](WPARAM, LPARAM) -> LRESULT { cout << "Click" << endl; return 0; });
 
 	MSG msg = {};
 
@@ -31,13 +32,9 @@ void test(const wstring& className, const wstring& title, const string& function
 
 CREATE_DEFAULT_WINDOW_FUNCTION(main)
 
-CREATE_DEFAULT_WINDOW_FUNCTION(child)
-
 int main(int argc, char** argv)
 {
-	setlocale(LC_CTYPE, "RU");
-
-	gui_framework::GUIFramework::get();
+	gui_framework::GUIFramework& ref = gui_framework::GUIFramework::get();
 
 	thread(test, L"Main window", L"Title", "main", 300, 200).detach();
 
@@ -47,9 +44,6 @@ int main(int argc, char** argv)
 	{
 
 	}
-
-
-
 
 	return 0;
 }
