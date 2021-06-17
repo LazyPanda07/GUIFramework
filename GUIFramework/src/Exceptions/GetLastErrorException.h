@@ -6,7 +6,8 @@ namespace gui_framework
 {
 	namespace exceptions
 	{
-		class GetLastErrorException : public BaseGUIFrameworkException
+		/// @brief Exception that receive error code from GetLastError function
+		class GUI_FRAMEWORK_API GetLastErrorException : public BaseGUIFrameworkException
 		{
 		public:
 			GetLastErrorException(DWORD errorCode);

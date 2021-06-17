@@ -6,10 +6,10 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		void unregisterClass(const std::wstring& className);
+		GUI_FRAMEWORK_API_FUNCTION void unregisterClass(const std::wstring& className);
 
-		void appendStyle(HWND handle, LONG_PTR newStyle);
+		GUI_FRAMEWORK_API_FUNCTION void appendStyle(HWND handle, LONG_PTR newStyle);
 
-		void removeStyle(HWND handle, LONG_PTR styleToRemove);
+		GUI_FRAMEWORK_API_FUNCTION void removeStyle(HWND handle, LONG_PTR styleToRemove);
 	}
 }

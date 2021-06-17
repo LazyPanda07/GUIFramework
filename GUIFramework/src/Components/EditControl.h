@@ -6,7 +6,7 @@
 namespace gui_framework
 {
 	/// @brief Standard edit control
-	class EditControl :
+	class GUI_FRAMEWORK_API EditControl :
 		public BaseResizableComponent,
 		public BaseEditControl
 	{

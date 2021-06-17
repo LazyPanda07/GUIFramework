@@ -7,8 +7,9 @@ namespace gui_framework
 {
 	namespace utility
 	{
+		/// @brief Specialization for gui_framework::EditControl
 		template<>
-		class AdditionalCreationData<EditControl>
+		class GUI_FRAMEWORK_API AdditionalCreationData<EditControl>
 		{
 		protected:
 			std::wstring placeholder;

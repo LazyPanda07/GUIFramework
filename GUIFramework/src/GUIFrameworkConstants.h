@@ -54,3 +54,14 @@ namespace gui_framework
 		inline constexpr std::wstring_view msftEditLibrary = L"MsftEdit.dll";
 	}
 }
+
+#ifdef GUI_FRAMEWORK_DLL
+#define GUI_FRAMEWORK_API __declspec(dllexport)
+#define GUI_FRAMEWORK_API_FUNCTION extern "C" __declspec(dllexport)
+
+#pragma warning(disable: 4251)
+#pragma warning(disable: 4275)
+#else
+#define GUI_FRAMEWORK_API
+#define GUI_FRAMEWORK_API_FUNCTION
+#endif // GUI_FRAMEWORK_DLL

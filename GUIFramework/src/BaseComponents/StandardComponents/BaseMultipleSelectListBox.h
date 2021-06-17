@@ -4,7 +4,8 @@
 
 namespace gui_framework
 {
-	class BaseMultipleSelectListBox : public BaseListBox
+	/// @brief Base class for all multiple select list boxes
+	class GUI_FRAMEWORK_API BaseMultipleSelectListBox : public BaseListBox
 	{
 	public:
 		BaseMultipleSelectListBox(const std::wstring& listBoxName, const utility::ComponentSettings& settings, BaseComponent* parent);

@@ -7,8 +7,9 @@ namespace gui_framework
 {
 	namespace utility
 	{
+		/// @brief Specialization for gui_framework::SeparateWindow
 		template<>
-		class AdditionalCreationData<SeparateWindow>
+		class GUI_FRAMEWORK_API AdditionalCreationData<SeparateWindow>
 		{
 		protected:
 			std::wstring className;

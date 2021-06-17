@@ -7,8 +7,9 @@ namespace gui_framework
 {
 	namespace utility
 	{
+		/// @brief Specialization for gui_framework::Button
 		template<>
-		class AdditionalCreationData<Button>
+		class GUI_FRAMEWORK_API AdditionalCreationData<Button>
 		{
 		protected:
 			std::wstring text;

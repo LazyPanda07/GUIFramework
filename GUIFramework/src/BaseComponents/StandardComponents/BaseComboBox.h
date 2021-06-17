@@ -5,7 +5,8 @@
 
 namespace gui_framework
 {
-	class BaseComboBox :
+	/// @brief Base class for all combo boxes
+	class GUI_FRAMEWORK_API BaseComboBox :
 		virtual public BaseComponent,
 		public interfaces::IResizableComponent
 	{

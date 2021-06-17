@@ -5,7 +5,8 @@
 
 namespace gui_framework
 {
-	class ChildWindow :
+	/// @brief Standard child window
+	class GUI_FRAMEWORK_API ChildWindow :
 		public BaseResizableComposite,
 		public BaseChildWindow
 	{

@@ -6,7 +6,8 @@ namespace gui_framework
 {
 	namespace interfaces
 	{
-		class IMenuItem
+		/// @brief Interface for all menu items
+		class GUI_FRAMEWORK_API IMenuItem
 		{
 		protected:
 			std::wstring text;

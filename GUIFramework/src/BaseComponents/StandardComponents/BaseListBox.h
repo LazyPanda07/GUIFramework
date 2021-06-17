@@ -5,7 +5,8 @@
 
 namespace gui_framework
 {
-	class BaseListBox :
+	/// @brief Base class for all list boxes
+	class GUI_FRAMEWORK_API BaseListBox :
 		virtual public BaseComponent,
 		public interfaces::IResizableComponent
 	{

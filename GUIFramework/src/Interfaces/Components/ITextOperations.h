@@ -7,7 +7,7 @@ namespace gui_framework
 	namespace interfaces
 	{
 		/// @brief Provides setText and getText methods
-		class ITextOperations
+		class GUI_FRAMEWORK_API ITextOperations
 		{
 		protected:
 			HWND textHandle;

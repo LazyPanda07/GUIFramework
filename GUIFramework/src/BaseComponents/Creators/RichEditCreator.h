@@ -6,7 +6,8 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		class RichEditCreator : public BaseComponentCreator
+		/// @brief gui_framework::RichEdit creator
+		class GUI_FRAMEWORK_API RichEditCreator : public BaseComponentCreator
 		{
 		public:
 			RichEditCreator() = default;

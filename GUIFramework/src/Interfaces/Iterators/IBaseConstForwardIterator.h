@@ -6,8 +6,11 @@ namespace gui_framework
 {
 	namespace interfaces
 	{
+		/// @brief Base interface for const forward iterators
+		/// @tparam T Type
+		/// @tparam IBaseConstIteratorSubclass Class that implements IBaseConstForwardIterator
 		template<typename T, typename IBaseConstIteratorSubclass>
-		class IBaseConstForwardIterator
+		class GUI_FRAMEWORK_API IBaseConstForwardIterator
 		{
 		public:
 			IBaseConstForwardIterator() = default;

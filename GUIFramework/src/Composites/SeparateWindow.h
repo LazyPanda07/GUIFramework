@@ -5,7 +5,8 @@
 
 namespace gui_framework
 {
-	class SeparateWindow :
+	/// @brief Standard separate window
+	class GUI_FRAMEWORK_API SeparateWindow :
 		public BaseResizableComposite,
 		public BaseSeparateWindow
 	{

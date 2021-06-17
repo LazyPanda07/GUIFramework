@@ -9,7 +9,7 @@
 namespace gui_framework
 {
 	/// @brief Standard button
-	class Button :
+	class GUI_FRAMEWORK_API Button :
 		public BaseResizableComponent,
 		public BaseButton
 	{
