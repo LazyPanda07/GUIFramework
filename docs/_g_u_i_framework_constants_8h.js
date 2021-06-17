@@ -1,0 +1,26 @@
+var _g_u_i_framework_constants_8h =
+[
+    [ "GUI_FRAMEWORK_API", "_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba", null ],
+    [ "GUI_FRAMEWORK_API_FUNCTION", "_g_u_i_framework_constants_8h.html#a767f18c6bddef6da85ce42f210726a25", null ],
+    [ "button", "_g_u_i_framework_constants_8h.html#a3a70e6e92deddb65c6406def06e23ec8", null ],
+    [ "buttonHeight", "_g_u_i_framework_constants_8h.html#ad9a5341565621f03854e8c9e0d942e8f", null ],
+    [ "buttonWidth", "_g_u_i_framework_constants_8h.html#af458d40e3a798d830af7f24830173cc7", null ],
+    [ "comboBox", "_g_u_i_framework_constants_8h.html#a268c9d59b1fb54e307a88f7693eb19a2", null ],
+    [ "comboBoxAdditionalWidth", "_g_u_i_framework_constants_8h.html#af5dff7df0d040f20e7069da7f8ce28da", null ],
+    [ "dialogBoxBuilderMinHeight", "_g_u_i_framework_constants_8h.html#a1eb22a43d0bb081bc61b66b89c35fc33", null ],
+    [ "dialogBoxBuilderMinWidth", "_g_u_i_framework_constants_8h.html#a0fcf0837ccf940788169d753bad717de", null ],
+    [ "dropDownMenuItem", "_g_u_i_framework_constants_8h.html#acd826e0552d9392c7e519b1d7e0ff599", null ],
+    [ "editControl", "_g_u_i_framework_constants_8h.html#a3d184f6df6f95fabed1653b545c3c027", null ],
+    [ "editControlHeight", "_g_u_i_framework_constants_8h.html#adb1974c26e1895c1ba8ab8c6ef7e04dd", null ],
+    [ "editControlWidth", "_g_u_i_framework_constants_8h.html#a2e493c26d6d61ce38aa1da20fa61717f", null ],
+    [ "listBox", "_g_u_i_framework_constants_8h.html#af6e71a5d5e0e7847e41cd158ae68221c", null ],
+    [ "listBoxAdditionalWidth", "_g_u_i_framework_constants_8h.html#a064e45c055ec4208917e9f5663ec53a5", null ],
+    [ "menuItem", "_g_u_i_framework_constants_8h.html#a15d8d4d9b0a61c66441e8675dbc892c9", null ],
+    [ "msftEditLibrary", "_g_u_i_framework_constants_8h.html#aa0a8f6ff8009d943b34253c4a50409c2", null ],
+    [ "richEdit", "_g_u_i_framework_constants_8h.html#a57b557e0f5b320b012d2af64d4246290", null ],
+    [ "settingsJSONFile", "_g_u_i_framework_constants_8h.html#a9ac890cff1776e71efbf6c9ae1a837bf", null ],
+    [ "staticControl", "_g_u_i_framework_constants_8h.html#ac86ad99c706e27ca256a71b2b0ee9dd8", null ],
+    [ "staticControlHeight", "_g_u_i_framework_constants_8h.html#a07a74c45cb8206bb4a4f918a5cb9d131", null ],
+    [ "staticControlWidth", "_g_u_i_framework_constants_8h.html#a62f0c5bf3fb69dfcd5a07cad5f90306f", null ],
+    [ "threadsCountSetting", "_g_u_i_framework_constants_8h.html#a583a179dba5adc309d1a59f97c4dfe54", null ]
+];
