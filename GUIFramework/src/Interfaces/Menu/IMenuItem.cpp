@@ -40,7 +40,7 @@ namespace gui_framework
 			return text;
 		}
 
-		const string& IMenuItem::getMenuType() const
+		const string& IMenuItem::getType() const
 		{
 			return type;
 		}

@@ -31,7 +31,7 @@ namespace gui_framework
 
 			virtual const std::wstring& getText() const final;
 
-			virtual const std::string& getMenuType() const final;
+			virtual const std::string& getType() const final;
 
 			virtual ~IMenuItem();
 		};

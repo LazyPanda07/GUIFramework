@@ -93,6 +93,8 @@
     <ClInclude Include="src\Interfaces\Iterators\IIterable.h" />
     <ClInclude Include="src\Interfaces\Menu\IMenuItem.h" />
     <ClInclude Include="src\Menu\Menu.h" />
+    <ClInclude Include="src\Menu\MenuItems\BaseDropDownMenuItem.h" />
+    <ClInclude Include="src\Menu\MenuItems\BaseMenuItem.h" />
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\BaseComposites\StandardComposites\BaseSeparateWindow.h" />
     <ClInclude Include="src\Utility\ComponentSettings.h" />
@@ -159,6 +161,8 @@
     <ClCompile Include="src\Interfaces\Components\ITextOperations.cpp" />
     <ClCompile Include="src\Interfaces\Menu\IMenuItem.cpp" />
     <ClCompile Include="src\Menu\Menu.cpp" />
+    <ClCompile Include="src\Menu\MenuItems\BaseDropDownMenuItem.cpp" />
+    <ClCompile Include="src\Menu\MenuItems\BaseMenuItem.cpp" />
     <ClCompile Include="src\pch.cpp" />
     <ClCompile Include="src\BaseComposites\StandardComposites\BaseSeparateWindow.cpp" />
     <ClCompile Include="src\Utility\ComponentSettings.cpp" />
