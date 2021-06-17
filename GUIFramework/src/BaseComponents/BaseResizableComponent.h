@@ -5,6 +5,7 @@
 
 namespace gui_framework
 {
+	/// @brief Class for resizing
 	class BaseResizableComponent :
 		virtual public BaseComponent,
 		public interfaces::IResizableComponent

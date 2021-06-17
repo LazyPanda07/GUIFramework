@@ -5,7 +5,8 @@
 
 namespace gui_framework
 {
-	class StaticControl :
+	/// @brief Standard static control
+	class GUI_FRAMEWORK_API StaticControl :
 		public BaseResizableComponent,
 		public BaseStaticControl
 	{

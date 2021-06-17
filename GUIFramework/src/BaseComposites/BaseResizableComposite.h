@@ -5,7 +5,8 @@
 
 namespace gui_framework
 {
-	class BaseResizableComposite :
+	/// @brief Class for resizing
+	class GUI_FRAMEWORK_API BaseResizableComposite :
 		virtual public BaseComposite,
 		public interfaces::IResizableComponent
 	{

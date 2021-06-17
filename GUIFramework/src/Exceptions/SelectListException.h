@@ -6,7 +6,8 @@ namespace gui_framework
 {
 	namespace exceptions
 	{
-		class SelectListException : public BaseGUIFrameworkException
+		/// @brief Exception for all list classes exceptions
+		class GUI_FRAMEWORK_API SelectListException : public BaseGUIFrameworkException
 		{
 		public:
 			SelectListException(const std::string& method, LRESULT errorCode, const std::string_view& additionalDescription = "");

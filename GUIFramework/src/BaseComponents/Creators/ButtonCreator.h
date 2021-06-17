@@ -6,7 +6,8 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		class ButtonCreator : public BaseComponentCreator
+		/// @brief gui_framework::Button creator
+		class GUI_FRAMEWORK_API ButtonCreator : public BaseComponentCreator
 		{
 		public:
 			ButtonCreator() = default;

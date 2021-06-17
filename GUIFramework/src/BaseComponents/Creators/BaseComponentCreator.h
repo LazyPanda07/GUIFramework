@@ -6,7 +6,8 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		class BaseComponentCreator
+		/// @brief Interface for components creation(factory method pattern)
+		class GUI_FRAMEWORK_API BaseComponentCreator
 		{
 		public:
 			BaseComponentCreator() = default;

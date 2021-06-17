@@ -4,7 +4,8 @@
 
 namespace gui_framework
 {
-	class BaseMenuItem : public interfaces::IMenuItem
+	/// @brief Base class for all menu items
+	class GUI_FRAMEWORK_API BaseMenuItem : public interfaces::IMenuItem
 	{
 	public:
 		BaseMenuItem(const std::wstring& text);

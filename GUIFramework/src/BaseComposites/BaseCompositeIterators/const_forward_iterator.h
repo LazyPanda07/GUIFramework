@@ -7,7 +7,7 @@ namespace gui_framework
 {
 	namespace iterators
 	{
-		class const_forward_iterator : public interfaces::IBaseConstForwardIterator<BaseComponent, const_forward_iterator>
+		class GUI_FRAMEWORK_API const_forward_iterator : public interfaces::IBaseConstForwardIterator<BaseComponent, const_forward_iterator>
 		{
 		private:
 			BaseComponent* currentComponent;

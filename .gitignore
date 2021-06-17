@@ -36,3 +36,9 @@
 
 # Binaries
 bin/
+
+# Build folder
+build/
+
+# GUIFrameworkBuilder
+!GUIFrameworkBuilder.exe

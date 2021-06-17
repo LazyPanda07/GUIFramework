@@ -7,7 +7,7 @@ namespace gui_framework
 	namespace utility
 	{
 		/// @brief All settings for windows
-		struct ComponentSettings
+		struct GUI_FRAMEWORK_API ComponentSettings
 		{
 			DWORD extendedStyles;
 			DWORD styles;

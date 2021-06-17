@@ -8,8 +8,9 @@ namespace gui_framework
 {
 	namespace utility
 	{
+		/// @brief Specialization for gui_framework::ListBox
 		template<>
-		class AdditionalCreationData<ListBox>
+		class GUI_FRAMEWORK_API AdditionalCreationData<ListBox>
 		{
 		protected:
 			std::vector<std::wstring> values;
@@ -25,8 +26,9 @@ namespace gui_framework
 			virtual ~AdditionalCreationData() = default;
 		};
 
+		/// @brief Specialization for gui_framework::MultipleSelectListBox
 		template<>
-		class AdditionalCreationData<MultipleSelectListBox>
+		class GUI_FRAMEWORK_API AdditionalCreationData<MultipleSelectListBox>
 		{
 		protected:
 			std::vector<std::wstring> values;

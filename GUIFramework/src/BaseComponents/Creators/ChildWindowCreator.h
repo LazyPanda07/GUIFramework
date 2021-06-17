@@ -6,7 +6,8 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		class ChildWindowCreator : public BaseComponentCreator
+		/// @brief gui_framework::ChildWindow creator
+		class GUI_FRAMEWORK_API ChildWindowCreator : public BaseComponentCreator
 		{
 		public:
 			ChildWindowCreator() = default;

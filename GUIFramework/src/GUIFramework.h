@@ -11,7 +11,7 @@
 namespace gui_framework
 {
 	/// @brief Singleton with GUIFramework settings
-	class GUIFramework
+	class GUI_FRAMEWORK_API GUIFramework
 	{
 	private:
 		json::JSONParser jsonSettings;

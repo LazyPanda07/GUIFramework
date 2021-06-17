@@ -6,7 +6,7 @@
 namespace gui_framework
 {
 	/// @brief Base class for all windows, controls, etc.
-	class BaseComponent
+	class GUI_FRAMEWORK_API BaseComponent
 	{
 	public:
 		enum class exitMode

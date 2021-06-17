@@ -7,8 +7,9 @@ namespace gui_framework
 {
 	namespace utility
 	{
+		/// @brief Specialization for gui_framework::RichEdit
 		template<>
-		class AdditionalCreationData<RichEdit>
+		class GUI_FRAMEWORK_API AdditionalCreationData<RichEdit>
 		{
 		protected:
 			std::vector<std::pair<BaseRichEdit::urlDetectEvent, std::function<void(const std::wstring&)>>> callbacks;

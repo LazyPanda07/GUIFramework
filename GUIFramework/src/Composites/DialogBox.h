@@ -8,12 +8,14 @@
 
 namespace gui_framework
 {
-	class DialogBox :
+	/// @brief Standard dialog box
+	class GUI_FRAMEWORK_API DialogBox :
 		public BaseNonResizableComposite,
 		public BaseDialogBox
 	{
 	public:
-		class DialogBoxBuilder
+		/// @brief Builder for dialog boxes
+		class GUI_FRAMEWORK_API DialogBoxBuilder
 		{
 		public:
 			enum class alignment

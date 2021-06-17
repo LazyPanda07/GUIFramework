@@ -7,7 +7,7 @@ namespace gui_framework
 	namespace interfaces
 	{
 		/// @brief Provides resize, setBlockResize, getBlockResize methods
-		class IResizableComponent
+		class GUI_FRAMEWORK_API IResizableComponent
 		{
 		protected:
 			HWND resizeableHandle;

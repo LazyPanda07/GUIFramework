@@ -4,7 +4,8 @@
 
 namespace gui_framework
 {
-	class Menu final
+	/// @brief Menu class
+	class GUI_FRAMEWORK_API Menu final
 	{
 	private:
 		std::wstring name;

@@ -8,7 +8,7 @@
 namespace gui_framework
 {
 	/// @brief Base class for all windows that has children windows
-	class BaseComposite :
+	class GUI_FRAMEWORK_API BaseComposite :
 		public BaseComponent,
 		public interfaces::IIterable<BaseComponent, iterators::forward_iterator, iterators::const_forward_iterator>
 	{

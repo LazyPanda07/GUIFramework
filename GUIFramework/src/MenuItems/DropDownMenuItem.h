@@ -4,7 +4,8 @@
 
 namespace gui_framework
 {
-	class DropDownMenuItem : public interfaces::IMenuItem
+	/// @brief Standard drop-down menu item
+	class GUI_FRAMEWORK_API DropDownMenuItem : public interfaces::IMenuItem
 	{
 	protected:
 		HMENU popupMenuHandle;

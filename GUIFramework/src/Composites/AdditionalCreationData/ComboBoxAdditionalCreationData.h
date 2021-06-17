@@ -9,8 +9,9 @@ namespace gui_framework
 {
 	namespace utility
 	{
+		/// @brief Specialization for gui_framework::DropDownComboBox
 		template<>
-		class AdditionalCreationData<DropDownComboBox>
+		class GUI_FRAMEWORK_API AdditionalCreationData<DropDownComboBox>
 		{
 		protected:
 			std::vector<std::wstring> values;
@@ -25,8 +26,9 @@ namespace gui_framework
 			virtual ~AdditionalCreationData() = default;
 		};
 
+		/// @brief Specialization for gui_framework::DropDownListComboBox
 		template<>
-		class AdditionalCreationData<DropDownListComboBox>
+		class GUI_FRAMEWORK_API AdditionalCreationData<DropDownListComboBox>
 		{
 		protected:
 			std::vector<std::wstring> values;
@@ -41,8 +43,9 @@ namespace gui_framework
 			virtual ~AdditionalCreationData() = default;
 		};
 
+		/// @brief Specialization for gui_framework::SimpleComboBox
 		template<>
-		class AdditionalCreationData<SimpleComboBox>
+		class GUI_FRAMEWORK_API AdditionalCreationData<SimpleComboBox>
 		{
 		protected:
 			std::vector<std::wstring> values;

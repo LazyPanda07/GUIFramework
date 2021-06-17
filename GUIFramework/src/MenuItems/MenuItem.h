@@ -4,7 +4,8 @@
 
 namespace gui_framework
 {
-	class MenuItem : public BaseMenuItem
+	/// @brief Standard menu item
+	class GUI_FRAMEWORK_API MenuItem : public BaseMenuItem
 	{
 	private:
 		std::function<void()> onClick;

@@ -1,0 +1,11 @@
+{
+  "GUIFrameworkSettings": {
+    "JSON": "{f6b57139-d9f3-4b02-aa92-4e1f417649da}",
+    "ThreadPool": "{bde48484-5593-484f-9f84-fc01f8cf83a9}",
+    "GUIFramework": "{4abc2b87-48db-4481-8d94-4de3de15a82e}"
+  },
+
+  "GUIFrameworkLink": {
+    "frameworkLibrary": "GUIFramework.lib"
+  }
+}

@@ -7,8 +7,9 @@ namespace gui_framework
 {
 	namespace utility
 	{
+		/// @brief Base templated class for component creators
 		template<std::derived_from<BaseComponent> T>
-		class AdditionalCreationData
+		class GUI_FRAMEWORK_API AdditionalCreationData
 		{
 		public:
 			AdditionalCreationData() = default;
