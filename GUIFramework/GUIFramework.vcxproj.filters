@@ -440,5 +440,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="gui_framework.json" />
+    <None Include="GUIFrameworkMacros.props" />
   </ItemGroup>
 </Project>
