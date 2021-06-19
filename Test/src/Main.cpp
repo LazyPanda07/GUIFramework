@@ -2,7 +2,7 @@
 
 #include "GUIFramework.h"
 #include "Composites/SeparateWindow.h"
-#include "Components/Button.h"
+#include "BaseComponents/StandardComponents/BaseTabControl.h"
 
 #pragma comment (lib, "GUIFramework.lib")
 
@@ -18,7 +18,7 @@ void test(const wstring& className, const wstring& title, const string& function
 
 	mainWindow->setExitMode(BaseComponent::exitMode::quit);
 
-	new Button(L"SimpleButton", L"Some text on button", 0, 0, mainWindow.get(), [](WPARAM, LPARAM) -> LRESULT { cout << "Click" << endl; return 0; });
+
 
 	MSG msg = {};
 
