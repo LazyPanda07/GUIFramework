@@ -11,6 +11,7 @@
 #include <sstream>
 #include <concepts>
 #include <any>
+#include <filesystem>
 
 #include <thread>
 #include <condition_variable>

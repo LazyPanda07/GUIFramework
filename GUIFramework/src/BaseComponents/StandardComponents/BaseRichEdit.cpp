@@ -38,11 +38,11 @@ namespace gui_framework
 		return -1;
 	}
 
-	BaseRichEdit::BaseRichEdit(const wstring& windowName, const utility::ComponentSettings& settings, BaseComponent* parent) :
+	BaseRichEdit::BaseRichEdit(const wstring& richEditName, const utility::ComponentSettings& settings, BaseComponent* parent) :
 		BaseComponent
 		(
 			wstring(standard_classes::richEdit),
-			windowName,
+			richEditName,
 			settings,
 			parent
 		),
