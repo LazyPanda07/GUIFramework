@@ -9,12 +9,13 @@ namespace gui_framework
 {
 	namespace standard_classes
 	{
-		inline constexpr std::wstring_view button = L"Button";
-		inline constexpr std::wstring_view editControl = L"Edit";
-		inline constexpr std::wstring_view staticControl = L"Static";
-		inline constexpr std::wstring_view comboBox = L"ComboBox";
-		inline constexpr std::wstring_view listBox = L"ListBox";
+		inline constexpr std::wstring_view button = WC_BUTTONW;
+		inline constexpr std::wstring_view editControl = WC_EDITW;
+		inline constexpr std::wstring_view staticControl = WC_STATICW;
+		inline constexpr std::wstring_view comboBox = WC_COMBOBOXW;
+		inline constexpr std::wstring_view listBox = WC_LISTBOXW;
 		inline constexpr std::wstring_view richEdit = MSFTEDIT_CLASS;
+		inline constexpr std::wstring_view tabControl = WC_TABCONTROL;
 	}
 
 	namespace standard_menu_items
@@ -40,6 +41,10 @@ namespace gui_framework
 
 		inline constexpr uint16_t dialogBoxBuilderMinWidth = 300;
 		inline constexpr uint16_t dialogBoxBuilderMinHeight = 200;
+
+		inline constexpr uint16_t defaultTabControlImageWidth = 64;
+		inline constexpr uint16_t defaultTabControlImageHeight = 64;
+		inline constexpr uint16_t defaultImagesCount = 16;
 	}
 
 	namespace settings
@@ -53,6 +58,8 @@ namespace gui_framework
 	{
 		inline constexpr std::wstring_view msftEditLibrary = L"MsftEdit.dll";
 	}
+
+	inline constexpr std::string_view guiFrameworkVersion = "0.2-alpha";
 }
 
 #ifdef GUI_FRAMEWORK_DLL

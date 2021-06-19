@@ -2,15 +2,11 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros">
-    <GUIFrameworkVersion>0.1</GUIFrameworkVersion>
     <GUIFrameworkLibraryDir>$(SolutionDir)GUIFrameworkLibrary\</GUIFrameworkLibraryDir>
   </PropertyGroup>
   <PropertyGroup />
   <ItemDefinitionGroup />
   <ItemGroup>
-    <BuildMacro Include="GUIFrameworkVersion">
-      <Value>$(GUIFrameworkVersion)</Value>
-    </BuildMacro>
     <BuildMacro Include="GUIFrameworkLibraryDir">
       <Value>$(GUIFrameworkLibraryDir)</Value>
     </BuildMacro>
