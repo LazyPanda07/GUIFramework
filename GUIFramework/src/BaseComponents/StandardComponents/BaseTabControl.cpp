@@ -9,6 +9,16 @@ using namespace std;
 
 namespace gui_framework
 {
+	using tabData = BaseTabControl::tabData;
+
+	tabData::tabData(const wstring& text, const filesystem::path& pathToImage, const function<void()>& callback) :
+		text(text),
+		pathToImage(pathToImage),
+		callback(callback)
+	{
+
+	}
+
 	LRESULT BaseTabControl::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
 	{
 		if (message == WM_NOTIFY)
@@ -67,7 +77,9 @@ namespace gui_framework
 
 		if (result != -1)
 		{
-			callbacks.insert(callbacks.begin() + index, onClick);
+			auto it = callbacks.insert(callbacks.begin() + index, onClick);
+
+			tabs.emplace(tabs.begin() + index, text, filesystem::path(), *it);
 		}
 
 		return result;
@@ -101,7 +113,9 @@ namespace gui_framework
 
 		if (result != -1)
 		{
-			callbacks.insert(callbacks.begin() + index, onClick);
+			auto it = callbacks.insert(callbacks.begin() + index, onClick);
+
+			tabs.emplace(tabs.begin() + index, wstring(), pathToImage, *it);
 		}
 
 		return result;
@@ -137,7 +151,9 @@ namespace gui_framework
 
 		if (result != -1)
 		{
-			callbacks.insert(callbacks.begin() + index, onClick);
+			auto it = callbacks.insert(callbacks.begin() + index, onClick);
+
+			tabs.emplace(tabs.begin() + index, text, pathToImage, *it);
 		}
 
 		return result;
@@ -150,6 +166,8 @@ namespace gui_framework
 		if (result)
 		{
 			callbacks.erase(callbacks.begin() + index);
+
+			tabs.erase(tabs.begin() + index);
 		}
 
 		return result;
@@ -162,6 +180,8 @@ namespace gui_framework
 		if (result)
 		{
 			callbacks.clear();
+
+			tabs.clear();
 		}
 
 		return result;
@@ -172,7 +192,7 @@ namespace gui_framework
 		return SendMessageW(handle, TCM_GETITEMCOUNT, NULL, NULL);
 	}
 
-	bool BaseTabControl::setItem(size_t index, const wstring& text, const filesystem::path& pathToImage)
+	bool BaseTabControl::setItem(size_t index, const function<void()>& callback, const wstring& text, const filesystem::path& pathToImage)
 	{
 		if (!pathToImage.empty() && !filesystem::exists(pathToImage))
 		{
@@ -203,7 +223,16 @@ namespace gui_framework
 			item.iImage = images[pathToImage];
 		}
 
-		return SendMessageW(handle, TCM_SETITEM, index, reinterpret_cast<LPARAM>(&item));
+		bool result = SendMessageW(handle, TCM_SETITEM, index, reinterpret_cast<LPARAM>(&item));
+
+		if (result)
+		{
+			callbacks[index] = callback;
+
+			tabs[index] = tabData(text, pathToImage, callback);
+		}
+
+		return result;
 	}
 
 	LRESULT BaseTabControl::setSelection(size_t index)
@@ -211,18 +240,24 @@ namespace gui_framework
 		return SendMessageW(handle, TCM_SETCURSEL, static_cast<WPARAM>(index), NULL);
 	}
 
-	TCITEMW BaseTabControl::getItem(size_t index) const
+	const BaseTabControl::tabData& BaseTabControl::getItem(size_t index) const
 	{
-		TCITEMW item = {};
-
-		SendMessageW(handle, TCM_GETITEM, static_cast<WPARAM>(index), reinterpret_cast<LPARAM>(&item));
-
-		return item;
+		return tabs.at(index);
 	}
 
 	LRESULT BaseTabControl::getSelectedTab() const
 	{
 		return SendMessageW(handle, TCM_GETCURSEL, NULL, NULL);
+	}
+
+	uint16_t BaseTabControl::getImageWidth() const
+	{
+		return iconWidth;
+	}
+
+	uint16_t BaseTabControl::getImageHeight() const
+	{
+		return iconHeight;
 	}
 
 	BaseTabControl::~BaseTabControl()

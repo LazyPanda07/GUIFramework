@@ -7,12 +7,29 @@ namespace gui_framework
 	class GUI_FRAMEWORK_API BaseTabControl :
 		virtual public BaseComponent
 	{
+	public:
+		struct tabData
+		{
+			std::wstring text;
+			std::filesystem::path pathToImage;
+			std::function<void()> callback;
+
+			tabData(const std::wstring& text, const std::filesystem::path& pathToImage, const std::function<void()>& callback);
+
+			tabData(tabData&& other) noexcept = default;
+
+			tabData& operator = (tabData&& other) noexcept = default;
+
+			~tabData() = default;
+		};
+
 	protected:
 		HIMAGELIST imageList;
 		std::unordered_map<std::wstring, uint16_t> images;
 		uint16_t iconWidth;
 		uint16_t iconHeight;
 		std::vector<std::function<void()>> callbacks;
+		std::vector<tabData> tabs;
 
 	protected:
 		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
@@ -64,15 +81,23 @@ namespace gui_framework
 		/// @param pathToImage 
 		/// @return 
 		/// @exception gui_framework::exceptions::FileDoesNotExist 
-		virtual bool setItem(size_t index, const std::wstring& text = L"", const std::filesystem::path& pathToImage = L"") final;
+		virtual bool setItem(size_t index, const std::function<void()>& callback, const std::wstring& text = L"", const std::filesystem::path& pathToImage = L"") final;
 
 		/// @brief 
 		/// @return Returns the index of the previously selected tab if successful, or -1 otherwise 
 		virtual LRESULT setSelection(size_t index) final;
 
-		virtual TCITEMW getItem(size_t index) const final;
+		/// @brief 
+		/// @param index 
+		/// @return
+		/// @exception std::out_of_range 
+		virtual const tabData& getItem(size_t index) const final;
 
 		virtual LRESULT getSelectedTab() const final;
+
+		virtual uint16_t getImageWidth() const final;
+
+		virtual uint16_t getImageHeight() const final;
 
 		virtual ~BaseTabControl();
 	};
