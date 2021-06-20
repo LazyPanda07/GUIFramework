@@ -3,10 +3,38 @@
 
 #include "Exceptions/FileDoesNotExist.h"
 
+#pragma warning(disable: 26454)
+
 using namespace std;
 
 namespace gui_framework
 {
+	LRESULT BaseTabControl::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
+	{
+		if (message == WM_NOTIFY)
+		{
+			NMHDR* notification = reinterpret_cast<NMHDR*>(lparam);
+
+			if (notification->code == TCN_SELCHANGE)
+			{
+				isUsed = true;
+
+				LRESULT currentTab = this->getSelectedTab();
+
+				if (currentTab != -1)
+				{
+					callbacks[currentTab]();
+				}
+
+				return 0;
+			}
+		}
+
+		isUsed = false;
+
+		return -1;
+	}
+
 	BaseTabControl::BaseTabControl(const wstring& tabControlName, const utility::ComponentSettings& settings, uint16_t iconWidth, uint16_t iconHeight, BaseComponent* parent) :
 		BaseComponent
 		(
@@ -22,12 +50,12 @@ namespace gui_framework
 		SendMessageW(handle, TCM_SETIMAGELIST, NULL, reinterpret_cast<LPARAM>(imageList));
 	}
 
-	LRESULT BaseTabControl::appendText(const wstring& text)
+	LRESULT BaseTabControl::appendText(const wstring& text, const function<void()>& onClick)
 	{
-		return this->insertText(this->size(), text);
+		return this->insertText(this->size(), text, onClick);
 	}
 
-	LRESULT BaseTabControl::insertText(size_t index, const wstring& text)
+	LRESULT BaseTabControl::insertText(size_t index, const wstring& text, const function<void()>& onClick)
 	{
 		TCITEMW item = {};
 
@@ -35,15 +63,22 @@ namespace gui_framework
 		item.pszText = const_cast<wchar_t*>(text.data());
 		item.cchTextMax = static_cast<int>(text.size());
 
-		return SendMessageW(handle, TCM_INSERTITEM, index, reinterpret_cast<LPARAM>(&item));
+		LRESULT result = SendMessageW(handle, TCM_INSERTITEM, index, reinterpret_cast<LPARAM>(&item));
+
+		if (result != -1)
+		{
+			callbacks.insert(callbacks.begin() + index, onClick);
+		}
+
+		return result;
 	}
 
-	LRESULT BaseTabControl::appendImage(const filesystem::path& pathToImage)
+	LRESULT BaseTabControl::appendImage(const filesystem::path& pathToImage, const function<void()>& onClick)
 	{
-		return this->insertImage(this->size(), pathToImage);
+		return this->insertImage(this->size(), pathToImage, onClick);
 	}
 
-	LRESULT BaseTabControl::insertImage(size_t index, const filesystem::path& pathToImage)
+	LRESULT BaseTabControl::insertImage(size_t index, const filesystem::path& pathToImage, const function<void()>& onClick)
 	{
 		if (!filesystem::exists(pathToImage))
 		{
@@ -62,15 +97,22 @@ namespace gui_framework
 		item.mask = TCIF_IMAGE;
 		item.iImage = images[pathToImage];
 
-		return SendMessageW(handle, TCM_INSERTITEM, index, reinterpret_cast<LPARAM>(&item));
+		LRESULT result = SendMessageW(handle, TCM_INSERTITEM, index, reinterpret_cast<LPARAM>(&item));
+
+		if (result != -1)
+		{
+			callbacks.insert(callbacks.begin() + index, onClick);
+		}
+
+		return result;
 	}
 
-	LRESULT BaseTabControl::appendTextAndImage(const wstring& text, const filesystem::path& pathToImage)
+	LRESULT BaseTabControl::appendTextAndImage(const wstring& text, const filesystem::path& pathToImage, const function<void()>& onClick)
 	{
-		return this->insertTextAndImage(this->size(), text, pathToImage);
+		return this->insertTextAndImage(this->size(), text, pathToImage, onClick);
 	}
 
-	LRESULT BaseTabControl::insertTextAndImage(size_t index, const wstring& text, const filesystem::path& pathToImage)
+	LRESULT BaseTabControl::insertTextAndImage(size_t index, const wstring& text, const filesystem::path& pathToImage, const function<void()>& onClick)
 	{
 		if (!filesystem::exists(pathToImage))
 		{
@@ -91,17 +133,38 @@ namespace gui_framework
 		item.cchTextMax = static_cast<int>(text.size());
 		item.iImage = images[pathToImage];
 
-		return SendMessageW(handle, TCM_INSERTITEM, index, reinterpret_cast<LPARAM>(&item));
+		LRESULT result = SendMessageW(handle, TCM_INSERTITEM, index, reinterpret_cast<LPARAM>(&item));
+
+		if (result != -1)
+		{
+			callbacks.insert(callbacks.begin() + index, onClick);
+		}
+
+		return result;
 	}
 
 	bool BaseTabControl::removeTab(size_t index)
 	{
-		return SendMessageW(handle, TCM_DELETEITEM, static_cast<WPARAM>(index), NULL);
+		bool result = SendMessageW(handle, TCM_DELETEITEM, static_cast<WPARAM>(index), NULL);
+
+		if (result)
+		{
+			callbacks.erase(callbacks.begin() + index);
+		}
+
+		return result;
 	}
 
 	bool BaseTabControl::clear()
 	{
-		return SendMessageW(handle, TCM_DELETEALLITEMS, NULL, NULL);
+		bool result = SendMessageW(handle, TCM_DELETEALLITEMS, NULL, NULL);
+
+		if (result)
+		{
+			callbacks.clear();
+		}
+
+		return result;
 	}
 
 	size_t BaseTabControl::size() const

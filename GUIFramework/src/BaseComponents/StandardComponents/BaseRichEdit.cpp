@@ -11,10 +11,12 @@ namespace gui_framework
 
 		if (message == WM_NOTIFY && this->getAutoURLDetect())
 		{
-			ENLINK* ptrLink = reinterpret_cast<ENLINK*>(lparam);
+			NMHDR* notification = reinterpret_cast<NMHDR*>(lparam);
 
-			if (ptrLink->nmhdr.code == EN_LINK)
+			if (notification->code == EN_LINK)
 			{
+				ENLINK* ptrLink = reinterpret_cast<ENLINK*>(lparam);
+
 				auto callback = callbacks.find(static_cast<urlDetectEvent>(ptrLink->msg));
 
 				if (callback != callbacks.end())

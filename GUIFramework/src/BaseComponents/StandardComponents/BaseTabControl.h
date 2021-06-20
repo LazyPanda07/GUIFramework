@@ -12,33 +12,37 @@ namespace gui_framework
 		std::unordered_map<std::wstring, uint16_t> images;
 		uint16_t iconWidth;
 		uint16_t iconHeight;
+		std::vector<std::function<void()>> callbacks;
+
+	protected:
+		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
 
 	public:
 		BaseTabControl(const std::wstring& tabControlName, const utility::ComponentSettings& settings, uint16_t iconsWidth, uint16_t iconsHeight, BaseComponent* parent);
 
-		virtual LRESULT appendText(const std::wstring& text) final;
+		virtual LRESULT appendText(const std::wstring& text, const std::function<void()>& onClick) final;
 
-		virtual LRESULT insertText(size_t index, const std::wstring& text) final;
+		virtual LRESULT insertText(size_t index, const std::wstring& text, const std::function<void()>& onClick) final;
 
 		/// @brief 
 		/// @param pathToImage 
 		/// @return
 		/// @exception gui_framework::exceptions::FileDoesNotExist
-		virtual LRESULT appendImage(const std::filesystem::path& pathToImage) final;
+		virtual LRESULT appendImage(const std::filesystem::path& pathToImage, const std::function<void()>& onClick) final;
 
 		/// @brief 
 		/// @param pathToImage 
 		/// @param index 
 		/// @return 
 		/// @exception gui_framework::exceptions::FileDoesNotExist
-		virtual LRESULT insertImage(size_t index, const std::filesystem::path& pathToImage) final;
+		virtual LRESULT insertImage(size_t index, const std::filesystem::path& pathToImage, const std::function<void()>& onClick) final;
 
 		/// @brief 
 		/// @param text 
 		/// @param pathToImage 
 		/// @return
 		/// @exception gui_framework::exceptions::FileDoesNotExist 
-		virtual LRESULT appendTextAndImage(const std::wstring& text, const std::filesystem::path& pathToImage) final;
+		virtual LRESULT appendTextAndImage(const std::wstring& text, const std::filesystem::path& pathToImage, const std::function<void()>& onClick) final;
 
 		/// @brief 
 		/// @param text 
@@ -46,7 +50,7 @@ namespace gui_framework
 		/// @param index 
 		/// @return 
 		/// @exception gui_framework::exceptions::FileDoesNotExist 
-		virtual LRESULT insertTextAndImage(size_t index, const std::wstring& text, const std::filesystem::path& pathToImage) final;
+		virtual LRESULT insertTextAndImage(size_t index, const std::wstring& text, const std::filesystem::path& pathToImage, const std::function<void()>& onClick) final;
 
 		virtual bool removeTab(size_t index) final;
 
