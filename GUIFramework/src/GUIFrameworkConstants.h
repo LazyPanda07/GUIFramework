@@ -42,8 +42,6 @@ namespace gui_framework
 		inline constexpr uint16_t dialogBoxBuilderMinWidth = 300;
 		inline constexpr uint16_t dialogBoxBuilderMinHeight = 200;
 
-		inline constexpr uint16_t defaultTabControlImageWidth = 64;
-		inline constexpr uint16_t defaultTabControlImageHeight = 64;
 		inline constexpr uint16_t defaultImagesCount = 16;
 	}
 
