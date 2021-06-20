@@ -38,7 +38,9 @@
     <ClInclude Include="src\BaseComponents\Creators\SeparateWindowCreator.h" />
     <ClInclude Include="src\BaseComponents\Creators\SimpleComboBoxCreator.h" />
     <ClInclude Include="src\BaseComponents\Creators\StaticControlCreator.h" />
+    <ClInclude Include="src\BaseComponents\Creators\TabControlCreator.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseTabControl.h" />
+    <ClInclude Include="src\Components\TabControl.h" />
     <ClInclude Include="src\Composites\AdditionalCreationData\AdditionalCreationData.h" />
     <ClInclude Include="src\BaseComponents\Creators\BaseComponentCreator.h" />
     <ClInclude Include="src\BaseComponents\Creators\ButtonCreator.h" />
@@ -77,6 +79,7 @@
     <ClInclude Include="src\Composites\AdditionalCreationData\RichEditAdditionalCreationData.h" />
     <ClInclude Include="src\Composites\AdditionalCreationData\SeparateWindowAdditionalCreationData.h" />
     <ClInclude Include="src\Composites\AdditionalCreationData\StaticControlAdditionalCreationData.h" />
+    <ClInclude Include="src\Composites\AdditionalCreationData\TabControlAdditionalCreationData.h" />
     <ClInclude Include="src\Composites\ChildWindow.h" />
     <ClInclude Include="src\Composites\DialogBox.h" />
     <ClInclude Include="src\Composites\SeparateWindow.h" />
@@ -102,6 +105,7 @@
     <ClInclude Include="src\BaseComposites\StandardComposites\BaseSeparateWindow.h" />
     <ClInclude Include="src\Utility\ComponentSettings.h" />
     <ClInclude Include="src\Utility\Utility.h" />
+    <ClInclude Include="src\WindowHolder.h" />
     <ClInclude Include="src\WindowMessages.h" />
   </ItemGroup>
   <ItemGroup>
@@ -117,6 +121,7 @@
     <ClCompile Include="src\BaseComponents\Creators\SeparateWindowCreator.cpp" />
     <ClCompile Include="src\BaseComponents\Creators\SimpleComboBoxCreator.cpp" />
     <ClCompile Include="src\BaseComponents\Creators\StaticControlCreator.cpp" />
+    <ClCompile Include="src\BaseComponents\Creators\TabControlCreator.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseButton.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseComboBox.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseEditControl.cpp" />
@@ -145,6 +150,7 @@
     <ClCompile Include="src\Components\SimpleComboBox.cpp" />
     <ClCompile Include="src\Components\EditControl.cpp" />
     <ClCompile Include="src\Components\StaticControl.cpp" />
+    <ClCompile Include="src\Components\TabControl.cpp" />
     <ClCompile Include="src\Composites\AdditionalCreationData\ButtonAdditionalCreationData.cpp" />
     <ClCompile Include="src\Composites\AdditionalCreationData\ChildWindowAdditionalCreationData.cpp" />
     <ClCompile Include="src\Composites\AdditionalCreationData\ComboBoxAdditionalCreationData.cpp" />
@@ -153,6 +159,7 @@
     <ClCompile Include="src\Composites\AdditionalCreationData\RichEditAdditionalCreationData.cpp" />
     <ClCompile Include="src\Composites\AdditionalCreationData\SeparateWindowAdditionalCreationData.cpp" />
     <ClCompile Include="src\Composites\AdditionalCreationData\StaticControlAdditionalCreationData.cpp" />
+    <ClCompile Include="src\Composites\AdditionalCreationData\TabControlAdditionalCreationData.cpp" />
     <ClCompile Include="src\Composites\ChildWindow.cpp" />
     <ClCompile Include="src\Composites\DialogBox.cpp" />
     <ClCompile Include="src\Composites\SeparateWindow.cpp" />
@@ -173,6 +180,7 @@
     <ClCompile Include="src\BaseComposites\StandardComposites\BaseSeparateWindow.cpp" />
     <ClCompile Include="src\Utility\ComponentSettings.cpp" />
     <ClCompile Include="src\Utility\Utility.cpp" />
+    <ClCompile Include="src\WindowHolder.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GUIFrameworkMacros.props" />

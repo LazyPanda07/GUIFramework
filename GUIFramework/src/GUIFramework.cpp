@@ -12,6 +12,7 @@
 #include "BaseComponents/Creators/StaticControlCreator.h"
 #include "BaseComponents/Creators/SeparateWindowCreator.h"
 #include "BaseComponents/Creators/ChildWindowCreator.h"
+#include "BaseComponents/Creators/TabControlCreator.h"
 
 #include "Components/Button.h"
 #include "Components/EditControl.h"
@@ -24,6 +25,7 @@
 #include "Components/StaticControl.h"
 #include "Composites/SeparateWindow.h"
 #include "Composites/ChildWindow.h"
+#include "Components/TabControl.h"
 
 using namespace std;
 
@@ -52,6 +54,8 @@ namespace gui_framework
 		creators[typeid(SeparateWindow).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::SeparateWindowCreator());
 
 		creators[typeid(ChildWindow).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::ChildWindowCreator());
+
+		creators[typeid(TabControl).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::TabControlCreator());
 	}
 
 	GUIFramework::GUIFramework() :
