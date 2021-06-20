@@ -48,6 +48,12 @@ namespace gui_framework
 		/// @exception gui_framework::exceptions::FileDoesNotExist 
 		virtual LRESULT insertTextAndImage(size_t index, const std::wstring& text, const std::filesystem::path& pathToImage) final;
 
+		virtual bool removeTab(size_t index) final;
+
+		virtual bool clear() final;
+
+		virtual size_t size() const final;
+
 		/// @brief 
 		/// @param index 
 		/// @param text 
@@ -56,13 +62,13 @@ namespace gui_framework
 		/// @exception gui_framework::exceptions::FileDoesNotExist 
 		virtual bool setItem(size_t index, const std::wstring& text = L"", const std::filesystem::path& pathToImage = L"") final;
 
-		virtual TCITEMW getItem(size_t index) final;
+		/// @brief 
+		/// @return Returns the index of the previously selected tab if successful, or -1 otherwise 
+		virtual LRESULT setSelection(size_t index) final;
 
-		virtual bool removeTab(size_t index) final;
+		virtual TCITEMW getItem(size_t index) const final;
 
-		virtual bool clear() final;
-
-		virtual size_t size() const final;
+		virtual LRESULT getSelectedTab() const final;
 
 		virtual ~BaseTabControl();
 	};

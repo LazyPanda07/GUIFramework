@@ -94,6 +94,21 @@ namespace gui_framework
 		return SendMessageW(handle, TCM_INSERTITEM, index, reinterpret_cast<LPARAM>(&item));
 	}
 
+	bool BaseTabControl::removeTab(size_t index)
+	{
+		return SendMessageW(handle, TCM_DELETEITEM, static_cast<WPARAM>(index), NULL);
+	}
+
+	bool BaseTabControl::clear()
+	{
+		return SendMessageW(handle, TCM_DELETEALLITEMS, NULL, NULL);
+	}
+
+	size_t BaseTabControl::size() const
+	{
+		return SendMessageW(handle, TCM_GETITEMCOUNT, NULL, NULL);
+	}
+
 	bool BaseTabControl::setItem(size_t index, const wstring& text, const filesystem::path& pathToImage)
 	{
 		if (!pathToImage.empty() && !filesystem::exists(pathToImage))
@@ -128,7 +143,12 @@ namespace gui_framework
 		return SendMessageW(handle, TCM_SETITEM, index, reinterpret_cast<LPARAM>(&item));
 	}
 
-	TCITEMW BaseTabControl::getItem(size_t index)
+	LRESULT BaseTabControl::setSelection(size_t index)
+	{
+		return SendMessageW(handle, TCM_SETCURSEL, static_cast<WPARAM>(index), NULL);
+	}
+
+	TCITEMW BaseTabControl::getItem(size_t index) const
 	{
 		TCITEMW item = {};
 
@@ -137,19 +157,9 @@ namespace gui_framework
 		return item;
 	}
 
-	bool BaseTabControl::removeTab(size_t index)
+	LRESULT BaseTabControl::getSelectedTab() const
 	{
-		return SendMessageW(handle, TCM_DELETEITEM, static_cast<WPARAM>(index), NULL);
-	}
-
-	bool BaseTabControl::clear()
-	{
-		return SendMessageW(handle, TCM_DELETEALLITEMS, NULL, NULL);
-	}
-
-	size_t BaseTabControl::size() const
-	{
-		return SendMessageW(handle, TCM_GETITEMCOUNT, NULL, NULL);
+		return SendMessageW(handle, TCM_GETCURSEL, NULL, NULL);
 	}
 
 	BaseTabControl::~BaseTabControl()
