@@ -105,6 +105,7 @@
     <ClInclude Include="src\BaseComposites\StandardComposites\BaseSeparateWindow.h" />
     <ClInclude Include="src\Utility\ComponentSettings.h" />
     <ClInclude Include="src\Utility\Utility.h" />
+    <ClInclude Include="src\WindowHolder.h" />
     <ClInclude Include="src\WindowMessages.h" />
   </ItemGroup>
   <ItemGroup>
@@ -179,6 +180,7 @@
     <ClCompile Include="src\BaseComposites\StandardComposites\BaseSeparateWindow.cpp" />
     <ClCompile Include="src\Utility\ComponentSettings.cpp" />
     <ClCompile Include="src\Utility\Utility.cpp" />
+    <ClCompile Include="src\WindowHolder.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GUIFrameworkMacros.props" />
