@@ -6,7 +6,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		class TabControlCreator : public BaseComponentCreator
+		class GUI_FRAMEWORK_API TabControlCreator : public BaseComponentCreator
 		{
 		public:
 			TabControlCreator() = default;

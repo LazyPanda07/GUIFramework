@@ -3,6 +3,9 @@
 #include "BaseComponents/BaseResizableComponent.h"
 #include "BaseComponents/StandardComponents/BaseTabControl.h"
 
+#pragma warning(push)
+#pragma warning(disable: 4250)
+
 namespace gui_framework
 {
 	class GUI_FRAMEWORK_API TabControl : 
@@ -15,3 +18,5 @@ namespace gui_framework
 		~TabControl() = default;
 	};
 }
+
+#pragma warning(pop)
