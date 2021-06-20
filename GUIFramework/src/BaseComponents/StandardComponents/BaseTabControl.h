@@ -16,9 +16,13 @@ namespace gui_framework
 
 			tabData(const std::wstring& text, const std::filesystem::path& pathToImage, const std::function<void()>& callback);
 
-			tabData(tabData&& other) noexcept = default;
+			tabData(const tabData&) = default;
 
-			tabData& operator = (tabData&& other) noexcept = default;
+			tabData(tabData&&) noexcept = default;
+
+			tabData& operator = (const tabData&) = default;
+
+			tabData& operator = (tabData&&) noexcept = default;
 
 			~tabData() = default;
 		};
@@ -26,8 +30,8 @@ namespace gui_framework
 	protected:
 		HIMAGELIST imageList;
 		std::unordered_map<std::wstring, uint16_t> images;
-		uint16_t iconWidth;
-		uint16_t iconHeight;
+		uint16_t imagesWidth;
+		uint16_t imagesHeight;
 		std::vector<std::function<void()>> callbacks;
 		std::vector<tabData> tabs;
 
@@ -35,7 +39,7 @@ namespace gui_framework
 		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
 
 	public:
-		BaseTabControl(const std::wstring& tabControlName, const utility::ComponentSettings& settings, uint16_t iconsWidth, uint16_t iconsHeight, BaseComponent* parent);
+		BaseTabControl(const std::wstring& tabControlName, const utility::ComponentSettings& settings, uint16_t imagesWidth, uint16_t imagesHeight, BaseComponent* parent);
 
 		virtual LRESULT appendText(const std::wstring& text, const std::function<void()>& onClick) final;
 
@@ -95,9 +99,9 @@ namespace gui_framework
 
 		virtual LRESULT getSelectedTab() const final;
 
-		virtual uint16_t getImageWidth() const final;
+		virtual uint16_t getImagesWidth() const final;
 
-		virtual uint16_t getImageHeight() const final;
+		virtual uint16_t getImagesHeight() const final;
 
 		virtual ~BaseTabControl();
 	};

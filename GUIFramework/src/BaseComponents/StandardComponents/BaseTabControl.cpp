@@ -45,7 +45,7 @@ namespace gui_framework
 		return -1;
 	}
 
-	BaseTabControl::BaseTabControl(const wstring& tabControlName, const utility::ComponentSettings& settings, uint16_t iconWidth, uint16_t iconHeight, BaseComponent* parent) :
+	BaseTabControl::BaseTabControl(const wstring& tabControlName, const utility::ComponentSettings& settings, uint16_t imagesWidth, uint16_t imagesHeight, BaseComponent* parent) :
 		BaseComponent
 		(
 			wstring(standard_classes::tabControl),
@@ -53,9 +53,9 @@ namespace gui_framework
 			settings,
 			parent
 		),
-		imageList(ImageList_Create(iconWidth, iconHeight, ILC_COLOR32, 0, standard_sizes::defaultImagesCount)),
-		iconWidth(iconWidth),
-		iconHeight(iconHeight)
+		imageList(ImageList_Create(imagesWidth, imagesHeight, ILC_COLOR32, 0, standard_sizes::defaultImagesCount)),
+		imagesWidth(imagesWidth),
+		imagesHeight(imagesHeight)
 	{
 		SendMessageW(handle, TCM_SETIMAGELIST, NULL, reinterpret_cast<LPARAM>(imageList));
 	}
@@ -101,7 +101,7 @@ namespace gui_framework
 
 		if (!images.contains(pathToImage))
 		{
-			HBITMAP image = static_cast<HBITMAP>(LoadImageW(nullptr, pathToImage.wstring().data(), IMAGE_BITMAP, iconWidth, iconHeight, LR_LOADFROMFILE));
+			HBITMAP image = static_cast<HBITMAP>(LoadImageW(nullptr, pathToImage.wstring().data(), IMAGE_BITMAP, imagesWidth, imagesHeight, LR_LOADFROMFILE));
 
 			images[pathToImage] = ImageList_Add(imageList, image, NULL);
 		}
@@ -137,7 +137,7 @@ namespace gui_framework
 
 		if (!images.contains(pathToImage))
 		{
-			HBITMAP image = static_cast<HBITMAP>(LoadImageW(nullptr, pathToImage.wstring().data(), IMAGE_BITMAP, iconWidth, iconHeight, LR_LOADFROMFILE));
+			HBITMAP image = static_cast<HBITMAP>(LoadImageW(nullptr, pathToImage.wstring().data(), IMAGE_BITMAP, imagesWidth, imagesHeight, LR_LOADFROMFILE));
 
 			images[pathToImage] = ImageList_Add(imageList, image, NULL);
 		}
@@ -213,7 +213,7 @@ namespace gui_framework
 		{
 			if (!images.contains(pathToImage))
 			{
-				HBITMAP image = static_cast<HBITMAP>(LoadImageW(nullptr, pathToImage.wstring().data(), IMAGE_BITMAP, iconWidth, iconHeight, LR_LOADFROMFILE));
+				HBITMAP image = static_cast<HBITMAP>(LoadImageW(nullptr, pathToImage.wstring().data(), IMAGE_BITMAP, imagesWidth, imagesHeight, LR_LOADFROMFILE));
 
 				images[pathToImage] = ImageList_Add(imageList, image, NULL);
 			}
@@ -250,14 +250,14 @@ namespace gui_framework
 		return SendMessageW(handle, TCM_GETCURSEL, NULL, NULL);
 	}
 
-	uint16_t BaseTabControl::getImageWidth() const
+	uint16_t BaseTabControl::getImagesWidth() const
 	{
-		return iconWidth;
+		return imagesWidth;
 	}
 
-	uint16_t BaseTabControl::getImageHeight() const
+	uint16_t BaseTabControl::getImagesHeight() const
 	{
-		return iconHeight;
+		return imagesHeight;
 	}
 
 	BaseTabControl::~BaseTabControl()
