@@ -2,7 +2,6 @@
 
 #include "GUIFramework.h"
 #include "Composites/SeparateWindow.h"
-#include "BaseComponents/StandardComponents/BaseTabControl.h"
 
 #pragma comment (lib, "GUIFramework.lib")
 
@@ -17,8 +16,6 @@ void test(const wstring& className, const wstring& title, const string& function
 	unique_ptr<SeparateWindow> mainWindow(make_unique<SeparateWindow>(className, title, settings, functionName));
 
 	mainWindow->setExitMode(BaseComponent::exitMode::quit);
-
-
 
 	MSG msg = {};
 
