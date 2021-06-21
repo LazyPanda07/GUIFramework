@@ -13,16 +13,14 @@ namespace gui_framework
 		WindowHolder(std::unique_ptr<BaseComposite>&& compositeWindow) noexcept;
 
 		template<std::derived_from<BaseComposite> T>
-		T* get();
+		T* getDerived();
 
 		template<std::derived_from<BaseComposite> T>
-		const T* get() const;
+		const T* getDerived() const;
 
-		template<>
-		BaseComposite* get<BaseComposite>();
+		BaseComposite* get();
 
-		template<>
-		const BaseComposite* get<BaseComposite>() const;
+		const BaseComposite* get() const;
 
 		/// @brief 
 		/// @exception gui_framework::exceptions::GetLastErrorException
@@ -32,13 +30,13 @@ namespace gui_framework
 	};
 
 	template<std::derived_from<BaseComposite> T>
-	T* WindowHolder::get()
+	T* WindowHolder::getDerived()
 	{
 		return static_cast<T*>(compositeWindow.get());
 	}
 
 	template<std::derived_from<BaseComposite> T>
-	const T* WindowHolder::get() const
+	const T* WindowHolder::getDerived() const
 	{
 		return static_cast<T*>(compositeWindow.get());
 	}
