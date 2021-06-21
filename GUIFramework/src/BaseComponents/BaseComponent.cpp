@@ -3,6 +3,7 @@
 
 #include "BaseComposites/BaseComposite.h"
 #include "Exceptions/CantFindSeparateWindowFunctionException.h"
+#include "Exceptions/FileDoesNotExist.h"
 #include "Interfaces/Components/IResizableComponent.h"
 
 #pragma warning(disable: 6387)
@@ -28,7 +29,9 @@ namespace gui_framework
 		desiredHeight(settings.height),
 		desiredX(settings.x),
 		desiredY(settings.y),
-		mode(exitMode::destroyWindow)
+		mode(exitMode::destroyWindow),
+		largeIcon(nullptr),
+		smallIcon(nullptr)
 	{
 		WNDCLASSEXW classStruct = {};
 
@@ -130,6 +133,9 @@ namespace gui_framework
 
 		if (result && parent && parent->isComposite())
 		{
+			DestroyIcon(largeIcon);
+			DestroyIcon(smallIcon);
+
 			BaseComposite* parentComposite = static_cast<BaseComposite*>(parent);
 
 			parentComposite->removeChild(this);
@@ -144,6 +150,9 @@ namespace gui_framework
 
 		if (result && parent && parent->isComposite())
 		{
+			DestroyIcon(largeIcon);
+			DestroyIcon(smallIcon);
+
 			BaseComposite* parentComposite = static_cast<BaseComposite*>(parent);
 
 			parentComposite->removeChild(this);
@@ -211,6 +220,44 @@ namespace gui_framework
 	void BaseComponent::setExitMode(exitMode mode)
 	{
 		this->mode = mode;
+	}
+
+	void BaseComponent::setLargeIcon(const filesystem::path& pathToLargeIcon)
+	{
+		if (!filesystem::exists(pathToLargeIcon))
+		{
+			throw exceptions::FileDoesNotExist(pathToLargeIcon);
+		}
+
+		if (largeIcon)
+		{
+			DestroyIcon(largeIcon);
+
+			largeIcon = nullptr;
+		}
+
+		largeIcon = static_cast<HICON>(LoadImageW(nullptr, pathToLargeIcon.wstring().data(), IMAGE_ICON, standard_sizes::largeIconWidth, standard_sizes::largeIconHeight, LR_LOADFROMFILE));
+
+		SendMessageW(handle, WM_SETICON, ICON_BIG, reinterpret_cast<LPARAM>(largeIcon));
+	}
+
+	void BaseComponent::setSmallIcon(const filesystem::path& pathToLargeIcon)
+	{
+		if (!filesystem::exists(pathToLargeIcon))
+		{
+			throw exceptions::FileDoesNotExist(pathToLargeIcon);
+		}
+
+		if (largeIcon)
+		{
+			DestroyIcon(largeIcon);
+
+			smallIcon = nullptr;
+		}
+
+		smallIcon = static_cast<HICON>(LoadImageW(nullptr, pathToLargeIcon.wstring().data(), IMAGE_ICON, standard_sizes::largeIconWidth, standard_sizes::largeIconHeight, LR_LOADFROMFILE));
+
+		SendMessageW(handle, WM_SETICON, ICON_SMALL, reinterpret_cast<LPARAM>(smallIcon));
 	}
 
 	BaseComponent* BaseComponent::getParent() const
