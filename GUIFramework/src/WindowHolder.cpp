@@ -13,14 +13,12 @@ namespace gui_framework
 
 	}
 
-	template<>
-	BaseComposite* WindowHolder::get<BaseComposite>()
+	BaseComposite* WindowHolder::get()
 	{
 		return compositeWindow.get();
 	}
 
-	template<>
-	const BaseComposite* WindowHolder::get<BaseComposite>() const
+	const BaseComposite* WindowHolder::get() const
 	{
 		return compositeWindow.get();
 	}
