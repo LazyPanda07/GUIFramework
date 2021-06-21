@@ -10,9 +10,7 @@ namespace gui_framework
 		std::unique_ptr<BaseComposite> compositeWindow;
 
 	public:
-		/// @brief 
-		/// @param windowFunctionName Value passed to CREATE_DEFAULT_WINDOW_FUNCTION
-		WindowHolder(const std::wstring& compositeWindowClassName, const std::wstring& compositeWindowName, int x, int y, uint16_t width, uint16_t height, const std::string& windowFunctionName, bool isAsync = false);
+		WindowHolder(std::unique_ptr<BaseComposite>&& compositeWindow) noexcept;
 
 		template<std::derived_from<BaseComposite> T>
 		T* get();
@@ -26,7 +24,7 @@ namespace gui_framework
 		template<>
 		const BaseComposite* get<BaseComposite>() const;
 
-		/// @brief Don't need in async mode
+		/// @brief 
 		/// @exception gui_framework::exceptions::GetLastErrorException
 		void runMainLoop();
 

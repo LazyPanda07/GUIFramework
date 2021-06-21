@@ -7,21 +7,10 @@ using namespace std;
 
 namespace gui_framework
 {
-	WindowHolder::WindowHolder(const wstring& compositeWindowClassName, const wstring& compositeWindowName, int x, int y, uint16_t width, uint16_t height, const string& windowFunctionName, bool isAsync)
+	WindowHolder::WindowHolder(unique_ptr<BaseComposite>&& compositeWindow) noexcept :
+		compositeWindow(move(compositeWindow))
 	{
-		if (isAsync)
-		{
-			thread([&, this]()
-				{
-					compositeWindow = make_unique<BaseComposite>(compositeWindowClassName, compositeWindowName, utility::ComponentSettings(WS_BORDER, x, y, width, height), nullptr, windowFunctionName);
 
-					this->runMainLoop();
-				}).detach();
-		}
-		else
-		{
-			compositeWindow = make_unique<BaseComposite>(compositeWindowClassName, compositeWindowName, utility::ComponentSettings(WS_BORDER, x, y, width, height), nullptr, windowFunctionName);
-		}
 	}
 
 	template<>
