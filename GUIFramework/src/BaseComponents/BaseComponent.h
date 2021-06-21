@@ -28,6 +28,8 @@ namespace gui_framework
 		int desiredX;
 		int desiredY;
 		exitMode mode;
+		HICON largeIcon;
+		HICON smallIcon;
 
 	protected:
 		virtual LRESULT preWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed);
@@ -68,6 +70,16 @@ namespace gui_framework
 		virtual void setDesiredY(int desiredY) final;
 
 		virtual void setExitMode(exitMode mode) final;
+
+		/// @brief Set large icon(32x32) for specific window
+		/// @param pathToLargeIcon 
+		/// @exception gui_framework::exceptions::FileDoesNotExist
+		virtual void setLargeIcon(const std::filesystem::path& pathToLargeIcon) final;
+
+		/// @brief Set small icon(16x16) for specific window
+		/// @param pathToSmallIcon 
+		/// @exception gui_framework::exceptions::FileDoesNotExist
+		virtual void setSmallIcon(const std::filesystem::path& pathToSmallIcon) final;
 
 		virtual BaseComponent* getParent() const final;
 

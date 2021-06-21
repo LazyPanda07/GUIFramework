@@ -43,6 +43,12 @@ namespace gui_framework
 		inline constexpr uint16_t dialogBoxBuilderMinHeight = 200;
 
 		inline constexpr uint16_t defaultImagesCount = 16;
+
+		inline constexpr uint16_t largeIconWidth = 32;
+		inline constexpr uint16_t largeIconHeight = 32;
+
+		inline constexpr uint16_t smallIconWidth = 16;
+		inline constexpr uint16_t smallIconHeight = 16;
 	}
 
 	namespace settings
