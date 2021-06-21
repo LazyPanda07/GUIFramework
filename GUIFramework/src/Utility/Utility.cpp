@@ -31,5 +31,15 @@ namespace gui_framework
 				GetWindowLongPtrW(handle, GWL_STYLE) & ~styleToRemove
 			);
 		}
+
+		void setBackgroundColor(HWND handle, uint8_t red, uint8_t green, uint8_t blue)
+		{
+			SetWindowLongPtrW
+			(
+				handle,
+				GCLP_HBRBACKGROUND,
+				reinterpret_cast<LONG_PTR>(CreateSolidBrush(RGB(red, green, blue)))
+			);
+		}
 	}
 }
