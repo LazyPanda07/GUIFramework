@@ -16,7 +16,11 @@ void test()
 
 	WindowHolder holder(make_unique<SeparateWindow>(L"MainWindow", L"Главное окно", settings, "main"));
 
-	holder.get()->setExitMode(BaseComponent::exitMode::quit);
+	SeparateWindow* ptr = dynamic_cast<SeparateWindow*>(holder.get());
+
+	ptr->setExitMode(BaseComponent::exitMode::quit);
+
+	ptr->setLargeIcon(R"(assets\icon.ico)");
 
 	holder.runMainLoop();
 }
