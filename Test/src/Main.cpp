@@ -1,39 +1,33 @@
 #include <iostream>
 
 #include "GUIFramework.h"
+#include "WindowHolder.h"
 #include "Composites/SeparateWindow.h"
 
 #pragma comment (lib, "GUIFramework.lib")
 
 using namespace std;
 
-void test(const wstring& className, const wstring& title, const string& functionName, int x, int y)
+void test()
 {
 	using namespace gui_framework;
 
-	utility::ComponentSettings settings(WS_BORDER, x, y, 800, 600);
+	utility::ComponentSettings settings(WS_BORDER, 300, 200, 800, 600);
 
-	unique_ptr<SeparateWindow> mainWindow(make_unique<SeparateWindow>(className, title, settings, functionName));
+	WindowHolder holder(make_unique<SeparateWindow>(L"MainWindow", L"Главное окно", settings, "main"));
 
-	mainWindow->setExitMode(BaseComponent::exitMode::quit);
+	holder.get()->setExitMode(BaseComponent::exitMode::quit);
 
-	MSG msg = {};
-
-	while (GetMessageW(&msg, nullptr, NULL, NULL))
-	{
-		TranslateMessage(&msg);
-
-		DispatchMessageW(&msg);
-	}
+	holder.runMainLoop();
 }
 
 CREATE_DEFAULT_WINDOW_FUNCTION(main)
 
 int main(int argc, char** argv)
 {
-	gui_framework::GUIFramework& ref = gui_framework::GUIFramework::get();
+	gui_framework::GUIFramework::get();
 
-	thread(test, L"Main window", L"Title", "main", 300, 200).detach();
+	thread(test).detach();
 
 	string s;
 
