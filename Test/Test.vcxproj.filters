@@ -22,4 +22,12 @@
   <ItemGroup>
     <None Include="gui_framework.json" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\icon16x16.ico">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="assets\icon256x256.ico">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+  </ItemGroup>
 </Project>

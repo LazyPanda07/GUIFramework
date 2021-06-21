@@ -169,6 +169,10 @@
   <ItemGroup>
     <None Include="gui_framework.json" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\icon16x16.ico" />
+    <Image Include="assets\icon256x256.ico" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
