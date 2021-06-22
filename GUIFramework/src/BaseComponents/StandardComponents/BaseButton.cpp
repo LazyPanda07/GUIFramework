@@ -7,28 +7,12 @@ using namespace std;
 
 namespace gui_framework
 {
-	HMENU BaseButton::initButtonId(uint32_t buttonId)
-	{
-		this->buttonId = buttonId;
-
-		return reinterpret_cast<HMENU>(static_cast<uint64_t>(buttonId));
-	}
-
 	BaseButton::BaseButton(const wstring& buttonName, const wstring& buttonText, const utility::ComponentSettings& settings, BaseComponent* parent, const function<LRESULT(WPARAM, LPARAM)>& onClick) :
 		BaseComponent
 		(
 			wstring(standard_classes::button),
 			buttonName,
-			utility::ComponentSettings
-			(
-				settings.styles,
-				settings.x,
-				settings.y,
-				settings.width,
-				settings.height,
-				this->initButtonId(GUIFramework::get().generateHMENU(buttonName)),
-				settings.extendedStyles
-			),
+			settings,
 			parent
 		),
 		ITextOperations(handle),
@@ -39,7 +23,7 @@ namespace gui_framework
 
 	LRESULT BaseButton::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
 	{
-		if (message == WM_COMMAND && buttonId == LOWORD(wparam))
+		if (message == WM_COMMAND && id == LOWORD(wparam))
 		{
 			isUsed = true;
 
@@ -59,10 +43,5 @@ namespace gui_framework
 	const function<LRESULT(WPARAM, LPARAM)>& BaseButton::getOnClick() const
 	{
 		return onClick;
-	}
-
-	uint32_t BaseButton::getButtonId() const
-	{
-		return buttonId;
 	}
 }

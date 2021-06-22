@@ -30,6 +30,8 @@ namespace gui_framework
 		exitMode mode;
 		HICON largeIcon;
 		HICON smallIcon;
+		uint32_t id;
+		COLORREF backgroundColor;
 
 	protected:
 		virtual LRESULT preWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed);
@@ -61,7 +63,7 @@ namespace gui_framework
 		/// @param menuName 
 		virtual void removePopupMenus(const std::wstring& menuName);
 
-		virtual void setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue) final;
+		virtual void setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue);
 
 		virtual void setDesiredWidth(uint16_t desiredWidth) final;
 
@@ -112,6 +114,10 @@ namespace gui_framework
 		virtual std::unique_ptr<Menu>& getMainMenu() final;
 
 		virtual std::vector<const Menu*> getPopupMenus() const final;
+
+		virtual uint32_t getId() const final;
+
+		virtual COLORREF getBackgroundColor() const final;
 
 		virtual ~BaseComponent();
 	};
