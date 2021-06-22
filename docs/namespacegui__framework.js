@@ -5,7 +5,8 @@ var namespacegui__framework =
     ] ],
     [ "exception_messages", "namespacegui__framework_1_1exception__messages.html", [
       [ "alreadyRegisteredClassName", "namespacegui__framework_1_1exception__messages.html#aad27b7d23cdb5e8e50c7fcbead0af7b5", null ],
-      [ "notEnoughSpace", "namespacegui__framework_1_1exception__messages.html#ae6c9818db47860199d4328499127075f", null ]
+      [ "notEnoughSpace", "namespacegui__framework_1_1exception__messages.html#ae6c9818db47860199d4328499127075f", null ],
+      [ "notImplemented", "namespacegui__framework_1_1exception__messages.html#a27f65a8349ec94b67215c61d207a7684", null ]
     ] ],
     [ "exceptions", "namespacegui__framework_1_1exceptions.html", "namespacegui__framework_1_1exceptions" ],
     [ "interfaces", "namespacegui__framework_1_1interfaces.html", "namespacegui__framework_1_1interfaces" ],
@@ -23,7 +24,8 @@ var namespacegui__framework =
       [ "editControl", "namespacegui__framework_1_1standard__classes.html#a3d184f6df6f95fabed1653b545c3c027", null ],
       [ "listBox", "namespacegui__framework_1_1standard__classes.html#af6e71a5d5e0e7847e41cd158ae68221c", null ],
       [ "richEdit", "namespacegui__framework_1_1standard__classes.html#a57b557e0f5b320b012d2af64d4246290", null ],
-      [ "staticControl", "namespacegui__framework_1_1standard__classes.html#ac86ad99c706e27ca256a71b2b0ee9dd8", null ]
+      [ "staticControl", "namespacegui__framework_1_1standard__classes.html#ac86ad99c706e27ca256a71b2b0ee9dd8", null ],
+      [ "tabControl", "namespacegui__framework_1_1standard__classes.html#af681e6f51d464b74820da2ac2fc43efc", null ]
     ] ],
     [ "standard_menu_items", "namespacegui__framework_1_1standard__menu__items.html", [
       [ "dropDownMenuItem", "namespacegui__framework_1_1standard__menu__items.html#acd826e0552d9392c7e519b1d7e0ff599", null ],
@@ -33,11 +35,16 @@ var namespacegui__framework =
       [ "buttonHeight", "namespacegui__framework_1_1standard__sizes.html#ad9a5341565621f03854e8c9e0d942e8f", null ],
       [ "buttonWidth", "namespacegui__framework_1_1standard__sizes.html#af458d40e3a798d830af7f24830173cc7", null ],
       [ "comboBoxAdditionalWidth", "namespacegui__framework_1_1standard__sizes.html#af5dff7df0d040f20e7069da7f8ce28da", null ],
+      [ "defaultImagesCount", "namespacegui__framework_1_1standard__sizes.html#a018fae1303ab52531f18a98e80fc15e7", null ],
       [ "dialogBoxBuilderMinHeight", "namespacegui__framework_1_1standard__sizes.html#a1eb22a43d0bb081bc61b66b89c35fc33", null ],
       [ "dialogBoxBuilderMinWidth", "namespacegui__framework_1_1standard__sizes.html#a0fcf0837ccf940788169d753bad717de", null ],
       [ "editControlHeight", "namespacegui__framework_1_1standard__sizes.html#adb1974c26e1895c1ba8ab8c6ef7e04dd", null ],
       [ "editControlWidth", "namespacegui__framework_1_1standard__sizes.html#a2e493c26d6d61ce38aa1da20fa61717f", null ],
+      [ "largeIconHeight", "namespacegui__framework_1_1standard__sizes.html#a66fd6d3d948ddc2363a845a9d84ff9fd", null ],
+      [ "largeIconWidth", "namespacegui__framework_1_1standard__sizes.html#a0ceba9e6349e07f57ff44081bd2b208c", null ],
       [ "listBoxAdditionalWidth", "namespacegui__framework_1_1standard__sizes.html#a064e45c055ec4208917e9f5663ec53a5", null ],
+      [ "smallIconHeight", "namespacegui__framework_1_1standard__sizes.html#a1f7f2e637c8499e76e01b4e314da8134", null ],
+      [ "smallIconWidth", "namespacegui__framework_1_1standard__sizes.html#ab4af2006499a6a8d402ccc7861beb821", null ],
       [ "staticControlHeight", "namespacegui__framework_1_1standard__sizes.html#a07a74c45cb8206bb4a4f918a5cb9d131", null ],
       [ "staticControlWidth", "namespacegui__framework_1_1standard__sizes.html#a62f0c5bf3fb69dfcd5a07cad5f90306f", null ]
     ] ],
@@ -52,6 +59,7 @@ var namespacegui__framework =
     [ "BaseMultipleSelectListBox", "classgui__framework_1_1_base_multiple_select_list_box.html", "classgui__framework_1_1_base_multiple_select_list_box" ],
     [ "BaseRichEdit", "classgui__framework_1_1_base_rich_edit.html", "classgui__framework_1_1_base_rich_edit" ],
     [ "BaseStaticControl", "classgui__framework_1_1_base_static_control.html", "classgui__framework_1_1_base_static_control" ],
+    [ "BaseTabControl", "classgui__framework_1_1_base_tab_control.html", "classgui__framework_1_1_base_tab_control" ],
     [ "BaseComposite", "classgui__framework_1_1_base_composite.html", "classgui__framework_1_1_base_composite" ],
     [ "BaseDialogBox", "classgui__framework_1_1_base_dialog_box.html", "classgui__framework_1_1_base_dialog_box" ],
     [ "BaseNonResizableComposite", "classgui__framework_1_1_base_non_resizable_composite.html", "classgui__framework_1_1_base_non_resizable_composite" ],
@@ -68,6 +76,7 @@ var namespacegui__framework =
     [ "RichEdit", "classgui__framework_1_1_rich_edit.html", "classgui__framework_1_1_rich_edit" ],
     [ "SimpleComboBox", "classgui__framework_1_1_simple_combo_box.html", "classgui__framework_1_1_simple_combo_box" ],
     [ "StaticControl", "classgui__framework_1_1_static_control.html", "classgui__framework_1_1_static_control" ],
+    [ "TabControl", "classgui__framework_1_1_tab_control.html", "classgui__framework_1_1_tab_control" ],
     [ "ChildWindow", "classgui__framework_1_1_child_window.html", "classgui__framework_1_1_child_window" ],
     [ "DialogBox", "classgui__framework_1_1_dialog_box.html", "classgui__framework_1_1_dialog_box" ],
     [ "SeparateWindow", "classgui__framework_1_1_separate_window.html", "classgui__framework_1_1_separate_window" ],
@@ -76,5 +85,8 @@ var namespacegui__framework =
     [ "BaseMenuItem", "classgui__framework_1_1_base_menu_item.html", "classgui__framework_1_1_base_menu_item" ],
     [ "DropDownMenuItem", "classgui__framework_1_1_drop_down_menu_item.html", "classgui__framework_1_1_drop_down_menu_item" ],
     [ "MenuItem", "classgui__framework_1_1_menu_item.html", "classgui__framework_1_1_menu_item" ],
-    [ "DialogBoxBuilder", "namespacegui__framework.html#af525ce6f1696446fe552abd946818aee", null ]
+    [ "WindowHolder", "classgui__framework_1_1_window_holder.html", "classgui__framework_1_1_window_holder" ],
+    [ "DialogBoxBuilder", "namespacegui__framework.html#af525ce6f1696446fe552abd946818aee", null ],
+    [ "tabData", "namespacegui__framework.html#ae3e66f06336365b0dc8c0dac9f239f63", null ],
+    [ "guiFrameworkVersion", "namespacegui__framework.html#a5e94c5c423c72dd9f763bafce9ba4672", null ]
 ];

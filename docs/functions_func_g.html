@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.1</span>
+   &#160;<span id="projectnumber">0.2</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -91,6 +91,7 @@ $(document).ready(function(){initNavTree('functions_func_g.html',''); initResiza
 </li>
 <li>get()
 : <a class="el" href="classgui__framework_1_1_g_u_i_framework.html#a3ddb6e3b33f9143d5e4eb5c2111d1d6b">gui_framework::GUIFramework</a>
+, <a class="el" href="classgui__framework_1_1_window_holder.html#a107d333a8d268fdb94d913e71e5bffde">gui_framework::WindowHolder</a>
 </li>
 <li>getActualCoordinates()
 : <a class="el" href="classgui__framework_1_1_base_component.html#a9f276f4574913aa9c4140901c8331169">gui_framework::BaseComponent</a>
@@ -107,11 +108,11 @@ $(document).ready(function(){initNavTree('functions_func_g.html',''); initResiza
 <li>getAutoURLDetect()
 : <a class="el" href="classgui__framework_1_1_base_rich_edit.html#ad9c813e5ba0b4cae075b9ea89101f835">gui_framework::BaseRichEdit</a>
 </li>
+<li>getBackgroundColor()
+: <a class="el" href="classgui__framework_1_1_base_component.html#a8b4685df88fa1edf51da5f29895961a4">gui_framework::BaseComponent</a>
+</li>
 <li>getBlockResize()
 : <a class="el" href="classgui__framework_1_1interfaces_1_1_i_resizable_component.html#a9de38868747c14b3278ad72144f94a62">gui_framework::interfaces::IResizableComponent</a>
-</li>
-<li>getButtonId()
-: <a class="el" href="classgui__framework_1_1_base_button.html#a879d1b344487a5ce2f0d40dbdeb801e3">gui_framework::BaseButton</a>
 </li>
 <li>getChildren()
 : <a class="el" href="classgui__framework_1_1_base_composite.html#a39539aed053e40905f147cd9da5003eb">gui_framework::BaseComposite</a>
@@ -150,6 +151,10 @@ $(document).ready(function(){initNavTree('functions_func_g.html',''); initResiza
 , <a class="el" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_separate_window_01_4.html#a7412289657b3217c35cff3585fbde45e">gui_framework::utility::AdditionalCreationData&lt; SeparateWindow &gt;</a>
 , <a class="el" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_simple_combo_box_01_4.html#a64266fb04794c00fda1bb754bf6e17f3">gui_framework::utility::AdditionalCreationData&lt; SimpleComboBox &gt;</a>
 , <a class="el" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_static_control_01_4.html#adf6684b5a20f162e58f33cb45f828806">gui_framework::utility::AdditionalCreationData&lt; StaticControl &gt;</a>
+, <a class="el" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_tab_control_01_4.html#a0d0d8ba22e4cef26218664327d5fe1e2">gui_framework::utility::AdditionalCreationData&lt; TabControl &gt;</a>
+</li>
+<li>getDerived()
+: <a class="el" href="classgui__framework_1_1_window_holder.html#a78ff50e68affdcfa7b31ca34b4c9c7d9">gui_framework::WindowHolder</a>
 </li>
 <li>getDesiredHeight()
 : <a class="el" href="classgui__framework_1_1_base_component.html#abb0f1b23affeb994eff519bd2d5cd845">gui_framework::BaseComponent</a>
@@ -175,6 +180,18 @@ $(document).ready(function(){initNavTree('functions_func_g.html',''); initResiza
 </li>
 <li>getHMENUs()
 : <a class="el" href="classgui__framework_1_1_g_u_i_framework.html#a3a6c334159802408e25a98b0a1d48e2e">gui_framework::GUIFramework</a>
+</li>
+<li>getId()
+: <a class="el" href="classgui__framework_1_1_base_component.html#a1719b34576b8ceb271cdb04611ed4523">gui_framework::BaseComponent</a>
+</li>
+<li>getImagesHeight()
+: <a class="el" href="classgui__framework_1_1_base_tab_control.html#add2d6821177afae68662e6b2b6dc3de8">gui_framework::BaseTabControl</a>
+</li>
+<li>getImagesWidth()
+: <a class="el" href="classgui__framework_1_1_base_tab_control.html#a083f7ee76419f491b4d02ae616e3e178">gui_framework::BaseTabControl</a>
+</li>
+<li>getItem()
+: <a class="el" href="classgui__framework_1_1_base_tab_control.html#a3110aff9c73cc6d3f10689753bff14df">gui_framework::BaseTabControl</a>
 </li>
 <li>getItemHeight()
 : <a class="el" href="classgui__framework_1_1_base_combo_box.html#a8dfa3518cbfa085ce5b666c1853b1c21">gui_framework::BaseComboBox</a>
@@ -212,12 +229,18 @@ $(document).ready(function(){initNavTree('functions_func_g.html',''); initResiza
 <li>getSelectedItems()
 : <a class="el" href="classgui__framework_1_1_base_multiple_select_list_box.html#a2ee258651249ea4cae86e5ccaaff0bf4">gui_framework::BaseMultipleSelectListBox</a>
 </li>
+<li>getSelectedTab()
+: <a class="el" href="classgui__framework_1_1_base_tab_control.html#a2d014829d24bbcdfbdc52839bad815c9">gui_framework::BaseTabControl</a>
+</li>
 <li>getSelectedText()
 : <a class="el" href="classgui__framework_1_1_base_rich_edit.html#a2d321e91aa2d43d81381f0148eecf7ad">gui_framework::BaseRichEdit</a>
 </li>
 <li>getText()
 : <a class="el" href="classgui__framework_1_1interfaces_1_1_i_menu_item.html#a8ace5ab5ad8317f293de0f1d9a76b32e">gui_framework::interfaces::IMenuItem</a>
 , <a class="el" href="classgui__framework_1_1interfaces_1_1_i_text_operations.html#a6f2fc83f8b34e8b608f8570b7703915e">gui_framework::interfaces::ITextOperations</a>
+</li>
+<li>getTextColor()
+: <a class="el" href="classgui__framework_1_1_base_component.html#a56df6db296a420576396a4629236aa41">gui_framework::BaseComponent</a>
 </li>
 <li>getType()
 : <a class="el" href="classgui__framework_1_1interfaces_1_1_i_menu_item.html#a1cdbcd0935ec86ed7c57489bc5759cb0">gui_framework::interfaces::IMenuItem</a>

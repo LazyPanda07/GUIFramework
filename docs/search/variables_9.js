@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['mainmenu_1023',['mainMenu',['../classgui__framework_1_1_base_component.html#ad2e1e9a73ab94b4fb0da0addc3ffb66d',1,'gui_framework::BaseComponent']]],
-  ['menuitem_1024',['menuItem',['../namespacegui__framework_1_1standard__menu__items.html#a15d8d4d9b0a61c66441e8675dbc892c9',1,'gui_framework::standard_menu_items']]],
-  ['mode_1025',['mode',['../classgui__framework_1_1_base_component.html#a55051bf0a8f4a9e513a7531fc9998145',1,'gui_framework::BaseComponent']]],
-  ['module_1026',['module',['../classgui__framework_1_1_base_component.html#a1fe8542988faaa68bbe5a5a566f8117c',1,'gui_framework::BaseComponent']]],
-  ['msfteditlibrary_1027',['msftEditLibrary',['../namespacegui__framework_1_1libraries.html#aa0a8f6ff8009d943b34253c4a50409c2',1,'gui_framework::libraries']]]
+  ['largeicon_1153',['largeIcon',['../classgui__framework_1_1_base_component.html#ae94897a52c22317fa48c4b3fa79ace16',1,'gui_framework::BaseComponent']]],
+  ['largeiconheight_1154',['largeIconHeight',['../namespacegui__framework_1_1standard__sizes.html#a66fd6d3d948ddc2363a845a9d84ff9fd',1,'gui_framework::standard_sizes']]],
+  ['largeiconwidth_1155',['largeIconWidth',['../namespacegui__framework_1_1standard__sizes.html#a0ceba9e6349e07f57ff44081bd2b208c',1,'gui_framework::standard_sizes']]],
+  ['listbox_1156',['listBox',['../namespacegui__framework_1_1standard__classes.html#af6e71a5d5e0e7847e41cd158ae68221c',1,'gui_framework::standard_classes']]],
+  ['listboxadditionalwidth_1157',['listBoxAdditionalWidth',['../namespacegui__framework_1_1standard__sizes.html#a064e45c055ec4208917e9f5663ec53a5',1,'gui_framework::standard_sizes']]]
 ];

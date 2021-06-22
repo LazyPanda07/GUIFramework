@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.1</span>
+   &#160;<span id="projectnumber">0.2</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -113,6 +113,7 @@ Inheritance diagram for gui_framework::BaseComponent:</div>
 <area href="classgui__framework_1_1_base_resizable_component.html" title="Class for resizing." alt="gui_framework::BaseResizableComponent" shape="rect" coords="279,392,548,416"/>
 <area href="classgui__framework_1_1_base_rich_edit.html" title="Base class for all rich edit controls." alt="gui_framework::BaseRichEdit" shape="rect" coords="279,448,548,472"/>
 <area href="classgui__framework_1_1_base_static_control.html" title="Base class for all static controls." alt="gui_framework::BaseStaticControl" shape="rect" coords="279,504,548,528"/>
+<area href="classgui__framework_1_1_base_tab_control.html" alt="gui_framework::BaseTabControl" shape="rect" coords="279,560,548,584"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -156,6 +157,16 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a90444b6b79044a9c7a0d35fb2333c77d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a970624b3baad18e031f53ce52a0a3f45"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a970624b3baad18e031f53ce52a0a3f45">setExitMode</a> (<a class="el" href="classgui__framework_1_1_base_component.html#adadba923c5fcc012ce8b50e592080bcd">exitMode</a> <a class="el" href="classgui__framework_1_1_base_component.html#a55051bf0a8f4a9e513a7531fc9998145">mode</a>) final</td></tr>
 <tr class="separator:a970624b3baad18e031f53ce52a0a3f45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a087da7e2087b861f6a5d2aeb423ede66"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a087da7e2087b861f6a5d2aeb423ede66">setLargeIcon</a> (const std::filesystem::path &amp;pathToLargeIcon) final</td></tr>
+<tr class="memdesc:a087da7e2087b861f6a5d2aeb423ede66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set large icon(32x32) for specific window.  <a href="classgui__framework_1_1_base_component.html#a087da7e2087b861f6a5d2aeb423ede66">More...</a><br /></td></tr>
+<tr class="separator:a087da7e2087b861f6a5d2aeb423ede66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a82031e678bcf3a29b2c00c6e103429"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a7a82031e678bcf3a29b2c00c6e103429">setSmallIcon</a> (const std::filesystem::path &amp;pathToSmallIcon) final</td></tr>
+<tr class="memdesc:a7a82031e678bcf3a29b2c00c6e103429"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set small icon(16x16) for specific window.  <a href="classgui__framework_1_1_base_component.html#a7a82031e678bcf3a29b2c00c6e103429">More...</a><br /></td></tr>
+<tr class="separator:a7a82031e678bcf3a29b2c00c6e103429"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2f1b329acc98ad498e18f4d5330f027"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#ae2f1b329acc98ad498e18f4d5330f027">setBackgroundColor</a> (uint8_t red, uint8_t green, uint8_t blue)</td></tr>
+<tr class="separator:ae2f1b329acc98ad498e18f4d5330f027"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dba22822b7f830295e104fa27af284c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a9dba22822b7f830295e104fa27af284c">setTextColor</a> (uint8_t red, uint8_t green, uint8_t blue)</td></tr>
+<tr class="separator:a9dba22822b7f830295e104fa27af284c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae01a3e23cbef564fc8d7e3d9ec26251b"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#ae01a3e23cbef564fc8d7e3d9ec26251b">getParent</a> () const final</td></tr>
 <tr class="separator:ae01a3e23cbef564fc8d7e3d9ec26251b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab12780fecd5f22ec01d21a82d9ac87b7"><td class="memItemLeft" align="right" valign="top">virtual HWND&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#ab12780fecd5f22ec01d21a82d9ac87b7">getHandle</a> () const final</td></tr>
@@ -186,6 +197,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8792f3026aa71d32a50758978dd85e98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aacdd618a74527d288a8035088fe87b81"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; const <a class="el" href="classgui__framework_1_1_menu.html">Menu</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#aacdd618a74527d288a8035088fe87b81">getPopupMenus</a> () const final</td></tr>
 <tr class="separator:aacdd618a74527d288a8035088fe87b81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1719b34576b8ceb271cdb04611ed4523"><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a1719b34576b8ceb271cdb04611ed4523">getId</a> () const final</td></tr>
+<tr class="separator:a1719b34576b8ceb271cdb04611ed4523"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b4685df88fa1edf51da5f29895961a4"><td class="memItemLeft" align="right" valign="top">virtual COLORREF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a8b4685df88fa1edf51da5f29895961a4">getBackgroundColor</a> () const final</td></tr>
+<tr class="separator:a8b4685df88fa1edf51da5f29895961a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56df6db296a420576396a4629236aa41"><td class="memItemLeft" align="right" valign="top">virtual COLORREF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a56df6db296a420576396a4629236aa41">getTextColor</a> () const final</td></tr>
+<tr class="separator:a56df6db296a420576396a4629236aa41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a274274f6f28b2e93f73544634b640d56"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a274274f6f28b2e93f73544634b640d56">~BaseComponent</a> ()</td></tr>
 <tr class="separator:a274274f6f28b2e93f73544634b640d56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -220,6 +237,16 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a3d15724eb33a896f282d5199f825d03b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55051bf0a8f4a9e513a7531fc9998145"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgui__framework_1_1_base_component.html#adadba923c5fcc012ce8b50e592080bcd">exitMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a55051bf0a8f4a9e513a7531fc9998145">mode</a></td></tr>
 <tr class="separator:a55051bf0a8f4a9e513a7531fc9998145"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae94897a52c22317fa48c4b3fa79ace16"><td class="memItemLeft" align="right" valign="top">HICON&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#ae94897a52c22317fa48c4b3fa79ace16">largeIcon</a></td></tr>
+<tr class="separator:ae94897a52c22317fa48c4b3fa79ace16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa42b7d08d840328fab675e3308ac7ab5"><td class="memItemLeft" align="right" valign="top">HICON&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#aa42b7d08d840328fab675e3308ac7ab5">smallIcon</a></td></tr>
+<tr class="separator:aa42b7d08d840328fab675e3308ac7ab5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24a743c99e4ca9bd6a5e1ea2fbd3aea7"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a24a743c99e4ca9bd6a5e1ea2fbd3aea7">id</a></td></tr>
+<tr class="separator:a24a743c99e4ca9bd6a5e1ea2fbd3aea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5a56227ac3689163f958e778f0df1ca"><td class="memItemLeft" align="right" valign="top">COLORREF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#aa5a56227ac3689163f958e778f0df1ca">backgroundColor</a></td></tr>
+<tr class="separator:aa5a56227ac3689163f958e778f0df1ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6bedc9892f3eb8ae57193275bab2242"><td class="memItemLeft" align="right" valign="top">COLORREF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#aa6bedc9892f3eb8ae57193275bab2242">textColor</a></td></tr>
+<tr class="separator:aa6bedc9892f3eb8ae57193275bab2242"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base class for all windows, controls, etc. </p>
@@ -312,7 +339,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00021">21</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00023">23</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -339,7 +366,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00314">314</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00394">394</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -371,7 +398,7 @@ Protected Attributes</h2></td></tr>
 <p>Don't call move operator with return value. </p>
 <dl class="section return"><dt>Returns</dt><dd>Created pop-up menu </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00164">164</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00177">177</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -398,7 +425,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00141">141</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00151">151</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -429,7 +456,7 @@ Protected Attributes</h2></td></tr>
 <p>It needs to be called once. </p>
 <dl class="section return"><dt>Returns</dt><dd>Created main menu </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00155">155</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00168">168</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -456,7 +483,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00127">127</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00134">134</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -483,7 +510,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00264">264</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00329">329</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -510,7 +537,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00255">255</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00320">320</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -537,7 +564,34 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00246">246</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00311">311</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a8b4685df88fa1edf51da5f29895961a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b4685df88fa1edf51da5f29895961a4">&#9670;&nbsp;</a></span>getBackgroundColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">COLORREF gui_framework::BaseComponent::getBackgroundColor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00384">384</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -564,7 +618,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00231">231</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00296">296</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -591,7 +645,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00241">241</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00306">306</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -618,7 +672,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00236">236</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00301">301</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -645,7 +699,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00275">275</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00340">340</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -672,7 +726,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00280">280</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00345">345</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -699,7 +753,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00285">285</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00350">350</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -726,7 +780,34 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00221">221</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00286">286</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a1719b34576b8ceb271cdb04611ed4523"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1719b34576b8ceb271cdb04611ed4523">&#9670;&nbsp;</a></span>getId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t gui_framework::BaseComponent::getId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00379">379</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -753,7 +834,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00290">290</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00355">355</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -780,7 +861,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00295">295</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00360">360</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -807,7 +888,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00216">216</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00281">281</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -834,7 +915,34 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00300">300</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00365">365</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a56df6db296a420576396a4629236aa41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56df6db296a420576396a4629236aa41">&#9670;&nbsp;</a></span>getTextColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">COLORREF gui_framework::BaseComponent::getTextColor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00389">389</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -861,7 +969,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00226">226</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00291">291</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -917,7 +1025,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00115">115</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00122">122</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -946,7 +1054,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classgui__framework_1_1_base_composite.html#a6f0726dccdb362d62f42dcff5cd87942">gui_framework::BaseComposite</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00087">87</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00094">94</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -1004,7 +1112,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classgui__framework_1_1_base_resizable_composite.html#a7f2c82dda595602af7a7dd01a13da02f">gui_framework::BaseResizableComposite</a>, and <a class="el" href="classgui__framework_1_1_base_resizable_component.html#a38866d0aa798c140b26fb1b61b064961">gui_framework::BaseResizableComponent</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00014">14</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00016">16</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -1041,7 +1149,53 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00173">173</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00186">186</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ae2f1b329acc98ad498e18f4d5330f027"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2f1b329acc98ad498e18f4d5330f027">&#9670;&nbsp;</a></span>setBackgroundColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gui_framework::BaseComponent::setBackgroundColor </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>red</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>green</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>blue</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classgui__framework_1_1_base_composite.html#a597778bd4699fb574b2e839b2d70b04f">gui_framework::BaseComposite</a>, <a class="el" href="classgui__framework_1_1_base_tab_control.html#ab6c332e1cef2dc5371413dcdbe959044">gui_framework::BaseTabControl</a>, <a class="el" href="classgui__framework_1_1_base_rich_edit.html#abe18d7d262aa479d30306d76ef2be318">gui_framework::BaseRichEdit</a>, and <a class="el" href="classgui__framework_1_1_base_combo_box.html#aade08088d156f60fa7319c8f64e9b932">gui_framework::BaseComboBox</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00267">267</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -1069,7 +1223,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00196">196</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00209">209</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -1097,7 +1251,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00191">191</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00204">204</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -1125,7 +1279,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00201">201</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00214">214</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -1153,7 +1307,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00206">206</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00219">219</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -1181,7 +1335,137 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00211">211</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00224">224</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a087da7e2087b861f6a5d2aeb423ede66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a087da7e2087b861f6a5d2aeb423ede66">&#9670;&nbsp;</a></span>setLargeIcon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gui_framework::BaseComponent::setLargeIcon </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>pathToLargeIcon</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set large icon(32x32) for specific window. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pathToLargeIcon</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classgui__framework_1_1exceptions_1_1_file_does_not_exist.html">gui_framework::exceptions::FileDoesNotExist</a></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00229">229</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a7a82031e678bcf3a29b2c00c6e103429"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a82031e678bcf3a29b2c00c6e103429">&#9670;&nbsp;</a></span>setSmallIcon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gui_framework::BaseComponent::setSmallIcon </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>pathToSmallIcon</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set small icon(16x16) for specific window. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pathToSmallIcon</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classgui__framework_1_1exceptions_1_1_file_does_not_exist.html">gui_framework::exceptions::FileDoesNotExist</a></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00248">248</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a9dba22822b7f830295e104fa27af284c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9dba22822b7f830295e104fa27af284c">&#9670;&nbsp;</a></span>setTextColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gui_framework::BaseComponent::setTextColor </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>red</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>green</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>blue</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classgui__framework_1_1_base_tab_control.html#aa20da2dc52c7bdae55f4960e3ea000be">gui_framework::BaseTabControl</a>, <a class="el" href="classgui__framework_1_1_base_rich_edit.html#a09d6d56819fc8fc9caaf1b39e962f910">gui_framework::BaseRichEdit</a>, <a class="el" href="classgui__framework_1_1_base_combo_box.html#ab9ac06e14375a41cd0db219f1030b40d">gui_framework::BaseComboBox</a>, and <a class="el" href="classgui__framework_1_1_base_button.html#aafe12f92e9407defc8e3211518f52025">gui_framework::BaseButton</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00274">274</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -1237,13 +1521,37 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classgui__framework_1_1_base_rich_edit.html#a5b0e9edd94997732cc8b0f6533e9b27a">gui_framework::BaseRichEdit</a>, <a class="el" href="classgui__framework_1_1_base_composite.html#ab788d4dc310ef2e8eda23e9475da7ea7">gui_framework::BaseComposite</a>, and <a class="el" href="classgui__framework_1_1_base_button.html#aeceb03df19d66ea6e6e7ea04a81ec397">gui_framework::BaseButton</a>.</p>
+<p>Reimplemented in <a class="el" href="classgui__framework_1_1_base_tab_control.html#a705e7fa0d724d7c17e1cd6d9db6a38ba">gui_framework::BaseTabControl</a>, <a class="el" href="classgui__framework_1_1_base_rich_edit.html#a5b0e9edd94997732cc8b0f6533e9b27a">gui_framework::BaseRichEdit</a>, <a class="el" href="classgui__framework_1_1_base_composite.html#ab788d4dc310ef2e8eda23e9475da7ea7">gui_framework::BaseComposite</a>, and <a class="el" href="classgui__framework_1_1_base_button.html#aeceb03df19d66ea6e6e7ea04a81ec397">gui_framework::BaseButton</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00092">92</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00099">99</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="aa5a56227ac3689163f958e778f0df1ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5a56227ac3689163f958e778f0df1ca">&#9670;&nbsp;</a></span>backgroundColor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">COLORREF gui_framework::BaseComponent::backgroundColor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00034">34</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
+
+</div>
+</div>
 <a id="a7a8719af09a90cd4de26d3a295882e86"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7a8719af09a90cd4de26d3a295882e86">&#9670;&nbsp;</a></span>className</h2>
 
@@ -1388,6 +1696,54 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a24a743c99e4ca9bd6a5e1ea2fbd3aea7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24a743c99e4ca9bd6a5e1ea2fbd3aea7">&#9670;&nbsp;</a></span>id</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t gui_framework::BaseComponent::id</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00033">33</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
+
+</div>
+</div>
+<a id="ae94897a52c22317fa48c4b3fa79ace16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae94897a52c22317fa48c4b3fa79ace16">&#9670;&nbsp;</a></span>largeIcon</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">HICON gui_framework::BaseComponent::largeIcon</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00031">31</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
+
+</div>
+</div>
 <a id="ad2e1e9a73ab94b4fb0da0addc3ffb66d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad2e1e9a73ab94b4fb0da0addc3ffb66d">&#9670;&nbsp;</a></span>mainMenu</h2>
 
@@ -1505,6 +1861,54 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00020">20</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
+
+</div>
+</div>
+<a id="aa42b7d08d840328fab675e3308ac7ab5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa42b7d08d840328fab675e3308ac7ab5">&#9670;&nbsp;</a></span>smallIcon</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">HICON gui_framework::BaseComponent::smallIcon</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00032">32</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
+
+</div>
+</div>
+<a id="aa6bedc9892f3eb8ae57193275bab2242"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6bedc9892f3eb8ae57193275bab2242">&#9670;&nbsp;</a></span>textColor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">COLORREF gui_framework::BaseComponent::textColor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00035">35</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
 
 </div>
 </div>

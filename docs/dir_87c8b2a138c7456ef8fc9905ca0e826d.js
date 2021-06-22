@@ -46,5 +46,9 @@ var dir_87c8b2a138c7456ef8fc9905ca0e826d =
     [ "StaticControlCreator.cpp", "_static_control_creator_8cpp.html", null ],
     [ "StaticControlCreator.h", "_static_control_creator_8h.html", [
       [ "StaticControlCreator", "classgui__framework_1_1utility_1_1_static_control_creator.html", "classgui__framework_1_1utility_1_1_static_control_creator" ]
+    ] ],
+    [ "TabControlCreator.cpp", "_tab_control_creator_8cpp.html", null ],
+    [ "TabControlCreator.h", "_tab_control_creator_8h.html", [
+      [ "TabControlCreator", "classgui__framework_1_1utility_1_1_tab_control_creator.html", "classgui__framework_1_1utility_1_1_tab_control_creator" ]
     ] ]
 ];
