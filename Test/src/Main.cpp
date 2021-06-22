@@ -2,14 +2,6 @@
 
 #include "GUIFramework.h"
 #include "WindowHolder.h"
-#include "Components/Button.h"
-#include "Components/EditControl.h"
-#include "Components/StaticControl.h"
-#include "Components/RichEdit.h"
-#include "Components/SimpleComboBox.h"
-#include "Components/DropDownComboBox.h"
-#include "Components/DropDownListComboBox.h"
-#include "Components/ListBox.h"
 #include "Composites/SeparateWindow.h"
 
 #pragma comment (lib, "GUIFramework.lib")
@@ -33,21 +25,6 @@ void test()
 		ptr->setExitMode(BaseComponent::exitMode::quit);
 
 		ptr->setLargeIcon(R"(assets\icon.ico)");
-
-		BaseComboBox* simpleComboBox = new SimpleComboBox(L"ComboBox", 200, 0, 200, 80, ptr);
-
-		BaseComboBox* dropDownComboBox = new DropDownComboBox(L"DropDownBox", 200, 150, 200, 80, ptr);
-
-		BaseComboBox* dropDownListComboBox = new DropDownListComboBox(L"DropDownListBox", 200, 300, 200, 80, ptr);
-
-		simpleComboBox->addValue(L"First combo box");
-		simpleComboBox->addValue(L"Second combo box");
-
-		dropDownComboBox->addValue(L"First drop down combo box");
-		dropDownComboBox->addValue(L"Second drop down combo box");
-
-		dropDownListComboBox->addValue(L"First drop down list combo box");
-		dropDownListComboBox->addValue(L"Second drop down list combo box");
 
 		holder.runMainLoop();
 	}
