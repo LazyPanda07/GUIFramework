@@ -2,6 +2,7 @@
 #include "BaseButton.h"
 
 #include "Exceptions/GetLastErrorException.h"
+#include "Exceptions/NotImplemented.h"
 
 using namespace std;
 
@@ -43,5 +44,10 @@ namespace gui_framework
 	const function<LRESULT(WPARAM, LPARAM)>& BaseButton::getOnClick() const
 	{
 		return onClick;
+	}
+
+	void BaseButton::setTextColor(uint8_t red, uint8_t green, uint8_t blue)
+	{
+		throw exceptions::NotImplemented(__FUNCTION__, "BaseButton");
 	}
 }
