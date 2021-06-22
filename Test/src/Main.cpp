@@ -52,9 +52,6 @@ int main(int argc, char** argv)
 		
 		ListBox* listBox = new ListBox(L"ListBox", 400, 0, 200, 80, ptr);
 		
-		simpleComboBox->setAutoResize(false);
-		listBox->setAutoResize(false);
-		
 		simpleComboBox->addValue(L"First combo box");
 		simpleComboBox->addValue(L"Second combo box");
 		
@@ -73,10 +70,7 @@ int main(int argc, char** argv)
 			editControl,
 			staticControl,
 			richEdit,
-			simpleComboBox,
-			listBox,
-			dropDownComboBox,
-			dropDownListComboBox
+			listBox
 		};
 		
 		srand(time(nullptr));
