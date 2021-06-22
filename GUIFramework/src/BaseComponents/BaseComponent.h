@@ -61,6 +61,8 @@ namespace gui_framework
 		/// @param menuName 
 		virtual void removePopupMenus(const std::wstring& menuName);
 
+		virtual void changeBackgroundColor(uint8_t red, uint8_t green, uint8_t blue) final;
+
 		virtual void setDesiredWidth(uint16_t desiredWidth) final;
 
 		virtual void setDesiredHeight(uint16_t desiredHeight) final;
