@@ -13,7 +13,7 @@ namespace gui_framework
 	StaticControl::StaticControl(const wstring& staticControlName, const wstring& editControlText, int x, int y, BaseComponent* parent, uint16_t width, uint16_t height) :
 		BaseComponent
 		(
-			wstring(standard_classes::button),
+			wstring(standard_classes::staticControl),
 			staticControlName,
 			utility::ComponentSettings
 			(

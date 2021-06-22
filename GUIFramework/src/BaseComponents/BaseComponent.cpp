@@ -7,6 +7,7 @@
 #include "Interfaces/Components/IResizableComponent.h"
 
 #pragma warning(disable: 6387)
+#pragma warning(disable: 4312)
 
 using namespace std;
 
@@ -31,7 +32,9 @@ namespace gui_framework
 		desiredY(settings.y),
 		mode(exitMode::destroyWindow),
 		largeIcon(nullptr),
-		smallIcon(nullptr)
+		smallIcon(nullptr),
+		id(GUIFramework::get().generateHMENU(windowName)),
+		backgroundColor(RGB(255, 255, 255))
 	{
 		WNDCLASSEXW classStruct = {};
 
@@ -68,7 +71,7 @@ namespace gui_framework
 			settings.width,
 			settings.height,
 			parent ? parent->handle : nullptr,
-			settings.id,
+			reinterpret_cast<HMENU>(id),
 			GetModuleHandleW(nullptr),
 			nullptr
 		);
@@ -199,7 +202,7 @@ namespace gui_framework
 
 	void BaseComponent::setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue)
 	{
-		SetWindowLongPtrW(handle, GCLP_HBRBACKGROUND, reinterpret_cast<LONG_PTR>(CreateSolidBrush(RGB(red, green, blue))));
+		backgroundColor = RGB(red, green, blue);
 
 		InvalidateRect(handle, nullptr, true);
 	}
@@ -363,6 +366,16 @@ namespace gui_framework
 		}
 
 		return result;
+	}
+
+	uint32_t BaseComponent::getId() const
+	{
+		return id;
+	}
+
+	COLORREF BaseComponent::getBackgroundColor() const
+	{
+		return backgroundColor;
 	}
 
 	BaseComponent::~BaseComponent()

@@ -119,7 +119,6 @@ namespace gui_framework
 				settings.y,
 				settings.width,
 				settings.height,
-				settings.id,
 				settings.extendedStyles | WS_EX_DLGMODALFRAME
 			),
 			parent,
@@ -136,7 +135,6 @@ namespace gui_framework
 				settings.y,
 				settings.width,
 				settings.height,
-				settings.id,
 				settings.extendedStyles | WS_EX_DLGMODALFRAME
 			),
 			parent,
@@ -153,7 +151,6 @@ namespace gui_framework
 				settings.y,
 				settings.width,
 				settings.height,
-				settings.id,
 				settings.extendedStyles | WS_EX_DLGMODALFRAME
 			),
 			parent,

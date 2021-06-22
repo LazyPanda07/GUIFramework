@@ -21,8 +21,7 @@ namespace gui_framework
 				x,
 				y,
 				width,
-				height,
-				this->initButtonId(GUIFramework::get().generateHMENU(buttonName))
+				height
 			),
 			parent
 		),
