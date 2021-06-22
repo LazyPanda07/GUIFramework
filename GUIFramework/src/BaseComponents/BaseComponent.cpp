@@ -51,7 +51,7 @@ namespace gui_framework
 				classStruct.hInstance = module;
 				classStruct.hCursor = LoadCursorW(module, IDC_ARROW);
 				classStruct.lpfnWndProc = windowFunction;
-				classStruct.hbrBackground = HBRUSH(COLOR_WINDOW);
+				classStruct.hbrBackground = reinterpret_cast<HBRUSH>(COLOR_WINDOW);
 
 				RegisterClassExW(&classStruct);
 			}
@@ -197,9 +197,11 @@ namespace gui_framework
 		}
 	}
 
-	void BaseComponent::changeBackgroundColor(uint8_t red, uint8_t green, uint8_t blue)
+	void BaseComponent::setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue)
 	{
-		SendMessageW(handle, WM_ERASEBKGND, reinterpret_cast<WPARAM>(CreateSolidBrush(RGB(red, green, blue))), NULL);
+		SetWindowLongPtrW(handle, GCLP_HBRBACKGROUND, reinterpret_cast<LONG_PTR>(CreateSolidBrush(RGB(red, green, blue))));
+
+		InvalidateRect(handle, nullptr, true);
 	}
 
 	void BaseComponent::setDesiredWidth(uint16_t desiredWidth)
