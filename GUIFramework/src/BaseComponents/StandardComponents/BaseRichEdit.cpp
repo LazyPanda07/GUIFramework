@@ -127,4 +127,11 @@ namespace gui_framework
 
 		return this->getText().substr(range.cpMin, static_cast<size_t>(range.cpMax) - range.cpMin);
 	}
+
+	void BaseRichEdit::setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue)
+	{
+		BaseComponent::setBackgroundColor(red, green, blue);
+
+		SendMessageW(handle, EM_SETBKGNDCOLOR, NULL, static_cast<LPARAM>(backgroundColor));
+	}
 }

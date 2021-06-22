@@ -120,6 +120,13 @@ namespace gui_framework
 		/// @exception gui_framework::exceptions::SelectListException 
 		virtual void resize(uint16_t width, uint16_t height) override;
 
+		/// @brief Not implemented
+		/// @param red 
+		/// @param green 
+		/// @param blue 
+		/// @exception gui_framework::exceptions::NotImplemented Background color does not affects at combo boxes
+		virtual void setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue) final override;
+
 		virtual ~BaseComboBox() = default;
 	};
 }
