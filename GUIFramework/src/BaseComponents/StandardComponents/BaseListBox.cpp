@@ -24,7 +24,7 @@ namespace gui_framework
 			parent ? parent->getHandle() : nullptr,
 			true
 		),
-		requiredSize{ numeric_limits<long>::min(), numeric_limits<long>::min() },
+		requiredSize{ settings.width, settings.height },
 		columnsWidth(0)
 	{
 
@@ -227,9 +227,19 @@ namespace gui_framework
 			HDC deviceContext = GetDC(handle);
 			int heightSum = 0;
 
-			if (currentSize == CB_ERR)
+			if (currentSize == CB_ERR || !currentSize)
 			{
 				return;
+			}
+
+			if (requiredSize.cx == desiredWidth)
+			{
+				requiredSize.cx = 0;
+			}
+
+			if (requiredSize.cy = desiredHeight)
+			{
+				requiredSize.cy = 0;
 			}
 
 			for (size_t i = 0; i < static_cast<size_t>(currentSize); i++)

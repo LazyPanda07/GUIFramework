@@ -242,9 +242,19 @@ namespace gui_framework
 			HDC deviceContext = GetDC(handle);
 			int heightSum = 0;
 
-			if (currentSize == CB_ERR)
+			if (currentSize == CB_ERR || !currentSize)
 			{
 				return;
+			}
+
+			if (requiredSize.cx == desiredWidth)
+			{
+				requiredSize.cx = 0;
+			}
+			
+			if (requiredSize.cy = desiredHeight)
+			{
+				requiredSize.cy = 0;
 			}
 
 			for (size_t i = 0; i < currentSize; i++)
