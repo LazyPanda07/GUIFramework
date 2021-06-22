@@ -131,6 +131,8 @@ namespace gui_framework
 			{
 				isUsed = true;
 
+				SetBkColor(reinterpret_cast<HDC>(wparam), component->getBackgroundColor());
+
 				return reinterpret_cast<LRESULT>(CreateSolidBrush(component->getBackgroundColor()));
 			}
 		}
