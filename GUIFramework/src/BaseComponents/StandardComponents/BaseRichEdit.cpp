@@ -134,4 +134,18 @@ namespace gui_framework
 
 		SendMessageW(handle, EM_SETBKGNDCOLOR, NULL, static_cast<LPARAM>(backgroundColor));
 	}
+
+	void BaseRichEdit::setTextColor(uint8_t red, uint8_t green, uint8_t blue)
+	{
+		BaseComponent::setTextColor(red, green, blue);
+
+		CHARFORMAT2W textFormat;
+
+		textFormat.cbSize = sizeof(CHARFORMAT2W);
+		textFormat.dwMask = CFM_COLOR;
+		textFormat.crTextColor = RGB(red, green, blue);
+		textFormat.dwEffects = NULL;
+
+		SendMessageW(handle, EM_SETCHARFORMAT, SCF_ALL, reinterpret_cast<LPARAM>(&textFormat));
+	}
 }

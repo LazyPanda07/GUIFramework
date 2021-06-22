@@ -34,7 +34,8 @@ namespace gui_framework
 		largeIcon(nullptr),
 		smallIcon(nullptr),
 		id(GUIFramework::get().generateHMENU(windowName)),
-		backgroundColor(RGB(255, 255, 255))
+		backgroundColor(RGB(255, 255, 255)),
+		textColor(RGB(0, 0, 0))
 	{
 		WNDCLASSEXW classStruct = {};
 
@@ -200,13 +201,6 @@ namespace gui_framework
 		}
 	}
 
-	void BaseComponent::setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue)
-	{
-		backgroundColor = RGB(red, green, blue);
-
-		InvalidateRect(handle, nullptr, true);
-	}
-
 	void BaseComponent::setDesiredWidth(uint16_t desiredWidth)
 	{
 		this->desiredWidth = desiredWidth;
@@ -268,6 +262,20 @@ namespace gui_framework
 		smallIcon = static_cast<HICON>(LoadImageW(nullptr, pathToLargeIcon.wstring().data(), IMAGE_ICON, standard_sizes::largeIconWidth, standard_sizes::largeIconHeight, LR_LOADFROMFILE));
 
 		SendMessageW(handle, WM_SETICON, ICON_SMALL, reinterpret_cast<LPARAM>(smallIcon));
+	}
+
+	void BaseComponent::setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue)
+	{
+		backgroundColor = RGB(red, green, blue);
+
+		InvalidateRect(handle, nullptr, true);
+	}
+
+	void BaseComponent::setTextColor(uint8_t red, uint8_t green, uint8_t blue)
+	{
+		textColor = RGB(red, green, blue);
+
+		InvalidateRect(handle, nullptr, true);
 	}
 
 	BaseComponent* BaseComponent::getParent() const
@@ -376,6 +384,11 @@ namespace gui_framework
 	COLORREF BaseComponent::getBackgroundColor() const
 	{
 		return backgroundColor;
+	}
+
+	COLORREF BaseComponent::getTextColor() const
+	{
+		return textColor;
 	}
 
 	BaseComponent::~BaseComponent()

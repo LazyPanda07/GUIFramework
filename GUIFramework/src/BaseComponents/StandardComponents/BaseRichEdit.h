@@ -54,6 +54,8 @@ namespace gui_framework
 
 		virtual void setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue) final override;
 
+		virtual void setTextColor(uint8_t red, uint8_t green, uint8_t blue) final override;
+
 		virtual ~BaseRichEdit() = default;
 	};
 }

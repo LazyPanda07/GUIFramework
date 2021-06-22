@@ -32,6 +32,7 @@ namespace gui_framework
 		HICON smallIcon;
 		uint32_t id;
 		COLORREF backgroundColor;
+		COLORREF textColor;
 
 	protected:
 		virtual LRESULT preWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed);
@@ -63,8 +64,6 @@ namespace gui_framework
 		/// @param menuName 
 		virtual void removePopupMenus(const std::wstring& menuName);
 
-		virtual void setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue);
-
 		virtual void setDesiredWidth(uint16_t desiredWidth) final;
 
 		virtual void setDesiredHeight(uint16_t desiredHeight) final;
@@ -84,6 +83,10 @@ namespace gui_framework
 		/// @param pathToSmallIcon 
 		/// @exception gui_framework::exceptions::FileDoesNotExist
 		virtual void setSmallIcon(const std::filesystem::path& pathToSmallIcon) final;
+
+		virtual void setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue);
+
+		virtual void setTextColor(uint8_t red, uint8_t green, uint8_t blue);
 
 		virtual BaseComponent* getParent() const final;
 
@@ -118,6 +121,8 @@ namespace gui_framework
 		virtual uint32_t getId() const final;
 
 		virtual COLORREF getBackgroundColor() const final;
+
+		virtual COLORREF getTextColor() const final;
 
 		virtual ~BaseComponent();
 	};
