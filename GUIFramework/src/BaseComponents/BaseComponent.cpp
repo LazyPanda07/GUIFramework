@@ -197,6 +197,11 @@ namespace gui_framework
 		}
 	}
 
+	void BaseComponent::changeBackgroundColor(uint8_t red, uint8_t green, uint8_t blue)
+	{
+		SendMessageW(handle, WM_ERASEBKGND, reinterpret_cast<WPARAM>(CreateSolidBrush(RGB(red, green, blue))), NULL);
+	}
+
 	void BaseComponent::setDesiredWidth(uint16_t desiredWidth)
 	{
 		this->desiredWidth = desiredWidth;
