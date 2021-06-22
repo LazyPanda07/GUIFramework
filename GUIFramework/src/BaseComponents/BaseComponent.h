@@ -28,6 +28,11 @@ namespace gui_framework
 		int desiredX;
 		int desiredY;
 		exitMode mode;
+		HICON largeIcon;
+		HICON smallIcon;
+		uint32_t id;
+		COLORREF backgroundColor;
+		COLORREF textColor;
 
 	protected:
 		virtual LRESULT preWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed);
@@ -69,6 +74,20 @@ namespace gui_framework
 
 		virtual void setExitMode(exitMode mode) final;
 
+		/// @brief Set large icon(32x32) for specific window
+		/// @param pathToLargeIcon 
+		/// @exception gui_framework::exceptions::FileDoesNotExist
+		virtual void setLargeIcon(const std::filesystem::path& pathToLargeIcon) final;
+
+		/// @brief Set small icon(16x16) for specific window
+		/// @param pathToSmallIcon 
+		/// @exception gui_framework::exceptions::FileDoesNotExist
+		virtual void setSmallIcon(const std::filesystem::path& pathToSmallIcon) final;
+
+		virtual void setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue);
+
+		virtual void setTextColor(uint8_t red, uint8_t green, uint8_t blue);
+
 		virtual BaseComponent* getParent() const final;
 
 		virtual HWND getHandle() const final;
@@ -98,6 +117,12 @@ namespace gui_framework
 		virtual std::unique_ptr<Menu>& getMainMenu() final;
 
 		virtual std::vector<const Menu*> getPopupMenus() const final;
+
+		virtual uint32_t getId() const final;
+
+		virtual COLORREF getBackgroundColor() const final;
+
+		virtual COLORREF getTextColor() const final;
 
 		virtual ~BaseComponent();
 	};

@@ -28,6 +28,8 @@ namespace gui_framework
 
 		virtual BaseComponent* findChild(const std::wstring& windowName) const final;
 
+		virtual BaseComponent* findChild(HWND handle) const final;
+
 		virtual std::vector<BaseComponent*> findChildren(const std::wstring& windowName) const final;
 
 		virtual const std::vector<std::unique_ptr<BaseComponent>>& getChildren() const final;
@@ -45,6 +47,8 @@ namespace gui_framework
 		virtual iterators::forward_iterator end() noexcept override;
 
 		virtual iterators::const_forward_iterator cend() const noexcept override;
+
+		virtual void setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue) final override;
 
 		virtual ~BaseComposite();
 	};

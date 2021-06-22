@@ -33,7 +33,6 @@ namespace gui_framework
 				settings.y,
 				settings.width,
 				settings.height,
-				settings.id,
 				settings.extendedStyles
 			),
 			parent,

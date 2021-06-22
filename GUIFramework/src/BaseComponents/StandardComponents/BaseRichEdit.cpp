@@ -11,10 +11,12 @@ namespace gui_framework
 
 		if (message == WM_NOTIFY && this->getAutoURLDetect())
 		{
-			ENLINK* ptrLink = reinterpret_cast<ENLINK*>(lparam);
+			NMHDR* notification = reinterpret_cast<NMHDR*>(lparam);
 
-			if (ptrLink->nmhdr.code == EN_LINK)
+			if (notification->code == EN_LINK)
 			{
+				ENLINK* ptrLink = reinterpret_cast<ENLINK*>(lparam);
+
 				auto callback = callbacks.find(static_cast<urlDetectEvent>(ptrLink->msg));
 
 				if (callback != callbacks.end())
@@ -38,11 +40,11 @@ namespace gui_framework
 		return -1;
 	}
 
-	BaseRichEdit::BaseRichEdit(const wstring& windowName, const utility::ComponentSettings& settings, BaseComponent* parent) :
+	BaseRichEdit::BaseRichEdit(const wstring& richEditName, const utility::ComponentSettings& settings, BaseComponent* parent) :
 		BaseComponent
 		(
 			wstring(standard_classes::richEdit),
-			windowName,
+			richEditName,
 			settings,
 			parent
 		),
@@ -124,5 +126,26 @@ namespace gui_framework
 		SendMessageW(handle, EM_EXGETSEL, NULL, reinterpret_cast<LPARAM>(&range));
 
 		return this->getText().substr(range.cpMin, static_cast<size_t>(range.cpMax) - range.cpMin);
+	}
+
+	void BaseRichEdit::setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue)
+	{
+		BaseComponent::setBackgroundColor(red, green, blue);
+
+		SendMessageW(handle, EM_SETBKGNDCOLOR, NULL, static_cast<LPARAM>(backgroundColor));
+	}
+
+	void BaseRichEdit::setTextColor(uint8_t red, uint8_t green, uint8_t blue)
+	{
+		BaseComponent::setTextColor(red, green, blue);
+
+		CHARFORMAT2W textFormat;
+
+		textFormat.cbSize = sizeof(CHARFORMAT2W);
+		textFormat.dwMask = CFM_COLOR;
+		textFormat.crTextColor = RGB(red, green, blue);
+		textFormat.dwEffects = NULL;
+
+		SendMessageW(handle, EM_SETCHARFORMAT, SCF_ALL, reinterpret_cast<LPARAM>(&textFormat));
 	}
 }

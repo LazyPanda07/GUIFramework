@@ -2,6 +2,7 @@
 #include "BaseComboBox.h"
 
 #include "Exceptions/SelectListException.h"
+#include "Exceptions/NotImplemented.h"
 
 #pragma warning(disable: 4018)
 #pragma warning(disable: 4267)
@@ -27,7 +28,7 @@ namespace gui_framework
 			parent ? parent->getHandle() : nullptr,
 			true
 		),
-		requiredSize{ numeric_limits<long>::min(), numeric_limits<long>::min() }
+		requiredSize{ settings.width, settings.height }
 	{
 
 	}
@@ -241,9 +242,19 @@ namespace gui_framework
 			HDC deviceContext = GetDC(handle);
 			int heightSum = 0;
 
-			if (currentSize == CB_ERR)
+			if (currentSize == CB_ERR || !currentSize)
 			{
 				return;
+			}
+
+			if (requiredSize.cx == desiredWidth)
+			{
+				requiredSize.cx = 0;
+			}
+			
+			if (requiredSize.cy = desiredHeight)
+			{
+				requiredSize.cy = 0;
 			}
 
 			for (size_t i = 0; i < currentSize; i++)
@@ -281,6 +292,16 @@ namespace gui_framework
 
 			ShowWindow(handle, SW_SHOW);
 		}
+	}
+
+	void BaseComboBox::setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue)
+	{
+		throw exceptions::NotImplemented(__FUNCTION__, "BaseComboBox");
+	}
+
+	void BaseComboBox::setTextColor(uint8_t red, uint8_t green, uint8_t blue)
+	{
+		throw exceptions::NotImplemented(__FUNCTION__, "BaseComboBox");
 	}
 }
 

@@ -3,9 +3,11 @@
 
 #include "BaseComposites/BaseComposite.h"
 #include "Exceptions/CantFindSeparateWindowFunctionException.h"
+#include "Exceptions/FileDoesNotExist.h"
 #include "Interfaces/Components/IResizableComponent.h"
 
 #pragma warning(disable: 6387)
+#pragma warning(disable: 4312)
 
 using namespace std;
 
@@ -28,7 +30,12 @@ namespace gui_framework
 		desiredHeight(settings.height),
 		desiredX(settings.x),
 		desiredY(settings.y),
-		mode(exitMode::destroyWindow)
+		mode(exitMode::destroyWindow),
+		largeIcon(nullptr),
+		smallIcon(nullptr),
+		id(GUIFramework::get().generateHMENU(windowName)),
+		backgroundColor(RGB(255, 255, 255)),
+		textColor(RGB(0, 0, 0))
 	{
 		WNDCLASSEXW classStruct = {};
 
@@ -48,7 +55,7 @@ namespace gui_framework
 				classStruct.hInstance = module;
 				classStruct.hCursor = LoadCursorW(module, IDC_ARROW);
 				classStruct.lpfnWndProc = windowFunction;
-				classStruct.hbrBackground = HBRUSH(COLOR_WINDOW);
+				classStruct.hbrBackground = reinterpret_cast<HBRUSH>(COLOR_WINDOW);
 
 				RegisterClassExW(&classStruct);
 			}
@@ -65,7 +72,7 @@ namespace gui_framework
 			settings.width,
 			settings.height,
 			parent ? parent->handle : nullptr,
-			settings.id,
+			reinterpret_cast<HMENU>(id),
 			GetModuleHandleW(nullptr),
 			nullptr
 		);
@@ -130,6 +137,9 @@ namespace gui_framework
 
 		if (result && parent && parent->isComposite())
 		{
+			DestroyIcon(largeIcon);
+			DestroyIcon(smallIcon);
+
 			BaseComposite* parentComposite = static_cast<BaseComposite*>(parent);
 
 			parentComposite->removeChild(this);
@@ -144,6 +154,9 @@ namespace gui_framework
 
 		if (result && parent && parent->isComposite())
 		{
+			DestroyIcon(largeIcon);
+			DestroyIcon(smallIcon);
+
 			BaseComposite* parentComposite = static_cast<BaseComposite*>(parent);
 
 			parentComposite->removeChild(this);
@@ -211,6 +224,58 @@ namespace gui_framework
 	void BaseComponent::setExitMode(exitMode mode)
 	{
 		this->mode = mode;
+	}
+
+	void BaseComponent::setLargeIcon(const filesystem::path& pathToLargeIcon)
+	{
+		if (!filesystem::exists(pathToLargeIcon))
+		{
+			throw exceptions::FileDoesNotExist(pathToLargeIcon);
+		}
+
+		if (largeIcon)
+		{
+			DestroyIcon(largeIcon);
+
+			largeIcon = nullptr;
+		}
+
+		largeIcon = static_cast<HICON>(LoadImageW(nullptr, pathToLargeIcon.wstring().data(), IMAGE_ICON, standard_sizes::largeIconWidth, standard_sizes::largeIconHeight, LR_LOADFROMFILE));
+
+		SendMessageW(handle, WM_SETICON, ICON_BIG, reinterpret_cast<LPARAM>(largeIcon));
+	}
+
+	void BaseComponent::setSmallIcon(const filesystem::path& pathToLargeIcon)
+	{
+		if (!filesystem::exists(pathToLargeIcon))
+		{
+			throw exceptions::FileDoesNotExist(pathToLargeIcon);
+		}
+
+		if (largeIcon)
+		{
+			DestroyIcon(largeIcon);
+
+			smallIcon = nullptr;
+		}
+
+		smallIcon = static_cast<HICON>(LoadImageW(nullptr, pathToLargeIcon.wstring().data(), IMAGE_ICON, standard_sizes::largeIconWidth, standard_sizes::largeIconHeight, LR_LOADFROMFILE));
+
+		SendMessageW(handle, WM_SETICON, ICON_SMALL, reinterpret_cast<LPARAM>(smallIcon));
+	}
+
+	void BaseComponent::setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue)
+	{
+		backgroundColor = RGB(red, green, blue);
+
+		InvalidateRect(handle, nullptr, true);
+	}
+
+	void BaseComponent::setTextColor(uint8_t red, uint8_t green, uint8_t blue)
+	{
+		textColor = RGB(red, green, blue);
+
+		InvalidateRect(handle, nullptr, true);
 	}
 
 	BaseComponent* BaseComponent::getParent() const
@@ -309,6 +374,21 @@ namespace gui_framework
 		}
 
 		return result;
+	}
+
+	uint32_t BaseComponent::getId() const
+	{
+		return id;
+	}
+
+	COLORREF BaseComponent::getBackgroundColor() const
+	{
+		return backgroundColor;
+	}
+
+	COLORREF BaseComponent::getTextColor() const
+	{
+		return textColor;
 	}
 
 	BaseComponent::~BaseComponent()

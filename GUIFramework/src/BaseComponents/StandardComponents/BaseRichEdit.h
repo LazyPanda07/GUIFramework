@@ -34,7 +34,7 @@ namespace gui_framework
 		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
 
 	public:
-		BaseRichEdit(const std::wstring& windowName, const utility::ComponentSettings& settings, BaseComponent* parent);
+		BaseRichEdit(const std::wstring& richEditName, const utility::ComponentSettings& settings, BaseComponent* parent);
 
 		virtual void addUrlDetectEvent(urlDetectEvent event, const std::function<void(const std::wstring&)>& eventCallback) final;
 
@@ -51,6 +51,10 @@ namespace gui_framework
 		virtual bool getAutoURLDetect() const final;
 
 		virtual std::wstring getSelectedText() const final;
+
+		virtual void setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue) final override;
+
+		virtual void setTextColor(uint8_t red, uint8_t green, uint8_t blue) final override;
 
 		virtual ~BaseRichEdit() = default;
 	};

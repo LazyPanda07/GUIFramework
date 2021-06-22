@@ -11,11 +11,7 @@ namespace gui_framework
 		public interfaces::ITextOperations
 	{
 	protected:
-		uint32_t buttonId;
 		std::function<LRESULT(WPARAM, LPARAM)> onClick;
-
-	protected:
-		HMENU initButtonId(uint32_t buttonId);
 
 	public:
 		BaseButton(const std::wstring& buttonName, const std::wstring& buttonText, const utility::ComponentSettings& settings, BaseComponent* parent, const std::function<LRESULT(WPARAM, LPARAM)>& onClick = nullptr);
@@ -26,7 +22,12 @@ namespace gui_framework
 
 		virtual const std::function<LRESULT(WPARAM, LPARAM)>& getOnClick() const final;
 
-		virtual uint32_t getButtonId() const;
+		/// @brief Not implemented
+		/// @param red 
+		/// @param green 
+		/// @param blue 
+		/// @exception gui_framework::exceptions::NotImplemented Background color does not affects at combo boxes
+		virtual void setTextColor(uint8_t red, uint8_t green, uint8_t blue) final override;
 
 		~BaseButton() = default;
 	};
