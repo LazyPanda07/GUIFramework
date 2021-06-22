@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['settingsjsonfile_1039',['settingsJSONFile',['../namespacegui__framework_1_1settings.html#a9ac890cff1776e71efbf6c9ae1a837bf',1,'gui_framework::settings']]],
-  ['staticcontrol_1040',['staticControl',['../namespacegui__framework_1_1standard__classes.html#ac86ad99c706e27ca256a71b2b0ee9dd8',1,'gui_framework::standard_classes']]],
-  ['staticcontrolheight_1041',['staticControlHeight',['../namespacegui__framework_1_1standard__sizes.html#a07a74c45cb8206bb4a4f918a5cb9d131',1,'gui_framework::standard_sizes']]],
-  ['staticcontrolwidth_1042',['staticControlWidth',['../namespacegui__framework_1_1standard__sizes.html#a62f0c5bf3fb69dfcd5a07cad5f90306f',1,'gui_framework::standard_sizes']]],
-  ['styles_1043',['styles',['../structgui__framework_1_1utility_1_1_component_settings.html#a94c6d6d28b4938f71e6bef5893ed18f1',1,'gui_framework::utility::ComponentSettings']]]
+  ['requiredsize_1173',['requiredSize',['../classgui__framework_1_1_base_combo_box.html#a1ebea246cd230cbdfe508aba9bf75104',1,'gui_framework::BaseComboBox::requiredSize()'],['../classgui__framework_1_1_base_list_box.html#ad7a613cca729e06ad6ce0c4d98ac0fc7',1,'gui_framework::BaseListBox::requiredSize()']]],
+  ['resizeablehandle_1174',['resizeableHandle',['../classgui__framework_1_1interfaces_1_1_i_resizable_component.html#a7b6cda00c1fd0b875e7f82f7049c0955',1,'gui_framework::interfaces::IResizableComponent']]],
+  ['richedit_1175',['richEdit',['../namespacegui__framework_1_1standard__classes.html#a57b557e0f5b320b012d2af64d4246290',1,'gui_framework::standard_classes']]]
 ];

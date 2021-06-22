@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.1</span>
+   &#160;<span id="projectnumber">0.2</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -135,8 +135,8 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a23ef5942c6515ee57e60a0b8bb721b40"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_rich_edit.html#a23ef5942c6515ee57e60a0b8bb721b40">BaseRichEdit</a> (const std::wstring &amp;<a class="el" href="classgui__framework_1_1_base_component.html#ab927f5791c7605446203f7f7f6e0bb83">windowName</a>, const <a class="el" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a> &amp;settings, <a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> *<a class="el" href="classgui__framework_1_1_base_component.html#a1576375d22cf283d598e22f4a11aca2f">parent</a>)</td></tr>
-<tr class="separator:a23ef5942c6515ee57e60a0b8bb721b40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf95576534631c3e382035a6f84aca45"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_rich_edit.html#acf95576534631c3e382035a6f84aca45">BaseRichEdit</a> (const std::wstring &amp;richEditName, const <a class="el" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a> &amp;settings, <a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> *<a class="el" href="classgui__framework_1_1_base_component.html#a1576375d22cf283d598e22f4a11aca2f">parent</a>)</td></tr>
+<tr class="separator:acf95576534631c3e382035a6f84aca45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af21b8916906b7a1c5139d513c47aff52"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_rich_edit.html#af21b8916906b7a1c5139d513c47aff52">addUrlDetectEvent</a> (<a class="el" href="classgui__framework_1_1_base_rich_edit.html#abf55c644c6c2640d8c662dd7179ab1f3">urlDetectEvent</a> event, const std::function&lt; void(const std::wstring &amp;)&gt; &amp;eventCallback) final</td></tr>
 <tr class="separator:af21b8916906b7a1c5139d513c47aff52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf50e2d2bfa111189ab21415b620a85b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_rich_edit.html#acf50e2d2bfa111189ab21415b620a85b">removeUrlDetectEvent</a> (<a class="el" href="classgui__framework_1_1_base_rich_edit.html#abf55c644c6c2640d8c662dd7179ab1f3">urlDetectEvent</a> event) final</td></tr>
@@ -153,6 +153,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad9c813e5ba0b4cae075b9ea89101f835"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d321e91aa2d43d81381f0148eecf7ad"><td class="memItemLeft" align="right" valign="top">virtual std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_rich_edit.html#a2d321e91aa2d43d81381f0148eecf7ad">getSelectedText</a> () const final</td></tr>
 <tr class="separator:a2d321e91aa2d43d81381f0148eecf7ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe18d7d262aa479d30306d76ef2be318"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_rich_edit.html#abe18d7d262aa479d30306d76ef2be318">setBackgroundColor</a> (uint8_t red, uint8_t green, uint8_t blue) final override</td></tr>
+<tr class="separator:abe18d7d262aa479d30306d76ef2be318"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09d6d56819fc8fc9caaf1b39e962f910"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_rich_edit.html#a09d6d56819fc8fc9caaf1b39e962f910">setTextColor</a> (uint8_t red, uint8_t green, uint8_t blue) final override</td></tr>
+<tr class="separator:a09d6d56819fc8fc9caaf1b39e962f910"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae92c8a07985e30e2ef372a66d046ec46"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_rich_edit.html#ae92c8a07985e30e2ef372a66d046ec46">~BaseRichEdit</a> ()=default</td></tr>
 <tr class="separator:ae92c8a07985e30e2ef372a66d046ec46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classgui__framework_1_1_base_component"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classgui__framework_1_1_base_component')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></td></tr>
@@ -185,6 +189,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a90444b6b79044a9c7a0d35fb2333c77d inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a970624b3baad18e031f53ce52a0a3f45 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a970624b3baad18e031f53ce52a0a3f45">setExitMode</a> (<a class="el" href="classgui__framework_1_1_base_component.html#adadba923c5fcc012ce8b50e592080bcd">exitMode</a> <a class="el" href="classgui__framework_1_1_base_component.html#a55051bf0a8f4a9e513a7531fc9998145">mode</a>) final</td></tr>
 <tr class="separator:a970624b3baad18e031f53ce52a0a3f45 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a087da7e2087b861f6a5d2aeb423ede66 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a087da7e2087b861f6a5d2aeb423ede66">setLargeIcon</a> (const std::filesystem::path &amp;pathToLargeIcon) final</td></tr>
+<tr class="memdesc:a087da7e2087b861f6a5d2aeb423ede66 inherit pub_methods_classgui__framework_1_1_base_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set large icon(32x32) for specific window.  <a href="classgui__framework_1_1_base_component.html#a087da7e2087b861f6a5d2aeb423ede66">More...</a><br /></td></tr>
+<tr class="separator:a087da7e2087b861f6a5d2aeb423ede66 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a82031e678bcf3a29b2c00c6e103429 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a7a82031e678bcf3a29b2c00c6e103429">setSmallIcon</a> (const std::filesystem::path &amp;pathToSmallIcon) final</td></tr>
+<tr class="memdesc:a7a82031e678bcf3a29b2c00c6e103429 inherit pub_methods_classgui__framework_1_1_base_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set small icon(16x16) for specific window.  <a href="classgui__framework_1_1_base_component.html#a7a82031e678bcf3a29b2c00c6e103429">More...</a><br /></td></tr>
+<tr class="separator:a7a82031e678bcf3a29b2c00c6e103429 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae01a3e23cbef564fc8d7e3d9ec26251b inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#ae01a3e23cbef564fc8d7e3d9ec26251b">getParent</a> () const final</td></tr>
 <tr class="separator:ae01a3e23cbef564fc8d7e3d9ec26251b inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab12780fecd5f22ec01d21a82d9ac87b7 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual HWND&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#ab12780fecd5f22ec01d21a82d9ac87b7">getHandle</a> () const final</td></tr>
@@ -215,6 +225,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8792f3026aa71d32a50758978dd85e98 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aacdd618a74527d288a8035088fe87b81 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; const <a class="el" href="classgui__framework_1_1_menu.html">Menu</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#aacdd618a74527d288a8035088fe87b81">getPopupMenus</a> () const final</td></tr>
 <tr class="separator:aacdd618a74527d288a8035088fe87b81 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1719b34576b8ceb271cdb04611ed4523 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a1719b34576b8ceb271cdb04611ed4523">getId</a> () const final</td></tr>
+<tr class="separator:a1719b34576b8ceb271cdb04611ed4523 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b4685df88fa1edf51da5f29895961a4 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual COLORREF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a8b4685df88fa1edf51da5f29895961a4">getBackgroundColor</a> () const final</td></tr>
+<tr class="separator:a8b4685df88fa1edf51da5f29895961a4 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56df6db296a420576396a4629236aa41 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual COLORREF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a56df6db296a420576396a4629236aa41">getTextColor</a> () const final</td></tr>
+<tr class="separator:a56df6db296a420576396a4629236aa41 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a274274f6f28b2e93f73544634b640d56 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a274274f6f28b2e93f73544634b640d56">~BaseComponent</a> ()</td></tr>
 <tr class="separator:a274274f6f28b2e93f73544634b640d56 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classgui__framework_1_1interfaces_1_1_i_resizable_component"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classgui__framework_1_1interfaces_1_1_i_resizable_component')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classgui__framework_1_1interfaces_1_1_i_resizable_component.html">gui_framework::interfaces::IResizableComponent</a></td></tr>
@@ -288,6 +304,16 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a3d15724eb33a896f282d5199f825d03b inherit pro_attribs_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55051bf0a8f4a9e513a7531fc9998145 inherit pro_attribs_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgui__framework_1_1_base_component.html#adadba923c5fcc012ce8b50e592080bcd">exitMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a55051bf0a8f4a9e513a7531fc9998145">mode</a></td></tr>
 <tr class="separator:a55051bf0a8f4a9e513a7531fc9998145 inherit pro_attribs_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae94897a52c22317fa48c4b3fa79ace16 inherit pro_attribs_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">HICON&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#ae94897a52c22317fa48c4b3fa79ace16">largeIcon</a></td></tr>
+<tr class="separator:ae94897a52c22317fa48c4b3fa79ace16 inherit pro_attribs_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa42b7d08d840328fab675e3308ac7ab5 inherit pro_attribs_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">HICON&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#aa42b7d08d840328fab675e3308ac7ab5">smallIcon</a></td></tr>
+<tr class="separator:aa42b7d08d840328fab675e3308ac7ab5 inherit pro_attribs_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24a743c99e4ca9bd6a5e1ea2fbd3aea7 inherit pro_attribs_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a24a743c99e4ca9bd6a5e1ea2fbd3aea7">id</a></td></tr>
+<tr class="separator:a24a743c99e4ca9bd6a5e1ea2fbd3aea7 inherit pro_attribs_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5a56227ac3689163f958e778f0df1ca inherit pro_attribs_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">COLORREF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#aa5a56227ac3689163f958e778f0df1ca">backgroundColor</a></td></tr>
+<tr class="separator:aa5a56227ac3689163f958e778f0df1ca inherit pro_attribs_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6bedc9892f3eb8ae57193275bab2242 inherit pro_attribs_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">COLORREF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#aa6bedc9892f3eb8ae57193275bab2242">textColor</a></td></tr>
+<tr class="separator:aa6bedc9892f3eb8ae57193275bab2242 inherit pro_attribs_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classgui__framework_1_1interfaces_1_1_i_resizable_component"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classgui__framework_1_1interfaces_1_1_i_resizable_component')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classgui__framework_1_1interfaces_1_1_i_resizable_component.html">gui_framework::interfaces::IResizableComponent</a></td></tr>
 <tr class="memitem:a7b6cda00c1fd0b875e7f82f7049c0955 inherit pro_attribs_classgui__framework_1_1interfaces_1_1_i_resizable_component"><td class="memItemLeft" align="right" valign="top">HWND&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_resizable_component.html#a7b6cda00c1fd0b875e7f82f7049c0955">resizeableHandle</a></td></tr>
 <tr class="separator:a7b6cda00c1fd0b875e7f82f7049c0955 inherit pro_attribs_classgui__framework_1_1interfaces_1_1_i_resizable_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -353,8 +379,8 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a23ef5942c6515ee57e60a0b8bb721b40"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23ef5942c6515ee57e60a0b8bb721b40">&#9670;&nbsp;</a></span>BaseRichEdit()</h2>
+<a id="acf95576534631c3e382035a6f84aca45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf95576534631c3e382035a6f84aca45">&#9670;&nbsp;</a></span>BaseRichEdit()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -363,7 +389,7 @@ Protected Attributes</h2></td></tr>
           <td class="memname">gui_framework::BaseRichEdit::BaseRichEdit </td>
           <td>(</td>
           <td class="paramtype">const std::wstring &amp;&#160;</td>
-          <td class="paramname"><em>windowName</em>, </td>
+          <td class="paramname"><em>richEditName</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -385,7 +411,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00041">41</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00043">43</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
 
 </div>
 </div>
@@ -449,7 +475,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00060">60</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00062">62</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
 
 </div>
 </div>
@@ -487,7 +513,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00082">82</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00084">84</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
 
 </div>
 </div>
@@ -525,7 +551,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00070">70</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00072">72</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
 
 </div>
 </div>
@@ -552,7 +578,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00115">115</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00117">117</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
 
 </div>
 </div>
@@ -579,7 +605,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00120">120</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00122">122</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
 
 </div>
 </div>
@@ -607,7 +633,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00065">65</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00067">67</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
 
 </div>
 </div>
@@ -635,7 +661,53 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00094">94</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00096">96</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
+
+</div>
+</div>
+<a id="abe18d7d262aa479d30306d76ef2be318"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe18d7d262aa479d30306d76ef2be318">&#9670;&nbsp;</a></span>setBackgroundColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gui_framework::BaseRichEdit::setBackgroundColor </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>red</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>green</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>blue</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classgui__framework_1_1_base_component.html#ae2f1b329acc98ad498e18f4d5330f027">gui_framework::BaseComponent</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00131">131</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
 
 </div>
 </div>
@@ -663,7 +735,53 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00110">110</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00112">112</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a09d6d56819fc8fc9caaf1b39e962f910"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09d6d56819fc8fc9caaf1b39e962f910">&#9670;&nbsp;</a></span>setTextColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gui_framework::BaseRichEdit::setTextColor </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>red</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>green</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>blue</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classgui__framework_1_1_base_component.html#a9dba22822b7f830295e104fa27af284c">gui_framework::BaseComponent</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00138">138</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
 
 </div>
 </div>

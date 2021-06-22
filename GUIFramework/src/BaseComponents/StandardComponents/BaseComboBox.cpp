@@ -298,6 +298,11 @@ namespace gui_framework
 	{
 		throw exceptions::NotImplemented(__FUNCTION__, "BaseComboBox");
 	}
+
+	void BaseComboBox::setTextColor(uint8_t red, uint8_t green, uint8_t blue)
+	{
+		throw exceptions::NotImplemented(__FUNCTION__, "BaseComboBox");
+	}
 }
 
 #pragma pop_macro("min")

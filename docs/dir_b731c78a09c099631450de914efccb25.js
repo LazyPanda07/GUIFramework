@@ -35,5 +35,9 @@ var dir_b731c78a09c099631450de914efccb25 =
     [ "StaticControl.cpp", "_static_control_8cpp.html", null ],
     [ "StaticControl.h", "_static_control_8h.html", [
       [ "StaticControl", "classgui__framework_1_1_static_control.html", "classgui__framework_1_1_static_control" ]
+    ] ],
+    [ "TabControl.cpp", "_tab_control_8cpp.html", null ],
+    [ "TabControl.h", "_tab_control_8h.html", [
+      [ "TabControl", "classgui__framework_1_1_tab_control.html", "classgui__framework_1_1_tab_control" ]
     ] ]
 ];

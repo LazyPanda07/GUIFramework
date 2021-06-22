@@ -2,6 +2,7 @@
 #include "BaseTabControl.h"
 
 #include "Exceptions/FileDoesNotExist.h"
+#include "Exceptions/NotImplemented.h"
 
 #pragma warning(disable: 26454)
 
@@ -258,6 +259,16 @@ namespace gui_framework
 	uint16_t BaseTabControl::getImagesHeight() const
 	{
 		return imagesHeight;
+	}
+
+	void BaseTabControl::setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue)
+	{
+		throw exceptions::NotImplemented(__FUNCTION__, "BaseComboBox");
+	}
+
+	void BaseTabControl::setTextColor(uint8_t red, uint8_t green, uint8_t blue)
+	{
+		throw exceptions::NotImplemented(__FUNCTION__, "BaseComboBox");
 	}
 
 	BaseTabControl::~BaseTabControl()

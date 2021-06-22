@@ -4,7 +4,9 @@ var annotated_dup =
       [ "exceptions", "namespacegui__framework_1_1exceptions.html", [
         [ "BaseGUIFrameworkException", "classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception.html", "classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception" ],
         [ "CantFindSeparateWindowFunctionException", "classgui__framework_1_1exceptions_1_1_cant_find_separate_window_function_exception.html", "classgui__framework_1_1exceptions_1_1_cant_find_separate_window_function_exception" ],
+        [ "FileDoesNotExist", "classgui__framework_1_1exceptions_1_1_file_does_not_exist.html", "classgui__framework_1_1exceptions_1_1_file_does_not_exist" ],
         [ "GetLastErrorException", "classgui__framework_1_1exceptions_1_1_get_last_error_exception.html", "classgui__framework_1_1exceptions_1_1_get_last_error_exception" ],
+        [ "NotImplemented", "classgui__framework_1_1exceptions_1_1_not_implemented.html", "classgui__framework_1_1exceptions_1_1_not_implemented" ],
         [ "SelectListException", "classgui__framework_1_1exceptions_1_1_select_list_exception.html", "classgui__framework_1_1exceptions_1_1_select_list_exception" ]
       ] ],
       [ "interfaces", "namespacegui__framework_1_1interfaces.html", [
@@ -31,6 +33,7 @@ var annotated_dup =
         [ "SeparateWindowCreator", "classgui__framework_1_1utility_1_1_separate_window_creator.html", "classgui__framework_1_1utility_1_1_separate_window_creator" ],
         [ "SimpleComboBoxCreator", "classgui__framework_1_1utility_1_1_simple_combo_box_creator.html", "classgui__framework_1_1utility_1_1_simple_combo_box_creator" ],
         [ "StaticControlCreator", "classgui__framework_1_1utility_1_1_static_control_creator.html", "classgui__framework_1_1utility_1_1_static_control_creator" ],
+        [ "TabControlCreator", "classgui__framework_1_1utility_1_1_tab_control_creator.html", "classgui__framework_1_1utility_1_1_tab_control_creator" ],
         [ "AdditionalCreationData", "classgui__framework_1_1utility_1_1_additional_creation_data.html", "classgui__framework_1_1utility_1_1_additional_creation_data" ],
         [ "AdditionalCreationData< Button >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_button_01_4.html", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_button_01_4" ],
         [ "AdditionalCreationData< ChildWindow >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_child_window_01_4.html", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_child_window_01_4" ],
@@ -43,6 +46,7 @@ var annotated_dup =
         [ "AdditionalCreationData< RichEdit >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_rich_edit_01_4.html", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_rich_edit_01_4" ],
         [ "AdditionalCreationData< SeparateWindow >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_separate_window_01_4.html", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_separate_window_01_4" ],
         [ "AdditionalCreationData< StaticControl >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_static_control_01_4.html", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_static_control_01_4" ],
+        [ "AdditionalCreationData< TabControl >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_tab_control_01_4.html", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_tab_control_01_4" ],
         [ "ComponentSettings", "structgui__framework_1_1utility_1_1_component_settings.html", "structgui__framework_1_1utility_1_1_component_settings" ]
       ] ],
       [ "BaseComponent", "classgui__framework_1_1_base_component.html", "classgui__framework_1_1_base_component" ],
@@ -55,6 +59,7 @@ var annotated_dup =
       [ "BaseMultipleSelectListBox", "classgui__framework_1_1_base_multiple_select_list_box.html", "classgui__framework_1_1_base_multiple_select_list_box" ],
       [ "BaseRichEdit", "classgui__framework_1_1_base_rich_edit.html", "classgui__framework_1_1_base_rich_edit" ],
       [ "BaseStaticControl", "classgui__framework_1_1_base_static_control.html", "classgui__framework_1_1_base_static_control" ],
+      [ "BaseTabControl", "classgui__framework_1_1_base_tab_control.html", "classgui__framework_1_1_base_tab_control" ],
       [ "BaseComposite", "classgui__framework_1_1_base_composite.html", "classgui__framework_1_1_base_composite" ],
       [ "BaseDialogBox", "classgui__framework_1_1_base_dialog_box.html", "classgui__framework_1_1_base_dialog_box" ],
       [ "BaseNonResizableComposite", "classgui__framework_1_1_base_non_resizable_composite.html", "classgui__framework_1_1_base_non_resizable_composite" ],
@@ -71,6 +76,7 @@ var annotated_dup =
       [ "RichEdit", "classgui__framework_1_1_rich_edit.html", "classgui__framework_1_1_rich_edit" ],
       [ "SimpleComboBox", "classgui__framework_1_1_simple_combo_box.html", "classgui__framework_1_1_simple_combo_box" ],
       [ "StaticControl", "classgui__framework_1_1_static_control.html", "classgui__framework_1_1_static_control" ],
+      [ "TabControl", "classgui__framework_1_1_tab_control.html", "classgui__framework_1_1_tab_control" ],
       [ "ChildWindow", "classgui__framework_1_1_child_window.html", "classgui__framework_1_1_child_window" ],
       [ "DialogBox", "classgui__framework_1_1_dialog_box.html", "classgui__framework_1_1_dialog_box" ],
       [ "SeparateWindow", "classgui__framework_1_1_separate_window.html", "classgui__framework_1_1_separate_window" ],
@@ -78,6 +84,7 @@ var annotated_dup =
       [ "Menu", "classgui__framework_1_1_menu.html", "classgui__framework_1_1_menu" ],
       [ "BaseMenuItem", "classgui__framework_1_1_base_menu_item.html", "classgui__framework_1_1_base_menu_item" ],
       [ "DropDownMenuItem", "classgui__framework_1_1_drop_down_menu_item.html", "classgui__framework_1_1_drop_down_menu_item" ],
-      [ "MenuItem", "classgui__framework_1_1_menu_item.html", "classgui__framework_1_1_menu_item" ]
+      [ "MenuItem", "classgui__framework_1_1_menu_item.html", "classgui__framework_1_1_menu_item" ],
+      [ "WindowHolder", "classgui__framework_1_1_window_holder.html", "classgui__framework_1_1_window_holder" ]
     ] ]
 ];

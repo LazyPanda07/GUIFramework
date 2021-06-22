@@ -1,8 +1,11 @@
 var searchData=
 [
-  ['text_1044',['text',['../classgui__framework_1_1utility_1_1_additional_creation_data_3_01_button_01_4.html#aa69bf50ce9fc00101d893a4f6e8bec87',1,'gui_framework::utility::AdditionalCreationData&lt; Button &gt;::text()'],['../classgui__framework_1_1utility_1_1_additional_creation_data_3_01_static_control_01_4.html#a5b44e40fb2696543c9f8b804ffa22a50',1,'gui_framework::utility::AdditionalCreationData&lt; StaticControl &gt;::text()'],['../classgui__framework_1_1interfaces_1_1_i_menu_item.html#a5c326fbc909b29d4026235ba0e15cd39',1,'gui_framework::interfaces::IMenuItem::text()']]],
-  ['texthandle_1045',['textHandle',['../classgui__framework_1_1interfaces_1_1_i_text_operations.html#a48cf7da66c946761627d116c38063eac',1,'gui_framework::interfaces::ITextOperations']]],
-  ['textlimitcount_1046',['textLimitCount',['../classgui__framework_1_1utility_1_1_additional_creation_data_3_01_rich_edit_01_4.html#aa51e59387d6c6b9116139a98f98b408a',1,'gui_framework::utility::AdditionalCreationData&lt; RichEdit &gt;']]],
-  ['threadscountsetting_1047',['threadsCountSetting',['../namespacegui__framework_1_1settings.html#a583a179dba5adc309d1a59f97c4dfe54',1,'gui_framework::settings']]],
-  ['type_1048',['type',['../classgui__framework_1_1interfaces_1_1_i_menu_item.html#a0b9e9c2b085fa0e0c7e75c97ce4f74f3',1,'gui_framework::interfaces::IMenuItem']]]
+  ['settingsjsonfile_1176',['settingsJSONFile',['../namespacegui__framework_1_1settings.html#a9ac890cff1776e71efbf6c9ae1a837bf',1,'gui_framework::settings']]],
+  ['smallicon_1177',['smallIcon',['../classgui__framework_1_1_base_component.html#aa42b7d08d840328fab675e3308ac7ab5',1,'gui_framework::BaseComponent']]],
+  ['smalliconheight_1178',['smallIconHeight',['../namespacegui__framework_1_1standard__sizes.html#a1f7f2e637c8499e76e01b4e314da8134',1,'gui_framework::standard_sizes']]],
+  ['smalliconwidth_1179',['smallIconWidth',['../namespacegui__framework_1_1standard__sizes.html#ab4af2006499a6a8d402ccc7861beb821',1,'gui_framework::standard_sizes']]],
+  ['staticcontrol_1180',['staticControl',['../namespacegui__framework_1_1standard__classes.html#ac86ad99c706e27ca256a71b2b0ee9dd8',1,'gui_framework::standard_classes']]],
+  ['staticcontrolheight_1181',['staticControlHeight',['../namespacegui__framework_1_1standard__sizes.html#a07a74c45cb8206bb4a4f918a5cb9d131',1,'gui_framework::standard_sizes']]],
+  ['staticcontrolwidth_1182',['staticControlWidth',['../namespacegui__framework_1_1standard__sizes.html#a62f0c5bf3fb69dfcd5a07cad5f90306f',1,'gui_framework::standard_sizes']]],
+  ['styles_1183',['styles',['../structgui__framework_1_1utility_1_1_component_settings.html#a94c6d6d28b4938f71e6bef5893ed18f1',1,'gui_framework::utility::ComponentSettings']]]
 ];

@@ -27,5 +27,10 @@ var dir_e26a3f9e84f4c910235ed176785f491f =
     [ "BaseStaticControl.cpp", "_base_static_control_8cpp.html", null ],
     [ "BaseStaticControl.h", "_base_static_control_8h.html", [
       [ "BaseStaticControl", "classgui__framework_1_1_base_static_control.html", "classgui__framework_1_1_base_static_control" ]
+    ] ],
+    [ "BaseTabControl.cpp", "_base_tab_control_8cpp.html", "_base_tab_control_8cpp" ],
+    [ "BaseTabControl.h", "_base_tab_control_8h.html", [
+      [ "BaseTabControl", "classgui__framework_1_1_base_tab_control.html", "classgui__framework_1_1_base_tab_control" ],
+      [ "tabData", "structgui__framework_1_1_base_tab_control_1_1tab_data.html", "structgui__framework_1_1_base_tab_control_1_1tab_data" ]
     ] ]
 ];
