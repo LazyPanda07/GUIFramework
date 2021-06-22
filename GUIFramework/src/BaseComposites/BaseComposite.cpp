@@ -133,6 +133,8 @@ namespace gui_framework
 
 				SetBkColor(reinterpret_cast<HDC>(wparam), component->getBackgroundColor());
 
+				SetTextColor(reinterpret_cast<HDC>(wparam), component->getTextColor());
+
 				return reinterpret_cast<LRESULT>(CreateSolidBrush(component->getBackgroundColor()));
 			}
 		}
