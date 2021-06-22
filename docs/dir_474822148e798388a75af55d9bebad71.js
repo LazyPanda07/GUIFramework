@@ -16,5 +16,9 @@ var dir_474822148e798388a75af55d9bebad71 =
     [ "GUIFrameworkConstants.h", "_g_u_i_framework_constants_8h.html", "_g_u_i_framework_constants_8h" ],
     [ "pch.cpp", "pch_8cpp.html", null ],
     [ "pch.h", "pch_8h.html", null ],
+    [ "WindowHolder.cpp", "_window_holder_8cpp.html", null ],
+    [ "WindowHolder.h", "_window_holder_8h.html", [
+      [ "WindowHolder", "classgui__framework_1_1_window_holder.html", "classgui__framework_1_1_window_holder" ]
+    ] ],
     [ "WindowMessages.h", "_window_messages_8h.html", "_window_messages_8h" ]
 ];

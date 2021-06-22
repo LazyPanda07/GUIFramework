@@ -10,7 +10,7 @@ var classgui__framework_1_1_base_rich_edit =
       [ "rightButtonDoubleClick", "classgui__framework_1_1_base_rich_edit.html#abf55c644c6c2640d8c662dd7179ab1f3a0514645391c12afc670bcd1d999c98bc", null ],
       [ "setCursor", "classgui__framework_1_1_base_rich_edit.html#abf55c644c6c2640d8c662dd7179ab1f3a5a69f9315e4bb59223621009e87cbc8d", null ]
     ] ],
-    [ "BaseRichEdit", "classgui__framework_1_1_base_rich_edit.html#a23ef5942c6515ee57e60a0b8bb721b40", null ],
+    [ "BaseRichEdit", "classgui__framework_1_1_base_rich_edit.html#acf95576534631c3e382035a6f84aca45", null ],
     [ "~BaseRichEdit", "classgui__framework_1_1_base_rich_edit.html#ae92c8a07985e30e2ef372a66d046ec46", null ],
     [ "addUrlDetectEvent", "classgui__framework_1_1_base_rich_edit.html#af21b8916906b7a1c5139d513c47aff52", null ],
     [ "findString", "classgui__framework_1_1_base_rich_edit.html#a28e3b67f20ffbba552803455e03b3104", null ],
@@ -19,7 +19,9 @@ var classgui__framework_1_1_base_rich_edit =
     [ "getSelectedText", "classgui__framework_1_1_base_rich_edit.html#a2d321e91aa2d43d81381f0148eecf7ad", null ],
     [ "removeUrlDetectEvent", "classgui__framework_1_1_base_rich_edit.html#acf50e2d2bfa111189ab21415b620a85b", null ],
     [ "setAutoURLDetect", "classgui__framework_1_1_base_rich_edit.html#a99a7734c996dc4c84115279362db2dc3", null ],
+    [ "setBackgroundColor", "classgui__framework_1_1_base_rich_edit.html#abe18d7d262aa479d30306d76ef2be318", null ],
     [ "setLimitText", "classgui__framework_1_1_base_rich_edit.html#a00d331e8e19e08f47d51193b0ac17e6f", null ],
+    [ "setTextColor", "classgui__framework_1_1_base_rich_edit.html#a09d6d56819fc8fc9caaf1b39e962f910", null ],
     [ "windowMessagesHandle", "classgui__framework_1_1_base_rich_edit.html#a5b0e9edd94997732cc8b0f6533e9b27a", null ],
     [ "callbacks", "classgui__framework_1_1_base_rich_edit.html#af8fe311fac3e88f607c886a07a529d3c", null ]
 ];

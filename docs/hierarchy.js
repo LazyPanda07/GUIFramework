@@ -12,6 +12,7 @@ var hierarchy =
     [ "gui_framework::utility::AdditionalCreationData< SeparateWindow >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_separate_window_01_4.html", null ],
     [ "gui_framework::utility::AdditionalCreationData< SimpleComboBox >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_simple_combo_box_01_4.html", null ],
     [ "gui_framework::utility::AdditionalCreationData< StaticControl >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_static_control_01_4.html", null ],
+    [ "gui_framework::utility::AdditionalCreationData< TabControl >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_tab_control_01_4.html", null ],
     [ "gui_framework::BaseComponent", "classgui__framework_1_1_base_component.html", [
       [ "gui_framework::BaseButton", "classgui__framework_1_1_base_button.html", [
         [ "gui_framework::Button", "classgui__framework_1_1_button.html", null ]
@@ -54,13 +55,17 @@ var hierarchy =
       [ "gui_framework::BaseResizableComponent", "classgui__framework_1_1_base_resizable_component.html", [
         [ "gui_framework::Button", "classgui__framework_1_1_button.html", null ],
         [ "gui_framework::EditControl", "classgui__framework_1_1_edit_control.html", null ],
-        [ "gui_framework::StaticControl", "classgui__framework_1_1_static_control.html", null ]
+        [ "gui_framework::StaticControl", "classgui__framework_1_1_static_control.html", null ],
+        [ "gui_framework::TabControl", "classgui__framework_1_1_tab_control.html", null ]
       ] ],
       [ "gui_framework::BaseRichEdit", "classgui__framework_1_1_base_rich_edit.html", [
         [ "gui_framework::RichEdit", "classgui__framework_1_1_rich_edit.html", null ]
       ] ],
       [ "gui_framework::BaseStaticControl", "classgui__framework_1_1_base_static_control.html", [
         [ "gui_framework::StaticControl", "classgui__framework_1_1_static_control.html", null ]
+      ] ],
+      [ "gui_framework::BaseTabControl", "classgui__framework_1_1_base_tab_control.html", [
+        [ "gui_framework::TabControl", "classgui__framework_1_1_tab_control.html", null ]
       ] ]
     ] ],
     [ "gui_framework::utility::BaseComponentCreator", "classgui__framework_1_1utility_1_1_base_component_creator.html", [
@@ -74,7 +79,8 @@ var hierarchy =
       [ "gui_framework::utility::RichEditCreator", "classgui__framework_1_1utility_1_1_rich_edit_creator.html", null ],
       [ "gui_framework::utility::SeparateWindowCreator", "classgui__framework_1_1utility_1_1_separate_window_creator.html", null ],
       [ "gui_framework::utility::SimpleComboBoxCreator", "classgui__framework_1_1utility_1_1_simple_combo_box_creator.html", null ],
-      [ "gui_framework::utility::StaticControlCreator", "classgui__framework_1_1utility_1_1_static_control_creator.html", null ]
+      [ "gui_framework::utility::StaticControlCreator", "classgui__framework_1_1utility_1_1_static_control_creator.html", null ],
+      [ "gui_framework::utility::TabControlCreator", "classgui__framework_1_1utility_1_1_tab_control_creator.html", null ]
     ] ],
     [ "gui_framework::utility::ComponentSettings", "structgui__framework_1_1utility_1_1_component_settings.html", null ],
     [ "gui_framework::DialogBox::DialogBoxBuilder", "classgui__framework_1_1_dialog_box_1_1_dialog_box_builder.html", null ],
@@ -116,8 +122,12 @@ var hierarchy =
     [ "std::runtime_error", null, [
       [ "gui_framework::exceptions::BaseGUIFrameworkException", "classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception.html", [
         [ "gui_framework::exceptions::CantFindSeparateWindowFunctionException", "classgui__framework_1_1exceptions_1_1_cant_find_separate_window_function_exception.html", null ],
+        [ "gui_framework::exceptions::FileDoesNotExist", "classgui__framework_1_1exceptions_1_1_file_does_not_exist.html", null ],
         [ "gui_framework::exceptions::GetLastErrorException", "classgui__framework_1_1exceptions_1_1_get_last_error_exception.html", null ],
+        [ "gui_framework::exceptions::NotImplemented", "classgui__framework_1_1exceptions_1_1_not_implemented.html", null ],
         [ "gui_framework::exceptions::SelectListException", "classgui__framework_1_1exceptions_1_1_select_list_exception.html", null ]
       ] ]
-    ] ]
+    ] ],
+    [ "gui_framework::BaseTabControl::tabData", "structgui__framework_1_1_base_tab_control_1_1tab_data.html", null ],
+    [ "gui_framework::WindowHolder", "classgui__framework_1_1_window_holder.html", null ]
 ];
