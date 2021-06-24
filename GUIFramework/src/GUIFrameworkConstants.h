@@ -15,7 +15,8 @@ namespace gui_framework
 		inline constexpr std::wstring_view comboBox = WC_COMBOBOXW;
 		inline constexpr std::wstring_view listBox = WC_LISTBOXW;
 		inline constexpr std::wstring_view richEdit = MSFTEDIT_CLASS;
-		inline constexpr std::wstring_view tabControl = WC_TABCONTROL;
+		inline constexpr std::wstring_view tabControl = WC_TABCONTROLW;
+		inline constexpr std::wstring_view listView = WC_LISTVIEWW;
 	}
 
 	namespace standard_menu_items
@@ -63,7 +64,7 @@ namespace gui_framework
 		inline constexpr std::wstring_view msftEditLibrary = L"MsftEdit.dll";
 	}
 
-	inline constexpr std::string_view guiFrameworkVersion = "0.2-alpha";
+	inline constexpr std::string_view guiFrameworkVersion = "0.3-alpha";
 }
 
 #ifdef GUI_FRAMEWORK_DLL

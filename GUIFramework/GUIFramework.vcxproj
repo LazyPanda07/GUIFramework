@@ -39,6 +39,7 @@
     <ClInclude Include="src\BaseComponents\Creators\SimpleComboBoxCreator.h" />
     <ClInclude Include="src\BaseComponents\Creators\StaticControlCreator.h" />
     <ClInclude Include="src\BaseComponents\Creators\TabControlCreator.h" />
+    <ClInclude Include="src\BaseComponents\StandardComponents\BaseListView.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseTabControl.h" />
     <ClInclude Include="src\Components\TabControl.h" />
     <ClInclude Include="src\Composites\AdditionalCreationData\AdditionalCreationData.h" />
@@ -57,10 +58,10 @@
     <ClInclude Include="src\BaseComposites\BaseCompositeIterators\const_forward_iterator.h" />
     <ClInclude Include="src\BaseComposites\BaseCompositeIterators\forward_iterator.h" />
     <ClInclude Include="src\BaseComposites\BaseCompositeIterators\IteratorsFunctionality.h" />
-    <ClInclude Include="src\BaseComposites\BaseDialogBox.h" />
+    <ClInclude Include="src\BaseComposites\StandardComposites\BaseDialogBox.h" />
     <ClInclude Include="src\BaseComposites\BaseNonResizableComposite.h" />
     <ClInclude Include="src\BaseComposites\BaseResizableComposite.h" />
-    <ClInclude Include="src\BaseComposites\BaseWindow.h" />
+    <ClInclude Include="src\BaseComposites\StandardComposites\BaseWindow.h" />
     <ClInclude Include="src\BaseComposites\StandardComposites\BaseChildWindow.h" />
     <ClInclude Include="src\Components\Button.h" />
     <ClInclude Include="src\Components\DropDownComboBox.h" />
@@ -129,6 +130,7 @@
     <ClCompile Include="src\BaseComponents\BaseNonResizableComponent.cpp" />
     <ClCompile Include="src\BaseComponents\BaseResizableComponent.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseListBox.cpp" />
+    <ClCompile Include="src\BaseComponents\StandardComponents\BaseListView.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseMultipleSelectListBox.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseRichEdit.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseStaticControl.cpp" />
@@ -136,12 +138,12 @@
     <ClCompile Include="src\BaseComposites\BaseCompositeIterators\const_forward_iterator.cpp" />
     <ClCompile Include="src\BaseComposites\BaseCompositeIterators\forward_iterator.cpp" />
     <ClCompile Include="src\BaseComposites\BaseCompositeIterators\IteratorsFunctionality.cpp" />
-    <ClCompile Include="src\BaseComposites\BaseDialogBox.cpp" />
+    <ClCompile Include="src\BaseComposites\StandardComposites\BaseDialogBox.cpp" />
     <ClCompile Include="src\BaseComposites\StandardComposites\BaseChildWindow.cpp" />
     <ClCompile Include="src\BaseComposites\BaseComposite.cpp" />
     <ClCompile Include="src\BaseComposites\BaseNonResizableComposite.cpp" />
     <ClCompile Include="src\BaseComposites\BaseResizableComposite.cpp" />
-    <ClCompile Include="src\BaseComposites\BaseWindow.cpp" />
+    <ClCompile Include="src\BaseComposites\StandardComposites\BaseWindow.cpp" />
     <ClCompile Include="src\Components\Button.cpp" />
     <ClCompile Include="src\Components\DropDownComboBox.cpp" />
     <ClCompile Include="src\Components\DropDownListComboBox.cpp" />

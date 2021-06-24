@@ -42,7 +42,7 @@
     <ClInclude Include="src\BaseComposites\BaseComposite.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComposites\BaseWindow.h">
+    <ClInclude Include="src\BaseComposites\StandardComposites\BaseWindow.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\BaseComposites\StandardComposites\BaseChildWindow.h">
@@ -153,7 +153,7 @@
     <ClInclude Include="src\BaseComposites\BaseCompositeIterators\IteratorsFunctionality.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComposites\BaseDialogBox.h">
+    <ClInclude Include="src\BaseComposites\StandardComposites\BaseDialogBox.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Composites\DialogBox.h">
@@ -258,6 +258,9 @@
     <ClInclude Include="src\Exceptions\NotImplemented.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="src\BaseComponents\StandardComponents\BaseListView.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\pch.cpp">
@@ -281,7 +284,7 @@
     <ClCompile Include="src\BaseComposites\BaseComposite.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComposites\BaseWindow.cpp">
+    <ClCompile Include="src\BaseComposites\StandardComposites\BaseWindow.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\BaseComposites\StandardComposites\BaseChildWindow.cpp">
@@ -380,7 +383,7 @@
     <ClCompile Include="src\BaseComposites\BaseCompositeIterators\IteratorsFunctionality.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComposites\BaseDialogBox.cpp">
+    <ClCompile Include="src\BaseComposites\StandardComposites\BaseDialogBox.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Composites\DialogBox.cpp">
@@ -477,6 +480,9 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Exceptions\NotImplemented.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BaseComponents\StandardComponents\BaseListView.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
