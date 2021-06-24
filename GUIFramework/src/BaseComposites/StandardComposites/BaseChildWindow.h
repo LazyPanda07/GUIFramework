@@ -1,6 +1,6 @@
 #pragma once
 
-#include "BaseComposites/BaseWindow.h"
+#include "BaseWindow.h"
 
 namespace gui_framework
 {

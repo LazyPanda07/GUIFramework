@@ -1,6 +1,6 @@
 #pragma once
 
-#include "BaseComposites/BaseDialogBox.h"
+#include "BaseComposites/StandardComposites/BaseDialogBox.h"
 #include "BaseComposites/BaseNonResizableComposite.h"
 #include "Composites/AdditionalCreationData/AdditionalCreationData.h"
 
