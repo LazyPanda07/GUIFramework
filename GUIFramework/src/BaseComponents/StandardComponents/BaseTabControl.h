@@ -1,6 +1,7 @@
 #pragma once
 
 #include "BaseComponents/BaseComponent.h"
+#include "Utility/ImagesHolder.h"
 
 namespace gui_framework
 {
@@ -28,10 +29,7 @@ namespace gui_framework
 		};
 
 	protected:
-		HIMAGELIST imageList;
-		std::unordered_map<std::wstring, uint16_t> images;
-		uint16_t imagesWidth;
-		uint16_t imagesHeight;
+		utility::ImagesHolder images;
 		std::vector<std::function<void()>> callbacks;
 		std::vector<tabData> tabs;
 
@@ -117,6 +115,6 @@ namespace gui_framework
 		/// @exception gui_framework::exceptions::NotImplemented Background color does not affects at combo boxes
 		virtual void setTextColor(uint8_t red, uint8_t green, uint8_t blue) final override;
 
-		virtual ~BaseTabControl();
+		virtual ~BaseTabControl() = default;
 	};
 }

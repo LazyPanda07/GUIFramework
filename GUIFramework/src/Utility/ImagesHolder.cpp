@@ -5,7 +5,7 @@ using namespace std;
 
 namespace gui_framework
 {
-	namespace interfaces
+	namespace utility
 	{
 		ImagesHolder::imageData::imageData(uint16_t index, imageType type) :
 			index(index),
@@ -15,7 +15,7 @@ namespace gui_framework
 		}
 
 		ImagesHolder::ImagesHolder(uint16_t imagesWidth, uint16_t imagesHeight, size_t count) :
-			imageList(ImageList_Create(imagesWidth, imagesHeight, ILC_COLOR32, 0, count)),
+			imageList(ImageList_Create(imagesWidth, imagesHeight, ILC_COLOR32, 0, static_cast<int>(count))),
 			imagesWidth(imagesWidth),
 			imagesHeight(imagesHeight)
 		{
@@ -45,6 +45,21 @@ namespace gui_framework
 					break;
 				}
 			}
+		}
+
+		bool ImagesHolder::contains(const filesystem::path& pathToImage) const
+		{
+			return images.contains(pathToImage);
+		}
+
+		uint16_t ImagesHolder::getImagesWidth() const
+		{
+			return imagesWidth;
+		}
+
+		uint16_t ImagesHolder::getImagesHeight() const
+		{
+			return imagesHeight;
 		}
 
 		uint16_t ImagesHolder::getImageIndex(const filesystem::path& pathToImage) const

@@ -4,7 +4,7 @@
 
 namespace gui_framework
 {
-	namespace interfaces
+	namespace utility
 	{
 		class ImagesHolder final
 		{
@@ -52,6 +52,12 @@ namespace gui_framework
 			void removeImage(const std::filesystem::path& pathToImage);
 
 			void removeImage(uint16_t imageIndex);
+
+			bool contains(const std::filesystem::path& pathToImage) const;
+
+			uint16_t getImagesWidth() const;
+
+			uint16_t getImagesHeight() const;
 
 			/// @brief 
 			/// @param pathToImage 
