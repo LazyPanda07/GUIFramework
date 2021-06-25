@@ -9,7 +9,7 @@ namespace gui_framework
 		virtual public BaseComponent
 	{
 	public:
-		struct tabData
+		struct GUI_FRAMEWORK_API tabData
 		{
 			std::wstring text;
 			std::filesystem::path pathToImage;

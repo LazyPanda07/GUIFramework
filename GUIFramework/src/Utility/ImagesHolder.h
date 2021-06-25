@@ -6,7 +6,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		class ImagesHolder final
+		class GUI_FRAMEWORK_API ImagesHolder final
 		{
 		public:
 			enum class imageType : uint32_t
