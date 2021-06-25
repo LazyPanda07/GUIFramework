@@ -6,6 +6,12 @@ namespace gui_framework
 {
 	namespace utility
 	{
+		enum class iconListViewType : uint32_t
+		{
+			icon,
+			smallIcon = 2
+		};
+
 		class GUI_FRAMEWORK_API ImagesHolder final
 		{
 		public:

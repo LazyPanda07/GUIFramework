@@ -258,10 +258,25 @@
     <ClInclude Include="src\Exceptions\NotImplemented.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\StandardComponents\BaseListView.h">
+    <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseListView.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Utility\ImagesHolder.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseReportListView.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseTextListView.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseIconListView.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseReportTextListView.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseReportIconListView.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
@@ -485,10 +500,25 @@
     <ClCompile Include="src\Exceptions\NotImplemented.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComponents\StandardComponents\BaseListView.cpp">
+    <ClCompile Include="src\BaseComponents\StandardComponents\ListView\BaseListView.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Utility\ImagesHolder.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BaseComponents\StandardComponents\ListView\BaseReportListView.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BaseComponents\StandardComponents\ListView\BaseTextListView.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BaseComponents\StandardComponents\ListView\BaseIconListView.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BaseComponents\StandardComponents\ListView\BaseReportTextListView.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BaseComponents\StandardComponents\ListView\BaseReportIconListView.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
