@@ -7,6 +7,26 @@ namespace gui_framework
 {
 	namespace interfaces
 	{
+		IIconListView::IIconListView(HWND handle, utility::ImagesHolder& icons) :
+			IBaseListViewOperations(handle),
+			icons(icons)
+		{
 
+		}
+
+		LRESULT IIconListView::addIconItem(const filesystem::path& pathToIcon)
+		{
+			LVITEMW item = {};
+
+			if (!icons.contains(pathToIcon))
+			{
+				icons.addImage(pathToIcon, utility::ImagesHolder::imageType::icon);
+			}
+
+			item.mask = LVIF_IMAGE;
+			item.iImage = icons[pathToIcon];
+
+			return this->addItem(item);
+		}
 	}
 }
