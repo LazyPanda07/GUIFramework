@@ -4,7 +4,7 @@
 
 namespace gui_framework
 {
-	class BaseReportListView : public BaseListView
+	class GUI_FRAMEWORK_API BaseReportListView : public BaseListView
 	{
 	public:
 		BaseReportListView(const std::wstring& listViewName, const utility::ComponentSettings& settings, BaseComponent* parent);
