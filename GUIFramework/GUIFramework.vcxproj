@@ -42,12 +42,15 @@
     <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseIconListView.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseListIconListView.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseListListView.h" />
+    <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseListTextIconListView.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseListTextListView.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseListView.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseReportIconListView.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseReportListView.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseTabControl.h" />
+    <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseReportTextIconListView.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseReportTextListView.h" />
+    <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseTextIconListView.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseTextListView.h" />
     <ClInclude Include="src\Components\TabControl.h" />
     <ClInclude Include="src\Composites\AdditionalCreationData\AdditionalCreationData.h" />
@@ -146,6 +149,7 @@
     <ClCompile Include="src\BaseComponents\StandardComponents\ListView\BaseIconListView.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\ListView\BaseListIconListView.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\ListView\BaseListListView.cpp" />
+    <ClCompile Include="src\BaseComponents\StandardComponents\ListView\BaseListTextIconListView.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\ListView\BaseListTextListView.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\ListView\BaseListView.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseMultipleSelectListBox.cpp" />
@@ -154,7 +158,9 @@
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseRichEdit.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseStaticControl.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseTabControl.cpp" />
+    <ClCompile Include="src\BaseComponents\StandardComponents\ListView\BaseReportTextIconListView.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\ListView\BaseReportTextListView.cpp" />
+    <ClCompile Include="src\BaseComponents\StandardComponents\ListView\BaseTextIconListView.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\ListView\BaseTextListView.cpp" />
     <ClCompile Include="src\BaseComposites\BaseCompositeIterators\const_forward_iterator.cpp" />
     <ClCompile Include="src\BaseComposites\BaseCompositeIterators\forward_iterator.cpp" />
