@@ -1,15 +1,17 @@
 #pragma once
 
-#include "pch.h"
+#include "IBaseListViewOperations.h"
 
 namespace gui_framework
 {
 	namespace interfaces
 	{
-		class GUI_FRAMEWORK_API ITextListView
+		class GUI_FRAMEWORK_API ITextListView : public IBaseListViewOperations
 		{
 		public:
-			ITextListView() = default;
+			ITextListView(HWND handle);
+
+			virtual LRESULT addTextItem(const std::wstring& text);
 
 			virtual ~ITextListView() = default;
 		};

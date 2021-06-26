@@ -1,11 +1,13 @@
 #pragma once
 
 #include "BaseReportListView.h"
-#include "Utility/ImagesHolder.h"
+#include "Interfaces/Components/ListView/IIconListView.h"
 
 namespace gui_framework
 {
-	class GUI_FRAMEWORK_API BaseReportIconListView : public BaseReportListView
+	class GUI_FRAMEWORK_API BaseReportIconListView :
+		public BaseReportListView,
+		public interfaces::IIconListView
 	{
 	protected:
 		utility::ImagesHolder images;

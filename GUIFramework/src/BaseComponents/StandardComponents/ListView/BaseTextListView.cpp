@@ -34,7 +34,8 @@ namespace gui_framework
 				settings.extendedStyles
 			),
 			parent
-		)
+		),
+		ITextListView(handle)
 	{
 
 	}

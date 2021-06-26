@@ -1,15 +1,21 @@
 #pragma once
 
-#include "pch.h"
+#include "IBaseListViewOperations.h"
+#include "Utility/ImagesHolder.h"
 
 namespace gui_framework
 {
 	namespace interfaces
 	{
-		class GUI_FRAMEWORK_API IIconListView
+		class GUI_FRAMEWORK_API IIconListView : public IBaseListViewOperations
 		{
+		private:
+			utility::ImagesHolder& images;
+
 		public:
-			IIconListView() = default;
+			IIconListView(HWND handle, utility::ImagesHolder& images);
+
+			virtual LRESULT addIconItem(const std::filesystem::path& pathToIcon);
 
 			virtual ~IIconListView() = default;
 		};
