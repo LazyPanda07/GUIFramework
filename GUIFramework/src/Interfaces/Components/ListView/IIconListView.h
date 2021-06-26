@@ -10,10 +10,10 @@ namespace gui_framework
 		class GUI_FRAMEWORK_API IIconListView : public IBaseListViewOperations
 		{
 		private:
-			utility::ImagesHolder& images;
+			utility::ImagesHolder& icons;
 
 		public:
-			IIconListView(HWND handle, utility::ImagesHolder& images);
+			IIconListView(HWND handle, utility::ImagesHolder& icons);
 
 			virtual LRESULT addIconItem(const std::filesystem::path& pathToIcon);
 

@@ -35,8 +35,8 @@ namespace gui_framework
 			),
 			parent
 		),
-		ITextIconListView(handle, images),
-		images(iconsWidth, iconsHeight, count)
+		ITextIconListView(handle, icons),
+		icons(iconsWidth, iconsHeight, count)
 	{
 
 	}

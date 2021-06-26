@@ -10,10 +10,10 @@ namespace gui_framework
 		class GUI_FRAMEWORK_API ITextIconListView : public IBaseListViewOperations
 		{
 		private:
-			utility::ImagesHolder& images;
+			utility::ImagesHolder& icons;
 
 		public:
-			ITextIconListView(HWND handle, utility::ImagesHolder& images);
+			ITextIconListView(HWND handle, utility::ImagesHolder& icons);
 
 			virtual LRESULT addTextIconItem(const std::wstring& text, const std::filesystem::path& pathToIcon);
 

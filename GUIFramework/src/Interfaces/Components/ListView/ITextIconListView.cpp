@@ -7,9 +7,9 @@ namespace gui_framework
 {
 	namespace interfaces
 	{
-		ITextIconListView::ITextIconListView(HWND handle, utility::ImagesHolder& images) :
+		ITextIconListView::ITextIconListView(HWND handle, utility::ImagesHolder& icons) :
 			IBaseListViewOperations(handle),
-			images(images)
+			icons(icons)
 		{
 
 		}
@@ -18,15 +18,15 @@ namespace gui_framework
 		{
 			LVITEMW item = {};
 
-			if (!images.contains(pathToIcon))
+			if (!icons.contains(pathToIcon))
 			{
-				images.addImage(pathToIcon, utility::ImagesHolder::imageType::icon);
+				icons.addImage(pathToIcon, utility::ImagesHolder::imageType::icon);
 			}
 
 			item.mask = LVIF_TEXT | LVIF_IMAGE;
 			item.pszText = const_cast<wchar_t*>(text.data());
 			item.cchTextMax = static_cast<int>(text.size());
-			item.iImage = images[pathToIcon];
+			item.iImage = icons[pathToIcon];
 
 			return this->addItem(item);
 		}
