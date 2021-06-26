@@ -12,7 +12,7 @@ namespace gui_framework
 			listViewName,
 			utility::ComponentSettings
 			(
-				settings.styles | LVS_LIST,
+				settings.styles,
 				settings.x,
 				settings.y,
 				settings.width,
@@ -26,7 +26,7 @@ namespace gui_framework
 			listViewName,
 			utility::ComponentSettings
 			(
-				settings.styles | LVS_LIST,
+				settings.styles,
 				settings.x,
 				settings.y,
 				settings.width,
