@@ -5,7 +5,7 @@
 
 namespace gui_framework
 {
-	class BaseReportIconListView : public BaseReportListView
+	class GUI_FRAMEWORK_API BaseReportIconListView : public BaseReportListView
 	{
 	protected:
 		utility::ImagesHolder images;

@@ -288,6 +288,15 @@
     <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseListTextListView.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="src\Interfaces\Components\ListView\ITextListView.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Interfaces\Components\ListView\IIconListView.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Interfaces\Components\ListView\ITextIconListView.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\pch.cpp">
@@ -537,6 +546,15 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\BaseComponents\StandardComponents\ListView\BaseListTextListView.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Interfaces\Components\ListView\ITextListView.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Interfaces\Components\ListView\ITextIconListView.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Interfaces\Components\ListView\IIconListView.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
