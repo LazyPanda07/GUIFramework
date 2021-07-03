@@ -20,7 +20,7 @@ namespace gui_framework
 
 			if (!icons.contains(pathToIcon))
 			{
-				icons.addImage(pathToIcon, utility::ImagesHolder::imageType::icon);
+				icons.addImage(pathToIcon);
 			}
 
 			item.mask = LVIF_TEXT | LVIF_IMAGE;
