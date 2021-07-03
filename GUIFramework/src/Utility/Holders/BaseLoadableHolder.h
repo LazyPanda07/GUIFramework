@@ -12,7 +12,7 @@ namespace gui_framework
 			smallIcon = 2
 		};
 
-		class GUI_FRAMEWORK_API ImagesHolder final
+		class GUI_FRAMEWORK_API BaseLoadableHolder
 		{
 		public:
 			enum class imageType : uint32_t
@@ -44,50 +44,55 @@ namespace gui_framework
 		private:
 			HIMAGELIST imageList;
 			std::unordered_map<std::wstring, imageData> images;
+
+		protected:
 			uint16_t imagesWidth;
 			uint16_t imagesHeight;
 
+		protected:
+			virtual uint16_t insertImage(const std::filesystem::path& pathToImage, imageType type) final;
+
 		public:
-			ImagesHolder(uint16_t imagesWidth, uint16_t imagesHeight, size_t count = standard_sizes::defaultImagesCount);
+			BaseLoadableHolder(uint16_t imagesWidth, uint16_t imagesHeight, size_t count = standard_sizes::defaultImagesCount);
 
 			/// @brief 
 			/// @param pathToImage 
 			/// @return Index of newly added image
-			uint16_t addImage(const std::filesystem::path& pathToImage, imageType type);
+			virtual uint16_t addImage(const std::filesystem::path& pathToImage) = 0;
 
-			void removeImage(const std::filesystem::path& pathToImage);
+			virtual void removeImage(const std::filesystem::path& pathToImage) final;
 
-			void removeImage(uint16_t imageIndex);
+			virtual void removeImage(uint16_t imageIndex) final;
 
-			bool contains(const std::filesystem::path& pathToImage) const;
+			virtual bool contains(const std::filesystem::path& pathToImage) const final;
 
-			uint16_t getImagesWidth() const;
+			virtual uint16_t getImagesWidth() const final;
 
-			uint16_t getImagesHeight() const;
+			virtual uint16_t getImagesHeight() const final;
 
 			/// @brief 
 			/// @param pathToImage 
 			/// @return
 			/// @exception std::out_of_range 
-			uint16_t getImageIndex(const std::filesystem::path& pathToImage) const;
+			virtual uint16_t getImageIndex(const std::filesystem::path& pathToImage) const final;
 
-			imageType getImageType(const std::filesystem::path& pathToImage) const;
+			virtual imageType getImageType(const std::filesystem::path& pathToImage) const final;
 
 			/// @brief 
 			/// @param imageIndex 
 			/// @return
 			/// @exception std::out_of_range 
-			imageType getImageType(uint16_t imageIndex) const;
+			virtual imageType getImageType(uint16_t imageIndex) const final;
 
-			HIMAGELIST getImageList() const;
+			virtual HIMAGELIST getImageList() const final;
 
 			/// @brief 
 			/// @param pathToImage 
 			/// @return 
 			/// @exception std::out_of_range
-			uint16_t operator [] (const std::filesystem::path& pathToImage) const;
+			virtual uint16_t operator [] (const std::filesystem::path& pathToImage) const final;
 
-			~ImagesHolder();
+			virtual ~BaseLoadableHolder();
 		};
 	}
 }

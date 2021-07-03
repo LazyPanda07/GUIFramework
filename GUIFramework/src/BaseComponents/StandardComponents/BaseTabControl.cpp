@@ -100,7 +100,7 @@ namespace gui_framework
 
 		if (!images.contains(pathToImage))
 		{
-			images.addImage(pathToImage, utility::ImagesHolder::imageType::bitmap);
+			images.addImage(pathToImage);
 		}
 
 		item.mask = TCIF_IMAGE;
@@ -134,7 +134,7 @@ namespace gui_framework
 
 		if (!images.contains(pathToImage))
 		{
-			images.addImage(pathToImage, utility::ImagesHolder::imageType::bitmap);
+			images.addImage(pathToImage);
 		}
 
 		item.mask = TCIF_TEXT | TCIF_IMAGE;
@@ -208,7 +208,7 @@ namespace gui_framework
 		{
 			if (!images.contains(pathToImage))
 			{
-				images.addImage(pathToImage, utility::ImagesHolder::imageType::bitmap);
+				images.addImage(pathToImage);
 			}
 
 			item.mask |= TCIF_IMAGE;

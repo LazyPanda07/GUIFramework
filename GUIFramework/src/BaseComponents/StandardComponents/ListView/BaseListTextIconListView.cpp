@@ -38,6 +38,6 @@ namespace gui_framework
 		ITextIconListView(handle, icons),
 		icons(iconsWidth, iconsHeight, count)
 	{
-
+		SendMessageW(handle, LVM_SETIMAGELIST, type == utility::iconListViewType::icon ? LVSIL_NORMAL : LVSIL_SMALL, reinterpret_cast<LPARAM>(icons.getImageList()));
 	}
 }
