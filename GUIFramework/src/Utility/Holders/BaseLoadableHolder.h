@@ -55,9 +55,6 @@ namespace gui_framework
 		public:
 			BaseLoadableHolder(uint16_t imagesWidth, uint16_t imagesHeight, size_t count = standard_sizes::defaultImagesCount);
 
-			/// @brief 
-			/// @param pathToImage 
-			/// @return Index of newly added image
 			virtual uint16_t addImage(const std::filesystem::path& pathToImage) = 0;
 
 			virtual void removeImage(const std::filesystem::path& pathToImage) final;

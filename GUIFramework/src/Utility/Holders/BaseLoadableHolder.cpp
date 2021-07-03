@@ -25,24 +25,34 @@ namespace gui_framework
 		uint16_t BaseLoadableHolder::insertImage(const filesystem::path& pathToImage, imageType type)
 		{
 			HBITMAP image = static_cast<HBITMAP>(LoadImageW(nullptr, pathToImage.wstring().data(), static_cast<uint32_t>(type), imagesWidth, imagesHeight, LR_LOADFROMFILE));
-			uint16_t resultIndex = images.emplace(pathToImage, imageData(ImageList_Add(imageList, image, NULL), type)).first->second.index;
+			uint16_t resultIndex;
 
 			switch (type)
 			{
 			case imageType::bitmap:
+				resultIndex = images.emplace(pathToImage, imageData(ImageList_Add(imageList, image, NULL), type)).first->second.index;
+
 				DeleteObject(image);
 
 				break;
 			case imageType::icon:
+				resultIndex = images.emplace(pathToImage, imageData(ImageList_AddIcon(imageList, reinterpret_cast<HICON>(image)), type)).first->second.index;
+
 				DestroyIcon(reinterpret_cast<HICON>(image));
 
 				break;
 			case imageType::cursor:
+				resultIndex = images.emplace(pathToImage, imageData(ImageList_AddIcon(imageList, reinterpret_cast<HCURSOR>(image)), type)).first->second.index;
+
 				DestroyCursor(reinterpret_cast<HCURSOR>(image));
 
 				break;
 
 			default:
+				resultIndex = static_cast<uint16_t>(-1);
+
+				DeleteObject(image);
+
 				break;
 			}
 

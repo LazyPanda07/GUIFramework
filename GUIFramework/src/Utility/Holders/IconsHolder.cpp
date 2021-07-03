@@ -18,9 +18,9 @@ namespace gui_framework
 
 		}
 
-		uint16_t IconsHolder::addImage(const filesystem::path& pathToImage)
+		uint16_t IconsHolder::addImage(const filesystem::path& pathToIcon)
 		{
-			return BaseLoadableHolder::insertImage(pathToImage, imageType::bitmap);
+			return BaseLoadableHolder::insertImage(pathToIcon, imageType::icon);
 		}
 	}
 }

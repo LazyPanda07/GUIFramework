@@ -7,7 +7,7 @@ namespace gui_framework
 {
 	namespace interfaces
 	{
-		ITextIconListView::ITextIconListView(HWND handle, utility::ImagesHolder& icons) :
+		ITextIconListView::ITextIconListView(HWND handle, utility::IconsHolder& icons) :
 			IBaseListViewOperations(handle),
 			icons(icons)
 		{
