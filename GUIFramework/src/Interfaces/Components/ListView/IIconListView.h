@@ -1,7 +1,7 @@
 #pragma once
 
 #include "IBaseListViewOperations.h"
-#include "Utility/Holders/ImagesHolder.h"
+#include "Utility/Holders/IconsHolder.h"
 
 namespace gui_framework
 {
@@ -10,10 +10,10 @@ namespace gui_framework
 		class GUI_FRAMEWORK_API IIconListView : public IBaseListViewOperations
 		{
 		private:
-			utility::ImagesHolder& icons;
+			utility::IconsHolder& icons;
 
 		public:
-			IIconListView(HWND handle, utility::ImagesHolder& icons);
+			IIconListView(HWND handle, utility::IconsHolder& icons);
 
 			virtual LRESULT addIconItem(const std::filesystem::path& pathToIcon);
 

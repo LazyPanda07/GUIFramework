@@ -11,7 +11,10 @@ namespace gui_framework
 		public:
 			IconsHolder(uint16_t imagesWidth, uint16_t imagesHeight, size_t count = standard_sizes::defaultImagesCount);
 
-			uint16_t addImage(const std::filesystem::path& pathToImage) override;
+			/// @brief 
+			/// @param pathToIcon
+			/// @return Index of newly added icon
+			uint16_t addImage(const std::filesystem::path& pathToIcon) override;
 
 			~IconsHolder() = default;
 		};

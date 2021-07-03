@@ -18,9 +18,9 @@ namespace gui_framework
 
 		}
 
-		uint16_t CursorHolder::addImage(const filesystem::path& pathToImage)
+		uint16_t CursorHolder::addImage(const filesystem::path& pathToCursor)
 		{
-			return BaseLoadableHolder::insertImage(pathToImage, imageType::bitmap);
+			return BaseLoadableHolder::insertImage(pathToCursor, imageType::cursor);
 		}
 	}
 }
