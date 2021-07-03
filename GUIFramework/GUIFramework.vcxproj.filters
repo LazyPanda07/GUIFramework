@@ -261,7 +261,7 @@
     <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseListView.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Utility\ImagesHolder.h">
+    <ClInclude Include="src\Utility\Holders\ImagesHolder.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseReportListView.h">
@@ -307,6 +307,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseListTextIconListView.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utility\Holders\BaseLoadableHolder.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
@@ -533,7 +536,7 @@
     <ClCompile Include="src\BaseComponents\StandardComponents\ListView\BaseListView.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Utility\ImagesHolder.cpp">
+    <ClCompile Include="src\Utility\Holders\ImagesHolder.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\BaseComponents\StandardComponents\ListView\BaseReportListView.cpp">
@@ -579,6 +582,9 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\BaseComponents\StandardComponents\ListView\BaseListTextIconListView.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utility\Holders\BaseLoadableHolder.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

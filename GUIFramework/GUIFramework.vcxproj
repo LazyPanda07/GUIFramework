@@ -108,7 +108,8 @@
     <ClInclude Include="src\Interfaces\Components\ListView\IIconListView.h" />
     <ClInclude Include="src\Interfaces\Components\ListView\ITextIconListView.h" />
     <ClInclude Include="src\Interfaces\Components\ListView\ITextListView.h" />
-    <ClInclude Include="src\Utility\ImagesHolder.h" />
+    <ClInclude Include="src\Utility\Holders\BaseLoadableHolder.h" />
+    <ClInclude Include="src\Utility\Holders\ImagesHolder.h" />
     <ClInclude Include="src\Interfaces\Components\IResizableComponent.h" />
     <ClInclude Include="src\Interfaces\Components\ITextOperations.h" />
     <ClInclude Include="src\Interfaces\Iterators\IBaseConstForwardIterator.h" />
@@ -204,7 +205,8 @@
     <ClCompile Include="src\Interfaces\Components\ListView\IIconListView.cpp" />
     <ClCompile Include="src\Interfaces\Components\ListView\ITextIconListView.cpp" />
     <ClCompile Include="src\Interfaces\Components\ListView\ITextListView.cpp" />
-    <ClCompile Include="src\Utility\ImagesHolder.cpp" />
+    <ClCompile Include="src\Utility\Holders\BaseLoadableHolder.cpp" />
+    <ClCompile Include="src\Utility\Holders\ImagesHolder.cpp" />
     <ClCompile Include="src\Interfaces\Components\IResizableComponent.cpp" />
     <ClCompile Include="src\Interfaces\Components\ITextOperations.cpp" />
     <ClCompile Include="src\Interfaces\Menu\IMenuItem.cpp" />
