@@ -87,7 +87,7 @@ namespace gui_framework
 		item.cchTextMax = static_cast<int>(text.size());
 		item.iSubItem = columnIndex;
 
-		while (rowCount < rowIndex)
+		while (rowCount <= rowIndex)
 		{
 			this->addRow();
 		}
