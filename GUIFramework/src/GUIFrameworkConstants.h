@@ -50,6 +50,8 @@ namespace gui_framework
 
 		inline constexpr uint16_t smallIconWidth = 16;
 		inline constexpr uint16_t smallIconHeight = 16;
+
+		inline constexpr uint16_t additionalListViewReportColumnWidth = 10;
 	}
 
 	namespace settings
