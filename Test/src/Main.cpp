@@ -2,7 +2,7 @@
 
 #include "GUIFramework.h"
 #include "WindowHolder.h"
-#include "BaseComponents/StandardComponents/ListView/BaseIconListView.h"
+#include "BaseComponents/StandardComponents/ListView/BaseReportTextListView.h"
 #include "Composites/SeparateWindow.h"
 
 #pragma comment (lib, "GUIFramework.lib")
@@ -22,13 +22,19 @@ void test()
 		WindowHolder holder(make_unique<SeparateWindow>(L"MainWindow", L"Главное окно", settings, "main"));
 
 		SeparateWindow* ptr = dynamic_cast<SeparateWindow*>(holder.get());
-		BaseIconListView* list = new BaseIconListView(L"List", utility::ComponentSettings(WS_BORDER, 0, 0, 200, 100), ptr, utility::iconListViewType::icon, 32, 32);
+		BaseReportTextListView* list = new BaseReportTextListView(L"List", utility::ComponentSettings(WS_BORDER, 0, 0, 600, 400), ptr);
 
-		list->addIconItem(R"(assets\icon.ico)");
+		list->addTextItem(L"First column");
 
-		list->addIconItem(R"(assets\icon.ico)");
+		list->addTextItem(L"Second column");
 
-		list->addIconItem(R"(assets\icon.ico)");
+		list->addTextItem(L"Third column");
+
+		list->addTextItem(L"First subitem", 0, 2);
+
+		list->addTextItem(L"Third subitem", 2, 1);
+
+		list->addTextItem(L"Second suibtem", 1, 0);
 
 		ptr->setExitMode(BaseComponent::exitMode::quit);
 
