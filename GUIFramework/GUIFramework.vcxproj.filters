@@ -264,19 +264,10 @@
     <ClInclude Include="src\Utility\Holders\ImagesHolder.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseReportListView.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseTextListView.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseIconListView.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseReportTextListView.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseReportIconListView.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseListListView.h">
@@ -301,9 +292,6 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseTextIconListView.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseReportTextIconListView.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseListTextIconListView.h">
@@ -545,19 +533,10 @@
     <ClCompile Include="src\Utility\Holders\ImagesHolder.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComponents\StandardComponents\ListView\BaseReportListView.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="src\BaseComponents\StandardComponents\ListView\BaseTextListView.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\BaseComponents\StandardComponents\ListView\BaseIconListView.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="src\BaseComponents\StandardComponents\ListView\BaseReportTextListView.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="src\BaseComponents\StandardComponents\ListView\BaseReportIconListView.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\BaseComponents\StandardComponents\ListView\BaseListListView.cpp">
@@ -582,9 +561,6 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\BaseComponents\StandardComponents\ListView\BaseTextIconListView.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="src\BaseComponents\StandardComponents\ListView\BaseReportTextIconListView.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\BaseComponents\StandardComponents\ListView\BaseListTextIconListView.cpp">
