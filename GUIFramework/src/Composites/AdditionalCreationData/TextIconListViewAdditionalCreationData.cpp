@@ -18,5 +18,17 @@ namespace gui_framework
 		{
 			return make_any<tuple<iconListViewType, vector<pair<wstring, filesystem::path>>>>(type, items);
 		}
+
+		AdditionalCreationData<ListTextIconListView>::AdditionalCreationData(iconListViewType type, const vector<pair<wstring, filesystem::path>>& items) :
+			type(type),
+			items(items)
+		{
+
+		}
+
+		any AdditionalCreationData<ListTextIconListView>::getData() const
+		{
+			return make_any<tuple<iconListViewType, vector<pair<wstring, filesystem::path>>>>(type, items);
+		}
 	}
 }
