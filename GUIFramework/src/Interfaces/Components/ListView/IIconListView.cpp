@@ -28,5 +28,27 @@ namespace gui_framework
 
 			return this->addItem(item);
 		}
+
+		filesystem::path IIconListView::getIconPath(size_t index) const
+		{
+			LVITEMW item = {};
+
+			item.iItem = static_cast<int>(index);
+
+			this->getItem(item);
+
+			return icons[item.iImage];
+		}
+
+		size_t IIconListView::getIconIndex(size_t index) const
+		{
+			LVITEMW item = {};
+
+			item.iItem = static_cast<int>(index);
+
+			this->getItem(item);
+
+			return item.iImage;
+		}
 	}
 }
