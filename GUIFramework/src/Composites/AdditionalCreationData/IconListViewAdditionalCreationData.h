@@ -13,13 +13,13 @@ namespace gui_framework
 		class GUI_FRAMEWORK_API AdditionalCreationData<IconListView>
 		{
 		protected:
-			utility::iconListViewType type;
+			iconListViewType type;
 			std::vector<std::filesystem::path> pathToIcons;
 
 		public:
 			AdditionalCreationData() = default;
 
-			AdditionalCreationData(utility::iconListViewType type, const std::vector<std::filesystem::path>& pathToIcons);
+			AdditionalCreationData(iconListViewType type, const std::vector<std::filesystem::path>& pathToIcons);
 
 			virtual std::any getData() const;
 
@@ -31,13 +31,13 @@ namespace gui_framework
 		class GUI_FRAMEWORK_API AdditionalCreationData<ListIconListView>
 		{
 		protected:
-			utility::iconListViewType type;
+			iconListViewType type;
 			std::vector<std::filesystem::path> pathToIcons;
 
 		public:
 			AdditionalCreationData() = default;
 
-			AdditionalCreationData(utility::iconListViewType type, const std::vector<std::filesystem::path>& pathToIcons);
+			AdditionalCreationData(iconListViewType type, const std::vector<std::filesystem::path>& pathToIcons);
 
 			virtual std::any getData() const;
 

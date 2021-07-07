@@ -36,6 +36,7 @@
     <ClInclude Include="src\BaseComponents\Creators\ListView\IconListViewCreator.h" />
     <ClInclude Include="src\BaseComponents\Creators\ListView\ListIconListViewCreator.h" />
     <ClInclude Include="src\BaseComponents\Creators\ListView\ListTextListViewCreator.h" />
+    <ClInclude Include="src\BaseComponents\Creators\ListView\TextIconListViewCreator.h" />
     <ClInclude Include="src\BaseComponents\Creators\ListView\TextListViewCreator.h" />
     <ClInclude Include="src\BaseComponents\Creators\MultipleSelectListBoxCreator.h" />
     <ClInclude Include="src\BaseComponents\Creators\RichEditCreator.h" />
@@ -99,6 +100,7 @@
     <ClInclude Include="src\Composites\AdditionalCreationData\SeparateWindowAdditionalCreationData.h" />
     <ClInclude Include="src\Composites\AdditionalCreationData\StaticControlAdditionalCreationData.h" />
     <ClInclude Include="src\Composites\AdditionalCreationData\TabControlAdditionalCreationData.h" />
+    <ClInclude Include="src\Composites\AdditionalCreationData\TextIconListViewAdditionalCreationData.h" />
     <ClInclude Include="src\Composites\AdditionalCreationData\TextListViewAdditionalCreationData.h" />
     <ClInclude Include="src\Composites\ChildWindow.h" />
     <ClInclude Include="src\Composites\DialogBox.h" />
@@ -148,6 +150,7 @@
     <ClCompile Include="src\BaseComponents\Creators\ListView\IconListViewCreator.cpp" />
     <ClCompile Include="src\BaseComponents\Creators\ListView\ListIconListViewCreator.cpp" />
     <ClCompile Include="src\BaseComponents\Creators\ListView\ListTextListViewCreator.cpp" />
+    <ClCompile Include="src\BaseComponents\Creators\ListView\TextIconListViewCreator.cpp" />
     <ClCompile Include="src\BaseComponents\Creators\ListView\TextListViewCreator.cpp" />
     <ClCompile Include="src\BaseComponents\Creators\MultipleSelectListBoxCreator.cpp" />
     <ClCompile Include="src\BaseComponents\Creators\RichEditCreator.cpp" />
@@ -208,6 +211,7 @@
     <ClCompile Include="src\Composites\AdditionalCreationData\SeparateWindowAdditionalCreationData.cpp" />
     <ClCompile Include="src\Composites\AdditionalCreationData\StaticControlAdditionalCreationData.cpp" />
     <ClCompile Include="src\Composites\AdditionalCreationData\TabControlAdditionalCreationData.cpp" />
+    <ClCompile Include="src\Composites\AdditionalCreationData\TextIconListViewAdditionalCreationData.cpp" />
     <ClCompile Include="src\Composites\AdditionalCreationData\TextListViewAdditionalCreationData.cpp" />
     <ClCompile Include="src\Composites\ChildWindow.cpp" />
     <ClCompile Include="src\Composites\DialogBox.cpp" />
