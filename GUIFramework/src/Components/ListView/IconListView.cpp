@@ -5,7 +5,7 @@ using namespace std;
 
 namespace gui_framework
 {
-	IconListView::IconListView(const wstring& listViewName, int x, int y, uint16_t width, uint16_t height, BaseComponent* parent, utility::iconListViewType type, uint16_t iconsWidth) :
+	IconListView::IconListView(const wstring& listViewName, int x, int y, uint16_t width, uint16_t height, BaseComponent* parent, utility::iconListViewType type) :
 		BaseComponent
 		(
 			wstring(standard_classes::listView),

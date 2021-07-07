@@ -33,6 +33,7 @@
     <ClInclude Include="src\BaseComponents\Creators\DropDownListComboBoxCreator.h" />
     <ClInclude Include="src\BaseComponents\Creators\EditControlCreator.h" />
     <ClInclude Include="src\BaseComponents\Creators\ListBoxCreator.h" />
+    <ClInclude Include="src\BaseComponents\Creators\ListView\IconListViewCreator.h" />
     <ClInclude Include="src\BaseComponents\Creators\MultipleSelectListBoxCreator.h" />
     <ClInclude Include="src\BaseComponents\Creators\RichEditCreator.h" />
     <ClInclude Include="src\BaseComponents\Creators\SeparateWindowCreator.h" />
@@ -89,6 +90,7 @@
     <ClInclude Include="src\Composites\AdditionalCreationData\ChildWindowAdditionalCreationData.h" />
     <ClInclude Include="src\Composites\AdditionalCreationData\ComboBoxAdditionalCreationData.h" />
     <ClInclude Include="src\Composites\AdditionalCreationData\EditControlAdditionalCreationData.h" />
+    <ClInclude Include="src\Composites\AdditionalCreationData\IconListViewAdditionalCreationData.h" />
     <ClInclude Include="src\Composites\AdditionalCreationData\ListBoxAdditionalCreationData.h" />
     <ClInclude Include="src\Composites\AdditionalCreationData\RichEditAdditionalCreationData.h" />
     <ClInclude Include="src\Composites\AdditionalCreationData\SeparateWindowAdditionalCreationData.h" />
@@ -139,6 +141,7 @@
     <ClCompile Include="src\BaseComponents\Creators\DropDownListComboBoxCreator.cpp" />
     <ClCompile Include="src\BaseComponents\Creators\EditControlCreator.cpp" />
     <ClCompile Include="src\BaseComponents\Creators\ListBoxCreator.cpp" />
+    <ClCompile Include="src\BaseComponents\Creators\ListView\IconListViewCreator.cpp" />
     <ClCompile Include="src\BaseComponents\Creators\MultipleSelectListBoxCreator.cpp" />
     <ClCompile Include="src\BaseComponents\Creators\RichEditCreator.cpp" />
     <ClCompile Include="src\BaseComponents\Creators\SeparateWindowCreator.cpp" />
@@ -192,6 +195,7 @@
     <ClCompile Include="src\Composites\AdditionalCreationData\ChildWindowAdditionalCreationData.cpp" />
     <ClCompile Include="src\Composites\AdditionalCreationData\ComboBoxAdditionalCreationData.cpp" />
     <ClCompile Include="src\Composites\AdditionalCreationData\EditControlAdditionalCreationData.cpp" />
+    <ClCompile Include="src\Composites\AdditionalCreationData\IconListViewAdditionalCreationData.cpp" />
     <ClCompile Include="src\Composites\AdditionalCreationData\ListBoxAdditionalCreationData.cpp" />
     <ClCompile Include="src\Composites\AdditionalCreationData\RichEditAdditionalCreationData.cpp" />
     <ClCompile Include="src\Composites\AdditionalCreationData\SeparateWindowAdditionalCreationData.cpp" />
