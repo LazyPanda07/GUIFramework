@@ -17,6 +17,7 @@ namespace gui_framework
 		inline constexpr std::wstring_view richEdit = MSFTEDIT_CLASS;
 		inline constexpr std::wstring_view tabControl = WC_TABCONTROLW;
 		inline constexpr std::wstring_view listView = WC_LISTVIEWW;
+		inline constexpr std::wstring_view progressBar = PROGRESS_CLASS;
 	}
 
 	namespace standard_menu_items
