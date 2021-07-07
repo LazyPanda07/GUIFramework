@@ -14,6 +14,13 @@
 #include "BaseComponents/Creators/ChildWindowCreator.h"
 #include "BaseComponents/Creators/TabControlCreator.h"
 
+#include "BaseComponents/Creators/ListView/IconListViewCreator.h"
+#include "BaseComponents/Creators/ListView/TextListViewCreator.h"
+#include "BaseComponents/Creators/ListView/TextIconListViewCreator.h"
+#include "BaseComponents/Creators/ListView/ListIconListViewCreator.h"
+#include "BaseComponents/Creators/ListView/ListTextListViewCreator.h"
+#include "BaseComponents/Creators/ListView/ListTextIconListViewCreator.h"
+
 #include "Components/Button.h"
 #include "Components/EditControl.h"
 #include "Components/DropDownComboBox.h"
@@ -26,6 +33,13 @@
 #include "Composites/SeparateWindow.h"
 #include "Composites/ChildWindow.h"
 #include "Components/TabControl.h"
+
+#include "Components/ListView/IconListView.h"
+#include "Components/ListView/TextListView.h"
+#include "Components/ListView/TextIconListView.h"
+#include "Components/ListView/ListIconListView.h"
+#include "Components/ListView/ListTextListView.h"
+#include "Components/ListView/ListTextIconListView.h"
 
 using namespace std;
 
@@ -56,6 +70,22 @@ namespace gui_framework
 		creators[typeid(ChildWindow).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::ChildWindowCreator());
 
 		creators[typeid(TabControl).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::TabControlCreator());
+
+#pragma region ListViews
+		creators[typeid(IconListView).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::IconListViewCreator());
+
+		creators[typeid(ListIconListView).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::ListIconListViewCreator());
+
+		creators[typeid(TextListView).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::TextListViewCreator());
+
+		creators[typeid(ListTextListView).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::ListTextListViewCreator());
+
+		creators[typeid(TextIconListView).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::TextIconListViewCreator());
+
+		creators[typeid(ListTextIconListView).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::ListTextIconListViewCreator());
+#pragma endregion
+
+
 	}
 
 	GUIFramework::GUIFramework() :
