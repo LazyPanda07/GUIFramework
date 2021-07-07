@@ -10,7 +10,7 @@
 
 namespace gui_framework
 {
-	/// @brief Singleton with GUIFramework settings
+	/// @brief Singleton with GUIFramework settings and some functionality
 	class GUI_FRAMEWORK_API GUIFramework
 	{
 	private:

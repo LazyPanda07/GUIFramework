@@ -33,7 +33,7 @@ namespace gui_framework
 		mode(exitMode::destroyWindow),
 		largeIcon(nullptr),
 		smallIcon(nullptr),
-		id(GUIFramework::get().generateHMENU(windowName)),
+		id(parent ? GUIFramework::get().generateHMENU(windowName) : NULL),
 		backgroundColor(RGB(255, 255, 255)),
 		textColor(RGB(0, 0, 0))
 	{
@@ -73,7 +73,7 @@ namespace gui_framework
 			settings.height,
 			parent ? parent->handle : nullptr,
 			reinterpret_cast<HMENU>(id),
-			GetModuleHandleW(nullptr),
+			module,
 			nullptr
 		);
 

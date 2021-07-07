@@ -49,14 +49,12 @@ namespace gui_framework
 			std::vector<builderComponentData> components;
 
 		public:
-			DialogBoxBuilder(const std::wstring& className, const std::wstring& dialogBoxName, int x, int y);
+			DialogBoxBuilder(const std::wstring& className, const std::wstring& dialogBoxName, int x, int y, const std::string& dialogBoxFunctionName);
 
 			DialogBoxBuilder& clear();
 
 			template<std::derived_from<BaseComponent> T>
 			DialogBoxBuilder& addComponent(const std::wstring& componentName, uint16_t width, uint16_t height, alignment type, const utility::AdditionalCreationData<T>& additionalData = utility::AdditionalCreationData<T>(), int leftOffset = 0, int topOffset = 0, int rightOffset = 0, int bottomOffset = 0, const std::wstring& text = L"");
-
-			DialogBoxBuilder& addDialogBoxFunction(const std::string& functionName);
 
 			DialogBoxBuilder& addParent(BaseComposite* parent);
 

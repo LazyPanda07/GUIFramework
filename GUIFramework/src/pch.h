@@ -46,6 +46,22 @@
 
 #include "GUIFramework.h"
 
+#pragma region AdditionalCreationData
+#include "Composites/AdditionalCreationData/ButtonAdditionalCreationData.h"
+#include "Composites/AdditionalCreationData/ChildWindowAdditionalCreationData.h"
+#include "Composites/AdditionalCreationData/ComboBoxAdditionalCreationData.h"
+#include "Composites/AdditionalCreationData/EditControlAdditionalCreationData.h"
+#include "Composites/AdditionalCreationData/IconListViewAdditionalCreationData.h"
+#include "Composites/AdditionalCreationData/ListBoxAdditionalCreationData.h"
+#include "Composites/AdditionalCreationData/ProgressBarAdditionalCreationData.h"
+#include "Composites/AdditionalCreationData/RichEditAdditionalCreationData.h"
+#include "Composites/AdditionalCreationData/SeparateWindowAdditionalCreationData.h"
+#include "Composites/AdditionalCreationData/StaticControlAdditionalCreationData.h"
+#include "Composites/AdditionalCreationData/TabControlAdditionalCreationData.h"
+#include "Composites/AdditionalCreationData/TextIconListViewAdditionalCreationData.h"
+#include "Composites/AdditionalCreationData/TextListViewAdditionalCreationData.h"
+#pragma endregion
+
 #pragma comment(linker,"\"/manifestdependency:type='win32' \
 name='Microsoft.Windows.Common-Controls' version='6.0.0.0' \
 processorArchitecture='amd64' publicKeyToken='6595b64144ccf1df' language='*'\"")

@@ -7,7 +7,7 @@ namespace gui_framework
 {
 	using DialogBoxBuilder = DialogBox::DialogBoxBuilder;
 
-	DialogBoxBuilder::DialogBoxBuilder(const wstring& className, const wstring& dialogBoxName, int x, int y) :
+	DialogBoxBuilder::DialogBoxBuilder(const wstring& className, const wstring& dialogBoxName, int x, int y, const string& dialogBoxFunctionName) :
 		settings
 		(
 			NULL,
@@ -18,21 +18,15 @@ namespace gui_framework
 		),
 		className(className),
 		dialogBoxName(dialogBoxName),
-		parent(nullptr)
+		parent(nullptr),
+		functionName(dialogBoxFunctionName)
 	{
 
 	}
 
 	DialogBoxBuilder& DialogBoxBuilder::clear()
 	{
-		(*this) = DialogBoxBuilder(className, dialogBoxName, settings.x, settings.y);
-
-		return *this;
-	}
-
-	DialogBoxBuilder& DialogBoxBuilder::addDialogBoxFunction(const string& functionName)
-	{
-		this->functionName = functionName;
+		(*this) = DialogBoxBuilder(className, dialogBoxName, settings.x, settings.y, functionName);
 
 		return *this;
 	}
