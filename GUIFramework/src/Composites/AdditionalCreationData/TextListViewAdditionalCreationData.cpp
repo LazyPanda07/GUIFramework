@@ -17,5 +17,16 @@ namespace gui_framework
 		{
 			return make_any<vector<wstring>>(items);
 		}
+
+		AdditionalCreationData<ListTextListView>::AdditionalCreationData(const vector<wstring>& items) :
+			items(items)
+		{
+
+		}
+
+		any AdditionalCreationData<ListTextListView>::getData() const
+		{
+			return make_any<vector<wstring>>(items);
+		}
 	}
 }

@@ -35,6 +35,7 @@
     <ClInclude Include="src\BaseComponents\Creators\ListBoxCreator.h" />
     <ClInclude Include="src\BaseComponents\Creators\ListView\IconListViewCreator.h" />
     <ClInclude Include="src\BaseComponents\Creators\ListView\ListIconListViewCreator.h" />
+    <ClInclude Include="src\BaseComponents\Creators\ListView\ListTextListViewCreator.h" />
     <ClInclude Include="src\BaseComponents\Creators\ListView\TextListViewCreator.h" />
     <ClInclude Include="src\BaseComponents\Creators\MultipleSelectListBoxCreator.h" />
     <ClInclude Include="src\BaseComponents\Creators\RichEditCreator.h" />
@@ -146,6 +147,7 @@
     <ClCompile Include="src\BaseComponents\Creators\ListBoxCreator.cpp" />
     <ClCompile Include="src\BaseComponents\Creators\ListView\IconListViewCreator.cpp" />
     <ClCompile Include="src\BaseComponents\Creators\ListView\ListIconListViewCreator.cpp" />
+    <ClCompile Include="src\BaseComponents\Creators\ListView\ListTextListViewCreator.cpp" />
     <ClCompile Include="src\BaseComponents\Creators\ListView\TextListViewCreator.cpp" />
     <ClCompile Include="src\BaseComponents\Creators\MultipleSelectListBoxCreator.cpp" />
     <ClCompile Include="src\BaseComponents\Creators\RichEditCreator.cpp" />
