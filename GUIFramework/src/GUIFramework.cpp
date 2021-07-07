@@ -13,6 +13,7 @@
 #include "BaseComponents/Creators/SeparateWindowCreator.h"
 #include "BaseComponents/Creators/ChildWindowCreator.h"
 #include "BaseComponents/Creators/TabControlCreator.h"
+#include "BaseComponents/Creators/ProgressBarCreator.h"
 
 #include "BaseComponents/Creators/ListView/IconListViewCreator.h"
 #include "BaseComponents/Creators/ListView/TextListViewCreator.h"
@@ -33,6 +34,7 @@
 #include "Composites/SeparateWindow.h"
 #include "Composites/ChildWindow.h"
 #include "Components/TabControl.h"
+#include "Components/ProgressBar.h"
 
 #include "Components/ListView/IconListView.h"
 #include "Components/ListView/TextListView.h"
@@ -71,6 +73,8 @@ namespace gui_framework
 
 		creators[typeid(TabControl).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::TabControlCreator());
 
+		creators[typeid(ProgressBar).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::ProgressBarCreator());
+
 #pragma region ListViews
 		creators[typeid(IconListView).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::IconListViewCreator());
 
@@ -84,8 +88,6 @@ namespace gui_framework
 
 		creators[typeid(ListTextIconListView).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::ListTextIconListViewCreator());
 #pragma endregion
-
-
 	}
 
 	GUIFramework::GUIFramework() :
