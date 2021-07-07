@@ -56,12 +56,14 @@
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseTabControl.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseTextIconListView.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseTextListView.h" />
+    <ClInclude Include="src\Components\InfiniteProgressBar.h" />
     <ClInclude Include="src\Components\ListView\IconListView.h" />
     <ClInclude Include="src\Components\ListView\ListIconListView.h" />
     <ClInclude Include="src\Components\ListView\ListTextIconListView.h" />
     <ClInclude Include="src\Components\ListView\ListTextListView.h" />
     <ClInclude Include="src\Components\ListView\TextIconListView.h" />
     <ClInclude Include="src\Components\ListView\TextListView.h" />
+    <ClInclude Include="src\Components\ProgressBar.h" />
     <ClInclude Include="src\Components\TabControl.h" />
     <ClInclude Include="src\Composites\AdditionalCreationData\AdditionalCreationData.h" />
     <ClInclude Include="src\BaseComponents\Creators\BaseComponentCreator.h" />
@@ -194,6 +196,7 @@
     <ClCompile Include="src\Components\Button.cpp" />
     <ClCompile Include="src\Components\DropDownComboBox.cpp" />
     <ClCompile Include="src\Components\DropDownListComboBox.cpp" />
+    <ClCompile Include="src\Components\InfiniteProgressBar.cpp" />
     <ClCompile Include="src\Components\ListBox.cpp" />
     <ClCompile Include="src\Components\ListView\IconListView.cpp" />
     <ClCompile Include="src\Components\ListView\ListIconListView.cpp" />
@@ -202,6 +205,7 @@
     <ClCompile Include="src\Components\ListView\TextIconListView.cpp" />
     <ClCompile Include="src\Components\ListView\TextListView.cpp" />
     <ClCompile Include="src\Components\MultipleSelectListBox.cpp" />
+    <ClCompile Include="src\Components\ProgressBar.cpp" />
     <ClCompile Include="src\Components\RichEdit.cpp" />
     <ClCompile Include="src\Components\SimpleComboBox.cpp" />
     <ClCompile Include="src\Components\EditControl.cpp" />
