@@ -125,6 +125,19 @@ namespace gui_framework
 			return images.at(pathToImage).index;
 		}
 
+		filesystem::path BaseLoadableHolder::operator [] (uint16_t index) const
+		{
+			for (const auto& [key, value] : images)
+			{
+				if (value.index == index)
+				{
+					return key;
+				}
+			}
+
+			throw out_of_range(format("Can't find image at {} index", index));
+		}
+
 		BaseLoadableHolder::~BaseLoadableHolder()
 		{
 			ImageList_Destroy(imageList);

@@ -17,6 +17,10 @@ namespace gui_framework
 
 			virtual LRESULT addIconItem(const std::filesystem::path& pathToIcon);
 
+			virtual std::filesystem::path getIconPath(size_t index) const;
+
+			virtual size_t getIconIndex(size_t index) const;
+
 			virtual ~IIconListView() = default;
 		};
 	}

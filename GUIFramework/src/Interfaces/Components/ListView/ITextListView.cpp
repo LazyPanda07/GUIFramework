@@ -23,5 +23,21 @@ namespace gui_framework
 
 			return this->addItem(item);
 		}
+
+		wstring ITextListView::getItemText(size_t index) const
+		{
+			LVITEMW item = {};
+
+			item.iItem = static_cast<int>(index);
+
+			this->getItem(item);
+
+			if (item.pszText)
+			{
+				return wstring(item.pszText);
+			}
+
+			return wstring();
+		}
 	}
 }

@@ -19,10 +19,25 @@ namespace gui_framework
 			return result;
 		}
 
+		LRESULT IBaseListViewOperations::setItem(const LVITEMW& item)
+		{
+			return SendMessageW(listViewHandle, LVM_SETITEM, NULL, reinterpret_cast<LPARAM>(&item));
+		}
+
+		void IBaseListViewOperations::getItem(LVITEMW& item) const
+		{
+			SendMessageW(listViewHandle, LVM_GETITEMW, NULL, reinterpret_cast<LPARAM>(&item));
+		}
+
 		IBaseListViewOperations::IBaseListViewOperations(HWND handle) :
 			listViewHandle(handle)
 		{
 
+		}
+
+		bool IBaseListViewOperations::deleteItem(size_t index)
+		{
+			return SendMessageW(listViewHandle, LVM_DELETEITEM, index, NULL);
 		}
 	}
 }

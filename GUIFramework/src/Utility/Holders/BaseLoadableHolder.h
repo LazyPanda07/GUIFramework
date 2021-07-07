@@ -89,6 +89,12 @@ namespace gui_framework
 			/// @exception std::out_of_range
 			virtual uint16_t operator [] (const std::filesystem::path& pathToImage) const final;
 
+			/// @brief 
+			/// @param index 
+			/// @return 
+			/// @exception std::out_of_range
+			virtual std::filesystem::path operator [] (uint16_t index) const final;
+
 			virtual ~BaseLoadableHolder();
 		};
 	}
