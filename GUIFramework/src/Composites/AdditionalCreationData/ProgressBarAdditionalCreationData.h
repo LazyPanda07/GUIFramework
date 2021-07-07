@@ -15,9 +15,7 @@ namespace gui_framework
 			int updateStep;
 
 		public:
-			AdditionalCreationData() = default;
-
-			AdditionalCreationData(int updateStep);
+			AdditionalCreationData(int updateStep = 0);
 
 			virtual std::any getData() const;
 

@@ -14,6 +14,7 @@
 #include "BaseComponents/Creators/ChildWindowCreator.h"
 #include "BaseComponents/Creators/TabControlCreator.h"
 #include "BaseComponents/Creators/ProgressBarCreator.h"
+#include "BaseComponents/Creators/InfiniteProgressBarCreator.h"
 
 #include "BaseComponents/Creators/ListView/IconListViewCreator.h"
 #include "BaseComponents/Creators/ListView/TextListViewCreator.h"
@@ -35,6 +36,7 @@
 #include "Composites/ChildWindow.h"
 #include "Components/TabControl.h"
 #include "Components/ProgressBar.h"
+#include "Components/InfiniteProgressBar.h"
 
 #include "Components/ListView/IconListView.h"
 #include "Components/ListView/TextListView.h"
@@ -74,6 +76,8 @@ namespace gui_framework
 		creators[typeid(TabControl).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::TabControlCreator());
 
 		creators[typeid(ProgressBar).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::ProgressBarCreator());
+
+		creators[typeid(InfiniteProgressBar).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::InfiniteProgressBarCreator());
 
 #pragma region ListViews
 		creators[typeid(IconListView).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::IconListViewCreator());

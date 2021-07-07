@@ -32,6 +32,7 @@
     <ClInclude Include="src\BaseComponents\Creators\DropDownComboBoxCreator.h" />
     <ClInclude Include="src\BaseComponents\Creators\DropDownListComboBoxCreator.h" />
     <ClInclude Include="src\BaseComponents\Creators\EditControlCreator.h" />
+    <ClInclude Include="src\BaseComponents\Creators\InfiniteProgressBarCreator.h" />
     <ClInclude Include="src\BaseComponents\Creators\ListBoxCreator.h" />
     <ClInclude Include="src\BaseComponents\Creators\ListView\IconListViewCreator.h" />
     <ClInclude Include="src\BaseComponents\Creators\ListView\ListIconListViewCreator.h" />
@@ -153,6 +154,7 @@
     <ClCompile Include="src\BaseComponents\Creators\DropDownComboBoxCreator.cpp" />
     <ClCompile Include="src\BaseComponents\Creators\DropDownListComboBoxCreator.cpp" />
     <ClCompile Include="src\BaseComponents\Creators\EditControlCreator.cpp" />
+    <ClCompile Include="src\BaseComponents\Creators\InfiniteProgressBarCreator.cpp" />
     <ClCompile Include="src\BaseComponents\Creators\ListBoxCreator.cpp" />
     <ClCompile Include="src\BaseComponents\Creators\ListView\IconListViewCreator.cpp" />
     <ClCompile Include="src\BaseComponents\Creators\ListView\ListIconListViewCreator.cpp" />
