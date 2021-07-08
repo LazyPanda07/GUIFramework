@@ -2,7 +2,8 @@
 
 #include "GUIFramework.h"
 #include "WindowHolder.h"
-#include "BaseComponents/StandardComponents/ListView/BaseReportTextListView.h"
+#include "Composites/DialogBox.h"
+#include "Components/InfiniteProgressBar.h"
 #include "Composites/SeparateWindow.h"
 
 #pragma comment (lib, "GUIFramework.lib")
@@ -10,6 +11,8 @@
 using namespace std;
 
 CREATE_DEFAULT_WINDOW_FUNCTION(main)
+
+CREATE_DEFAULT_WINDOW_FUNCTION(dialog)
 
 void test()
 {
@@ -22,19 +25,9 @@ void test()
 		WindowHolder holder(make_unique<SeparateWindow>(L"MainWindow", L"Главное окно", settings, "main"));
 
 		SeparateWindow* ptr = dynamic_cast<SeparateWindow*>(holder.get());
-		BaseReportTextListView* list = new BaseReportTextListView(L"List", utility::ComponentSettings(WS_BORDER, 0, 0, 600, 400), ptr);
+		DialogBox* dialog = DialogBox::DialogBoxBuilder(L"MainDialog", L"QWE", 100, 100, "dialog").addComponent<InfiniteProgressBar>(L"Progress", 200, 10, DialogBox::DialogBoxBuilder::alignment::center).build();
 
-		list->addTextItem(L"First column");
-
-		list->addTextItem(L"Second column");
-
-		list->addTextItem(L"Third column");
-
-		list->addTextItem(L"First subitem", 0, 2);
-
-		list->addTextItem(L"Third subitem", 2, 1);
-
-		list->addTextItem(L"Second suibtem", 1, 0);
+		dialog->show();
 
 		ptr->setExitMode(BaseComponent::exitMode::quit);
 
