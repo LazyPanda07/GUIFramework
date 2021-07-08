@@ -5,7 +5,7 @@ using namespace std;
 
 namespace gui_framework
 {
-	BaseInfiniteProgressBar::BaseInfiniteProgressBar(const wstring& progressBarName, const utility::ComponentSettings& settings, BaseComponent* parent) :
+	BaseInfiniteProgressBar::BaseInfiniteProgressBar(const wstring& progressBarName, const utility::ComponentSettings& settings, BaseComponent* parent, int animationPeriod) :
 		BaseComponent
 		(
 			wstring(standard_classes::progressBar),
@@ -20,8 +20,29 @@ namespace gui_framework
 				settings.extendedStyles
 			),
 			parent
-		)
+		),
+		animationPeriod(animationPeriod)
 	{
+		this->playAnimation();
+	}
 
+	void BaseInfiniteProgressBar::playAnimation()
+	{
+		SendMessageW(handle, PBM_SETMARQUEE, true, animationPeriod);
+	}
+
+	void BaseInfiniteProgressBar::stopAnimation()
+	{
+		SendMessageW(handle, PBM_SETMARQUEE, false, NULL);
+	}
+
+	void BaseInfiniteProgressBar::setAnimationPeriod(int animationPeriod)
+	{
+		this->animationPeriod = animationPeriod;
+	}
+
+	int BaseInfiniteProgressBar::getAnimationPeriod() const
+	{
+		return animationPeriod;
 	}
 }

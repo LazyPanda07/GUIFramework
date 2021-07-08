@@ -66,7 +66,7 @@ namespace gui_framework
 			settings.extendedStyles,
 			className.data(),
 			windowName.data(),
-			settings.styles | (parent ? WS_CHILDWINDOW : WS_OVERLAPPEDWINDOW),
+			settings.styles | (parent ? WS_CHILDWINDOW | WS_BORDER : WS_OVERLAPPEDWINDOW),
 			settings.x,
 			settings.y,
 			settings.width,

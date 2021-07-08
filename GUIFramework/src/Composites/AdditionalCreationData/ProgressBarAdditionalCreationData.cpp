@@ -7,7 +7,9 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		AdditionalCreationData<ProgressBar>::AdditionalCreationData(int updateStep) :
+		AdditionalCreationData<ProgressBar>::AdditionalCreationData(int minRange, int maxRange, int updateStep) :
+			minRange(minRange),
+			maxRange(maxRange),
 			updateStep(updateStep)
 		{
 
@@ -15,7 +17,18 @@ namespace gui_framework
 
 		any AdditionalCreationData<ProgressBar>::getData() const
 		{
-			return make_any<int>(updateStep);
+			return make_any<tuple<int, int, int>>(minRange, maxRange, updateStep);
+		}
+
+		AdditionalCreationData<InfiniteProgressBar>::AdditionalCreationData(int animationPeriod) :
+			animationPeriod(animationPeriod)
+		{
+
+		}
+
+		any AdditionalCreationData<InfiniteProgressBar>::getData() const
+		{
+			return make_any<int>(animationPeriod);
 		}
 	}
 }

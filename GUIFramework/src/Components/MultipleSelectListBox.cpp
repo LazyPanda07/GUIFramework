@@ -12,7 +12,7 @@ namespace gui_framework
 			listBoxName,
 			utility::ComponentSettings
 			(
-				WS_BORDER | LBS_MULTIPLESEL | (isSorting ? LBS_SORT : NULL),
+				LBS_MULTIPLESEL | (isSorting ? LBS_SORT : NULL),
 				x,
 				y,
 				width,
@@ -25,7 +25,7 @@ namespace gui_framework
 			listBoxName,
 			utility::ComponentSettings
 			(
-				WS_BORDER | (isSorting ? LBS_SORT : NULL),
+				(isSorting ? LBS_SORT : NULL),
 				x,
 				y,
 				width,

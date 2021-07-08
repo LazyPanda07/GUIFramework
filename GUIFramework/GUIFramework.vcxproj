@@ -47,6 +47,7 @@
     <ClInclude Include="src\BaseComponents\Creators\SimpleComboBoxCreator.h" />
     <ClInclude Include="src\BaseComponents\Creators\StaticControlCreator.h" />
     <ClInclude Include="src\BaseComponents\Creators\TabControlCreator.h" />
+    <ClInclude Include="src\BaseComponents\StandardComponents\BaseAnimationControl.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseProgressBar.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseIconListView.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseInfiniteProgressBar.h" />
@@ -58,6 +59,7 @@
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseTabControl.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseTextIconListView.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseTextListView.h" />
+    <ClInclude Include="src\Components\AnimationControl.h" />
     <ClInclude Include="src\Components\InfiniteProgressBar.h" />
     <ClInclude Include="src\Components\ListView\IconListView.h" />
     <ClInclude Include="src\Components\ListView\ListIconListView.h" />
@@ -169,6 +171,7 @@
     <ClCompile Include="src\BaseComponents\Creators\SimpleComboBoxCreator.cpp" />
     <ClCompile Include="src\BaseComponents\Creators\StaticControlCreator.cpp" />
     <ClCompile Include="src\BaseComponents\Creators\TabControlCreator.cpp" />
+    <ClCompile Include="src\BaseComponents\StandardComponents\BaseAnimationControl.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseButton.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseComboBox.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseEditControl.cpp" />
@@ -198,6 +201,7 @@
     <ClCompile Include="src\BaseComposites\BaseNonResizableComposite.cpp" />
     <ClCompile Include="src\BaseComposites\BaseResizableComposite.cpp" />
     <ClCompile Include="src\BaseComposites\StandardComposites\BaseWindow.cpp" />
+    <ClCompile Include="src\Components\AnimationControl.cpp" />
     <ClCompile Include="src\Components\Button.cpp" />
     <ClCompile Include="src\Components\DropDownComboBox.cpp" />
     <ClCompile Include="src\Components\DropDownListComboBox.cpp" />
