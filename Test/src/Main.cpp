@@ -2,8 +2,6 @@
 
 #include "GUIFramework.h"
 #include "WindowHolder.h"
-#include "Composites/DialogBox.h"
-#include "Components/InfiniteProgressBar.h"
 #include "Composites/SeparateWindow.h"
 
 #pragma comment (lib, "GUIFramework.lib")
@@ -11,8 +9,6 @@
 using namespace std;
 
 CREATE_DEFAULT_WINDOW_FUNCTION(main)
-
-CREATE_DEFAULT_WINDOW_FUNCTION(dialog)
 
 void test()
 {
@@ -25,9 +21,6 @@ void test()
 		WindowHolder holder(make_unique<SeparateWindow>(L"MainWindow", L"Главное окно", settings, "main"));
 
 		SeparateWindow* ptr = dynamic_cast<SeparateWindow*>(holder.get());
-		DialogBox* dialog = DialogBox::DialogBoxBuilder(L"MainDialog", L"QWE", 100, 100, "dialog").addComponent<InfiniteProgressBar>(L"Progress", 200, 10, DialogBox::DialogBoxBuilder::alignment::center).build();
-
-		dialog->show();
 
 		ptr->setExitMode(BaseComponent::exitMode::quit);
 

@@ -12,7 +12,7 @@ namespace gui_framework
 			progressBarName,
 			utility::ComponentSettings
 			(
-				NULL,
+				NULL | PBS_MARQUEE,
 				x,
 				y,
 				width,
@@ -48,6 +48,6 @@ namespace gui_framework
 			parent
 		)
 	{
-
+		SendMessageW(handle, PBM_SETMARQUEE, true, NULL);
 	}
 }
