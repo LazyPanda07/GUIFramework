@@ -16,9 +16,9 @@ namespace gui_framework
 		public:
 			IProgressBarColor(HWND progressBarHandle);
 
-			virtual void setProgressBarBackgroundColor(uint8_t red, uint8_t green, uint8_t blue) final;
+			virtual void setProgressBarBackgroundColor(uint8_t red, uint8_t green, uint8_t blue);
 
-			virtual void setProgressBarColor(uint8_t red, uint8_t green, uint8_t blue) final;
+			virtual void setProgressBarColor(uint8_t red, uint8_t green, uint8_t blue);
 
 			virtual COLORREF getProgressBarBackgroundColor() const final;
 

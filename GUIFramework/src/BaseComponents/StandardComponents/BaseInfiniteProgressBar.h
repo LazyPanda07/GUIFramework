@@ -30,7 +30,17 @@ namespace gui_framework
 
 		virtual int getAnimationPeriod() const final;
 
+		/// @brief Same as setProgressBarBackgroundColor
+		/// @param red 
+		/// @param green 
+		/// @param blue 
 		virtual void setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue) final override;
+
+		/// @brief Inherited from IProgressBarColor
+		/// @param red 
+		/// @param green 
+		/// @param blue 
+		virtual void setProgressBarBackgroundColor(uint8_t red, uint8_t green, uint8_t blue) final override;
 
 		/// @brief Not implemented
 		/// @param red 

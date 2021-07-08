@@ -19,18 +19,22 @@ namespace gui_framework
 		{
 			progressBarBackgroundColor = RGB(red, green, blue);
 
-			SetWindowTheme(progressBarHandle, nullptr, nullptr);
+			SetWindowTheme(progressBarHandle, L"", L"");
 
 			SendMessageW(progressBarHandle, PBM_SETBKCOLOR, NULL, static_cast<LPARAM>(progressBarBackgroundColor));
+
+			InvalidateRect(progressBarHandle, nullptr, true);
 		}
 
 		void IProgressBarColor::setProgressBarColor(uint8_t red, uint8_t green, uint8_t blue)
 		{
 			progressBarColor = RGB(red, green, blue);
 
-			SetWindowTheme(progressBarHandle, nullptr, nullptr);
+			SetWindowTheme(progressBarHandle, L"", L"");
 
 			SendMessageW(progressBarHandle, PBM_SETBARCOLOR, NULL, static_cast<LPARAM>(progressBarColor));
+
+			InvalidateRect(progressBarHandle, nullptr, true);
 		}
 
 		COLORREF IProgressBarColor::getProgressBarBackgroundColor() const
