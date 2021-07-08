@@ -4,6 +4,7 @@
 #include "BaseComponents/Creators/BaseComponentCreator.h"
 
 #pragma comment (lib, "Comctl32.lib")
+#pragma comment (lib, "UxTheme.lib")
 
 #pragma comment (lib, "JSON.lib")
 #pragma comment (lib, "ThreadPool.lib")

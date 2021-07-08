@@ -122,6 +122,7 @@
     <ClInclude Include="src\Exceptions\ExceptionConstants.h" />
     <ClInclude Include="src\Exceptions\GetLastErrorException.h" />
     <ClInclude Include="src\GUIFramework.h" />
+    <ClInclude Include="src\Interfaces\Components\IProgressBarColor.h" />
     <ClInclude Include="src\Interfaces\Components\ListView\IBaseListViewOperations.h" />
     <ClInclude Include="src\Interfaces\Components\ListView\IIconListView.h" />
     <ClInclude Include="src\Interfaces\Components\ListView\ITextIconListView.h" />
@@ -239,6 +240,7 @@
     <ClCompile Include="src\Exceptions\SelectListException.cpp" />
     <ClCompile Include="src\Exceptions\GetLastErrorException.cpp" />
     <ClCompile Include="src\GUIFramework.cpp" />
+    <ClCompile Include="src\Interfaces\Components\IProgressBarColor.cpp" />
     <ClCompile Include="src\Interfaces\Components\ListView\IBaseListViewOperations.cpp" />
     <ClCompile Include="src\Interfaces\Components\ListView\IIconListView.cpp" />
     <ClCompile Include="src\Interfaces\Components\ListView\ITextIconListView.cpp" />

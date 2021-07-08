@@ -15,6 +15,10 @@ namespace gui_framework
 			settings,
 			parent
 		),
+		IProgressBarColor
+		(
+			handle
+		),
 		minRange(minRange),
 		maxRange(maxRange),
 		updateStep(updateStep)
@@ -75,9 +79,7 @@ namespace gui_framework
 
 	void BaseProgressBar::setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue)
 	{
-		BaseComponent::setBackgroundColor(red, green, blue);
-
-		SendMessageW(handle, PBM_SETBKCOLOR, NULL, static_cast<LPARAM>(backgroundColor));
+		IProgressBarColor::setProgressBarBackgroundColor(red, green, blue);
 	}
 
 	void BaseProgressBar::setTextColor(uint8_t red, uint8_t green, uint8_t blue)
