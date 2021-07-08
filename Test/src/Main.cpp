@@ -2,6 +2,7 @@
 
 #include "GUIFramework.h"
 #include "WindowHolder.h"
+#include "Components/ProgressBar.h"
 #include "Composites/SeparateWindow.h"
 
 #pragma comment (lib, "GUIFramework.lib")
@@ -21,6 +22,11 @@ void test()
 		WindowHolder holder(make_unique<SeparateWindow>(L"MainWindow", L"Главное окно", settings, "main"));
 
 		SeparateWindow* ptr = dynamic_cast<SeparateWindow*>(holder.get());
+		ProgressBar* bar = new ProgressBar(L"Bar", 0, 0, 200, 10, ptr);
+		
+		bar->setBackgroundColor(255, 0, 0);
+
+		bar->update(50);
 
 		ptr->setExitMode(BaseComponent::exitMode::quit);
 
