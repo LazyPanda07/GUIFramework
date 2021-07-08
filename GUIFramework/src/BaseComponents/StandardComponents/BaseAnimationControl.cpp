@@ -3,6 +3,8 @@
 
 #include "Exceptions/FileDoesNotExist.h"
 
+#include <iostream>
+
 using namespace std;
 
 namespace gui_framework
