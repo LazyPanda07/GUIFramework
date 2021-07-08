@@ -17,7 +17,7 @@ namespace gui_framework
 			editControlName,
 			utility::ComponentSettings
 			(
-				WS_BORDER,
+				NULL,
 				x,
 				y,
 				width,
@@ -31,7 +31,7 @@ namespace gui_framework
 			editControlName,
 			utility::ComponentSettings
 			(
-				WS_BORDER,
+				NULL,
 				x,
 				y,
 				width,
@@ -44,7 +44,7 @@ namespace gui_framework
 			editControlName,
 			utility::ComponentSettings
 			(
-				WS_BORDER,
+				NULL,
 				x,
 				y,
 				width,
