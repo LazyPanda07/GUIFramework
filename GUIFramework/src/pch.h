@@ -30,6 +30,7 @@
 #include <Windows.h>
 #include <CommCtrl.h>
 #include <Richedit.h>
+#include <uxtheme.h>
 
 #include "WindowMessages.h"
 #include "GUIFrameworkConstants.h"

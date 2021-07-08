@@ -1,10 +1,13 @@
 #pragma once
 
 #include "BaseComponents/BaseComponent.h"
+#include "Interfaces/Components/IProgressBarColor.h"
 
 namespace gui_framework
 {
-	class GUI_FRAMEWORK_API BaseProgressBar : virtual public BaseComponent
+	class GUI_FRAMEWORK_API BaseProgressBar : 
+		virtual public BaseComponent,
+		public interfaces::IProgressBarColor
 	{
 	public:
 		static inline constexpr int defaultUpdateStep = 10;

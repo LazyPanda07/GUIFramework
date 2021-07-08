@@ -1,10 +1,13 @@
 #pragma once
 
 #include "BaseComponents/BaseComponent.h"
+#include "Interfaces/Components/IProgressBarColor.h"
 
 namespace gui_framework
 {
-	class GUI_FRAMEWORK_API BaseInfiniteProgressBar : virtual public BaseComponent
+	class GUI_FRAMEWORK_API BaseInfiniteProgressBar : 
+		virtual public BaseComponent,
+		public interfaces::IProgressBarColor
 	{
 	protected:
 		int animationPeriod;
