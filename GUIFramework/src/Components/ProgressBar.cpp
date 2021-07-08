@@ -5,7 +5,7 @@ using namespace std;
 
 namespace gui_framework
 {
-	ProgressBar::ProgressBar(const wstring& progressBarName, int x, int y, uint16_t width, uint16_t height, BaseComponent* parent) :
+	ProgressBar::ProgressBar(const wstring& progressBarName, int x, int y, uint16_t width, uint16_t height, BaseComponent* parent, int minRange, int maxRange, int updateStep) :
 		BaseComponent
 		(
 			wstring(standard_classes::progressBar),
@@ -45,7 +45,10 @@ namespace gui_framework
 				width,
 				height
 			),
-			parent
+			parent,
+			minRange,
+			maxRange,
+			updateStep
 		)
 	{
 

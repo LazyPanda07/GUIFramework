@@ -5,14 +5,14 @@ using namespace std;
 
 namespace gui_framework
 {
-	InfiniteProgressBar::InfiniteProgressBar(const wstring& progressBarName, int x, int y, uint16_t width, uint16_t height, BaseComponent* parent) :
+	InfiniteProgressBar::InfiniteProgressBar(const wstring& progressBarName, int x, int y, uint16_t width, uint16_t height, BaseComponent* parent, int animationPeriod) :
 		BaseComponent
 		(
 			wstring(standard_classes::progressBar),
 			progressBarName,
 			utility::ComponentSettings
 			(
-				NULL,
+				PBS_MARQUEE,
 				x,
 				y,
 				width,
@@ -26,7 +26,7 @@ namespace gui_framework
 			progressBarName,
 			utility::ComponentSettings
 			(
-				NULL,
+				PBS_MARQUEE,
 				x,
 				y,
 				width,
@@ -45,7 +45,8 @@ namespace gui_framework
 				width,
 				height
 			),
-			parent
+			parent,
+			animationPeriod
 		)
 	{
 

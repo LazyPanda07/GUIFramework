@@ -11,15 +11,9 @@ namespace gui_framework
 	{
 		BaseComponent* ProgressBarCreator::create(const wstring& windowName, const utility::ComponentSettings& settings, const any& additionalData, BaseComponent* parent)
 		{
-			ProgressBar* result = new ProgressBar(windowName, settings.x, settings.y, settings.width, settings.height, parent);
-			int updateStep = any_cast<int>(additionalData);
+			auto [minRange, maxRange, updateStep] = any_cast<tuple<int, int, int>>(additionalData);
 
-			if(updateStep)
-			{
-				result->setUpdateStep(updateStep);
-			}
-
-			return result;
+			return new ProgressBar(windowName, settings.x, settings.y, settings.width, settings.height, parent, minRange, maxRange, updateStep);
 		}
 	}
 }
