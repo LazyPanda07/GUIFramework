@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "BaseInfiniteProgressBar.h"
 
+#include "Exceptions/NotImplemented.h"
+
 using namespace std;
 
 namespace gui_framework
@@ -44,5 +46,17 @@ namespace gui_framework
 	int BaseInfiniteProgressBar::getAnimationPeriod() const
 	{
 		return animationPeriod;
+	}
+
+	void BaseInfiniteProgressBar::setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue)
+	{
+		BaseComponent::setBackgroundColor(red, green, blue);
+
+		SendMessageW(handle, PBM_SETBKCOLOR, NULL, static_cast<LPARAM>(backgroundColor));
+	}
+
+	void BaseInfiniteProgressBar::setTextColor(uint8_t red, uint8_t green, uint8_t blue)
+	{
+		throw exceptions::NotImplemented(__FUNCTION__, "BaseInfiniteProgressBar");
 	}
 }

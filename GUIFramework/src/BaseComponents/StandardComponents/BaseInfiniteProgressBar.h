@@ -27,6 +27,15 @@ namespace gui_framework
 
 		virtual int getAnimationPeriod() const final;
 
+		virtual void setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue) final override;
+
+		/// @brief Not implemented
+		/// @param red 
+		/// @param green 
+		/// @param blue 
+		/// @exception gui_framework::exceptions::NotImplemented Background color does not affects at progress bar
+		virtual void setTextColor(uint8_t red, uint8_t green, uint8_t blue) final override;
+
 		virtual ~BaseInfiniteProgressBar() = default;
 	};
 }
