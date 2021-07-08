@@ -209,7 +209,7 @@ namespace gui_framework
 	{
 		BaseComponent::setBackgroundColor(red, green, blue);
 
-		SetWindowLongPtrW(handle, GCLP_HBRBACKGROUND, reinterpret_cast<LONG_PTR>(CreateSolidBrush(backgroundColor)));
+		SetClassLongPtrW(handle, GCLP_HBRBACKGROUND, reinterpret_cast<LONG_PTR>(CreateSolidBrush(backgroundColor)));
 
 		InvalidateRect(handle, nullptr, true);
 	}
