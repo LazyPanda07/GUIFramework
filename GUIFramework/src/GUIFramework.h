@@ -55,4 +55,11 @@ namespace gui_framework
 
 		const json::JSONParser& getJSONSettings() const;
 	};
+
+	inline GUIFramework& GUIFramework::get()
+	{
+		static GUIFramework instance;
+
+		return instance;
+	}
 }
