@@ -5,6 +5,7 @@
 
 namespace gui_framework
 {
+	/// @brief Base class for all list views with text and icon items
 	class BaseTextIconListView : 
 		public BaseListView,
 		public interfaces::ITextIconListView

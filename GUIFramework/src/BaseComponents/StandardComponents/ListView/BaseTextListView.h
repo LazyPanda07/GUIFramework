@@ -5,6 +5,7 @@
 
 namespace gui_framework
 {
+	/// @brief Base class for all list views with text items only
 	class GUI_FRAMEWORK_API BaseTextListView : 
 		public BaseListView,
 		public interfaces::ITextListView

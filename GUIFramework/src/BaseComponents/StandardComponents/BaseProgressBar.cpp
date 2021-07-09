@@ -79,6 +79,15 @@ namespace gui_framework
 
 	void BaseProgressBar::setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue)
 	{
+		BaseComponent::setBackgroundColor(red, green, blue);
+
+		IProgressBarColor::setProgressBarBackgroundColor(red, green, blue);
+	}
+
+	void BaseProgressBar::setProgressBarBackgroundColor(uint8_t red, uint8_t green, uint8_t blue)
+	{
+		BaseComponent::setBackgroundColor(red, green, blue);
+
 		IProgressBarColor::setProgressBarBackgroundColor(red, green, blue);
 	}
 

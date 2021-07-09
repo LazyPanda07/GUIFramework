@@ -8,6 +8,7 @@
 
 namespace gui_framework
 {
+	/// @brief Standard updatable progress bar
 	class GUI_FRAMEWORK_API ProgressBar :
 		public BaseProgressBar,
 		virtual public BaseResizableComponent

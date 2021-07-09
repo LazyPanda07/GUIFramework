@@ -4,6 +4,7 @@
 
 namespace gui_framework
 {
+	/// @brief Base class for all list views in list mode
 	class GUI_FRAMEWORK_API BaseListListView : public BaseListView
 	{
 	public:

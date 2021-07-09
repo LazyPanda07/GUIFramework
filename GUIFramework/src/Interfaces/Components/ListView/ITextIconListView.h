@@ -7,6 +7,7 @@ namespace gui_framework
 {
 	namespace interfaces
 	{
+		/// @brief Provides adding text and icon items for list views
 		class GUI_FRAMEWORK_API ITextIconListView : public IBaseListViewOperations
 		{
 		private:

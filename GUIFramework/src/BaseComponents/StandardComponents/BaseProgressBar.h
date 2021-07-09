@@ -5,6 +5,7 @@
 
 namespace gui_framework
 {
+	/// @brief Base class for all updatable progress bars
 	class GUI_FRAMEWORK_API BaseProgressBar : 
 		virtual public BaseComponent,
 		public interfaces::IProgressBarColor
@@ -40,13 +41,23 @@ namespace gui_framework
 
 		virtual int getUpdateStep() const final;
 
+		/// @brief Same as setProgressBarBackgroundColor
+		/// @param red 
+		/// @param green 
+		/// @param blue 
 		virtual void setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue) final override;
+
+		/// @brief Inherited from IProgressBarColor
+		/// @param red 
+		/// @param green 
+		/// @param blue 
+		virtual void setProgressBarBackgroundColor(uint8_t red, uint8_t green, uint8_t blue) final override;
 
 		/// @brief Not implemented
 		/// @param red 
 		/// @param green 
 		/// @param blue 
-		/// @exception gui_framework::exceptions::NotImplemented Background color does not affects at progress bar
+		/// @exception gui_framework::exceptions::NotImplemented Text color does not affects at progress bar
 		virtual void setTextColor(uint8_t red, uint8_t green, uint8_t blue) final override;
 
 		virtual ~BaseProgressBar() = default;

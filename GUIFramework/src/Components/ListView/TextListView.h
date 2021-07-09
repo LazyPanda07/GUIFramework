@@ -4,6 +4,7 @@
 
 namespace gui_framework
 {
+	/// @brief Standard list view with text items
 	class GUI_FRAMEWORK_API TextListView : public BaseTextListView
 	{
 	public:
