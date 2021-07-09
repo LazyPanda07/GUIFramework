@@ -6,6 +6,7 @@ namespace gui_framework
 {
 	namespace interfaces
 	{
+		/// @brief Provides coloring for progress bars
 		class GUI_FRAMEWORK_API IProgressBarColor
 		{
 		private:

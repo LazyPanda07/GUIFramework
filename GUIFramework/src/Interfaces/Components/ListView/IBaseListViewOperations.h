@@ -6,6 +6,7 @@ namespace gui_framework
 {
 	namespace interfaces
 	{
+		/// @brief Provides adding, deleting, setting, getting items for other list view interfaces
 		class GUI_FRAMEWORK_API IBaseListViewOperations
 		{
 		private:

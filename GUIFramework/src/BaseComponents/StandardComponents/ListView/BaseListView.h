@@ -4,6 +4,7 @@
 
 namespace gui_framework
 {
+	/// @brief Base class for all list views
 	class GUI_FRAMEWORK_API BaseListView : virtual public BaseComponent
 	{
 	public:

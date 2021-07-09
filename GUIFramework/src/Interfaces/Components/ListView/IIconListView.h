@@ -7,6 +7,7 @@ namespace gui_framework
 {
 	namespace interfaces
 	{
+		/// @brief Provides adding icon items for list views
 		class GUI_FRAMEWORK_API IIconListView : public IBaseListViewOperations
 		{
 		private:

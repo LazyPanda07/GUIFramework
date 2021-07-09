@@ -131,7 +131,7 @@ namespace gui_framework
 		/// @param red 
 		/// @param green 
 		/// @param blue 
-		/// @exception gui_framework::exceptions::NotImplemented Background color does not affects at combo boxes
+		/// @exception gui_framework::exceptions::NotImplemented Text color does not affects at combo boxes
 		virtual void setTextColor(uint8_t red, uint8_t green, uint8_t blue) final override;
 
 		virtual ~BaseComboBox() = default;
