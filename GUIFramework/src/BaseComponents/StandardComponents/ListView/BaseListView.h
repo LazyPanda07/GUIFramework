@@ -10,6 +10,10 @@ namespace gui_framework
 	public:
 		BaseListView(const std::wstring& listViewName, const utility::ComponentSettings& settings, BaseComponent* parent);
 
+		virtual void setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue) final override;
+
+		virtual void setTextColor(uint8_t red, uint8_t green, uint8_t blue) final override;
+
 		virtual ~BaseListView() = default;
 	};
 }
