@@ -4,13 +4,14 @@
 #include "BaseComponents/Creators/BaseComponentCreator.h"
 
 #pragma comment (lib, "Comctl32.lib")
+#pragma comment (lib, "UxTheme.lib")
 
 #pragma comment (lib, "JSON.lib")
 #pragma comment (lib, "ThreadPool.lib")
 
 namespace gui_framework
 {
-	/// @brief Singleton with GUIFramework settings
+	/// @brief Singleton with GUIFramework settings and some functionality
 	class GUI_FRAMEWORK_API GUIFramework
 	{
 	private:
@@ -54,4 +55,11 @@ namespace gui_framework
 
 		const json::JSONParser& getJSONSettings() const;
 	};
+
+	inline GUIFramework& GUIFramework::get()
+	{
+		static GUIFramework instance;
+
+		return instance;
+	}
 }

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "BaseComponents/BaseComponent.h"
+#include "Utility/Holders/ImagesHolder.h"
 
 namespace gui_framework
 {
@@ -8,7 +9,7 @@ namespace gui_framework
 		virtual public BaseComponent
 	{
 	public:
-		struct tabData
+		struct GUI_FRAMEWORK_API tabData
 		{
 			std::wstring text;
 			std::filesystem::path pathToImage;
@@ -28,10 +29,7 @@ namespace gui_framework
 		};
 
 	protected:
-		HIMAGELIST imageList;
-		std::unordered_map<std::wstring, uint16_t> images;
-		uint16_t imagesWidth;
-		uint16_t imagesHeight;
+		utility::ImagesHolder images;
 		std::vector<std::function<void()>> callbacks;
 		std::vector<tabData> tabs;
 
@@ -107,16 +105,16 @@ namespace gui_framework
 		/// @param red 
 		/// @param green 
 		/// @param blue 
-		/// @exception gui_framework::exceptions::NotImplemented Background color does not affects at combo boxes
+		/// @exception gui_framework::exceptions::NotImplemented Background color does not affects at tab control
 		virtual void setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue) final override;
 
 		/// @brief Not implemented
 		/// @param red 
 		/// @param green 
 		/// @param blue 
-		/// @exception gui_framework::exceptions::NotImplemented Background color does not affects at combo boxes
+		/// @exception gui_framework::exceptions::NotImplemented Text color does not affects at tab control
 		virtual void setTextColor(uint8_t red, uint8_t green, uint8_t blue) final override;
 
-		virtual ~BaseTabControl();
+		virtual ~BaseTabControl() = default;
 	};
 }

@@ -17,7 +17,7 @@ namespace gui_framework
 			staticControlName,
 			utility::ComponentSettings
 			(
-				WS_BORDER,
+				NULL,
 				x,
 				y,
 				width,
@@ -31,7 +31,7 @@ namespace gui_framework
 			editControlText,
 			utility::ComponentSettings
 			(
-				WS_BORDER,
+				NULL,
 				x,
 				y,
 				width,
@@ -45,7 +45,7 @@ namespace gui_framework
 			editControlText,
 			utility::ComponentSettings
 			(
-				WS_BORDER,
+				NULL,
 				x,
 				y,
 				width,

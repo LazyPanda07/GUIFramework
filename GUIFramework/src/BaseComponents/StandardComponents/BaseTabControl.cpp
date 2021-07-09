@@ -54,11 +54,9 @@ namespace gui_framework
 			settings,
 			parent
 		),
-		imageList(ImageList_Create(imagesWidth, imagesHeight, ILC_COLOR32, 0, standard_sizes::defaultImagesCount)),
-		imagesWidth(imagesWidth),
-		imagesHeight(imagesHeight)
+		images(imagesWidth, imagesHeight)
 	{
-		SendMessageW(handle, TCM_SETIMAGELIST, NULL, reinterpret_cast<LPARAM>(imageList));
+		SendMessageW(handle, TCM_SETIMAGELIST, NULL, reinterpret_cast<LPARAM>(images.getImageList()));
 	}
 
 	LRESULT BaseTabControl::appendText(const wstring& text, const function<void()>& onClick)
@@ -102,9 +100,7 @@ namespace gui_framework
 
 		if (!images.contains(pathToImage))
 		{
-			HBITMAP image = static_cast<HBITMAP>(LoadImageW(nullptr, pathToImage.wstring().data(), IMAGE_BITMAP, imagesWidth, imagesHeight, LR_LOADFROMFILE));
-
-			images[pathToImage] = ImageList_Add(imageList, image, NULL);
+			images.addImage(pathToImage);
 		}
 
 		item.mask = TCIF_IMAGE;
@@ -138,9 +134,7 @@ namespace gui_framework
 
 		if (!images.contains(pathToImage))
 		{
-			HBITMAP image = static_cast<HBITMAP>(LoadImageW(nullptr, pathToImage.wstring().data(), IMAGE_BITMAP, imagesWidth, imagesHeight, LR_LOADFROMFILE));
-
-			images[pathToImage] = ImageList_Add(imageList, image, NULL);
+			images.addImage(pathToImage);
 		}
 
 		item.mask = TCIF_TEXT | TCIF_IMAGE;
@@ -214,9 +208,7 @@ namespace gui_framework
 		{
 			if (!images.contains(pathToImage))
 			{
-				HBITMAP image = static_cast<HBITMAP>(LoadImageW(nullptr, pathToImage.wstring().data(), IMAGE_BITMAP, imagesWidth, imagesHeight, LR_LOADFROMFILE));
-
-				images[pathToImage] = ImageList_Add(imageList, image, NULL);
+				images.addImage(pathToImage);
 			}
 
 			item.mask |= TCIF_IMAGE;
@@ -253,12 +245,12 @@ namespace gui_framework
 
 	uint16_t BaseTabControl::getImagesWidth() const
 	{
-		return imagesWidth;
+		return images.getImagesWidth();
 	}
 
 	uint16_t BaseTabControl::getImagesHeight() const
 	{
-		return imagesHeight;
+		return images.getImagesHeight();
 	}
 
 	void BaseTabControl::setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue)
@@ -269,10 +261,5 @@ namespace gui_framework
 	void BaseTabControl::setTextColor(uint8_t red, uint8_t green, uint8_t blue)
 	{
 		throw exceptions::NotImplemented(__FUNCTION__, "BaseComboBox");
-	}
-
-	BaseTabControl::~BaseTabControl()
-	{
-		ImageList_Destroy(imageList);
 	}
 }
