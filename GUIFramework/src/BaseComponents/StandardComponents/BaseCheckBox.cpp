@@ -71,15 +71,23 @@ namespace gui_framework
 
 			LRESULT state = SendMessageW(handle, BM_GETCHECK, NULL, NULL);
 
-			SendMessageW(handle, BM_SETCHECK, !state, NULL);
+			if (state == BST_CHECKED)
+			{
+				SendMessageW(handle, BM_SETCHECK, BST_UNCHECKED, NULL);
 
-			if (onClear && state == BST_CHECKED)
-			{
-				return onClear(wparam, lparam);
+				if (onClear)
+				{
+					return onClear(wparam, lparam);
+				}
 			}
-			else if (onCheck && state == BST_UNCHECKED)
+			else if (state == BST_UNCHECKED)
 			{
-				return onCheck(wparam, lparam);
+				SendMessageW(handle, BM_SETCHECK, BST_CHECKED, NULL);
+
+				if (onCheck)
+				{
+					return onCheck(wparam, lparam);
+				}
 			}
 			else if (onClick)
 			{
