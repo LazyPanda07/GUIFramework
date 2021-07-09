@@ -50,7 +50,7 @@ namespace gui_framework
 
 	void BaseCheckBox::setOnClear(const function<LRESULT(WPARAM, LPARAM)>& onClear)
 	{
-		this->onClear= onClear;
+		this->onClear = onClear;
 	}
 
 	const function<LRESULT(WPARAM, LPARAM)>& BaseCheckBox::getOnCheck() const
@@ -69,25 +69,17 @@ namespace gui_framework
 		{
 			isUsed = true;
 
-			LRESULT state = SendMessageW(handle, BM_GETCHECK, NULL, NULL);
+			LRESULT state = SendMessageW(this->handle, BM_GETCHECK, NULL, NULL);
 
-			if (state == BST_CHECKED)
+			SendMessageW(this->handle, BM_SETCHECK, !state, NULL);
+
+			if (onClear && state == BST_CHECKED)
 			{
-				SendMessageW(handle, BM_SETCHECK, BST_UNCHECKED, NULL);
-
-				if (onClear)
-				{
-					return onClear(wparam, lparam);
-				}
+				return onClear(wparam, lparam);
 			}
-			else if (state == BST_UNCHECKED)
+			else if (onCheck && state == BST_UNCHECKED)
 			{
-				SendMessageW(handle, BM_SETCHECK, BST_CHECKED, NULL);
-
-				if (onCheck)
-				{
-					return onCheck(wparam, lparam);
-				}
+				return onCheck(wparam, lparam);
 			}
 			else if (onClick)
 			{
