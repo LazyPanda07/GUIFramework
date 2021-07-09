@@ -10,6 +10,8 @@ using namespace std;
 
 CREATE_DEFAULT_WINDOW_FUNCTION(main)
 
+CREATE_DEFAULT_WINDOW_FUNCTION(dialog)
+
 void test()
 {
 	using namespace gui_framework;
@@ -19,7 +21,6 @@ void test()
 	try
 	{
 		WindowHolder holder(make_unique<SeparateWindow>(L"MainWindow", L"Главное окно", settings, "main"));
-
 		SeparateWindow* ptr = dynamic_cast<SeparateWindow*>(holder.get());
 
 		ptr->setExitMode(BaseComponent::exitMode::quit);
