@@ -2,7 +2,6 @@
 
 #include "GUIFramework.h"
 #include "WindowHolder.h"
-#include "Components/CheckBox.h"
 #include "Composites/SeparateWindow.h"
 
 #pragma comment (lib, "GUIFramework.lib")
@@ -21,7 +20,6 @@ void test()
 	{
 		WindowHolder holder(make_unique<SeparateWindow>(L"MainWindow", L"Главное окно", settings, "main"));
 		SeparateWindow* ptr = dynamic_cast<SeparateWindow*>(holder.get());
-		CheckBox* box = new CheckBox(L"Box", L"Text", 0, 0, ptr, [](WPARAM, LPARAM) { cout << "Check" << endl; return 0; }, [](WPARAM, LPARAM) {cout << "Clear" << endl; return 0; });
 
 		ptr->setExitMode(BaseComponent::exitMode::quit);
 
