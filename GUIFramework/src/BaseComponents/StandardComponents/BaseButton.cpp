@@ -22,20 +22,6 @@ namespace gui_framework
 		this->setText(buttonText);
 	}
 
-	LRESULT BaseButton::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
-	{
-		if (message == WM_COMMAND && id == LOWORD(wparam))
-		{
-			isUsed = true;
-
-			return onClick(wparam, lparam);
-		}
-
-		isUsed = false;
-
-		return -1;
-	}
-
 	void BaseButton::setOnClick(const function<LRESULT(WPARAM, LPARAM)>& onClick)
 	{
 		this->onClick = onClick;
@@ -44,6 +30,23 @@ namespace gui_framework
 	const function<LRESULT(WPARAM, LPARAM)>& BaseButton::getOnClick() const
 	{
 		return onClick;
+	}
+
+	LRESULT BaseButton::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
+	{
+		if (message == WM_COMMAND && id == LOWORD(wparam))
+		{
+			isUsed = true;
+
+			if (onClick)
+			{
+				return onClick(wparam, lparam);
+			}
+		}
+
+		isUsed = false;
+
+		return -1;
 	}
 
 	void BaseButton::setTextColor(uint8_t red, uint8_t green, uint8_t blue)

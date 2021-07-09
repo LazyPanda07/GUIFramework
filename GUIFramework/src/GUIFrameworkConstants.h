@@ -32,6 +32,9 @@ namespace gui_framework
 		inline constexpr uint16_t buttonWidth = 200;
 		inline constexpr uint16_t buttonHeight = 20;
 
+		inline constexpr uint16_t checkBoxWidth = 200;
+		inline constexpr uint16_t checkBoxHeight = 20;
+
 		inline constexpr uint16_t editControlWidth = 200;
 		inline constexpr uint16_t editControlHeight = 20;
 
@@ -68,7 +71,7 @@ namespace gui_framework
 		inline constexpr std::wstring_view msftEditLibrary = L"MsftEdit.dll";
 	}
 
-	inline constexpr std::string_view guiFrameworkVersion = "0.3-alpha";
+	inline constexpr std::string_view guiFrameworkVersion = "0.4-alpha";
 }
 
 #ifdef GUI_FRAMEWORK_DLL
