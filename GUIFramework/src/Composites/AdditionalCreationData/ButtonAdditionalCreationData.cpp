@@ -18,5 +18,19 @@ namespace gui_framework
 		{
 			return make_any<tuple<wstring, function<LRESULT(WPARAM, LPARAM)>>>(text, onClick);
 		}
+
+		AdditionalCreationData<CheckBox>::AdditionalCreationData(const wstring text, const function<LRESULT(WPARAM, LPARAM)>& onCheck, const function<LRESULT(WPARAM, LPARAM)>& onClear, const function<LRESULT(WPARAM, LPARAM)>& onClick) :
+			text(text),
+			onCheck(onCheck),
+			onClear(onClear),
+			onClick(onClick)
+		{
+
+		}
+
+		any AdditionalCreationData<CheckBox>::getData() const
+		{
+			return make_any<tuple<wstring, function<LRESULT(WPARAM, LPARAM)>, function<LRESULT(WPARAM, LPARAM)>, function<LRESULT(WPARAM, LPARAM)>>>(text, onCheck, onClear, onClick);
+		}
 	}
 }
