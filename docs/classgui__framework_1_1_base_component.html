@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.2</span>
+   &#160;<span id="projectnumber">0.3</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -86,6 +86,7 @@ $(document).ready(function(){initNavTree('classgui__framework_1_1_base_component
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classgui__framework_1_1_base_component-members.html">List of all members</a>  </div>
@@ -108,12 +109,15 @@ Inheritance diagram for gui_framework::BaseComponent:</div>
 <area href="classgui__framework_1_1_base_combo_box.html" title="Base class for all combo boxes." alt="gui_framework::BaseComboBox" shape="rect" coords="279,112,548,136"/>
 <area href="classgui__framework_1_1_base_composite.html" title="Base class for all windows that has children windows." alt="gui_framework::BaseComposite" shape="rect" coords="279,168,548,192"/>
 <area href="classgui__framework_1_1_base_edit_control.html" title="Base class for all edit controls." alt="gui_framework::BaseEditControl" shape="rect" coords="279,224,548,248"/>
-<area href="classgui__framework_1_1_base_list_box.html" title="Base class for all list boxes." alt="gui_framework::BaseListBox" shape="rect" coords="279,280,548,304"/>
-<area href="classgui__framework_1_1_base_non_resizable_component.html" title="Class to prevent resizing." alt="gui_framework::BaseNonResizableComponent" shape="rect" coords="279,336,548,360"/>
-<area href="classgui__framework_1_1_base_resizable_component.html" title="Class for resizing." alt="gui_framework::BaseResizableComponent" shape="rect" coords="279,392,548,416"/>
-<area href="classgui__framework_1_1_base_rich_edit.html" title="Base class for all rich edit controls." alt="gui_framework::BaseRichEdit" shape="rect" coords="279,448,548,472"/>
-<area href="classgui__framework_1_1_base_static_control.html" title="Base class for all static controls." alt="gui_framework::BaseStaticControl" shape="rect" coords="279,504,548,528"/>
-<area href="classgui__framework_1_1_base_tab_control.html" alt="gui_framework::BaseTabControl" shape="rect" coords="279,560,548,584"/>
+<area href="classgui__framework_1_1_base_infinite_progress_bar.html" title="Base class for all non updatable progress bars." alt="gui_framework::BaseInfiniteProgressBar" shape="rect" coords="279,280,548,304"/>
+<area href="classgui__framework_1_1_base_list_box.html" title="Base class for all list boxes." alt="gui_framework::BaseListBox" shape="rect" coords="279,336,548,360"/>
+<area href="classgui__framework_1_1_base_list_view.html" title="Base class for all list views." alt="gui_framework::BaseListView" shape="rect" coords="279,392,548,416"/>
+<area href="classgui__framework_1_1_base_non_resizable_component.html" title="Class to prevent resizing." alt="gui_framework::BaseNonResizableComponent" shape="rect" coords="279,448,548,472"/>
+<area href="classgui__framework_1_1_base_progress_bar.html" title="Base class for all updatable progress bars." alt="gui_framework::BaseProgressBar" shape="rect" coords="279,504,548,528"/>
+<area href="classgui__framework_1_1_base_resizable_component.html" title="Class for resizing." alt="gui_framework::BaseResizableComponent" shape="rect" coords="279,560,548,584"/>
+<area href="classgui__framework_1_1_base_rich_edit.html" title="Base class for all rich edit controls." alt="gui_framework::BaseRichEdit" shape="rect" coords="279,616,548,640"/>
+<area href="classgui__framework_1_1_base_static_control.html" title="Base class for all static controls." alt="gui_framework::BaseStaticControl" shape="rect" coords="279,672,548,696"/>
+<area href="classgui__framework_1_1_base_tab_control.html" alt="gui_framework::BaseTabControl" shape="rect" coords="279,728,548,752"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -205,6 +209,15 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a56df6db296a420576396a4629236aa41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a274274f6f28b2e93f73544634b640d56"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a274274f6f28b2e93f73544634b640d56">~BaseComponent</a> ()</td></tr>
 <tr class="separator:a274274f6f28b2e93f73544634b640d56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ac823322fa8ec6712f4585239835b3fdb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#ac823322fa8ec6712f4585239835b3fdb">runFunctionAsync</a> (const std::function&lt; void()&gt; &amp;callable, const std::function&lt; void()&gt; &amp;callback=nullptr) noexcept</td></tr>
+<tr class="memdesc:ac823322fa8ec6712f4585239835b3fdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add task to thread pool.  <a href="classgui__framework_1_1_base_component.html#ac823322fa8ec6712f4585239835b3fdb">More...</a><br /></td></tr>
+<tr class="separator:ac823322fa8ec6712f4585239835b3fdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a377a3b392aa9778b11347f3b69acbd42"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a377a3b392aa9778b11347f3b69acbd42">runFunctionAsync</a> (std::function&lt; void()&gt; &amp;&amp;callable, const std::function&lt; void()&gt; &amp;callback=nullptr) noexcept</td></tr>
+<tr class="memdesc:a377a3b392aa9778b11347f3b69acbd42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add task to thread pool.  <a href="classgui__framework_1_1_base_component.html#a377a3b392aa9778b11347f3b69acbd42">More...</a><br /></td></tr>
+<tr class="separator:a377a3b392aa9778b11347f3b69acbd42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -339,7 +352,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00023">23</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00033">33</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -366,7 +379,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00394">394</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00404">404</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -398,7 +411,7 @@ Protected Attributes</h2></td></tr>
 <p>Don't call move operator with return value. </p>
 <dl class="section return"><dt>Returns</dt><dd>Created pop-up menu </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00177">177</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00187">187</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -425,7 +438,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00151">151</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00161">161</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -456,7 +469,7 @@ Protected Attributes</h2></td></tr>
 <p>It needs to be called once. </p>
 <dl class="section return"><dt>Returns</dt><dd>Created main menu </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00168">168</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00178">178</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -483,7 +496,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00134">134</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00144">144</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -510,7 +523,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00329">329</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00339">339</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -537,7 +550,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00320">320</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00330">330</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -564,7 +577,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00311">311</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00321">321</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -591,7 +604,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00384">384</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00394">394</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -618,7 +631,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00296">296</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00306">306</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -645,7 +658,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00306">306</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00316">316</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -672,7 +685,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00301">301</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00311">311</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -699,7 +712,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00340">340</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00350">350</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -726,7 +739,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00345">345</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00355">355</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -753,7 +766,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00350">350</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00360">360</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -780,7 +793,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00286">286</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00296">296</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -807,7 +820,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00379">379</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00389">389</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -834,7 +847,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00355">355</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00365">365</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -861,7 +874,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00360">360</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00370">370</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -888,7 +901,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00281">281</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00291">291</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -915,7 +928,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00365">365</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00375">375</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -942,7 +955,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00389">389</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00399">399</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -969,7 +982,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00291">291</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00301">301</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -1025,7 +1038,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00122">122</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00132">132</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -1054,7 +1067,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classgui__framework_1_1_base_composite.html#a6f0726dccdb362d62f42dcff5cd87942">gui_framework::BaseComposite</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00094">94</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00104">104</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -1112,7 +1125,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classgui__framework_1_1_base_resizable_composite.html#a7f2c82dda595602af7a7dd01a13da02f">gui_framework::BaseResizableComposite</a>, and <a class="el" href="classgui__framework_1_1_base_resizable_component.html#a38866d0aa798c140b26fb1b61b064961">gui_framework::BaseResizableComponent</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00016">16</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00026">26</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -1149,7 +1162,97 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00186">186</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00196">196</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ac823322fa8ec6712f4585239835b3fdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac823322fa8ec6712f4585239835b3fdb">&#9670;&nbsp;</a></span>runFunctionAsync() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void gui_framework::BaseComponent::runFunctionAsync </td>
+          <td>(</td>
+          <td class="paramtype">const std::function&lt; void()&gt; &amp;&#160;</td>
+          <td class="paramname"><em>callable</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; void()&gt; &amp;&#160;</td>
+          <td class="paramname"><em>callback</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Add task to thread pool. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">callable</td><td>Function to call async </td></tr>
+    <tr><td class="paramname">callback</td><td>Function to call after callable invokes </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a377a3b392aa9778b11347f3b69acbd42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a377a3b392aa9778b11347f3b69acbd42">&#9670;&nbsp;</a></span>runFunctionAsync() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void gui_framework::BaseComponent::runFunctionAsync </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; void()&gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>callable</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; void()&gt; &amp;&#160;</td>
+          <td class="paramname"><em>callback</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Add task to thread pool. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">callable</td><td>Function to call async </td></tr>
+    <tr><td class="paramname">callback</td><td>Function to call after callable invokes </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1193,9 +1296,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classgui__framework_1_1_base_composite.html#a597778bd4699fb574b2e839b2d70b04f">gui_framework::BaseComposite</a>, <a class="el" href="classgui__framework_1_1_base_tab_control.html#ab6c332e1cef2dc5371413dcdbe959044">gui_framework::BaseTabControl</a>, <a class="el" href="classgui__framework_1_1_base_rich_edit.html#abe18d7d262aa479d30306d76ef2be318">gui_framework::BaseRichEdit</a>, and <a class="el" href="classgui__framework_1_1_base_combo_box.html#aade08088d156f60fa7319c8f64e9b932">gui_framework::BaseComboBox</a>.</p>
+<p>Reimplemented in <a class="el" href="classgui__framework_1_1_base_composite.html#a597778bd4699fb574b2e839b2d70b04f">gui_framework::BaseComposite</a>, <a class="el" href="classgui__framework_1_1_base_list_view.html#a5bf19f8aef5901d87e62d5f3bc5f7b50">gui_framework::BaseListView</a>, <a class="el" href="classgui__framework_1_1_base_tab_control.html#ab6c332e1cef2dc5371413dcdbe959044">gui_framework::BaseTabControl</a>, <a class="el" href="classgui__framework_1_1_base_rich_edit.html#abe18d7d262aa479d30306d76ef2be318">gui_framework::BaseRichEdit</a>, <a class="el" href="classgui__framework_1_1_base_progress_bar.html#ac3bbf8b711b9af9520c7b550d828763b">gui_framework::BaseProgressBar</a>, <a class="el" href="classgui__framework_1_1_base_infinite_progress_bar.html#ade0bbe2068cd1a4726196de33ad31432">gui_framework::BaseInfiniteProgressBar</a>, and <a class="el" href="classgui__framework_1_1_base_combo_box.html#aade08088d156f60fa7319c8f64e9b932">gui_framework::BaseComboBox</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00267">267</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00277">277</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -1223,7 +1326,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00209">209</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00219">219</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -1251,7 +1354,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00204">204</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00214">214</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -1279,7 +1382,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00214">214</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00224">224</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -1307,7 +1410,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00219">219</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00229">229</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -1335,7 +1438,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00224">224</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00234">234</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -1377,7 +1480,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00229">229</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00239">239</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -1419,7 +1522,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00248">248</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00258">258</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -1463,9 +1566,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classgui__framework_1_1_base_tab_control.html#aa20da2dc52c7bdae55f4960e3ea000be">gui_framework::BaseTabControl</a>, <a class="el" href="classgui__framework_1_1_base_rich_edit.html#a09d6d56819fc8fc9caaf1b39e962f910">gui_framework::BaseRichEdit</a>, <a class="el" href="classgui__framework_1_1_base_combo_box.html#ab9ac06e14375a41cd0db219f1030b40d">gui_framework::BaseComboBox</a>, and <a class="el" href="classgui__framework_1_1_base_button.html#aafe12f92e9407defc8e3211518f52025">gui_framework::BaseButton</a>.</p>
+<p>Reimplemented in <a class="el" href="classgui__framework_1_1_base_list_view.html#a4290e33e54ca45bd286257cf7528cf46">gui_framework::BaseListView</a>, <a class="el" href="classgui__framework_1_1_base_list_icon_list_view.html#ae115d1b881d08025c41058070687cc62">gui_framework::BaseListIconListView</a>, <a class="el" href="classgui__framework_1_1_base_icon_list_view.html#a7041adf4e7e2740ef352a628fd123b4c">gui_framework::BaseIconListView</a>, <a class="el" href="classgui__framework_1_1_base_tab_control.html#aa20da2dc52c7bdae55f4960e3ea000be">gui_framework::BaseTabControl</a>, <a class="el" href="classgui__framework_1_1_base_rich_edit.html#a09d6d56819fc8fc9caaf1b39e962f910">gui_framework::BaseRichEdit</a>, <a class="el" href="classgui__framework_1_1_base_progress_bar.html#a05c499b9b728aec7948ecc686121a64c">gui_framework::BaseProgressBar</a>, <a class="el" href="classgui__framework_1_1_base_infinite_progress_bar.html#a8ad22c5f338c8ccc4bea7cf022417d18">gui_framework::BaseInfiniteProgressBar</a>, <a class="el" href="classgui__framework_1_1_base_combo_box.html#ab9ac06e14375a41cd0db219f1030b40d">gui_framework::BaseComboBox</a>, and <a class="el" href="classgui__framework_1_1_base_button.html#aafe12f92e9407defc8e3211518f52025">gui_framework::BaseButton</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00274">274</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00284">284</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -1523,7 +1626,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classgui__framework_1_1_base_tab_control.html#a705e7fa0d724d7c17e1cd6d9db6a38ba">gui_framework::BaseTabControl</a>, <a class="el" href="classgui__framework_1_1_base_rich_edit.html#a5b0e9edd94997732cc8b0f6533e9b27a">gui_framework::BaseRichEdit</a>, <a class="el" href="classgui__framework_1_1_base_composite.html#ab788d4dc310ef2e8eda23e9475da7ea7">gui_framework::BaseComposite</a>, and <a class="el" href="classgui__framework_1_1_base_button.html#aeceb03df19d66ea6e6e7ea04a81ec397">gui_framework::BaseButton</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00099">99</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00109">109</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -1548,7 +1651,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00034">34</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00045">45</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
 
 </div>
 </div>
@@ -1572,7 +1675,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00022">22</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00033">33</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
 
 </div>
 </div>
@@ -1596,7 +1699,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00027">27</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00038">38</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
 
 </div>
 </div>
@@ -1620,7 +1723,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00026">26</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00037">37</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
 
 </div>
 </div>
@@ -1644,7 +1747,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00028">28</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00039">39</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
 
 </div>
 </div>
@@ -1668,7 +1771,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00029">29</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00040">40</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
 
 </div>
 </div>
@@ -1692,7 +1795,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00024">24</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00035">35</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
 
 </div>
 </div>
@@ -1716,7 +1819,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00033">33</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00044">44</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
 
 </div>
 </div>
@@ -1740,7 +1843,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00031">31</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00042">42</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
 
 </div>
 </div>
@@ -1764,7 +1867,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00021">21</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00032">32</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
 
 </div>
 </div>
@@ -1788,7 +1891,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00030">30</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00041">41</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
 
 </div>
 </div>
@@ -1812,7 +1915,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00025">25</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00036">36</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
 
 </div>
 </div>
@@ -1836,7 +1939,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00019">19</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00030">30</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
 
 </div>
 </div>
@@ -1860,7 +1963,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00020">20</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00031">31</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
 
 </div>
 </div>
@@ -1884,7 +1987,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00032">32</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00043">43</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
 
 </div>
 </div>
@@ -1908,7 +2011,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00035">35</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00046">46</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
 
 </div>
 </div>
@@ -1932,7 +2035,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00023">23</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00034">34</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
 
 </div>
 </div>

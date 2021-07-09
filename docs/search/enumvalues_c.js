@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['tryagain_1232',['tryAgain',['../classgui__framework_1_1_base_dialog_box.html#a66c5cb34004ac273196f855bf18afbfaa7b4b47c0f57e8890fef4690f44474dc5',1,'gui_framework::BaseDialogBox']]]
+  ['selectionfielditem_1677',['selectionFieldItem',['../classgui__framework_1_1_base_combo_box.html#a148ff392d7d0af526dafcb102b98513aa647c2f2946dee4dd8800b92c2f241081',1,'gui_framework::BaseComboBox']]],
+  ['setcursor_1678',['setCursor',['../classgui__framework_1_1_base_rich_edit.html#abf55c644c6c2640d8c662dd7179ab1f3a5a69f9315e4bb59223621009e87cbc8d',1,'gui_framework::BaseRichEdit']]],
+  ['smallicon_1679',['smallIcon',['../namespacegui__framework_1_1utility.html#a4bd7b1a1121bbfb16d0a1f9b4ba266dea82840ee69ba0e891fa382c7785fc0527',1,'gui_framework::utility']]]
 ];

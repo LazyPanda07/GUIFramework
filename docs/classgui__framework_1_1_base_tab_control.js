@@ -2,7 +2,7 @@ var classgui__framework_1_1_base_tab_control =
 [
     [ "tabData", "structgui__framework_1_1_base_tab_control_1_1tab_data.html", "structgui__framework_1_1_base_tab_control_1_1tab_data" ],
     [ "BaseTabControl", "classgui__framework_1_1_base_tab_control.html#a77434660c0d8746e256dc37d94dabb33", null ],
-    [ "~BaseTabControl", "classgui__framework_1_1_base_tab_control.html#a4b68ec6e4a00fd7bbd7a34c540acfb12", null ],
+    [ "~BaseTabControl", "classgui__framework_1_1_base_tab_control.html#a6d7e78ee515467d152f0519a842fc0e2", null ],
     [ "appendImage", "classgui__framework_1_1_base_tab_control.html#aa5792ab808e6af7591470f4ab3617b74", null ],
     [ "appendText", "classgui__framework_1_1_base_tab_control.html#a56785d1a8609e0c21b5ee99195b7905f", null ],
     [ "appendTextAndImage", "classgui__framework_1_1_base_tab_control.html#a77af82bbed5f21092d4fe06fb20c5cc5", null ],
@@ -22,9 +22,6 @@ var classgui__framework_1_1_base_tab_control =
     [ "size", "classgui__framework_1_1_base_tab_control.html#a7a8553f14a13b75479ee9126e741fbfe", null ],
     [ "windowMessagesHandle", "classgui__framework_1_1_base_tab_control.html#a705e7fa0d724d7c17e1cd6d9db6a38ba", null ],
     [ "callbacks", "classgui__framework_1_1_base_tab_control.html#a72fb209e6bff92f5ceadb5da4e8e6247", null ],
-    [ "imageList", "classgui__framework_1_1_base_tab_control.html#ab6094be3ffb22e7db4d51c0ddfedad2f", null ],
-    [ "images", "classgui__framework_1_1_base_tab_control.html#acc68940a8fbda8934a99296eeb70dc41", null ],
-    [ "imagesHeight", "classgui__framework_1_1_base_tab_control.html#a2ed333f1894f5baa4d64692b663ddd40", null ],
-    [ "imagesWidth", "classgui__framework_1_1_base_tab_control.html#af3c2c56155841f6b22f5cf6aae62122d", null ],
+    [ "images", "classgui__framework_1_1_base_tab_control.html#a994a8781ea62fe4497e3864fd9777ea8", null ],
     [ "tabs", "classgui__framework_1_1_base_tab_control.html#ad132fcba4407ba83736ecf56704f7771", null ]
 ];

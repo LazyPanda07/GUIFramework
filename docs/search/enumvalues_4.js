@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ignore_1214',['ignore',['../classgui__framework_1_1_base_dialog_box.html#a66c5cb34004ac273196f855bf18afbfaa567bc1d268f135496de3d5b946b691f3',1,'gui_framework::BaseDialogBox']]]
+  ['forallitems_1659',['forAllItems',['../classgui__framework_1_1_base_combo_box.html#a148ff392d7d0af526dafcb102b98513aab6afdce5bd50d3af19ec1c4caf37eae6',1,'gui_framework::BaseComboBox']]]
 ];
