@@ -12,7 +12,7 @@ namespace gui_framework
 			checkBoxName,
 			utility::ComponentSettings
 			(
-				settings.styles | BS_AUTOCHECKBOX,
+				settings.styles | BS_CHECKBOX,
 				settings.x,
 				settings.y,
 				settings.width,
@@ -27,7 +27,7 @@ namespace gui_framework
 			checkBoxText,
 			utility::ComponentSettings
 			(
-				settings.styles | BS_AUTOCHECKBOX,
+				settings.styles | BS_CHECKBOX,
 				settings.x,
 				settings.y,
 				settings.width,
@@ -71,13 +71,15 @@ namespace gui_framework
 
 			LRESULT state = SendMessageW(handle, BM_GETCHECK, NULL, NULL);
 
-			if (onCheck && state == BST_CHECKED)
-			{
-				return onCheck(wparam, lparam);
-			}
-			else if (onClear && state == BST_UNCHECKED)
+			SendMessageW(handle, BM_SETCHECK, !state, NULL);
+
+			if (onClear && state == BST_CHECKED)
 			{
 				return onClear(wparam, lparam);
+			}
+			else if (onCheck && state == BST_UNCHECKED)
+			{
+				return onCheck(wparam, lparam);
 			}
 			else if (onClick)
 			{

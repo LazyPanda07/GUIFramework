@@ -15,6 +15,7 @@
 #include "BaseComponents/Creators/TabControlCreator.h"
 #include "BaseComponents/Creators/ProgressBarCreator.h"
 #include "BaseComponents/Creators/InfiniteProgressBarCreator.h"
+#include "BaseComponents/Creators/CheckBoxCreator.h"
 
 #include "BaseComponents/Creators/ListView/IconListViewCreator.h"
 #include "BaseComponents/Creators/ListView/TextListViewCreator.h"
@@ -37,6 +38,7 @@
 #include "Components/TabControl.h"
 #include "Components/ProgressBar.h"
 #include "Components/InfiniteProgressBar.h"
+#include "Components/CheckBox.h"
 
 #include "Components/ListView/IconListView.h"
 #include "Components/ListView/TextListView.h"
@@ -79,6 +81,8 @@ namespace gui_framework
 
 		creators[typeid(InfiniteProgressBar).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::InfiniteProgressBarCreator());
 
+		creators[typeid(CheckBox).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::CheckBoxCreator());
+
 #pragma region ListViews
 		creators[typeid(IconListView).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::IconListViewCreator());
 
@@ -98,7 +102,7 @@ namespace gui_framework
 		jsonSettings(ifstream(settings::settingsJSONFile.data())),
 		threadPool(static_cast<uint32_t>(jsonSettings.get<int64_t>(settings::threadsCountSetting))),
 		msftEditModule(LoadLibraryW(libraries::msftEditLibrary.data())),
-		nextHMENU(0)
+		nextHMENU(1)
 	{
 		InitCommonControlsEx(&comm);
 

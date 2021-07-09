@@ -12,21 +12,7 @@ namespace gui_framework
 			checkBoxName,
 			utility::ComponentSettings
 			(
-				BS_AUTOCHECKBOX,
-				x,
-				y,
-				width,
-				height
-			),
-			parent
-		),
-		BaseResizableComponent
-		(
-			wstring(standard_classes::button),
-			checkBoxName,
-			utility::ComponentSettings
-			(
-				BS_AUTOCHECKBOX,
+				BS_CHECKBOX,
 				x,
 				y,
 				width,

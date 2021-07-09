@@ -28,6 +28,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\BaseComponents\BaseComponent.h" />
+    <ClInclude Include="src\BaseComponents\Creators\CheckBoxCreator.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseCheckBox.h" />
     <ClInclude Include="src\BaseComponents\Creators\ChildWindowCreator.h" />
     <ClInclude Include="src\BaseComponents\Creators\DropDownComboBoxCreator.h" />
@@ -152,6 +153,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\BaseComponents\BaseComponent.cpp" />
+    <ClCompile Include="src\BaseComponents\Creators\CheckBoxCreator.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseCheckBox.cpp" />
     <ClCompile Include="src\BaseComponents\Creators\ButtonCreator.cpp" />
     <ClCompile Include="src\BaseComponents\Creators\ChildWindowCreator.cpp" />
