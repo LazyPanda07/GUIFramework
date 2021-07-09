@@ -15,6 +15,17 @@ namespace gui_framework
 			quit
 		};
 
+	public:
+		/// @brief Add task to thread pool
+		/// @param callable Function to call async
+		/// @param callback Function to call after callable invokes
+		static void runFunctionAsync(const std::function<void()>& callable, const std::function<void()>& callback = nullptr) noexcept;
+
+		/// @brief Add task to thread pool
+		/// @param callable Function to call async
+		/// @param callback Function to call after callable invokes
+		static void runFunctionAsync(std::function<void()>&& callable, const std::function<void()>& callback = nullptr) noexcept;
+
 	protected:
 		BaseComponent* parent;
 		std::unordered_map<HMENU, Menu> popupMenus;

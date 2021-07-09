@@ -28,6 +28,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\BaseComponents\BaseComponent.h" />
+    <ClInclude Include="src\BaseComponents\StandardComponents\BaseCheckBox.h" />
     <ClInclude Include="src\BaseComponents\Creators\ChildWindowCreator.h" />
     <ClInclude Include="src\BaseComponents\Creators\DropDownComboBoxCreator.h" />
     <ClInclude Include="src\BaseComponents\Creators\DropDownListComboBoxCreator.h" />
@@ -58,6 +59,7 @@
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseTabControl.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseTextIconListView.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseTextListView.h" />
+    <ClInclude Include="src\Components\CheckBox.h" />
     <ClInclude Include="src\Components\InfiniteProgressBar.h" />
     <ClInclude Include="src\Components\ListView\IconListView.h" />
     <ClInclude Include="src\Components\ListView\ListIconListView.h" />
@@ -150,6 +152,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\BaseComponents\BaseComponent.cpp" />
+    <ClCompile Include="src\BaseComponents\StandardComponents\BaseCheckBox.cpp" />
     <ClCompile Include="src\BaseComponents\Creators\ButtonCreator.cpp" />
     <ClCompile Include="src\BaseComponents\Creators\ChildWindowCreator.cpp" />
     <ClCompile Include="src\BaseComponents\Creators\DropDownComboBoxCreator.cpp" />
@@ -200,6 +203,7 @@
     <ClCompile Include="src\BaseComposites\BaseResizableComposite.cpp" />
     <ClCompile Include="src\BaseComposites\StandardComposites\BaseWindow.cpp" />
     <ClCompile Include="src\Components\Button.cpp" />
+    <ClCompile Include="src\Components\CheckBox.cpp" />
     <ClCompile Include="src\Components\DropDownComboBox.cpp" />
     <ClCompile Include="src\Components\DropDownListComboBox.cpp" />
     <ClCompile Include="src\Components\InfiniteProgressBar.cpp" />

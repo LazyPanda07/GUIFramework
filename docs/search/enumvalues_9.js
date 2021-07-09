@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['quit_1223',['quit',['../classgui__framework_1_1_base_component.html#adadba923c5fcc012ce8b50e592080bcdadbd73c2b545209688ed794c0d5413d5a',1,'gui_framework::BaseComponent']]]
+  ['ok_1668',['ok',['../classgui__framework_1_1_base_dialog_box.html#a4c390f225765a7ff69983db9d232b6e3a444bcb3a3fcf8389296c49467f27e1d6',1,'gui_framework::BaseDialogBox::ok()'],['../classgui__framework_1_1_base_dialog_box.html#a66c5cb34004ac273196f855bf18afbfaa444bcb3a3fcf8389296c49467f27e1d6',1,'gui_framework::BaseDialogBox::ok()']]],
+  ['okcancel_1669',['okCancel',['../classgui__framework_1_1_base_dialog_box.html#a4c390f225765a7ff69983db9d232b6e3abccf6956c3986ad9ca27a6241114800d',1,'gui_framework::BaseDialogBox']]]
 ];

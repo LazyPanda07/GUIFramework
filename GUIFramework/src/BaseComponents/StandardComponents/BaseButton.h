@@ -16,11 +16,11 @@ namespace gui_framework
 	public:
 		BaseButton(const std::wstring& buttonName, const std::wstring& buttonText, const utility::ComponentSettings& settings, BaseComponent* parent, const std::function<LRESULT(WPARAM, LPARAM)>& onClick = nullptr);
 
-		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) final;
-
 		virtual void setOnClick(const std::function<LRESULT(WPARAM, LPARAM)>& onClick) final;
 
 		virtual const std::function<LRESULT(WPARAM, LPARAM)>& getOnClick() const final;
+
+		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
 
 		/// @brief Not implemented
 		/// @param red 

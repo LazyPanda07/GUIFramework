@@ -13,6 +13,16 @@ using namespace std;
 
 namespace gui_framework
 {
+	void BaseComponent::runFunctionAsync(const function<void()>& callable, const function<void()>& callback) noexcept
+	{
+		GUIFramework::get().addTask(callable, callback);
+	}
+
+	void BaseComponent::runFunctionAsync(function<void()>&& callable, const function<void()>& callback) noexcept
+	{
+		GUIFramework::get().addTask(move(callable), callback);
+	}
+
 	LRESULT BaseComponent::preWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
 	{
 		isUsed = false;

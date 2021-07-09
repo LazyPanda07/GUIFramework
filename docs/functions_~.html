@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.2</span>
+   &#160;<span id="projectnumber">0.3</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -93,13 +93,21 @@ $(document).ready(function(){initNavTree('functions_~.html',''); initResizable()
 , <a class="el" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_drop_down_combo_box_01_4.html#a854f5d6f66f53ef51f114763912ad5ef">gui_framework::utility::AdditionalCreationData&lt; DropDownComboBox &gt;</a>
 , <a class="el" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_drop_down_list_combo_box_01_4.html#a175b6407b3b8e8e0420ef94db65dec11">gui_framework::utility::AdditionalCreationData&lt; DropDownListComboBox &gt;</a>
 , <a class="el" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_edit_control_01_4.html#aa173ce17f29964f111b83dfb1fb55fcd">gui_framework::utility::AdditionalCreationData&lt; EditControl &gt;</a>
+, <a class="el" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_icon_list_view_01_4.html#a38237bdc02a8351f0402a9f9b3da2106">gui_framework::utility::AdditionalCreationData&lt; IconListView &gt;</a>
+, <a class="el" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_infinite_progress_bar_01_4.html#a2fb2762b8f23867a240d9a7147d86720">gui_framework::utility::AdditionalCreationData&lt; InfiniteProgressBar &gt;</a>
 , <a class="el" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_list_box_01_4.html#afaef22f7e914aa8a7f09b2e3ad226d3a">gui_framework::utility::AdditionalCreationData&lt; ListBox &gt;</a>
+, <a class="el" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_list_icon_list_view_01_4.html#a4528b1865ba810016bdf1981f7aeb96c">gui_framework::utility::AdditionalCreationData&lt; ListIconListView &gt;</a>
+, <a class="el" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_list_text_icon_list_view_01_4.html#a939f7ab984638b16d1e97cdf3768da37">gui_framework::utility::AdditionalCreationData&lt; ListTextIconListView &gt;</a>
+, <a class="el" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_list_text_list_view_01_4.html#ab4dc4d6ac16f1381f21046135d577648">gui_framework::utility::AdditionalCreationData&lt; ListTextListView &gt;</a>
 , <a class="el" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_multiple_select_list_box_01_4.html#aaa44126b5c99eb4d4b1efd35e55ffa34">gui_framework::utility::AdditionalCreationData&lt; MultipleSelectListBox &gt;</a>
+, <a class="el" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_progress_bar_01_4.html#a8ace9c33e3a65d050819ef28e68a9724">gui_framework::utility::AdditionalCreationData&lt; ProgressBar &gt;</a>
 , <a class="el" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_rich_edit_01_4.html#a19b9a8a32b00b9961a89b449aeb5eb93">gui_framework::utility::AdditionalCreationData&lt; RichEdit &gt;</a>
 , <a class="el" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_separate_window_01_4.html#a9a03f3305fa30c8b9974788cb2655460">gui_framework::utility::AdditionalCreationData&lt; SeparateWindow &gt;</a>
 , <a class="el" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_simple_combo_box_01_4.html#a8701f379f874757b8f06bcceedef7008">gui_framework::utility::AdditionalCreationData&lt; SimpleComboBox &gt;</a>
 , <a class="el" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_static_control_01_4.html#a050544b092474c5dd43b1b21b073b682">gui_framework::utility::AdditionalCreationData&lt; StaticControl &gt;</a>
 , <a class="el" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_tab_control_01_4.html#a593290c353588629ed08fbf42346952b">gui_framework::utility::AdditionalCreationData&lt; TabControl &gt;</a>
+, <a class="el" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_text_icon_list_view_01_4.html#a920f2bb30e50160d8141d04292d07ccb">gui_framework::utility::AdditionalCreationData&lt; TextIconListView &gt;</a>
+, <a class="el" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_text_list_view_01_4.html#a0abb7e0da1b1a08f46a9a4c71a8fa8b7">gui_framework::utility::AdditionalCreationData&lt; TextListView &gt;</a>
 </li>
 <li>~BaseButton()
 : <a class="el" href="classgui__framework_1_1_base_button.html#aaccdf27d78ea7e370c485855d6f441a7">gui_framework::BaseButton</a>
@@ -128,8 +136,32 @@ $(document).ready(function(){initNavTree('functions_~.html',''); initResizable()
 <li>~BaseGUIFrameworkException()
 : <a class="el" href="classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception.html#a7c5106402c82a6919b0c92cc24301699">gui_framework::exceptions::BaseGUIFrameworkException</a>
 </li>
+<li>~BaseIconListView()
+: <a class="el" href="classgui__framework_1_1_base_icon_list_view.html#abb123b8406d54d74b3ea41a95f8ef7b2">gui_framework::BaseIconListView</a>
+</li>
+<li>~BaseInfiniteProgressBar()
+: <a class="el" href="classgui__framework_1_1_base_infinite_progress_bar.html#ab700390fc2a72239f5ab2fef6c2bd1a6">gui_framework::BaseInfiniteProgressBar</a>
+</li>
 <li>~BaseListBox()
 : <a class="el" href="classgui__framework_1_1_base_list_box.html#ad6adedd3e23a0dda370e6f5d8efc515c">gui_framework::BaseListBox</a>
+</li>
+<li>~BaseListIconListView()
+: <a class="el" href="classgui__framework_1_1_base_list_icon_list_view.html#ac804462a17ec3549fb8d5c99b1686d94">gui_framework::BaseListIconListView</a>
+</li>
+<li>~BaseListListView()
+: <a class="el" href="classgui__framework_1_1_base_list_list_view.html#ab3ab3e1e98b2140ee7be9dd5a3e3a5c6">gui_framework::BaseListListView</a>
+</li>
+<li>~BaseListTextIconListView()
+: <a class="el" href="classgui__framework_1_1_base_list_text_icon_list_view.html#a990f19396167c25b9b62f9a5e67c3a1a">gui_framework::BaseListTextIconListView</a>
+</li>
+<li>~BaseListTextListView()
+: <a class="el" href="classgui__framework_1_1_base_list_text_list_view.html#a25c1020ac86a1106d168fa374eabdc54">gui_framework::BaseListTextListView</a>
+</li>
+<li>~BaseListView()
+: <a class="el" href="classgui__framework_1_1_base_list_view.html#a172b1e719c996e0d4b560949cf487af7">gui_framework::BaseListView</a>
+</li>
+<li>~BaseLoadableHolder()
+: <a class="el" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a1a91a985361b1940f3c9837dc4ce8ca4">gui_framework::utility::BaseLoadableHolder</a>
 </li>
 <li>~BaseMenuItem()
 : <a class="el" href="classgui__framework_1_1_base_menu_item.html#ac049115e5f32a746dd35df04df785ad2">gui_framework::BaseMenuItem</a>
@@ -142,6 +174,9 @@ $(document).ready(function(){initNavTree('functions_~.html',''); initResizable()
 </li>
 <li>~BaseNonResizableComposite()
 : <a class="el" href="classgui__framework_1_1_base_non_resizable_composite.html#a6c50979d634a736785487b54b9284f6b">gui_framework::BaseNonResizableComposite</a>
+</li>
+<li>~BaseProgressBar()
+: <a class="el" href="classgui__framework_1_1_base_progress_bar.html#abd28f0164224d2d816cc23e7ac12fe46">gui_framework::BaseProgressBar</a>
 </li>
 <li>~BaseResizableComponent()
 : <a class="el" href="classgui__framework_1_1_base_resizable_component.html#adc0820acc34e7f63fe5576bbfa564ba0">gui_framework::BaseResizableComponent</a>
@@ -159,7 +194,13 @@ $(document).ready(function(){initNavTree('functions_~.html',''); initResizable()
 : <a class="el" href="classgui__framework_1_1_base_static_control.html#a9ded285b24f4d1b7f532bfa9dac04891">gui_framework::BaseStaticControl</a>
 </li>
 <li>~BaseTabControl()
-: <a class="el" href="classgui__framework_1_1_base_tab_control.html#a4b68ec6e4a00fd7bbd7a34c540acfb12">gui_framework::BaseTabControl</a>
+: <a class="el" href="classgui__framework_1_1_base_tab_control.html#a6d7e78ee515467d152f0519a842fc0e2">gui_framework::BaseTabControl</a>
+</li>
+<li>~BaseTextIconListView()
+: <a class="el" href="classgui__framework_1_1_base_text_icon_list_view.html#a659f4b4664ba8b2c5b01b05a9a9e50f7">gui_framework::BaseTextIconListView</a>
+</li>
+<li>~BaseTextListView()
+: <a class="el" href="classgui__framework_1_1_base_text_list_view.html#ad3955f99452963a7fa75cc09768f0710">gui_framework::BaseTextListView</a>
 </li>
 <li>~BaseWindow()
 : <a class="el" href="classgui__framework_1_1_base_window.html#a9e7ef6f954af0c728a81afa2f1e29222">gui_framework::BaseWindow</a>
@@ -184,6 +225,9 @@ $(document).ready(function(){initNavTree('functions_~.html',''); initResizable()
 </li>
 <li>~const_forward_iterator()
 : <a class="el" href="classgui__framework_1_1iterators_1_1const__forward__iterator.html#a0d61f3c86d51d235389153d5cfca7e42">gui_framework::iterators::const_forward_iterator</a>
+</li>
+<li>~CursorHolder()
+: <a class="el" href="classgui__framework_1_1utility_1_1_cursor_holder.html#aac89b6b23b20074959357a28b6e74737">gui_framework::utility::CursorHolder</a>
 </li>
 <li>~DialogBox()
 : <a class="el" href="classgui__framework_1_1_dialog_box.html#a9e4a6c11ef1701862769542682f0918a">gui_framework::DialogBox</a>
@@ -227,11 +271,44 @@ $(document).ready(function(){initNavTree('functions_~.html',''); initResizable()
 <li>~IBaseForwardIterator()
 : <a class="el" href="classgui__framework_1_1interfaces_1_1_i_base_forward_iterator.html#a790baa9ab3843539b1fb16386da62db5">gui_framework::interfaces::IBaseForwardIterator&lt; T, IBaseConstIteratorSubclass &gt;</a>
 </li>
+<li>~IBaseListViewOperations()
+: <a class="el" href="classgui__framework_1_1interfaces_1_1_i_base_list_view_operations.html#a19fa5d921fb9e0eaf3531b732e3ed276">gui_framework::interfaces::IBaseListViewOperations</a>
+</li>
+<li>~IconListView()
+: <a class="el" href="classgui__framework_1_1_icon_list_view.html#ae26be4f28a395c53072aec69cd51f0bc">gui_framework::IconListView</a>
+</li>
+<li>~IconListViewCreator()
+: <a class="el" href="classgui__framework_1_1utility_1_1_icon_list_view_creator.html#a5a997d46222211e09b0ba28785c73c51">gui_framework::utility::IconListViewCreator</a>
+</li>
+<li>~IconsHolder()
+: <a class="el" href="classgui__framework_1_1utility_1_1_icons_holder.html#a42946ffb89d0ce1cfdcf04e899b74c6b">gui_framework::utility::IconsHolder</a>
+</li>
+<li>~IIconListView()
+: <a class="el" href="classgui__framework_1_1interfaces_1_1_i_icon_list_view.html#a4abb309a4e81677e02cd0a9638d5affb">gui_framework::interfaces::IIconListView</a>
+</li>
+<li>~ImagesHolder()
+: <a class="el" href="classgui__framework_1_1utility_1_1_images_holder.html#a1f5ede9abf061b9fd6503d064e132e4c">gui_framework::utility::ImagesHolder</a>
+</li>
 <li>~IMenuItem()
 : <a class="el" href="classgui__framework_1_1interfaces_1_1_i_menu_item.html#a2dc53e1815a296c8e3b07507d31b5433">gui_framework::interfaces::IMenuItem</a>
 </li>
+<li>~InfiniteProgressBar()
+: <a class="el" href="classgui__framework_1_1_infinite_progress_bar.html#a9a0de80a954e985255897e5e8055f3a2">gui_framework::InfiniteProgressBar</a>
+</li>
+<li>~InfiniteProgressBarCreator()
+: <a class="el" href="classgui__framework_1_1utility_1_1_infinite_progress_bar_creator.html#a15472f843e4f9edf44cb7d56338cef34">gui_framework::utility::InfiniteProgressBarCreator</a>
+</li>
+<li>~IProgressBarColor()
+: <a class="el" href="classgui__framework_1_1interfaces_1_1_i_progress_bar_color.html#aa0d388e5870650f7c559de1294bd012b">gui_framework::interfaces::IProgressBarColor</a>
+</li>
 <li>~IResizableComponent()
 : <a class="el" href="classgui__framework_1_1interfaces_1_1_i_resizable_component.html#af8076c433950f9187a9bf54607cb1746">gui_framework::interfaces::IResizableComponent</a>
+</li>
+<li>~ITextIconListView()
+: <a class="el" href="classgui__framework_1_1interfaces_1_1_i_text_icon_list_view.html#aa479e1914b44bbf25aaf772f154c7a8e">gui_framework::interfaces::ITextIconListView</a>
+</li>
+<li>~ITextListView()
+: <a class="el" href="classgui__framework_1_1interfaces_1_1_i_text_list_view.html#a7d74c02d0b6479de75b071f59c3a7931">gui_framework::interfaces::ITextListView</a>
 </li>
 <li>~ITextOperations()
 : <a class="el" href="classgui__framework_1_1interfaces_1_1_i_text_operations.html#a120e78646e9bf11daf956842ca9cb534">gui_framework::interfaces::ITextOperations</a>
@@ -241,6 +318,24 @@ $(document).ready(function(){initNavTree('functions_~.html',''); initResizable()
 </li>
 <li>~ListBoxCreator()
 : <a class="el" href="classgui__framework_1_1utility_1_1_list_box_creator.html#aec02342ba7d1eed7667b27c737aa43c2">gui_framework::utility::ListBoxCreator</a>
+</li>
+<li>~ListIconListView()
+: <a class="el" href="classgui__framework_1_1_list_icon_list_view.html#a158d5cb10e4b5fe1fc520ccc76a9e6f3">gui_framework::ListIconListView</a>
+</li>
+<li>~ListIconListViewCreator()
+: <a class="el" href="classgui__framework_1_1utility_1_1_list_icon_list_view_creator.html#ada0fbff252ee85766d070edcc29c2a05">gui_framework::utility::ListIconListViewCreator</a>
+</li>
+<li>~ListTextIconListView()
+: <a class="el" href="classgui__framework_1_1_list_text_icon_list_view.html#a09963ca54b00d416b24a4824ed7cdcba">gui_framework::ListTextIconListView</a>
+</li>
+<li>~ListTextIconListViewCreator()
+: <a class="el" href="classgui__framework_1_1utility_1_1_list_text_icon_list_view_creator.html#a0e660a4f7412bbcf49fed5396552a82d">gui_framework::utility::ListTextIconListViewCreator</a>
+</li>
+<li>~ListTextListView()
+: <a class="el" href="classgui__framework_1_1_list_text_list_view.html#adc83883a412504ef3671b3e370ebb63f">gui_framework::ListTextListView</a>
+</li>
+<li>~ListTextListViewCreator()
+: <a class="el" href="classgui__framework_1_1utility_1_1_list_text_list_view_creator.html#a57c6ffc192a70873bf7c0867c42e1500">gui_framework::utility::ListTextListViewCreator</a>
 </li>
 <li>~Menu()
 : <a class="el" href="classgui__framework_1_1_menu.html#ab982318126cbd7d4d8d5de969a176d2b">gui_framework::Menu</a>
@@ -256,6 +351,12 @@ $(document).ready(function(){initNavTree('functions_~.html',''); initResizable()
 </li>
 <li>~NotImplemented()
 : <a class="el" href="classgui__framework_1_1exceptions_1_1_not_implemented.html#a7ccba471027a17ca6805f8f175b46ff7">gui_framework::exceptions::NotImplemented</a>
+</li>
+<li>~ProgressBar()
+: <a class="el" href="classgui__framework_1_1_progress_bar.html#ac22526e0035642d1f45df61b1ca76921">gui_framework::ProgressBar</a>
+</li>
+<li>~ProgressBarCreator()
+: <a class="el" href="classgui__framework_1_1utility_1_1_progress_bar_creator.html#a5dc658f6d0a3dc114fa6f213a92d4112">gui_framework::utility::ProgressBarCreator</a>
 </li>
 <li>~RichEdit()
 : <a class="el" href="classgui__framework_1_1_rich_edit.html#aecd8f5ee62bcab4d4cd08963457a19eb">gui_framework::RichEdit</a>
@@ -292,6 +393,18 @@ $(document).ready(function(){initNavTree('functions_~.html',''); initResizable()
 </li>
 <li>~tabData()
 : <a class="el" href="structgui__framework_1_1_base_tab_control_1_1tab_data.html#ac0bda1a9ce7790efad750cc663d0aa36">gui_framework::BaseTabControl::tabData</a>
+</li>
+<li>~TextIconListView()
+: <a class="el" href="classgui__framework_1_1_text_icon_list_view.html#ada1a3c678c7f29b463dc261c2a15d097">gui_framework::TextIconListView</a>
+</li>
+<li>~TextIconListViewCreator()
+: <a class="el" href="classgui__framework_1_1utility_1_1_text_icon_list_view_creator.html#a630c8beb4f330f265af52499e2ea803d">gui_framework::utility::TextIconListViewCreator</a>
+</li>
+<li>~TextListView()
+: <a class="el" href="classgui__framework_1_1_text_list_view.html#a0fa177e5c0c60f013367491ec824b739">gui_framework::TextListView</a>
+</li>
+<li>~TextListViewCreator()
+: <a class="el" href="classgui__framework_1_1utility_1_1_text_list_view_creator.html#a84c4c8cc95e8db7dfe2269d1d672697f">gui_framework::utility::TextListViewCreator</a>
 </li>
 <li>~WindowHolder()
 : <a class="el" href="classgui__framework_1_1_window_holder.html#a1deade9a80e7417cf9a959932f5d4e32">gui_framework::WindowHolder</a>

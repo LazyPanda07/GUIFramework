@@ -30,6 +30,6 @@ namespace gui_framework
 
 		SendMessageW(handle, LVM_SETTEXTCOLOR, NULL, static_cast<LPARAM>(textColor));
 
-		SendMessageW(handle, LVM_SETTEXTBKCOLOR, NULL, static_cast<LPARAM>(textColor));
+		SendMessageW(handle, LVM_SETTEXTBKCOLOR, NULL, static_cast<LPARAM>(backgroundColor));
 	}
 }

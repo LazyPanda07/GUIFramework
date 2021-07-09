@@ -120,13 +120,6 @@ namespace gui_framework
 		FreeLibrary(msftEditModule);
 	}
 
-	GUIFramework& GUIFramework::get()
-	{
-		static GUIFramework instance;
-
-		return instance;
-	}
-
 	void GUIFramework::addTask(const function<void()>& task, const function<void()>& callback)
 	{
 		threadPool.addTask(task, callback);

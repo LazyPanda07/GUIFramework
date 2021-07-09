@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['left_1215',['left',['../classgui__framework_1_1_dialog_box_1_1_dialog_box_builder.html#a1911e5452e9eee157a71b4e1db7e85e8a811882fecd5c7618d7099ebbd39ea254',1,'gui_framework::DialogBox::DialogBoxBuilder']]],
-  ['leftbuttondoubleclick_1216',['leftButtonDoubleClick',['../classgui__framework_1_1_base_rich_edit.html#abf55c644c6c2640d8c662dd7179ab1f3abca11f8623dfd825b9aa4058d193709a',1,'gui_framework::BaseRichEdit']]],
-  ['leftbuttondown_1217',['leftButtonDown',['../classgui__framework_1_1_base_rich_edit.html#abf55c644c6c2640d8c662dd7179ab1f3a12a162236859b4749ecf721f178833ae',1,'gui_framework::BaseRichEdit']]],
-  ['leftbuttonup_1218',['leftButtonUp',['../classgui__framework_1_1_base_rich_edit.html#abf55c644c6c2640d8c662dd7179ab1f3a51e37c2a30bc9e0e837693ca897b8cf9',1,'gui_framework::BaseRichEdit']]]
+  ['icon_1660',['icon',['../classgui__framework_1_1utility_1_1_base_loadable_holder.html#a4a51f316eaed8d199b7faa998ca407bfabaec6461b0d69dde1b861aefbe375d8a',1,'gui_framework::utility::BaseLoadableHolder::icon()'],['../namespacegui__framework_1_1utility.html#a4bd7b1a1121bbfb16d0a1f9b4ba266deabaec6461b0d69dde1b861aefbe375d8a',1,'gui_framework::utility::icon()']]],
+  ['ignore_1661',['ignore',['../classgui__framework_1_1_base_dialog_box.html#a66c5cb34004ac273196f855bf18afbfaa567bc1d268f135496de3d5b946b691f3',1,'gui_framework::BaseDialogBox']]]
 ];

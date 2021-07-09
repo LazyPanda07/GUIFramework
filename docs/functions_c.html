@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.2</span>
+   &#160;<span id="projectnumber">0.3</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -142,6 +142,9 @@ $(document).ready(function(){initNavTree('functions_c.html',''); initResizable()
 <li>const_forward_iterator()
 : <a class="el" href="classgui__framework_1_1iterators_1_1const__forward__iterator.html#a00a19287e1bd1e1eb8b76a335fdc4fae">gui_framework::iterators::const_forward_iterator</a>
 </li>
+<li>contains()
+: <a class="el" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#af7366ac11649ec567ce5b3759ee39430">gui_framework::utility::BaseLoadableHolder</a>
+</li>
 <li>create()
 : <a class="el" href="classgui__framework_1_1utility_1_1_base_component_creator.html#aeaa7ee0d2ab4fce02d1f499992209281">gui_framework::utility::BaseComponentCreator</a>
 , <a class="el" href="classgui__framework_1_1utility_1_1_button_creator.html#a8130384a18b21998ecc4f5accde862e8">gui_framework::utility::ButtonCreator</a>
@@ -149,13 +152,21 @@ $(document).ready(function(){initNavTree('functions_c.html',''); initResizable()
 , <a class="el" href="classgui__framework_1_1utility_1_1_drop_down_combo_box_creator.html#a5d8bd47c9e5a3f0a4071018fd7fff245">gui_framework::utility::DropDownComboBoxCreator</a>
 , <a class="el" href="classgui__framework_1_1utility_1_1_drop_down_list_combo_box_creator.html#a337ce2d9339114de3f436c7d7df41ae0">gui_framework::utility::DropDownListComboBoxCreator</a>
 , <a class="el" href="classgui__framework_1_1utility_1_1_edit_control_creator.html#ae752c5b358558560b06a35a6a805a571">gui_framework::utility::EditControlCreator</a>
+, <a class="el" href="classgui__framework_1_1utility_1_1_icon_list_view_creator.html#a16e24408f4b822d76b53cd70f6dbf89b">gui_framework::utility::IconListViewCreator</a>
+, <a class="el" href="classgui__framework_1_1utility_1_1_infinite_progress_bar_creator.html#a7a7645a3c6eafe9fe30d521037ea721e">gui_framework::utility::InfiniteProgressBarCreator</a>
 , <a class="el" href="classgui__framework_1_1utility_1_1_list_box_creator.html#ab98fd1a50f82b79e6340585907ad2d58">gui_framework::utility::ListBoxCreator</a>
+, <a class="el" href="classgui__framework_1_1utility_1_1_list_icon_list_view_creator.html#a99de1dada5cd457cee023c97316661bd">gui_framework::utility::ListIconListViewCreator</a>
+, <a class="el" href="classgui__framework_1_1utility_1_1_list_text_icon_list_view_creator.html#a3d048e5b86b799c02ac3a9babbcafd80">gui_framework::utility::ListTextIconListViewCreator</a>
+, <a class="el" href="classgui__framework_1_1utility_1_1_list_text_list_view_creator.html#a028cb7503a429509930b76971cdaa859">gui_framework::utility::ListTextListViewCreator</a>
 , <a class="el" href="classgui__framework_1_1utility_1_1_multiple_select_list_box_creator.html#a2930ce629cd375d84f4b34a4ea9478ed">gui_framework::utility::MultipleSelectListBoxCreator</a>
+, <a class="el" href="classgui__framework_1_1utility_1_1_progress_bar_creator.html#ae356699e96b3d13b918071e7b3cde123">gui_framework::utility::ProgressBarCreator</a>
 , <a class="el" href="classgui__framework_1_1utility_1_1_rich_edit_creator.html#a38a427775ea7c28b69d67ccaffb14ed7">gui_framework::utility::RichEditCreator</a>
 , <a class="el" href="classgui__framework_1_1utility_1_1_separate_window_creator.html#a40544baf90e1adb38c29b912a22501af">gui_framework::utility::SeparateWindowCreator</a>
 , <a class="el" href="classgui__framework_1_1utility_1_1_simple_combo_box_creator.html#a77b96e8abff7e60b4b0911d77a6c9ca8">gui_framework::utility::SimpleComboBoxCreator</a>
 , <a class="el" href="classgui__framework_1_1utility_1_1_static_control_creator.html#aa303f1b88c63b6884943127e223b65cd">gui_framework::utility::StaticControlCreator</a>
 , <a class="el" href="classgui__framework_1_1utility_1_1_tab_control_creator.html#a102809f430a42ed0676966e99c1443de">gui_framework::utility::TabControlCreator</a>
+, <a class="el" href="classgui__framework_1_1utility_1_1_text_icon_list_view_creator.html#a324d825dc3cd8668bfef97bb9909aa9f">gui_framework::utility::TextIconListViewCreator</a>
+, <a class="el" href="classgui__framework_1_1utility_1_1_text_list_view_creator.html#a24fe337f85ecc4ccf5a7ce13f3bed06f">gui_framework::utility::TextListViewCreator</a>
 </li>
 <li>createMainMenu()
 : <a class="el" href="classgui__framework_1_1_base_component.html#a6b20b40575db0f3648c988cb49552f1d">gui_framework::BaseComponent</a>
@@ -165,6 +176,9 @@ $(document).ready(function(){initNavTree('functions_c.html',''); initResizable()
 </li>
 <li>createMessageBox()
 : <a class="el" href="classgui__framework_1_1_base_dialog_box.html#a0095a5b604559f0c22f5d734feb6372e">gui_framework::BaseDialogBox</a>
+</li>
+<li>CursorHolder()
+: <a class="el" href="classgui__framework_1_1utility_1_1_cursor_holder.html#a2aa02c475143d67255b1a4008407eaf1">gui_framework::utility::CursorHolder</a>
 </li>
 </ul>
 </div><!-- contents -->
