@@ -1,6 +1,7 @@
 #pragma once
 
 #include "BaseComponents/StandardComponents/BaseButton.h"
+#include "BaseComposites/BaseComposite.h"
 
 #pragma warning(push)
 #pragma warning(disable: 4250)
@@ -8,7 +9,7 @@
 namespace gui_framework
 {
 	/// @brief Standard group box with radio buttons
-	class GUI_FRAMEWORK_API GroupBox : public BaseButton
+	class GUI_FRAMEWORK_API GroupBox : public BaseComposite
 	{
 	private:
 		class RadioButton : public BaseButton
@@ -19,14 +20,8 @@ namespace gui_framework
 			~RadioButton() = default;
 		};
 
-	private:
-		std::vector<std::unique_ptr<RadioButton>> buttons;
-
-	private:
-		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) final override;
-
 	public:
-		GroupBox(const std::wstring& groupBoxName, const std::wstring& groupBoxText, int x, int y, uint16_t width, uint16_t height, BaseComponent* parent);
+		GroupBox(const std::wstring& groupBoxClassName, const std::wstring& groupBoxName, const std::wstring& groupBoxText, int x, int y, uint16_t width, uint16_t height, BaseComponent* parent);
 
 		virtual void addRadioButton(const std::wstring& radioButtonName, const std::wstring& radioButtonText, int x, int y, uint16_t width, uint16_t height, const std::function<void()>& onClick) final;
 
