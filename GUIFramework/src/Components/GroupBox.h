@@ -21,6 +21,22 @@ namespace gui_framework
 		};
 
 	public:
+		struct radioButtonData
+		{
+			std::wstring radioButtonName;
+			std::wstring radioButtonText;
+			int x;
+			int y;
+			uint16_t width;
+			uint16_t height;
+			std::function<void()> onClick;
+
+			radioButtonData(const std::wstring& radioButtonName, const std::wstring& radioButtonText, int x, int y, uint16_t width, uint16_t height, const std::function<void()>& onClick);
+
+			~radioButtonData() = default;
+		};
+
+	public:
 		/// @brief 
 		/// @param groupBoxClassName 
 		/// @param groupBoxName 
@@ -32,7 +48,7 @@ namespace gui_framework
 		/// @param groupBoxFunctionName Value that you pass in CREATE_DEFAULT_WINDOW_FUNCTION macro
 		GroupBox(const std::wstring& groupBoxClassName, const std::wstring& groupBoxName, int x, int y, uint16_t width, uint16_t height, BaseComponent* parent, const std::string& groupBoxFunctionName);
 
-		virtual void addRadioButton(const std::wstring& radioButtonName, const std::wstring& radioButtonText, int x, int y, uint16_t width, uint16_t height, const std::function<void()>& onClick) final;
+		void addRadioButton(const radioButtonData& data);
 
 		~GroupBox() = default;
 	};

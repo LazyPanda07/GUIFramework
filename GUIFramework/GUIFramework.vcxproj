@@ -29,6 +29,7 @@
   <ItemGroup>
     <ClInclude Include="src\BaseComponents\BaseComponent.h" />
     <ClInclude Include="src\BaseComponents\Creators\CheckBoxCreator.h" />
+    <ClInclude Include="src\BaseComponents\Creators\GroupBoxCreator.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseCheckBox.h" />
     <ClInclude Include="src\BaseComponents\Creators\ChildWindowCreator.h" />
     <ClInclude Include="src\BaseComponents\Creators\DropDownComboBoxCreator.h" />
@@ -50,6 +51,7 @@
     <ClInclude Include="src\BaseComponents\Creators\StaticControlCreator.h" />
     <ClInclude Include="src\BaseComponents\Creators\TabControlCreator.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseProgressBar.h" />
+    <ClInclude Include="src\BaseComponents\StandardComponents\BaseTrackbarControl.h" />
     <ClInclude Include="src\Components\GroupBox.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseIconListView.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseInfiniteProgressBar.h" />
@@ -71,6 +73,8 @@
     <ClInclude Include="src\Components\ListView\TextListView.h" />
     <ClInclude Include="src\Components\ProgressBar.h" />
     <ClInclude Include="src\Components\TabControl.h" />
+    <ClInclude Include="src\Components\Trackbar\HorizontalTrackbarControl.h" />
+    <ClInclude Include="src\Components\Trackbar\VerticalTrackbarControl.h" />
     <ClInclude Include="src\Composites\AdditionalCreationData\AdditionalCreationData.h" />
     <ClInclude Include="src\BaseComponents\Creators\BaseComponentCreator.h" />
     <ClInclude Include="src\BaseComponents\Creators\ButtonCreator.h" />
@@ -105,6 +109,7 @@
     <ClInclude Include="src\Composites\AdditionalCreationData\ChildWindowAdditionalCreationData.h" />
     <ClInclude Include="src\Composites\AdditionalCreationData\ComboBoxAdditionalCreationData.h" />
     <ClInclude Include="src\Composites\AdditionalCreationData\EditControlAdditionalCreationData.h" />
+    <ClInclude Include="src\Composites\AdditionalCreationData\GroupBoxAdditionalCreationData.h" />
     <ClInclude Include="src\Composites\AdditionalCreationData\IconListViewAdditionalCreationData.h" />
     <ClInclude Include="src\Composites\AdditionalCreationData\ListBoxAdditionalCreationData.h" />
     <ClInclude Include="src\Composites\AdditionalCreationData\ProgressBarAdditionalCreationData.h" />
@@ -155,6 +160,7 @@
   <ItemGroup>
     <ClCompile Include="src\BaseComponents\BaseComponent.cpp" />
     <ClCompile Include="src\BaseComponents\Creators\CheckBoxCreator.cpp" />
+    <ClCompile Include="src\BaseComponents\Creators\GroupBoxCreator.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseCheckBox.cpp" />
     <ClCompile Include="src\BaseComponents\Creators\ButtonCreator.cpp" />
     <ClCompile Include="src\BaseComponents\Creators\ChildWindowCreator.cpp" />
@@ -181,6 +187,7 @@
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseEditControl.cpp" />
     <ClCompile Include="src\BaseComponents\BaseNonResizableComponent.cpp" />
     <ClCompile Include="src\BaseComponents\BaseResizableComponent.cpp" />
+    <ClCompile Include="src\BaseComponents\StandardComponents\BaseTrackbarControl.cpp" />
     <ClCompile Include="src\Components\GroupBox.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseInfiniteProgressBar.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseListBox.cpp" />
@@ -225,10 +232,13 @@
     <ClCompile Include="src\Components\EditControl.cpp" />
     <ClCompile Include="src\Components\StaticControl.cpp" />
     <ClCompile Include="src\Components\TabControl.cpp" />
+    <ClCompile Include="src\Components\Trackbar\HorizontalTrackbarControl.cpp" />
+    <ClCompile Include="src\Components\Trackbar\VerticalTrackbarControl.cpp" />
     <ClCompile Include="src\Composites\AdditionalCreationData\ButtonAdditionalCreationData.cpp" />
     <ClCompile Include="src\Composites\AdditionalCreationData\ChildWindowAdditionalCreationData.cpp" />
     <ClCompile Include="src\Composites\AdditionalCreationData\ComboBoxAdditionalCreationData.cpp" />
     <ClCompile Include="src\Composites\AdditionalCreationData\EditControlAdditionalCreationData.cpp" />
+    <ClCompile Include="src\Composites\AdditionalCreationData\GroupBoxAdditionalCreationData.cpp" />
     <ClCompile Include="src\Composites\AdditionalCreationData\IconListViewAdditionalCreationData.cpp" />
     <ClCompile Include="src\Composites\AdditionalCreationData\ListBoxAdditionalCreationData.cpp" />
     <ClCompile Include="src\Composites\AdditionalCreationData\ProgressBarAdditionalCreationData.cpp" />
