@@ -14,12 +14,12 @@ namespace gui_framework
 		{
 		protected:
 			std::wstring text;
-			std::function<LRESULT(WPARAM, LPARAM)> onClick;
+			std::function<void()> onClick;
 
 		public:
 			AdditionalCreationData() = default;
 
-			AdditionalCreationData(const std::wstring text, const std::function<LRESULT(WPARAM, LPARAM)>& onClick);
+			AdditionalCreationData(const std::wstring text, const std::function<void()>& onClick);
 
 			virtual std::any getData() const;
 
@@ -32,14 +32,14 @@ namespace gui_framework
 		{
 		protected:
 			std::wstring text;
-			std::function<LRESULT(WPARAM, LPARAM)> onCheck;
-			std::function<LRESULT(WPARAM, LPARAM)> onClear;
-			std::function<LRESULT(WPARAM, LPARAM)> onClick;
+			std::function<void()> onCheck;
+			std::function<void()> onClear;
+			std::function<void()> onClick;
 
 		public:
 			AdditionalCreationData() = default;
 
-			AdditionalCreationData(const std::wstring text, const std::function<LRESULT(WPARAM, LPARAM)>& onCheck, const std::function<LRESULT(WPARAM, LPARAM)>& onClear, const std::function<LRESULT(WPARAM, LPARAM)>& onClick = nullptr);
+			AdditionalCreationData(const std::wstring text, const std::function<void()>& onCheck, const std::function<void()>& onClear, const std::function<void()>& onClick = nullptr);
 
 			virtual std::any getData() const;
 

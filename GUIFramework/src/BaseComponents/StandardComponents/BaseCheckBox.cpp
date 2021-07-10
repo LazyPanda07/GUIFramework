@@ -5,7 +5,42 @@ using namespace std;
 
 namespace gui_framework
 {
-	BaseCheckBox::BaseCheckBox(const wstring& checkBoxName, const wstring& checkBoxText, const utility::ComponentSettings& settings, BaseComponent* parent, const function<LRESULT(WPARAM, LPARAM)>& onCheck, const function<LRESULT(WPARAM, LPARAM)>& onClear, const function<LRESULT(WPARAM, LPARAM)>& onClick) :
+	LRESULT BaseCheckBox::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
+	{
+		if (message == WM_COMMAND && id == LOWORD(wparam))
+		{
+			isUsed = true;
+
+			LRESULT state = SendMessageW(this->handle, BM_GETCHECK, NULL, NULL);
+
+			SendMessageW(this->handle, BM_SETCHECK, !state, NULL);
+
+			if (onClear && state == BST_CHECKED)
+			{
+				onClear();
+
+				return 0;
+			}
+			else if (onCheck && state == BST_UNCHECKED)
+			{
+				onCheck();
+
+				return 0;
+			}
+			else if (onClick)
+			{
+				onClick();
+
+				return 0;
+			}
+		}
+
+		isUsed = false;
+
+		return -1;
+	}
+
+	BaseCheckBox::BaseCheckBox(const wstring& checkBoxName, const wstring& checkBoxText, const utility::ComponentSettings& settings, BaseComponent* parent, const function<void()>& onCheck, const function<void()>& onClear, const function<void()>& onClick) :
 		BaseComponent
 		(
 			wstring(standard_classes::button),
@@ -43,52 +78,23 @@ namespace gui_framework
 
 	}
 
-	void BaseCheckBox::setOnCheck(const function<LRESULT(WPARAM, LPARAM)>& onCheck)
+	void BaseCheckBox::setOnCheck(const function<void()>& onCheck)
 	{
 		this->onCheck = onCheck;
 	}
 
-	void BaseCheckBox::setOnClear(const function<LRESULT(WPARAM, LPARAM)>& onClear)
+	void BaseCheckBox::setOnClear(const function<void()>& onClear)
 	{
 		this->onClear = onClear;
 	}
 
-	const function<LRESULT(WPARAM, LPARAM)>& BaseCheckBox::getOnCheck() const
+	const function<void()>& BaseCheckBox::getOnCheck() const
 	{
 		return onCheck;
 	}
 
-	const function<LRESULT(WPARAM, LPARAM)>& BaseCheckBox::getOnClear() const
+	const function<void()>& BaseCheckBox::getOnClear() const
 	{
 		return onClear;
-	}
-
-	LRESULT BaseCheckBox::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
-	{
-		if (message == WM_COMMAND && id == LOWORD(wparam))
-		{
-			isUsed = true;
-
-			LRESULT state = SendMessageW(this->handle, BM_GETCHECK, NULL, NULL);
-
-			SendMessageW(this->handle, BM_SETCHECK, !state, NULL);
-
-			if (onClear && state == BST_CHECKED)
-			{
-				return onClear(wparam, lparam);
-			}
-			else if (onCheck && state == BST_UNCHECKED)
-			{
-				return onCheck(wparam, lparam);
-			}
-			else if (onClick)
-			{
-				return onClick(wparam, lparam);
-			}
-		}
-
-		isUsed = false;
-
-		return -1;
 	}
 }
