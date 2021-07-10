@@ -4,7 +4,7 @@
 
 namespace gui_framework
 {
-	class GUI_FRAMEWORK_API BaseTrackbarControl : virtual public BaseComponent
+	class GUI_FRAMEWORK_API BaseTrackbarControl : public BaseComponent
 	{
 	public:
 		BaseTrackbarControl(const std::wstring& trackbarName, const utility::ComponentSettings& settings, BaseComponent* parent);

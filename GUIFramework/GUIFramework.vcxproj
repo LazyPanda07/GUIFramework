@@ -73,6 +73,8 @@
     <ClInclude Include="src\Components\ListView\TextListView.h" />
     <ClInclude Include="src\Components\ProgressBar.h" />
     <ClInclude Include="src\Components\TabControl.h" />
+    <ClInclude Include="src\Components\Trackbar\HorizontalTrackbarControl.h" />
+    <ClInclude Include="src\Components\Trackbar\VerticalTrackbarControl.h" />
     <ClInclude Include="src\Composites\AdditionalCreationData\AdditionalCreationData.h" />
     <ClInclude Include="src\BaseComponents\Creators\BaseComponentCreator.h" />
     <ClInclude Include="src\BaseComponents\Creators\ButtonCreator.h" />
@@ -230,6 +232,8 @@
     <ClCompile Include="src\Components\EditControl.cpp" />
     <ClCompile Include="src\Components\StaticControl.cpp" />
     <ClCompile Include="src\Components\TabControl.cpp" />
+    <ClCompile Include="src\Components\Trackbar\HorizontalTrackbarControl.cpp" />
+    <ClCompile Include="src\Components\Trackbar\VerticalTrackbarControl.cpp" />
     <ClCompile Include="src\Composites\AdditionalCreationData\ButtonAdditionalCreationData.cpp" />
     <ClCompile Include="src\Composites\AdditionalCreationData\ChildWindowAdditionalCreationData.cpp" />
     <ClCompile Include="src\Composites\AdditionalCreationData\ComboBoxAdditionalCreationData.cpp" />
