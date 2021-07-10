@@ -16,6 +16,7 @@
 #include "BaseComponents/Creators/ProgressBarCreator.h"
 #include "BaseComponents/Creators/InfiniteProgressBarCreator.h"
 #include "BaseComponents/Creators/CheckBoxCreator.h"
+#include "BaseComponents/Creators/GroupBoxCreator.h"
 
 #include "BaseComponents/Creators/ListView/IconListViewCreator.h"
 #include "BaseComponents/Creators/ListView/TextListViewCreator.h"
@@ -39,6 +40,7 @@
 #include "Components/ProgressBar.h"
 #include "Components/InfiniteProgressBar.h"
 #include "Components/CheckBox.h"
+#include "Components/GroupBox.h"
 
 #include "Components/ListView/IconListView.h"
 #include "Components/ListView/TextListView.h"
@@ -82,6 +84,8 @@ namespace gui_framework
 		creators[typeid(InfiniteProgressBar).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::InfiniteProgressBarCreator());
 
 		creators[typeid(CheckBox).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::CheckBoxCreator());
+
+		creators[typeid(GroupBox).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::GroupBoxCreator());
 
 #pragma region ListViews
 		creators[typeid(IconListView).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::IconListViewCreator());
