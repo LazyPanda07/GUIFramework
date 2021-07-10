@@ -47,19 +47,9 @@ namespace gui_framework
 		SendMessageW(handle, TBM_SETSELEND, true, endPosition);
 	}
 
-	LRESULT BaseTrackbarControl::getTicksCount() const
-	{
-		return SendMessageW(handle, TBM_GETNUMTICS, NULL, NULL);
-	}
-
 	LRESULT BaseTrackbarControl::getPosition() const
 	{
 		return SendMessageW(handle, TBM_GETPOS, NULL, NULL);
-	}
-
-	LRESULT BaseTrackbarControl::getTickPosition() const
-	{
-		return SendMessageW(handle, TBM_GETTICPOS, NULL, NULL);
 	}
 
 	LRESULT BaseTrackbarControl::getMinRange() const

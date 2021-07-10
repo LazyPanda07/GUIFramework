@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "TextIconListViewCreator.h"
 
-#include "Components/ListView/TextIconListView.h"
+#include "Components/ListViews/TextIconListView.h"
 
 using namespace std;
 

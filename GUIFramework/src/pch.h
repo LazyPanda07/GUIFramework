@@ -62,6 +62,7 @@
 #include "Composites/AdditionalCreationData/TabControlAdditionalCreationData.h"
 #include "Composites/AdditionalCreationData/TextIconListViewAdditionalCreationData.h"
 #include "Composites/AdditionalCreationData/TextListViewAdditionalCreationData.h"
+#include "Composites/AdditionalCreationData/TrackbarControlAdditionalCreationData.h"
 #pragma endregion
 
 #pragma comment(linker,"\"/manifestdependency:type='win32' \

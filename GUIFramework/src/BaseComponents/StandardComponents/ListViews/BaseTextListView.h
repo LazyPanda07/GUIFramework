@@ -1,7 +1,7 @@
 #pragma once
 
 #include "BaseListView.h"
-#include "Interfaces/Components/ListView/ITextListView.h"
+#include "Interfaces/Components/ListViews/ITextListView.h"
 
 namespace gui_framework
 {

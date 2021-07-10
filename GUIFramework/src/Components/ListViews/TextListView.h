@@ -1,6 +1,6 @@
 #pragma once
 
-#include "BaseComponents/StandardComponents/ListView/BaseTextListView.h"
+#include "BaseComponents/StandardComponents/ListViews/BaseTextListView.h"
 
 namespace gui_framework
 {
