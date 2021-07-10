@@ -39,19 +39,18 @@ namespace gui_framework
 
 	}
 
-	GroupBox::GroupBox(const wstring& groupBoxName, const wstring& groupBoxText, const utility::ComponentSettings& settings, BaseComponent* parent) :
+	GroupBox::GroupBox(const wstring& groupBoxName, const wstring& groupBoxText, int x, int y, uint16_t width, uint16_t height, BaseComponent* parent) :
 		BaseComponent
 		(
+			wstring(standard_classes::button),
 			groupBoxName,
-			groupBoxText,
 			utility::ComponentSettings
 			(
-				settings.styles | BS_GROUPBOX,
-				settings.x,
-				settings.y,
-				settings.width,
-				settings.height,
-				settings.extendedStyles
+				BS_GROUPBOX,
+				x,
+				y,
+				width,
+				height
 			),
 			parent
 		),
@@ -61,12 +60,11 @@ namespace gui_framework
 			groupBoxText,
 			utility::ComponentSettings
 			(
-				settings.styles | BS_GROUPBOX,
-				settings.x,
-				settings.y,
-				settings.width,
-				settings.height,
-				settings.extendedStyles
+				BS_GROUPBOX,
+				x,
+				y,
+				width,
+				height
 			),
 			parent
 		)
