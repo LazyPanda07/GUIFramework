@@ -21,11 +21,20 @@ namespace gui_framework
 		};
 
 	public:
-		GroupBox(const std::wstring& groupBoxClassName, const std::wstring& groupBoxName, const std::wstring& groupBoxText, int x, int y, uint16_t width, uint16_t height, BaseComponent* parent);
+		/// @brief 
+		/// @param groupBoxClassName 
+		/// @param groupBoxName 
+		/// @param x 
+		/// @param y 
+		/// @param width 
+		/// @param height 
+		/// @param parent 
+		/// @param groupBoxFunctionName Value that you pass in CREATE_DEFAULT_WINDOW_FUNCTION macro
+		GroupBox(const std::wstring& groupBoxClassName, const std::wstring& groupBoxName, int x, int y, uint16_t width, uint16_t height, BaseComponent* parent, const std::string& groupBoxFunctionName);
 
 		virtual void addRadioButton(const std::wstring& radioButtonName, const std::wstring& radioButtonText, int x, int y, uint16_t width, uint16_t height, const std::function<void()>& onClick) final;
 
-		virtual ~GroupBox() = default;
+		~GroupBox() = default;
 	};
 }
 

@@ -39,7 +39,7 @@ namespace gui_framework
 
 	}
 
-	GroupBox::GroupBox(const wstring& groupBoxClassName, const wstring& groupBoxName, const wstring& groupBoxText, int x, int y, uint16_t width, uint16_t height, BaseComponent* parent) :
+	GroupBox::GroupBox(const wstring& groupBoxClassName, const wstring& groupBoxName, int x, int y, uint16_t width, uint16_t height, BaseComponent* parent, const string& groupBoxFunctionName) :
 		BaseComposite
 		(
 			groupBoxClassName,
