@@ -11,16 +11,17 @@ namespace gui_framework
 		public interfaces::ITextOperations
 	{
 	protected:
-		std::function<LRESULT(WPARAM, LPARAM)> onClick;
+		std::function<void()> onClick;
+
+	protected:
+		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
 
 	public:
-		BaseButton(const std::wstring& buttonName, const std::wstring& buttonText, const utility::ComponentSettings& settings, BaseComponent* parent, const std::function<LRESULT(WPARAM, LPARAM)>& onClick = nullptr);
+		BaseButton(const std::wstring& buttonName, const std::wstring& buttonText, const utility::ComponentSettings& settings, BaseComponent* parent, const std::function<void()>& onClick = nullptr);
 
-		virtual void setOnClick(const std::function<LRESULT(WPARAM, LPARAM)>& onClick) final;
+		virtual void setOnClick(const std::function<void()>& onClick) final;
 
-		virtual const std::function<LRESULT(WPARAM, LPARAM)>& getOnClick() const final;
-
-		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
+		virtual const std::function<void()>& getOnClick() const final;
 
 		/// @brief Not implemented
 		/// @param red 

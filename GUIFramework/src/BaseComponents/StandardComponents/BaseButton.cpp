@@ -8,7 +8,26 @@ using namespace std;
 
 namespace gui_framework
 {
-	BaseButton::BaseButton(const wstring& buttonName, const wstring& buttonText, const utility::ComponentSettings& settings, BaseComponent* parent, const function<LRESULT(WPARAM, LPARAM)>& onClick) :
+	LRESULT BaseButton::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
+	{
+		if (message == WM_COMMAND && id == LOWORD(wparam))
+		{
+			isUsed = true;
+
+			if (onClick)
+			{
+				onClick();
+
+				return 0;
+			}
+		}
+
+		isUsed = false;
+
+		return -1;
+	}
+
+	BaseButton::BaseButton(const wstring& buttonName, const wstring& buttonText, const utility::ComponentSettings& settings, BaseComponent* parent, const function<void()>& onClick) :
 		BaseComponent
 		(
 			wstring(standard_classes::button),
@@ -22,31 +41,14 @@ namespace gui_framework
 		this->setText(buttonText);
 	}
 
-	void BaseButton::setOnClick(const function<LRESULT(WPARAM, LPARAM)>& onClick)
+	void BaseButton::setOnClick(const function<void()>& onClick)
 	{
 		this->onClick = onClick;
 	}
 
-	const function<LRESULT(WPARAM, LPARAM)>& BaseButton::getOnClick() const
+	const function<void()>& BaseButton::getOnClick() const
 	{
 		return onClick;
-	}
-
-	LRESULT BaseButton::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
-	{
-		if (message == WM_COMMAND && id == LOWORD(wparam))
-		{
-			isUsed = true;
-
-			if (onClick)
-			{
-				return onClick(wparam, lparam);
-			}
-		}
-
-		isUsed = false;
-
-		return -1;
 	}
 
 	void BaseButton::setTextColor(uint8_t red, uint8_t green, uint8_t blue)

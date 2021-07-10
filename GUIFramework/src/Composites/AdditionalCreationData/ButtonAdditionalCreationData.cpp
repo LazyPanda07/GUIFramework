@@ -7,7 +7,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		AdditionalCreationData<Button>::AdditionalCreationData(const wstring text, const function<LRESULT(WPARAM, LPARAM)>& onClick) :
+		AdditionalCreationData<Button>::AdditionalCreationData(const wstring text, const function<void()>& onClick) :
 			text(text),
 			onClick(onClick)
 		{
@@ -16,10 +16,10 @@ namespace gui_framework
 
 		any AdditionalCreationData<Button>::getData() const
 		{
-			return make_any<tuple<wstring, function<LRESULT(WPARAM, LPARAM)>>>(text, onClick);
+			return make_any<tuple<wstring, function<void()>>>(text, onClick);
 		}
 
-		AdditionalCreationData<CheckBox>::AdditionalCreationData(const wstring text, const function<LRESULT(WPARAM, LPARAM)>& onCheck, const function<LRESULT(WPARAM, LPARAM)>& onClear, const function<LRESULT(WPARAM, LPARAM)>& onClick) :
+		AdditionalCreationData<CheckBox>::AdditionalCreationData(const wstring text, const function<void()>& onCheck, const function<void()>& onClear, const function<void()>& onClick) :
 			text(text),
 			onCheck(onCheck),
 			onClear(onClear),
@@ -30,7 +30,7 @@ namespace gui_framework
 
 		any AdditionalCreationData<CheckBox>::getData() const
 		{
-			return make_any<tuple<wstring, function<LRESULT(WPARAM, LPARAM)>, function<LRESULT(WPARAM, LPARAM)>, function<LRESULT(WPARAM, LPARAM)>>>(text, onCheck, onClear, onClick);
+			return make_any<tuple<wstring, function<void()>, function<void()>, function<void()>>>(text, onCheck, onClear, onClick);
 		}
 	}
 }

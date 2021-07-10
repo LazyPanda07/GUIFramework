@@ -8,21 +8,22 @@ namespace gui_framework
 	class GUI_FRAMEWORK_API BaseCheckBox : public BaseButton
 	{
 	protected:
-		std::function<LRESULT(WPARAM, LPARAM)> onCheck;
-		std::function<LRESULT(WPARAM, LPARAM)> onClear;
+		std::function<void()> onCheck;
+		std::function<void()> onClear;
+
+	private:
+		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) final override;
 
 	public:
-		BaseCheckBox(const std::wstring& checkBoxName, const std::wstring& checkBoxText, const utility::ComponentSettings& settings, BaseComponent* parent, const std::function<LRESULT(WPARAM, LPARAM)>& onCheck, const std::function<LRESULT(WPARAM, LPARAM)>& onClear, const std::function<LRESULT(WPARAM, LPARAM)>& onClick = nullptr);
+		BaseCheckBox(const std::wstring& checkBoxName, const std::wstring& checkBoxText, const utility::ComponentSettings& settings, BaseComponent* parent, const std::function<void()>& onCheck, const std::function<void()>& onClear, const std::function<void()>& onClick = nullptr);
 
-		virtual void setOnCheck(const std::function<LRESULT(WPARAM, LPARAM)>& onCheck) final;
+		virtual void setOnCheck(const std::function<void()>& onCheck) final;
 
-		virtual void setOnClear(const std::function<LRESULT(WPARAM, LPARAM)>& onClear) final;
+		virtual void setOnClear(const std::function<void()>& onClear) final;
 
-		virtual const std::function<LRESULT(WPARAM, LPARAM)>& getOnCheck() const final;
+		virtual const std::function<void()>& getOnCheck() const final;
 
-		virtual const std::function<LRESULT(WPARAM, LPARAM)>& getOnClear() const final;
-
-		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) final override;
+		virtual const std::function<void()>& getOnClear() const final;
 
 		virtual ~BaseCheckBox() = default;
 	};
