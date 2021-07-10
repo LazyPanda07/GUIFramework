@@ -52,7 +52,8 @@ namespace gui_framework
 				width,
 				height
 			),
-			parent
+			parent,
+			groupBoxFunctionName
 		)
 	{
 		
