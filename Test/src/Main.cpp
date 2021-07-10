@@ -2,6 +2,7 @@
 
 #include "GUIFramework.h"
 #include "WindowHolder.h"
+#include "Components/GroupBox.h"
 #include "Composites/SeparateWindow.h"
 
 #pragma comment (lib, "GUIFramework.lib")
@@ -20,6 +21,11 @@ void test()
 	{
 		WindowHolder holder(make_unique<SeparateWindow>(L"MainWindow", L"Главное окно", settings, "main"));
 		SeparateWindow* ptr = dynamic_cast<SeparateWindow*>(holder.get());
+		GroupBox* box = new GroupBox(L"Box", L"Some text here", utility::ComponentSettings(NULL, 0, 0, 400, 400), ptr);
+
+		box->addRadioButton(L"First", L"First", 0, 0, 200, 20, [](WPARAM, LPARAM) { cout << "First" << endl; return 0; });
+
+		box->addRadioButton(L"Second", L"Second", 0, 0, 200, 20, [](WPARAM, LPARAM) { cout << "Second" << endl; return 0; });
 
 		ptr->setExitMode(BaseComponent::exitMode::quit);
 
