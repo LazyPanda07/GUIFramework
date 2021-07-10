@@ -11,6 +11,8 @@ using namespace std;
 
 CREATE_DEFAULT_WINDOW_FUNCTION(main)
 
+CREATE_DEFAULT_WINDOW_FUNCTION(first);
+
 void test()
 {
 	using namespace gui_framework;
