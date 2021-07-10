@@ -21,11 +21,7 @@ namespace gui_framework
 
 		virtual void setSelectionEnd(int endPosition) final;
 
-		virtual LRESULT getTicksCount() const final;
-
 		virtual LRESULT getPosition() const final;
-
-		virtual LRESULT getTickPosition() const final;
 
 		virtual LRESULT getMinRange() const final;
 

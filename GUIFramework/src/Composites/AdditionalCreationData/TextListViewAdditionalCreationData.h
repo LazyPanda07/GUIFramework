@@ -1,8 +1,8 @@
 #pragma once
 
 #include "AdditionalCreationData.h"
-#include "Components/ListView/TextListView.h"
-#include "Components/ListView/ListTextListView.h"
+#include "Components/ListViews/TextListView.h"
+#include "Components/ListViews/ListTextListView.h"
 
 namespace gui_framework
 {

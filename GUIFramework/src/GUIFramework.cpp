@@ -18,12 +18,15 @@
 #include "BaseComponents/Creators/CheckBoxCreator.h"
 #include "BaseComponents/Creators/GroupBoxCreator.h"
 
-#include "BaseComponents/Creators/ListView/IconListViewCreator.h"
-#include "BaseComponents/Creators/ListView/TextListViewCreator.h"
-#include "BaseComponents/Creators/ListView/TextIconListViewCreator.h"
-#include "BaseComponents/Creators/ListView/ListIconListViewCreator.h"
-#include "BaseComponents/Creators/ListView/ListTextListViewCreator.h"
-#include "BaseComponents/Creators/ListView/ListTextIconListViewCreator.h"
+#include "BaseComponents/Creators/ListViews/IconListViewCreator.h"
+#include "BaseComponents/Creators/ListViews/TextListViewCreator.h"
+#include "BaseComponents/Creators/ListViews/TextIconListViewCreator.h"
+#include "BaseComponents/Creators/ListViews/ListIconListViewCreator.h"
+#include "BaseComponents/Creators/ListViews/ListTextListViewCreator.h"
+#include "BaseComponents/Creators/ListViews/ListTextIconListViewCreator.h"
+
+#include "BaseComponents/Creators/Trackbars/HorizontalTrackbarControlCreator.h"
+#include "BaseComponents/Creators/Trackbars/VerticalTrackbarControlCreator.h"
 
 #include "Components/Button.h"
 #include "Components/EditControl.h"
@@ -42,12 +45,15 @@
 #include "Components/CheckBox.h"
 #include "Components/GroupBox.h"
 
-#include "Components/ListView/IconListView.h"
-#include "Components/ListView/TextListView.h"
-#include "Components/ListView/TextIconListView.h"
-#include "Components/ListView/ListIconListView.h"
-#include "Components/ListView/ListTextListView.h"
-#include "Components/ListView/ListTextIconListView.h"
+#include "Components/ListViews/IconListView.h"
+#include "Components/ListViews/TextListView.h"
+#include "Components/ListViews/TextIconListView.h"
+#include "Components/ListViews/ListIconListView.h"
+#include "Components/ListViews/ListTextListView.h"
+#include "Components/ListViews/ListTextIconListView.h"
+
+#include "Components/Trackbars/HorizontalTrackbarControl.h"
+#include "Components/Trackbars/VerticalTrackbarControl.h"
 
 using namespace std;
 
@@ -99,6 +105,12 @@ namespace gui_framework
 		creators[typeid(TextIconListView).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::TextIconListViewCreator());
 
 		creators[typeid(ListTextIconListView).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::ListTextIconListViewCreator());
+#pragma endregion
+
+#pragma region Trackbars
+		creators[typeid(HorizontalTrackbarControl).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::HorizontalTrackbarControlCreator());
+
+		creators[typeid(VerticalTrackbarControl).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::VerticalTrackbarControlCreator());
 #pragma endregion
 	}
 
