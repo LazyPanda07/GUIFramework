@@ -20,7 +20,7 @@ namespace gui_framework
 		std::vector<std::unique_ptr<RadioButton>> buttons;
 
 	public:
-		GroupBox(const std::wstring& groupBoxName, const std::wstring& groupBoxText, const utility::ComponentSettings& settings, BaseComponent* parent);
+		GroupBox(const std::wstring& groupBoxName, const std::wstring& groupBoxText, int x, int y, uint16_t width, uint16_t height, BaseComponent* parent);
 
 		virtual void addRadioButton(const std::wstring& radioButtonName, const std::wstring& radioButtonText, int x, int y, uint16_t width, uint16_t height, const std::function<LRESULT(WPARAM, LPARAM)>& onClick) final;
 
