@@ -50,6 +50,7 @@
     <ClInclude Include="src\BaseComponents\Creators\StaticControlCreator.h" />
     <ClInclude Include="src\BaseComponents\Creators\TabControlCreator.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseProgressBar.h" />
+    <ClInclude Include="src\Components\GroupBox.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseIconListView.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseInfiniteProgressBar.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\ListView\BaseListIconListView.h" />
@@ -180,6 +181,7 @@
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseEditControl.cpp" />
     <ClCompile Include="src\BaseComponents\BaseNonResizableComponent.cpp" />
     <ClCompile Include="src\BaseComponents\BaseResizableComponent.cpp" />
+    <ClCompile Include="src\Components\GroupBox.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseInfiniteProgressBar.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseListBox.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseProgressBar.cpp" />
