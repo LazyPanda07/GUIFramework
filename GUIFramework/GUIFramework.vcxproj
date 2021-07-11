@@ -156,6 +156,7 @@
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\BaseComposites\StandardComposites\BaseSeparateWindow.h" />
     <ClInclude Include="src\Utility\ComponentSettings.h" />
+    <ClInclude Include="src\Utility\Paint\DrawImage.h" />
     <ClInclude Include="src\Utility\Utility.h" />
     <ClInclude Include="src\WindowHolder.h" />
     <ClInclude Include="src\WindowMessages.h" />
@@ -283,6 +284,7 @@
     <ClCompile Include="src\pch.cpp" />
     <ClCompile Include="src\BaseComposites\StandardComposites\BaseSeparateWindow.cpp" />
     <ClCompile Include="src\Utility\ComponentSettings.cpp" />
+    <ClCompile Include="src\Utility\Paint\DrawImage.cpp" />
     <ClCompile Include="src\Utility\Utility.cpp" />
     <ClCompile Include="src\WindowHolder.cpp" />
   </ItemGroup>
