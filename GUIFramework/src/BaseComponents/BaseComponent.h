@@ -148,7 +148,7 @@ namespace gui_framework
 	case WM_DESTROY: \
 		if(topLevelWindow) \
 		{ \
-			if (topLevelWindow->getExitMode() == gui_framework::BaseComponent::exitMode::quit) \
+			if (topLevel->getHandle() == handle && topLevelWindow->getExitMode() == gui_framework::BaseComponent::exitMode::quit) \
 			{ \
 				PostQuitMessage(0); \
 			} \

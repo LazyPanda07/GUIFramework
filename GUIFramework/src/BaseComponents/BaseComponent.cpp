@@ -100,7 +100,7 @@ namespace gui_framework
 			SendMessageW(handle, custom_window_messages::initTopLevelWindowPointer, reinterpret_cast<WPARAM>(parent), NULL);
 		}
 
-		ShowWindowAsync(handle, SW_SHOW);
+		ShowWindow(handle, SW_SHOW);
 	}
 
 	bool BaseComponent::isComposite() const
