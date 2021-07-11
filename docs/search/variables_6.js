@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['groupboxclassname_1734',['groupBoxClassName',['../classgui__framework_1_1utility_1_1_additional_creation_data_3_01_group_box_01_4.html#aca9a66d2131915149c6d32b61586b9a1',1,'gui_framework::utility::AdditionalCreationData&lt; GroupBox &gt;']]],
-  ['groupboxfunctionname_1735',['groupBoxFunctionName',['../classgui__framework_1_1utility_1_1_additional_creation_data_3_01_group_box_01_4.html#a5c6d93401f3d883add388eb082d94831',1,'gui_framework::utility::AdditionalCreationData&lt; GroupBox &gt;']]],
-  ['guiframeworkversion_1736',['guiFrameworkVersion',['../namespacegui__framework.html#a5e94c5c423c72dd9f763bafce9ba4672',1,'gui_framework']]]
+  ['groupboxclassname_1736',['groupBoxClassName',['../classgui__framework_1_1utility_1_1_additional_creation_data_3_01_group_box_01_4.html#aca9a66d2131915149c6d32b61586b9a1',1,'gui_framework::utility::AdditionalCreationData&lt; GroupBox &gt;']]],
+  ['groupboxfunctionname_1737',['groupBoxFunctionName',['../classgui__framework_1_1utility_1_1_additional_creation_data_3_01_group_box_01_4.html#a5c6d93401f3d883add388eb082d94831',1,'gui_framework::utility::AdditionalCreationData&lt; GroupBox &gt;']]],
+  ['guiframeworkversion_1738',['guiFrameworkVersion',['../namespacegui__framework.html#a5e94c5c423c72dd9f763bafce9ba4672',1,'gui_framework']]]
 ];

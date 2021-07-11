@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['exitmode_1815',['exitMode',['../classgui__framework_1_1_base_component.html#adadba923c5fcc012ce8b50e592080bcd',1,'gui_framework::BaseComponent']]]
+  ['exitmode_1817',['exitMode',['../classgui__framework_1_1_base_component.html#adadba923c5fcc012ce8b50e592080bcd',1,'gui_framework::BaseComponent']]]
 ];

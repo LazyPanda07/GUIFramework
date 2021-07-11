@@ -1,9 +1,9 @@
 var namespacegui__framework_1_1utility =
 [
     [ "paint", "namespacegui__framework_1_1utility_1_1paint.html", [
-      [ "drawImage", "namespacegui__framework_1_1utility_1_1paint.html#a57a56548a01f6758df42a1ee1044695e", null ],
-      [ "drawImage", "namespacegui__framework_1_1utility_1_1paint.html#ae86b40f52632c06ab5d26462c7c74724", null ],
-      [ "drawImage", "namespacegui__framework_1_1utility_1_1paint.html#a66e24dba245cba758cc4d477c74d863c", null ]
+      [ "drawImageByIndex", "namespacegui__framework_1_1utility_1_1paint.html#a931933d1d403270d312dce9702bb5877", null ],
+      [ "drawImageByPath", "namespacegui__framework_1_1utility_1_1paint.html#aaa72ab7a54bd01b37bff27818f6872dc", null ],
+      [ "drawImageByPath", "namespacegui__framework_1_1utility_1_1paint.html#a2dd56702974a9f976b11bc663ed580f2", null ]
     ] ],
     [ "BaseComponentCreator", "classgui__framework_1_1utility_1_1_base_component_creator.html", "classgui__framework_1_1utility_1_1_base_component_creator" ],
     [ "ButtonCreator", "classgui__framework_1_1utility_1_1_button_creator.html", "classgui__framework_1_1utility_1_1_button_creator" ],

@@ -1,5 +1,5 @@
 var _draw_image_8h =
 [
-    [ "drawImage", "_draw_image_8h.html#ae86b40f52632c06ab5d26462c7c74724", null ],
-    [ "drawImage", "_draw_image_8h.html#a66e24dba245cba758cc4d477c74d863c", null ]
+    [ "drawImageByIndex", "_draw_image_8h.html#a931933d1d403270d312dce9702bb5877", null ],
+    [ "drawImageByPath", "_draw_image_8h.html#a2dd56702974a9f976b11bc663ed580f2", null ]
 ];
