@@ -2,6 +2,9 @@
 
 #include "GUIFramework.h"
 #include "WindowHolder.h"
+#include "Utility/Paint/DrawImage.h"
+#include "Utility/Holders/IconsHolder.h"
+#include "Components/EditControl.h"
 #include "Composites/SeparateWindow.h"
 
 #pragma comment (lib, "GUIFramework.lib")
@@ -20,6 +23,13 @@ void test()
 	{
 		WindowHolder holder(make_unique<SeparateWindow>(L"MainWindow", L"Главное окно", settings, "main"));
 		SeparateWindow* ptr = dynamic_cast<SeparateWindow*>(holder.get());
+		utility::IconsHolder icon(32, 32);
+
+		uint16_t index = icon.addImage(R"(assets\icon.ico)");
+
+		utility::paint::drawImage(ptr, icon, 0, 0, index);
+
+		new EditControl(L"Test", 50, 0, ptr);
 
 		ptr->setExitMode(BaseComponent::exitMode::quit);
 
