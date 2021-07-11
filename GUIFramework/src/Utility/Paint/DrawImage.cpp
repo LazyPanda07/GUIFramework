@@ -12,12 +12,12 @@ namespace gui_framework
 	{
 		namespace paint
 		{
-			bool drawImage(const BaseWindow* window, const BaseLoadableHolder& holder, int x, int y, uint16_t index)
+			bool drawImageByIndex(const BaseWindow* window, const BaseLoadableHolder& holder, int x, int y, uint16_t index)
 			{
 				return drawImageImplementation(window, holder, x, y, index);
 			}
 
-			bool drawImage(const BaseWindow* window, const BaseLoadableHolder& holder, int x, int y, const filesystem::path& pathToImage)
+			bool drawImageByPath(const BaseWindow* window, const BaseLoadableHolder& holder, int x, int y, const filesystem::path& pathToImage)
 			{
 				return drawImageImplementation(window, holder, x, y, pathToImage);
 			}
