@@ -4,7 +4,7 @@
 using namespace std;
 
 template<typename T>
-bool drawImageImplementation(const gui_framework::BaseWindow* window, const gui_framework::utility::BaseLoadableHolder& holder, int x, int y, const T& index, uint16_t width, uint16_t height);
+bool drawImageImplementation(const gui_framework::BaseWindow* window, const gui_framework::utility::BaseLoadableHolder& holder, int x, int y, const T& index);
 
 namespace gui_framework
 {
@@ -12,37 +12,39 @@ namespace gui_framework
 	{
 		namespace paint
 		{
-			bool drawImage(const BaseWindow* window, const BaseLoadableHolder& holder, int x, int y, uint16_t index, uint16_t width, uint16_t height)
+			bool drawImage(const BaseWindow* window, const BaseLoadableHolder& holder, int x, int y, uint16_t index)
 			{
-				return drawImageImplementation(window, holder, x, y, index, width, height);
+				return drawImageImplementation(window, holder, x, y, index);
 			}
 
-			bool drawImage(const BaseWindow* window, const BaseLoadableHolder& holder, int x, int y, const std::filesystem::path& pathToImage, uint16_t width, uint16_t height)
+			bool drawImage(const BaseWindow* window, const BaseLoadableHolder& holder, int x, int y, const filesystem::path& pathToImage)
 			{
-				return drawImageImplementation(window, holder, x, y, pathToImage, width, height);
+				return drawImageImplementation(window, holder, x, y, pathToImage);
 			}
 		}
 	}
 }
 
 template<typename T>
-bool drawImageImplementation(const gui_framework::BaseWindow* window, const gui_framework::utility::BaseLoadableHolder& holder, int x, int y, const T& index, uint16_t width, uint16_t height)
+bool drawImageImplementation(const gui_framework::BaseWindow* window, const gui_framework::utility::BaseLoadableHolder& holder, int x, int y, const T& index)
 {
 	PAINTSTRUCT paint = {};
-	HDC deviceContext = BeginPaint(window->getHandle(), &paint);
+	HWND handle = window->getHandle();
+	HDC deviceContext = BeginPaint(handle, &paint);
 	bool result = false;
 
 	if constexpr (is_same_v<T, uint16_t>)
 	{
-		result = ImageList_DrawEx(holder.getImageList(), index, deviceContext, x, y, width, height, CLR_DEFAULT, CLR_DEFAULT, ILD_TRANSPARENT);
+		result = ImageList_Draw(holder.getImageList(), index, deviceContext, x, y, ILD_TRANSPARENT);
 	}
 	else
 	{
-		result = ImageList_DrawEx(holder.getImageList(), holder.getImageIndex(index), deviceContext, x, y, width, height, CLR_DEFAULT, CLR_DEFAULT, ILD_TRANSPARENT);
+		result = ImageList_Draw(holder.getImageList(), holder.getImageIndex(index), deviceContext, x, y, ILD_TRANSPARENT);
 	}
 
-	ReleaseDC(window->getHandle(), deviceContext);
-	EndPaint(window->getHandle(), &paint);
+	ReleaseDC(handle, deviceContext);
+
+	EndPaint(handle, &paint);
 
 	return result;
 }
