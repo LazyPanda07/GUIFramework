@@ -87,12 +87,12 @@ namespace gui_framework
 
 		/// @brief Set large icon(32x32) for specific window
 		/// @param pathToLargeIcon 
-		/// @exception gui_framework::exceptions::FileDoesNotExist
+		/// @exception FileDoesNotExist
 		virtual void setLargeIcon(const std::filesystem::path& pathToLargeIcon) final;
 
 		/// @brief Set small icon(16x16) for specific window
 		/// @param pathToSmallIcon 
-		/// @exception gui_framework::exceptions::FileDoesNotExist
+		/// @exception FileDoesNotExist
 		virtual void setSmallIcon(const std::filesystem::path& pathToSmallIcon) final;
 
 		virtual void setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue);
@@ -148,7 +148,7 @@ namespace gui_framework
 	case WM_DESTROY: \
 		if(topLevelWindow) \
 		{ \
-			if (topLevelWindow->getExitMode() == gui_framework::BaseComponent::exitMode::quit) \
+			if (topLevelWindow->getHandle() == handle && topLevelWindow->getExitMode() == gui_framework::BaseComponent::exitMode::quit) \
 			{ \
 				PostQuitMessage(0); \
 			} \

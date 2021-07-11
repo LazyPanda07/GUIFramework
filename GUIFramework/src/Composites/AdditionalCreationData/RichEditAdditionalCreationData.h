@@ -7,7 +7,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		/// @brief Specialization for gui_framework::RichEdit
+		/// @brief Specialization for RichEdit
 		template<>
 		class GUI_FRAMEWORK_API AdditionalCreationData<RichEdit>
 		{

@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.3</span>
+   &#160;<span id="projectnumber">0.4</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -85,6 +85,7 @@ $(document).ready(function(){initNavTree('classgui__framework_1_1_base_button.ht
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classgui__framework_1_1_base_button-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -104,20 +105,20 @@ Inheritance diagram for gui_framework::BaseButton:</div>
   <map id="gui_5Fframework::BaseButton_map" name="gui_5Fframework::BaseButton_map">
 <area href="classgui__framework_1_1_base_component.html" title="Base class for all windows, controls, etc." alt="gui_framework::BaseComponent" shape="rect" coords="0,0,251,24"/>
 <area href="classgui__framework_1_1interfaces_1_1_i_text_operations.html" title="Provides setText and getText methods." alt="gui_framework::interfaces::ITextOperations" shape="rect" coords="261,0,512,24"/>
-<area href="classgui__framework_1_1_button.html" title="Standard button." alt="gui_framework::Button" shape="rect" coords="130,112,381,136"/>
+<area href="classgui__framework_1_1_base_check_box.html" title="Base class for all check boxes." alt="gui_framework::BaseCheckBox" shape="rect" coords="0,112,251,136"/>
+<area href="classgui__framework_1_1_button.html" title="Standard button." alt="gui_framework::Button" shape="rect" coords="261,112,512,136"/>
+<area href="classgui__framework_1_1_check_box.html" title="Standard check box." alt="gui_framework::CheckBox" shape="rect" coords="0,168,251,192"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad467dcb988f9b0518cc27a1e1c87cac9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_button.html#ad467dcb988f9b0518cc27a1e1c87cac9">BaseButton</a> (const std::wstring &amp;buttonName, const std::wstring &amp;buttonText, const <a class="el" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a> &amp;settings, <a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> *<a class="el" href="classgui__framework_1_1_base_component.html#a1576375d22cf283d598e22f4a11aca2f">parent</a>, const std::function&lt; LRESULT(WPARAM, LPARAM)&gt; &amp;<a class="el" href="classgui__framework_1_1_base_button.html#a87c9bb8dbe253d0891fb229c83873221">onClick</a>=nullptr)</td></tr>
-<tr class="separator:ad467dcb988f9b0518cc27a1e1c87cac9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeceb03df19d66ea6e6e7ea04a81ec397"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_button.html#aeceb03df19d66ea6e6e7ea04a81ec397">windowMessagesHandle</a> (HWND <a class="el" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, UINT message, WPARAM wparam, LPARAM lparam, bool &amp;isUsed) final</td></tr>
-<tr class="separator:aeceb03df19d66ea6e6e7ea04a81ec397"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af34c0ca922797738ac1282b04e2c6725"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_button.html#af34c0ca922797738ac1282b04e2c6725">setOnClick</a> (const std::function&lt; LRESULT(WPARAM, LPARAM)&gt; &amp;<a class="el" href="classgui__framework_1_1_base_button.html#a87c9bb8dbe253d0891fb229c83873221">onClick</a>) final</td></tr>
-<tr class="separator:af34c0ca922797738ac1282b04e2c6725"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15a210a72f994568de27e08af7adc33b"><td class="memItemLeft" align="right" valign="top">virtual const std::function&lt; LRESULT(WPARAM, LPARAM)&gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_button.html#a15a210a72f994568de27e08af7adc33b">getOnClick</a> () const final</td></tr>
-<tr class="separator:a15a210a72f994568de27e08af7adc33b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bb0fad4aef7e70d4e8e2b7dc58f08f8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_button.html#a2bb0fad4aef7e70d4e8e2b7dc58f08f8">BaseButton</a> (const std::wstring &amp;buttonName, const std::wstring &amp;buttonText, const <a class="el" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a> &amp;settings, <a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> *<a class="el" href="classgui__framework_1_1_base_component.html#a1576375d22cf283d598e22f4a11aca2f">parent</a>, const std::function&lt; void()&gt; &amp;<a class="el" href="classgui__framework_1_1_base_button.html#ac98949457fb92497faad41a086576583">onClick</a>=nullptr)</td></tr>
+<tr class="separator:a2bb0fad4aef7e70d4e8e2b7dc58f08f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad176fd01f8de165e253b7a92680c3505"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_button.html#ad176fd01f8de165e253b7a92680c3505">setOnClick</a> (const std::function&lt; void()&gt; &amp;<a class="el" href="classgui__framework_1_1_base_button.html#ac98949457fb92497faad41a086576583">onClick</a>) final</td></tr>
+<tr class="separator:ad176fd01f8de165e253b7a92680c3505"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e7389d4dde1fcc3481f37bd78d55923"><td class="memItemLeft" align="right" valign="top">virtual const std::function&lt; void()&gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_button.html#a5e7389d4dde1fcc3481f37bd78d55923">getOnClick</a> () const final</td></tr>
+<tr class="separator:a5e7389d4dde1fcc3481f37bd78d55923"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aafe12f92e9407defc8e3211518f52025"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_button.html#aafe12f92e9407defc8e3211518f52025">setTextColor</a> (uint8_t red, uint8_t green, uint8_t blue) final override</td></tr>
 <tr class="memdesc:aafe12f92e9407defc8e3211518f52025"><td class="mdescLeft">&#160;</td><td class="mdescRight">Not implemented.  <a href="classgui__framework_1_1_base_button.html#aafe12f92e9407defc8e3211518f52025">More...</a><br /></td></tr>
 <tr class="separator:aafe12f92e9407defc8e3211518f52025"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -210,10 +211,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a120e78646e9bf11daf956842ca9cb534 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_text_operations"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_text_operations.html#a120e78646e9bf11daf956842ca9cb534">~ITextOperations</a> ()=default</td></tr>
 <tr class="separator:a120e78646e9bf11daf956842ca9cb534 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_text_operations"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:acf8c3970175cea31fe83422412203bb8"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_button.html#acf8c3970175cea31fe83422412203bb8">windowMessagesHandle</a> (HWND <a class="el" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, UINT message, WPARAM wparam, LPARAM lparam, bool &amp;isUsed) override</td></tr>
+<tr class="separator:acf8c3970175cea31fe83422412203bb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classgui__framework_1_1_base_component"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classgui__framework_1_1_base_component')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></td></tr>
+<tr class="memitem:aa271d9c3ad5e9a9374c7d3a334327cdc inherit pro_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#aa271d9c3ad5e9a9374c7d3a334327cdc">preWindowMessagesHandle</a> (HWND <a class="el" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, UINT message, WPARAM wparam, LPARAM lparam, bool &amp;isUsed)</td></tr>
+<tr class="separator:aa271d9c3ad5e9a9374c7d3a334327cdc inherit pro_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a87c9bb8dbe253d0891fb229c83873221"><td class="memItemLeft" align="right" valign="top">std::function&lt; LRESULT(WPARAM, LPARAM)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_button.html#a87c9bb8dbe253d0891fb229c83873221">onClick</a></td></tr>
-<tr class="separator:a87c9bb8dbe253d0891fb229c83873221"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac98949457fb92497faad41a086576583"><td class="memItemLeft" align="right" valign="top">std::function&lt; void()&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_button.html#ac98949457fb92497faad41a086576583">onClick</a></td></tr>
+<tr class="separator:ac98949457fb92497faad41a086576583"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classgui__framework_1_1_base_component"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classgui__framework_1_1_base_component')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></td></tr>
 <tr class="memitem:a1576375d22cf283d598e22f4a11aca2f inherit pro_attribs_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a1576375d22cf283d598e22f4a11aca2f">parent</a></td></tr>
 <tr class="separator:a1576375d22cf283d598e22f4a11aca2f inherit pro_attribs_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -267,17 +276,14 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a377a3b392aa9778b11347f3b69acbd42 inherit pub_static_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a377a3b392aa9778b11347f3b69acbd42">runFunctionAsync</a> (std::function&lt; void()&gt; &amp;&amp;callable, const std::function&lt; void()&gt; &amp;callback=nullptr) noexcept</td></tr>
 <tr class="memdesc:a377a3b392aa9778b11347f3b69acbd42 inherit pub_static_methods_classgui__framework_1_1_base_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add task to thread pool.  <a href="classgui__framework_1_1_base_component.html#a377a3b392aa9778b11347f3b69acbd42">More...</a><br /></td></tr>
 <tr class="separator:a377a3b392aa9778b11347f3b69acbd42 inherit pub_static_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_methods_classgui__framework_1_1_base_component"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classgui__framework_1_1_base_component')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></td></tr>
-<tr class="memitem:aa271d9c3ad5e9a9374c7d3a334327cdc inherit pro_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#aa271d9c3ad5e9a9374c7d3a334327cdc">preWindowMessagesHandle</a> (HWND <a class="el" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, UINT message, WPARAM wparam, LPARAM lparam, bool &amp;isUsed)</td></tr>
-<tr class="separator:aa271d9c3ad5e9a9374c7d3a334327cdc inherit pro_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base class for all buttons. </p>
 
 <p class="definition">Definition at line <a class="el" href="_base_button_8h_source.html#l00009">9</a> of file <a class="el" href="_base_button_8h_source.html">BaseButton.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ad467dcb988f9b0518cc27a1e1c87cac9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad467dcb988f9b0518cc27a1e1c87cac9">&#9670;&nbsp;</a></span>BaseButton()</h2>
+<a id="a2bb0fad4aef7e70d4e8e2b7dc58f08f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bb0fad4aef7e70d4e8e2b7dc58f08f8">&#9670;&nbsp;</a></span>BaseButton()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -309,7 +315,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::function&lt; LRESULT(WPARAM, LPARAM)&gt; &amp;&#160;</td>
+          <td class="paramtype">const std::function&lt; void()&gt; &amp;&#160;</td>
           <td class="paramname"><em>onClick</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
@@ -320,7 +326,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_button_8cpp_source.html#l00011">11</a> of file <a class="el" href="_base_button_8cpp_source.html">BaseButton.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_button_8cpp_source.html#l00030">30</a> of file <a class="el" href="_base_button_8cpp_source.html">BaseButton.cpp</a>.</p>
 
 </div>
 </div>
@@ -350,8 +356,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a15a210a72f994568de27e08af7adc33b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a15a210a72f994568de27e08af7adc33b">&#9670;&nbsp;</a></span>getOnClick()</h2>
+<a id="a5e7389d4dde1fcc3481f37bd78d55923"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e7389d4dde1fcc3481f37bd78d55923">&#9670;&nbsp;</a></span>getOnClick()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -360,7 +366,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const function&lt; LRESULT(WPARAM, LPARAM)&gt; &amp; gui_framework::BaseButton::getOnClick </td>
+          <td class="memname">const function&lt; void()&gt; &amp; gui_framework::BaseButton::getOnClick </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -373,12 +379,12 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_button_8cpp_source.html#l00044">44</a> of file <a class="el" href="_base_button_8cpp_source.html">BaseButton.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_button_8cpp_source.html#l00049">49</a> of file <a class="el" href="_base_button_8cpp_source.html">BaseButton.cpp</a>.</p>
 
 </div>
 </div>
-<a id="af34c0ca922797738ac1282b04e2c6725"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af34c0ca922797738ac1282b04e2c6725">&#9670;&nbsp;</a></span>setOnClick()</h2>
+<a id="ad176fd01f8de165e253b7a92680c3505"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad176fd01f8de165e253b7a92680c3505">&#9670;&nbsp;</a></span>setOnClick()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -389,7 +395,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">void gui_framework::BaseButton::setOnClick </td>
           <td>(</td>
-          <td class="paramtype">const std::function&lt; LRESULT(WPARAM, LPARAM)&gt; &amp;&#160;</td>
+          <td class="paramtype">const std::function&lt; void()&gt; &amp;&#160;</td>
           <td class="paramname"><em>onClick</em></td><td>)</td>
           <td></td>
         </tr>
@@ -401,7 +407,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_button_8cpp_source.html#l00039">39</a> of file <a class="el" href="_base_button_8cpp_source.html">BaseButton.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_button_8cpp_source.html#l00044">44</a> of file <a class="el" href="_base_button_8cpp_source.html">BaseButton.cpp</a>.</p>
 
 </div>
 </div>
@@ -456,19 +462,19 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classgui__framework_1_1exceptions_1_1_not_implemented.html">gui_framework::exceptions::NotImplemented</a></td><td>Text color does not affects at button </td></tr>
+    <tr><td class="paramname">NotImplemented</td><td>Text color does not affects at button </td></tr>
   </table>
   </dd>
 </dl>
 
 <p>Reimplemented from <a class="el" href="classgui__framework_1_1_base_component.html#a9dba22822b7f830295e104fa27af284c">gui_framework::BaseComponent</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_base_button_8cpp_source.html#l00049">49</a> of file <a class="el" href="_base_button_8cpp_source.html">BaseButton.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_button_8cpp_source.html#l00054">54</a> of file <a class="el" href="_base_button_8cpp_source.html">BaseButton.cpp</a>.</p>
 
 </div>
 </div>
-<a id="aeceb03df19d66ea6e6e7ea04a81ec397"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeceb03df19d66ea6e6e7ea04a81ec397">&#9670;&nbsp;</a></span>windowMessagesHandle()</h2>
+<a id="acf8c3970175cea31fe83422412203bb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf8c3970175cea31fe83422412203bb8">&#9670;&nbsp;</a></span>windowMessagesHandle()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -514,20 +520,20 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classgui__framework_1_1_base_component.html#a636cece7fe5db06982150a8eb9e13e10">gui_framework::BaseComponent</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_base_button_8cpp_source.html#l00025">25</a> of file <a class="el" href="_base_button_8cpp_source.html">BaseButton.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_button_8cpp_source.html#l00011">11</a> of file <a class="el" href="_base_button_8cpp_source.html">BaseButton.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a87c9bb8dbe253d0891fb229c83873221"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a87c9bb8dbe253d0891fb229c83873221">&#9670;&nbsp;</a></span>onClick</h2>
+<a id="ac98949457fb92497faad41a086576583"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac98949457fb92497faad41a086576583">&#9670;&nbsp;</a></span>onClick</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -536,7 +542,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::function&lt;LRESULT(WPARAM, LPARAM)&gt; gui_framework::BaseButton::onClick</td>
+          <td class="memname">std::function&lt;void()&gt; gui_framework::BaseButton::onClick</td>
         </tr>
       </table>
   </td>

@@ -6,7 +6,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		/// @brief gui_framework::SimpleComboBox creator
+		/// @brief SimpleComboBox creator
 		class GUI_FRAMEWORK_API SimpleComboBoxCreator : public BaseComponentCreator
 		{
 		public:

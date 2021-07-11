@@ -6,7 +6,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		/// @brief gui_framework::ListBox creator
+		/// @brief ListBox creator
 		class GUI_FRAMEWORK_API ListBoxCreator : public BaseComponentCreator
 		{
 		public:

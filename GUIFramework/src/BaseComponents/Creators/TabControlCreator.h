@@ -6,6 +6,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
+		/// @brief TabControl creator
 		class GUI_FRAMEWORK_API TabControlCreator : public BaseComponentCreator
 		{
 		public:

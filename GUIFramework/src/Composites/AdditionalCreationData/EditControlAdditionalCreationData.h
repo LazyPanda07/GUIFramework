@@ -7,7 +7,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		/// @brief Specialization for gui_framework::EditControl
+		/// @brief Specialization for EditControl
 		template<>
 		class GUI_FRAMEWORK_API AdditionalCreationData<EditControl>
 		{

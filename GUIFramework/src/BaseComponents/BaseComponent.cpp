@@ -96,9 +96,11 @@ namespace gui_framework
 			BaseComposite* composite = static_cast<BaseComposite*>(parent);
 
 			composite->addChild(this);
+
+			SendMessageW(handle, custom_window_messages::initTopLevelWindowPointer, reinterpret_cast<WPARAM>(parent), NULL);
 		}
 
-		ShowWindowAsync(handle, SW_SHOW);
+		ShowWindow(handle, SW_SHOW);
 	}
 
 	bool BaseComponent::isComposite() const

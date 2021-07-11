@@ -19,7 +19,7 @@ namespace gui_framework
 
 			/// @brief Get text from control
 			/// @return Text from control
-			/// @exception gui_framework::exceptions::GetLastErrorException
+			/// @exception GetLastErrorException
 			virtual std::wstring getText() const final;
 
 			virtual ~ITextOperations() = default;

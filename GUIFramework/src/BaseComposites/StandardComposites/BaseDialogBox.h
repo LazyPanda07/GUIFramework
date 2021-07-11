@@ -4,6 +4,7 @@
 
 namespace gui_framework
 {
+	/// @brief Base class for all dialog boxes
 	class GUI_FRAMEWORK_API BaseDialogBox : virtual public BaseComposite
 	{
 	public:

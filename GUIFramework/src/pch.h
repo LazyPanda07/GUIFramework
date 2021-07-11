@@ -52,6 +52,7 @@
 #include "Composites/AdditionalCreationData/ChildWindowAdditionalCreationData.h"
 #include "Composites/AdditionalCreationData/ComboBoxAdditionalCreationData.h"
 #include "Composites/AdditionalCreationData/EditControlAdditionalCreationData.h"
+#include "Composites/AdditionalCreationData/GroupBoxAdditionalCreationData.h"
 #include "Composites/AdditionalCreationData/IconListViewAdditionalCreationData.h"
 #include "Composites/AdditionalCreationData/ListBoxAdditionalCreationData.h"
 #include "Composites/AdditionalCreationData/ProgressBarAdditionalCreationData.h"
@@ -61,6 +62,7 @@
 #include "Composites/AdditionalCreationData/TabControlAdditionalCreationData.h"
 #include "Composites/AdditionalCreationData/TextIconListViewAdditionalCreationData.h"
 #include "Composites/AdditionalCreationData/TextListViewAdditionalCreationData.h"
+#include "Composites/AdditionalCreationData/TrackbarControlAdditionalCreationData.h"
 #pragma endregion
 
 #pragma comment(linker,"\"/manifestdependency:type='win32' \

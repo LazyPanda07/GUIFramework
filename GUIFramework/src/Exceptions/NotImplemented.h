@@ -6,6 +6,7 @@ namespace gui_framework
 {
 	namespace exceptions
 	{
+		/// @brief Throws by not implemented methods
 		class NotImplemented : public BaseGUIFrameworkException
 		{
 		public:

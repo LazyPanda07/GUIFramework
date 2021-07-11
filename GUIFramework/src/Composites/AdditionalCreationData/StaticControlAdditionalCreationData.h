@@ -7,7 +7,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		/// @brief Specialization for gui_framework::StaticControl
+		/// @brief Specialization for StaticControl
 		template<>
 		class GUI_FRAMEWORK_API AdditionalCreationData<StaticControl>
 		{

@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.3</span>
+   &#160;<span id="projectnumber">0.4</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -86,6 +86,10 @@ $(document).ready(function(){initNavTree('functions_s.html',''); initResizable()
 <div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
 
 <h3><a id="index_s"></a>- s -</h3><ul>
+<li>selectionRange
+: <a class="el" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_horizontal_trackbar_control_01_4.html#ab75f47f59969c3965e74cb0d8a40380c">gui_framework::utility::AdditionalCreationData&lt; HorizontalTrackbarControl &gt;</a>
+, <a class="el" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_vertical_trackbar_control_01_4.html#af41127dae102715090abe479edebb363">gui_framework::utility::AdditionalCreationData&lt; VerticalTrackbarControl &gt;</a>
+</li>
 <li>SelectListException()
 : <a class="el" href="classgui__framework_1_1exceptions_1_1_select_list_exception.html#acf8c6e630298c8527e33f9142a232998">gui_framework::exceptions::SelectListException</a>
 </li>
@@ -167,12 +171,20 @@ $(document).ready(function(){initNavTree('functions_s.html',''); initResizable()
 </li>
 <li>setMaxRange()
 : <a class="el" href="classgui__framework_1_1_base_progress_bar.html#a432f72d0053391ce14f91b09ac7de18d">gui_framework::BaseProgressBar</a>
+, <a class="el" href="classgui__framework_1_1_base_trackbar_control.html#a833e3358362edd27ce6a867c204d4e7f">gui_framework::BaseTrackbarControl</a>
 </li>
 <li>setMinRange()
 : <a class="el" href="classgui__framework_1_1_base_progress_bar.html#a9c19c3863418a7574435cd005feb2010">gui_framework::BaseProgressBar</a>
+, <a class="el" href="classgui__framework_1_1_base_trackbar_control.html#a6edffa523bde226e65dd377742ccc204">gui_framework::BaseTrackbarControl</a>
+</li>
+<li>setOnCheck()
+: <a class="el" href="classgui__framework_1_1_base_check_box.html#a10975703e1efec22cb31d79213a1a029">gui_framework::BaseCheckBox</a>
+</li>
+<li>setOnClear()
+: <a class="el" href="classgui__framework_1_1_base_check_box.html#a5fa6b390da391d9107c469ce022b2ece">gui_framework::BaseCheckBox</a>
 </li>
 <li>setOnClick()
-: <a class="el" href="classgui__framework_1_1_base_button.html#af34c0ca922797738ac1282b04e2c6725">gui_framework::BaseButton</a>
+: <a class="el" href="classgui__framework_1_1_base_button.html#ad176fd01f8de165e253b7a92680c3505">gui_framework::BaseButton</a>
 </li>
 <li>setParent()
 : <a class="el" href="classgui__framework_1_1interfaces_1_1_i_menu_item.html#adef47676b4031f926705ca5e10135c26">gui_framework::interfaces::IMenuItem</a>
@@ -190,6 +202,12 @@ $(document).ready(function(){initNavTree('functions_s.html',''); initResizable()
 </li>
 <li>setSelection()
 : <a class="el" href="classgui__framework_1_1_base_tab_control.html#a436a36178f9999c72c518cf4d6695885">gui_framework::BaseTabControl</a>
+</li>
+<li>setSelectionEnd()
+: <a class="el" href="classgui__framework_1_1_base_trackbar_control.html#abc5c15a19d258d1d16b0e7fbc1734608">gui_framework::BaseTrackbarControl</a>
+</li>
+<li>setSelectionStart()
+: <a class="el" href="classgui__framework_1_1_base_trackbar_control.html#a9f1e678cb4ae5539b6ea214c34afdecb">gui_framework::BaseTrackbarControl</a>
 </li>
 <li>setSmallIcon()
 : <a class="el" href="classgui__framework_1_1_base_component.html#a7a82031e678bcf3a29b2c00c6e103429">gui_framework::BaseComponent</a>
@@ -211,6 +229,7 @@ $(document).ready(function(){initNavTree('functions_s.html',''); initResizable()
 , <a class="el" href="classgui__framework_1_1_base_progress_bar.html#a05c499b9b728aec7948ecc686121a64c">gui_framework::BaseProgressBar</a>
 , <a class="el" href="classgui__framework_1_1_base_rich_edit.html#a09d6d56819fc8fc9caaf1b39e962f910">gui_framework::BaseRichEdit</a>
 , <a class="el" href="classgui__framework_1_1_base_tab_control.html#aa20da2dc52c7bdae55f4960e3ea000be">gui_framework::BaseTabControl</a>
+, <a class="el" href="classgui__framework_1_1_base_trackbar_control.html#a336557c4c79b7c50f15472f7ccfb772e">gui_framework::BaseTrackbarControl</a>
 </li>
 <li>setUpdateStep()
 : <a class="el" href="classgui__framework_1_1_base_progress_bar.html#a206ff3fffdd456956c9d210bf55fce68">gui_framework::BaseProgressBar</a>
@@ -228,6 +247,7 @@ $(document).ready(function(){initNavTree('functions_s.html',''); initResizable()
 : <a class="el" href="classgui__framework_1_1_base_combo_box.html#adbf4e6485029f19015ab9d2ab005f52b">gui_framework::BaseComboBox</a>
 , <a class="el" href="classgui__framework_1_1_base_list_box.html#a97ad991e631c32871df97e2bb9a9ec0e">gui_framework::BaseListBox</a>
 , <a class="el" href="classgui__framework_1_1_base_tab_control.html#a7a8553f14a13b75479ee9126e741fbfe">gui_framework::BaseTabControl</a>
+, <a class="el" href="classgui__framework_1_1_base_trackbar_control.html#ae579ca4495b046ea233c915d1e041cdf">gui_framework::BaseTrackbarControl</a>
 </li>
 <li>smallIcon
 : <a class="el" href="classgui__framework_1_1_base_component.html#aa42b7d08d840328fab675e3308ac7ab5">gui_framework::BaseComponent</a>

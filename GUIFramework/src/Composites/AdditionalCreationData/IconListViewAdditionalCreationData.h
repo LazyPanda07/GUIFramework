@@ -1,14 +1,14 @@
 #pragma once
 
 #include "AdditionalCreationData.h"
-#include "Components/ListView/IconListView.h"
-#include "Components/ListView/ListIconListView.h"
+#include "Components/ListViews/IconListView.h"
+#include "Components/ListViews/ListIconListView.h"
 
 namespace gui_framework
 {
 	namespace utility
 	{
-		/// @brief Specialization for gui_framework::IconListView
+		/// @brief Specialization for IconListView
 		template<>
 		class GUI_FRAMEWORK_API AdditionalCreationData<IconListView>
 		{
@@ -26,7 +26,7 @@ namespace gui_framework
 			virtual ~AdditionalCreationData() = default;
 		};
 
-		/// @brief Specialization for gui_framework::ListIconListView
+		/// @brief Specialization for ListIconListView
 		template<>
 		class GUI_FRAMEWORK_API AdditionalCreationData<ListIconListView>
 		{

@@ -6,6 +6,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
+		/// @brief Images loader
 		class GUI_FRAMEWORK_API ImagesHolder final : public BaseLoadableHolder
 		{
 		public:
