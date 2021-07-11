@@ -73,6 +73,6 @@ namespace gui_framework
 
 	void GroupBox::addRadioButton(const radioButtonData& data)
 	{
-		this->addChild(new RadioButton(data.radioButtonName, data.radioButtonText, data.x, data.y, data.width, data.height, this, data.onClick));
+		new RadioButton(data.radioButtonName, data.radioButtonText, data.x, data.y, data.width, data.height, this, data.onClick);
 	}
 }

@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "BaseTrackbarControl.h"
 
+#include "Exceptions/NotImplemented.h"
+
 using namespace std;
 
 namespace gui_framework
@@ -70,5 +72,10 @@ namespace gui_framework
 	LRESULT BaseTrackbarControl::getSelectionEnd() const
 	{
 		return SendMessageW(handle, TBM_GETSELEND, NULL, NULL);
+	}
+
+	void BaseTrackbarControl::setTextColor(uint8_t red, uint8_t green, uint8_t blue)
+	{
+		throw exceptions::NotImplemented(__FUNCTION__, "BaseTrackbarControl");
 	}
 }
