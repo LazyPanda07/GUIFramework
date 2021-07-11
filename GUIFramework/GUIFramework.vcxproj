@@ -140,7 +140,7 @@
     <ClInclude Include="src\Interfaces\Components\ListViews\ITextIconListView.h" />
     <ClInclude Include="src\Interfaces\Components\ListViews\ITextListView.h" />
     <ClInclude Include="src\Utility\Holders\BaseLoadableHolder.h" />
-    <ClInclude Include="src\Utility\Holders\CursorHolder.h" />
+    <ClInclude Include="src\Utility\Holders\CursorsHolder.h" />
     <ClInclude Include="src\Utility\Holders\IconsHolder.h" />
     <ClInclude Include="src\Utility\Holders\ImagesHolder.h" />
     <ClInclude Include="src\Interfaces\Components\IResizableComponent.h" />
@@ -271,7 +271,7 @@
     <ClCompile Include="src\Interfaces\Components\ListViews\ITextIconListView.cpp" />
     <ClCompile Include="src\Interfaces\Components\ListViews\ITextListView.cpp" />
     <ClCompile Include="src\Utility\Holders\BaseLoadableHolder.cpp" />
-    <ClCompile Include="src\Utility\Holders\CursorHolder.cpp" />
+    <ClCompile Include="src\Utility\Holders\CursorsHolder.cpp" />
     <ClCompile Include="src\Utility\Holders\IconsHolder.cpp" />
     <ClCompile Include="src\Utility\Holders\ImagesHolder.cpp" />
     <ClCompile Include="src\Interfaces\Components\IResizableComponent.cpp" />

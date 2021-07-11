@@ -4,6 +4,7 @@
 
 namespace gui_framework
 {
+	/// @brief Base class for all tracbar controls
 	class GUI_FRAMEWORK_API BaseTrackbarControl : public BaseComponent
 	{
 	public:
@@ -35,7 +36,7 @@ namespace gui_framework
 		/// @param red 
 		/// @param green 
 		/// @param blue 
-		/// @exception gui_framework::exceptions::NotImplemented Text color does not affects at track bars
+		/// @exception NotImplemented Text color does not affects at track bars
 		virtual void setTextColor(uint8_t red, uint8_t green, uint8_t blue) final override;
 
 		virtual ~BaseTrackbarControl() = default;

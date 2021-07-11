@@ -6,6 +6,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
+		/// @brief GroupBox creator
 		class GUI_FRAMEWORK_API GroupBoxCreator : public BaseComponentCreator
 		{
 		public:

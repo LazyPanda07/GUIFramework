@@ -3,10 +3,11 @@ var _g_u_i_framework_constants_8h =
     [ "GUI_FRAMEWORK_API", "_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba", null ],
     [ "GUI_FRAMEWORK_API_FUNCTION", "_g_u_i_framework_constants_8h.html#a767f18c6bddef6da85ce42f210726a25", null ],
     [ "additionalListViewReportColumnWidth", "_g_u_i_framework_constants_8h.html#a411003476965ae5667265e2e56687220", null ],
-    [ "animateControl", "_g_u_i_framework_constants_8h.html#ae53b75f5203de7d6742073951e966f03", null ],
     [ "button", "_g_u_i_framework_constants_8h.html#a3a70e6e92deddb65c6406def06e23ec8", null ],
     [ "buttonHeight", "_g_u_i_framework_constants_8h.html#ad9a5341565621f03854e8c9e0d942e8f", null ],
     [ "buttonWidth", "_g_u_i_framework_constants_8h.html#af458d40e3a798d830af7f24830173cc7", null ],
+    [ "checkBoxHeight", "_g_u_i_framework_constants_8h.html#a7e29e7a576f983497b8347cc45b21191", null ],
+    [ "checkBoxWidth", "_g_u_i_framework_constants_8h.html#a30ae3f2a8d6104c5e384ac6ee22db3f2", null ],
     [ "comboBox", "_g_u_i_framework_constants_8h.html#a268c9d59b1fb54e307a88f7693eb19a2", null ],
     [ "comboBoxAdditionalWidth", "_g_u_i_framework_constants_8h.html#af5dff7df0d040f20e7069da7f8ce28da", null ],
     [ "defaultImagesCount", "_g_u_i_framework_constants_8h.html#a018fae1303ab52531f18a98e80fc15e7", null ],
@@ -33,5 +34,6 @@ var _g_u_i_framework_constants_8h =
     [ "staticControlHeight", "_g_u_i_framework_constants_8h.html#a07a74c45cb8206bb4a4f918a5cb9d131", null ],
     [ "staticControlWidth", "_g_u_i_framework_constants_8h.html#a62f0c5bf3fb69dfcd5a07cad5f90306f", null ],
     [ "tabControl", "_g_u_i_framework_constants_8h.html#af681e6f51d464b74820da2ac2fc43efc", null ],
-    [ "threadsCountSetting", "_g_u_i_framework_constants_8h.html#a583a179dba5adc309d1a59f97c4dfe54", null ]
+    [ "threadsCountSetting", "_g_u_i_framework_constants_8h.html#a583a179dba5adc309d1a59f97c4dfe54", null ],
+    [ "trackbarControl", "_g_u_i_framework_constants_8h.html#ad0d62ae00bdf396ab427a4ab041e75e5", null ]
 ];

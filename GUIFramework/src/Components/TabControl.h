@@ -8,6 +8,7 @@
 
 namespace gui_framework
 {
+	/// @brief Standard tab control
 	class GUI_FRAMEWORK_API TabControl : 
 		public BaseResizableComponent,
 		public BaseTabControl

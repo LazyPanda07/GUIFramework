@@ -7,6 +7,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
+		/// @brief Specialization for GroupBox
 		template<>
 		class GUI_FRAMEWORK_API AdditionalCreationData<GroupBox>
 		{

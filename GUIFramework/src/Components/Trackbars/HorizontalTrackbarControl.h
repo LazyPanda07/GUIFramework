@@ -4,6 +4,7 @@
 
 namespace gui_framework
 {
+	/// @brief Standard horizontal trackbar control
 	class GUI_FRAMEWORK_API HorizontalTrackbarControl : public BaseTrackbarControl
 	{
 	public:

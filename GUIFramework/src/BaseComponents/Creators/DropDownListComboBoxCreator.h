@@ -6,7 +6,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		/// @brief gui_framework::DropDownListComboBox creator
+		/// @brief DropDownListComboBox creator
 		class GUI_FRAMEWORK_API DropDownListComboBoxCreator : public BaseComponentCreator
 		{
 		public:

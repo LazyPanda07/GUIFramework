@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "CursorHolder.h"
+#include "CursorsHolder.h"
 
 using namespace std;
 
@@ -7,7 +7,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		CursorHolder::CursorHolder(uint16_t imagesWidth, uint16_t imagesHeight, size_t count) :
+		CursorsHolder::CursorsHolder(uint16_t imagesWidth, uint16_t imagesHeight, size_t count) :
 			BaseLoadableHolder
 			(
 				imagesWidth,
@@ -18,7 +18,7 @@ namespace gui_framework
 
 		}
 
-		uint16_t CursorHolder::addImage(const filesystem::path& pathToCursor)
+		uint16_t CursorsHolder::addImage(const filesystem::path& pathToCursor)
 		{
 			return BaseLoadableHolder::insertImage(pathToCursor, imageType::cursor);
 		}

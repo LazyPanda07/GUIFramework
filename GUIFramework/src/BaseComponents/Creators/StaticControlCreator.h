@@ -6,7 +6,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		/// @brief gui_framework::StaticControl creator
+		/// @brief StaticControl creator
 		class GUI_FRAMEWORK_API StaticControlCreator : public BaseComponentCreator
 		{
 		public:

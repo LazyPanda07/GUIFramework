@@ -8,7 +8,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		/// @brief Specialization for gui_framework::Button
+		/// @brief Specialization for Button
 		template<>
 		class GUI_FRAMEWORK_API AdditionalCreationData<Button>
 		{
@@ -26,7 +26,7 @@ namespace gui_framework
 			virtual ~AdditionalCreationData() = default;
 		};
 
-		/// @brief Specialization for gui_framework::CheckBox
+		/// @brief Specialization for CheckBox
 		template<>
 		class GUI_FRAMEWORK_API AdditionalCreationData<CheckBox>
 		{

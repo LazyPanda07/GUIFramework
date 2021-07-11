@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GUIFramework: GUIFramework/src/Components/ListView/IconListView.cpp Source File</title>
+<title>GUIFramework: GUIFramework/src/Components/ListViews/IconListView.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.3</span>
+   &#160;<span id="projectnumber">0.4</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -133,10 +133,10 @@ $(document).ready(function(){initNavTree('_icon_list_view_8cpp_source.html','');
 <div class="ttc" id="aclassgui__framework_1_1_base_component_html"><div class="ttname"><a href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></div><div class="ttdoc">Base class for all windows, controls, etc.</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00009">BaseComponent.h:10</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1_base_icon_list_view_html"><div class="ttname"><a href="classgui__framework_1_1_base_icon_list_view.html">gui_framework::BaseIconListView</a></div><div class="ttdoc">Base class for all list views with icon items only.</div><div class="ttdef"><b>Definition:</b> <a href="_base_icon_list_view_8h_source.html#l00009">BaseIconListView.h:12</a></div></div>
 <div class="ttc" id="anamespacegui__framework_1_1standard__classes_html_adac4b5d75af78a7cfa79e019c9b43f2f"><div class="ttname"><a href="namespacegui__framework_1_1standard__classes.html#adac4b5d75af78a7cfa79e019c9b43f2f">gui_framework::standard_classes::listView</a></div><div class="ttdeci">constexpr std::wstring_view listView</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00019">GUIFrameworkConstants.h:19</a></div></div>
-<div class="ttc" id="anamespacegui__framework_1_1standard__sizes_html_a0ceba9e6349e07f57ff44081bd2b208c"><div class="ttname"><a href="namespacegui__framework_1_1standard__sizes.html#a0ceba9e6349e07f57ff44081bd2b208c">gui_framework::standard_sizes::largeIconWidth</a></div><div class="ttdeci">constexpr uint16_t largeIconWidth</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00050">GUIFrameworkConstants.h:50</a></div></div>
-<div class="ttc" id="anamespacegui__framework_1_1standard__sizes_html_a1f7f2e637c8499e76e01b4e314da8134"><div class="ttname"><a href="namespacegui__framework_1_1standard__sizes.html#a1f7f2e637c8499e76e01b4e314da8134">gui_framework::standard_sizes::smallIconHeight</a></div><div class="ttdeci">constexpr uint16_t smallIconHeight</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00054">GUIFrameworkConstants.h:54</a></div></div>
-<div class="ttc" id="anamespacegui__framework_1_1standard__sizes_html_a66fd6d3d948ddc2363a845a9d84ff9fd"><div class="ttname"><a href="namespacegui__framework_1_1standard__sizes.html#a66fd6d3d948ddc2363a845a9d84ff9fd">gui_framework::standard_sizes::largeIconHeight</a></div><div class="ttdeci">constexpr uint16_t largeIconHeight</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00051">GUIFrameworkConstants.h:51</a></div></div>
-<div class="ttc" id="anamespacegui__framework_1_1standard__sizes_html_ab4af2006499a6a8d402ccc7861beb821"><div class="ttname"><a href="namespacegui__framework_1_1standard__sizes.html#ab4af2006499a6a8d402ccc7861beb821">gui_framework::standard_sizes::smallIconWidth</a></div><div class="ttdeci">constexpr uint16_t smallIconWidth</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00053">GUIFrameworkConstants.h:53</a></div></div>
+<div class="ttc" id="anamespacegui__framework_1_1standard__sizes_html_a0ceba9e6349e07f57ff44081bd2b208c"><div class="ttname"><a href="namespacegui__framework_1_1standard__sizes.html#a0ceba9e6349e07f57ff44081bd2b208c">gui_framework::standard_sizes::largeIconWidth</a></div><div class="ttdeci">constexpr uint16_t largeIconWidth</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00053">GUIFrameworkConstants.h:53</a></div></div>
+<div class="ttc" id="anamespacegui__framework_1_1standard__sizes_html_a1f7f2e637c8499e76e01b4e314da8134"><div class="ttname"><a href="namespacegui__framework_1_1standard__sizes.html#a1f7f2e637c8499e76e01b4e314da8134">gui_framework::standard_sizes::smallIconHeight</a></div><div class="ttdeci">constexpr uint16_t smallIconHeight</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00057">GUIFrameworkConstants.h:57</a></div></div>
+<div class="ttc" id="anamespacegui__framework_1_1standard__sizes_html_a66fd6d3d948ddc2363a845a9d84ff9fd"><div class="ttname"><a href="namespacegui__framework_1_1standard__sizes.html#a66fd6d3d948ddc2363a845a9d84ff9fd">gui_framework::standard_sizes::largeIconHeight</a></div><div class="ttdeci">constexpr uint16_t largeIconHeight</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00054">GUIFrameworkConstants.h:54</a></div></div>
+<div class="ttc" id="anamespacegui__framework_1_1standard__sizes_html_ab4af2006499a6a8d402ccc7861beb821"><div class="ttname"><a href="namespacegui__framework_1_1standard__sizes.html#ab4af2006499a6a8d402ccc7861beb821">gui_framework::standard_sizes::smallIconWidth</a></div><div class="ttdeci">constexpr uint16_t smallIconWidth</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00056">GUIFrameworkConstants.h:56</a></div></div>
 <div class="ttc" id="anamespacegui__framework_1_1utility_html_a4bd7b1a1121bbfb16d0a1f9b4ba266de"><div class="ttname"><a href="namespacegui__framework_1_1utility.html#a4bd7b1a1121bbfb16d0a1f9b4ba266de">gui_framework::utility::iconListViewType</a></div><div class="ttdeci">iconListViewType</div><div class="ttdef"><b>Definition:</b> <a href="_base_loadable_holder_8h_source.html#l00009">BaseLoadableHolder.h:10</a></div></div>
 <div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00014">BaseComponent.cpp:15</a></div></div>
 <div class="ttc" id="apch_8h_html"><div class="ttname"><a href="pch_8h.html">pch.h</a></div></div>
@@ -145,7 +145,7 @@ $(document).ready(function(){initNavTree('_icon_list_view_8cpp_source.html','');
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_2f1c88f5c534480c246abfedb48e5a6c.html">GUIFramework</a></li><li class="navelem"><a class="el" href="dir_474822148e798388a75af55d9bebad71.html">src</a></li><li class="navelem"><a class="el" href="dir_b731c78a09c099631450de914efccb25.html">Components</a></li><li class="navelem"><a class="el" href="dir_2e6ce1ff7b43b3199a4cf49ba5f67aec.html">ListView</a></li><li class="navelem"><a class="el" href="_icon_list_view_8cpp.html">IconListView.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_2f1c88f5c534480c246abfedb48e5a6c.html">GUIFramework</a></li><li class="navelem"><a class="el" href="dir_474822148e798388a75af55d9bebad71.html">src</a></li><li class="navelem"><a class="el" href="dir_b731c78a09c099631450de914efccb25.html">Components</a></li><li class="navelem"><a class="el" href="dir_8711bfbd12e2d79c834421c41da06562.html">ListViews</a></li><li class="navelem"><a class="el" href="_icon_list_view_8cpp.html">IconListView.cpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

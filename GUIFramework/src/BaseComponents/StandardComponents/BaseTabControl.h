@@ -5,6 +5,7 @@
 
 namespace gui_framework
 {
+	/// @brief Base class for all tab controls
 	class GUI_FRAMEWORK_API BaseTabControl :
 		virtual public BaseComponent
 	{
@@ -46,21 +47,21 @@ namespace gui_framework
 		/// @brief 
 		/// @param pathToImage 
 		/// @return
-		/// @exception gui_framework::exceptions::FileDoesNotExist
+		/// @exception FileDoesNotExist
 		virtual LRESULT appendImage(const std::filesystem::path& pathToImage, const std::function<void()>& onClick) final;
 
 		/// @brief 
 		/// @param pathToImage 
 		/// @param index 
 		/// @return 
-		/// @exception gui_framework::exceptions::FileDoesNotExist
+		/// @exception FileDoesNotExist
 		virtual LRESULT insertImage(size_t index, const std::filesystem::path& pathToImage, const std::function<void()>& onClick) final;
 
 		/// @brief 
 		/// @param text 
 		/// @param pathToImage 
 		/// @return
-		/// @exception gui_framework::exceptions::FileDoesNotExist 
+		/// @exception FileDoesNotExist 
 		virtual LRESULT appendTextAndImage(const std::wstring& text, const std::filesystem::path& pathToImage, const std::function<void()>& onClick) final;
 
 		/// @brief 
@@ -68,7 +69,7 @@ namespace gui_framework
 		/// @param pathToImage 
 		/// @param index 
 		/// @return 
-		/// @exception gui_framework::exceptions::FileDoesNotExist 
+		/// @exception FileDoesNotExist 
 		virtual LRESULT insertTextAndImage(size_t index, const std::wstring& text, const std::filesystem::path& pathToImage, const std::function<void()>& onClick) final;
 
 		virtual bool removeTab(size_t index) final;
@@ -82,7 +83,7 @@ namespace gui_framework
 		/// @param text 
 		/// @param pathToImage 
 		/// @return 
-		/// @exception gui_framework::exceptions::FileDoesNotExist 
+		/// @exception FileDoesNotExist 
 		virtual bool setItem(size_t index, const std::function<void()>& callback, const std::wstring& text = L"", const std::filesystem::path& pathToImage = L"") final;
 
 		/// @brief 
@@ -105,14 +106,14 @@ namespace gui_framework
 		/// @param red 
 		/// @param green 
 		/// @param blue 
-		/// @exception gui_framework::exceptions::NotImplemented Background color does not affects at tab control
+		/// @exception NotImplemented Background color does not affects at tab control
 		virtual void setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue) final override;
 
 		/// @brief Not implemented
 		/// @param red 
 		/// @param green 
 		/// @param blue 
-		/// @exception gui_framework::exceptions::NotImplemented Text color does not affects at tab control
+		/// @exception NotImplemented Text color does not affects at tab control
 		virtual void setTextColor(uint8_t red, uint8_t green, uint8_t blue) final override;
 
 		virtual ~BaseTabControl() = default;

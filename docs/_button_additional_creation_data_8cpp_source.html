@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.3</span>
+   &#160;<span id="projectnumber">0.4</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('_button_additional_creation_data_8cpp_
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">namespace </span>utility</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        AdditionalCreationData&lt;Button&gt;::AdditionalCreationData(<span class="keyword">const</span> wstring text, <span class="keyword">const</span> <span class="keyword">function</span>&lt;LRESULT(WPARAM, LPARAM)&gt;&amp; onClick) :</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        AdditionalCreationData&lt;Button&gt;::AdditionalCreationData(<span class="keyword">const</span> wstring text, <span class="keyword">const</span> <span class="keyword">function</span>&lt;<span class="keywordtype">void</span>()&gt;&amp; onClick) :</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            text(text),</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            onClick(onClick)</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        {</div>
@@ -105,12 +105,27 @@ $(document).ready(function(){initNavTree('_button_additional_creation_data_8cpp_
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_button_01_4.html#a017f579b4ddb27e9c8b4343deb43af99">   17</a></span>&#160;        any <a class="code" href="classgui__framework_1_1utility_1_1_additional_creation_data.html">AdditionalCreationData&lt;Button&gt;::getData</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <span class="keywordflow">return</span> make_any&lt;tuple&lt;wstring, <span class="keyword">function</span>&lt;LRESULT(WPARAM, LPARAM)&gt;&gt;&gt;(text, onClick);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <span class="keywordflow">return</span> make_any&lt;tuple&lt;wstring, <span class="keyword">function</span>&lt;void()&gt;&gt;&gt;(text, onClick);</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        }</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    }</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="classgui__framework_1_1utility_1_1_additional_creation_data.html">AdditionalCreationData&lt;CheckBox&gt;::AdditionalCreationData</a>(<span class="keyword">const</span> wstring text, <span class="keyword">const</span> <span class="keyword">function</span>&lt;<span class="keywordtype">void</span>()&gt;&amp; onCheck, <span class="keyword">const</span> <span class="keyword">function</span>&lt;<span class="keywordtype">void</span>()&gt;&amp; onClear, <span class="keyword">const</span> <span class="keyword">function</span>&lt;<span class="keywordtype">void</span>()&gt;&amp; onClick) :</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            text(text),</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            onCheck(onCheck),</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            onClear(onClear),</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            onClick(onClick)</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_check_box_01_4.html#a5def0750f46c4d59b55567cff60cd7ec">   31</a></span>&#160;        any <a class="code" href="classgui__framework_1_1utility_1_1_additional_creation_data.html#a21e872b6f833b8c17285e8dbd806412c">AdditionalCreationData&lt;CheckBox&gt;::getData</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keywordflow">return</span> make_any&lt;tuple&lt;wstring, <span class="keyword">function</span>&lt;void()&gt;, <span class="keyword">function</span>&lt;void()&gt;, <span class="keyword">function</span>&lt;void()&gt;&gt;&gt;(text, onCheck, onClear, onClick);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
 <div class="ttc" id="a_button_additional_creation_data_8h_html"><div class="ttname"><a href="_button_additional_creation_data_8h.html">ButtonAdditionalCreationData.h</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1utility_1_1_additional_creation_data_html"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_additional_creation_data.html">gui_framework::utility::AdditionalCreationData</a></div><div class="ttdoc">Base templated class for component creators.</div><div class="ttdef"><b>Definition:</b> <a href="_additional_creation_data_8h_source.html#l00012">AdditionalCreationData.h:13</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1utility_1_1_additional_creation_data_html_a21e872b6f833b8c17285e8dbd806412c"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_additional_creation_data.html#a21e872b6f833b8c17285e8dbd806412c">gui_framework::utility::AdditionalCreationData::getData</a></div><div class="ttdeci">virtual std::any getData() const</div><div class="ttdef"><b>Definition:</b> <a href="_additional_creation_data_8h_source.html#l00023">AdditionalCreationData.h:23</a></div></div>
 <div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00014">BaseComponent.cpp:15</a></div></div>
 <div class="ttc" id="apch_8h_html"><div class="ttname"><a href="pch_8h.html">pch.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

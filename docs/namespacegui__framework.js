@@ -19,7 +19,6 @@ var namespacegui__framework =
       [ "threadsCountSetting", "namespacegui__framework_1_1settings.html#a583a179dba5adc309d1a59f97c4dfe54", null ]
     ] ],
     [ "standard_classes", "namespacegui__framework_1_1standard__classes.html", [
-      [ "animateControl", "namespacegui__framework_1_1standard__classes.html#ae53b75f5203de7d6742073951e966f03", null ],
       [ "button", "namespacegui__framework_1_1standard__classes.html#a3a70e6e92deddb65c6406def06e23ec8", null ],
       [ "comboBox", "namespacegui__framework_1_1standard__classes.html#a268c9d59b1fb54e307a88f7693eb19a2", null ],
       [ "editControl", "namespacegui__framework_1_1standard__classes.html#a3d184f6df6f95fabed1653b545c3c027", null ],
@@ -28,7 +27,8 @@ var namespacegui__framework =
       [ "progressBar", "namespacegui__framework_1_1standard__classes.html#a694547b9a5cc0c43d8c380808274f278", null ],
       [ "richEdit", "namespacegui__framework_1_1standard__classes.html#a57b557e0f5b320b012d2af64d4246290", null ],
       [ "staticControl", "namespacegui__framework_1_1standard__classes.html#ac86ad99c706e27ca256a71b2b0ee9dd8", null ],
-      [ "tabControl", "namespacegui__framework_1_1standard__classes.html#af681e6f51d464b74820da2ac2fc43efc", null ]
+      [ "tabControl", "namespacegui__framework_1_1standard__classes.html#af681e6f51d464b74820da2ac2fc43efc", null ],
+      [ "trackbarControl", "namespacegui__framework_1_1standard__classes.html#ad0d62ae00bdf396ab427a4ab041e75e5", null ]
     ] ],
     [ "standard_menu_items", "namespacegui__framework_1_1standard__menu__items.html", [
       [ "dropDownMenuItem", "namespacegui__framework_1_1standard__menu__items.html#acd826e0552d9392c7e519b1d7e0ff599", null ],
@@ -38,6 +38,8 @@ var namespacegui__framework =
       [ "additionalListViewReportColumnWidth", "namespacegui__framework_1_1standard__sizes.html#a411003476965ae5667265e2e56687220", null ],
       [ "buttonHeight", "namespacegui__framework_1_1standard__sizes.html#ad9a5341565621f03854e8c9e0d942e8f", null ],
       [ "buttonWidth", "namespacegui__framework_1_1standard__sizes.html#af458d40e3a798d830af7f24830173cc7", null ],
+      [ "checkBoxHeight", "namespacegui__framework_1_1standard__sizes.html#a7e29e7a576f983497b8347cc45b21191", null ],
+      [ "checkBoxWidth", "namespacegui__framework_1_1standard__sizes.html#a30ae3f2a8d6104c5e384ac6ee22db3f2", null ],
       [ "comboBoxAdditionalWidth", "namespacegui__framework_1_1standard__sizes.html#af5dff7df0d040f20e7069da7f8ce28da", null ],
       [ "defaultImagesCount", "namespacegui__framework_1_1standard__sizes.html#a018fae1303ab52531f18a98e80fc15e7", null ],
       [ "dialogBoxBuilderMinHeight", "namespacegui__framework_1_1standard__sizes.html#a1eb22a43d0bb081bc61b66b89c35fc33", null ],
@@ -57,6 +59,7 @@ var namespacegui__framework =
     [ "BaseNonResizableComponent", "classgui__framework_1_1_base_non_resizable_component.html", "classgui__framework_1_1_base_non_resizable_component" ],
     [ "BaseResizableComponent", "classgui__framework_1_1_base_resizable_component.html", "classgui__framework_1_1_base_resizable_component" ],
     [ "BaseButton", "classgui__framework_1_1_base_button.html", "classgui__framework_1_1_base_button" ],
+    [ "BaseCheckBox", "classgui__framework_1_1_base_check_box.html", "classgui__framework_1_1_base_check_box" ],
     [ "BaseComboBox", "classgui__framework_1_1_base_combo_box.html", "classgui__framework_1_1_base_combo_box" ],
     [ "BaseEditControl", "classgui__framework_1_1_base_edit_control.html", "classgui__framework_1_1_base_edit_control" ],
     [ "BaseInfiniteProgressBar", "classgui__framework_1_1_base_infinite_progress_bar.html", "classgui__framework_1_1_base_infinite_progress_bar" ],
@@ -66,6 +69,7 @@ var namespacegui__framework =
     [ "BaseRichEdit", "classgui__framework_1_1_base_rich_edit.html", "classgui__framework_1_1_base_rich_edit" ],
     [ "BaseStaticControl", "classgui__framework_1_1_base_static_control.html", "classgui__framework_1_1_base_static_control" ],
     [ "BaseTabControl", "classgui__framework_1_1_base_tab_control.html", "classgui__framework_1_1_base_tab_control" ],
+    [ "BaseTrackbarControl", "classgui__framework_1_1_base_trackbar_control.html", "classgui__framework_1_1_base_trackbar_control" ],
     [ "BaseIconListView", "classgui__framework_1_1_base_icon_list_view.html", "classgui__framework_1_1_base_icon_list_view" ],
     [ "BaseListIconListView", "classgui__framework_1_1_base_list_icon_list_view.html", "classgui__framework_1_1_base_list_icon_list_view" ],
     [ "BaseListListView", "classgui__framework_1_1_base_list_list_view.html", "classgui__framework_1_1_base_list_list_view" ],
@@ -82,9 +86,11 @@ var namespacegui__framework =
     [ "BaseSeparateWindow", "classgui__framework_1_1_base_separate_window.html", "classgui__framework_1_1_base_separate_window" ],
     [ "BaseWindow", "classgui__framework_1_1_base_window.html", "classgui__framework_1_1_base_window" ],
     [ "Button", "classgui__framework_1_1_button.html", "classgui__framework_1_1_button" ],
+    [ "CheckBox", "classgui__framework_1_1_check_box.html", "classgui__framework_1_1_check_box" ],
     [ "DropDownComboBox", "classgui__framework_1_1_drop_down_combo_box.html", "classgui__framework_1_1_drop_down_combo_box" ],
     [ "DropDownListComboBox", "classgui__framework_1_1_drop_down_list_combo_box.html", "classgui__framework_1_1_drop_down_list_combo_box" ],
     [ "EditControl", "classgui__framework_1_1_edit_control.html", "classgui__framework_1_1_edit_control" ],
+    [ "GroupBox", "classgui__framework_1_1_group_box.html", "classgui__framework_1_1_group_box" ],
     [ "InfiniteProgressBar", "classgui__framework_1_1_infinite_progress_bar.html", "classgui__framework_1_1_infinite_progress_bar" ],
     [ "ListBox", "classgui__framework_1_1_list_box.html", "classgui__framework_1_1_list_box" ],
     [ "IconListView", "classgui__framework_1_1_icon_list_view.html", "classgui__framework_1_1_icon_list_view" ],
@@ -99,6 +105,8 @@ var namespacegui__framework =
     [ "SimpleComboBox", "classgui__framework_1_1_simple_combo_box.html", "classgui__framework_1_1_simple_combo_box" ],
     [ "StaticControl", "classgui__framework_1_1_static_control.html", "classgui__framework_1_1_static_control" ],
     [ "TabControl", "classgui__framework_1_1_tab_control.html", "classgui__framework_1_1_tab_control" ],
+    [ "HorizontalTrackbarControl", "classgui__framework_1_1_horizontal_trackbar_control.html", "classgui__framework_1_1_horizontal_trackbar_control" ],
+    [ "VerticalTrackbarControl", "classgui__framework_1_1_vertical_trackbar_control.html", "classgui__framework_1_1_vertical_trackbar_control" ],
     [ "ChildWindow", "classgui__framework_1_1_child_window.html", "classgui__framework_1_1_child_window" ],
     [ "DialogBox", "classgui__framework_1_1_dialog_box.html", "classgui__framework_1_1_dialog_box" ],
     [ "SeparateWindow", "classgui__framework_1_1_separate_window.html", "classgui__framework_1_1_separate_window" ],

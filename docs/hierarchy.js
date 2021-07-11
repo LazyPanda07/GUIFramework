@@ -2,10 +2,13 @@ var hierarchy =
 [
     [ "gui_framework::utility::AdditionalCreationData< T >", "classgui__framework_1_1utility_1_1_additional_creation_data.html", null ],
     [ "gui_framework::utility::AdditionalCreationData< Button >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_button_01_4.html", null ],
+    [ "gui_framework::utility::AdditionalCreationData< CheckBox >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_check_box_01_4.html", null ],
     [ "gui_framework::utility::AdditionalCreationData< ChildWindow >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_child_window_01_4.html", null ],
     [ "gui_framework::utility::AdditionalCreationData< DropDownComboBox >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_drop_down_combo_box_01_4.html", null ],
     [ "gui_framework::utility::AdditionalCreationData< DropDownListComboBox >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_drop_down_list_combo_box_01_4.html", null ],
     [ "gui_framework::utility::AdditionalCreationData< EditControl >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_edit_control_01_4.html", null ],
+    [ "gui_framework::utility::AdditionalCreationData< GroupBox >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_group_box_01_4.html", null ],
+    [ "gui_framework::utility::AdditionalCreationData< HorizontalTrackbarControl >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_horizontal_trackbar_control_01_4.html", null ],
     [ "gui_framework::utility::AdditionalCreationData< IconListView >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_icon_list_view_01_4.html", null ],
     [ "gui_framework::utility::AdditionalCreationData< InfiniteProgressBar >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_infinite_progress_bar_01_4.html", null ],
     [ "gui_framework::utility::AdditionalCreationData< ListBox >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_list_box_01_4.html", null ],
@@ -21,8 +24,12 @@ var hierarchy =
     [ "gui_framework::utility::AdditionalCreationData< TabControl >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_tab_control_01_4.html", null ],
     [ "gui_framework::utility::AdditionalCreationData< TextIconListView >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_text_icon_list_view_01_4.html", null ],
     [ "gui_framework::utility::AdditionalCreationData< TextListView >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_text_list_view_01_4.html", null ],
+    [ "gui_framework::utility::AdditionalCreationData< VerticalTrackbarControl >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_vertical_trackbar_control_01_4.html", null ],
     [ "gui_framework::BaseComponent", "classgui__framework_1_1_base_component.html", [
       [ "gui_framework::BaseButton", "classgui__framework_1_1_base_button.html", [
+        [ "gui_framework::BaseCheckBox", "classgui__framework_1_1_base_check_box.html", [
+          [ "gui_framework::CheckBox", "classgui__framework_1_1_check_box.html", null ]
+        ] ],
         [ "gui_framework::Button", "classgui__framework_1_1_button.html", null ]
       ] ],
       [ "gui_framework::BaseComboBox", "classgui__framework_1_1_base_combo_box.html", [
@@ -48,7 +55,8 @@ var hierarchy =
           [ "gui_framework::BaseSeparateWindow", "classgui__framework_1_1_base_separate_window.html", [
             [ "gui_framework::SeparateWindow", "classgui__framework_1_1_separate_window.html", null ]
           ] ]
-        ] ]
+        ] ],
+        [ "gui_framework::GroupBox", "classgui__framework_1_1_group_box.html", null ]
       ] ],
       [ "gui_framework::BaseEditControl", "classgui__framework_1_1_base_edit_control.html", [
         [ "gui_framework::EditControl", "classgui__framework_1_1_edit_control.html", null ]
@@ -104,14 +112,21 @@ var hierarchy =
       ] ],
       [ "gui_framework::BaseTabControl", "classgui__framework_1_1_base_tab_control.html", [
         [ "gui_framework::TabControl", "classgui__framework_1_1_tab_control.html", null ]
+      ] ],
+      [ "gui_framework::BaseTrackbarControl", "classgui__framework_1_1_base_trackbar_control.html", [
+        [ "gui_framework::HorizontalTrackbarControl", "classgui__framework_1_1_horizontal_trackbar_control.html", null ],
+        [ "gui_framework::VerticalTrackbarControl", "classgui__framework_1_1_vertical_trackbar_control.html", null ]
       ] ]
     ] ],
     [ "gui_framework::utility::BaseComponentCreator", "classgui__framework_1_1utility_1_1_base_component_creator.html", [
       [ "gui_framework::utility::ButtonCreator", "classgui__framework_1_1utility_1_1_button_creator.html", null ],
+      [ "gui_framework::utility::CheckBoxCreator", "classgui__framework_1_1utility_1_1_check_box_creator.html", null ],
       [ "gui_framework::utility::ChildWindowCreator", "classgui__framework_1_1utility_1_1_child_window_creator.html", null ],
       [ "gui_framework::utility::DropDownComboBoxCreator", "classgui__framework_1_1utility_1_1_drop_down_combo_box_creator.html", null ],
       [ "gui_framework::utility::DropDownListComboBoxCreator", "classgui__framework_1_1utility_1_1_drop_down_list_combo_box_creator.html", null ],
       [ "gui_framework::utility::EditControlCreator", "classgui__framework_1_1utility_1_1_edit_control_creator.html", null ],
+      [ "gui_framework::utility::GroupBoxCreator", "classgui__framework_1_1utility_1_1_group_box_creator.html", null ],
+      [ "gui_framework::utility::HorizontalTrackbarControlCreator", "classgui__framework_1_1utility_1_1_horizontal_trackbar_control_creator.html", null ],
       [ "gui_framework::utility::IconListViewCreator", "classgui__framework_1_1utility_1_1_icon_list_view_creator.html", null ],
       [ "gui_framework::utility::InfiniteProgressBarCreator", "classgui__framework_1_1utility_1_1_infinite_progress_bar_creator.html", null ],
       [ "gui_framework::utility::ListBoxCreator", "classgui__framework_1_1utility_1_1_list_box_creator.html", null ],
@@ -126,10 +141,11 @@ var hierarchy =
       [ "gui_framework::utility::StaticControlCreator", "classgui__framework_1_1utility_1_1_static_control_creator.html", null ],
       [ "gui_framework::utility::TabControlCreator", "classgui__framework_1_1utility_1_1_tab_control_creator.html", null ],
       [ "gui_framework::utility::TextIconListViewCreator", "classgui__framework_1_1utility_1_1_text_icon_list_view_creator.html", null ],
-      [ "gui_framework::utility::TextListViewCreator", "classgui__framework_1_1utility_1_1_text_list_view_creator.html", null ]
+      [ "gui_framework::utility::TextListViewCreator", "classgui__framework_1_1utility_1_1_text_list_view_creator.html", null ],
+      [ "gui_framework::utility::VerticalTrackbarControlCreator", "classgui__framework_1_1utility_1_1_vertical_trackbar_control_creator.html", null ]
     ] ],
     [ "gui_framework::utility::BaseLoadableHolder", "classgui__framework_1_1utility_1_1_base_loadable_holder.html", [
-      [ "gui_framework::utility::CursorHolder", "classgui__framework_1_1utility_1_1_cursor_holder.html", null ],
+      [ "gui_framework::utility::CursorsHolder", "classgui__framework_1_1utility_1_1_cursors_holder.html", null ],
       [ "gui_framework::utility::IconsHolder", "classgui__framework_1_1utility_1_1_icons_holder.html", null ],
       [ "gui_framework::utility::ImagesHolder", "classgui__framework_1_1utility_1_1_images_holder.html", null ]
     ] ],
@@ -188,6 +204,7 @@ var hierarchy =
       [ "gui_framework::BaseStaticControl", "classgui__framework_1_1_base_static_control.html", null ]
     ] ],
     [ "gui_framework::Menu", "classgui__framework_1_1_menu.html", null ],
+    [ "gui_framework::GroupBox::radioButtonData", "structgui__framework_1_1_group_box_1_1radio_button_data.html", null ],
     [ "std::runtime_error", null, [
       [ "gui_framework::exceptions::BaseGUIFrameworkException", "classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception.html", [
         [ "gui_framework::exceptions::CantFindSeparateWindowFunctionException", "classgui__framework_1_1exceptions_1_1_cant_find_separate_window_function_exception.html", null ],

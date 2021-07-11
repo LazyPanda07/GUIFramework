@@ -7,6 +7,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
+		/// @brief Specialization for TabControl
 		template<>
 		class GUI_FRAMEWORK_API AdditionalCreationData<TabControl>
 		{

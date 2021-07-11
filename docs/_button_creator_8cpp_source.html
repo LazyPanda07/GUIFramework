@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.3</span>
+   &#160;<span id="projectnumber">0.4</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('_button_creator_8cpp_source.html','');
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    {</div>
 <div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_button_creator.html#a8130384a18b21998ecc4f5accde862e8">   12</a></span>&#160;        <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* ButtonCreator::create(<span class="keyword">const</span> wstring&amp; windowName, <span class="keyword">const</span> <a class="code" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a>&amp; settings, <span class="keyword">const</span> any&amp; additionalData, <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* parent)</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            <span class="keyword">auto</span> [text, onClick] = any_cast&lt;tuple&lt;wstring, <span class="keyword">function</span>&lt;LRESULT(WPARAM, LPARAM)&gt;&gt;&gt;(additionalData);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            <span class="keyword">auto</span> [text, onClick] = any_cast&lt;tuple&lt;wstring, <span class="keyword">function</span>&lt;void()&gt;&gt;&gt;(additionalData);</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classgui__framework_1_1_button.html">Button</a>(windowName, text, settings.<a class="code" href="structgui__framework_1_1utility_1_1_component_settings.html#a6838816279065fadae087a1e1ec0a3e7">x</a>, settings.<a class="code" href="structgui__framework_1_1utility_1_1_component_settings.html#a3d3e5c4eb6a404a2c6b0888ff6fbfdb2">y</a>, parent, onClick, settings.<a class="code" href="structgui__framework_1_1utility_1_1_component_settings.html#a16e36a9bbf7476a9ba9d215ddd8b0ce8">width</a>, settings.<a class="code" href="structgui__framework_1_1utility_1_1_component_settings.html#a64055dca192a579b9b51d29ad80a3bb1">height</a>);</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        }</div>

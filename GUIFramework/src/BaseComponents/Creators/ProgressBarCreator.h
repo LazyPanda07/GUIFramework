@@ -6,6 +6,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
+		/// @brief ProgressBar creator
 		class GUI_FRAMEWORK_API ProgressBarCreator : public BaseComponentCreator
 		{
 		public:

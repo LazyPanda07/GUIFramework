@@ -8,7 +8,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		/// @brief Specialization for gui_framework::ListBox
+		/// @brief Specialization for ListBox
 		template<>
 		class GUI_FRAMEWORK_API AdditionalCreationData<ListBox>
 		{
@@ -26,7 +26,7 @@ namespace gui_framework
 			virtual ~AdditionalCreationData() = default;
 		};
 
-		/// @brief Specialization for gui_framework::MultipleSelectListBox
+		/// @brief Specialization for MultipleSelectListBox
 		template<>
 		class GUI_FRAMEWORK_API AdditionalCreationData<MultipleSelectListBox>
 		{

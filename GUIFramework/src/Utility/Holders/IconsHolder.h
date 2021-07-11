@@ -6,6 +6,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
+		/// @brief Icons loader
 		class GUI_FRAMEWORK_API IconsHolder final : public BaseLoadableHolder
 		{
 		public:

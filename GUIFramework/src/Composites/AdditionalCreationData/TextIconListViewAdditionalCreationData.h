@@ -8,7 +8,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		/// @brief Specialization for gui_framework::TextIconListView
+		/// @brief Specialization for TextIconListView
 		template<>
 		class GUI_FRAMEWORK_API AdditionalCreationData<TextIconListView>
 		{
@@ -26,7 +26,7 @@ namespace gui_framework
 			virtual ~AdditionalCreationData() = default;
 		};
 
-		/// @brief Specialization for gui_framework::ListTextIconListView
+		/// @brief Specialization for ListTextIconListView
 		template<>
 		class GUI_FRAMEWORK_API AdditionalCreationData<ListTextIconListView>
 		{

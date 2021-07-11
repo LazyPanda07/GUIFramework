@@ -9,7 +9,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		/// @brief Specialization for gui_framework::DropDownComboBox
+		/// @brief Specialization for DropDownComboBox
 		template<>
 		class GUI_FRAMEWORK_API AdditionalCreationData<DropDownComboBox>
 		{
@@ -26,7 +26,7 @@ namespace gui_framework
 			virtual ~AdditionalCreationData() = default;
 		};
 
-		/// @brief Specialization for gui_framework::DropDownListComboBox
+		/// @brief Specialization for DropDownListComboBox
 		template<>
 		class GUI_FRAMEWORK_API AdditionalCreationData<DropDownListComboBox>
 		{
@@ -43,7 +43,7 @@ namespace gui_framework
 			virtual ~AdditionalCreationData() = default;
 		};
 
-		/// @brief Specialization for gui_framework::SimpleComboBox
+		/// @brief Specialization for SimpleComboBox
 		template<>
 		class GUI_FRAMEWORK_API AdditionalCreationData<SimpleComboBox>
 		{
