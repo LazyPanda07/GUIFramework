@@ -6,20 +6,6 @@ using namespace std;
 namespace gui_framework
 {
 	GroupBox::RadioButton::RadioButton(const wstring& radioButtonName, const wstring& radioButtonText, int x, int y, uint16_t width, uint16_t height, BaseComponent* parent, const function<void()>& onClick) :
-		BaseComponent
-		(
-			wstring(standard_classes::button),
-			radioButtonName,
-			utility::ComponentSettings
-			(
-				BS_AUTORADIOBUTTON,
-				x,
-				y,
-				width,
-				height
-			),
-			parent
-		),
 		BaseButton
 		(
 			radioButtonName,

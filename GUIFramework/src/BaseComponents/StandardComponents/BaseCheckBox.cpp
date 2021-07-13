@@ -41,21 +41,6 @@ namespace gui_framework
 	}
 
 	BaseCheckBox::BaseCheckBox(const wstring& checkBoxName, const wstring& checkBoxText, const utility::ComponentSettings& settings, BaseComponent* parent, const function<void()>& onCheck, const function<void()>& onClear, const function<void()>& onClick) :
-		BaseComponent
-		(
-			wstring(standard_classes::button),
-			checkBoxName,
-			utility::ComponentSettings
-			(
-				settings.styles | BS_CHECKBOX,
-				settings.x,
-				settings.y,
-				settings.width,
-				settings.height,
-				settings.extendedStyles
-			),
-			parent
-		),
 		BaseButton
 		(
 			checkBoxName,

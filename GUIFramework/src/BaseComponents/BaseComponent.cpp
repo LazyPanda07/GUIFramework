@@ -27,6 +27,20 @@ namespace gui_framework
 	{
 		isUsed = false;
 
+		if (message == WM_SIZE)
+		{
+			interfaces::IResizableComponent* resizableComponent = dynamic_cast<interfaces::IResizableComponent*>(this);
+
+			if (!resizableComponent->getBlockResize())
+			{
+				isUsed = true;
+
+				resizableComponent->resize(LOWORD(lparam), HIWORD(lparam));
+
+				return 0;
+			}
+		}
+
 		return -1;
 	}
 

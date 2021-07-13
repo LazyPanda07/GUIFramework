@@ -1,17 +1,14 @@
 #pragma once
 
 #include "BaseComponents/StandardComponents/BaseProgressBar.h"
-#include "BaseComponents/BaseResizableComponent.h"
-
-#pragma warning(push)
-#pragma warning(disable: 4250)
+#include "Interfaces/Components/IResizableComponent.h"
 
 namespace gui_framework
 {
 	/// @brief Standard updatable progress bar
 	class GUI_FRAMEWORK_API ProgressBar :
 		public BaseProgressBar,
-		virtual public BaseResizableComponent
+		public interfaces::IResizableComponent
 	{
 	public:
 		ProgressBar(const std::wstring& progressBarName, int x, int y, uint16_t width, uint16_t height, BaseComponent* parent, int minRange = defaultMinRange, int maxRange = defaultMaxRange, int updateStep = defaultUpdateStep);
@@ -19,5 +16,3 @@ namespace gui_framework
 		~ProgressBar() = default;
 	};
 }
-
-#pragma warning(pop)

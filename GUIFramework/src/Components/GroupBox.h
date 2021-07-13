@@ -3,9 +3,6 @@
 #include "BaseComponents/StandardComponents/BaseButton.h"
 #include "BaseComposites/BaseComposite.h"
 
-#pragma warning(push)
-#pragma warning(disable: 4250)
-
 namespace gui_framework
 {
 	/// @brief Standard group box with radio buttons
@@ -53,5 +50,3 @@ namespace gui_framework
 		~GroupBox() = default;
 	};
 }
-
-#pragma warning(pop)

@@ -1,17 +1,14 @@
 #pragma once
 
 #include "BaseComponents/StandardComponents/BaseInfiniteProgressBar.h"
-#include "BaseComponents/BaseResizableComponent.h"
-
-#pragma warning(push)
-#pragma warning(disable: 4250)
+#include "Interfaces/Components/IResizableComponent.h"
 
 namespace gui_framework
 {
 	/// @brief Standard non updatable progress bar
 	class GUI_FRAMEWORK_API InfiniteProgressBar :
 		public BaseInfiniteProgressBar,
-		virtual public BaseResizableComponent
+		public interfaces::IResizableComponent
 	{
 	public:
 		/// @brief 
@@ -27,5 +24,3 @@ namespace gui_framework
 		~InfiniteProgressBar() = default;
 	};
 }
-
-#pragma warning(pop)

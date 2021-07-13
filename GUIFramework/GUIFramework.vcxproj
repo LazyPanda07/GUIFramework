@@ -84,7 +84,6 @@
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseComboBox.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseEditControl.h" />
     <ClInclude Include="src\BaseComponents\BaseNonResizableComponent.h" />
-    <ClInclude Include="src\BaseComponents\BaseResizableComponent.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseListBox.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseMultipleSelectListBox.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseRichEdit.h" />
@@ -192,7 +191,6 @@
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseComboBox.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseEditControl.cpp" />
     <ClCompile Include="src\BaseComponents\BaseNonResizableComponent.cpp" />
-    <ClCompile Include="src\BaseComponents\BaseResizableComponent.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseTrackbarControl.cpp" />
     <ClCompile Include="src\Components\GroupBox.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseInfiniteProgressBar.cpp" />

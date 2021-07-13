@@ -1,10 +1,6 @@
 #pragma once
 
 #include "BaseComponents/StandardComponents/BaseCheckBox.h"
-#include "BaseComponents/BaseResizableComponent.h"
-
-#pragma warning(push)
-#pragma warning(disable: 4250)
 
 namespace gui_framework
 {
@@ -17,5 +13,3 @@ namespace gui_framework
 		~CheckBox() = default;
 	};
 }
-
-#pragma warning(pop)
