@@ -6,6 +6,7 @@ namespace gui_framework
 {
 	namespace interfaces
 	{
+		/// @brief Provides preventing resize
 		class GUI_FRAMEWORK_API INonResizableComponent
 		{
 		private:

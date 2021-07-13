@@ -5,7 +5,7 @@
 namespace gui_framework
 {
 	/// @brief Base class for all list views
-	class GUI_FRAMEWORK_API BaseListView : virtual public BaseComponent
+	class GUI_FRAMEWORK_API BaseListView : public BaseComponent
 	{
 	public:
 		BaseListView(const std::wstring& listViewName, const utility::ComponentSettings& settings, BaseComponent* parent);

@@ -102,38 +102,6 @@ namespace gui_framework
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	DialogBox::DialogBox(const wstring& className, const wstring& dialogBoxName, const utility::ComponentSettings& settings, BaseComponent* parent, const string& dialogBoxFunctionName) :
-		BaseComposite
-		(
-			className,
-			dialogBoxName,
-			utility::ComponentSettings
-			(
-				settings.styles,
-				settings.x,
-				settings.y,
-				settings.width,
-				settings.height,
-				settings.extendedStyles | WS_EX_DLGMODALFRAME
-			),
-			parent,
-			dialogBoxFunctionName
-		),
-		BaseNonResizableComposite
-		(
-			className,
-			dialogBoxName,
-			utility::ComponentSettings
-			(
-				settings.styles,
-				settings.x,
-				settings.y,
-				settings.width,
-				settings.height,
-				settings.extendedStyles | WS_EX_DLGMODALFRAME
-			),
-			parent,
-			dialogBoxFunctionName
-		),
 		BaseDialogBox
 		(
 			className,
@@ -149,6 +117,10 @@ namespace gui_framework
 			),
 			parent,
 			dialogBoxFunctionName
+		),
+		INonResizableComponent
+		(
+			handle
 		)
 	{
 
