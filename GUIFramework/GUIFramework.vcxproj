@@ -83,7 +83,6 @@
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseButton.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseComboBox.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseEditControl.h" />
-    <ClInclude Include="src\BaseComponents\BaseNonResizableComponent.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseListBox.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseMultipleSelectListBox.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseRichEdit.h" />
@@ -136,6 +135,7 @@
     <ClInclude Include="src\Interfaces\Components\IProgressBarColor.h" />
     <ClInclude Include="src\Interfaces\Components\ListViews\IBaseListViewOperations.h" />
     <ClInclude Include="src\Interfaces\Components\ListViews\IIconListView.h" />
+    <ClInclude Include="src\Interfaces\Components\INonResizableComponent.h" />
     <ClInclude Include="src\Interfaces\Components\ListViews\ITextIconListView.h" />
     <ClInclude Include="src\Interfaces\Components\ListViews\ITextListView.h" />
     <ClInclude Include="src\Utility\Holders\BaseLoadableHolder.h" />
@@ -190,7 +190,6 @@
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseButton.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseComboBox.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseEditControl.cpp" />
-    <ClCompile Include="src\BaseComponents\BaseNonResizableComponent.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseTrackbarControl.cpp" />
     <ClCompile Include="src\Components\GroupBox.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseInfiniteProgressBar.cpp" />
@@ -263,6 +262,7 @@
     <ClCompile Include="src\Exceptions\SelectListException.cpp" />
     <ClCompile Include="src\Exceptions\GetLastErrorException.cpp" />
     <ClCompile Include="src\GUIFramework.cpp" />
+    <ClCompile Include="src\Interfaces\Components\INonResizableComponent.cpp" />
     <ClCompile Include="src\Interfaces\Components\IProgressBarColor.cpp" />
     <ClCompile Include="src\Interfaces\Components\ListViews\IBaseListViewOperations.cpp" />
     <ClCompile Include="src\Interfaces\Components\ListViews\IIconListView.cpp" />
