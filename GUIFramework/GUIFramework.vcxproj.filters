@@ -81,12 +81,6 @@
     <ClInclude Include="src\Utility\Utility.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComposites\BaseResizableComposite.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="src\BaseComposites\BaseNonResizableComposite.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="src\Composites\SeparateWindow.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
@@ -471,12 +465,6 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Utility\Utility.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="src\BaseComposites\BaseResizableComposite.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="src\BaseComposites\BaseNonResizableComposite.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Composites\SeparateWindow.cpp">

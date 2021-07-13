@@ -15,6 +15,9 @@ namespace gui_framework
 	protected:
 		std::vector<std::unique_ptr<BaseComponent>> children;
 
+	private:
+		virtual LRESULT preWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
+
 	public:
 		BaseComposite(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, BaseComponent* parent = nullptr, const std::string& windowFunctionName = "");
 

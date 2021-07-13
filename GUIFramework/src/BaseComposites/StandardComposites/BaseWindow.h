@@ -5,7 +5,7 @@
 namespace gui_framework
 {
 	/// @brief Base class for composite windows
-	class GUI_FRAMEWORK_API BaseWindow : virtual public BaseComposite
+	class GUI_FRAMEWORK_API BaseWindow : public BaseComposite
 	{
 	public:
 		BaseWindow(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, BaseComponent* parent = nullptr, const std::string& windowFunctionName = "");
