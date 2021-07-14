@@ -6,7 +6,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		/// @brief gui_framework::SeparateWindow creator
+		/// @brief SeparateWindow creator
 		class GUI_FRAMEWORK_API SeparateWindowCreator : public BaseComponentCreator
 		{
 		public:

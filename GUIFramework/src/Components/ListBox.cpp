@@ -1,39 +1,24 @@
 #include "pch.h"
 #include "ListBox.h"
 
+#include "Styles/Components/DefaultListBoxStyles.h"
+
 using namespace std;
 
 namespace gui_framework
 {
-	ListBox::ListBox(const wstring& listBoxName, int x, int y, uint16_t width, uint16_t height, BaseComponent* parent, bool isSorting) :
-		BaseComponent
-		(
-			wstring(standard_classes::listBox),
-			listBoxName,
-			utility::ComponentSettings
-			(
-				(isSorting ? LBS_SORT : NULL),
-				x,
-				y,
-				width,
-				height
-			),
-			parent
-		),
+	ListBox::ListBox(const wstring& listBoxName, const utility::ComponentSettings& settings, BaseComponent* parent, bool isSorting) :
 		BaseListBox
 		(
 			listBoxName,
-			utility::ComponentSettings
-			(
-				(isSorting ? LBS_SORT : NULL),
-				x,
-				y,
-				width,
-				height
-			),
+			settings,
+			styles::DefaultListBoxStyles(),
 			parent
 		)
 	{
-
+		if (isSorting)
+		{
+			utility::appendStyle(handle, LBS_SORT);
+		}
 	}
 }

@@ -5,35 +5,17 @@ using namespace std;
 
 namespace gui_framework
 {
-	MultipleSelectListBox::MultipleSelectListBox(const wstring& listBoxName, int x, int y, uint16_t width, uint16_t height, BaseComponent* parent, bool isSorting) :
-		BaseComponent
-		(
-			wstring(standard_classes::listBox),
-			listBoxName,
-			utility::ComponentSettings
-			(
-				LBS_MULTIPLESEL | (isSorting ? LBS_SORT : NULL),
-				x,
-				y,
-				width,
-				height
-			),
-			parent
-		),
+	MultipleSelectListBox::MultipleSelectListBox(const wstring& listBoxName, const utility::ComponentSettings& settings, BaseComponent* parent, bool isSorting) :
 		BaseMultipleSelectListBox
 		(
 			listBoxName,
-			utility::ComponentSettings
-			(
-				(isSorting ? LBS_SORT : NULL),
-				x,
-				y,
-				width,
-				height
-			),
+			settings,
 			parent
 		)
 	{
-
+		if (isSorting)
+		{
+			utility::appendStyle(handle, LBS_SORT);
+		}
 	}
 }

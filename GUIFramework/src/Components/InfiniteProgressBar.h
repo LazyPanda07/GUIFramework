@@ -1,17 +1,14 @@
 #pragma once
 
 #include "BaseComponents/StandardComponents/BaseInfiniteProgressBar.h"
-#include "BaseComponents/BaseResizableComponent.h"
-
-#pragma warning(push)
-#pragma warning(disable: 4250)
+#include "Interfaces/Components/IResizableComponent.h"
 
 namespace gui_framework
 {
 	/// @brief Standard non updatable progress bar
 	class GUI_FRAMEWORK_API InfiniteProgressBar :
 		public BaseInfiniteProgressBar,
-		virtual public BaseResizableComponent
+		public interfaces::IResizableComponent
 	{
 	public:
 		/// @brief 
@@ -22,10 +19,8 @@ namespace gui_framework
 		/// @param height 
 		/// @param parent 
 		/// @param animationPeriod Period between animation in milliseconds
-		InfiniteProgressBar(const std::wstring& progressBarName, int x, int y, uint16_t width, uint16_t height, BaseComponent* parent, int animationPeriod = NULL);
+		InfiniteProgressBar(const std::wstring& progressBarName, const utility::ComponentSettings& settings, BaseComponent* parent, int animationPeriod = NULL);
 
 		~InfiniteProgressBar() = default;
 	};
 }
-
-#pragma warning(pop)

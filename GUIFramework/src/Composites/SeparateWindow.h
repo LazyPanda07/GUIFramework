@@ -1,18 +1,15 @@
 #pragma once
 
 #include "BaseComposites/StandardComposites/BaseSeparateWindow.h"
-#include "BaseComposites/BaseResizableComposite.h"
+#include "Interfaces/Components/IResizableComponent.h"
 
 namespace gui_framework
 {
 	/// @brief Standard separate window
 	class GUI_FRAMEWORK_API SeparateWindow :
-		public BaseResizableComposite,
-		public BaseSeparateWindow
+		public BaseSeparateWindow,
+		public interfaces::IResizableComponent
 	{
-	private:
-		LRESULT preWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
-
 	public:
 		SeparateWindow(const std::wstring& className, const std::wstring& titleName, const utility::ComponentSettings& settings, const std::string& windowFunctionName);
 

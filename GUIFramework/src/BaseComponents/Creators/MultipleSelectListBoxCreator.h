@@ -6,7 +6,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		/// @brief gui_framework::MultipleSelectListBox creator
+		/// @brief MultipleSelectListBox creator
 		class GUI_FRAMEWORK_API MultipleSelectListBoxCreator : public BaseComponentCreator
 		{
 		public:

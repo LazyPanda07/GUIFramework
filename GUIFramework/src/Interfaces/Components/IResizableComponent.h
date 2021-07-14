@@ -9,9 +9,11 @@ namespace gui_framework
 		/// @brief Provides resize, setBlockResize, getBlockResize methods
 		class GUI_FRAMEWORK_API IResizableComponent
 		{
-		protected:
+		private:
 			HWND resizeableHandle;
 			HWND parent;
+
+		protected:
 			bool blockResize;
 			bool autoResize;
 			int initX;

@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "BaseInfiniteProgressBar.h"
 
+#include "Styles/Components/InfiniteProgressBarStyles.h"
 #include "Exceptions/NotImplemented.h"
 
 using namespace std;
@@ -12,15 +13,8 @@ namespace gui_framework
 		(
 			wstring(standard_classes::progressBar),
 			progressBarName,
-			utility::ComponentSettings
-			(
-				settings.styles | PBS_MARQUEE,
-				settings.x,
-				settings.y,
-				settings.width,
-				settings.height,
-				settings.extendedStyles
-			),
+			settings,
+			styles::InfiniteProgressBarStyles(),
 			parent
 		),
 		IProgressBarColor

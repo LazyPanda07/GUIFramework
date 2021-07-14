@@ -6,7 +6,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		/// @brief gui_framework::Button creator
+		/// @brief CheckBox creator
 		class GUI_FRAMEWORK_API CheckBoxCreator : public BaseComponentCreator
 		{
 		public:

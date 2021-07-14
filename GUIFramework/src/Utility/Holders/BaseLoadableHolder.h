@@ -12,6 +12,7 @@ namespace gui_framework
 			smallIcon = 2
 		};
 
+		/// @brief Base class for all visual asset loaders
 		class GUI_FRAMEWORK_API BaseLoadableHolder
 		{
 		public:

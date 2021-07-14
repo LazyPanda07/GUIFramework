@@ -6,6 +6,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
+		/// @brief TextIconListView creator
 		class GUI_FRAMEWORK_API TextIconListViewCreator : public BaseComponentCreator
 		{
 		public:

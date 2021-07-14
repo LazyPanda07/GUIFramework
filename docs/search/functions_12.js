@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['windowholder_1435',['WindowHolder',['../classgui__framework_1_1_window_holder.html#a78443d165cc99d95793acdf4dca298b5',1,'gui_framework::WindowHolder']]],
-  ['windowmessageshandle_1436',['windowMessagesHandle',['../classgui__framework_1_1_base_component.html#a636cece7fe5db06982150a8eb9e13e10',1,'gui_framework::BaseComponent::windowMessagesHandle()'],['../classgui__framework_1_1_base_button.html#aeceb03df19d66ea6e6e7ea04a81ec397',1,'gui_framework::BaseButton::windowMessagesHandle()'],['../classgui__framework_1_1_base_rich_edit.html#a5b0e9edd94997732cc8b0f6533e9b27a',1,'gui_framework::BaseRichEdit::windowMessagesHandle()'],['../classgui__framework_1_1_base_tab_control.html#a705e7fa0d724d7c17e1cd6d9db6a38ba',1,'gui_framework::BaseTabControl::windowMessagesHandle()'],['../classgui__framework_1_1_base_composite.html#ab788d4dc310ef2e8eda23e9475da7ea7',1,'gui_framework::BaseComposite::windowMessagesHandle()']]]
+  ['verticaltrackbarcontrol_1584',['VerticalTrackbarControl',['../classgui__framework_1_1_vertical_trackbar_control.html#a878234bcd0892c1237bed6bdfecf0266',1,'gui_framework::VerticalTrackbarControl']]],
+  ['verticaltrackbarcontrolcreator_1585',['VerticalTrackbarControlCreator',['../classgui__framework_1_1utility_1_1_vertical_trackbar_control_creator.html#aae111179847ff8cfe084f3ed62b04ee5',1,'gui_framework::utility::VerticalTrackbarControlCreator']]]
 ];

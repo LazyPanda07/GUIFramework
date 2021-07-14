@@ -6,7 +6,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		/// @brief gui_framework::EditControl creator
+		/// @brief EditControl creator
 		class GUI_FRAMEWORK_API EditControlCreator : public BaseComponentCreator
 		{
 		public:

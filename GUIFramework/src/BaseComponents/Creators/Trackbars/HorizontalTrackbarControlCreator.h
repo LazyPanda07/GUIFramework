@@ -6,7 +6,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		/// @brief gui_framework::Button creator
+		/// @brief Button creator
 		class GUI_FRAMEWORK_API HorizontalTrackbarControlCreator : public BaseComponentCreator
 		{
 		public:

@@ -2,9 +2,9 @@ var dir_7966ae72e363b34655a85f8e65488403 =
 [
     [ "BaseLoadableHolder.cpp", "_base_loadable_holder_8cpp.html", null ],
     [ "BaseLoadableHolder.h", "_base_loadable_holder_8h.html", "_base_loadable_holder_8h" ],
-    [ "CursorHolder.cpp", "_cursor_holder_8cpp.html", null ],
-    [ "CursorHolder.h", "_cursor_holder_8h.html", [
-      [ "CursorHolder", "classgui__framework_1_1utility_1_1_cursor_holder.html", "classgui__framework_1_1utility_1_1_cursor_holder" ]
+    [ "CursorsHolder.cpp", "_cursors_holder_8cpp.html", null ],
+    [ "CursorsHolder.h", "_cursors_holder_8h.html", [
+      [ "CursorsHolder", "classgui__framework_1_1utility_1_1_cursors_holder.html", "classgui__framework_1_1utility_1_1_cursors_holder" ]
     ] ],
     [ "IconsHolder.cpp", "_icons_holder_8cpp.html", null ],
     [ "IconsHolder.h", "_icons_holder_8h.html", [

@@ -2,6 +2,7 @@
 
 #include "pch.h"
 #include "Menu/Menu.h"
+#include "Interfaces/Styles/IStyles.h"
 
 namespace gui_framework
 {
@@ -51,7 +52,7 @@ namespace gui_framework
 	public:
 		/// @param windowFunctionName Value that you pass in CREATE_DEFAULT_WINDOW_FUNCTION macro
 		/// @param moduleName Executable name for finding classes
-		BaseComponent(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, BaseComponent* parent = nullptr, const std::string& windowFunctionName = "", const std::wstring& moduleName = L"");
+		BaseComponent(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent = nullptr, const std::string& windowFunctionName = "", const std::wstring& moduleName = L"");
 
 		virtual bool isComposite() const;
 
@@ -87,12 +88,12 @@ namespace gui_framework
 
 		/// @brief Set large icon(32x32) for specific window
 		/// @param pathToLargeIcon 
-		/// @exception gui_framework::exceptions::FileDoesNotExist
+		/// @exception FileDoesNotExist
 		virtual void setLargeIcon(const std::filesystem::path& pathToLargeIcon) final;
 
 		/// @brief Set small icon(16x16) for specific window
 		/// @param pathToSmallIcon 
-		/// @exception gui_framework::exceptions::FileDoesNotExist
+		/// @exception FileDoesNotExist
 		virtual void setSmallIcon(const std::filesystem::path& pathToSmallIcon) final;
 
 		virtual void setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue);

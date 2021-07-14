@@ -7,7 +7,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		/// @brief Specialization for gui_framework::ChildWindow
+		/// @brief Specialization for ChildWindow
 		template<>
 		class GUI_FRAMEWORK_API AdditionalCreationData<ChildWindow>
 		{

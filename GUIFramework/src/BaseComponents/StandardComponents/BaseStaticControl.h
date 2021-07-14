@@ -7,7 +7,7 @@ namespace gui_framework
 {
 	/// @brief Base class for all static controls
 	class GUI_FRAMEWORK_API BaseStaticControl :
-		virtual public BaseComponent,
+		public BaseComponent,
 		public interfaces::ITextOperations
 	{
 	public:

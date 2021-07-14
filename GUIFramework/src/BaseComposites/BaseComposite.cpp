@@ -1,16 +1,51 @@
 #include "pch.h"
 #include "BaseComposite.h"
 
+#include "Interfaces/Components/IResizableComponent.h"
+
 using namespace std;
 
 namespace gui_framework
 {
-	BaseComposite::BaseComposite(const wstring& className, const wstring& windowName, const utility::ComponentSettings& settings, BaseComponent* parent, const string& windowFunctionName) :
+	LRESULT BaseComposite::preWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
+	{
+		isUsed = false;
+
+		if (message == WM_SIZE)
+		{
+			interfaces::IResizableComponent* resizableComposite = dynamic_cast<interfaces::IResizableComponent*>(this);
+
+			if (resizableComposite && resizableComposite->getBlockResize())
+			{
+				isUsed = true;
+
+				uint16_t width = LOWORD(lparam);
+				uint16_t height = HIWORD(lparam);
+
+				for (const auto& i : children)
+				{
+					interfaces::IResizableComponent* resizable = dynamic_cast<interfaces::IResizableComponent*>(i.get());
+
+					if (resizable)
+					{
+						resizable->resize(width, height);
+					}
+				}
+
+				return 0;
+			}
+		}
+
+		return -1;
+	}
+
+	BaseComposite::BaseComposite(const wstring& className, const wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent, const string& windowFunctionName) :
 		BaseComponent
 		(
 			className,
 			windowName,
 			settings,
+			styles,
 			parent,
 			windowFunctionName
 		)

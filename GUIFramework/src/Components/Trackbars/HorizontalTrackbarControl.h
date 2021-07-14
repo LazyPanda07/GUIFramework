@@ -4,6 +4,7 @@
 
 namespace gui_framework
 {
+	/// @brief Standard horizontal trackbar control
 	class GUI_FRAMEWORK_API HorizontalTrackbarControl : public BaseTrackbarControl
 	{
 	public:
@@ -15,7 +16,7 @@ namespace gui_framework
 		};
 
 	public:
-		HorizontalTrackbarControl(const std::wstring& trackbarName, int x, int y, uint16_t width, uint16_t height, BaseComponent* parent, bool autoTicks = true, horizontalTickPosition position = horizontalTickPosition::bottom, bool selectionRange = false, bool noTicks = false);
+		HorizontalTrackbarControl(const std::wstring& trackbarName, const utility::ComponentSettings& settings, BaseComponent* parent, bool autoTicks = true, horizontalTickPosition position = horizontalTickPosition::bottom, bool selectionRange = false, bool noTicks = false);
 
 		~HorizontalTrackbarControl() = default;
 	};

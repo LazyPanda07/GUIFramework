@@ -4,7 +4,8 @@
 
 namespace gui_framework
 {
-	class GUI_FRAMEWORK_API BaseDialogBox : virtual public BaseComposite
+	/// @brief Base class for all dialog boxes
+	class GUI_FRAMEWORK_API BaseDialogBox : public BaseComposite
 	{
 	public:
 		enum class messageBoxType

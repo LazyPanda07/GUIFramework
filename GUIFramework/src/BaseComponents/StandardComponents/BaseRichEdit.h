@@ -8,7 +8,7 @@ namespace gui_framework
 {
 	/// @brief Base class for all rich edit controls
 	class GUI_FRAMEWORK_API BaseRichEdit :
-		virtual public BaseComponent,
+		public BaseComponent,
 		public interfaces::IResizableComponent,
 		public interfaces::ITextOperations
 	{

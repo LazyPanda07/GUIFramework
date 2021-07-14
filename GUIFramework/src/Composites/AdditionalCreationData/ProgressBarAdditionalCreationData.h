@@ -8,7 +8,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		/// @brief Specialization for gui_framework::ProgressBar
+		/// @brief Specialization for ProgressBar
 		template<>
 		class GUI_FRAMEWORK_API AdditionalCreationData<ProgressBar>
 		{
@@ -25,7 +25,7 @@ namespace gui_framework
 			virtual ~AdditionalCreationData() = default;
 		};
 
-		/// @brief Specialization for gui_framework::InfiniteProgressBar
+		/// @brief Specialization for InfiniteProgressBar
 		template<>
 		class GUI_FRAMEWORK_API AdditionalCreationData<InfiniteProgressBar>
 		{

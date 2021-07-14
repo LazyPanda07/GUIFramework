@@ -5,7 +5,8 @@ var dir_c248bc770f0ee44cbe49ead0e7fb8aa7 =
     ] ],
     [ "ButtonAdditionalCreationData.cpp", "_button_additional_creation_data_8cpp.html", null ],
     [ "ButtonAdditionalCreationData.h", "_button_additional_creation_data_8h.html", [
-      [ "AdditionalCreationData< Button >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_button_01_4.html", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_button_01_4" ]
+      [ "AdditionalCreationData< Button >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_button_01_4.html", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_button_01_4" ],
+      [ "AdditionalCreationData< CheckBox >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_check_box_01_4.html", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_check_box_01_4" ]
     ] ],
     [ "ChildWindowAdditionalCreationData.cpp", "_child_window_additional_creation_data_8cpp.html", null ],
     [ "ChildWindowAdditionalCreationData.h", "_child_window_additional_creation_data_8h.html", [
@@ -20,6 +21,10 @@ var dir_c248bc770f0ee44cbe49ead0e7fb8aa7 =
     [ "EditControlAdditionalCreationData.cpp", "_edit_control_additional_creation_data_8cpp.html", null ],
     [ "EditControlAdditionalCreationData.h", "_edit_control_additional_creation_data_8h.html", [
       [ "AdditionalCreationData< EditControl >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_edit_control_01_4.html", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_edit_control_01_4" ]
+    ] ],
+    [ "GroupBoxAdditionalCreationData.cpp", "_group_box_additional_creation_data_8cpp.html", null ],
+    [ "GroupBoxAdditionalCreationData.h", "_group_box_additional_creation_data_8h.html", [
+      [ "AdditionalCreationData< GroupBox >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_group_box_01_4.html", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_group_box_01_4" ]
     ] ],
     [ "IconListViewAdditionalCreationData.cpp", "_icon_list_view_additional_creation_data_8cpp.html", null ],
     [ "IconListViewAdditionalCreationData.h", "_icon_list_view_additional_creation_data_8h.html", [
@@ -61,5 +66,10 @@ var dir_c248bc770f0ee44cbe49ead0e7fb8aa7 =
     [ "TextListViewAdditionalCreationData.h", "_text_list_view_additional_creation_data_8h.html", [
       [ "AdditionalCreationData< TextListView >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_text_list_view_01_4.html", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_text_list_view_01_4" ],
       [ "AdditionalCreationData< ListTextListView >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_list_text_list_view_01_4.html", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_list_text_list_view_01_4" ]
+    ] ],
+    [ "TrackbarControlAdditionalCreationData.cpp", "_trackbar_control_additional_creation_data_8cpp.html", null ],
+    [ "TrackbarControlAdditionalCreationData.h", "_trackbar_control_additional_creation_data_8h.html", [
+      [ "AdditionalCreationData< HorizontalTrackbarControl >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_horizontal_trackbar_control_01_4.html", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_horizontal_trackbar_control_01_4" ],
+      [ "AdditionalCreationData< VerticalTrackbarControl >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_vertical_trackbar_control_01_4.html", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_vertical_trackbar_control_01_4" ]
     ] ]
 ];

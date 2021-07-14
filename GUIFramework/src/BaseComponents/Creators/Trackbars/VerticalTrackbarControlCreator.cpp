@@ -13,7 +13,7 @@ namespace gui_framework
 		{
 			auto [autoTicks, position, selectionRange, noTicks] = any_cast<tuple<bool, VerticalTrackbarControl::verticalTickPosition, bool, bool>>(additionalData);
 
-			return new VerticalTrackbarControl(windowName, settings.x, settings.y, settings.width, settings.height, parent, autoTicks, position, selectionRange, noTicks);
+			return new VerticalTrackbarControl(windowName, utility::ComponentSettings(settings.x, settings.y, settings.width, settings.height), parent, autoTicks, position, selectionRange, noTicks);
 		}
 	}
 }

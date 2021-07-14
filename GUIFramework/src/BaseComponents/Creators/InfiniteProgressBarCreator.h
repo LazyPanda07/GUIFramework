@@ -6,6 +6,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
+		/// @brief InfiniteProgressBar creator
 		class GUI_FRAMEWORK_API InfiniteProgressBarCreator : public BaseComponentCreator
 		{
 		public:

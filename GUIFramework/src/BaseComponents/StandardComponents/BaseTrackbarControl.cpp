@@ -1,16 +1,20 @@
 #include "pch.h"
 #include "BaseTrackbarControl.h"
 
+#include "Styles/DefaultStyles.h"
+#include "Exceptions/NotImplemented.h"
+
 using namespace std;
 
 namespace gui_framework
 {
-	BaseTrackbarControl::BaseTrackbarControl(const wstring& trackbarName, const utility::ComponentSettings& settings, BaseComponent* parent) :
+	BaseTrackbarControl::BaseTrackbarControl(const wstring& trackbarName, const utility::ComponentSettings& settings, const styles::TrackbarControlStyles& styles, BaseComponent* parent) :
 		BaseComponent
 		(
 			wstring(standard_classes::trackbarControl),
 			trackbarName,
 			settings,
+			styles,
 			parent
 		)
 	{
@@ -70,5 +74,10 @@ namespace gui_framework
 	LRESULT BaseTrackbarControl::getSelectionEnd() const
 	{
 		return SendMessageW(handle, TBM_GETSELEND, NULL, NULL);
+	}
+
+	void BaseTrackbarControl::setTextColor(uint8_t red, uint8_t green, uint8_t blue)
+	{
+		throw exceptions::NotImplemented(__FUNCTION__, "BaseTrackbarControl");
 	}
 }

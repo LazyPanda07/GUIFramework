@@ -4,6 +4,7 @@
 
 namespace gui_framework
 {
+	/// @brief Provides runMainLoop for top level window
 	class GUI_FRAMEWORK_API WindowHolder final
 	{
 	private:
@@ -23,7 +24,7 @@ namespace gui_framework
 		const BaseComposite* get() const;
 
 		/// @brief 
-		/// @exception gui_framework::exceptions::GetLastErrorException
+		/// @exception GetLastErrorException
 		void runMainLoop();
 
 		~WindowHolder() = default;

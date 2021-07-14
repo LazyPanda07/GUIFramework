@@ -1,36 +1,18 @@
 #include "pch.h"
 #include "DropDownComboBox.h"
 
+#include "Styles/Components/DropDownComboBoxStyles.h"
+
 using namespace std;
 
 namespace gui_framework
 {
-	DropDownComboBox::DropDownComboBox(const wstring& comboBoxName, int x, int y, uint16_t width, uint16_t height, BaseComponent* parent) :
-		BaseComponent
-		(
-			wstring(standard_classes::comboBox),
-			comboBoxName,
-			utility::ComponentSettings
-			(
-				CBS_DROPDOWN,
-				x,
-				y,
-				width,
-				height
-			),
-			parent
-		),
+	DropDownComboBox::DropDownComboBox(const wstring& comboBoxName, const utility::ComponentSettings& settings, BaseComponent* parent) :
 		BaseComboBox
 		(
 			comboBoxName,
-			utility::ComponentSettings
-			(
-				CBS_DROPDOWN,
-				x,
-				y,
-				width,
-				height
-			),
+			settings,
+			styles::DropDownComboBoxStyles(),
 			parent
 		)
 	{
