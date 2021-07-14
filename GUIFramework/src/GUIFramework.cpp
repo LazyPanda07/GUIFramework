@@ -63,17 +63,9 @@ namespace gui_framework
 	{
 		creators[typeid(Button).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::ButtonCreator());
 
+		creators[typeid(CheckBox).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::CheckBoxCreator());
+
 		creators[typeid(EditControl).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::EditControlCreator());
-
-		creators[typeid(DropDownComboBox).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::DropDownComboBoxCreator());
-
-		creators[typeid(DropDownListComboBox).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::DropDownListComboBoxCreator());
-
-		creators[typeid(SimpleComboBox).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::SimpleComboBoxCreator());
-
-		creators[typeid(ListBox).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::ListBoxCreator());
-
-		creators[typeid(MultipleSelectListBox).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::MultipleSelectListBoxCreator());
 
 		creators[typeid(RichEdit).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::RichEditCreator());
 
@@ -85,13 +77,27 @@ namespace gui_framework
 
 		creators[typeid(TabControl).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::TabControlCreator());
 
+		creators[typeid(GroupBox).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::GroupBoxCreator());
+
+#pragma region ProgressBars
 		creators[typeid(ProgressBar).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::ProgressBarCreator());
 
 		creators[typeid(InfiniteProgressBar).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::InfiniteProgressBarCreator());
+#pragma endregion
 
-		creators[typeid(CheckBox).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::CheckBoxCreator());
+#pragma region ComboBoxes
+		creators[typeid(DropDownComboBox).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::DropDownComboBoxCreator());
 
-		creators[typeid(GroupBox).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::GroupBoxCreator());
+		creators[typeid(DropDownListComboBox).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::DropDownListComboBoxCreator());
+
+		creators[typeid(SimpleComboBox).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::SimpleComboBoxCreator());
+#pragma endregion
+
+#pragma region ListBoxes
+		creators[typeid(ListBox).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::ListBoxCreator());
+
+		creators[typeid(MultipleSelectListBox).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::MultipleSelectListBoxCreator());
+#pragma endregion
 
 #pragma region ListViews
 		creators[typeid(IconListView).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::IconListViewCreator());
