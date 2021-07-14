@@ -57,7 +57,7 @@ namespace gui_framework
 		mode(exitMode::destroyWindow),
 		largeIcon(nullptr),
 		smallIcon(nullptr),
-		id(parent ? GUIFramework::get().generateHMENU(windowName) : NULL),
+		id(parent ? GUIFramework::get().generateId(windowName) : NULL),
 		backgroundColor(RGB(255, 255, 255)),
 		textColor(RGB(0, 0, 0))
 	{
@@ -429,5 +429,7 @@ namespace gui_framework
 		{
 			this->asyncDestroyComponent();
 		}
+
+		GUIFramework::get().removeId(windowName, id);
 	}
 }
