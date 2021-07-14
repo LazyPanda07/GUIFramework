@@ -49,7 +49,8 @@ namespace gui_framework
 
 		void removeId(const std::wstring& windowName, uint32_t HMENU);
 
-		void addCreator(size_t hash, std::unique_ptr<utility::BaseComponentCreator>&& creator);
+		template<std::derived_from<BaseComponent> T, std::derived_from<utility::BaseComponentCreator> CreatorT, typename... Args>
+		void addCreator(Args&&... args);
 
 		std::vector<uint32_t> getIds(const std::wstring& windowName);
 
@@ -63,5 +64,11 @@ namespace gui_framework
 		static GUIFramework instance;
 
 		return instance;
+	}
+
+	template<std::derived_from<BaseComponent> T, std::derived_from<utility::BaseComponentCreator> CreatorT, typename... Args>
+	void GUIFramework::addCreator(Args&&... args)
+	{
+		creators[typeid(T).hash_code()] = std::unique_ptr<CreatorT>(new CreatorT(std::forward<Args>(args)...));
 	}
 }

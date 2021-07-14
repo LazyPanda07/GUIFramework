@@ -61,62 +61,64 @@ namespace gui_framework
 {
 	void GUIFramework::initCreators()
 	{
-		creators[typeid(Button).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::ButtonCreator());
+		creators.reserve(24);
 
-		creators[typeid(CheckBox).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::CheckBoxCreator());
+		this->addCreator<Button, utility::ButtonCreator>();
 
-		creators[typeid(EditControl).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::EditControlCreator());
+		this->addCreator<CheckBox, utility::CheckBoxCreator>();
 
-		creators[typeid(RichEdit).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::RichEditCreator());
+		this->addCreator<EditControl, utility::EditControlCreator>();
 
-		creators[typeid(StaticControl).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::StaticControlCreator());
+		this->addCreator<RichEdit, utility::RichEditCreator>();
 
-		creators[typeid(SeparateWindow).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::SeparateWindowCreator());
+		this->addCreator<StaticControl, utility::StaticControlCreator>();
 
-		creators[typeid(ChildWindow).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::ChildWindowCreator());
+		this->addCreator<SeparateWindow, utility::SeparateWindowCreator>();
 
-		creators[typeid(TabControl).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::TabControlCreator());
+		this->addCreator<ChildWindow, utility::ChildWindowCreator>();
 
-		creators[typeid(GroupBox).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::GroupBoxCreator());
+		this->addCreator<TabControl, utility::TabControlCreator>();
+
+		this->addCreator<GroupBox, utility::GroupBoxCreator>();
 
 #pragma region ProgressBars
-		creators[typeid(ProgressBar).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::ProgressBarCreator());
+		this->addCreator<ProgressBar, utility::ProgressBarCreator>();
 
-		creators[typeid(InfiniteProgressBar).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::InfiniteProgressBarCreator());
+		this->addCreator<InfiniteProgressBar, utility::InfiniteProgressBarCreator>();
 #pragma endregion
 
 #pragma region ComboBoxes
-		creators[typeid(DropDownComboBox).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::DropDownComboBoxCreator());
+		this->addCreator<DropDownComboBox, utility::DropDownComboBoxCreator>();
 
-		creators[typeid(DropDownListComboBox).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::DropDownListComboBoxCreator());
+		this->addCreator<DropDownListComboBox, utility::DropDownListComboBoxCreator>();
 
-		creators[typeid(SimpleComboBox).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::SimpleComboBoxCreator());
+		this->addCreator<SimpleComboBox, utility::SimpleComboBoxCreator>();
 #pragma endregion
 
 #pragma region ListBoxes
-		creators[typeid(ListBox).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::ListBoxCreator());
+		this->addCreator<ListBox, utility::ListBoxCreator>();
 
-		creators[typeid(MultipleSelectListBox).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::MultipleSelectListBoxCreator());
+		this->addCreator<MultipleSelectListBox, utility::MultipleSelectListBoxCreator>();
 #pragma endregion
 
 #pragma region ListViews
-		creators[typeid(IconListView).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::IconListViewCreator());
+		this->addCreator<IconListView, utility::IconListViewCreator>();
 
-		creators[typeid(ListIconListView).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::ListIconListViewCreator());
+		this->addCreator<ListIconListView, utility::ListIconListViewCreator>();
 
-		creators[typeid(TextListView).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::TextListViewCreator());
+		this->addCreator<TextListView, utility::TextListViewCreator>();
 
-		creators[typeid(ListTextListView).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::ListTextListViewCreator());
+		this->addCreator<ListTextListView, utility::ListTextListViewCreator>();
 
-		creators[typeid(TextIconListView).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::TextIconListViewCreator());
+		this->addCreator<TextIconListView, utility::TextIconListViewCreator>();
 
-		creators[typeid(ListTextIconListView).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::ListTextIconListViewCreator());
+		this->addCreator<ListTextIconListView, utility::ListTextIconListViewCreator>();
 #pragma endregion
 
 #pragma region Trackbars
-		creators[typeid(HorizontalTrackbarControl).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::HorizontalTrackbarControlCreator());
+		this->addCreator<HorizontalTrackbarControl, utility::HorizontalTrackbarControlCreator>();
 
-		creators[typeid(VerticalTrackbarControl).hash_code()] = unique_ptr<utility::BaseComponentCreator>(new utility::VerticalTrackbarControlCreator());
+		this->addCreator<VerticalTrackbarControl, utility::VerticalTrackbarControlCreator>();
 #pragma endregion
 	}
 
@@ -192,7 +194,7 @@ namespace gui_framework
 		for_each(it.first, it.second, [this](const pair<wstring, uint32_t>& data) { availableIds.push(autoGeneratedIds.extract(data.first).mapped()); });
 	}
 
-	void GUIFramework::removeId(const wstring& windowName, uint32_t HMENU)
+	void GUIFramework::removeId(const wstring& windowName, uint32_t id)
 	{
 		unique_lock<mutex> lock(idMutex);
 
@@ -205,18 +207,13 @@ namespace gui_framework
 
 		for (; it.first != it.second; ++it.first)
 		{
-			if (it.first->second == HMENU)
+			if (it.first->second == id)
 			{
 				availableIds.push(autoGeneratedIds.extract(it.first).mapped());
 
 				break;
 			}
 		}
-	}
-
-	void GUIFramework::addCreator(size_t hash, unique_ptr<utility::BaseComponentCreator>&& creator)
-	{
-		creators[hash] = move(creator);
 	}
 
 	vector<uint32_t> GUIFramework::getIds(const wstring& windowName)
