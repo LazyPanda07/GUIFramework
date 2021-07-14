@@ -39,12 +39,13 @@ namespace gui_framework
 		return -1;
 	}
 
-	BaseComposite::BaseComposite(const wstring& className, const wstring& windowName, const utility::ComponentSettings& settings, BaseComponent* parent, const string& windowFunctionName) :
+	BaseComposite::BaseComposite(const wstring& className, const wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent, const string& windowFunctionName) :
 		BaseComponent
 		(
 			className,
 			windowName,
 			settings,
+			styles,
 			parent,
 			windowFunctionName
 		)

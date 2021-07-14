@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "BaseChildWindow.h"
 
+#include "Styles/DefaultStyles.h"
+
 using namespace std;
 
 namespace gui_framework
@@ -11,6 +13,7 @@ namespace gui_framework
 			className,
 			windowName,
 			settings,
+			styles::DefaultStyles(),
 			parent,
 			windowFunctionName
 		)

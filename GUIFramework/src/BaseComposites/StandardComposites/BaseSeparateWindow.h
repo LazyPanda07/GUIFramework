@@ -9,7 +9,7 @@ namespace gui_framework
 	{
 	public:
 		/// @brief Create new separate window
-		BaseSeparateWindow(const std::wstring& className, const std::wstring& titleName, const utility::ComponentSettings& settings, const std::string& windowFunctionName);
+		BaseSeparateWindow(const std::wstring& className, const std::wstring& titleName, const utility::ComponentSettings& settings, const std::string& windowFunctionName, bool maximize = false, bool minimize = false);
 
 		virtual ~BaseSeparateWindow() = default;
 	};

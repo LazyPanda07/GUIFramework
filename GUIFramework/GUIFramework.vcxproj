@@ -141,6 +141,8 @@
     <ClInclude Include="src\Styles\Components\CheckBoxStyles.h" />
     <ClInclude Include="src\Styles\Components\ComboBoxStyles.h" />
     <ClInclude Include="src\Styles\Components\DefaultButtonStyles.h" />
+    <ClInclude Include="src\Styles\Components\DefaultListBoxStyles.h" />
+    <ClInclude Include="src\Styles\Components\DefaultRichEditStyles.h" />
     <ClInclude Include="src\Styles\Components\DropDownComboBoxStyles.h" />
     <ClInclude Include="src\Styles\Components\DropDownListComboBoxStyles.h" />
     <ClInclude Include="src\Styles\Components\HorizontalTrackbarControlStyles.h" />
@@ -157,7 +159,7 @@
     <ClInclude Include="src\Styles\Components\SimpleComboBoxStyles.h" />
     <ClInclude Include="src\Styles\Components\TrackbarControlStyles.h" />
     <ClInclude Include="src\Styles\Components\VerticalTrackbarControlStyles.h" />
-    <ClInclude Include="src\Styles\Composites\BaseWindowStyles.h" />
+    <ClInclude Include="src\Styles\Composites\SeparateWindowStyles.h" />
     <ClInclude Include="src\Styles\DefaultStyles.h" />
     <ClInclude Include="src\Utility\Holders\BaseLoadableHolder.h" />
     <ClInclude Include="src\Utility\Holders\CursorsHolder.h" />
@@ -292,6 +294,8 @@
     <ClCompile Include="src\Styles\Components\CheckBoxStyles.cpp" />
     <ClCompile Include="src\Styles\Components\ComboBoxStyles.cpp" />
     <ClCompile Include="src\Styles\Components\DefaultButtonStyles.cpp" />
+    <ClCompile Include="src\Styles\Components\DefaultListBoxStyles.cpp" />
+    <ClCompile Include="src\Styles\Components\DefaultRichEditStyles.cpp" />
     <ClCompile Include="src\Styles\Components\DropDownComboBoxStyles.cpp" />
     <ClCompile Include="src\Styles\Components\DropDownListComboBoxStyles.cpp" />
     <ClCompile Include="src\Styles\Components\HorizontalTrackbarControlStyles.cpp" />
@@ -308,7 +312,7 @@
     <ClCompile Include="src\Styles\Components\SimpleComboBoxStyles.cpp" />
     <ClCompile Include="src\Styles\Components\TrackbarControlStyles.cpp" />
     <ClCompile Include="src\Styles\Components\VerticalTrackbarControlStyles.cpp" />
-    <ClCompile Include="src\Styles\Composites\BaseWindowStyles.cpp" />
+    <ClCompile Include="src\Styles\Composites\SeparateWindowStyles.cpp" />
     <ClCompile Include="src\Styles\DefaultStyles.cpp" />
     <ClCompile Include="src\Utility\Holders\BaseLoadableHolder.cpp" />
     <ClCompile Include="src\Utility\Holders\CursorsHolder.cpp" />

@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "BaseWindowStyles.h"
+#include "SeparateWindowStyles.h"
 
 using namespace std;
 
@@ -7,7 +7,7 @@ namespace gui_framework
 {
 	namespace styles
 	{
-		BaseWindowStyles::BaseWindowStyles(bool maximize, bool minimize)
+		SeparateWindowStyles::SeparateWindowStyles(bool maximize, bool minimize)
 		{
 			if (maximize)
 			{

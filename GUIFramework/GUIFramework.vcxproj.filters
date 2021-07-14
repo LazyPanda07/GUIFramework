@@ -408,7 +408,7 @@
     <ClInclude Include="src\Interfaces\Styles\IStyles.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Styles\Composites\BaseWindowStyles.h">
+    <ClInclude Include="src\Styles\Composites\SeparateWindowStyles.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Styles\DefaultStyles.h">
@@ -472,6 +472,12 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Styles\Components\RadioButtonStyles.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Styles\Components\DefaultListBoxStyles.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Styles\Components\DefaultRichEditStyles.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
@@ -845,7 +851,7 @@
     <ClCompile Include="src\Interfaces\Styles\IStyles.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Styles\Composites\BaseWindowStyles.cpp">
+    <ClCompile Include="src\Styles\Composites\SeparateWindowStyles.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Styles\DefaultStyles.cpp">
@@ -909,6 +915,12 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Styles\Components\RadioButtonStyles.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Styles\Components\DefaultListBoxStyles.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Styles\Components\DefaultRichEditStyles.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
