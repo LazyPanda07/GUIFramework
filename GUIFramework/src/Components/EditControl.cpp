@@ -11,7 +11,6 @@ namespace gui_framework
 			editControlName,
 			utility::ComponentSettings
 			(
-				NULL,
 				x,
 				y,
 				width,

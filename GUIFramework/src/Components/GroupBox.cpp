@@ -1,23 +1,19 @@
 #include "pch.h"
 #include "GroupBox.h"
 
+#include "Styles/Components/RadioButtonStyles.h"
+
 using namespace std;
 
 namespace gui_framework
 {
-	GroupBox::RadioButton::RadioButton(const wstring& radioButtonName, const wstring& radioButtonText, int x, int y, uint16_t width, uint16_t height, BaseComponent* parent, const function<void()>& onClick) :
+	GroupBox::RadioButton::RadioButton(const wstring& radioButtonName, const wstring& radioButtonText, const utility::ComponentSettings& settings, BaseComponent* parent, const function<void()>& onClick) :
 		BaseButton
 		(
 			radioButtonName,
 			radioButtonText,
-			utility::ComponentSettings
-			(
-				BS_AUTORADIOBUTTON,
-				x,
-				y,
-				width,
-				height
-			),
+			settings,
+			styles::RadioButtonStyles(),
 			parent,
 			onClick
 		)
@@ -25,7 +21,7 @@ namespace gui_framework
 
 	}
 
-	GroupBox::radioButtonData::radioButtonData(const wstring& radioButtonName, const wstring& radioButtonText, int x, int y, uint16_t width, uint16_t height, const function<void()>& onClick) :
+	GroupBox::radioButtonData::radioButtonData(const wstring& radioButtonName, const wstring& radioButtonText, const utility::ComponentSettings& settings, const function<void()>& onClick) :
 		radioButtonName(radioButtonName),
 		radioButtonText(radioButtonText),
 		x(x),
@@ -37,19 +33,12 @@ namespace gui_framework
 
 	}
 
-	GroupBox::GroupBox(const wstring& groupBoxClassName, const wstring& groupBoxName, int x, int y, uint16_t width, uint16_t height, BaseComponent* parent, const string& groupBoxFunctionName) :
+	GroupBox::GroupBox(const wstring& groupBoxClassName, const wstring& groupBoxName, const utility::ComponentSettings& settings, BaseComponent* parent, const string& groupBoxFunctionName) :
 		BaseComposite
 		(
 			groupBoxClassName,
 			groupBoxName,
-			utility::ComponentSettings
-			(
-				NULL,
-				x,
-				y,
-				width,
-				height
-			),
+			settings,
 			parent,
 			groupBoxFunctionName
 		)
@@ -59,6 +48,6 @@ namespace gui_framework
 
 	void GroupBox::addRadioButton(const radioButtonData& data)
 	{
-		new RadioButton(data.radioButtonName, data.radioButtonText, data.x, data.y, data.width, data.height, this, data.onClick);
+		new RadioButton(data.radioButtonName, data.radioButtonText, utility::ComponentSettings(data.x, data.y, data.width, data.height), this, data.onClick);
 	}
 }

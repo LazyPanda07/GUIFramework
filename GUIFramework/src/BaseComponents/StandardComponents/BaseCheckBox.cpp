@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "BaseCheckBox.h"
 
+#include "Styles/Components/CheckBoxStyles.h"
+
 using namespace std;
 
 namespace gui_framework
@@ -45,15 +47,8 @@ namespace gui_framework
 		(
 			checkBoxName,
 			checkBoxText,
-			utility::ComponentSettings
-			(
-				settings.styles | BS_CHECKBOX,
-				settings.x,
-				settings.y,
-				settings.width,
-				settings.height,
-				settings.extendedStyles
-			),
+			settings,
+			styles::CheckBoxStyles(),
 			parent,
 			onClick
 		),

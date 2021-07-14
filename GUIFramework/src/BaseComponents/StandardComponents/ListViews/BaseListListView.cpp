@@ -5,22 +5,15 @@ using namespace std;
 
 namespace gui_framework
 {
-	BaseListListView::BaseListListView(const wstring& listViewName, const utility::ComponentSettings& settings, BaseComponent* parent) :
+	BaseListListView::BaseListListView(const wstring& listViewName, const utility::ComponentSettings& settings, const styles::ListListViewStyles& styles, BaseComponent* parent) :
 		BaseListView
 		(
 			listViewName,
-			utility::ComponentSettings
-			(
-				settings.styles | LVS_LIST,
-				settings.x,
-				settings.y,
-				settings.width,
-				settings.height,
-				settings.extendedStyles
-			),
+			settings,
+			styles,
 			parent
 		)
 	{
-
+		
 	}
 }

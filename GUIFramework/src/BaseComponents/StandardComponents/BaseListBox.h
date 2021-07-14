@@ -2,6 +2,7 @@
 
 #include "BaseComponents/BaseComponent.h"
 #include "Interfaces/Components/IResizableComponent.h"
+#include "Styles/Components/ListBoxStyles.h"
 
 namespace gui_framework
 {
@@ -15,7 +16,7 @@ namespace gui_framework
 		uint8_t columnsWidth;
 
 	public:
-		BaseListBox(const std::wstring& listBoxName, const utility::ComponentSettings& settings, BaseComponent* parent);
+		BaseListBox(const std::wstring& listBoxName, const utility::ComponentSettings& settings, const styles::ListBoxStyles& styles, BaseComponent* parent);
 
 		/// @brief 
 		/// @param value 

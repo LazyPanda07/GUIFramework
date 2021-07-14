@@ -12,7 +12,6 @@ namespace gui_framework
 			editControlText,
 			utility::ComponentSettings
 			(
-				NULL,
 				x,
 				y,
 				width,

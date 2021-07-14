@@ -5,18 +5,11 @@ using namespace std;
 
 namespace gui_framework
 {
-	TextListView::TextListView(const wstring& listViewName, int x, int y, uint16_t width, uint16_t height, BaseComponent* parent) :
+	TextListView::TextListView(const wstring& listViewName, const utility::ComponentSettings& settings, BaseComponent* parent) :
 		BaseTextListView
 		(
 			listViewName,
-			utility::ComponentSettings
-			(
-				NULL,
-				x,
-				y,
-				width,
-				height
-			),
+			settings,
 			parent
 		)
 	{

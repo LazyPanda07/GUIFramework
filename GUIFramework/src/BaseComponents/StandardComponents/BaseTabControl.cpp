@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "BaseTabControl.h"
 
+#include "Styles/DefaultStyles.h"
 #include "Exceptions/FileDoesNotExist.h"
 #include "Exceptions/NotImplemented.h"
 
@@ -52,6 +53,7 @@ namespace gui_framework
 			wstring(standard_classes::tabControl),
 			tabControlName,
 			settings,
+			styles::DefaultStyles(),
 			parent
 		),
 		images(imagesWidth, imagesHeight)

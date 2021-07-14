@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "BaseRichEdit.h"
 
+#include "Styles/Components/DefaultRichEditStyles.h"
+
 using namespace std;
 
 namespace gui_framework
@@ -46,6 +48,7 @@ namespace gui_framework
 			wstring(standard_classes::richEdit),
 			richEditName,
 			settings,
+			styles::DefaultRichEditStyles(),
 			parent
 		),
 		IResizableComponent

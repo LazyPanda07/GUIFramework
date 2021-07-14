@@ -2,6 +2,7 @@
 
 #include "BaseComponents/BaseComponent.h"
 #include "Interfaces/Components/IResizableComponent.h"
+#include "Styles/Components/ComboBoxStyles.h"
 
 namespace gui_framework
 {
@@ -21,7 +22,7 @@ namespace gui_framework
 		};
 
 	public:
-		BaseComboBox(const std::wstring& comboBoxName, const utility::ComponentSettings& settings, BaseComponent* parent);
+		BaseComboBox(const std::wstring& comboBoxName, const utility::ComponentSettings& settings, const styles::ComboBoxStyles& styles, BaseComponent* parent);
 
 		/// @brief 
 		/// @param value 

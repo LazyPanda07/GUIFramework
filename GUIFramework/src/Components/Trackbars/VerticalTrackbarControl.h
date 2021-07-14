@@ -16,7 +16,7 @@ namespace gui_framework
 		};
 
 	public:
-		VerticalTrackbarControl(const std::wstring& trackbarName, int x, int y, uint16_t width, uint16_t height, BaseComponent* parent, bool autoTicks = true, verticalTickPosition position = verticalTickPosition::left, bool selectionRange = false, bool noTicks = false);
+		VerticalTrackbarControl(const std::wstring& trackbarName, const utility::ComponentSettings& settings, BaseComponent* parent, bool autoTicks = true, verticalTickPosition position = verticalTickPosition::left, bool selectionRange = false, bool noTicks = false);
 
 		~VerticalTrackbarControl() = default;
 	};

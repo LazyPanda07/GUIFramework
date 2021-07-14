@@ -8,7 +8,7 @@ namespace gui_framework
 	class GUI_FRAMEWORK_API DropDownComboBox : public BaseComboBox
 	{
 	public:
-		DropDownComboBox(const std::wstring& comboBoxName, int x, int y, uint16_t width, uint16_t height, BaseComponent* parent);
+		DropDownComboBox(const std::wstring& comboBoxName, const utility::ComponentSettings& settings, BaseComponent* parent);
 
 		~DropDownComboBox() = default;
 	};

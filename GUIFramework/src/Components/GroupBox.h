@@ -12,7 +12,7 @@ namespace gui_framework
 		class RadioButton : public BaseButton
 		{
 		public:
-			RadioButton(const std::wstring& radioButtonName, const std::wstring& radioButtonText, int x, int y, uint16_t width, uint16_t height, BaseComponent* parent, const std::function<void()>& onClick);
+			RadioButton(const std::wstring& radioButtonName, const std::wstring& radioButtonText, const utility::ComponentSettings& settings, BaseComponent* parent, const std::function<void()>& onClick);
 
 			~RadioButton() = default;
 		};
@@ -28,7 +28,7 @@ namespace gui_framework
 			uint16_t height;
 			std::function<void()> onClick;
 
-			radioButtonData(const std::wstring& radioButtonName, const std::wstring& radioButtonText, int x, int y, uint16_t width, uint16_t height, const std::function<void()>& onClick);
+			radioButtonData(const std::wstring& radioButtonName, const std::wstring& radioButtonText, const utility::ComponentSettings& settings, const std::function<void()>& onClick);
 
 			~radioButtonData() = default;
 		};
@@ -43,7 +43,7 @@ namespace gui_framework
 		/// @param height 
 		/// @param parent 
 		/// @param groupBoxFunctionName Value that you pass in CREATE_DEFAULT_WINDOW_FUNCTION macro
-		GroupBox(const std::wstring& groupBoxClassName, const std::wstring& groupBoxName, int x, int y, uint16_t width, uint16_t height, BaseComponent* parent, const std::string& groupBoxFunctionName);
+		GroupBox(const std::wstring& groupBoxClassName, const std::wstring& groupBoxName, const utility::ComponentSettings& settings, BaseComponent* parent, const std::string& groupBoxFunctionName);
 
 		void addRadioButton(const radioButtonData& data);
 

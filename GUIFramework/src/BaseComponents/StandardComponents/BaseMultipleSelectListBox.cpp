@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "BaseMultipleSelectListBox.h"
 
+#include "Styles/Components/MultipleSelectListBox.h"
 #include "Exceptions/SelectListException.h"
 
 #pragma push_macro("min")
@@ -14,15 +15,8 @@ namespace gui_framework
 		BaseListBox
 		(
 			listBoxName, 
-			utility::ComponentSettings
-			(
-				settings.styles | LBS_MULTIPLESEL,
-				settings.x,
-				settings.y,
-				settings.width,
-				settings.height,
-				settings.extendedStyles
-			),
+			settings,
+			styles::MultipleSelectListBox(),
 			parent
 		)
 	{

@@ -2,6 +2,7 @@
 
 #include "pch.h"
 #include "Menu/Menu.h"
+#include "Interfaces/Styles/IStyles.h"
 
 namespace gui_framework
 {
@@ -51,7 +52,7 @@ namespace gui_framework
 	public:
 		/// @param windowFunctionName Value that you pass in CREATE_DEFAULT_WINDOW_FUNCTION macro
 		/// @param moduleName Executable name for finding classes
-		BaseComponent(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, BaseComponent* parent = nullptr, const std::string& windowFunctionName = "", const std::wstring& moduleName = L"");
+		BaseComponent(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent = nullptr, const std::string& windowFunctionName = "", const std::wstring& moduleName = L"");
 
 		virtual bool isComposite() const;
 

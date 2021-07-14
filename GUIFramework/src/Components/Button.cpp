@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "Button.h"
 
+#include "Styles/Components/DefaultButtonStyles.h"
+
 using namespace std;
 
 namespace gui_framework
@@ -12,12 +14,12 @@ namespace gui_framework
 			buttonText,
 			utility::ComponentSettings
 			(
-				NULL,
 				x,
 				y,
 				width,
 				height
 			),
+			styles::DefaultButtonStyles(),
 			parent,
 			onClick
 		),

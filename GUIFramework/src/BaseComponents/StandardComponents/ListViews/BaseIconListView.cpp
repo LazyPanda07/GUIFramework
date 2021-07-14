@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "BaseIconListView.h"
 
+#include "Styles/Components/ListViews/IconListViewStyles.h"
 #include "Exceptions/NotImplemented.h"
 
 using namespace std;
@@ -11,15 +12,8 @@ namespace gui_framework
 		BaseListView
 		(
 			listViewName,
-			utility::ComponentSettings
-			(
-				settings.styles | static_cast<uint32_t>(type),
-				settings.x,
-				settings.y,
-				settings.width,
-				settings.height,
-				settings.extendedStyles
-			),
+			settings,
+			styles::IconListViewStyles(type),
 			parent
 		),
 		IIconListView(handle, icons),

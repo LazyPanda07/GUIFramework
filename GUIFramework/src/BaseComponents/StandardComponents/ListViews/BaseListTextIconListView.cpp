@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "BaseListTextIconListView.h"
 
+#include "Styles/Components/ListViews/ListIconListViewStyles.h"
+
 using namespace std;
 
 namespace gui_framework
@@ -9,15 +11,8 @@ namespace gui_framework
 		BaseListListView
 		(
 			listViewName,
-			utility::ComponentSettings
-			(
-				settings.styles | static_cast<uint32_t>(type),
-				settings.x,
-				settings.y,
-				settings.width,
-				settings.height,
-				settings.extendedStyles
-			),
+			settings,
+			styles::ListIconListViewStyles(type),
 			parent
 		),
 		ITextIconListView(handle, icons),

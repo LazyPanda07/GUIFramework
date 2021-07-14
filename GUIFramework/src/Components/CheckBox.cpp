@@ -12,7 +12,6 @@ namespace gui_framework
 			checkBoxText,
 			utility::ComponentSettings
 			(
-				NULL,
 				x,
 				y,
 				width,

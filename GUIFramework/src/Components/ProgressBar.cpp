@@ -5,18 +5,11 @@ using namespace std;
 
 namespace gui_framework
 {
-	ProgressBar::ProgressBar(const wstring& progressBarName, int x, int y, uint16_t width, uint16_t height, BaseComponent* parent, int minRange, int maxRange, int updateStep) :
+	ProgressBar::ProgressBar(const wstring& progressBarName, const utility::ComponentSettings& settings, BaseComponent* parent, int minRange, int maxRange, int updateStep) :
 		BaseProgressBar
 		(
 			progressBarName,
-			utility::ComponentSettings
-			(
-				NULL,
-				x,
-				y,
-				width,
-				height
-			),
+			settings,
 			parent,
 			minRange,
 			maxRange,

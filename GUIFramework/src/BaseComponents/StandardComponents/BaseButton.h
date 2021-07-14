@@ -2,6 +2,7 @@
 
 #include "BaseComponents/BaseComponent.h"
 #include "Interfaces/Components/ITextOperations.h"
+#include "Styles/Components/ButtonStyles.h"
 
 namespace gui_framework
 {
@@ -17,7 +18,7 @@ namespace gui_framework
 		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
 
 	public:
-		BaseButton(const std::wstring& buttonName, const std::wstring& buttonText, const utility::ComponentSettings& settings, BaseComponent* parent, const std::function<void()>& onClick = nullptr);
+		BaseButton(const std::wstring& buttonName, const std::wstring& buttonText, const utility::ComponentSettings& settings, const styles::ButtonStyles& styles, BaseComponent* parent, const std::function<void()>& onClick = nullptr);
 
 		virtual void setOnClick(const std::function<void()>& onClick) final;
 

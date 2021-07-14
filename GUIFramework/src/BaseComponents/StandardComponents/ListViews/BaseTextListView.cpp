@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "BaseTextListView.h"
 
+#include "Styles/Components/ListViews/TextListViewStyles.h"
+
 using namespace std;
 
 namespace gui_framework
@@ -9,15 +11,8 @@ namespace gui_framework
 		BaseListView
 		(
 			listViewName,
-			utility::ComponentSettings
-			(
-				settings.styles,
-				settings.x,
-				settings.y,
-				settings.width,
-				settings.height,
-				settings.extendedStyles
-			),
+			settings,
+			styles::TextListViewStyles(),
 			parent
 		),
 		ITextListView(handle)

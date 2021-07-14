@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "BaseProgressBar.h"
 
+#include "Styles/DefaultStyles.h"
 #include "Exceptions/NotImplemented.h"
 
 using namespace std;
@@ -13,6 +14,7 @@ namespace gui_framework
 			wstring(standard_classes::progressBar),
 			progressBarName,
 			settings,
+			styles::DefaultStyles(),
 			parent
 		),
 		IProgressBarColor
