@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['generatehmenu_1559',['generateHMENU',['../classgui__framework_1_1_g_u_i_framework.html#a0f473fb1a244e94dc9282ad3589c9eda',1,'gui_framework::GUIFramework']]],
+  ['generateid_1559',['generateId',['../classgui__framework_1_1_g_u_i_framework.html#a633356a9001855ec05824bca5ed6eb99',1,'gui_framework::GUIFramework']]],
   ['get_1560',['get',['../classgui__framework_1_1_g_u_i_framework.html#a3ddb6e3b33f9143d5e4eb5c2111d1d6b',1,'gui_framework::GUIFramework::get()'],['../classgui__framework_1_1_window_holder.html#a107d333a8d268fdb94d913e71e5bffde',1,'gui_framework::WindowHolder::get()'],['../classgui__framework_1_1_window_holder.html#aa1e7f8d1fbc992c7dd12026e8927b8bc',1,'gui_framework::WindowHolder::get() const']]],
   ['getactualcoordinates_1561',['getActualCoordinates',['../classgui__framework_1_1_base_component.html#a9f276f4574913aa9c4140901c8331169',1,'gui_framework::BaseComponent']]],
   ['getactualheight_1562',['getActualHeight',['../classgui__framework_1_1_base_component.html#afc149b47370b54de2ed218d17264fd51',1,'gui_framework::BaseComponent']]],
@@ -27,10 +27,10 @@ var searchData=
   ['getexitmode_1583',['getExitMode',['../classgui__framework_1_1_base_component.html#a5053112354d8f89a6e426688e0bf150a',1,'gui_framework::BaseComponent']]],
   ['getextendedstyles_1584',['getExtendedStyles',['../classgui__framework_1_1interfaces_1_1_i_styles.html#a2a957275e32294d32cb93e98e37c8c4f',1,'gui_framework::interfaces::IStyles']]],
   ['gethandle_1585',['getHandle',['../classgui__framework_1_1_base_component.html#ab12780fecd5f22ec01d21a82d9ac87b7',1,'gui_framework::BaseComponent::getHandle()'],['../classgui__framework_1_1_menu.html#a73231f0fca881c7553a3fc96808fed59',1,'gui_framework::Menu::getHandle()']]],
-  ['gethmenus_1586',['getHMENUs',['../classgui__framework_1_1_g_u_i_framework.html#a3a6c334159802408e25a98b0a1d48e2e',1,'gui_framework::GUIFramework']]],
-  ['geticonindex_1587',['getIconIndex',['../classgui__framework_1_1interfaces_1_1_i_icon_list_view.html#ad1a82ed39e2982413d5c6defa043b65c',1,'gui_framework::interfaces::IIconListView']]],
-  ['geticonpath_1588',['getIconPath',['../classgui__framework_1_1interfaces_1_1_i_icon_list_view.html#a26d7dfef0a9beb9141857248c0d6290c',1,'gui_framework::interfaces::IIconListView']]],
-  ['getid_1589',['getId',['../classgui__framework_1_1_base_component.html#a1719b34576b8ceb271cdb04611ed4523',1,'gui_framework::BaseComponent']]],
+  ['geticonindex_1586',['getIconIndex',['../classgui__framework_1_1interfaces_1_1_i_icon_list_view.html#ad1a82ed39e2982413d5c6defa043b65c',1,'gui_framework::interfaces::IIconListView']]],
+  ['geticonpath_1587',['getIconPath',['../classgui__framework_1_1interfaces_1_1_i_icon_list_view.html#a26d7dfef0a9beb9141857248c0d6290c',1,'gui_framework::interfaces::IIconListView']]],
+  ['getid_1588',['getId',['../classgui__framework_1_1_base_component.html#a1719b34576b8ceb271cdb04611ed4523',1,'gui_framework::BaseComponent']]],
+  ['getids_1589',['getIds',['../classgui__framework_1_1_g_u_i_framework.html#a3a04381522f61f399162331fbca8e532',1,'gui_framework::GUIFramework']]],
   ['getimageindex_1590',['getImageIndex',['../classgui__framework_1_1utility_1_1_base_loadable_holder.html#add52b32c99125bba86c7af3cf6adfbc8',1,'gui_framework::utility::BaseLoadableHolder']]],
   ['getimagelist_1591',['getImageList',['../classgui__framework_1_1utility_1_1_base_loadable_holder.html#ab525ee25b9e2276865a78e61ceeacf67',1,'gui_framework::utility::BaseLoadableHolder']]],
   ['getimagesheight_1592',['getImagesHeight',['../classgui__framework_1_1_base_tab_control.html#add2d6821177afae68662e6b2b6dc3de8',1,'gui_framework::BaseTabControl::getImagesHeight()'],['../classgui__framework_1_1utility_1_1_base_loadable_holder.html#ac3727fba6ef612c4e1d16bdeae3d74c6',1,'gui_framework::utility::BaseLoadableHolder::getImagesHeight()']]],

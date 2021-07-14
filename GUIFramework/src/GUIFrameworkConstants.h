@@ -71,7 +71,7 @@ namespace gui_framework
 		inline constexpr std::wstring_view msftEditLibrary = L"MsftEdit.dll";
 	}
 
-	inline constexpr std::string_view guiFrameworkVersion = "0.5-alpha";
+	inline constexpr std::string_view guiFrameworkVersion = "0.6-beta";
 }
 
 #ifdef GUI_FRAMEWORK_DLL
