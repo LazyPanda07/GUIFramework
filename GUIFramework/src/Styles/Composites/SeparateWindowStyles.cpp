@@ -13,8 +13,7 @@ namespace gui_framework
 			{
 				this->appendStyle(WS_MAXIMIZE);
 			}
-
-			if (minimize)
+			else if (minimize)
 			{
 				this->appendStyle(WS_MINIMIZE);
 			}
