@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GUIFramework: GUIFramework/src/Components/InfiniteProgressBar.h Source File</title>
+<title>GUIFramework: GUIFramework/src/Components/ProgressBars/InfiniteProgressBar.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.4</span>
+   &#160;<span id="projectnumber">0.5</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -90,40 +90,36 @@ $(document).ready(function(){initNavTree('_infinite_progress_bar_8h_source.html'
 <a href="_infinite_progress_bar_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_base_infinite_progress_bar_8h.html">BaseComponents/StandardComponents/BaseInfiniteProgressBar.h</a>&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_base_resizable_component_8h.html">BaseComponents/BaseResizableComponent.h</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_i_resizable_component_8h.html">Interfaces/Components/IResizableComponent.h</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#pragma warning(push)</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#pragma warning(disable: 4250)</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_infinite_progress_bar.html">   12</a></span>&#160;    <span class="keyword">class </span><a class="code" href="_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba">GUI_FRAMEWORK_API</a> <a class="code" href="classgui__framework_1_1_infinite_progress_bar.html">InfiniteProgressBar</a> :</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keyword">public</span> <a class="code" href="classgui__framework_1_1_base_infinite_progress_bar.html">BaseInfiniteProgressBar</a>,</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keyword">virtual</span> <span class="keyword">public</span> <a class="code" href="classgui__framework_1_1_base_resizable_component.html">BaseResizableComponent</a></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="classgui__framework_1_1_infinite_progress_bar.html">InfiniteProgressBar</a>(<span class="keyword">const</span> std::wstring&amp; progressBarName, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, uint16_t width, uint16_t height, <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* parent, <span class="keywordtype">int</span> animationPeriod = NULL);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_infinite_progress_bar.html#a9a0de80a954e985255897e5e8055f3a2">   27</a></span>&#160;        <a class="code" href="classgui__framework_1_1_infinite_progress_bar.html#a9a0de80a954e985255897e5e8055f3a2">~InfiniteProgressBar</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    };</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#pragma warning(pop)</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_infinite_progress_bar.html">    9</a></span>&#160;    <span class="keyword">class </span><a class="code" href="_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba">GUI_FRAMEWORK_API</a> <a class="code" href="classgui__framework_1_1_infinite_progress_bar.html">InfiniteProgressBar</a> :</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="keyword">public</span> <a class="code" href="classgui__framework_1_1_base_infinite_progress_bar.html">BaseInfiniteProgressBar</a>,</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keyword">public</span> <a class="code" href="classgui__framework_1_1interfaces_1_1_i_resizable_component.html">interfaces::IResizableComponent</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="classgui__framework_1_1_infinite_progress_bar.html">InfiniteProgressBar</a>(<span class="keyword">const</span> std::wstring&amp; progressBarName, <span class="keyword">const</span> <a class="code" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a>&amp; settings, <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* parent, <span class="keywordtype">int</span> animationPeriod = NULL);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_infinite_progress_bar.html#a9a0de80a954e985255897e5e8055f3a2">   24</a></span>&#160;        <a class="code" href="classgui__framework_1_1_infinite_progress_bar.html#a9a0de80a954e985255897e5e8055f3a2">~InfiniteProgressBar</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    };</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
 <div class="ttc" id="a_base_infinite_progress_bar_8h_html"><div class="ttname"><a href="_base_infinite_progress_bar_8h.html">BaseInfiniteProgressBar.h</a></div></div>
-<div class="ttc" id="a_base_resizable_component_8h_html"><div class="ttname"><a href="_base_resizable_component_8h.html">BaseResizableComponent.h</a></div></div>
 <div class="ttc" id="a_g_u_i_framework_constants_8h_html_a15da9ebdfa896557bb941a5da31021ba"><div class="ttname"><a href="_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba">GUI_FRAMEWORK_API</a></div><div class="ttdeci">#define GUI_FRAMEWORK_API</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00084">GUIFrameworkConstants.h:84</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_component_html"><div class="ttname"><a href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></div><div class="ttdoc">Base class for all windows, controls, etc.</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00009">BaseComponent.h:10</a></div></div>
+<div class="ttc" id="a_i_resizable_component_8h_html"><div class="ttname"><a href="_i_resizable_component_8h.html">IResizableComponent.h</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_component_html"><div class="ttname"><a href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></div><div class="ttdoc">Base class for all windows, controls, etc.</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00010">BaseComponent.h:11</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1_base_infinite_progress_bar_html"><div class="ttname"><a href="classgui__framework_1_1_base_infinite_progress_bar.html">gui_framework::BaseInfiniteProgressBar</a></div><div class="ttdoc">Base class for all non updatable progress bars.</div><div class="ttdef"><b>Definition:</b> <a href="_base_infinite_progress_bar_8h_source.html#l00009">BaseInfiniteProgressBar.h:12</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_resizable_component_html"><div class="ttname"><a href="classgui__framework_1_1_base_resizable_component.html">gui_framework::BaseResizableComponent</a></div><div class="ttdoc">Class for resizing.</div><div class="ttdef"><b>Definition:</b> <a href="_base_resizable_component_8h_source.html#l00009">BaseResizableComponent.h:12</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_infinite_progress_bar_html"><div class="ttname"><a href="classgui__framework_1_1_infinite_progress_bar.html">gui_framework::InfiniteProgressBar</a></div><div class="ttdoc">Standard non updatable progress bar.</div><div class="ttdef"><b>Definition:</b> <a href="_infinite_progress_bar_8h_source.html#l00012">InfiniteProgressBar.h:15</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_infinite_progress_bar_html"><div class="ttname"><a href="classgui__framework_1_1_infinite_progress_bar.html">gui_framework::InfiniteProgressBar</a></div><div class="ttdoc">Standard non updatable progress bar.</div><div class="ttdef"><b>Definition:</b> <a href="_infinite_progress_bar_8h_source.html#l00009">InfiniteProgressBar.h:12</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1_infinite_progress_bar_html_a9a0de80a954e985255897e5e8055f3a2"><div class="ttname"><a href="classgui__framework_1_1_infinite_progress_bar.html#a9a0de80a954e985255897e5e8055f3a2">gui_framework::InfiniteProgressBar::~InfiniteProgressBar</a></div><div class="ttdeci">~InfiniteProgressBar()=default</div></div>
+<div class="ttc" id="aclassgui__framework_1_1interfaces_1_1_i_resizable_component_html"><div class="ttname"><a href="classgui__framework_1_1interfaces_1_1_i_resizable_component.html">gui_framework::interfaces::IResizableComponent</a></div><div class="ttdoc">Provides resize, setBlockResize, getBlockResize methods.</div><div class="ttdef"><b>Definition:</b> <a href="_i_resizable_component_8h_source.html#l00010">IResizableComponent.h:11</a></div></div>
 <div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00014">BaseComponent.cpp:15</a></div></div>
+<div class="ttc" id="astructgui__framework_1_1utility_1_1_component_settings_html"><div class="ttname"><a href="structgui__framework_1_1utility_1_1_component_settings.html">gui_framework::utility::ComponentSettings</a></div><div class="ttdoc">All settings for windows.</div><div class="ttdef"><b>Definition:</b> <a href="_component_settings_8h_source.html#l00010">ComponentSettings.h:11</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_2f1c88f5c534480c246abfedb48e5a6c.html">GUIFramework</a></li><li class="navelem"><a class="el" href="dir_474822148e798388a75af55d9bebad71.html">src</a></li><li class="navelem"><a class="el" href="dir_b731c78a09c099631450de914efccb25.html">Components</a></li><li class="navelem"><a class="el" href="_infinite_progress_bar_8h.html">InfiniteProgressBar.h</a></li>
+    <li class="navelem"><a class="el" href="dir_2f1c88f5c534480c246abfedb48e5a6c.html">GUIFramework</a></li><li class="navelem"><a class="el" href="dir_474822148e798388a75af55d9bebad71.html">src</a></li><li class="navelem"><a class="el" href="dir_b731c78a09c099631450de914efccb25.html">Components</a></li><li class="navelem"><a class="el" href="dir_2009a52abfdfb2c99423d21e79541038.html">ProgressBars</a></li><li class="navelem"><a class="el" href="_infinite_progress_bar_8h.html">InfiniteProgressBar.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

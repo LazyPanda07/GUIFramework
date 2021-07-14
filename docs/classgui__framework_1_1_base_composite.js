@@ -1,6 +1,6 @@
 var classgui__framework_1_1_base_composite =
 [
-    [ "BaseComposite", "classgui__framework_1_1_base_composite.html#a28eafef88f0a06e408af3a4c323a9028", null ],
+    [ "BaseComposite", "classgui__framework_1_1_base_composite.html#ab378df34d1e2eafee5ebeda2074edba5", null ],
     [ "~BaseComposite", "classgui__framework_1_1_base_composite.html#a4d6d50985c481dae71dcb09ae527f3e7", null ],
     [ "addChild", "classgui__framework_1_1_base_composite.html#a2755c6a6aca5ed51a9e24b987a3af323", null ],
     [ "begin", "classgui__framework_1_1_base_composite.html#a73b44f7448c5381e6a4ecf0fad46233f", null ],
