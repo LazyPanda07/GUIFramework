@@ -154,11 +154,12 @@
     <ClInclude Include="src\Styles\Components\ListViews\ListTextListViewStyles.h" />
     <ClInclude Include="src\Styles\Components\ListViews\ListViewStyles.h" />
     <ClInclude Include="src\Styles\Components\ListViews\TextListViewStyles.h" />
-    <ClInclude Include="src\Styles\Components\MultipleSelectListBox.h" />
+    <ClInclude Include="src\Styles\Components\MultipleSelectListBoxStyles.h" />
     <ClInclude Include="src\Styles\Components\RadioButtonStyles.h" />
     <ClInclude Include="src\Styles\Components\SimpleComboBoxStyles.h" />
     <ClInclude Include="src\Styles\Components\TrackbarControlStyles.h" />
     <ClInclude Include="src\Styles\Components\VerticalTrackbarControlStyles.h" />
+    <ClInclude Include="src\Styles\Composites\DialogBoxStyles.h" />
     <ClInclude Include="src\Styles\Composites\SeparateWindowStyles.h" />
     <ClInclude Include="src\Styles\DefaultStyles.h" />
     <ClInclude Include="src\Utility\Holders\BaseLoadableHolder.h" />
@@ -307,11 +308,12 @@
     <ClCompile Include="src\Styles\Components\ListViews\ListTextListViewStyles.cpp" />
     <ClCompile Include="src\Styles\Components\ListViews\ListViewStyles.cpp" />
     <ClCompile Include="src\Styles\Components\ListViews\TextListViewStyles.cpp" />
-    <ClCompile Include="src\Styles\Components\MultipleSelectListBox.cpp" />
+    <ClCompile Include="src\Styles\Components\MultipleSelectListBoxStyles.cpp" />
     <ClCompile Include="src\Styles\Components\RadioButtonStyles.cpp" />
     <ClCompile Include="src\Styles\Components\SimpleComboBoxStyles.cpp" />
     <ClCompile Include="src\Styles\Components\TrackbarControlStyles.cpp" />
     <ClCompile Include="src\Styles\Components\VerticalTrackbarControlStyles.cpp" />
+    <ClCompile Include="src\Styles\Composites\DialogBoxStyles.cpp" />
     <ClCompile Include="src\Styles\Composites\SeparateWindowStyles.cpp" />
     <ClCompile Include="src\Styles\DefaultStyles.cpp" />
     <ClCompile Include="src\Utility\Holders\BaseLoadableHolder.cpp" />

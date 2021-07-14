@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "MultipleSelectListBox.h"
+#include "MultipleSelectListBoxStyles.h"
 
 using namespace std;
 
@@ -7,7 +7,7 @@ namespace gui_framework
 {
 	namespace styles
 	{
-		MultipleSelectListBox::MultipleSelectListBox()
+		MultipleSelectListBoxStyles::MultipleSelectListBoxStyles()
 		{
 			this->appendStyle(LBS_MULTIPLESEL);
 		}

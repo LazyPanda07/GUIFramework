@@ -11,7 +11,7 @@ namespace gui_framework
 		public:
 			DefaultButtonStyles() = default;
 
-			DefaultButtonStyles() = default;
+			~DefaultButtonStyles() = default;
 		};
 	}
 }

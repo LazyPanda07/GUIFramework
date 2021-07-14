@@ -87,10 +87,10 @@ namespace gui_framework
 
 		handle = CreateWindowExW
 		(
-			styles.getExtendedStyles(),
+			static_cast<DWORD>(styles.getExtendedStyles()),
 			className.data(),
 			windowName.data(),
-			styles.getStyles() | (parent ? WS_CHILDWINDOW | WS_BORDER : WS_OVERLAPPEDWINDOW),
+			static_cast<DWORD>(styles.getStyles()) | (parent ? WS_CHILDWINDOW | WS_BORDER : WS_OVERLAPPEDWINDOW),
 			settings.x,
 			settings.y,
 			settings.width,

@@ -10,7 +10,6 @@ namespace gui_framework
 	DialogBoxBuilder::DialogBoxBuilder(const wstring& className, const wstring& dialogBoxName, int x, int y, const string& dialogBoxFunctionName) :
 		settings
 		(
-			NULL,
 			x,
 			y,
 			standard_sizes::dialogBoxBuilderMinWidth,
@@ -70,7 +69,6 @@ namespace gui_framework
 				i.componentName,
 				utility::ComponentSettings
 				(
-					NULL,
 					xPosition,
 					currentTopOffset,
 					i.width,
@@ -106,15 +104,7 @@ namespace gui_framework
 		(
 			className,
 			dialogBoxName,
-			utility::ComponentSettings
-			(
-				settings.styles,
-				settings.x,
-				settings.y,
-				settings.width,
-				settings.height,
-				settings.extendedStyles | WS_EX_DLGMODALFRAME
-			),
+			settings,
 			parent,
 			dialogBoxFunctionName
 		),

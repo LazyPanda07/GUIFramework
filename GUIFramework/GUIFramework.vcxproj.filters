@@ -438,7 +438,7 @@
     <ClInclude Include="src\Styles\Components\ListBoxStyles.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Styles\Components\MultipleSelectListBox.h">
+    <ClInclude Include="src\Styles\Components\MultipleSelectListBoxStyles.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Styles\Components\ListViews\ListViewStyles.h">
@@ -478,6 +478,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Styles\Components\DefaultRichEditStyles.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Styles\Composites\DialogBoxStyles.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
@@ -881,7 +884,7 @@
     <ClCompile Include="src\Styles\Components\ListBoxStyles.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Styles\Components\MultipleSelectListBox.cpp">
+    <ClCompile Include="src\Styles\Components\MultipleSelectListBoxStyles.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Styles\Components\ListViews\ListViewStyles.cpp">
@@ -921,6 +924,9 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Styles\Components\DefaultRichEditStyles.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Styles\Composites\DialogBoxStyles.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

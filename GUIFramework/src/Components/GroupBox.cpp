@@ -39,6 +39,7 @@ namespace gui_framework
 			groupBoxClassName,
 			groupBoxName,
 			settings,
+			styles::DefaultStyles(),
 			parent,
 			groupBoxFunctionName
 		)
