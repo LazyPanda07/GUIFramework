@@ -108,10 +108,16 @@ namespace gui_framework
 		else if (parent->isComposite())
 		{
 			BaseComposite* composite = static_cast<BaseComposite*>(parent);
+			BaseComponent* topLevelWindow = parent;
 
 			composite->addChild(this);
 
-			SendMessageW(handle, custom_window_messages::initTopLevelWindowPointer, reinterpret_cast<WPARAM>(parent), NULL);
+			while (topLevelWindow->getParent())
+			{
+				topLevelWindow = topLevelWindow->getParent();
+			}
+
+			SendMessageW(handle, custom_window_messages::initTopLevelWindowPointer, reinterpret_cast<WPARAM>(topLevelWindow), NULL);
 		}
 
 		ShowWindow(handle, SW_SHOW);
