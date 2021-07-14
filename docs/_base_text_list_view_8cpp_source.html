@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.4</span>
+   &#160;<span id="projectnumber">0.5</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -90,49 +90,29 @@ $(document).ready(function(){initNavTree('_base_text_list_view_8cpp_source.html'
 <a href="_base_text_list_view_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pch_8h.html">pch.h</a>&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_base_text_list_view_8h.html">BaseTextListView.h</a>&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_text_list_view_styles_8h.html">Styles/Components/ListViews/TextListViewStyles.h</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_text_list_view.html#a8cfe067d45a005852109e59d38d21fc4">    8</a></span>&#160;    BaseTextListView::BaseTextListView(<span class="keyword">const</span> wstring&amp; listViewName, <span class="keyword">const</span> <a class="code" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a>&amp; settings, <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* parent) :</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        (</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            wstring(standard_classes::<a class="code" href="namespacegui__framework_1_1standard__classes.html#adac4b5d75af78a7cfa79e019c9b43f2f">listView</a>),</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            listViewName,</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            utility::ComponentSettings</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            (</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                settings.styles,</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                settings.x,</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                settings.y,</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                settings.width,</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                settings.height,</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                settings.extendedStyles</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            ),</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            parent</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        ),</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="classgui__framework_1_1_base_list_view.html">BaseListView</a></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        (</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            listViewName,</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            utility::ComponentSettings</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            (</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                settings.styles,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                settings.x,</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                settings.y,</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                settings.width,</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                settings.height,</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                settings.extendedStyles</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            ),</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            parent</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        ),</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        ITextListView(handle)</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_text_list_view.html#a8cfe067d45a005852109e59d38d21fc4">   10</a></span>&#160;    BaseTextListView::BaseTextListView(<span class="keyword">const</span> wstring&amp; listViewName, <span class="keyword">const</span> <a class="code" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a>&amp; settings, <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* parent) :</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <a class="code" href="classgui__framework_1_1_base_list_view.html">BaseListView</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        (</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            listViewName,</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            settings,</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            styles::TextListViewStyles(),</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            parent</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        ),</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        ITextListView(handle)</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
 <div class="ttc" id="a_base_text_list_view_8h_html"><div class="ttname"><a href="_base_text_list_view_8h.html">BaseTextListView.h</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_component_html"><div class="ttname"><a href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></div><div class="ttdoc">Base class for all windows, controls, etc.</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00009">BaseComponent.h:10</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_list_view_html"><div class="ttname"><a href="classgui__framework_1_1_base_list_view.html">gui_framework::BaseListView</a></div><div class="ttdoc">Base class for all list views.</div><div class="ttdef"><b>Definition:</b> <a href="_base_list_view_8h_source.html#l00008">BaseListView.h:9</a></div></div>
-<div class="ttc" id="anamespacegui__framework_1_1standard__classes_html_adac4b5d75af78a7cfa79e019c9b43f2f"><div class="ttname"><a href="namespacegui__framework_1_1standard__classes.html#adac4b5d75af78a7cfa79e019c9b43f2f">gui_framework::standard_classes::listView</a></div><div class="ttdeci">constexpr std::wstring_view listView</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00019">GUIFrameworkConstants.h:19</a></div></div>
+<div class="ttc" id="a_text_list_view_styles_8h_html"><div class="ttname"><a href="_text_list_view_styles_8h.html">TextListViewStyles.h</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_component_html"><div class="ttname"><a href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></div><div class="ttdoc">Base class for all windows, controls, etc.</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00010">BaseComponent.h:11</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_list_view_html"><div class="ttname"><a href="classgui__framework_1_1_base_list_view.html">gui_framework::BaseListView</a></div><div class="ttdoc">Base class for all list views.</div><div class="ttdef"><b>Definition:</b> <a href="_base_list_view_8h_source.html#l00009">BaseListView.h:10</a></div></div>
 <div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00014">BaseComponent.cpp:15</a></div></div>
 <div class="ttc" id="apch_8h_html"><div class="ttname"><a href="pch_8h.html">pch.h</a></div></div>
 <div class="ttc" id="astructgui__framework_1_1utility_1_1_component_settings_html"><div class="ttname"><a href="structgui__framework_1_1utility_1_1_component_settings.html">gui_framework::utility::ComponentSettings</a></div><div class="ttdoc">All settings for windows.</div><div class="ttdef"><b>Definition:</b> <a href="_component_settings_8h_source.html#l00010">ComponentSettings.h:11</a></div></div>

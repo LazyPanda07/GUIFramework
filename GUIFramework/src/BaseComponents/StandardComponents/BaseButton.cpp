@@ -27,12 +27,13 @@ namespace gui_framework
 		return -1;
 	}
 
-	BaseButton::BaseButton(const wstring& buttonName, const wstring& buttonText, const utility::ComponentSettings& settings, BaseComponent* parent, const function<void()>& onClick) :
+	BaseButton::BaseButton(const wstring& buttonName, const wstring& buttonText, const utility::ComponentSettings& settings, const styles::ButtonStyles& styles, BaseComponent* parent, const function<void()>& onClick) :
 		BaseComponent
 		(
 			wstring(standard_classes::button),
 			buttonName,
 			settings,
+			styles,
 			parent
 		),
 		ITextOperations(handle),

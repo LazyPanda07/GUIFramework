@@ -13,7 +13,7 @@ namespace gui_framework
 		{
 			auto [callbacks, textLimitCount, isMultiLine] = any_cast<tuple<vector<pair<BaseRichEdit::urlDetectEvent, function<void(const wstring&)>>>, uint64_t, bool>>(additionalData);
 
-			RichEdit* richEdit = new RichEdit(windowName, settings.x, settings.y, settings.width, settings.height, parent, isMultiLine);
+			RichEdit* richEdit = new RichEdit(windowName, utility::ComponentSettings(settings.x, settings.y, settings.width, settings.height), parent, isMultiLine);
 
 			if (callbacks.size())
 			{

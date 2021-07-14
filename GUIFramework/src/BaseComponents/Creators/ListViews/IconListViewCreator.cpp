@@ -13,7 +13,7 @@ namespace gui_framework
 		{
 			auto [type, data] = any_cast<tuple<utility::iconListViewType, vector<filesystem::path>>>(additionalData);
 
-			IconListView* result = new IconListView(windowName, settings.x, settings.y, settings.width, settings.height, parent, type);
+			IconListView* result = new IconListView(windowName, utility::ComponentSettings(settings.x, settings.y, settings.width, settings.height), parent, type);
 
 			for (const auto& i : data)
 			{

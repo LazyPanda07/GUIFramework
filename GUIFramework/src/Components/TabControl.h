@@ -1,17 +1,14 @@
 #pragma once
 
-#include "BaseComponents/BaseResizableComponent.h"
 #include "BaseComponents/StandardComponents/BaseTabControl.h"
-
-#pragma warning(push)
-#pragma warning(disable: 4250)
+#include "Interfaces/Components/IResizableComponent.h"
 
 namespace gui_framework
 {
 	/// @brief Standard tab control
 	class GUI_FRAMEWORK_API TabControl : 
-		public BaseResizableComponent,
-		public BaseTabControl
+		public BaseTabControl,
+		public interfaces::IResizableComponent
 	{
 	public:
 		TabControl(const std::wstring& tabControlName, const utility::ComponentSettings& settings, BaseComponent* parent, uint16_t imagesWidth = NULL, uint16_t imagesHeight = NULL);
@@ -19,5 +16,3 @@ namespace gui_framework
 		~TabControl() = default;
 	};
 }
-
-#pragma warning(pop)

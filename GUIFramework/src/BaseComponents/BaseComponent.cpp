@@ -27,10 +27,24 @@ namespace gui_framework
 	{
 		isUsed = false;
 
+		if (message == WM_SIZE)
+		{
+			interfaces::IResizableComponent* resizableComponent = dynamic_cast<interfaces::IResizableComponent*>(this);
+
+			if (resizableComponent && !resizableComponent->getBlockResize())
+			{
+				isUsed = true;
+
+				resizableComponent->resize(LOWORD(lparam), HIWORD(lparam));
+
+				return 0;
+			}
+		}
+
 		return -1;
 	}
 
-	BaseComponent::BaseComponent(const wstring& className, const wstring& windowName, const utility::ComponentSettings& settings, BaseComponent* parent, const string& windowFunctionName, const std::wstring& moduleName) :
+	BaseComponent::BaseComponent(const wstring& className, const wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent, const string& windowFunctionName, const std::wstring& moduleName) :
 		parent(parent),
 		className(className),
 		windowName(windowName),
@@ -73,10 +87,10 @@ namespace gui_framework
 
 		handle = CreateWindowExW
 		(
-			settings.extendedStyles,
+			static_cast<DWORD>(styles.getExtendedStyles()),
 			className.data(),
 			windowName.data(),
-			settings.styles | (parent ? WS_CHILDWINDOW | WS_BORDER : WS_OVERLAPPEDWINDOW),
+			static_cast<DWORD>(styles.getStyles()) | (parent ? WS_CHILDWINDOW | WS_BORDER : WS_OVERLAPPEDWINDOW),
 			settings.x,
 			settings.y,
 			settings.width,

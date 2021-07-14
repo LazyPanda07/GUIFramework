@@ -5,13 +5,5 @@ var dir_fe7144ccf5354047d8dce0577a2d1e7e =
     [ "BaseComposite.cpp", "_base_composite_8cpp.html", null ],
     [ "BaseComposite.h", "_base_composite_8h.html", [
       [ "BaseComposite", "classgui__framework_1_1_base_composite.html", "classgui__framework_1_1_base_composite" ]
-    ] ],
-    [ "BaseNonResizableComposite.cpp", "_base_non_resizable_composite_8cpp.html", null ],
-    [ "BaseNonResizableComposite.h", "_base_non_resizable_composite_8h.html", [
-      [ "BaseNonResizableComposite", "classgui__framework_1_1_base_non_resizable_composite.html", "classgui__framework_1_1_base_non_resizable_composite" ]
-    ] ],
-    [ "BaseResizableComposite.cpp", "_base_resizable_composite_8cpp.html", null ],
-    [ "BaseResizableComposite.h", "_base_resizable_composite_8h.html", [
-      [ "BaseResizableComposite", "classgui__framework_1_1_base_resizable_composite.html", "classgui__framework_1_1_base_resizable_composite" ]
     ] ]
 ];

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "BaseComposites/StandardComposites/BaseDialogBox.h"
-#include "BaseComposites/BaseNonResizableComposite.h"
+#include "Interfaces/Components/INonResizableComponent.h"	
 #include "Composites/AdditionalCreationData/AdditionalCreationData.h"
 
 #undef DialogBox
@@ -10,8 +10,8 @@ namespace gui_framework
 {
 	/// @brief Standard dialog box
 	class GUI_FRAMEWORK_API DialogBox :
-		public BaseNonResizableComposite,
-		public BaseDialogBox
+		public BaseDialogBox,
+		public interfaces::INonResizableComponent
 	{
 	public:
 		/// @brief Builder for dialog boxes

@@ -7,7 +7,7 @@ namespace gui_framework
 {
 	/// @brief Base class for all non updatable progress bars
 	class GUI_FRAMEWORK_API BaseInfiniteProgressBar : 
-		virtual public BaseComponent,
+		public BaseComponent,
 		public interfaces::IProgressBarColor
 	{
 	protected:

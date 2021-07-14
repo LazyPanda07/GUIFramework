@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "ProgressBarCreator.h"
 
-#include "Components/ProgressBar.h"
+#include "Components/ProgressBars/ProgressBar.h"
 
 using namespace std;
 
@@ -13,7 +13,7 @@ namespace gui_framework
 		{
 			auto [minRange, maxRange, updateStep] = any_cast<tuple<int, int, int>>(additionalData);
 
-			return new ProgressBar(windowName, settings.x, settings.y, settings.width, settings.height, parent, minRange, maxRange, updateStep);
+			return new ProgressBar(windowName, utility::ComponentSettings(settings.x, settings.y, settings.width, settings.height), parent, minRange, maxRange, updateStep);
 		}
 	}
 }

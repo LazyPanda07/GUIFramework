@@ -6,8 +6,7 @@
 namespace gui_framework
 {
 	/// @brief Base class for all tab controls
-	class GUI_FRAMEWORK_API BaseTabControl :
-		virtual public BaseComponent
+	class GUI_FRAMEWORK_API BaseTabControl : public BaseComponent
 	{
 	public:
 		struct GUI_FRAMEWORK_API tabData

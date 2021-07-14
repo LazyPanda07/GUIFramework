@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "BaseDialogBox.h"
 
+#include "Styles/Composites/DialogBoxStyles.h"
+
 using namespace std;
 
 namespace gui_framework
@@ -15,15 +17,8 @@ namespace gui_framework
 		(
 			className,
 			title,
-			utility::ComponentSettings
-			(
-				settings.styles | WS_SYSMENU | WS_CAPTION,
-				settings.x,
-				settings.y,
-				settings.width,
-				settings.height,
-				settings.extendedStyles | WS_EX_DLGMODALFRAME
-			),
+			settings,
+			styles::DialogBoxStyles(),
 			parent,
 			dialogBoxFunctionName
 		)

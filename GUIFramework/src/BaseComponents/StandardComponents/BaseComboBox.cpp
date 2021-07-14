@@ -14,12 +14,13 @@ using namespace std;
 
 namespace gui_framework
 {
-	BaseComboBox::BaseComboBox(const wstring& comboBoxName, const utility::ComponentSettings& settings, BaseComponent* parent) :
+	BaseComboBox::BaseComboBox(const wstring& comboBoxName, const utility::ComponentSettings& settings, const styles::ComboBoxStyles& styles, BaseComponent* parent) :
 		BaseComponent
 		(
 			wstring(standard_classes::comboBox),
 			comboBoxName,
 			settings,
+			styles,
 			parent
 		),
 		IResizableComponent

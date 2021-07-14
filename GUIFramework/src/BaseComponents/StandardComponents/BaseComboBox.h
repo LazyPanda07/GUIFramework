@@ -2,12 +2,13 @@
 
 #include "BaseComponents/BaseComponent.h"
 #include "Interfaces/Components/IResizableComponent.h"
+#include "Styles/Components/ComboBoxes/ComboBoxStyles.h"
 
 namespace gui_framework
 {
 	/// @brief Base class for all combo boxes
 	class GUI_FRAMEWORK_API BaseComboBox :
-		virtual public BaseComponent,
+		public BaseComponent,
 		public interfaces::IResizableComponent
 	{
 	protected:
@@ -21,7 +22,7 @@ namespace gui_framework
 		};
 
 	public:
-		BaseComboBox(const std::wstring& comboBoxName, const utility::ComponentSettings& settings, BaseComponent* parent);
+		BaseComboBox(const std::wstring& comboBoxName, const utility::ComponentSettings& settings, const styles::ComboBoxStyles& styles, BaseComponent* parent);
 
 		/// @brief 
 		/// @param value 

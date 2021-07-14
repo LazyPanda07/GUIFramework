@@ -1,6 +1,6 @@
 var classgui__framework_1_1_base_trackbar_control =
 [
-    [ "BaseTrackbarControl", "classgui__framework_1_1_base_trackbar_control.html#a8c10d4d38bb6025bfc7456b354f4c47b", null ],
+    [ "BaseTrackbarControl", "classgui__framework_1_1_base_trackbar_control.html#aca329ed18aab67cd5169d6309e9ac41b", null ],
     [ "~BaseTrackbarControl", "classgui__framework_1_1_base_trackbar_control.html#aef71e055ea173fa265f34449202b020a", null ],
     [ "clearSelection", "classgui__framework_1_1_base_trackbar_control.html#a7eb942f4060d26664e72f3c8c7436592", null ],
     [ "getMaxRange", "classgui__framework_1_1_base_trackbar_control.html#a12627f54efbf35716092e2a9769725fe", null ],

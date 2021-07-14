@@ -1,22 +1,18 @@
 #include "pch.h"
 #include "HorizontalTrackbarControl.h"
 
+#include "Styles/Components/Trackbars/HorizontalTrackbarControlStyles.h"
+
 using namespace std;
 
 namespace gui_framework
 {
-	HorizontalTrackbarControl::HorizontalTrackbarControl(const wstring& trackbarName, int x, int y, uint16_t width, uint16_t height, BaseComponent* parent, bool autoTicks, horizontalTickPosition position, bool selectionRange, bool noTicks) :
+	HorizontalTrackbarControl::HorizontalTrackbarControl(const wstring& trackbarName, const utility::ComponentSettings& settings, BaseComponent* parent, bool autoTicks, horizontalTickPosition position, bool selectionRange, bool noTicks) :
 		BaseTrackbarControl
 		(
 			trackbarName,
-			utility::ComponentSettings
-			(
-				TBS_HORZ | (position == horizontalTickPosition::bottom ? TBS_BOTTOM : (position == horizontalTickPosition::top ? TBS_TOP : TBS_BOTH)),
-				x,
-				y,
-				width,
-				height
-			),
+			settings,
+			styles::HorizontalTrackbarControlStyles(position),
 			parent
 		)
 	{

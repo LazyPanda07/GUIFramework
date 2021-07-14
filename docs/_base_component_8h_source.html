@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.4</span>
+   &#160;<span id="projectnumber">0.5</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -91,169 +91,171 @@ $(document).ready(function(){initNavTree('_base_component_8h_source.html',''); i
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pch_8h.html">pch.h</a>&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_menu_8h.html">Menu/Menu.h</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html">    9</a></span>&#160;    <span class="keyword">class </span><a class="code" href="_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba">GUI_FRAMEWORK_API</a> <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#adadba923c5fcc012ce8b50e592080bcd">   12</a></span>&#160;        <span class="keyword">enum class</span> <a class="code" href="classgui__framework_1_1_base_component.html#adadba923c5fcc012ce8b50e592080bcd">exitMode</a></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            destroyWindow,</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            quit</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        };</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#ac823322fa8ec6712f4585239835b3fdb">   22</a></span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classgui__framework_1_1_base_component.html#ac823322fa8ec6712f4585239835b3fdb">runFunctionAsync</a>(<span class="keyword">const</span> std::function&lt;<span class="keywordtype">void</span>()&gt;&amp; callable, <span class="keyword">const</span> std::function&lt;<span class="keywordtype">void</span>()&gt;&amp; callback = <span class="keyword">nullptr</span>) noexcept;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#a377a3b392aa9778b11347f3b69acbd42">   27</a></span>&#160;        static <span class="keywordtype">void</span> runFunctionAsync(std::function&lt;<span class="keywordtype">void</span>()&gt;&amp;&amp; callable, const std::function&lt;<span class="keywordtype">void</span>()&gt;&amp; callback = <span class="keywordtype">nullptr</span>) noexcept;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    protected:</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#a1576375d22cf283d598e22f4a11aca2f">   30</a></span>&#160;        <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* parent;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#a7a012276355e58b4c55227dccac46bf5">   31</a></span>&#160;        std::unordered_map&lt;HMENU, <a class="code" href="classgui__framework_1_1_menu.html">Menu</a>&gt; popupMenus;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#ad2e1e9a73ab94b4fb0da0addc3ffb66d">   32</a></span>&#160;        std::unique_ptr&lt;<a class="code" href="classgui__framework_1_1_menu.html">Menu</a>&gt; mainMenu;</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#a7a8719af09a90cd4de26d3a295882e86">   33</a></span>&#160;        const std::wstring className;</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#ab927f5791c7605446203f7f7f6e0bb83">   34</a></span>&#160;        const std::wstring windowName;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">   35</a></span>&#160;        HWND handle;</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#a1fe8542988faaa68bbe5a5a566f8117c">   36</a></span>&#160;        HINSTANCE module;</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#ac926a20fcbe58d1b4712d2592284ddc2">   37</a></span>&#160;        uint16_t desiredWidth;</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#a11847788edd849b0b245bd90db0af7bb">   38</a></span>&#160;        uint16_t desiredHeight;</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#a45714d8af7df9cc43ed7a0acc02a7c9f">   39</a></span>&#160;        <span class="keywordtype">int</span> desiredX;</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#a3d15724eb33a896f282d5199f825d03b">   40</a></span>&#160;        <span class="keywordtype">int</span> desiredY;</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#a55051bf0a8f4a9e513a7531fc9998145">   41</a></span>&#160;        <a class="code" href="classgui__framework_1_1_base_component.html#adadba923c5fcc012ce8b50e592080bcd">exitMode</a> mode;</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#ae94897a52c22317fa48c4b3fa79ace16">   42</a></span>&#160;        HICON largeIcon;</div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#aa42b7d08d840328fab675e3308ac7ab5">   43</a></span>&#160;        HICON smallIcon;</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#a24a743c99e4ca9bd6a5e1ea2fbd3aea7">   44</a></span>&#160;        uint32_t <span class="keywordtype">id</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#aa5a56227ac3689163f958e778f0df1ca">   45</a></span>&#160;        COLORREF backgroundColor;</div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#aa6bedc9892f3eb8ae57193275bab2242">   46</a></span>&#160;        COLORREF textColor;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    protected:</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        virtual LRESULT preWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, <span class="keywordtype">bool</span>&amp; isUsed);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    public:</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>(const std::wstring&amp; className, const std::wstring&amp; windowName, const utility::ComponentSettings&amp; settings, <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* parent = <span class="keywordtype">nullptr</span>, const std::<span class="keywordtype">string</span>&amp; windowFunctionName = &quot;&quot;, const std::wstring&amp; moduleName = L&quot;&quot;);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        virtual <span class="keywordtype">bool</span> isComposite() const;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, <span class="keywordtype">bool</span>&amp; isUsed);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        virtual LRESULT handleMessages(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, <span class="keywordtype">bool</span>&amp; isUsed) final;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        virtual <span class="keywordtype">bool</span> destroyComponent() final;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        virtual <span class="keywordtype">bool</span> asyncDestroyComponent() final;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        virtual std::unique_ptr&lt;<a class="code" href="classgui__framework_1_1_menu.html">Menu</a>&gt;&amp; createMainMenu(const std::wstring&amp; menuName) final;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        virtual <a class="code" href="classgui__framework_1_1_menu.html">Menu</a>&amp; addPopupMenu(const std::wstring&amp; menuName) final;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        virtual <span class="keywordtype">void</span> removePopupMenus(const std::wstring&amp; menuName);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        virtual <span class="keywordtype">void</span> setDesiredWidth(uint16_t desiredWidth) final;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        virtual <span class="keywordtype">void</span> setDesiredHeight(uint16_t desiredHeight) final;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        virtual <span class="keywordtype">void</span> setDesiredX(<span class="keywordtype">int</span> desiredX) final;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        virtual <span class="keywordtype">void</span> setDesiredY(<span class="keywordtype">int</span> desiredY) final;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        virtual <span class="keywordtype">void</span> setExitMode(<a class="code" href="classgui__framework_1_1_base_component.html#adadba923c5fcc012ce8b50e592080bcd">exitMode</a> mode) final;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        virtual <span class="keywordtype">void</span> setLargeIcon(const std::filesystem::path&amp; pathToLargeIcon) final;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        virtual <span class="keywordtype">void</span> setSmallIcon(const std::filesystem::path&amp; pathToSmallIcon) final;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        virtual <span class="keywordtype">void</span> setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        virtual <span class="keywordtype">void</span> setTextColor(uint8_t red, uint8_t green, uint8_t blue);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        virtual <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* getParent() const final;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        virtual HWND getHandle() const final;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        virtual const std::wstring&amp; getWindowName() const final;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        virtual const std::wstring&amp; getClassName() const final;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        virtual uint16_t getDesiredWidth() const final;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        virtual uint16_t getDesiredHeight() const final;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        virtual uint16_t getActualWidth() const final;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        virtual uint16_t getActualHeight() const final;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        virtual RECT getActualCoordinates() const final;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        virtual <span class="keywordtype">int</span> getDesiredX() const final;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        virtual <span class="keywordtype">int</span> getDesiredY() const final;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        virtual <a class="code" href="classgui__framework_1_1_base_component.html#adadba923c5fcc012ce8b50e592080bcd">exitMode</a> getExitMode() const final;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        virtual const std::unique_ptr&lt;<a class="code" href="classgui__framework_1_1_menu.html">Menu</a>&gt;&amp; getMainMenu() const final;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        virtual std::unique_ptr&lt;<a class="code" href="classgui__framework_1_1_menu.html">Menu</a>&gt;&amp; getMainMenu() final;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        virtual std::vector&lt;const <a class="code" href="classgui__framework_1_1_menu.html">Menu</a>*&gt; getPopupMenus() const final;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        virtual uint32_t getId() const final;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        virtual COLORREF getBackgroundColor() const final;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        virtual COLORREF getTextColor() const final;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        virtual ~<a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>();</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    };</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;}</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
-<div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="_base_component_8h.html#ae001e6c0e20a554bf6fb9aa8de4f6a20">  142</a></span>&#160;<span class="preprocessor">#define CREATE_DEFAULT_WINDOW_FUNCTION(className) extern &quot;C&quot;</span> __declspec(dllexport) LRESULT className##WindowFunction (HWND handle, UINT message, WPARAM wparam, LPARAM lparam)  \</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;{ \</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    static gui_framework::BaseComponent* topLevelWindow = nullptr; \</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    \</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    switch(message) \</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    { \</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    case WM_DESTROY: \</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        if(topLevelWindow) \</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        { \</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            if (topLevelWindow-&gt;getHandle() == handle &amp;&amp; topLevelWindow-&gt;getExitMode() == gui_framework::BaseComponent::exitMode::quit) \</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            { \</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                PostQuitMessage(0); \</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            } \</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        } \</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        else \</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        { \</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            PostQuitMessage(0); \</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        } \</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            \</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        return 0; \</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        \</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    case gui_framework::custom_window_messages::initTopLevelWindowPointer: \</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        topLevelWindow = reinterpret_cast&lt;gui_framework::BaseComponent*&gt;(wparam); \</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            \</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        return 0; \</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    } \</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        \</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    if (topLevelWindow) \</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    { \</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        bool isUsed = false; \</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            \</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        LRESULT result = topLevelWindow-&gt;handleMessages(handle, message, wparam, lparam, isUsed); \</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            \</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        return isUsed ? \</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            result : \</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            DefWindowProcW(handle, message, wparam, lparam); \</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    } \</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    else \</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    { \</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        return DefWindowProcW(handle, message, wparam, lparam); \</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    } \</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;}</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_i_styles_8h.html">Interfaces/Styles/IStyles.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html">   10</a></span>&#160;    <span class="keyword">class </span><a class="code" href="_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba">GUI_FRAMEWORK_API</a> <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#adadba923c5fcc012ce8b50e592080bcd">   13</a></span>&#160;        <span class="keyword">enum class</span> <a class="code" href="classgui__framework_1_1_base_component.html#adadba923c5fcc012ce8b50e592080bcd">exitMode</a></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            destroyWindow,</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            quit</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        };</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#ac823322fa8ec6712f4585239835b3fdb">   23</a></span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classgui__framework_1_1_base_component.html#ac823322fa8ec6712f4585239835b3fdb">runFunctionAsync</a>(<span class="keyword">const</span> std::function&lt;<span class="keywordtype">void</span>()&gt;&amp; callable, <span class="keyword">const</span> std::function&lt;<span class="keywordtype">void</span>()&gt;&amp; callback = <span class="keyword">nullptr</span>) noexcept;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#a377a3b392aa9778b11347f3b69acbd42">   28</a></span>&#160;        static <span class="keywordtype">void</span> runFunctionAsync(std::function&lt;<span class="keywordtype">void</span>()&gt;&amp;&amp; callable, const std::function&lt;<span class="keywordtype">void</span>()&gt;&amp; callback = <span class="keywordtype">nullptr</span>) noexcept;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    protected:</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#a1576375d22cf283d598e22f4a11aca2f">   31</a></span>&#160;        <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* parent;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#a7a012276355e58b4c55227dccac46bf5">   32</a></span>&#160;        std::unordered_map&lt;HMENU, <a class="code" href="classgui__framework_1_1_menu.html">Menu</a>&gt; popupMenus;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#ad2e1e9a73ab94b4fb0da0addc3ffb66d">   33</a></span>&#160;        std::unique_ptr&lt;<a class="code" href="classgui__framework_1_1_menu.html">Menu</a>&gt; mainMenu;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#a7a8719af09a90cd4de26d3a295882e86">   34</a></span>&#160;        const std::wstring className;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#ab927f5791c7605446203f7f7f6e0bb83">   35</a></span>&#160;        const std::wstring windowName;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">   36</a></span>&#160;        HWND handle;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#a1fe8542988faaa68bbe5a5a566f8117c">   37</a></span>&#160;        HINSTANCE module;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#ac926a20fcbe58d1b4712d2592284ddc2">   38</a></span>&#160;        uint16_t desiredWidth;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#a11847788edd849b0b245bd90db0af7bb">   39</a></span>&#160;        uint16_t desiredHeight;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#a45714d8af7df9cc43ed7a0acc02a7c9f">   40</a></span>&#160;        <span class="keywordtype">int</span> desiredX;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#a3d15724eb33a896f282d5199f825d03b">   41</a></span>&#160;        <span class="keywordtype">int</span> desiredY;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#a55051bf0a8f4a9e513a7531fc9998145">   42</a></span>&#160;        <a class="code" href="classgui__framework_1_1_base_component.html#adadba923c5fcc012ce8b50e592080bcd">exitMode</a> mode;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#ae94897a52c22317fa48c4b3fa79ace16">   43</a></span>&#160;        HICON largeIcon;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#aa42b7d08d840328fab675e3308ac7ab5">   44</a></span>&#160;        HICON smallIcon;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#a24a743c99e4ca9bd6a5e1ea2fbd3aea7">   45</a></span>&#160;        uint32_t <span class="keywordtype">id</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#aa5a56227ac3689163f958e778f0df1ca">   46</a></span>&#160;        COLORREF backgroundColor;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#aa6bedc9892f3eb8ae57193275bab2242">   47</a></span>&#160;        COLORREF textColor;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    protected:</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        virtual LRESULT preWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, <span class="keywordtype">bool</span>&amp; isUsed);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    public:</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>(const std::wstring&amp; className, const std::wstring&amp; windowName, const utility::ComponentSettings&amp; settings, const interfaces::IStyles&amp; styles, <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* parent = <span class="keywordtype">nullptr</span>, const std::<span class="keywordtype">string</span>&amp; windowFunctionName = &quot;&quot;, const std::wstring&amp; moduleName = L&quot;&quot;);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        virtual <span class="keywordtype">bool</span> isComposite() const;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, <span class="keywordtype">bool</span>&amp; isUsed);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        virtual LRESULT handleMessages(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, <span class="keywordtype">bool</span>&amp; isUsed) final;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        virtual <span class="keywordtype">bool</span> destroyComponent() final;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        virtual <span class="keywordtype">bool</span> asyncDestroyComponent() final;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        virtual std::unique_ptr&lt;<a class="code" href="classgui__framework_1_1_menu.html">Menu</a>&gt;&amp; createMainMenu(const std::wstring&amp; menuName) final;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        virtual <a class="code" href="classgui__framework_1_1_menu.html">Menu</a>&amp; addPopupMenu(const std::wstring&amp; menuName) final;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        virtual <span class="keywordtype">void</span> removePopupMenus(const std::wstring&amp; menuName);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        virtual <span class="keywordtype">void</span> setDesiredWidth(uint16_t desiredWidth) final;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        virtual <span class="keywordtype">void</span> setDesiredHeight(uint16_t desiredHeight) final;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        virtual <span class="keywordtype">void</span> setDesiredX(<span class="keywordtype">int</span> desiredX) final;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        virtual <span class="keywordtype">void</span> setDesiredY(<span class="keywordtype">int</span> desiredY) final;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        virtual <span class="keywordtype">void</span> setExitMode(<a class="code" href="classgui__framework_1_1_base_component.html#adadba923c5fcc012ce8b50e592080bcd">exitMode</a> mode) final;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        virtual <span class="keywordtype">void</span> setLargeIcon(const std::filesystem::path&amp; pathToLargeIcon) final;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        virtual <span class="keywordtype">void</span> setSmallIcon(const std::filesystem::path&amp; pathToSmallIcon) final;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        virtual <span class="keywordtype">void</span> setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        virtual <span class="keywordtype">void</span> setTextColor(uint8_t red, uint8_t green, uint8_t blue);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        virtual <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* getParent() const final;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        virtual HWND getHandle() const final;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        virtual const std::wstring&amp; getWindowName() const final;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        virtual const std::wstring&amp; getClassName() const final;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        virtual uint16_t getDesiredWidth() const final;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        virtual uint16_t getDesiredHeight() const final;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        virtual uint16_t getActualWidth() const final;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        virtual uint16_t getActualHeight() const final;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        virtual RECT getActualCoordinates() const final;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        virtual <span class="keywordtype">int</span> getDesiredX() const final;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        virtual <span class="keywordtype">int</span> getDesiredY() const final;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        virtual <a class="code" href="classgui__framework_1_1_base_component.html#adadba923c5fcc012ce8b50e592080bcd">exitMode</a> getExitMode() const final;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        virtual const std::unique_ptr&lt;<a class="code" href="classgui__framework_1_1_menu.html">Menu</a>&gt;&amp; getMainMenu() const final;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        virtual std::unique_ptr&lt;<a class="code" href="classgui__framework_1_1_menu.html">Menu</a>&gt;&amp; getMainMenu() final;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        virtual std::vector&lt;const <a class="code" href="classgui__framework_1_1_menu.html">Menu</a>*&gt; getPopupMenus() const final;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        virtual uint32_t getId() const final;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        virtual COLORREF getBackgroundColor() const final;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        virtual COLORREF getTextColor() const final;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        virtual ~<a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>();</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    };</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;}</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="_base_component_8h.html#ae001e6c0e20a554bf6fb9aa8de4f6a20">  143</a></span>&#160;<span class="preprocessor">#define CREATE_DEFAULT_WINDOW_FUNCTION(className) extern &quot;C&quot;</span> __declspec(dllexport) LRESULT className##WindowFunction (HWND handle, UINT message, WPARAM wparam, LPARAM lparam)  \</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;{ \</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    static gui_framework::BaseComponent* topLevelWindow = nullptr; \</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    \</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    switch(message) \</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    { \</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    case WM_DESTROY: \</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        if(topLevelWindow) \</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        { \</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            if (topLevelWindow-&gt;getHandle() == handle &amp;&amp; topLevelWindow-&gt;getExitMode() == gui_framework::BaseComponent::exitMode::quit) \</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            { \</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                PostQuitMessage(0); \</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            } \</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        } \</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        else \</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        { \</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            PostQuitMessage(0); \</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        } \</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            \</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        return 0; \</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        \</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    case gui_framework::custom_window_messages::initTopLevelWindowPointer: \</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        topLevelWindow = reinterpret_cast&lt;gui_framework::BaseComponent*&gt;(wparam); \</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            \</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        return 0; \</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    } \</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        \</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    if (topLevelWindow) \</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    { \</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        bool isUsed = false; \</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            \</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        LRESULT result = topLevelWindow-&gt;handleMessages(handle, message, wparam, lparam, isUsed); \</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            \</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        return isUsed ? \</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            result : \</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            DefWindowProcW(handle, message, wparam, lparam); \</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    } \</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    else \</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    { \</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        return DefWindowProcW(handle, message, wparam, lparam); \</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    } \</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;}</div>
 <div class="ttc" id="a_g_u_i_framework_constants_8h_html_a15da9ebdfa896557bb941a5da31021ba"><div class="ttname"><a href="_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba">GUI_FRAMEWORK_API</a></div><div class="ttdeci">#define GUI_FRAMEWORK_API</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00084">GUIFrameworkConstants.h:84</a></div></div>
+<div class="ttc" id="a_i_styles_8h_html"><div class="ttname"><a href="_i_styles_8h.html">IStyles.h</a></div></div>
 <div class="ttc" id="a_menu_8h_html"><div class="ttname"><a href="_menu_8h.html">Menu.h</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_component_html"><div class="ttname"><a href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></div><div class="ttdoc">Base class for all windows, controls, etc.</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00009">BaseComponent.h:10</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_component_html"><div class="ttname"><a href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></div><div class="ttdoc">Base class for all windows, controls, etc.</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00010">BaseComponent.h:11</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1_base_component_html_ac823322fa8ec6712f4585239835b3fdb"><div class="ttname"><a href="classgui__framework_1_1_base_component.html#ac823322fa8ec6712f4585239835b3fdb">gui_framework::BaseComponent::runFunctionAsync</a></div><div class="ttdeci">static void runFunctionAsync(const std::function&lt; void()&gt; &amp;callable, const std::function&lt; void()&gt; &amp;callback=nullptr) noexcept</div><div class="ttdoc">Add task to thread pool.</div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_component_html_adadba923c5fcc012ce8b50e592080bcd"><div class="ttname"><a href="classgui__framework_1_1_base_component.html#adadba923c5fcc012ce8b50e592080bcd">gui_framework::BaseComponent::exitMode</a></div><div class="ttdeci">exitMode</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00012">BaseComponent.h:13</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_component_html_adadba923c5fcc012ce8b50e592080bcd"><div class="ttname"><a href="classgui__framework_1_1_base_component.html#adadba923c5fcc012ce8b50e592080bcd">gui_framework::BaseComponent::exitMode</a></div><div class="ttdeci">exitMode</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00013">BaseComponent.h:14</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1_menu_html"><div class="ttname"><a href="classgui__framework_1_1_menu.html">gui_framework::Menu</a></div><div class="ttdoc">Menu class.</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8h_source.html#l00008">Menu.h:9</a></div></div>
 <div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00014">BaseComponent.cpp:15</a></div></div>
 <div class="ttc" id="apch_8h_html"><div class="ttname"><a href="pch_8h.html">pch.h</a></div></div>

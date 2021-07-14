@@ -7,7 +7,7 @@ namespace gui_framework
 {
 	/// @brief Base class for all edit controls
 	class GUI_FRAMEWORK_API BaseEditControl :
-		virtual public BaseComponent,
+		public BaseComponent,
 		public interfaces::ITextOperations
 	{
 	protected:
