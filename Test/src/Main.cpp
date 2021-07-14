@@ -4,7 +4,6 @@
 #include "WindowHolder.h"
 #include "Utility/Paint/DrawImage.h"
 #include "Utility/Holders/IconsHolder.h"
-#include "Components/EditControl.h"
 #include "Composites/SeparateWindow.h"
 
 #pragma comment (lib, "GUIFramework.lib")
@@ -17,7 +16,7 @@ void test()
 {
 	using namespace gui_framework;
 
-	utility::ComponentSettings settings(WS_BORDER, 300, 200, 800, 600);
+	utility::ComponentSettings settings(300, 200, 800, 600);
 
 	try
 	{
@@ -27,9 +26,7 @@ void test()
 
 		uint16_t index = icon.addImage(R"(assets\icon.ico)");
 
-		utility::paint::drawImage(ptr, icon, 0, 0, index);
-
-		new EditControl(L"Test", 50, 0, ptr);
+		utility::paint::drawImageByIndex(ptr, icon, 0, 0, index);
 
 		ptr->setExitMode(BaseComponent::exitMode::quit);
 
