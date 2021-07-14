@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "DropDownComboBox.h"
 
-#include "Styles/Components/DropDownComboBoxStyles.h"
+#include "Styles/Components/ComboBoxes/DropDownComboBoxStyles.h"
 
 using namespace std;
 

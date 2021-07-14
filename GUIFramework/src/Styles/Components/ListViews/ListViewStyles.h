@@ -6,6 +6,7 @@ namespace gui_framework
 {
 	namespace styles
 	{
+		/// @brief ListView styles
 		class GUI_FRAMEWORK_API ListViewStyles : public DefaultStyles
 		{
 		protected:

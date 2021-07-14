@@ -6,6 +6,7 @@ namespace gui_framework
 {
 	namespace styles
 	{
+		/// @brief TrackbarControl styles
 		class GUI_FRAMEWORK_API TrackbarControlStyles : public DefaultStyles
 		{
 		protected:

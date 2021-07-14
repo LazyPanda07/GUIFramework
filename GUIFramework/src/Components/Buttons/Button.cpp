@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "Button.h"
 
-#include "Styles/Components/DefaultButtonStyles.h"
+#include "Styles/Components/Buttons/DefaultButtonStyles.h"
 
 using namespace std;
 

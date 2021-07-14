@@ -1,7 +1,7 @@
 #pragma once
 
 #include "BaseComponents/BaseComponent.h"
-#include "Styles/Components/TrackbarControlStyles.h"
+#include "Styles/Components/Trackbars/TrackbarControlStyles.h"
 
 namespace gui_framework
 {

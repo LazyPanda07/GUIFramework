@@ -51,7 +51,7 @@
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseButton.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Components\Button.h">
+    <ClInclude Include="src\Components\Buttons\Button.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\GUIFramework.h">
@@ -90,13 +90,13 @@
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseComboBox.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Components\SimpleComboBox.h">
+    <ClInclude Include="src\Components\ComboBoxes\SimpleComboBox.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Components\DropDownComboBox.h">
+    <ClInclude Include="src\Components\ComboBoxes\DropDownComboBox.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Components\DropDownListComboBox.h">
+    <ClInclude Include="src\Components\ComboBoxes\DropDownListComboBox.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Exceptions\SelectListException.h">
@@ -108,10 +108,10 @@
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseListBox.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Components\ListBox.h">
+    <ClInclude Include="src\Components\ListBoxes\ListBox.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Components\MultipleSelectListBox.h">
+    <ClInclude Include="src\Components\ListBoxes\MultipleSelectListBox.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseMultipleSelectListBox.h">
@@ -345,10 +345,10 @@
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseInfiniteProgressBar.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Components\ProgressBar.h">
+    <ClInclude Include="src\Components\ProgressBars\ProgressBar.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Components\InfiniteProgressBar.h">
+    <ClInclude Include="src\Components\ProgressBars\InfiniteProgressBar.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\BaseComponents\Creators\ProgressBarCreator.h">
@@ -366,13 +366,13 @@
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseCheckBox.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Components\CheckBox.h">
+    <ClInclude Include="src\Components\Buttons\CheckBox.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\BaseComponents\Creators\CheckBoxCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Components\GroupBox.h">
+    <ClInclude Include="src\Composites\GroupBox.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\BaseComponents\Creators\GroupBoxCreator.h">
@@ -414,31 +414,31 @@
     <ClInclude Include="src\Styles\DefaultStyles.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Styles\Components\CheckBoxStyles.h">
+    <ClInclude Include="src\Styles\Components\Buttons\CheckBoxStyles.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Styles\Components\ButtonStyles.h">
+    <ClInclude Include="src\Styles\Components\Buttons\ButtonStyles.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Styles\Components\ComboBoxStyles.h">
+    <ClInclude Include="src\Styles\Components\ComboBoxes\ComboBoxStyles.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Styles\Components\DropDownComboBoxStyles.h">
+    <ClInclude Include="src\Styles\Components\ComboBoxes\DropDownComboBoxStyles.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Styles\Components\DropDownListComboBoxStyles.h">
+    <ClInclude Include="src\Styles\Components\ComboBoxes\DropDownListComboBoxStyles.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Styles\Components\SimpleComboBoxStyles.h">
+    <ClInclude Include="src\Styles\Components\ComboBoxes\SimpleComboBoxStyles.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Styles\Components\InfiniteProgressBarStyles.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Styles\Components\ListBoxStyles.h">
+    <ClInclude Include="src\Styles\Components\ListBoxes\ListBoxStyles.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Styles\Components\MultipleSelectListBoxStyles.h">
+    <ClInclude Include="src\Styles\Components\ListBoxes\MultipleSelectListBoxStyles.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Styles\Components\ListViews\ListViewStyles.h">
@@ -459,22 +459,22 @@
     <ClInclude Include="src\Styles\Components\ListViews\ListTextListViewStyles.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Styles\Components\TrackbarControlStyles.h">
+    <ClInclude Include="src\Styles\Components\Trackbars\TrackbarControlStyles.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Styles\Components\VerticalTrackbarControlStyles.h">
+    <ClInclude Include="src\Styles\Components\Trackbars\VerticalTrackbarControlStyles.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Styles\Components\HorizontalTrackbarControlStyles.h">
+    <ClInclude Include="src\Styles\Components\Trackbars\HorizontalTrackbarControlStyles.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Styles\Components\DefaultButtonStyles.h">
+    <ClInclude Include="src\Styles\Components\Buttons\DefaultButtonStyles.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Styles\Components\RadioButtonStyles.h">
+    <ClInclude Include="src\Styles\Components\Buttons\RadioButtonStyles.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Styles\Components\DefaultListBoxStyles.h">
+    <ClInclude Include="src\Styles\Components\ListBoxes\DefaultListBoxStyles.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Styles\Components\DefaultRichEditStyles.h">
@@ -515,7 +515,7 @@
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseButton.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Components\Button.cpp">
+    <ClCompile Include="src\Components\Buttons\Button.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\GUIFramework.cpp">
@@ -554,13 +554,13 @@
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseComboBox.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Components\SimpleComboBox.cpp">
+    <ClCompile Include="src\Components\ComboBoxes\SimpleComboBox.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Components\DropDownComboBox.cpp">
+    <ClCompile Include="src\Components\ComboBoxes\DropDownComboBox.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Components\DropDownListComboBox.cpp">
+    <ClCompile Include="src\Components\ComboBoxes\DropDownListComboBox.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Exceptions\SelectListException.cpp">
@@ -569,10 +569,10 @@
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseListBox.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Components\ListBox.cpp">
+    <ClCompile Include="src\Components\ListBoxes\ListBox.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Components\MultipleSelectListBox.cpp">
+    <ClCompile Include="src\Components\ListBoxes\MultipleSelectListBox.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseMultipleSelectListBox.cpp">
@@ -791,10 +791,10 @@
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseInfiniteProgressBar.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Components\ProgressBar.cpp">
+    <ClCompile Include="src\Components\ProgressBars\ProgressBar.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Components\InfiniteProgressBar.cpp">
+    <ClCompile Include="src\Components\ProgressBars\InfiniteProgressBar.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\BaseComponents\Creators\ProgressBarCreator.cpp">
@@ -812,13 +812,13 @@
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseCheckBox.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Components\CheckBox.cpp">
+    <ClCompile Include="src\Components\Buttons\CheckBox.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\BaseComponents\Creators\CheckBoxCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Components\GroupBox.cpp">
+    <ClCompile Include="src\Composites\GroupBox.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\BaseComponents\Creators\GroupBoxCreator.cpp">
@@ -860,31 +860,31 @@
     <ClCompile Include="src\Styles\DefaultStyles.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Styles\Components\CheckBoxStyles.cpp">
+    <ClCompile Include="src\Styles\Components\Buttons\CheckBoxStyles.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Styles\Components\ButtonStyles.cpp">
+    <ClCompile Include="src\Styles\Components\Buttons\ButtonStyles.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Styles\Components\ComboBoxStyles.cpp">
+    <ClCompile Include="src\Styles\Components\ComboBoxes\ComboBoxStyles.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Styles\Components\DropDownComboBoxStyles.cpp">
+    <ClCompile Include="src\Styles\Components\ComboBoxes\DropDownComboBoxStyles.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Styles\Components\DropDownListComboBoxStyles.cpp">
+    <ClCompile Include="src\Styles\Components\ComboBoxes\DropDownListComboBoxStyles.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Styles\Components\SimpleComboBoxStyles.cpp">
+    <ClCompile Include="src\Styles\Components\ComboBoxes\SimpleComboBoxStyles.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Styles\Components\InfiniteProgressBarStyles.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Styles\Components\ListBoxStyles.cpp">
+    <ClCompile Include="src\Styles\Components\ListBoxes\ListBoxStyles.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Styles\Components\MultipleSelectListBoxStyles.cpp">
+    <ClCompile Include="src\Styles\Components\ListBoxes\MultipleSelectListBoxStyles.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Styles\Components\ListViews\ListViewStyles.cpp">
@@ -905,22 +905,22 @@
     <ClCompile Include="src\Styles\Components\ListViews\ListTextListViewStyles.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Styles\Components\TrackbarControlStyles.cpp">
+    <ClCompile Include="src\Styles\Components\Trackbars\TrackbarControlStyles.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Styles\Components\VerticalTrackbarControlStyles.cpp">
+    <ClCompile Include="src\Styles\Components\Trackbars\VerticalTrackbarControlStyles.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Styles\Components\HorizontalTrackbarControlStyles.cpp">
+    <ClCompile Include="src\Styles\Components\Trackbars\HorizontalTrackbarControlStyles.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Styles\Components\DefaultButtonStyles.cpp">
+    <ClCompile Include="src\Styles\Components\Buttons\DefaultButtonStyles.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Styles\Components\RadioButtonStyles.cpp">
+    <ClCompile Include="src\Styles\Components\Buttons\RadioButtonStyles.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Styles\Components\DefaultListBoxStyles.cpp">
+    <ClCompile Include="src\Styles\Components\ListBoxes\DefaultListBoxStyles.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Styles\Components\DefaultRichEditStyles.cpp">

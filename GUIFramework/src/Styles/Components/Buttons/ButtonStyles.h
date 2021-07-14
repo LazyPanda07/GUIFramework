@@ -6,6 +6,7 @@ namespace gui_framework
 {
 	namespace styles
 	{
+		/// @brief Base class for button styles
 		class GUI_FRAMEWORK_API ButtonStyles : public DefaultStyles
 		{
 		protected:

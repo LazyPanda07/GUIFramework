@@ -1,8 +1,8 @@
 #pragma once
 
 #include "AdditionalCreationData.h"
-#include "Components/ProgressBar.h"
-#include "Components/InfiniteProgressBar.h"
+#include "Components/ProgressBars/ProgressBar.h"
+#include "Components/ProgressBars/InfiniteProgressBar.h"
 
 namespace gui_framework
 {

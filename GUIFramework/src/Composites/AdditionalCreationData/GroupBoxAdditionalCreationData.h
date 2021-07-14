@@ -1,7 +1,7 @@
 #pragma once
 
 #include "AdditionalCreationData.h"
-#include "Components/GroupBox.h"
+#include "Composites/GroupBox.h"
 
 namespace gui_framework
 {

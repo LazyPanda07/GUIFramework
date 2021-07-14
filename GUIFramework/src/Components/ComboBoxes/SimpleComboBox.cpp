@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "SimpleComboBox.h"
 
-#include "Styles/Components/SimpleComboBoxStyles.h"
+#include "Styles/Components/ComboBoxes/SimpleComboBoxStyles.h"
 
 using namespace std;
 

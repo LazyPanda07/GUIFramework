@@ -6,6 +6,7 @@ namespace gui_framework
 {
 	namespace styles
 	{
+		/// @brief Default class for ListBoxStyles
 		class GUI_FRAMEWORK_API DefaultListBoxStyles : public ListBoxStyles
 		{
 		public:

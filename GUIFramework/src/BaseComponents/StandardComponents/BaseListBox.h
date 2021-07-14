@@ -2,7 +2,7 @@
 
 #include "BaseComponents/BaseComponent.h"
 #include "Interfaces/Components/IResizableComponent.h"
-#include "Styles/Components/ListBoxStyles.h"
+#include "Styles/Components/ListBoxes/ListBoxStyles.h"
 
 namespace gui_framework
 {

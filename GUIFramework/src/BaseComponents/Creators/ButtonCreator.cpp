@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "ButtonCreator.h"
 
-#include "Components/Button.h"
+#include "Components/Buttons/Button.h"
 
 using namespace std;
 

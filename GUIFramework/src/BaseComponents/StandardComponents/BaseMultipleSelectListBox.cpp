@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "BaseMultipleSelectListBox.h"
 
-#include "Styles/Components/MultipleSelectListBoxStyles.h"
+#include "Styles/Components/ListBoxes/MultipleSelectListBoxStyles.h"
 #include "Exceptions/SelectListException.h"
 
 #pragma push_macro("min")

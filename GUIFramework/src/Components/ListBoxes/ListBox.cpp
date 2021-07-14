@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "ListBox.h"
 
-#include "Styles/Components/DefaultListBoxStyles.h"
+#include "Styles/Components/ListBoxes/DefaultListBoxStyles.h"
 
 using namespace std;
 

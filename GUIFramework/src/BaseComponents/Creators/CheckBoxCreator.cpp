@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "CheckBoxCreator.h"
 
-#include "Components/CheckBox.h"
+#include "Components/Buttons/CheckBox.h"
 
 using namespace std;
 
