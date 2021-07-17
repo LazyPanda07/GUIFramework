@@ -1,5 +1,6 @@
 #pragma once
 
+#include "pch.h"
 #include "BaseComponents/BaseComponent.h"
 #include "Interfaces/Iterators/IIterable.h"
 #include "BaseCompositeIterators/forward_iterator.h"

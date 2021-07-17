@@ -1,5 +1,6 @@
 #pragma once
 
+#include "pch.h"
 #include "BaseComponents/StandardComponents/BaseStaticControl.h"
 #include "Interfaces/Components/IResizableComponent.h"
 

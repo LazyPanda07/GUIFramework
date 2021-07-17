@@ -1,5 +1,6 @@
 #pragma once
 
+#include "pch.h"
 #include "BaseWindow.h"
 
 namespace gui_framework

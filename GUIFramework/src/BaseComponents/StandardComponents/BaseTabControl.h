@@ -1,5 +1,6 @@
 #pragma once
 
+#include "pch.h"
 #include "BaseComponents/BaseComponent.h"
 #include "Utility/Holders/LoadableHolders/ImagesHolder.h"
 

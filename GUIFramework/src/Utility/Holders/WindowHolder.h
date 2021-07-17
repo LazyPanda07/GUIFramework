@@ -1,5 +1,6 @@
 #pragma once
 
+#include "pch.h"
 #include "BaseComposites/BaseComposite.h"
 
 namespace gui_framework

@@ -1,5 +1,6 @@
 #pragma once
 
+#include "pch.h"
 #include "IBaseConstForwardIterator.h"
 
 namespace gui_framework
