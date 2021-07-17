@@ -1,5 +1,6 @@
 #pragma once
 
+#include "pch.h"
 #include "BaseComponents/StandardComponents/BaseButton.h"
 #include "BaseComposites/BaseComposite.h"
 

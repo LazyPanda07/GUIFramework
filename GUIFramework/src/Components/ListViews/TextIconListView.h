@@ -1,5 +1,6 @@
 #pragma once
 
+#include "pch.h"
 #include "BaseComponents/StandardComponents/ListViews/BaseTextIconListView.h"
 
 namespace gui_framework

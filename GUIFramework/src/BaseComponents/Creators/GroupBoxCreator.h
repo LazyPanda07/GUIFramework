@@ -1,5 +1,6 @@
 #pragma once
 
+#include "pch.h"
 #include "BaseComponents/Creators/BaseComponentCreator.h"
 
 namespace gui_framework

@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.6-beta</span>
+   &#160;<span id="projectnumber">0.6.1-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -89,58 +89,60 @@ $(document).ready(function(){initNavTree('_base_dialog_box_8h_source.html',''); 
 <div class="contents">
 <a href="_base_dialog_box_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_base_composite_8h.html">BaseComposites/BaseComposite.h</a>&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_dialog_box.html">    8</a></span>&#160;    <span class="keyword">class </span><a class="code" href="_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba">GUI_FRAMEWORK_API</a> <a class="code" href="classgui__framework_1_1_base_dialog_box.html">BaseDialogBox</a> : <span class="keyword">public</span> <a class="code" href="classgui__framework_1_1_base_composite.html">BaseComposite</a></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_dialog_box.html#a4c390f225765a7ff69983db9d232b6e3">   11</a></span>&#160;        <span class="keyword">enum class</span> <a class="code" href="classgui__framework_1_1_base_dialog_box.html#a4c390f225765a7ff69983db9d232b6e3">messageBoxType</a></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            ok,</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            okCancel,</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            abortRetryIgnore,</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            yesNoCancel,</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            yesNo,</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            retryCancel,</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            cancelTryContinue</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        };</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_dialog_box.html#a66c5cb34004ac273196f855bf18afbfa">   22</a></span>&#160;        <span class="keyword">enum class</span> <a class="code" href="classgui__framework_1_1_base_dialog_box.html#a66c5cb34004ac273196f855bf18afbfa">messageBoxResponse</a></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            ok = 1,</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            cancel,</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            abort,</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            retry,</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            ignore,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            yes,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            no,</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            tryAgain = 10,</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            continueResponse</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        };</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">static</span> messageBoxResponse createMessageBox(<span class="keyword">const</span> std::wstring&amp; text, <span class="keyword">const</span> std::wstring&amp; title, messageBoxType type, <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* parent = <span class="keyword">nullptr</span>, <span class="keywordtype">bool</span> helpButton = <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="classgui__framework_1_1_base_dialog_box.html">BaseDialogBox</a>(<span class="keyword">const</span> std::wstring&amp; className, <span class="keyword">const</span> std::wstring&amp; title, <span class="keyword">const</span> <a class="code" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a>&amp; settings, <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* parent = <span class="keyword">nullptr</span>, <span class="keyword">const</span> std::string&amp; dialogBoxFunctionName = <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> hide() const final;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        virtual <span class="keywordtype">void</span> show() const final;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_dialog_box.html#a449b12f85afc3a3e36bf4af9ca5d83ef">   45</a></span>&#160;        virtual ~<a class="code" href="classgui__framework_1_1_base_dialog_box.html">BaseDialogBox</a>() = default;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    };</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pch_8h.html">pch.h</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_base_composite_8h.html">BaseComposites/BaseComposite.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_dialog_box.html">    9</a></span>&#160;    <span class="keyword">class </span><a class="code" href="_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba">GUI_FRAMEWORK_API</a> <a class="code" href="classgui__framework_1_1_base_dialog_box.html">BaseDialogBox</a> : <span class="keyword">public</span> <a class="code" href="classgui__framework_1_1_base_composite.html">BaseComposite</a></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_dialog_box.html#a4c390f225765a7ff69983db9d232b6e3">   12</a></span>&#160;        <span class="keyword">enum class</span> <a class="code" href="classgui__framework_1_1_base_dialog_box.html#a4c390f225765a7ff69983db9d232b6e3">messageBoxType</a></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            ok,</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            okCancel,</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            abortRetryIgnore,</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            yesNoCancel,</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            yesNo,</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            retryCancel,</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            cancelTryContinue</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        };</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_dialog_box.html#a66c5cb34004ac273196f855bf18afbfa">   23</a></span>&#160;        <span class="keyword">enum class</span> <a class="code" href="classgui__framework_1_1_base_dialog_box.html#a66c5cb34004ac273196f855bf18afbfa">messageBoxResponse</a></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            ok = 1,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            cancel,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            abort,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            retry,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            ignore,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            yes,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            no,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            tryAgain = 10,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            continueResponse</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        };</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">static</span> messageBoxResponse createMessageBox(<span class="keyword">const</span> std::wstring&amp; text, <span class="keyword">const</span> std::wstring&amp; title, messageBoxType type, <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* parent = <span class="keyword">nullptr</span>, <span class="keywordtype">bool</span> helpButton = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="classgui__framework_1_1_base_dialog_box.html">BaseDialogBox</a>(<span class="keyword">const</span> std::wstring&amp; className, <span class="keyword">const</span> std::wstring&amp; title, <span class="keyword">const</span> <a class="code" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a>&amp; settings, <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* parent = <span class="keyword">nullptr</span>, <span class="keyword">const</span> std::string&amp; dialogBoxFunctionName = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> hide() const final;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        virtual <span class="keywordtype">void</span> show() const final;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_dialog_box.html#a449b12f85afc3a3e36bf4af9ca5d83ef">   46</a></span>&#160;        virtual ~<a class="code" href="classgui__framework_1_1_base_dialog_box.html">BaseDialogBox</a>() = default;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    };</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
 <div class="ttc" id="a_base_composite_8h_html"><div class="ttname"><a href="_base_composite_8h.html">BaseComposite.h</a></div></div>
-<div class="ttc" id="a_g_u_i_framework_constants_8h_html_a15da9ebdfa896557bb941a5da31021ba"><div class="ttname"><a href="_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba">GUI_FRAMEWORK_API</a></div><div class="ttdeci">#define GUI_FRAMEWORK_API</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00094">GUIFrameworkConstants.h:94</a></div></div>
+<div class="ttc" id="a_g_u_i_framework_constants_8h_html_a15da9ebdfa896557bb941a5da31021ba"><div class="ttname"><a href="_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba">GUI_FRAMEWORK_API</a></div><div class="ttdeci">#define GUI_FRAMEWORK_API</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00095">GUIFrameworkConstants.h:95</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1_base_component_html"><div class="ttname"><a href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></div><div class="ttdoc">Base class for all windows, controls, etc.</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00010">BaseComponent.h:11</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_composite_html"><div class="ttname"><a href="classgui__framework_1_1_base_composite.html">gui_framework::BaseComposite</a></div><div class="ttdoc">Base class for all windows that has children windows.</div><div class="ttdef"><b>Definition:</b> <a href="_base_composite_8h_source.html#l00011">BaseComposite.h:14</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_dialog_box_html"><div class="ttname"><a href="classgui__framework_1_1_base_dialog_box.html">gui_framework::BaseDialogBox</a></div><div class="ttdoc">Base class for all dialog boxes.</div><div class="ttdef"><b>Definition:</b> <a href="_base_dialog_box_8h_source.html#l00008">BaseDialogBox.h:9</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_dialog_box_html_a4c390f225765a7ff69983db9d232b6e3"><div class="ttname"><a href="classgui__framework_1_1_base_dialog_box.html#a4c390f225765a7ff69983db9d232b6e3">gui_framework::BaseDialogBox::messageBoxType</a></div><div class="ttdeci">messageBoxType</div><div class="ttdef"><b>Definition:</b> <a href="_base_dialog_box_8h_source.html#l00011">BaseDialogBox.h:12</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_dialog_box_html_a66c5cb34004ac273196f855bf18afbfa"><div class="ttname"><a href="classgui__framework_1_1_base_dialog_box.html#a66c5cb34004ac273196f855bf18afbfa">gui_framework::BaseDialogBox::messageBoxResponse</a></div><div class="ttdeci">messageBoxResponse</div><div class="ttdef"><b>Definition:</b> <a href="_base_dialog_box_8h_source.html#l00022">BaseDialogBox.h:23</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_composite_html"><div class="ttname"><a href="classgui__framework_1_1_base_composite.html">gui_framework::BaseComposite</a></div><div class="ttdoc">Base class for all windows that has children windows.</div><div class="ttdef"><b>Definition:</b> <a href="_base_composite_8h_source.html#l00012">BaseComposite.h:15</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_dialog_box_html"><div class="ttname"><a href="classgui__framework_1_1_base_dialog_box.html">gui_framework::BaseDialogBox</a></div><div class="ttdoc">Base class for all dialog boxes.</div><div class="ttdef"><b>Definition:</b> <a href="_base_dialog_box_8h_source.html#l00009">BaseDialogBox.h:10</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_dialog_box_html_a4c390f225765a7ff69983db9d232b6e3"><div class="ttname"><a href="classgui__framework_1_1_base_dialog_box.html#a4c390f225765a7ff69983db9d232b6e3">gui_framework::BaseDialogBox::messageBoxType</a></div><div class="ttdeci">messageBoxType</div><div class="ttdef"><b>Definition:</b> <a href="_base_dialog_box_8h_source.html#l00012">BaseDialogBox.h:13</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_dialog_box_html_a66c5cb34004ac273196f855bf18afbfa"><div class="ttname"><a href="classgui__framework_1_1_base_dialog_box.html#a66c5cb34004ac273196f855bf18afbfa">gui_framework::BaseDialogBox::messageBoxResponse</a></div><div class="ttdeci">messageBoxResponse</div><div class="ttdef"><b>Definition:</b> <a href="_base_dialog_box_8h_source.html#l00023">BaseDialogBox.h:24</a></div></div>
 <div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00014">BaseComponent.cpp:15</a></div></div>
+<div class="ttc" id="apch_8h_html"><div class="ttname"><a href="pch_8h.html">pch.h</a></div></div>
 <div class="ttc" id="astructgui__framework_1_1utility_1_1_component_settings_html"><div class="ttname"><a href="structgui__framework_1_1utility_1_1_component_settings.html">gui_framework::utility::ComponentSettings</a></div><div class="ttdoc">All settings for windows.</div><div class="ttdef"><b>Definition:</b> <a href="_component_settings_8h_source.html#l00010">ComponentSettings.h:11</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

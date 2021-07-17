@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['cantfindseparatewindowfunctionexception_2ecpp_1224',['CantFindSeparateWindowFunctionException.cpp',['../_cant_find_separate_window_function_exception_8cpp.html',1,'']]],
-  ['cantfindseparatewindowfunctionexception_2eh_1225',['CantFindSeparateWindowFunctionException.h',['../_cant_find_separate_window_function_exception_8h.html',1,'']]],
+  ['cantfindcompositefunctionexception_2ecpp_1224',['CantFindCompositeFunctionException.cpp',['../_cant_find_composite_function_exception_8cpp.html',1,'']]],
+  ['cantfindcompositefunctionexception_2eh_1225',['CantFindCompositeFunctionException.h',['../_cant_find_composite_function_exception_8h.html',1,'']]],
   ['checkbox_2ecpp_1226',['CheckBox.cpp',['../_check_box_8cpp.html',1,'']]],
   ['checkbox_2eh_1227',['CheckBox.h',['../_check_box_8h.html',1,'']]],
   ['checkboxcreator_2ecpp_1228',['CheckBoxCreator.cpp',['../_check_box_creator_8cpp.html',1,'']]],

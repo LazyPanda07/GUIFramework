@@ -2,7 +2,7 @@
 #include "BaseComponent.h"
 
 #include "BaseComposites/BaseComposite.h"
-#include "Exceptions/CantFindSeparateWindowFunctionException.h"
+#include "Exceptions/CantFindCompositeFunctionException.h"
 #include "Exceptions/FileDoesNotExist.h"
 #include "Interfaces/Components/IResizableComponent.h"
 
@@ -71,7 +71,7 @@ namespace gui_framework
 
 				if (!windowFunction)
 				{
-					throw exceptions::CantFindSeparateWindowFunctionException(windowFunctionName + "WindowFunction");
+					throw exceptions::CantFindCompositeFunctionException(windowFunctionName + "WindowFunction");
 				}
 
 				classStruct.cbSize = sizeof(WNDCLASSEXW);
@@ -88,14 +88,14 @@ namespace gui_framework
 		handle = CreateWindowExW
 		(
 			static_cast<DWORD>(styles.getExtendedStyles()),
-			className.data(),
+			classStruct.lpszClassName,
 			windowName.data(),
 			static_cast<DWORD>(styles.getStyles()) | (parent ? WS_CHILDWINDOW | WS_BORDER : WS_OVERLAPPEDWINDOW),
 			settings.x,
 			settings.y,
 			settings.width,
 			settings.height,
-			parent ? parent->handle : nullptr,
+			parent ? parent->getHandle() : nullptr,
 			reinterpret_cast<HMENU>(id),
 			module,
 			nullptr
@@ -430,6 +430,13 @@ namespace gui_framework
 			this->asyncDestroyComponent();
 		}
 
-		GUIFramework::get().removeId(windowName, id);
+		try
+		{
+			GUIFramework::get().removeId(windowName, id);
+		}
+		catch (const exception&)
+		{
+
+		}
 	}
 }
