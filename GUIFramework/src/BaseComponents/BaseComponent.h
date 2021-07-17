@@ -165,11 +165,6 @@ namespace gui_framework
 		topLevelWindow = reinterpret_cast<gui_framework::BaseComponent*>(wparam); \
 			\
 		return 0; \
-			\
-	case WM_HOTKEY:	\
-		GUIFramework::get().processHotkey(wparam);	\
-			\
-		return 0;	\
 	} \
 		\
 	if (topLevelWindow) \
