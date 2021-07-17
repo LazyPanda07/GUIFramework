@@ -2,6 +2,11 @@ var _g_u_i_framework_constants_8h =
 [
     [ "GUI_FRAMEWORK_API", "_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba", null ],
     [ "GUI_FRAMEWORK_API_FUNCTION", "_g_u_i_framework_constants_8h.html#a767f18c6bddef6da85ce42f210726a25", null ],
+    [ "additionalKey", "_g_u_i_framework_constants_8h.html#a8c2f6d478b57ff78909ffc4e60136e1f", [
+      [ "alt", "_g_u_i_framework_constants_8h.html#a8c2f6d478b57ff78909ffc4e60136e1fa34823136d0dd91d0f5d22db740f7679c", null ],
+      [ "control", "_g_u_i_framework_constants_8h.html#a8c2f6d478b57ff78909ffc4e60136e1fafc5364bf9dbfa34954526becad136d4b", null ],
+      [ "shift", "_g_u_i_framework_constants_8h.html#a8c2f6d478b57ff78909ffc4e60136e1fa2ab64f4ee279e5baf7ab7059b15e6d12", null ]
+    ] ],
     [ "additionalListViewReportColumnWidth", "_g_u_i_framework_constants_8h.html#a411003476965ae5667265e2e56687220", null ],
     [ "button", "_g_u_i_framework_constants_8h.html#a3a70e6e92deddb65c6406def06e23ec8", null ],
     [ "buttonHeight", "_g_u_i_framework_constants_8h.html#ad9a5341565621f03854e8c9e0d942e8f", null ],

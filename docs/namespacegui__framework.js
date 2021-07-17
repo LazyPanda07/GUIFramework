@@ -9,6 +9,13 @@ var namespacegui__framework =
       [ "notImplemented", "namespacegui__framework_1_1exception__messages.html#a27f65a8349ec94b67215c61d207a7684", null ]
     ] ],
     [ "exceptions", "namespacegui__framework_1_1exceptions.html", "namespacegui__framework_1_1exceptions" ],
+    [ "hotkeys", "namespacegui__framework_1_1hotkeys.html", [
+      [ "additionalKey", "namespacegui__framework_1_1hotkeys.html#a8c2f6d478b57ff78909ffc4e60136e1f", [
+        [ "alt", "namespacegui__framework_1_1hotkeys.html#a8c2f6d478b57ff78909ffc4e60136e1fa34823136d0dd91d0f5d22db740f7679c", null ],
+        [ "control", "namespacegui__framework_1_1hotkeys.html#a8c2f6d478b57ff78909ffc4e60136e1fafc5364bf9dbfa34954526becad136d4b", null ],
+        [ "shift", "namespacegui__framework_1_1hotkeys.html#a8c2f6d478b57ff78909ffc4e60136e1fa2ab64f4ee279e5baf7ab7059b15e6d12", null ]
+      ] ]
+    ] ],
     [ "interfaces", "namespacegui__framework_1_1interfaces.html", "namespacegui__framework_1_1interfaces" ],
     [ "iterators", "namespacegui__framework_1_1iterators.html", "namespacegui__framework_1_1iterators" ],
     [ "libraries", "namespacegui__framework_1_1libraries.html", [

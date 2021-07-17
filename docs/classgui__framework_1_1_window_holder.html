@@ -98,8 +98,8 @@ $(document).ready(function(){initNavTree('classgui__framework_1_1_window_holder.
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a78443d165cc99d95793acdf4dca298b5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_window_holder.html#a78443d165cc99d95793acdf4dca298b5">WindowHolder</a> (std::unique_ptr&lt; <a class="el" href="classgui__framework_1_1_base_composite.html">BaseComposite</a> &gt; &amp;&amp;compositeWindow) noexcept</td></tr>
-<tr class="separator:a78443d165cc99d95793acdf4dca298b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecb53d69696a6a57409bd3c087a8a186"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_window_holder.html#aecb53d69696a6a57409bd3c087a8a186">WindowHolder</a> (std::unique_ptr&lt; <a class="el" href="classgui__framework_1_1_base_composite.html">BaseComposite</a> &gt; &amp;&amp;compositeWindow, bool unregisterClass=false) noexcept</td></tr>
+<tr class="separator:aecb53d69696a6a57409bd3c087a8a186"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a78ff50e68affdcfa7b31ca34b4c9c7d9"><td class="memTemplParams" colspan="2">template&lt;std::derived_from&lt; BaseComposite &gt; T&gt; </td></tr>
 <tr class="memitem:a78ff50e68affdcfa7b31ca34b4c9c7d9"><td class="memTemplItemLeft" align="right" valign="top">T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_window_holder.html#a78ff50e68affdcfa7b31ca34b4c9c7d9">getDerived</a> ()</td></tr>
 <tr class="separator:a78ff50e68affdcfa7b31ca34b4c9c7d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -110,18 +110,19 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a107d333a8d268fdb94d913e71e5bffde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1e7f8d1fbc992c7dd12026e8927b8bc"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classgui__framework_1_1_base_composite.html">BaseComposite</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_window_holder.html#aa1e7f8d1fbc992c7dd12026e8927b8bc">get</a> () const</td></tr>
 <tr class="separator:aa1e7f8d1fbc992c7dd12026e8927b8bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17e9144a92652e14a5943ebc16e97b7f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_window_holder.html#a17e9144a92652e14a5943ebc16e97b7f">runMainLoop</a> ()</td></tr>
-<tr class="separator:a17e9144a92652e14a5943ebc16e97b7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1deade9a80e7417cf9a959932f5d4e32"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_window_holder.html#a1deade9a80e7417cf9a959932f5d4e32">~WindowHolder</a> ()=default</td></tr>
-<tr class="separator:a1deade9a80e7417cf9a959932f5d4e32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec84d0585ec86b82d2861f26117731c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_window_holder.html#aec84d0585ec86b82d2861f26117731c7">runMainLoop</a> (const std::vector&lt; uint32_t &gt; &amp;registeredHotkeyIds={})</td></tr>
+<tr class="memdesc:aec84d0585ec86b82d2861f26117731c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process messages. Must be called after initialization.  <a href="classgui__framework_1_1_window_holder.html#aec84d0585ec86b82d2861f26117731c7">More...</a><br /></td></tr>
+<tr class="separator:aec84d0585ec86b82d2861f26117731c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7aa08c2616dc9e203b8da26019b1f519"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_window_holder.html#a7aa08c2616dc9e203b8da26019b1f519">~WindowHolder</a> ()</td></tr>
+<tr class="separator:a7aa08c2616dc9e203b8da26019b1f519"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Provides runMainLoop for top level window. </p>
 
 <p class="definition">Definition at line <a class="el" href="_window_holder_8h_source.html#l00008">8</a> of file <a class="el" href="_window_holder_8h_source.html">WindowHolder.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a78443d165cc99d95793acdf4dca298b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a78443d165cc99d95793acdf4dca298b5">&#9670;&nbsp;</a></span>WindowHolder()</h2>
+<a id="aecb53d69696a6a57409bd3c087a8a186"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecb53d69696a6a57409bd3c087a8a186">&#9670;&nbsp;</a></span>WindowHolder()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -133,8 +134,18 @@ Public Member Functions</h2></td></tr>
           <td class="memname">gui_framework::WindowHolder::WindowHolder </td>
           <td>(</td>
           <td class="paramtype">std::unique_ptr&lt; <a class="el" href="classgui__framework_1_1_base_composite.html">BaseComposite</a> &gt; &amp;&amp;&#160;</td>
-          <td class="paramname"><em>compositeWindow</em></td><td>)</td>
+          <td class="paramname"><em>compositeWindow</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>unregisterClass</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -143,19 +154,23 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">compositeWindow</td><td></td></tr>
+    <tr><td class="paramname">clearClass</td><td>Unregister class after window destroy </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="_window_holder_8cpp_source.html#l00010">10</a> of file <a class="el" href="_window_holder_8cpp_source.html">WindowHolder.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a1deade9a80e7417cf9a959932f5d4e32"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1deade9a80e7417cf9a959932f5d4e32">&#9670;&nbsp;</a></span>~WindowHolder()</h2>
+<a id="a7aa08c2616dc9e203b8da26019b1f519"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7aa08c2616dc9e203b8da26019b1f519">&#9670;&nbsp;</a></span>~WindowHolder()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">gui_framework::WindowHolder::~WindowHolder </td>
@@ -164,12 +179,9 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">default</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_window_holder_8cpp_source.html#l00057">57</a> of file <a class="el" href="_window_holder_8cpp_source.html">WindowHolder.cpp</a>.</p>
 
 </div>
 </div>
@@ -189,7 +201,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_window_holder_8cpp_source.html#l00016">16</a> of file <a class="el" href="_window_holder_8cpp_source.html">WindowHolder.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_window_holder_8cpp_source.html#l00017">17</a> of file <a class="el" href="_window_holder_8cpp_source.html">WindowHolder.cpp</a>.</p>
 
 </div>
 </div>
@@ -208,7 +220,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_window_holder_8cpp_source.html#l00021">21</a> of file <a class="el" href="_window_holder_8cpp_source.html">WindowHolder.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_window_holder_8cpp_source.html#l00022">22</a> of file <a class="el" href="_window_holder_8cpp_source.html">WindowHolder.cpp</a>.</p>
 
 </div>
 </div>
@@ -226,7 +238,7 @@ template&lt;std::derived_from&lt; BaseComposite &gt; T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_window_holder_8h_source.html#l00034">34</a> of file <a class="el" href="_window_holder_8h_source.html">WindowHolder.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_window_holder_8h_source.html#l00039">39</a> of file <a class="el" href="_window_holder_8h_source.html">WindowHolder.h</a>.</p>
 
 </div>
 </div>
@@ -244,12 +256,12 @@ template&lt;std::derived_from&lt; BaseComposite &gt; T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_window_holder_8h_source.html#l00040">40</a> of file <a class="el" href="_window_holder_8h_source.html">WindowHolder.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_window_holder_8h_source.html#l00045">45</a> of file <a class="el" href="_window_holder_8h_source.html">WindowHolder.h</a>.</p>
 
 </div>
 </div>
-<a id="a17e9144a92652e14a5943ebc16e97b7f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a17e9144a92652e14a5943ebc16e97b7f">&#9670;&nbsp;</a></span>runMainLoop()</h2>
+<a id="aec84d0585ec86b82d2861f26117731c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec84d0585ec86b82d2861f26117731c7">&#9670;&nbsp;</a></span>runMainLoop()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -257,25 +269,35 @@ template&lt;std::derived_from&lt; BaseComposite &gt; T&gt; </div>
         <tr>
           <td class="memname">void gui_framework::WindowHolder::runMainLoop </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const std::vector&lt; uint32_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>registeredHotkeyIds</em> = <code>{}</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Process messages. Must be called after initialization. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">registeredHotkeyIds</td><td>You may pass all registered hotkeys for unregister them after window destroy </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">GetLastErrorException</td><td></td></tr>
+    <tr><td class="paramname">GetLastErrorException</td><td><br  />
+ </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_window_holder_8cpp_source.html#l00026">26</a> of file <a class="el" href="_window_holder_8cpp_source.html">WindowHolder.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_window_holder_8cpp_source.html#l00027">27</a> of file <a class="el" href="_window_holder_8cpp_source.html">WindowHolder.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>GUIFramework/src/<a class="el" href="_window_holder_8h_source.html">WindowHolder.h</a></li>
-<li>GUIFramework/src/<a class="el" href="_window_holder_8cpp_source.html">WindowHolder.cpp</a></li>
+<li>GUIFramework/src/Utility/Holders/<a class="el" href="_window_holder_8h_source.html">WindowHolder.h</a></li>
+<li>GUIFramework/src/Utility/Holders/<a class="el" href="_window_holder_8cpp_source.html">WindowHolder.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
