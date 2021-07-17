@@ -135,7 +135,7 @@ namespace gui_framework
 		virtual COLORREF getBackgroundColor() const final;
 
 		virtual COLORREF getTextColor() const final;
-
+		
 		virtual ~BaseComponent();
 	};
 }
