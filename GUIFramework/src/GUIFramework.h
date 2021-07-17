@@ -28,6 +28,7 @@ namespace gui_framework
 #pragma region Hotkeys
 		std::vector<std::function<void()>> hotkeys;
 		std::queue<uint32_t> availableHotkeyIds;
+		std::mutex hotkeyIdMutex;
 		uint32_t nextHotkeyId;
 #pragma endregion
 		std::unordered_map<size_t, std::unique_ptr<utility::BaseComponentCreator>> creators;
@@ -75,7 +76,7 @@ namespace gui_framework
 		/// @param HMENU 
 		void removeId(const std::wstring& windowName, uint32_t id);
 
-		/// @brief 
+		/// @brief Only works in thread, that call runMainLoop from WindowHolder. Thread safe register hotkey
 		/// @param hotkey Value from https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
 		/// @param additionalKeys 
 		/// @param noRepeat 
@@ -83,7 +84,7 @@ namespace gui_framework
 		/// @exception GetLastErrorException 
 		uint32_t registerHotkey(uint32_t hotkey, const std::function<void()>& onClick, const std::vector<hotkeys::additionalKey>& additionalKeys = {}, bool noRepeat = false);
 
-		/// @brief 
+		/// @brief Thread safe unregister hotkey
 		/// @param hotkeyId 
 		/// @return 
 		bool unregisterHotkey(uint32_t hotkeyId);
