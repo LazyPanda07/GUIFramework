@@ -1,7 +1,7 @@
 #pragma once
 
 #include "BaseComponents/BaseComponent.h"
-#include "Utility/Holders/ImagesHolder.h"
+#include "Utility/Holders/LoadableHolders/ImagesHolder.h"
 
 namespace gui_framework
 {

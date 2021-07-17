@@ -162,10 +162,10 @@
     <ClInclude Include="src\Styles\Composites\DialogBoxStyles.h" />
     <ClInclude Include="src\Styles\Composites\SeparateWindowStyles.h" />
     <ClInclude Include="src\Styles\DefaultStyles.h" />
-    <ClInclude Include="src\Utility\Holders\BaseLoadableHolder.h" />
-    <ClInclude Include="src\Utility\Holders\CursorsHolder.h" />
-    <ClInclude Include="src\Utility\Holders\IconsHolder.h" />
-    <ClInclude Include="src\Utility\Holders\ImagesHolder.h" />
+    <ClInclude Include="src\Utility\Holders\LoadableHolders\BaseLoadableHolder.h" />
+    <ClInclude Include="src\Utility\Holders\LoadableHolders\CursorsHolder.h" />
+    <ClInclude Include="src\Utility\Holders\LoadableHolders\IconsHolder.h" />
+    <ClInclude Include="src\Utility\Holders\LoadableHolders\ImagesHolder.h" />
     <ClInclude Include="src\Interfaces\Components\IResizableComponent.h" />
     <ClInclude Include="src\Interfaces\Components\ITextOperations.h" />
     <ClInclude Include="src\Interfaces\Iterators\IBaseConstForwardIterator.h" />
@@ -181,7 +181,7 @@
     <ClInclude Include="src\Utility\ComponentSettings.h" />
     <ClInclude Include="src\Utility\Paint\DrawImage.h" />
     <ClInclude Include="src\Utility\Utility.h" />
-    <ClInclude Include="src\WindowHolder.h" />
+    <ClInclude Include="src\Utility\Holders\WindowHolder.h" />
     <ClInclude Include="src\WindowMessages.h" />
   </ItemGroup>
   <ItemGroup>
@@ -316,10 +316,10 @@
     <ClCompile Include="src\Styles\Composites\DialogBoxStyles.cpp" />
     <ClCompile Include="src\Styles\Composites\SeparateWindowStyles.cpp" />
     <ClCompile Include="src\Styles\DefaultStyles.cpp" />
-    <ClCompile Include="src\Utility\Holders\BaseLoadableHolder.cpp" />
-    <ClCompile Include="src\Utility\Holders\CursorsHolder.cpp" />
-    <ClCompile Include="src\Utility\Holders\IconsHolder.cpp" />
-    <ClCompile Include="src\Utility\Holders\ImagesHolder.cpp" />
+    <ClCompile Include="src\Utility\Holders\LoadableHolders\BaseLoadableHolder.cpp" />
+    <ClCompile Include="src\Utility\Holders\LoadableHolders\CursorsHolder.cpp" />
+    <ClCompile Include="src\Utility\Holders\LoadableHolders\IconsHolder.cpp" />
+    <ClCompile Include="src\Utility\Holders\LoadableHolders\ImagesHolder.cpp" />
     <ClCompile Include="src\Interfaces\Components\IResizableComponent.cpp" />
     <ClCompile Include="src\Interfaces\Components\ITextOperations.cpp" />
     <ClCompile Include="src\Interfaces\Menu\IMenuItem.cpp" />
@@ -332,7 +332,7 @@
     <ClCompile Include="src\Utility\ComponentSettings.cpp" />
     <ClCompile Include="src\Utility\Paint\DrawImage.cpp" />
     <ClCompile Include="src\Utility\Utility.cpp" />
-    <ClCompile Include="src\WindowHolder.cpp" />
+    <ClCompile Include="src\Utility\Holders\WindowHolder.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GUIFrameworkMacros.props" />

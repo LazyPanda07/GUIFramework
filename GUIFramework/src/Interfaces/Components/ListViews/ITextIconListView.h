@@ -1,7 +1,7 @@
 #pragma once
 
 #include "IBaseListViewOperations.h"
-#include "Utility/Holders/IconsHolder.h"
+#include "Utility/Holders/LoadableHolders/IconsHolder.h"
 
 namespace gui_framework
 {

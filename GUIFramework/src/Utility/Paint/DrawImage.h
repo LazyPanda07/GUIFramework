@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Utility/Holders/BaseLoadableHolder.h"
+#include "Utility/Holders/LoadableHolders/BaseLoadableHolder.h"
 #include "BaseComposites/StandardComposites/BaseWindow.h"
 
 namespace gui_framework
