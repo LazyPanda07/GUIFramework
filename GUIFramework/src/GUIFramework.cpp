@@ -244,6 +244,8 @@ namespace gui_framework
 			additional |= MOD_NOREPEAT;
 		}
 
+		unique_lock<mutex> lock(hotkeyIdMutex);
+
 		if (availableHotkeyIds.size())
 		{
 			id = availableHotkeyIds.front();
@@ -278,6 +280,8 @@ namespace gui_framework
 
 	bool GUIFramework::unregisterHotkey(uint32_t hotkeyId)
 	{
+		unique_lock<mutex> lock(hotkeyIdMutex);
+
 		bool result = UnregisterHotKey(nullptr, hotkeyId);
 
 		if (result)
