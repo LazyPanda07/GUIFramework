@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.4</span>
+   &#160;<span id="projectnumber">0.6-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -103,16 +103,17 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aba953f14d707b9d3253f655d95cd54e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab77a09a4df9c4e126be1b9b1f55f1737"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_g_u_i_framework.html#ab77a09a4df9c4e126be1b9b1f55f1737">addTask</a> (std::function&lt; void()&gt; &amp;&amp;task, const std::function&lt; void()&gt; &amp;callback=nullptr)</td></tr>
 <tr class="separator:ab77a09a4df9c4e126be1b9b1f55f1737"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f473fb1a244e94dc9282ad3589c9eda"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_g_u_i_framework.html#a0f473fb1a244e94dc9282ad3589c9eda">generateHMENU</a> (const std::wstring &amp;windowName)</td></tr>
-<tr class="separator:a0f473fb1a244e94dc9282ad3589c9eda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa825cc1fd10f733c377aab5f165adfe4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_g_u_i_framework.html#aa825cc1fd10f733c377aab5f165adfe4">removeHMENUs</a> (const std::wstring &amp;windowName)</td></tr>
-<tr class="separator:aa825cc1fd10f733c377aab5f165adfe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9dce2b0f6cc42ecee40862632bedde3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_g_u_i_framework.html#a9dce2b0f6cc42ecee40862632bedde3c">removeHMENU</a> (const std::wstring &amp;windowName, uint32_t hmenu)</td></tr>
-<tr class="separator:a9dce2b0f6cc42ecee40862632bedde3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad05a798f5c2bea41dea658b47f49b51e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_g_u_i_framework.html#ad05a798f5c2bea41dea658b47f49b51e">addCreator</a> (size_t hash, std::unique_ptr&lt; <a class="el" href="classgui__framework_1_1utility_1_1_base_component_creator.html">utility::BaseComponentCreator</a> &gt; &amp;&amp;creator)</td></tr>
-<tr class="separator:ad05a798f5c2bea41dea658b47f49b51e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a6c334159802408e25a98b0a1d48e2e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_g_u_i_framework.html#a3a6c334159802408e25a98b0a1d48e2e">getHMENUs</a> (const std::wstring &amp;windowName)</td></tr>
-<tr class="separator:a3a6c334159802408e25a98b0a1d48e2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a633356a9001855ec05824bca5ed6eb99"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_g_u_i_framework.html#a633356a9001855ec05824bca5ed6eb99">generateId</a> (const std::wstring &amp;windowName)</td></tr>
+<tr class="separator:a633356a9001855ec05824bca5ed6eb99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a735b81207bcbb5d223dfd9e55e53e0e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_g_u_i_framework.html#a735b81207bcbb5d223dfd9e55e53e0e1">removeIds</a> (const std::wstring &amp;windowName)</td></tr>
+<tr class="separator:a735b81207bcbb5d223dfd9e55e53e0e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab64241c8ea9834122889c37912362fa6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_g_u_i_framework.html#ab64241c8ea9834122889c37912362fa6">removeId</a> (const std::wstring &amp;windowName, uint32_t HMENU)</td></tr>
+<tr class="separator:ab64241c8ea9834122889c37912362fa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a589bb4e6c619e302b2f87e15a2985da7"><td class="memTemplParams" colspan="2">template&lt;std::derived_from&lt; BaseComponent &gt; T, std::derived_from&lt; utility::BaseComponentCreator &gt; CreatorT, typename... Args&gt; </td></tr>
+<tr class="memitem:a589bb4e6c619e302b2f87e15a2985da7"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_g_u_i_framework.html#a589bb4e6c619e302b2f87e15a2985da7">addCreator</a> (Args &amp;&amp;... args)</td></tr>
+<tr class="separator:a589bb4e6c619e302b2f87e15a2985da7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a04381522f61f399162331fbca8e532"><td class="memItemLeft" align="right" valign="top">std::vector&lt; uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_g_u_i_framework.html#a3a04381522f61f399162331fbca8e532">getIds</a> (const std::wstring &amp;windowName)</td></tr>
+<tr class="separator:a3a04381522f61f399162331fbca8e532"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c8d818b688a1c63d3f5dccb0c28925b"><td class="memItemLeft" align="right" valign="top">const std::unordered_map&lt; size_t, std::unique_ptr&lt; <a class="el" href="classgui__framework_1_1utility_1_1_base_component_creator.html">utility::BaseComponentCreator</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_g_u_i_framework.html#a3c8d818b688a1c63d3f5dccb0c28925b">getCreators</a> () const</td></tr>
 <tr class="separator:a3c8d818b688a1c63d3f5dccb0c28925b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9035e07c42c7e025f46601a4aee83cdc"><td class="memItemLeft" align="right" valign="top">const json::JSONParser &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_g_u_i_framework.html#a9035e07c42c7e025f46601a4aee83cdc">getJSONSettings</a> () const</td></tr>
@@ -128,33 +129,25 @@ Static Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8h_source.html#l00015">15</a> of file <a class="el" href="_g_u_i_framework_8h_source.html">GUIFramework.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ad05a798f5c2bea41dea658b47f49b51e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad05a798f5c2bea41dea658b47f49b51e">&#9670;&nbsp;</a></span>addCreator()</h2>
+<a id="a589bb4e6c619e302b2f87e15a2985da7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a589bb4e6c619e302b2f87e15a2985da7">&#9670;&nbsp;</a></span>addCreator()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;std::derived_from&lt; BaseComponent &gt; T, std::derived_from&lt; utility::BaseComponentCreator &gt; CreatorT, typename... Args&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void gui_framework::GUIFramework::addCreator </td>
           <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>hash</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="classgui__framework_1_1utility_1_1_base_component_creator.html">utility::BaseComponentCreator</a> &gt; &amp;&amp;&#160;</td>
-          <td class="paramname"><em>creator</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00182">182</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8h_source.html#l00070">70</a> of file <a class="el" href="_g_u_i_framework_8h_source.html">GUIFramework.h</a>.</p>
 
 </div>
 </div>
@@ -214,14 +207,14 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a0f473fb1a244e94dc9282ad3589c9eda"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f473fb1a244e94dc9282ad3589c9eda">&#9670;&nbsp;</a></span>generateHMENU()</h2>
+<a id="a633356a9001855ec05824bca5ed6eb99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a633356a9001855ec05824bca5ed6eb99">&#9670;&nbsp;</a></span>generateId()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t gui_framework::GUIFramework::generateHMENU </td>
+          <td class="memname">uint32_t gui_framework::GUIFramework::generateId </td>
           <td>(</td>
           <td class="paramtype">const std::wstring &amp;&#160;</td>
           <td class="paramname"><em>windowName</em></td><td>)</td>
@@ -230,7 +223,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00153">153</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00161">161</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
 
 </div>
 </div>
@@ -264,7 +257,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8h_source.html#l00059">59</a> of file <a class="el" href="_g_u_i_framework_8h_source.html">GUIFramework.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8h_source.html#l00062">62</a> of file <a class="el" href="_g_u_i_framework_8h_source.html">GUIFramework.h</a>.</p>
 
 </div>
 </div>
@@ -283,18 +276,18 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00207">207</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00239">239</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a3a6c334159802408e25a98b0a1d48e2e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a6c334159802408e25a98b0a1d48e2e">&#9670;&nbsp;</a></span>getHMENUs()</h2>
+<a id="a3a04381522f61f399162331fbca8e532"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a04381522f61f399162331fbca8e532">&#9670;&nbsp;</a></span>getIds()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt; uint32_t &gt; gui_framework::GUIFramework::getHMENUs </td>
+          <td class="memname">vector&lt; uint32_t &gt; gui_framework::GUIFramework::getIds </td>
           <td>(</td>
           <td class="paramtype">const std::wstring &amp;&#160;</td>
           <td class="paramname"><em>windowName</em></td><td>)</td>
@@ -303,7 +296,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00187">187</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00219">219</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
 
 </div>
 </div>
@@ -322,18 +315,18 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00202">202</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00234">234</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a9dce2b0f6cc42ecee40862632bedde3c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9dce2b0f6cc42ecee40862632bedde3c">&#9670;&nbsp;</a></span>removeHMENU()</h2>
+<a id="ab64241c8ea9834122889c37912362fa6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab64241c8ea9834122889c37912362fa6">&#9670;&nbsp;</a></span>removeId()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void gui_framework::GUIFramework::removeHMENU </td>
+          <td class="memname">void gui_framework::GUIFramework::removeId </td>
           <td>(</td>
           <td class="paramtype">const std::wstring &amp;&#160;</td>
           <td class="paramname"><em>windowName</em>, </td>
@@ -342,7 +335,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>hmenu</em>&#160;</td>
+          <td class="paramname"><em>HMENU</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -352,18 +345,18 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00167">167</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00197">197</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
 
 </div>
 </div>
-<a id="aa825cc1fd10f733c377aab5f165adfe4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa825cc1fd10f733c377aab5f165adfe4">&#9670;&nbsp;</a></span>removeHMENUs()</h2>
+<a id="a735b81207bcbb5d223dfd9e55e53e0e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a735b81207bcbb5d223dfd9e55e53e0e1">&#9670;&nbsp;</a></span>removeIds()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void gui_framework::GUIFramework::removeHMENUs </td>
+          <td class="memname">void gui_framework::GUIFramework::removeIds </td>
           <td>(</td>
           <td class="paramtype">const std::wstring &amp;&#160;</td>
           <td class="paramname"><em>windowName</em></td><td>)</td>
@@ -372,7 +365,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00162">162</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00183">183</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
 
 </div>
 </div>

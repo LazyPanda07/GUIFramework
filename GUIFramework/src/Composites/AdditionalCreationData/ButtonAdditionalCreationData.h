@@ -1,8 +1,8 @@
 #pragma once
 
 #include "AdditionalCreationData.h"
-#include "Components/Button.h"
-#include "Components/CheckBox.h"
+#include "Components/Buttons/Button.h"
+#include "Components/Buttons/CheckBox.h"
 
 namespace gui_framework
 {

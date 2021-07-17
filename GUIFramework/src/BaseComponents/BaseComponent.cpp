@@ -57,7 +57,7 @@ namespace gui_framework
 		mode(exitMode::destroyWindow),
 		largeIcon(nullptr),
 		smallIcon(nullptr),
-		id(parent ? GUIFramework::get().generateHMENU(windowName) : NULL),
+		id(parent ? GUIFramework::get().generateId(windowName) : NULL),
 		backgroundColor(RGB(255, 255, 255)),
 		textColor(RGB(0, 0, 0))
 	{
@@ -108,10 +108,16 @@ namespace gui_framework
 		else if (parent->isComposite())
 		{
 			BaseComposite* composite = static_cast<BaseComposite*>(parent);
+			BaseComponent* topLevelWindow = parent;
 
 			composite->addChild(this);
 
-			SendMessageW(handle, custom_window_messages::initTopLevelWindowPointer, reinterpret_cast<WPARAM>(parent), NULL);
+			while (topLevelWindow->getParent())
+			{
+				topLevelWindow = topLevelWindow->getParent();
+			}
+
+			SendMessageW(handle, custom_window_messages::initTopLevelWindowPointer, reinterpret_cast<WPARAM>(topLevelWindow), NULL);
 		}
 
 		ShowWindow(handle, SW_SHOW);
@@ -423,5 +429,7 @@ namespace gui_framework
 		{
 			this->asyncDestroyComponent();
 		}
+
+		GUIFramework::get().removeId(windowName, id);
 	}
 }

@@ -1,9 +1,9 @@
 #pragma once
 
 #include "AdditionalCreationData.h"
-#include "Components/DropDownComboBox.h"
-#include "Components/DropDownListComboBox.h"
-#include "Components/SimpleComboBox.h"
+#include "Components/ComboBoxes/DropDownComboBox.h"
+#include "Components/ComboBoxes/DropDownListComboBox.h"
+#include "Components/ComboBoxes/SimpleComboBox.h"
 
 namespace gui_framework
 {

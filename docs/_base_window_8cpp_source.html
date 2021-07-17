@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.4</span>
+   &#160;<span id="projectnumber">0.6-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -94,22 +94,24 @@ $(document).ready(function(){initNavTree('_base_window_8cpp_source.html',''); in
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_window.html#a4fb853ceadc2fe53793389b03b8ccf09">    8</a></span>&#160;    BaseWindow::BaseWindow(<span class="keyword">const</span> std::wstring&amp; className, <span class="keyword">const</span> std::wstring&amp; windowName, <span class="keyword">const</span> <a class="code" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a>&amp; settings, <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* parent, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; windowFunctionName) :</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_window.html#ad80eafb494c0ce772ceb0d1d0e6d761c">    8</a></span>&#160;    BaseWindow::BaseWindow(<span class="keyword">const</span> std::wstring&amp; className, <span class="keyword">const</span> std::wstring&amp; windowName, <span class="keyword">const</span> <a class="code" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a>&amp; settings, <span class="keyword">const</span> <a class="code" href="classgui__framework_1_1interfaces_1_1_i_styles.html">interfaces::IStyles</a>&amp; styles, <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* parent, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; windowFunctionName) :</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <a class="code" href="classgui__framework_1_1_base_composite.html">BaseComposite</a></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        (</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            className,</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            windowName,</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            settings,</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            parent,</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            windowFunctionName</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        )</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    }</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            styles,</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            parent,</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            windowFunctionName</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        )</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    }</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
 <div class="ttc" id="a_base_window_8h_html"><div class="ttname"><a href="_base_window_8h.html">BaseWindow.h</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_component_html"><div class="ttname"><a href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></div><div class="ttdoc">Base class for all windows, controls, etc.</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00009">BaseComponent.h:10</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_component_html"><div class="ttname"><a href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></div><div class="ttdoc">Base class for all windows, controls, etc.</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00010">BaseComponent.h:11</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1_base_composite_html"><div class="ttname"><a href="classgui__framework_1_1_base_composite.html">gui_framework::BaseComposite</a></div><div class="ttdoc">Base class for all windows that has children windows.</div><div class="ttdef"><b>Definition:</b> <a href="_base_composite_8h_source.html#l00011">BaseComposite.h:14</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1interfaces_1_1_i_styles_html"><div class="ttname"><a href="classgui__framework_1_1interfaces_1_1_i_styles.html">gui_framework::interfaces::IStyles</a></div><div class="ttdoc">Provides styles for other classes.</div><div class="ttdef"><b>Definition:</b> <a href="_i_styles_8h_source.html#l00010">IStyles.h:11</a></div></div>
 <div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00014">BaseComponent.cpp:15</a></div></div>
 <div class="ttc" id="apch_8h_html"><div class="ttname"><a href="pch_8h.html">pch.h</a></div></div>
 <div class="ttc" id="astructgui__framework_1_1utility_1_1_component_settings_html"><div class="ttname"><a href="structgui__framework_1_1utility_1_1_component_settings.html">gui_framework::utility::ComponentSettings</a></div><div class="ttdoc">All settings for windows.</div><div class="ttdef"><b>Definition:</b> <a href="_component_settings_8h_source.html#l00010">ComponentSettings.h:11</a></div></div>

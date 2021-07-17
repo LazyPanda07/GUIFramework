@@ -1,8 +1,8 @@
 #pragma once
 
 #include "AdditionalCreationData.h"
-#include "Components/ListBox.h"
-#include "Components/MultipleSelectListBox.h"
+#include "Components/ListBoxes/ListBox.h"
+#include "Components/ListBoxes/MultipleSelectListBox.h"
 
 namespace gui_framework
 {

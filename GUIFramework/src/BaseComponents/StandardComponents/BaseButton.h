@@ -2,7 +2,7 @@
 
 #include "BaseComponents/BaseComponent.h"
 #include "Interfaces/Components/ITextOperations.h"
-#include "Styles/Components/ButtonStyles.h"
+#include "Styles/Components/Buttons/ButtonStyles.h"
 
 namespace gui_framework
 {

@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "InfiniteProgressBarCreator.h"
 
-#include "Components/InfiniteProgressBar.h"
+#include "Components/ProgressBars/InfiniteProgressBar.h"
 
 using namespace std;
 

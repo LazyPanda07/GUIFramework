@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "BaseCheckBox.h"
 
-#include "Styles/Components/CheckBoxStyles.h"
+#include "Styles/Components/Buttons/CheckBoxStyles.h"
 
 using namespace std;
 

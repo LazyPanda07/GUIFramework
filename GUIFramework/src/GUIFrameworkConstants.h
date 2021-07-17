@@ -42,7 +42,7 @@ namespace gui_framework
 		inline constexpr uint16_t staticControlHeight = 40;
 
 		inline constexpr uint16_t comboBoxAdditionalWidth = 10;
-		
+
 		inline constexpr uint16_t listBoxAdditionalWidth = 20;
 
 		inline constexpr uint16_t dialogBoxBuilderMinWidth = 300;
@@ -71,7 +71,17 @@ namespace gui_framework
 		inline constexpr std::wstring_view msftEditLibrary = L"MsftEdit.dll";
 	}
 
-	inline constexpr std::string_view guiFrameworkVersion = "0.4-alpha";
+	namespace hotkeys
+	{
+		enum class additionalKey
+		{
+			alt,
+			control,
+			shift = 4
+		};
+	}
+
+	inline constexpr std::string_view guiFrameworkVersion = "0.6-beta";
 }
 
 #ifdef GUI_FRAMEWORK_DLL

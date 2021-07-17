@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GUIFramework: GUIFramework/src/Components/CheckBox.h Source File</title>
+<title>GUIFramework: GUIFramework/src/Components/Buttons/CheckBox.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.4</span>
+   &#160;<span id="projectnumber">0.6-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -90,29 +90,22 @@ $(document).ready(function(){initNavTree('_check_box_8h_source.html',''); initRe
 <a href="_check_box_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_base_check_box_8h.html">BaseComponents/StandardComponents/BaseCheckBox.h</a>&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_base_resizable_component_8h.html">BaseComponents/BaseResizableComponent.h</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#pragma warning(push)</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#pragma warning(disable: 4250)</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_check_box.html">   12</a></span>&#160;    <span class="keyword">class </span><a class="code" href="_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba">GUI_FRAMEWORK_API</a> <a class="code" href="classgui__framework_1_1_check_box.html">CheckBox</a> : <span class="keyword">public</span> <a class="code" href="classgui__framework_1_1_base_check_box.html">BaseCheckBox</a></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <a class="code" href="classgui__framework_1_1_check_box.html">CheckBox</a>(<span class="keyword">const</span> std::wstring&amp; checkBoxName, <span class="keyword">const</span> std::wstring&amp; checkBoxText, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* parent, <span class="keyword">const</span> std::function&lt;<span class="keywordtype">void</span>()&gt;&amp; onCheck, <span class="keyword">const</span> std::function&lt;<span class="keywordtype">void</span>()&gt;&amp; onClear, <span class="keyword">const</span> std::function&lt;<span class="keywordtype">void</span>()&gt;&amp; onClick = <span class="keyword">nullptr</span>, uint16_t width = <a class="code" href="namespacegui__framework_1_1standard__sizes.html#a30ae3f2a8d6104c5e384ac6ee22db3f2">standard_sizes::checkBoxWidth</a>, uint16_t height = <a class="code" href="namespacegui__framework_1_1standard__sizes.html#a7e29e7a576f983497b8347cc45b21191">standard_sizes::checkBoxHeight</a>);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_check_box.html#aa4f39cbf61811dbb8241f137b5a98011">   17</a></span>&#160;        <a class="code" href="classgui__framework_1_1_check_box.html#aa4f39cbf61811dbb8241f137b5a98011">~CheckBox</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    };</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#pragma warning(pop)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_check_box.html">    8</a></span>&#160;    <span class="keyword">class </span><a class="code" href="_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba">GUI_FRAMEWORK_API</a> <a class="code" href="classgui__framework_1_1_check_box.html">CheckBox</a> : <span class="keyword">public</span> <a class="code" href="classgui__framework_1_1_base_check_box.html">BaseCheckBox</a></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <a class="code" href="classgui__framework_1_1_check_box.html">CheckBox</a>(<span class="keyword">const</span> std::wstring&amp; checkBoxName, <span class="keyword">const</span> std::wstring&amp; checkBoxText, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* parent, <span class="keyword">const</span> std::function&lt;<span class="keywordtype">void</span>()&gt;&amp; onCheck, <span class="keyword">const</span> std::function&lt;<span class="keywordtype">void</span>()&gt;&amp; onClear, <span class="keyword">const</span> std::function&lt;<span class="keywordtype">void</span>()&gt;&amp; onClick = <span class="keyword">nullptr</span>, uint16_t width = <a class="code" href="namespacegui__framework_1_1standard__sizes.html#a30ae3f2a8d6104c5e384ac6ee22db3f2">standard_sizes::checkBoxWidth</a>, uint16_t height = <a class="code" href="namespacegui__framework_1_1standard__sizes.html#a7e29e7a576f983497b8347cc45b21191">standard_sizes::checkBoxHeight</a>);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_check_box.html#aa4f39cbf61811dbb8241f137b5a98011">   13</a></span>&#160;        <a class="code" href="classgui__framework_1_1_check_box.html#aa4f39cbf61811dbb8241f137b5a98011">~CheckBox</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    };</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
 <div class="ttc" id="a_base_check_box_8h_html"><div class="ttname"><a href="_base_check_box_8h.html">BaseCheckBox.h</a></div></div>
-<div class="ttc" id="a_base_resizable_component_8h_html"><div class="ttname"><a href="_base_resizable_component_8h.html">BaseResizableComponent.h</a></div></div>
 <div class="ttc" id="a_g_u_i_framework_constants_8h_html_a15da9ebdfa896557bb941a5da31021ba"><div class="ttname"><a href="_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba">GUI_FRAMEWORK_API</a></div><div class="ttdeci">#define GUI_FRAMEWORK_API</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00084">GUIFrameworkConstants.h:84</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1_base_check_box_html"><div class="ttname"><a href="classgui__framework_1_1_base_check_box.html">gui_framework::BaseCheckBox</a></div><div class="ttdoc">Base class for all check boxes.</div><div class="ttdef"><b>Definition:</b> <a href="_base_check_box_8h_source.html#l00008">BaseCheckBox.h:9</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_component_html"><div class="ttname"><a href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></div><div class="ttdoc">Base class for all windows, controls, etc.</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00009">BaseComponent.h:10</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_check_box_html"><div class="ttname"><a href="classgui__framework_1_1_check_box.html">gui_framework::CheckBox</a></div><div class="ttdoc">Standard check box.</div><div class="ttdef"><b>Definition:</b> <a href="_check_box_8h_source.html#l00012">CheckBox.h:13</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_component_html"><div class="ttname"><a href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></div><div class="ttdoc">Base class for all windows, controls, etc.</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00010">BaseComponent.h:11</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_check_box_html"><div class="ttname"><a href="classgui__framework_1_1_check_box.html">gui_framework::CheckBox</a></div><div class="ttdoc">Standard check box.</div><div class="ttdef"><b>Definition:</b> <a href="_check_box_8h_source.html#l00008">CheckBox.h:9</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1_check_box_html_aa4f39cbf61811dbb8241f137b5a98011"><div class="ttname"><a href="classgui__framework_1_1_check_box.html#aa4f39cbf61811dbb8241f137b5a98011">gui_framework::CheckBox::~CheckBox</a></div><div class="ttdeci">~CheckBox()=default</div></div>
 <div class="ttc" id="anamespacegui__framework_1_1standard__sizes_html_a30ae3f2a8d6104c5e384ac6ee22db3f2"><div class="ttname"><a href="namespacegui__framework_1_1standard__sizes.html#a30ae3f2a8d6104c5e384ac6ee22db3f2">gui_framework::standard_sizes::checkBoxWidth</a></div><div class="ttdeci">constexpr uint16_t checkBoxWidth</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00035">GUIFrameworkConstants.h:35</a></div></div>
 <div class="ttc" id="anamespacegui__framework_1_1standard__sizes_html_a7e29e7a576f983497b8347cc45b21191"><div class="ttname"><a href="namespacegui__framework_1_1standard__sizes.html#a7e29e7a576f983497b8347cc45b21191">gui_framework::standard_sizes::checkBoxHeight</a></div><div class="ttdeci">constexpr uint16_t checkBoxHeight</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00036">GUIFrameworkConstants.h:36</a></div></div>
@@ -122,7 +115,7 @@ $(document).ready(function(){initNavTree('_check_box_8h_source.html',''); initRe
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_2f1c88f5c534480c246abfedb48e5a6c.html">GUIFramework</a></li><li class="navelem"><a class="el" href="dir_474822148e798388a75af55d9bebad71.html">src</a></li><li class="navelem"><a class="el" href="dir_b731c78a09c099631450de914efccb25.html">Components</a></li><li class="navelem"><a class="el" href="_check_box_8h.html">CheckBox.h</a></li>
+    <li class="navelem"><a class="el" href="dir_2f1c88f5c534480c246abfedb48e5a6c.html">GUIFramework</a></li><li class="navelem"><a class="el" href="dir_474822148e798388a75af55d9bebad71.html">src</a></li><li class="navelem"><a class="el" href="dir_b731c78a09c099631450de914efccb25.html">Components</a></li><li class="navelem"><a class="el" href="dir_504ba9a93320c336f430406be3d5dfa5.html">Buttons</a></li><li class="navelem"><a class="el" href="_check_box_8h.html">CheckBox.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

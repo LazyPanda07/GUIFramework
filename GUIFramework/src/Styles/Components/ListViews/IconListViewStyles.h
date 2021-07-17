@@ -6,6 +6,7 @@ namespace gui_framework
 {
 	namespace styles
 	{
+		/// @brief IconListView styles
 		class GUI_FRAMEWORK_API IconListViewStyles : public ListViewStyles
 		{
 		public:

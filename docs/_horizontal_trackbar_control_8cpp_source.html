@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.4</span>
+   &#160;<span id="projectnumber">0.6-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -90,49 +90,47 @@ $(document).ready(function(){initNavTree('_horizontal_trackbar_control_8cpp_sour
 <a href="_horizontal_trackbar_control_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pch_8h.html">pch.h</a>&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_horizontal_trackbar_control_8h.html">HorizontalTrackbarControl.h</a>&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_horizontal_trackbar_control_styles_8h.html">Styles/Components/Trackbars/HorizontalTrackbarControlStyles.h</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_horizontal_trackbar_control.html#aa76da0620a31964bf4f60f4bbe971cca">    8</a></span>&#160;    HorizontalTrackbarControl::HorizontalTrackbarControl(<span class="keyword">const</span> wstring&amp; trackbarName, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, uint16_t width, uint16_t height, <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* parent, <span class="keywordtype">bool</span> autoTicks, <a class="code" href="classgui__framework_1_1_horizontal_trackbar_control.html#a40c44b65f9f2033859e569b4c7da3b33">horizontalTickPosition</a> position, <span class="keywordtype">bool</span> selectionRange, <span class="keywordtype">bool</span> noTicks) :</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <a class="code" href="classgui__framework_1_1_base_trackbar_control.html">BaseTrackbarControl</a></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        (</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            trackbarName,</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            utility::ComponentSettings</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            (</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                TBS_HORZ | (position == <a class="code" href="classgui__framework_1_1_horizontal_trackbar_control.html#a40c44b65f9f2033859e569b4c7da3b33">horizontalTickPosition</a>::bottom ? TBS_BOTTOM : (position == <a class="code" href="classgui__framework_1_1_horizontal_trackbar_control.html#a40c44b65f9f2033859e569b4c7da3b33">horizontalTickPosition</a>::top ? TBS_TOP : TBS_BOTH)),</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                x,</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                y,</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                width,</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                height</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            ),</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            parent</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        )</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">if</span> (autoTicks)</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <a class="code" href="namespacegui__framework_1_1utility.html#ae97300d8014320696e57f502a858c570">utility::appendStyle</a>(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, TBS_AUTOTICKS);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">if</span> (selectionRange)</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <a class="code" href="namespacegui__framework_1_1utility.html#ae97300d8014320696e57f502a858c570">utility::appendStyle</a>(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, TBS_ENABLESELRANGE);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">if</span> (noTicks)</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <a class="code" href="namespacegui__framework_1_1utility.html#ae97300d8014320696e57f502a858c570">utility::appendStyle</a>(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, TBS_NOTICKS);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        }</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_horizontal_trackbar_control.html#adad4b0f7b5722a226ca84464508eea5b">   10</a></span>&#160;    HorizontalTrackbarControl::HorizontalTrackbarControl(<span class="keyword">const</span> wstring&amp; trackbarName, <span class="keyword">const</span> <a class="code" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a>&amp; settings, <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* parent, <span class="keywordtype">bool</span> autoTicks, <a class="code" href="classgui__framework_1_1_horizontal_trackbar_control.html#a40c44b65f9f2033859e569b4c7da3b33">horizontalTickPosition</a> position, <span class="keywordtype">bool</span> selectionRange, <span class="keywordtype">bool</span> noTicks) :</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <a class="code" href="classgui__framework_1_1_base_trackbar_control.html">BaseTrackbarControl</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        (</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            trackbarName,</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            settings,</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            styles::HorizontalTrackbarControlStyles(position),</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            parent</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        )</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">if</span> (autoTicks)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <a class="code" href="namespacegui__framework_1_1utility.html#ae97300d8014320696e57f502a858c570">utility::appendStyle</a>(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, TBS_AUTOTICKS);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        }</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">if</span> (selectionRange)</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <a class="code" href="namespacegui__framework_1_1utility.html#ae97300d8014320696e57f502a858c570">utility::appendStyle</a>(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, TBS_ENABLESELRANGE);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">if</span> (noTicks)</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <a class="code" href="namespacegui__framework_1_1utility.html#ae97300d8014320696e57f502a858c570">utility::appendStyle</a>(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, TBS_NOTICKS);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
 <div class="ttc" id="a_horizontal_trackbar_control_8h_html"><div class="ttname"><a href="_horizontal_trackbar_control_8h.html">HorizontalTrackbarControl.h</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_component_html"><div class="ttname"><a href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></div><div class="ttdoc">Base class for all windows, controls, etc.</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00009">BaseComponent.h:10</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_component_html_abff4f6befd00a3e67037b12fa9d9613a"><div class="ttname"><a href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">gui_framework::BaseComponent::handle</a></div><div class="ttdeci">HWND handle</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00035">BaseComponent.h:35</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_trackbar_control_html"><div class="ttname"><a href="classgui__framework_1_1_base_trackbar_control.html">gui_framework::BaseTrackbarControl</a></div><div class="ttdoc">Base class for all tracbar controls.</div><div class="ttdef"><b>Definition:</b> <a href="_base_trackbar_control_8h_source.html#l00008">BaseTrackbarControl.h:9</a></div></div>
+<div class="ttc" id="a_horizontal_trackbar_control_styles_8h_html"><div class="ttname"><a href="_horizontal_trackbar_control_styles_8h.html">HorizontalTrackbarControlStyles.h</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_component_html"><div class="ttname"><a href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></div><div class="ttdoc">Base class for all windows, controls, etc.</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00010">BaseComponent.h:11</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_component_html_abff4f6befd00a3e67037b12fa9d9613a"><div class="ttname"><a href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">gui_framework::BaseComponent::handle</a></div><div class="ttdeci">HWND handle</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00036">BaseComponent.h:36</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_trackbar_control_html"><div class="ttname"><a href="classgui__framework_1_1_base_trackbar_control.html">gui_framework::BaseTrackbarControl</a></div><div class="ttdoc">Base class for all tracbar controls.</div><div class="ttdef"><b>Definition:</b> <a href="_base_trackbar_control_8h_source.html#l00009">BaseTrackbarControl.h:10</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1_horizontal_trackbar_control_html_a40c44b65f9f2033859e569b4c7da3b33"><div class="ttname"><a href="classgui__framework_1_1_horizontal_trackbar_control.html#a40c44b65f9f2033859e569b4c7da3b33">gui_framework::HorizontalTrackbarControl::horizontalTickPosition</a></div><div class="ttdeci">horizontalTickPosition</div><div class="ttdef"><b>Definition:</b> <a href="_horizontal_trackbar_control_8h_source.html#l00011">HorizontalTrackbarControl.h:12</a></div></div>
-<div class="ttc" id="anamespacegui__framework_1_1utility_html_ae97300d8014320696e57f502a858c570"><div class="ttname"><a href="namespacegui__framework_1_1utility.html#ae97300d8014320696e57f502a858c570">gui_framework::utility::appendStyle</a></div><div class="ttdeci">void appendStyle(HWND handle, LONG_PTR newStyle)</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00015">Utility.cpp:15</a></div></div>
+<div class="ttc" id="anamespacegui__framework_1_1utility_html_ae97300d8014320696e57f502a858c570"><div class="ttname"><a href="namespacegui__framework_1_1utility.html#ae97300d8014320696e57f502a858c570">gui_framework::utility::appendStyle</a></div><div class="ttdeci">void appendStyle(HWND handle, LONG_PTR newStyle)</div><div class="ttdoc">Append WinAPI style.</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00015">Utility.cpp:15</a></div></div>
 <div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00014">BaseComponent.cpp:15</a></div></div>
 <div class="ttc" id="apch_8h_html"><div class="ttname"><a href="pch_8h.html">pch.h</a></div></div>
+<div class="ttc" id="astructgui__framework_1_1utility_1_1_component_settings_html"><div class="ttname"><a href="structgui__framework_1_1utility_1_1_component_settings.html">gui_framework::utility::ComponentSettings</a></div><div class="ttdoc">All settings for windows.</div><div class="ttdef"><b>Definition:</b> <a href="_component_settings_8h_source.html#l00010">ComponentSettings.h:11</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

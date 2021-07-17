@@ -8,6 +8,7 @@ var dir_474822148e798388a75af55d9bebad71 =
     [ "Interfaces", "dir_e747bc3c678fb81bb46e796429f46f7f.html", "dir_e747bc3c678fb81bb46e796429f46f7f" ],
     [ "Menu", "dir_c6aed8a842f64d1b8c981cb2e60037f9.html", "dir_c6aed8a842f64d1b8c981cb2e60037f9" ],
     [ "MenuItems", "dir_dca5549e17e2892857a30daa34461e71.html", "dir_dca5549e17e2892857a30daa34461e71" ],
+    [ "Styles", "dir_33b19810e37ab787ebd5fb1fffc41dec.html", "dir_33b19810e37ab787ebd5fb1fffc41dec" ],
     [ "Utility", "dir_1b8d12f05f344750fc083bc1c78427be.html", "dir_1b8d12f05f344750fc083bc1c78427be" ],
     [ "GUIFramework.cpp", "_g_u_i_framework_8cpp.html", null ],
     [ "GUIFramework.h", "_g_u_i_framework_8h.html", [

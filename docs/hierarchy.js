@@ -41,13 +41,6 @@ var hierarchy =
         [ "gui_framework::BaseDialogBox", "classgui__framework_1_1_base_dialog_box.html", [
           [ "gui_framework::DialogBox", "classgui__framework_1_1_dialog_box.html", null ]
         ] ],
-        [ "gui_framework::BaseNonResizableComposite", "classgui__framework_1_1_base_non_resizable_composite.html", [
-          [ "gui_framework::DialogBox", "classgui__framework_1_1_dialog_box.html", null ]
-        ] ],
-        [ "gui_framework::BaseResizableComposite", "classgui__framework_1_1_base_resizable_composite.html", [
-          [ "gui_framework::ChildWindow", "classgui__framework_1_1_child_window.html", null ],
-          [ "gui_framework::SeparateWindow", "classgui__framework_1_1_separate_window.html", null ]
-        ] ],
         [ "gui_framework::BaseWindow", "classgui__framework_1_1_base_window.html", [
           [ "gui_framework::BaseChildWindow", "classgui__framework_1_1_base_child_window.html", [
             [ "gui_framework::ChildWindow", "classgui__framework_1_1_child_window.html", null ]
@@ -92,17 +85,8 @@ var hierarchy =
           [ "gui_framework::TextListView", "classgui__framework_1_1_text_list_view.html", null ]
         ] ]
       ] ],
-      [ "gui_framework::BaseNonResizableComponent", "classgui__framework_1_1_base_non_resizable_component.html", null ],
       [ "gui_framework::BaseProgressBar", "classgui__framework_1_1_base_progress_bar.html", [
         [ "gui_framework::ProgressBar", "classgui__framework_1_1_progress_bar.html", null ]
-      ] ],
-      [ "gui_framework::BaseResizableComponent", "classgui__framework_1_1_base_resizable_component.html", [
-        [ "gui_framework::Button", "classgui__framework_1_1_button.html", null ],
-        [ "gui_framework::EditControl", "classgui__framework_1_1_edit_control.html", null ],
-        [ "gui_framework::InfiniteProgressBar", "classgui__framework_1_1_infinite_progress_bar.html", null ],
-        [ "gui_framework::ProgressBar", "classgui__framework_1_1_progress_bar.html", null ],
-        [ "gui_framework::StaticControl", "classgui__framework_1_1_static_control.html", null ],
-        [ "gui_framework::TabControl", "classgui__framework_1_1_tab_control.html", null ]
       ] ],
       [ "gui_framework::BaseRichEdit", "classgui__framework_1_1_base_rich_edit.html", [
         [ "gui_framework::RichEdit", "classgui__framework_1_1_rich_edit.html", null ]
@@ -184,6 +168,9 @@ var hierarchy =
       ] ],
       [ "gui_framework::DropDownMenuItem", "classgui__framework_1_1_drop_down_menu_item.html", null ]
     ] ],
+    [ "gui_framework::interfaces::INonResizableComponent", "classgui__framework_1_1interfaces_1_1_i_non_resizable_component.html", [
+      [ "gui_framework::DialogBox", "classgui__framework_1_1_dialog_box.html", null ]
+    ] ],
     [ "gui_framework::interfaces::IProgressBarColor", "classgui__framework_1_1interfaces_1_1_i_progress_bar_color.html", [
       [ "gui_framework::BaseInfiniteProgressBar", "classgui__framework_1_1_base_infinite_progress_bar.html", null ],
       [ "gui_framework::BaseProgressBar", "classgui__framework_1_1_base_progress_bar.html", null ]
@@ -191,11 +178,49 @@ var hierarchy =
     [ "gui_framework::interfaces::IResizableComponent", "classgui__framework_1_1interfaces_1_1_i_resizable_component.html", [
       [ "gui_framework::BaseComboBox", "classgui__framework_1_1_base_combo_box.html", null ],
       [ "gui_framework::BaseListBox", "classgui__framework_1_1_base_list_box.html", null ],
-      [ "gui_framework::BaseNonResizableComponent", "classgui__framework_1_1_base_non_resizable_component.html", null ],
-      [ "gui_framework::BaseNonResizableComposite", "classgui__framework_1_1_base_non_resizable_composite.html", null ],
-      [ "gui_framework::BaseResizableComponent", "classgui__framework_1_1_base_resizable_component.html", null ],
-      [ "gui_framework::BaseResizableComposite", "classgui__framework_1_1_base_resizable_composite.html", null ],
-      [ "gui_framework::BaseRichEdit", "classgui__framework_1_1_base_rich_edit.html", null ]
+      [ "gui_framework::BaseRichEdit", "classgui__framework_1_1_base_rich_edit.html", null ],
+      [ "gui_framework::Button", "classgui__framework_1_1_button.html", null ],
+      [ "gui_framework::ChildWindow", "classgui__framework_1_1_child_window.html", null ],
+      [ "gui_framework::EditControl", "classgui__framework_1_1_edit_control.html", null ],
+      [ "gui_framework::InfiniteProgressBar", "classgui__framework_1_1_infinite_progress_bar.html", null ],
+      [ "gui_framework::ProgressBar", "classgui__framework_1_1_progress_bar.html", null ],
+      [ "gui_framework::SeparateWindow", "classgui__framework_1_1_separate_window.html", null ],
+      [ "gui_framework::StaticControl", "classgui__framework_1_1_static_control.html", null ],
+      [ "gui_framework::TabControl", "classgui__framework_1_1_tab_control.html", null ]
+    ] ],
+    [ "gui_framework::interfaces::IStyles", "classgui__framework_1_1interfaces_1_1_i_styles.html", [
+      [ "gui_framework::styles::DefaultStyles", "classgui__framework_1_1styles_1_1_default_styles.html", [
+        [ "gui_framework::styles::ButtonStyles", "classgui__framework_1_1styles_1_1_button_styles.html", [
+          [ "gui_framework::styles::CheckBoxStyles", "classgui__framework_1_1styles_1_1_check_box_styles.html", null ],
+          [ "gui_framework::styles::DefaultButtonStyles", "classgui__framework_1_1styles_1_1_default_button_styles.html", null ],
+          [ "gui_framework::styles::RadioButtonStyles", "classgui__framework_1_1styles_1_1_radio_button_styles.html", null ]
+        ] ],
+        [ "gui_framework::styles::ComboBoxStyles", "classgui__framework_1_1styles_1_1_combo_box_styles.html", [
+          [ "gui_framework::styles::DropDownComboBoxStyles", "classgui__framework_1_1styles_1_1_drop_down_combo_box_styles.html", null ],
+          [ "gui_framework::styles::DropDownListComboBoxStyles", "classgui__framework_1_1styles_1_1_drop_down_list_combo_box_styles.html", null ],
+          [ "gui_framework::styles::SimpleComboBoxStyles", "classgui__framework_1_1styles_1_1_simple_combo_box_styles.html", null ]
+        ] ],
+        [ "gui_framework::styles::DefaultRichEditStyles", "classgui__framework_1_1styles_1_1_default_rich_edit_styles.html", null ],
+        [ "gui_framework::styles::DialogBoxStyles", "classgui__framework_1_1styles_1_1_dialog_box_styles.html", null ],
+        [ "gui_framework::styles::InfiniteProgressBarStyles", "classgui__framework_1_1styles_1_1_infinite_progress_bar_styles.html", null ],
+        [ "gui_framework::styles::ListBoxStyles", "classgui__framework_1_1styles_1_1_list_box_styles.html", [
+          [ "gui_framework::styles::DefaultListBoxStyles", "classgui__framework_1_1styles_1_1_default_list_box_styles.html", null ],
+          [ "gui_framework::styles::MultipleSelectListBoxStyles", "classgui__framework_1_1styles_1_1_multiple_select_list_box_styles.html", null ]
+        ] ],
+        [ "gui_framework::styles::ListViewStyles", "classgui__framework_1_1styles_1_1_list_view_styles.html", [
+          [ "gui_framework::styles::IconListViewStyles", "classgui__framework_1_1styles_1_1_icon_list_view_styles.html", null ],
+          [ "gui_framework::styles::ListListViewStyles", "classgui__framework_1_1styles_1_1_list_list_view_styles.html", [
+            [ "gui_framework::styles::ListIconListViewStyles", "classgui__framework_1_1styles_1_1_list_icon_list_view_styles.html", null ],
+            [ "gui_framework::styles::ListTextListViewStyles", "classgui__framework_1_1styles_1_1_list_text_list_view_styles.html", null ]
+          ] ],
+          [ "gui_framework::styles::TextListViewStyles", "classgui__framework_1_1styles_1_1_text_list_view_styles.html", null ]
+        ] ],
+        [ "gui_framework::styles::SeparateWindowStyles", "classgui__framework_1_1styles_1_1_separate_window_styles.html", null ],
+        [ "gui_framework::styles::TrackbarControlStyles", "classgui__framework_1_1styles_1_1_trackbar_control_styles.html", [
+          [ "gui_framework::styles::HorizontalTrackbarControlStyles", "classgui__framework_1_1styles_1_1_horizontal_trackbar_control_styles.html", null ],
+          [ "gui_framework::styles::VerticalTrackbarControlStyles", "classgui__framework_1_1styles_1_1_vertical_trackbar_control_styles.html", null ]
+        ] ]
+      ] ]
     ] ],
     [ "gui_framework::interfaces::ITextOperations", "classgui__framework_1_1interfaces_1_1_i_text_operations.html", [
       [ "gui_framework::BaseButton", "classgui__framework_1_1_base_button.html", null ],

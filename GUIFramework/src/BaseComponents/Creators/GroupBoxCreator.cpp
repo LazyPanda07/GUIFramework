@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "GroupBoxCreator.h"
 
-#include "Components/GroupBox.h"
+#include "Composites/GroupBox.h"
 
 using namespace std;
 

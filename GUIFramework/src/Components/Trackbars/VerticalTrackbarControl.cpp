@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "VerticalTrackbarControl.h"
 
-#include "Styles/Components/VerticalTrackbarControlStyles.h"
+#include "Styles/Components/Trackbars/VerticalTrackbarControlStyles.h"
 
 using namespace std;
 

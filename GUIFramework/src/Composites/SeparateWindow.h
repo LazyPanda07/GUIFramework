@@ -11,7 +11,7 @@ namespace gui_framework
 		public interfaces::IResizableComponent
 	{
 	public:
-		SeparateWindow(const std::wstring& className, const std::wstring& titleName, const utility::ComponentSettings& settings, const std::string& windowFunctionName);
+		SeparateWindow(const std::wstring& className, const std::wstring& titleName, const utility::ComponentSettings& settings, const std::string& windowFunctionName, bool maximize = false, bool minimize = false);
 
 		~SeparateWindow() = default;
 	};

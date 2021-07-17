@@ -6,6 +6,7 @@ namespace gui_framework
 {
 	namespace styles
 	{
+		/// @brief Default RichEdit styles
 		class GUI_FRAMEWORK_API DefaultRichEditStyles : public DefaultStyles
 		{
 		public:

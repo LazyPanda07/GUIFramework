@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.4</span>
+   &#160;<span id="projectnumber">0.6-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -278,10 +278,13 @@ Functions</h2></td></tr>
 <tr class="memitem:a9102f958e07350e5f2ab564c5c30d66c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1utility.html#a9102f958e07350e5f2ab564c5c30d66c">unregisterClass</a> (const wstring &amp;className)</td></tr>
 <tr class="separator:a9102f958e07350e5f2ab564c5c30d66c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae97300d8014320696e57f502a858c570"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1utility.html#ae97300d8014320696e57f502a858c570">appendStyle</a> (HWND handle, LONG_PTR newStyle)</td></tr>
+<tr class="memdesc:ae97300d8014320696e57f502a858c570"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append WinAPI style.  <a href="namespacegui__framework_1_1utility.html#ae97300d8014320696e57f502a858c570">More...</a><br /></td></tr>
 <tr class="separator:ae97300d8014320696e57f502a858c570"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a746d8e6e6277a08c83bd0bfd523d2e04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1utility.html#a746d8e6e6277a08c83bd0bfd523d2e04">removeStyle</a> (HWND handle, LONG_PTR styleToRemove)</td></tr>
+<tr class="memdesc:a746d8e6e6277a08c83bd0bfd523d2e04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove WinAPI style.  <a href="namespacegui__framework_1_1utility.html#a746d8e6e6277a08c83bd0bfd523d2e04">More...</a><br /></td></tr>
 <tr class="separator:a746d8e6e6277a08c83bd0bfd523d2e04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd212ea6354db1d1ef3a3658fa9b8b4f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_g_u_i_framework_constants_8h.html#a767f18c6bddef6da85ce42f210726a25">GUI_FRAMEWORK_API_FUNCTION</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1utility.html#abd212ea6354db1d1ef3a3658fa9b8b4f">unregisterClass</a> (const std::wstring &amp;className)</td></tr>
+<tr class="memdesc:abd212ea6354db1d1ef3a3658fa9b8b4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregister class that is used in <a class="el" href="classgui__framework_1_1_separate_window.html" title="Standard separate window.">SeparateWindow</a>, <a class="el" href="classgui__framework_1_1_child_window.html" title="Standard child window.">ChildWindow</a>, <a class="el" href="classgui__framework_1_1_dialog_box.html" title="Standard dialog box.">DialogBox</a>, <a class="el" href="classgui__framework_1_1_group_box.html" title="Standard group box with radio buttons.">GroupBox</a>.  <a href="namespacegui__framework_1_1utility.html#abd212ea6354db1d1ef3a3658fa9b8b4f">More...</a><br /></td></tr>
 <tr class="separator:abd212ea6354db1d1ef3a3658fa9b8b4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
@@ -340,6 +343,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Append WinAPI style. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td></td></tr>
+    <tr><td class="paramname">newStyle</td><td><br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="_utility_8cpp_source.html#l00015">15</a> of file <a class="el" href="_utility_8cpp_source.html">Utility.cpp</a>.</p>
 
 </div>
@@ -370,6 +383,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Remove WinAPI style. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td></td></tr>
+    <tr><td class="paramname">styleToRemove</td><td><br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="_utility_8cpp_source.html#l00025">25</a> of file <a class="el" href="_utility_8cpp_source.html">Utility.cpp</a>.</p>
 
 </div>
@@ -389,6 +412,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Unregister class that is used in <a class="el" href="classgui__framework_1_1_separate_window.html" title="Standard separate window.">SeparateWindow</a>, <a class="el" href="classgui__framework_1_1_child_window.html" title="Standard child window.">ChildWindow</a>, <a class="el" href="classgui__framework_1_1_dialog_box.html" title="Standard dialog box.">DialogBox</a>, <a class="el" href="classgui__framework_1_1_group_box.html" title="Standard group box with radio buttons.">GroupBox</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">className</td><td><br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

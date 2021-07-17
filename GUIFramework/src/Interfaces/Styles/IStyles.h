@@ -6,6 +6,7 @@ namespace gui_framework
 {
 	namespace interfaces
 	{
+		/// @brief Provides styles for other classes
 		class GUI_FRAMEWORK_API IStyles
 		{
 		private:
