@@ -430,6 +430,13 @@ namespace gui_framework
 			this->asyncDestroyComponent();
 		}
 
-		GUIFramework::get().removeId(windowName, id);
+		try
+		{
+			GUIFramework::get().removeId(windowName, id);
+		}
+		catch (const exception&)
+		{
+
+		}
 	}
 }

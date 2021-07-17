@@ -31,9 +31,9 @@ namespace gui_framework
 
 		while (code = GetMessageW(&message, nullptr, NULL, NULL) > 0)
 		{
-			if (message.message == WM_HOTKEY)
+			if (message.message == WM_HOTKEY && message.wParam >= 0)
 			{
-				GUIFramework::get().processHotkey(message.wParam);
+				GUIFramework::get().processHotkey(static_cast<uint32_t>(message.wParam));
 			}
 
 			TranslateMessage(&message);
