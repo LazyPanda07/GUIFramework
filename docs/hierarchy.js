@@ -232,7 +232,7 @@ var hierarchy =
     [ "gui_framework::GroupBox::radioButtonData", "structgui__framework_1_1_group_box_1_1radio_button_data.html", null ],
     [ "std::runtime_error", null, [
       [ "gui_framework::exceptions::BaseGUIFrameworkException", "classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception.html", [
-        [ "gui_framework::exceptions::CantFindSeparateWindowFunctionException", "classgui__framework_1_1exceptions_1_1_cant_find_separate_window_function_exception.html", null ],
+        [ "gui_framework::exceptions::CantFindCompositeFunctionException", "classgui__framework_1_1exceptions_1_1_cant_find_composite_function_exception.html", null ],
         [ "gui_framework::exceptions::FileDoesNotExist", "classgui__framework_1_1exceptions_1_1_file_does_not_exist.html", null ],
         [ "gui_framework::exceptions::GetLastErrorException", "classgui__framework_1_1exceptions_1_1_get_last_error_exception.html", null ],
         [ "gui_framework::exceptions::NotImplemented", "classgui__framework_1_1exceptions_1_1_not_implemented.html", null ],

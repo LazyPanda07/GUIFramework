@@ -34,7 +34,7 @@ var searchData=
   ['_7ebutton_1821',['~Button',['../classgui__framework_1_1_button.html#a69645774e061e9f6c52efc98fc57d59c',1,'gui_framework::Button']]],
   ['_7ebuttoncreator_1822',['~ButtonCreator',['../classgui__framework_1_1utility_1_1_button_creator.html#a0b212ff17a1465add9ea25f760869120',1,'gui_framework::utility::ButtonCreator']]],
   ['_7ebuttonstyles_1823',['~ButtonStyles',['../classgui__framework_1_1styles_1_1_button_styles.html#a2e3763e8432b607756ba41d2552ab117',1,'gui_framework::styles::ButtonStyles']]],
-  ['_7ecantfindseparatewindowfunctionexception_1824',['~CantFindSeparateWindowFunctionException',['../classgui__framework_1_1exceptions_1_1_cant_find_separate_window_function_exception.html#a4a4793d49aa06da2267e9f5428668fc6',1,'gui_framework::exceptions::CantFindSeparateWindowFunctionException']]],
+  ['_7ecantfindcompositefunctionexception_1824',['~CantFindCompositeFunctionException',['../classgui__framework_1_1exceptions_1_1_cant_find_composite_function_exception.html#adfc366f0097984ba140d65c2f478e0d8',1,'gui_framework::exceptions::CantFindCompositeFunctionException']]],
   ['_7echeckbox_1825',['~CheckBox',['../classgui__framework_1_1_check_box.html#aa4f39cbf61811dbb8241f137b5a98011',1,'gui_framework::CheckBox']]],
   ['_7echeckboxcreator_1826',['~CheckBoxCreator',['../classgui__framework_1_1utility_1_1_check_box_creator.html#a49dd1050164a016b0e2a9417e18d2ae4',1,'gui_framework::utility::CheckBoxCreator']]],
   ['_7echeckboxstyles_1827',['~CheckBoxStyles',['../classgui__framework_1_1styles_1_1_check_box_styles.html#a161c16e8f876868a93b5061c5706c691',1,'gui_framework::styles::CheckBoxStyles']]],

@@ -130,6 +130,8 @@ namespace gui_framework
 
 		virtual std::vector<const Menu*> getPopupMenus() const final;
 
+		/// @brief 
+		/// @return Components returns id, composites returns 0 
 		virtual uint32_t getId() const final;
 
 		virtual COLORREF getBackgroundColor() const final;

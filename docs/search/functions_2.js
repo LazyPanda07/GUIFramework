@@ -1,7 +1,7 @@
 var searchData=
 [
   ['calculatenewsizes_1518',['calculateNewSizes',['../classgui__framework_1_1interfaces_1_1_i_resizable_component.html#a70335904d0c428a948c4537b2bfacf04',1,'gui_framework::interfaces::IResizableComponent']]],
-  ['cantfindseparatewindowfunctionexception_1519',['CantFindSeparateWindowFunctionException',['../classgui__framework_1_1exceptions_1_1_cant_find_separate_window_function_exception.html#a013a685f051767098d4ae9247e53de4d',1,'gui_framework::exceptions::CantFindSeparateWindowFunctionException']]],
+  ['cantfindcompositefunctionexception_1519',['CantFindCompositeFunctionException',['../classgui__framework_1_1exceptions_1_1_cant_find_composite_function_exception.html#aceeb8f4066c54fe34e94010801a6e143',1,'gui_framework::exceptions::CantFindCompositeFunctionException']]],
   ['cbegin_1520',['cbegin',['../classgui__framework_1_1_base_composite.html#aa659b14a122c257963fc32dbe8b6aa1b',1,'gui_framework::BaseComposite']]],
   ['cend_1521',['cend',['../classgui__framework_1_1_base_composite.html#ab112cdc35aedb39264d93e36f50c992b',1,'gui_framework::BaseComposite']]],
   ['changevalue_1522',['changeValue',['../classgui__framework_1_1_base_combo_box.html#a8764b2c833e30d2b06d5522d8ca52c0f',1,'gui_framework::BaseComboBox::changeValue()'],['../classgui__framework_1_1_base_list_box.html#aaa85d4246f068112f6a63bd375826084',1,'gui_framework::BaseListBox::changeValue()']]],

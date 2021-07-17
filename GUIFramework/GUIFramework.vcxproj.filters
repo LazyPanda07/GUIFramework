@@ -30,7 +30,7 @@
     <ClInclude Include="src\GUIFrameworkConstants.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Exceptions\CantFindSeparateWindowFunctionException.h">
+    <ClInclude Include="src\Exceptions\CantFindCompositeFunctionException.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\BaseComponents\BaseComponent.h">
@@ -494,7 +494,7 @@
     <ClCompile Include="src\Exceptions\BaseGUIFrameworkException.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Exceptions\CantFindSeparateWindowFunctionException.cpp">
+    <ClCompile Include="src\Exceptions\CantFindCompositeFunctionException.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\BaseComponents\BaseComponent.cpp">

@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.6-beta</span>
+   &#160;<span id="projectnumber">0.6.1-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -89,29 +89,31 @@ $(document).ready(function(){initNavTree('_draw_image_8h_source.html',''); initR
 <div class="contents">
 <a href="_draw_image_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_base_loadable_holder_8h.html">Utility/Holders/LoadableHolders/BaseLoadableHolder.h</a>&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_base_window_8h.html">BaseComposites/StandardComposites/BaseWindow.h</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">namespace </span>utility</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="keyword">namespace </span>paint</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <a class="code" href="_g_u_i_framework_constants_8h.html#a767f18c6bddef6da85ce42f210726a25">GUI_FRAMEWORK_API_FUNCTION</a> <span class="keywordtype">bool</span> <a class="code" href="namespacegui__framework_1_1utility_1_1paint.html#a931933d1d403270d312dce9702bb5877">drawImageByIndex</a>(<span class="keyword">const</span> BaseWindow* window, <span class="keyword">const</span> BaseLoadableHolder&amp; holder, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, uint16_t index);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="namespacegui__framework_1_1utility_1_1paint.html#a2dd56702974a9f976b11bc663ed580f2">   30</a></span>&#160;            <a class="code" href="_g_u_i_framework_constants_8h.html#a767f18c6bddef6da85ce42f210726a25">GUI_FRAMEWORK_API_FUNCTION</a> <span class="keywordtype">bool</span> <a class="code" href="namespacegui__framework_1_1utility_1_1paint.html#aaa72ab7a54bd01b37bff27818f6872dc">drawImageByPath</a>(<span class="keyword">const</span> <a class="code" href="classgui__framework_1_1_base_window.html">BaseWindow</a>* window, <span class="keyword">const</span> <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html">BaseLoadableHolder</a>&amp; holder, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keyword">const</span> std::filesystem::path&amp; pathToImage);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pch_8h.html">pch.h</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_base_loadable_holder_8h.html">Utility/Holders/LoadableHolders/BaseLoadableHolder.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_base_window_8h.html">BaseComposites/StandardComposites/BaseWindow.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">namespace </span>utility</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keyword">namespace </span>paint</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <a class="code" href="_g_u_i_framework_constants_8h.html#a767f18c6bddef6da85ce42f210726a25">GUI_FRAMEWORK_API_FUNCTION</a> <span class="keywordtype">bool</span> <a class="code" href="namespacegui__framework_1_1utility_1_1paint.html#a931933d1d403270d312dce9702bb5877">drawImageByIndex</a>(<span class="keyword">const</span> BaseWindow* window, <span class="keyword">const</span> BaseLoadableHolder&amp; holder, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, uint16_t index);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="namespacegui__framework_1_1utility_1_1paint.html#a2dd56702974a9f976b11bc663ed580f2">   31</a></span>&#160;            <a class="code" href="_g_u_i_framework_constants_8h.html#a767f18c6bddef6da85ce42f210726a25">GUI_FRAMEWORK_API_FUNCTION</a> <span class="keywordtype">bool</span> <a class="code" href="namespacegui__framework_1_1utility_1_1paint.html#aaa72ab7a54bd01b37bff27818f6872dc">drawImageByPath</a>(<span class="keyword">const</span> <a class="code" href="classgui__framework_1_1_base_window.html">BaseWindow</a>* window, <span class="keyword">const</span> <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html">BaseLoadableHolder</a>&amp; holder, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keyword">const</span> std::filesystem::path&amp; pathToImage);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
 <div class="ttc" id="a_base_loadable_holder_8h_html"><div class="ttname"><a href="_base_loadable_holder_8h.html">BaseLoadableHolder.h</a></div></div>
 <div class="ttc" id="a_base_window_8h_html"><div class="ttname"><a href="_base_window_8h.html">BaseWindow.h</a></div></div>
-<div class="ttc" id="a_g_u_i_framework_constants_8h_html_a767f18c6bddef6da85ce42f210726a25"><div class="ttname"><a href="_g_u_i_framework_constants_8h.html#a767f18c6bddef6da85ce42f210726a25">GUI_FRAMEWORK_API_FUNCTION</a></div><div class="ttdeci">#define GUI_FRAMEWORK_API_FUNCTION</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00095">GUIFrameworkConstants.h:95</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_window_html"><div class="ttname"><a href="classgui__framework_1_1_base_window.html">gui_framework::BaseWindow</a></div><div class="ttdoc">Base class for composite windows.</div><div class="ttdef"><b>Definition:</b> <a href="_base_window_8h_source.html#l00008">BaseWindow.h:9</a></div></div>
+<div class="ttc" id="a_g_u_i_framework_constants_8h_html_a767f18c6bddef6da85ce42f210726a25"><div class="ttname"><a href="_g_u_i_framework_constants_8h.html#a767f18c6bddef6da85ce42f210726a25">GUI_FRAMEWORK_API_FUNCTION</a></div><div class="ttdeci">#define GUI_FRAMEWORK_API_FUNCTION</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00096">GUIFrameworkConstants.h:96</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_window_html"><div class="ttname"><a href="classgui__framework_1_1_base_window.html">gui_framework::BaseWindow</a></div><div class="ttdoc">Base class for composite windows.</div><div class="ttdef"><b>Definition:</b> <a href="_base_window_8h_source.html#l00009">BaseWindow.h:10</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1utility_1_1_base_loadable_holder_html"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_base_loadable_holder.html">gui_framework::utility::BaseLoadableHolder</a></div><div class="ttdoc">Base class for all visual asset loaders.</div><div class="ttdef"><b>Definition:</b> <a href="_base_loadable_holder_8h_source.html#l00016">BaseLoadableHolder.h:17</a></div></div>
 <div class="ttc" id="anamespacegui__framework_1_1utility_1_1paint_html_a931933d1d403270d312dce9702bb5877"><div class="ttname"><a href="namespacegui__framework_1_1utility_1_1paint.html#a931933d1d403270d312dce9702bb5877">gui_framework::utility::paint::drawImageByIndex</a></div><div class="ttdeci">bool drawImageByIndex(const BaseWindow *window, const BaseLoadableHolder &amp;holder, int x, int y, uint16_t index)</div><div class="ttdoc">Draw image from holder.</div><div class="ttdef"><b>Definition:</b> <a href="_draw_image_8cpp_source.html#l00015">DrawImage.cpp:15</a></div></div>
 <div class="ttc" id="anamespacegui__framework_1_1utility_1_1paint_html_aaa72ab7a54bd01b37bff27818f6872dc"><div class="ttname"><a href="namespacegui__framework_1_1utility_1_1paint.html#aaa72ab7a54bd01b37bff27818f6872dc">gui_framework::utility::paint::drawImageByPath</a></div><div class="ttdeci">bool drawImageByPath(const BaseWindow *window, const BaseLoadableHolder &amp;holder, int x, int y, const filesystem::path &amp;pathToImage)</div><div class="ttdef"><b>Definition:</b> <a href="_draw_image_8cpp_source.html#l00020">DrawImage.cpp:20</a></div></div>
 <div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00014">BaseComponent.cpp:15</a></div></div>
+<div class="ttc" id="apch_8h_html"><div class="ttname"><a href="pch_8h.html">pch.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

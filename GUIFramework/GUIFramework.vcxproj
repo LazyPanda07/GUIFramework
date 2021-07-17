@@ -125,7 +125,7 @@
     <ClInclude Include="src\Exceptions\NotImplemented.h" />
     <ClInclude Include="src\GUIFrameworkConstants.h" />
     <ClInclude Include="src\Exceptions\BaseGUIFrameworkException.h" />
-    <ClInclude Include="src\Exceptions\CantFindSeparateWindowFunctionException.h" />
+    <ClInclude Include="src\Exceptions\CantFindCompositeFunctionException.h" />
     <ClInclude Include="src\Exceptions\SelectListException.h" />
     <ClInclude Include="src\Exceptions\ExceptionConstants.h" />
     <ClInclude Include="src\Exceptions\GetLastErrorException.h" />
@@ -278,7 +278,7 @@
     <ClCompile Include="src\Composites\DialogBox.cpp" />
     <ClCompile Include="src\Composites\SeparateWindow.cpp" />
     <ClCompile Include="src\Exceptions\BaseGUIFrameworkException.cpp" />
-    <ClCompile Include="src\Exceptions\CantFindSeparateWindowFunctionException.cpp" />
+    <ClCompile Include="src\Exceptions\CantFindCompositeFunctionException.cpp" />
     <ClCompile Include="src\Exceptions\FileDoesNotExist.cpp" />
     <ClCompile Include="src\Exceptions\NotImplemented.cpp" />
     <ClCompile Include="src\Exceptions\SelectListException.cpp" />

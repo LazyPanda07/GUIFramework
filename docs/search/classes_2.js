@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['cantfindseparatewindowfunctionexception_1037',['CantFindSeparateWindowFunctionException',['../classgui__framework_1_1exceptions_1_1_cant_find_separate_window_function_exception.html',1,'gui_framework::exceptions']]],
+  ['cantfindcompositefunctionexception_1037',['CantFindCompositeFunctionException',['../classgui__framework_1_1exceptions_1_1_cant_find_composite_function_exception.html',1,'gui_framework::exceptions']]],
   ['checkbox_1038',['CheckBox',['../classgui__framework_1_1_check_box.html',1,'gui_framework']]],
   ['checkboxcreator_1039',['CheckBoxCreator',['../classgui__framework_1_1utility_1_1_check_box_creator.html',1,'gui_framework::utility']]],
   ['checkboxstyles_1040',['CheckBoxStyles',['../classgui__framework_1_1styles_1_1_check_box_styles.html',1,'gui_framework::styles']]],
