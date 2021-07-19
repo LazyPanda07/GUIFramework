@@ -2,12 +2,14 @@
 
 #include "pch.h"
 #include "Menu/Menu.h"
+#include "Utility/Holders/LoadableHolders/IconsHolder.h"
 #include "Interfaces/Styles/IStyles.h"
+#include "Interfaces/Utility/ISerializable.h"
 
 namespace gui_framework
 {
 	/// @brief Base class for all windows, controls, etc.
-	class GUI_FRAMEWORK_API BaseComponent
+	class GUI_FRAMEWORK_API BaseComponent : public interfaces::ISerializable
 	{
 	public:
 		enum class exitMode
@@ -28,6 +30,9 @@ namespace gui_framework
 		static void runFunctionAsync(std::function<void()>&& callable, const std::function<void()>& callback = nullptr) noexcept;
 
 	protected:
+		virtual json::JSONBuilder getStructure() const override;
+
+	protected:
 		BaseComponent* parent;
 		std::unordered_map<HMENU, Menu> popupMenus;
 		std::unique_ptr<Menu> mainMenu;
@@ -42,6 +47,8 @@ namespace gui_framework
 		exitMode mode;
 		HICON largeIcon;
 		HICON smallIcon;
+		std::string pathToSmallIcon;
+		std::string pathToLargeIcon;
 		uint32_t id;
 		COLORREF backgroundColor;
 		COLORREF textColor;

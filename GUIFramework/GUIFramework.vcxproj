@@ -137,6 +137,7 @@
     <ClInclude Include="src\Interfaces\Components\ListViews\ITextIconListView.h" />
     <ClInclude Include="src\Interfaces\Components\ListViews\ITextListView.h" />
     <ClInclude Include="src\Interfaces\Styles\IStyles.h" />
+    <ClInclude Include="src\Interfaces\Utility\ISerializable.h" />
     <ClInclude Include="src\Styles\Components\Buttons\ButtonStyles.h" />
     <ClInclude Include="src\Styles\Components\Buttons\CheckBoxStyles.h" />
     <ClInclude Include="src\Styles\Components\ComboBoxes\ComboBoxStyles.h" />
@@ -291,6 +292,7 @@
     <ClCompile Include="src\Interfaces\Components\ListViews\ITextIconListView.cpp" />
     <ClCompile Include="src\Interfaces\Components\ListViews\ITextListView.cpp" />
     <ClCompile Include="src\Interfaces\Styles\IStyles.cpp" />
+    <ClCompile Include="src\Interfaces\Utility\ISerializable.cpp" />
     <ClCompile Include="src\Styles\Components\Buttons\ButtonStyles.cpp" />
     <ClCompile Include="src\Styles\Components\Buttons\CheckBoxStyles.cpp" />
     <ClCompile Include="src\Styles\Components\ComboBoxes\ComboBoxStyles.cpp" />
