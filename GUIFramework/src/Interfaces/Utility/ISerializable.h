@@ -11,13 +11,12 @@ namespace gui_framework
 		private:
 			uint32_t codepage;
 
-		protected:
-			virtual json::JSONBuilder getStructure() const = 0;
-
 		public:
 			ISerializable();
 
 			virtual void setCodepage(uint32_t codepage) final;
+
+			virtual json::JSONBuilder getStructure() const = 0;
 
 			virtual uint32_t getCodepage() const final;
 

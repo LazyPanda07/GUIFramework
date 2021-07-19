@@ -39,6 +39,39 @@ namespace gui_framework
 		return -1;
 	}
 
+	json::JSONBuilder BaseComposite::getStructure() const
+	{
+		json::JSONBuilder builder = BaseComponent::getStructure();
+		uint32_t codepage = ISerializable::getCodepage();
+		vector<json::JSONBuilder> childrenStructure;
+
+		childrenStructure.reserve(children.size());
+
+		for_each(children.begin(), children.end(), [&childrenStructure](const unique_ptr<BaseComponent>& child) { childrenStructure.push_back(child->getStructure()); });
+
+		if (parent)
+		{
+			auto& parentStructure = get<smartPointerType<json::JSONBuilder::objectType>>(builder[utility::to_string(windowName, codepage)]);
+
+			vector<smartPointerType<json::JSONBuilder::objectType>> data;
+
+			for (size_t i = 0; i < children.size(); i++)
+			{
+				auto& childStructure = get<smartPointerType<json::JSONBuilder::objectType>>(childrenStructure[i][utility::to_string(children[i]->getWindowName(), children[i]->getCodepage())]);
+
+				data.emplace_back(move(childrenStructure));
+			}
+
+			// parentStructure->data.push_back(make_pair("qwe"s, move(data)));
+		}
+		else
+		{
+
+		}
+
+		return builder;
+	}
+
 	BaseComposite::BaseComposite(const wstring& className, const wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent, const string& windowFunctionName) :
 		BaseComponent
 		(
@@ -107,26 +140,26 @@ namespace gui_framework
 	BaseComponent* BaseComposite::findChild(HWND handle) const
 	{
 		BaseComponent* result = nullptr;
-	
+
 		for (const auto& i : children)
 		{
 			if (i->getHandle() == handle)
 			{
 				result = i.get();
-	
+
 				break;
 			}
 			else if (i->isComposite())
 			{
 				result = static_cast<BaseComposite*>(i.get())->findChild(handle);
-	
+
 				if (result)
 				{
 					break;
 				}
 			}
 		}
-	
+
 		return result;
 	}
 

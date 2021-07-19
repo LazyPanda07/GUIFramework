@@ -23,58 +23,6 @@ namespace gui_framework
 		GUIFramework::get().addTask(move(callable), callback);
 	}
 
-	json::JSONBuilder BaseComponent::getStructure() const
-	{
-		using json::utility::toUTF8JSON;
-
-		uint32_t codepage = ISerializable::getCodepage();
-		json::JSONBuilder builder(codepage);
-
-		smartPointerType<json::JSONBuilder::objectType> structure(new json::JSONBuilder::objectType());
-
-		structure->data.push_back({ "className"s, toUTF8JSON(utility::to_string(className, codepage), codepage) });
-
-		structure->data.push_back({ "desiredX"s, desiredX });
-		structure->data.push_back({ "desiredY"s, desiredY });
-
-		structure->data.push_back({ "desiredWidth"s, static_cast<uint64_t>(desiredWidth) });
-		structure->data.push_back({ "desiredHeight"s, static_cast<uint64_t>(desiredHeight) });
-
-		structure->data.push_back({ "backgroundColor"s, vector<uint64_t>({ GetRValue(backgroundColor), GetGValue(backgroundColor), GetBValue(backgroundColor) }) });
-		structure->data.push_back({ "textColor"s, vector<uint64_t>({ GetRValue(textColor), GetGValue(textColor), GetBValue(textColor) }) });
-
-		if (pathToSmallIcon.size())
-		{
-			structure->data.push_back({ "pathToSmallIcon"s, toUTF8JSON(pathToSmallIcon, codepage) });
-		}
-
-		if (pathToLargeIcon.size())
-		{
-			structure->data.push_back({ "pathToLargeIcon"s, toUTF8JSON(pathToLargeIcon, codepage) });
-		}
-
-		structure->data.push_back({ "exitMode"s, static_cast<int64_t>(mode) });
-
-		// TODO: serialize menus
-		if (false && mainMenu)
-		{
-			smartPointerType<json::JSONBuilder::objectType> menuStructure(new json::JSONBuilder::objectType());
-
-			menuStructure->data.push_back({ "mainMenuName"s, toUTF8JSON(utility::to_string(mainMenu->getName(), codepage), codepage) });
-
-			for (const auto& [menuHandle, menu] : popupMenus)
-			{
-
-			}
-
-			structure->data.push_back({ "menuStructure"s, move(menuStructure) });
-		}
-
-		builder.push_back(make_pair(toUTF8JSON(utility::to_string(windowName, codepage), codepage), move(structure)));
-
-		return builder;
-	}
-
 	LRESULT BaseComponent::preWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
 	{
 		isUsed = false;
@@ -477,6 +425,58 @@ namespace gui_framework
 	COLORREF BaseComponent::getTextColor() const
 	{
 		return textColor;
+	}
+
+	json::JSONBuilder BaseComponent::getStructure() const
+	{
+		using json::utility::toUTF8JSON;
+
+		uint32_t codepage = ISerializable::getCodepage();
+		json::JSONBuilder builder(codepage);
+
+		smartPointerType<json::JSONBuilder::objectType> structure(new json::JSONBuilder::objectType());
+
+		structure->data.push_back({ "className"s, toUTF8JSON(utility::to_string(className, codepage), codepage) });
+
+		structure->data.push_back({ "desiredX"s, desiredX });
+		structure->data.push_back({ "desiredY"s, desiredY });
+
+		structure->data.push_back({ "desiredWidth"s, static_cast<uint64_t>(desiredWidth) });
+		structure->data.push_back({ "desiredHeight"s, static_cast<uint64_t>(desiredHeight) });
+
+		structure->data.push_back({ "backgroundColor"s, vector<uint64_t>({ GetRValue(backgroundColor), GetGValue(backgroundColor), GetBValue(backgroundColor) }) });
+		structure->data.push_back({ "textColor"s, vector<uint64_t>({ GetRValue(textColor), GetGValue(textColor), GetBValue(textColor) }) });
+
+		if (pathToSmallIcon.size())
+		{
+			structure->data.push_back({ "pathToSmallIcon"s, toUTF8JSON(pathToSmallIcon, codepage) });
+		}
+
+		if (pathToLargeIcon.size())
+		{
+			structure->data.push_back({ "pathToLargeIcon"s, toUTF8JSON(pathToLargeIcon, codepage) });
+		}
+
+		structure->data.push_back({ "exitMode"s, static_cast<int64_t>(mode) });
+
+		// TODO: serialize menus
+		if (false && mainMenu)
+		{
+			smartPointerType<json::JSONBuilder::objectType> menuStructure(new json::JSONBuilder::objectType());
+
+			menuStructure->data.push_back({ "mainMenuName"s, toUTF8JSON(utility::to_string(mainMenu->getName(), codepage), codepage) });
+
+			for (const auto& [menuHandle, menu] : popupMenus)
+			{
+
+			}
+
+			structure->data.push_back({ "menuStructure"s, move(menuStructure) });
+		}
+
+		builder.push_back(make_pair(toUTF8JSON(utility::to_string(windowName, codepage), codepage), move(structure)));
+
+		return builder;
 	}
 
 	BaseComponent::~BaseComponent()

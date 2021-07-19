@@ -30,9 +30,6 @@ namespace gui_framework
 		static void runFunctionAsync(std::function<void()>&& callable, const std::function<void()>& callback = nullptr) noexcept;
 
 	protected:
-		virtual json::JSONBuilder getStructure() const override;
-
-	protected:
 		BaseComponent* parent;
 		std::unordered_map<HMENU, Menu> popupMenus;
 		std::unique_ptr<Menu> mainMenu;
@@ -144,6 +141,8 @@ namespace gui_framework
 		virtual COLORREF getBackgroundColor() const final;
 
 		virtual COLORREF getTextColor() const final;
+
+		virtual json::JSONBuilder getStructure() const override;
 		
 		virtual ~BaseComponent();
 	};
