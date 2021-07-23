@@ -43,6 +43,4 @@ smartPointerType<T> gui_framework::utility::make_smart_pointer(Args&&... args)
 	{
 		return std::make_shared<T>(std::forward<Args>(args...));
 	}
-
-	static_assert(false, "Wrong smartPointerType");
 }
