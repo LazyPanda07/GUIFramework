@@ -41,35 +41,37 @@ namespace gui_framework
 
 	json::JSONBuilder BaseComposite::getStructure() const
 	{
-		json::JSONBuilder builder = BaseComponent::getStructure();
-		uint32_t codepage = ISerializable::getCodepage();
-		vector<json::JSONBuilder> childrenStructure;
+		//json::JSONBuilder builder = BaseComponent::getStructure();
+		//uint32_t codepage = ISerializable::getCodepage();
+		//vector<json::JSONBuilder> childrenStructure;
+		//
+		//childrenStructure.reserve(children.size());
+		//
+		//for_each(children.begin(), children.end(), [&childrenStructure](const unique_ptr<BaseComponent>& child) { childrenStructure.push_back(child->getStructure()); });
+		//
+		//if (parent)
+		//{
+		//	auto& parentStructure = get<smartPointerType<json::JSONBuilder::objectType>>(builder[utility::to_string(windowName, codepage)]);
+		//
+		//	vector<smartPointerType<json::JSONBuilder::objectType>> data;
+		//
+		//	for (size_t i = 0; i < children.size(); i++)
+		//	{
+		//		auto& childStructure = get<smartPointerType<json::JSONBuilder::objectType>>(childrenStructure[i][utility::to_string(children[i]->getWindowName(), children[i]->getCodepage())]);
+		//
+		//		data.emplace_back(move(childrenStructure));
+		//	}
+		//
+		//	
+		//}
+		//else
+		//{
+		//
+		//}
+		
+		// return builder;
 
-		childrenStructure.reserve(children.size());
-
-		for_each(children.begin(), children.end(), [&childrenStructure](const unique_ptr<BaseComponent>& child) { childrenStructure.push_back(child->getStructure()); });
-
-		if (parent)
-		{
-			auto& parentStructure = get<smartPointerType<json::JSONBuilder::objectType>>(builder[utility::to_string(windowName, codepage)]);
-
-			vector<smartPointerType<json::JSONBuilder::objectType>> data;
-
-			for (size_t i = 0; i < children.size(); i++)
-			{
-				auto& childStructure = get<smartPointerType<json::JSONBuilder::objectType>>(childrenStructure[i][utility::to_string(children[i]->getWindowName(), children[i]->getCodepage())]);
-
-				data.emplace_back(move(childrenStructure));
-			}
-
-			// parentStructure->data.push_back(make_pair("qwe"s, move(data)));
-		}
-		else
-		{
-
-		}
-
-		return builder;
+		return json::JSONBuilder(getCodepage());
 	}
 
 	BaseComposite::BaseComposite(const wstring& className, const wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent, const string& windowFunctionName) :
