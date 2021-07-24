@@ -1,5 +1,6 @@
 #pragma once
 
+#include "pch.h"
 #include "BaseComponents/BaseComponent.h"
 #include "Interfaces/Iterators/IIterable.h"
 #include "BaseCompositeIterators/forward_iterator.h"
@@ -17,6 +18,9 @@ namespace gui_framework
 
 	private:
 		virtual LRESULT preWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
+
+	protected:
+		virtual json::JSONBuilder getStructure() const override;
 
 	public:
 		BaseComposite(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent = nullptr, const std::string& windowFunctionName = "");

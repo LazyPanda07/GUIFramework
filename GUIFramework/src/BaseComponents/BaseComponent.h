@@ -2,12 +2,14 @@
 
 #include "pch.h"
 #include "Menu/Menu.h"
+#include "Utility/Holders/LoadableHolders/IconsHolder.h"
 #include "Interfaces/Styles/IStyles.h"
+#include "Interfaces/Utility/ISerializable.h"
 
 namespace gui_framework
 {
 	/// @brief Base class for all windows, controls, etc.
-	class GUI_FRAMEWORK_API BaseComponent
+	class GUI_FRAMEWORK_API BaseComponent : public interfaces::ISerializable
 	{
 	public:
 		enum class exitMode
@@ -42,6 +44,8 @@ namespace gui_framework
 		exitMode mode;
 		HICON largeIcon;
 		HICON smallIcon;
+		std::string pathToSmallIcon;
+		std::string pathToLargeIcon;
 		uint32_t id;
 		COLORREF backgroundColor;
 		COLORREF textColor;
@@ -130,11 +134,15 @@ namespace gui_framework
 
 		virtual std::vector<const Menu*> getPopupMenus() const final;
 
+		/// @brief 
+		/// @return Components returns id, composites returns 0 
 		virtual uint32_t getId() const final;
 
 		virtual COLORREF getBackgroundColor() const final;
 
 		virtual COLORREF getTextColor() const final;
+
+		virtual json::JSONBuilder getStructure() const override;
 		
 		virtual ~BaseComponent();
 	};

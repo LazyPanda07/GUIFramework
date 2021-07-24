@@ -1,7 +1,10 @@
 #pragma once
 
+#include "pch.h"
+
 #include <string>
 #include <cstdint>
+#include <memory>
 
 #include <Richedit.h>
 
@@ -81,16 +84,25 @@ namespace gui_framework
 		};
 	}
 
-	inline constexpr std::string_view guiFrameworkVersion = "0.6-beta";
+	inline constexpr std::string_view guiFrameworkVersion = "0.7-beta";
 }
 
 #ifdef GUI_FRAMEWORK_DLL
 #define GUI_FRAMEWORK_API __declspec(dllexport)
 #define GUI_FRAMEWORK_API_FUNCTION extern "C" __declspec(dllexport)
 
+/// @brief Compatible smart pointer type
+template<typename T>
+using smartPointerType = std::shared_ptr<T>;
+
 #pragma warning(disable: 4251)
 #pragma warning(disable: 4275)
 #else
 #define GUI_FRAMEWORK_API
 #define GUI_FRAMEWORK_API_FUNCTION
+
+/// @brief Compatible smart pointer type
+template<typename T>
+using smartPointerType = std::unique_ptr<T>;
+
 #endif // GUI_FRAMEWORK_DLL

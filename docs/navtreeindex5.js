@@ -1,5 +1,12 @@
 var NAVTREEINDEX5 =
 {
+"classgui__framework_1_1iterators_1_1forward__iterator.html#ac6dddb80ebab4e72af30340e83ce1fe0":[1,0,0,2,1,2],
+"classgui__framework_1_1iterators_1_1forward__iterator.html#aecf467b91974c685b75396df352f9e42":[1,0,0,2,1,4],
+"classgui__framework_1_1iterators_1_1forward__iterator.html#af21bf131c84bbf98fb47232d80a899f1":[1,0,0,2,1,3],
+"classgui__framework_1_1styles_1_1_button_styles.html":[1,0,0,3,0],
+"classgui__framework_1_1styles_1_1_button_styles.html#a0eee2ad76e67f477542934309504b1ea":[1,0,0,3,0,0],
+"classgui__framework_1_1styles_1_1_button_styles.html#a2e3763e8432b607756ba41d2552ab117":[1,0,0,3,0,2],
+"classgui__framework_1_1styles_1_1_button_styles.html#ac1a1269b0c2a88ddda6c0274d599e593":[1,0,0,3,0,1],
 "classgui__framework_1_1styles_1_1_check_box_styles.html":[1,0,0,3,1],
 "classgui__framework_1_1styles_1_1_check_box_styles.html#a161c16e8f876868a93b5061c5706c691":[1,0,0,3,1,1],
 "classgui__framework_1_1styles_1_1_check_box_styles.html#abbaaf1959b320e45996e0bfbc6ca9cac":[1,0,0,3,1,0],
@@ -242,12 +249,5 @@ var NAVTREEINDEX5 =
 "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_vertical_trackbar_control_01_4.html#a177eeef317854220be8953b350344301":[1,0,0,4,49,2],
 "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_vertical_trackbar_control_01_4.html#aae95fd3853d31f3c1f67a4f0143dd205":[1,0,0,4,49,0],
 "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_vertical_trackbar_control_01_4.html#ac0665a1e9348720286056f2522fe938c":[1,0,0,4,49,5],
-"classgui__framework_1_1utility_1_1_additional_creation_data_3_01_vertical_trackbar_control_01_4.html#acaf8f2dcfbd9d2aafc87f3b6fb3cfc23":[1,0,0,4,49,4],
-"classgui__framework_1_1utility_1_1_additional_creation_data_3_01_vertical_trackbar_control_01_4.html#ae96cc4f4dc730ce5e89a87547996a8e8":[1,0,0,4,49,3],
-"classgui__framework_1_1utility_1_1_additional_creation_data_3_01_vertical_trackbar_control_01_4.html#af41127dae102715090abe479edebb363":[1,0,0,4,49,6],
-"classgui__framework_1_1utility_1_1_base_component_creator.html":[1,0,0,4,0],
-"classgui__framework_1_1utility_1_1_base_component_creator.html#a6294c4ef1fd82727502bfe11b206d3bd":[1,0,0,4,0,1],
-"classgui__framework_1_1utility_1_1_base_component_creator.html#ac39e8a6c28709b4cea0498eeb41f92c7":[1,0,0,4,0,0],
-"classgui__framework_1_1utility_1_1_base_component_creator.html#aeaa7ee0d2ab4fce02d1f499992209281":[1,0,0,4,0,2],
-"classgui__framework_1_1utility_1_1_base_loadable_holder.html":[1,0,0,4,51]
+"classgui__framework_1_1utility_1_1_additional_creation_data_3_01_vertical_trackbar_control_01_4.html#acaf8f2dcfbd9d2aafc87f3b6fb3cfc23":[1,0,0,4,49,4]
 };

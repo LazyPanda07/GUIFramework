@@ -61,12 +61,12 @@ var NAVTREEINDEX =
 [
 "_additional_creation_data_8h.html",
 "_edit_control_8h_source.html",
-"_multiple_select_list_box_styles_8cpp_source.html",
-"classgui__framework_1_1_base_component.html#ad2e1e9a73ab94b4fb0da0addc3ffb66d",
-"classgui__framework_1_1_dialog_box_1_1_dialog_box_builder.html#af25aa0eb06a30488a16a60b6b9084536",
-"classgui__framework_1_1styles_1_1_check_box_styles.html",
-"classgui__framework_1_1utility_1_1_base_loadable_holder.html#a0817753b742ba2374ef4a33b309f6c90",
-"namespacegui__framework_1_1libraries.html#aa0a8f6ff8009d943b34253c4a50409c2"
+"_multiple_select_list_box_creator_8cpp_source.html",
+"classgui__framework_1_1_base_component.html#ab927f5791c7605446203f7f7f6e0bb83",
+"classgui__framework_1_1_dialog_box_1_1_dialog_box_builder.html#a4ba7218d5d4b4103d5c472e2c227c244",
+"classgui__framework_1_1iterators_1_1forward__iterator.html#ac6dddb80ebab4e72af30340e83ce1fe0",
+"classgui__framework_1_1utility_1_1_additional_creation_data_3_01_vertical_trackbar_control_01_4.html#ae96cc4f4dc730ce5e89a87547996a8e8",
+"namespacegui__framework_1_1exceptions.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

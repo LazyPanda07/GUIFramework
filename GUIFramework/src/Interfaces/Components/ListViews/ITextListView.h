@@ -1,5 +1,6 @@
 #pragma once
 
+#include "pch.h"
 #include "IBaseListViewOperations.h"
 
 namespace gui_framework

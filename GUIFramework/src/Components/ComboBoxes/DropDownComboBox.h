@@ -1,5 +1,6 @@
 #pragma once
 
+#include "pch.h"
 #include "BaseComponents/StandardComponents/BaseComboBox.h"
 
 namespace gui_framework

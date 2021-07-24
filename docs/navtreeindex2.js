@@ -1,5 +1,9 @@
 var NAVTREEINDEX2 =
 {
+"_multiple_select_list_box_creator_8cpp_source.html":[2,0,0,0,0,0,21],
+"_multiple_select_list_box_creator_8h.html":[2,0,0,0,0,0,22],
+"_multiple_select_list_box_creator_8h_source.html":[2,0,0,0,0,0,22],
+"_multiple_select_list_box_styles_8cpp.html":[2,0,0,0,8,0,2,4],
 "_multiple_select_list_box_styles_8cpp_source.html":[2,0,0,0,8,0,2,4],
 "_multiple_select_list_box_styles_8h.html":[2,0,0,0,8,0,2,5],
 "_multiple_select_list_box_styles_8h_source.html":[2,0,0,0,8,0,2,5],
@@ -149,13 +153,13 @@ var NAVTREEINDEX2 =
 "_vertical_trackbar_control_styles_8cpp_source.html":[2,0,0,0,8,0,4,4],
 "_vertical_trackbar_control_styles_8h.html":[2,0,0,0,8,0,4,5],
 "_vertical_trackbar_control_styles_8h_source.html":[2,0,0,0,8,0,4,5],
-"_window_holder_8cpp.html":[2,0,0,0,15],
-"_window_holder_8cpp_source.html":[2,0,0,0,15],
-"_window_holder_8h.html":[2,0,0,0,16],
-"_window_holder_8h_source.html":[2,0,0,0,16],
-"_window_messages_8h.html":[2,0,0,0,17],
-"_window_messages_8h.html#a9d6c2d2d357b573767b5837f204407ce":[2,0,0,0,17,0],
-"_window_messages_8h_source.html":[2,0,0,0,17],
+"_window_holder_8cpp.html":[2,0,0,0,9,0,1],
+"_window_holder_8cpp_source.html":[2,0,0,0,9,0,1],
+"_window_holder_8h.html":[2,0,0,0,9,0,2],
+"_window_holder_8h_source.html":[2,0,0,0,9,0,2],
+"_window_messages_8h.html":[2,0,0,0,15],
+"_window_messages_8h.html#a9d6c2d2d357b573767b5837f204407ce":[2,0,0,0,15,0],
+"_window_messages_8h_source.html":[2,0,0,0,15],
 "annotated.html":[1,0],
 "classes.html":[1,1],
 "classgui__framework_1_1_base_button.html":[1,0,0,6],
@@ -245,9 +249,5 @@ var NAVTREEINDEX2 =
 "classgui__framework_1_1_base_component.html#aa6bedc9892f3eb8ae57193275bab2242":[1,0,0,5,54],
 "classgui__framework_1_1_base_component.html#aa91c935601d05ca54c2002b4832d260f":[1,0,0,5,6],
 "classgui__framework_1_1_base_component.html#aacdd618a74527d288a8035088fe87b81":[1,0,0,5,22],
-"classgui__framework_1_1_base_component.html#ab12780fecd5f22ec01d21a82d9ac87b7":[1,0,0,5,17],
-"classgui__framework_1_1_base_component.html#ab927f5791c7605446203f7f7f6e0bb83":[1,0,0,5,55],
-"classgui__framework_1_1_base_component.html#abb0f1b23affeb994eff519bd2d5cd845":[1,0,0,5,12],
-"classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a":[1,0,0,5,45],
-"classgui__framework_1_1_base_component.html#ac926a20fcbe58d1b4712d2592284ddc2":[1,0,0,5,42]
+"classgui__framework_1_1_base_component.html#ab12780fecd5f22ec01d21a82d9ac87b7":[1,0,0,5,17]
 };

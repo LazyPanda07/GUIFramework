@@ -1,5 +1,6 @@
 #pragma once
 
+#include "pch.h"
 #include "Interfaces/Styles/IStyles.h"
 
 namespace gui_framework

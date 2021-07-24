@@ -1,5 +1,6 @@
 #pragma once
 
+#include "pch.h"
 #include "BaseComponents/StandardComponents/BaseTrackbarControl.h"
 
 namespace gui_framework

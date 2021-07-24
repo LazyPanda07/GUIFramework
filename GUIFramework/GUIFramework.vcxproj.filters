@@ -30,7 +30,7 @@
     <ClInclude Include="src\GUIFrameworkConstants.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Exceptions\CantFindSeparateWindowFunctionException.h">
+    <ClInclude Include="src\Exceptions\CantFindCompositeFunctionException.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\BaseComponents\BaseComponent.h">
@@ -240,7 +240,7 @@
     <ClInclude Include="src\BaseComponents\Creators\TabControlCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\WindowHolder.h">
+    <ClInclude Include="src\Utility\Holders\WindowHolder.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Exceptions\NotImplemented.h">
@@ -249,7 +249,7 @@
     <ClInclude Include="src\BaseComponents\StandardComponents\ListViews\BaseListView.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Utility\Holders\ImagesHolder.h">
+    <ClInclude Include="src\Utility\Holders\LoadableHolders\ImagesHolder.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\BaseComponents\StandardComponents\ListViews\BaseTextListView.h">
@@ -285,13 +285,13 @@
     <ClInclude Include="src\BaseComponents\StandardComponents\ListViews\BaseListTextIconListView.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Utility\Holders\BaseLoadableHolder.h">
+    <ClInclude Include="src\Utility\Holders\LoadableHolders\BaseLoadableHolder.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Utility\Holders\IconsHolder.h">
+    <ClInclude Include="src\Utility\Holders\LoadableHolders\IconsHolder.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Utility\Holders\CursorsHolder.h">
+    <ClInclude Include="src\Utility\Holders\LoadableHolders\CursorsHolder.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Components\ListViews\IconListView.h">
@@ -483,6 +483,9 @@
     <ClInclude Include="src\Styles\Composites\DialogBoxStyles.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="src\Interfaces\Utility\ISerializable.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\pch.cpp">
@@ -494,7 +497,7 @@
     <ClCompile Include="src\Exceptions\BaseGUIFrameworkException.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Exceptions\CantFindSeparateWindowFunctionException.cpp">
+    <ClCompile Include="src\Exceptions\CantFindCompositeFunctionException.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\BaseComponents\BaseComponent.cpp">
@@ -686,7 +689,7 @@
     <ClCompile Include="src\BaseComponents\Creators\TabControlCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\WindowHolder.cpp">
+    <ClCompile Include="src\Utility\Holders\WindowHolder.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Exceptions\NotImplemented.cpp">
@@ -695,7 +698,7 @@
     <ClCompile Include="src\BaseComponents\StandardComponents\ListViews\BaseListView.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Utility\Holders\ImagesHolder.cpp">
+    <ClCompile Include="src\Utility\Holders\LoadableHolders\ImagesHolder.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\BaseComponents\StandardComponents\ListViews\BaseTextListView.cpp">
@@ -731,13 +734,13 @@
     <ClCompile Include="src\BaseComponents\StandardComponents\ListViews\BaseListTextIconListView.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Utility\Holders\BaseLoadableHolder.cpp">
+    <ClCompile Include="src\Utility\Holders\LoadableHolders\BaseLoadableHolder.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Utility\Holders\IconsHolder.cpp">
+    <ClCompile Include="src\Utility\Holders\LoadableHolders\IconsHolder.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Utility\Holders\CursorsHolder.cpp">
+    <ClCompile Include="src\Utility\Holders\LoadableHolders\CursorsHolder.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Components\ListViews\IconListView.cpp">
@@ -927,6 +930,9 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Styles\Composites\DialogBoxStyles.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Interfaces\Utility\ISerializable.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

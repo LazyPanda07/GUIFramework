@@ -1,5 +1,6 @@
 #pragma once
 
+#include "pch.h"
 #include "BaseComposites/BaseComposite.h"
 
 namespace gui_framework
@@ -9,9 +10,13 @@ namespace gui_framework
 	{
 	private:
 		std::unique_ptr<BaseComposite> compositeWindow;
+		bool unregisterClass;
 
 	public:
-		WindowHolder(std::unique_ptr<BaseComposite>&& compositeWindow) noexcept;
+		/// @brief 
+		/// @param compositeWindow 
+		/// @param clearClass Unregister class after window destroy
+		WindowHolder(std::unique_ptr<BaseComposite>&& compositeWindow, bool unregisterClass = false) noexcept;
 
 		template<std::derived_from<BaseComposite> T>
 		T* getDerived();
@@ -23,11 +28,12 @@ namespace gui_framework
 
 		const BaseComposite* get() const;
 
-		/// @brief 
-		/// @exception GetLastErrorException
-		void runMainLoop();
+		/// @brief Process messages. Must be called after initialization
+		/// @param registeredHotkeyIds You may pass all registered hotkeys for unregister them after window destroy
+		/// @exception GetLastErrorException 
+		void runMainLoop(const std::vector<uint32_t>& registeredHotkeyIds = {});
 
-		~WindowHolder() = default;
+		~WindowHolder();
 	};
 
 	template<std::derived_from<BaseComposite> T>

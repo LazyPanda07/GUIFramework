@@ -4,9 +4,9 @@ var dir_ff7204cab76ae1163e703071c8bed3c9 =
     [ "BaseGUIFrameworkException.h", "_base_g_u_i_framework_exception_8h.html", [
       [ "BaseGUIFrameworkException", "classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception.html", "classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception" ]
     ] ],
-    [ "CantFindSeparateWindowFunctionException.cpp", "_cant_find_separate_window_function_exception_8cpp.html", null ],
-    [ "CantFindSeparateWindowFunctionException.h", "_cant_find_separate_window_function_exception_8h.html", [
-      [ "CantFindSeparateWindowFunctionException", "classgui__framework_1_1exceptions_1_1_cant_find_separate_window_function_exception.html", "classgui__framework_1_1exceptions_1_1_cant_find_separate_window_function_exception" ]
+    [ "CantFindCompositeFunctionException.cpp", "_cant_find_composite_function_exception_8cpp.html", null ],
+    [ "CantFindCompositeFunctionException.h", "_cant_find_composite_function_exception_8h.html", [
+      [ "CantFindCompositeFunctionException", "classgui__framework_1_1exceptions_1_1_cant_find_composite_function_exception.html", "classgui__framework_1_1exceptions_1_1_cant_find_composite_function_exception" ]
     ] ],
     [ "ExceptionConstants.h", "_exception_constants_8h.html", "_exception_constants_8h" ],
     [ "FileDoesNotExist.cpp", "_file_does_not_exist_8cpp.html", null ],

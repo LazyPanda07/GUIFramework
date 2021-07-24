@@ -1,5 +1,6 @@
 #pragma once
 
+#include "pch.h"
 #include "BaseComponents/StandardComponents/BaseProgressBar.h"
 #include "Interfaces/Components/IResizableComponent.h"
 
