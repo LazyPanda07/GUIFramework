@@ -43,6 +43,7 @@ namespace gui_framework
 	{
 		using json::utility::jsonObject;
 		using json::utility::objectSmartPointer;
+		using json::utility::appendArray;
 
 		json::JSONBuilder builder = BaseComponent::getStructure();
 		uint32_t codepage = ISerializable::getCodepage();
@@ -64,6 +65,10 @@ namespace gui_framework
 
 				data.push_back(move(childStructure));
 			}
+
+			
+
+			
 		}
 		else
 		{
