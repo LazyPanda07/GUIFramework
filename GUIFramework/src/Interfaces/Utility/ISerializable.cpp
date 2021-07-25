@@ -23,9 +23,9 @@ namespace gui_framework
 			return codepage;
 		}
 
-		ostream& ISerializable::operator << (ostream& outputStream) const
+		ostream& operator << (ostream& outputStream, const ISerializable& serializable) 
 		{
-			return outputStream << this->getStructure();
+			return outputStream << serializable.getStructure();
 		}
 	}
 }

@@ -19,6 +19,9 @@ namespace gui_framework
 	private:
 		virtual LRESULT preWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
 
+	private:
+		std::vector<json::utility::objectSmartPointer<json::utility::jsonObject>> getChildrenStructure() const;
+
 	protected:
 		virtual json::JSONBuilder getStructure() const override;
 

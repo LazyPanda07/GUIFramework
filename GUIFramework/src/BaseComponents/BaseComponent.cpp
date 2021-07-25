@@ -429,7 +429,6 @@ namespace gui_framework
 
 	json::JSONBuilder BaseComponent::getStructure() const
 	{
-		using json::utility::toUTF8JSON;
 		using json::utility::objectSmartPointer;
 		using json::utility::jsonObject;
 		using json::utility::appendArray;
@@ -449,7 +448,7 @@ namespace gui_framework
 		appendArray(static_cast<int64_t>(GetGValue(textColor)), textColorJSON);
 		appendArray(static_cast<int64_t>(GetBValue(textColor)), textColorJSON);
 
-		structure->data.push_back({ "className"s, toUTF8JSON(utility::to_string(className, codepage), codepage) });
+		structure->data.push_back({ "className"s, utility::to_string(className, codepage) });
 
 		structure->data.push_back({ "desiredX"s, desiredX });
 		structure->data.push_back({ "desiredY"s, desiredY });
@@ -462,12 +461,12 @@ namespace gui_framework
 
 		if (pathToSmallIcon.size())
 		{
-			structure->data.push_back({ "pathToSmallIcon"s, toUTF8JSON(pathToSmallIcon, codepage) });
+			structure->data.push_back({ "pathToSmallIcon"s, pathToSmallIcon });
 		}
 
 		if (pathToLargeIcon.size())
 		{
-			structure->data.push_back({ "pathToLargeIcon"s, toUTF8JSON(pathToLargeIcon, codepage) });
+			structure->data.push_back({ "pathToLargeIcon"s, pathToLargeIcon });
 		}
 
 		structure->data.push_back({ "exitMode"s, static_cast<int64_t>(mode) });
@@ -477,7 +476,7 @@ namespace gui_framework
 		{
 			smartPointerType<json::JSONBuilder::objectType> menuStructure(new json::JSONBuilder::objectType());
 
-			menuStructure->data.push_back({ "mainMenuName"s, toUTF8JSON(utility::to_string(mainMenu->getName(), codepage), codepage) });
+			menuStructure->data.push_back({ "mainMenuName"s, utility::to_string(mainMenu->getName(), codepage) });
 
 			for (const auto& [menuHandle, menu] : popupMenus)
 			{
@@ -487,7 +486,7 @@ namespace gui_framework
 			structure->data.push_back({ "menuStructure"s, move(menuStructure) });
 		}
 
-		builder.push_back(make_pair(toUTF8JSON(utility::to_string(windowName, codepage), codepage), move(structure)));
+		builder.push_back(make_pair(utility::to_string(windowName, codepage), move(structure)));
 
 		return builder;
 	}

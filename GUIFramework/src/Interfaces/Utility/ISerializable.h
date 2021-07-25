@@ -20,7 +20,7 @@ namespace gui_framework
 
 			virtual uint32_t getCodepage() const final;
 
-			virtual std::ostream& operator << (std::ostream& outputStream) const final;
+			friend std::ostream& operator << (std::ostream& outputStream, const ISerializable& serializable);
 
 			virtual ~ISerializable() = default;
 		};
