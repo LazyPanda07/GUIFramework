@@ -39,14 +39,14 @@ namespace gui_framework
 		return -1;
 	}
 
-	vector<pair<string, json::utility::objectSmartPointer<json::utility::jsonObject>>> BaseComposite::getChildrenStructure() const
+	vector<pair<string, json::utility::objectSmartPointer<json::utility::jsonObject>>> BaseComposite::getChildrenStructure(json::JSONBuilder& parentStructure) const
 	{
 		vector<json::JSONBuilder> childrenStructure;
 		vector<pair<string, json::utility::objectSmartPointer<json::utility::jsonObject>>> data;
 
 		childrenStructure.reserve(children.size());
 
-		for_each(children.begin(), children.end(), [&childrenStructure](const unique_ptr<BaseComponent>& child) { childrenStructure.push_back(child->getStructure()); });
+		for_each(children.begin(), children.end(), [&childrenStructure, &parentStructure](const unique_ptr<BaseComponent>& child) { childrenStructure.push_back(child->getStructure(&parentStructure)); });
 
 		for (size_t i = 0; i < children.size(); i++)
 		{
@@ -60,15 +60,14 @@ namespace gui_framework
 		return data;
 	}
 
-	json::JSONBuilder BaseComposite::getStructure() const
+	json::JSONBuilder BaseComposite::getStructure(json::JSONBuilder* parentStructure) const
 	{
 		using json::utility::jsonObject;
 		using json::utility::objectSmartPointer;
-		using json::utility::appendArray;
 
 		json::JSONBuilder builder = BaseComponent::getStructure();
 		uint32_t codepage = ISerializable::getCodepage();
-		vector<pair<string, objectSmartPointer<jsonObject>>> data = this->getChildrenStructure();
+		vector<pair<string, objectSmartPointer<jsonObject>>> data = this->getChildrenStructure(builder);
 
 		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, codepage)]);
 
@@ -78,23 +77,29 @@ namespace gui_framework
 
 			for (auto& i : data)
 			{
+				objectSmartPointer<jsonObject> topLevel = json::utility::make_object<jsonObject>();
 				objectSmartPointer<jsonObject> tem = json::utility::make_object<jsonObject>();
 
 				tem->data.push_back(move(i));
 
-				childrenStructures.push_back(move(tem));
+				topLevel->data.push_back({ ""s, move(tem) });
+
+				childrenStructures.push_back(move(topLevel));
 			}
 		}
 
-		if (parent)
+		if (parent && parentStructure)
 		{
-			objectSmartPointer<jsonObject>& parentStructure = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(parent->getWindowName(), codepage)]);
-			vector<objectSmartPointer<jsonObject>>& childrenStructures = get<vector<objectSmartPointer<jsonObject>>>(parentStructure->data.back().second);
+			objectSmartPointer<jsonObject>& parentObject = get<objectSmartPointer<jsonObject>>((*parentStructure)[utility::to_string(parent->getWindowName(), codepage)]);
+			vector<objectSmartPointer<jsonObject>>& childrenStructures = get<vector<objectSmartPointer<jsonObject>>>(parentObject->data.back().second);
+			objectSmartPointer<jsonObject> topLevel = json::utility::make_object<jsonObject>();
 			objectSmartPointer<jsonObject> tem = json::utility::make_object<jsonObject>();
 
 			tem->data.push_back({ utility::to_string(windowName, codepage), move(current) });
 
-			childrenStructures.push_back(move(tem));
+			topLevel->data.push_back({ ""s, move(tem) });
+
+			childrenStructures.push_back(move(topLevel));
 		}
 
 		return builder;
