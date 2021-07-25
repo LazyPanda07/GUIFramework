@@ -78,11 +78,14 @@ namespace gui_framework
 
 			for (auto& i : data)
 			{
+				objectSmartPointer<jsonObject> topLevel = json::utility::make_object<jsonObject>();
 				objectSmartPointer<jsonObject> tem = json::utility::make_object<jsonObject>();
 
 				tem->data.push_back(move(i));
 
-				childrenStructures.push_back(move(tem));
+				topLevel->data.push_back({ ""s, move(tem) });
+
+				childrenStructures.push_back(move(topLevel));
 			}
 		}
 
@@ -90,11 +93,14 @@ namespace gui_framework
 		{
 			objectSmartPointer<jsonObject>& parentStructure = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(parent->getWindowName(), codepage)]);
 			vector<objectSmartPointer<jsonObject>>& childrenStructures = get<vector<objectSmartPointer<jsonObject>>>(parentStructure->data.back().second);
+			objectSmartPointer<jsonObject> topLevel = json::utility::make_object<jsonObject>();
 			objectSmartPointer<jsonObject> tem = json::utility::make_object<jsonObject>();
 
 			tem->data.push_back({ utility::to_string(windowName, codepage), move(current) });
 
-			childrenStructures.push_back(move(tem));
+			topLevel->data.push_back({ ""s, move(tem) });
+
+			childrenStructures.push_back(move(topLevel));
 		}
 
 		return builder;
