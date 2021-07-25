@@ -1,7 +1,7 @@
 #include <iostream>
 
 #include "GUIFramework.h"
-#include "WindowHolder.h"
+#include "Utility/Holders/WindowHolder.h"
 #include "Composites/SeparateWindow.h"
 
 #pragma comment (lib, "GUIFramework.lib")
