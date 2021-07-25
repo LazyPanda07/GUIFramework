@@ -142,7 +142,7 @@ namespace gui_framework
 
 		virtual COLORREF getTextColor() const final;
 
-		virtual json::JSONBuilder getStructure() const override;
+		virtual json::JSONBuilder getStructure(json::JSONBuilder* parentStructure = nullptr) const override;
 		
 		virtual ~BaseComponent();
 	};

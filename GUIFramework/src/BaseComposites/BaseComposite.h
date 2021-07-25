@@ -20,10 +20,10 @@ namespace gui_framework
 		virtual LRESULT preWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
 
 	private:
-		std::vector<std::pair<std::string, json::utility::objectSmartPointer<json::utility::jsonObject>>> getChildrenStructure() const;
+		std::vector<std::pair<std::string, json::utility::objectSmartPointer<json::utility::jsonObject>>> getChildrenStructure(json::JSONBuilder& parentStructure) const;
 
 	protected:
-		virtual json::JSONBuilder getStructure() const override;
+		virtual json::JSONBuilder getStructure(json::JSONBuilder* parentStructure = nullptr) const override;
 
 	public:
 		BaseComposite(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent = nullptr, const std::string& windowFunctionName = "");
