@@ -427,7 +427,7 @@ namespace gui_framework
 		return textColor;
 	}
 
-	json::JSONBuilder BaseComponent::getStructure(json::JSONBuilder* parentStructure) const
+	json::JSONBuilder BaseComponent::getStructure() const
 	{
 		using json::utility::objectSmartPointer;
 		using json::utility::jsonObject;
