@@ -9,7 +9,7 @@ namespace gui_framework
 {
 	namespace iterators
 	{
-		composite_forward_iterator::composite_forward_iterator(BaseComponent* component) :
+		composite_forward_iterator::composite_forward_iterator(BaseComponent* component) noexcept :
 			currentComponent(component)
 		{
 

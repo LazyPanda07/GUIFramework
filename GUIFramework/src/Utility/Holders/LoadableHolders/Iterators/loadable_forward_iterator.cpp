@@ -7,44 +7,57 @@ namespace gui_framework
 {
 	namespace iterators
 	{
+		loadable_forward_iterator::loadable_forward_iterator(vector<filesystem::path>&& data, size_t index) noexcept :
+			data(move(data)),
+			currentIndex(index)
+		{
+
+		}
+
 		filesystem::path* loadable_forward_iterator::operator * () noexcept
 		{
-			return new filesystem::path();
+			return &data[currentIndex];
 		}
 
 		const filesystem::path* loadable_forward_iterator::operator * () const noexcept
 		{
-			return new filesystem::path();
+			return &data[currentIndex];
 		}
 
 		filesystem::path* loadable_forward_iterator::operator -> () noexcept
 		{
-			return new filesystem::path();
+			return &data[currentIndex];
 		}
 
 		const filesystem::path* loadable_forward_iterator::operator -> () const noexcept
 		{
-			return new filesystem::path();
+			return &data[currentIndex];
 		}
 
 		loadable_forward_iterator& loadable_forward_iterator::operator ++ () noexcept
 		{
+			currentIndex++;
+
 			return *this;
 		}
 
 		loadable_forward_iterator loadable_forward_iterator::operator ++ (int) noexcept
 		{
-			return *this;
+			loadable_forward_iterator tem(*this);
+
+			currentIndex++;
+
+			return tem;
 		}
 
-		bool loadable_forward_iterator::operator == (const interfaces::IBaseConstForwardIterator<filesystem::path, loadable_forward_iterator>& loadable_const_forward_iterator) const noexcept
+		bool loadable_forward_iterator::operator == (const interfaces::IBaseConstForwardIterator<filesystem::path, loadable_forward_iterator>& loadable_forward_iterator) const noexcept
 		{
-			return false;
+			return currentIndex == dynamic_cast<const iterators::loadable_forward_iterator&>(loadable_forward_iterator).currentIndex;
 		}
 
-		bool loadable_forward_iterator::operator != (const interfaces::IBaseConstForwardIterator<filesystem::path, loadable_forward_iterator>& loadable_const_forward_iterator) const noexcept
+		bool loadable_forward_iterator::operator != (const interfaces::IBaseConstForwardIterator<filesystem::path, loadable_forward_iterator>& loadable_forward_iterator) const noexcept
 		{
-			return false;
+			return currentIndex != dynamic_cast<const iterators::loadable_forward_iterator&>(loadable_forward_iterator).currentIndex;
 		}
 	}
 }

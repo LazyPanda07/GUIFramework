@@ -100,13 +100,14 @@ namespace gui_framework
 			/// @exception std::out_of_range
 			virtual std::filesystem::path operator [] (uint16_t index) const final;
 
-			iterators::loadable_forward_iterator begin() noexcept override;
+			/// @brief Can't be modified
+			virtual iterators::loadable_forward_iterator begin() noexcept final override;
 
-			iterators::loadable_const_forward_iterator cbegin() const noexcept override;
+			virtual iterators::loadable_const_forward_iterator cbegin() const noexcept final override;
+ 
+			virtual iterators::loadable_forward_iterator end() noexcept final override;
 
-			iterators::loadable_forward_iterator end() noexcept override;
-
-			iterators::loadable_const_forward_iterator cend() const noexcept override;
+			virtual iterators::loadable_const_forward_iterator cend() const noexcept final override;
 
 			virtual ~BaseLoadableHolder();
 		};

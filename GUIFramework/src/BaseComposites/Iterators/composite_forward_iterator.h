@@ -16,7 +16,7 @@ namespace gui_framework
 			std::stack<size_t> indices;
 
 		public:
-			composite_forward_iterator(BaseComponent* component);
+			composite_forward_iterator(BaseComponent* component) noexcept;
 
 			BaseComponent* operator * () noexcept override;
 

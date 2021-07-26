@@ -9,8 +9,12 @@ namespace gui_framework
 	{
 		class GUI_FRAMEWORK_API loadable_const_forward_iterator : public interfaces::IBaseConstForwardIterator<std::filesystem::path, loadable_const_forward_iterator>
 		{
+		private:
+			std::vector<std::filesystem::path> data;
+			size_t currentIndex;
+
 		public:
-			loadable_const_forward_iterator() = default;
+			loadable_const_forward_iterator(std::vector<std::filesystem::path>&& data, size_t index) noexcept;
 
 			const std::filesystem::path* operator * () const noexcept override;
 
