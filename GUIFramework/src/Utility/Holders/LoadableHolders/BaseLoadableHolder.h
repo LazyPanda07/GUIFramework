@@ -1,6 +1,7 @@
 #pragma once
 
 #include "pch.h"
+#include "Interfaces/Iterators/IIterable.h"
 
 namespace gui_framework
 {

@@ -272,24 +272,24 @@ namespace gui_framework
 		return true;
 	}
 
-	iterators::forward_iterator BaseComposite::begin() noexcept
+	iterators::composite_forward_iterator BaseComposite::begin() noexcept
 	{
-		return iterators::forward_iterator(this);
+		return iterators::composite_forward_iterator(this);
 	}
 
-	iterators::const_forward_iterator BaseComposite::cbegin() const noexcept
+	iterators::composite_const_forward_iterator BaseComposite::cbegin() const noexcept
 	{
-		return iterators::const_forward_iterator(static_cast<BaseComponent*>(const_cast<BaseComposite*>(this)));
+		return iterators::composite_const_forward_iterator(static_cast<BaseComponent*>(const_cast<BaseComposite*>(this)));
 	}
 
-	iterators::forward_iterator BaseComposite::end() noexcept
+	iterators::composite_forward_iterator BaseComposite::end() noexcept
 	{
-		return iterators::forward_iterator(nullptr);
+		return iterators::composite_forward_iterator(nullptr);
 	}
 
-	iterators::const_forward_iterator BaseComposite::cend() const noexcept
+	iterators::composite_const_forward_iterator BaseComposite::cend() const noexcept
 	{
-		return iterators::const_forward_iterator(nullptr);
+		return iterators::composite_const_forward_iterator(nullptr);
 	}
 
 	void BaseComposite::setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue)

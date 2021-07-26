@@ -132,10 +132,10 @@
     <ClInclude Include="src\Interfaces\Iterators\IBaseConstForwardIterator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComposites\BaseCompositeIterators\forward_iterator.h">
+    <ClInclude Include="src\BaseComposites\BaseCompositeIterators\composite_forward_iterator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComposites\BaseCompositeIterators\const_forward_iterator.h">
+    <ClInclude Include="src\BaseComposites\BaseCompositeIterators\composite_const_forward_iterator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\BaseComposites\BaseCompositeIterators\IteratorsFunctionality.h">
@@ -587,10 +587,10 @@
     <ClCompile Include="src\Components\RichEdit.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComposites\BaseCompositeIterators\forward_iterator.cpp">
+    <ClCompile Include="src\BaseComposites\BaseCompositeIterators\composite_forward_iterator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComposites\BaseCompositeIterators\const_forward_iterator.cpp">
+    <ClCompile Include="src\BaseComposites\BaseCompositeIterators\composite_const_forward_iterator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\BaseComposites\BaseCompositeIterators\IteratorsFunctionality.cpp">

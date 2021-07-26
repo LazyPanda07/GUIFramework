@@ -3,15 +3,15 @@
 #include "pch.h"
 #include "BaseComponents/BaseComponent.h"
 #include "Interfaces/Iterators/IIterable.h"
-#include "BaseCompositeIterators/forward_iterator.h"
-#include "BaseCompositeIterators/const_forward_iterator.h"
+#include "BaseCompositeIterators/composite_forward_iterator.h"
+#include "BaseCompositeIterators/composite_const_forward_iterator.h"
 
 namespace gui_framework
 {
 	/// @brief Base class for all windows that has children windows
 	class GUI_FRAMEWORK_API BaseComposite :
 		public BaseComponent,
-		public interfaces::IIterable<BaseComponent, iterators::forward_iterator, iterators::const_forward_iterator>
+		public interfaces::IIterable<BaseComponent, iterators::composite_forward_iterator, iterators::composite_const_forward_iterator>
 	{
 	protected:
 		std::vector<std::unique_ptr<BaseComponent>> children;
@@ -50,13 +50,13 @@ namespace gui_framework
 
 		virtual bool isComposite() const final override;
 
-		virtual iterators::forward_iterator begin() noexcept override;
+		virtual iterators::composite_forward_iterator begin() noexcept override;
 
-		virtual iterators::const_forward_iterator cbegin() const noexcept override;
+		virtual iterators::composite_const_forward_iterator cbegin() const noexcept override;
 
-		virtual iterators::forward_iterator end() noexcept override;
+		virtual iterators::composite_forward_iterator end() noexcept override;
 
-		virtual iterators::const_forward_iterator cend() const noexcept override;
+		virtual iterators::composite_const_forward_iterator cend() const noexcept override;
 
 		virtual void setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue) final override;
 
