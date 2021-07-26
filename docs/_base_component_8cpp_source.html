@@ -508,7 +508,7 @@ $(document).ready(function(){initNavTree('_base_component_8cpp_source.html','');
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;        <span class="comment">// TODO: serialize menus</span></div>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">false</span> &amp;&amp; <a class="code" href="classgui__framework_1_1_base_component.html#ad2e1e9a73ab94b4fb0da0addc3ffb66d">mainMenu</a>)</div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;        {</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;            <a class="code" href="_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67">smartPointerType&lt;json::JSONBuilder::objectType&gt;</a> menuStructure(<span class="keyword">new</span> json::JSONBuilder::objectType());</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;            objectSmartPointer&lt;jsonObject&gt; menuStructure(<span class="keyword">new</span> json::JSONBuilder::objectType());</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160; </div>
 <div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;            menuStructure-&gt;data.push_back({ <span class="stringliteral">&quot;mainMenuName&quot;</span>s, <a class="code" href="namespacegui__framework_1_1utility.html#abbafc9708435f466d89c4f977dcd460d">utility::to_string</a>(<a class="code" href="classgui__framework_1_1_base_component.html#ad2e1e9a73ab94b4fb0da0addc3ffb66d">mainMenu</a>-&gt;getName(), codepage) });</div>
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160; </div>
@@ -517,7 +517,7 @@ $(document).ready(function(){initNavTree('_base_component_8cpp_source.html','');
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160; </div>
 <div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;            }</div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160; </div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;            structure-&gt;data.push_back({ <span class="stringliteral">&quot;menuStructure&quot;</span>s, move(menuStructure) });</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;            structure-&gt;data.push_back(make_pair(<span class="stringliteral">&quot;menuStructure&quot;</span>s, move(menuStructure)));</div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;        }</div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160; </div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;        <span class="keywordflow">if</span> (textOperations)</div>
@@ -553,7 +553,6 @@ $(document).ready(function(){initNavTree('_base_component_8cpp_source.html','');
 <div class="ttc" id="a_base_composite_8h_html"><div class="ttname"><a href="_base_composite_8h.html">BaseComposite.h</a></div></div>
 <div class="ttc" id="a_cant_find_composite_function_exception_8h_html"><div class="ttname"><a href="_cant_find_composite_function_exception_8h.html">CantFindCompositeFunctionException.h</a></div></div>
 <div class="ttc" id="a_file_does_not_exist_8h_html"><div class="ttname"><a href="_file_does_not_exist_8h.html">FileDoesNotExist.h</a></div></div>
-<div class="ttc" id="a_g_u_i_framework_constants_8h_html_aaeb2028aa1fe1f81b8bc210cbf2d0b67"><div class="ttname"><a href="_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67">smartPointerType</a></div><div class="ttdeci">std::unique_ptr&lt; T &gt; smartPointerType</div><div class="ttdoc">Compatible smart pointer type.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00106">GUIFrameworkConstants.h:106</a></div></div>
 <div class="ttc" id="a_i_resizable_component_8h_html"><div class="ttname"><a href="_i_resizable_component_8h.html">IResizableComponent.h</a></div></div>
 <div class="ttc" id="a_i_text_operations_8h_html"><div class="ttname"><a href="_i_text_operations_8h.html">ITextOperations.h</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1_base_component_html"><div class="ttname"><a href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></div><div class="ttdoc">Base class for all windows, controls, etc.</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00012">BaseComponent.h:13</a></div></div>
