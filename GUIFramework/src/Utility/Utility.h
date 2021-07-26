@@ -35,12 +35,12 @@ namespace gui_framework
 template<typename T, typename... Args>
 smartPointerType<T> gui_framework::utility::make_smart_pointer(Args&&... args)
 {
-	if constexpr (std::is_same_v<std::unique_ptr<T>, smartPointerType>)
+	if constexpr (std::is_same_v<std::unique_ptr<T>, smartPointerType<T>>)
 	{
-		return std::make_unique<T>(std::forward<Args>(args...));
+		return std::make_unique<T>(std::forward<Args>(args)...);
 	}
-	else if constexpr (std::is_same_v<std::shared_ptr<T>, smartPointerType>)
+	else if constexpr (std::is_same_v<std::shared_ptr<T>, smartPointerType<T>>)
 	{
-		return std::make_shared<T>(std::forward<Args>(args...));
+		return std::make_shared<T>(std::forward<Args>(args)...);
 	}
 }

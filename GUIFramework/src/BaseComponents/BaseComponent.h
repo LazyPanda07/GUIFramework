@@ -49,6 +49,7 @@ namespace gui_framework
 		uint32_t id;
 		COLORREF backgroundColor;
 		COLORREF textColor;
+		smartPointerType<interfaces::IStyles> styles;
 
 	protected:
 		virtual LRESULT preWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed);

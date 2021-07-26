@@ -102,6 +102,8 @@ namespace gui_framework
 			nullptr
 		);
 
+		this->styles = utility::make_smart_pointer<interfaces::IStyles>(styles);
+
 		if (!parent)
 		{
 			SendMessageW(handle, custom_window_messages::initTopLevelWindowPointer, reinterpret_cast<WPARAM>(this), NULL);
@@ -492,6 +494,8 @@ namespace gui_framework
 		{
 			structure->data.push_back({ "text"s, utility::to_string(textOperations->getText(), codepage) });
 		}
+
+		structure->data.push_back({ "styles"s, styles->getStyles() });
 
 		builder.push_back(make_pair(utility::to_string(windowName, codepage), move(structure)));
 
