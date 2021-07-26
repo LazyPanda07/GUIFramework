@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.6.1-beta</span>
+   &#160;<span id="projectnumber">0.7-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -101,9 +101,11 @@ Inheritance diagram for gui_framework::interfaces::IBaseConstForwardIterator&lt;
  <div class="center">
   <img src="classgui__framework_1_1interfaces_1_1_i_base_const_forward_iterator.png" usemap="#gui_5Fframework::interfaces::IBaseConstForwardIterator_3C_20T_2C_20IBaseConstIteratorSubclass_20_3E_map" alt=""/>
   <map id="gui_5Fframework::interfaces::IBaseConstForwardIterator_3C_20T_2C_20IBaseConstIteratorSubclass_20_3E_map" name="gui_5Fframework::interfaces::IBaseConstForwardIterator_3C_20T_2C_20IBaseConstIteratorSubclass_20_3E_map">
-<area href="classgui__framework_1_1interfaces_1_1_i_base_forward_iterator.html" alt="gui_framework::interfaces::IBaseForwardIterator&lt; BaseComponent, forward_iterator &gt;" shape="rect" coords="0,56,508,80"/>
-<area href="classgui__framework_1_1interfaces_1_1_i_base_forward_iterator.html" title="Base interface for forward iterators." alt="gui_framework::interfaces::IBaseForwardIterator&lt; T, IBaseConstIteratorSubclass &gt;" shape="rect" coords="518,56,1026,80"/>
-<area href="classgui__framework_1_1iterators_1_1forward__iterator.html" alt="gui_framework::iterators::forward_iterator" shape="rect" coords="0,112,508,136"/>
+<area href="classgui__framework_1_1interfaces_1_1_i_base_forward_iterator.html" alt="gui_framework::interfaces::IBaseForwardIterator&lt; BaseComponent, composite_forward_iterator &gt;" shape="rect" coords="0,56,568,80"/>
+<area href="classgui__framework_1_1interfaces_1_1_i_base_forward_iterator.html" alt="gui_framework::interfaces::IBaseForwardIterator&lt; std::filesystem::path, loadable_forward_iterator &gt;" shape="rect" coords="578,56,1146,80"/>
+<area href="classgui__framework_1_1interfaces_1_1_i_base_forward_iterator.html" title="Base interface for forward iterators." alt="gui_framework::interfaces::IBaseForwardIterator&lt; T, IBaseConstIteratorSubclass &gt;" shape="rect" coords="1156,56,1724,80"/>
+<area href="classgui__framework_1_1iterators_1_1composite__forward__iterator.html" title="IBaseForwardIterator implementation for BaseComponent." alt="gui_framework::iterators::composite_forward_iterator" shape="rect" coords="0,112,568,136"/>
+<area href="classgui__framework_1_1iterators_1_1loadable__forward__iterator.html" title="IBaseForwardIterator implementation for BaseLoadableHolder." alt="gui_framework::iterators::loadable_forward_iterator" shape="rect" coords="578,112,1146,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -119,10 +121,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:adc55be330f09c6923238b09a148c1e4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8573bccf8873a6f3d05c62b903c61139"><td class="memItemLeft" align="right" valign="top">virtual IBaseConstIteratorSubclass&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_base_const_forward_iterator.html#a8573bccf8873a6f3d05c62b903c61139">operator++</a> (int) noexcept=0</td></tr>
 <tr class="separator:a8573bccf8873a6f3d05c62b903c61139"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba5c9e13a2e09c3b7f6efaf059b964f3"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_base_const_forward_iterator.html#aba5c9e13a2e09c3b7f6efaf059b964f3">operator==</a> (const <a class="el" href="classgui__framework_1_1interfaces_1_1_i_base_const_forward_iterator.html">IBaseConstForwardIterator</a>&lt; T, IBaseConstIteratorSubclass &gt; &amp;forward_iterator) const noexcept=0</td></tr>
-<tr class="separator:aba5c9e13a2e09c3b7f6efaf059b964f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9bd623686809fd2fc072d86b1626df0"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_base_const_forward_iterator.html#aa9bd623686809fd2fc072d86b1626df0">operator!=</a> (const <a class="el" href="classgui__framework_1_1interfaces_1_1_i_base_const_forward_iterator.html">IBaseConstForwardIterator</a>&lt; T, IBaseConstIteratorSubclass &gt; &amp;forward_iterator) const noexcept=0</td></tr>
-<tr class="separator:aa9bd623686809fd2fc072d86b1626df0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f0205e0fa5376d97f53af0534e654f9"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_base_const_forward_iterator.html#a3f0205e0fa5376d97f53af0534e654f9">operator==</a> (const <a class="el" href="classgui__framework_1_1interfaces_1_1_i_base_const_forward_iterator.html">IBaseConstForwardIterator</a>&lt; T, IBaseConstIteratorSubclass &gt; &amp;const_forward_iterator) const noexcept=0</td></tr>
+<tr class="separator:a3f0205e0fa5376d97f53af0534e654f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e6065214616f7ac01b0d4a2ce672ccb"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_base_const_forward_iterator.html#a7e6065214616f7ac01b0d4a2ce672ccb">operator!=</a> (const <a class="el" href="classgui__framework_1_1interfaces_1_1_i_base_const_forward_iterator.html">IBaseConstForwardIterator</a>&lt; T, IBaseConstIteratorSubclass &gt; &amp;const_forward_iterator) const noexcept=0</td></tr>
+<tr class="separator:a7e6065214616f7ac01b0d4a2ce672ccb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace31d83863bc788dbd119935148989d0"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_base_const_forward_iterator.html#ace31d83863bc788dbd119935148989d0">~IBaseConstForwardIterator</a> ()=default</td></tr>
 <tr class="separator:ace31d83863bc788dbd119935148989d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -196,8 +198,8 @@ template&lt;typename T , typename IBaseConstIteratorSubclass &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aa9bd623686809fd2fc072d86b1626df0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa9bd623686809fd2fc072d86b1626df0">&#9670;&nbsp;</a></span>operator!=()</h2>
+<a id="a7e6065214616f7ac01b0d4a2ce672ccb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e6065214616f7ac01b0d4a2ce672ccb">&#9670;&nbsp;</a></span>operator!=()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -211,7 +213,7 @@ template&lt;typename T , typename IBaseConstIteratorSubclass &gt; </div>
           <td class="memname">virtual bool <a class="el" href="classgui__framework_1_1interfaces_1_1_i_base_const_forward_iterator.html">gui_framework::interfaces::IBaseConstForwardIterator</a>&lt; T, IBaseConstIteratorSubclass &gt;::operator!= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classgui__framework_1_1interfaces_1_1_i_base_const_forward_iterator.html">IBaseConstForwardIterator</a>&lt; T, IBaseConstIteratorSubclass &gt; &amp;&#160;</td>
-          <td class="paramname"><em>forward_iterator</em></td><td>)</td>
+          <td class="paramname"><em>const_forward_iterator</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -249,7 +251,7 @@ template&lt;typename T , typename IBaseConstIteratorSubclass &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classgui__framework_1_1iterators_1_1forward__iterator.html#af21bf131c84bbf98fb47232d80a899f1">gui_framework::iterators::forward_iterator</a>, and <a class="el" href="classgui__framework_1_1iterators_1_1const__forward__iterator.html#ac80b234204d3244db8579c6b3d119c47">gui_framework::iterators::const_forward_iterator</a>.</p>
+<p>Implemented in <a class="el" href="classgui__framework_1_1iterators_1_1loadable__forward__iterator.html#a604089f10750d5ca0577d7d9db24ba90">gui_framework::iterators::loadable_forward_iterator</a>, <a class="el" href="classgui__framework_1_1iterators_1_1loadable__const__forward__iterator.html#a5f7e4d8f12ae893e8ad6704c2c8448e7">gui_framework::iterators::loadable_const_forward_iterator</a>, <a class="el" href="classgui__framework_1_1iterators_1_1composite__forward__iterator.html#a0ff9f0899d77290f405600e54320e616">gui_framework::iterators::composite_forward_iterator</a>, and <a class="el" href="classgui__framework_1_1iterators_1_1composite__const__forward__iterator.html#af696debce1b4691c46f3593732bbe7af">gui_framework::iterators::composite_const_forward_iterator</a>.</p>
 
 </div>
 </div>
@@ -278,7 +280,7 @@ template&lt;typename T , typename IBaseConstIteratorSubclass &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classgui__framework_1_1iterators_1_1forward__iterator.html#a7e9d15d36e899e23f254e9ab620737d5">gui_framework::iterators::forward_iterator</a>, and <a class="el" href="classgui__framework_1_1iterators_1_1const__forward__iterator.html#acce51fd61da657a951917e7c16b571b2">gui_framework::iterators::const_forward_iterator</a>.</p>
+<p>Implemented in <a class="el" href="classgui__framework_1_1iterators_1_1loadable__forward__iterator.html#abee8e6e1a96e5a29b35345e8b9fecaa5">gui_framework::iterators::loadable_forward_iterator</a>, <a class="el" href="classgui__framework_1_1iterators_1_1loadable__const__forward__iterator.html#a65799c264c112c969f3166bdaa820cb5">gui_framework::iterators::loadable_const_forward_iterator</a>, <a class="el" href="classgui__framework_1_1iterators_1_1composite__forward__iterator.html#aa0be353c0c6d5d2e9f4576b3146dffa0">gui_framework::iterators::composite_forward_iterator</a>, and <a class="el" href="classgui__framework_1_1iterators_1_1composite__const__forward__iterator.html#ae632ce6e46c4075973bd43c2091bdc40">gui_framework::iterators::composite_const_forward_iterator</a>.</p>
 
 </div>
 </div>
@@ -308,7 +310,7 @@ template&lt;typename T , typename IBaseConstIteratorSubclass &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classgui__framework_1_1iterators_1_1forward__iterator.html#a03b083188b124fb8e5ddaabfc8020d83">gui_framework::iterators::forward_iterator</a>, and <a class="el" href="classgui__framework_1_1iterators_1_1const__forward__iterator.html#a1d933dfbbb12e66dab589bd0cc37f48e">gui_framework::iterators::const_forward_iterator</a>.</p>
+<p>Implemented in <a class="el" href="classgui__framework_1_1iterators_1_1loadable__forward__iterator.html#a255771f9c0ce48b3b4358b1de5b0bab7">gui_framework::iterators::loadable_forward_iterator</a>, <a class="el" href="classgui__framework_1_1iterators_1_1loadable__const__forward__iterator.html#a76e05a1959cb7d19d05173d2e59de57d">gui_framework::iterators::loadable_const_forward_iterator</a>, <a class="el" href="classgui__framework_1_1iterators_1_1composite__forward__iterator.html#a0617f19673a2fcd8810b99701fe48d7e">gui_framework::iterators::composite_forward_iterator</a>, and <a class="el" href="classgui__framework_1_1iterators_1_1composite__const__forward__iterator.html#a874add57cd921d30c2f250335464eb65">gui_framework::iterators::composite_const_forward_iterator</a>.</p>
 
 </div>
 </div>
@@ -337,12 +339,12 @@ template&lt;typename T , typename IBaseConstIteratorSubclass &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classgui__framework_1_1iterators_1_1forward__iterator.html#a0b62810a627e58c15ed9f980ce6a1625">gui_framework::iterators::forward_iterator</a>, and <a class="el" href="classgui__framework_1_1iterators_1_1const__forward__iterator.html#a3b2087e91e0baf5be06d399b2ee45992">gui_framework::iterators::const_forward_iterator</a>.</p>
+<p>Implemented in <a class="el" href="classgui__framework_1_1iterators_1_1loadable__forward__iterator.html#ab38e876bcf61e9bb2f5601578fd00521">gui_framework::iterators::loadable_forward_iterator</a>, <a class="el" href="classgui__framework_1_1iterators_1_1loadable__const__forward__iterator.html#a483113748dcd1d523237b5eb3a8b04cf">gui_framework::iterators::loadable_const_forward_iterator</a>, <a class="el" href="classgui__framework_1_1iterators_1_1composite__forward__iterator.html#a6b868e30cc2f01201e9217a7f79f273d">gui_framework::iterators::composite_forward_iterator</a>, and <a class="el" href="classgui__framework_1_1iterators_1_1composite__const__forward__iterator.html#a237418b3cb7777af818c069a5227a601">gui_framework::iterators::composite_const_forward_iterator</a>.</p>
 
 </div>
 </div>
-<a id="aba5c9e13a2e09c3b7f6efaf059b964f3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba5c9e13a2e09c3b7f6efaf059b964f3">&#9670;&nbsp;</a></span>operator==()</h2>
+<a id="a3f0205e0fa5376d97f53af0534e654f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f0205e0fa5376d97f53af0534e654f9">&#9670;&nbsp;</a></span>operator==()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -356,7 +358,7 @@ template&lt;typename T , typename IBaseConstIteratorSubclass &gt; </div>
           <td class="memname">virtual bool <a class="el" href="classgui__framework_1_1interfaces_1_1_i_base_const_forward_iterator.html">gui_framework::interfaces::IBaseConstForwardIterator</a>&lt; T, IBaseConstIteratorSubclass &gt;::operator== </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classgui__framework_1_1interfaces_1_1_i_base_const_forward_iterator.html">IBaseConstForwardIterator</a>&lt; T, IBaseConstIteratorSubclass &gt; &amp;&#160;</td>
-          <td class="paramname"><em>forward_iterator</em></td><td>)</td>
+          <td class="paramname"><em>const_forward_iterator</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>

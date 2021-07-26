@@ -2,6 +2,7 @@ var _g_u_i_framework_constants_8h =
 [
     [ "GUI_FRAMEWORK_API", "_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba", null ],
     [ "GUI_FRAMEWORK_API_FUNCTION", "_g_u_i_framework_constants_8h.html#a767f18c6bddef6da85ce42f210726a25", null ],
+    [ "smartPointerType", "_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67", null ],
     [ "additionalKey", "_g_u_i_framework_constants_8h.html#a8c2f6d478b57ff78909ffc4e60136e1f", [
       [ "alt", "_g_u_i_framework_constants_8h.html#a8c2f6d478b57ff78909ffc4e60136e1fa34823136d0dd91d0f5d22db740f7679c", null ],
       [ "control", "_g_u_i_framework_constants_8h.html#a8c2f6d478b57ff78909ffc4e60136e1fafc5364bf9dbfa34954526becad136d4b", null ],

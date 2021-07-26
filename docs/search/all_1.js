@@ -90,7 +90,7 @@ var searchData=
   ['basewindow_145',['BaseWindow',['../classgui__framework_1_1_base_window.html#ad80eafb494c0ce772ceb0d1d0e6d761c',1,'gui_framework::BaseWindow::BaseWindow()'],['../classgui__framework_1_1_base_window.html',1,'gui_framework::BaseWindow']]],
   ['basewindow_2ecpp_146',['BaseWindow.cpp',['../_base_window_8cpp.html',1,'']]],
   ['basewindow_2eh_147',['BaseWindow.h',['../_base_window_8h.html',1,'']]],
-  ['begin_148',['begin',['../classgui__framework_1_1_base_composite.html#a73b44f7448c5381e6a4ecf0fad46233f',1,'gui_framework::BaseComposite']]],
+  ['begin_148',['begin',['../classgui__framework_1_1_base_composite.html#a36148305df7442496ba5a8a3c6b36ec0',1,'gui_framework::BaseComposite::begin()'],['../classgui__framework_1_1utility_1_1_base_loadable_holder.html#a77ceed107e4b047703651330010744ef',1,'gui_framework::utility::BaseLoadableHolder::begin() noexcept final override']]],
   ['bitmap_149',['bitmap',['../classgui__framework_1_1utility_1_1_base_loadable_holder.html#a4a51f316eaed8d199b7faa998ca407bfa86bb33755628454af74f88f047ec894a',1,'gui_framework::utility::BaseLoadableHolder']]],
   ['blockresize_150',['blockResize',['../classgui__framework_1_1interfaces_1_1_i_resizable_component.html#aa32ec52c93a41e4f7106266649d89218',1,'gui_framework::interfaces::IResizableComponent']]],
   ['both_151',['both',['../classgui__framework_1_1_horizontal_trackbar_control.html#a40c44b65f9f2033859e569b4c7da3b33af6cb3e816496528d4187db53bc66567f',1,'gui_framework::HorizontalTrackbarControl::both()'],['../classgui__framework_1_1_vertical_trackbar_control.html#aa1a191d9b39ed0629ce6c11c71443e0eaf6cb3e816496528d4187db53bc66567f',1,'gui_framework::VerticalTrackbarControl::both()']]],

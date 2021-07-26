@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.6.1-beta</span>
+   &#160;<span id="projectnumber">0.7-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -120,13 +120,55 @@ $(document).ready(function(){initNavTree('_utility_8cpp_source.html',''); initRe
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                GetWindowLongPtrW(handle, GWL_STYLE) &amp; ~styleToRemove</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            );</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="namespacegui__framework_1_1utility.html#abbafc9708435f466d89c4f977dcd460d">   35</a></span>&#160;        <span class="keywordtype">string</span> <a class="code" href="namespacegui__framework_1_1utility.html#abbafc9708435f466d89c4f977dcd460d">to_string</a>(<span class="keyword">const</span> wstring&amp; stringToConvert, uint32_t codepage)</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordtype">string</span> result;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordtype">int</span> size = WideCharToMultiByte</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            (</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                codepage,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                NULL,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                stringToConvert.data(),</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                -1,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <span class="keyword">nullptr</span>,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                NULL,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                NULL,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                NULL</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            );</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">if</span> (!size)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <span class="keywordflow">throw</span> json::exceptions::WrongEncodingException();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            result.resize(<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(size) - 1);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">if</span> (!WideCharToMultiByte</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            (</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                codepage,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                NULL,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                stringToConvert.data(),</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                -1,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                result.data(),</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                size,</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                NULL,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                NULL</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            ))</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="keywordflow">throw</span> json::exceptions::WrongEncodingException();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
 <div class="ttc" id="a_utility_8h_html"><div class="ttname"><a href="_utility_8h.html">Utility.h</a></div></div>
 <div class="ttc" id="anamespacegui__framework_1_1utility_html_a746d8e6e6277a08c83bd0bfd523d2e04"><div class="ttname"><a href="namespacegui__framework_1_1utility.html#a746d8e6e6277a08c83bd0bfd523d2e04">gui_framework::utility::removeStyle</a></div><div class="ttdeci">void removeStyle(HWND handle, LONG_PTR styleToRemove)</div><div class="ttdoc">Remove WinAPI style.</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00025">Utility.cpp:25</a></div></div>
 <div class="ttc" id="anamespacegui__framework_1_1utility_html_a9102f958e07350e5f2ab564c5c30d66c"><div class="ttname"><a href="namespacegui__framework_1_1utility.html#a9102f958e07350e5f2ab564c5c30d66c">gui_framework::utility::unregisterClass</a></div><div class="ttdeci">void unregisterClass(const wstring &amp;className)</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00010">Utility.cpp:10</a></div></div>
+<div class="ttc" id="anamespacegui__framework_1_1utility_html_abbafc9708435f466d89c4f977dcd460d"><div class="ttname"><a href="namespacegui__framework_1_1utility.html#abbafc9708435f466d89c4f977dcd460d">gui_framework::utility::to_string</a></div><div class="ttdeci">string to_string(const wstring &amp;stringToConvert, uint32_t codepage)</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00035">Utility.cpp:35</a></div></div>
 <div class="ttc" id="anamespacegui__framework_1_1utility_html_ae97300d8014320696e57f502a858c570"><div class="ttname"><a href="namespacegui__framework_1_1utility.html#ae97300d8014320696e57f502a858c570">gui_framework::utility::appendStyle</a></div><div class="ttdeci">void appendStyle(HWND handle, LONG_PTR newStyle)</div><div class="ttdoc">Append WinAPI style.</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00015">Utility.cpp:15</a></div></div>
-<div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00014">BaseComponent.cpp:15</a></div></div>
+<div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00016">BaseComponent.cpp:17</a></div></div>
 <div class="ttc" id="apch_8h_html"><div class="ttname"><a href="pch_8h.html">pch.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

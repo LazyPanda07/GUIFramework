@@ -21,11 +21,14 @@ var annotated_dup =
         [ "IBaseConstForwardIterator", "classgui__framework_1_1interfaces_1_1_i_base_const_forward_iterator.html", "classgui__framework_1_1interfaces_1_1_i_base_const_forward_iterator" ],
         [ "IBaseForwardIterator", "classgui__framework_1_1interfaces_1_1_i_base_forward_iterator.html", "classgui__framework_1_1interfaces_1_1_i_base_forward_iterator" ],
         [ "IMenuItem", "classgui__framework_1_1interfaces_1_1_i_menu_item.html", "classgui__framework_1_1interfaces_1_1_i_menu_item" ],
-        [ "IStyles", "classgui__framework_1_1interfaces_1_1_i_styles.html", "classgui__framework_1_1interfaces_1_1_i_styles" ]
+        [ "IStyles", "classgui__framework_1_1interfaces_1_1_i_styles.html", "classgui__framework_1_1interfaces_1_1_i_styles" ],
+        [ "ISerializable", "classgui__framework_1_1interfaces_1_1_i_serializable.html", "classgui__framework_1_1interfaces_1_1_i_serializable" ]
       ] ],
       [ "iterators", "namespacegui__framework_1_1iterators.html", [
-        [ "const_forward_iterator", "classgui__framework_1_1iterators_1_1const__forward__iterator.html", "classgui__framework_1_1iterators_1_1const__forward__iterator" ],
-        [ "forward_iterator", "classgui__framework_1_1iterators_1_1forward__iterator.html", "classgui__framework_1_1iterators_1_1forward__iterator" ]
+        [ "composite_const_forward_iterator", "classgui__framework_1_1iterators_1_1composite__const__forward__iterator.html", "classgui__framework_1_1iterators_1_1composite__const__forward__iterator" ],
+        [ "composite_forward_iterator", "classgui__framework_1_1iterators_1_1composite__forward__iterator.html", "classgui__framework_1_1iterators_1_1composite__forward__iterator" ],
+        [ "loadable_const_forward_iterator", "classgui__framework_1_1iterators_1_1loadable__const__forward__iterator.html", "classgui__framework_1_1iterators_1_1loadable__const__forward__iterator" ],
+        [ "loadable_forward_iterator", "classgui__framework_1_1iterators_1_1loadable__forward__iterator.html", "classgui__framework_1_1iterators_1_1loadable__forward__iterator" ]
       ] ],
       [ "styles", "namespacegui__framework_1_1styles.html", [
         [ "ButtonStyles", "classgui__framework_1_1styles_1_1_button_styles.html", "classgui__framework_1_1styles_1_1_button_styles" ],
