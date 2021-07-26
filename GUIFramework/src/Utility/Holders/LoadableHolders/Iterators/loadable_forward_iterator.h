@@ -7,6 +7,7 @@ namespace gui_framework
 {
 	namespace iterators
 	{
+		/// @brief IBaseForwardIterator implementation for BaseLoadableHolder
 		class GUI_FRAMEWORK_API loadable_forward_iterator : public interfaces::IBaseForwardIterator<std::filesystem::path, loadable_forward_iterator>
 		{
 		private:

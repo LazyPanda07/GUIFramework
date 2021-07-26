@@ -10,6 +10,7 @@ var classgui__framework_1_1_base_list_box =
     [ "getColumnsWidth", "classgui__framework_1_1_base_list_box.html#a5da93436444094329f5a59e3054ed477", null ],
     [ "getCurrentSelectionIndex", "classgui__framework_1_1_base_list_box.html#afd962bbc263e8f66dc03751f18b189cc", null ],
     [ "getItemsHeight", "classgui__framework_1_1_base_list_box.html#aca4ef4d9a0f97e39288b59540125d0c8", null ],
+    [ "getStructure", "classgui__framework_1_1_base_list_box.html#a6ae2994ceb712fed4c87028bfc074f24", null ],
     [ "getValue", "classgui__framework_1_1_base_list_box.html#a58fc839753afbaa623cb140339149744", null ],
     [ "insertValue", "classgui__framework_1_1_base_list_box.html#a628af8d5bb8b857c007b7d42f064b37c", null ],
     [ "removeValue", "classgui__framework_1_1_base_list_box.html#a6331ea3cc2488540e0a42859ee77a32a", null ],

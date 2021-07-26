@@ -43,7 +43,8 @@ var NAVTREE =
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", null ],
-        [ "Enumerations", "functions_enum.html", null ]
+        [ "Enumerations", "functions_enum.html", null ],
+        [ "Related Functions", "functions_rela.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
@@ -51,6 +52,7 @@ var NAVTREE =
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
+        [ "Typedefs", "globals_type.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
@@ -61,12 +63,12 @@ var NAVTREEINDEX =
 [
 "_additional_creation_data_8h.html",
 "_edit_control_8h_source.html",
-"_multiple_select_list_box_creator_8cpp_source.html",
-"classgui__framework_1_1_base_component.html#ab927f5791c7605446203f7f7f6e0bb83",
-"classgui__framework_1_1_dialog_box_1_1_dialog_box_builder.html#a4ba7218d5d4b4103d5c472e2c227c244",
-"classgui__framework_1_1iterators_1_1forward__iterator.html#ac6dddb80ebab4e72af30340e83ce1fe0",
-"classgui__framework_1_1utility_1_1_additional_creation_data_3_01_vertical_trackbar_control_01_4.html#ae96cc4f4dc730ce5e89a87547996a8e8",
-"namespacegui__framework_1_1exceptions.html"
+"_menu_item_8h_source.html",
+"classgui__framework_1_1_base_component.html#aa03d5033d1bcaa4cb97c42aeaa3704d5",
+"classgui__framework_1_1_button.html",
+"classgui__framework_1_1interfaces_1_1_i_text_icon_list_view.html#a7912e57743124b081fe197a4fb968d57",
+"classgui__framework_1_1utility_1_1_additional_creation_data_3_01_rich_edit_01_4.html#a6e0f09b1baf887548aec026d9b07ea59",
+"functions_f.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.6.1-beta</span>
+   &#160;<span id="projectnumber">0.7-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -129,6 +129,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_styles.html">IStyles</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides styles for other classes.  <a href="classgui__framework_1_1interfaces_1_1_i_styles.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html">ISerializable</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides interface for serializable to JSON format.  <a href="classgui__framework_1_1interfaces_1_1_i_serializable.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -136,8 +139,40 @@ Functions</h2></td></tr>
 <tr class="memitem:a3e711f70b54b918d68b091e17035c674"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1interfaces.html#a3e711f70b54b918d68b091e17035c674">requires</a> (std::is_base_of_v&lt; <a class="el" href="classgui__framework_1_1interfaces_1_1_i_base_forward_iterator.html">IBaseForwardIterator</a>&lt; T, TForwardIterator &gt;, TForwardIterator &gt; &amp;&amp;std::is_base_of_v&lt; <a class="el" href="classgui__framework_1_1interfaces_1_1_i_base_const_forward_iterator.html">IBaseConstForwardIterator</a>&lt; T, TConstForwardIterator &gt;, TConstForwardIterator &gt;) class <a class="el" href="_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba">GUI_FRAMEWORK_API</a> IIterable</td></tr>
 <tr class="memdesc:a3e711f70b54b918d68b091e17035c674"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specify iterable class.  <a href="namespacegui__framework_1_1interfaces.html#a3e711f70b54b918d68b091e17035c674">More...</a><br /></td></tr>
 <tr class="separator:a3e711f70b54b918d68b091e17035c674"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac87cc3815a81c0c277819250276d449"><td class="memItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1interfaces.html#aac87cc3815a81c0c277819250276d449">operator&lt;&lt;</a> (ostream &amp;outputStream, const <a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html">ISerializable</a> &amp;serializable)</td></tr>
+<tr class="separator:aac87cc3815a81c0c277819250276d449"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="aac87cc3815a81c0c277819250276d449"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac87cc3815a81c0c277819250276d449">&#9670;&nbsp;</a></span>operator&lt;&lt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ostream&amp; gui_framework::interfaces::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;&#160;</td>
+          <td class="paramname"><em>outputStream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html">ISerializable</a> &amp;&#160;</td>
+          <td class="paramname"><em>serializable</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_i_serializable_8cpp_source.html#l00026">26</a> of file <a class="el" href="_i_serializable_8cpp_source.html">ISerializable.cpp</a>.</p>
+
+</div>
+</div>
 <a id="a3e711f70b54b918d68b091e17035c674"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3e711f70b54b918d68b091e17035c674">&#9670;&nbsp;</a></span>requires()</h2>
 

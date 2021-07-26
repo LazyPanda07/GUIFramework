@@ -6,6 +6,7 @@ namespace gui_framework
 {
 	namespace interfaces
 	{
+		/// @brief Provides interface for serializable to JSON format
 		class GUI_FRAMEWORK_API ISerializable
 		{
 		private:
