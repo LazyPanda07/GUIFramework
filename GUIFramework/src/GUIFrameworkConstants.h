@@ -90,6 +90,8 @@ namespace gui_framework
 #ifdef GUI_FRAMEWORK_DLL
 #define GUI_FRAMEWORK_API __declspec(dllexport)
 #define GUI_FRAMEWORK_API_FUNCTION extern "C" __declspec(dllexport)
+#define JSON_DLL
+#define THREAD_POOL_DLL
 
 /// @brief Compatible smart pointer type
 template<typename T>
@@ -97,6 +99,7 @@ using smartPointerType = std::shared_ptr<T>;
 
 #pragma warning(disable: 4251)
 #pragma warning(disable: 4275)
+#pragma warning(disable: 4190)
 #else
 #define GUI_FRAMEWORK_API
 #define GUI_FRAMEWORK_API_FUNCTION
