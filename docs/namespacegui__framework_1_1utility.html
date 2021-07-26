@@ -291,9 +291,10 @@ Functions</h2></td></tr>
 <tr class="memitem:acfc6bead05acb26a7a347dea0e5fc169"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_g_u_i_framework_constants_8h.html#a767f18c6bddef6da85ce42f210726a25">GUI_FRAMEWORK_API_FUNCTION</a> std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1utility.html#acfc6bead05acb26a7a347dea0e5fc169">to_string</a> (const std::wstring &amp;stringToConvert, uint32_t codepage)</td></tr>
 <tr class="memdesc:acfc6bead05acb26a7a347dea0e5fc169"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert std::wstring to std::string.  <a href="namespacegui__framework_1_1utility.html#acfc6bead05acb26a7a347dea0e5fc169">More...</a><br /></td></tr>
 <tr class="separator:acfc6bead05acb26a7a347dea0e5fc169"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a601552c2adf7590bf78090435c98982f"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Args&gt; </td></tr>
-<tr class="memitem:a601552c2adf7590bf78090435c98982f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="_g_u_i_framework_constants_8h.html#a767f18c6bddef6da85ce42f210726a25">GUI_FRAMEWORK_API_FUNCTION</a> <a class="el" href="_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67">smartPointerType</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1utility.html#a601552c2adf7590bf78090435c98982f">make_smart_pointer</a> (Args &amp;&amp;... args)</td></tr>
-<tr class="separator:a601552c2adf7590bf78090435c98982f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60d17f3aed2f6fbe1b6e77907e237ff0"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Args&gt; </td></tr>
+<tr class="memitem:a60d17f3aed2f6fbe1b6e77907e237ff0"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67">smartPointerType</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1utility.html#a60d17f3aed2f6fbe1b6e77907e237ff0">make_smart_pointer</a> (Args &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a60d17f3aed2f6fbe1b6e77907e237ff0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make function with current build configuration compatibility.  <a href="namespacegui__framework_1_1utility.html#a60d17f3aed2f6fbe1b6e77907e237ff0">More...</a><br /></td></tr>
+<tr class="separator:a60d17f3aed2f6fbe1b6e77907e237ff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="a4bd7b1a1121bbfb16d0a1f9b4ba266de"></a>
@@ -365,8 +366,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a601552c2adf7590bf78090435c98982f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a601552c2adf7590bf78090435c98982f">&#9670;&nbsp;</a></span>make_smart_pointer()</h2>
+<a id="a60d17f3aed2f6fbe1b6e77907e237ff0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60d17f3aed2f6fbe1b6e77907e237ff0">&#9670;&nbsp;</a></span>make_smart_pointer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -374,7 +375,7 @@ Functions</h2></td></tr>
 template&lt;typename T , typename... Args&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_g_u_i_framework_constants_8h.html#a767f18c6bddef6da85ce42f210726a25">GUI_FRAMEWORK_API_FUNCTION</a> <a class="el" href="_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67">smartPointerType</a>&lt;T&gt; gui_framework::utility::make_smart_pointer </td>
+          <td class="memname"><a class="el" href="_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67">smartPointerType</a>&lt; T &gt; gui_framework::utility::make_smart_pointer </td>
           <td>(</td>
           <td class="paramtype">Args &amp;&amp;...&#160;</td>
           <td class="paramname"><em>args</em></td><td>)</td>
@@ -382,6 +383,23 @@ template&lt;typename T , typename... Args&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Make function with current build configuration compatibility. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">...args</td><td>Constructor arguments </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Compatible smart pointer </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_utility_8h_source.html#l00040">40</a> of file <a class="el" href="_utility_8h_source.html">Utility.h</a>.</p>
 
 </div>
 </div>

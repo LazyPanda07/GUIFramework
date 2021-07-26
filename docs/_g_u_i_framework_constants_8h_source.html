@@ -179,21 +179,24 @@ $(document).ready(function(){initNavTree('_g_u_i_framework_constants_8h_source.h
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#ifdef GUI_FRAMEWORK_DLL</span></div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#define GUI_FRAMEWORK_API __declspec(dllexport)</span></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#define GUI_FRAMEWORK_API_FUNCTION extern &quot;C&quot;</span> __declspec(dllexport)</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keyword">using</span> <a class="code" href="_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67">smartPointerType</a> = std::shared_ptr&lt;T&gt;;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#pragma warning(disable: 4251)</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#pragma warning(disable: 4275)</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba">  101</a></span>&#160;<span class="preprocessor">#define GUI_FRAMEWORK_API</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="_g_u_i_framework_constants_8h.html#a767f18c6bddef6da85ce42f210726a25">  102</a></span>&#160;<span class="preprocessor">#define GUI_FRAMEWORK_API_FUNCTION</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67">  106</a></span>&#160;<span class="keyword">using</span> <a class="code" href="_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67">smartPointerType</a> = std::unique_ptr&lt;T&gt;;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// GUI_FRAMEWORK_DLL</span></div>
-<div class="ttc" id="a_g_u_i_framework_constants_8h_html_aaeb2028aa1fe1f81b8bc210cbf2d0b67"><div class="ttname"><a href="_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67">smartPointerType</a></div><div class="ttdeci">std::unique_ptr&lt; T &gt; smartPointerType</div><div class="ttdoc">Compatible smart pointer type.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00106">GUIFrameworkConstants.h:106</a></div></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#define JSON_DLL</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#define THREAD_POOL_DLL</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keyword">using</span> <a class="code" href="_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67">smartPointerType</a> = std::shared_ptr&lt;T&gt;;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#pragma warning(disable: 4251)</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#pragma warning(disable: 4275)</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#pragma warning(disable: 4190)</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba">  104</a></span>&#160;<span class="preprocessor">#define GUI_FRAMEWORK_API</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="_g_u_i_framework_constants_8h.html#a767f18c6bddef6da85ce42f210726a25">  105</a></span>&#160;<span class="preprocessor">#define GUI_FRAMEWORK_API_FUNCTION</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67">  109</a></span>&#160;<span class="keyword">using</span> <a class="code" href="_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67">smartPointerType</a> = std::unique_ptr&lt;T&gt;;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// GUI_FRAMEWORK_DLL</span></div>
+<div class="ttc" id="a_g_u_i_framework_constants_8h_html_aaeb2028aa1fe1f81b8bc210cbf2d0b67"><div class="ttname"><a href="_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67">smartPointerType</a></div><div class="ttdeci">std::unique_ptr&lt; T &gt; smartPointerType</div><div class="ttdoc">Compatible smart pointer type.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00109">GUIFrameworkConstants.h:109</a></div></div>
 <div class="ttc" id="a_rich_edit_8h_html"><div class="ttname"><a href="_rich_edit_8h.html">RichEdit.h</a></div></div>
 <div class="ttc" id="anamespacegui__framework_1_1hotkeys_html_a8c2f6d478b57ff78909ffc4e60136e1f"><div class="ttname"><a href="namespacegui__framework_1_1hotkeys.html#a8c2f6d478b57ff78909ffc4e60136e1f">gui_framework::hotkeys::additionalKey</a></div><div class="ttdeci">additionalKey</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00079">GUIFrameworkConstants.h:80</a></div></div>
 <div class="ttc" id="anamespacegui__framework_1_1hotkeys_html_a8c2f6d478b57ff78909ffc4e60136e1fa2ab64f4ee279e5baf7ab7059b15e6d12"><div class="ttname"><a href="namespacegui__framework_1_1hotkeys.html#a8c2f6d478b57ff78909ffc4e60136e1fa2ab64f4ee279e5baf7ab7059b15e6d12">gui_framework::hotkeys::additionalKey::shift</a></div><div class="ttdeci">@ shift</div></div>
