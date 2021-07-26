@@ -21,6 +21,9 @@ namespace gui_framework
 		int maxRange;
 		int updateStep;
 
+	protected:
+		virtual json::JSONBuilder getStructure() const override;
+
 	public:
 		BaseProgressBar(const std::wstring& progressBarName, const utility::ComponentSettings& settings, BaseComponent* parent, int minRange = defaultMinRange, int maxRange = defaultMaxRange, int updateStep = defaultUpdateStep);
 

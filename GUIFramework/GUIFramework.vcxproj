@@ -88,9 +88,9 @@
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseRichEdit.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseStaticControl.h" />
     <ClInclude Include="src\BaseComposites\BaseComposite.h" />
-    <ClInclude Include="src\BaseComposites\BaseCompositeIterators\const_forward_iterator.h" />
-    <ClInclude Include="src\BaseComposites\BaseCompositeIterators\forward_iterator.h" />
-    <ClInclude Include="src\BaseComposites\BaseCompositeIterators\IteratorsFunctionality.h" />
+    <ClInclude Include="src\BaseComposites\Iterators\composite_const_forward_iterator.h" />
+    <ClInclude Include="src\BaseComposites\Iterators\composite_forward_iterator.h" />
+    <ClInclude Include="src\BaseComposites\Iterators\IteratorsFunctionality.h" />
     <ClInclude Include="src\BaseComposites\StandardComposites\BaseDialogBox.h" />
     <ClInclude Include="src\BaseComposites\StandardComposites\BaseWindow.h" />
     <ClInclude Include="src\BaseComposites\StandardComposites\BaseChildWindow.h" />
@@ -180,6 +180,8 @@
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\BaseComposites\StandardComposites\BaseSeparateWindow.h" />
     <ClInclude Include="src\Utility\ComponentSettings.h" />
+    <ClInclude Include="src\Utility\Holders\LoadableHolders\Iterators\loadable_const_forward_iterator.h" />
+    <ClInclude Include="src\Utility\Holders\LoadableHolders\Iterators\loadable_forward_iterator.h" />
     <ClInclude Include="src\Utility\Paint\DrawImage.h" />
     <ClInclude Include="src\Utility\Utility.h" />
     <ClInclude Include="src\Utility\Holders\WindowHolder.h" />
@@ -232,9 +234,9 @@
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseTabControl.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\ListViews\BaseTextIconListView.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\ListViews\BaseTextListView.cpp" />
-    <ClCompile Include="src\BaseComposites\BaseCompositeIterators\const_forward_iterator.cpp" />
-    <ClCompile Include="src\BaseComposites\BaseCompositeIterators\forward_iterator.cpp" />
-    <ClCompile Include="src\BaseComposites\BaseCompositeIterators\IteratorsFunctionality.cpp" />
+    <ClCompile Include="src\BaseComposites\Iterators\composite_const_forward_iterator.cpp" />
+    <ClCompile Include="src\BaseComposites\Iterators\composite_forward_iterator.cpp" />
+    <ClCompile Include="src\BaseComposites\Iterators\IteratorsFunctionality.cpp" />
     <ClCompile Include="src\BaseComposites\StandardComposites\BaseDialogBox.cpp" />
     <ClCompile Include="src\BaseComposites\StandardComposites\BaseChildWindow.cpp" />
     <ClCompile Include="src\BaseComposites\BaseComposite.cpp" />
@@ -332,6 +334,8 @@
     <ClCompile Include="src\pch.cpp" />
     <ClCompile Include="src\BaseComposites\StandardComposites\BaseSeparateWindow.cpp" />
     <ClCompile Include="src\Utility\ComponentSettings.cpp" />
+    <ClCompile Include="src\Utility\Holders\LoadableHolders\Iterators\loadable_const_forward_iterator.cpp" />
+    <ClCompile Include="src\Utility\Holders\LoadableHolders\Iterators\loadable_forward_iterator.cpp" />
     <ClCompile Include="src\Utility\Paint\DrawImage.cpp" />
     <ClCompile Include="src\Utility\Utility.cpp" />
     <ClCompile Include="src\Utility\Holders\WindowHolder.cpp" />

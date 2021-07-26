@@ -9,6 +9,9 @@ namespace gui_framework
 	/// @brief Base class for all tracbar controls
 	class GUI_FRAMEWORK_API BaseTrackbarControl : public BaseComponent
 	{
+	protected:
+		virtual json::JSONBuilder getStructure() const override;
+
 	public:
 		BaseTrackbarControl(const std::wstring& trackbarName, const utility::ComponentSettings& settings, const styles::TrackbarControlStyles& styles, BaseComponent* parent);
 

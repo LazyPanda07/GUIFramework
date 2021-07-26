@@ -2,9 +2,11 @@
 #include "BaseComponent.h"
 
 #include "BaseComposites/BaseComposite.h"
+#include "Interfaces/Components/IResizableComponent.h"
+#include "Interfaces/Components/ITextOperations.h"
+
 #include "Exceptions/CantFindCompositeFunctionException.h"
 #include "Exceptions/FileDoesNotExist.h"
-#include "Interfaces/Components/IResizableComponent.h"
 
 #pragma warning(disable: 6387)
 #pragma warning(disable: 4312)
@@ -55,8 +57,6 @@ namespace gui_framework
 		desiredX(settings.x),
 		desiredY(settings.y),
 		mode(exitMode::destroyWindow),
-		largeIcon(nullptr),
-		smallIcon(nullptr),
 		id(parent ? GUIFramework::get().generateId(windowName) : NULL),
 		backgroundColor(RGB(255, 255, 255)),
 		textColor(RGB(0, 0, 0))
@@ -100,6 +100,8 @@ namespace gui_framework
 			module,
 			nullptr
 		);
+
+		this->styles = utility::make_smart_pointer<interfaces::IStyles>(styles);
 
 		if (!parent)
 		{
@@ -169,9 +171,6 @@ namespace gui_framework
 
 		if (result && parent && parent->isComposite())
 		{
-			DestroyIcon(largeIcon);
-			DestroyIcon(smallIcon);
-
 			BaseComposite* parentComposite = static_cast<BaseComposite*>(parent);
 
 			parentComposite->removeChild(this);
@@ -186,9 +185,6 @@ namespace gui_framework
 
 		if (result && parent && parent->isComposite())
 		{
-			DestroyIcon(largeIcon);
-			DestroyIcon(smallIcon);
-
 			BaseComposite* parentComposite = static_cast<BaseComposite*>(parent);
 
 			parentComposite->removeChild(this);
@@ -256,48 +252,6 @@ namespace gui_framework
 	void BaseComponent::setExitMode(exitMode mode)
 	{
 		this->mode = mode;
-	}
-
-	void BaseComponent::setLargeIcon(const filesystem::path& pathToLargeIcon)
-	{
-		if (!filesystem::exists(pathToLargeIcon))
-		{
-			throw exceptions::FileDoesNotExist(pathToLargeIcon);
-		}
-
-		this->pathToLargeIcon = pathToLargeIcon.string();
-
-		if (largeIcon)
-		{
-			DestroyIcon(largeIcon);
-
-			largeIcon = nullptr;
-		}
-
-		largeIcon = static_cast<HICON>(LoadImageW(nullptr, pathToLargeIcon.wstring().data(), IMAGE_ICON, standard_sizes::largeIconWidth, standard_sizes::largeIconHeight, LR_LOADFROMFILE));
-
-		SendMessageW(handle, WM_SETICON, ICON_BIG, reinterpret_cast<LPARAM>(largeIcon));
-	}
-
-	void BaseComponent::setSmallIcon(const filesystem::path& pathToSmallIcon)
-	{
-		if (!filesystem::exists(pathToSmallIcon))
-		{
-			throw exceptions::FileDoesNotExist(pathToSmallIcon);
-		}
-
-		this->pathToSmallIcon = pathToSmallIcon.string();
-
-		if (smallIcon)
-		{
-			DestroyIcon(smallIcon);
-
-			smallIcon = nullptr;
-		}
-
-		smallIcon = static_cast<HICON>(LoadImageW(nullptr, pathToSmallIcon.wstring().data(), IMAGE_ICON, standard_sizes::smallIconWidth, standard_sizes::smallIconHeight, LR_LOADFROMFILE));
-
-		SendMessageW(handle, WM_SETICON, ICON_SMALL, reinterpret_cast<LPARAM>(smallIcon));
 	}
 
 	void BaseComponent::setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue)
@@ -439,6 +393,7 @@ namespace gui_framework
 		objectSmartPointer<jsonObject> structure = json::utility::make_object<jsonObject>();
 		vector<objectSmartPointer<jsonObject>> backgroundColorJSON;
 		vector<objectSmartPointer<jsonObject>> textColorJSON;
+		const interfaces::ITextOperations* textOperations = dynamic_cast<const interfaces::ITextOperations*>(this);
 
 		appendArray(static_cast<int64_t>(GetRValue(backgroundColor)), backgroundColorJSON);
 		appendArray(static_cast<int64_t>(GetGValue(backgroundColor)), backgroundColorJSON);
@@ -459,16 +414,6 @@ namespace gui_framework
 		structure->data.push_back({ "backgroundColor"s, move(backgroundColorJSON) });
 		structure->data.push_back({ "textColor"s, move(textColorJSON) });
 
-		if (pathToSmallIcon.size())
-		{
-			structure->data.push_back({ "pathToSmallIcon"s, pathToSmallIcon });
-		}
-
-		if (pathToLargeIcon.size())
-		{
-			structure->data.push_back({ "pathToLargeIcon"s, pathToLargeIcon });
-		}
-
 		structure->data.push_back({ "exitMode"s, static_cast<int64_t>(mode) });
 
 		// TODO: serialize menus
@@ -485,6 +430,13 @@ namespace gui_framework
 
 			structure->data.push_back({ "menuStructure"s, move(menuStructure) });
 		}
+
+		if (textOperations)
+		{
+			structure->data.push_back({ "text"s, utility::to_string(textOperations->getText(), codepage) });
+		}
+
+		structure->data.push_back({ "styles"s, styles->getStyles() });
 
 		builder.push_back(make_pair(utility::to_string(windowName, codepage), move(structure)));
 

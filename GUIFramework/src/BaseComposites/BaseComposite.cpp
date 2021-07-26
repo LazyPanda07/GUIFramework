@@ -3,6 +3,8 @@
 
 #include "Interfaces/Components/IResizableComponent.h"
 
+#include "Exceptions/FileDoesNotExist.h"
+
 using namespace std;
 
 namespace gui_framework
@@ -68,8 +70,17 @@ namespace gui_framework
 		json::JSONBuilder builder = BaseComponent::getStructure();
 		uint32_t codepage = ISerializable::getCodepage();
 		vector<pair<string, objectSmartPointer<jsonObject>>> data = this->getChildrenStructure();
-
 		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, codepage)]);
+
+		if (pathToSmallIcon.size())
+		{
+			current->data.push_back({ "pathToSmallIcon"s, pathToSmallIcon });
+		}
+
+		if (pathToLargeIcon.size())
+		{
+			current->data.push_back({ "pathToLargeIcon"s, pathToLargeIcon });
+		}
 
 		if (data.size())
 		{
@@ -100,7 +111,9 @@ namespace gui_framework
 			styles,
 			parent,
 			windowFunctionName
-		)
+		),
+		largeIcon(nullptr),
+		smallIcon(nullptr)
 	{
 
 	}
@@ -272,24 +285,66 @@ namespace gui_framework
 		return true;
 	}
 
-	iterators::forward_iterator BaseComposite::begin() noexcept
+	void BaseComposite::setLargeIcon(const filesystem::path& pathToLargeIcon)
 	{
-		return iterators::forward_iterator(this);
+		if (!filesystem::exists(pathToLargeIcon))
+		{
+			throw exceptions::FileDoesNotExist(pathToLargeIcon);
+		}
+
+		this->pathToLargeIcon = pathToLargeIcon.string();
+
+		if (largeIcon)
+		{
+			DestroyIcon(largeIcon);
+
+			largeIcon = nullptr;
+		}
+
+		largeIcon = static_cast<HICON>(LoadImageW(nullptr, pathToLargeIcon.wstring().data(), IMAGE_ICON, standard_sizes::largeIconWidth, standard_sizes::largeIconHeight, LR_LOADFROMFILE));
+
+		SendMessageW(handle, WM_SETICON, ICON_BIG, reinterpret_cast<LPARAM>(largeIcon));
 	}
 
-	iterators::const_forward_iterator BaseComposite::cbegin() const noexcept
+	void BaseComposite::setSmallIcon(const filesystem::path& pathToSmallIcon)
 	{
-		return iterators::const_forward_iterator(static_cast<BaseComponent*>(const_cast<BaseComposite*>(this)));
+		if (!filesystem::exists(pathToSmallIcon))
+		{
+			throw exceptions::FileDoesNotExist(pathToSmallIcon);
+		}
+
+		this->pathToSmallIcon = pathToSmallIcon.string();
+
+		if (smallIcon)
+		{
+			DestroyIcon(smallIcon);
+
+			smallIcon = nullptr;
+		}
+
+		smallIcon = static_cast<HICON>(LoadImageW(nullptr, pathToSmallIcon.wstring().data(), IMAGE_ICON, standard_sizes::smallIconWidth, standard_sizes::smallIconHeight, LR_LOADFROMFILE));
+
+		SendMessageW(handle, WM_SETICON, ICON_SMALL, reinterpret_cast<LPARAM>(smallIcon));
 	}
 
-	iterators::forward_iterator BaseComposite::end() noexcept
+	iterators::composite_forward_iterator BaseComposite::begin() noexcept
 	{
-		return iterators::forward_iterator(nullptr);
+		return iterators::composite_forward_iterator(this);
 	}
 
-	iterators::const_forward_iterator BaseComposite::cend() const noexcept
+	iterators::composite_const_forward_iterator BaseComposite::cbegin() const noexcept
 	{
-		return iterators::const_forward_iterator(nullptr);
+		return iterators::composite_const_forward_iterator(static_cast<BaseComponent*>(const_cast<BaseComposite*>(this)));
+	}
+
+	iterators::composite_forward_iterator BaseComposite::end() noexcept
+	{
+		return iterators::composite_forward_iterator(nullptr);
+	}
+
+	iterators::composite_const_forward_iterator BaseComposite::cend() const noexcept
+	{
+		return iterators::composite_const_forward_iterator(nullptr);
 	}
 
 	void BaseComposite::setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue)
@@ -308,5 +363,8 @@ namespace gui_framework
 		for_each(children.begin(), children.end(), [&components](const unique_ptr<BaseComponent>& component) { components.push_back(component.get()); });
 
 		for_each(components.begin(), components.end(), [this](BaseComponent* component) { this->removeChild(component); });
+
+		DestroyIcon(largeIcon);
+		DestroyIcon(smallIcon);
 	}
 }
