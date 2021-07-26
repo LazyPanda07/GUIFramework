@@ -27,8 +27,12 @@ namespace gui_framework
 		/// @exception json::exceptions::WrongEncodingException 
 		GUI_FRAMEWORK_API_FUNCTION std::string to_string(const std::wstring& stringToConvert, uint32_t codepage);
 
+		/// @brief Make function with current build configuration compatibility
+		/// @tparam T Type
+		/// @param ...args Constructor arguments 
+		/// @return Compatible smart pointer
 		template<typename T, typename... Args>
-		GUI_FRAMEWORK_API_FUNCTION smartPointerType<T> make_smart_pointer(Args&&... args);
+		smartPointerType<T> make_smart_pointer(Args&&... args);
 	}
 }
 

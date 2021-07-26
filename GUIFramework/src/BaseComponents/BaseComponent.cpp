@@ -419,7 +419,7 @@ namespace gui_framework
 		// TODO: serialize menus
 		if (false && mainMenu)
 		{
-			smartPointerType<json::JSONBuilder::objectType> menuStructure(new json::JSONBuilder::objectType());
+			objectSmartPointer<jsonObject> menuStructure(new json::JSONBuilder::objectType());
 
 			menuStructure->data.push_back({ "mainMenuName"s, utility::to_string(mainMenu->getName(), codepage) });
 
@@ -428,7 +428,7 @@ namespace gui_framework
 
 			}
 
-			structure->data.push_back({ "menuStructure"s, move(menuStructure) });
+			structure->data.push_back(make_pair("menuStructure"s, move(menuStructure)));
 		}
 
 		if (textOperations)
