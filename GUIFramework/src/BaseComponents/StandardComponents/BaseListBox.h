@@ -16,6 +16,9 @@ namespace gui_framework
 		SIZE requiredSize;
 		uint8_t columnsWidth;
 
+	protected:
+		virtual json::JSONBuilder getStructure() const override;
+
 	public:
 		BaseListBox(const std::wstring& listBoxName, const utility::ComponentSettings& settings, const styles::ListBoxStyles& styles, BaseComponent* parent);
 

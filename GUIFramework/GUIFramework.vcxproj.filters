@@ -132,13 +132,13 @@
     <ClInclude Include="src\Interfaces\Iterators\IBaseConstForwardIterator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComposites\BaseCompositeIterators\forward_iterator.h">
+    <ClInclude Include="src\BaseComposites\Iterators\composite_forward_iterator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComposites\BaseCompositeIterators\const_forward_iterator.h">
+    <ClInclude Include="src\BaseComposites\Iterators\composite_const_forward_iterator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComposites\BaseCompositeIterators\IteratorsFunctionality.h">
+    <ClInclude Include="src\BaseComposites\Iterators\IteratorsFunctionality.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\BaseComposites\StandardComposites\BaseDialogBox.h">
@@ -483,6 +483,15 @@
     <ClInclude Include="src\Styles\Composites\DialogBoxStyles.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="src\Interfaces\Utility\ISerializable.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utility\Holders\LoadableHolders\Iterators\loadable_const_forward_iterator.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utility\Holders\LoadableHolders\Iterators\loadable_forward_iterator.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\pch.cpp">
@@ -584,13 +593,13 @@
     <ClCompile Include="src\Components\RichEdit.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComposites\BaseCompositeIterators\forward_iterator.cpp">
+    <ClCompile Include="src\BaseComposites\Iterators\composite_forward_iterator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComposites\BaseCompositeIterators\const_forward_iterator.cpp">
+    <ClCompile Include="src\BaseComposites\Iterators\composite_const_forward_iterator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComposites\BaseCompositeIterators\IteratorsFunctionality.cpp">
+    <ClCompile Include="src\BaseComposites\Iterators\IteratorsFunctionality.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\BaseComposites\StandardComposites\BaseDialogBox.cpp">
@@ -927,6 +936,15 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Styles\Composites\DialogBoxStyles.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Interfaces\Utility\ISerializable.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utility\Holders\LoadableHolders\Iterators\loadable_const_forward_iterator.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utility\Holders\LoadableHolders\Iterators\loadable_forward_iterator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

@@ -8,6 +8,24 @@ using namespace std;
 
 namespace gui_framework
 {
+	json::JSONBuilder BaseTrackbarControl::getStructure() const
+	{
+		using json::utility::jsonObject;
+		using json::utility::objectSmartPointer;
+
+		json::JSONBuilder builder = BaseComponent::getStructure();
+
+		auto& object = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
+
+		object->data.push_back({ "minRange"s, static_cast<int64_t>(this->getMinRange())});
+		object->data.push_back({ "maxRange"s, static_cast<int64_t>(this->getMaxRange())});
+
+		object->data.push_back({ "selectionStart"s, static_cast<int64_t>(this->getSelectionStart())});
+		object->data.push_back({ "selectionEnd"s, static_cast<int64_t>(this->getSelectionEnd())});
+
+		return builder;
+	}
+
 	BaseTrackbarControl::BaseTrackbarControl(const wstring& trackbarName, const utility::ComponentSettings& settings, const styles::TrackbarControlStyles& styles, BaseComponent* parent) :
 		BaseComponent
 		(

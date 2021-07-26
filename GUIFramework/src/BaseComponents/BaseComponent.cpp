@@ -2,9 +2,11 @@
 #include "BaseComponent.h"
 
 #include "BaseComposites/BaseComposite.h"
+#include "Interfaces/Components/IResizableComponent.h"
+#include "Interfaces/Components/ITextOperations.h"
+
 #include "Exceptions/CantFindCompositeFunctionException.h"
 #include "Exceptions/FileDoesNotExist.h"
-#include "Interfaces/Components/IResizableComponent.h"
 
 #pragma warning(disable: 6387)
 #pragma warning(disable: 4312)
@@ -55,8 +57,6 @@ namespace gui_framework
 		desiredX(settings.x),
 		desiredY(settings.y),
 		mode(exitMode::destroyWindow),
-		largeIcon(nullptr),
-		smallIcon(nullptr),
 		id(parent ? GUIFramework::get().generateId(windowName) : NULL),
 		backgroundColor(RGB(255, 255, 255)),
 		textColor(RGB(0, 0, 0))
@@ -100,6 +100,8 @@ namespace gui_framework
 			module,
 			nullptr
 		);
+
+		this->styles = utility::make_smart_pointer<interfaces::IStyles>(styles);
 
 		if (!parent)
 		{
@@ -169,9 +171,6 @@ namespace gui_framework
 
 		if (result && parent && parent->isComposite())
 		{
-			DestroyIcon(largeIcon);
-			DestroyIcon(smallIcon);
-
 			BaseComposite* parentComposite = static_cast<BaseComposite*>(parent);
 
 			parentComposite->removeChild(this);
@@ -186,9 +185,6 @@ namespace gui_framework
 
 		if (result && parent && parent->isComposite())
 		{
-			DestroyIcon(largeIcon);
-			DestroyIcon(smallIcon);
-
 			BaseComposite* parentComposite = static_cast<BaseComposite*>(parent);
 
 			parentComposite->removeChild(this);
@@ -256,44 +252,6 @@ namespace gui_framework
 	void BaseComponent::setExitMode(exitMode mode)
 	{
 		this->mode = mode;
-	}
-
-	void BaseComponent::setLargeIcon(const filesystem::path& pathToLargeIcon)
-	{
-		if (!filesystem::exists(pathToLargeIcon))
-		{
-			throw exceptions::FileDoesNotExist(pathToLargeIcon);
-		}
-
-		if (largeIcon)
-		{
-			DestroyIcon(largeIcon);
-
-			largeIcon = nullptr;
-		}
-
-		largeIcon = static_cast<HICON>(LoadImageW(nullptr, pathToLargeIcon.wstring().data(), IMAGE_ICON, standard_sizes::largeIconWidth, standard_sizes::largeIconHeight, LR_LOADFROMFILE));
-
-		SendMessageW(handle, WM_SETICON, ICON_BIG, reinterpret_cast<LPARAM>(largeIcon));
-	}
-
-	void BaseComponent::setSmallIcon(const filesystem::path& pathToLargeIcon)
-	{
-		if (!filesystem::exists(pathToLargeIcon))
-		{
-			throw exceptions::FileDoesNotExist(pathToLargeIcon);
-		}
-
-		if (largeIcon)
-		{
-			DestroyIcon(largeIcon);
-
-			smallIcon = nullptr;
-		}
-
-		smallIcon = static_cast<HICON>(LoadImageW(nullptr, pathToLargeIcon.wstring().data(), IMAGE_ICON, standard_sizes::largeIconWidth, standard_sizes::largeIconHeight, LR_LOADFROMFILE));
-
-		SendMessageW(handle, WM_SETICON, ICON_SMALL, reinterpret_cast<LPARAM>(smallIcon));
 	}
 
 	void BaseComponent::setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue)
@@ -421,6 +379,68 @@ namespace gui_framework
 	COLORREF BaseComponent::getTextColor() const
 	{
 		return textColor;
+	}
+
+	json::JSONBuilder BaseComponent::getStructure() const
+	{
+		using json::utility::objectSmartPointer;
+		using json::utility::jsonObject;
+		using json::utility::appendArray;
+
+		uint32_t codepage = ISerializable::getCodepage();
+		json::JSONBuilder builder(codepage);
+
+		objectSmartPointer<jsonObject> structure = json::utility::make_object<jsonObject>();
+		vector<objectSmartPointer<jsonObject>> backgroundColorJSON;
+		vector<objectSmartPointer<jsonObject>> textColorJSON;
+		const interfaces::ITextOperations* textOperations = dynamic_cast<const interfaces::ITextOperations*>(this);
+
+		appendArray(static_cast<int64_t>(GetRValue(backgroundColor)), backgroundColorJSON);
+		appendArray(static_cast<int64_t>(GetGValue(backgroundColor)), backgroundColorJSON);
+		appendArray(static_cast<int64_t>(GetBValue(backgroundColor)), backgroundColorJSON);
+
+		appendArray(static_cast<int64_t>(GetRValue(textColor)), textColorJSON);
+		appendArray(static_cast<int64_t>(GetGValue(textColor)), textColorJSON);
+		appendArray(static_cast<int64_t>(GetBValue(textColor)), textColorJSON);
+
+		structure->data.push_back({ "className"s, utility::to_string(className, codepage) });
+
+		structure->data.push_back({ "desiredX"s, desiredX });
+		structure->data.push_back({ "desiredY"s, desiredY });
+
+		structure->data.push_back({ "desiredWidth"s, static_cast<uint64_t>(desiredWidth) });
+		structure->data.push_back({ "desiredHeight"s, static_cast<uint64_t>(desiredHeight) });
+
+		structure->data.push_back({ "backgroundColor"s, move(backgroundColorJSON) });
+		structure->data.push_back({ "textColor"s, move(textColorJSON) });
+
+		structure->data.push_back({ "exitMode"s, static_cast<int64_t>(mode) });
+
+		// TODO: serialize menus
+		if (false && mainMenu)
+		{
+			smartPointerType<json::JSONBuilder::objectType> menuStructure(new json::JSONBuilder::objectType());
+
+			menuStructure->data.push_back({ "mainMenuName"s, utility::to_string(mainMenu->getName(), codepage) });
+
+			for (const auto& [menuHandle, menu] : popupMenus)
+			{
+
+			}
+
+			structure->data.push_back({ "menuStructure"s, move(menuStructure) });
+		}
+
+		if (textOperations)
+		{
+			structure->data.push_back({ "text"s, utility::to_string(textOperations->getText(), codepage) });
+		}
+
+		structure->data.push_back({ "styles"s, styles->getStyles() });
+
+		builder.push_back(make_pair(utility::to_string(windowName, codepage), move(structure)));
+
+		return builder;
 	}
 
 	BaseComponent::~BaseComponent()

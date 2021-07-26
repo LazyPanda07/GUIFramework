@@ -1,0 +1,63 @@
+#include "pch.h"
+#include "loadable_forward_iterator.h"
+
+using namespace std;
+
+namespace gui_framework
+{
+	namespace iterators
+	{
+		loadable_forward_iterator::loadable_forward_iterator(vector<filesystem::path>&& data, size_t index) noexcept :
+			data(move(data)),
+			currentIndex(index)
+		{
+
+		}
+
+		filesystem::path* loadable_forward_iterator::operator * () noexcept
+		{
+			return &data[currentIndex];
+		}
+
+		const filesystem::path* loadable_forward_iterator::operator * () const noexcept
+		{
+			return &data[currentIndex];
+		}
+
+		filesystem::path* loadable_forward_iterator::operator -> () noexcept
+		{
+			return &data[currentIndex];
+		}
+
+		const filesystem::path* loadable_forward_iterator::operator -> () const noexcept
+		{
+			return &data[currentIndex];
+		}
+
+		loadable_forward_iterator& loadable_forward_iterator::operator ++ () noexcept
+		{
+			currentIndex++;
+
+			return *this;
+		}
+
+		loadable_forward_iterator loadable_forward_iterator::operator ++ (int) noexcept
+		{
+			loadable_forward_iterator tem(*this);
+
+			currentIndex++;
+
+			return tem;
+		}
+
+		bool loadable_forward_iterator::operator == (const interfaces::IBaseConstForwardIterator<filesystem::path, loadable_forward_iterator>& loadable_forward_iterator) const noexcept
+		{
+			return currentIndex == dynamic_cast<const iterators::loadable_forward_iterator&>(loadable_forward_iterator).currentIndex;
+		}
+
+		bool loadable_forward_iterator::operator != (const interfaces::IBaseConstForwardIterator<filesystem::path, loadable_forward_iterator>& loadable_forward_iterator) const noexcept
+		{
+			return currentIndex != dynamic_cast<const iterators::loadable_forward_iterator&>(loadable_forward_iterator).currentIndex;
+		}
+	}
+}

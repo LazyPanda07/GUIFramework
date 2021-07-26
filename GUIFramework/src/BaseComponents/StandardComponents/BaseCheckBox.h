@@ -9,7 +9,9 @@ namespace gui_framework
 	class GUI_FRAMEWORK_API BaseCheckBox : public BaseButton
 	{
 	protected:
+		// TODO: serialize onCheck
 		std::function<void()> onCheck;
+		// TODO: serialize onClear
 		std::function<void()> onClear;
 
 	private:

@@ -29,6 +29,7 @@ namespace gui_framework
 		static constexpr uint8_t urlDetectEventSize = 8;
 
 	protected:
+		// TODO: serialize callbacks
 		std::unordered_map<urlDetectEvent, std::function<void(const std::wstring&)>> callbacks;
 
 	protected:

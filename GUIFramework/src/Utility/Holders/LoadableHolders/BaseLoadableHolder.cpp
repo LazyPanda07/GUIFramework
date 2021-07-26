@@ -138,6 +138,38 @@ namespace gui_framework
 			throw out_of_range(format("Can't find image at {} index", index));
 		}
 
+		iterators::loadable_forward_iterator BaseLoadableHolder::begin() noexcept
+		{
+			vector<filesystem::path> imagesPaths;
+
+			imagesPaths.reserve(images.size());
+
+			for_each(images.begin(), images.end(), [&imagesPaths](const pair<wstring, imageData>& data) { imagesPaths.push_back(data.first); });
+
+			return iterators::loadable_forward_iterator(move(imagesPaths), 0);
+		}
+
+		iterators::loadable_const_forward_iterator BaseLoadableHolder::cbegin() const noexcept
+		{
+			vector<filesystem::path> imagesPaths;
+
+			imagesPaths.reserve(images.size());
+
+			for_each(images.begin(), images.end(), [&imagesPaths](const pair<wstring, imageData>& data) { imagesPaths.push_back(data.first); });
+
+			return iterators::loadable_const_forward_iterator(move(imagesPaths), 0);
+		}
+
+		iterators::loadable_forward_iterator BaseLoadableHolder::end() noexcept
+		{
+			return iterators::loadable_forward_iterator({}, images.size());
+		}
+
+		iterators::loadable_const_forward_iterator BaseLoadableHolder::cend() const noexcept
+		{
+			return iterators::loadable_const_forward_iterator({}, images.size());
+		}
+
 		BaseLoadableHolder::~BaseLoadableHolder()
 		{
 			ImageList_Destroy(imageList);

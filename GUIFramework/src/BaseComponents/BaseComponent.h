@@ -2,12 +2,14 @@
 
 #include "pch.h"
 #include "Menu/Menu.h"
+#include "Utility/Holders/LoadableHolders/IconsHolder.h"
 #include "Interfaces/Styles/IStyles.h"
+#include "Interfaces/Utility/ISerializable.h"
 
 namespace gui_framework
 {
 	/// @brief Base class for all windows, controls, etc.
-	class GUI_FRAMEWORK_API BaseComponent
+	class GUI_FRAMEWORK_API BaseComponent : public interfaces::ISerializable
 	{
 	public:
 		enum class exitMode
@@ -40,11 +42,10 @@ namespace gui_framework
 		int desiredX;
 		int desiredY;
 		exitMode mode;
-		HICON largeIcon;
-		HICON smallIcon;
 		uint32_t id;
 		COLORREF backgroundColor;
 		COLORREF textColor;
+		smartPointerType<interfaces::IStyles> styles;
 
 	protected:
 		virtual LRESULT preWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed);
@@ -85,16 +86,6 @@ namespace gui_framework
 		virtual void setDesiredY(int desiredY) final;
 
 		virtual void setExitMode(exitMode mode) final;
-
-		/// @brief Set large icon(32x32) for specific window
-		/// @param pathToLargeIcon 
-		/// @exception FileDoesNotExist
-		virtual void setLargeIcon(const std::filesystem::path& pathToLargeIcon) final;
-
-		/// @brief Set small icon(16x16) for specific window
-		/// @param pathToSmallIcon 
-		/// @exception FileDoesNotExist
-		virtual void setSmallIcon(const std::filesystem::path& pathToSmallIcon) final;
 
 		virtual void setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue);
 
@@ -137,6 +128,8 @@ namespace gui_framework
 		virtual COLORREF getBackgroundColor() const final;
 
 		virtual COLORREF getTextColor() const final;
+
+		virtual json::JSONBuilder getStructure() const override;
 		
 		virtual ~BaseComponent();
 	};

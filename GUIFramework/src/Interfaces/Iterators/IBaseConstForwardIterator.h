@@ -23,9 +23,9 @@ namespace gui_framework
 
 			virtual IBaseConstIteratorSubclass operator ++ (int) noexcept = 0;
 
-			virtual bool operator == (const IBaseConstForwardIterator<T, IBaseConstIteratorSubclass>& forward_iterator) const noexcept = 0;
+			virtual bool operator == (const IBaseConstForwardIterator<T, IBaseConstIteratorSubclass>& const_forward_iterator) const noexcept = 0;
 
-			virtual bool operator != (const IBaseConstForwardIterator<T, IBaseConstIteratorSubclass>& forward_iterator) const noexcept = 0;
+			virtual bool operator != (const IBaseConstForwardIterator<T, IBaseConstIteratorSubclass>& const_forward_iterator) const noexcept = 0;
 
 			virtual ~IBaseConstForwardIterator() = default;
 		};

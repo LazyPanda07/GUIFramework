@@ -13,6 +13,7 @@ namespace gui_framework
 		public interfaces::ITextOperations
 	{
 	protected:
+		// TODO: serialize onClick
 		std::function<void()> onClick;
 
 	protected:
