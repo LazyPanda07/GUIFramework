@@ -14,6 +14,9 @@ namespace gui_framework
 	protected:
 		int animationPeriod;
 
+	protected:
+		virtual json::JSONBuilder getStructure() const override;
+
 	public:
 		/// @brief 
 		/// @param progressBarName 

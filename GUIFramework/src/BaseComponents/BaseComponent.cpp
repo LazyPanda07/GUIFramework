@@ -5,6 +5,7 @@
 #include "Exceptions/CantFindCompositeFunctionException.h"
 #include "Exceptions/FileDoesNotExist.h"
 #include "Interfaces/Components/IResizableComponent.h"
+#include "Interfaces/Components/ITextOperations.h"
 
 #pragma warning(disable: 6387)
 #pragma warning(disable: 4312)
@@ -439,6 +440,7 @@ namespace gui_framework
 		objectSmartPointer<jsonObject> structure = json::utility::make_object<jsonObject>();
 		vector<objectSmartPointer<jsonObject>> backgroundColorJSON;
 		vector<objectSmartPointer<jsonObject>> textColorJSON;
+		const interfaces::ITextOperations* textOperations = dynamic_cast<const interfaces::ITextOperations*>(this);
 
 		appendArray(static_cast<int64_t>(GetRValue(backgroundColor)), backgroundColorJSON);
 		appendArray(static_cast<int64_t>(GetGValue(backgroundColor)), backgroundColorJSON);
@@ -484,6 +486,11 @@ namespace gui_framework
 			}
 
 			structure->data.push_back({ "menuStructure"s, move(menuStructure) });
+		}
+
+		if (textOperations)
+		{
+			structure->data.push_back({ "text"s, utility::to_string(textOperations->getText(), codepage) });
 		}
 
 		builder.push_back(make_pair(utility::to_string(windowName, codepage), move(structure)));

@@ -10,6 +10,18 @@ using namespace std;
 
 namespace gui_framework
 {
+	json::JSONBuilder BaseListBox::getStructure() const
+	{
+		using json::utility::jsonObject;
+		using json::utility::objectSmartPointer;
+
+		json::JSONBuilder builder = BaseComponent::getStructure();
+
+		get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())])->data.push_back({ "columnWidth"s, static_cast<uint64_t>(columnsWidth) });
+
+		return builder;
+	}
+
 	BaseListBox::BaseListBox(const wstring& listBoxName, const utility::ComponentSettings& settings, const styles::ListBoxStyles& styles, BaseComponent* parent) :
 		BaseComponent
 		(

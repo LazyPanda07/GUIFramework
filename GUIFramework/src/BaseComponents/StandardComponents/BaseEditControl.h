@@ -14,6 +14,9 @@ namespace gui_framework
 	protected:
 		std::wstring placeholder;
 
+	protected:
+		virtual json::JSONBuilder getStructure() const override;
+
 	public:
 		BaseEditControl(const std::wstring& editControlName, const utility::ComponentSettings& settings, BaseComponent* parent);
 

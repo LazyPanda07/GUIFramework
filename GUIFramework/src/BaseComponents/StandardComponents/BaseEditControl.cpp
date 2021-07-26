@@ -8,6 +8,19 @@ using namespace std;
 
 namespace gui_framework
 {
+	json::JSONBuilder BaseEditControl::getStructure() const
+	{
+		using json::utility::jsonObject;
+		using json::utility::objectSmartPointer;
+
+		json::JSONBuilder builder = BaseComponent::getStructure();
+		uint32_t codepage = ISerializable::getCodepage();
+
+		get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, codepage)])->data.push_back({ "placeholder"s, utility::to_string(placeholder, codepage) });
+
+		return builder;
+	}
+
 	BaseEditControl::BaseEditControl(const std::wstring& editControlName, const utility::ComponentSettings& settings, BaseComponent* parent) :
 		BaseComponent
 		(

@@ -8,6 +8,23 @@ using namespace std;
 
 namespace gui_framework
 {
+	json::JSONBuilder BaseProgressBar::getStructure() const
+	{
+		using json::utility::jsonObject;
+		using json::utility::objectSmartPointer;
+
+		json::JSONBuilder builder = BaseComponent::getStructure();
+
+		auto& object = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
+
+		object->data.push_back({ "minRange"s, static_cast<int64_t>(minRange) });
+		object->data.push_back({ "maxRange"s, static_cast<int64_t>(maxRange) });
+
+		object->data.push_back({ "updateStep"s, static_cast<int64_t>(updateStep) });
+
+		return builder;
+	}
+
 	BaseProgressBar::BaseProgressBar(const wstring& progressBarName, const utility::ComponentSettings& settings, BaseComponent* parent, int minRange, int maxRange, int updateStep) :
 		BaseComponent
 		(
