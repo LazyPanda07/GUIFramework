@@ -3,8 +3,8 @@
 #include "pch.h"
 #include "BaseComponents/BaseComponent.h"
 #include "Interfaces/Iterators/IIterable.h"
-#include "BaseCompositeIterators/composite_forward_iterator.h"
-#include "BaseCompositeIterators/composite_const_forward_iterator.h"
+#include "Iterators/composite_forward_iterator.h"
+#include "Iterators/composite_const_forward_iterator.h"
 
 namespace gui_framework
 {
