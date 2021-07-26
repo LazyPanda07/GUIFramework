@@ -42,10 +42,6 @@ namespace gui_framework
 		int desiredX;
 		int desiredY;
 		exitMode mode;
-		HICON largeIcon;
-		HICON smallIcon;
-		std::string pathToSmallIcon;
-		std::string pathToLargeIcon;
 		uint32_t id;
 		COLORREF backgroundColor;
 		COLORREF textColor;
@@ -90,16 +86,6 @@ namespace gui_framework
 		virtual void setDesiredY(int desiredY) final;
 
 		virtual void setExitMode(exitMode mode) final;
-
-		/// @brief Set large icon(32x32) for specific window
-		/// @param pathToLargeIcon 
-		/// @exception FileDoesNotExist
-		virtual void setLargeIcon(const std::filesystem::path& pathToLargeIcon) final;
-
-		/// @brief Set small icon(16x16) for specific window
-		/// @param pathToSmallIcon 
-		/// @exception FileDoesNotExist
-		virtual void setSmallIcon(const std::filesystem::path& pathToSmallIcon) final;
 
 		virtual void setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue);
 

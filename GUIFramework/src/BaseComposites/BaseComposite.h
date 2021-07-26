@@ -15,6 +15,10 @@ namespace gui_framework
 	{
 	protected:
 		std::vector<std::unique_ptr<BaseComponent>> children;
+		HICON largeIcon;
+		HICON smallIcon;
+		std::string pathToSmallIcon;
+		std::string pathToLargeIcon;
 
 	private:
 		virtual LRESULT preWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
@@ -49,6 +53,16 @@ namespace gui_framework
 		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) final override;
 
 		virtual bool isComposite() const final override;
+
+		/// @brief Set large icon(32x32) for specific window
+		/// @param pathToLargeIcon 
+		/// @exception FileDoesNotExist
+		virtual void setLargeIcon(const std::filesystem::path& pathToLargeIcon) final;
+
+		/// @brief Set small icon(16x16) for specific window
+		/// @param pathToSmallIcon 
+		/// @exception FileDoesNotExist
+		virtual void setSmallIcon(const std::filesystem::path& pathToSmallIcon) final;
 
 		virtual iterators::composite_forward_iterator begin() noexcept override;
 
