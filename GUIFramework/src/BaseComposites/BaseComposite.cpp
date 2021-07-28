@@ -17,7 +17,7 @@ namespace gui_framework
 		{
 			interfaces::IResizableComponent* resizableComposite = dynamic_cast<interfaces::IResizableComponent*>(this);
 
-			if (resizableComposite && resizableComposite->getBlockResize())
+			if (resizableComposite && !resizableComposite->getBlockResize())
 			{
 				isUsed = true;
 

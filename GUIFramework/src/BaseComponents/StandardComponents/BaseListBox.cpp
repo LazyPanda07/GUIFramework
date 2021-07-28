@@ -245,16 +245,6 @@ namespace gui_framework
 				return;
 			}
 
-			if (requiredSize.cx == desiredWidth)
-			{
-				requiredSize.cx = 0;
-			}
-
-			if (requiredSize.cy = desiredHeight)
-			{
-				requiredSize.cy = 0;
-			}
-
 			for (size_t i = 0; i < static_cast<size_t>(currentSize); i++)
 			{
 				wstring value = this->getValue(i);

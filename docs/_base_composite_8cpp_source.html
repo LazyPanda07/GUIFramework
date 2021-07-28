@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.7-beta</span>
+   &#160;<span id="projectnumber">0.7.1-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -106,7 +106,7 @@ $(document).ready(function(){initNavTree('_base_composite_8cpp_source.html','');
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        {</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            interfaces::IResizableComponent* resizableComposite = <span class="keyword">dynamic_cast&lt;</span>interfaces::IResizableComponent*<span class="keyword">&gt;</span>(<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <span class="keywordflow">if</span> (resizableComposite &amp;&amp; resizableComposite-&gt;getBlockResize())</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <span class="keywordflow">if</span> (resizableComposite &amp;&amp; !resizableComposite-&gt;getBlockResize())</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            {</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                isUsed = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
