@@ -84,7 +84,7 @@ namespace gui_framework
 		};
 	}
 
-	inline constexpr std::string_view guiFrameworkVersion = "0.7.1-beta";
+	inline constexpr std::string_view guiFrameworkVersion = "0.7.2-beta";
 }
 
 #ifdef GUI_FRAMEWORK_DLL

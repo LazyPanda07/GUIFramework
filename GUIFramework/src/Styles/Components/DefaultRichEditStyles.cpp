@@ -7,8 +7,13 @@ namespace gui_framework
 {
 	namespace styles
 	{
-		DefaultRichEditStyles::DefaultRichEditStyles()
+		DefaultRichEditStyles::DefaultRichEditStyles(bool isMultiLine)
 		{
+			if (isMultiLine)
+			{
+				this->appendStyle(ES_MULTILINE);
+			}
+
 			this->appendStyle(WS_VSCROLL);
 
 			this->appendStyle(WS_HSCROLL);
