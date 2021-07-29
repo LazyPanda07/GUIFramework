@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "BaseEditControl.h"
 
-#include "Styles/DefaultStyles.h"
+#include "Styles/Components/EditControlStyles.h"
 #include "Exceptions/GetLastErrorException.h"
 
 using namespace std;
@@ -27,7 +27,7 @@ namespace gui_framework
 			wstring(standard_classes::editControl),
 			editControlName,
 			settings,
-			styles::DefaultStyles(),
+			styles::EditControlStyles(isMultiLine),
 			parent
 		),
 		ITextOperations(handle)

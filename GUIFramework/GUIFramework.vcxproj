@@ -142,6 +142,7 @@
     <ClInclude Include="src\Styles\Components\Buttons\CheckBoxStyles.h" />
     <ClInclude Include="src\Styles\Components\ComboBoxes\ComboBoxStyles.h" />
     <ClInclude Include="src\Styles\Components\Buttons\DefaultButtonStyles.h" />
+    <ClInclude Include="src\Styles\Components\EditControlStyles.h" />
     <ClInclude Include="src\Styles\Components\ListBoxes\DefaultListBoxStyles.h" />
     <ClInclude Include="src\Styles\Components\DefaultRichEditStyles.h" />
     <ClInclude Include="src\Styles\Components\ComboBoxes\DropDownComboBoxStyles.h" />
@@ -299,6 +300,7 @@
     <ClCompile Include="src\Styles\Components\Buttons\CheckBoxStyles.cpp" />
     <ClCompile Include="src\Styles\Components\ComboBoxes\ComboBoxStyles.cpp" />
     <ClCompile Include="src\Styles\Components\Buttons\DefaultButtonStyles.cpp" />
+    <ClCompile Include="src\Styles\Components\EditControlStyles.cpp" />
     <ClCompile Include="src\Styles\Components\ListBoxes\DefaultListBoxStyles.cpp" />
     <ClCompile Include="src\Styles\Components\DefaultRichEditStyles.cpp" />
     <ClCompile Include="src\Styles\Components\ComboBoxes\DropDownComboBoxStyles.cpp" />
