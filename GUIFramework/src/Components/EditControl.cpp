@@ -5,7 +5,7 @@ using namespace std;
 
 namespace gui_framework
 {
-	EditControl::EditControl(const wstring& editControlName, int x, int y, BaseComponent* parent, uint16_t width, uint16_t height) :
+	EditControl::EditControl(const wstring& editControlName, int x, int y, BaseComponent* parent, uint16_t width, uint16_t height, bool isMultiLine) :
 		BaseEditControl
 		(
 			editControlName,
@@ -16,7 +16,8 @@ namespace gui_framework
 				width,
 				height
 			),
-			parent
+			parent,
+			isMultiLine
 		),
 		IResizableComponent
 		(

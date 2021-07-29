@@ -21,7 +21,7 @@ namespace gui_framework
 		return builder;
 	}
 
-	BaseEditControl::BaseEditControl(const std::wstring& editControlName, const utility::ComponentSettings& settings, BaseComponent* parent) :
+	BaseEditControl::BaseEditControl(const std::wstring& editControlName, const utility::ComponentSettings& settings, BaseComponent* parent, bool isMultiLine) :
 		BaseComponent
 		(
 			wstring(standard_classes::editControl),
