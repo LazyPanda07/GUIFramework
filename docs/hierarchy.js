@@ -210,6 +210,7 @@ var hierarchy =
         ] ],
         [ "gui_framework::styles::DefaultRichEditStyles", "classgui__framework_1_1styles_1_1_default_rich_edit_styles.html", null ],
         [ "gui_framework::styles::DialogBoxStyles", "classgui__framework_1_1styles_1_1_dialog_box_styles.html", null ],
+        [ "gui_framework::styles::EditControlStyles", "classgui__framework_1_1styles_1_1_edit_control_styles.html", null ],
         [ "gui_framework::styles::InfiniteProgressBarStyles", "classgui__framework_1_1styles_1_1_infinite_progress_bar_styles.html", null ],
         [ "gui_framework::styles::ListBoxStyles", "classgui__framework_1_1styles_1_1_list_box_styles.html", [
           [ "gui_framework::styles::DefaultListBoxStyles", "classgui__framework_1_1styles_1_1_default_list_box_styles.html", null ],

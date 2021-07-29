@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.7.1-beta</span>
+   &#160;<span id="projectnumber">0.7.2-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -136,8 +136,8 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:acf95576534631c3e382035a6f84aca45"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_rich_edit.html#acf95576534631c3e382035a6f84aca45">BaseRichEdit</a> (const std::wstring &amp;richEditName, const <a class="el" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a> &amp;settings, <a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> *<a class="el" href="classgui__framework_1_1_base_component.html#a1576375d22cf283d598e22f4a11aca2f">parent</a>)</td></tr>
-<tr class="separator:acf95576534631c3e382035a6f84aca45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33e2ff026ae68f0cdba10162eff082be"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_rich_edit.html#a33e2ff026ae68f0cdba10162eff082be">BaseRichEdit</a> (const std::wstring &amp;richEditName, const <a class="el" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a> &amp;settings, <a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> *<a class="el" href="classgui__framework_1_1_base_component.html#a1576375d22cf283d598e22f4a11aca2f">parent</a>, bool isMultiLine=false)</td></tr>
+<tr class="separator:a33e2ff026ae68f0cdba10162eff082be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af21b8916906b7a1c5139d513c47aff52"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_rich_edit.html#af21b8916906b7a1c5139d513c47aff52">addUrlDetectEvent</a> (<a class="el" href="classgui__framework_1_1_base_rich_edit.html#abf55c644c6c2640d8c662dd7179ab1f3">urlDetectEvent</a> event, const std::function&lt; void(const std::wstring &amp;)&gt; &amp;eventCallback) final</td></tr>
 <tr class="separator:af21b8916906b7a1c5139d513c47aff52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf50e2d2bfa111189ab21415b620a85b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_rich_edit.html#acf50e2d2bfa111189ab21415b620a85b">removeUrlDetectEvent</a> (<a class="el" href="classgui__framework_1_1_base_rich_edit.html#abf55c644c6c2640d8c662dd7179ab1f3">urlDetectEvent</a> event) final</td></tr>
@@ -389,8 +389,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="acf95576534631c3e382035a6f84aca45"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf95576534631c3e382035a6f84aca45">&#9670;&nbsp;</a></span>BaseRichEdit()</h2>
+<a id="a33e2ff026ae68f0cdba10162eff082be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33e2ff026ae68f0cdba10162eff082be">&#9670;&nbsp;</a></span>BaseRichEdit()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -411,7 +411,13 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> *&#160;</td>
-          <td class="paramname"><em>parent</em>&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isMultiLine</em> = <code>false</code>&#160;</td>
         </tr>
         <tr>
           <td></td>

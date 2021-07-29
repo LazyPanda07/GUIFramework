@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.7.1-beta</span>
+   &#160;<span id="projectnumber">0.7.2-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -131,13 +131,13 @@ $(document).ready(function(){initNavTree('_base_rich_edit_8cpp_source.html','');
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">return</span> -1;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_rich_edit.html#acf95576534631c3e382035a6f84aca45">   45</a></span>&#160;    BaseRichEdit::BaseRichEdit(<span class="keyword">const</span> wstring&amp; richEditName, <span class="keyword">const</span> <a class="code" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a>&amp; settings, <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* parent) :</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_rich_edit.html#a33e2ff026ae68f0cdba10162eff082be">   45</a></span>&#160;    BaseRichEdit::BaseRichEdit(<span class="keyword">const</span> wstring&amp; richEditName, <span class="keyword">const</span> <a class="code" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a>&amp; settings, <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* parent, <span class="keywordtype">bool</span> isMultiLine) :</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        (</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            wstring(standard_classes::<a class="code" href="namespacegui__framework_1_1standard__classes.html#a57b557e0f5b320b012d2af64d4246290">richEdit</a>),</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            richEditName,</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            settings,</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            styles::DefaultRichEditStyles(),</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            styles::DefaultRichEditStyles(isMultiLine),</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            parent</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        ),</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        IResizableComponent</div>

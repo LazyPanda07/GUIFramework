@@ -1,5 +1,9 @@
 var NAVTREEINDEX4 =
 {
+"classgui__framework_1_1_base_trackbar_control.html#aef71e055ea173fa265f34449202b020a":[1,0,0,17,1],
+"classgui__framework_1_1_base_window.html":[1,0,0,30],
+"classgui__framework_1_1_base_window.html#a9e7ef6f954af0c728a81afa2f1e29222":[1,0,0,30,1],
+"classgui__framework_1_1_base_window.html#ad80eafb494c0ce772ceb0d1d0e6d761c":[1,0,0,30,0],
 "classgui__framework_1_1_button.html":[1,0,0,31],
 "classgui__framework_1_1_button.html#a69645774e061e9f6c52efc98fc57d59c":[1,0,0,31,1],
 "classgui__framework_1_1_button.html#a77bd5fc7fbc7af64d209e3766642818d":[1,0,0,31,0],
@@ -38,7 +42,7 @@ var NAVTREEINDEX4 =
 "classgui__framework_1_1_drop_down_menu_item.html#ae30b0354675dd5efee5ddd2e34f34703":[1,0,0,59,0],
 "classgui__framework_1_1_edit_control.html":[1,0,0,36],
 "classgui__framework_1_1_edit_control.html#a2077faa13a23ef7e8041e276bf421d4b":[1,0,0,36,1],
-"classgui__framework_1_1_edit_control.html#a356216bcf74db5abfef0a6c66e12072b":[1,0,0,36,0],
+"classgui__framework_1_1_edit_control.html#a34e04bdab3dc20bcf165134fea811879":[1,0,0,36,0],
 "classgui__framework_1_1_g_u_i_framework.html":[1,0,0,56],
 "classgui__framework_1_1_g_u_i_framework.html#a129903a0c5ade0c4da792de6ff40e9c7":[1,0,0,56,9],
 "classgui__framework_1_1_g_u_i_framework.html#a3a04381522f61f399162331fbca8e532":[1,0,0,56,5],
@@ -245,9 +249,5 @@ var NAVTREEINDEX4 =
 "classgui__framework_1_1interfaces_1_1_i_styles.html#a2c68c3b6cc4bcbd5fb6685790749b176":[1,0,0,1,11,8],
 "classgui__framework_1_1interfaces_1_1_i_styles.html#a5242087407441874bce6d624f9ac58ad":[1,0,0,1,11,3],
 "classgui__framework_1_1interfaces_1_1_i_styles.html#aa0618eefd941f87021599ea471f141b5":[1,0,0,1,11,5],
-"classgui__framework_1_1interfaces_1_1_i_styles.html#aa5dbf0044d0b5cdd4eaf92c58eb4b1a5":[1,0,0,1,11,2],
-"classgui__framework_1_1interfaces_1_1_i_styles.html#afcb2be9738fb8a120b714ad552fdd234":[1,0,0,1,11,1],
-"classgui__framework_1_1interfaces_1_1_i_text_icon_list_view.html":[1,0,0,1,6],
-"classgui__framework_1_1interfaces_1_1_i_text_icon_list_view.html#a551dc63d09c33a3a3b3ff34afc87a211":[1,0,0,1,6,0],
-"classgui__framework_1_1interfaces_1_1_i_text_icon_list_view.html#a790c03d14ee0a0aded755d33709ae143":[1,0,0,1,6,3]
+"classgui__framework_1_1interfaces_1_1_i_styles.html#aa5dbf0044d0b5cdd4eaf92c58eb4b1a5":[1,0,0,1,11,2]
 };

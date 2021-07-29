@@ -9,6 +9,7 @@ var namespacegui__framework_1_1styles =
     [ "DropDownListComboBoxStyles", "classgui__framework_1_1styles_1_1_drop_down_list_combo_box_styles.html", "classgui__framework_1_1styles_1_1_drop_down_list_combo_box_styles" ],
     [ "SimpleComboBoxStyles", "classgui__framework_1_1styles_1_1_simple_combo_box_styles.html", "classgui__framework_1_1styles_1_1_simple_combo_box_styles" ],
     [ "DefaultRichEditStyles", "classgui__framework_1_1styles_1_1_default_rich_edit_styles.html", "classgui__framework_1_1styles_1_1_default_rich_edit_styles" ],
+    [ "EditControlStyles", "classgui__framework_1_1styles_1_1_edit_control_styles.html", "classgui__framework_1_1styles_1_1_edit_control_styles" ],
     [ "InfiniteProgressBarStyles", "classgui__framework_1_1styles_1_1_infinite_progress_bar_styles.html", "classgui__framework_1_1styles_1_1_infinite_progress_bar_styles" ],
     [ "DefaultListBoxStyles", "classgui__framework_1_1styles_1_1_default_list_box_styles.html", "classgui__framework_1_1styles_1_1_default_list_box_styles" ],
     [ "ListBoxStyles", "classgui__framework_1_1styles_1_1_list_box_styles.html", "classgui__framework_1_1styles_1_1_list_box_styles" ],

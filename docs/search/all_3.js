@@ -10,7 +10,7 @@ var searchData=
   ['defaultlistboxstyles_2eh_241',['DefaultListBoxStyles.h',['../_default_list_box_styles_8h.html',1,'']]],
   ['defaultmaxrange_242',['defaultMaxRange',['../classgui__framework_1_1_base_progress_bar.html#a48b2ed47cd506a8dd28f31b29727e226',1,'gui_framework::BaseProgressBar']]],
   ['defaultminrange_243',['defaultMinRange',['../classgui__framework_1_1_base_progress_bar.html#a5452143e608509bc9157091f031476e9',1,'gui_framework::BaseProgressBar']]],
-  ['defaultricheditstyles_244',['DefaultRichEditStyles',['../classgui__framework_1_1styles_1_1_default_rich_edit_styles.html#af9555e72ffdfbb14e974ddc183db2b61',1,'gui_framework::styles::DefaultRichEditStyles::DefaultRichEditStyles()'],['../classgui__framework_1_1styles_1_1_default_rich_edit_styles.html',1,'gui_framework::styles::DefaultRichEditStyles']]],
+  ['defaultricheditstyles_244',['DefaultRichEditStyles',['../classgui__framework_1_1styles_1_1_default_rich_edit_styles.html#a76158d934c4d2fbd625f8f796a8b3d52',1,'gui_framework::styles::DefaultRichEditStyles::DefaultRichEditStyles()'],['../classgui__framework_1_1styles_1_1_default_rich_edit_styles.html',1,'gui_framework::styles::DefaultRichEditStyles']]],
   ['defaultricheditstyles_2ecpp_245',['DefaultRichEditStyles.cpp',['../_default_rich_edit_styles_8cpp.html',1,'']]],
   ['defaultricheditstyles_2eh_246',['DefaultRichEditStyles.h',['../_default_rich_edit_styles_8h.html',1,'']]],
   ['defaultstyles_247',['DefaultStyles',['../classgui__framework_1_1styles_1_1_default_styles.html#a31a1de20c82610c105f859cf034429d7',1,'gui_framework::styles::DefaultStyles::DefaultStyles()'],['../classgui__framework_1_1styles_1_1_default_styles.html',1,'gui_framework::styles::DefaultStyles']]],

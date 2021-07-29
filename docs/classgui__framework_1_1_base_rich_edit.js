@@ -10,7 +10,7 @@ var classgui__framework_1_1_base_rich_edit =
       [ "rightButtonDoubleClick", "classgui__framework_1_1_base_rich_edit.html#abf55c644c6c2640d8c662dd7179ab1f3a0514645391c12afc670bcd1d999c98bc", null ],
       [ "setCursor", "classgui__framework_1_1_base_rich_edit.html#abf55c644c6c2640d8c662dd7179ab1f3a5a69f9315e4bb59223621009e87cbc8d", null ]
     ] ],
-    [ "BaseRichEdit", "classgui__framework_1_1_base_rich_edit.html#acf95576534631c3e382035a6f84aca45", null ],
+    [ "BaseRichEdit", "classgui__framework_1_1_base_rich_edit.html#a33e2ff026ae68f0cdba10162eff082be", null ],
     [ "~BaseRichEdit", "classgui__framework_1_1_base_rich_edit.html#ae92c8a07985e30e2ef372a66d046ec46", null ],
     [ "addUrlDetectEvent", "classgui__framework_1_1_base_rich_edit.html#af21b8916906b7a1c5139d513c47aff52", null ],
     [ "findString", "classgui__framework_1_1_base_rich_edit.html#a28e3b67f20ffbba552803455e03b3104", null ],

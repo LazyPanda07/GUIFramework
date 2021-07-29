@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.7.1-beta</span>
+   &#160;<span id="projectnumber">0.7.2-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -112,8 +112,8 @@ Inheritance diagram for gui_framework::BaseEditControl:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3209bf5608df967f2df0d4b93bfb3108"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_edit_control.html#a3209bf5608df967f2df0d4b93bfb3108">BaseEditControl</a> (const std::wstring &amp;editControlName, const <a class="el" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a> &amp;settings, <a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> *<a class="el" href="classgui__framework_1_1_base_component.html#a1576375d22cf283d598e22f4a11aca2f">parent</a>)</td></tr>
-<tr class="separator:a3209bf5608df967f2df0d4b93bfb3108"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd4ab65bde456c423f45520506c3abed"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_edit_control.html#acd4ab65bde456c423f45520506c3abed">BaseEditControl</a> (const std::wstring &amp;editControlName, const <a class="el" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a> &amp;settings, <a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> *<a class="el" href="classgui__framework_1_1_base_component.html#a1576375d22cf283d598e22f4a11aca2f">parent</a>, bool isMultiLine=false)</td></tr>
+<tr class="separator:acd4ab65bde456c423f45520506c3abed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3f70bbd96d8e35b87faeb1d89d582e0"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_edit_control.html#ad3f70bbd96d8e35b87faeb1d89d582e0">setPlaceholder</a> (const std::wstring &amp;<a class="el" href="classgui__framework_1_1_base_edit_control.html#a052e56b538e85a46071b5f696955762d">placeholder</a>) final</td></tr>
 <tr class="memdesc:ad3f70bbd96d8e35b87faeb1d89d582e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set placeholder to single line edit control.  <a href="classgui__framework_1_1_base_edit_control.html#ad3f70bbd96d8e35b87faeb1d89d582e0">More...</a><br /></td></tr>
 <tr class="separator:ad3f70bbd96d8e35b87faeb1d89d582e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -284,8 +284,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_base_edit_control_8h_source.html#l00010">10</a> of file <a class="el" href="_base_edit_control_8h_source.html">BaseEditControl.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a3209bf5608df967f2df0d4b93bfb3108"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3209bf5608df967f2df0d4b93bfb3108">&#9670;&nbsp;</a></span>BaseEditControl()</h2>
+<a id="acd4ab65bde456c423f45520506c3abed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd4ab65bde456c423f45520506c3abed">&#9670;&nbsp;</a></span>BaseEditControl()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -306,7 +306,13 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> *&#160;</td>
-          <td class="paramname"><em>parent</em>&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isMultiLine</em> = <code>false</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -429,12 +435,11 @@ Additional Inherited Members</h2></td></tr>
 <p>Set placeholder to single line edit control. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">placeholder</td><td></td></tr>
+    <tr><td class="paramname">placeholder</td><td><br  />
+ </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><br  />
- </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_base_edit_control_8cpp_source.html#l00038">38</a> of file <a class="el" href="_base_edit_control_8cpp_source.html">BaseEditControl.cpp</a>.</p>
 
