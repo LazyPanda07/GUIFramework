@@ -16,5 +16,9 @@ var dir_207a032f0a90b270c77a660f4dd3aafc =
     [ "InfiniteProgressBarStyles.cpp", "_infinite_progress_bar_styles_8cpp.html", null ],
     [ "InfiniteProgressBarStyles.h", "_infinite_progress_bar_styles_8h.html", [
       [ "InfiniteProgressBarStyles", "classgui__framework_1_1styles_1_1_infinite_progress_bar_styles.html", "classgui__framework_1_1styles_1_1_infinite_progress_bar_styles" ]
+    ] ],
+    [ "StaticControlStyles.cpp", "_static_control_styles_8cpp.html", null ],
+    [ "StaticControlStyles.h", "_static_control_styles_8h.html", [
+      [ "StaticControlStyles", "classgui__framework_1_1styles_1_1_static_control_styles.html", "classgui__framework_1_1styles_1_1_static_control_styles" ]
     ] ]
 ];

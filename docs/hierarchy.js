@@ -225,6 +225,7 @@ var hierarchy =
           [ "gui_framework::styles::TextListViewStyles", "classgui__framework_1_1styles_1_1_text_list_view_styles.html", null ]
         ] ],
         [ "gui_framework::styles::SeparateWindowStyles", "classgui__framework_1_1styles_1_1_separate_window_styles.html", null ],
+        [ "gui_framework::styles::StaticControlStyles", "classgui__framework_1_1styles_1_1_static_control_styles.html", null ],
         [ "gui_framework::styles::TrackbarControlStyles", "classgui__framework_1_1styles_1_1_trackbar_control_styles.html", [
           [ "gui_framework::styles::HorizontalTrackbarControlStyles", "classgui__framework_1_1styles_1_1_horizontal_trackbar_control_styles.html", null ],
           [ "gui_framework::styles::VerticalTrackbarControlStyles", "classgui__framework_1_1styles_1_1_vertical_trackbar_control_styles.html", null ]

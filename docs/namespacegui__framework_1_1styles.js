@@ -20,6 +20,7 @@ var namespacegui__framework_1_1styles =
     [ "ListTextListViewStyles", "classgui__framework_1_1styles_1_1_list_text_list_view_styles.html", "classgui__framework_1_1styles_1_1_list_text_list_view_styles" ],
     [ "ListViewStyles", "classgui__framework_1_1styles_1_1_list_view_styles.html", "classgui__framework_1_1styles_1_1_list_view_styles" ],
     [ "TextListViewStyles", "classgui__framework_1_1styles_1_1_text_list_view_styles.html", "classgui__framework_1_1styles_1_1_text_list_view_styles" ],
+    [ "StaticControlStyles", "classgui__framework_1_1styles_1_1_static_control_styles.html", "classgui__framework_1_1styles_1_1_static_control_styles" ],
     [ "HorizontalTrackbarControlStyles", "classgui__framework_1_1styles_1_1_horizontal_trackbar_control_styles.html", "classgui__framework_1_1styles_1_1_horizontal_trackbar_control_styles" ],
     [ "TrackbarControlStyles", "classgui__framework_1_1styles_1_1_trackbar_control_styles.html", "classgui__framework_1_1styles_1_1_trackbar_control_styles" ],
     [ "VerticalTrackbarControlStyles", "classgui__framework_1_1styles_1_1_vertical_trackbar_control_styles.html", "classgui__framework_1_1styles_1_1_vertical_trackbar_control_styles" ],

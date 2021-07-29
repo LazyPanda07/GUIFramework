@@ -147,6 +147,7 @@
     <ClInclude Include="src\Styles\Components\DefaultRichEditStyles.h" />
     <ClInclude Include="src\Styles\Components\ComboBoxes\DropDownComboBoxStyles.h" />
     <ClInclude Include="src\Styles\Components\ComboBoxes\DropDownListComboBoxStyles.h" />
+    <ClInclude Include="src\Styles\Components\StaticControlStyles.h" />
     <ClInclude Include="src\Styles\Components\Trackbars\HorizontalTrackbarControlStyles.h" />
     <ClInclude Include="src\Styles\Components\InfiniteProgressBarStyles.h" />
     <ClInclude Include="src\Styles\Components\ListBoxes\ListBoxStyles.h" />
@@ -305,6 +306,7 @@
     <ClCompile Include="src\Styles\Components\DefaultRichEditStyles.cpp" />
     <ClCompile Include="src\Styles\Components\ComboBoxes\DropDownComboBoxStyles.cpp" />
     <ClCompile Include="src\Styles\Components\ComboBoxes\DropDownListComboBoxStyles.cpp" />
+    <ClCompile Include="src\Styles\Components\StaticControlStyles.cpp" />
     <ClCompile Include="src\Styles\Components\Trackbars\HorizontalTrackbarControlStyles.cpp" />
     <ClCompile Include="src\Styles\Components\InfiniteProgressBarStyles.cpp" />
     <ClCompile Include="src\Styles\Components\ListBoxes\ListBoxStyles.cpp" />
