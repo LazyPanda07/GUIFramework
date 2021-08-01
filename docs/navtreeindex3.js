@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"classgui__framework_1_1_base_component.html#a80afd36bdaaa52f7137371ec9c8cdac5":[1,0,0,5,27],
 "classgui__framework_1_1_base_component.html#a874eae6d7db8309155a9946aef01199a":[1,0,0,5,23],
 "classgui__framework_1_1_base_component.html#a8792f3026aa71d32a50758978dd85e98":[1,0,0,5,20],
 "classgui__framework_1_1_base_component.html#a8b4685df88fa1edf51da5f29895961a4":[1,0,0,5,10],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "classgui__framework_1_1_base_trackbar_control.html#a7eb942f4060d26664e72f3c8c7436592":[1,0,0,17,2],
 "classgui__framework_1_1_base_trackbar_control.html#a833e3358362edd27ce6a867c204d4e7f":[1,0,0,17,9],
 "classgui__framework_1_1_base_trackbar_control.html#a93be63f0e10559473f285fc2edcf194d":[1,0,0,17,7],
-"classgui__framework_1_1_base_trackbar_control.html#a9f1e678cb4ae5539b6ea214c34afdecb":[1,0,0,17,12],
-"classgui__framework_1_1_base_trackbar_control.html#aa96688df080ee2e5cf278208eb884c9f":[1,0,0,17,6]
+"classgui__framework_1_1_base_trackbar_control.html#a9f1e678cb4ae5539b6ea214c34afdecb":[1,0,0,17,12]
 };

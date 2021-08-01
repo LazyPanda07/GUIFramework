@@ -151,7 +151,7 @@ namespace gui_framework
 		} \
 		else \
 		{ \
-			PostQuitMessage(0); \
+			return DefWindowProcW(handle, message, wparam, lparam); \
 		} \
 			\
 		return 0; \
@@ -160,6 +160,12 @@ namespace gui_framework
 		topLevelWindow = reinterpret_cast<gui_framework::BaseComponent*>(wparam); \
 			\
 		return 0; \
+		\
+	case gui_framework::custom_window_messages::deinitTopLevelWindowPointer: \
+		topLevelWindow = nullptr; \
+			\
+		return 0; \
+		\
 	} \
 		\
 	if (topLevelWindow) \

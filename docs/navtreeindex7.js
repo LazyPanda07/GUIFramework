@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"dir_e653c386f618015fb2fa60412e365ae3.html":[2,0,0,0,5,0,0],
 "dir_e747bc3c678fb81bb46e796429f46f7f.html":[2,0,0,0,5],
 "dir_f60d5d280ff0881e112972fd9f9388cb.html":[2,0,0,0,0,0,1],
 "dir_fa5ffdccd764f08c4d2a3362dc6a6a6b.html":[2,0,0,0,9,1],
@@ -7,8 +8,8 @@ var NAVTREEINDEX7 =
 "dir_fee88c6b699a9b09b79bd2a9e404db6f.html":[2,0,0,0,5,1],
 "dir_ff7204cab76ae1163e703071c8bed3c9.html":[2,0,0,0,4],
 "files.html":[2,0],
-"functions.html":[1,3,0,0],
 "functions.html":[1,3,0],
+"functions.html":[1,3,0,0],
 "functions_b.html":[1,3,0,1],
 "functions_c.html":[1,3,0,2],
 "functions_d.html":[1,3,0,3],
@@ -75,7 +76,8 @@ var NAVTREEINDEX7 =
 "namespacegui__framework.html#ae3e66f06336365b0dc8c0dac9f239f63":[0,0,0,71],
 "namespacegui__framework.html#af525ce6f1696446fe552abd946818aee":[0,0,0,70],
 "namespacegui__framework_1_1custom__window__messages.html":[0,0,0,0],
-"namespacegui__framework_1_1custom__window__messages.html#a9d6c2d2d357b573767b5837f204407ce":[0,0,0,0,0],
+"namespacegui__framework_1_1custom__window__messages.html#a9d6c2d2d357b573767b5837f204407ce":[0,0,0,0,1],
+"namespacegui__framework_1_1custom__window__messages.html#ae277398e850c3e6adb8b9c3c5caa97c3":[0,0,0,0,0],
 "namespacegui__framework_1_1exception__messages.html":[0,0,0,1],
 "namespacegui__framework_1_1exception__messages.html#a27f65a8349ec94b67215c61d207a7684":[0,0,0,1,2],
 "namespacegui__framework_1_1exception__messages.html#aad27b7d23cdb5e8e50c7fcbead0af7b5":[0,0,0,1,0],

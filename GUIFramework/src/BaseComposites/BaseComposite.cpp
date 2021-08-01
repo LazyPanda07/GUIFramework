@@ -366,5 +366,7 @@ namespace gui_framework
 
 		DestroyIcon(largeIcon);
 		DestroyIcon(smallIcon);
+
+		SendMessageW(handle, custom_window_messages::deinitTopLevelWindowPointer, NULL, NULL);
 	}
 }

@@ -1,6 +1,7 @@
 var namespacegui__framework =
 [
     [ "custom_window_messages", "namespacegui__framework_1_1custom__window__messages.html", [
+      [ "deinitTopLevelWindowPointer", "namespacegui__framework_1_1custom__window__messages.html#ae277398e850c3e6adb8b9c3c5caa97c3", null ],
       [ "initTopLevelWindowPointer", "namespacegui__framework_1_1custom__window__messages.html#a9d6c2d2d357b573767b5837f204407ce", null ]
     ] ],
     [ "exception_messages", "namespacegui__framework_1_1exception__messages.html", [

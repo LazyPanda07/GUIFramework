@@ -8,5 +8,8 @@ namespace gui_framework
 	{
 		/// @brief WPARAM contains pointer to BaseComponent
 		inline constexpr int initTopLevelWindowPointer = 52430;
+
+		/// @brief Set to nullptr topLevelWindow for recreating window with same window class name
+		inline constexpr int deinitTopLevelWindowPointer = 52431;
 	}
 }

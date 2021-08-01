@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"classgui__framework_1_1_base_trackbar_control.html#aa96688df080ee2e5cf278208eb884c9f":[1,0,0,17,6],
 "classgui__framework_1_1_base_trackbar_control.html#ab37df18ec2e82bf3582393bad8b65446":[1,0,0,17,8],
 "classgui__framework_1_1_base_trackbar_control.html#abc5c15a19d258d1d16b0e7fbc1734608":[1,0,0,17,11],
 "classgui__framework_1_1_base_trackbar_control.html#aca329ed18aab67cd5169d6309e9ac41b":[1,0,0,17,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "classgui__framework_1_1interfaces_1_1_i_styles.html#a09fee929287ca83f487c112c1c49f366":[1,0,0,1,11,7],
 "classgui__framework_1_1interfaces_1_1_i_styles.html#a14a1778a5c201d92fd92451af4c40639":[1,0,0,1,11,4],
 "classgui__framework_1_1interfaces_1_1_i_styles.html#a2131ba32c22d175800298eaeaf9738ce":[1,0,0,1,11,9],
-"classgui__framework_1_1interfaces_1_1_i_styles.html#a2934607f4b6223806e58e2f77d2c1cfa":[1,0,0,1,11,0],
-"classgui__framework_1_1interfaces_1_1_i_styles.html#a2a957275e32294d32cb93e98e37c8c4f":[1,0,0,1,11,6]
+"classgui__framework_1_1interfaces_1_1_i_styles.html#a2934607f4b6223806e58e2f77d2c1cfa":[1,0,0,1,11,0]
 };

@@ -175,7 +175,8 @@ var NAVTREEINDEX2 =
 "_window_holder_8h.html":[2,0,0,0,9,0,2],
 "_window_holder_8h_source.html":[2,0,0,0,9,0,2],
 "_window_messages_8h.html":[2,0,0,0,15],
-"_window_messages_8h.html#a9d6c2d2d357b573767b5837f204407ce":[2,0,0,0,15,0],
+"_window_messages_8h.html#a9d6c2d2d357b573767b5837f204407ce":[2,0,0,0,15,1],
+"_window_messages_8h.html#ae277398e850c3e6adb8b9c3c5caa97c3":[2,0,0,0,15,0],
 "_window_messages_8h_source.html":[2,0,0,0,15],
 "annotated.html":[1,0],
 "classes.html":[1,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "classgui__framework_1_1_base_component.html#a7a012276355e58b4c55227dccac46bf5":[1,0,0,5,50],
 "classgui__framework_1_1_base_component.html#a7a8719af09a90cd4de26d3a295882e86":[1,0,0,5,39],
 "classgui__framework_1_1_base_component.html#a7bb01e4f57c3066b96e38c20ea9207a2":[1,0,0,5,32],
-"classgui__framework_1_1_base_component.html#a7fa073602015e5328c8f1be9c0d37902":[1,0,0,5,1],
-"classgui__framework_1_1_base_component.html#a80afd36bdaaa52f7137371ec9c8cdac5":[1,0,0,5,27]
+"classgui__framework_1_1_base_component.html#a7fa073602015e5328c8f1be9c0d37902":[1,0,0,5,1]
 };

@@ -223,7 +223,7 @@ $(document).ready(function(){initNavTree('_base_component_8h_source.html',''); i
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        } \</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        else \</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        { \</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            PostQuitMessage(0); \</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            return DefWindowProcW(handle, message, wparam, lparam); \</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        } \</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            \</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        return 0; \</div>
@@ -232,23 +232,29 @@ $(document).ready(function(){initNavTree('_base_component_8h_source.html',''); i
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        topLevelWindow = reinterpret_cast&lt;gui_framework::BaseComponent*&gt;(wparam); \</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            \</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        return 0; \</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    } \</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        \</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    if (topLevelWindow) \</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    { \</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        bool isUsed = false; \</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            \</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        LRESULT result = topLevelWindow-&gt;handleMessages(handle, message, wparam, lparam, isUsed); \</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            \</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        return isUsed ? \</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            result : \</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            DefWindowProcW(handle, message, wparam, lparam); \</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    } \</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    else \</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    { \</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        return DefWindowProcW(handle, message, wparam, lparam); \</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    } \</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;}</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        \</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    case gui_framework::custom_window_messages::deinitTopLevelWindowPointer: \</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        topLevelWindow = nullptr; \</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            \</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        return 0; \</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        \</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    } \</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        \</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    if (topLevelWindow) \</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    { \</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        bool isUsed = false; \</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            \</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        LRESULT result = topLevelWindow-&gt;handleMessages(handle, message, wparam, lparam, isUsed); \</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            \</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        return isUsed ? \</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            result : \</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            DefWindowProcW(handle, message, wparam, lparam); \</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    } \</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    else \</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    { \</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        return DefWindowProcW(handle, message, wparam, lparam); \</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    } \</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;}</div>
 <div class="ttc" id="a_g_u_i_framework_constants_8h_html_a15da9ebdfa896557bb941a5da31021ba"><div class="ttname"><a href="_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba">GUI_FRAMEWORK_API</a></div><div class="ttdeci">#define GUI_FRAMEWORK_API</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00104">GUIFrameworkConstants.h:104</a></div></div>
 <div class="ttc" id="a_g_u_i_framework_constants_8h_html_aaeb2028aa1fe1f81b8bc210cbf2d0b67"><div class="ttname"><a href="_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67">smartPointerType</a></div><div class="ttdeci">std::unique_ptr&lt; T &gt; smartPointerType</div><div class="ttdoc">Compatible smart pointer type.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00109">GUIFrameworkConstants.h:109</a></div></div>
 <div class="ttc" id="a_i_serializable_8h_html"><div class="ttname"><a href="_i_serializable_8h.html">ISerializable.h</a></div></div>
