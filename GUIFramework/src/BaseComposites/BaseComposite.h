@@ -2,6 +2,7 @@
 
 #include "pch.h"
 #include "BaseComponents/BaseComponent.h"
+#include "Menu/Menu.h"
 #include "Interfaces/Iterators/IIterable.h"
 #include "Iterators/composite_forward_iterator.h"
 #include "Iterators/composite_const_forward_iterator.h"
@@ -15,6 +16,8 @@ namespace gui_framework
 	{
 	protected:
 		std::vector<std::unique_ptr<BaseComponent>> children;
+		std::unordered_map<HMENU, Menu> popupMenus;
+		std::unique_ptr<Menu> mainMenu;
 		HICON largeIcon;
 		HICON smallIcon;
 		std::string pathToSmallIcon;
@@ -48,11 +51,29 @@ namespace gui_framework
 
 		virtual const std::vector<std::unique_ptr<BaseComponent>>& getChildren() const final;
 
+		/// @brief It needs to be called once
+		/// @return Created main menu
+		virtual std::unique_ptr<Menu>& createMainMenu(const std::wstring& menuName) final;
+
+		/// @brief Don't call move operator with return value
+		/// @return Created pop-up menu
+		virtual Menu& addPopupMenu(const std::wstring& menuName) final;
+
+		/// @brief Remove all pop-up menus with menuName
+		/// @param menuName 
+		virtual void removePopupMenus(const std::wstring& menuName);
+
 		virtual LRESULT compositeWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed);
 
 		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) final override;
 
 		virtual bool isComposite() const final override;
+
+		virtual const std::unique_ptr<Menu>& getMainMenu() const final;
+
+		virtual std::unique_ptr<Menu>& getMainMenu() final;
+
+		virtual std::vector<const Menu*> getPopupMenus() const final;
 
 		/// @brief Set large icon(32x32) for specific window
 		/// @param pathToLargeIcon 

@@ -82,6 +82,21 @@ namespace gui_framework
 			current->data.push_back({ "pathToLargeIcon"s, pathToLargeIcon });
 		}
 
+		// TODO: serialize menus
+		if (false && mainMenu)
+		{
+			objectSmartPointer<jsonObject> menuStructure(new json::JSONBuilder::objectType());
+
+			menuStructure->data.push_back({ "mainMenuName"s, utility::to_string(mainMenu->getName(), codepage) });
+
+			for (const auto& [menuHandle, menu] : popupMenus)
+			{
+
+			}
+
+			current->data.push_back(make_pair("menuStructure"s, move(menuStructure)));
+		}
+
 		if (data.size())
 		{
 			vector<objectSmartPointer<jsonObject>>& childrenStructures = get<vector<objectSmartPointer<jsonObject>>>(current->data.emplace_back(make_pair("children"s, vector<objectSmartPointer<jsonObject>>())).second);
@@ -221,6 +236,42 @@ namespace gui_framework
 		return children;
 	}
 
+	unique_ptr<Menu>& BaseComposite::createMainMenu(const wstring& menuName)
+	{
+		popupMenus.clear();
+
+		mainMenu = make_unique<Menu>(menuName, handle);
+
+		return mainMenu;
+	}
+
+	Menu& BaseComposite::addPopupMenu(const wstring& menuName)
+	{
+		Menu menu(menuName, nullptr);
+
+		auto it = popupMenus.emplace(menu.getHandle(), move(menu)).first;
+
+		return popupMenus.at(it->first);
+	}
+
+	void BaseComposite::removePopupMenus(const wstring& menuName)
+	{
+		vector<HMENU> itemsToRemove;
+
+		for (const auto& [handle, popupMenu] : popupMenus)
+		{
+			if (popupMenu.getName() == menuName)
+			{
+				itemsToRemove.push_back(handle);
+			}
+		}
+
+		for (const auto& i : itemsToRemove)
+		{
+			popupMenus.erase(i);
+		}
+	}
+
 	LRESULT BaseComposite::compositeWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
 	{
 		if (message >= WM_CTLCOLOREDIT && message <= WM_CTLCOLORSTATIC)
@@ -237,6 +288,21 @@ namespace gui_framework
 
 				return reinterpret_cast<LRESULT>(CreateSolidBrush(component->getBackgroundColor()));
 			}
+		}
+		else if (message == WM_MENUCOMMAND)
+		{
+			isUsed = true;
+
+			if (mainMenu->getHandle() == reinterpret_cast<HMENU>(lparam))
+			{
+				mainMenu->handleMessage(static_cast<uint32_t>(wparam));
+			}
+			else
+			{
+				popupMenus[reinterpret_cast<HMENU>(lparam)].handleMessage(static_cast<uint32_t>(wparam));
+			}
+
+			return 0;
 		}
 
 		isUsed = false;
@@ -283,6 +349,30 @@ namespace gui_framework
 	bool BaseComposite::isComposite() const
 	{
 		return true;
+	}
+
+	const unique_ptr<Menu>& BaseComposite::getMainMenu() const
+	{
+		return mainMenu;
+	}
+
+	unique_ptr<Menu>& BaseComposite::getMainMenu()
+	{
+		return mainMenu;
+	}
+
+	vector<const Menu*> BaseComposite::getPopupMenus() const
+	{
+		vector<const Menu*> result;
+
+		result.reserve(popupMenus.size());
+
+		for (const auto& [_, popupMenu] : popupMenus)
+		{
+			result.push_back(&popupMenu);
+		}
+
+		return result;
 	}
 
 	void BaseComposite::setLargeIcon(const filesystem::path& pathToLargeIcon)
