@@ -1,7 +1,6 @@
 #pragma once
 
 #include "pch.h"
-#include "Menu/Menu.h"
 #include "Utility/Holders/LoadableHolders/IconsHolder.h"
 #include "Interfaces/Styles/IStyles.h"
 #include "Interfaces/Utility/ISerializable.h"
@@ -31,8 +30,6 @@ namespace gui_framework
 
 	protected:
 		BaseComponent* parent;
-		std::unordered_map<HMENU, Menu> popupMenus;
-		std::unique_ptr<Menu> mainMenu;
 		const std::wstring className;
 		const std::wstring windowName;
 		HWND handle;
@@ -64,18 +61,6 @@ namespace gui_framework
 		virtual bool destroyComponent() final;
 
 		virtual bool asyncDestroyComponent() final;
-
-		/// @brief It needs to be called once
-		/// @return Created main menu
-		virtual std::unique_ptr<Menu>& createMainMenu(const std::wstring& menuName) final;
-
-		/// @brief Don't call move operator with return value
-		/// @return Created pop-up menu
-		virtual Menu& addPopupMenu(const std::wstring& menuName) final;
-
-		/// @brief Remove all pop-up menus with menuName
-		/// @param menuName 
-		virtual void removePopupMenus(const std::wstring& menuName);
 
 		virtual void setDesiredWidth(uint16_t desiredWidth) final;
 
@@ -115,12 +100,6 @@ namespace gui_framework
 
 		virtual exitMode getExitMode() const final;
 
-		virtual const std::unique_ptr<Menu>& getMainMenu() const final;
-
-		virtual std::unique_ptr<Menu>& getMainMenu() final;
-
-		virtual std::vector<const Menu*> getPopupMenus() const final;
-
 		/// @brief 
 		/// @return Components returns id, composites returns 0 
 		virtual uint32_t getId() const final;
@@ -151,7 +130,7 @@ namespace gui_framework
 		} \
 		else \
 		{ \
-			PostQuitMessage(0); \
+			return DefWindowProcW(handle, message, wparam, lparam); \
 		} \
 			\
 		return 0; \
@@ -160,6 +139,12 @@ namespace gui_framework
 		topLevelWindow = reinterpret_cast<gui_framework::BaseComponent*>(wparam); \
 			\
 		return 0; \
+		\
+	case gui_framework::custom_window_messages::deinitTopLevelWindowPointer: \
+		topLevelWindow = nullptr; \
+			\
+		return 0; \
+		\
 	} \
 		\
 	if (topLevelWindow) \

@@ -65,7 +65,10 @@ var namespacegui__framework_1_1utility =
       [ "smallIcon", "namespacegui__framework_1_1utility.html#a4bd7b1a1121bbfb16d0a1f9b4ba266dea82840ee69ba0e891fa382c7785fc0527", null ]
     ] ],
     [ "appendStyle", "namespacegui__framework_1_1utility.html#ae97300d8014320696e57f502a858c570", null ],
+    [ "make_smart_pointer", "namespacegui__framework_1_1utility.html#a60d17f3aed2f6fbe1b6e77907e237ff0", null ],
     [ "removeStyle", "namespacegui__framework_1_1utility.html#a746d8e6e6277a08c83bd0bfd523d2e04", null ],
+    [ "to_string", "namespacegui__framework_1_1utility.html#acfc6bead05acb26a7a347dea0e5fc169", null ],
+    [ "to_string", "namespacegui__framework_1_1utility.html#abbafc9708435f466d89c4f977dcd460d", null ],
     [ "unregisterClass", "namespacegui__framework_1_1utility.html#abd212ea6354db1d1ef3a3658fa9b8b4f", null ],
     [ "unregisterClass", "namespacegui__framework_1_1utility.html#a9102f958e07350e5f2ab564c5c30d66c", null ]
 ];

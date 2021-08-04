@@ -8,6 +8,7 @@ var classgui__framework_1_1_base_trackbar_control =
     [ "getPosition", "classgui__framework_1_1_base_trackbar_control.html#a7bfda092dfe62e53b3a450e1842f8fa0", null ],
     [ "getSelectionEnd", "classgui__framework_1_1_base_trackbar_control.html#aa96688df080ee2e5cf278208eb884c9f", null ],
     [ "getSelectionStart", "classgui__framework_1_1_base_trackbar_control.html#a93be63f0e10559473f285fc2edcf194d", null ],
+    [ "getStructure", "classgui__framework_1_1_base_trackbar_control.html#ab37df18ec2e82bf3582393bad8b65446", null ],
     [ "setMaxRange", "classgui__framework_1_1_base_trackbar_control.html#a833e3358362edd27ce6a867c204d4e7f", null ],
     [ "setMinRange", "classgui__framework_1_1_base_trackbar_control.html#a6edffa523bde226e65dd377742ccc204", null ],
     [ "setSelectionEnd", "classgui__framework_1_1_base_trackbar_control.html#abc5c15a19d258d1d16b0e7fbc1734608", null ],

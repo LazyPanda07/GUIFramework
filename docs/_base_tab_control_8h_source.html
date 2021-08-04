@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.6.1-beta</span>
+   &#160;<span id="projectnumber">0.7.3-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -118,59 +118,62 @@ $(document).ready(function(){initNavTree('_base_tab_control_8h_source.html','');
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        };</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    protected:</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_tab_control.html#a994a8781ea62fe4497e3864fd9777ea8">   33</a></span>&#160;        utility::ImagesHolder images;</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_tab_control.html#a72fb209e6bff92f5ceadb5da4e8e6247">   34</a></span>&#160;        std::vector&lt;std::function&lt;<span class="keywordtype">void</span>()&gt;&gt; callbacks;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_tab_control.html#ad132fcba4407ba83736ecf56704f7771">   35</a></span>&#160;        std::vector&lt;<a class="code" href="structgui__framework_1_1_base_tab_control_1_1tab_data.html">tabData</a>&gt; tabs;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    protected:</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, <span class="keywordtype">bool</span>&amp; isUsed) override;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="comment">// TODO: serialize images</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_tab_control.html#a994a8781ea62fe4497e3864fd9777ea8">   34</a></span>&#160;        utility::ImagesHolder images;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="comment">// TODO: serialize callbacks</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_tab_control.html#a72fb209e6bff92f5ceadb5da4e8e6247">   36</a></span>&#160;        std::vector&lt;std::function&lt;<span class="keywordtype">void</span>()&gt;&gt; callbacks;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="comment">// TODO: serialize tabs</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_tab_control.html#ad132fcba4407ba83736ecf56704f7771">   38</a></span>&#160;        std::vector&lt;<a class="code" href="structgui__framework_1_1_base_tab_control_1_1tab_data.html">tabData</a>&gt; tabs;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    public:</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="classgui__framework_1_1_base_tab_control.html">BaseTabControl</a>(const std::wstring&amp; tabControlName, const utility::ComponentSettings&amp; settings, uint16_t imagesWidth, uint16_t imagesHeight, <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* parent);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    protected:</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, <span class="keywordtype">bool</span>&amp; isUsed) override;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        virtual LRESULT appendText(const std::wstring&amp; text, const std::function&lt;<span class="keywordtype">void</span>()&gt;&amp; onClick) final;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        virtual LRESULT insertText(<span class="keywordtype">size_t</span> index, const std::wstring&amp; text, const std::function&lt;<span class="keywordtype">void</span>()&gt;&amp; onClick) final;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        virtual LRESULT appendImage(const std::filesystem::path&amp; pathToImage, const std::function&lt;<span class="keywordtype">void</span>()&gt;&amp; onClick) final;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        virtual LRESULT insertImage(<span class="keywordtype">size_t</span> index, const std::filesystem::path&amp; pathToImage, const std::function&lt;<span class="keywordtype">void</span>()&gt;&amp; onClick) final;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        virtual LRESULT appendTextAndImage(const std::wstring&amp; text, const std::filesystem::path&amp; pathToImage, const std::function&lt;<span class="keywordtype">void</span>()&gt;&amp; onClick) final;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        virtual LRESULT insertTextAndImage(<span class="keywordtype">size_t</span> index, const std::wstring&amp; text, const std::filesystem::path&amp; pathToImage, const std::function&lt;<span class="keywordtype">void</span>()&gt;&amp; onClick) final;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        virtual <span class="keywordtype">bool</span> removeTab(<span class="keywordtype">size_t</span> index) final;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        virtual <span class="keywordtype">bool</span> clear() final;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        virtual <span class="keywordtype">size_t</span> size() const final;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        virtual <span class="keywordtype">bool</span> setItem(<span class="keywordtype">size_t</span> index, const std::function&lt;<span class="keywordtype">void</span>()&gt;&amp; callback, const std::wstring&amp; text = L&quot;&quot;, const std::filesystem::path&amp; pathToImage = L&quot;&quot;) final;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        virtual LRESULT setSelection(<span class="keywordtype">size_t</span> index) final;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        virtual const <a class="code" href="structgui__framework_1_1_base_tab_control_1_1tab_data.html">tabData</a>&amp; getItem(<span class="keywordtype">size_t</span> index) const final;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        virtual LRESULT getSelectedTab() const final;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        virtual uint16_t getImagesWidth() const final;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        virtual uint16_t getImagesHeight() const final;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        virtual <span class="keywordtype">void</span> setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue) final override;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        virtual <span class="keywordtype">void</span> setTextColor(uint8_t red, uint8_t green, uint8_t blue) final override;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_tab_control.html#a6d7e78ee515467d152f0519a842fc0e2">  119</a></span>&#160;        virtual ~<a class="code" href="classgui__framework_1_1_base_tab_control.html">BaseTabControl</a>() = default;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    };</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    public:</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="classgui__framework_1_1_base_tab_control.html">BaseTabControl</a>(const std::wstring&amp; tabControlName, const utility::ComponentSettings&amp; settings, uint16_t imagesWidth, uint16_t imagesHeight, <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* parent);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        virtual LRESULT appendText(const std::wstring&amp; text, const std::function&lt;<span class="keywordtype">void</span>()&gt;&amp; onClick) final;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        virtual LRESULT insertText(<span class="keywordtype">size_t</span> index, const std::wstring&amp; text, const std::function&lt;<span class="keywordtype">void</span>()&gt;&amp; onClick) final;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        virtual LRESULT appendImage(const std::filesystem::path&amp; pathToImage, const std::function&lt;<span class="keywordtype">void</span>()&gt;&amp; onClick) final;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        virtual LRESULT insertImage(<span class="keywordtype">size_t</span> index, const std::filesystem::path&amp; pathToImage, const std::function&lt;<span class="keywordtype">void</span>()&gt;&amp; onClick) final;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        virtual LRESULT appendTextAndImage(const std::wstring&amp; text, const std::filesystem::path&amp; pathToImage, const std::function&lt;<span class="keywordtype">void</span>()&gt;&amp; onClick) final;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        virtual LRESULT insertTextAndImage(<span class="keywordtype">size_t</span> index, const std::wstring&amp; text, const std::filesystem::path&amp; pathToImage, const std::function&lt;<span class="keywordtype">void</span>()&gt;&amp; onClick) final;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        virtual <span class="keywordtype">bool</span> removeTab(<span class="keywordtype">size_t</span> index) final;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        virtual <span class="keywordtype">bool</span> clear() final;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        virtual <span class="keywordtype">size_t</span> size() const final;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        virtual <span class="keywordtype">bool</span> setItem(<span class="keywordtype">size_t</span> index, const std::function&lt;<span class="keywordtype">void</span>()&gt;&amp; callback, const std::wstring&amp; text = L&quot;&quot;, const std::filesystem::path&amp; pathToImage = L&quot;&quot;) final;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        virtual LRESULT setSelection(<span class="keywordtype">size_t</span> index) final;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        virtual const <a class="code" href="structgui__framework_1_1_base_tab_control_1_1tab_data.html">tabData</a>&amp; getItem(<span class="keywordtype">size_t</span> index) const final;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        virtual LRESULT getSelectedTab() const final;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        virtual uint16_t getImagesWidth() const final;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        virtual uint16_t getImagesHeight() const final;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        virtual <span class="keywordtype">void</span> setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue) final override;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        virtual <span class="keywordtype">void</span> setTextColor(uint8_t red, uint8_t green, uint8_t blue) final override;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_tab_control.html#a6d7e78ee515467d152f0519a842fc0e2">  122</a></span>&#160;        virtual ~<a class="code" href="classgui__framework_1_1_base_tab_control.html">BaseTabControl</a>() = default;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    };</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
 <div class="ttc" id="a_base_component_8h_html"><div class="ttname"><a href="_base_component_8h.html">BaseComponent.h</a></div></div>
-<div class="ttc" id="a_g_u_i_framework_constants_8h_html_a15da9ebdfa896557bb941a5da31021ba"><div class="ttname"><a href="_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba">GUI_FRAMEWORK_API</a></div><div class="ttdeci">#define GUI_FRAMEWORK_API</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00095">GUIFrameworkConstants.h:95</a></div></div>
+<div class="ttc" id="a_g_u_i_framework_constants_8h_html_a15da9ebdfa896557bb941a5da31021ba"><div class="ttname"><a href="_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba">GUI_FRAMEWORK_API</a></div><div class="ttdeci">#define GUI_FRAMEWORK_API</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00104">GUIFrameworkConstants.h:104</a></div></div>
 <div class="ttc" id="a_images_holder_8h_html"><div class="ttname"><a href="_images_holder_8h.html">ImagesHolder.h</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_component_html"><div class="ttname"><a href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></div><div class="ttdoc">Base class for all windows, controls, etc.</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00010">BaseComponent.h:11</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_component_html"><div class="ttname"><a href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></div><div class="ttdoc">Base class for all windows, controls, etc.</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00012">BaseComponent.h:13</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1_base_tab_control_html"><div class="ttname"><a href="classgui__framework_1_1_base_tab_control.html">gui_framework::BaseTabControl</a></div><div class="ttdoc">Base class for all tab controls.</div><div class="ttdef"><b>Definition:</b> <a href="_base_tab_control_8h_source.html#l00010">BaseTabControl.h:11</a></div></div>
-<div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00014">BaseComponent.cpp:15</a></div></div>
+<div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00016">BaseComponent.cpp:17</a></div></div>
 <div class="ttc" id="apch_8h_html"><div class="ttname"><a href="pch_8h.html">pch.h</a></div></div>
 <div class="ttc" id="astructgui__framework_1_1_base_tab_control_1_1tab_data_html"><div class="ttname"><a href="structgui__framework_1_1_base_tab_control_1_1tab_data.html">gui_framework::BaseTabControl::tabData</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_tab_control_8h_source.html#l00013">BaseTabControl.h:14</a></div></div>
 <div class="ttc" id="astructgui__framework_1_1_base_tab_control_1_1tab_data_html_a17854208ea51dc7f09e0ad62311ccb4d"><div class="ttname"><a href="structgui__framework_1_1_base_tab_control_1_1tab_data.html#a17854208ea51dc7f09e0ad62311ccb4d">gui_framework::BaseTabControl::tabData::tabData</a></div><div class="ttdeci">tabData(tabData &amp;&amp;) noexcept=default</div></div>

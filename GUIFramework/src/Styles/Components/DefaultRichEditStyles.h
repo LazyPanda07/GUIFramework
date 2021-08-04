@@ -11,7 +11,7 @@ namespace gui_framework
 		class GUI_FRAMEWORK_API DefaultRichEditStyles : public DefaultStyles
 		{
 		public:
-			DefaultRichEditStyles();
+			DefaultRichEditStyles(bool isMultiLine = false);
 
 			~DefaultRichEditStyles() = default;
 		};

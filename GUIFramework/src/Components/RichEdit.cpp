@@ -10,12 +10,10 @@ namespace gui_framework
 		(
 			richEditName,
 			settings,
-			parent
+			parent,
+			isMultiLine
 		)
 	{
-		if (isMultiLine)
-		{
-			utility::appendStyle(handle, ES_MULTILINE);
-		}
+
 	}
 }

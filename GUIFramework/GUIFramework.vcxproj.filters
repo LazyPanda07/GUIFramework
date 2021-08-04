@@ -492,6 +492,12 @@
     <ClInclude Include="src\Utility\Holders\LoadableHolders\Iterators\loadable_forward_iterator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="src\Styles\Components\EditControlStyles.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Styles\Components\StaticControlStyles.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\pch.cpp">
@@ -945,6 +951,12 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Utility\Holders\LoadableHolders\Iterators\loadable_forward_iterator.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Styles\Components\EditControlStyles.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Styles\Components\StaticControlStyles.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

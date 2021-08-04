@@ -12,5 +12,7 @@ var namespacegui__framework_1_1interfaces =
     [ "IBaseForwardIterator", "classgui__framework_1_1interfaces_1_1_i_base_forward_iterator.html", "classgui__framework_1_1interfaces_1_1_i_base_forward_iterator" ],
     [ "IMenuItem", "classgui__framework_1_1interfaces_1_1_i_menu_item.html", "classgui__framework_1_1interfaces_1_1_i_menu_item" ],
     [ "IStyles", "classgui__framework_1_1interfaces_1_1_i_styles.html", "classgui__framework_1_1interfaces_1_1_i_styles" ],
+    [ "ISerializable", "classgui__framework_1_1interfaces_1_1_i_serializable.html", "classgui__framework_1_1interfaces_1_1_i_serializable" ],
+    [ "operator<<", "namespacegui__framework_1_1interfaces.html#aac87cc3815a81c0c277819250276d449", null ],
     [ "requires", "namespacegui__framework_1_1interfaces.html#a3e711f70b54b918d68b091e17035c674", null ]
 ];

@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.6.1-beta</span>
+   &#160;<span id="projectnumber">0.7.3-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -90,55 +90,69 @@ $(document).ready(function(){initNavTree('_base_edit_control_8cpp_source.html','
 <a href="_base_edit_control_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pch_8h.html">pch.h</a>&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_base_edit_control_8h.html">BaseEditControl.h</a>&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_default_styles_8h.html">Styles/DefaultStyles.h</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_edit_control_styles_8h.html">Styles/Components/EditControlStyles.h</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_get_last_error_exception_8h.html">Exceptions/GetLastErrorException.h</a>&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using namespace </span>std;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_edit_control.html#a3209bf5608df967f2df0d4b93bfb3108">   11</a></span>&#160;    BaseEditControl::BaseEditControl(<span class="keyword">const</span> std::wstring&amp; editControlName, <span class="keyword">const</span> <a class="code" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a>&amp; settings, <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* parent) :</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        (</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            wstring(standard_classes::<a class="code" href="namespacegui__framework_1_1standard__classes.html#a3d184f6df6f95fabed1653b545c3c027">editControl</a>),</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            editControlName,</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            settings,</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            styles::DefaultStyles(),</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            parent</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        ),</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        ITextOperations(handle)</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        this-&gt;<a class="code" href="classgui__framework_1_1interfaces_1_1_i_text_operations.html#a6236a648c9d82e9f658127d6e872839d">setText</a>(L<span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_edit_control.html#ad3f70bbd96d8e35b87faeb1d89d582e0">   25</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classgui__framework_1_1_base_edit_control.html#ad3f70bbd96d8e35b87faeb1d89d582e0">BaseEditControl::setPlaceholder</a>(<span class="keyword">const</span> std::wstring&amp; placeholder)</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordtype">bool</span> result = SendMessageW(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, EM_SETCUEBANNER, <span class="keyword">false</span>, <span class="keyword">reinterpret_cast&lt;</span>LPARAM<span class="keyword">&gt;</span>(<a class="code" href="classgui__framework_1_1_base_edit_control.html#a052e56b538e85a46071b5f696955762d">placeholder</a>.data()));</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">if</span> (result)</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            this-&gt;placeholder = <a class="code" href="classgui__framework_1_1_base_edit_control.html#a052e56b538e85a46071b5f696955762d">placeholder</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_edit_control.html#ae9dc5bc94030c43180afbbe668daab06">   37</a></span>&#160;    <span class="keyword">const</span> wstring&amp; <a class="code" href="classgui__framework_1_1_base_edit_control.html#ae9dc5bc94030c43180afbbe668daab06">BaseEditControl::getPlaceholder</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classgui__framework_1_1_base_edit_control.html#a052e56b538e85a46071b5f696955762d">placeholder</a>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_edit_control.html#a8c180badbdcd6fa74f2887b5e5ac4121">   11</a></span>&#160;    json::JSONBuilder BaseEditControl::getStructure()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keyword">using</span> json::utility::jsonObject;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keyword">using</span> json::utility::objectSmartPointer;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        json::JSONBuilder builder = BaseComponent::getStructure();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        uint32_t codepage = ISerializable::getCodepage();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        get&lt;objectSmartPointer&lt;jsonObject&gt;&gt;(builder[<a class="code" href="namespacegui__framework_1_1utility.html#abbafc9708435f466d89c4f977dcd460d">utility::to_string</a>(windowName, codepage)])-&gt;data.push_back({ <span class="stringliteral">&quot;placeholder&quot;</span>s, <a class="code" href="namespacegui__framework_1_1utility.html#abbafc9708435f466d89c4f977dcd460d">utility::to_string</a>(placeholder, codepage) });</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordflow">return</span> builder;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_edit_control.html#acd4ab65bde456c423f45520506c3abed">   24</a></span>&#160;    BaseEditControl::BaseEditControl(<span class="keyword">const</span> std::wstring&amp; editControlName, <span class="keyword">const</span> <a class="code" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a>&amp; settings, <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* parent, <span class="keywordtype">bool</span> isMultiLine) :</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        (</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            wstring(standard_classes::<a class="code" href="namespacegui__framework_1_1standard__classes.html#a3d184f6df6f95fabed1653b545c3c027">editControl</a>),</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            editControlName,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            settings,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            styles::EditControlStyles(isMultiLine),</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            parent</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        ),</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        ITextOperations(handle)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        this-&gt;<a class="code" href="classgui__framework_1_1interfaces_1_1_i_text_operations.html#a6236a648c9d82e9f658127d6e872839d">setText</a>(L<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_edit_control.html#ad3f70bbd96d8e35b87faeb1d89d582e0">   38</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classgui__framework_1_1_base_edit_control.html#ad3f70bbd96d8e35b87faeb1d89d582e0">BaseEditControl::setPlaceholder</a>(<span class="keyword">const</span> std::wstring&amp; placeholder)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordtype">bool</span> result = SendMessageW(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, EM_SETCUEBANNER, <span class="keyword">false</span>, <span class="keyword">reinterpret_cast&lt;</span>LPARAM<span class="keyword">&gt;</span>(<a class="code" href="classgui__framework_1_1_base_edit_control.html#a052e56b538e85a46071b5f696955762d">placeholder</a>.data()));</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">if</span> (result)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            this-&gt;placeholder = <a class="code" href="classgui__framework_1_1_base_edit_control.html#a052e56b538e85a46071b5f696955762d">placeholder</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_edit_control.html#ae9dc5bc94030c43180afbbe668daab06">   50</a></span>&#160;    <span class="keyword">const</span> wstring&amp; <a class="code" href="classgui__framework_1_1_base_edit_control.html#ae9dc5bc94030c43180afbbe668daab06">BaseEditControl::getPlaceholder</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classgui__framework_1_1_base_edit_control.html#a052e56b538e85a46071b5f696955762d">placeholder</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
 <div class="ttc" id="a_base_edit_control_8h_html"><div class="ttname"><a href="_base_edit_control_8h.html">BaseEditControl.h</a></div></div>
-<div class="ttc" id="a_default_styles_8h_html"><div class="ttname"><a href="_default_styles_8h.html">DefaultStyles.h</a></div></div>
+<div class="ttc" id="a_edit_control_styles_8h_html"><div class="ttname"><a href="_edit_control_styles_8h.html">EditControlStyles.h</a></div></div>
 <div class="ttc" id="a_get_last_error_exception_8h_html"><div class="ttname"><a href="_get_last_error_exception_8h.html">GetLastErrorException.h</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_component_html"><div class="ttname"><a href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></div><div class="ttdoc">Base class for all windows, controls, etc.</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00010">BaseComponent.h:11</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_component_html_abff4f6befd00a3e67037b12fa9d9613a"><div class="ttname"><a href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">gui_framework::BaseComponent::handle</a></div><div class="ttdeci">HWND handle</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00036">BaseComponent.h:36</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_component_html"><div class="ttname"><a href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></div><div class="ttdoc">Base class for all windows, controls, etc.</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00012">BaseComponent.h:13</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_component_html_abff4f6befd00a3e67037b12fa9d9613a"><div class="ttname"><a href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">gui_framework::BaseComponent::handle</a></div><div class="ttdeci">HWND handle</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00038">BaseComponent.h:38</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1_base_edit_control_html_a052e56b538e85a46071b5f696955762d"><div class="ttname"><a href="classgui__framework_1_1_base_edit_control.html#a052e56b538e85a46071b5f696955762d">gui_framework::BaseEditControl::placeholder</a></div><div class="ttdeci">std::wstring placeholder</div><div class="ttdef"><b>Definition:</b> <a href="_base_edit_control_8h_source.html#l00015">BaseEditControl.h:15</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_edit_control_html_ad3f70bbd96d8e35b87faeb1d89d582e0"><div class="ttname"><a href="classgui__framework_1_1_base_edit_control.html#ad3f70bbd96d8e35b87faeb1d89d582e0">gui_framework::BaseEditControl::setPlaceholder</a></div><div class="ttdeci">virtual bool setPlaceholder(const std::wstring &amp;placeholder) final</div><div class="ttdoc">Set placeholder to single line edit control.</div><div class="ttdef"><b>Definition:</b> <a href="_base_edit_control_8cpp_source.html#l00025">BaseEditControl.cpp:25</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_edit_control_html_ae9dc5bc94030c43180afbbe668daab06"><div class="ttname"><a href="classgui__framework_1_1_base_edit_control.html#ae9dc5bc94030c43180afbbe668daab06">gui_framework::BaseEditControl::getPlaceholder</a></div><div class="ttdeci">virtual const std::wstring &amp; getPlaceholder() const final</div><div class="ttdef"><b>Definition:</b> <a href="_base_edit_control_8cpp_source.html#l00037">BaseEditControl.cpp:37</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_edit_control_html_ad3f70bbd96d8e35b87faeb1d89d582e0"><div class="ttname"><a href="classgui__framework_1_1_base_edit_control.html#ad3f70bbd96d8e35b87faeb1d89d582e0">gui_framework::BaseEditControl::setPlaceholder</a></div><div class="ttdeci">virtual bool setPlaceholder(const std::wstring &amp;placeholder) final</div><div class="ttdoc">Set placeholder to single line edit control.</div><div class="ttdef"><b>Definition:</b> <a href="_base_edit_control_8cpp_source.html#l00038">BaseEditControl.cpp:38</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_edit_control_html_ae9dc5bc94030c43180afbbe668daab06"><div class="ttname"><a href="classgui__framework_1_1_base_edit_control.html#ae9dc5bc94030c43180afbbe668daab06">gui_framework::BaseEditControl::getPlaceholder</a></div><div class="ttdeci">virtual const std::wstring &amp; getPlaceholder() const final</div><div class="ttdef"><b>Definition:</b> <a href="_base_edit_control_8cpp_source.html#l00050">BaseEditControl.cpp:50</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1interfaces_1_1_i_text_operations_html_a6236a648c9d82e9f658127d6e872839d"><div class="ttname"><a href="classgui__framework_1_1interfaces_1_1_i_text_operations.html#a6236a648c9d82e9f658127d6e872839d">gui_framework::interfaces::ITextOperations::setText</a></div><div class="ttdeci">virtual void setText(const std::wstring &amp;text) const final</div><div class="ttdef"><b>Definition:</b> <a href="_i_text_operations_8cpp_source.html#l00018">ITextOperations.cpp:18</a></div></div>
-<div class="ttc" id="anamespacegui__framework_1_1standard__classes_html_a3d184f6df6f95fabed1653b545c3c027"><div class="ttname"><a href="namespacegui__framework_1_1standard__classes.html#a3d184f6df6f95fabed1653b545c3c027">gui_framework::standard_classes::editControl</a></div><div class="ttdeci">constexpr std::wstring_view editControl</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00014">GUIFrameworkConstants.h:14</a></div></div>
-<div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00014">BaseComponent.cpp:15</a></div></div>
+<div class="ttc" id="anamespacegui__framework_1_1standard__classes_html_a3d184f6df6f95fabed1653b545c3c027"><div class="ttname"><a href="namespacegui__framework_1_1standard__classes.html#a3d184f6df6f95fabed1653b545c3c027">gui_framework::standard_classes::editControl</a></div><div class="ttdeci">constexpr std::wstring_view editControl</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00016">GUIFrameworkConstants.h:16</a></div></div>
+<div class="ttc" id="anamespacegui__framework_1_1utility_html_abbafc9708435f466d89c4f977dcd460d"><div class="ttname"><a href="namespacegui__framework_1_1utility.html#abbafc9708435f466d89c4f977dcd460d">gui_framework::utility::to_string</a></div><div class="ttdeci">string to_string(const wstring &amp;stringToConvert, uint32_t codepage)</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00035">Utility.cpp:35</a></div></div>
+<div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00016">BaseComponent.cpp:17</a></div></div>
 <div class="ttc" id="apch_8h_html"><div class="ttname"><a href="pch_8h.html">pch.h</a></div></div>
 <div class="ttc" id="astructgui__framework_1_1utility_1_1_component_settings_html"><div class="ttname"><a href="structgui__framework_1_1utility_1_1_component_settings.html">gui_framework::utility::ComponentSettings</a></div><div class="ttdoc">All settings for windows.</div><div class="ttdef"><b>Definition:</b> <a href="_component_settings_8h_source.html#l00010">ComponentSettings.h:11</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

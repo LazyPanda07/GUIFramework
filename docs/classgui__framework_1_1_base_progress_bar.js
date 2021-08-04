@@ -5,6 +5,7 @@ var classgui__framework_1_1_base_progress_bar =
     [ "advancePosition", "classgui__framework_1_1_base_progress_bar.html#a989100925503473a4e3d44b49258514c", null ],
     [ "getMaxRange", "classgui__framework_1_1_base_progress_bar.html#a073ad4c05159e2012a77cf8e4fd96a5a", null ],
     [ "getMinRange", "classgui__framework_1_1_base_progress_bar.html#a3f75c9db24d7729dc21a7f7f269832a0", null ],
+    [ "getStructure", "classgui__framework_1_1_base_progress_bar.html#ada7817b13dd8ba5fba8b64ceb5aeb05f", null ],
     [ "getUpdateStep", "classgui__framework_1_1_base_progress_bar.html#afbf5e97e4b643ae5d697151fb32cff9f", null ],
     [ "setBackgroundColor", "classgui__framework_1_1_base_progress_bar.html#ac3bbf8b711b9af9520c7b550d828763b", null ],
     [ "setMaxRange", "classgui__framework_1_1_base_progress_bar.html#a432f72d0053391ce14f91b09ac7de18d", null ],

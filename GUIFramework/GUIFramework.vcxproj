@@ -142,10 +142,12 @@
     <ClInclude Include="src\Styles\Components\Buttons\CheckBoxStyles.h" />
     <ClInclude Include="src\Styles\Components\ComboBoxes\ComboBoxStyles.h" />
     <ClInclude Include="src\Styles\Components\Buttons\DefaultButtonStyles.h" />
+    <ClInclude Include="src\Styles\Components\EditControlStyles.h" />
     <ClInclude Include="src\Styles\Components\ListBoxes\DefaultListBoxStyles.h" />
     <ClInclude Include="src\Styles\Components\DefaultRichEditStyles.h" />
     <ClInclude Include="src\Styles\Components\ComboBoxes\DropDownComboBoxStyles.h" />
     <ClInclude Include="src\Styles\Components\ComboBoxes\DropDownListComboBoxStyles.h" />
+    <ClInclude Include="src\Styles\Components\StaticControlStyles.h" />
     <ClInclude Include="src\Styles\Components\Trackbars\HorizontalTrackbarControlStyles.h" />
     <ClInclude Include="src\Styles\Components\InfiniteProgressBarStyles.h" />
     <ClInclude Include="src\Styles\Components\ListBoxes\ListBoxStyles.h" />
@@ -299,10 +301,12 @@
     <ClCompile Include="src\Styles\Components\Buttons\CheckBoxStyles.cpp" />
     <ClCompile Include="src\Styles\Components\ComboBoxes\ComboBoxStyles.cpp" />
     <ClCompile Include="src\Styles\Components\Buttons\DefaultButtonStyles.cpp" />
+    <ClCompile Include="src\Styles\Components\EditControlStyles.cpp" />
     <ClCompile Include="src\Styles\Components\ListBoxes\DefaultListBoxStyles.cpp" />
     <ClCompile Include="src\Styles\Components\DefaultRichEditStyles.cpp" />
     <ClCompile Include="src\Styles\Components\ComboBoxes\DropDownComboBoxStyles.cpp" />
     <ClCompile Include="src\Styles\Components\ComboBoxes\DropDownListComboBoxStyles.cpp" />
+    <ClCompile Include="src\Styles\Components\StaticControlStyles.cpp" />
     <ClCompile Include="src\Styles\Components\Trackbars\HorizontalTrackbarControlStyles.cpp" />
     <ClCompile Include="src\Styles\Components\InfiniteProgressBarStyles.cpp" />
     <ClCompile Include="src\Styles\Components\ListBoxes\ListBoxStyles.cpp" />
@@ -411,18 +415,23 @@
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="GUIFrameworkMacros.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="GUIFrameworkMacros.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="GUIFrameworkMacros.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ProductionRelease|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="GUIFrameworkMacros.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ProductionReleaseDLL|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="GUIFrameworkMacros.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -459,7 +468,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);GUI_FRAMEWORK_VERSION=$(GUIFrameworkVersion)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <PrecompiledHeader>Create</PrecompiledHeader>
@@ -478,7 +487,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);GUI_FRAMEWORK_DLL;GUI_FRAMEWORK_VERSION=$(GUIFrameworkVersion)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);GUI_FRAMEWORK_DLL</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <PrecompiledHeader>Create</PrecompiledHeader>
@@ -499,7 +508,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);GUI_FRAMEWORK_VERSION=$(GUIFrameworkVersion)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <PrecompiledHeader>Create</PrecompiledHeader>
@@ -522,7 +531,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);GUI_FRAMEWORK_DLL;GUI_FRAMEWORK_VERSION=$(GUIFrameworkVersion)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);GUI_FRAMEWORK_DLL</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <PrecompiledHeader>Create</PrecompiledHeader>
@@ -545,7 +554,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);GUI_FRAMEWORK_VERSION=$(GUIFrameworkVersion)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <DebugInformationFormat>None</DebugInformationFormat>
@@ -568,7 +577,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);GUI_FRAMEWORK_DLL;GUI_FRAMEWORK_VERSION=$(GUIFrameworkVersion)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);GUI_FRAMEWORK_DLL</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <DebugInformationFormat>None</DebugInformationFormat>

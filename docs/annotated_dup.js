@@ -21,11 +21,14 @@ var annotated_dup =
         [ "IBaseConstForwardIterator", "classgui__framework_1_1interfaces_1_1_i_base_const_forward_iterator.html", "classgui__framework_1_1interfaces_1_1_i_base_const_forward_iterator" ],
         [ "IBaseForwardIterator", "classgui__framework_1_1interfaces_1_1_i_base_forward_iterator.html", "classgui__framework_1_1interfaces_1_1_i_base_forward_iterator" ],
         [ "IMenuItem", "classgui__framework_1_1interfaces_1_1_i_menu_item.html", "classgui__framework_1_1interfaces_1_1_i_menu_item" ],
-        [ "IStyles", "classgui__framework_1_1interfaces_1_1_i_styles.html", "classgui__framework_1_1interfaces_1_1_i_styles" ]
+        [ "IStyles", "classgui__framework_1_1interfaces_1_1_i_styles.html", "classgui__framework_1_1interfaces_1_1_i_styles" ],
+        [ "ISerializable", "classgui__framework_1_1interfaces_1_1_i_serializable.html", "classgui__framework_1_1interfaces_1_1_i_serializable" ]
       ] ],
       [ "iterators", "namespacegui__framework_1_1iterators.html", [
-        [ "const_forward_iterator", "classgui__framework_1_1iterators_1_1const__forward__iterator.html", "classgui__framework_1_1iterators_1_1const__forward__iterator" ],
-        [ "forward_iterator", "classgui__framework_1_1iterators_1_1forward__iterator.html", "classgui__framework_1_1iterators_1_1forward__iterator" ]
+        [ "composite_const_forward_iterator", "classgui__framework_1_1iterators_1_1composite__const__forward__iterator.html", "classgui__framework_1_1iterators_1_1composite__const__forward__iterator" ],
+        [ "composite_forward_iterator", "classgui__framework_1_1iterators_1_1composite__forward__iterator.html", "classgui__framework_1_1iterators_1_1composite__forward__iterator" ],
+        [ "loadable_const_forward_iterator", "classgui__framework_1_1iterators_1_1loadable__const__forward__iterator.html", "classgui__framework_1_1iterators_1_1loadable__const__forward__iterator" ],
+        [ "loadable_forward_iterator", "classgui__framework_1_1iterators_1_1loadable__forward__iterator.html", "classgui__framework_1_1iterators_1_1loadable__forward__iterator" ]
       ] ],
       [ "styles", "namespacegui__framework_1_1styles.html", [
         [ "ButtonStyles", "classgui__framework_1_1styles_1_1_button_styles.html", "classgui__framework_1_1styles_1_1_button_styles" ],
@@ -37,6 +40,7 @@ var annotated_dup =
         [ "DropDownListComboBoxStyles", "classgui__framework_1_1styles_1_1_drop_down_list_combo_box_styles.html", "classgui__framework_1_1styles_1_1_drop_down_list_combo_box_styles" ],
         [ "SimpleComboBoxStyles", "classgui__framework_1_1styles_1_1_simple_combo_box_styles.html", "classgui__framework_1_1styles_1_1_simple_combo_box_styles" ],
         [ "DefaultRichEditStyles", "classgui__framework_1_1styles_1_1_default_rich_edit_styles.html", "classgui__framework_1_1styles_1_1_default_rich_edit_styles" ],
+        [ "EditControlStyles", "classgui__framework_1_1styles_1_1_edit_control_styles.html", "classgui__framework_1_1styles_1_1_edit_control_styles" ],
         [ "InfiniteProgressBarStyles", "classgui__framework_1_1styles_1_1_infinite_progress_bar_styles.html", "classgui__framework_1_1styles_1_1_infinite_progress_bar_styles" ],
         [ "DefaultListBoxStyles", "classgui__framework_1_1styles_1_1_default_list_box_styles.html", "classgui__framework_1_1styles_1_1_default_list_box_styles" ],
         [ "ListBoxStyles", "classgui__framework_1_1styles_1_1_list_box_styles.html", "classgui__framework_1_1styles_1_1_list_box_styles" ],
@@ -47,6 +51,7 @@ var annotated_dup =
         [ "ListTextListViewStyles", "classgui__framework_1_1styles_1_1_list_text_list_view_styles.html", "classgui__framework_1_1styles_1_1_list_text_list_view_styles" ],
         [ "ListViewStyles", "classgui__framework_1_1styles_1_1_list_view_styles.html", "classgui__framework_1_1styles_1_1_list_view_styles" ],
         [ "TextListViewStyles", "classgui__framework_1_1styles_1_1_text_list_view_styles.html", "classgui__framework_1_1styles_1_1_text_list_view_styles" ],
+        [ "StaticControlStyles", "classgui__framework_1_1styles_1_1_static_control_styles.html", "classgui__framework_1_1styles_1_1_static_control_styles" ],
         [ "HorizontalTrackbarControlStyles", "classgui__framework_1_1styles_1_1_horizontal_trackbar_control_styles.html", "classgui__framework_1_1styles_1_1_horizontal_trackbar_control_styles" ],
         [ "TrackbarControlStyles", "classgui__framework_1_1styles_1_1_trackbar_control_styles.html", "classgui__framework_1_1styles_1_1_trackbar_control_styles" ],
         [ "VerticalTrackbarControlStyles", "classgui__framework_1_1styles_1_1_vertical_trackbar_control_styles.html", "classgui__framework_1_1styles_1_1_vertical_trackbar_control_styles" ],

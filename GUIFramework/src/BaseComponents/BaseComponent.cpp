@@ -132,22 +132,6 @@ namespace gui_framework
 
 	LRESULT BaseComponent::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
 	{
-		if (message == WM_MENUCOMMAND)
-		{
-			isUsed = true;
-
-			if (mainMenu->getHandle() == reinterpret_cast<HMENU>(lparam))
-			{
-				mainMenu->handleMessage(static_cast<uint32_t>(wparam));
-			}
-			else
-			{
-				popupMenus[reinterpret_cast<HMENU>(lparam)].handleMessage(static_cast<uint32_t>(wparam));
-			}
-
-			return 0;
-		}
-
 		isUsed = false;
 
 		return -1;
@@ -191,42 +175,6 @@ namespace gui_framework
 		}
 
 		return result;
-	}
-
-	unique_ptr<Menu>& BaseComponent::createMainMenu(const wstring& menuName)
-	{
-		popupMenus.clear();
-
-		mainMenu = make_unique<Menu>(menuName, handle);
-
-		return mainMenu;
-	}
-
-	Menu& BaseComponent::addPopupMenu(const wstring& menuName)
-	{
-		Menu menu(menuName, nullptr);
-
-		auto it = popupMenus.emplace(menu.getHandle(), move(menu)).first;
-
-		return popupMenus.at(it->first);
-	}
-
-	void BaseComponent::removePopupMenus(const wstring& menuName)
-	{
-		vector<HMENU> itemsToRemove;
-
-		for (const auto& [handle, popupMenu] : popupMenus)
-		{
-			if (popupMenu.getName() == menuName)
-			{
-				itemsToRemove.push_back(handle);
-			}
-		}
-
-		for (const auto& i : itemsToRemove)
-		{
-			popupMenus.erase(i);
-		}
 	}
 
 	void BaseComponent::setDesiredWidth(uint16_t desiredWidth)
@@ -342,30 +290,6 @@ namespace gui_framework
 		return mode;
 	}
 
-	const unique_ptr<Menu>& BaseComponent::getMainMenu() const
-	{
-		return mainMenu;
-	}
-
-	unique_ptr<Menu>& BaseComponent::getMainMenu()
-	{
-		return mainMenu;
-	}
-
-	vector<const Menu*> BaseComponent::getPopupMenus() const
-	{
-		vector<const Menu*> result;
-
-		result.reserve(popupMenus.size());
-
-		for (const auto& [_, popupMenu] : popupMenus)
-		{
-			result.push_back(&popupMenu);
-		}
-
-		return result;
-	}
-
 	uint32_t BaseComponent::getId() const
 	{
 		return id;
@@ -415,21 +339,6 @@ namespace gui_framework
 		structure->data.push_back({ "textColor"s, move(textColorJSON) });
 
 		structure->data.push_back({ "exitMode"s, static_cast<int64_t>(mode) });
-
-		// TODO: serialize menus
-		if (false && mainMenu)
-		{
-			smartPointerType<json::JSONBuilder::objectType> menuStructure(new json::JSONBuilder::objectType());
-
-			menuStructure->data.push_back({ "mainMenuName"s, utility::to_string(mainMenu->getName(), codepage) });
-
-			for (const auto& [menuHandle, menu] : popupMenus)
-			{
-
-			}
-
-			structure->data.push_back({ "menuStructure"s, move(menuStructure) });
-		}
 
 		if (textOperations)
 		{
