@@ -45,6 +45,18 @@ namespace gui_framework
 			return type;
 		}
 
+		json::JSONBuilder IMenuItem::getStructure() const
+		{
+			uint32_t codepage = ISerializable::getCodepage();
+			json::JSONBuilder builder(codepage);
+
+			builder.
+				append("itemText"s, utility::to_string(text, codepage)).
+				append("itemType"s, type);
+
+			return builder;
+		}
+
 		IMenuItem::~IMenuItem()
 		{
 			DeleteMenu(parent, index, MF_BYPOSITION);

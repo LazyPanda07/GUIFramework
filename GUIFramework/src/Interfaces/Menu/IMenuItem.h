@@ -2,12 +2,14 @@
 
 #include "pch.h"
 
+#include "Interfaces/Utility/ISerializable.h"
+
 namespace gui_framework
 {
 	namespace interfaces
 	{
 		/// @brief Interface for all menu items
-		class GUI_FRAMEWORK_API IMenuItem
+		class GUI_FRAMEWORK_API IMenuItem : public ISerializable
 		{
 		protected:
 			std::wstring text;
@@ -33,6 +35,8 @@ namespace gui_framework
 			virtual const std::wstring& getText() const final;
 
 			virtual const std::string& getType() const final;
+
+			virtual json::JSONBuilder getStructure() const final override;
 
 			virtual ~IMenuItem();
 		};
