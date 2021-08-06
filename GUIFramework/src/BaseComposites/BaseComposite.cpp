@@ -83,7 +83,7 @@ namespace gui_framework
 		}
 
 		// TODO: serialize menus
-		if (false && mainMenu)
+		if (mainMenu)
 		{
 			objectSmartPointer<jsonObject> menuStructure(new json::JSONBuilder::objectType());
 
