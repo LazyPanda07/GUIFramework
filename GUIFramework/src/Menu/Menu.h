@@ -14,9 +14,6 @@ namespace gui_framework
 		HWND parent;
 		std::vector<std::unique_ptr<interfaces::IMenuItem>> items;
 
-	protected:
-		virtual json::JSONBuilder getStructure() const final override;
-
 	public:
 		Menu();
 
@@ -45,6 +42,8 @@ namespace gui_framework
 		const std::vector<std::unique_ptr<interfaces::IMenuItem>>& getItems() const;
 
 		HMENU getHandle() const;
+
+		json::JSONBuilder getStructure() const override;
 
 		~Menu();
 	};
