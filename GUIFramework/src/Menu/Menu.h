@@ -6,13 +6,16 @@
 namespace gui_framework
 {
 	/// @brief Menu class
-	class GUI_FRAMEWORK_API Menu final
+	class GUI_FRAMEWORK_API Menu final : public interfaces::ISerializable
 	{
 	private:
 		std::wstring name;
 		HMENU handle;
 		HWND parent;
 		std::vector<std::unique_ptr<interfaces::IMenuItem>> items;
+
+	protected:
+		virtual json::JSONBuilder getStructure() const final override;
 
 	public:
 		Menu();
