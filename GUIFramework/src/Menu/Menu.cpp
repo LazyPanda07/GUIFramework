@@ -32,6 +32,7 @@ namespace gui_framework
 	}
 
 	Menu::Menu(Menu&& other) noexcept :
+		name(move(other.name)),
 		handle(other.handle),
 		items(move(other.items)),
 		parent(other.parent)
@@ -42,6 +43,7 @@ namespace gui_framework
 
 	Menu& Menu::operator = (Menu&& other) noexcept
 	{
+		name = move(other.name);
 		handle = other.handle;
 		items = move(other.items);
 		parent = other.parent;
@@ -119,11 +121,17 @@ namespace gui_framework
 			child->data.push_back({ "itemText"s, itemText });
 			child->data.push_back({ "itemType"s, itemType });
 
+			if (itemType == standard_menu_items::dropDownMenuItem)
+			{
+				child->data.push_back({ "popupId"s, get<string>(structure["popupId"]) });
+			}
+
 			json::utility::appendArray(move(child), children);
 		}
 
 		builder.
 			append("menuName"s, utility::to_string(name, codepage)).
+			append("menuId"s, reinterpret_cast<uint64_t>(handle)).
 			append("items"s, move(children));
 
 		return builder;

@@ -36,7 +36,7 @@ namespace gui_framework
 
 			virtual const std::string& getType() const final;
 
-			virtual json::JSONBuilder getStructure() const final override;
+			virtual json::JSONBuilder getStructure() const override;
 
 			virtual ~IMenuItem();
 		};
