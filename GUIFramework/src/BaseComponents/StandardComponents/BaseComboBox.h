@@ -14,6 +14,7 @@ namespace gui_framework
 	{
 	protected:
 		SIZE requiredSize;
+		std::function<void(BaseComboBox&)> onSelectionChange;
 
 	public:
 		enum class itemHeightEnum
@@ -105,6 +106,10 @@ namespace gui_framework
 		/// @exception SelectListException 
 		virtual LRESULT setDroppedWidth(uint16_t width) final;
 
+		/// @brief Set callback function with on selection change event
+		/// @param onSelectionChange callback with reference to current BaseCombobox
+		virtual void setOnSelectionChange(const std::function<void(BaseComboBox&)>& onSelectionChange) final;
+
 		/// @brief 
 		/// @param value 
 		/// @return 
@@ -135,6 +140,8 @@ namespace gui_framework
 		/// @param blue 
 		/// @exception NotImplemented Text color does not affects at combo boxes
 		virtual void setTextColor(uint8_t red, uint8_t green, uint8_t blue) final override;
+
+		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) final override;
 
 		virtual ~BaseComboBox() = default;
 	};

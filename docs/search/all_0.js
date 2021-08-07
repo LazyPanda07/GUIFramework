@@ -38,7 +38,7 @@ var searchData=
   ['additionallistviewreportcolumnwidth_35',['additionalListViewReportColumnWidth',['../namespacegui__framework_1_1standard__sizes.html#a411003476965ae5667265e2e56687220',1,'gui_framework::standard_sizes']]],
   ['addmenuitem_36',['addMenuItem',['../classgui__framework_1_1_menu.html#ad1a2a13022ca63659a014c59d4b5f246',1,'gui_framework::Menu']]],
   ['addparent_37',['addParent',['../classgui__framework_1_1_dialog_box_1_1_dialog_box_builder.html#a486cdf4be382cd3127aea3987de07211',1,'gui_framework::DialogBox::DialogBoxBuilder']]],
-  ['addpopupmenu_38',['addPopupMenu',['../classgui__framework_1_1_base_component.html#a79f5e77eb98d38a11295a99081d4f21e',1,'gui_framework::BaseComponent']]],
+  ['addpopupmenu_38',['addPopupMenu',['../classgui__framework_1_1_base_composite.html#a411e3e9140e1a2731df48e8ac6b5893b',1,'gui_framework::BaseComposite']]],
   ['addradiobutton_39',['addRadioButton',['../classgui__framework_1_1_group_box.html#a2c2e62ff45b0fd50f0182ece830c5a1b',1,'gui_framework::GroupBox']]],
   ['addtask_40',['addTask',['../classgui__framework_1_1_g_u_i_framework.html#ab77a09a4df9c4e126be1b9b1f55f1737',1,'gui_framework::GUIFramework::addTask(std::function&lt; void()&gt; &amp;&amp;task, const std::function&lt; void()&gt; &amp;callback=nullptr)'],['../classgui__framework_1_1_g_u_i_framework.html#aba953f14d707b9d3253f655d95cd54e2',1,'gui_framework::GUIFramework::addTask(const std::function&lt; void()&gt; &amp;task, const std::function&lt; void()&gt; &amp;callback=nullptr)']]],
   ['addtexticonitem_41',['addTextIconItem',['../classgui__framework_1_1interfaces_1_1_i_text_icon_list_view.html#a7912e57743124b081fe197a4fb968d57',1,'gui_framework::interfaces::ITextIconListView']]],
