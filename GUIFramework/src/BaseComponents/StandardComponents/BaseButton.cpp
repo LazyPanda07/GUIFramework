@@ -17,9 +17,9 @@ namespace gui_framework
 			if (onClick)
 			{
 				onClick();
-
-				return 0;
 			}
+
+			return 0;
 		}
 
 		isUsed = false;

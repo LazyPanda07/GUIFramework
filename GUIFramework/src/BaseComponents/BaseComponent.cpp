@@ -101,6 +101,8 @@ namespace gui_framework
 			nullptr
 		);
 
+		GUIFramework::get().addComponent(this);
+
 		this->styles = utility::make_smart_pointer<interfaces::IStyles>(styles);
 
 		if (!parent)
@@ -367,5 +369,7 @@ namespace gui_framework
 		{
 
 		}
+
+		GUIFramework::get().removeComponent(this);
 	}
 }

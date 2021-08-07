@@ -124,51 +124,18 @@ namespace gui_framework
 #pragma endregion
 	}
 
-	GUIFramework::GUIFramework() :
-		jsonSettings(ifstream(settings::settingsJSONFile.data())),
-		threadPool(static_cast<uint32_t>(jsonSettings.get<int64_t>(settings::threadsCountSetting))),
-		msftEditModule(LoadLibraryW(libraries::msftEditLibrary.data())),
-		nextId(1),
-		nextHotkeyId(0)
+	void GUIFramework::addComponent(BaseComponent* component)
 	{
-		InitCommonControlsEx(&comm);
+		unique_lock<mutex> lock(componentsMutex);
 
-		try
-		{
-			if (jsonSettings.get<bool>("usingDefaultCreators"))
-			{
-				this->initCreators();
-			}
-		}
-		catch (const json::exceptions::CantFindValueException&)
-		{
-
-		}
+		components.push_back(component);
 	}
 
-	GUIFramework::~GUIFramework()
+	void GUIFramework::removeComponent(BaseComponent* component)
 	{
-		FreeLibrary(msftEditModule);
-	}
+		unique_lock<mutex> lock(componentsMutex);
 
-	void GUIFramework::processHotkey(uint32_t hotkey) const
-	{
-		const function<void()>& onClick = hotkeys.at(hotkey);
-
-		if (onClick)
-		{
-			onClick();
-		}
-	}
-
-	void GUIFramework::addTask(const function<void()>& task, const function<void()>& callback)
-	{
-		threadPool.addTask(task, callback);
-	}
-
-	void GUIFramework::addTask(function<void()>&& task, const function<void()>& callback)
-	{
-		threadPool.addTask(move(task), callback);
+		erase(components, component);
 	}
 
 	uint32_t GUIFramework::generateId(const wstring& windowName)
@@ -227,6 +194,70 @@ namespace gui_framework
 				break;
 			}
 		}
+	}
+
+	vector<uint32_t> GUIFramework::getIds(const wstring& windowName)
+	{
+		unique_lock<mutex> lock(idMutex);
+
+		auto resultIterator = generatedIds.equal_range(windowName);
+		vector<uint32_t> result;
+
+		if (resultIterator.first != generatedIds.end())
+		{
+			result.reserve(distance(resultIterator.first, resultIterator.second));
+
+			for_each(resultIterator.first, resultIterator.second, [&result](const pair<wstring, uint32_t>& data) { result.push_back(data.second); });
+		}
+
+		return result;
+	}
+
+	GUIFramework::GUIFramework() :
+		jsonSettings(ifstream(settings::settingsJSONFile.data())),
+		threadPool(static_cast<uint32_t>(jsonSettings.get<int64_t>(settings::threadsCountSetting))),
+		msftEditModule(LoadLibraryW(libraries::msftEditLibrary.data())),
+		nextId(1),
+		nextHotkeyId(0)
+	{
+		InitCommonControlsEx(&comm);
+
+		try
+		{
+			if (jsonSettings.get<bool>("usingDefaultCreators"))
+			{
+				this->initCreators();
+			}
+		}
+		catch (const json::exceptions::CantFindValueException&)
+		{
+
+		}
+	}
+
+	GUIFramework::~GUIFramework()
+	{
+		FreeLibrary(msftEditModule);
+	}
+
+	void GUIFramework::processHotkey(uint32_t hotkey) const
+	{
+		const function<void()>& onClick = hotkeys.at(hotkey);
+
+		if (onClick)
+		{
+			onClick();
+		}
+	}
+
+	void GUIFramework::addTask(const function<void()>& task, const function<void()>& callback)
+	{
+		threadPool.addTask(task, callback);
+	}
+
+	void GUIFramework::addTask(function<void()>&& task, const function<void()>& callback)
+	{
+		threadPool.addTask(move(task), callback);
 	}
 
 	uint32_t GUIFramework::registerHotkey(uint32_t hotkey, const function<void()>& onClick, const vector<hotkeys::additionalKey>& additionalKeys, bool noRepeat)
@@ -294,21 +325,22 @@ namespace gui_framework
 		return result;
 	}
 
-	vector<uint32_t> GUIFramework::getIds(const wstring& windowName)
+	BaseComponent* GUIFramework::findComponent(HWND handle)
 	{
-		unique_lock<mutex> lock(idMutex);
+		unique_lock<mutex> lock(componentsMutex);
 
-		auto resultIterator = generatedIds.equal_range(windowName);
-		vector<uint32_t> result;
+		auto it = find_if(components.begin(), components.end(), [&handle](BaseComponent* component) { return component->getHandle() == handle; });
 
-		if (resultIterator.first != generatedIds.end())
-		{
-			result.reserve(distance(resultIterator.first, resultIterator.second));
+		return it == components.end() ? nullptr : *it;
+	}
 
-			for_each(resultIterator.first, resultIterator.second, [&result](const pair<wstring, uint32_t>& data) { result.push_back(data.second); });
-		}
+	BaseComponent* GUIFramework::findComponent(const wstring& componentName)
+	{
+		unique_lock<mutex> lock(componentsMutex);
 
-		return result;
+		auto it = find_if(components.begin(), components.end(), [&componentName](BaseComponent* component) { return component->getWindowName() == componentName; });
+
+		return it == components.end() ? nullptr : *it;
 	}
 
 	const json::JSONParser& GUIFramework::getJSONSettings() const
