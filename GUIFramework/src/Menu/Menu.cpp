@@ -123,7 +123,7 @@ namespace gui_framework
 
 			if (itemType == standard_menu_items::dropDownMenuItem)
 			{
-				child->data.push_back({ "popupId"s, get<string>(structure["popupId"]) });
+				child->data.push_back({ "popupId"s, get<uint64_t>(structure["popupId"]) });
 			}
 
 			json::utility::appendArray(move(child), children);
