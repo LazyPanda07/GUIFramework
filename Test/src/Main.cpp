@@ -35,6 +35,8 @@ void test()
 		list->addValue(L"Third");
 		list->addValue(L"Fourth");
 
+		list->setOnSelectionChange([](BaseComboBox& ref) { wcout << ref.getValue(ref.getCurrentSelectionIndex()) << endl; });
+
 		ptr->setExitMode(BaseComponent::exitMode::quit);
 
 		ptr->setLargeIcon(R"(assets\icon.ico)");
