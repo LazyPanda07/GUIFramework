@@ -29,9 +29,6 @@ namespace gui_framework
 	private:
 		std::vector<std::pair<std::string, json::utility::objectSmartPointer<json::utility::jsonObject>>> getChildrenStructure() const;
 
-	protected:
-		virtual json::JSONBuilder getStructure() const override;
-
 	public:
 		BaseComposite(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent = nullptr, const std::string& windowFunctionName = "");
 
@@ -94,6 +91,8 @@ namespace gui_framework
 		virtual iterators::composite_const_forward_iterator cend() const noexcept override;
 
 		virtual void setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue) final override;
+
+		virtual json::JSONBuilder getStructure() const override;
 
 		virtual ~BaseComposite();
 	};

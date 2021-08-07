@@ -62,61 +62,6 @@ namespace gui_framework
 		return data;
 	}
 
-	json::JSONBuilder BaseComposite::getStructure() const
-	{
-		using json::utility::jsonObject;
-		using json::utility::objectSmartPointer;
-
-		json::JSONBuilder builder = BaseComponent::getStructure();
-		uint32_t codepage = ISerializable::getCodepage();
-		vector<pair<string, objectSmartPointer<jsonObject>>> data = this->getChildrenStructure();
-		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, codepage)]);
-
-		if (pathToSmallIcon.size())
-		{
-			current->data.push_back({ "pathToSmallIcon"s, pathToSmallIcon });
-		}
-
-		if (pathToLargeIcon.size())
-		{
-			current->data.push_back({ "pathToLargeIcon"s, pathToLargeIcon });
-		}
-
-		// TODO: serialize menus
-		if (mainMenu)
-		{
-			objectSmartPointer<jsonObject> menuStructure(new json::JSONBuilder::objectType());
-
-			menuStructure->data.push_back({ "mainMenuName"s, utility::to_string(mainMenu->getName(), codepage) });
-
-			for (const auto& [menuHandle, menu] : popupMenus)
-			{
-
-			}
-
-			current->data.push_back(make_pair("menuStructure"s, move(menuStructure)));
-		}
-
-		if (data.size())
-		{
-			vector<objectSmartPointer<jsonObject>>& childrenStructures = get<vector<objectSmartPointer<jsonObject>>>(current->data.emplace_back(make_pair("children"s, vector<objectSmartPointer<jsonObject>>())).second);
-
-			for (auto& i : data)
-			{
-				objectSmartPointer<jsonObject> topLevel = json::utility::make_object<jsonObject>();
-				objectSmartPointer<jsonObject> tem = json::utility::make_object<jsonObject>();
-
-				tem->data.push_back(move(i));
-
-				topLevel->data.push_back({ ""s, move(tem) });
-
-				childrenStructures.push_back(move(topLevel));
-			}
-		}
-
-		return builder;
-	}
-
 	BaseComposite::BaseComposite(const wstring& className, const wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent, const string& windowFunctionName) :
 		BaseComponent
 		(
@@ -444,6 +389,70 @@ namespace gui_framework
 		SetClassLongPtrW(handle, GCLP_HBRBACKGROUND, reinterpret_cast<LONG_PTR>(CreateSolidBrush(backgroundColor)));
 
 		InvalidateRect(handle, nullptr, true);
+	}
+
+	json::JSONBuilder BaseComposite::getStructure() const
+	{
+		using json::utility::jsonObject;
+		using json::utility::objectSmartPointer;
+
+		json::JSONBuilder builder = BaseComponent::getStructure();
+		vector<pair<string, objectSmartPointer<jsonObject>>> data = this->getChildrenStructure();
+		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
+
+		if (pathToSmallIcon.size())
+		{
+			current->data.push_back({ "pathToSmallIcon"s, pathToSmallIcon });
+		}
+
+		if (pathToLargeIcon.size())
+		{
+			current->data.push_back({ "pathToLargeIcon"s, pathToLargeIcon });
+		}
+
+		if (mainMenu)
+		{
+			objectSmartPointer<jsonObject> menuStructure = json::utility::make_object<jsonObject>();
+			json::JSONBuilder mainMenuBuilder = mainMenu->getStructure();
+			vector<objectSmartPointer<jsonObject>> popupItems;
+
+			menuStructure->data.push_back({ "mainMenuName"s, get<string>(mainMenuBuilder["menuName"]) });
+
+			menuStructure->data.push_back({ "mainMenuItems"s, move(mainMenuBuilder["items"]) });
+
+			for (const auto& [menuHandle, menu] : popupMenus)
+			{
+				objectSmartPointer<jsonObject> tem = json::utility::make_object<jsonObject>();
+				json::JSONBuilder temBuilder = menu.getStructure();
+
+				tem->data.push_back({ "menuName"s, get<string>(temBuilder["menuName"]) });
+				tem->data.push_back({ "menuId"s, get<uint64_t>(temBuilder["menuId"]) });
+				tem->data.push_back({ "items"s, move(temBuilder["items"]) });
+
+				json::utility::appendArray(move(tem), popupItems);
+			}
+
+			current->data.push_back(make_pair("menuStructure"s, move(menuStructure)));
+		}
+
+		if (data.size())
+		{
+			vector<objectSmartPointer<jsonObject>>& childrenStructures = get<vector<objectSmartPointer<jsonObject>>>(current->data.emplace_back(make_pair("children"s, vector<objectSmartPointer<jsonObject>>())).second);
+
+			for (auto& i : data)
+			{
+				objectSmartPointer<jsonObject> topLevel = json::utility::make_object<jsonObject>();
+				objectSmartPointer<jsonObject> tem = json::utility::make_object<jsonObject>();
+
+				tem->data.push_back(move(i));
+
+				topLevel->data.push_back({ ""s, move(tem) });
+
+				childrenStructures.push_back(move(topLevel));
+			}
+		}
+
+		return builder;
 	}
 
 	BaseComposite::~BaseComposite()

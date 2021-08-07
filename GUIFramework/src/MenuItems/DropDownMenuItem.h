@@ -18,6 +18,8 @@ namespace gui_framework
 
 		virtual std::tuple<uint32_t, uint64_t> getCreationData() const final override;
 
+		virtual json::JSONBuilder getStructure() const final override;
+
 		virtual ~DropDownMenuItem() = default;
 	};
 }
