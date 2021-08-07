@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['mainmenu_596',['mainMenu',['../classgui__framework_1_1_base_component.html#ad2e1e9a73ab94b4fb0da0addc3ffb66d',1,'gui_framework::BaseComponent']]],
+  ['mainmenu_596',['mainMenu',['../classgui__framework_1_1_base_composite.html#a02be7d9aee6b1c4089c248d70a9da03c',1,'gui_framework::BaseComposite']]],
   ['make_5fsmart_5fpointer_597',['make_smart_pointer',['../namespacegui__framework_1_1utility.html#a60d17f3aed2f6fbe1b6e77907e237ff0',1,'gui_framework::utility']]],
   ['maxrange_598',['maxRange',['../classgui__framework_1_1utility_1_1_additional_creation_data_3_01_progress_bar_01_4.html#a25abdad98de1ffba029d584f3d128c3f',1,'gui_framework::utility::AdditionalCreationData&lt; ProgressBar &gt;::maxRange()'],['../classgui__framework_1_1_base_progress_bar.html#a95634bb0f68269e3eaa2ca7fcfbc57c9',1,'gui_framework::BaseProgressBar::maxRange()']]],
   ['menu_599',['Menu',['../classgui__framework_1_1_menu.html',1,'gui_framework::Menu'],['../classgui__framework_1_1_menu.html#ab1e1aacb4d4831dcdb9475f36bbf82eb',1,'gui_framework::Menu::Menu(Menu &amp;&amp;other) noexcept'],['../classgui__framework_1_1_menu.html#a2155448171d493387889e49958638d2a',1,'gui_framework::Menu::Menu()'],['../classgui__framework_1_1_menu.html#ae7009b681d5c0d021bd06afa2b46db10',1,'gui_framework::Menu::Menu(const std::wstring &amp;name, HWND parent)'],['../classgui__framework_1_1_menu.html#ae46b3082f1e7a9d17d1ca99013863e1c',1,'gui_framework::Menu::Menu(const Menu &amp;)=delete']]],

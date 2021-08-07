@@ -211,6 +211,11 @@ namespace gui_framework
 		return result;
 	}
 
+	void BaseComboBox::setOnSelectionChange(const function<void(BaseComboBox&)>& onSelectionChange)
+	{
+		this->onSelectionChange = onSelectionChange;
+	}
+
 	LRESULT BaseComboBox::getItemHeight(itemHeightEnum value) const
 	{
 		LRESULT result = SendMessageW(handle, CB_GETITEMHEIGHT, static_cast<WPARAM>(value), NULL);
@@ -293,6 +298,32 @@ namespace gui_framework
 	void BaseComboBox::setTextColor(uint8_t red, uint8_t green, uint8_t blue)
 	{
 		throw exceptions::NotImplemented(__FUNCTION__, "BaseComboBox");
+	}
+
+	LRESULT BaseComboBox::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
+	{
+		if (message == WM_COMMAND && id == LOWORD(wparam))
+		{
+			switch (HIWORD(wparam))
+			{
+			case CBN_SELCHANGE:
+				if (onSelectionChange)
+				{
+					isUsed = true;
+
+					onSelectionChange(*this);
+				}
+
+				return 0;
+
+			default:
+				break;
+			}
+		}
+
+		isUsed = false;
+
+		return -1;
 	}
 }
 

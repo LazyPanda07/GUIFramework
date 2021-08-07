@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.7.3-beta</span>
+   &#160;<span id="projectnumber">0.7.4-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -102,7 +102,8 @@ Inheritance diagram for gui_framework::DropDownMenuItem:</div>
  <div class="center">
   <img src="classgui__framework_1_1_drop_down_menu_item.png" usemap="#gui_5Fframework::DropDownMenuItem_map" alt=""/>
   <map id="gui_5Fframework::DropDownMenuItem_map" name="gui_5Fframework::DropDownMenuItem_map">
-<area href="classgui__framework_1_1interfaces_1_1_i_menu_item.html" title="Interface for all menu items." alt="gui_framework::interfaces::IMenuItem" shape="rect" coords="0,0,220,24"/>
+<area href="classgui__framework_1_1interfaces_1_1_i_menu_item.html" title="Interface for all menu items." alt="gui_framework::interfaces::IMenuItem" shape="rect" coords="0,56,232,80"/>
+<area href="classgui__framework_1_1interfaces_1_1_i_serializable.html" title="Provides interface for serializable to JSON format." alt="gui_framework::interfaces::ISerializable" shape="rect" coords="0,0,232,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -114,6 +115,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a43e2ae55df009dcb63ce39c9ac1e0475"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ab5c777ef0dbb0d5802fed839bea044"><td class="memItemLeft" align="right" valign="top">virtual std::tuple&lt; uint32_t, uint64_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_drop_down_menu_item.html#a2ab5c777ef0dbb0d5802fed839bea044">getCreationData</a> () const final override</td></tr>
 <tr class="separator:a2ab5c777ef0dbb0d5802fed839bea044"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a913810b8c18d779a1ac077bf0b601e37"><td class="memItemLeft" align="right" valign="top">virtual json::JSONBuilder&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_drop_down_menu_item.html#a913810b8c18d779a1ac077bf0b601e37">getStructure</a> () const final override</td></tr>
+<tr class="separator:a913810b8c18d779a1ac077bf0b601e37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2664ec68c47a97300522ab66e2f418ed"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_drop_down_menu_item.html#a2664ec68c47a97300522ab66e2f418ed">~DropDownMenuItem</a> ()=default</td></tr>
 <tr class="separator:a2664ec68c47a97300522ab66e2f418ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classgui__framework_1_1interfaces_1_1_i_menu_item"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classgui__framework_1_1interfaces_1_1_i_menu_item')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classgui__framework_1_1interfaces_1_1_i_menu_item.html">gui_framework::interfaces::IMenuItem</a></td></tr>
@@ -131,6 +134,15 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a1cdbcd0935ec86ed7c57489bc5759cb0 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_menu_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2dc53e1815a296c8e3b07507d31b5433 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_menu_item"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_menu_item.html#a2dc53e1815a296c8e3b07507d31b5433">~IMenuItem</a> ()</td></tr>
 <tr class="separator:a2dc53e1815a296c8e3b07507d31b5433 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_menu_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html">gui_framework::interfaces::ISerializable</a></td></tr>
+<tr class="memitem:a87182b138b089b88b869a22876076b1d inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#a87182b138b089b88b869a22876076b1d">ISerializable</a> ()</td></tr>
+<tr class="separator:a87182b138b089b88b869a22876076b1d inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b10a13a7dcad84dd2a7e6e885b45672 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#a2b10a13a7dcad84dd2a7e6e885b45672">setCodepage</a> (uint32_t codepage) final</td></tr>
+<tr class="separator:a2b10a13a7dcad84dd2a7e6e885b45672 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe1577de1770a62d3dcc6161c3475c7a inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#afe1577de1770a62d3dcc6161c3475c7a">getCodepage</a> () const final</td></tr>
+<tr class="separator:afe1577de1770a62d3dcc6161c3475c7a inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8feceb56504671870fc49a814a212516 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#a8feceb56504671870fc49a814a212516">~ISerializable</a> ()=default</td></tr>
+<tr class="separator:a8feceb56504671870fc49a814a212516 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -235,6 +247,35 @@ Protected Attributes</h2></td></tr>
 <p>Implements <a class="el" href="classgui__framework_1_1interfaces_1_1_i_menu_item.html#a86914dc8a7f0d9e282361bd80e9b49ae">gui_framework::interfaces::IMenuItem</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="_drop_down_menu_item_8cpp_source.html#l00024">24</a> of file <a class="el" href="_drop_down_menu_item_8cpp_source.html">DropDownMenuItem.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a913810b8c18d779a1ac077bf0b601e37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a913810b8c18d779a1ac077bf0b601e37">&#9670;&nbsp;</a></span>getStructure()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">json::JSONBuilder gui_framework::DropDownMenuItem::getStructure </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classgui__framework_1_1interfaces_1_1_i_menu_item.html#a11725b99f241c64c8767738fcb88c823">gui_framework::interfaces::IMenuItem</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_drop_down_menu_item_8cpp_source.html#l00029">29</a> of file <a class="el" href="_drop_down_menu_item_8cpp_source.html">DropDownMenuItem.cpp</a>.</p>
 
 </div>
 </div>

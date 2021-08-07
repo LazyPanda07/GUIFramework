@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.7.3-beta</span>
+   &#160;<span id="projectnumber">0.7.4-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -101,8 +101,9 @@ Inheritance diagram for gui_framework::MenuItem:</div>
  <div class="center">
   <img src="classgui__framework_1_1_menu_item.png" usemap="#gui_5Fframework::MenuItem_map" alt=""/>
   <map id="gui_5Fframework::MenuItem_map" name="gui_5Fframework::MenuItem_map">
-<area href="classgui__framework_1_1_base_menu_item.html" title="Base class for all menu items." alt="gui_framework::BaseMenuItem" shape="rect" coords="0,56,220,80"/>
-<area href="classgui__framework_1_1interfaces_1_1_i_menu_item.html" title="Interface for all menu items." alt="gui_framework::interfaces::IMenuItem" shape="rect" coords="0,0,220,24"/>
+<area href="classgui__framework_1_1_base_menu_item.html" title="Base class for all menu items." alt="gui_framework::BaseMenuItem" shape="rect" coords="0,112,232,136"/>
+<area href="classgui__framework_1_1interfaces_1_1_i_menu_item.html" title="Interface for all menu items." alt="gui_framework::interfaces::IMenuItem" shape="rect" coords="0,56,232,80"/>
+<area href="classgui__framework_1_1interfaces_1_1_i_serializable.html" title="Provides interface for serializable to JSON format." alt="gui_framework::interfaces::ISerializable" shape="rect" coords="0,0,232,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -134,8 +135,19 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8ace5ab5ad8317f293de0f1d9a76b32e inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_menu_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1cdbcd0935ec86ed7c57489bc5759cb0 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_menu_item"><td class="memItemLeft" align="right" valign="top">virtual const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_menu_item.html#a1cdbcd0935ec86ed7c57489bc5759cb0">getType</a> () const final</td></tr>
 <tr class="separator:a1cdbcd0935ec86ed7c57489bc5759cb0 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_menu_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11725b99f241c64c8767738fcb88c823 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_menu_item"><td class="memItemLeft" align="right" valign="top">virtual json::JSONBuilder&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_menu_item.html#a11725b99f241c64c8767738fcb88c823">getStructure</a> () const override</td></tr>
+<tr class="separator:a11725b99f241c64c8767738fcb88c823 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_menu_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2dc53e1815a296c8e3b07507d31b5433 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_menu_item"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_menu_item.html#a2dc53e1815a296c8e3b07507d31b5433">~IMenuItem</a> ()</td></tr>
 <tr class="separator:a2dc53e1815a296c8e3b07507d31b5433 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_menu_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html">gui_framework::interfaces::ISerializable</a></td></tr>
+<tr class="memitem:a87182b138b089b88b869a22876076b1d inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#a87182b138b089b88b869a22876076b1d">ISerializable</a> ()</td></tr>
+<tr class="separator:a87182b138b089b88b869a22876076b1d inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b10a13a7dcad84dd2a7e6e885b45672 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#a2b10a13a7dcad84dd2a7e6e885b45672">setCodepage</a> (uint32_t codepage) final</td></tr>
+<tr class="separator:a2b10a13a7dcad84dd2a7e6e885b45672 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe1577de1770a62d3dcc6161c3475c7a inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#afe1577de1770a62d3dcc6161c3475c7a">getCodepage</a> () const final</td></tr>
+<tr class="separator:afe1577de1770a62d3dcc6161c3475c7a inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8feceb56504671870fc49a814a212516 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#a8feceb56504671870fc49a814a212516">~ISerializable</a> ()=default</td></tr>
+<tr class="separator:a8feceb56504671870fc49a814a212516 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>

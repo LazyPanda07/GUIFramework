@@ -116,12 +116,6 @@ var hierarchy =
         [ "gui_framework::utility::ImagesHolder", "classgui__framework_1_1utility_1_1_images_holder.html", null ]
       ] ]
     ] ],
-    [ "gui_framework::interfaces::IMenuItem", "classgui__framework_1_1interfaces_1_1_i_menu_item.html", [
-      [ "gui_framework::BaseMenuItem", "classgui__framework_1_1_base_menu_item.html", [
-        [ "gui_framework::MenuItem", "classgui__framework_1_1_menu_item.html", null ]
-      ] ],
-      [ "gui_framework::DropDownMenuItem", "classgui__framework_1_1_drop_down_menu_item.html", null ]
-    ] ],
     [ "gui_framework::interfaces::INonResizableComponent", "classgui__framework_1_1interfaces_1_1_i_non_resizable_component.html", [
       [ "gui_framework::DialogBox", "classgui__framework_1_1_dialog_box.html", null ]
     ] ],
@@ -194,6 +188,13 @@ var hierarchy =
           [ "gui_framework::HorizontalTrackbarControl", "classgui__framework_1_1_horizontal_trackbar_control.html", null ],
           [ "gui_framework::VerticalTrackbarControl", "classgui__framework_1_1_vertical_trackbar_control.html", null ]
         ] ]
+      ] ],
+      [ "gui_framework::Menu", "classgui__framework_1_1_menu.html", null ],
+      [ "gui_framework::interfaces::IMenuItem", "classgui__framework_1_1interfaces_1_1_i_menu_item.html", [
+        [ "gui_framework::BaseMenuItem", "classgui__framework_1_1_base_menu_item.html", [
+          [ "gui_framework::MenuItem", "classgui__framework_1_1_menu_item.html", null ]
+        ] ],
+        [ "gui_framework::DropDownMenuItem", "classgui__framework_1_1_drop_down_menu_item.html", null ]
       ] ]
     ] ],
     [ "gui_framework::interfaces::IStyles", "classgui__framework_1_1interfaces_1_1_i_styles.html", [
@@ -238,7 +239,6 @@ var hierarchy =
       [ "gui_framework::BaseRichEdit", "classgui__framework_1_1_base_rich_edit.html", null ],
       [ "gui_framework::BaseStaticControl", "classgui__framework_1_1_base_static_control.html", null ]
     ] ],
-    [ "gui_framework::Menu", "classgui__framework_1_1_menu.html", null ],
     [ "gui_framework::GroupBox::radioButtonData", "structgui__framework_1_1_group_box_1_1radio_button_data.html", null ],
     [ "std::runtime_error", null, [
       [ "gui_framework::exceptions::BaseGUIFrameworkException", "classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception.html", [

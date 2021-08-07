@@ -22,8 +22,11 @@ var classgui__framework_1_1_base_combo_box =
     [ "setCurrentSelection", "classgui__framework_1_1_base_combo_box.html#ab96e31aab5363781e72e3f931c98109e", null ],
     [ "setDroppedWidth", "classgui__framework_1_1_base_combo_box.html#a48e1b62680b8c23de5671165bfdeeb48", null ],
     [ "setItemHeight", "classgui__framework_1_1_base_combo_box.html#ae5c3623f11e44c6cb81527a9dbc9846c", null ],
+    [ "setOnSelectionChange", "classgui__framework_1_1_base_combo_box.html#a7798fa53c21c73f289e59ff66625470d", null ],
     [ "setSortingMode", "classgui__framework_1_1_base_combo_box.html#acfe9b4c371940f61dc513d610541c9f8", null ],
     [ "setTextColor", "classgui__framework_1_1_base_combo_box.html#ab9ac06e14375a41cd0db219f1030b40d", null ],
     [ "size", "classgui__framework_1_1_base_combo_box.html#adbf4e6485029f19015ab9d2ab005f52b", null ],
+    [ "windowMessagesHandle", "classgui__framework_1_1_base_combo_box.html#a9113c5f3d49291253ae45c93c6f629b9", null ],
+    [ "onSelectionChange", "classgui__framework_1_1_base_combo_box.html#a00a1c26198e7c1057c8874c13c2a283e", null ],
     [ "requiredSize", "classgui__framework_1_1_base_combo_box.html#a1ebea246cd230cbdfe508aba9bf75104", null ]
 ];
