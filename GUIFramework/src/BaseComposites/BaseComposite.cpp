@@ -432,6 +432,8 @@ namespace gui_framework
 				json::utility::appendArray(move(tem), popupItems);
 			}
 
+			menuStructure->data.push_back({ "popupItems"s, move(popupItems) });
+
 			current->data.push_back(make_pair("menuStructure"s, move(menuStructure)));
 		}
 
