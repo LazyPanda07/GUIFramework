@@ -3,6 +3,8 @@
 
 #include "Styles/Components/DefaultRichEditStyles.h"
 
+#include "Exceptions/CantFindFunctionFromModuleException.h"
+
 using namespace std;
 
 namespace gui_framework
@@ -19,13 +21,13 @@ namespace gui_framework
 			{
 				ENLINK* ptrLink = reinterpret_cast<ENLINK*>(lparam);
 
-				auto callback = callbacks.find(static_cast<urlDetectEvent>(ptrLink->msg));
+				const function<void(const wstring&)>& callback = callbacks[(static_cast<size_t>(ptrLink->msg))];
 
-				if (callback != callbacks.end())
+				if (callback)
 				{
 					isUsed = true;
 
-					callback->second
+					callback
 					(
 						this->getText().substr
 						(
@@ -56,20 +58,44 @@ namespace gui_framework
 			handle,
 			parent ? parent->getHandle() : nullptr
 		),
-		ITextOperations(handle),
-		callbacks(urlDetectEventSize)
+		ITextOperations(handle)
 	{
 		this->setText(L"");
+
+		ranges::for_each(callbacks, [](function<void(const wstring&)>& callback) { callback = nullptr; });
+
+		ranges::for_each(callbacksFunctionNamesAndModules, [](pair<string, string>& data) { data = make_pair(""s, ""s); });
 	}
 
 	void BaseRichEdit::addUrlDetectEvent(urlDetectEvent event, const function<void(const wstring&)>& eventCallback)
 	{
-		callbacks[event] = eventCallback;
+		callbacks[static_cast<size_t>(event)] = eventCallback;
+
+		callbacksFunctionNamesAndModules[static_cast<size_t>(event)] = make_pair(""s, ""s);
+	}
+
+	void BaseRichEdit::addUrlDetectEvent(urlDetectEvent event, const string& functionName, const string& moduleName)
+	{
+		GUIFramework& instance = GUIFramework::get();
+		const HMODULE& module = instance.getModules().at(moduleName);
+
+		richEditCallbackSignature tem = reinterpret_cast<richEditCallbackSignature>(GetProcAddress(module, functionName.data()));
+
+		if (!tem)
+		{
+			throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName);
+		}
+
+		callbacks[static_cast<size_t>(event)] = tem;
+
+		callbacksFunctionNamesAndModules[static_cast<size_t>(event)] = make_pair(functionName, moduleName);
 	}
 
 	void BaseRichEdit::removeUrlDetectEvent(urlDetectEvent event)
 	{
-		callbacks.erase(event);
+		callbacks[static_cast<size_t>(event)] = nullptr;
+
+		callbacksFunctionNamesAndModules[static_cast<size_t>(event)] = make_pair(""s, ""s);
 	}
 
 	LRESULT BaseRichEdit::findSubstring(const wstring& subStringToFind, bool isMatchCase)
@@ -150,5 +176,44 @@ namespace gui_framework
 		textFormat.dwEffects = NULL;
 
 		SendMessageW(handle, EM_SETCHARFORMAT, SCF_ALL, reinterpret_cast<LPARAM>(&textFormat));
+	}
+
+	json::JSONBuilder BaseRichEdit::getStructure() const
+	{
+		using json::utility::objectSmartPointer;
+		using json::utility::jsonObject;
+
+		pair<string, string> emptyPair = make_pair(""s, ""s);
+
+		if (ranges::all_of(callbacksFunctionNamesAndModules, [&emptyPair](const pair<string, string>& data) { return data == emptyPair; }))
+		{
+			return BaseComponent::getStructure();
+		}
+
+		json::JSONBuilder builder = BaseComponent::getStructure();
+		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
+		vector<objectSmartPointer<jsonObject>> jsonCallbacks;
+
+		for (size_t i = 0; i < callbacksFunctionNamesAndModules.size(); i++)
+		{
+			if (callbacksFunctionNamesAndModules[i] == emptyPair)
+			{
+				continue;
+			}
+
+			objectSmartPointer<jsonObject> object = json::utility::make_object<jsonObject>();
+
+			object->data.push_back({ "callbackType"s, static_cast<uint64_t>(i) });
+
+			object->data.push_back({ "callbackName"s, callbacksFunctionNamesAndModules[i].first });
+
+			object->data.push_back({ "callbackModule"s, callbacksFunctionNamesAndModules[i].second });
+
+			json::utility::appendArray(move(object), jsonCallbacks);
+		}
+
+		current->data.push_back({ "callbacks"s, move(jsonCallbacks) });
+
+		return builder;
 	}
 }

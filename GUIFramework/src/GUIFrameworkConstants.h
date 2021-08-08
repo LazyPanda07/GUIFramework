@@ -92,7 +92,7 @@ namespace gui_framework
 		};
 	}
 
-	inline constexpr std::string_view guiFrameworkVersion = "0.7.4-beta";
+	inline constexpr std::string_view guiFrameworkVersion = "0.7.5-beta";
 }
 
 #ifdef GUI_FRAMEWORK_DLL
@@ -117,3 +117,7 @@ template<typename T>
 using smartPointerType = std::unique_ptr<T>;
 
 #endif // GUI_FRAMEWORK_DLL
+
+using onClickSignature = void(*)();
+
+using richEditCallbackSignature = void(*)(const std::wstring&);

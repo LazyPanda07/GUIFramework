@@ -225,11 +225,6 @@ namespace gui_framework
 		}
 	}
 
-	const unordered_map<string, HMODULE>& GUIFramework::getModules() const
-	{
-		return modules;
-	}
-
 	GUIFramework::GUIFramework() :
 		jsonSettings(ifstream(json_settings::settingsJSONFile.data())),
 		threadPool(static_cast<uint32_t>(jsonSettings.get<int64_t>(json_settings::threadsCountSetting))),
@@ -436,13 +431,19 @@ namespace gui_framework
 		return ranges::find(components, component) != components.end();
 	}
 
+	const unordered_map<size_t, unique_ptr<utility::BaseComponentCreator>>& GUIFramework::getCreators() const
+	{
+		return creators;
+	}
+
 	const json::JSONParser& GUIFramework::getJSONSettings() const
 	{
 		return jsonSettings;
 	}
 
-	const unordered_map<size_t, unique_ptr<utility::BaseComponentCreator>>& GUIFramework::getCreators() const
+	const unordered_map<string, HMODULE>& GUIFramework::getModules() const
 	{
-		return creators;
+		return modules;
 	}
+
 }

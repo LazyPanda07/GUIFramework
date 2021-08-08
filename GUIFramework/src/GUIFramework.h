@@ -55,8 +55,6 @@ namespace gui_framework
 
 		void processHotkey(uint32_t hotkey) const;
 
-		const std::unordered_map<std::string, HMODULE>& getModules() const;
-
 	private:
 		GUIFramework();
 
@@ -129,6 +127,7 @@ namespace gui_framework
 		/// @return jsonSettings
 		const json::JSONParser& getJSONSettings() const;
 
+		const std::unordered_map<std::string, HMODULE>& getModules() const;
 #pragma region FriendClasses
 		friend class BaseComponent;
 
