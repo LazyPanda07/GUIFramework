@@ -13,7 +13,7 @@ var searchData=
   ['basecombobox_68',['BaseComboBox',['../classgui__framework_1_1_base_combo_box.html#adc88028d23860780cc92733304b75815',1,'gui_framework::BaseComboBox::BaseComboBox()'],['../classgui__framework_1_1_base_combo_box.html',1,'gui_framework::BaseComboBox']]],
   ['basecombobox_2ecpp_69',['BaseComboBox.cpp',['../_base_combo_box_8cpp.html',1,'']]],
   ['basecombobox_2eh_70',['BaseComboBox.h',['../_base_combo_box_8h.html',1,'']]],
-  ['basecomponent_71',['BaseComponent',['../classgui__framework_1_1_base_component.html#a7fa073602015e5328c8f1be9c0d37902',1,'gui_framework::BaseComponent::BaseComponent()'],['../classgui__framework_1_1_g_u_i_framework.html#ad89e05696f39a7a3b7908a11c22f82e0',1,'gui_framework::GUIFramework::BaseComponent()'],['../classgui__framework_1_1_base_component.html',1,'gui_framework::BaseComponent']]],
+  ['basecomponent_71',['BaseComponent',['../classgui__framework_1_1_base_component.html#a4b4f7216831d51b2d2cf22c90872394f',1,'gui_framework::BaseComponent::BaseComponent()'],['../classgui__framework_1_1_g_u_i_framework.html#ad89e05696f39a7a3b7908a11c22f82e0',1,'gui_framework::GUIFramework::BaseComponent()'],['../classgui__framework_1_1_base_component.html',1,'gui_framework::BaseComponent']]],
   ['basecomponent_2ecpp_72',['BaseComponent.cpp',['../_base_component_8cpp.html',1,'']]],
   ['basecomponent_2eh_73',['BaseComponent.h',['../_base_component_8h.html',1,'']]],
   ['basecomponentcreator_74',['BaseComponentCreator',['../classgui__framework_1_1utility_1_1_base_component_creator.html#ac39e8a6c28709b4cea0498eeb41f92c7',1,'gui_framework::utility::BaseComponentCreator::BaseComponentCreator()'],['../classgui__framework_1_1utility_1_1_base_component_creator.html',1,'gui_framework::utility::BaseComponentCreator']]],

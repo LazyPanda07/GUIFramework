@@ -145,6 +145,10 @@ var NAVTREEINDEX0 =
 "_cant_find_composite_function_exception_8cpp_source.html":[2,0,0,0,4,2],
 "_cant_find_composite_function_exception_8h.html":[2,0,0,0,4,3],
 "_cant_find_composite_function_exception_8h_source.html":[2,0,0,0,4,3],
+"_cant_load_module_exception_8cpp.html":[2,0,0,0,4,4],
+"_cant_load_module_exception_8cpp_source.html":[2,0,0,0,4,4],
+"_cant_load_module_exception_8h.html":[2,0,0,0,4,5],
+"_cant_load_module_exception_8h_source.html":[2,0,0,0,4,5],
 "_check_box_8cpp.html":[2,0,0,0,2,0,2],
 "_check_box_8cpp_source.html":[2,0,0,0,2,0,2],
 "_check_box_8h.html":[2,0,0,0,2,0,3],
@@ -245,9 +249,5 @@ var NAVTREEINDEX0 =
 "_drop_down_list_combo_box_styles_8h_source.html":[2,0,0,0,8,0,1,5],
 "_drop_down_menu_item_8cpp.html":[2,0,0,0,7,0],
 "_drop_down_menu_item_8cpp_source.html":[2,0,0,0,7,0],
-"_drop_down_menu_item_8h.html":[2,0,0,0,7,1],
-"_drop_down_menu_item_8h_source.html":[2,0,0,0,7,1],
-"_edit_control_8cpp.html":[2,0,0,0,2,6],
-"_edit_control_8cpp_source.html":[2,0,0,0,2,6],
-"_edit_control_8h.html":[2,0,0,0,2,7]
+"_drop_down_menu_item_8h.html":[2,0,0,0,7,1]
 };

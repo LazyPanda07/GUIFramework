@@ -8,6 +8,10 @@ var dir_ff7204cab76ae1163e703071c8bed3c9 =
     [ "CantFindCompositeFunctionException.h", "_cant_find_composite_function_exception_8h.html", [
       [ "CantFindCompositeFunctionException", "classgui__framework_1_1exceptions_1_1_cant_find_composite_function_exception.html", "classgui__framework_1_1exceptions_1_1_cant_find_composite_function_exception" ]
     ] ],
+    [ "CantLoadModuleException.cpp", "_cant_load_module_exception_8cpp.html", null ],
+    [ "CantLoadModuleException.h", "_cant_load_module_exception_8h.html", [
+      [ "CantLoadModuleException", "classgui__framework_1_1exceptions_1_1_cant_load_module_exception.html", "classgui__framework_1_1exceptions_1_1_cant_load_module_exception" ]
+    ] ],
     [ "ExceptionConstants.h", "_exception_constants_8h.html", "_exception_constants_8h" ],
     [ "FileDoesNotExist.cpp", "_file_does_not_exist_8cpp.html", null ],
     [ "FileDoesNotExist.h", "_file_does_not_exist_8h.html", [
