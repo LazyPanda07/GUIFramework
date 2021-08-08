@@ -144,7 +144,7 @@ namespace gui_framework
 
 			imagesPaths.reserve(images.size());
 
-			for_each(images.begin(), images.end(), [&imagesPaths](const pair<wstring, imageData>& data) { imagesPaths.push_back(data.first); });
+			ranges::for_each(images, [&imagesPaths](const pair<wstring, imageData>& data) { imagesPaths.push_back(data.first); });
 
 			return iterators::loadable_forward_iterator(move(imagesPaths), 0);
 		}
@@ -155,7 +155,7 @@ namespace gui_framework
 
 			imagesPaths.reserve(images.size());
 
-			for_each(images.begin(), images.end(), [&imagesPaths](const pair<wstring, imageData>& data) { imagesPaths.push_back(data.first); });
+			ranges::for_each(images, [&imagesPaths](const pair<wstring, imageData>& data) { imagesPaths.push_back(data.first); });
 
 			return iterators::loadable_const_forward_iterator(move(imagesPaths), 0);
 		}

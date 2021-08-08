@@ -48,7 +48,7 @@ namespace gui_framework
 
 		childrenStructure.reserve(children.size());
 
-		for_each(children.begin(), children.end(), [&childrenStructure](const unique_ptr<BaseComponent>& child) { childrenStructure.push_back(child->getStructure()); });
+		ranges::for_each(children, [&childrenStructure](const unique_ptr<BaseComponent>& child) { childrenStructure.push_back(child->getStructure()); });
 
 		for (size_t i = 0; i < children.size(); i++)
 		{
@@ -461,9 +461,9 @@ namespace gui_framework
 	{
 		vector<BaseComponent*> components;
 
-		for_each(children.begin(), children.end(), [&components](const unique_ptr<BaseComponent>& component) { components.push_back(component.get()); });
+		ranges::for_each(children, [&components](const unique_ptr<BaseComponent>& component) { components.push_back(component.get()); });
 
-		for_each(components.begin(), components.end(), [this](BaseComponent* component) { this->removeChild(component); });
+		ranges::for_each(components, [this](BaseComponent* component) { this->removeChild(component); });
 
 		DestroyIcon(largeIcon);
 		DestroyIcon(smallIcon);

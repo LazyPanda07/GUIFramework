@@ -417,7 +417,7 @@ namespace gui_framework
 	{
 		unique_lock<mutex> lock(componentsMutex);
 
-		auto it = find_if(components.begin(), components.end(), [&handle](BaseComponent* component) { return component->getHandle() == handle; });
+		auto it = ranges::find_if(components, [&handle](BaseComponent* component) { return component->getHandle() == handle; });
 
 		return it == components.end() ? nullptr : *it;
 	}
@@ -426,7 +426,7 @@ namespace gui_framework
 	{
 		unique_lock<mutex> lock(componentsMutex);
 
-		auto it = find_if(components.begin(), components.end(), [&componentName](BaseComponent* component) { return component->getWindowName() == componentName; });
+		auto it = ranges::find_if(components, [&componentName](BaseComponent* component) { return component->getWindowName() == componentName; });
 
 		return it == components.end() ? nullptr : *it;
 	}

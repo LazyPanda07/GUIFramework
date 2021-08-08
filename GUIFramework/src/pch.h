@@ -12,6 +12,7 @@
 #include <concepts>
 #include <any>
 #include <filesystem>
+#include <ranges>
 
 #include <thread>
 #include <condition_variable>
