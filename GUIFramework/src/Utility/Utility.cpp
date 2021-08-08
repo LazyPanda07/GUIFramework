@@ -109,5 +109,10 @@ namespace gui_framework
 
 			return result;
 		}
+
+		HMODULE getCurrentModule()
+		{
+			return GetModuleHandleW(nullptr);
+		}
 	}
 }

@@ -34,6 +34,8 @@ namespace gui_framework
 		/// @exception json::exceptions::WrongEncodingException 
 		GUI_FRAMEWORK_API_FUNCTION std::wstring to_wstring(const std::string& stringToConvert, uint32_t codepage);
 
+		GUI_FRAMEWORK_API_FUNCTION HMODULE getCurrentModule();
+
 		/// @brief Make function with current build configuration compatibility
 		/// @tparam T Type
 		/// @param ...args Constructor arguments 

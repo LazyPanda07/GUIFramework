@@ -225,6 +225,11 @@ namespace gui_framework
 		}
 	}
 
+	const unordered_map<string, HMODULE>& GUIFramework::getModules() const
+	{
+		return modules;
+	}
+
 	GUIFramework::GUIFramework() :
 		jsonSettings(ifstream(json_settings::settingsJSONFile.data())),
 		threadPool(static_cast<uint32_t>(jsonSettings.get<int64_t>(json_settings::threadsCountSetting))),
@@ -424,6 +429,11 @@ namespace gui_framework
 		auto it = find_if(components.begin(), components.end(), [&componentName](BaseComponent* component) { return component->getWindowName() == componentName; });
 
 		return it == components.end() ? nullptr : *it;
+	}
+
+	bool GUIFramework::isExist(BaseComponent* component)
+	{
+		return ranges::find(components, component) != components.end();
 	}
 
 	const json::JSONParser& GUIFramework::getJSONSettings() const

@@ -55,6 +55,8 @@ namespace gui_framework
 
 		void processHotkey(uint32_t hotkey) const;
 
+		const std::unordered_map<std::string, HMODULE>& getModules() const;
+
 	private:
 		GUIFramework();
 
@@ -113,6 +115,11 @@ namespace gui_framework
 		/// @param componentName 
 		/// @return Found component or nullptr
 		BaseComponent* findComponent(const std::wstring& componentName);
+
+		/// @brief Check if component created. If component destroyed after you call findComponent, you may have not valid pointer
+		/// @param component Value from 
+		/// @return true if exist, false otherwise
+		bool isExist(BaseComponent* component);
 
 		/// @brief Get all current registered creators
 		/// @return creators
