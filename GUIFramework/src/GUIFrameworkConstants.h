@@ -62,11 +62,19 @@ namespace gui_framework
 		inline constexpr uint16_t additionalListViewReportColumnWidth = 10;
 	}
 
-	namespace settings
+	namespace json_settings
 	{
 		inline constexpr std::string_view settingsJSONFile = "gui_framework.json";
 
+		inline const std::string settingsObject = "settings";
+
+		inline const std::string usingDefaultCreatorsSetting = "usingDefaultCreators";
 		inline const std::string threadsCountSetting = "threadsCount";
+		inline const std::string modulesSetting = "modules";
+		inline const std::string moduleNameSetting = "moduleName";
+		inline constexpr std::string_view pathToModuleSettings = "pathToModule";
+
+		inline constexpr std::string_view currentModule = "current";
 	}
 
 	namespace libraries

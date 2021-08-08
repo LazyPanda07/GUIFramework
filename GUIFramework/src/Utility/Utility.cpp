@@ -72,5 +72,42 @@ namespace gui_framework
 
 			return result;
 		}
+
+		wstring to_wstring(const string& stringToConvert, uint32_t codepage)
+		{
+			wstring result;
+
+			int size = MultiByteToWideChar
+			(
+				codepage,
+				NULL,
+				stringToConvert.data(),
+				-1,
+				nullptr,
+				NULL
+			);
+
+			if (!size)
+			{
+				throw json::exceptions::WrongEncodingException();
+			}
+
+			result.resize(static_cast<size_t>(size) - 1);
+
+			if (!MultiByteToWideChar
+			(
+				codepage,
+				NULL,
+				stringToConvert.data(),
+				-1,
+				result.data(),
+				size
+			))
+			{
+				throw json::exceptions::WrongEncodingException();
+			}
+
+			return result;
+		}
 	}
 }

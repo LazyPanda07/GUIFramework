@@ -18,7 +18,7 @@ namespace gui_framework
 		json::JSONParser jsonSettings;
 		threading::ThreadPool threadPool;
 		INITCOMMONCONTROLSEX comm;
-		HMODULE msftEditModule;
+		std::unordered_map<std::string, HMODULE> modules;
 #pragma region Ids
 		std::unordered_multimap<std::wstring, uint32_t> generatedIds;
 		std::queue<uint32_t> availableIds;
@@ -91,6 +91,17 @@ namespace gui_framework
 		/// @param hotkeyId 
 		/// @return 
 		bool unregisterHotkey(uint32_t hotkeyId);
+
+		/// @brief Load module with some sort of data
+		/// @param moduleName Name of that module
+		/// @param pathToModule Path to that module
+		/// @excepiton FileDoesNotExist 
+		/// @exception CantLoadModule 
+		void loadModule(const std::string& moduleName, const std::filesystem::path& pathToModule);
+
+		/// @brief Unload module
+		/// @param moduleName Name of module to unload
+		void unloadModule(const std::string& moduleName);
 
 		/// @brief Add derived from BaseComponentCreator creator
 		template<std::derived_from<BaseComponent> T, std::derived_from<utility::BaseComponentCreator> CreatorT, typename... Args>
