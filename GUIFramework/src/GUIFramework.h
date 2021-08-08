@@ -53,30 +53,27 @@ namespace gui_framework
 
 		std::vector<uint32_t> getIds(const std::wstring& windowName);
 
+		void processHotkey(uint32_t hotkey) const;
+
 	private:
 		GUIFramework();
 
 		~GUIFramework();
 
 	public:
-		/// @brief 
-		/// @return
+		/// @brief Singleton instance access
+		/// @return Singleton instance
 		/// @exception json::exceptions::CantFindValueException Unable to find setting in gui_framework.json on first GUIFramework::get() call
 		static GUIFramework& get();
 
-		/// @brief 
-		/// @param hotkey 
-		/// @exceptions std:out_of_range 
-		void processHotkey(uint32_t hotkey) const;
-
 		/// @brief Add task to thread pool. Thread safe method
-		/// @param task 
-		/// @param callback 
+		/// @param task Task function
+		/// @param callback After execution task callback function
 		void addTask(const std::function<void()>& task, const std::function<void()>& callback = nullptr);
 
 		/// @brief Add task to thread pool. Thread safe method
-		/// @param task 
-		/// @param callback 
+		/// @param task Task function
+		/// @param callback After execution task callback function
 		void addTask(std::function<void()>&& task, const std::function<void()>& callback = nullptr);
 
 		/// @brief Only works in thread, that call runMainLoop from WindowHolder. Thread safe register hotkey
@@ -89,7 +86,7 @@ namespace gui_framework
 
 		/// @brief Thread safe unregister hotkey
 		/// @param hotkeyId 
-		/// @return 
+		/// @return Success
 		bool unregisterHotkey(uint32_t hotkeyId);
 
 		/// @brief Load module with some sort of data
@@ -118,14 +115,18 @@ namespace gui_framework
 		BaseComponent* findComponent(const std::wstring& componentName);
 
 		/// @brief Get all current registered creators
-		/// @return 
+		/// @return creators
 		const std::unordered_map<size_t, std::unique_ptr<utility::BaseComponentCreator>>& getCreators() const;
 
 		/// @brief Get settings from gui_framework.json
-		/// @return 
+		/// @return jsonSettings
 		const json::JSONParser& getJSONSettings() const;
 
+#pragma region FriendClasses
 		friend class BaseComponent;
+
+		friend class WindowHolder;
+#pragma endregion
 	};
 
 	inline GUIFramework& GUIFramework::get()

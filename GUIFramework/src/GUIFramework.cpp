@@ -215,6 +215,16 @@ namespace gui_framework
 		return result;
 	}
 
+	void GUIFramework::processHotkey(uint32_t hotkey) const
+	{
+		const function<void()>& onClick = hotkeys.at(hotkey);
+
+		if (onClick)
+		{
+			onClick();
+		}
+	}
+
 	GUIFramework::GUIFramework() :
 		jsonSettings(ifstream(json_settings::settingsJSONFile.data())),
 		threadPool(static_cast<uint32_t>(jsonSettings.get<int64_t>(json_settings::threadsCountSetting))),
@@ -225,11 +235,11 @@ namespace gui_framework
 
 		modules.insert({ "MSFT"s, LoadLibraryW(libraries::msftEditLibrary.data()) });
 
-		const json::utility::objectSmartPointer<json::utility::jsonObject>& settings = jsonSettings.getObject(json_settings::settingsObject);
+		const json::utility::objectSmartPointer<json::utility::jsonObject>& settingsObject = jsonSettings.getObject(json_settings::settingsObject);
 
 		try
 		{
-			if (jsonSettings.get<bool>("usingDefaultCreators"))
+			if (settingsObject->getBool(json_settings::usingDefaultCreatorsSetting))
 			{
 				this->initCreators();
 			}
@@ -239,50 +249,43 @@ namespace gui_framework
 
 		}
 
-		try
+		auto& jsonModules = settingsObject->getArray(json_settings::modulesSetting);
+
+		modules.reserve(jsonModules.size() + 1);
+
+		for (const auto& i : jsonModules)
 		{
-			auto& jsonModules = jsonSettings.getArray(json_settings::modulesSetting);
+			const auto& moduleObject = std::get<json::utility::objectSmartPointer<json::utility::jsonObject>>(i->data.front().second);
+			const string& moduleName = moduleObject->getString(json_settings::moduleNameSetting);
 
-			modules.reserve(jsonModules.size() + 1);
+			const auto& modulePath = find_if(moduleObject->data.begin(), moduleObject->data.end(),
+				[](const pair<string, json::utility::jsonObject::variantType>& value) { return value.first == json_settings::pathToModuleSettings; })->second;
 
-			for (const auto& i : jsonModules)
+			if (moduleName == json_settings::currentModule)
 			{
-				const auto& moduleObject = std::get<json::utility::objectSmartPointer<json::utility::jsonObject>>(i->data.front().second);
-				const string& moduleName = moduleObject->getString(json_settings::moduleNameSetting);
-
-				const auto& modulePath = find_if(moduleObject->data.begin(), moduleObject->data.end(),
-					[](const pair<string, json::utility::jsonObject::variantType>& value) { return value.first == json_settings::pathToModuleSettings; })->second;
-
-				if (moduleName == json_settings::currentModule)
-				{
-					modules.insert({ moduleName, GetModuleHandleW(nullptr) });
-				}
-				else
-				{
-					if (!filesystem::exists(moduleName))
-					{
-						throw exceptions::FileDoesNotExist(moduleName);
-					}
-
-					HMODULE module = LoadLibraryA
-					(
-						modulePath.index() == static_cast<size_t>(json::utility::variantTypeEnum::jNull) ?
-						moduleName.data() :
-						std::get<string>(modulePath).data()
-					);
-
-					if (!module)
-					{
-						throw exceptions::CantLoadModuleException(moduleName);
-					}
-
-					modules.insert({ moduleName, module });
-				}
+				modules.insert({ moduleName, GetModuleHandleW(nullptr) });
 			}
-		}
-		catch (const json::exceptions::CantFindValueException&)
-		{
+			else
+			{
+				if (!filesystem::exists(moduleName))
+				{
+					throw exceptions::FileDoesNotExist(moduleName);
+				}
 
+				HMODULE module = LoadLibraryA
+				(
+					modulePath.index() == static_cast<size_t>(json::utility::variantTypeEnum::jNull) ?
+					moduleName.data() :
+					std::get<string>(modulePath).data()
+				);
+
+				if (!module)
+				{
+					throw exceptions::CantLoadModuleException(moduleName);
+				}
+
+				modules.insert({ moduleName, module });
+			}
 		}
 	}
 
@@ -296,16 +299,6 @@ namespace gui_framework
 			}
 
 			FreeLibrary(module);
-		}
-	}
-
-	void GUIFramework::processHotkey(uint32_t hotkey) const
-	{
-		const function<void()>& onClick = hotkeys.at(hotkey);
-
-		if (onClick)
-		{
-			onClick();
 		}
 	}
 
