@@ -30,7 +30,6 @@ namespace gui_framework
 		};
 
 	protected:
-		// TODO: serialize images
 		utility::ImagesHolder images;
 		// TODO: serialize callbacks
 		std::vector<std::function<void()>> callbacks;

@@ -2,6 +2,7 @@
 
 #include "pch.h"
 #include "Interfaces/Iterators/IIterable.h"
+#include "Interfaces/Utility/ISerializable.h"
 #include "Iterators/loadable_forward_iterator.h"
 #include "Iterators/loadable_const_forward_iterator.h"
 
@@ -17,7 +18,8 @@ namespace gui_framework
 
 		/// @brief Base class for all visual asset loaders
 		class GUI_FRAMEWORK_API BaseLoadableHolder :
-			public interfaces::IIterable<std::filesystem::path, iterators::loadable_forward_iterator, iterators::loadable_const_forward_iterator>
+			public interfaces::IIterable<std::filesystem::path, iterators::loadable_forward_iterator, iterators::loadable_const_forward_iterator>,
+			public interfaces::ISerializable
 		{
 		public:
 			enum class imageType : uint32_t
@@ -49,6 +51,9 @@ namespace gui_framework
 		private:
 			HIMAGELIST imageList;
 			std::unordered_map<std::wstring, imageData> images;
+
+		private:
+			virtual json::JSONBuilder getStructure() const final override;
 
 		protected:
 			uint16_t imagesWidth;
@@ -108,6 +113,8 @@ namespace gui_framework
 			virtual iterators::loadable_forward_iterator end() noexcept final override;
 
 			virtual iterators::loadable_const_forward_iterator cend() const noexcept final override;
+
+			virtual void loadBaseLoadableHolderStructure(json::utility::objectSmartPointer<json::utility::jsonObject>& current) const final;
 
 			virtual ~BaseLoadableHolder();
 		};
