@@ -43,6 +43,7 @@ namespace gui_framework
 		threading::ThreadPool threadPool;
 		INITCOMMONCONTROLSEX comm;
 		std::unordered_map<std::string, HMODULE> modules;
+		std::unordered_map<size_t, std::unique_ptr<utility::BaseComponentCreator>> creators;
 #pragma region Ids
 		std::unordered_multimap<std::wstring, uint32_t> generatedIds;
 		std::queue<uint32_t> availableIds;
@@ -60,9 +61,12 @@ namespace gui_framework
 		std::vector<BaseComponent*> components;
 		std::mutex componentsMutex;
 #pragma endregion
-		std::unordered_map<size_t, std::unique_ptr<utility::BaseComponentCreator>> creators;
-		int modulesNeedToLoad;
+#pragma region Modules
+		std::atomic<int> modulesNeedToLoad;
 		std::atomic<int> currentLoadedModules;
+		std::mutex loadModulesMutex;
+		std::vector<std::string> cantLoadedModules;
+#pragma endregion
 
 	private:
 		void initCreators();
@@ -160,6 +164,8 @@ namespace gui_framework
 		/// @return true if exist, false otherwise
 		bool isExist(BaseComponent* component);
 
+		/// @brief Serialize hotkeys
+		/// @return JSON array with hotkeys data
 		std::vector<json::utility::objectSmartPointer<json::utility::jsonObject>> serializeHotkeys();
 
 		/// @brief Get all current registered creators
@@ -170,9 +176,17 @@ namespace gui_framework
 		/// @return jsonSettings
 		const json::JSONParser& getJSONSettings() const;
 
+		/// @brief Get all loaded modules
+		/// @return 
 		const std::unordered_map<std::string, HMODULE>& getModules() const;
 
+		/// @brief Check if modules are loaded. You can call getCantLoadedModules() to check if loaded modules have failed
+		/// @return 
 		bool isModulesLoaded() const;
+
+		/// @brief List of all exceptions in load modules process
+		/// @return 
+		std::vector<std::string> getCantLoadedModules();
 #pragma region FriendClasses
 		friend class BaseComponent;
 

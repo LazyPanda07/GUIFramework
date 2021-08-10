@@ -283,42 +283,70 @@ namespace gui_framework
 				const string& moduleName = moduleObject->getString(json_settings::moduleNameSetting);
 				const auto& modulePath = find_if(moduleObject->data.begin(), moduleObject->data.end(),
 					[](const pair<string, json::utility::jsonObject::variantType>& value) { return value.first == json_settings::pathToModuleSettings; })->second;
+				string modulePathString;
 
-				if (modulePath.index() == static_cast<size_t>(json::utility::variantTypeEnum::jNull))
+				if (modulePath.index() == static_cast<size_t>(json::utility::variantTypeEnum::jString))
+				{
+					modulePathString= std::get<string>(modulePath);
+				}
+
+				if (modulePathString.empty())
 				{
 					if (!filesystem::exists(moduleName))
 					{
 						throw exceptions::FileDoesNotExist(moduleName);
 					}
 				}
-				else if (modulePath.index() == static_cast<size_t>(json::utility::variantTypeEnum::jString))
+				else
 				{
-					if (!filesystem::exists(std::get<string>(modulePath)))
+					if (!filesystem::exists(modulePathString))
 					{
-						throw exceptions::FileDoesNotExist(std::get<string>(modulePath));
+						throw exceptions::FileDoesNotExist(modulePathString);
 					}
 				}
 
-				HMODULE module = LoadLibraryA
-				(
-					modulePath.index() == static_cast<size_t>(json::utility::variantTypeEnum::jNull) ?
-					moduleName.data() :
-					std::get<string>(modulePath).data()
-				);
+				modules.insert({ moduleName, nullptr });
 
-				if (!module)
+				auto loadModule = [modulePathString, moduleName, this]()
 				{
-					if (modulePath.index() == static_cast<size_t>(json::utility::variantTypeEnum::jNull))
-					{
-						throw exceptions::CantLoadModuleException(moduleName);
-					}
-					else if (modulePath.index() == static_cast<size_t>(json::utility::variantTypeEnum::jString))
-					{
-						throw exceptions::CantLoadModuleException(std::get<string>(modulePath));
-					}
-				}
+					HMODULE module = LoadLibraryA
+					(
+						modulePathString.empty() ?
+						moduleName.data() :
+						modulePathString.data()
+					);
 
-				modules.insert({ moduleName, module });
+					if (!module)
+					{
+						try
+						{
+							if (modulePathString.empty())
+							{
+								throw exceptions::CantLoadModuleException(moduleName);
+							}
+							else
+							{
+								throw exceptions::CantLoadModuleException(modulePathString);
+							}
+						}
+						catch (const exceptions::CantLoadModuleException& e)
+						{
+							unique_lock<mutex> lock(loadModulesMutex);
+
+							--modulesNeedToLoad;
+
+							cantLoadedModules.push_back(e.what());
+						}
+					}
+					else
+					{
+						modules[moduleName] = module;
+
+						++currentLoadedModules;
+					}
+				};
+
+				this->addTask(loadModule);
 			}
 		}
 		catch (const json::exceptions::CantFindValueException&)
@@ -564,6 +592,13 @@ namespace gui_framework
 
 	bool GUIFramework::isModulesLoaded() const
 	{
-		return true;
+		return modulesNeedToLoad == currentLoadedModules;
+	}
+
+	vector<string> GUIFramework::getCantLoadedModules()
+	{
+		unique_lock<mutex> lock(loadModulesMutex);
+
+		return cantLoadedModules;
 	}
 }
