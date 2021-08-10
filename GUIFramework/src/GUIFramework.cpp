@@ -247,7 +247,9 @@ namespace gui_framework
 		jsonSettings(ifstream(json_settings::settingsJSONFile.data())),
 		threadPool(static_cast<uint32_t>(jsonSettings.get<int64_t>(json_settings::threadsCountSetting))),
 		nextId(1),
-		nextHotkeyId(0)
+		nextHotkeyId(0),
+		modulesNeedToLoad(1),
+		currentLoadedModules(1)
 	{
 		InitCommonControlsEx(&comm);
 
@@ -267,28 +269,34 @@ namespace gui_framework
 
 		}
 
-		auto& jsonModules = settingsObject->getArray(json_settings::modulesSetting);
-
-		modules.reserve(jsonModules.size() + 1);
-
-		// TODO: Make modules loading async
-		for (const auto& i : jsonModules)
+		try
 		{
-			const auto& moduleObject = std::get<json::utility::objectSmartPointer<json::utility::jsonObject>>(i->data.front().second);
-			const string& moduleName = moduleObject->getString(json_settings::moduleNameSetting);
+			auto& jsonModules = settingsObject->getArray(json_settings::modulesSetting);
 
-			const auto& modulePath = find_if(moduleObject->data.begin(), moduleObject->data.end(),
-				[](const pair<string, json::utility::jsonObject::variantType>& value) { return value.first == json_settings::pathToModuleSettings; })->second;
+			modulesNeedToLoad += static_cast<int>(jsonModules.size());
 
-			if (moduleName == json_settings::currentModule)
+			modules.reserve(modulesNeedToLoad);
+
+			for (const auto& i : jsonModules)
 			{
-				modules.insert({ moduleName, GetModuleHandleW(nullptr) });
-			}
-			else
-			{
-				if (!filesystem::exists(moduleName))
+				const auto& moduleObject = std::get<json::utility::objectSmartPointer<json::utility::jsonObject>>(i->data.front().second);
+				const string& moduleName = moduleObject->getString(json_settings::moduleNameSetting);
+				const auto& modulePath = find_if(moduleObject->data.begin(), moduleObject->data.end(),
+					[](const pair<string, json::utility::jsonObject::variantType>& value) { return value.first == json_settings::pathToModuleSettings; })->second;
+
+				if (modulePath.index() == static_cast<size_t>(json::utility::variantTypeEnum::jNull))
 				{
-					throw exceptions::FileDoesNotExist(moduleName);
+					if (!filesystem::exists(moduleName))
+					{
+						throw exceptions::FileDoesNotExist(moduleName);
+					}
+				}
+				else if (modulePath.index() == static_cast<size_t>(json::utility::variantTypeEnum::jString))
+				{
+					if (!filesystem::exists(std::get<string>(modulePath)))
+					{
+						throw exceptions::FileDoesNotExist(std::get<string>(modulePath));
+					}
 				}
 
 				HMODULE module = LoadLibraryA
@@ -300,11 +308,22 @@ namespace gui_framework
 
 				if (!module)
 				{
-					throw exceptions::CantLoadModuleException(moduleName);
+					if (modulePath.index() == static_cast<size_t>(json::utility::variantTypeEnum::jNull))
+					{
+						throw exceptions::CantLoadModuleException(moduleName);
+					}
+					else if (modulePath.index() == static_cast<size_t>(json::utility::variantTypeEnum::jString))
+					{
+						throw exceptions::CantLoadModuleException(std::get<string>(modulePath));
+					}
 				}
 
 				modules.insert({ moduleName, module });
 			}
+		}
+		catch (const json::exceptions::CantFindValueException&)
+		{
+
 		}
 	}
 
@@ -312,11 +331,6 @@ namespace gui_framework
 	{
 		for (auto& [name, module] : modules)
 		{
-			if (name == json_settings::currentModule)
-			{
-				continue;
-			}
-
 			FreeLibrary(module);
 		}
 	}
@@ -501,7 +515,7 @@ namespace gui_framework
 
 		using json::utility::objectSmartPointer;
 		using json::utility::jsonObject;
-		
+
 		vector<objectSmartPointer<jsonObject>> result;
 
 		for (const auto& i : serializableHotkeysData)
@@ -548,4 +562,8 @@ namespace gui_framework
 		return modules;
 	}
 
+	bool GUIFramework::isModulesLoaded() const
+	{
+		return true;
+	}
 }

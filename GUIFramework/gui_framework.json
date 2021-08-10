@@ -1,12 +1,6 @@
 {
   "settings": {
     "usingDefaultCreators": true,
-    "threadsCount": 4,
-    "modules": [
-      {
-        "moduleName": "current",
-        "pathToModule": null
-      }
-    ]
+    "threadsCount": 4
   }
 }

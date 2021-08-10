@@ -61,6 +61,8 @@ namespace gui_framework
 		std::mutex componentsMutex;
 #pragma endregion
 		std::unordered_map<size_t, std::unique_ptr<utility::BaseComponentCreator>> creators;
+		int modulesNeedToLoad;
+		std::atomic<int> currentLoadedModules;
 
 	private:
 		void initCreators();
@@ -169,6 +171,8 @@ namespace gui_framework
 		const json::JSONParser& getJSONSettings() const;
 
 		const std::unordered_map<std::string, HMODULE>& getModules() const;
+
+		bool isModulesLoaded() const;
 #pragma region FriendClasses
 		friend class BaseComponent;
 

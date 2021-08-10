@@ -73,8 +73,6 @@ namespace gui_framework
 		inline const std::string modulesSetting = "modules";
 		inline const std::string moduleNameSetting = "moduleName";
 		inline constexpr std::string_view pathToModuleSettings = "pathToModule";
-
-		inline constexpr std::string_view currentModule = "current";
 	}
 
 	namespace libraries
