@@ -455,8 +455,7 @@ namespace gui_framework
 			}
 		}
 
-		// TODO: Check hotkeys containing
-		if (instance.getRegisteredHotkeys().size())
+		if (!current->contains("hotkeys", json::utility::variantTypeEnum::jJSONObject) && instance.getRegisteredHotkeys().size())
 		{
 			current->data.push_back({ "hotkeys"s, move(instance.serializeHotkeys()) });
 		}
