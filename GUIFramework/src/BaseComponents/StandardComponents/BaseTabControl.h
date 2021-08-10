@@ -15,8 +15,12 @@ namespace gui_framework
 			std::wstring text;
 			std::filesystem::path pathToImage;
 			std::function<void()> callback;
+			std::string functionName;
+			std::string moduleName;
 
 			tabData(const std::wstring& text, const std::filesystem::path& pathToImage, const std::function<void()>& callback);
+
+			tabData(const std::wstring& text, const std::filesystem::path& pathToImage, const std::string& functionName, const std::string& moduleName);
 
 			tabData(const tabData&) = default;
 
@@ -31,9 +35,7 @@ namespace gui_framework
 
 	protected:
 		utility::ImagesHolder images;
-		// TODO: serialize callbacks
 		std::vector<std::function<void()>> callbacks;
-		// TODO: serialize tabs
 		std::vector<tabData> tabs;
 
 	protected:
@@ -89,6 +91,18 @@ namespace gui_framework
 		virtual bool setItem(size_t index, const std::function<void()>& callback, const std::wstring& text = L"", const std::filesystem::path& pathToImage = L"") final;
 
 		/// @brief 
+		/// @param index 
+		/// @param functionName 
+		/// @param moduleName 
+		/// @param text 
+		/// @param pathToImage 
+		/// @return 
+		/// @exception FileDoesNotExist 
+		/// @exception CantFindFunctionFromModuleException 
+		/// @exception std::out_of_range Can't find moduleName in loaded modules
+		virtual bool setItem(size_t index, const std::string& functionName, const std::string& moduleName, const std::wstring& text = L"", const std::filesystem::path& pathToImage = L"") final;
+
+		/// @brief 
 		/// @return Returns the index of the previously selected tab if successful, or -1 otherwise 
 		virtual LRESULT setSelection(size_t index) final;
 
@@ -117,6 +131,8 @@ namespace gui_framework
 		/// @param blue 
 		/// @exception NotImplemented Text color does not affects at tab control
 		virtual void setTextColor(uint8_t red, uint8_t green, uint8_t blue) final override;
+
+		virtual json::JSONBuilder getStructure() const override;
 
 		virtual ~BaseTabControl() = default;
 	};

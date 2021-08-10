@@ -95,6 +95,8 @@ namespace gui_framework
 	inline constexpr std::string_view guiFrameworkVersion = "0.7.5-beta";
 }
 
+#define DECLARE_SERIALIZABLE_FUNCTION extern "C" __declspec(dllexport) 
+
 #ifdef GUI_FRAMEWORK_DLL
 #define GUI_FRAMEWORK_API __declspec(dllexport)
 #define GUI_FRAMEWORK_API_FUNCTION extern "C" __declspec(dllexport)
