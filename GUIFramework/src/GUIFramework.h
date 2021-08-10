@@ -14,6 +14,30 @@ namespace gui_framework
 	/// @brief Singleton with GUIFramework settings and some functionality
 	class GUI_FRAMEWORK_API GUIFramework
 	{
+	public:
+		struct GUI_FRAMEWORK_API hotkeyData
+		{
+			uint32_t hotkeyCode;
+			std::string functionName;
+			std::string moduleName;
+			std::vector<hotkeys::additionalKey> additionalKeys;
+			bool noRepeat;
+
+			hotkeyData();
+
+			hotkeyData(uint32_t hotkeyCode, const std::string& functionName, const std::string& moduleName, const std::vector<hotkeys::additionalKey>& additionalKeys = {}, bool noRepeat = false);
+
+			hotkeyData(const hotkeyData&) = default;
+
+			hotkeyData(hotkeyData&&) noexcept = default;
+
+			hotkeyData& operator = (const hotkeyData&) = default;
+
+			hotkeyData& operator = (hotkeyData&&) noexcept = default;
+
+			~hotkeyData() = default;
+		};
+
 	private:
 		json::JSONParser jsonSettings;
 		threading::ThreadPool threadPool;
@@ -27,6 +51,7 @@ namespace gui_framework
 #pragma endregion
 #pragma region Hotkeys
 		std::vector<std::function<void()>> hotkeys;
+		std::vector<hotkeyData> serializableHotkeysData;
 		std::queue<uint32_t> availableHotkeyIds;
 		std::mutex hotkeyIdMutex;
 		uint32_t nextHotkeyId;
@@ -84,10 +109,24 @@ namespace gui_framework
 		/// @exception GetLastErrorException 
 		uint32_t registerHotkey(uint32_t hotkey, const std::function<void()>& onClick, const std::vector<hotkeys::additionalKey>& additionalKeys = {}, bool noRepeat = false);
 
+		/// @brief Only works in thread, that call runMainLoop from WindowHolder. Thread safe register hotkey
+		/// @param hotkey Value from https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
+		/// @param additionalKeys 
+		/// @param noRepeat 
+		/// @return Hotkey id
+		/// @exception GetLastErrorException 
+		/// @exception CantFindFunctionFromModuleException 
+		/// @exception std::out_of_range Can't find moduleName in loaded modules
+		uint32_t registerHotkey(uint32_t hotkey, const std::string& functionName, const std::string& moduleName, const std::vector<hotkeys::additionalKey>& additionalKeys = {}, bool noRepeat = false);
+
 		/// @brief Thread safe unregister hotkey
 		/// @param hotkeyId 
 		/// @return Success
 		bool unregisterHotkey(uint32_t hotkeyId);
+
+		/// @brief Thread safe get hotkeys
+		/// @return Registered hotkeys
+		std::vector<hotkeyData> getRegisteredHotkeys();
 
 		/// @brief Load module with some sort of data
 		/// @param moduleName Name of that module
@@ -118,6 +157,8 @@ namespace gui_framework
 		/// @param component Value from 
 		/// @return true if exist, false otherwise
 		bool isExist(BaseComponent* component);
+
+		std::vector<json::utility::objectSmartPointer<json::utility::jsonObject>> serializeHotkeys();
 
 		/// @brief Get all current registered creators
 		/// @return creators

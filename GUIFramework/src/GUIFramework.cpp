@@ -4,6 +4,7 @@
 #include "Exceptions/GetLastErrorException.h"
 #include "Exceptions/FileDoesNotExist.h"
 #include "Exceptions/CantLoadModuleException.h"
+#include "Exceptions/CantFindFunctionFromModuleException.h"
 
 #include "BaseComponents/Creators/ButtonCreator.h"
 #include "BaseComponents/Creators/EditControlCreator.h"
@@ -63,6 +64,23 @@ using namespace std;
 
 namespace gui_framework
 {
+	GUIFramework::hotkeyData::hotkeyData() :
+		hotkeyCode(static_cast<uint32_t>(-1)),
+		noRepeat(false)
+	{
+
+	}
+
+	GUIFramework::hotkeyData::hotkeyData(uint32_t hotkeyCode, const string& functionName, const string& moduleName, const vector<hotkeys::additionalKey>& additionalKeys, bool noRepeat) :
+		hotkeyCode(hotkeyCode),
+		functionName(functionName),
+		moduleName(moduleName),
+		additionalKeys(additionalKeys),
+		noRepeat(noRepeat)
+	{
+
+	}
+
 	void GUIFramework::initCreators()
 	{
 		creators.reserve(24);
@@ -253,6 +271,7 @@ namespace gui_framework
 
 		modules.reserve(jsonModules.size() + 1);
 
+		// TODO: Make modules loading async
 		for (const auto& i : jsonModules)
 		{
 			const auto& moduleObject = std::get<json::utility::objectSmartPointer<json::utility::jsonObject>>(i->data.front().second);
@@ -351,11 +370,43 @@ namespace gui_framework
 			if (hotkeys.size() == id)
 			{
 				hotkeys.push_back(onClick);
+
+				serializableHotkeysData.emplace_back();
 			}
 			else
 			{
 				hotkeys[id] = onClick;
+
+				serializableHotkeysData[id] = hotkeyData();
 			}
+		}
+
+		return id;
+	}
+
+	uint32_t GUIFramework::registerHotkey(uint32_t hotkey, const string& functionName, const string& moduleName, const vector<hotkeys::additionalKey>& additionalKeys, bool noRepeat)
+	{
+		onClickSignature tem = nullptr;
+
+		{
+			unique_lock<mutex> lock(hotkeyIdMutex);
+
+			const HMODULE& module = this->getModules().at(moduleName);
+
+			tem = reinterpret_cast<onClickSignature>(GetProcAddress(module, functionName.data()));
+
+			if (!tem)
+			{
+				throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName);
+			}
+		}
+
+		uint32_t id = this->registerHotkey(hotkey, tem, additionalKeys, noRepeat);
+
+		{
+			unique_lock<mutex> lock(hotkeyIdMutex);
+
+			serializableHotkeysData[id] = hotkeyData(hotkey, functionName, moduleName, additionalKeys, noRepeat);
 		}
 
 		return id;
@@ -372,7 +423,20 @@ namespace gui_framework
 			availableHotkeyIds.push(hotkeyId);
 
 			hotkeys[hotkeyId] = nullptr;
+
+			serializableHotkeysData[hotkeyId] = hotkeyData();
 		}
+
+		return result;
+	}
+
+	vector<GUIFramework::hotkeyData> GUIFramework::getRegisteredHotkeys()
+	{
+		unique_lock<mutex> lock(hotkeyIdMutex);
+
+		vector<hotkeyData> result;
+
+		ranges::for_each(serializableHotkeysData, [&result](const hotkeyData& data) { if (data.functionName.size()) { result.emplace_back(data); } });
 
 		return result;
 	}
@@ -429,6 +493,44 @@ namespace gui_framework
 	bool GUIFramework::isExist(BaseComponent* component)
 	{
 		return ranges::find(components, component) != components.end();
+	}
+
+	vector<json::utility::objectSmartPointer<json::utility::jsonObject>> GUIFramework::serializeHotkeys()
+	{
+		unique_lock<mutex> lock(hotkeyIdMutex);
+
+		using json::utility::objectSmartPointer;
+		using json::utility::jsonObject;
+		
+		vector<objectSmartPointer<jsonObject>> result;
+
+		for (const auto& i : serializableHotkeysData)
+		{
+			if (i.functionName.size())
+			{
+				objectSmartPointer<jsonObject> object = json::utility::make_object<jsonObject>();
+
+				object->data.push_back({ "hotkeyCode"s, static_cast<uint64_t>(i.hotkeyCode) });
+				object->data.push_back({ "functionName"s, i.functionName });
+				object->data.push_back({ "moduleName"s, i.moduleName });
+				object->data.push_back({ "noRepeat"s, i.noRepeat });
+
+				if (i.additionalKeys.size())
+				{
+					vector<objectSmartPointer<jsonObject>> additionalKeys;
+
+					additionalKeys.reserve(i.additionalKeys.size());
+
+					ranges::for_each(i.additionalKeys, [&additionalKeys](const hotkeys::additionalKey& key) { json::utility::appendArray(static_cast<int64_t>(key), additionalKeys); });
+
+					object->data.push_back({ "additionalKeys"s, move(additionalKeys) });
+				}
+
+				json::utility::appendArray(move(object), result);
+			}
+		}
+
+		return result;
 	}
 
 	const unordered_map<size_t, unique_ptr<utility::BaseComponentCreator>>& GUIFramework::getCreators() const

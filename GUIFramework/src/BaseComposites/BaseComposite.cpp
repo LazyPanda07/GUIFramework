@@ -399,6 +399,7 @@ namespace gui_framework
 		json::JSONBuilder builder = BaseComponent::getStructure();
 		vector<pair<string, objectSmartPointer<jsonObject>>> data = this->getChildrenStructure();
 		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
+		GUIFramework& instance = GUIFramework::get();
 
 		if (pathToSmallIcon.size())
 		{
@@ -452,6 +453,12 @@ namespace gui_framework
 
 				childrenStructures.push_back(move(topLevel));
 			}
+		}
+
+		// TODO: Check hotkeys containing
+		if (instance.getRegisteredHotkeys().size())
+		{
+			current->data.push_back({ "hotkeys"s, move(instance.serializeHotkeys()) });
 		}
 
 		return builder;
