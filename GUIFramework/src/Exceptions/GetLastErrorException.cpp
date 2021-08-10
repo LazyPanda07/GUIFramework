@@ -8,7 +8,7 @@ namespace gui_framework
 	namespace exceptions
 	{
 		GetLastErrorException::GetLastErrorException(DWORD errorCode) :
-			BaseGUIFrameworkException(format("GetLastError returns {}", errorCode))
+			BaseGUIFrameworkException(format(R"(GetLastError returns "{}")", errorCode))
 		{
 
 		}

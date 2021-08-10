@@ -4,7 +4,7 @@ var classgui__framework_1_1_base_component =
       [ "destroyWindow", "classgui__framework_1_1_base_component.html#adadba923c5fcc012ce8b50e592080bcda3619de6b97539298d3d046e6dbbe48cc", null ],
       [ "quit", "classgui__framework_1_1_base_component.html#adadba923c5fcc012ce8b50e592080bcdadbd73c2b545209688ed794c0d5413d5a", null ]
     ] ],
-    [ "BaseComponent", "classgui__framework_1_1_base_component.html#a7fa073602015e5328c8f1be9c0d37902", null ],
+    [ "BaseComponent", "classgui__framework_1_1_base_component.html#a4b4f7216831d51b2d2cf22c90872394f", null ],
     [ "~BaseComponent", "classgui__framework_1_1_base_component.html#a274274f6f28b2e93f73544634b640d56", null ],
     [ "asyncDestroyComponent", "classgui__framework_1_1_base_component.html#ae670a5510c2e9a1cbaa4d00220555b07", null ],
     [ "destroyComponent", "classgui__framework_1_1_base_component.html#aa91c935601d05ca54c2002b4832d260f", null ],
@@ -44,7 +44,6 @@ var classgui__framework_1_1_base_component =
     [ "handle", "classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a", null ],
     [ "id", "classgui__framework_1_1_base_component.html#a24a743c99e4ca9bd6a5e1ea2fbd3aea7", null ],
     [ "mode", "classgui__framework_1_1_base_component.html#a55051bf0a8f4a9e513a7531fc9998145", null ],
-    [ "module", "classgui__framework_1_1_base_component.html#a1fe8542988faaa68bbe5a5a566f8117c", null ],
     [ "parent", "classgui__framework_1_1_base_component.html#a1576375d22cf283d598e22f4a11aca2f", null ],
     [ "styles", "classgui__framework_1_1_base_component.html#aec8d3af6711b0c012f2f7f90cc7d4141", null ],
     [ "textColor", "classgui__framework_1_1_base_component.html#aa6bedc9892f3eb8ae57193275bab2242", null ],

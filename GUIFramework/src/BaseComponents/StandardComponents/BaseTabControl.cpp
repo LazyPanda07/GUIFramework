@@ -2,8 +2,10 @@
 #include "BaseTabControl.h"
 
 #include "Styles/DefaultStyles.h"
+
 #include "Exceptions/FileDoesNotExist.h"
 #include "Exceptions/NotImplemented.h"
+#include "Exceptions/CantFindFunctionFromModuleException.h"
 
 #pragma warning(disable: 26454)
 
@@ -17,6 +19,15 @@ namespace gui_framework
 		text(text),
 		pathToImage(pathToImage),
 		callback(callback)
+	{
+
+	}
+
+	tabData::tabData(const wstring& text, const filesystem::path& pathToImage, const string& functionName, const string& moduleName) :
+		text(text),
+		pathToImage(pathToImage),
+		functionName(functionName),
+		moduleName(moduleName)
 	{
 
 	}
@@ -230,6 +241,57 @@ namespace gui_framework
 		return result;
 	}
 
+	bool BaseTabControl::setItem(size_t index, const string& functionName, const string& moduleName, const wstring& text, const filesystem::path& pathToImage)
+	{
+		GUIFramework& instance = GUIFramework::get();
+		const HMODULE& module = instance.getModules().at(moduleName);
+
+		onClickSignature tem = reinterpret_cast<onClickSignature>(GetProcAddress(module, functionName.data()));
+
+		if (!tem)
+		{
+			throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName);
+		}
+
+		if (!pathToImage.empty() && !filesystem::exists(pathToImage))
+		{
+			throw exceptions::FileDoesNotExist(pathToImage);
+		}
+
+		TCITEMW item = {};
+
+		if (text.size())
+		{
+			item.mask |= TCIF_TEXT;
+
+			item.pszText = const_cast<wchar_t*>(text.data());
+			item.cchTextMax = static_cast<int>(text.size());
+		}
+
+		if (!pathToImage.empty())
+		{
+			if (!images.contains(pathToImage))
+			{
+				images.addImage(pathToImage);
+			}
+
+			item.mask |= TCIF_IMAGE;
+
+			item.iImage = images[pathToImage];
+		}
+
+		bool result = SendMessageW(handle, TCM_SETITEM, index, reinterpret_cast<LPARAM>(&item));
+
+		if (result)
+		{
+			callbacks[index] = tem;
+
+			tabs[index] = tabData(text, pathToImage, functionName, moduleName);
+		}
+
+		return result;
+	}
+
 	LRESULT BaseTabControl::setSelection(size_t index)
 	{
 		return SendMessageW(handle, TCM_SETCURSEL, static_cast<WPARAM>(index), NULL);
@@ -257,11 +319,75 @@ namespace gui_framework
 
 	void BaseTabControl::setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue)
 	{
-		throw exceptions::NotImplemented(__FUNCTION__, "BaseComboBox");
+		throw exceptions::NotImplemented(__FUNCTION__, "BaseTabControl");
 	}
 
 	void BaseTabControl::setTextColor(uint8_t red, uint8_t green, uint8_t blue)
 	{
-		throw exceptions::NotImplemented(__FUNCTION__, "BaseComboBox");
+		throw exceptions::NotImplemented(__FUNCTION__, "BaseTabControl");
+	}
+
+	json::JSONBuilder BaseTabControl::getStructure() const
+	{
+		using json::utility::jsonObject;
+		using json::utility::objectSmartPointer;
+
+		json::JSONBuilder builder = BaseComponent::getStructure();
+		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
+		vector<objectSmartPointer<jsonObject>> jsonTabs;
+
+		auto serializeText = [this](objectSmartPointer<jsonObject>& object, const tabData& data)
+		{
+			if (data.text.empty())
+			{
+				return;
+			}
+
+			object->data.push_back({ "tabText"s, utility::to_string(data.text, ISerializable::getCodepage()) });
+		};
+		auto serializePathToImage = [](objectSmartPointer<jsonObject>& object, const tabData& data)
+		{
+			if (data.pathToImage.empty())
+			{
+				return;
+			}
+
+			object->data.push_back({ "tabImagePath"s, data.pathToImage.string() });
+		};
+		auto serializeCallback = [](objectSmartPointer<jsonObject>& object, const tabData& data)
+		{
+			object->data.push_back({ "functionName"s, data.functionName });
+			object->data.push_back({ "moduleName"s, data.moduleName });
+		};
+
+		for (const auto& i : tabs)
+		{
+			objectSmartPointer<jsonObject> object;
+
+			if (i.functionName.size())
+			{
+				object = json::utility::make_object<jsonObject>();
+
+				serializeText(object, i);
+
+				serializePathToImage(object, i);
+
+				serializeCallback(object, i);
+
+				json::utility::appendArray(move(object), jsonTabs);
+			}
+			else if (!i.callback)
+			{
+				object = json::utility::make_object<jsonObject>();
+
+				serializeText(object, i);
+
+				serializePathToImage(object, i);
+
+				json::utility::appendArray(move(object), jsonTabs);
+			}
+		}
+
+		return builder;
 	}
 }

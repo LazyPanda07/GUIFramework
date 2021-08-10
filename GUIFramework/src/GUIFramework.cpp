@@ -2,6 +2,9 @@
 #include "GUIFramework.h"
 
 #include "Exceptions/GetLastErrorException.h"
+#include "Exceptions/FileDoesNotExist.h"
+#include "Exceptions/CantLoadModuleException.h"
+#include "Exceptions/CantFindFunctionFromModuleException.h"
 
 #include "BaseComponents/Creators/ButtonCreator.h"
 #include "BaseComponents/Creators/EditControlCreator.h"
@@ -61,6 +64,23 @@ using namespace std;
 
 namespace gui_framework
 {
+	GUIFramework::hotkeyData::hotkeyData() :
+		hotkeyCode(static_cast<uint32_t>(-1)),
+		noRepeat(false)
+	{
+
+	}
+
+	GUIFramework::hotkeyData::hotkeyData(uint32_t hotkeyCode, const string& functionName, const string& moduleName, const vector<hotkeys::additionalKey>& additionalKeys, bool noRepeat) :
+		hotkeyCode(hotkeyCode),
+		functionName(functionName),
+		moduleName(moduleName),
+		additionalKeys(additionalKeys),
+		noRepeat(noRepeat)
+	{
+
+	}
+
 	void GUIFramework::initCreators()
 	{
 		creators.reserve(24);
@@ -124,51 +144,18 @@ namespace gui_framework
 #pragma endregion
 	}
 
-	GUIFramework::GUIFramework() :
-		jsonSettings(ifstream(settings::settingsJSONFile.data())),
-		threadPool(static_cast<uint32_t>(jsonSettings.get<int64_t>(settings::threadsCountSetting))),
-		msftEditModule(LoadLibraryW(libraries::msftEditLibrary.data())),
-		nextId(1),
-		nextHotkeyId(0)
+	void GUIFramework::addComponent(BaseComponent* component)
 	{
-		InitCommonControlsEx(&comm);
+		unique_lock<mutex> lock(componentsMutex);
 
-		try
-		{
-			if (jsonSettings.get<bool>("usingDefaultCreators"))
-			{
-				this->initCreators();
-			}
-		}
-		catch (const json::exceptions::CantFindValueException&)
-		{
-
-		}
+		components.push_back(component);
 	}
 
-	GUIFramework::~GUIFramework()
+	void GUIFramework::removeComponent(BaseComponent* component)
 	{
-		FreeLibrary(msftEditModule);
-	}
+		unique_lock<mutex> lock(componentsMutex);
 
-	void GUIFramework::processHotkey(uint32_t hotkey) const
-	{
-		const function<void()>& onClick = hotkeys.at(hotkey);
-
-		if (onClick)
-		{
-			onClick();
-		}
-	}
-
-	void GUIFramework::addTask(const function<void()>& task, const function<void()>& callback)
-	{
-		threadPool.addTask(task, callback);
-	}
-
-	void GUIFramework::addTask(function<void()>&& task, const function<void()>& callback)
-	{
-		threadPool.addTask(move(task), callback);
+		erase(components, component);
 	}
 
 	uint32_t GUIFramework::generateId(const wstring& windowName)
@@ -229,6 +216,163 @@ namespace gui_framework
 		}
 	}
 
+	vector<uint32_t> GUIFramework::getIds(const wstring& windowName)
+	{
+		unique_lock<mutex> lock(idMutex);
+
+		auto resultIterator = generatedIds.equal_range(windowName);
+		vector<uint32_t> result;
+
+		if (resultIterator.first != generatedIds.end())
+		{
+			result.reserve(distance(resultIterator.first, resultIterator.second));
+
+			for_each(resultIterator.first, resultIterator.second, [&result](const pair<wstring, uint32_t>& data) { result.push_back(data.second); });
+		}
+
+		return result;
+	}
+
+	void GUIFramework::processHotkey(uint32_t hotkey) const
+	{
+		const function<void()>& onClick = hotkeys.at(hotkey);
+
+		if (onClick)
+		{
+			onClick();
+		}
+	}
+
+	GUIFramework::GUIFramework() :
+		jsonSettings(ifstream(json_settings::settingsJSONFile.data())),
+		threadPool(static_cast<uint32_t>(jsonSettings.get<int64_t>(json_settings::threadsCountSetting))),
+		nextId(1),
+		nextHotkeyId(0),
+		modulesNeedToLoad(1),
+		currentLoadedModules(1)
+	{
+		InitCommonControlsEx(&comm);
+
+		modules.insert({ "MSFT"s, LoadLibraryW(libraries::msftEditLibrary.data()) });
+
+		const json::utility::objectSmartPointer<json::utility::jsonObject>& settingsObject = jsonSettings.getObject(json_settings::settingsObject);
+
+		try
+		{
+			if (settingsObject->getBool(json_settings::usingDefaultCreatorsSetting))
+			{
+				this->initCreators();
+			}
+		}
+		catch (const json::exceptions::CantFindValueException&)
+		{
+
+		}
+
+		try
+		{
+			auto& jsonModules = settingsObject->getArray(json_settings::modulesSetting);
+
+			modulesNeedToLoad += static_cast<int>(jsonModules.size());
+
+			modules.reserve(modulesNeedToLoad);
+
+			for (const auto& i : jsonModules)
+			{
+				const auto& moduleObject = std::get<json::utility::objectSmartPointer<json::utility::jsonObject>>(i->data.front().second);
+				const string& moduleName = moduleObject->getString(json_settings::moduleNameSetting);
+				const auto& modulePath = find_if(moduleObject->data.begin(), moduleObject->data.end(),
+					[](const pair<string, json::utility::jsonObject::variantType>& value) { return value.first == json_settings::pathToModuleSettings; })->second;
+				string modulePathString;
+
+				if (modulePath.index() == static_cast<size_t>(json::utility::variantTypeEnum::jString))
+				{
+					modulePathString= std::get<string>(modulePath);
+				}
+
+				if (modulePathString.empty())
+				{
+					if (!filesystem::exists(moduleName))
+					{
+						throw exceptions::FileDoesNotExist(moduleName);
+					}
+				}
+				else
+				{
+					if (!filesystem::exists(modulePathString))
+					{
+						throw exceptions::FileDoesNotExist(modulePathString);
+					}
+				}
+
+				modules.insert({ moduleName, nullptr });
+
+				auto loadModule = [modulePathString, moduleName, this]()
+				{
+					HMODULE module = LoadLibraryA
+					(
+						modulePathString.empty() ?
+						moduleName.data() :
+						modulePathString.data()
+					);
+
+					if (!module)
+					{
+						try
+						{
+							if (modulePathString.empty())
+							{
+								throw exceptions::CantLoadModuleException(moduleName);
+							}
+							else
+							{
+								throw exceptions::CantLoadModuleException(modulePathString);
+							}
+						}
+						catch (const exceptions::CantLoadModuleException& e)
+						{
+							unique_lock<mutex> lock(loadModulesMutex);
+
+							--modulesNeedToLoad;
+
+							cantLoadedModules.push_back(e.what());
+						}
+					}
+					else
+					{
+						modules[moduleName] = module;
+
+						++currentLoadedModules;
+					}
+				};
+
+				this->addTask(loadModule);
+			}
+		}
+		catch (const json::exceptions::CantFindValueException&)
+		{
+
+		}
+	}
+
+	GUIFramework::~GUIFramework()
+	{
+		for (auto& [name, module] : modules)
+		{
+			FreeLibrary(module);
+		}
+	}
+
+	void GUIFramework::addTask(const function<void()>& task, const function<void()>& callback)
+	{
+		threadPool.addTask(task, callback);
+	}
+
+	void GUIFramework::addTask(function<void()>&& task, const function<void()>& callback)
+	{
+		threadPool.addTask(move(task), callback);
+	}
+
 	uint32_t GUIFramework::registerHotkey(uint32_t hotkey, const function<void()>& onClick, const vector<hotkeys::additionalKey>& additionalKeys, bool noRepeat)
 	{
 		uint32_t additional = 0;
@@ -268,11 +412,43 @@ namespace gui_framework
 			if (hotkeys.size() == id)
 			{
 				hotkeys.push_back(onClick);
+
+				serializableHotkeysData.emplace_back();
 			}
 			else
 			{
 				hotkeys[id] = onClick;
+
+				serializableHotkeysData[id] = hotkeyData();
 			}
+		}
+
+		return id;
+	}
+
+	uint32_t GUIFramework::registerHotkey(uint32_t hotkey, const string& functionName, const string& moduleName, const vector<hotkeys::additionalKey>& additionalKeys, bool noRepeat)
+	{
+		onClickSignature tem = nullptr;
+
+		{
+			unique_lock<mutex> lock(hotkeyIdMutex);
+
+			const HMODULE& module = this->getModules().at(moduleName);
+
+			tem = reinterpret_cast<onClickSignature>(GetProcAddress(module, functionName.data()));
+
+			if (!tem)
+			{
+				throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName);
+			}
+		}
+
+		uint32_t id = this->registerHotkey(hotkey, tem, additionalKeys, noRepeat);
+
+		{
+			unique_lock<mutex> lock(hotkeyIdMutex);
+
+			serializableHotkeysData[id] = hotkeyData(hotkey, functionName, moduleName, additionalKeys, noRepeat);
 		}
 
 		return id;
@@ -289,26 +465,119 @@ namespace gui_framework
 			availableHotkeyIds.push(hotkeyId);
 
 			hotkeys[hotkeyId] = nullptr;
+
+			serializableHotkeysData[hotkeyId] = hotkeyData();
 		}
 
 		return result;
 	}
 
-	vector<uint32_t> GUIFramework::getIds(const wstring& windowName)
+	vector<GUIFramework::hotkeyData> GUIFramework::getRegisteredHotkeys()
 	{
-		unique_lock<mutex> lock(idMutex);
+		unique_lock<mutex> lock(hotkeyIdMutex);
 
-		auto resultIterator = generatedIds.equal_range(windowName);
-		vector<uint32_t> result;
+		vector<hotkeyData> result;
 
-		if (resultIterator.first != generatedIds.end())
+		ranges::for_each(serializableHotkeysData, [&result](const hotkeyData& data) { if (data.functionName.size()) { result.emplace_back(data); } });
+
+		return result;
+	}
+
+	void GUIFramework::loadModule(const string& moduleName, const filesystem::path& pathToModule)
+	{
+		if (!filesystem::exists(pathToModule))
 		{
-			result.reserve(distance(resultIterator.first, resultIterator.second));
+			throw exceptions::FileDoesNotExist(moduleName);
+		}
 
-			for_each(resultIterator.first, resultIterator.second, [&result](const pair<wstring, uint32_t>& data) { result.push_back(data.second); });
+		HMODULE	module = LoadLibraryA(pathToModule.string().data());
+
+		if (!module)
+		{
+			throw exceptions::CantLoadModuleException(moduleName);
+		}
+
+		modules.insert({ moduleName, module });
+	}
+
+	void GUIFramework::unloadModule(const string& moduleName)
+	{
+		auto it = modules.find(moduleName);
+
+		if (it == modules.end())
+		{
+			return;
+		}
+
+		FreeLibrary(it->second);
+
+		modules.erase(it);
+	}
+
+	BaseComponent* GUIFramework::findComponent(HWND handle)
+	{
+		unique_lock<mutex> lock(componentsMutex);
+
+		auto it = ranges::find_if(components, [&handle](BaseComponent* component) { return component->getHandle() == handle; });
+
+		return it == components.end() ? nullptr : *it;
+	}
+
+	BaseComponent* GUIFramework::findComponent(const wstring& componentName)
+	{
+		unique_lock<mutex> lock(componentsMutex);
+
+		auto it = ranges::find_if(components, [&componentName](BaseComponent* component) { return component->getWindowName() == componentName; });
+
+		return it == components.end() ? nullptr : *it;
+	}
+
+	bool GUIFramework::isExist(BaseComponent* component)
+	{
+		return ranges::find(components, component) != components.end();
+	}
+
+	vector<json::utility::objectSmartPointer<json::utility::jsonObject>> GUIFramework::serializeHotkeys()
+	{
+		unique_lock<mutex> lock(hotkeyIdMutex);
+
+		using json::utility::objectSmartPointer;
+		using json::utility::jsonObject;
+
+		vector<objectSmartPointer<jsonObject>> result;
+
+		for (const auto& i : serializableHotkeysData)
+		{
+			if (i.functionName.size())
+			{
+				objectSmartPointer<jsonObject> object = json::utility::make_object<jsonObject>();
+
+				object->data.push_back({ "hotkeyCode"s, static_cast<uint64_t>(i.hotkeyCode) });
+				object->data.push_back({ "functionName"s, i.functionName });
+				object->data.push_back({ "moduleName"s, i.moduleName });
+				object->data.push_back({ "noRepeat"s, i.noRepeat });
+
+				if (i.additionalKeys.size())
+				{
+					vector<objectSmartPointer<jsonObject>> additionalKeys;
+
+					additionalKeys.reserve(i.additionalKeys.size());
+
+					ranges::for_each(i.additionalKeys, [&additionalKeys](const hotkeys::additionalKey& key) { json::utility::appendArray(static_cast<int64_t>(key), additionalKeys); });
+
+					object->data.push_back({ "additionalKeys"s, move(additionalKeys) });
+				}
+
+				json::utility::appendArray(move(object), result);
+			}
 		}
 
 		return result;
+	}
+
+	const unordered_map<size_t, unique_ptr<utility::BaseComponentCreator>>& GUIFramework::getCreators() const
+	{
+		return creators;
 	}
 
 	const json::JSONParser& GUIFramework::getJSONSettings() const
@@ -316,8 +585,20 @@ namespace gui_framework
 		return jsonSettings;
 	}
 
-	const unordered_map<size_t, unique_ptr<utility::BaseComponentCreator>>& GUIFramework::getCreators() const
+	const unordered_map<string, HMODULE>& GUIFramework::getModules() const
 	{
-		return creators;
+		return modules;
+	}
+
+	bool GUIFramework::isModulesLoaded() const
+	{
+		return modulesNeedToLoad == currentLoadedModules;
+	}
+
+	vector<string> GUIFramework::getCantLoadedModules()
+	{
+		unique_lock<mutex> lock(loadModulesMutex);
+
+		return cantLoadedModules;
 	}
 }

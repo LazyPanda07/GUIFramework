@@ -48,7 +48,7 @@ namespace gui_framework
 
 		childrenStructure.reserve(children.size());
 
-		for_each(children.begin(), children.end(), [&childrenStructure](const unique_ptr<BaseComponent>& child) { childrenStructure.push_back(child->getStructure()); });
+		ranges::for_each(children, [&childrenStructure](const unique_ptr<BaseComponent>& child) { childrenStructure.push_back(child->getStructure()); });
 
 		for (size_t i = 0; i < children.size(); i++)
 		{
@@ -399,6 +399,7 @@ namespace gui_framework
 		json::JSONBuilder builder = BaseComponent::getStructure();
 		vector<pair<string, objectSmartPointer<jsonObject>>> data = this->getChildrenStructure();
 		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
+		GUIFramework& instance = GUIFramework::get();
 
 		if (pathToSmallIcon.size())
 		{
@@ -454,6 +455,11 @@ namespace gui_framework
 			}
 		}
 
+		if (!current->contains("hotkeys", json::utility::variantTypeEnum::jJSONObject) && instance.getRegisteredHotkeys().size())
+		{
+			current->data.push_back({ "hotkeys"s, move(instance.serializeHotkeys()) });
+		}
+
 		return builder;
 	}
 
@@ -461,9 +467,9 @@ namespace gui_framework
 	{
 		vector<BaseComponent*> components;
 
-		for_each(children.begin(), children.end(), [&components](const unique_ptr<BaseComponent>& component) { components.push_back(component.get()); });
+		ranges::for_each(children, [&components](const unique_ptr<BaseComponent>& component) { components.push_back(component.get()); });
 
-		for_each(components.begin(), components.end(), [this](BaseComponent* component) { this->removeChild(component); });
+		ranges::for_each(components, [this](BaseComponent* component) { this->removeChild(component); });
 
 		DestroyIcon(largeIcon);
 		DestroyIcon(smallIcon);

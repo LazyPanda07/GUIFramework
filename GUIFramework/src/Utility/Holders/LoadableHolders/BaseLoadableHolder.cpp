@@ -14,12 +14,34 @@ namespace gui_framework
 
 		}
 
-		BaseLoadableHolder::BaseLoadableHolder(uint16_t imagesWidth, uint16_t imagesHeight, size_t count) :
-			imageList(ImageList_Create(imagesWidth, imagesHeight, ILC_COLOR32, 0, static_cast<int>(count))),
-			imagesWidth(imagesWidth),
-			imagesHeight(imagesHeight)
+		json::JSONBuilder BaseLoadableHolder::getStructure() const
 		{
+			using json::utility::objectSmartPointer;
+			using json::utility::jsonObject;
 
+			uint32_t codepage = ISerializable::getCodepage();
+			json::JSONBuilder builder(codepage);
+			objectSmartPointer<jsonObject> object = json::utility::make_object<jsonObject>();
+			vector<objectSmartPointer<jsonObject>> jsonImages;
+
+			object->data.push_back({ "imagesWidth"s, static_cast<uint64_t>(imagesWidth) });
+			object->data.push_back({ "imagesHeight"s, static_cast<uint64_t>(imagesHeight) });
+
+			for (const auto& [path, data] : images)
+			{
+				objectSmartPointer<jsonObject> image = json::utility::make_object<jsonObject>();
+
+				image->data.push_back({ "pathToImage"s, utility::to_string(path, codepage) });
+				image->data.push_back({ "type"s, static_cast<uint64_t>(data.type) });
+
+				json::utility::appendArray(move(image), jsonImages);
+			}
+
+			object->data.push_back({ "images"s, move(jsonImages) });
+
+			builder.append("imageHolder"s, move(object));
+
+			return builder;
 		}
 
 		uint16_t BaseLoadableHolder::insertImage(const filesystem::path& pathToImage, imageType type)
@@ -57,6 +79,14 @@ namespace gui_framework
 			}
 
 			return resultIndex;
+		}
+
+		BaseLoadableHolder::BaseLoadableHolder(uint16_t imagesWidth, uint16_t imagesHeight, size_t count) :
+			imageList(ImageList_Create(imagesWidth, imagesHeight, ILC_COLOR32, 0, static_cast<int>(count))),
+			imagesWidth(imagesWidth),
+			imagesHeight(imagesHeight)
+		{
+
 		}
 
 		void BaseLoadableHolder::removeImage(const filesystem::path& pathToImage)
@@ -144,7 +174,7 @@ namespace gui_framework
 
 			imagesPaths.reserve(images.size());
 
-			for_each(images.begin(), images.end(), [&imagesPaths](const pair<wstring, imageData>& data) { imagesPaths.push_back(data.first); });
+			ranges::for_each(images, [&imagesPaths](const pair<wstring, imageData>& data) { imagesPaths.push_back(data.first); });
 
 			return iterators::loadable_forward_iterator(move(imagesPaths), 0);
 		}
@@ -155,7 +185,7 @@ namespace gui_framework
 
 			imagesPaths.reserve(images.size());
 
-			for_each(images.begin(), images.end(), [&imagesPaths](const pair<wstring, imageData>& data) { imagesPaths.push_back(data.first); });
+			ranges::for_each(images, [&imagesPaths](const pair<wstring, imageData>& data) { imagesPaths.push_back(data.first); });
 
 			return iterators::loadable_const_forward_iterator(move(imagesPaths), 0);
 		}
@@ -168,6 +198,11 @@ namespace gui_framework
 		iterators::loadable_const_forward_iterator BaseLoadableHolder::cend() const noexcept
 		{
 			return iterators::loadable_const_forward_iterator({}, images.size());
+		}
+
+		void BaseLoadableHolder::loadBaseLoadableHolderStructure(json::utility::objectSmartPointer<json::utility::jsonObject>& current) const
+		{
+			current->data.push_back({ "imageHolder"s,  move(this->getStructure()["imageHolder"]) });
 		}
 
 		BaseLoadableHolder::~BaseLoadableHolder()

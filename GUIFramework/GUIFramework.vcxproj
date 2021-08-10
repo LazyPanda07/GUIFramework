@@ -121,6 +121,8 @@
     <ClInclude Include="src\Composites\ChildWindow.h" />
     <ClInclude Include="src\Composites\DialogBox.h" />
     <ClInclude Include="src\Composites\SeparateWindow.h" />
+    <ClInclude Include="src\Exceptions\CantFindFunctionFromModuleException.h" />
+    <ClInclude Include="src\Exceptions\CantLoadModuleException.h" />
     <ClInclude Include="src\Exceptions\FileDoesNotExist.h" />
     <ClInclude Include="src\Exceptions\NotImplemented.h" />
     <ClInclude Include="src\GUIFrameworkConstants.h" />
@@ -284,6 +286,8 @@
     <ClCompile Include="src\Composites\SeparateWindow.cpp" />
     <ClCompile Include="src\Exceptions\BaseGUIFrameworkException.cpp" />
     <ClCompile Include="src\Exceptions\CantFindCompositeFunctionException.cpp" />
+    <ClCompile Include="src\Exceptions\CantFindFunctionFromModuleException.cpp" />
+    <ClCompile Include="src\Exceptions\CantLoadModuleException.cpp" />
     <ClCompile Include="src\Exceptions\FileDoesNotExist.cpp" />
     <ClCompile Include="src\Exceptions\NotImplemented.cpp" />
     <ClCompile Include="src\Exceptions\SelectListException.cpp" />
@@ -471,11 +475,11 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <PrecompiledHeader>Create</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\PrecompiledHeaders\pch.pch</PrecompiledHeaderOutputFile>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
-      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <AdditionalIncludeDirectories>$(ProjectDir)src;$(SolutionDir)JSON\src;$(SolutionDir)ThreadPool\src;$(GUIFrameworkLibraryDir)JSON\src;$(GUIFrameworkLibraryDir)ThreadPool\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -490,11 +494,11 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);GUI_FRAMEWORK_DLL</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <PrecompiledHeader>Create</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\PrecompiledHeaders\pch.pch</PrecompiledHeaderOutputFile>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
-      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <AdditionalIncludeDirectories>$(ProjectDir)src;$(SolutionDir)JSON\src;$(SolutionDir)ThreadPool\src;$(GUIFrameworkLibraryDir)JSON\src;$(GUIFrameworkLibraryDir)ThreadPool\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -511,11 +515,11 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <PrecompiledHeader>Create</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\PrecompiledHeaders\pch.pch</PrecompiledHeaderOutputFile>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <AdditionalIncludeDirectories>$(ProjectDir)src;$(SolutionDir)JSON\src;$(SolutionDir)ThreadPool\src;$(GUIFrameworkLibraryDir)JSON\src;$(GUIFrameworkLibraryDir)ThreadPool\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -534,11 +538,11 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);GUI_FRAMEWORK_DLL</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <PrecompiledHeader>Create</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\PrecompiledHeaders\pch.pch</PrecompiledHeaderOutputFile>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <AdditionalIncludeDirectories>$(ProjectDir)src;$(SolutionDir)JSON\src;$(SolutionDir)ThreadPool\src;$(GUIFrameworkLibraryDir)JSON\src;$(GUIFrameworkLibraryDir)ThreadPool\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -558,10 +562,10 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <DebugInformationFormat>None</DebugInformationFormat>
-      <PrecompiledHeader>Create</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\PrecompiledHeaders\pch.pch</PrecompiledHeaderOutputFile>
-      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <AdditionalIncludeDirectories>$(ProjectDir)src;$(SolutionDir)JSON\src;$(SolutionDir)ThreadPool\src;$(GUIFrameworkLibraryDir)JSON\src;$(GUIFrameworkLibraryDir)ThreadPool\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -581,10 +585,10 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <DebugInformationFormat>None</DebugInformationFormat>
-      <PrecompiledHeader>Create</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\PrecompiledHeaders\pch.pch</PrecompiledHeaderOutputFile>
-      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <AdditionalIncludeDirectories>$(ProjectDir)src;$(SolutionDir)JSON\src;$(SolutionDir)ThreadPool\src;$(GUIFrameworkLibraryDir)JSON\src;$(GUIFrameworkLibraryDir)ThreadPool\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>

@@ -19,12 +19,18 @@ var namespacegui__framework =
     ] ],
     [ "interfaces", "namespacegui__framework_1_1interfaces.html", "namespacegui__framework_1_1interfaces" ],
     [ "iterators", "namespacegui__framework_1_1iterators.html", "namespacegui__framework_1_1iterators" ],
+    [ "json_settings", "namespacegui__framework_1_1json__settings.html", [
+      [ "currentModule", "namespacegui__framework_1_1json__settings.html#a606275e3c7c630e53c774a95813e1bd4", null ],
+      [ "moduleNameSetting", "namespacegui__framework_1_1json__settings.html#a6dae873e8b91fb97158311efbfb35c70", null ],
+      [ "modulesSetting", "namespacegui__framework_1_1json__settings.html#a03400673f6ecd7ac91d97eca3b71c327", null ],
+      [ "pathToModuleSettings", "namespacegui__framework_1_1json__settings.html#acb925ed8bd2261fc88aea09e514144a0", null ],
+      [ "settingsJSONFile", "namespacegui__framework_1_1json__settings.html#a9426e6e8ca2d732bdae204bdc9903564", null ],
+      [ "settingsObject", "namespacegui__framework_1_1json__settings.html#a31fd95ffa91c694e93b01a23a07305f3", null ],
+      [ "threadsCountSetting", "namespacegui__framework_1_1json__settings.html#af4f5086d138e7948e61b65288c1b5bf4", null ],
+      [ "usingDefaultCreatorsSetting", "namespacegui__framework_1_1json__settings.html#a7ddcf0e329446aee3695a8d5fe493839", null ]
+    ] ],
     [ "libraries", "namespacegui__framework_1_1libraries.html", [
       [ "msftEditLibrary", "namespacegui__framework_1_1libraries.html#aa0a8f6ff8009d943b34253c4a50409c2", null ]
-    ] ],
-    [ "settings", "namespacegui__framework_1_1settings.html", [
-      [ "settingsJSONFile", "namespacegui__framework_1_1settings.html#a9ac890cff1776e71efbf6c9ae1a837bf", null ],
-      [ "threadsCountSetting", "namespacegui__framework_1_1settings.html#a583a179dba5adc309d1a59f97c4dfe54", null ]
     ] ],
     [ "standard_classes", "namespacegui__framework_1_1standard__classes.html", [
       [ "button", "namespacegui__framework_1_1standard__classes.html#a3a70e6e92deddb65c6406def06e23ec8", null ],

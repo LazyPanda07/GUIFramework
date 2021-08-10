@@ -12,7 +12,9 @@
 #include <concepts>
 #include <any>
 #include <filesystem>
+#include <ranges>
 
+#include <atomic>
 #include <thread>
 #include <condition_variable>
 #include <mutex>

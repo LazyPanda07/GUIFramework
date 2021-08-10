@@ -8,7 +8,7 @@ namespace gui_framework
 	namespace exceptions
 	{
 		FileDoesNotExist::FileDoesNotExist(const filesystem::path& filePath) :
-			BaseGUIFrameworkException(format("File {} does not exist", filePath.string()))
+			BaseGUIFrameworkException(format(R"(File "{}" does not exist)", filePath.string()))
 		{
 
 		}

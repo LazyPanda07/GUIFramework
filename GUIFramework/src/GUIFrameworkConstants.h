@@ -62,11 +62,17 @@ namespace gui_framework
 		inline constexpr uint16_t additionalListViewReportColumnWidth = 10;
 	}
 
-	namespace settings
+	namespace json_settings
 	{
 		inline constexpr std::string_view settingsJSONFile = "gui_framework.json";
 
+		inline const std::string settingsObject = "settings";
+
+		inline const std::string usingDefaultCreatorsSetting = "usingDefaultCreators";
 		inline const std::string threadsCountSetting = "threadsCount";
+		inline const std::string modulesSetting = "modules";
+		inline const std::string moduleNameSetting = "moduleName";
+		inline constexpr std::string_view pathToModuleSettings = "pathToModule";
 	}
 
 	namespace libraries
@@ -84,8 +90,10 @@ namespace gui_framework
 		};
 	}
 
-	inline constexpr std::string_view guiFrameworkVersion = "0.7.4-beta";
+	inline constexpr std::string_view guiFrameworkVersion = "0.7.5-beta";
 }
+
+#define DECLARE_SERIALIZABLE_FUNCTION extern "C" __declspec(dllexport) 
 
 #ifdef GUI_FRAMEWORK_DLL
 #define GUI_FRAMEWORK_API __declspec(dllexport)
@@ -109,3 +117,7 @@ template<typename T>
 using smartPointerType = std::unique_ptr<T>;
 
 #endif // GUI_FRAMEWORK_DLL
+
+using onClickSignature = void(*)();
+
+using richEditCallbackSignature = void(*)(const std::wstring&);
