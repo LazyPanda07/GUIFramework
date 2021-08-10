@@ -89,7 +89,7 @@ namespace gui_framework
 				classStruct.cbSize = sizeof(WNDCLASSEXW);
 				classStruct.lpszClassName = className.data();
 				classStruct.hInstance = utility::getCurrentModule();
-				classStruct.hCursor = LoadCursorW(utility::getCurrentModule(), IDC_ARROW);
+				classStruct.hCursor = LoadCursorW(nullptr, IDC_ARROW);
 				classStruct.lpfnWndProc = windowFunction;
 				classStruct.hbrBackground = reinterpret_cast<HBRUSH>(COLOR_WINDOW);
 
