@@ -1,9 +1,12 @@
 {
-  "Settings": {
-    "usingDefaultCreators": true
-  },
-
-  "Threading": {
-    "threadsCount": 4
+  "settings": {
+    "usingDefaultCreators": true,
+    "threadsCount": 4,
+    "modules": [
+      {
+        "moduleName": "Dynamic.dll",
+        "pathToModule": null
+      }
+    ]
   }
 }

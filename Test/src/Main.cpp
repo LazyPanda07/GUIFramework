@@ -26,16 +26,6 @@ void test()
 	{
 		WindowHolder holder(make_unique<SeparateWindow>(L"MainWindow", L"Главное окно", settings, "main"));
 		SeparateWindow* ptr = dynamic_cast<SeparateWindow*>(holder.get());
-		DropDownListComboBox* list = new DropDownListComboBox(L"Drop", utility::ComponentSettings(0, 0, 400, 20), ptr);
-
-		list->setBlockResize(true);
-
-		list->addValue(L"First");
-		list->addValue(L"Second");
-		list->addValue(L"Third");
-		list->addValue(L"Fourth");
-
-		list->setOnSelectionChange([](BaseComboBox& ref) { wcout << ref.getValue(ref.getCurrentSelectionIndex()) << endl; });
 
 		ptr->setExitMode(BaseComponent::exitMode::quit);
 
