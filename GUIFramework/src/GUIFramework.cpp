@@ -247,7 +247,7 @@ namespace gui_framework
 		jsonSettings(ifstream(json_settings::settingsJSONFile.data())),
 		threadPool(static_cast<uint32_t>(jsonSettings.get<int64_t>(json_settings::threadsCountSetting))),
 		nextId(1),
-		nextHotkeyId(1)
+		nextHotkeyId(0)
 	{
 		InitCommonControlsEx(&comm);
 
