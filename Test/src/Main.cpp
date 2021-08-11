@@ -33,7 +33,7 @@ void test()
 
 		ptr->addImage(0, 200, R"(assets\image.bmp)");
 
-		thread([&ptr]() { this_thread::sleep_for(2s); ptr->removeImage(R"(assets\image.bmp)"); cout << "Removed" << endl; }).detach();
+		cout << *ptr << endl;
 
 		ptr->setExitMode(BaseComponent::exitMode::quit);
 
