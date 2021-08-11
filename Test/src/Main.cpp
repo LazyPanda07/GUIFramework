@@ -1,7 +1,7 @@
 #include <iostream>
 
 #include "GUIFramework.h"
-#include "Components/Buttons/Button.h"
+#include "Components/TabControl.h"
 #include "Composites/ChildWindow.h"
 #include "Utility/Holders/WindowHolder.h"
 #include "Composites/SeparateWindow.h"
@@ -23,9 +23,13 @@ void test()
 		WindowHolder holder(make_unique<SeparateWindow>(L"MainWindow", L"Главное окно", settings, "main"));
 		SeparateWindow* ptr = dynamic_cast<SeparateWindow*>(holder.get());
 
-		Button* button = new Button(L"First", L"Текст", 0, 0, ptr);
+		TabControl* control = new TabControl(L"First", utility::ComponentSettings(0, 0, 400, 200), ptr);
 
-		button->setOnClick("test", "functions");
+		control->appendText(L"Text", []() { cout << "HAME" << endl; });
+
+		control->appendImage(R"(assets\icon.ico)", []() { cout << "Action" << endl; });
+
+		control->setItem(1, "test", "functions", L"Текст");
 
 		cout << *ptr << endl;
 
