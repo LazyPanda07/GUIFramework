@@ -43,6 +43,7 @@ namespace gui_framework
 		threading::ThreadPool threadPool;
 		INITCOMMONCONTROLSEX comm;
 		std::unordered_map<std::string, HMODULE> modules;
+		std::unordered_map<std::string, std::string> modulesPaths;
 		std::unordered_map<size_t, std::unique_ptr<utility::BaseComponentCreator>> creators;
 #pragma region Ids
 		std::unordered_multimap<std::wstring, uint32_t> generatedIds;
@@ -179,6 +180,10 @@ namespace gui_framework
 		/// @brief Get all loaded modules
 		/// @return 
 		const std::unordered_map<std::string, HMODULE>& getModules() const;
+
+		/// @brief Get all loaded modules paths
+		/// @return 
+		const std::unordered_map<std::string, std::string>& getModulesPaths() const;
 
 		/// @brief Check if modules are loaded. You can call getCantLoadedModules() to check if loaded modules have failed
 		/// @return 
