@@ -27,9 +27,7 @@ void test()
 
 		control->appendText(L"Text", []() { cout << "HAME" << endl; });
 
-		control->appendImage(R"(assets\icon.ico)", []() { cout << "Action" << endl; });
-
-		control->setItem(1, "test", "functions", L"Текст");
+		control->appendText(L"Текст", "test", "functions");
 
 		cout << *ptr << endl;
 
