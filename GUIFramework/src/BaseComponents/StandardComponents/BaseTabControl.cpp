@@ -485,12 +485,10 @@ namespace gui_framework
 
 		for (const auto& i : tabs)
 		{
-			objectSmartPointer<jsonObject> object;
+			objectSmartPointer<jsonObject> object = json::utility::make_object<jsonObject>();
 
 			if (i.functionName.size())
 			{
-				object = json::utility::make_object<jsonObject>();
-
 				serializeText(object, i);
 
 				serializePathToImage(object, i);
@@ -499,10 +497,8 @@ namespace gui_framework
 
 				json::utility::appendArray(move(object), jsonTabs);
 			}
-			else if (!i.callback)
+			else
 			{
-				object = json::utility::make_object<jsonObject>();
-
 				serializeText(object, i);
 
 				serializePathToImage(object, i);
@@ -510,6 +506,8 @@ namespace gui_framework
 				json::utility::appendArray(move(object), jsonTabs);
 			}
 		}
+
+		current->data.push_back({ "tabs"s, move(jsonTabs) });
 
 		return builder;
 	}
