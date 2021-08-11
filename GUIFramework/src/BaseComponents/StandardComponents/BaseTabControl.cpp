@@ -480,7 +480,7 @@ namespace gui_framework
 		auto serializeCallback = [](objectSmartPointer<jsonObject>& object, const tabData& data)
 		{
 			object->data.push_back({ "functionName"s, data.functionName });
-			object->data.push_back({ "moduleName"s, GUIFramework::get().getModulesPaths().at(data.moduleName) });
+			object->data.push_back({ "pathToModule"s, GUIFramework::get().getModulesPaths().at(data.moduleName) });
 		};
 
 		for (const auto& i : tabs)
