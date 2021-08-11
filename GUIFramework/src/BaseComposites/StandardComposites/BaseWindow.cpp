@@ -64,6 +64,8 @@ namespace gui_framework
 	void BaseWindow::removeImage(const filesystem::path& pathToImage)
 	{
 		pictures.removeImage(pathToImage);
+
+		InvalidateRect(nullptr, nullptr, true);
 	}
 
 	json::JSONBuilder BaseWindow::getStructure() const
