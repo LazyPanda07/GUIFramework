@@ -363,6 +363,8 @@ namespace gui_framework
 
 		current->data.push_back({ "functionName"s, functionName });
 
+		current->data.push_back({ "moduleName"s, moduleName });
+
 		current->data.push_back({ "pathToModule"s, GUIFramework::get().getModulesPaths().at(moduleName) });
 
 		return builder;
