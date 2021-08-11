@@ -562,6 +562,7 @@ namespace gui_framework
 
 				object->data.push_back({ "hotkeyCode"s, static_cast<uint64_t>(i.hotkeyCode) });
 				object->data.push_back({ "functionName"s, i.functionName });
+				object->data.push_back({ "moduleName"s, i.moduleName });
 				object->data.push_back({ "pathToModule"s, modulesPaths.at(i.moduleName) });
 				object->data.push_back({ "noRepeat"s, i.noRepeat });
 
