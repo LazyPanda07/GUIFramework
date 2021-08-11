@@ -307,6 +307,8 @@ namespace gui_framework
 
 				modules.insert({ moduleName, nullptr });
 
+				modulesPaths.insert({ moduleName, ""s });
+
 				auto loadModule = [modulePathString, moduleName, this]()
 				{
 					HMODULE module = LoadLibraryA
@@ -341,6 +343,8 @@ namespace gui_framework
 					else
 					{
 						modules[moduleName] = module;
+
+						modulesPaths[moduleName] = modulePathString.empty() ? moduleName : modulePathString;
 
 						++currentLoadedModules;
 					}
@@ -554,7 +558,7 @@ namespace gui_framework
 
 				object->data.push_back({ "hotkeyCode"s, static_cast<uint64_t>(i.hotkeyCode) });
 				object->data.push_back({ "functionName"s, i.functionName });
-				object->data.push_back({ "moduleName"s, i.moduleName });
+				object->data.push_back({ "moduleName"s, modulesPaths.at(i.moduleName) });
 				object->data.push_back({ "noRepeat"s, i.noRepeat });
 
 				if (i.additionalKeys.size())
@@ -588,6 +592,11 @@ namespace gui_framework
 	const unordered_map<string, HMODULE>& GUIFramework::getModules() const
 	{
 		return modules;
+	}
+
+	const unordered_map<string, string>& GUIFramework::getModulesPaths() const
+	{
+		return modulesPaths;
 	}
 
 	bool GUIFramework::isModulesLoaded() const

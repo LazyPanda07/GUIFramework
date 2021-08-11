@@ -193,6 +193,7 @@ namespace gui_framework
 		json::JSONBuilder builder = BaseComponent::getStructure();
 		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
 		vector<objectSmartPointer<jsonObject>> jsonCallbacks;
+		const auto& modulesPaths = GUIFramework::get().getModulesPaths();
 
 		for (size_t i = 0; i < callbacksFunctionNamesAndModules.size(); i++)
 		{
@@ -207,7 +208,7 @@ namespace gui_framework
 
 			object->data.push_back({ "callbackName"s, callbacksFunctionNamesAndModules[i].first });
 
-			object->data.push_back({ "callbackModule"s, callbacksFunctionNamesAndModules[i].second });
+			object->data.push_back({ "callbackModule"s, modulesPaths.at(callbacksFunctionNamesAndModules[i].second) });
 
 			json::utility::appendArray(move(object), jsonCallbacks);
 		}

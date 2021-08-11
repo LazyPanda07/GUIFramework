@@ -91,9 +91,12 @@ namespace gui_framework
 	}
 
 	inline constexpr std::string_view guiFrameworkVersion = "0.7.5-beta";
+
+	/// @brief Default on click signature
+	using onClickSignature = void(*)();
 }
 
-#define DECLARE_SERIALIZABLE_FUNCTION extern "C" __declspec(dllexport) 
+#define IMPLEMENT_SERIALIZABLE_FUNCTION extern "C" __declspec(dllexport) 
 
 #ifdef GUI_FRAMEWORK_DLL
 #define GUI_FRAMEWORK_API __declspec(dllexport)
@@ -117,7 +120,3 @@ template<typename T>
 using smartPointerType = std::unique_ptr<T>;
 
 #endif // GUI_FRAMEWORK_DLL
-
-using onClickSignature = void(*)();
-
-using richEditCallbackSignature = void(*)(const std::wstring&);

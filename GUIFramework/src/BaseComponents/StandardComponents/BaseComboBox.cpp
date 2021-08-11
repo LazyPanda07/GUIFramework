@@ -3,6 +3,7 @@
 
 #include "Exceptions/SelectListException.h"
 #include "Exceptions/NotImplemented.h"
+#include "Exceptions/CantFindFunctionFromModuleException.h"
 
 #pragma warning(disable: 4018)
 #pragma warning(disable: 4267)
@@ -14,6 +15,32 @@ using namespace std;
 
 namespace gui_framework
 {
+	LRESULT BaseComboBox::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
+	{
+		if (message == WM_COMMAND && id == LOWORD(wparam))
+		{
+			switch (HIWORD(wparam))
+			{
+			case CBN_SELCHANGE:
+				if (onSelectionChange)
+				{
+					isUsed = true;
+
+					onSelectionChange(*this);
+				}
+
+				return 0;
+
+			default:
+				break;
+			}
+		}
+
+		isUsed = false;
+
+		return -1;
+	}
+
 	BaseComboBox::BaseComboBox(const wstring& comboBoxName, const utility::ComponentSettings& settings, const styles::ComboBoxStyles& styles, BaseComponent* parent) :
 		BaseComponent
 		(
@@ -214,6 +241,27 @@ namespace gui_framework
 	void BaseComboBox::setOnSelectionChange(const function<void(BaseComboBox&)>& onSelectionChange)
 	{
 		this->onSelectionChange = onSelectionChange;
+
+		functionName.clear();
+		moduleName.clear();
+	}
+
+	void BaseComboBox::setOnSelectionChange(const string& functionName, const string& moduleName)
+	{
+		GUIFramework& instance = GUIFramework::get();
+		const HMODULE& module = instance.getModules().at(moduleName);
+
+		comboBoxCallbackSignature tem = reinterpret_cast<comboBoxCallbackSignature>(GetProcAddress(module, functionName.data()));
+
+		if (!tem)
+		{
+			throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName);
+		}
+
+		onSelectionChange = tem;
+
+		this->functionName = functionName;
+		this->moduleName = moduleName;
 	}
 
 	LRESULT BaseComboBox::getItemHeight(itemHeightEnum value) const
@@ -300,30 +348,24 @@ namespace gui_framework
 		throw exceptions::NotImplemented(__FUNCTION__, "BaseComboBox");
 	}
 
-	LRESULT BaseComboBox::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
+	json::JSONBuilder BaseComboBox::getStructure() const
 	{
-		if (message == WM_COMMAND && id == LOWORD(wparam))
+		using json::utility::jsonObject;
+		using json::utility::objectSmartPointer;
+
+		if (functionName.empty())
 		{
-			switch (HIWORD(wparam))
-			{
-			case CBN_SELCHANGE:
-				if (onSelectionChange)
-				{
-					isUsed = true;
-
-					onSelectionChange(*this);
-				}
-
-				return 0;
-
-			default:
-				break;
-			}
+			return BaseComponent::getStructure();
 		}
 
-		isUsed = false;
+		json::JSONBuilder builder = BaseComponent::getStructure();
+		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
 
-		return -1;
+		current->data.push_back({ "functionName"s, functionName });
+
+		current->data.push_back({ "moduleName"s, GUIFramework::get().getModulesPaths().at(moduleName) });
+
+		return builder;
 	}
 }
 

@@ -64,4 +64,7 @@ namespace gui_framework
 
 		virtual ~BaseRichEdit() = default;
 	};
+
+	/// @brief Used in rich edit auto url detect events
+	using richEditCallbackSignature = void(*)(const std::wstring&);
 }
