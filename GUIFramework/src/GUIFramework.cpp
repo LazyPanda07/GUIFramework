@@ -249,7 +249,7 @@ namespace gui_framework
 		nextId(1),
 		nextHotkeyId(0),
 		modulesNeedToLoad(1),
-		currentLoadedModules(1)
+		currentLoadedModules(modulesNeedToLoad)
 	{
 		InitCommonControlsEx(&comm);
 
@@ -290,21 +290,6 @@ namespace gui_framework
 					modulePathString= std::get<string>(modulePath);
 				}
 
-				if (modulePathString.empty())
-				{
-					if (!filesystem::exists(moduleName))
-					{
-						throw exceptions::FileDoesNotExist(moduleName);
-					}
-				}
-				else
-				{
-					if (!filesystem::exists(modulePathString))
-					{
-						throw exceptions::FileDoesNotExist(modulePathString);
-					}
-				}
-
 				{
 					unique_lock<mutex> lock(loadModulesMutex);
 
@@ -315,6 +300,34 @@ namespace gui_framework
 
 				auto loadModule = [modulePathString, moduleName, this]()
 				{
+					try
+					{
+						if (modulePathString.empty())
+						{
+							if (!filesystem::exists(moduleName))
+							{
+								throw exceptions::FileDoesNotExist(moduleName);
+							}
+						}
+						else
+						{
+							if (!filesystem::exists(modulePathString))
+							{
+								throw exceptions::FileDoesNotExist(modulePathString);
+							}
+						}
+					}
+					catch (const exceptions::FileDoesNotExist& e)
+					{
+						unique_lock<mutex> lock(loadModulesMutex);
+
+						--modulesNeedToLoad;
+
+						cantLoadedModules.push_back(e.what());
+
+						return;
+					}
+
 					HMODULE module = LoadLibraryA
 					(
 						modulePathString.empty() ?

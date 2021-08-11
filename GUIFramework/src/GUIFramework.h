@@ -63,8 +63,8 @@ namespace gui_framework
 		std::mutex componentsMutex;
 #pragma endregion
 #pragma region Modules
-		std::atomic<int> modulesNeedToLoad;
-		std::atomic<int> currentLoadedModules;
+		int modulesNeedToLoad;
+		int currentLoadedModules;
 		std::mutex loadModulesMutex;
 		std::vector<std::string> cantLoadedModules;
 #pragma endregion
