@@ -46,7 +46,26 @@ namespace gui_framework
 
 		virtual LRESULT appendText(const std::wstring& text, const std::function<void()>& onClick) final;
 
+		/// @brief 
+		/// @param text 
+		/// @param functionName 
+		/// @param moduleName 
+		/// @return
+		/// @exception CantFindFunctionFromModuleException 
+		/// @exception std::out_of_range Can't find moduleName in loaded modules
+		virtual LRESULT appendText(const std::wstring& text, const std::string& functionName, const std::string& moduleName) final;
+
 		virtual LRESULT insertText(size_t index, const std::wstring& text, const std::function<void()>& onClick) final;
+
+		/// @brief 
+		/// @param index 
+		/// @param text 
+		/// @param functionName 
+		/// @param moduleName 
+		/// @return
+		/// @exception CantFindFunctionFromModuleException 
+		/// @exception std::out_of_range Can't find moduleName in loaded modules 
+		virtual LRESULT insertText(size_t index, const std::wstring& text, const std::string& functionName, const std::string& moduleName) final;
 
 		/// @brief 
 		/// @param pathToImage 
@@ -56,10 +75,27 @@ namespace gui_framework
 
 		/// @brief 
 		/// @param pathToImage 
+		/// @return
+		/// @exception FileDoesNotExist
+		/// @exception CantFindFunctionFromModuleException 
+		/// @exception std::out_of_range Can't find moduleName in loaded modules
+		virtual LRESULT appendImage(const std::filesystem::path& pathToImage, const std::string& functionName, const std::string& moduleName) final;
+
+		/// @brief 
+		/// @param pathToImage 
 		/// @param index 
 		/// @return 
 		/// @exception FileDoesNotExist
 		virtual LRESULT insertImage(size_t index, const std::filesystem::path& pathToImage, const std::function<void()>& onClick) final;
+
+		/// @brief 
+		/// @param pathToImage 
+		/// @param index 
+		/// @return 
+		/// @exception FileDoesNotExist
+		/// @exception CantFindFunctionFromModuleException 
+		/// @exception std::out_of_range Can't find moduleName in loaded modules
+		virtual LRESULT insertImage(size_t index, const std::filesystem::path& pathToImage, const std::string& functionName, const std::string& moduleName) final;
 
 		/// @brief 
 		/// @param text 
@@ -71,10 +107,29 @@ namespace gui_framework
 		/// @brief 
 		/// @param text 
 		/// @param pathToImage 
+		/// @return
+		/// @exception FileDoesNotExist 
+		/// @exception CantFindFunctionFromModuleException 
+		/// @exception std::out_of_range Can't find moduleName in loaded modules
+		virtual LRESULT appendTextAndImage(const std::wstring& text, const std::filesystem::path& pathToImage, const std::string& functionName, const std::string& moduleName) final;
+
+		/// @brief 
+		/// @param text 
+		/// @param pathToImage 
 		/// @param index 
 		/// @return 
 		/// @exception FileDoesNotExist 
 		virtual LRESULT insertTextAndImage(size_t index, const std::wstring& text, const std::filesystem::path& pathToImage, const std::function<void()>& onClick) final;
+
+		/// @brief 
+		/// @param text 
+		/// @param pathToImage 
+		/// @param index 
+		/// @return 
+		/// @exception FileDoesNotExist 
+		/// @exception CantFindFunctionFromModuleException 
+		/// @exception std::out_of_range Can't find moduleName in loaded modules
+		virtual LRESULT insertTextAndImage(size_t index, const std::wstring& text, const std::filesystem::path& pathToImage, const std::string& functionName, const std::string& moduleName) final;
 
 		virtual bool removeTab(size_t index) final;
 

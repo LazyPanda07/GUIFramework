@@ -29,7 +29,14 @@ namespace gui_framework
 		functionName(functionName),
 		moduleName(moduleName)
 	{
+		onClickSignature tem = reinterpret_cast<onClickSignature>(GetProcAddress(GUIFramework::get().getModules().at(moduleName), functionName.data()));
 
+		if (!tem)
+		{
+			throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName);
+		}
+
+		callback = tem;
 	}
 
 	LRESULT BaseTabControl::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
@@ -77,6 +84,11 @@ namespace gui_framework
 		return this->insertText(this->size(), text, onClick);
 	}
 
+	LRESULT BaseTabControl::appendText(const wstring& text, const string& functionName, const string& moduleName)
+	{
+		return this->insertText(this->size(), text, functionName, moduleName);
+	}
+
 	LRESULT BaseTabControl::insertText(size_t index, const wstring& text, const function<void()>& onClick)
 	{
 		TCITEMW item = {};
@@ -97,9 +109,41 @@ namespace gui_framework
 		return result;
 	}
 
+	LRESULT BaseTabControl::insertText(size_t index, const wstring& text, const string& functionName, const string& moduleName)
+	{
+		TCITEMW item = {};
+
+		item.mask = TCIF_TEXT;
+		item.pszText = const_cast<wchar_t*>(text.data());
+		item.cchTextMax = static_cast<int>(text.size());
+
+		LRESULT result = SendMessageW(handle, TCM_INSERTITEM, index, reinterpret_cast<LPARAM>(&item));
+
+		if (result != -1)
+		{
+			onClickSignature tem = reinterpret_cast<onClickSignature>(GetProcAddress(GUIFramework::get().getModules().at(moduleName), functionName.data()));
+
+			if (!tem)
+			{
+				throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName);
+			}
+
+			callbacks.insert(callbacks.begin() + index, tem);
+
+			tabs.emplace(tabs.begin() + index, text, filesystem::path(), functionName, moduleName);
+		}
+
+		return result;
+	}
+
 	LRESULT BaseTabControl::appendImage(const filesystem::path& pathToImage, const function<void()>& onClick)
 	{
 		return this->insertImage(this->size(), pathToImage, onClick);
+	}
+
+	LRESULT BaseTabControl::appendImage(const filesystem::path& pathToImage, const string& functionName, const string& moduleName)
+	{
+		return this->insertImage(this->size(), pathToImage, functionName, moduleName);
 	}
 
 	LRESULT BaseTabControl::insertImage(size_t index, const filesystem::path& pathToImage, const function<void()>& onClick)
@@ -131,9 +175,50 @@ namespace gui_framework
 		return result;
 	}
 
+	LRESULT BaseTabControl::insertImage(size_t index, const filesystem::path& pathToImage, const string& functionName, const string& moduleName)
+	{
+		if (!filesystem::exists(pathToImage))
+		{
+			throw exceptions::FileDoesNotExist(pathToImage);
+		}
+
+		TCITEMW item = {};
+
+		if (!images.contains(pathToImage))
+		{
+			images.addImage(pathToImage);
+		}
+
+		item.mask = TCIF_IMAGE;
+		item.iImage = images[pathToImage];
+
+		LRESULT result = SendMessageW(handle, TCM_INSERTITEM, index, reinterpret_cast<LPARAM>(&item));
+
+		if (result != -1)
+		{
+			onClickSignature tem = reinterpret_cast<onClickSignature>(GetProcAddress(GUIFramework::get().getModules().at(moduleName), functionName.data()));
+
+			if (!tem)
+			{
+				throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName);
+			}
+
+			callbacks.insert(callbacks.begin() + index, tem);
+
+			tabs.emplace(tabs.begin() + index, wstring(), pathToImage, functionName, moduleName);
+		}
+
+		return result;
+	}
+
 	LRESULT BaseTabControl::appendTextAndImage(const wstring& text, const filesystem::path& pathToImage, const function<void()>& onClick)
 	{
 		return this->insertTextAndImage(this->size(), text, pathToImage, onClick);
+	}
+
+	LRESULT BaseTabControl::appendTextAndImage(const wstring& text, const filesystem::path& pathToImage, const string& functionName, const string& moduleName)
+	{
+		return this->insertTextAndImage(this->size(), text, pathToImage, functionName, moduleName);
 	}
 
 	LRESULT BaseTabControl::insertTextAndImage(size_t index, const wstring& text, const filesystem::path& pathToImage, const function<void()>& onClick)
@@ -162,6 +247,44 @@ namespace gui_framework
 			auto it = callbacks.insert(callbacks.begin() + index, onClick);
 
 			tabs.emplace(tabs.begin() + index, text, pathToImage, *it);
+		}
+
+		return result;
+	}
+
+	LRESULT BaseTabControl::insertTextAndImage(size_t index, const wstring& text, const filesystem::path& pathToImage, const string& functionName, const string& moduleName)
+	{
+		if (!filesystem::exists(pathToImage))
+		{
+			throw exceptions::FileDoesNotExist(pathToImage);
+		}
+
+		TCITEMW item = {};
+
+		if (!images.contains(pathToImage))
+		{
+			images.addImage(pathToImage);
+		}
+
+		item.mask = TCIF_TEXT | TCIF_IMAGE;
+		item.pszText = const_cast<wchar_t*>(text.data());
+		item.cchTextMax = static_cast<int>(text.size());
+		item.iImage = images[pathToImage];
+
+		LRESULT result = SendMessageW(handle, TCM_INSERTITEM, index, reinterpret_cast<LPARAM>(&item));
+
+		if (result != -1)
+		{
+			onClickSignature tem = reinterpret_cast<onClickSignature>(GetProcAddress(GUIFramework::get().getModules().at(moduleName), functionName.data()));
+
+			if (!tem)
+			{
+				throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName);
+			}
+
+			callbacks.insert(callbacks.begin() + index, tem);
+
+			tabs.emplace(tabs.begin() + index, text, pathToImage, functionName, moduleName);
 		}
 
 		return result;
