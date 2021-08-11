@@ -29,7 +29,11 @@ void test()
 
 		control->appendText(L"Текст", "test", "functions");
 
-		cout << *ptr << endl;
+		ptr->initDrawing(128, 128);
+
+		ptr->addImage(0, 200, R"(assets\image.bmp)");
+
+		thread([&ptr]() { this_thread::sleep_for(2s); ptr->removeImage(R"(assets\image.bmp)"); cout << "Removed" << endl; }).detach();
 
 		ptr->setExitMode(BaseComponent::exitMode::quit);
 
