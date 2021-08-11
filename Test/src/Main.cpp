@@ -1,9 +1,7 @@
 #include <iostream>
 
 #include "GUIFramework.h"
-#include "Components/StaticControl.h"
 #include "Components/Buttons/Button.h"
-#include "Components/ComboBoxes/DropDownListComboBox.h"
 #include "Composites/ChildWindow.h"
 #include "Utility/Holders/WindowHolder.h"
 #include "Composites/SeparateWindow.h"
@@ -13,8 +11,6 @@
 using namespace std;
 
 CREATE_DEFAULT_WINDOW_FUNCTION(main)
-
-CREATE_DEFAULT_WINDOW_FUNCTION(child)
 
 void test()
 {
@@ -26,6 +22,12 @@ void test()
 	{
 		WindowHolder holder(make_unique<SeparateWindow>(L"MainWindow", L"Главное окно", settings, "main"));
 		SeparateWindow* ptr = dynamic_cast<SeparateWindow*>(holder.get());
+
+		Button* button = new Button(L"First", L"Текст", 0, 0, ptr);
+
+		button->setOnClick("test", "functions");
+
+		cout << *ptr << endl;
 
 		ptr->setExitMode(BaseComponent::exitMode::quit);
 
@@ -41,7 +43,16 @@ void test()
 
 int main(int argc, char** argv)
 {
-	gui_framework::GUIFramework::get();
+	try
+	{
+		gui_framework::GUIFramework::get();
+	}
+	catch (const std::exception& e)
+	{
+		cout << e.what() << endl;
+
+		return 0;
+	}
 
 	SetConsoleOutputCP(CP_UTF8);
 

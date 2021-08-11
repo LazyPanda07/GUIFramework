@@ -4,8 +4,8 @@
     "threadsCount": 4,
     "modules": [
       {
-        "moduleName": "Dynamic.dll",
-        "pathToModule": null
+        "moduleName": "functions",
+        "pathToModule": "assets/Dynamic.dll"
       }
     ]
   }
