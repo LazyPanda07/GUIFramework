@@ -91,7 +91,14 @@ namespace gui_framework
 
 		void BaseLoadableHolder::removeImage(const filesystem::path& pathToImage)
 		{
-			images.erase(pathToImage);
+			auto it = images.find(pathToImage);
+
+			if (it != images.end())
+			{
+				ImageList_Remove(imageList, it->second.index);
+
+				images.erase(it);
+			}
 		}
 
 		void BaseLoadableHolder::removeImage(uint16_t imageIndex)
@@ -101,6 +108,8 @@ namespace gui_framework
 				if (value.index == imageIndex)
 				{
 					images.erase(key);
+
+					ImageList_Remove(imageList, imageIndex);
 
 					break;
 				}
