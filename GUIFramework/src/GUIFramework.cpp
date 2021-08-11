@@ -305,9 +305,13 @@ namespace gui_framework
 					}
 				}
 
-				modules.insert({ moduleName, nullptr });
+				{
+					unique_lock<mutex> lock(loadModulesMutex);
 
-				modulesPaths.insert({ moduleName, ""s });
+					modules.insert({ moduleName, nullptr });
+
+					modulesPaths.insert({ moduleName, ""s });
+				}
 
 				auto loadModule = [modulePathString, moduleName, this]()
 				{
@@ -317,6 +321,8 @@ namespace gui_framework
 						moduleName.data() :
 						modulePathString.data()
 					);
+
+					unique_lock<mutex> lock(loadModulesMutex);
 
 					if (!module)
 					{
@@ -333,8 +339,6 @@ namespace gui_framework
 						}
 						catch (const exceptions::CantLoadModuleException& e)
 						{
-							unique_lock<mutex> lock(loadModulesMutex);
-
 							--modulesNeedToLoad;
 
 							cantLoadedModules.push_back(e.what());
