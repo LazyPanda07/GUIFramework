@@ -31,16 +31,19 @@ bool drawImageImplementation(const gui_framework::BaseWindow* window, const gui_
 	PAINTSTRUCT paint = {};
 	HWND handle = window->getHandle();
 	HDC deviceContext = BeginPaint(handle, &paint);
+	IMAGEINFO info = {};
 	bool result = false;
 
 	if constexpr (is_same_v<T, uint16_t>)
 	{
-		result = ImageList_Draw(holder.getImageList(), index, deviceContext, x, y, ILD_TRANSPARENT);
+		ImageList_GetImageInfo(holder.getImageList(), index, &info);
 	}
 	else
 	{
-		result = ImageList_Draw(holder.getImageList(), holder.getImageIndex(index), deviceContext, x, y, ILD_TRANSPARENT);
+		ImageList_GetImageInfo(holder.getImageList(), holder.getImageIndex(index), &info);
 	}
+
+	result = DrawStateW(deviceContext, NULL, nullptr, reinterpret_cast<LPARAM>(info.hbmImage), NULL, x, y, holder.getImagesWidth(), holder.getImagesHeight(), DST_BITMAP | DSS_NORMAL);
 
 	ReleaseDC(handle, deviceContext);
 
