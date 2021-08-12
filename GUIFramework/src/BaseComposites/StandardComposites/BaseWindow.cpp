@@ -80,8 +80,21 @@ namespace gui_framework
 
 		json::JSONBuilder builder = BaseComposite::getStructure();
 		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
+		vector<objectSmartPointer<jsonObject>> jsonCoordinates;
 
-		// TODO: implement serialization
+		pictures.images->loadBaseLoadableHolderStructure(current);
+
+		for (const auto& [index, coordinates] : pictures.coordinates)
+		{
+			objectSmartPointer<jsonObject> object = json::utility::make_object<jsonObject>();
+
+			object->data.push_back({ "x"s, static_cast<int64_t>(coordinates.first) });
+			object->data.push_back({ "y"s, static_cast<int64_t>(coordinates.second) });
+
+			json::utility::appendArray(move(object), jsonCoordinates);
+		}
+
+		current->getObject("imageHolder")->data.push_back({ "coordinates"s, move(jsonCoordinates) });
 
 		return builder;
 	}
