@@ -42,6 +42,8 @@ namespace gui_framework
 		/// @exception std::out_of_range
 		virtual void removeImage(const std::filesystem::path& pathToImage);
 
+		void drawAllImages();
+
 		virtual json::JSONBuilder getStructure() const override;
 
 		virtual ~BaseWindow() = default;

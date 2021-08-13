@@ -19,8 +19,6 @@ namespace gui_framework
 		uint16_t index = images->addImage(pathToImage);
 
 		coordinates.insert({ index, {x, y} });
-
-		utility::paint::drawImageByPath(owner, *images, x, y, pathToImage);
 	}
 
 	void BaseWindow::drawedImages::removeImage(const filesystem::path& pathToImage)
@@ -59,13 +57,38 @@ namespace gui_framework
 		}
 
 		pictures.addImage(this, x, y, pathToImage);
+
+		this->drawAllImages();
 	}
 
 	void BaseWindow::removeImage(const filesystem::path& pathToImage)
 	{
 		pictures.removeImage(pathToImage);
 
-		InvalidateRect(nullptr, nullptr, true);
+		this->drawAllImages();
+	}
+
+	void BaseWindow::drawAllImages()
+	{
+		InvalidateRect(handle, nullptr, true);
+
+		PAINTSTRUCT paint = {};
+		HDC deviceContext = BeginPaint(handle, &paint);
+		LPARAM drawData = NULL;
+		uint32_t flags = DSS_NORMAL | DST_BITMAP;
+		uint16_t width = pictures.images->getImagesWidth();
+		uint16_t height = pictures.images->getImagesHeight();
+
+		for (const auto& [index, coordinates] : pictures.coordinates)
+		{
+			drawData = reinterpret_cast<LPARAM>(pictures.images->getImage(index));
+
+			DrawStateW(deviceContext, NULL, nullptr, drawData, NULL, coordinates.first, coordinates.second, width, height, flags);
+		}
+
+		ReleaseDC(handle, deviceContext);
+
+		EndPaint(handle, &paint);
 	}
 
 	json::JSONBuilder BaseWindow::getStructure() const
