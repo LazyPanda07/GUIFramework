@@ -29,13 +29,14 @@ namespace gui_framework
 				cursor
 			};
 
-		private:
+		protected:
 			struct imageData
 			{
 				uint16_t index;
 				imageType type;
+				std::any data;
 
-				imageData(uint16_t index, imageType type);
+				imageData(uint16_t index, imageType type, std::any&& data);
 
 				imageData(const imageData& other) = default;
 
@@ -45,17 +46,15 @@ namespace gui_framework
 
 				imageData& operator = (imageData&& other) noexcept = default;
 
-				~imageData() = default;
+				~imageData();
 			};
-
-		private:
-			HIMAGELIST imageList;
-			std::unordered_map<std::wstring, imageData> images;
 
 		private:
 			virtual json::JSONBuilder getStructure() const final override;
 
 		protected:
+			HIMAGELIST imageList;
+			std::unordered_map<std::wstring, imageData> images;
 			uint16_t imagesWidth;
 			uint16_t imagesHeight;
 

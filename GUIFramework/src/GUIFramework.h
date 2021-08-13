@@ -40,7 +40,7 @@ namespace gui_framework
 
 	private:
 		json::JSONParser jsonSettings;
-		threading::ThreadPool threadPool;
+		std::unique_ptr<threading::ThreadPool> threadPool;
 		INITCOMMONCONTROLSEX comm;
 		std::unordered_map<std::string, HMODULE> modules;
 		std::unordered_map<std::string, std::string> modulesPaths;
@@ -101,11 +101,13 @@ namespace gui_framework
 		/// @brief Add task to thread pool. Thread safe method
 		/// @param task Task function
 		/// @param callback After execution task callback function
+		/// @exception std::runtime_error Can't find threadsCount setting in gui_framework.json
 		void addTask(const std::function<void()>& task, const std::function<void()>& callback = nullptr);
 
 		/// @brief Add task to thread pool. Thread safe method
 		/// @param task Task function
 		/// @param callback After execution task callback function
+		/// @exception std::runtime_error Can't find threadsCount setting in gui_framework.json
 		void addTask(std::function<void()>&& task, const std::function<void()>& callback = nullptr);
 
 		/// @brief Only works in thread, that call runMainLoop from WindowHolder. Thread safe register hotkey

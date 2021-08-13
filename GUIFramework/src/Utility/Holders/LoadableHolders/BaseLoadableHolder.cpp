@@ -7,11 +7,31 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		BaseLoadableHolder::imageData::imageData(uint16_t index, imageType type) :
+		BaseLoadableHolder::imageData::imageData(uint16_t index, imageType type, any&& data) :
 			index(index),
-			type(type)
+			type(type),
+			data(move(data))
 		{
 
+		}
+
+		BaseLoadableHolder::imageData::~imageData()
+		{
+			switch (type)
+			{
+			case gui_framework::utility::BaseLoadableHolder::imageType::bitmap:
+				DeleteObject(any_cast<HBITMAP>(data));
+
+				break;
+			case gui_framework::utility::BaseLoadableHolder::imageType::icon:
+				DestroyIcon(any_cast<HICON>(data));
+
+				break;
+			case gui_framework::utility::BaseLoadableHolder::imageType::cursor:
+				DestroyCursor(any_cast<HCURSOR>(data));
+
+				break;
+			}
 		}
 
 		json::JSONBuilder BaseLoadableHolder::getStructure() const
@@ -52,21 +72,15 @@ namespace gui_framework
 			switch (type)
 			{
 			case imageType::bitmap:
-				resultIndex = images.emplace(pathToImage, imageData(ImageList_Add(imageList, image, NULL), type)).first->second.index;
-
-				DeleteObject(image);
+				resultIndex = images.emplace(pathToImage, imageData(ImageList_Add(imageList, image, NULL), type, image)).first->second.index;
 
 				break;
 			case imageType::icon:
-				resultIndex = images.emplace(pathToImage, imageData(ImageList_AddIcon(imageList, reinterpret_cast<HICON>(image)), type)).first->second.index;
-
-				DestroyIcon(reinterpret_cast<HICON>(image));
+				resultIndex = images.emplace(pathToImage, imageData(ImageList_AddIcon(imageList, reinterpret_cast<HICON>(image)), type, image)).first->second.index;
 
 				break;
 			case imageType::cursor:
-				resultIndex = images.emplace(pathToImage, imageData(ImageList_AddIcon(imageList, reinterpret_cast<HCURSOR>(image)), type)).first->second.index;
-
-				DestroyCursor(reinterpret_cast<HCURSOR>(image));
+				resultIndex = images.emplace(pathToImage, imageData(ImageList_AddIcon(imageList, reinterpret_cast<HCURSOR>(image)), type, image)).first->second.index;
 
 				break;
 

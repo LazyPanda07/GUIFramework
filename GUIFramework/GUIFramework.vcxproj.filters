@@ -399,7 +399,7 @@
     <ClInclude Include="src\Composites\AdditionalCreationData\TrackbarControlAdditionalCreationData.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Utility\Paint\DrawImage.h">
+    <ClInclude Include="src\Utility\Paint\Draw.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Interfaces\Components\INonResizableComponent.h">
@@ -866,7 +866,7 @@
     <ClCompile Include="src\Composites\AdditionalCreationData\TrackbarControlAdditionalCreationData.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Utility\Paint\DrawImage.cpp">
+    <ClCompile Include="src\Utility\Paint\Draw.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Interfaces\Components\INonResizableComponent.cpp">

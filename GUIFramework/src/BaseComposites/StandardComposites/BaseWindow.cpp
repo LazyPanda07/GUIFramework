@@ -3,7 +3,7 @@
 
 #include "Exceptions/FileDoesNotExist.h"
 
-#include "Utility/Paint/DrawImage.h"
+#include "Utility/Paint/Draw.h"
 
 using namespace std;
 
