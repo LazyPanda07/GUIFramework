@@ -30,41 +30,6 @@ namespace gui_framework
 		coordinates.erase(index);
 	}
 
-	LRESULT BaseWindow::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
-	{
-		isUsed = false;
-
-		if (message == WM_ERASEBKGND)
-		{
-			this->drawAllImages();
-		}
-
-		return -1;
-	}
-
-	void BaseWindow::drawAllImages()
-	{
-		InvalidateRect(handle, nullptr, true);
-
-		PAINTSTRUCT paint = {};
-		HDC deviceContext = BeginPaint(handle, &paint);
-		LPARAM drawData = NULL;
-		uint32_t flags = DSS_NORMAL | DST_BITMAP;
-		uint16_t width = pictures.images->getImagesWidth();
-		uint16_t height = pictures.images->getImagesHeight();
-
-		for (const auto& [index, coordinates] : pictures.coordinates)
-		{
-			drawData = reinterpret_cast<LPARAM>(pictures.images->getImage(index));
-
-			DrawStateW(deviceContext, NULL, nullptr, drawData, NULL, coordinates.first, coordinates.second, width, height, flags);
-		}
-
-		ReleaseDC(handle, deviceContext);
-
-		EndPaint(handle, &paint);
-	}
-
 	BaseWindow::BaseWindow(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent, const string& windowFunctionName) :
 		BaseComposite
 		(
@@ -110,9 +75,35 @@ namespace gui_framework
 
 		pictures.removeImage(pathToImage);
 
-		this->drawAllImages();
-
 		InvalidateRect(handle, nullptr, true);
+
+		this->drawAllImages();
+	}
+
+	void BaseWindow::drawAllImages()
+	{
+		if (!pictures.images)
+		{
+			return;
+		}
+
+		PAINTSTRUCT paint = {};
+		HDC deviceContext = BeginPaint(handle, &paint);
+		LPARAM drawData = NULL;
+		uint32_t flags = DSS_NORMAL | DST_BITMAP;
+		uint16_t width = pictures.images->getImagesWidth();
+		uint16_t height = pictures.images->getImagesHeight();
+
+		for (const auto& [index, coordinates] : pictures.coordinates)
+		{
+			drawData = reinterpret_cast<LPARAM>(pictures.images->getImage(index));
+
+			DrawStateW(deviceContext, NULL, nullptr, drawData, NULL, coordinates.first, coordinates.second, width, height, flags);
+		}
+
+		ReleaseDC(handle, deviceContext);
+
+		EndPaint(handle, &paint);
 	}
 
 	void BaseWindow::setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue)
