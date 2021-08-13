@@ -75,8 +75,6 @@ namespace gui_framework
 
 		pictures.removeImage(pathToImage);
 
-		InvalidateRect(handle, nullptr, true);
-
 		this->drawAllImages();
 	}
 
@@ -86,6 +84,8 @@ namespace gui_framework
 		{
 			return;
 		}
+
+		InvalidateRect(handle, nullptr, true);
 
 		PAINTSTRUCT paint = {};
 		HDC deviceContext = BeginPaint(handle, &paint);

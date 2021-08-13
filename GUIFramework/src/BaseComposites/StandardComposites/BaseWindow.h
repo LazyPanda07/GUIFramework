@@ -44,6 +44,7 @@ namespace gui_framework
 		/// @exception std::runtime_error
 		virtual void removeImage(const std::filesystem::path& pathToImage);
 
+		/// @brief Clear window and draw all images
 		virtual void drawAllImages() final;
 
 		virtual void setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue) final override;

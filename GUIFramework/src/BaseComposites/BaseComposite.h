@@ -23,8 +23,12 @@ namespace gui_framework
 		std::string pathToSmallIcon;
 		std::string pathToLargeIcon;
 
-	private:
+	protected:
 		virtual LRESULT preWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
+
+		virtual LRESULT compositeWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed);
+
+		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) final override;
 
 	private:
 		std::vector<std::pair<std::string, json::utility::objectSmartPointer<json::utility::jsonObject>>> getChildrenStructure() const;
@@ -59,10 +63,6 @@ namespace gui_framework
 		/// @brief Remove all pop-up menus with menuName
 		/// @param menuName 
 		virtual void removePopupMenus(const std::wstring& menuName);
-
-		virtual LRESULT compositeWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed);
-
-		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) final override;
 
 		virtual bool isComposite() const final override;
 
