@@ -245,12 +245,25 @@ namespace gui_framework
 
 	GUIFramework::GUIFramework() :
 		jsonSettings(ifstream(json_settings::settingsJSONFile.data())),
-		threadPool(static_cast<uint32_t>(jsonSettings.get<int64_t>(json_settings::threadsCountSetting))),
 		nextId(1),
 		nextHotkeyId(0),
 		modulesNeedToLoad(1),
 		currentLoadedModules(modulesNeedToLoad)
 	{
+		try
+		{
+			int64_t threadsCount = jsonSettings.getInt(json_settings::threadsCountSetting);
+
+			if (threadsCount != -1)
+			{
+				threadPool = make_unique<threading::ThreadPool>(static_cast<uint32_t>(threadsCount));
+			}
+		}
+		catch (const json::exceptions::CantFindValueException&)
+		{
+
+		}
+
 		InitCommonControlsEx(&comm);
 
 		modules.insert({ "MSFT"s, LoadLibraryW(libraries::msftEditLibrary.data()) });
@@ -386,12 +399,22 @@ namespace gui_framework
 
 	void GUIFramework::addTask(const function<void()>& task, const function<void()>& callback)
 	{
-		threadPool.addTask(task, callback);
+		if (!threadPool)
+		{
+			throw runtime_error("Can't find threadsCount setting in gui_framework.json");
+		}
+
+		threadPool->addTask(task, callback);
 	}
 
 	void GUIFramework::addTask(function<void()>&& task, const function<void()>& callback)
 	{
-		threadPool.addTask(move(task), callback);
+		if (!threadPool)
+		{
+			throw runtime_error("Can't find threadsCount setting in gui_framework.json");
+		}
+
+		threadPool->addTask(move(task), callback);
 	}
 
 	uint32_t GUIFramework::registerHotkey(uint32_t hotkey, const function<void()>& onClick, const vector<hotkeys::additionalKey>& additionalKeys, bool noRepeat)
