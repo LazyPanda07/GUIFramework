@@ -15,19 +15,38 @@ namespace gui_framework
 
 		}
 
+		BaseLoadableHolder::imageData::imageData(imageData&& other) noexcept :
+			index(other.index),
+			type(other.type),
+			data(move(other.data))
+		{
+			other.data = nullptr;
+		}
+
+		BaseLoadableHolder::imageData& BaseLoadableHolder::imageData::operator = (imageData&& other) noexcept
+		{
+			index = other.index;
+			type = other.type;
+			data = move(other.data);
+
+			other.data = nullptr;
+
+			return *this;
+		}
+
 		BaseLoadableHolder::imageData::~imageData()
 		{
 			switch (type)
 			{
-			case gui_framework::utility::BaseLoadableHolder::imageType::bitmap:
+			case imageType::bitmap:
 				DeleteObject(any_cast<HBITMAP>(data));
 
 				break;
-			case gui_framework::utility::BaseLoadableHolder::imageType::icon:
+			case imageType::icon:
 				DestroyIcon(any_cast<HICON>(data));
 
 				break;
-			case gui_framework::utility::BaseLoadableHolder::imageType::cursor:
+			case imageType::cursor:
 				DestroyCursor(any_cast<HCURSOR>(data));
 
 				break;
@@ -197,7 +216,10 @@ namespace gui_framework
 
 			imagesPaths.reserve(images.size());
 
-			ranges::for_each(images, [&imagesPaths](const pair<wstring, imageData>& data) { imagesPaths.push_back(data.first); });
+			for (const auto& [path, data] : images)
+			{
+				imagesPaths.push_back(path);
+			}
 
 			return iterators::loadable_forward_iterator(move(imagesPaths), 0);
 		}
@@ -208,7 +230,10 @@ namespace gui_framework
 
 			imagesPaths.reserve(images.size());
 
-			ranges::for_each(images, [&imagesPaths](const pair<wstring, imageData>& data) { imagesPaths.push_back(data.first); });
+			for (const auto& [path, data] : images)
+			{
+				imagesPaths.push_back(path);
+			}
 
 			return iterators::loadable_const_forward_iterator(move(imagesPaths), 0);
 		}

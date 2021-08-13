@@ -38,13 +38,13 @@ namespace gui_framework
 
 				imageData(uint16_t index, imageType type, std::any&& data);
 
-				imageData(const imageData& other) = default;
+				imageData(const imageData& other) = delete;
 
-				imageData(imageData&& other) noexcept = default;
+				imageData(imageData&& other) noexcept;
 
-				imageData& operator = (const imageData& other) = default;
+				imageData& operator = (const imageData& other) = delete;
 
-				imageData& operator = (imageData&& other) noexcept = default;
+				imageData& operator = (imageData&& other) noexcept;
 
 				~imageData();
 			};

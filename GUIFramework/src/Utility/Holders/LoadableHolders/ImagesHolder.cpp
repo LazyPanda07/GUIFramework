@@ -25,7 +25,22 @@ namespace gui_framework
 
 		HBITMAP ImagesHolder::getImage(uint16_t imageIndex) const
 		{
-			return any_cast<HBITMAP>(ranges::find_if(images, [imageIndex](const pair<wstring, imageData>& data) { return data.second.index == imageIndex; })->second.data);
+			const any* result = nullptr;
+
+			for (const auto& [path, data] : images)
+			{
+				if (data.index == imageIndex)
+				{
+					result = &data.data;
+				}
+			}
+
+			if (!result)
+			{
+				throw out_of_range("Wrong index");
+			}
+
+			return any_cast<HBITMAP>(*result);
 		}
 
 		uint16_t ImagesHolder::addImage(const filesystem::path& pathToImage)
