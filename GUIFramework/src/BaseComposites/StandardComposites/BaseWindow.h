@@ -25,12 +25,6 @@ namespace gui_framework
 	protected:
 		drawedImages pictures;
 
-	protected:
-		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
-
-	private:
-		void drawAllImages();
-
 	public:
 		BaseWindow(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent = nullptr, const std::string& windowFunctionName = "");
 
@@ -49,6 +43,8 @@ namespace gui_framework
 		/// @exception std::out_of_range
 		/// @exception std::runtime_error
 		virtual void removeImage(const std::filesystem::path& pathToImage);
+
+		virtual void drawAllImages() final;
 
 		virtual void setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue) final override;
 
