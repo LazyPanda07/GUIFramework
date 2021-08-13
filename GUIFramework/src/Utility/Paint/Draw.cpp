@@ -44,7 +44,7 @@ bool drawImplementation(const gui_framework::BaseWindow* window, const gui_frame
 	LPARAM drawData = NULL;
 	uint32_t flags = DSS_NORMAL;
 	bool result = false;
-
+	
 	try
 	{
 		const gui_framework::utility::ImagesHolder& imagesHolder = dynamic_cast<const gui_framework::utility::ImagesHolder&>(holder);
