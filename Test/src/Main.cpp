@@ -1,7 +1,6 @@
 #include <iostream>
 
 #include "GUIFramework.h"
-#include "Components/TabControl.h"
 #include "Composites/ChildWindow.h"
 #include "Utility/Holders/WindowHolder.h"
 #include "Composites/SeparateWindow.h"
@@ -23,17 +22,11 @@ void test()
 		WindowHolder holder(make_unique<SeparateWindow>(L"MainWindow", L"Главное окно", settings, "main"));
 		SeparateWindow* ptr = dynamic_cast<SeparateWindow*>(holder.get());
 
-		TabControl* control = new TabControl(L"First", utility::ComponentSettings(0, 0, 400, 200), ptr);
-
-		control->appendText(L"Text", []() { cout << "HAME" << endl; });
-
-		control->appendText(L"Текст", "test", "functions");
-
 		ptr->initDrawing(128, 128);
 
-		ptr->addImage(0, 200, R"(assets\image.bmp)");
+		ptr->addImage(0, 0, R"(assets\image.bmp)");
 
-		cout << *ptr << endl;
+		ptr->addImage(128, 0, R"(assets\another_image.bmp)");
 
 		ptr->setExitMode(BaseComponent::exitMode::quit);
 
