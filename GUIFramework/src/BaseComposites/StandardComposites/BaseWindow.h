@@ -25,6 +25,12 @@ namespace gui_framework
 	protected:
 		drawedImages pictures;
 
+	protected:
+		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
+
+	private:
+		void drawAllImages();
+
 	public:
 		BaseWindow(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent = nullptr, const std::string& windowFunctionName = "");
 
@@ -35,14 +41,16 @@ namespace gui_framework
 		/// @param y 
 		/// @param pathToImage 
 		/// @exception FileDoesNotExist
+		/// @exception std::runtime_error
 		virtual void addImage(int x, int y, const std::filesystem::path& pathToImage);
 
 		/// @brief Remove image from window
 		/// @param pathToImage 
 		/// @exception std::out_of_range
+		/// @exception std::runtime_error
 		virtual void removeImage(const std::filesystem::path& pathToImage);
 
-		void drawAllImages();
+		virtual void setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue) final override;
 
 		virtual json::JSONBuilder getStructure() const override;
 

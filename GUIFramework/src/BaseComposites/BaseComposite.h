@@ -62,7 +62,7 @@ namespace gui_framework
 
 		virtual LRESULT compositeWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed);
 
-		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) final override;
+		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
 
 		virtual bool isComposite() const final override;
 
@@ -90,7 +90,7 @@ namespace gui_framework
 
 		virtual iterators::composite_const_forward_iterator cend() const noexcept override;
 
-		virtual void setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue) final override;
+		virtual void setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue) override;
 
 		virtual json::JSONBuilder getStructure() const override;
 
