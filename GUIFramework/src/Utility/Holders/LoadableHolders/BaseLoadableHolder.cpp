@@ -20,7 +20,7 @@ namespace gui_framework
 			type(other.type),
 			data(move(other.data))
 		{
-			other.data = nullptr;
+			other.data.reset();
 		}
 
 		BaseLoadableHolder::imageData& BaseLoadableHolder::imageData::operator = (imageData&& other) noexcept
@@ -29,13 +29,18 @@ namespace gui_framework
 			type = other.type;
 			data = move(other.data);
 
-			other.data = nullptr;
+			other.data.reset();
 
 			return *this;
 		}
 
 		BaseLoadableHolder::imageData::~imageData()
 		{
+			if (!data.has_value())
+			{
+				return;
+			}
+
 			switch (type)
 			{
 			case imageType::bitmap:
