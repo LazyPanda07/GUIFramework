@@ -25,7 +25,22 @@ namespace gui_framework
 
 		HICON IconsHolder::getIcon(uint16_t iconIndex) const
 		{
-			return any_cast<HICON>(ranges::find_if(images, [iconIndex](const pair<wstring, imageData>& data) { return data.second.index == iconIndex; })->second.data);
+			const any* result = nullptr;
+
+			for (const auto& [path, data] : images)
+			{
+				if (data.index == iconIndex)
+				{
+					result = &data.data;
+				}
+			}
+
+			if (!result)
+			{
+				throw out_of_range("Wrong index");
+			}
+
+			return any_cast<HICON>(*result);
 		}
 
 		uint16_t IconsHolder::addImage(const filesystem::path& pathToIcon)
