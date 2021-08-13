@@ -30,42 +30,16 @@ namespace gui_framework
 		coordinates.erase(index);
 	}
 
-	BaseWindow::BaseWindow(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent, const string& windowFunctionName) :
-		BaseComposite
-		(
-			className,
-			windowName,
-			settings,
-			styles,
-			parent,
-			windowFunctionName
-		)
+	LRESULT BaseWindow::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
 	{
+		isUsed = false;
 
-	}
-
-	void BaseWindow::initDrawing(uint16_t imagesWidth, uint16_t imagesHeight)
-	{
-		pictures.init(imagesWidth, imagesHeight);
-	}
-
-	void BaseWindow::addImage(int x, int y, const filesystem::path& pathToImage)
-	{
-		if (!filesystem::exists(pathToImage))
+		if (message == WM_ERASEBKGND)
 		{
-			throw exceptions::FileDoesNotExist(pathToImage);
+			this->drawAllImages();
 		}
 
-		pictures.addImage(this, x, y, pathToImage);
-
-		this->drawAllImages();
-	}
-
-	void BaseWindow::removeImage(const filesystem::path& pathToImage)
-	{
-		pictures.removeImage(pathToImage);
-
-		this->drawAllImages();
+		return -1;
 	}
 
 	void BaseWindow::drawAllImages()
@@ -89,6 +63,63 @@ namespace gui_framework
 		ReleaseDC(handle, deviceContext);
 
 		EndPaint(handle, &paint);
+	}
+
+	BaseWindow::BaseWindow(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent, const string& windowFunctionName) :
+		BaseComposite
+		(
+			className,
+			windowName,
+			settings,
+			styles,
+			parent,
+			windowFunctionName
+		)
+	{
+
+	}
+
+	void BaseWindow::initDrawing(uint16_t imagesWidth, uint16_t imagesHeight)
+	{
+		pictures.init(imagesWidth, imagesHeight);
+	}
+
+	void BaseWindow::addImage(int x, int y, const filesystem::path& pathToImage)
+	{
+		if (!pictures.images)
+		{
+			throw runtime_error("Call initDrawing before calling addImage");
+		}
+
+		if (!filesystem::exists(pathToImage))
+		{
+			throw exceptions::FileDoesNotExist(pathToImage);
+		}
+
+		pictures.addImage(this, x, y, pathToImage);
+
+		this->drawAllImages();
+	}
+
+	void BaseWindow::removeImage(const filesystem::path& pathToImage)
+	{
+		if (!pictures.images)
+		{
+			throw runtime_error("Call initDrawing before calling removeImage");
+		}
+
+		pictures.removeImage(pathToImage);
+
+		this->drawAllImages();
+
+		InvalidateRect(handle, nullptr, true);
+	}
+
+	void BaseWindow::setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue)
+	{
+		BaseComposite::setBackgroundColor(red, green, blue);
+
+		this->drawAllImages();
 	}
 
 	json::JSONBuilder BaseWindow::getStructure() const
