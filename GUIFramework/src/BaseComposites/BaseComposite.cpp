@@ -17,7 +17,7 @@ namespace gui_framework
 		{
 			interfaces::IResizableComponent* resizableComposite = dynamic_cast<interfaces::IResizableComponent*>(this);
 
-			if (resizableComposite && resizableComposite->getBlockResize())
+			if (resizableComposite && !resizableComposite->getBlockResize())
 			{
 				isUsed = true;
 
@@ -41,6 +41,80 @@ namespace gui_framework
 		return -1;
 	}
 
+	LRESULT BaseComposite::compositeWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
+	{
+		if (message >= WM_CTLCOLOREDIT && message <= WM_CTLCOLORSTATIC)
+		{
+			BaseComponent* component = this->findChild(reinterpret_cast<HWND>(lparam));
+
+			if (component)
+			{
+				isUsed = true;
+
+				SetBkColor(reinterpret_cast<HDC>(wparam), component->getBackgroundColor());
+
+				SetTextColor(reinterpret_cast<HDC>(wparam), component->getTextColor());
+
+				return reinterpret_cast<LRESULT>(CreateSolidBrush(component->getBackgroundColor()));
+			}
+		}
+		else if (message == WM_MENUCOMMAND)
+		{
+			isUsed = true;
+
+			if (mainMenu->getHandle() == reinterpret_cast<HMENU>(lparam))
+			{
+				mainMenu->handleMessage(static_cast<uint32_t>(wparam));
+			}
+			else
+			{
+				popupMenus[reinterpret_cast<HMENU>(lparam)].handleMessage(static_cast<uint32_t>(wparam));
+			}
+
+			return 0;
+		}
+
+		isUsed = false;
+
+		return -1;
+	}
+
+	LRESULT BaseComposite::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
+	{
+		LRESULT result = this->compositeWindowMessagesHandle(handle, message, wparam, lparam, isUsed);
+
+		if (isUsed)
+		{
+			return result;
+		}
+
+		result = BaseComponent::windowMessagesHandle(handle, message, wparam, lparam, isUsed);
+
+		if (isUsed)
+		{
+			return result;
+		}
+
+		for (const auto& i : children)
+		{
+			if (!i)
+			{
+				continue;
+			}
+
+			result = i->windowMessagesHandle(handle, message, wparam, lparam, isUsed);
+
+			if (isUsed)
+			{
+				return result;
+			}
+		}
+
+		isUsed = false;
+
+		return -1;
+	}
+
 	vector<pair<string, json::utility::objectSmartPointer<json::utility::jsonObject>>> BaseComposite::getChildrenStructure() const
 	{
 		vector<json::JSONBuilder> childrenStructure;
@@ -48,7 +122,7 @@ namespace gui_framework
 
 		childrenStructure.reserve(children.size());
 
-		for_each(children.begin(), children.end(), [&childrenStructure](const unique_ptr<BaseComponent>& child) { childrenStructure.push_back(child->getStructure()); });
+		ranges::for_each(children, [&childrenStructure](const unique_ptr<BaseComponent>& child) { childrenStructure.push_back(child->getStructure()); });
 
 		for (size_t i = 0; i < children.size(); i++)
 		{
@@ -60,46 +134,6 @@ namespace gui_framework
 		}
 
 		return data;
-	}
-
-	json::JSONBuilder BaseComposite::getStructure() const
-	{
-		using json::utility::jsonObject;
-		using json::utility::objectSmartPointer;
-
-		json::JSONBuilder builder = BaseComponent::getStructure();
-		uint32_t codepage = ISerializable::getCodepage();
-		vector<pair<string, objectSmartPointer<jsonObject>>> data = this->getChildrenStructure();
-		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, codepage)]);
-
-		if (pathToSmallIcon.size())
-		{
-			current->data.push_back({ "pathToSmallIcon"s, pathToSmallIcon });
-		}
-
-		if (pathToLargeIcon.size())
-		{
-			current->data.push_back({ "pathToLargeIcon"s, pathToLargeIcon });
-		}
-
-		if (data.size())
-		{
-			vector<objectSmartPointer<jsonObject>>& childrenStructures = get<vector<objectSmartPointer<jsonObject>>>(current->data.emplace_back(make_pair("children"s, vector<objectSmartPointer<jsonObject>>())).second);
-
-			for (auto& i : data)
-			{
-				objectSmartPointer<jsonObject> topLevel = json::utility::make_object<jsonObject>();
-				objectSmartPointer<jsonObject> tem = json::utility::make_object<jsonObject>();
-
-				tem->data.push_back(move(i));
-
-				topLevel->data.push_back({ ""s, move(tem) });
-
-				childrenStructures.push_back(move(topLevel));
-			}
-		}
-
-		return builder;
 	}
 
 	BaseComposite::BaseComposite(const wstring& className, const wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent, const string& windowFunctionName) :
@@ -221,68 +255,69 @@ namespace gui_framework
 		return children;
 	}
 
-	LRESULT BaseComposite::compositeWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
+	unique_ptr<Menu>& BaseComposite::createMainMenu(const wstring& menuName)
 	{
-		if (message >= WM_CTLCOLOREDIT && message <= WM_CTLCOLORSTATIC)
-		{
-			BaseComponent* component = this->findChild(reinterpret_cast<HWND>(lparam));
+		popupMenus.clear();
 
-			if (component)
-			{
-				isUsed = true;
+		mainMenu = make_unique<Menu>(menuName, handle);
 
-				SetBkColor(reinterpret_cast<HDC>(wparam), component->getBackgroundColor());
-
-				SetTextColor(reinterpret_cast<HDC>(wparam), component->getTextColor());
-
-				return reinterpret_cast<LRESULT>(CreateSolidBrush(component->getBackgroundColor()));
-			}
-		}
-
-		isUsed = false;
-
-		return -1;
+		return mainMenu;
 	}
 
-	LRESULT BaseComposite::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
+	Menu& BaseComposite::addPopupMenu(const wstring& menuName)
 	{
-		LRESULT result = this->compositeWindowMessagesHandle(handle, message, wparam, lparam, isUsed);
+		Menu menu(menuName, nullptr);
 
-		if (isUsed)
+		auto it = popupMenus.emplace(menu.getHandle(), move(menu)).first;
+
+		return popupMenus.at(it->first);
+	}
+
+	void BaseComposite::removePopupMenus(const wstring& menuName)
+	{
+		vector<HMENU> itemsToRemove;
+
+		for (const auto& [handle, popupMenu] : popupMenus)
 		{
-			return result;
-		}
-
-		result = BaseComponent::windowMessagesHandle(handle, message, wparam, lparam, isUsed);
-
-		if (isUsed)
-		{
-			return result;
-		}
-
-		for (const auto& i : children)
-		{
-			if (!i)
+			if (popupMenu.getName() == menuName)
 			{
-				continue;
-			}
-
-			result = i->windowMessagesHandle(handle, message, wparam, lparam, isUsed);
-
-			if (isUsed)
-			{
-				return result;
+				itemsToRemove.push_back(handle);
 			}
 		}
 
-		isUsed = false;
-
-		return -1;
+		for (const auto& i : itemsToRemove)
+		{
+			popupMenus.erase(i);
+		}
 	}
 
 	bool BaseComposite::isComposite() const
 	{
 		return true;
+	}
+
+	const unique_ptr<Menu>& BaseComposite::getMainMenu() const
+	{
+		return mainMenu;
+	}
+
+	unique_ptr<Menu>& BaseComposite::getMainMenu()
+	{
+		return mainMenu;
+	}
+
+	vector<const Menu*> BaseComposite::getPopupMenus() const
+	{
+		vector<const Menu*> result;
+
+		result.reserve(popupMenus.size());
+
+		for (const auto& [_, popupMenu] : popupMenus)
+		{
+			result.push_back(&popupMenu);
+		}
+
+		return result;
 	}
 
 	void BaseComposite::setLargeIcon(const filesystem::path& pathToLargeIcon)
@@ -356,15 +391,89 @@ namespace gui_framework
 		InvalidateRect(handle, nullptr, true);
 	}
 
+	json::JSONBuilder BaseComposite::getStructure() const
+	{
+		using json::utility::jsonObject;
+		using json::utility::objectSmartPointer;
+
+		json::JSONBuilder builder = BaseComponent::getStructure();
+		vector<pair<string, objectSmartPointer<jsonObject>>> data = this->getChildrenStructure();
+		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
+		GUIFramework& instance = GUIFramework::get();
+
+		if (pathToSmallIcon.size())
+		{
+			current->data.push_back({ "pathToSmallIcon"s, pathToSmallIcon });
+		}
+
+		if (pathToLargeIcon.size())
+		{
+			current->data.push_back({ "pathToLargeIcon"s, pathToLargeIcon });
+		}
+
+		if (mainMenu)
+		{
+			objectSmartPointer<jsonObject> menuStructure = json::utility::make_object<jsonObject>();
+			json::JSONBuilder mainMenuBuilder = mainMenu->getStructure();
+			vector<objectSmartPointer<jsonObject>> popupItems;
+
+			menuStructure->data.push_back({ "mainMenuName"s, get<string>(mainMenuBuilder["menuName"]) });
+
+			menuStructure->data.push_back({ "mainMenuItems"s, move(mainMenuBuilder["items"]) });
+
+			for (const auto& [menuHandle, menu] : popupMenus)
+			{
+				objectSmartPointer<jsonObject> tem = json::utility::make_object<jsonObject>();
+				json::JSONBuilder temBuilder = menu.getStructure();
+
+				tem->data.push_back({ "menuName"s, get<string>(temBuilder["menuName"]) });
+				tem->data.push_back({ "menuId"s, get<uint64_t>(temBuilder["menuId"]) });
+				tem->data.push_back({ "items"s, move(temBuilder["items"]) });
+
+				json::utility::appendArray(move(tem), popupItems);
+			}
+
+			menuStructure->data.push_back({ "popupItems"s, move(popupItems) });
+
+			current->data.push_back(make_pair("menuStructure"s, move(menuStructure)));
+		}
+
+		if (data.size())
+		{
+			vector<objectSmartPointer<jsonObject>>& childrenStructures = get<vector<objectSmartPointer<jsonObject>>>(current->data.emplace_back(make_pair("children"s, vector<objectSmartPointer<jsonObject>>())).second);
+
+			for (auto& i : data)
+			{
+				objectSmartPointer<jsonObject> topLevel = json::utility::make_object<jsonObject>();
+				objectSmartPointer<jsonObject> tem = json::utility::make_object<jsonObject>();
+
+				tem->data.push_back(move(i));
+
+				topLevel->data.push_back({ ""s, move(tem) });
+
+				childrenStructures.push_back(move(topLevel));
+			}
+		}
+
+		if (!current->contains("hotkeys", json::utility::variantTypeEnum::jJSONObject) && instance.getRegisteredHotkeys().size())
+		{
+			current->data.push_back({ "hotkeys"s, move(instance.serializeHotkeys()) });
+		}
+
+		return builder;
+	}
+
 	BaseComposite::~BaseComposite()
 	{
 		vector<BaseComponent*> components;
 
-		for_each(children.begin(), children.end(), [&components](const unique_ptr<BaseComponent>& component) { components.push_back(component.get()); });
+		ranges::for_each(children, [&components](const unique_ptr<BaseComponent>& component) { components.push_back(component.get()); });
 
-		for_each(components.begin(), components.end(), [this](BaseComponent* component) { this->removeChild(component); });
+		ranges::for_each(components, [this](BaseComponent* component) { this->removeChild(component); });
 
 		DestroyIcon(largeIcon);
 		DestroyIcon(smallIcon);
+
+		SendMessageW(handle, custom_window_messages::deinitTopLevelWindowPointer, NULL, NULL);
 	}
 }

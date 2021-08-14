@@ -29,16 +29,18 @@ namespace gui_framework
 		static constexpr uint8_t urlDetectEventSize = 8;
 
 	protected:
-		// TODO: serialize callbacks
-		std::unordered_map<urlDetectEvent, std::function<void(const std::wstring&)>> callbacks;
+		std::array<std::function<void(const std::wstring&)>, urlDetectEventSize> callbacks;
+		std::array<std::pair<std::string, std::string>, urlDetectEventSize> callbacksFunctionNamesAndModules;	// function name - module name
 
 	protected:
 		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
 
 	public:
-		BaseRichEdit(const std::wstring& richEditName, const utility::ComponentSettings& settings, BaseComponent* parent);
+		BaseRichEdit(const std::wstring& richEditName, const utility::ComponentSettings& settings, BaseComponent* parent, bool isMultiLine = false);
 
 		virtual void addUrlDetectEvent(urlDetectEvent event, const std::function<void(const std::wstring&)>& eventCallback) final;
+
+		virtual void addUrlDetectEvent(urlDetectEvent event, const std::string& functionName, const std::string& moduleName) final;
 
 		virtual void removeUrlDetectEvent(urlDetectEvent event) final;
 
@@ -58,6 +60,11 @@ namespace gui_framework
 
 		virtual void setTextColor(uint8_t red, uint8_t green, uint8_t blue) final override;
 
+		virtual json::JSONBuilder getStructure() const override;
+
 		virtual ~BaseRichEdit() = default;
 	};
+
+	/// @brief Used in rich edit auto url detect events
+	using richEditCallbackSignature = void(*)(const std::wstring&);
 }

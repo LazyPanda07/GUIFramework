@@ -1,6 +1,7 @@
 var namespacegui__framework =
 [
     [ "custom_window_messages", "namespacegui__framework_1_1custom__window__messages.html", [
+      [ "deinitTopLevelWindowPointer", "namespacegui__framework_1_1custom__window__messages.html#ae277398e850c3e6adb8b9c3c5caa97c3", null ],
       [ "initTopLevelWindowPointer", "namespacegui__framework_1_1custom__window__messages.html#a9d6c2d2d357b573767b5837f204407ce", null ]
     ] ],
     [ "exception_messages", "namespacegui__framework_1_1exception__messages.html", [
@@ -18,12 +19,17 @@ var namespacegui__framework =
     ] ],
     [ "interfaces", "namespacegui__framework_1_1interfaces.html", "namespacegui__framework_1_1interfaces" ],
     [ "iterators", "namespacegui__framework_1_1iterators.html", "namespacegui__framework_1_1iterators" ],
+    [ "json_settings", "namespacegui__framework_1_1json__settings.html", [
+      [ "moduleNameSetting", "namespacegui__framework_1_1json__settings.html#a6dae873e8b91fb97158311efbfb35c70", null ],
+      [ "modulesSetting", "namespacegui__framework_1_1json__settings.html#a03400673f6ecd7ac91d97eca3b71c327", null ],
+      [ "pathToModuleSettings", "namespacegui__framework_1_1json__settings.html#acb925ed8bd2261fc88aea09e514144a0", null ],
+      [ "settingsJSONFile", "namespacegui__framework_1_1json__settings.html#a9426e6e8ca2d732bdae204bdc9903564", null ],
+      [ "settingsObject", "namespacegui__framework_1_1json__settings.html#a31fd95ffa91c694e93b01a23a07305f3", null ],
+      [ "threadsCountSetting", "namespacegui__framework_1_1json__settings.html#af4f5086d138e7948e61b65288c1b5bf4", null ],
+      [ "usingDefaultCreatorsSetting", "namespacegui__framework_1_1json__settings.html#a7ddcf0e329446aee3695a8d5fe493839", null ]
+    ] ],
     [ "libraries", "namespacegui__framework_1_1libraries.html", [
       [ "msftEditLibrary", "namespacegui__framework_1_1libraries.html#aa0a8f6ff8009d943b34253c4a50409c2", null ]
-    ] ],
-    [ "settings", "namespacegui__framework_1_1settings.html", [
-      [ "settingsJSONFile", "namespacegui__framework_1_1settings.html#a9ac890cff1776e71efbf6c9ae1a837bf", null ],
-      [ "threadsCountSetting", "namespacegui__framework_1_1settings.html#a583a179dba5adc309d1a59f97c4dfe54", null ]
     ] ],
     [ "standard_classes", "namespacegui__framework_1_1standard__classes.html", [
       [ "button", "namespacegui__framework_1_1standard__classes.html#a3a70e6e92deddb65c6406def06e23ec8", null ],
@@ -120,7 +126,10 @@ var namespacegui__framework =
     [ "DropDownMenuItem", "classgui__framework_1_1_drop_down_menu_item.html", "classgui__framework_1_1_drop_down_menu_item" ],
     [ "MenuItem", "classgui__framework_1_1_menu_item.html", "classgui__framework_1_1_menu_item" ],
     [ "WindowHolder", "classgui__framework_1_1_window_holder.html", "classgui__framework_1_1_window_holder" ],
+    [ "comboBoxCallbackSignature", "namespacegui__framework.html#a324f0f932298033cc393d93ec69d544a", null ],
     [ "DialogBoxBuilder", "namespacegui__framework.html#af525ce6f1696446fe552abd946818aee", null ],
+    [ "onClickSignature", "namespacegui__framework.html#a5c2c0a8327422f8318f9c225fa2bf27d", null ],
+    [ "richEditCallbackSignature", "namespacegui__framework.html#ae93e197b03ab535325f85dbd87c4cf7c", null ],
     [ "tabData", "namespacegui__framework.html#ae3e66f06336365b0dc8c0dac9f239f63", null ],
     [ "guiFrameworkVersion", "namespacegui__framework.html#a5e94c5c423c72dd9f763bafce9ba4672", null ]
 ];

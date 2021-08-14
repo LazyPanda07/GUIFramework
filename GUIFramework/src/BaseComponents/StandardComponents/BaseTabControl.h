@@ -15,8 +15,12 @@ namespace gui_framework
 			std::wstring text;
 			std::filesystem::path pathToImage;
 			std::function<void()> callback;
+			std::string functionName;
+			std::string moduleName;
 
 			tabData(const std::wstring& text, const std::filesystem::path& pathToImage, const std::function<void()>& callback);
+
+			tabData(const std::wstring& text, const std::filesystem::path& pathToImage, const std::string& functionName, const std::string& moduleName);
 
 			tabData(const tabData&) = default;
 
@@ -30,11 +34,8 @@ namespace gui_framework
 		};
 
 	protected:
-		// TODO: serialize images
 		utility::ImagesHolder images;
-		// TODO: serialize callbacks
 		std::vector<std::function<void()>> callbacks;
-		// TODO: serialize tabs
 		std::vector<tabData> tabs;
 
 	protected:
@@ -45,7 +46,26 @@ namespace gui_framework
 
 		virtual LRESULT appendText(const std::wstring& text, const std::function<void()>& onClick) final;
 
+		/// @brief 
+		/// @param text 
+		/// @param functionName 
+		/// @param moduleName 
+		/// @return
+		/// @exception CantFindFunctionFromModuleException 
+		/// @exception std::out_of_range Can't find moduleName in loaded modules
+		virtual LRESULT appendText(const std::wstring& text, const std::string& functionName, const std::string& moduleName) final;
+
 		virtual LRESULT insertText(size_t index, const std::wstring& text, const std::function<void()>& onClick) final;
+
+		/// @brief 
+		/// @param index 
+		/// @param text 
+		/// @param functionName 
+		/// @param moduleName 
+		/// @return
+		/// @exception CantFindFunctionFromModuleException 
+		/// @exception std::out_of_range Can't find moduleName in loaded modules 
+		virtual LRESULT insertText(size_t index, const std::wstring& text, const std::string& functionName, const std::string& moduleName) final;
 
 		/// @brief 
 		/// @param pathToImage 
@@ -55,10 +75,27 @@ namespace gui_framework
 
 		/// @brief 
 		/// @param pathToImage 
+		/// @return
+		/// @exception FileDoesNotExist
+		/// @exception CantFindFunctionFromModuleException 
+		/// @exception std::out_of_range Can't find moduleName in loaded modules
+		virtual LRESULT appendImage(const std::filesystem::path& pathToImage, const std::string& functionName, const std::string& moduleName) final;
+
+		/// @brief 
+		/// @param pathToImage 
 		/// @param index 
 		/// @return 
 		/// @exception FileDoesNotExist
 		virtual LRESULT insertImage(size_t index, const std::filesystem::path& pathToImage, const std::function<void()>& onClick) final;
+
+		/// @brief 
+		/// @param pathToImage 
+		/// @param index 
+		/// @return 
+		/// @exception FileDoesNotExist
+		/// @exception CantFindFunctionFromModuleException 
+		/// @exception std::out_of_range Can't find moduleName in loaded modules
+		virtual LRESULT insertImage(size_t index, const std::filesystem::path& pathToImage, const std::string& functionName, const std::string& moduleName) final;
 
 		/// @brief 
 		/// @param text 
@@ -70,10 +107,29 @@ namespace gui_framework
 		/// @brief 
 		/// @param text 
 		/// @param pathToImage 
+		/// @return
+		/// @exception FileDoesNotExist 
+		/// @exception CantFindFunctionFromModuleException 
+		/// @exception std::out_of_range Can't find moduleName in loaded modules
+		virtual LRESULT appendTextAndImage(const std::wstring& text, const std::filesystem::path& pathToImage, const std::string& functionName, const std::string& moduleName) final;
+
+		/// @brief 
+		/// @param text 
+		/// @param pathToImage 
 		/// @param index 
 		/// @return 
 		/// @exception FileDoesNotExist 
 		virtual LRESULT insertTextAndImage(size_t index, const std::wstring& text, const std::filesystem::path& pathToImage, const std::function<void()>& onClick) final;
+
+		/// @brief 
+		/// @param text 
+		/// @param pathToImage 
+		/// @param index 
+		/// @return 
+		/// @exception FileDoesNotExist 
+		/// @exception CantFindFunctionFromModuleException 
+		/// @exception std::out_of_range Can't find moduleName in loaded modules
+		virtual LRESULT insertTextAndImage(size_t index, const std::wstring& text, const std::filesystem::path& pathToImage, const std::string& functionName, const std::string& moduleName) final;
 
 		virtual bool removeTab(size_t index) final;
 
@@ -88,6 +144,18 @@ namespace gui_framework
 		/// @return 
 		/// @exception FileDoesNotExist 
 		virtual bool setItem(size_t index, const std::function<void()>& callback, const std::wstring& text = L"", const std::filesystem::path& pathToImage = L"") final;
+
+		/// @brief 
+		/// @param index 
+		/// @param functionName 
+		/// @param moduleName 
+		/// @param text 
+		/// @param pathToImage 
+		/// @return 
+		/// @exception FileDoesNotExist 
+		/// @exception CantFindFunctionFromModuleException 
+		/// @exception std::out_of_range Can't find moduleName in loaded modules
+		virtual bool setItem(size_t index, const std::string& functionName, const std::string& moduleName, const std::wstring& text = L"", const std::filesystem::path& pathToImage = L"") final;
 
 		/// @brief 
 		/// @return Returns the index of the previously selected tab if successful, or -1 otherwise 
@@ -118,6 +186,8 @@ namespace gui_framework
 		/// @param blue 
 		/// @exception NotImplemented Text color does not affects at tab control
 		virtual void setTextColor(uint8_t red, uint8_t green, uint8_t blue) final override;
+
+		virtual json::JSONBuilder getStructure() const override;
 
 		virtual ~BaseTabControl() = default;
 	};

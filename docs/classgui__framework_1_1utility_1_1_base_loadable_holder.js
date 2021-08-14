@@ -1,5 +1,6 @@
 var classgui__framework_1_1utility_1_1_base_loadable_holder =
 [
+    [ "imageData", "structgui__framework_1_1utility_1_1_base_loadable_holder_1_1image_data.html", "structgui__framework_1_1utility_1_1_base_loadable_holder_1_1image_data" ],
     [ "imageType", "classgui__framework_1_1utility_1_1_base_loadable_holder.html#a4a51f316eaed8d199b7faa998ca407bf", [
       [ "bitmap", "classgui__framework_1_1utility_1_1_base_loadable_holder.html#a4a51f316eaed8d199b7faa998ca407bfa86bb33755628454af74f88f047ec894a", null ],
       [ "icon", "classgui__framework_1_1utility_1_1_base_loadable_holder.html#a4a51f316eaed8d199b7faa998ca407bfabaec6461b0d69dde1b861aefbe375d8a", null ],
@@ -20,10 +21,13 @@ var classgui__framework_1_1utility_1_1_base_loadable_holder =
     [ "getImageType", "classgui__framework_1_1utility_1_1_base_loadable_holder.html#a63ff6d93af85582af94acf67d9b9839b", null ],
     [ "getImageType", "classgui__framework_1_1utility_1_1_base_loadable_holder.html#add2bfa0a462d9515a8c42079a05d6e25", null ],
     [ "insertImage", "classgui__framework_1_1utility_1_1_base_loadable_holder.html#a1fdd3caeb20986a8cffa5d0549be853f", null ],
+    [ "loadBaseLoadableHolderStructure", "classgui__framework_1_1utility_1_1_base_loadable_holder.html#a5a30217bdce1d6201974497ae8c10126", null ],
     [ "operator[]", "classgui__framework_1_1utility_1_1_base_loadable_holder.html#a912944261b0a0016511e010552c4e655", null ],
     [ "operator[]", "classgui__framework_1_1utility_1_1_base_loadable_holder.html#ad0c32a91cbb9610f37703139099924e0", null ],
     [ "removeImage", "classgui__framework_1_1utility_1_1_base_loadable_holder.html#a7eb6b82c64272a60a261fa88038fd124", null ],
     [ "removeImage", "classgui__framework_1_1utility_1_1_base_loadable_holder.html#a0817753b742ba2374ef4a33b309f6c90", null ],
+    [ "imageList", "classgui__framework_1_1utility_1_1_base_loadable_holder.html#a7bba67968ff183d8ad7049ff4d4e0059", null ],
+    [ "images", "classgui__framework_1_1utility_1_1_base_loadable_holder.html#a67b958272c2f2dd865362a15cf97a692", null ],
     [ "imagesHeight", "classgui__framework_1_1utility_1_1_base_loadable_holder.html#a0d3318ae974b13fe723162d75d43cb14", null ],
     [ "imagesWidth", "classgui__framework_1_1utility_1_1_base_loadable_holder.html#a5883cfaa42d61ff69e1ab7636b234d47", null ]
 ];

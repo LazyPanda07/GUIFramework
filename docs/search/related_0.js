@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['operator_3c_3c_2141',['operator&lt;&lt;',['../classgui__framework_1_1interfaces_1_1_i_serializable.html#a919db0d1d29ab2737a7ce7d3f043b82f',1,'gui_framework::interfaces::ISerializable']]]
+  ['basecomponent_2263',['BaseComponent',['../classgui__framework_1_1_g_u_i_framework.html#ad89e05696f39a7a3b7908a11c22f82e0',1,'gui_framework::GUIFramework']]],
+  ['basecomposite_2264',['BaseComposite',['../classgui__framework_1_1_base_component.html#a9ed7ee1de0b791a2603f899e3a181961',1,'gui_framework::BaseComponent']]]
 ];

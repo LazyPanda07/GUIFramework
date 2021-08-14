@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.7-beta</span>
+   &#160;<span id="projectnumber">0.7.5-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -334,78 +334,67 @@ $(document).ready(function(){initNavTree('_base_list_box_8cpp_source.html',''); 
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            }</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classgui__framework_1_1_base_list_box.html#ad7a613cca729e06ad6ce0c4d98ac0fc7">requiredSize</a>.cx == <a class="code" href="classgui__framework_1_1_base_component.html#ac926a20fcbe58d1b4712d2592284ddc2">desiredWidth</a>)</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; static_cast&lt;size_t&gt;(currentSize); i++)</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            {</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                <a class="code" href="classgui__framework_1_1_base_list_box.html#ad7a613cca729e06ad6ce0c4d98ac0fc7">requiredSize</a>.cx = 0;</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            }</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                wstring value = this-&gt;<a class="code" href="classgui__framework_1_1_base_list_box.html#a58fc839753afbaa623cb140339149744">getValue</a>(i);</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                SIZE valueSizes;</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classgui__framework_1_1_base_list_box.html#ad7a613cca729e06ad6ce0c4d98ac0fc7">requiredSize</a>.cy = <a class="code" href="classgui__framework_1_1_base_component.html#a11847788edd849b0b245bd90db0af7bb">desiredHeight</a>)</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            {</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                <a class="code" href="classgui__framework_1_1_base_list_box.html#ad7a613cca729e06ad6ce0c4d98ac0fc7">requiredSize</a>.cy = 0;</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            }</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; </div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; static_cast&lt;size_t&gt;(currentSize); i++)</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            {</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                wstring value = this-&gt;<a class="code" href="classgui__framework_1_1_base_list_box.html#a58fc839753afbaa623cb140339149744">getValue</a>(i);</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                SIZE valueSizes;</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                <span class="keywordflow">if</span> (GetTextExtentPoint32W(deviceContext, value.data(), <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(value.size()), &amp;valueSizes))</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                {</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                    <span class="keywordflow">if</span> (valueSizes.cx &gt; <a class="code" href="classgui__framework_1_1_base_list_box.html#ad7a613cca729e06ad6ce0c4d98ac0fc7">requiredSize</a>.cx)</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                    {</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                        <a class="code" href="classgui__framework_1_1_base_list_box.html#ad7a613cca729e06ad6ce0c4d98ac0fc7">requiredSize</a>.cx = valueSizes.cx;</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                    }</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                    <span class="keywordflow">if</span> (valueSizes.cy &gt; <a class="code" href="classgui__framework_1_1_base_list_box.html#ad7a613cca729e06ad6ce0c4d98ac0fc7">requiredSize</a>.cy)</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                    {</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                        <a class="code" href="classgui__framework_1_1_base_list_box.html#ad7a613cca729e06ad6ce0c4d98ac0fc7">requiredSize</a>.cy = valueSizes.cy;</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                    }</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                <span class="keywordflow">if</span> (GetTextExtentPoint32W(deviceContext, value.data(), <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(value.size()), &amp;valueSizes))</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                {</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                    <span class="keywordflow">if</span> (valueSizes.cx &gt; <a class="code" href="classgui__framework_1_1_base_list_box.html#ad7a613cca729e06ad6ce0c4d98ac0fc7">requiredSize</a>.cx)</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                    {</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                        <a class="code" href="classgui__framework_1_1_base_list_box.html#ad7a613cca729e06ad6ce0c4d98ac0fc7">requiredSize</a>.cx = valueSizes.cx;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                    }</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                    <span class="keywordflow">if</span> (valueSizes.cy &gt; <a class="code" href="classgui__framework_1_1_base_list_box.html#ad7a613cca729e06ad6ce0c4d98ac0fc7">requiredSize</a>.cy)</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                    {</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                        <a class="code" href="classgui__framework_1_1_base_list_box.html#ad7a613cca729e06ad6ce0c4d98ac0fc7">requiredSize</a>.cy = valueSizes.cy;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                    }</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                    heightSum += valueSizes.cy;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                }</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            }</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            uint16_t height = 0;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            <span class="keywordflow">if</span> (heightSum &gt; <a class="code" href="classgui__framework_1_1_base_component.html#a11847788edd849b0b245bd90db0af7bb">desiredHeight</a>)</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            {</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                <a class="code" href="namespacegui__framework_1_1utility.html#ae97300d8014320696e57f502a858c570">utility::appendStyle</a>(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, WS_VSCROLL);</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                    heightSum += valueSizes.cy;</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                }</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;            }</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;            uint16_t height = 0;</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                height = <a class="code" href="classgui__framework_1_1_base_component.html#a11847788edd849b0b245bd90db0af7bb">desiredHeight</a>;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            }</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;            {</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                <a class="code" href="namespacegui__framework_1_1utility.html#a746d8e6e6277a08c83bd0bfd523d2e04">utility::removeStyle</a>(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, WS_VSCROLL);</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; </div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            <span class="keywordflow">if</span> (heightSum &gt; <a class="code" href="classgui__framework_1_1_base_component.html#a11847788edd849b0b245bd90db0af7bb">desiredHeight</a>)</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;            {</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                <a class="code" href="namespacegui__framework_1_1utility.html#ae97300d8014320696e57f502a858c570">utility::appendStyle</a>(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, WS_VSCROLL);</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160; </div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                height = <a class="code" href="classgui__framework_1_1_base_component.html#a11847788edd849b0b245bd90db0af7bb">desiredHeight</a>;</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;            }</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;            {</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                <a class="code" href="namespacegui__framework_1_1utility.html#a746d8e6e6277a08c83bd0bfd523d2e04">utility::removeStyle</a>(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, WS_VSCROLL);</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                this-&gt;<a class="code" href="classgui__framework_1_1_base_list_box.html#a60fc704ca949b59696690a093fc9ef43">setItemsHeight</a>(<span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(<a class="code" href="classgui__framework_1_1_base_list_box.html#ad7a613cca729e06ad6ce0c4d98ac0fc7">requiredSize</a>.cy));</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160; </div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                height = <span class="keyword">static_cast&lt;</span>uint16_t<span class="keyword">&gt;</span>(heightSum + <a class="code" href="classgui__framework_1_1_base_list_box.html#ad7a613cca729e06ad6ce0c4d98ac0fc7">requiredSize</a>.cy * 2);</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            }</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                this-&gt;<a class="code" href="classgui__framework_1_1_base_list_box.html#a60fc704ca949b59696690a093fc9ef43">setItemsHeight</a>(<span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(<a class="code" href="classgui__framework_1_1_base_list_box.html#ad7a613cca729e06ad6ce0c4d98ac0fc7">requiredSize</a>.cy));</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                height = <span class="keyword">static_cast&lt;</span>uint16_t<span class="keyword">&gt;</span>(heightSum + <a class="code" href="classgui__framework_1_1_base_list_box.html#ad7a613cca729e06ad6ce0c4d98ac0fc7">requiredSize</a>.cy * 2);</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            }</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160; </div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;            MoveWindow</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;            (</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                <a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>,</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                <a class="code" href="classgui__framework_1_1_base_component.html#a45714d8af7df9cc43ed7a0acc02a7c9f">desiredX</a>,</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                <a class="code" href="classgui__framework_1_1_base_component.html#a3d15724eb33a896f282d5199f825d03b">desiredY</a>,</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                <a class="code" href="classgui__framework_1_1_base_list_box.html#ad7a613cca729e06ad6ce0c4d98ac0fc7">requiredSize</a>.cx + <a class="code" href="namespacegui__framework_1_1standard__sizes.html#a064e45c055ec4208917e9f5663ec53a5">standard_sizes::listBoxAdditionalWidth</a>,</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                height,</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                <span class="keyword">true</span></div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            );</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            MoveWindow</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;            (</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                <a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>,</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                <a class="code" href="classgui__framework_1_1_base_component.html#a45714d8af7df9cc43ed7a0acc02a7c9f">desiredX</a>,</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                <a class="code" href="classgui__framework_1_1_base_component.html#a3d15724eb33a896f282d5199f825d03b">desiredY</a>,</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                <a class="code" href="classgui__framework_1_1_base_list_box.html#ad7a613cca729e06ad6ce0c4d98ac0fc7">requiredSize</a>.cx + <a class="code" href="namespacegui__framework_1_1standard__sizes.html#a064e45c055ec4208917e9f5663ec53a5">standard_sizes::listBoxAdditionalWidth</a>,</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                height,</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                <span class="keyword">true</span></div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;            );</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;            ShowWindow(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, SW_SHOW);</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        }</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    }</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;}</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160; </div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;<span class="preprocessor">#pragma pop_macro(&quot;min&quot;</span>)</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            ShowWindow(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, SW_SHOW);</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        }</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    }</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;}</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;<span class="preprocessor">#pragma pop_macro(&quot;min&quot;</span>)</div>
 <div class="ttc" id="a_base_list_box_8h_html"><div class="ttname"><a href="_base_list_box_8h.html">BaseListBox.h</a></div></div>
 <div class="ttc" id="a_select_list_exception_8h_html"><div class="ttname"><a href="_select_list_exception_8h.html">SelectListException.h</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_component_html"><div class="ttname"><a href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></div><div class="ttdoc">Base class for all windows, controls, etc.</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00012">BaseComponent.h:13</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_component_html_a11847788edd849b0b245bd90db0af7bb"><div class="ttname"><a href="classgui__framework_1_1_base_component.html#a11847788edd849b0b245bd90db0af7bb">gui_framework::BaseComponent::desiredHeight</a></div><div class="ttdeci">uint16_t desiredHeight</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00041">BaseComponent.h:41</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_component_html_a3d15724eb33a896f282d5199f825d03b"><div class="ttname"><a href="classgui__framework_1_1_base_component.html#a3d15724eb33a896f282d5199f825d03b">gui_framework::BaseComponent::desiredY</a></div><div class="ttdeci">int desiredY</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00043">BaseComponent.h:43</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_component_html_a45714d8af7df9cc43ed7a0acc02a7c9f"><div class="ttname"><a href="classgui__framework_1_1_base_component.html#a45714d8af7df9cc43ed7a0acc02a7c9f">gui_framework::BaseComponent::desiredX</a></div><div class="ttdeci">int desiredX</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00042">BaseComponent.h:42</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_component_html_abff4f6befd00a3e67037b12fa9d9613a"><div class="ttname"><a href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">gui_framework::BaseComponent::handle</a></div><div class="ttdeci">HWND handle</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00038">BaseComponent.h:38</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_component_html_ac926a20fcbe58d1b4712d2592284ddc2"><div class="ttname"><a href="classgui__framework_1_1_base_component.html#ac926a20fcbe58d1b4712d2592284ddc2">gui_framework::BaseComponent::desiredWidth</a></div><div class="ttdeci">uint16_t desiredWidth</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00040">BaseComponent.h:40</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_component_html"><div class="ttname"><a href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></div><div class="ttdoc">Base class for all windows, controls, etc.</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00011">BaseComponent.h:12</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_component_html_a11847788edd849b0b245bd90db0af7bb"><div class="ttname"><a href="classgui__framework_1_1_base_component.html#a11847788edd849b0b245bd90db0af7bb">gui_framework::BaseComponent::desiredHeight</a></div><div class="ttdeci">uint16_t desiredHeight</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00037">BaseComponent.h:37</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_component_html_a3d15724eb33a896f282d5199f825d03b"><div class="ttname"><a href="classgui__framework_1_1_base_component.html#a3d15724eb33a896f282d5199f825d03b">gui_framework::BaseComponent::desiredY</a></div><div class="ttdeci">int desiredY</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00039">BaseComponent.h:39</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_component_html_a45714d8af7df9cc43ed7a0acc02a7c9f"><div class="ttname"><a href="classgui__framework_1_1_base_component.html#a45714d8af7df9cc43ed7a0acc02a7c9f">gui_framework::BaseComponent::desiredX</a></div><div class="ttdeci">int desiredX</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00038">BaseComponent.h:38</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_component_html_abff4f6befd00a3e67037b12fa9d9613a"><div class="ttname"><a href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">gui_framework::BaseComponent::handle</a></div><div class="ttdeci">HWND handle</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00035">BaseComponent.h:35</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1_base_list_box_html_a0a2cd05d08a9b33a2248ee50fcf578b9"><div class="ttname"><a href="classgui__framework_1_1_base_list_box.html#a0a2cd05d08a9b33a2248ee50fcf578b9">gui_framework::BaseListBox::resize</a></div><div class="ttdeci">virtual void resize(uint16_t width, uint16_t height)</div><div class="ttdef"><b>Definition:</b> <a href="_base_list_box_8cpp_source.html#l00235">BaseListBox.cpp:235</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1_base_list_box_html_a17dfe0ac51b05acc2463a82766b186b2"><div class="ttname"><a href="classgui__framework_1_1_base_list_box.html#a17dfe0ac51b05acc2463a82766b186b2">gui_framework::BaseListBox::findString</a></div><div class="ttdeci">virtual LRESULT findString(const std::wstring &amp;stringToFind) final</div><div class="ttdef"><b>Definition:</b> <a href="_base_list_box_8cpp_source.html#l00122">BaseListBox.cpp:122</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1_base_list_box_html_a2fcbc0365194904b580a8f9f0d323864"><div class="ttname"><a href="classgui__framework_1_1_base_list_box.html#a2fcbc0365194904b580a8f9f0d323864">gui_framework::BaseListBox::columnsWidth</a></div><div class="ttdeci">uint8_t columnsWidth</div><div class="ttdef"><b>Definition:</b> <a href="_base_list_box_8h_source.html#l00017">BaseListBox.h:17</a></div></div>

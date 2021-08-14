@@ -9,6 +9,7 @@ var classgui__framework_1_1_menu =
     [ "getHandle", "classgui__framework_1_1_menu.html#a73231f0fca881c7553a3fc96808fed59", null ],
     [ "getItems", "classgui__framework_1_1_menu.html#a0a5809f7c1418e810befaf4b819ae7c5", null ],
     [ "getName", "classgui__framework_1_1_menu.html#a3d20a6a3f347b9428af100ff0fe4ff4a", null ],
+    [ "getStructure", "classgui__framework_1_1_menu.html#a6daf4796d2759b96ae7c323e2ec0d8db", null ],
     [ "handleMessage", "classgui__framework_1_1_menu.html#a1bf1253fb6905ab2d5514cac98907ae5", null ],
     [ "operator=", "classgui__framework_1_1_menu.html#a438acbe858735ef5e8ebfc0e49cdd824", null ],
     [ "operator=", "classgui__framework_1_1_menu.html#a0d1d17252a36abae06db1d484de90a33", null ],

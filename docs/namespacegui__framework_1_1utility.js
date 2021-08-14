@@ -1,9 +1,12 @@
 var namespacegui__framework_1_1utility =
 [
     [ "paint", "namespacegui__framework_1_1utility_1_1paint.html", [
-      [ "drawImageByIndex", "namespacegui__framework_1_1utility_1_1paint.html#a931933d1d403270d312dce9702bb5877", null ],
-      [ "drawImageByPath", "namespacegui__framework_1_1utility_1_1paint.html#aaa72ab7a54bd01b37bff27818f6872dc", null ],
-      [ "drawImageByPath", "namespacegui__framework_1_1utility_1_1paint.html#a2dd56702974a9f976b11bc663ed580f2", null ]
+      [ "drawIconByIndex", "namespacegui__framework_1_1utility_1_1paint.html#a07e5a5d85c980728d6d304af73db47e0", null ],
+      [ "drawIconByPath", "namespacegui__framework_1_1utility_1_1paint.html#a79d09f6b4b9cdea22bd65c006ee983e4", null ],
+      [ "drawIconByPath", "namespacegui__framework_1_1utility_1_1paint.html#a6ee07b7922e7c815aef7c4d07f24a868", null ],
+      [ "drawImageByIndex", "namespacegui__framework_1_1utility_1_1paint.html#aebe15d78a6ed0c53c7e675fab2d40ecd", null ],
+      [ "drawImageByPath", "namespacegui__framework_1_1utility_1_1paint.html#a6ffb2d4e95656be075ea722b3f9f476f", null ],
+      [ "drawImageByPath", "namespacegui__framework_1_1utility_1_1paint.html#a405419e8f1563d9ef73932d0ab8149d3", null ]
     ] ],
     [ "BaseComponentCreator", "classgui__framework_1_1utility_1_1_base_component_creator.html", "classgui__framework_1_1utility_1_1_base_component_creator" ],
     [ "ButtonCreator", "classgui__framework_1_1utility_1_1_button_creator.html", "classgui__framework_1_1utility_1_1_button_creator" ],
@@ -65,10 +68,13 @@ var namespacegui__framework_1_1utility =
       [ "smallIcon", "namespacegui__framework_1_1utility.html#a4bd7b1a1121bbfb16d0a1f9b4ba266dea82840ee69ba0e891fa382c7785fc0527", null ]
     ] ],
     [ "appendStyle", "namespacegui__framework_1_1utility.html#ae97300d8014320696e57f502a858c570", null ],
+    [ "getCurrentModule", "namespacegui__framework_1_1utility.html#a1945ec50b055f688bbb3e7c6cae8de64", null ],
     [ "make_smart_pointer", "namespacegui__framework_1_1utility.html#a60d17f3aed2f6fbe1b6e77907e237ff0", null ],
     [ "removeStyle", "namespacegui__framework_1_1utility.html#a746d8e6e6277a08c83bd0bfd523d2e04", null ],
     [ "to_string", "namespacegui__framework_1_1utility.html#acfc6bead05acb26a7a347dea0e5fc169", null ],
     [ "to_string", "namespacegui__framework_1_1utility.html#abbafc9708435f466d89c4f977dcd460d", null ],
+    [ "to_wstring", "namespacegui__framework_1_1utility.html#a13969865263548210d327e830b12b4bc", null ],
+    [ "to_wstring", "namespacegui__framework_1_1utility.html#a14e878f929340a06b7a3c1e370c623af", null ],
     [ "unregisterClass", "namespacegui__framework_1_1utility.html#abd212ea6354db1d1ef3a3658fa9b8b4f", null ],
     [ "unregisterClass", "namespacegui__framework_1_1utility.html#a9102f958e07350e5f2ab564c5c30d66c", null ]
 ];

@@ -28,20 +28,19 @@ namespace gui_framework
 	{
 		MSG message = {};
 		int code;
+		GUIFramework& instance = GUIFramework::get();
 
 		while (code = GetMessageW(&message, nullptr, NULL, NULL) > 0)
 		{
 			if (message.message == WM_HOTKEY && message.wParam >= 0)
 			{
-				GUIFramework::get().processHotkey(static_cast<uint32_t>(message.wParam));
+				instance.processHotkey(static_cast<uint32_t>(message.wParam));
 			}
 
 			TranslateMessage(&message);
 
 			DispatchMessageW(&message);
 		}
-
-		GUIFramework& instance = GUIFramework::get();
 
 		for (const auto& i : registeredHotkeyIds)
 		{

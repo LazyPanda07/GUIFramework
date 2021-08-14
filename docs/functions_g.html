@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.7-beta</span>
+   &#160;<span id="projectnumber">0.7.5-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -86,9 +86,6 @@ $(document).ready(function(){initNavTree('functions_g.html',''); initResizable()
 <div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
 
 <h3><a id="index_g"></a>- g -</h3><ul>
-<li>generateId()
-: <a class="el" href="classgui__framework_1_1_g_u_i_framework.html#a633356a9001855ec05824bca5ed6eb99">gui_framework::GUIFramework</a>
-</li>
 <li>get()
 : <a class="el" href="classgui__framework_1_1_g_u_i_framework.html#a3ddb6e3b33f9143d5e4eb5c2111d1d6b">gui_framework::GUIFramework</a>
 , <a class="el" href="classgui__framework_1_1_window_holder.html#a107d333a8d268fdb94d913e71e5bffde">gui_framework::WindowHolder</a>
@@ -117,6 +114,9 @@ $(document).ready(function(){initNavTree('functions_g.html',''); initResizable()
 <li>getBlockResize()
 : <a class="el" href="classgui__framework_1_1interfaces_1_1_i_resizable_component.html#a9de38868747c14b3278ad72144f94a62">gui_framework::interfaces::IResizableComponent</a>
 </li>
+<li>getCantLoadedModules()
+: <a class="el" href="classgui__framework_1_1_g_u_i_framework.html#a0aa718fbeffaf31e2de9bcbc54062b57">gui_framework::GUIFramework</a>
+</li>
 <li>getChildren()
 : <a class="el" href="classgui__framework_1_1_base_composite.html#a39539aed053e40905f147cd9da5003eb">gui_framework::BaseComposite</a>
 </li>
@@ -143,6 +143,9 @@ $(document).ready(function(){initNavTree('functions_g.html',''); initResizable()
 </li>
 <li>getCurrentSelections()
 : <a class="el" href="classgui__framework_1_1_base_multiple_select_list_box.html#ae9d1425d44d3f5cdc9f95851e19799b8">gui_framework::BaseMultipleSelectListBox</a>
+</li>
+<li>getCursor()
+: <a class="el" href="classgui__framework_1_1utility_1_1_cursors_holder.html#a20e3b49039a1e9b865c02b69d2442b58">gui_framework::utility::CursorsHolder</a>
 </li>
 <li>getData()
 : <a class="el" href="classgui__framework_1_1utility_1_1_additional_creation_data.html#a21e872b6f833b8c17285e8dbd806412c">gui_framework::utility::AdditionalCreationData&lt; T &gt;</a>
@@ -195,9 +198,15 @@ $(document).ready(function(){initNavTree('functions_g.html',''); initResizable()
 <li>getExtendedStyles()
 : <a class="el" href="classgui__framework_1_1interfaces_1_1_i_styles.html#a2a957275e32294d32cb93e98e37c8c4f">gui_framework::interfaces::IStyles</a>
 </li>
+<li>getFunctionName()
+: <a class="el" href="classgui__framework_1_1_base_button.html#a9a1abf6e15283d38dadd83a765944459">gui_framework::BaseButton</a>
+</li>
 <li>getHandle()
 : <a class="el" href="classgui__framework_1_1_base_component.html#ab12780fecd5f22ec01d21a82d9ac87b7">gui_framework::BaseComponent</a>
 , <a class="el" href="classgui__framework_1_1_menu.html#a73231f0fca881c7553a3fc96808fed59">gui_framework::Menu</a>
+</li>
+<li>getIcon()
+: <a class="el" href="classgui__framework_1_1utility_1_1_icons_holder.html#ad1292bd8a48a5a60fa0e653c72bb192e">gui_framework::utility::IconsHolder</a>
 </li>
 <li>getIconIndex()
 : <a class="el" href="classgui__framework_1_1interfaces_1_1_i_icon_list_view.html#ad1a82ed39e2982413d5c6defa043b65c">gui_framework::interfaces::IIconListView</a>
@@ -208,8 +217,8 @@ $(document).ready(function(){initNavTree('functions_g.html',''); initResizable()
 <li>getId()
 : <a class="el" href="classgui__framework_1_1_base_component.html#a1719b34576b8ceb271cdb04611ed4523">gui_framework::BaseComponent</a>
 </li>
-<li>getIds()
-: <a class="el" href="classgui__framework_1_1_g_u_i_framework.html#a3a04381522f61f399162331fbca8e532">gui_framework::GUIFramework</a>
+<li>getImage()
+: <a class="el" href="classgui__framework_1_1utility_1_1_images_holder.html#aaabe1b1a593bc630f0a2d677897b1aff">gui_framework::utility::ImagesHolder</a>
 </li>
 <li>getImageIndex()
 : <a class="el" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#add52b32c99125bba86c7af3cf6adfbc8">gui_framework::utility::BaseLoadableHolder</a>
@@ -251,7 +260,7 @@ $(document).ready(function(){initNavTree('functions_g.html',''); initResizable()
 : <a class="el" href="classgui__framework_1_1exceptions_1_1_get_last_error_exception.html#a65c57a8416cc4dde082a32f4d9878954">gui_framework::exceptions::GetLastErrorException</a>
 </li>
 <li>getMainMenu()
-: <a class="el" href="classgui__framework_1_1_base_component.html#afe1bf541792773015c7de491f322e49a">gui_framework::BaseComponent</a>
+: <a class="el" href="classgui__framework_1_1_base_composite.html#a29f3b6cabb0fe06c0bd2e9cab8de8ac1">gui_framework::BaseComposite</a>
 </li>
 <li>getMaxRange()
 : <a class="el" href="classgui__framework_1_1_base_progress_bar.html#a073ad4c05159e2012a77cf8e4fd96a5a">gui_framework::BaseProgressBar</a>
@@ -260,6 +269,15 @@ $(document).ready(function(){initNavTree('functions_g.html',''); initResizable()
 <li>getMinRange()
 : <a class="el" href="classgui__framework_1_1_base_progress_bar.html#a3f75c9db24d7729dc21a7f7f269832a0">gui_framework::BaseProgressBar</a>
 , <a class="el" href="classgui__framework_1_1_base_trackbar_control.html#a16c9f1a6690c50dab270ce60da00d5a6">gui_framework::BaseTrackbarControl</a>
+</li>
+<li>getModuleName()
+: <a class="el" href="classgui__framework_1_1_base_button.html#a99decc2306969d5daea6467e87e81394">gui_framework::BaseButton</a>
+</li>
+<li>getModules()
+: <a class="el" href="classgui__framework_1_1_g_u_i_framework.html#a6e59c92739b588f7ef87ec77247ed35b">gui_framework::GUIFramework</a>
+</li>
+<li>getModulesPaths()
+: <a class="el" href="classgui__framework_1_1_g_u_i_framework.html#a069c0332eb3869de86e90557a8af9d88">gui_framework::GUIFramework</a>
 </li>
 <li>getName()
 : <a class="el" href="classgui__framework_1_1_menu.html#a3d20a6a3f347b9428af100ff0fe4ff4a">gui_framework::Menu</a>
@@ -280,7 +298,7 @@ $(document).ready(function(){initNavTree('functions_g.html',''); initResizable()
 : <a class="el" href="classgui__framework_1_1_base_edit_control.html#ae9dc5bc94030c43180afbbe668daab06">gui_framework::BaseEditControl</a>
 </li>
 <li>getPopupMenus()
-: <a class="el" href="classgui__framework_1_1_base_component.html#aacdd618a74527d288a8035088fe87b81">gui_framework::BaseComponent</a>
+: <a class="el" href="classgui__framework_1_1_base_composite.html#aff93c143210949150b5ce5203e0cc418">gui_framework::BaseComposite</a>
 </li>
 <li>getPosition()
 : <a class="el" href="classgui__framework_1_1_base_trackbar_control.html#a7bfda092dfe62e53b3a450e1842f8fa0">gui_framework::BaseTrackbarControl</a>
@@ -290,6 +308,9 @@ $(document).ready(function(){initNavTree('functions_g.html',''); initResizable()
 </li>
 <li>getProgressBarColor()
 : <a class="el" href="classgui__framework_1_1interfaces_1_1_i_progress_bar_color.html#a42195ab67aab295773ca33a640f854ac">gui_framework::interfaces::IProgressBarColor</a>
+</li>
+<li>getRegisteredHotkeys()
+: <a class="el" href="classgui__framework_1_1_g_u_i_framework.html#a66abb8838d34047587854c9f9ef114fc">gui_framework::GUIFramework</a>
 </li>
 <li>getSelectedItems()
 : <a class="el" href="classgui__framework_1_1_base_multiple_select_list_box.html#a2ee258651249ea4cae86e5ccaaff0bf4">gui_framework::BaseMultipleSelectListBox</a>
@@ -307,14 +328,23 @@ $(document).ready(function(){initNavTree('functions_g.html',''); initResizable()
 : <a class="el" href="classgui__framework_1_1_base_trackbar_control.html#a93be63f0e10559473f285fc2edcf194d">gui_framework::BaseTrackbarControl</a>
 </li>
 <li>getStructure()
-: <a class="el" href="classgui__framework_1_1_base_component.html#a874eae6d7db8309155a9946aef01199a">gui_framework::BaseComponent</a>
+: <a class="el" href="classgui__framework_1_1_base_button.html#ab35197f855f37974e25dda6b24314545">gui_framework::BaseButton</a>
+, <a class="el" href="classgui__framework_1_1_base_check_box.html#a8d57c8af5e51b7c687bcf49ff279e0fd">gui_framework::BaseCheckBox</a>
+, <a class="el" href="classgui__framework_1_1_base_combo_box.html#a67b687ab959e0a847952423d3b4eae12">gui_framework::BaseComboBox</a>
+, <a class="el" href="classgui__framework_1_1_base_component.html#a874eae6d7db8309155a9946aef01199a">gui_framework::BaseComponent</a>
 , <a class="el" href="classgui__framework_1_1_base_composite.html#a03f0ef2ce7916eb5e8833831fd24bd1f">gui_framework::BaseComposite</a>
 , <a class="el" href="classgui__framework_1_1_base_edit_control.html#a8c180badbdcd6fa74f2887b5e5ac4121">gui_framework::BaseEditControl</a>
 , <a class="el" href="classgui__framework_1_1_base_infinite_progress_bar.html#aef87a4d4cf2df246e328ed3462949ba7">gui_framework::BaseInfiniteProgressBar</a>
 , <a class="el" href="classgui__framework_1_1_base_list_box.html#a6ae2994ceb712fed4c87028bfc074f24">gui_framework::BaseListBox</a>
 , <a class="el" href="classgui__framework_1_1_base_progress_bar.html#ada7817b13dd8ba5fba8b64ceb5aeb05f">gui_framework::BaseProgressBar</a>
+, <a class="el" href="classgui__framework_1_1_base_rich_edit.html#a5efc3f658002087aee204a5f95a52ada">gui_framework::BaseRichEdit</a>
+, <a class="el" href="classgui__framework_1_1_base_tab_control.html#a0298efc8e7000f84e297967dec4be701">gui_framework::BaseTabControl</a>
 , <a class="el" href="classgui__framework_1_1_base_trackbar_control.html#ab37df18ec2e82bf3582393bad8b65446">gui_framework::BaseTrackbarControl</a>
+, <a class="el" href="classgui__framework_1_1_base_window.html#a601fc7e12ff4afa848514f40b844457c">gui_framework::BaseWindow</a>
+, <a class="el" href="classgui__framework_1_1_drop_down_menu_item.html#a913810b8c18d779a1ac077bf0b601e37">gui_framework::DropDownMenuItem</a>
+, <a class="el" href="classgui__framework_1_1interfaces_1_1_i_menu_item.html#a11725b99f241c64c8767738fcb88c823">gui_framework::interfaces::IMenuItem</a>
 , <a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#abd8e17c9b5087e477f9f035b9138148b">gui_framework::interfaces::ISerializable</a>
+, <a class="el" href="classgui__framework_1_1_menu.html#a6daf4796d2759b96ae7c323e2ec0d8db">gui_framework::Menu</a>
 </li>
 <li>getStyles()
 : <a class="el" href="classgui__framework_1_1interfaces_1_1_i_styles.html#a09fee929287ca83f487c112c1c49f366">gui_framework::interfaces::IStyles</a>

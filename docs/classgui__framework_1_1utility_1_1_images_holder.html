@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.7-beta</span>
+   &#160;<span id="projectnumber">0.7.5-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -101,7 +101,8 @@ Inheritance diagram for gui_framework::utility::ImagesHolder:</div>
  <div class="center">
   <img src="classgui__framework_1_1utility_1_1_images_holder.png" usemap="#gui_5Fframework::utility::ImagesHolder_map" alt=""/>
   <map id="gui_5Fframework::utility::ImagesHolder_map" name="gui_5Fframework::utility::ImagesHolder_map">
-<area href="classgui__framework_1_1utility_1_1_base_loadable_holder.html" title="Base class for all visual asset loaders." alt="gui_framework::utility::BaseLoadableHolder" shape="rect" coords="0,56,701,80"/>
+<area href="classgui__framework_1_1utility_1_1_base_loadable_holder.html" title="Base class for all visual asset loaders." alt="gui_framework::utility::BaseLoadableHolder" shape="rect" coords="355,56,1056,80"/>
+<area href="classgui__framework_1_1interfaces_1_1_i_serializable.html" title="Provides interface for serializable to JSON format." alt="gui_framework::interfaces::ISerializable" shape="rect" coords="711,0,1412,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -109,6 +110,10 @@ Inheritance diagram for gui_framework::utility::ImagesHolder:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a31ef3bab90372776aadb7b9cc3551d49"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1utility_1_1_images_holder.html#a31ef3bab90372776aadb7b9cc3551d49">ImagesHolder</a> (uint16_t <a class="el" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a5883cfaa42d61ff69e1ab7636b234d47">imagesWidth</a>, uint16_t <a class="el" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a0d3318ae974b13fe723162d75d43cb14">imagesHeight</a>, size_t count=<a class="el" href="namespacegui__framework_1_1standard__sizes.html#a018fae1303ab52531f18a98e80fc15e7">standard_sizes::defaultImagesCount</a>)</td></tr>
 <tr class="separator:a31ef3bab90372776aadb7b9cc3551d49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaabe1b1a593bc630f0a2d677897b1aff"><td class="memItemLeft" align="right" valign="top">HBITMAP&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1utility_1_1_images_holder.html#aaabe1b1a593bc630f0a2d677897b1aff">getImage</a> (const std::filesystem::path &amp;pathToImage) const</td></tr>
+<tr class="separator:aaabe1b1a593bc630f0a2d677897b1aff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ed290c091ef1b134551965e44f31e5e"><td class="memItemLeft" align="right" valign="top">HBITMAP&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1utility_1_1_images_holder.html#a3ed290c091ef1b134551965e44f31e5e">getImage</a> (uint16_t imageIndex) const</td></tr>
+<tr class="separator:a3ed290c091ef1b134551965e44f31e5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e21ecede5c11e16e91dcc81c731669b"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1utility_1_1_images_holder.html#a0e21ecede5c11e16e91dcc81c731669b">addImage</a> (const std::filesystem::path &amp;pathToImage) override</td></tr>
 <tr class="separator:a0e21ecede5c11e16e91dcc81c731669b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f5ede9abf061b9fd6503d064e132e4c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1utility_1_1_images_holder.html#a1f5ede9abf061b9fd6503d064e132e4c">~ImagesHolder</a> ()=default</td></tr>
@@ -147,8 +152,19 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:afd9bf42b37fac24224d616617bebf010 inherit pub_methods_classgui__framework_1_1utility_1_1_base_loadable_holder"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a04d5eabd4dcab82fbb7d4e91689dc3 inherit pub_methods_classgui__framework_1_1utility_1_1_base_loadable_holder"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classgui__framework_1_1iterators_1_1loadable__const__forward__iterator.html">iterators::loadable_const_forward_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a0a04d5eabd4dcab82fbb7d4e91689dc3">cend</a> () const noexcept final override</td></tr>
 <tr class="separator:a0a04d5eabd4dcab82fbb7d4e91689dc3 inherit pub_methods_classgui__framework_1_1utility_1_1_base_loadable_holder"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a30217bdce1d6201974497ae8c10126 inherit pub_methods_classgui__framework_1_1utility_1_1_base_loadable_holder"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a5a30217bdce1d6201974497ae8c10126">loadBaseLoadableHolderStructure</a> (json::utility::objectSmartPointer&lt; json::utility::jsonObject &gt; &amp;current) const final</td></tr>
+<tr class="separator:a5a30217bdce1d6201974497ae8c10126 inherit pub_methods_classgui__framework_1_1utility_1_1_base_loadable_holder"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a91a985361b1940f3c9837dc4ce8ca4 inherit pub_methods_classgui__framework_1_1utility_1_1_base_loadable_holder"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a1a91a985361b1940f3c9837dc4ce8ca4">~BaseLoadableHolder</a> ()</td></tr>
 <tr class="separator:a1a91a985361b1940f3c9837dc4ce8ca4 inherit pub_methods_classgui__framework_1_1utility_1_1_base_loadable_holder"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html">gui_framework::interfaces::ISerializable</a></td></tr>
+<tr class="memitem:a87182b138b089b88b869a22876076b1d inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#a87182b138b089b88b869a22876076b1d">ISerializable</a> ()</td></tr>
+<tr class="separator:a87182b138b089b88b869a22876076b1d inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b10a13a7dcad84dd2a7e6e885b45672 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#a2b10a13a7dcad84dd2a7e6e885b45672">setCodepage</a> (uint32_t codepage) final</td></tr>
+<tr class="separator:a2b10a13a7dcad84dd2a7e6e885b45672 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe1577de1770a62d3dcc6161c3475c7a inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#afe1577de1770a62d3dcc6161c3475c7a">getCodepage</a> () const final</td></tr>
+<tr class="separator:afe1577de1770a62d3dcc6161c3475c7a inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8feceb56504671870fc49a814a212516 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#a8feceb56504671870fc49a814a212516">~ISerializable</a> ()=default</td></tr>
+<tr class="separator:a8feceb56504671870fc49a814a212516 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -162,6 +178,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a1fdd3caeb20986a8cffa5d0549be853f inherit pro_methods_classgui__framework_1_1utility_1_1_base_loadable_holder"><td class="memItemLeft" align="right" valign="top">virtual uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a1fdd3caeb20986a8cffa5d0549be853f">insertImage</a> (const std::filesystem::path &amp;pathToImage, <a class="el" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a4a51f316eaed8d199b7faa998ca407bf">imageType</a> type) final</td></tr>
 <tr class="separator:a1fdd3caeb20986a8cffa5d0549be853f inherit pro_methods_classgui__framework_1_1utility_1_1_base_loadable_holder"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classgui__framework_1_1utility_1_1_base_loadable_holder"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classgui__framework_1_1utility_1_1_base_loadable_holder')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html">gui_framework::utility::BaseLoadableHolder</a></td></tr>
+<tr class="memitem:a7bba67968ff183d8ad7049ff4d4e0059 inherit pro_attribs_classgui__framework_1_1utility_1_1_base_loadable_holder"><td class="memItemLeft" align="right" valign="top">HIMAGELIST&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a7bba67968ff183d8ad7049ff4d4e0059">imageList</a></td></tr>
+<tr class="separator:a7bba67968ff183d8ad7049ff4d4e0059 inherit pro_attribs_classgui__framework_1_1utility_1_1_base_loadable_holder"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67b958272c2f2dd865362a15cf97a692 inherit pro_attribs_classgui__framework_1_1utility_1_1_base_loadable_holder"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::wstring, <a class="el" href="structgui__framework_1_1utility_1_1_base_loadable_holder_1_1image_data.html">imageData</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a67b958272c2f2dd865362a15cf97a692">images</a></td></tr>
+<tr class="separator:a67b958272c2f2dd865362a15cf97a692 inherit pro_attribs_classgui__framework_1_1utility_1_1_base_loadable_holder"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5883cfaa42d61ff69e1ab7636b234d47 inherit pro_attribs_classgui__framework_1_1utility_1_1_base_loadable_holder"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a5883cfaa42d61ff69e1ab7636b234d47">imagesWidth</a></td></tr>
 <tr class="separator:a5883cfaa42d61ff69e1ab7636b234d47 inherit pro_attribs_classgui__framework_1_1utility_1_1_base_loadable_holder"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d3318ae974b13fe723162d75d43cb14 inherit pro_attribs_classgui__framework_1_1utility_1_1_base_loadable_holder"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a0d3318ae974b13fe723162d75d43cb14">imagesHeight</a></td></tr>
@@ -267,7 +287,73 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#aad589068e58b9e88ee8bc9dea8d6bb0e">gui_framework::utility::BaseLoadableHolder</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_images_holder_8cpp_source.html#l00021">21</a> of file <a class="el" href="_images_holder_8cpp_source.html">ImagesHolder.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_images_holder_8cpp_source.html#l00046">46</a> of file <a class="el" href="_images_holder_8cpp_source.html">ImagesHolder.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aaabe1b1a593bc630f0a2d677897b1aff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaabe1b1a593bc630f0a2d677897b1aff">&#9670;&nbsp;</a></span>getImage() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HBITMAP gui_framework::utility::ImagesHolder::getImage </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>pathToImage</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pathToIcon</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::out_of_range</td><td><br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3ed290c091ef1b134551965e44f31e5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ed290c091ef1b134551965e44f31e5e">&#9670;&nbsp;</a></span>getImage() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HBITMAP gui_framework::utility::ImagesHolder::getImage </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>imageIndex</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">iconIndex</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::out_of_range</td><td><br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_images_holder_8cpp_source.html#l00026">26</a> of file <a class="el" href="_images_holder_8cpp_source.html">ImagesHolder.cpp</a>.</p>
 
 </div>
 </div>

@@ -3,6 +3,8 @@
 
 #include "Styles/Components/Buttons/CheckBoxStyles.h"
 
+#include "Exceptions/CantFindFunctionFromModuleException.h"
+
 using namespace std;
 
 namespace gui_framework
@@ -61,11 +63,53 @@ namespace gui_framework
 	void BaseCheckBox::setOnCheck(const function<void()>& onCheck)
 	{
 		this->onCheck = onCheck;
+
+		onCheckFunctionName.clear();
+		onCheckModuleName.clear();
+	}
+
+	void BaseCheckBox::setOnCheck(const string& functionName, const string& moduleName)
+	{
+		GUIFramework& instance = GUIFramework::get();
+		const HMODULE& module = instance.getModules().at(moduleName);
+
+		onClickSignature tem = reinterpret_cast<onClickSignature>(GetProcAddress(module, functionName.data()));
+
+		if (!tem)
+		{
+			throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName);
+		}
+
+		onCheck = tem;
+
+		this->onCheckFunctionName = functionName;
+		this->onCheckModuleName = moduleName;
 	}
 
 	void BaseCheckBox::setOnClear(const function<void()>& onClear)
 	{
 		this->onClear = onClear;
+
+		onClearFunctionName.clear();
+		onClearModuleName.clear();
+	}
+
+	void BaseCheckBox::setOnClear(const string& functionName, const string& moduleName)
+	{
+		GUIFramework& instance = GUIFramework::get();
+		const HMODULE& module = instance.getModules().at(moduleName);
+
+		onClickSignature tem = reinterpret_cast<onClickSignature>(GetProcAddress(module, functionName.data()));
+
+		if (!tem)
+		{
+			throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName);
+		}
+
+		onClear = tem;
+
+		this->onClearFunctionName = functionName;
+		this->onClearModuleName = moduleName;
 	}
 
 	const function<void()>& BaseCheckBox::getOnCheck() const
@@ -76,5 +120,36 @@ namespace gui_framework
 	const function<void()>& BaseCheckBox::getOnClear() const
 	{
 		return onClear;
+	}
+
+	json::JSONBuilder BaseCheckBox::getStructure() const
+	{
+		using json::utility::jsonObject;
+		using json::utility::objectSmartPointer;
+
+		if (onCheckFunctionName.empty() && onClearFunctionName.empty())
+		{
+			return BaseButton::getStructure();
+		}
+
+		json::JSONBuilder builder = BaseButton::getStructure();
+		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
+		const auto& modulesPaths = GUIFramework::get().getModulesPaths();
+
+		if (onCheckFunctionName.size())
+		{
+			current->data.push_back({ "checkFunctionName"s, onCheckFunctionName });
+
+			current->data.push_back({ "checkModuleName"s, modulesPaths.at(onCheckModuleName) });
+		}
+
+		if (onClearFunctionName.size())
+		{
+			current->data.push_back({ "clearFunctionName"s, onClearFunctionName });
+
+			current->data.push_back({ "clearModuleName"s, modulesPaths.at(onClearModuleName) });
+		}
+
+		return builder;
 	}
 }

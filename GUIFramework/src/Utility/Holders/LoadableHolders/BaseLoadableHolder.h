@@ -2,6 +2,7 @@
 
 #include "pch.h"
 #include "Interfaces/Iterators/IIterable.h"
+#include "Interfaces/Utility/ISerializable.h"
 #include "Iterators/loadable_forward_iterator.h"
 #include "Iterators/loadable_const_forward_iterator.h"
 
@@ -17,7 +18,8 @@ namespace gui_framework
 
 		/// @brief Base class for all visual asset loaders
 		class GUI_FRAMEWORK_API BaseLoadableHolder :
-			public interfaces::IIterable<std::filesystem::path, iterators::loadable_forward_iterator, iterators::loadable_const_forward_iterator>
+			public interfaces::IIterable<std::filesystem::path, iterators::loadable_forward_iterator, iterators::loadable_const_forward_iterator>,
+			public interfaces::ISerializable
 		{
 		public:
 			enum class imageType : uint32_t
@@ -27,30 +29,32 @@ namespace gui_framework
 				cursor
 			};
 
-		private:
+		protected:
 			struct imageData
 			{
 				uint16_t index;
 				imageType type;
+				std::any data;
 
-				imageData(uint16_t index, imageType type);
+				imageData(uint16_t index, imageType type, std::any&& data);
 
-				imageData(const imageData& other) = default;
+				imageData(const imageData& other) = delete;
 
-				imageData(imageData&& other) noexcept = default;
+				imageData(imageData&& other) noexcept;
 
-				imageData& operator = (const imageData& other) = default;
+				imageData& operator = (const imageData& other) = delete;
 
-				imageData& operator = (imageData&& other) noexcept = default;
+				imageData& operator = (imageData&& other) noexcept;
 
-				~imageData() = default;
+				~imageData();
 			};
 
 		private:
-			HIMAGELIST imageList;
-			std::unordered_map<std::wstring, imageData> images;
+			virtual json::JSONBuilder getStructure() const final override;
 
 		protected:
+			HIMAGELIST imageList;
+			std::unordered_map<std::wstring, imageData> images;
 			uint16_t imagesWidth;
 			uint16_t imagesHeight;
 
@@ -108,6 +112,8 @@ namespace gui_framework
 			virtual iterators::loadable_forward_iterator end() noexcept final override;
 
 			virtual iterators::loadable_const_forward_iterator cend() const noexcept final override;
+
+			virtual void loadBaseLoadableHolderStructure(json::utility::objectSmartPointer<json::utility::jsonObject>& current) const final;
 
 			virtual ~BaseLoadableHolder();
 		};

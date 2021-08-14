@@ -13,8 +13,9 @@ namespace gui_framework
 		public interfaces::ITextOperations
 	{
 	protected:
-		// TODO: serialize onClick
 		std::function<void()> onClick;
+		std::string functionName;
+		std::string moduleName;
 
 	protected:
 		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
@@ -22,9 +23,31 @@ namespace gui_framework
 	public:
 		BaseButton(const std::wstring& buttonName, const std::wstring& buttonText, const utility::ComponentSettings& settings, const styles::ButtonStyles& styles, BaseComponent* parent, const std::function<void()>& onClick = nullptr);
 
+		/// @brief 
+		/// @exception CantFindFunctionFromModuleException 
+		/// @exception std::out_of_range Can't find moduleName in loaded modules
+		BaseButton(const std::wstring& buttonName, const std::wstring& buttonText, const utility::ComponentSettings& settings, const styles::ButtonStyles& styles, BaseComponent* parent, const std::string& functionName, const std::string& moduleName);
+
+		/// @brief Can't serialize
+		/// @param onClick 
 		virtual void setOnClick(const std::function<void()>& onClick) final;
 
+		/// @brief Load function from module. Can be seriazlied
+		/// @param functionName 
+		/// @param moduleName 
+		/// @exception CantFindFunctionFromModuleException 
+		/// @exception std::out_of_range Can't find moduleName in loaded modules
+		virtual void setOnClick(const std::string& functionName, const std::string& moduleName);
+
 		virtual const std::function<void()>& getOnClick() const final;
+
+		/// @brief Get onClick function name from loaded module
+		/// @return functionName
+		virtual const std::string& getFunctionName() const final;
+
+		/// @brief Get onClick function associated module name
+		/// @return moduleName 
+		virtual const std::string& getModuleName() const final;
 
 		/// @brief Not implemented
 		/// @param red 
@@ -32,6 +55,8 @@ namespace gui_framework
 		/// @param blue 
 		/// @exception NotImplemented Text color does not affects at button
 		virtual void setTextColor(uint8_t red, uint8_t green, uint8_t blue) final override;
+
+		virtual json::JSONBuilder getStructure() const override;
 
 		~BaseButton() = default;
 	};

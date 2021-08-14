@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.7-beta</span>
+   &#160;<span id="projectnumber">0.7.5-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -107,9 +107,9 @@ Namespaces</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacegui__framework_1_1iterators"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1iterators.html">iterators</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespacegui__framework_1_1libraries"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1libraries.html">libraries</a></td></tr>
+<tr class="memitem:namespacegui__framework_1_1json__settings"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1json__settings.html">json_settings</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespacegui__framework_1_1settings"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1settings.html">settings</a></td></tr>
+<tr class="memitem:namespacegui__framework_1_1libraries"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1libraries.html">libraries</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacegui__framework_1_1standard__classes"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1standard__classes.html">standard_classes</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -298,17 +298,44 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:a324f0f932298033cc393d93ec69d544a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework.html#a324f0f932298033cc393d93ec69d544a">comboBoxCallbackSignature</a> = void(*)(<a class="el" href="classgui__framework_1_1_base_combo_box.html">BaseComboBox</a> &amp;)</td></tr>
+<tr class="memdesc:a324f0f932298033cc393d93ec69d544a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used in notification events in combo box.  <a href="namespacegui__framework.html#a324f0f932298033cc393d93ec69d544a">More...</a><br /></td></tr>
+<tr class="separator:a324f0f932298033cc393d93ec69d544a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae93e197b03ab535325f85dbd87c4cf7c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework.html#ae93e197b03ab535325f85dbd87c4cf7c">richEditCallbackSignature</a> = void(*)(const std::wstring &amp;)</td></tr>
+<tr class="memdesc:ae93e197b03ab535325f85dbd87c4cf7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used in rich edit auto url detect events.  <a href="namespacegui__framework.html#ae93e197b03ab535325f85dbd87c4cf7c">More...</a><br /></td></tr>
+<tr class="separator:ae93e197b03ab535325f85dbd87c4cf7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3e66f06336365b0dc8c0dac9f239f63"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework.html#ae3e66f06336365b0dc8c0dac9f239f63">tabData</a> = <a class="el" href="structgui__framework_1_1_base_tab_control_1_1tab_data.html">BaseTabControl::tabData</a></td></tr>
 <tr class="separator:ae3e66f06336365b0dc8c0dac9f239f63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af525ce6f1696446fe552abd946818aee"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework.html#af525ce6f1696446fe552abd946818aee">DialogBoxBuilder</a> = <a class="el" href="classgui__framework_1_1_dialog_box_1_1_dialog_box_builder.html">DialogBox::DialogBoxBuilder</a></td></tr>
 <tr class="separator:af525ce6f1696446fe552abd946818aee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c2c0a8327422f8318f9c225fa2bf27d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework.html#a5c2c0a8327422f8318f9c225fa2bf27d">onClickSignature</a> = void(*)()</td></tr>
+<tr class="memdesc:a5c2c0a8327422f8318f9c225fa2bf27d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default on click signature.  <a href="namespacegui__framework.html#a5c2c0a8327422f8318f9c225fa2bf27d">More...</a><br /></td></tr>
+<tr class="separator:a5c2c0a8327422f8318f9c225fa2bf27d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a5e94c5c423c72dd9f763bafce9ba4672"><td class="memItemLeft" align="right" valign="top">constexpr std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework.html#a5e94c5c423c72dd9f763bafce9ba4672">guiFrameworkVersion</a> = &quot;0.7-beta&quot;</td></tr>
+<tr class="memitem:a5e94c5c423c72dd9f763bafce9ba4672"><td class="memItemLeft" align="right" valign="top">constexpr std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework.html#a5e94c5c423c72dd9f763bafce9ba4672">guiFrameworkVersion</a> = &quot;0.7.5-beta&quot;</td></tr>
 <tr class="separator:a5e94c5c423c72dd9f763bafce9ba4672"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
+<a id="a324f0f932298033cc393d93ec69d544a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a324f0f932298033cc393d93ec69d544a">&#9670;&nbsp;</a></span>comboBoxCallbackSignature</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacegui__framework.html#a324f0f932298033cc393d93ec69d544a">gui_framework::comboBoxCallbackSignature</a> = typedef void(*)(<a class="el" href="classgui__framework_1_1_base_combo_box.html">BaseComboBox</a>&amp;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Used in notification events in combo box. </p>
+
+<p class="definition">Definition at line <a class="el" href="_base_combo_box_8h_source.html#l00162">162</a> of file <a class="el" href="_base_combo_box_8h_source.html">BaseComboBox.h</a>.</p>
+
+</div>
+</div>
 <a id="af525ce6f1696446fe552abd946818aee"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af525ce6f1696446fe552abd946818aee">&#9670;&nbsp;</a></span>DialogBoxBuilder</h2>
 
@@ -325,6 +352,42 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a5c2c0a8327422f8318f9c225fa2bf27d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c2c0a8327422f8318f9c225fa2bf27d">&#9670;&nbsp;</a></span>onClickSignature</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacegui__framework.html#a5c2c0a8327422f8318f9c225fa2bf27d">gui_framework::onClickSignature</a> = typedef void(*)()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Default on click signature. </p>
+
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00096">96</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
+
+</div>
+</div>
+<a id="ae93e197b03ab535325f85dbd87c4cf7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae93e197b03ab535325f85dbd87c4cf7c">&#9670;&nbsp;</a></span>richEditCallbackSignature</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacegui__framework.html#ae93e197b03ab535325f85dbd87c4cf7c">gui_framework::richEditCallbackSignature</a> = typedef void(*)(const std::wstring&amp;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Used in rich edit auto url detect events. </p>
+
+<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8h_source.html#l00069">69</a> of file <a class="el" href="_base_rich_edit_8h_source.html">BaseRichEdit.h</a>.</p>
+
+</div>
+</div>
 <a id="ae3e66f06336365b0dc8c0dac9f239f63"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae3e66f06336365b0dc8c0dac9f239f63">&#9670;&nbsp;</a></span>tabData</h2>
 
@@ -337,7 +400,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_tab_control_8cpp_source.html#l00014">14</a> of file <a class="el" href="_base_tab_control_8cpp_source.html">BaseTabControl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_tab_control_8cpp_source.html#l00016">16</a> of file <a class="el" href="_base_tab_control_8cpp_source.html">BaseTabControl.cpp</a>.</p>
 
 </div>
 </div>
@@ -352,7 +415,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr std::string_view gui_framework::guiFrameworkVersion = &quot;0.7-beta&quot;</td>
+          <td class="memname">constexpr std::string_view gui_framework::guiFrameworkVersion = &quot;0.7.5-beta&quot;</td>
         </tr>
       </table>
   </td>
@@ -362,7 +425,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00087">87</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00093">93</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
 
 </div>
 </div>

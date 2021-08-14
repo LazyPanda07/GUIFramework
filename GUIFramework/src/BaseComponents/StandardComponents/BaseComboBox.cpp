@@ -3,6 +3,7 @@
 
 #include "Exceptions/SelectListException.h"
 #include "Exceptions/NotImplemented.h"
+#include "Exceptions/CantFindFunctionFromModuleException.h"
 
 #pragma warning(disable: 4018)
 #pragma warning(disable: 4267)
@@ -14,6 +15,32 @@ using namespace std;
 
 namespace gui_framework
 {
+	LRESULT BaseComboBox::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
+	{
+		if (message == WM_COMMAND && id == LOWORD(wparam))
+		{
+			switch (HIWORD(wparam))
+			{
+			case CBN_SELCHANGE:
+				if (onSelectionChange)
+				{
+					isUsed = true;
+
+					onSelectionChange(*this);
+				}
+
+				return 0;
+
+			default:
+				break;
+			}
+		}
+
+		isUsed = false;
+
+		return -1;
+	}
+
 	BaseComboBox::BaseComboBox(const wstring& comboBoxName, const utility::ComponentSettings& settings, const styles::ComboBoxStyles& styles, BaseComponent* parent) :
 		BaseComponent
 		(
@@ -211,6 +238,32 @@ namespace gui_framework
 		return result;
 	}
 
+	void BaseComboBox::setOnSelectionChange(const function<void(BaseComboBox&)>& onSelectionChange)
+	{
+		this->onSelectionChange = onSelectionChange;
+
+		functionName.clear();
+		moduleName.clear();
+	}
+
+	void BaseComboBox::setOnSelectionChange(const string& functionName, const string& moduleName)
+	{
+		GUIFramework& instance = GUIFramework::get();
+		const HMODULE& module = instance.getModules().at(moduleName);
+
+		comboBoxCallbackSignature tem = reinterpret_cast<comboBoxCallbackSignature>(GetProcAddress(module, functionName.data()));
+
+		if (!tem)
+		{
+			throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName);
+		}
+
+		onSelectionChange = tem;
+
+		this->functionName = functionName;
+		this->moduleName = moduleName;
+	}
+
 	LRESULT BaseComboBox::getItemHeight(itemHeightEnum value) const
 	{
 		LRESULT result = SendMessageW(handle, CB_GETITEMHEIGHT, static_cast<WPARAM>(value), NULL);
@@ -246,16 +299,6 @@ namespace gui_framework
 			if (currentSize == CB_ERR || !currentSize)
 			{
 				return;
-			}
-
-			if (requiredSize.cx == desiredWidth)
-			{
-				requiredSize.cx = 0;
-			}
-			
-			if (requiredSize.cy = desiredHeight)
-			{
-				requiredSize.cy = 0;
 			}
 
 			for (size_t i = 0; i < currentSize; i++)
@@ -303,6 +346,28 @@ namespace gui_framework
 	void BaseComboBox::setTextColor(uint8_t red, uint8_t green, uint8_t blue)
 	{
 		throw exceptions::NotImplemented(__FUNCTION__, "BaseComboBox");
+	}
+
+	json::JSONBuilder BaseComboBox::getStructure() const
+	{
+		using json::utility::jsonObject;
+		using json::utility::objectSmartPointer;
+
+		if (functionName.empty())
+		{
+			return BaseComponent::getStructure();
+		}
+
+		json::JSONBuilder builder = BaseComponent::getStructure();
+		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
+
+		current->data.push_back({ "functionName"s, functionName });
+
+		current->data.push_back({ "moduleName"s, moduleName });
+
+		current->data.push_back({ "pathToModule"s, GUIFramework::get().getModulesPaths().at(moduleName) });
+
+		return builder;
 	}
 }
 

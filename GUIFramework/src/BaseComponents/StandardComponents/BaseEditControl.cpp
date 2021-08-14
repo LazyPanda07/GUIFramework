@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "BaseEditControl.h"
 
-#include "Styles/DefaultStyles.h"
+#include "Styles/Components/EditControlStyles.h"
 #include "Exceptions/GetLastErrorException.h"
 
 using namespace std;
@@ -21,13 +21,13 @@ namespace gui_framework
 		return builder;
 	}
 
-	BaseEditControl::BaseEditControl(const std::wstring& editControlName, const utility::ComponentSettings& settings, BaseComponent* parent) :
+	BaseEditControl::BaseEditControl(const std::wstring& editControlName, const utility::ComponentSettings& settings, BaseComponent* parent, bool isMultiLine) :
 		BaseComponent
 		(
 			wstring(standard_classes::editControl),
 			editControlName,
 			settings,
-			styles::DefaultStyles(),
+			styles::EditControlStyles(isMultiLine),
 			parent
 		),
 		ITextOperations(handle)

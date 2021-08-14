@@ -1,10 +1,11 @@
 var searchData=
 [
-  ['no_618',['no',['../classgui__framework_1_1_base_dialog_box.html#a66c5cb34004ac273196f855bf18afbfaa7fa3b767c460b54a2be4d49030b349c7',1,'gui_framework::BaseDialogBox']]],
-  ['notenoughspace_619',['notEnoughSpace',['../namespacegui__framework_1_1exception__messages.html#ae6c9818db47860199d4328499127075f',1,'gui_framework::exception_messages']]],
-  ['noticks_620',['noTicks',['../classgui__framework_1_1utility_1_1_additional_creation_data_3_01_horizontal_trackbar_control_01_4.html#a7e6a39dc7ea70a703ef3e937017c1ec7',1,'gui_framework::utility::AdditionalCreationData&lt; HorizontalTrackbarControl &gt;::noTicks()'],['../classgui__framework_1_1utility_1_1_additional_creation_data_3_01_vertical_trackbar_control_01_4.html#acaf8f2dcfbd9d2aafc87f3b6fb3cfc23',1,'gui_framework::utility::AdditionalCreationData&lt; VerticalTrackbarControl &gt;::noTicks()']]],
-  ['notimplemented_621',['NotImplemented',['../classgui__framework_1_1exceptions_1_1_not_implemented.html',1,'gui_framework::exceptions::NotImplemented'],['../classgui__framework_1_1exceptions_1_1_not_implemented.html#abb7174a5714ac274e3ad3b26be92b2a3',1,'gui_framework::exceptions::NotImplemented::NotImplemented()']]],
-  ['notimplemented_622',['notImplemented',['../namespacegui__framework_1_1exception__messages.html#a27f65a8349ec94b67215c61d207a7684',1,'gui_framework::exception_messages']]],
-  ['notimplemented_2ecpp_623',['NotImplemented.cpp',['../_not_implemented_8cpp.html',1,'']]],
-  ['notimplemented_2eh_624',['NotImplemented.h',['../_not_implemented_8h.html',1,'']]]
+  ['no_655',['no',['../classgui__framework_1_1_base_dialog_box.html#a66c5cb34004ac273196f855bf18afbfaa7fa3b767c460b54a2be4d49030b349c7',1,'gui_framework::BaseDialogBox']]],
+  ['norepeat_656',['noRepeat',['../structgui__framework_1_1_g_u_i_framework_1_1hotkey_data.html#adaf3d5a196bf7513cd9acb6bda30e907',1,'gui_framework::GUIFramework::hotkeyData']]],
+  ['notenoughspace_657',['notEnoughSpace',['../namespacegui__framework_1_1exception__messages.html#ae6c9818db47860199d4328499127075f',1,'gui_framework::exception_messages']]],
+  ['noticks_658',['noTicks',['../classgui__framework_1_1utility_1_1_additional_creation_data_3_01_horizontal_trackbar_control_01_4.html#a7e6a39dc7ea70a703ef3e937017c1ec7',1,'gui_framework::utility::AdditionalCreationData&lt; HorizontalTrackbarControl &gt;::noTicks()'],['../classgui__framework_1_1utility_1_1_additional_creation_data_3_01_vertical_trackbar_control_01_4.html#acaf8f2dcfbd9d2aafc87f3b6fb3cfc23',1,'gui_framework::utility::AdditionalCreationData&lt; VerticalTrackbarControl &gt;::noTicks()']]],
+  ['notimplemented_659',['NotImplemented',['../classgui__framework_1_1exceptions_1_1_not_implemented.html',1,'gui_framework::exceptions::NotImplemented'],['../classgui__framework_1_1exceptions_1_1_not_implemented.html#abb7174a5714ac274e3ad3b26be92b2a3',1,'gui_framework::exceptions::NotImplemented::NotImplemented()']]],
+  ['notimplemented_660',['notImplemented',['../namespacegui__framework_1_1exception__messages.html#a27f65a8349ec94b67215c61d207a7684',1,'gui_framework::exception_messages']]],
+  ['notimplemented_2ecpp_661',['NotImplemented.cpp',['../_not_implemented_8cpp.html',1,'']]],
+  ['notimplemented_2eh_662',['NotImplemented.h',['../_not_implemented_8h.html',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dialogboxbuilder_2087',['DialogBoxBuilder',['../namespacegui__framework.html#af525ce6f1696446fe552abd946818aee',1,'gui_framework']]]
+  ['comboboxcallbacksignature_2206',['comboBoxCallbackSignature',['../namespacegui__framework.html#a324f0f932298033cc393d93ec69d544a',1,'gui_framework']]]
 ];

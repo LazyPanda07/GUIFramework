@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['smartpointertype_2088',['smartPointerType',['../_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67',1,'GUIFrameworkConstants.h']]]
+  ['dialogboxbuilder_2207',['DialogBoxBuilder',['../namespacegui__framework.html#af525ce6f1696446fe552abd946818aee',1,'gui_framework']]]
 ];

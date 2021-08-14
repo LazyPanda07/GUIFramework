@@ -18,11 +18,10 @@ namespace gui_framework
 		virtual json::JSONBuilder getStructure() const override;
 
 	public:
-		BaseEditControl(const std::wstring& editControlName, const utility::ComponentSettings& settings, BaseComponent* parent);
+		BaseEditControl(const std::wstring& editControlName, const utility::ComponentSettings& settings, BaseComponent* parent, bool isMultiLine = false);
 
 		/// @brief Set placeholder to single line edit control
 		/// @param placeholder 
-		/// @return 
 		virtual bool setPlaceholder(const std::wstring& placeholder) final;
 
 		virtual const std::wstring& getPlaceholder() const final;

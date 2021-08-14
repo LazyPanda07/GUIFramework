@@ -14,6 +14,12 @@ namespace gui_framework
 	{
 	protected:
 		SIZE requiredSize;
+		std::function<void(BaseComboBox&)> onSelectionChange;
+		std::string functionName;
+		std::string moduleName;
+
+	protected:
+		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) final override;
 
 	public:
 		enum class itemHeightEnum
@@ -105,6 +111,17 @@ namespace gui_framework
 		/// @exception SelectListException 
 		virtual LRESULT setDroppedWidth(uint16_t width) final;
 
+		/// @brief Set callback function with on selection change event
+		/// @param onSelectionChange callback with reference to current BaseCombobox
+		virtual void setOnSelectionChange(const std::function<void(BaseComboBox&)>& onSelectionChange) final;
+
+		/// @brief Set serializable callback function with on selection change event
+		/// @param functionName Name of function with comboBoxCallbackSignature signature
+		/// @param moduleName 
+		/// @exception CantFindFunctionFromModuleException 
+		/// @exception std::out_of_range Can't find moduleName in loaded modules
+		virtual void setOnSelectionChange(const std::string& functionName, const std::string& moduleName) final;
+
 		/// @brief 
 		/// @param value 
 		/// @return 
@@ -136,6 +153,11 @@ namespace gui_framework
 		/// @exception NotImplemented Text color does not affects at combo boxes
 		virtual void setTextColor(uint8_t red, uint8_t green, uint8_t blue) final override;
 
+		virtual json::JSONBuilder getStructure() const override;
+
 		virtual ~BaseComboBox() = default;
 	};
+
+	/// @brief Used in notification events in combo box
+	using comboBoxCallbackSignature = void(*)(BaseComboBox&);
 }

@@ -399,7 +399,7 @@
     <ClInclude Include="src\Composites\AdditionalCreationData\TrackbarControlAdditionalCreationData.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Utility\Paint\DrawImage.h">
+    <ClInclude Include="src\Utility\Paint\Draw.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Interfaces\Components\INonResizableComponent.h">
@@ -490,6 +490,18 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Utility\Holders\LoadableHolders\Iterators\loadable_forward_iterator.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Styles\Components\EditControlStyles.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Styles\Components\StaticControlStyles.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Exceptions\CantLoadModuleException.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Exceptions\CantFindFunctionFromModuleException.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
@@ -854,7 +866,7 @@
     <ClCompile Include="src\Composites\AdditionalCreationData\TrackbarControlAdditionalCreationData.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Utility\Paint\DrawImage.cpp">
+    <ClCompile Include="src\Utility\Paint\Draw.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Interfaces\Components\INonResizableComponent.cpp">
@@ -945,6 +957,18 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Utility\Holders\LoadableHolders\Iterators\loadable_forward_iterator.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Styles\Components\EditControlStyles.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Styles\Components\StaticControlStyles.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Exceptions\CantLoadModuleException.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Exceptions\CantFindFunctionFromModuleException.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

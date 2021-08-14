@@ -18,6 +18,31 @@ namespace gui_framework
 
 		}
 
+		HCURSOR CursorsHolder::getCursor(const filesystem::path& pathToCursor) const
+		{
+			return any_cast<HCURSOR>(images.at(pathToCursor).data);
+		}
+
+		HCURSOR CursorsHolder::getCursor(uint16_t cursorIndex) const
+		{
+			const any* result = nullptr;
+
+			for (const auto& [path, data] : images)
+			{
+				if (data.index == cursorIndex)
+				{
+					result = &data.data;
+				}
+			}
+			
+			if (!result)
+			{
+				throw out_of_range("Wrong index");
+			}
+
+			return any_cast<HCURSOR>(*result);
+		}
+
 		uint16_t CursorsHolder::addImage(const filesystem::path& pathToCursor)
 		{
 			return BaseLoadableHolder::insertImage(pathToCursor, imageType::cursor);

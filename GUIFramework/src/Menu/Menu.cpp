@@ -32,6 +32,7 @@ namespace gui_framework
 	}
 
 	Menu::Menu(Menu&& other) noexcept :
+		name(move(other.name)),
 		handle(other.handle),
 		items(move(other.items)),
 		parent(other.parent)
@@ -42,6 +43,7 @@ namespace gui_framework
 
 	Menu& Menu::operator = (Menu&& other) noexcept
 	{
+		name = move(other.name);
 		handle = other.handle;
 		items = move(other.items);
 		parent = other.parent;
@@ -99,6 +101,40 @@ namespace gui_framework
 	HMENU Menu::getHandle() const
 	{
 		return handle;
+	}
+
+	json::JSONBuilder Menu::getStructure() const
+	{
+		uint32_t codepage = ISerializable::getCodepage();
+		json::JSONBuilder builder(codepage);
+
+		vector<json::utility::objectSmartPointer<json::utility::jsonObject>> children;
+
+		for (const auto& i : items)
+		{
+			json::utility::objectSmartPointer<json::utility::jsonObject> child = json::utility::make_object<json::utility::jsonObject>();
+			json::JSONBuilder structure = i->getStructure();
+
+			const string& itemText = get<string>(structure["itemText"]);
+			const string& itemType = get<string>(structure["itemType"]);
+
+			child->data.push_back({ "itemText"s, itemText });
+			child->data.push_back({ "itemType"s, itemType });
+
+			if (itemType == standard_menu_items::dropDownMenuItem)
+			{
+				child->data.push_back({ "popupId"s, get<uint64_t>(structure["popupId"]) });
+			}
+
+			json::utility::appendArray(move(child), children);
+		}
+
+		builder.
+			append("menuName"s, utility::to_string(name, codepage)).
+			append("menuId"s, reinterpret_cast<uint64_t>(handle)).
+			append("items"s, move(children));
+
+		return builder;
 	}
 
 	Menu::~Menu()
