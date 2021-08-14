@@ -11,7 +11,7 @@ using namespace std;
 
 namespace gui_framework
 {
-	BaseWindow::drawedImages::drawedImages(unique_ptr<utility::BaseLoadableHolder>&& images, utility::BaseLoadableHolder::imageType type) noexcept :
+	BaseWindow::drawedImages::drawedImages(smartPointerType<utility::BaseLoadableHolder>&& images, utility::BaseLoadableHolder::imageType type) noexcept :
 		images(move(images)),
 		type(type)
 	{
@@ -50,16 +50,16 @@ namespace gui_framework
 
 	void BaseWindow::initDrawing(const string& pictureBlockName, uint16_t imagesWidth, uint16_t imagesHeight, utility::BaseLoadableHolder::imageType type)
 	{
-		unique_ptr<utility::BaseLoadableHolder> images;
+		smartPointerType<utility::BaseLoadableHolder> images;
 
 		switch (type)
 		{
 		case utility::BaseLoadableHolder::imageType::bitmap:
-			images = make_unique<utility::ImagesHolder>(imagesWidth, imagesHeight);
+			images = utility::make_smart_pointer<utility::ImagesHolder>(imagesWidth, imagesHeight);
 
 			break;
 		case utility::BaseLoadableHolder::imageType::icon:
-			images = make_unique<utility::IconsHolder>(imagesWidth, imagesHeight);
+			images = utility::make_smart_pointer<utility::IconsHolder>(imagesWidth, imagesHeight);
 
 			break;
 		case utility::BaseLoadableHolder::imageType::cursor:

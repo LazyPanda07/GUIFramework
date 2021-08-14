@@ -620,7 +620,7 @@ namespace gui_framework
 		return result;
 	}
 
-	const unordered_map<size_t, unique_ptr<utility::BaseComponentCreator>>& GUIFramework::getCreators() const
+	const unordered_map<size_t, smartPointerType<utility::BaseComponentCreator>>& GUIFramework::getCreators() const
 	{
 		return creators;
 	}
