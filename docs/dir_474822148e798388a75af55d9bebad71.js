@@ -12,7 +12,8 @@ var dir_474822148e798388a75af55d9bebad71 =
     [ "Utility", "dir_1b8d12f05f344750fc083bc1c78427be.html", "dir_1b8d12f05f344750fc083bc1c78427be" ],
     [ "GUIFramework.cpp", "_g_u_i_framework_8cpp.html", null ],
     [ "GUIFramework.h", "_g_u_i_framework_8h.html", [
-      [ "GUIFramework", "classgui__framework_1_1_g_u_i_framework.html", "classgui__framework_1_1_g_u_i_framework" ]
+      [ "GUIFramework", "classgui__framework_1_1_g_u_i_framework.html", "classgui__framework_1_1_g_u_i_framework" ],
+      [ "hotkeyData", "structgui__framework_1_1_g_u_i_framework_1_1hotkey_data.html", "structgui__framework_1_1_g_u_i_framework_1_1hotkey_data" ]
     ] ],
     [ "GUIFrameworkConstants.h", "_g_u_i_framework_constants_8h.html", "_g_u_i_framework_constants_8h" ],
     [ "pch.cpp", "pch_8cpp.html", null ],

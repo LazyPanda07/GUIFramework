@@ -54,6 +54,7 @@ var hierarchy =
     [ "gui_framework::utility::ComponentSettings", "structgui__framework_1_1utility_1_1_component_settings.html", null ],
     [ "gui_framework::DialogBox::DialogBoxBuilder", "classgui__framework_1_1_dialog_box_1_1_dialog_box_builder.html", null ],
     [ "gui_framework::GUIFramework", "classgui__framework_1_1_g_u_i_framework.html", null ],
+    [ "gui_framework::GUIFramework::hotkeyData", "structgui__framework_1_1_g_u_i_framework_1_1hotkey_data.html", null ],
     [ "gui_framework::interfaces::IBaseConstForwardIterator< T, IBaseConstIteratorSubclass >", "classgui__framework_1_1interfaces_1_1_i_base_const_forward_iterator.html", [
       [ "gui_framework::interfaces::IBaseForwardIterator< BaseComponent, composite_forward_iterator >", "classgui__framework_1_1interfaces_1_1_i_base_forward_iterator.html", [
         [ "gui_framework::iterators::composite_forward_iterator", "classgui__framework_1_1iterators_1_1composite__forward__iterator.html", null ]
@@ -116,6 +117,7 @@ var hierarchy =
         [ "gui_framework::utility::ImagesHolder", "classgui__framework_1_1utility_1_1_images_holder.html", null ]
       ] ]
     ] ],
+    [ "gui_framework::utility::BaseLoadableHolder::imageData", "structgui__framework_1_1utility_1_1_base_loadable_holder_1_1image_data.html", null ],
     [ "gui_framework::interfaces::INonResizableComponent", "classgui__framework_1_1interfaces_1_1_i_non_resizable_component.html", [
       [ "gui_framework::DialogBox", "classgui__framework_1_1_dialog_box.html", null ]
     ] ],
@@ -195,7 +197,8 @@ var hierarchy =
           [ "gui_framework::MenuItem", "classgui__framework_1_1_menu_item.html", null ]
         ] ],
         [ "gui_framework::DropDownMenuItem", "classgui__framework_1_1_drop_down_menu_item.html", null ]
-      ] ]
+      ] ],
+      [ "gui_framework::utility::BaseLoadableHolder", "classgui__framework_1_1utility_1_1_base_loadable_holder.html", null ]
     ] ],
     [ "gui_framework::interfaces::IStyles", "classgui__framework_1_1interfaces_1_1_i_styles.html", [
       [ "gui_framework::styles::DefaultStyles", "classgui__framework_1_1styles_1_1_default_styles.html", [
@@ -243,6 +246,7 @@ var hierarchy =
     [ "std::runtime_error", null, [
       [ "gui_framework::exceptions::BaseGUIFrameworkException", "classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception.html", [
         [ "gui_framework::exceptions::CantFindCompositeFunctionException", "classgui__framework_1_1exceptions_1_1_cant_find_composite_function_exception.html", null ],
+        [ "gui_framework::exceptions::CantFindFunctionFromModuleException", "classgui__framework_1_1exceptions_1_1_cant_find_function_from_module_exception.html", null ],
         [ "gui_framework::exceptions::CantLoadModuleException", "classgui__framework_1_1exceptions_1_1_cant_load_module_exception.html", null ],
         [ "gui_framework::exceptions::FileDoesNotExist", "classgui__framework_1_1exceptions_1_1_file_does_not_exist.html", null ],
         [ "gui_framework::exceptions::GetLastErrorException", "classgui__framework_1_1exceptions_1_1_get_last_error_exception.html", null ],

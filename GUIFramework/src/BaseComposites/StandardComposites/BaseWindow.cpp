@@ -3,30 +3,33 @@
 
 #include "Exceptions/FileDoesNotExist.h"
 
-#include "Utility/Paint/Draw.h"
+#include "Utility/Holders/LoadableHolders/CursorsHolder.h"
+#include "Utility/Holders/LoadableHolders/ImagesHolder.h"
+#include "Utility/Holders/LoadableHolders/IconsHolder.h"
 
 using namespace std;
 
 namespace gui_framework
 {
-	BaseWindow::drawedImages::drawedImages(uint16_t imagesWidth, uint16_t imagesHeight) :
-		images(imagesWidth, imagesHeight)
+	BaseWindow::drawedImages::drawedImages(unique_ptr<utility::BaseLoadableHolder>&& images, utility::BaseLoadableHolder::imageType type) noexcept :
+		images(move(images)),
+		type(type)
 	{
 
 	}
 
 	void BaseWindow::drawedImages::addImage(BaseWindow* owner, int x, int y, const filesystem::path& pathToImage)
 	{
-		uint16_t index = images.addImage(pathToImage);
+		uint16_t index = images->addImage(pathToImage);
 
 		coordinates.insert({ index, {x, y} });
 	}
 
 	void BaseWindow::drawedImages::removeImage(const filesystem::path& pathToImage)
 	{
-		uint16_t index = images.getImageIndex(pathToImage);
+		uint16_t index = images->getImageIndex(pathToImage);
 
-		images.removeImage(index);
+		images->removeImage(index);
 
 		coordinates.erase(index);
 	}
@@ -45,9 +48,29 @@ namespace gui_framework
 
 	}
 
-	void BaseWindow::initDrawing(const string& pictureBlockName, uint16_t imagesWidth, uint16_t imagesHeight)
+	void BaseWindow::initDrawing(const string& pictureBlockName, uint16_t imagesWidth, uint16_t imagesHeight, utility::BaseLoadableHolder::imageType type)
 	{
-		pictures.try_emplace(pictureBlockName, imagesWidth, imagesHeight);
+		unique_ptr<utility::BaseLoadableHolder> images;
+
+		switch (type)
+		{
+		case utility::BaseLoadableHolder::imageType::bitmap:
+			images = make_unique<utility::ImagesHolder>(imagesWidth, imagesHeight);
+
+			break;
+		case utility::BaseLoadableHolder::imageType::icon:
+			images = make_unique<utility::IconsHolder>(imagesWidth, imagesHeight);
+
+			break;
+		case utility::BaseLoadableHolder::imageType::cursor:
+			throw runtime_error("Wrong type value");
+
+			break;
+		default:
+			break;
+		}
+
+		pictures.try_emplace(pictureBlockName, move(images), type);
 	}
 
 	void BaseWindow::addImage(const string& pictureBlockName, int x, int y, const filesystem::path& pathToImage)
@@ -80,16 +103,33 @@ namespace gui_framework
 		PAINTSTRUCT paint = {};
 		HDC deviceContext = BeginPaint(handle, &paint);
 		LPARAM drawData = NULL;
-		uint32_t flags = DSS_NORMAL | DST_BITMAP;
-
+		
 		for (const auto& [picturesBlockName, data] : pictures)
 		{
-			uint16_t width = data.images.getImagesWidth();
-			uint16_t height = data.images.getImagesHeight();
+			uint32_t flags = DSS_NORMAL;
+			uint16_t width = data.images->getImagesWidth();
+			uint16_t height = data.images->getImagesHeight();
 
 			for (const auto& [index, coordinates] : data.coordinates)
 			{
-				drawData = reinterpret_cast<LPARAM>(data.images.getImage(index));
+				switch (data.type)
+				{
+				case utility::BaseLoadableHolder::imageType::bitmap:
+					drawData = reinterpret_cast<LPARAM>(dynamic_cast<utility::ImagesHolder*>(data.images.get())->getImage(index));
+
+					flags |= DST_BITMAP;
+
+					break;
+				case utility::BaseLoadableHolder::imageType::icon:
+					drawData = reinterpret_cast<LPARAM>(dynamic_cast<utility::IconsHolder*>(data.images.get())->getIcon(index));
+
+					flags |= DST_ICON;
+
+					break;
+
+				default:
+					break;
+				}
 
 				DrawStateW(deviceContext, NULL, nullptr, drawData, NULL, coordinates.first, coordinates.second, width, height, flags);
 			}
@@ -125,7 +165,7 @@ namespace gui_framework
 			string imageHolderName = pictureBlockName + "ImageHolder";
 			vector<objectSmartPointer<jsonObject>> jsonCoordinates;
 
-			data.images.loadBaseLoadableHolderStructure(current);
+			data.images->loadBaseLoadableHolderStructure(current);
 
 			auto& lastImageHolder = current->data.back();
 

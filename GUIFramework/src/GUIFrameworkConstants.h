@@ -96,6 +96,7 @@ namespace gui_framework
 	using onClickSignature = void(*)();
 }
 
+/// @brief Insert this macro before serializable function implementation
 #define IMPLEMENT_SERIALIZABLE_FUNCTION extern "C" __declspec(dllexport) 
 
 #ifdef GUI_FRAMEWORK_DLL

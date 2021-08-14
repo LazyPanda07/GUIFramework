@@ -20,7 +20,6 @@ var namespacegui__framework =
     [ "interfaces", "namespacegui__framework_1_1interfaces.html", "namespacegui__framework_1_1interfaces" ],
     [ "iterators", "namespacegui__framework_1_1iterators.html", "namespacegui__framework_1_1iterators" ],
     [ "json_settings", "namespacegui__framework_1_1json__settings.html", [
-      [ "currentModule", "namespacegui__framework_1_1json__settings.html#a606275e3c7c630e53c774a95813e1bd4", null ],
       [ "moduleNameSetting", "namespacegui__framework_1_1json__settings.html#a6dae873e8b91fb97158311efbfb35c70", null ],
       [ "modulesSetting", "namespacegui__framework_1_1json__settings.html#a03400673f6ecd7ac91d97eca3b71c327", null ],
       [ "pathToModuleSettings", "namespacegui__framework_1_1json__settings.html#acb925ed8bd2261fc88aea09e514144a0", null ],
@@ -127,7 +126,10 @@ var namespacegui__framework =
     [ "DropDownMenuItem", "classgui__framework_1_1_drop_down_menu_item.html", "classgui__framework_1_1_drop_down_menu_item" ],
     [ "MenuItem", "classgui__framework_1_1_menu_item.html", "classgui__framework_1_1_menu_item" ],
     [ "WindowHolder", "classgui__framework_1_1_window_holder.html", "classgui__framework_1_1_window_holder" ],
+    [ "comboBoxCallbackSignature", "namespacegui__framework.html#a324f0f932298033cc393d93ec69d544a", null ],
     [ "DialogBoxBuilder", "namespacegui__framework.html#af525ce6f1696446fe552abd946818aee", null ],
+    [ "onClickSignature", "namespacegui__framework.html#a5c2c0a8327422f8318f9c225fa2bf27d", null ],
+    [ "richEditCallbackSignature", "namespacegui__framework.html#ae93e197b03ab535325f85dbd87c4cf7c", null ],
     [ "tabData", "namespacegui__framework.html#ae3e66f06336365b0dc8c0dac9f239f63", null ],
     [ "guiFrameworkVersion", "namespacegui__framework.html#a5e94c5c423c72dd9f763bafce9ba4672", null ]
 ];

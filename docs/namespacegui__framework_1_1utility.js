@@ -1,9 +1,12 @@
 var namespacegui__framework_1_1utility =
 [
     [ "paint", "namespacegui__framework_1_1utility_1_1paint.html", [
-      [ "drawImageByIndex", "namespacegui__framework_1_1utility_1_1paint.html#a931933d1d403270d312dce9702bb5877", null ],
-      [ "drawImageByPath", "namespacegui__framework_1_1utility_1_1paint.html#aaa72ab7a54bd01b37bff27818f6872dc", null ],
-      [ "drawImageByPath", "namespacegui__framework_1_1utility_1_1paint.html#a2dd56702974a9f976b11bc663ed580f2", null ]
+      [ "drawIconByIndex", "namespacegui__framework_1_1utility_1_1paint.html#a07e5a5d85c980728d6d304af73db47e0", null ],
+      [ "drawIconByPath", "namespacegui__framework_1_1utility_1_1paint.html#a79d09f6b4b9cdea22bd65c006ee983e4", null ],
+      [ "drawIconByPath", "namespacegui__framework_1_1utility_1_1paint.html#a6ee07b7922e7c815aef7c4d07f24a868", null ],
+      [ "drawImageByIndex", "namespacegui__framework_1_1utility_1_1paint.html#aebe15d78a6ed0c53c7e675fab2d40ecd", null ],
+      [ "drawImageByPath", "namespacegui__framework_1_1utility_1_1paint.html#a6ffb2d4e95656be075ea722b3f9f476f", null ],
+      [ "drawImageByPath", "namespacegui__framework_1_1utility_1_1paint.html#a405419e8f1563d9ef73932d0ab8149d3", null ]
     ] ],
     [ "BaseComponentCreator", "classgui__framework_1_1utility_1_1_base_component_creator.html", "classgui__framework_1_1utility_1_1_base_component_creator" ],
     [ "ButtonCreator", "classgui__framework_1_1utility_1_1_button_creator.html", "classgui__framework_1_1utility_1_1_button_creator" ],

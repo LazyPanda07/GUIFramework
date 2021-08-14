@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.7.4-beta</span>
+   &#160;<span id="projectnumber">0.7.5-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -84,6 +84,7 @@ $(document).ready(function(){initNavTree('classgui__framework_1_1_g_u_i_framewor
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#friends">Friends</a> &#124;
@@ -98,6 +99,11 @@ $(document).ready(function(){initNavTree('classgui__framework_1_1_g_u_i_framewor
 
 <p><code>#include &lt;<a class="el" href="_g_u_i_framework_8h_source.html">GUIFramework.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgui__framework_1_1_g_u_i_framework_1_1hotkey_data.html">hotkeyData</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aba953f14d707b9d3253f655d95cd54e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_g_u_i_framework.html#aba953f14d707b9d3253f655d95cd54e2">addTask</a> (const std::function&lt; void()&gt; &amp;task, const std::function&lt; void()&gt; &amp;callback=nullptr)</td></tr>
@@ -109,9 +115,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8d1f3666c4e14e21afa61a2f26100ac4"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_g_u_i_framework.html#a8d1f3666c4e14e21afa61a2f26100ac4">registerHotkey</a> (uint32_t hotkey, const std::function&lt; void()&gt; &amp;onClick, const std::vector&lt; <a class="el" href="namespacegui__framework_1_1hotkeys.html#a8c2f6d478b57ff78909ffc4e60136e1f">hotkeys::additionalKey</a> &gt; &amp;additionalKeys={}, bool noRepeat=false)</td></tr>
 <tr class="memdesc:a8d1f3666c4e14e21afa61a2f26100ac4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Only works in thread, that call runMainLoop from <a class="el" href="classgui__framework_1_1_window_holder.html" title="Provides runMainLoop for top level window.">WindowHolder</a>. Thread safe register hotkey.  <a href="classgui__framework_1_1_g_u_i_framework.html#a8d1f3666c4e14e21afa61a2f26100ac4">More...</a><br /></td></tr>
 <tr class="separator:a8d1f3666c4e14e21afa61a2f26100ac4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9b0acb5d3967543ae14fdb2069cc997"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_g_u_i_framework.html#ad9b0acb5d3967543ae14fdb2069cc997">registerHotkey</a> (uint32_t hotkey, const std::string &amp;functionName, const std::string &amp;moduleName, const std::vector&lt; <a class="el" href="namespacegui__framework_1_1hotkeys.html#a8c2f6d478b57ff78909ffc4e60136e1f">hotkeys::additionalKey</a> &gt; &amp;additionalKeys={}, bool noRepeat=false)</td></tr>
+<tr class="memdesc:ad9b0acb5d3967543ae14fdb2069cc997"><td class="mdescLeft">&#160;</td><td class="mdescRight">Only works in thread, that call runMainLoop from <a class="el" href="classgui__framework_1_1_window_holder.html" title="Provides runMainLoop for top level window.">WindowHolder</a>. Thread safe register hotkey.  <a href="classgui__framework_1_1_g_u_i_framework.html#ad9b0acb5d3967543ae14fdb2069cc997">More...</a><br /></td></tr>
+<tr class="separator:ad9b0acb5d3967543ae14fdb2069cc997"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb16602f3cfa9d6374d5e04a59974a4f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_g_u_i_framework.html#afb16602f3cfa9d6374d5e04a59974a4f">unregisterHotkey</a> (uint32_t hotkeyId)</td></tr>
 <tr class="memdesc:afb16602f3cfa9d6374d5e04a59974a4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thread safe unregister hotkey.  <a href="classgui__framework_1_1_g_u_i_framework.html#afb16602f3cfa9d6374d5e04a59974a4f">More...</a><br /></td></tr>
 <tr class="separator:afb16602f3cfa9d6374d5e04a59974a4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66abb8838d34047587854c9f9ef114fc"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structgui__framework_1_1_g_u_i_framework_1_1hotkey_data.html">hotkeyData</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_g_u_i_framework.html#a66abb8838d34047587854c9f9ef114fc">getRegisteredHotkeys</a> ()</td></tr>
+<tr class="memdesc:a66abb8838d34047587854c9f9ef114fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thread safe get hotkeys.  <a href="classgui__framework_1_1_g_u_i_framework.html#a66abb8838d34047587854c9f9ef114fc">More...</a><br /></td></tr>
+<tr class="separator:a66abb8838d34047587854c9f9ef114fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09e3810ca0a3fff265409fcbb3da7a28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_g_u_i_framework.html#a09e3810ca0a3fff265409fcbb3da7a28">loadModule</a> (const std::string &amp;moduleName, const std::filesystem::path &amp;pathToModule)</td></tr>
 <tr class="memdesc:a09e3810ca0a3fff265409fcbb3da7a28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load module with some sort of data.  <a href="classgui__framework_1_1_g_u_i_framework.html#a09e3810ca0a3fff265409fcbb3da7a28">More...</a><br /></td></tr>
 <tr class="separator:a09e3810ca0a3fff265409fcbb3da7a28"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -131,12 +143,27 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a74d8f19bb4905f11dc952605fe2d4670"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_g_u_i_framework.html#a74d8f19bb4905f11dc952605fe2d4670">isExist</a> (<a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> *component)</td></tr>
 <tr class="memdesc:a74d8f19bb4905f11dc952605fe2d4670"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if component created. If component destroyed after you call findComponent, you may have not valid pointer.  <a href="classgui__framework_1_1_g_u_i_framework.html#a74d8f19bb4905f11dc952605fe2d4670">More...</a><br /></td></tr>
 <tr class="separator:a74d8f19bb4905f11dc952605fe2d4670"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac531144a5b143dbeba7b753c8133af39"><td class="memItemLeft" align="right" valign="top">std::vector&lt; json::utility::objectSmartPointer&lt; json::utility::jsonObject &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_g_u_i_framework.html#ac531144a5b143dbeba7b753c8133af39">serializeHotkeys</a> ()</td></tr>
+<tr class="memdesc:ac531144a5b143dbeba7b753c8133af39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize hotkeys.  <a href="classgui__framework_1_1_g_u_i_framework.html#ac531144a5b143dbeba7b753c8133af39">More...</a><br /></td></tr>
+<tr class="separator:ac531144a5b143dbeba7b753c8133af39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c8d818b688a1c63d3f5dccb0c28925b"><td class="memItemLeft" align="right" valign="top">const std::unordered_map&lt; size_t, std::unique_ptr&lt; <a class="el" href="classgui__framework_1_1utility_1_1_base_component_creator.html">utility::BaseComponentCreator</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_g_u_i_framework.html#a3c8d818b688a1c63d3f5dccb0c28925b">getCreators</a> () const</td></tr>
 <tr class="memdesc:a3c8d818b688a1c63d3f5dccb0c28925b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all current registered creators.  <a href="classgui__framework_1_1_g_u_i_framework.html#a3c8d818b688a1c63d3f5dccb0c28925b">More...</a><br /></td></tr>
 <tr class="separator:a3c8d818b688a1c63d3f5dccb0c28925b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9035e07c42c7e025f46601a4aee83cdc"><td class="memItemLeft" align="right" valign="top">const json::JSONParser &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_g_u_i_framework.html#a9035e07c42c7e025f46601a4aee83cdc">getJSONSettings</a> () const</td></tr>
 <tr class="memdesc:a9035e07c42c7e025f46601a4aee83cdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get settings from gui_framework.json.  <a href="classgui__framework_1_1_g_u_i_framework.html#a9035e07c42c7e025f46601a4aee83cdc">More...</a><br /></td></tr>
 <tr class="separator:a9035e07c42c7e025f46601a4aee83cdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e59c92739b588f7ef87ec77247ed35b"><td class="memItemLeft" align="right" valign="top">const std::unordered_map&lt; std::string, HMODULE &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_g_u_i_framework.html#a6e59c92739b588f7ef87ec77247ed35b">getModules</a> () const</td></tr>
+<tr class="memdesc:a6e59c92739b588f7ef87ec77247ed35b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all loaded modules.  <a href="classgui__framework_1_1_g_u_i_framework.html#a6e59c92739b588f7ef87ec77247ed35b">More...</a><br /></td></tr>
+<tr class="separator:a6e59c92739b588f7ef87ec77247ed35b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a069c0332eb3869de86e90557a8af9d88"><td class="memItemLeft" align="right" valign="top">const std::unordered_map&lt; std::string, std::string &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_g_u_i_framework.html#a069c0332eb3869de86e90557a8af9d88">getModulesPaths</a> () const</td></tr>
+<tr class="memdesc:a069c0332eb3869de86e90557a8af9d88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all loaded modules paths.  <a href="classgui__framework_1_1_g_u_i_framework.html#a069c0332eb3869de86e90557a8af9d88">More...</a><br /></td></tr>
+<tr class="separator:a069c0332eb3869de86e90557a8af9d88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa8edc0ebca623c3e29e33286a9a09f8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_g_u_i_framework.html#afa8edc0ebca623c3e29e33286a9a09f8">isModulesLoaded</a> () const</td></tr>
+<tr class="memdesc:afa8edc0ebca623c3e29e33286a9a09f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if modules are loaded. You can call <a class="el" href="classgui__framework_1_1_g_u_i_framework.html#a0aa718fbeffaf31e2de9bcbc54062b57" title="List of all exceptions in load modules process.">getCantLoadedModules()</a> to check if loaded modules have failed.  <a href="classgui__framework_1_1_g_u_i_framework.html#afa8edc0ebca623c3e29e33286a9a09f8">More...</a><br /></td></tr>
+<tr class="separator:afa8edc0ebca623c3e29e33286a9a09f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0aa718fbeffaf31e2de9bcbc54062b57"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_g_u_i_framework.html#a0aa718fbeffaf31e2de9bcbc54062b57">getCantLoadedModules</a> ()</td></tr>
+<tr class="memdesc:a0aa718fbeffaf31e2de9bcbc54062b57"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of all exceptions in load modules process.  <a href="classgui__framework_1_1_g_u_i_framework.html#a0aa718fbeffaf31e2de9bcbc54062b57">More...</a><br /></td></tr>
+<tr class="separator:a0aa718fbeffaf31e2de9bcbc54062b57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -176,7 +203,7 @@ template&lt;std::derived_from&lt; BaseComponent &gt; T, std::derived_from&lt; ut
 
 <p>Add derived from BaseComponentCreator creator. </p>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8h_source.html#l00147">147</a> of file <a class="el" href="_g_u_i_framework_8h_source.html">GUIFramework.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8h_source.html#l00212">212</a> of file <a class="el" href="_g_u_i_framework_8h_source.html">GUIFramework.h</a>.</p>
 
 </div>
 </div>
@@ -214,6 +241,12 @@ template&lt;std::derived_from&lt; BaseComponent &gt; T, std::derived_from&lt; ut
   </table>
   </dd>
 </dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>Can't find threadsCount setting in gui_framework.json </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -248,6 +281,12 @@ template&lt;std::derived_from&lt; BaseComponent &gt; T, std::derived_from&lt; ut
   <table class="params">
     <tr><td class="paramname">task</td><td>Task function </td></tr>
     <tr><td class="paramname">callback</td><td>After execution task callback function </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>Can't find threadsCount setting in gui_framework.json </td></tr>
   </table>
   </dd>
 </dl>
@@ -306,7 +345,7 @@ template&lt;std::derived_from&lt; BaseComponent &gt; T, std::derived_from&lt; ut
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Found component or nullptr </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00416">416</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00561">561</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
 
 </div>
 </div>
@@ -342,7 +381,30 @@ template&lt;std::derived_from&lt; BaseComponent &gt; T, std::derived_from&lt; ut
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8h_source.html#l00139">139</a> of file <a class="el" href="_g_u_i_framework_8h_source.html">GUIFramework.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8h_source.html#l00204">204</a> of file <a class="el" href="_g_u_i_framework_8h_source.html">GUIFramework.h</a>.</p>
+
+</div>
+</div>
+<a id="a0aa718fbeffaf31e2de9bcbc54062b57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0aa718fbeffaf31e2de9bcbc54062b57">&#9670;&nbsp;</a></span>getCantLoadedModules()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; string &gt; gui_framework::GUIFramework::getCantLoadedModules </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>List of all exceptions in load modules process. </p>
+<dl class="section return"><dt>Returns</dt><dd><br  />
+ </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00648">648</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
 
 </div>
 </div>
@@ -364,7 +426,7 @@ template&lt;std::derived_from&lt; BaseComponent &gt; T, std::derived_from&lt; ut
 <p>Get all current registered creators. </p>
 <dl class="section return"><dt>Returns</dt><dd>creators </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00444">444</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00623">623</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
 
 </div>
 </div>
@@ -386,7 +448,75 @@ template&lt;std::derived_from&lt; BaseComponent &gt; T, std::derived_from&lt; ut
 <p>Get settings from gui_framework.json. </p>
 <dl class="section return"><dt>Returns</dt><dd>jsonSettings </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00439">439</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00628">628</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a6e59c92739b588f7ef87ec77247ed35b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e59c92739b588f7ef87ec77247ed35b">&#9670;&nbsp;</a></span>getModules()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const unordered_map&lt; string, HMODULE &gt; &amp; gui_framework::GUIFramework::getModules </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get all loaded modules. </p>
+<dl class="section return"><dt>Returns</dt><dd><br  />
+ </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00633">633</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a069c0332eb3869de86e90557a8af9d88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a069c0332eb3869de86e90557a8af9d88">&#9670;&nbsp;</a></span>getModulesPaths()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const unordered_map&lt; string, string &gt; &amp; gui_framework::GUIFramework::getModulesPaths </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get all loaded modules paths. </p>
+<dl class="section return"><dt>Returns</dt><dd><br  />
+ </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00638">638</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a66abb8838d34047587854c9f9ef114fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66abb8838d34047587854c9f9ef114fc">&#9670;&nbsp;</a></span>getRegisteredHotkeys()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; <a class="el" href="structgui__framework_1_1_g_u_i_framework_1_1hotkey_data.html">GUIFramework::hotkeyData</a> &gt; gui_framework::GUIFramework::getRegisteredHotkeys </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Thread safe get hotkeys. </p>
+<dl class="section return"><dt>Returns</dt><dd>Registered hotkeys </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00519">519</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
 
 </div>
 </div>
@@ -415,7 +545,30 @@ template&lt;std::derived_from&lt; BaseComponent &gt; T, std::derived_from&lt; ut
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if exist, false otherwise </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00434">434</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00579">579</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
+
+</div>
+</div>
+<a id="afa8edc0ebca623c3e29e33286a9a09f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa8edc0ebca623c3e29e33286a9a09f8">&#9670;&nbsp;</a></span>isModulesLoaded()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool gui_framework::GUIFramework::isModulesLoaded </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if modules are loaded. You can call <a class="el" href="classgui__framework_1_1_g_u_i_framework.html#a0aa718fbeffaf31e2de9bcbc54062b57" title="List of all exceptions in load modules process.">getCantLoadedModules()</a> to check if loaded modules have failed. </p>
+<dl class="section return"><dt>Returns</dt><dd><br  />
+ </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00643">643</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
 
 </div>
 </div>
@@ -461,12 +614,12 @@ template&lt;std::derived_from&lt; BaseComponent &gt; T, std::derived_from&lt; ut
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00385">385</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00530">530</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
 
 </div>
 </div>
 <a id="a8d1f3666c4e14e21afa61a2f26100ac4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8d1f3666c4e14e21afa61a2f26100ac4">&#9670;&nbsp;</a></span>registerHotkey()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d1f3666c4e14e21afa61a2f26100ac4">&#9670;&nbsp;</a></span>registerHotkey() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -521,7 +674,92 @@ template&lt;std::derived_from&lt; BaseComponent &gt; T, std::derived_from&lt; ut
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00320">320</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
+</div>
+</div>
+<a id="ad9b0acb5d3967543ae14fdb2069cc997"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9b0acb5d3967543ae14fdb2069cc997">&#9670;&nbsp;</a></span>registerHotkey() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t gui_framework::GUIFramework::registerHotkey </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>hotkey</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>functionName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>moduleName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="namespacegui__framework_1_1hotkeys.html#a8c2f6d478b57ff78909ffc4e60136e1f">hotkeys::additionalKey</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>additionalKeys</em> = <code>{}</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>noRepeat</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Only works in thread, that call runMainLoop from <a class="el" href="classgui__framework_1_1_window_holder.html" title="Provides runMainLoop for top level window.">WindowHolder</a>. Thread safe register hotkey. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hotkey</td><td>Value from <a href="https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes">https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes</a> </td></tr>
+    <tr><td class="paramname">additionalKeys</td><td></td></tr>
+    <tr><td class="paramname">noRepeat</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Hotkey id </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">GetLastErrorException</td><td></td></tr>
+    <tr><td class="paramname">CantFindFunctionFromModuleException</td><td></td></tr>
+    <tr><td class="paramname">std::out_of_range</td><td>Can't find moduleName in loaded modules </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac531144a5b143dbeba7b753c8133af39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac531144a5b143dbeba7b753c8133af39">&#9670;&nbsp;</a></span>serializeHotkeys()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; json::utility::objectSmartPointer&lt; json::utility::jsonObject &gt; &gt; gui_framework::GUIFramework::serializeHotkeys </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Serialize hotkeys. </p>
+<dl class="section return"><dt>Returns</dt><dd>JSON array with hotkeys data </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00584">584</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
 
 </div>
 </div>
@@ -549,7 +787,7 @@ template&lt;std::derived_from&lt; BaseComponent &gt; T, std::derived_from&lt; ut
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00402">402</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00547">547</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
 
 </div>
 </div>
@@ -578,7 +816,7 @@ template&lt;std::derived_from&lt; BaseComponent &gt; T, std::derived_from&lt; ut
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Success </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00369">369</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00501">501</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
 
 </div>
 </div>
@@ -603,7 +841,7 @@ template&lt;std::derived_from&lt; BaseComponent &gt; T, std::derived_from&lt; ut
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8h_source.html#l00133">133</a> of file <a class="el" href="_g_u_i_framework_8h_source.html">GUIFramework.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8h_source.html#l00198">198</a> of file <a class="el" href="_g_u_i_framework_8h_source.html">GUIFramework.h</a>.</p>
 
 </div>
 </div>
@@ -627,7 +865,7 @@ template&lt;std::derived_from&lt; BaseComponent &gt; T, std::derived_from&lt; ut
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8h_source.html#l00135">135</a> of file <a class="el" href="_g_u_i_framework_8h_source.html">GUIFramework.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8h_source.html#l00200">200</a> of file <a class="el" href="_g_u_i_framework_8h_source.html">GUIFramework.h</a>.</p>
 
 </div>
 </div>
