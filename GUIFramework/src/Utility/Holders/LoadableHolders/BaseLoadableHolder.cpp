@@ -12,7 +12,15 @@ namespace gui_framework
 			type(type),
 			data(move(data))
 		{
+			
+		}
 
+		BaseLoadableHolder::imageData::imageData(const imageData& other) :
+			index(other.index),
+			type(other.type),
+			data(other.data)
+		{
+			const_cast<imageData&>(other).data.reset();
 		}
 
 		BaseLoadableHolder::imageData::imageData(imageData&& other) noexcept :
@@ -21,6 +29,17 @@ namespace gui_framework
 			data(move(other.data))
 		{
 			other.data.reset();
+		}
+
+		BaseLoadableHolder::imageData& BaseLoadableHolder::imageData::operator = (const imageData& other)
+		{
+			index = other.index;
+			type = other.type;
+			data = other.data;
+
+			const_cast<imageData&>(other).data.reset();
+
+			return *this;
 		}
 
 		BaseLoadableHolder::imageData& BaseLoadableHolder::imageData::operator = (imageData&& other) noexcept

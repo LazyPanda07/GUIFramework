@@ -12,11 +12,11 @@ namespace gui_framework
 	private:
 		struct drawedImages
 		{
-			std::unique_ptr<utility::BaseLoadableHolder> images;
+			smartPointerType<utility::BaseLoadableHolder> images;
 			std::unordered_map<uint16_t, std::pair<int, int>> coordinates;
 			utility::BaseLoadableHolder::imageType type;
 
-			drawedImages(std::unique_ptr<utility::BaseLoadableHolder>&& images, utility::BaseLoadableHolder::imageType type) noexcept;
+			drawedImages(smartPointerType<utility::BaseLoadableHolder>&& images, utility::BaseLoadableHolder::imageType type) noexcept;
 
 			void addImage(BaseWindow* owner, int x, int y, const std::filesystem::path& pathToImage);
 
