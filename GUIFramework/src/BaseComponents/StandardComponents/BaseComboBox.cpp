@@ -324,17 +324,16 @@ namespace gui_framework
 
 			this->setItemHeight(itemHeightEnum::forAllItems, static_cast<uint16_t>(requiredSize.cy));
 
-			MoveWindow
+			SetWindowPos
 			(
 				handle,
+				BaseComponent::parent->getHandle(),
 				desiredX,
 				desiredY,
 				requiredSize.cx + standard_sizes::comboBoxAdditionalWidth,
 				heightSum + requiredSize.cy * 2,
-				true
+				SWP_SHOWWINDOW | SWP_NOOWNERZORDER
 			);
-
-			ShowWindow(handle, SW_SHOW);
 		}
 	}
 
