@@ -11,6 +11,7 @@ namespace gui_framework
 		{
 		private:
 			HWND listViewHandle;
+			size_t listViewSize;
 
 		protected:
 			virtual LRESULT addItem(const LVITEMW& item);
@@ -23,6 +24,8 @@ namespace gui_framework
 			IBaseListViewOperations(HWND handle);
 
 			virtual bool deleteItem(size_t index) final;
+
+			virtual size_t size() const final;
 
 			virtual ~IBaseListViewOperations() = default;
 		};

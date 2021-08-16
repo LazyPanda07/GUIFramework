@@ -14,6 +14,8 @@ namespace gui_framework
 			if (result != -1)
 			{
 				SendMessageW(listViewHandle, LVM_ISITEMVISIBLE, result, NULL);
+
+				listViewSize++;
 			}
 
 			return result;
@@ -30,14 +32,27 @@ namespace gui_framework
 		}
 
 		IBaseListViewOperations::IBaseListViewOperations(HWND handle) :
-			listViewHandle(handle)
+			listViewHandle(handle),
+			listViewSize(0)
 		{
 
 		}
 
 		bool IBaseListViewOperations::deleteItem(size_t index)
 		{
-			return SendMessageW(listViewHandle, LVM_DELETEITEM, index, NULL);
+			bool result = SendMessageW(listViewHandle, LVM_DELETEITEM, index, NULL);
+
+			if (result)
+			{
+				listViewSize--;
+			}
+
+			return result;
+		}
+
+		size_t IBaseListViewOperations::size() const
+		{
+			return listViewSize;
 		}
 	}
 }
