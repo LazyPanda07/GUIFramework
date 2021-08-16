@@ -15,8 +15,6 @@ namespace gui_framework
 			autoResize(autoResize),
 			blockResize(blockResize)
 		{
-			utility::appendStyle(resizeableHandle, WS_THICKFRAME);
-
 			RECT sizes;
 
 			GetClientRect(parent ? parent : HWND_DESKTOP, &sizes);
