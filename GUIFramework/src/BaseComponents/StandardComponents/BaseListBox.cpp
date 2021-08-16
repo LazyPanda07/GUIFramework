@@ -10,18 +10,6 @@ using namespace std;
 
 namespace gui_framework
 {
-	json::JSONBuilder BaseListBox::getStructure() const
-	{
-		using json::utility::jsonObject;
-		using json::utility::objectSmartPointer;
-
-		json::JSONBuilder builder = BaseComponent::getStructure();
-
-		get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())])->data.push_back({ "columnWidth"s, static_cast<uint64_t>(columnsWidth) });
-
-		return builder;
-	}
-
 	BaseListBox::BaseListBox(const wstring& listBoxName, const utility::ComponentSettings& settings, const styles::ListBoxStyles& styles, BaseComponent* parent) :
 		BaseComponent
 		(
@@ -295,6 +283,34 @@ namespace gui_framework
 
 			ShowWindow(handle, SW_SHOW);
 		}
+	}
+
+	json::JSONBuilder BaseListBox::getStructure() const
+	{
+		using json::utility::jsonObject;
+		using json::utility::objectSmartPointer;
+
+		uint32_t codepage = ISerializable::getCodepage();
+		json::JSONBuilder builder = BaseComponent::getStructure();
+		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, codepage)]);
+		vector<objectSmartPointer<jsonObject>> values;
+		LRESULT currentSize = this->size();
+
+		current->data.push_back({ "columnWidth"s, static_cast<uint64_t>(columnsWidth) });
+
+		if (currentSize > 0)
+		{
+			for (size_t i = 0; i < currentSize; i++)
+			{
+				string value = utility::to_string(this->getValue(i), codepage);
+
+				json::utility::appendArray(move(value), values);
+			}
+
+			current->data.push_back({ "listValues"s, move(values) });
+		}
+
+		return builder;
 	}
 }
 

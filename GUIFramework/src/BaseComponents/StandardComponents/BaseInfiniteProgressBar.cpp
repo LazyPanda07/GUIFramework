@@ -8,18 +8,6 @@ using namespace std;
 
 namespace gui_framework
 {
-	json::JSONBuilder BaseInfiniteProgressBar::getStructure() const
-	{
-		using json::utility::jsonObject;
-		using json::utility::objectSmartPointer;
-
-		json::JSONBuilder builder = BaseComponent::getStructure();
-
-		get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())])->data.push_back({ "animationPeriod"s, static_cast<int64_t>(animationPeriod) });
-
-		return builder;
-	}
-
 	BaseInfiniteProgressBar::BaseInfiniteProgressBar(const wstring& progressBarName, const utility::ComponentSettings& settings, BaseComponent* parent, int animationPeriod) :
 		BaseComponent
 		(
@@ -75,5 +63,17 @@ namespace gui_framework
 	void BaseInfiniteProgressBar::setTextColor(uint8_t red, uint8_t green, uint8_t blue)
 	{
 		throw exceptions::NotImplemented(__FUNCTION__, "BaseInfiniteProgressBar");
+	}
+
+	json::JSONBuilder BaseInfiniteProgressBar::getStructure() const
+	{
+		using json::utility::jsonObject;
+		using json::utility::objectSmartPointer;
+
+		json::JSONBuilder builder = BaseComponent::getStructure();
+
+		get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())])->data.push_back({ "animationPeriod"s, static_cast<int64_t>(animationPeriod) });
+
+		return builder;
 	}
 }
