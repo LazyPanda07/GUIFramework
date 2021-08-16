@@ -3,6 +3,7 @@
 #include "GUIFramework.h"
 #include "Utility/Holders/WindowHolder.h"
 #include "Composites/SeparateWindow.h"
+#include "Components/ListViews/ListTextListView.h"
 
 #pragma comment (lib, "GUIFramework.lib")
 
@@ -20,6 +21,12 @@ void test()
 	{
 		WindowHolder holder(make_unique<SeparateWindow>(L"MainWindow", L"Главное окно", settings, "main"));
 		SeparateWindow* ptr = dynamic_cast<SeparateWindow*>(holder.get());
+
+		ListTextListView* list = new ListTextListView(L"Test", utility::ComponentSettings(0, 0, 400, 400), ptr);
+
+		list->addTextItem(L"First");
+
+		list->addTextItem(L"Second");
 
 		ptr->setExitMode(BaseComponent::exitMode::quit);
 
