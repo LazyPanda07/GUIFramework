@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.7.4-beta</span>
+   &#160;<span id="projectnumber">0.7.5-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -92,73 +92,156 @@ $(document).ready(function(){initNavTree('_base_button_8cpp_source.html',''); in
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_get_last_error_exception_8h.html">Exceptions/GetLastErrorException.h</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_not_implemented_8h.html">Exceptions/NotImplemented.h</a>&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_button.html#acf8c3970175cea31fe83422412203bb8">   11</a></span>&#160;    LRESULT BaseButton::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, <span class="keywordtype">bool</span>&amp; isUsed)</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keywordflow">if</span> (message == WM_COMMAND &amp;&amp; <span class="keywordtype">id</span> == LOWORD(wparam))</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            isUsed = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <span class="keywordflow">if</span> (onClick)</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                onClick();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            }</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        isUsed = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_button.html#a451d89224af07c008034a895f85145f3">   30</a></span>&#160;    BaseButton::BaseButton(<span class="keyword">const</span> wstring&amp; buttonName, <span class="keyword">const</span> wstring&amp; buttonText, <span class="keyword">const</span> <a class="code" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a>&amp; settings, <span class="keyword">const</span> <a class="code" href="classgui__framework_1_1styles_1_1_button_styles.html">styles::ButtonStyles</a>&amp; styles, <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* parent, <span class="keyword">const</span> <span class="keyword">function</span>&lt;<span class="keywordtype">void</span>()&gt;&amp; onClick) :</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        (</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            wstring(standard_classes::<a class="code" href="namespacegui__framework_1_1standard__classes.html#a3a70e6e92deddb65c6406def06e23ec8">button</a>),</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            buttonName,</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            settings,</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            styles,</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            parent</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        ),</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        ITextOperations(handle),</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        onClick(onClick)</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        this-&gt;<a class="code" href="classgui__framework_1_1interfaces_1_1_i_text_operations.html#a6236a648c9d82e9f658127d6e872839d">setText</a>(buttonText);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_button.html#ad176fd01f8de165e253b7a92680c3505">   45</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgui__framework_1_1_base_button.html#ad176fd01f8de165e253b7a92680c3505">BaseButton::setOnClick</a>(<span class="keyword">const</span> <span class="keyword">function</span>&lt;<span class="keywordtype">void</span>()&gt;&amp; onClick)</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        this-&gt;<a class="code" href="classgui__framework_1_1_base_button.html#ac98949457fb92497faad41a086576583">onClick</a> = <a class="code" href="classgui__framework_1_1_base_button.html#ac98949457fb92497faad41a086576583">onClick</a>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_button.html#a5e7389d4dde1fcc3481f37bd78d55923">   50</a></span>&#160;    <span class="keyword">const</span> <span class="keyword">function</span>&lt;void()&gt;&amp; <a class="code" href="classgui__framework_1_1_base_button.html#a5e7389d4dde1fcc3481f37bd78d55923">BaseButton::getOnClick</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classgui__framework_1_1_base_button.html#ac98949457fb92497faad41a086576583">onClick</a>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_button.html#aafe12f92e9407defc8e3211518f52025">   55</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgui__framework_1_1_base_button.html#aafe12f92e9407defc8e3211518f52025">BaseButton::setTextColor</a>(uint8_t red, uint8_t green, uint8_t blue)</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_cant_find_function_from_module_exception_8h.html">Exceptions/CantFindFunctionFromModuleException.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_button.html#acf8c3970175cea31fe83422412203bb8">   12</a></span>&#160;    LRESULT BaseButton::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, <span class="keywordtype">bool</span>&amp; isUsed)</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordflow">if</span> (message == WM_COMMAND &amp;&amp; <span class="keywordtype">id</span> == LOWORD(wparam))</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            isUsed = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keywordflow">if</span> (onClick)</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                onClick();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        isUsed = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    BaseButton::BaseButton(<span class="keyword">const</span> wstring&amp; buttonName, <span class="keyword">const</span> wstring&amp; buttonText, <span class="keyword">const</span> <a class="code" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a>&amp; settings, <span class="keyword">const</span> <a class="code" href="classgui__framework_1_1styles_1_1_button_styles.html">styles::ButtonStyles</a>&amp; styles, <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* parent, <span class="keyword">const</span> <span class="keyword">function</span>&lt;<span class="keywordtype">void</span>()&gt;&amp; onClick) :</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        (</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            wstring(standard_classes::<a class="code" href="namespacegui__framework_1_1standard__classes.html#a3a70e6e92deddb65c6406def06e23ec8">button</a>),</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            buttonName,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            settings,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            styles,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            parent</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        ),</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        ITextOperations(handle),</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        onClick(onClick)</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        this-&gt;<a class="code" href="classgui__framework_1_1interfaces_1_1_i_text_operations.html#a6236a648c9d82e9f658127d6e872839d">setText</a>(buttonText);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="classgui__framework_1_1_base_button.html#a451d89224af07c008034a895f85145f3">BaseButton::BaseButton</a>(<span class="keyword">const</span> wstring&amp; buttonName, <span class="keyword">const</span> wstring&amp; buttonText, <span class="keyword">const</span> utility::ComponentSettings&amp; settings, <span class="keyword">const</span> styles::ButtonStyles&amp; styles, BaseComponent* parent, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; functionName, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; moduleName) :</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        BaseComponent</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        (</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            wstring(standard_classes::<a class="code" href="namespacegui__framework_1_1standard__classes.html#a3a70e6e92deddb65c6406def06e23ec8">button</a>),</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            buttonName,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            settings,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            styles,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            parent</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        ),</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        ITextOperations(handle)</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="classgui__framework_1_1exceptions_1_1_not_implemented.html">exceptions::NotImplemented</a>(__FUNCTION__, <span class="stringliteral">&quot;BaseButton&quot;</span>);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        this-&gt;<a class="code" href="classgui__framework_1_1interfaces_1_1_i_text_operations.html#a6236a648c9d82e9f658127d6e872839d">setText</a>(buttonText);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        this-&gt;<a class="code" href="classgui__framework_1_1_base_button.html#a5a231fe0e82d389d24701f3565f7fc98">setOnClick</a>(functionName, <a class="code" href="classgui__framework_1_1_base_button.html#ab645b200026f1692f4cf98f1d3fade1a">moduleName</a>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgui__framework_1_1_base_button.html#a5a231fe0e82d389d24701f3565f7fc98">BaseButton::setOnClick</a>(<span class="keyword">const</span> <span class="keyword">function</span>&lt;<span class="keywordtype">void</span>()&gt;&amp; onClick)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        this-&gt;<a class="code" href="classgui__framework_1_1_base_button.html#ac98949457fb92497faad41a086576583">onClick</a> = <a class="code" href="classgui__framework_1_1_base_button.html#ac98949457fb92497faad41a086576583">onClick</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="classgui__framework_1_1_base_button.html#aee51556107c0bd2a8feaddddce6fc633">functionName</a>.clear();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="classgui__framework_1_1_base_button.html#ab645b200026f1692f4cf98f1d3fade1a">moduleName</a>.clear();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgui__framework_1_1_base_button.html#a5a231fe0e82d389d24701f3565f7fc98">BaseButton::setOnClick</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; functionName, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; moduleName)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        GUIFramework&amp; instance = <a class="code" href="classgui__framework_1_1_g_u_i_framework.html#a3ddb6e3b33f9143d5e4eb5c2111d1d6b">GUIFramework::get</a>();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keyword">const</span> HMODULE&amp; module = instance.getModules().at(<a class="code" href="classgui__framework_1_1_base_button.html#ab645b200026f1692f4cf98f1d3fade1a">moduleName</a>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <a class="code" href="namespacegui__framework.html#a5c2c0a8327422f8318f9c225fa2bf27d">onClickSignature</a> tem = <span class="keyword">reinterpret_cast&lt;</span><a class="code" href="namespacegui__framework.html#a5c2c0a8327422f8318f9c225fa2bf27d">onClickSignature</a><span class="keyword">&gt;</span>(GetProcAddress(module, <a class="code" href="classgui__framework_1_1_base_button.html#aee51556107c0bd2a8feaddddce6fc633">functionName</a>.data()));</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">if</span> (!tem)</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordflow">throw</span> exceptions::CantFindFunctionFromModuleException(<a class="code" href="classgui__framework_1_1_base_button.html#aee51556107c0bd2a8feaddddce6fc633">functionName</a>, <a class="code" href="classgui__framework_1_1_base_button.html#ab645b200026f1692f4cf98f1d3fade1a">moduleName</a>);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="classgui__framework_1_1_base_button.html#ac98949457fb92497faad41a086576583">onClick</a> = tem;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        this-&gt;functionName = <a class="code" href="classgui__framework_1_1_base_button.html#aee51556107c0bd2a8feaddddce6fc633">functionName</a>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        this-&gt;moduleName = <a class="code" href="classgui__framework_1_1_base_button.html#ab645b200026f1692f4cf98f1d3fade1a">moduleName</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_button.html#a5e7389d4dde1fcc3481f37bd78d55923">   88</a></span>&#160;    <span class="keyword">const</span> <span class="keyword">function</span>&lt;void()&gt;&amp; <a class="code" href="classgui__framework_1_1_base_button.html#a5e7389d4dde1fcc3481f37bd78d55923">BaseButton::getOnClick</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classgui__framework_1_1_base_button.html#ac98949457fb92497faad41a086576583">onClick</a>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_button.html#a9a1abf6e15283d38dadd83a765944459">   93</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; <a class="code" href="classgui__framework_1_1_base_button.html#a9a1abf6e15283d38dadd83a765944459">BaseButton::getFunctionName</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classgui__framework_1_1_base_button.html#aee51556107c0bd2a8feaddddce6fc633">functionName</a>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_button.html#a99decc2306969d5daea6467e87e81394">   98</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; <a class="code" href="classgui__framework_1_1_base_button.html#a99decc2306969d5daea6467e87e81394">BaseButton::getModuleName</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classgui__framework_1_1_base_button.html#ab645b200026f1692f4cf98f1d3fade1a">moduleName</a>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_button.html#aafe12f92e9407defc8e3211518f52025">  103</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgui__framework_1_1_base_button.html#aafe12f92e9407defc8e3211518f52025">BaseButton::setTextColor</a>(uint8_t red, uint8_t green, uint8_t blue)</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="classgui__framework_1_1exceptions_1_1_not_implemented.html">exceptions::NotImplemented</a>(__FUNCTION__, <span class="stringliteral">&quot;BaseButton&quot;</span>);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_button.html#ab35197f855f37974e25dda6b24314545">  108</a></span>&#160;    json::JSONBuilder <a class="code" href="classgui__framework_1_1_base_button.html#ab35197f855f37974e25dda6b24314545">BaseButton::getStructure</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keyword">using</span> json::utility::jsonObject;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keyword">using</span> json::utility::objectSmartPointer;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classgui__framework_1_1_base_button.html#aee51556107c0bd2a8feaddddce6fc633">functionName</a>.empty())</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classgui__framework_1_1_base_component.html#a874eae6d7db8309155a9946aef01199a">BaseComponent::getStructure</a>();</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        json::JSONBuilder builder = <a class="code" href="classgui__framework_1_1_base_component.html#a874eae6d7db8309155a9946aef01199a">BaseComponent::getStructure</a>();</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        objectSmartPointer&lt;jsonObject&gt;&amp; current = get&lt;objectSmartPointer&lt;jsonObject&gt;&gt;(builder[<a class="code" href="namespacegui__framework_1_1utility.html#abbafc9708435f466d89c4f977dcd460d">utility::to_string</a>(<a class="code" href="classgui__framework_1_1_base_component.html#ab927f5791c7605446203f7f7f6e0bb83">windowName</a>, ISerializable::getCodepage())]);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        current-&gt;data.push_back({ <span class="stringliteral">&quot;functionName&quot;</span>s, <a class="code" href="classgui__framework_1_1_base_button.html#aee51556107c0bd2a8feaddddce6fc633">functionName</a> });</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        current-&gt;data.push_back({ <span class="stringliteral">&quot;moduleName&quot;</span>s, <a class="code" href="classgui__framework_1_1_base_button.html#ab645b200026f1692f4cf98f1d3fade1a">moduleName</a> });</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        current-&gt;data.push_back({ <span class="stringliteral">&quot;pathToModule&quot;</span>s, <a class="code" href="classgui__framework_1_1_g_u_i_framework.html#a3ddb6e3b33f9143d5e4eb5c2111d1d6b">GUIFramework::get</a>().<a class="code" href="classgui__framework_1_1_g_u_i_framework.html#a069c0332eb3869de86e90557a8af9d88">getModulesPaths</a>().at(<a class="code" href="classgui__framework_1_1_base_button.html#ab645b200026f1692f4cf98f1d3fade1a">moduleName</a>) });</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordflow">return</span> builder;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}</div>
 <div class="ttc" id="a_base_button_8h_html"><div class="ttname"><a href="_base_button_8h.html">BaseButton.h</a></div></div>
+<div class="ttc" id="a_cant_find_function_from_module_exception_8h_html"><div class="ttname"><a href="_cant_find_function_from_module_exception_8h.html">CantFindFunctionFromModuleException.h</a></div></div>
 <div class="ttc" id="a_get_last_error_exception_8h_html"><div class="ttname"><a href="_get_last_error_exception_8h.html">GetLastErrorException.h</a></div></div>
 <div class="ttc" id="a_not_implemented_8h_html"><div class="ttname"><a href="_not_implemented_8h.html">NotImplemented.h</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_button_html_a5e7389d4dde1fcc3481f37bd78d55923"><div class="ttname"><a href="classgui__framework_1_1_base_button.html#a5e7389d4dde1fcc3481f37bd78d55923">gui_framework::BaseButton::getOnClick</a></div><div class="ttdeci">virtual const std::function&lt; void()&gt; &amp; getOnClick() const final</div><div class="ttdef"><b>Definition:</b> <a href="_base_button_8cpp_source.html#l00050">BaseButton.cpp:50</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_button_html_aafe12f92e9407defc8e3211518f52025"><div class="ttname"><a href="classgui__framework_1_1_base_button.html#aafe12f92e9407defc8e3211518f52025">gui_framework::BaseButton::setTextColor</a></div><div class="ttdeci">virtual void setTextColor(uint8_t red, uint8_t green, uint8_t blue) final override</div><div class="ttdoc">Not implemented.</div><div class="ttdef"><b>Definition:</b> <a href="_base_button_8cpp_source.html#l00055">BaseButton.cpp:55</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_button_html_ac98949457fb92497faad41a086576583"><div class="ttname"><a href="classgui__framework_1_1_base_button.html#ac98949457fb92497faad41a086576583">gui_framework::BaseButton::onClick</a></div><div class="ttdeci">std::function&lt; void()&gt; onClick</div><div class="ttdef"><b>Definition:</b> <a href="_base_button_8h_source.html#l00017">BaseButton.h:17</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_button_html_ad176fd01f8de165e253b7a92680c3505"><div class="ttname"><a href="classgui__framework_1_1_base_button.html#ad176fd01f8de165e253b7a92680c3505">gui_framework::BaseButton::setOnClick</a></div><div class="ttdeci">virtual void setOnClick(const std::function&lt; void()&gt; &amp;onClick) final</div><div class="ttdef"><b>Definition:</b> <a href="_base_button_8cpp_source.html#l00045">BaseButton.cpp:45</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_button_html_a451d89224af07c008034a895f85145f3"><div class="ttname"><a href="classgui__framework_1_1_base_button.html#a451d89224af07c008034a895f85145f3">gui_framework::BaseButton::BaseButton</a></div><div class="ttdeci">BaseButton(const std::wstring &amp;buttonName, const std::wstring &amp;buttonText, const utility::ComponentSettings &amp;settings, const styles::ButtonStyles &amp;styles, BaseComponent *parent, const std::function&lt; void()&gt; &amp;onClick=nullptr)</div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_button_html_a5a231fe0e82d389d24701f3565f7fc98"><div class="ttname"><a href="classgui__framework_1_1_base_button.html#a5a231fe0e82d389d24701f3565f7fc98">gui_framework::BaseButton::setOnClick</a></div><div class="ttdeci">virtual void setOnClick(const std::function&lt; void()&gt; &amp;onClick) final</div><div class="ttdoc">Can't serialize.</div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_button_html_a5e7389d4dde1fcc3481f37bd78d55923"><div class="ttname"><a href="classgui__framework_1_1_base_button.html#a5e7389d4dde1fcc3481f37bd78d55923">gui_framework::BaseButton::getOnClick</a></div><div class="ttdeci">virtual const std::function&lt; void()&gt; &amp; getOnClick() const final</div><div class="ttdef"><b>Definition:</b> <a href="_base_button_8cpp_source.html#l00088">BaseButton.cpp:88</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_button_html_a99decc2306969d5daea6467e87e81394"><div class="ttname"><a href="classgui__framework_1_1_base_button.html#a99decc2306969d5daea6467e87e81394">gui_framework::BaseButton::getModuleName</a></div><div class="ttdeci">virtual const std::string &amp; getModuleName() const final</div><div class="ttdoc">Get onClick function associated module name.</div><div class="ttdef"><b>Definition:</b> <a href="_base_button_8cpp_source.html#l00098">BaseButton.cpp:98</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_button_html_a9a1abf6e15283d38dadd83a765944459"><div class="ttname"><a href="classgui__framework_1_1_base_button.html#a9a1abf6e15283d38dadd83a765944459">gui_framework::BaseButton::getFunctionName</a></div><div class="ttdeci">virtual const std::string &amp; getFunctionName() const final</div><div class="ttdoc">Get onClick function name from loaded module.</div><div class="ttdef"><b>Definition:</b> <a href="_base_button_8cpp_source.html#l00093">BaseButton.cpp:93</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_button_html_aafe12f92e9407defc8e3211518f52025"><div class="ttname"><a href="classgui__framework_1_1_base_button.html#aafe12f92e9407defc8e3211518f52025">gui_framework::BaseButton::setTextColor</a></div><div class="ttdeci">virtual void setTextColor(uint8_t red, uint8_t green, uint8_t blue) final override</div><div class="ttdoc">Not implemented.</div><div class="ttdef"><b>Definition:</b> <a href="_base_button_8cpp_source.html#l00103">BaseButton.cpp:103</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_button_html_ab35197f855f37974e25dda6b24314545"><div class="ttname"><a href="classgui__framework_1_1_base_button.html#ab35197f855f37974e25dda6b24314545">gui_framework::BaseButton::getStructure</a></div><div class="ttdeci">virtual json::JSONBuilder getStructure() const override</div><div class="ttdef"><b>Definition:</b> <a href="_base_button_8cpp_source.html#l00108">BaseButton.cpp:108</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_button_html_ab645b200026f1692f4cf98f1d3fade1a"><div class="ttname"><a href="classgui__framework_1_1_base_button.html#ab645b200026f1692f4cf98f1d3fade1a">gui_framework::BaseButton::moduleName</a></div><div class="ttdeci">std::string moduleName</div><div class="ttdef"><b>Definition:</b> <a href="_base_button_8h_source.html#l00018">BaseButton.h:18</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_button_html_ac98949457fb92497faad41a086576583"><div class="ttname"><a href="classgui__framework_1_1_base_button.html#ac98949457fb92497faad41a086576583">gui_framework::BaseButton::onClick</a></div><div class="ttdeci">std::function&lt; void()&gt; onClick</div><div class="ttdef"><b>Definition:</b> <a href="_base_button_8h_source.html#l00016">BaseButton.h:16</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_button_html_aee51556107c0bd2a8feaddddce6fc633"><div class="ttname"><a href="classgui__framework_1_1_base_button.html#aee51556107c0bd2a8feaddddce6fc633">gui_framework::BaseButton::functionName</a></div><div class="ttdeci">std::string functionName</div><div class="ttdef"><b>Definition:</b> <a href="_base_button_8h_source.html#l00017">BaseButton.h:17</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1_base_component_html"><div class="ttname"><a href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></div><div class="ttdoc">Base class for all windows, controls, etc.</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00011">BaseComponent.h:12</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_component_html_a874eae6d7db8309155a9946aef01199a"><div class="ttname"><a href="classgui__framework_1_1_base_component.html#a874eae6d7db8309155a9946aef01199a">gui_framework::BaseComponent::getStructure</a></div><div class="ttdeci">virtual json::JSONBuilder getStructure() const override</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00322">BaseComponent.cpp:322</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_component_html_ab927f5791c7605446203f7f7f6e0bb83"><div class="ttname"><a href="classgui__framework_1_1_base_component.html#ab927f5791c7605446203f7f7f6e0bb83">gui_framework::BaseComponent::windowName</a></div><div class="ttdeci">const std::wstring windowName</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00034">BaseComponent.h:34</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_g_u_i_framework_html_a069c0332eb3869de86e90557a8af9d88"><div class="ttname"><a href="classgui__framework_1_1_g_u_i_framework.html#a069c0332eb3869de86e90557a8af9d88">gui_framework::GUIFramework::getModulesPaths</a></div><div class="ttdeci">const std::unordered_map&lt; std::string, std::string &gt; &amp; getModulesPaths() const</div><div class="ttdoc">Get all loaded modules paths.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_8cpp_source.html#l00638">GUIFramework.cpp:638</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_g_u_i_framework_html_a3ddb6e3b33f9143d5e4eb5c2111d1d6b"><div class="ttname"><a href="classgui__framework_1_1_g_u_i_framework.html#a3ddb6e3b33f9143d5e4eb5c2111d1d6b">gui_framework::GUIFramework::get</a></div><div class="ttdeci">static GUIFramework &amp; get()</div><div class="ttdoc">Singleton instance access.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_8h_source.html#l00204">GUIFramework.h:204</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1exceptions_1_1_not_implemented_html"><div class="ttname"><a href="classgui__framework_1_1exceptions_1_1_not_implemented.html">gui_framework::exceptions::NotImplemented</a></div><div class="ttdoc">Throws by not implemented methods.</div><div class="ttdef"><b>Definition:</b> <a href="_not_implemented_8h_source.html#l00011">NotImplemented.h:12</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1interfaces_1_1_i_text_operations_html_a6236a648c9d82e9f658127d6e872839d"><div class="ttname"><a href="classgui__framework_1_1interfaces_1_1_i_text_operations.html#a6236a648c9d82e9f658127d6e872839d">gui_framework::interfaces::ITextOperations::setText</a></div><div class="ttdeci">virtual void setText(const std::wstring &amp;text) const final</div><div class="ttdef"><b>Definition:</b> <a href="_i_text_operations_8cpp_source.html#l00018">ITextOperations.cpp:18</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1styles_1_1_button_styles_html"><div class="ttname"><a href="classgui__framework_1_1styles_1_1_button_styles.html">gui_framework::styles::ButtonStyles</a></div><div class="ttdoc">Base class for button styles.</div><div class="ttdef"><b>Definition:</b> <a href="_button_styles_8h_source.html#l00011">ButtonStyles.h:12</a></div></div>
 <div class="ttc" id="anamespacegui__framework_1_1standard__classes_html_a3a70e6e92deddb65c6406def06e23ec8"><div class="ttname"><a href="namespacegui__framework_1_1standard__classes.html#a3a70e6e92deddb65c6406def06e23ec8">gui_framework::standard_classes::button</a></div><div class="ttdeci">constexpr std::wstring_view button</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00015">GUIFrameworkConstants.h:15</a></div></div>
+<div class="ttc" id="anamespacegui__framework_1_1utility_html_abbafc9708435f466d89c4f977dcd460d"><div class="ttname"><a href="namespacegui__framework_1_1utility.html#abbafc9708435f466d89c4f977dcd460d">gui_framework::utility::to_string</a></div><div class="ttdeci">string to_string(const wstring &amp;stringToConvert, uint32_t codepage)</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00035">Utility.cpp:35</a></div></div>
 <div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00016">BaseComponent.cpp:17</a></div></div>
+<div class="ttc" id="anamespacegui__framework_html_a5c2c0a8327422f8318f9c225fa2bf27d"><div class="ttname"><a href="namespacegui__framework.html#a5c2c0a8327422f8318f9c225fa2bf27d">gui_framework::onClickSignature</a></div><div class="ttdeci">void(*)() onClickSignature</div><div class="ttdoc">Default on click signature.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00096">GUIFrameworkConstants.h:96</a></div></div>
 <div class="ttc" id="apch_8h_html"><div class="ttname"><a href="pch_8h.html">pch.h</a></div></div>
 <div class="ttc" id="astructgui__framework_1_1utility_1_1_component_settings_html"><div class="ttname"><a href="structgui__framework_1_1utility_1_1_component_settings.html">gui_framework::utility::ComponentSettings</a></div><div class="ttdoc">All settings for windows.</div><div class="ttdef"><b>Definition:</b> <a href="_component_settings_8h_source.html#l00010">ComponentSettings.h:11</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

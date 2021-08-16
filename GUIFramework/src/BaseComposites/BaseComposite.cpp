@@ -41,6 +41,80 @@ namespace gui_framework
 		return -1;
 	}
 
+	LRESULT BaseComposite::compositeWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
+	{
+		if (message >= WM_CTLCOLOREDIT && message <= WM_CTLCOLORSTATIC)
+		{
+			BaseComponent* component = this->findChild(reinterpret_cast<HWND>(lparam));
+
+			if (component)
+			{
+				isUsed = true;
+
+				SetBkColor(reinterpret_cast<HDC>(wparam), component->getBackgroundColor());
+
+				SetTextColor(reinterpret_cast<HDC>(wparam), component->getTextColor());
+
+				return reinterpret_cast<LRESULT>(CreateSolidBrush(component->getBackgroundColor()));
+			}
+		}
+		else if (message == WM_MENUCOMMAND)
+		{
+			isUsed = true;
+
+			if (mainMenu->getHandle() == reinterpret_cast<HMENU>(lparam))
+			{
+				mainMenu->handleMessage(static_cast<uint32_t>(wparam));
+			}
+			else
+			{
+				popupMenus[reinterpret_cast<HMENU>(lparam)].handleMessage(static_cast<uint32_t>(wparam));
+			}
+
+			return 0;
+		}
+
+		isUsed = false;
+
+		return -1;
+	}
+
+	LRESULT BaseComposite::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
+	{
+		LRESULT result = this->compositeWindowMessagesHandle(handle, message, wparam, lparam, isUsed);
+
+		if (isUsed)
+		{
+			return result;
+		}
+
+		result = BaseComponent::windowMessagesHandle(handle, message, wparam, lparam, isUsed);
+
+		if (isUsed)
+		{
+			return result;
+		}
+
+		for (const auto& i : children)
+		{
+			if (!i)
+			{
+				continue;
+			}
+
+			result = i->windowMessagesHandle(handle, message, wparam, lparam, isUsed);
+
+			if (isUsed)
+			{
+				return result;
+			}
+		}
+
+		isUsed = false;
+
+		return -1;
+	}
+
 	vector<pair<string, json::utility::objectSmartPointer<json::utility::jsonObject>>> BaseComposite::getChildrenStructure() const
 	{
 		vector<json::JSONBuilder> childrenStructure;
@@ -215,80 +289,6 @@ namespace gui_framework
 		{
 			popupMenus.erase(i);
 		}
-	}
-
-	LRESULT BaseComposite::compositeWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
-	{
-		if (message >= WM_CTLCOLOREDIT && message <= WM_CTLCOLORSTATIC)
-		{
-			BaseComponent* component = this->findChild(reinterpret_cast<HWND>(lparam));
-
-			if (component)
-			{
-				isUsed = true;
-
-				SetBkColor(reinterpret_cast<HDC>(wparam), component->getBackgroundColor());
-
-				SetTextColor(reinterpret_cast<HDC>(wparam), component->getTextColor());
-
-				return reinterpret_cast<LRESULT>(CreateSolidBrush(component->getBackgroundColor()));
-			}
-		}
-		else if (message == WM_MENUCOMMAND)
-		{
-			isUsed = true;
-
-			if (mainMenu->getHandle() == reinterpret_cast<HMENU>(lparam))
-			{
-				mainMenu->handleMessage(static_cast<uint32_t>(wparam));
-			}
-			else
-			{
-				popupMenus[reinterpret_cast<HMENU>(lparam)].handleMessage(static_cast<uint32_t>(wparam));
-			}
-
-			return 0;
-		}
-
-		isUsed = false;
-
-		return -1;
-	}
-
-	LRESULT BaseComposite::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
-	{
-		LRESULT result = this->compositeWindowMessagesHandle(handle, message, wparam, lparam, isUsed);
-
-		if (isUsed)
-		{
-			return result;
-		}
-
-		result = BaseComponent::windowMessagesHandle(handle, message, wparam, lparam, isUsed);
-
-		if (isUsed)
-		{
-			return result;
-		}
-
-		for (const auto& i : children)
-		{
-			if (!i)
-			{
-				continue;
-			}
-
-			result = i->windowMessagesHandle(handle, message, wparam, lparam, isUsed);
-
-			if (isUsed)
-			{
-				return result;
-			}
-		}
-
-		isUsed = false;
-
-		return -1;
 	}
 
 	bool BaseComposite::isComposite() const

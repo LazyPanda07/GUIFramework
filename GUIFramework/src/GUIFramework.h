@@ -44,7 +44,7 @@ namespace gui_framework
 		INITCOMMONCONTROLSEX comm;
 		std::unordered_map<std::string, HMODULE> modules;
 		std::unordered_map<std::string, std::string> modulesPaths;
-		std::unordered_map<size_t, std::unique_ptr<utility::BaseComponentCreator>> creators;
+		std::unordered_map<size_t, smartPointerType<utility::BaseComponentCreator>> creators;
 #pragma region Ids
 		std::unordered_multimap<std::wstring, uint32_t> generatedIds;
 		std::queue<uint32_t> availableIds;
@@ -173,7 +173,7 @@ namespace gui_framework
 
 		/// @brief Get all current registered creators
 		/// @return creators
-		const std::unordered_map<size_t, std::unique_ptr<utility::BaseComponentCreator>>& getCreators() const;
+		const std::unordered_map<size_t, smartPointerType<utility::BaseComponentCreator>>& getCreators() const;
 
 		/// @brief Get settings from gui_framework.json
 		/// @return jsonSettings
@@ -211,6 +211,6 @@ namespace gui_framework
 	template<std::derived_from<BaseComponent> T, std::derived_from<utility::BaseComponentCreator> CreatorT, typename... Args>
 	void GUIFramework::addCreator(Args&&... args)
 	{
-		creators[typeid(T).hash_code()] = std::unique_ptr<CreatorT>(new CreatorT(std::forward<Args>(args)...));
+		creators[typeid(T).hash_code()] = smartPointerType<CreatorT>(new CreatorT(std::forward<Args>(args)...));
 	}
 }

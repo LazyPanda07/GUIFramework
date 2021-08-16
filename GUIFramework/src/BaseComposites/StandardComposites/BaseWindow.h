@@ -2,7 +2,7 @@
 
 #include "pch.h"
 #include "BaseComposites/BaseComposite.h"
-#include "Utility/Holders/LoadableHolders/ImagesHolder.h"
+#include "Utility/Holders/LoadableHolders/BaseLoadableHolder.h"
 
 namespace gui_framework
 {
@@ -12,10 +12,11 @@ namespace gui_framework
 	private:
 		struct drawedImages
 		{
-			std::unique_ptr<utility::ImagesHolder> images;
+			smartPointerType<utility::BaseLoadableHolder> images;
 			std::unordered_map<uint16_t, std::pair<int, int>> coordinates;
+			utility::BaseLoadableHolder::imageType type;
 
-			void init(uint16_t imagesWidth, uint16_t imagesHeight);
+			drawedImages(smartPointerType<utility::BaseLoadableHolder>&& images, utility::BaseLoadableHolder::imageType type) noexcept;
 
 			void addImage(BaseWindow* owner, int x, int y, const std::filesystem::path& pathToImage);
 
@@ -23,27 +24,35 @@ namespace gui_framework
 		};
 
 	protected:
-		drawedImages pictures;
+		std::unordered_map<std::string, drawedImages> pictures;
 
 	public:
 		BaseWindow(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent = nullptr, const std::string& windowFunctionName = "");
 
-		virtual void initDrawing(uint16_t imagesWidth, uint16_t imagesHeight) final;
+		/// @brief Initialize block of pictures with same size
+		/// @param pictureBlockName Name of pictures block
+		/// @param imagesWidth Pictures width in pixels
+		/// @param imagesHeight Pictures height in pixels
+		/// @param type Holder's data type - BaseLoadableHolder::imageType::cursor doesn't support
+		/// @exception std::runtime_error Wrong type value
+		virtual void initDrawing(const std::string& pictureBlockName, uint16_t imagesWidth, uint16_t imagesHeight, utility::BaseLoadableHolder::imageType type) final;
 
 		/// @brief Draw image in window
+		/// @param pictureBlockName Name of pictures block
 		/// @param x 
 		/// @param y 
 		/// @param pathToImage 
 		/// @exception FileDoesNotExist
-		/// @exception std::runtime_error
-		virtual void addImage(int x, int y, const std::filesystem::path& pathToImage);
+		/// @exception std::out_of_range 
+		virtual void addImage(const std::string& pictureBlockName, int x, int y, const std::filesystem::path& pathToImage);
 
 		/// @brief Remove image from window
+		/// @param pictureBlockName Name of pictures block
 		/// @param pathToImage 
-		/// @exception std::out_of_range
-		/// @exception std::runtime_error
-		virtual void removeImage(const std::filesystem::path& pathToImage);
+		/// @exception std::out_of_range 
+		virtual void removeImage(const std::string& pictureBlockName, const std::filesystem::path& pathToImage);
 
+		/// @brief Clear window and draw all images
 		virtual void drawAllImages() final;
 
 		virtual void setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue) final override;

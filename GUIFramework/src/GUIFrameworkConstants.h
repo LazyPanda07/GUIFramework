@@ -90,12 +90,13 @@ namespace gui_framework
 		};
 	}
 
-	inline constexpr std::string_view guiFrameworkVersion = "0.7.5-beta";
+	inline constexpr std::string_view guiFrameworkVersion = "0.8-beta";
 
 	/// @brief Default on click signature
 	using onClickSignature = void(*)();
 }
 
+/// @brief Insert this macro before serializable function implementation
 #define IMPLEMENT_SERIALIZABLE_FUNCTION extern "C" __declspec(dllexport) 
 
 #ifdef GUI_FRAMEWORK_DLL

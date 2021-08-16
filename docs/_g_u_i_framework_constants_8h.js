@@ -2,6 +2,8 @@ var _g_u_i_framework_constants_8h =
 [
     [ "GUI_FRAMEWORK_API", "_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba", null ],
     [ "GUI_FRAMEWORK_API_FUNCTION", "_g_u_i_framework_constants_8h.html#a767f18c6bddef6da85ce42f210726a25", null ],
+    [ "IMPLEMENT_SERIALIZABLE_FUNCTION", "_g_u_i_framework_constants_8h.html#afc2f3ab01c298b1975e099d1674e37f9", null ],
+    [ "onClickSignature", "_g_u_i_framework_constants_8h.html#a5c2c0a8327422f8318f9c225fa2bf27d", null ],
     [ "smartPointerType", "_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67", null ],
     [ "additionalKey", "_g_u_i_framework_constants_8h.html#a8c2f6d478b57ff78909ffc4e60136e1f", [
       [ "alt", "_g_u_i_framework_constants_8h.html#a8c2f6d478b57ff78909ffc4e60136e1fa34823136d0dd91d0f5d22db740f7679c", null ],
@@ -16,7 +18,6 @@ var _g_u_i_framework_constants_8h =
     [ "checkBoxWidth", "_g_u_i_framework_constants_8h.html#a30ae3f2a8d6104c5e384ac6ee22db3f2", null ],
     [ "comboBox", "_g_u_i_framework_constants_8h.html#a268c9d59b1fb54e307a88f7693eb19a2", null ],
     [ "comboBoxAdditionalWidth", "_g_u_i_framework_constants_8h.html#af5dff7df0d040f20e7069da7f8ce28da", null ],
-    [ "currentModule", "_g_u_i_framework_constants_8h.html#a606275e3c7c630e53c774a95813e1bd4", null ],
     [ "defaultImagesCount", "_g_u_i_framework_constants_8h.html#a018fae1303ab52531f18a98e80fc15e7", null ],
     [ "dialogBoxBuilderMinHeight", "_g_u_i_framework_constants_8h.html#a1eb22a43d0bb081bc61b66b89c35fc33", null ],
     [ "dialogBoxBuilderMinWidth", "_g_u_i_framework_constants_8h.html#a0fcf0837ccf940788169d753bad717de", null ],

@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.7.4-beta</span>
+   &#160;<span id="projectnumber">0.7.5-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -120,6 +120,9 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:afc2f3ab01c298b1975e099d1674e37f9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_g_u_i_framework_constants_8h.html#afc2f3ab01c298b1975e099d1674e37f9">IMPLEMENT_SERIALIZABLE_FUNCTION</a>&#160;&#160;&#160;extern &quot;C&quot; __declspec(dllexport)</td></tr>
+<tr class="memdesc:afc2f3ab01c298b1975e099d1674e37f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert this macro before serializable function implementation.  <a href="_g_u_i_framework_constants_8h.html#afc2f3ab01c298b1975e099d1674e37f9">More...</a><br /></td></tr>
+<tr class="separator:afc2f3ab01c298b1975e099d1674e37f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15da9ebdfa896557bb941a5da31021ba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba">GUI_FRAMEWORK_API</a></td></tr>
 <tr class="separator:a15da9ebdfa896557bb941a5da31021ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a767f18c6bddef6da85ce42f210726a25"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_g_u_i_framework_constants_8h.html#a767f18c6bddef6da85ce42f210726a25">GUI_FRAMEWORK_API_FUNCTION</a></td></tr>
@@ -127,6 +130,9 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:a5c2c0a8327422f8318f9c225fa2bf27d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework.html#a5c2c0a8327422f8318f9c225fa2bf27d">gui_framework::onClickSignature</a> = void(*)()</td></tr>
+<tr class="memdesc:a5c2c0a8327422f8318f9c225fa2bf27d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default on click signature.  <a href="namespacegui__framework.html#a5c2c0a8327422f8318f9c225fa2bf27d">More...</a><br /></td></tr>
+<tr class="separator:a5c2c0a8327422f8318f9c225fa2bf27d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaeb2028aa1fe1f81b8bc210cbf2d0b67"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:aaeb2028aa1fe1f81b8bc210cbf2d0b67"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67">smartPointerType</a> = std::unique_ptr&lt; T &gt;</td></tr>
 <tr class="memdesc:aaeb2028aa1fe1f81b8bc210cbf2d0b67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compatible smart pointer type.  <a href="_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67">More...</a><br /></td></tr>
@@ -216,11 +222,9 @@ Variables</h2></td></tr>
 <tr class="separator:a6dae873e8b91fb97158311efbfb35c70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb925ed8bd2261fc88aea09e514144a0"><td class="memItemLeft" align="right" valign="top">constexpr std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1json__settings.html#acb925ed8bd2261fc88aea09e514144a0">gui_framework::json_settings::pathToModuleSettings</a> = &quot;pathToModule&quot;</td></tr>
 <tr class="separator:acb925ed8bd2261fc88aea09e514144a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a606275e3c7c630e53c774a95813e1bd4"><td class="memItemLeft" align="right" valign="top">constexpr std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1json__settings.html#a606275e3c7c630e53c774a95813e1bd4">gui_framework::json_settings::currentModule</a> = &quot;current&quot;</td></tr>
-<tr class="separator:a606275e3c7c630e53c774a95813e1bd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0a8f6ff8009d943b34253c4a50409c2"><td class="memItemLeft" align="right" valign="top">constexpr std::wstring_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1libraries.html#aa0a8f6ff8009d943b34253c4a50409c2">gui_framework::libraries::msftEditLibrary</a> = L&quot;MsftEdit.dll&quot;</td></tr>
 <tr class="separator:aa0a8f6ff8009d943b34253c4a50409c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e94c5c423c72dd9f763bafce9ba4672"><td class="memItemLeft" align="right" valign="top">constexpr std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework.html#a5e94c5c423c72dd9f763bafce9ba4672">gui_framework::guiFrameworkVersion</a> = &quot;0.7.4-beta&quot;</td></tr>
+<tr class="memitem:a5e94c5c423c72dd9f763bafce9ba4672"><td class="memItemLeft" align="right" valign="top">constexpr std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework.html#a5e94c5c423c72dd9f763bafce9ba4672">gui_framework::guiFrameworkVersion</a> = &quot;0.7.5-beta&quot;</td></tr>
 <tr class="separator:a5e94c5c423c72dd9f763bafce9ba4672"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -236,7 +240,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00112">112</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00116">116</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
 
 </div>
 </div>
@@ -252,7 +256,25 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00113">113</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00117">117</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
+
+</div>
+</div>
+<a id="afc2f3ab01c298b1975e099d1674e37f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc2f3ab01c298b1975e099d1674e37f9">&#9670;&nbsp;</a></span>IMPLEMENT_SERIALIZABLE_FUNCTION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IMPLEMENT_SERIALIZABLE_FUNCTION&#160;&#160;&#160;extern &quot;C&quot; __declspec(dllexport)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Insert this macro before serializable function implementation. </p>
+
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00100">100</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
 
 </div>
 </div>
@@ -273,7 +295,7 @@ template&lt;typename T &gt; </div>
 
 <p>Compatible smart pointer type. </p>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00117">117</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00121">121</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
 
 </div>
 </div>

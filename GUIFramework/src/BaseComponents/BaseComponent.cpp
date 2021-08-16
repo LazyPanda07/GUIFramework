@@ -46,6 +46,13 @@ namespace gui_framework
 		return -1;
 	}
 
+	LRESULT BaseComponent::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
+	{
+		isUsed = false;
+
+		return -1;
+	}
+
 	BaseComponent::BaseComponent(const wstring& className, const wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent, const string& windowFunctionName) :
 		parent(parent),
 		className(className),
@@ -142,13 +149,6 @@ namespace gui_framework
 	bool BaseComponent::isComposite() const
 	{
 		return false;
-	}
-
-	LRESULT BaseComponent::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
-	{
-		isUsed = false;
-
-		return -1;
 	}
 
 	LRESULT BaseComponent::handleMessages(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)

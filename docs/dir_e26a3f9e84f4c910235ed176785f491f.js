@@ -10,9 +10,7 @@ var dir_e26a3f9e84f4c910235ed176785f491f =
       [ "BaseCheckBox", "classgui__framework_1_1_base_check_box.html", "classgui__framework_1_1_base_check_box" ]
     ] ],
     [ "BaseComboBox.cpp", "_base_combo_box_8cpp.html", null ],
-    [ "BaseComboBox.h", "_base_combo_box_8h.html", [
-      [ "BaseComboBox", "classgui__framework_1_1_base_combo_box.html", "classgui__framework_1_1_base_combo_box" ]
-    ] ],
+    [ "BaseComboBox.h", "_base_combo_box_8h.html", "_base_combo_box_8h" ],
     [ "BaseEditControl.cpp", "_base_edit_control_8cpp.html", null ],
     [ "BaseEditControl.h", "_base_edit_control_8h.html", [
       [ "BaseEditControl", "classgui__framework_1_1_base_edit_control.html", "classgui__framework_1_1_base_edit_control" ]
@@ -34,9 +32,7 @@ var dir_e26a3f9e84f4c910235ed176785f491f =
       [ "BaseProgressBar", "classgui__framework_1_1_base_progress_bar.html", "classgui__framework_1_1_base_progress_bar" ]
     ] ],
     [ "BaseRichEdit.cpp", "_base_rich_edit_8cpp.html", null ],
-    [ "BaseRichEdit.h", "_base_rich_edit_8h.html", [
-      [ "BaseRichEdit", "classgui__framework_1_1_base_rich_edit.html", "classgui__framework_1_1_base_rich_edit" ]
-    ] ],
+    [ "BaseRichEdit.h", "_base_rich_edit_8h.html", "_base_rich_edit_8h" ],
     [ "BaseStaticControl.cpp", "_base_static_control_8cpp.html", null ],
     [ "BaseStaticControl.h", "_base_static_control_8h.html", [
       [ "BaseStaticControl", "classgui__framework_1_1_base_static_control.html", "classgui__framework_1_1_base_static_control" ]

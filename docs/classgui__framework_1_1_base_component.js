@@ -35,6 +35,7 @@ var classgui__framework_1_1_base_component =
     [ "setExitMode", "classgui__framework_1_1_base_component.html#a970624b3baad18e031f53ce52a0a3f45", null ],
     [ "setTextColor", "classgui__framework_1_1_base_component.html#a9dba22822b7f830295e104fa27af284c", null ],
     [ "windowMessagesHandle", "classgui__framework_1_1_base_component.html#a636cece7fe5db06982150a8eb9e13e10", null ],
+    [ "BaseComposite", "classgui__framework_1_1_base_component.html#a9ed7ee1de0b791a2603f899e3a181961", null ],
     [ "backgroundColor", "classgui__framework_1_1_base_component.html#aa5a56227ac3689163f958e778f0df1ca", null ],
     [ "className", "classgui__framework_1_1_base_component.html#a7a8719af09a90cd4de26d3a295882e86", null ],
     [ "desiredHeight", "classgui__framework_1_1_base_component.html#a11847788edd849b0b245bd90db0af7bb", null ],

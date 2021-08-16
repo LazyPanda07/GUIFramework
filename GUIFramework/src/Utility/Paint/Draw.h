@@ -11,7 +11,7 @@ namespace gui_framework
 	{
 		namespace paint
 		{
-			/// @brief Draw image from holder
+			/// @brief Draw single image from holder. Multiple calls doesn't work
 			/// @param window 
 			/// @param holder 
 			/// @param x 
@@ -21,7 +21,7 @@ namespace gui_framework
 			/// @exception std::out_of_range Wrong index
 			GUI_FRAMEWORK_API_FUNCTION bool drawImageByIndex(const BaseWindow* window, const ImagesHolder& holder, int x, int y, uint16_t index);
 
-			/// @brief Draw image from holder
+			/// @brief Draw single image from holder. Multiple calls doesn't work
 			/// @param window 
 			/// @param holder 
 			/// @param x 
@@ -31,7 +31,7 @@ namespace gui_framework
 			/// @exception std::out_of_range Wrong pathToImage
 			GUI_FRAMEWORK_API_FUNCTION bool drawImageByPath(const BaseWindow* window, const ImagesHolder& holder, int x, int y, const std::filesystem::path& pathToImage);
 
-			/// @brief Draw icon from holder
+			/// @brief Draw single icon from holder. Multiple calls doesn't work
 			/// @param window 
 			/// @param holder 
 			/// @param x 
@@ -41,7 +41,7 @@ namespace gui_framework
 			/// @exception std::out_of_range Wrong index
 			GUI_FRAMEWORK_API_FUNCTION bool drawIconByIndex(const BaseWindow* window, const IconsHolder& holder, int x, int y, uint16_t index);
 
-			/// @brief Draw icon from holder
+			/// @brief Draw single icon from holder. Multiple calls doesn't work
 			/// @param window 
 			/// @param holder 
 			/// @param x 

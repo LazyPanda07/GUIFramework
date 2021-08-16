@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.7.4-beta</span>
+   &#160;<span id="projectnumber">0.7.5-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -105,12 +105,18 @@ Inheritance diagram for gui_framework::utility::BaseLoadableHolder:</div>
  <div class="center">
   <img src="classgui__framework_1_1utility_1_1_base_loadable_holder.png" usemap="#gui_5Fframework::utility::BaseLoadableHolder_map" alt=""/>
   <map id="gui_5Fframework::utility::BaseLoadableHolder_map" name="gui_5Fframework::utility::BaseLoadableHolder_map">
+<area href="classgui__framework_1_1interfaces_1_1_i_serializable.html" title="Provides interface for serializable to JSON format." alt="gui_framework::interfaces::ISerializable" shape="rect" coords="1066,0,1767,24"/>
 <area href="classgui__framework_1_1utility_1_1_cursors_holder.html" title="Cursors loader." alt="gui_framework::utility::CursorsHolder" shape="rect" coords="0,112,701,136"/>
 <area href="classgui__framework_1_1utility_1_1_icons_holder.html" title="Icons loader." alt="gui_framework::utility::IconsHolder" shape="rect" coords="711,112,1412,136"/>
 <area href="classgui__framework_1_1utility_1_1_images_holder.html" title="Images loader." alt="gui_framework::utility::ImagesHolder" shape="rect" coords="1422,112,2123,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgui__framework_1_1utility_1_1_base_loadable_holder_1_1image_data.html">imageData</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:a4a51f316eaed8d199b7faa998ca407bf"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a4a51f316eaed8d199b7faa998ca407bf">imageType</a> : uint32_t { <a class="el" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a4a51f316eaed8d199b7faa998ca407bfa86bb33755628454af74f88f047ec894a">bitmap</a>
@@ -156,8 +162,19 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:afd9bf42b37fac24224d616617bebf010"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a04d5eabd4dcab82fbb7d4e91689dc3"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classgui__framework_1_1iterators_1_1loadable__const__forward__iterator.html">iterators::loadable_const_forward_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a0a04d5eabd4dcab82fbb7d4e91689dc3">cend</a> () const noexcept final override</td></tr>
 <tr class="separator:a0a04d5eabd4dcab82fbb7d4e91689dc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a30217bdce1d6201974497ae8c10126"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a5a30217bdce1d6201974497ae8c10126">loadBaseLoadableHolderStructure</a> (json::utility::objectSmartPointer&lt; json::utility::jsonObject &gt; &amp;current) const final</td></tr>
+<tr class="separator:a5a30217bdce1d6201974497ae8c10126"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a91a985361b1940f3c9837dc4ce8ca4"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a1a91a985361b1940f3c9837dc4ce8ca4">~BaseLoadableHolder</a> ()</td></tr>
 <tr class="separator:a1a91a985361b1940f3c9837dc4ce8ca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html">gui_framework::interfaces::ISerializable</a></td></tr>
+<tr class="memitem:a87182b138b089b88b869a22876076b1d inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#a87182b138b089b88b869a22876076b1d">ISerializable</a> ()</td></tr>
+<tr class="separator:a87182b138b089b88b869a22876076b1d inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b10a13a7dcad84dd2a7e6e885b45672 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#a2b10a13a7dcad84dd2a7e6e885b45672">setCodepage</a> (uint32_t codepage) final</td></tr>
+<tr class="separator:a2b10a13a7dcad84dd2a7e6e885b45672 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe1577de1770a62d3dcc6161c3475c7a inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#afe1577de1770a62d3dcc6161c3475c7a">getCodepage</a> () const final</td></tr>
+<tr class="separator:afe1577de1770a62d3dcc6161c3475c7a inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8feceb56504671870fc49a814a212516 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#a8feceb56504671870fc49a814a212516">~ISerializable</a> ()=default</td></tr>
+<tr class="separator:a8feceb56504671870fc49a814a212516 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -166,6 +183,10 @@ Protected Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
+<tr class="memitem:a7bba67968ff183d8ad7049ff4d4e0059"><td class="memItemLeft" align="right" valign="top">HIMAGELIST&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a7bba67968ff183d8ad7049ff4d4e0059">imageList</a></td></tr>
+<tr class="separator:a7bba67968ff183d8ad7049ff4d4e0059"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67b958272c2f2dd865362a15cf97a692"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::wstring, <a class="el" href="structgui__framework_1_1utility_1_1_base_loadable_holder_1_1image_data.html">imageData</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a67b958272c2f2dd865362a15cf97a692">images</a></td></tr>
+<tr class="separator:a67b958272c2f2dd865362a15cf97a692"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5883cfaa42d61ff69e1ab7636b234d47"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a5883cfaa42d61ff69e1ab7636b234d47">imagesWidth</a></td></tr>
 <tr class="separator:a5883cfaa42d61ff69e1ab7636b234d47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d3318ae974b13fe723162d75d43cb14"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a0d3318ae974b13fe723162d75d43cb14">imagesHeight</a></td></tr>
@@ -174,7 +195,7 @@ Protected Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base class for all visual asset loaders. </p>
 
-<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8h_source.html#l00019">19</a> of file <a class="el" href="_base_loadable_holder_8h_source.html">BaseLoadableHolder.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8h_source.html#l00020">20</a> of file <a class="el" href="_base_loadable_holder_8h_source.html">BaseLoadableHolder.h</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a4a51f316eaed8d199b7faa998ca407bf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4a51f316eaed8d199b7faa998ca407bf">&#9670;&nbsp;</a></span>imageType</h2>
@@ -201,7 +222,7 @@ Protected Attributes</h2></td></tr>
 <tr><td class="fieldname"><a id="a4a51f316eaed8d199b7faa998ca407bfa1791a97a8403730ee0760489a2aeb992"></a>cursor&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8h_source.html#l00023">23</a> of file <a class="el" href="_base_loadable_holder_8h_source.html">BaseLoadableHolder.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8h_source.html#l00025">25</a> of file <a class="el" href="_base_loadable_holder_8h_source.html">BaseLoadableHolder.h</a>.</p>
 
 </div>
 </div>
@@ -238,7 +259,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8cpp_source.html#l00017">17</a> of file <a class="el" href="_base_loadable_holder_8cpp_source.html">BaseLoadableHolder.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8cpp_source.html#l00122">122</a> of file <a class="el" href="_base_loadable_holder_8cpp_source.html">BaseLoadableHolder.cpp</a>.</p>
 
 </div>
 </div>
@@ -265,7 +286,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8cpp_source.html#l00173">173</a> of file <a class="el" href="_base_loadable_holder_8cpp_source.html">BaseLoadableHolder.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8cpp_source.html#l00261">261</a> of file <a class="el" href="_base_loadable_holder_8cpp_source.html">BaseLoadableHolder.cpp</a>.</p>
 
 </div>
 </div>
@@ -323,7 +344,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Can't be modified. </p>
 
-<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8cpp_source.html#l00141">141</a> of file <a class="el" href="_base_loadable_holder_8cpp_source.html">BaseLoadableHolder.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8cpp_source.html#l00218">218</a> of file <a class="el" href="_base_loadable_holder_8cpp_source.html">BaseLoadableHolder.cpp</a>.</p>
 
 </div>
 </div>
@@ -350,7 +371,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8cpp_source.html#l00152">152</a> of file <a class="el" href="_base_loadable_holder_8cpp_source.html">BaseLoadableHolder.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8cpp_source.html#l00232">232</a> of file <a class="el" href="_base_loadable_holder_8cpp_source.html">BaseLoadableHolder.cpp</a>.</p>
 
 </div>
 </div>
@@ -377,7 +398,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8cpp_source.html#l00168">168</a> of file <a class="el" href="_base_loadable_holder_8cpp_source.html">BaseLoadableHolder.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8cpp_source.html#l00251">251</a> of file <a class="el" href="_base_loadable_holder_8cpp_source.html">BaseLoadableHolder.cpp</a>.</p>
 
 </div>
 </div>
@@ -405,7 +426,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8cpp_source.html#l00080">80</a> of file <a class="el" href="_base_loadable_holder_8cpp_source.html">BaseLoadableHolder.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8cpp_source.html#l00157">157</a> of file <a class="el" href="_base_loadable_holder_8cpp_source.html">BaseLoadableHolder.cpp</a>.</p>
 
 </div>
 </div>
@@ -432,7 +453,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8cpp_source.html#l00163">163</a> of file <a class="el" href="_base_loadable_holder_8cpp_source.html">BaseLoadableHolder.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8cpp_source.html#l00246">246</a> of file <a class="el" href="_base_loadable_holder_8cpp_source.html">BaseLoadableHolder.cpp</a>.</p>
 
 </div>
 </div>
@@ -474,7 +495,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8cpp_source.html#l00095">95</a> of file <a class="el" href="_base_loadable_holder_8cpp_source.html">BaseLoadableHolder.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8cpp_source.html#l00172">172</a> of file <a class="el" href="_base_loadable_holder_8cpp_source.html">BaseLoadableHolder.cpp</a>.</p>
 
 </div>
 </div>
@@ -501,7 +522,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8cpp_source.html#l00118">118</a> of file <a class="el" href="_base_loadable_holder_8cpp_source.html">BaseLoadableHolder.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8cpp_source.html#l00195">195</a> of file <a class="el" href="_base_loadable_holder_8cpp_source.html">BaseLoadableHolder.cpp</a>.</p>
 
 </div>
 </div>
@@ -528,7 +549,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8cpp_source.html#l00090">90</a> of file <a class="el" href="_base_loadable_holder_8cpp_source.html">BaseLoadableHolder.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8cpp_source.html#l00167">167</a> of file <a class="el" href="_base_loadable_holder_8cpp_source.html">BaseLoadableHolder.cpp</a>.</p>
 
 </div>
 </div>
@@ -555,7 +576,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8cpp_source.html#l00085">85</a> of file <a class="el" href="_base_loadable_holder_8cpp_source.html">BaseLoadableHolder.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8cpp_source.html#l00162">162</a> of file <a class="el" href="_base_loadable_holder_8cpp_source.html">BaseLoadableHolder.cpp</a>.</p>
 
 </div>
 </div>
@@ -623,7 +644,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8cpp_source.html#l00105">105</a> of file <a class="el" href="_base_loadable_holder_8cpp_source.html">BaseLoadableHolder.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8cpp_source.html#l00182">182</a> of file <a class="el" href="_base_loadable_holder_8cpp_source.html">BaseLoadableHolder.cpp</a>.</p>
 
 </div>
 </div>
@@ -661,7 +682,35 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8cpp_source.html#l00025">25</a> of file <a class="el" href="_base_loadable_holder_8cpp_source.html">BaseLoadableHolder.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8cpp_source.html#l00091">91</a> of file <a class="el" href="_base_loadable_holder_8cpp_source.html">BaseLoadableHolder.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a5a30217bdce1d6201974497ae8c10126"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a30217bdce1d6201974497ae8c10126">&#9670;&nbsp;</a></span>loadBaseLoadableHolderStructure()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gui_framework::utility::BaseLoadableHolder::loadBaseLoadableHolderStructure </td>
+          <td>(</td>
+          <td class="paramtype">json::utility::objectSmartPointer&lt; json::utility::jsonObject &gt; &amp;&#160;</td>
+          <td class="paramname"><em>current</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8cpp_source.html#l00256">256</a> of file <a class="el" href="_base_loadable_holder_8cpp_source.html">BaseLoadableHolder.cpp</a>.</p>
 
 </div>
 </div>
@@ -741,7 +790,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8cpp_source.html#l00128">128</a> of file <a class="el" href="_base_loadable_holder_8cpp_source.html">BaseLoadableHolder.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8cpp_source.html#l00205">205</a> of file <a class="el" href="_base_loadable_holder_8cpp_source.html">BaseLoadableHolder.cpp</a>.</p>
 
 </div>
 </div>
@@ -795,11 +844,59 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8cpp_source.html#l00067">67</a> of file <a class="el" href="_base_loadable_holder_8cpp_source.html">BaseLoadableHolder.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8cpp_source.html#l00142">142</a> of file <a class="el" href="_base_loadable_holder_8cpp_source.html">BaseLoadableHolder.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a7bba67968ff183d8ad7049ff4d4e0059"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bba67968ff183d8ad7049ff4d4e0059">&#9670;&nbsp;</a></span>imageList</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">HIMAGELIST gui_framework::utility::BaseLoadableHolder::imageList</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8h_source.html#l00056">56</a> of file <a class="el" href="_base_loadable_holder_8h_source.html">BaseLoadableHolder.h</a>.</p>
+
+</div>
+</div>
+<a id="a67b958272c2f2dd865362a15cf97a692"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67b958272c2f2dd865362a15cf97a692">&#9670;&nbsp;</a></span>images</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt;std::wstring, <a class="el" href="structgui__framework_1_1utility_1_1_base_loadable_holder_1_1image_data.html">imageData</a>&gt; gui_framework::utility::BaseLoadableHolder::images</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8h_source.html#l00057">57</a> of file <a class="el" href="_base_loadable_holder_8h_source.html">BaseLoadableHolder.h</a>.</p>
+
+</div>
+</div>
 <a id="a0d3318ae974b13fe723162d75d43cb14"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0d3318ae974b13fe723162d75d43cb14">&#9670;&nbsp;</a></span>imagesHeight</h2>
 
@@ -820,7 +917,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8h_source.html#l00055">55</a> of file <a class="el" href="_base_loadable_holder_8h_source.html">BaseLoadableHolder.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8h_source.html#l00059">59</a> of file <a class="el" href="_base_loadable_holder_8h_source.html">BaseLoadableHolder.h</a>.</p>
 
 </div>
 </div>
@@ -844,7 +941,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8h_source.html#l00054">54</a> of file <a class="el" href="_base_loadable_holder_8h_source.html">BaseLoadableHolder.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_loadable_holder_8h_source.html#l00058">58</a> of file <a class="el" href="_base_loadable_holder_8h_source.html">BaseLoadableHolder.h</a>.</p>
 
 </div>
 </div>

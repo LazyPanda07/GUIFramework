@@ -12,16 +12,19 @@ var classgui__framework_1_1_base_rich_edit =
     ] ],
     [ "BaseRichEdit", "classgui__framework_1_1_base_rich_edit.html#a33e2ff026ae68f0cdba10162eff082be", null ],
     [ "~BaseRichEdit", "classgui__framework_1_1_base_rich_edit.html#ae92c8a07985e30e2ef372a66d046ec46", null ],
-    [ "addUrlDetectEvent", "classgui__framework_1_1_base_rich_edit.html#af21b8916906b7a1c5139d513c47aff52", null ],
+    [ "addUrlDetectEvent", "classgui__framework_1_1_base_rich_edit.html#aed87ad2df9cdf8526c2b95426e11b899", null ],
+    [ "addUrlDetectEvent", "classgui__framework_1_1_base_rich_edit.html#a542c64440afb95b23750f627a5fd4074", null ],
     [ "findString", "classgui__framework_1_1_base_rich_edit.html#a28e3b67f20ffbba552803455e03b3104", null ],
     [ "findSubstring", "classgui__framework_1_1_base_rich_edit.html#aca2e15966dcf9d386342d3affdcd2e63", null ],
     [ "getAutoURLDetect", "classgui__framework_1_1_base_rich_edit.html#ad9c813e5ba0b4cae075b9ea89101f835", null ],
     [ "getSelectedText", "classgui__framework_1_1_base_rich_edit.html#a2d321e91aa2d43d81381f0148eecf7ad", null ],
+    [ "getStructure", "classgui__framework_1_1_base_rich_edit.html#a5efc3f658002087aee204a5f95a52ada", null ],
     [ "removeUrlDetectEvent", "classgui__framework_1_1_base_rich_edit.html#acf50e2d2bfa111189ab21415b620a85b", null ],
     [ "setAutoURLDetect", "classgui__framework_1_1_base_rich_edit.html#a99a7734c996dc4c84115279362db2dc3", null ],
     [ "setBackgroundColor", "classgui__framework_1_1_base_rich_edit.html#abe18d7d262aa479d30306d76ef2be318", null ],
     [ "setLimitText", "classgui__framework_1_1_base_rich_edit.html#a00d331e8e19e08f47d51193b0ac17e6f", null ],
     [ "setTextColor", "classgui__framework_1_1_base_rich_edit.html#a09d6d56819fc8fc9caaf1b39e962f910", null ],
     [ "windowMessagesHandle", "classgui__framework_1_1_base_rich_edit.html#a5b0e9edd94997732cc8b0f6533e9b27a", null ],
-    [ "callbacks", "classgui__framework_1_1_base_rich_edit.html#af8fe311fac3e88f607c886a07a529d3c", null ]
+    [ "callbacks", "classgui__framework_1_1_base_rich_edit.html#ab3e563fb3cc2e5ea31d8c7178c8c0f14", null ],
+    [ "callbacksFunctionNamesAndModules", "classgui__framework_1_1_base_rich_edit.html#a01d1b1cbd3861ff40520b3d0c1ab06c8", null ]
 ];

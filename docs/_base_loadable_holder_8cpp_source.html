@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.7.4-beta</span>
+   &#160;<span id="projectnumber">0.7.5-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -96,200 +96,290 @@ $(document).ready(function(){initNavTree('_base_loadable_holder_8cpp_source.html
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">namespace </span>utility</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        BaseLoadableHolder::imageData::imageData(uint16_t index, imageType type) :</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        BaseLoadableHolder::imageData::imageData(uint16_t index, imageType type, any&amp;&amp; data) :</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            index(index),</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            type(type)</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        }</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a391984f247e6a36435138a0cddf61455">   17</a></span>&#160;        BaseLoadableHolder::BaseLoadableHolder(uint16_t imagesWidth, uint16_t imagesHeight, <span class="keywordtype">size_t</span> count) :</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            imageList(ImageList_Create(imagesWidth, imagesHeight, ILC_COLOR32, 0, static_cast&lt;int&gt;(count))),</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            imagesWidth(imagesWidth),</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            imagesHeight(imagesHeight)</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a1fdd3caeb20986a8cffa5d0549be853f">   25</a></span>&#160;        uint16_t <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a1fdd3caeb20986a8cffa5d0549be853f">BaseLoadableHolder::insertImage</a>(<span class="keyword">const</span> filesystem::path&amp; pathToImage, <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a4a51f316eaed8d199b7faa998ca407bf">imageType</a> type)</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            HBITMAP image = <span class="keyword">static_cast&lt;</span>HBITMAP<span class="keyword">&gt;</span>(LoadImageW(<span class="keyword">nullptr</span>, pathToImage.wstring().data(), <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(type), <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a5883cfaa42d61ff69e1ab7636b234d47">imagesWidth</a>, <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a0d3318ae974b13fe723162d75d43cb14">imagesHeight</a>, LR_LOADFROMFILE));</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            uint16_t resultIndex;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">switch</span> (type)</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a4a51f316eaed8d199b7faa998ca407bfa86bb33755628454af74f88f047ec894a">imageType::bitmap</a>:</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                resultIndex = images.emplace(pathToImage, imageData(ImageList_Add(imageList, image, NULL), type)).first-&gt;second.index;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                DeleteObject(image);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            type(type),</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            data(move(data))</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        }</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="structgui__framework_1_1utility_1_1_base_loadable_holder_1_1image_data.html#a811f3f4e892335c9cf7b0303a34fc7bb">   18</a></span>&#160;        BaseLoadableHolder::imageData::imageData(<a class="code" href="structgui__framework_1_1utility_1_1_base_loadable_holder_1_1image_data.html">imageData</a>&amp;&amp; other) noexcept :</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            index(other.index),</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            type(other.type),</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            data(move(other.data))</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            other.data.reset();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="structgui__framework_1_1utility_1_1_base_loadable_holder_1_1image_data.html#a07bb24d0b8b6d728e067058d3067b254">   26</a></span>&#160;        <a class="code" href="structgui__framework_1_1utility_1_1_base_loadable_holder_1_1image_data.html">BaseLoadableHolder::imageData</a>&amp; BaseLoadableHolder::imageData::operator = (<a class="code" href="structgui__framework_1_1utility_1_1_base_loadable_holder_1_1image_data.html">imageData</a>&amp;&amp; other) noexcept</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            index = other.<a class="code" href="structgui__framework_1_1utility_1_1_base_loadable_holder_1_1image_data.html#a3403cb0de97dffefe7306c178d1a04d5">index</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            type = other.type;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            data = move(other.data);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            other.data.reset();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a4a51f316eaed8d199b7faa998ca407bfabaec6461b0d69dde1b861aefbe375d8a">imageType::icon</a>:</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                resultIndex = images.emplace(pathToImage, imageData(ImageList_AddIcon(imageList, <span class="keyword">reinterpret_cast&lt;</span>HICON<span class="keyword">&gt;</span>(image)), type)).first-&gt;second.index;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                DestroyIcon(<span class="keyword">reinterpret_cast&lt;</span>HICON<span class="keyword">&gt;</span>(image));</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a4a51f316eaed8d199b7faa998ca407bfa1791a97a8403730ee0760489a2aeb992">imageType::cursor</a>:</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                resultIndex = images.emplace(pathToImage, imageData(ImageList_AddIcon(imageList, <span class="keyword">reinterpret_cast&lt;</span>HCURSOR<span class="keyword">&gt;</span>(image)), type)).first-&gt;second.index;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                DestroyCursor(<span class="keyword">reinterpret_cast&lt;</span>HCURSOR<span class="keyword">&gt;</span>(image));</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="structgui__framework_1_1utility_1_1_base_loadable_holder_1_1image_data.html#a025414dff1c35c35ece3ede909db0942">   37</a></span>&#160;        BaseLoadableHolder::imageData::~imageData()</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">if</span> (!data.has_value())</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordflow">switch</span> (type)</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">case</span> imageType::bitmap:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                DeleteObject(any_cast&lt;HBITMAP&gt;(data));</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                resultIndex = <span class="keyword">static_cast&lt;</span>uint16_t<span class="keyword">&gt;</span>(-1);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                DeleteObject(image);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordflow">return</span> resultIndex;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a7eb6b82c64272a60a261fa88038fd124">BaseLoadableHolder::removeImage</a>(<span class="keyword">const</span> filesystem::path&amp; pathToImage)</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            images.erase(pathToImage);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a0817753b742ba2374ef4a33b309f6c90">   67</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a7eb6b82c64272a60a261fa88038fd124">BaseLoadableHolder::removeImage</a>(uint16_t imageIndex)</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [key, value] : images)</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="keywordflow">if</span> (value.index == imageIndex)</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    images.erase(key);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#af7366ac11649ec567ce5b3759ee39430">   80</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#af7366ac11649ec567ce5b3759ee39430">BaseLoadableHolder::contains</a>(<span class="keyword">const</span> filesystem::path&amp; pathToImage)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keywordflow">return</span> images.contains(pathToImage);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a0b87b331bf7ef3aa0071c842417f3b98">   85</a></span>&#160;        uint16_t <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a0b87b331bf7ef3aa0071c842417f3b98">BaseLoadableHolder::getImagesWidth</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a5883cfaa42d61ff69e1ab7636b234d47">imagesWidth</a>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#ac3727fba6ef612c4e1d16bdeae3d74c6">   90</a></span>&#160;        uint16_t <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#ac3727fba6ef612c4e1d16bdeae3d74c6">BaseLoadableHolder::getImagesHeight</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a0d3318ae974b13fe723162d75d43cb14">imagesHeight</a>;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#add52b32c99125bba86c7af3cf6adfbc8">   95</a></span>&#160;        uint16_t <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#add52b32c99125bba86c7af3cf6adfbc8">BaseLoadableHolder::getImageIndex</a>(<span class="keyword">const</span> filesystem::path&amp; pathToImage)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="keywordflow">return</span> images.at(pathToImage).index;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a4a51f316eaed8d199b7faa998ca407bf">BaseLoadableHolder::imageType</a> <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a63ff6d93af85582af94acf67d9b9839b">BaseLoadableHolder::getImageType</a>(<span class="keyword">const</span> filesystem::path&amp; pathToImage)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keywordflow">return</span> images.at(pathToImage).type;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordflow">case</span> imageType::icon:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                DestroyIcon(any_cast&lt;HICON&gt;(data));</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">case</span> imageType::cursor:</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                DestroyCursor(any_cast&lt;HCURSOR&gt;(data));</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        json::JSONBuilder BaseLoadableHolder::getStructure()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keyword">using</span> json::utility::objectSmartPointer;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keyword">using</span> json::utility::jsonObject;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            uint32_t codepage = ISerializable::getCodepage();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            json::JSONBuilder builder(codepage);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            objectSmartPointer&lt;jsonObject&gt; <span class="keywordtype">object</span> = json::utility::make_object&lt;jsonObject&gt;();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            vector&lt;objectSmartPointer&lt;jsonObject&gt;&gt; jsonImages;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordtype">object</span>-&gt;data.push_back({ <span class="stringliteral">&quot;imagesWidth&quot;</span>s, <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(imagesWidth) });</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordtype">object</span>-&gt;data.push_back({ <span class="stringliteral">&quot;imagesHeight&quot;</span>s, <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(imagesHeight) });</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [path, data] : images)</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                objectSmartPointer&lt;jsonObject&gt; image = json::utility::make_object&lt;jsonObject&gt;();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                image-&gt;data.push_back({ <span class="stringliteral">&quot;pathToImage&quot;</span>s, <a class="code" href="namespacegui__framework_1_1utility.html#abbafc9708435f466d89c4f977dcd460d">utility::to_string</a>(path, codepage) });</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                image-&gt;data.push_back({ <span class="stringliteral">&quot;type&quot;</span>s, <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(data.type) });</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                json::utility::appendArray(move(image), jsonImages);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordtype">object</span>-&gt;data.push_back({ <span class="stringliteral">&quot;images&quot;</span>s, move(jsonImages) });</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            builder.append(<span class="stringliteral">&quot;imageHolder&quot;</span>s, move(<span class="keywordtype">object</span>));</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="keywordflow">return</span> builder;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a1fdd3caeb20986a8cffa5d0549be853f">   91</a></span>&#160;        uint16_t BaseLoadableHolder::insertImage(<span class="keyword">const</span> filesystem::path&amp; pathToImage, <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a4a51f316eaed8d199b7faa998ca407bf">imageType</a> type)</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            HBITMAP image = <span class="keyword">static_cast&lt;</span>HBITMAP<span class="keyword">&gt;</span>(LoadImageW(<span class="keyword">nullptr</span>, pathToImage.wstring().data(), <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(type), imagesWidth, imagesHeight, LR_LOADFROMFILE));</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            uint16_t resultIndex;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="keywordflow">switch</span> (type)</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="keywordflow">case</span> imageType::bitmap:</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                resultIndex = images.emplace(pathToImage, <a class="code" href="structgui__framework_1_1utility_1_1_base_loadable_holder_1_1image_data.html">imageData</a>(ImageList_Add(imageList, image, NULL), type, image)).first-&gt;second.index;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keywordflow">case</span> imageType::icon:</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                resultIndex = images.emplace(pathToImage, <a class="code" href="structgui__framework_1_1utility_1_1_base_loadable_holder_1_1image_data.html">imageData</a>(ImageList_AddIcon(imageList, <span class="keyword">reinterpret_cast&lt;</span>HICON<span class="keyword">&gt;</span>(image)), type, image)).first-&gt;second.index;</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#add2bfa0a462d9515a8c42079a05d6e25">  105</a></span>&#160;        <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a4a51f316eaed8d199b7faa998ca407bf">BaseLoadableHolder::imageType</a> <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a63ff6d93af85582af94acf67d9b9839b">BaseLoadableHolder::getImageType</a>(uint16_t imageIndex)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [key, value] : images)</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                <span class="keywordflow">if</span> (value.index == imageIndex)</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                {</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                    <span class="keywordflow">return</span> value.type;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                }</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            }</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <span class="keywordflow">throw</span> out_of_range(format(<span class="stringliteral">&quot;Can&#39;t find imageType at {} index&quot;</span>, imageIndex));</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        }</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#ab525ee25b9e2276865a78e61ceeacf67">  118</a></span>&#160;        HIMAGELIST <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#ab525ee25b9e2276865a78e61ceeacf67">BaseLoadableHolder::getImageList</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <span class="keywordflow">return</span> imageList;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        }</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        uint16_t <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a912944261b0a0016511e010552c4e655">BaseLoadableHolder::operator [] </a>(<span class="keyword">const</span> filesystem::path&amp; pathToImage)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            <span class="keywordflow">return</span> images.at(pathToImage).index;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keywordflow">case</span> imageType::cursor:</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                resultIndex = images.emplace(pathToImage, <a class="code" href="structgui__framework_1_1utility_1_1_base_loadable_holder_1_1image_data.html">imageData</a>(ImageList_AddIcon(imageList, <span class="keyword">reinterpret_cast&lt;</span>HCURSOR<span class="keyword">&gt;</span>(image)), type, image)).first-&gt;second.index;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                resultIndex = <span class="keyword">static_cast&lt;</span>uint16_t<span class="keyword">&gt;</span>(-1);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                DeleteObject(image);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <span class="keywordflow">return</span> resultIndex;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        }</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a391984f247e6a36435138a0cddf61455">  122</a></span>&#160;        BaseLoadableHolder::BaseLoadableHolder(uint16_t imagesWidth, uint16_t imagesHeight, <span class="keywordtype">size_t</span> count) :</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            imageList(ImageList_Create(imagesWidth, imagesHeight, ILC_COLOR32, 0, static_cast&lt;int&gt;(count))),</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            imagesWidth(imagesWidth),</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            imagesHeight(imagesHeight)</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        {</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#ad0c32a91cbb9610f37703139099924e0">  128</a></span>&#160;        filesystem::path <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a912944261b0a0016511e010552c4e655">BaseLoadableHolder::operator [] </a>(uint16_t index)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [key, value] : images)</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            {</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                <span class="keywordflow">if</span> (value.index == index)</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                {</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                    <span class="keywordflow">return</span> key;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                }</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            }</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a7eb6b82c64272a60a261fa88038fd124">BaseLoadableHolder::removeImage</a>(<span class="keyword">const</span> filesystem::path&amp; pathToImage)</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        {</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            <span class="keyword">auto</span> it = <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a67b958272c2f2dd865362a15cf97a692">images</a>.find(pathToImage);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            <span class="keywordflow">if</span> (it != <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a67b958272c2f2dd865362a15cf97a692">images</a>.end())</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            {</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                ImageList_Remove(<a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a7bba67968ff183d8ad7049ff4d4e0059">imageList</a>, it-&gt;second.index);</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            <span class="keywordflow">throw</span> out_of_range(format(<span class="stringliteral">&quot;Can&#39;t find image at {} index&quot;</span>, index));</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        }</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
-<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a77ceed107e4b047703651330010744ef">  141</a></span>&#160;        <a class="code" href="classgui__framework_1_1iterators_1_1loadable__forward__iterator.html">iterators::loadable_forward_iterator</a> <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a77ceed107e4b047703651330010744ef">BaseLoadableHolder::begin</a>() noexcept</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        {</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            vector&lt;filesystem::path&gt; imagesPaths;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            imagesPaths.reserve(images.size());</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            ranges::for_each(images, [&amp;imagesPaths](<span class="keyword">const</span> pair&lt;wstring, imageData&gt;&amp; data) { imagesPaths.push_back(data.first); });</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classgui__framework_1_1iterators_1_1loadable__forward__iterator.html">iterators::loadable_forward_iterator</a>(move(imagesPaths), 0);</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        }</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a67b958272c2f2dd865362a15cf97a692">images</a>.erase(it);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        }</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a0817753b742ba2374ef4a33b309f6c90">  142</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a7eb6b82c64272a60a261fa88038fd124">BaseLoadableHolder::removeImage</a>(uint16_t imageIndex)</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        {</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [key, value] : <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a67b958272c2f2dd865362a15cf97a692">images</a>)</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            {</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                <span class="keywordflow">if</span> (value.index == imageIndex)</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                {</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                    <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a67b958272c2f2dd865362a15cf97a692">images</a>.erase(key);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                    ImageList_Remove(<a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a7bba67968ff183d8ad7049ff4d4e0059">imageList</a>, imageIndex);</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
-<div class="line"><a name="l00152"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a0d2854ee1a1d63b201f4cd574ffcec00">  152</a></span>&#160;        <a class="code" href="classgui__framework_1_1iterators_1_1loadable__const__forward__iterator.html">iterators::loadable_const_forward_iterator</a> <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a0d2854ee1a1d63b201f4cd574ffcec00">BaseLoadableHolder::cbegin</a>() const noexcept</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        {</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            vector&lt;filesystem::path&gt; imagesPaths;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            imagesPaths.reserve(images.size());</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            ranges::for_each(images, [&amp;imagesPaths](<span class="keyword">const</span> pair&lt;wstring, imageData&gt;&amp; data) { imagesPaths.push_back(data.first); });</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classgui__framework_1_1iterators_1_1loadable__const__forward__iterator.html">iterators::loadable_const_forward_iterator</a>(move(imagesPaths), 0);</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        }</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
-<div class="line"><a name="l00163"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#afd9bf42b37fac24224d616617bebf010">  163</a></span>&#160;        <a class="code" href="classgui__framework_1_1iterators_1_1loadable__forward__iterator.html">iterators::loadable_forward_iterator</a> <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#afd9bf42b37fac24224d616617bebf010">BaseLoadableHolder::end</a>() noexcept</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        {</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classgui__framework_1_1iterators_1_1loadable__forward__iterator.html">iterators::loadable_forward_iterator</a>({}, images.size());</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        }</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
-<div class="line"><a name="l00168"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a0a04d5eabd4dcab82fbb7d4e91689dc3">  168</a></span>&#160;        <a class="code" href="classgui__framework_1_1iterators_1_1loadable__const__forward__iterator.html">iterators::loadable_const_forward_iterator</a> <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a0a04d5eabd4dcab82fbb7d4e91689dc3">BaseLoadableHolder::cend</a>() const noexcept</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        {</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classgui__framework_1_1iterators_1_1loadable__const__forward__iterator.html">iterators::loadable_const_forward_iterator</a>({}, images.size());</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        }</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
-<div class="line"><a name="l00173"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a1a91a985361b1940f3c9837dc4ce8ca4">  173</a></span>&#160;        <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a1a91a985361b1940f3c9837dc4ce8ca4">BaseLoadableHolder::~BaseLoadableHolder</a>()</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        {</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            ImageList_Destroy(imageList);</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        }</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    }</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;}</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                }</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            }</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        }</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
+<div class="line"><a name="l00157"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#af7366ac11649ec567ce5b3759ee39430">  157</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#af7366ac11649ec567ce5b3759ee39430">BaseLoadableHolder::contains</a>(<span class="keyword">const</span> filesystem::path&amp; pathToImage)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a67b958272c2f2dd865362a15cf97a692">images</a>.contains(pathToImage);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        }</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a0b87b331bf7ef3aa0071c842417f3b98">  162</a></span>&#160;        uint16_t <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a0b87b331bf7ef3aa0071c842417f3b98">BaseLoadableHolder::getImagesWidth</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a5883cfaa42d61ff69e1ab7636b234d47">imagesWidth</a>;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        }</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#ac3727fba6ef612c4e1d16bdeae3d74c6">  167</a></span>&#160;        uint16_t <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#ac3727fba6ef612c4e1d16bdeae3d74c6">BaseLoadableHolder::getImagesHeight</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a0d3318ae974b13fe723162d75d43cb14">imagesHeight</a>;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        }</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
+<div class="line"><a name="l00172"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#add52b32c99125bba86c7af3cf6adfbc8">  172</a></span>&#160;        uint16_t <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#add52b32c99125bba86c7af3cf6adfbc8">BaseLoadableHolder::getImageIndex</a>(<span class="keyword">const</span> filesystem::path&amp; pathToImage)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a67b958272c2f2dd865362a15cf97a692">images</a>.at(pathToImage).index;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        }</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a4a51f316eaed8d199b7faa998ca407bf">BaseLoadableHolder::imageType</a> <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a63ff6d93af85582af94acf67d9b9839b">BaseLoadableHolder::getImageType</a>(<span class="keyword">const</span> filesystem::path&amp; pathToImage)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a67b958272c2f2dd865362a15cf97a692">images</a>.at(pathToImage).type;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        }</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
+<div class="line"><a name="l00182"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#add2bfa0a462d9515a8c42079a05d6e25">  182</a></span>&#160;        <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a4a51f316eaed8d199b7faa998ca407bf">BaseLoadableHolder::imageType</a> <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a63ff6d93af85582af94acf67d9b9839b">BaseLoadableHolder::getImageType</a>(uint16_t imageIndex)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [key, value] : <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a67b958272c2f2dd865362a15cf97a692">images</a>)</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            {</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                <span class="keywordflow">if</span> (value.index == imageIndex)</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                {</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                    <span class="keywordflow">return</span> value.type;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                }</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            }</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            <span class="keywordflow">throw</span> out_of_range(format(<span class="stringliteral">&quot;Can&#39;t find imageType at {} index&quot;</span>, imageIndex));</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        }</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#ab525ee25b9e2276865a78e61ceeacf67">  195</a></span>&#160;        HIMAGELIST <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#ab525ee25b9e2276865a78e61ceeacf67">BaseLoadableHolder::getImageList</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a7bba67968ff183d8ad7049ff4d4e0059">imageList</a>;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        }</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        uint16_t <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a912944261b0a0016511e010552c4e655">BaseLoadableHolder::operator [] </a>(<span class="keyword">const</span> filesystem::path&amp; pathToImage)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a67b958272c2f2dd865362a15cf97a692">images</a>.at(pathToImage).index;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        }</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
+<div class="line"><a name="l00205"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#ad0c32a91cbb9610f37703139099924e0">  205</a></span>&#160;        filesystem::path <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a912944261b0a0016511e010552c4e655">BaseLoadableHolder::operator [] </a>(uint16_t index)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [key, value] : <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a67b958272c2f2dd865362a15cf97a692">images</a>)</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            {</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                <span class="keywordflow">if</span> (value.index == index)</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                {</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                    <span class="keywordflow">return</span> key;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                }</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;            }</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;            <span class="keywordflow">throw</span> out_of_range(format(<span class="stringliteral">&quot;Can&#39;t find image at {} index&quot;</span>, index));</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        }</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
+<div class="line"><a name="l00218"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a77ceed107e4b047703651330010744ef">  218</a></span>&#160;        <a class="code" href="classgui__framework_1_1iterators_1_1loadable__forward__iterator.html">iterators::loadable_forward_iterator</a> <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a77ceed107e4b047703651330010744ef">BaseLoadableHolder::begin</a>() noexcept</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        {</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            vector&lt;filesystem::path&gt; imagesPaths;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            imagesPaths.reserve(<a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a67b958272c2f2dd865362a15cf97a692">images</a>.size());</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [path, data] : <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a67b958272c2f2dd865362a15cf97a692">images</a>)</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            {</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                imagesPaths.push_back(path);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            }</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classgui__framework_1_1iterators_1_1loadable__forward__iterator.html">iterators::loadable_forward_iterator</a>(move(imagesPaths), 0);</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        }</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
+<div class="line"><a name="l00232"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a0d2854ee1a1d63b201f4cd574ffcec00">  232</a></span>&#160;        <a class="code" href="classgui__framework_1_1iterators_1_1loadable__const__forward__iterator.html">iterators::loadable_const_forward_iterator</a> <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a0d2854ee1a1d63b201f4cd574ffcec00">BaseLoadableHolder::cbegin</a>() const noexcept</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        {</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            vector&lt;filesystem::path&gt; imagesPaths;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;            imagesPaths.reserve(<a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a67b958272c2f2dd865362a15cf97a692">images</a>.size());</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [path, data] : <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a67b958272c2f2dd865362a15cf97a692">images</a>)</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            {</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                imagesPaths.push_back(path);</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            }</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classgui__framework_1_1iterators_1_1loadable__const__forward__iterator.html">iterators::loadable_const_forward_iterator</a>(move(imagesPaths), 0);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        }</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
+<div class="line"><a name="l00246"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#afd9bf42b37fac24224d616617bebf010">  246</a></span>&#160;        <a class="code" href="classgui__framework_1_1iterators_1_1loadable__forward__iterator.html">iterators::loadable_forward_iterator</a> <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#afd9bf42b37fac24224d616617bebf010">BaseLoadableHolder::end</a>() noexcept</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        {</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classgui__framework_1_1iterators_1_1loadable__forward__iterator.html">iterators::loadable_forward_iterator</a>({}, <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a67b958272c2f2dd865362a15cf97a692">images</a>.size());</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        }</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
+<div class="line"><a name="l00251"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a0a04d5eabd4dcab82fbb7d4e91689dc3">  251</a></span>&#160;        <a class="code" href="classgui__framework_1_1iterators_1_1loadable__const__forward__iterator.html">iterators::loadable_const_forward_iterator</a> <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a0a04d5eabd4dcab82fbb7d4e91689dc3">BaseLoadableHolder::cend</a>() const noexcept</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        {</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classgui__framework_1_1iterators_1_1loadable__const__forward__iterator.html">iterators::loadable_const_forward_iterator</a>({}, <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a67b958272c2f2dd865362a15cf97a692">images</a>.size());</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        }</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
+<div class="line"><a name="l00256"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a5a30217bdce1d6201974497ae8c10126">  256</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a5a30217bdce1d6201974497ae8c10126">BaseLoadableHolder::loadBaseLoadableHolderStructure</a>(json::utility::objectSmartPointer&lt;json::utility::jsonObject&gt;&amp; current)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            current-&gt;data.push_back({ <span class="stringliteral">&quot;imageHolder&quot;</span>s,  move(this-&gt;getStructure()[<span class="stringliteral">&quot;imageHolder&quot;</span>]) });</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        }</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
+<div class="line"><a name="l00261"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a1a91a985361b1940f3c9837dc4ce8ca4">  261</a></span>&#160;        <a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a1a91a985361b1940f3c9837dc4ce8ca4">BaseLoadableHolder::~BaseLoadableHolder</a>()</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        {</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            ImageList_Destroy(<a class="code" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a7bba67968ff183d8ad7049ff4d4e0059">imageList</a>);</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        }</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    }</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;}</div>
 <div class="ttc" id="a_base_loadable_holder_8h_html"><div class="ttname"><a href="_base_loadable_holder_8h.html">BaseLoadableHolder.h</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1iterators_1_1loadable__const__forward__iterator_html"><div class="ttname"><a href="classgui__framework_1_1iterators_1_1loadable__const__forward__iterator.html">gui_framework::iterators::loadable_const_forward_iterator</a></div><div class="ttdoc">IBaseConstForwardIterator implementation for BaseLoadableHolder.</div><div class="ttdef"><b>Definition:</b> <a href="loadable__const__forward__iterator_8h_source.html#l00011">loadable_const_forward_iterator.h:12</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1iterators_1_1loadable__forward__iterator_html"><div class="ttname"><a href="classgui__framework_1_1iterators_1_1loadable__forward__iterator.html">gui_framework::iterators::loadable_forward_iterator</a></div><div class="ttdoc">IBaseForwardIterator implementation for BaseLoadableHolder.</div><div class="ttdef"><b>Definition:</b> <a href="loadable__forward__iterator_8h_source.html#l00011">loadable_forward_iterator.h:12</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1utility_1_1_base_loadable_holder_html_a0a04d5eabd4dcab82fbb7d4e91689dc3"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a0a04d5eabd4dcab82fbb7d4e91689dc3">gui_framework::utility::BaseLoadableHolder::cend</a></div><div class="ttdeci">virtual iterators::loadable_const_forward_iterator cend() const noexcept final override</div><div class="ttdef"><b>Definition:</b> <a href="_base_loadable_holder_8cpp_source.html#l00168">BaseLoadableHolder.cpp:168</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1utility_1_1_base_loadable_holder_html_a0b87b331bf7ef3aa0071c842417f3b98"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a0b87b331bf7ef3aa0071c842417f3b98">gui_framework::utility::BaseLoadableHolder::getImagesWidth</a></div><div class="ttdeci">virtual uint16_t getImagesWidth() const final</div><div class="ttdef"><b>Definition:</b> <a href="_base_loadable_holder_8cpp_source.html#l00085">BaseLoadableHolder.cpp:85</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1utility_1_1_base_loadable_holder_html_a0d2854ee1a1d63b201f4cd574ffcec00"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a0d2854ee1a1d63b201f4cd574ffcec00">gui_framework::utility::BaseLoadableHolder::cbegin</a></div><div class="ttdeci">virtual iterators::loadable_const_forward_iterator cbegin() const noexcept final override</div><div class="ttdef"><b>Definition:</b> <a href="_base_loadable_holder_8cpp_source.html#l00152">BaseLoadableHolder.cpp:152</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1utility_1_1_base_loadable_holder_html_a0d3318ae974b13fe723162d75d43cb14"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a0d3318ae974b13fe723162d75d43cb14">gui_framework::utility::BaseLoadableHolder::imagesHeight</a></div><div class="ttdeci">uint16_t imagesHeight</div><div class="ttdef"><b>Definition:</b> <a href="_base_loadable_holder_8h_source.html#l00055">BaseLoadableHolder.h:55</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1utility_1_1_base_loadable_holder_html_a1a91a985361b1940f3c9837dc4ce8ca4"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a1a91a985361b1940f3c9837dc4ce8ca4">gui_framework::utility::BaseLoadableHolder::~BaseLoadableHolder</a></div><div class="ttdeci">virtual ~BaseLoadableHolder()</div><div class="ttdef"><b>Definition:</b> <a href="_base_loadable_holder_8cpp_source.html#l00173">BaseLoadableHolder.cpp:173</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1utility_1_1_base_loadable_holder_html_a1fdd3caeb20986a8cffa5d0549be853f"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a1fdd3caeb20986a8cffa5d0549be853f">gui_framework::utility::BaseLoadableHolder::insertImage</a></div><div class="ttdeci">virtual uint16_t insertImage(const std::filesystem::path &amp;pathToImage, imageType type) final</div><div class="ttdef"><b>Definition:</b> <a href="_base_loadable_holder_8cpp_source.html#l00025">BaseLoadableHolder.cpp:25</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1utility_1_1_base_loadable_holder_html_a4a51f316eaed8d199b7faa998ca407bf"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a4a51f316eaed8d199b7faa998ca407bf">gui_framework::utility::BaseLoadableHolder::imageType</a></div><div class="ttdeci">imageType</div><div class="ttdef"><b>Definition:</b> <a href="_base_loadable_holder_8h_source.html#l00023">BaseLoadableHolder.h:24</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1utility_1_1_base_loadable_holder_html_a4a51f316eaed8d199b7faa998ca407bfa1791a97a8403730ee0760489a2aeb992"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a4a51f316eaed8d199b7faa998ca407bfa1791a97a8403730ee0760489a2aeb992">gui_framework::utility::BaseLoadableHolder::imageType::cursor</a></div><div class="ttdeci">@ cursor</div></div>
-<div class="ttc" id="aclassgui__framework_1_1utility_1_1_base_loadable_holder_html_a4a51f316eaed8d199b7faa998ca407bfa86bb33755628454af74f88f047ec894a"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a4a51f316eaed8d199b7faa998ca407bfa86bb33755628454af74f88f047ec894a">gui_framework::utility::BaseLoadableHolder::imageType::bitmap</a></div><div class="ttdeci">@ bitmap</div></div>
-<div class="ttc" id="aclassgui__framework_1_1utility_1_1_base_loadable_holder_html_a4a51f316eaed8d199b7faa998ca407bfabaec6461b0d69dde1b861aefbe375d8a"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a4a51f316eaed8d199b7faa998ca407bfabaec6461b0d69dde1b861aefbe375d8a">gui_framework::utility::BaseLoadableHolder::imageType::icon</a></div><div class="ttdeci">@ icon</div></div>
-<div class="ttc" id="aclassgui__framework_1_1utility_1_1_base_loadable_holder_html_a5883cfaa42d61ff69e1ab7636b234d47"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a5883cfaa42d61ff69e1ab7636b234d47">gui_framework::utility::BaseLoadableHolder::imagesWidth</a></div><div class="ttdeci">uint16_t imagesWidth</div><div class="ttdef"><b>Definition:</b> <a href="_base_loadable_holder_8h_source.html#l00054">BaseLoadableHolder.h:54</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1utility_1_1_base_loadable_holder_html_a0a04d5eabd4dcab82fbb7d4e91689dc3"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a0a04d5eabd4dcab82fbb7d4e91689dc3">gui_framework::utility::BaseLoadableHolder::cend</a></div><div class="ttdeci">virtual iterators::loadable_const_forward_iterator cend() const noexcept final override</div><div class="ttdef"><b>Definition:</b> <a href="_base_loadable_holder_8cpp_source.html#l00251">BaseLoadableHolder.cpp:251</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1utility_1_1_base_loadable_holder_html_a0b87b331bf7ef3aa0071c842417f3b98"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a0b87b331bf7ef3aa0071c842417f3b98">gui_framework::utility::BaseLoadableHolder::getImagesWidth</a></div><div class="ttdeci">virtual uint16_t getImagesWidth() const final</div><div class="ttdef"><b>Definition:</b> <a href="_base_loadable_holder_8cpp_source.html#l00162">BaseLoadableHolder.cpp:162</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1utility_1_1_base_loadable_holder_html_a0d2854ee1a1d63b201f4cd574ffcec00"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a0d2854ee1a1d63b201f4cd574ffcec00">gui_framework::utility::BaseLoadableHolder::cbegin</a></div><div class="ttdeci">virtual iterators::loadable_const_forward_iterator cbegin() const noexcept final override</div><div class="ttdef"><b>Definition:</b> <a href="_base_loadable_holder_8cpp_source.html#l00232">BaseLoadableHolder.cpp:232</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1utility_1_1_base_loadable_holder_html_a0d3318ae974b13fe723162d75d43cb14"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a0d3318ae974b13fe723162d75d43cb14">gui_framework::utility::BaseLoadableHolder::imagesHeight</a></div><div class="ttdeci">uint16_t imagesHeight</div><div class="ttdef"><b>Definition:</b> <a href="_base_loadable_holder_8h_source.html#l00059">BaseLoadableHolder.h:59</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1utility_1_1_base_loadable_holder_html_a1a91a985361b1940f3c9837dc4ce8ca4"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a1a91a985361b1940f3c9837dc4ce8ca4">gui_framework::utility::BaseLoadableHolder::~BaseLoadableHolder</a></div><div class="ttdeci">virtual ~BaseLoadableHolder()</div><div class="ttdef"><b>Definition:</b> <a href="_base_loadable_holder_8cpp_source.html#l00261">BaseLoadableHolder.cpp:261</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1utility_1_1_base_loadable_holder_html_a4a51f316eaed8d199b7faa998ca407bf"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a4a51f316eaed8d199b7faa998ca407bf">gui_framework::utility::BaseLoadableHolder::imageType</a></div><div class="ttdeci">imageType</div><div class="ttdef"><b>Definition:</b> <a href="_base_loadable_holder_8h_source.html#l00025">BaseLoadableHolder.h:26</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1utility_1_1_base_loadable_holder_html_a5883cfaa42d61ff69e1ab7636b234d47"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a5883cfaa42d61ff69e1ab7636b234d47">gui_framework::utility::BaseLoadableHolder::imagesWidth</a></div><div class="ttdeci">uint16_t imagesWidth</div><div class="ttdef"><b>Definition:</b> <a href="_base_loadable_holder_8h_source.html#l00058">BaseLoadableHolder.h:58</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1utility_1_1_base_loadable_holder_html_a5a30217bdce1d6201974497ae8c10126"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a5a30217bdce1d6201974497ae8c10126">gui_framework::utility::BaseLoadableHolder::loadBaseLoadableHolderStructure</a></div><div class="ttdeci">virtual void loadBaseLoadableHolderStructure(json::utility::objectSmartPointer&lt; json::utility::jsonObject &gt; &amp;current) const final</div><div class="ttdef"><b>Definition:</b> <a href="_base_loadable_holder_8cpp_source.html#l00256">BaseLoadableHolder.cpp:256</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1utility_1_1_base_loadable_holder_html_a63ff6d93af85582af94acf67d9b9839b"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a63ff6d93af85582af94acf67d9b9839b">gui_framework::utility::BaseLoadableHolder::getImageType</a></div><div class="ttdeci">virtual imageType getImageType(const std::filesystem::path &amp;pathToImage) const final</div></div>
-<div class="ttc" id="aclassgui__framework_1_1utility_1_1_base_loadable_holder_html_a77ceed107e4b047703651330010744ef"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a77ceed107e4b047703651330010744ef">gui_framework::utility::BaseLoadableHolder::begin</a></div><div class="ttdeci">virtual iterators::loadable_forward_iterator begin() noexcept final override</div><div class="ttdoc">Can't be modified.</div><div class="ttdef"><b>Definition:</b> <a href="_base_loadable_holder_8cpp_source.html#l00141">BaseLoadableHolder.cpp:141</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1utility_1_1_base_loadable_holder_html_a67b958272c2f2dd865362a15cf97a692"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a67b958272c2f2dd865362a15cf97a692">gui_framework::utility::BaseLoadableHolder::images</a></div><div class="ttdeci">std::unordered_map&lt; std::wstring, imageData &gt; images</div><div class="ttdef"><b>Definition:</b> <a href="_base_loadable_holder_8h_source.html#l00057">BaseLoadableHolder.h:57</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1utility_1_1_base_loadable_holder_html_a77ceed107e4b047703651330010744ef"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a77ceed107e4b047703651330010744ef">gui_framework::utility::BaseLoadableHolder::begin</a></div><div class="ttdeci">virtual iterators::loadable_forward_iterator begin() noexcept final override</div><div class="ttdoc">Can't be modified.</div><div class="ttdef"><b>Definition:</b> <a href="_base_loadable_holder_8cpp_source.html#l00218">BaseLoadableHolder.cpp:218</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1utility_1_1_base_loadable_holder_html_a7bba67968ff183d8ad7049ff4d4e0059"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a7bba67968ff183d8ad7049ff4d4e0059">gui_framework::utility::BaseLoadableHolder::imageList</a></div><div class="ttdeci">HIMAGELIST imageList</div><div class="ttdef"><b>Definition:</b> <a href="_base_loadable_holder_8h_source.html#l00056">BaseLoadableHolder.h:56</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1utility_1_1_base_loadable_holder_html_a7eb6b82c64272a60a261fa88038fd124"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a7eb6b82c64272a60a261fa88038fd124">gui_framework::utility::BaseLoadableHolder::removeImage</a></div><div class="ttdeci">virtual void removeImage(const std::filesystem::path &amp;pathToImage) final</div></div>
 <div class="ttc" id="aclassgui__framework_1_1utility_1_1_base_loadable_holder_html_a912944261b0a0016511e010552c4e655"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a912944261b0a0016511e010552c4e655">gui_framework::utility::BaseLoadableHolder::operator[]</a></div><div class="ttdeci">virtual uint16_t operator[](const std::filesystem::path &amp;pathToImage) const final</div></div>
-<div class="ttc" id="aclassgui__framework_1_1utility_1_1_base_loadable_holder_html_ab525ee25b9e2276865a78e61ceeacf67"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#ab525ee25b9e2276865a78e61ceeacf67">gui_framework::utility::BaseLoadableHolder::getImageList</a></div><div class="ttdeci">virtual HIMAGELIST getImageList() const final</div><div class="ttdef"><b>Definition:</b> <a href="_base_loadable_holder_8cpp_source.html#l00118">BaseLoadableHolder.cpp:118</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1utility_1_1_base_loadable_holder_html_ac3727fba6ef612c4e1d16bdeae3d74c6"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#ac3727fba6ef612c4e1d16bdeae3d74c6">gui_framework::utility::BaseLoadableHolder::getImagesHeight</a></div><div class="ttdeci">virtual uint16_t getImagesHeight() const final</div><div class="ttdef"><b>Definition:</b> <a href="_base_loadable_holder_8cpp_source.html#l00090">BaseLoadableHolder.cpp:90</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1utility_1_1_base_loadable_holder_html_add52b32c99125bba86c7af3cf6adfbc8"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#add52b32c99125bba86c7af3cf6adfbc8">gui_framework::utility::BaseLoadableHolder::getImageIndex</a></div><div class="ttdeci">virtual uint16_t getImageIndex(const std::filesystem::path &amp;pathToImage) const final</div><div class="ttdef"><b>Definition:</b> <a href="_base_loadable_holder_8cpp_source.html#l00095">BaseLoadableHolder.cpp:95</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1utility_1_1_base_loadable_holder_html_af7366ac11649ec567ce5b3759ee39430"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#af7366ac11649ec567ce5b3759ee39430">gui_framework::utility::BaseLoadableHolder::contains</a></div><div class="ttdeci">virtual bool contains(const std::filesystem::path &amp;pathToImage) const final</div><div class="ttdef"><b>Definition:</b> <a href="_base_loadable_holder_8cpp_source.html#l00080">BaseLoadableHolder.cpp:80</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1utility_1_1_base_loadable_holder_html_afd9bf42b37fac24224d616617bebf010"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#afd9bf42b37fac24224d616617bebf010">gui_framework::utility::BaseLoadableHolder::end</a></div><div class="ttdeci">virtual iterators::loadable_forward_iterator end() noexcept final override</div><div class="ttdef"><b>Definition:</b> <a href="_base_loadable_holder_8cpp_source.html#l00163">BaseLoadableHolder.cpp:163</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1utility_1_1_base_loadable_holder_html_ab525ee25b9e2276865a78e61ceeacf67"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#ab525ee25b9e2276865a78e61ceeacf67">gui_framework::utility::BaseLoadableHolder::getImageList</a></div><div class="ttdeci">virtual HIMAGELIST getImageList() const final</div><div class="ttdef"><b>Definition:</b> <a href="_base_loadable_holder_8cpp_source.html#l00195">BaseLoadableHolder.cpp:195</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1utility_1_1_base_loadable_holder_html_ac3727fba6ef612c4e1d16bdeae3d74c6"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#ac3727fba6ef612c4e1d16bdeae3d74c6">gui_framework::utility::BaseLoadableHolder::getImagesHeight</a></div><div class="ttdeci">virtual uint16_t getImagesHeight() const final</div><div class="ttdef"><b>Definition:</b> <a href="_base_loadable_holder_8cpp_source.html#l00167">BaseLoadableHolder.cpp:167</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1utility_1_1_base_loadable_holder_html_add52b32c99125bba86c7af3cf6adfbc8"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#add52b32c99125bba86c7af3cf6adfbc8">gui_framework::utility::BaseLoadableHolder::getImageIndex</a></div><div class="ttdeci">virtual uint16_t getImageIndex(const std::filesystem::path &amp;pathToImage) const final</div><div class="ttdef"><b>Definition:</b> <a href="_base_loadable_holder_8cpp_source.html#l00172">BaseLoadableHolder.cpp:172</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1utility_1_1_base_loadable_holder_html_af7366ac11649ec567ce5b3759ee39430"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#af7366ac11649ec567ce5b3759ee39430">gui_framework::utility::BaseLoadableHolder::contains</a></div><div class="ttdeci">virtual bool contains(const std::filesystem::path &amp;pathToImage) const final</div><div class="ttdef"><b>Definition:</b> <a href="_base_loadable_holder_8cpp_source.html#l00157">BaseLoadableHolder.cpp:157</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1utility_1_1_base_loadable_holder_html_afd9bf42b37fac24224d616617bebf010"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#afd9bf42b37fac24224d616617bebf010">gui_framework::utility::BaseLoadableHolder::end</a></div><div class="ttdeci">virtual iterators::loadable_forward_iterator end() noexcept final override</div><div class="ttdef"><b>Definition:</b> <a href="_base_loadable_holder_8cpp_source.html#l00246">BaseLoadableHolder.cpp:246</a></div></div>
+<div class="ttc" id="anamespacegui__framework_1_1utility_html_abbafc9708435f466d89c4f977dcd460d"><div class="ttname"><a href="namespacegui__framework_1_1utility.html#abbafc9708435f466d89c4f977dcd460d">gui_framework::utility::to_string</a></div><div class="ttdeci">string to_string(const wstring &amp;stringToConvert, uint32_t codepage)</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00035">Utility.cpp:35</a></div></div>
 <div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00016">BaseComponent.cpp:17</a></div></div>
 <div class="ttc" id="apch_8h_html"><div class="ttname"><a href="pch_8h.html">pch.h</a></div></div>
+<div class="ttc" id="astructgui__framework_1_1utility_1_1_base_loadable_holder_1_1image_data_html"><div class="ttname"><a href="structgui__framework_1_1utility_1_1_base_loadable_holder_1_1image_data.html">gui_framework::utility::BaseLoadableHolder::imageData</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_loadable_holder_8h_source.html#l00033">BaseLoadableHolder.h:34</a></div></div>
+<div class="ttc" id="astructgui__framework_1_1utility_1_1_base_loadable_holder_1_1image_data_html_a3403cb0de97dffefe7306c178d1a04d5"><div class="ttname"><a href="structgui__framework_1_1utility_1_1_base_loadable_holder_1_1image_data.html#a3403cb0de97dffefe7306c178d1a04d5">gui_framework::utility::BaseLoadableHolder::imageData::index</a></div><div class="ttdeci">uint16_t index</div><div class="ttdef"><b>Definition:</b> <a href="_base_loadable_holder_8h_source.html#l00035">BaseLoadableHolder.h:35</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
