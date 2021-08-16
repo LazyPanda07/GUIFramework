@@ -4,6 +4,7 @@
 #include "Utility/Holders/WindowHolder.h"
 #include "Composites/SeparateWindow.h"
 #include "Components/ListViews/ListTextListView.h"
+#include "Components/ListViews/TextListView.h"
 
 #pragma comment (lib, "GUIFramework.lib")
 
