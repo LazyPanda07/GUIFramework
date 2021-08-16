@@ -7,13 +7,17 @@ namespace gui_framework
 {
 	namespace styles
 	{
-		ListListViewStyles::ListListViewStyles(const ListListViewStyles& buttonStyles)
+		ListListViewStyles::ListListViewStyles()
 		{
 			this->appendStyle(LVS_LIST);
+		}
 
-			this->appendStyle(buttonStyles.getStyles());
+		ListListViewStyles::ListListViewStyles(const ListListViewStyles& listViewStyles) :
+			ListListViewStyles()
+		{
+			this->appendStyle(listViewStyles.getStyles());
 
-			this->appendExtendedStyle(buttonStyles.getExtendedStyles());
+			this->appendExtendedStyle(listViewStyles.getExtendedStyles());
 		}
 	}
 }

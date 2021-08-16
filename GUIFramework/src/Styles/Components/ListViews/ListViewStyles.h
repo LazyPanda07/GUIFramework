@@ -14,7 +14,7 @@ namespace gui_framework
 			ListViewStyles() = default;
 
 		public:
-			ListViewStyles(const ListViewStyles& buttonStyles);
+			ListViewStyles(const ListViewStyles& listViewStyles);
 
 			virtual ~ListViewStyles() = default;
 		};
