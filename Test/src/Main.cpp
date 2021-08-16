@@ -1,10 +1,8 @@
 #include <iostream>
 
 #include "GUIFramework.h"
-#include "Composites/ChildWindow.h"
 #include "Utility/Holders/WindowHolder.h"
 #include "Composites/SeparateWindow.h"
-#include "Components/ComboBoxes/DropDownListComboBox.h"
 
 #pragma comment (lib, "GUIFramework.lib")
 
@@ -22,11 +20,6 @@ void test()
 	{
 		WindowHolder holder(make_unique<SeparateWindow>(L"MainWindow", L"Главное окно", settings, "main"));
 		SeparateWindow* ptr = dynamic_cast<SeparateWindow*>(holder.get());
-
-		DropDownListComboBox* list = new DropDownListComboBox(L"List", utility::ComponentSettings(0, 0, 300, 20), ptr);
-
-		list->addValue(L"First");
-		list->addValue(L"Second");
 
 		ptr->setExitMode(BaseComponent::exitMode::quit);
 
