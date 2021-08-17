@@ -5,6 +5,11 @@ using namespace std;
 
 namespace gui_framework
 {
+	string SeparateWindow::getCreationType() const
+	{
+		return "SeparateWindow";
+	}
+
 	SeparateWindow::SeparateWindow(const std::wstring& className, const std::wstring& titleName, const utility::ComponentSettings& settings, const std::string& windowFunctionName, bool maximize, bool minimize) :
 		BaseSeparateWindow
 		(

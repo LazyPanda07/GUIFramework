@@ -34,6 +34,11 @@ namespace gui_framework
 		coordinates.erase(index);
 	}
 
+	string BaseWindow::getCreationType() const
+	{
+		return "BaseWindow";
+	}
+
 	BaseWindow::BaseWindow(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent, const string& windowFunctionName) :
 		BaseComposite
 		(

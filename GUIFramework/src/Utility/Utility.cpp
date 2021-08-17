@@ -115,4 +115,12 @@ namespace gui_framework
 			return GetModuleHandleW(nullptr);
 		}
 	}
+
+	namespace __utility
+	{
+		void changeClassName(json::utility::objectSmartPointer<json::utility::jsonObject>& object, const string& className)
+		{
+			get<string>(ranges::find_if(object->data, [](const pair<string, json::utility::jsonObject::variantType>& value) { return value.first == "className"; })->second) = className;
+		}
+	}
 }

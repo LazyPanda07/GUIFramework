@@ -195,6 +195,8 @@ namespace gui_framework
 		vector<objectSmartPointer<jsonObject>> jsonCallbacks;
 		const auto& modulesPaths = GUIFramework::get().getModulesPaths();
 
+		__utility::changeClassName(current, "RichEdit");
+
 		for (size_t i = 0; i < callbacksFunctionNamesAndModules.size(); i++)
 		{
 			if (callbacksFunctionNamesAndModules[i] == emptyPair)

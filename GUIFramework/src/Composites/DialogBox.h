@@ -67,6 +67,9 @@ namespace gui_framework
 			~DialogBoxBuilder() = default;
 		};
 
+	protected:
+		virtual std::string getCreationType() const override;
+
 	public:
 		DialogBox(const std::wstring& className, const std::wstring& dialogBoxName, const utility::ComponentSettings& settings, BaseComponent* parent = nullptr, const std::string& dialogBoxFunctionName = "");
 

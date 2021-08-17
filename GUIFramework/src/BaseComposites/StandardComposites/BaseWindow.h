@@ -26,6 +26,9 @@ namespace gui_framework
 	protected:
 		std::unordered_map<std::string, drawedImages> pictures;
 
+	protected:
+		virtual std::string getCreationType() const override;
+
 	public:
 		BaseWindow(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent = nullptr, const std::string& windowFunctionName = "");
 

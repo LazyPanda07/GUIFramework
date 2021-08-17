@@ -33,6 +33,11 @@ namespace gui_framework
 
 	}
 
+	string GroupBox::getCreationType() const
+	{
+		return "GroupBox";
+	}
+
 	GroupBox::GroupBox(const wstring& groupBoxClassName, const wstring& groupBoxName, const utility::ComponentSettings& settings, BaseComponent* parent, const string& groupBoxFunctionName) :
 		BaseComposite
 		(
@@ -50,5 +55,16 @@ namespace gui_framework
 	void GroupBox::addRadioButton(const radioButtonData& data)
 	{
 		new RadioButton(data.radioButtonName, data.radioButtonText, utility::ComponentSettings(data.x, data.y, data.width, data.height), this, data.onClick);
+	}
+
+	json::JSONBuilder GroupBox::getStructure() const
+	{
+		using json::utility::jsonObject;
+		using json::utility::objectSmartPointer;
+
+		json::JSONBuilder builder = BaseComponent::getStructure();
+		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
+
+		return builder;
 	}
 }

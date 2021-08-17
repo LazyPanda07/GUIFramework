@@ -459,6 +459,8 @@ namespace gui_framework
 		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
 		vector<objectSmartPointer<jsonObject>> jsonTabs;
 
+		__utility::changeClassName(current, "TabControl");
+
 		auto serializeText = [this](objectSmartPointer<jsonObject>& object, const tabData& data)
 		{
 			if (data.text.empty())

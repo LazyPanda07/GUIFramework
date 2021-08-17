@@ -99,6 +99,11 @@ namespace gui_framework
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+	string DialogBox::getCreationType() const
+	{
+		return "DialogBox";
+	}
+
 	DialogBox::DialogBox(const wstring& className, const wstring& dialogBoxName, const utility::ComponentSettings& settings, BaseComponent* parent, const string& dialogBoxFunctionName) :
 		BaseDialogBox
 		(

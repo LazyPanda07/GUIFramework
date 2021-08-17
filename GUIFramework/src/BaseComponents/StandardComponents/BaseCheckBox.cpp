@@ -136,6 +136,8 @@ namespace gui_framework
 		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
 		const auto& modulesPaths = GUIFramework::get().getModulesPaths();
 
+		__utility::changeClassName(current, "CheckBox");
+
 		if (onCheckFunctionName.size())
 		{
 			current->data.push_back({ "checkFunctionName"s, onCheckFunctionName });

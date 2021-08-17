@@ -85,36 +85,36 @@ namespace gui_framework
 	{
 		creators.reserve(24);
 
-		this->addCreator<Button, utility::ButtonCreator>();
+		this->addCreator<Button, utility::ButtonCreator>("Button");
 
-		this->addCreator<CheckBox, utility::CheckBoxCreator>();
+		this->addCreator<CheckBox, utility::CheckBoxCreator>("CheckBox");
 
-		this->addCreator<EditControl, utility::EditControlCreator>();
+		this->addCreator<EditControl, utility::EditControlCreator>("Edit");
 
-		this->addCreator<RichEdit, utility::RichEditCreator>();
+		this->addCreator<RichEdit, utility::RichEditCreator>("RichEdit");
 
-		this->addCreator<StaticControl, utility::StaticControlCreator>();
+		this->addCreator<StaticControl, utility::StaticControlCreator>("Static");
 
-		this->addCreator<SeparateWindow, utility::SeparateWindowCreator>();
+		this->addCreator<SeparateWindow, utility::SeparateWindowCreator>("SeparateWindow");
 
-		this->addCreator<ChildWindow, utility::ChildWindowCreator>();
+		this->addCreator<ChildWindow, utility::ChildWindowCreator>("ChildWindow");
 
-		this->addCreator<TabControl, utility::TabControlCreator>();
+		this->addCreator<TabControl, utility::TabControlCreator>("TabConrol");
 
-		this->addCreator<GroupBox, utility::GroupBoxCreator>();
+		this->addCreator<GroupBox, utility::GroupBoxCreator>("GroupBox");
 
 #pragma region ProgressBars
-		this->addCreator<ProgressBar, utility::ProgressBarCreator>();
+		this->addCreator<ProgressBar, utility::ProgressBarCreator>("ProgressBar");
 
-		this->addCreator<InfiniteProgressBar, utility::InfiniteProgressBarCreator>();
+		this->addCreator<InfiniteProgressBar, utility::InfiniteProgressBarCreator>("InfiniteProgressBar");
 #pragma endregion
 
 #pragma region ComboBoxes
-		this->addCreator<DropDownComboBox, utility::DropDownComboBoxCreator>();
+		this->addCreator<DropDownComboBox, utility::DropDownComboBoxCreator>("DropDownComboBox");
 
-		this->addCreator<DropDownListComboBox, utility::DropDownListComboBoxCreator>();
+		this->addCreator<DropDownListComboBox, utility::DropDownListComboBoxCreator>("DropDownListComboBox");
 
-		this->addCreator<SimpleComboBox, utility::SimpleComboBoxCreator>();
+		this->addCreator<SimpleComboBox, utility::SimpleComboBoxCreator>("SimpleComboBox");
 #pragma endregion
 
 #pragma region ListBoxes

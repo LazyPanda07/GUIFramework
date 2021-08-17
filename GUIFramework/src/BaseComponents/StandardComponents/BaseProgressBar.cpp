@@ -107,6 +107,8 @@ namespace gui_framework
 
 		auto& object = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
 
+		__utility::changeClassName(object, "ProgressBar");
+
 		object->data.push_back({ "minRange"s, static_cast<int64_t>(minRange) });
 		object->data.push_back({ "maxRange"s, static_cast<int64_t>(maxRange) });
 
