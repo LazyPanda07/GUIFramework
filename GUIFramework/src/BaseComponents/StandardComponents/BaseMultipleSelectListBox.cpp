@@ -86,7 +86,7 @@ namespace gui_framework
 		json::JSONBuilder builder = BaseComponent::getStructure();
 		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
 		
-		__utility::changeClassName(current, "MultipleSelectListBox");
+		__utility::changeClassName(current, serialized_classes::multipleSelectListBox);
 
 		return builder;
 	}

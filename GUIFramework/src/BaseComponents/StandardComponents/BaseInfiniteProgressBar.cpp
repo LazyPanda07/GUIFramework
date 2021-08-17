@@ -74,7 +74,7 @@ namespace gui_framework
 
 		auto& object = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
 		
-		__utility::changeClassName(object, "InfiniteProgressBar");
+		__utility::changeClassName(object, serialized_classes::infiniteProgressBar);
 
 		object->data.push_back({ "animationPeriod"s, static_cast<int64_t>(animationPeriod) });
 
