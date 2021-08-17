@@ -165,11 +165,9 @@ namespace gui_framework
 			string imageHolderName = pictureBlockName + "ImageHolder";
 			vector<objectSmartPointer<jsonObject>> jsonCoordinates;
 
-			data.images->loadBaseLoadableHolderStructure(current);
+			auto& lastImageHolderStructure = data.images->loadBaseLoadableHolderStructure(current);
 
-			auto& lastImageHolder = current->data.back();
-
-			lastImageHolder.first = imageHolderName;
+			lastImageHolderStructure.first = imageHolderName;
 
 			for (const auto& [index, coordinates] : data.coordinates)
 			{
@@ -181,7 +179,7 @@ namespace gui_framework
 				json::utility::appendArray(move(object), jsonCoordinates);
 			}
 
-			get<objectSmartPointer<jsonObject>>(lastImageHolder.second)->data.push_back({ "coordinates"s, move(jsonCoordinates) });
+			get<objectSmartPointer<jsonObject>>(lastImageHolderStructure.second)->data.push_back({ "coordinates"s, move(jsonCoordinates) });
 		}
 
 		return builder;

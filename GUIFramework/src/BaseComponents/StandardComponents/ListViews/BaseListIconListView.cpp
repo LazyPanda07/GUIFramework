@@ -26,4 +26,21 @@ namespace gui_framework
 	{
 		throw exceptions::NotImplemented(__FUNCTION__, "BaseListIconListView");
 	}
+
+	json::JSONBuilder BaseListIconListView::getStructure() const
+	{
+		using json::utility::jsonObject;
+		using json::utility::objectSmartPointer;
+
+		uint32_t codepage = ISerializable::getCodepage();
+		json::JSONBuilder builder = BaseListView::getStructure();
+		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, codepage)]);
+
+		if (this->size())
+		{
+			icons.loadBaseLoadableHolderStructure(current).first = "listViewValues";
+		}
+
+		return builder;
+	}
 }

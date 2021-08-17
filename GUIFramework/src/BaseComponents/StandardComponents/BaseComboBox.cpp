@@ -368,14 +368,12 @@ namespace gui_framework
 
 		if (currentSize > 0)
 		{
-			for (size_t i = 0; i < currentSize; i++)
+			for (size_t i = 0; i < static_cast<size_t>(currentSize); i++)
 			{
-				string value = utility::to_string(this->getValue(i), codepage);
-
-				json::utility::appendArray(move(value), values);
+				json::utility::appendArray(utility::to_string(this->getValue(i), codepage), values);
 			}
 
-			current->data.push_back({ "listValues"s, move(values) });
+			current->data.push_back({ "comboBoxValues"s, move(values) });
 		}
 
 		return builder;
