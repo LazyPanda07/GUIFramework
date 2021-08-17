@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "MenuItem.h"
 
+#include "Exceptions/CantFindFunctionFromModuleException.h"
+
 using namespace std;
 
 namespace gui_framework
@@ -12,8 +14,46 @@ namespace gui_framework
 
 	}
 
+	MenuItem::MenuItem(const wstring& text, const string& functionName, const string& moduleName) :
+		BaseMenuItem(text)
+	{
+		GUIFramework& instance = GUIFramework::get();
+		const HMODULE& module = instance.getModules().at(moduleName);
+
+		onClickSignature tem = reinterpret_cast<onClickSignature>(GetProcAddress(module, functionName.data()));
+
+		if (!tem)
+		{
+			throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName);
+		}
+
+		onClick = tem;
+
+		this->functionName = functionName;
+		this->moduleName = moduleName;
+	}
+
 	void MenuItem::processMessage()
 	{
 		onClick();
+	}
+
+	json::JSONBuilder MenuItem::getStructure() const
+	{
+		using json::utility::jsonObject;
+		using json::utility::objectSmartPointer;
+
+		if (functionName.empty())
+		{
+			return BaseMenuItem::getStructure();
+		}
+
+		json::JSONBuilder builder = BaseMenuItem::getStructure();
+		
+		builder.
+			append("functionName", functionName).
+			append("moduleName", moduleName);
+
+		return builder;
 	}
 }
