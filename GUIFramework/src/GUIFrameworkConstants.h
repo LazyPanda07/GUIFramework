@@ -24,6 +24,34 @@ namespace gui_framework
 		inline constexpr std::wstring_view trackbarControl = TRACKBAR_CLASSW;
 	}
 
+	namespace serialized_classes
+	{
+		inline const std::string button = "Button";
+		inline const std::string checkBox = "CheckBox";
+		inline const std::string editControl = "Edit";
+		inline const std::string richEdit = "RichEdit";
+		inline const std::string staticControl = "Static";
+		inline const std::string separateWindow = "SeparateWindow";
+		inline const std::string childWindow = "ChildWindow";
+		inline const std::string tabControl = "TabConrol";
+		inline const std::string groupBox = "GroupBox";
+		inline const std::string progressBar = "ProgressBar";
+		inline const std::string infiniteProgressBar = "InfiniteProgressBar";
+		inline const std::string dropDownComboBox = "DropDownComboBox";
+		inline const std::string dropDownListComboBox = "DropDownListComboBox";
+		inline const std::string simpleComboBox = "SimpleComboBox";
+		inline const std::string listBox = "ListBox";
+		inline const std::string multipleSelectListBox = "MultipleSelectListBox";
+		inline const std::string iconListView = "IconListView";
+		inline const std::string listIconListView = "ListIconListView";
+		inline const std::string textListView = "TextListView";
+		inline const std::string listTextListView = "ListTextListView";
+		inline const std::string textIconListView = "TextIconListView";
+		inline const std::string listTextIconListView = "ListTextIconListView";
+		inline const std::string horizontalTrackbarControl = "HorizontalTrackbarControl";
+		inline const std::string verticalTrackbarControl = "VerticalTrackbarControl";
+	}
+
 	namespace standard_menu_items
 	{
 		inline constexpr std::string_view dropDownMenuItem = "DropDown";
