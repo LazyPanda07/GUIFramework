@@ -11,6 +11,8 @@ namespace gui_framework
 	public:
 		ListIconListView(const std::wstring& listViewName, const utility::ComponentSettings& settings, BaseComponent* parent, utility::iconListViewType type);
 
+		json::JSONBuilder getStructure() const override;
+
 		~ListIconListView() = default;
 	};
 }

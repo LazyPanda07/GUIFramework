@@ -21,7 +21,7 @@ namespace gui_framework
 		};
 
 	public:
-		struct radioButtonData
+		struct GUI_FRAMEWORK_API radioButtonData
 		{
 			std::wstring radioButtonName;
 			std::wstring radioButtonText;
@@ -37,6 +37,13 @@ namespace gui_framework
 
 			radioButtonData(const std::wstring& radioButtonName, const std::wstring& radioButtonText, const utility::ComponentSettings& settings, const std::function<void()>& onClick);
 
+			/// @brief 
+			/// @param radioButtonName 
+			/// @param radioButtonText 
+			/// @param settings 
+			/// @param functionName 
+			/// @param moduleName 
+			/// @exception CantFindFunctionFromModuleException 
 			radioButtonData(const std::wstring& radioButtonName, const std::wstring& radioButtonText, const utility::ComponentSettings& settings, const std::string& functionName, const std::string& moduleName);
 
 			~radioButtonData() = default;

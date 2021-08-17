@@ -36,8 +36,6 @@ namespace gui_framework
 		json::JSONBuilder builder = BaseListView::getStructure();
 		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, codepage)]);
 
-		__utility::changeClassName(current, serialized_classes::listIconListView);
-
 		if (this->size())
 		{
 			icons.loadBaseLoadableHolderStructure(current).first = "listViewValues";

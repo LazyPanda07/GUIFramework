@@ -30,8 +30,6 @@ namespace gui_framework
 		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, codepage)]);
 		vector<objectSmartPointer<jsonObject>> values;
 		size_t size = this->size();
-
-		__utility::changeClassName(current, serialized_classes::textListView);
 		
 		if (size)
 		{

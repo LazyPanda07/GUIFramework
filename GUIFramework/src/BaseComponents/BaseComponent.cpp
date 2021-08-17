@@ -128,7 +128,7 @@ namespace gui_framework
 		{
 			SendMessageW(handle, custom_window_messages::initTopLevelWindowPointer, reinterpret_cast<WPARAM>(this), NULL);
 		}
-		else if (parent->isComposite())
+		else
 		{
 			BaseComposite* composite = static_cast<BaseComposite*>(parent);
 			BaseComponent* topLevelWindow = parent;

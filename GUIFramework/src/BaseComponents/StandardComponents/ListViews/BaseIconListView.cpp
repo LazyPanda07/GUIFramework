@@ -35,8 +35,6 @@ namespace gui_framework
 		uint32_t codepage = ISerializable::getCodepage();
 		json::JSONBuilder builder = BaseListView::getStructure();
 		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, codepage)]);
-		
-		__utility::changeClassName(current, serialized_classes::iconListView);
 
 		if (this->size())
 		{

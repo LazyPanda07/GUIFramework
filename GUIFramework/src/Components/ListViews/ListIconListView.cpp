@@ -18,4 +18,17 @@ namespace gui_framework
 	{
 		
 	}
+
+	json::JSONBuilder ListIconListView::getStructure() const
+	{
+		using json::utility::jsonObject;
+		using json::utility::objectSmartPointer;
+
+		json::JSONBuilder builder = BaseListIconListView::getStructure();
+		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
+
+		__utility::changeClassName(current, serialized_classes::listIconListView);
+
+		return builder;
+	}
 }

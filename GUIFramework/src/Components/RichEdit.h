@@ -11,6 +11,8 @@ namespace gui_framework
 	public:
 		RichEdit(const std::wstring& richEditName, const utility::ComponentSettings& settings, BaseComponent* parent, bool isMultiLine = false);
 
+		json::JSONBuilder getStructure() const override;
+
 		~RichEdit() = default;
 	};
 }

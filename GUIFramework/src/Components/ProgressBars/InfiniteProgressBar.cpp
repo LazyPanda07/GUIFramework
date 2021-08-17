@@ -21,4 +21,17 @@ namespace gui_framework
 	{
 		
 	}
+
+	json::JSONBuilder InfiniteProgressBar::getStructure() const
+	{
+		using json::utility::jsonObject;
+		using json::utility::objectSmartPointer;
+
+		json::JSONBuilder builder = BaseInfiniteProgressBar::getStructure();
+		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
+
+		__utility::changeClassName(current, serialized_classes::infiniteProgressBar);
+
+		return builder;
+	}
 }

@@ -31,8 +31,6 @@ namespace gui_framework
 		vector<objectSmartPointer<jsonObject>> values;
 		size_t size = this->size();
 
-		__utility::changeClassName(current, serialized_classes::listTextListView);
-
 		if (size)
 		{
 			for (size_t i = 0; i < size; i++)
