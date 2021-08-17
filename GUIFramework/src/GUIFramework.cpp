@@ -118,29 +118,29 @@ namespace gui_framework
 #pragma endregion
 
 #pragma region ListBoxes
-		this->addCreator<ListBox, utility::ListBoxCreator>();
+		this->addCreator<ListBox, utility::ListBoxCreator>("ListBox");
 
-		this->addCreator<MultipleSelectListBox, utility::MultipleSelectListBoxCreator>();
+		this->addCreator<MultipleSelectListBox, utility::MultipleSelectListBoxCreator>("MultipleSelectListBox");
 #pragma endregion
 
 #pragma region ListViews
-		this->addCreator<IconListView, utility::IconListViewCreator>();
+		this->addCreator<IconListView, utility::IconListViewCreator>("IconListView");
 
-		this->addCreator<ListIconListView, utility::ListIconListViewCreator>();
+		this->addCreator<ListIconListView, utility::ListIconListViewCreator>("ListIconListView");
 
-		this->addCreator<TextListView, utility::TextListViewCreator>();
+		this->addCreator<TextListView, utility::TextListViewCreator>("TextListView");
 
-		this->addCreator<ListTextListView, utility::ListTextListViewCreator>();
+		this->addCreator<ListTextListView, utility::ListTextListViewCreator>("ListTextListView");
 
-		this->addCreator<TextIconListView, utility::TextIconListViewCreator>();
+		this->addCreator<TextIconListView, utility::TextIconListViewCreator>("TextIconListView");
 
-		this->addCreator<ListTextIconListView, utility::ListTextIconListViewCreator>();
+		this->addCreator<ListTextIconListView, utility::ListTextIconListViewCreator>("ListTextIconListView");
 #pragma endregion
 
 #pragma region Trackbars
-		this->addCreator<HorizontalTrackbarControl, utility::HorizontalTrackbarControlCreator>();
+		this->addCreator<HorizontalTrackbarControl, utility::HorizontalTrackbarControlCreator>("HorizontalTrackbarControl");
 
-		this->addCreator<VerticalTrackbarControl, utility::VerticalTrackbarControlCreator>();
+		this->addCreator<VerticalTrackbarControl, utility::VerticalTrackbarControlCreator>("VerticalTrackbarControl");
 #pragma endregion
 	}
 

@@ -77,6 +77,19 @@ namespace gui_framework
 
 		return result;
 	}
+
+	json::JSONBuilder BaseMultipleSelectListBox::getStructure() const
+	{
+		using json::utility::jsonObject;
+		using json::utility::objectSmartPointer;
+
+		json::JSONBuilder builder = BaseComponent::getStructure();
+		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
+		
+		__utility::changeClassName(current, "MultipleSelectListBox");
+
+		return builder;
+	}
 }
 
 #pragma pop_macro("min")

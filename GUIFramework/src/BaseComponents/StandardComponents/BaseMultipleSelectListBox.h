@@ -19,6 +19,8 @@ namespace gui_framework
 
 		virtual LRESULT setCurrentSelection(LRESULT index) const final override;
 
+		virtual json::JSONBuilder getStructure() const override;
+
 		virtual ~BaseMultipleSelectListBox() = default;
 	};
 }

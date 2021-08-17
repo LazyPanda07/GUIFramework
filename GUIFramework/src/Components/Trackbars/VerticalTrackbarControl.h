@@ -19,6 +19,8 @@ namespace gui_framework
 	public:
 		VerticalTrackbarControl(const std::wstring& trackbarName, const utility::ComponentSettings& settings, BaseComponent* parent, bool autoTicks = true, verticalTickPosition position = verticalTickPosition::left, bool selectionRange = false, bool noTicks = false);
 
+		virtual json::JSONBuilder getStructure() const override;
+
 		~VerticalTrackbarControl() = default;
 	};
 }
