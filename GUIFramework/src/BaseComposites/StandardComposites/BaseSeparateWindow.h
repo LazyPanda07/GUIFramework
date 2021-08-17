@@ -9,7 +9,7 @@ namespace gui_framework
 	class GUI_FRAMEWORK_API BaseSeparateWindow : public BaseWindow
 	{
 	protected:
-		virtual std::string getCreationType() const override;
+		virtual const std::string& getCreationType() const override;
 
 	public:
 		/// @brief Create new separate window

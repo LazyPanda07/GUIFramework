@@ -7,9 +7,9 @@ using namespace std;
 
 namespace gui_framework
 {
-	string BaseChildWindow::getCreationType() const
+	const string& BaseChildWindow::getCreationType() const
 	{
-		return "BaseChildWindow";
+		return serialized_creation_type::baseChildWindow;
 	}
 
 	BaseChildWindow::BaseChildWindow(const wstring& className, const wstring& windowName, const utility::ComponentSettings& settings, BaseComponent* parent, const string& windowFunctionName) :

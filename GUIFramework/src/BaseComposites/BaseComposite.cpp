@@ -115,9 +115,9 @@ namespace gui_framework
 		return -1;
 	}
 
-	string BaseComposite::getCreationType() const
+	const string& BaseComposite::getCreationType() const
 	{
-		return "BaseComposite";
+		return serialized_creation_type::baseComposite;
 	}
 
 	vector<pair<string, json::utility::objectSmartPointer<json::utility::jsonObject>>> BaseComposite::getChildrenStructure() const

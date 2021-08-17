@@ -33,9 +33,9 @@ namespace gui_framework
 
 	}
 
-	string GroupBox::getCreationType() const
+	const string& GroupBox::getCreationType() const
 	{
-		return "GroupBox";
+		return serialized_creation_type::groupBox;
 	}
 
 	GroupBox::GroupBox(const wstring& groupBoxClassName, const wstring& groupBoxName, const utility::ComponentSettings& settings, BaseComponent* parent, const string& groupBoxFunctionName) :

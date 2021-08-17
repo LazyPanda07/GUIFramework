@@ -37,7 +37,7 @@ namespace gui_framework
 		static messageBoxResponse createMessageBox(const std::wstring& text, const std::wstring& title, messageBoxType type, BaseComponent* parent = nullptr, bool helpButton = false);
 
 	protected:
-		virtual std::string getCreationType() const override;
+		virtual const std::string& getCreationType() const override;
 
 	public:
 		BaseDialogBox(const std::wstring& className, const std::wstring& title, const utility::ComponentSettings& settings, BaseComponent* parent = nullptr, const std::string& dialogBoxFunctionName = "");

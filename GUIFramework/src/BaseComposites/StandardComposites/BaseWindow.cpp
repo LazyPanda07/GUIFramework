@@ -34,9 +34,9 @@ namespace gui_framework
 		coordinates.erase(index);
 	}
 
-	string BaseWindow::getCreationType() const
+	const string& BaseWindow::getCreationType() const
 	{
-		return "BaseWindow";
+		return serialized_creation_type::baseWindow;
 	}
 
 	BaseWindow::BaseWindow(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent, const string& windowFunctionName) :

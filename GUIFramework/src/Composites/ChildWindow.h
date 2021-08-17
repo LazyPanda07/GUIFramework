@@ -12,7 +12,7 @@ namespace gui_framework
 		public interfaces::IResizableComponent	
 	{
 	protected:
-		virtual std::string getCreationType() const override;
+		virtual const std::string& getCreationType() const override;
 
 	public:
 		ChildWindow(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, BaseComponent* parent, const std::string& windowFunctionName = "");

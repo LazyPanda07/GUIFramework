@@ -37,7 +37,7 @@ namespace gui_framework
 		};
 
 	protected:
-		virtual std::string getCreationType() const override;
+		virtual const std::string& getCreationType() const override;
 
 	public:
 		/// @brief 

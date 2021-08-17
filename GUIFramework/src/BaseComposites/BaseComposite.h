@@ -31,7 +31,7 @@ namespace gui_framework
 		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) final override;
 
 	protected:
-		virtual std::string getCreationType() const;
+		virtual const std::string& getCreationType() const;
 
 	private:
 		std::vector<std::pair<std::string, json::utility::objectSmartPointer<json::utility::jsonObject>>> getChildrenStructure() const;

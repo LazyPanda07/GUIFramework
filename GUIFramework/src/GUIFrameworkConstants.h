@@ -52,6 +52,19 @@ namespace gui_framework
 		inline const std::string verticalTrackbarControl = "VerticalTrackbarControl";
 	}
 
+	namespace serialized_creation_type
+	{
+		inline const std::string baseComposite = "BaseComposite";
+		inline const std::string baseWindow = "BaseWindow";
+		inline const std::string baseSeparateWindow = "BaseSeparateWindow";
+		inline const std::string baseChildWindow = "BaseChildWindow";
+		inline const std::string baseDialogBox = "BaseDialogBox";
+		inline const std::string separateWindow = "SeparateWindow";
+		inline const std::string childWindow = "ChildWindow";
+		inline const std::string dialogBox = "DialogBox";
+		inline const std::string groupBox = "GroupBox";
+	}
+
 	namespace standard_menu_items
 	{
 		inline constexpr std::string_view dropDownMenuItem = "DropDown";

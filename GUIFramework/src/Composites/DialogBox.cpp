@@ -99,9 +99,9 @@ namespace gui_framework
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	string DialogBox::getCreationType() const
+	const string& DialogBox::getCreationType() const
 	{
-		return "DialogBox";
+		return serialized_creation_type::dialogBox;
 	}
 
 	DialogBox::DialogBox(const wstring& className, const wstring& dialogBoxName, const utility::ComponentSettings& settings, BaseComponent* parent, const string& dialogBoxFunctionName) :

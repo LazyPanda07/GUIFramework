@@ -12,7 +12,7 @@ namespace gui_framework
 		public interfaces::IResizableComponent
 	{
 	protected:
-		virtual std::string getCreationType() const override;
+		virtual const std::string& getCreationType() const override;
 
 	public:
 		SeparateWindow(const std::wstring& className, const std::wstring& titleName, const utility::ComponentSettings& settings, const std::string& windowFunctionName, bool maximize = false, bool minimize = false);
