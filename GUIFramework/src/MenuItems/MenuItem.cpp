@@ -15,7 +15,9 @@ namespace gui_framework
 	}
 
 	MenuItem::MenuItem(const wstring& text, const string& functionName, const string& moduleName) :
-		BaseMenuItem(text)
+		BaseMenuItem(text),
+		functionName(functionName),
+		moduleName(moduleName)
 	{
 		GUIFramework& instance = GUIFramework::get();
 		const HMODULE& module = instance.getModules().at(moduleName);
@@ -28,9 +30,6 @@ namespace gui_framework
 		}
 
 		onClick = tem;
-
-		this->functionName = functionName;
-		this->moduleName = moduleName;
 	}
 
 	void MenuItem::processMessage()

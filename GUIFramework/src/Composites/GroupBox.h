@@ -6,8 +6,6 @@
 
 namespace gui_framework
 {
-	// TODO: serialization
-
 	/// @brief Standard group box with radio buttons
 	class GUI_FRAMEWORK_API GroupBox : public BaseComposite
 	{
@@ -16,6 +14,8 @@ namespace gui_framework
 		{
 		public:
 			RadioButton(const std::wstring& radioButtonName, const std::wstring& radioButtonText, const utility::ComponentSettings& settings, BaseComponent* parent, const std::function<void()>& onClick);
+
+			RadioButton(const std::wstring& radioButtonName, const std::wstring& radioButtonText, const utility::ComponentSettings& settings, BaseComponent* parent, const std::string& functionName, const std::string& moduleName);
 
 			~RadioButton() = default;
 		};
@@ -30,8 +30,14 @@ namespace gui_framework
 			uint16_t width;
 			uint16_t height;
 			std::function<void()> onClick;
+			std::string functionName;
+			std::string moduleName;
+
+			radioButtonData();
 
 			radioButtonData(const std::wstring& radioButtonName, const std::wstring& radioButtonText, const utility::ComponentSettings& settings, const std::function<void()>& onClick);
+
+			radioButtonData(const std::wstring& radioButtonName, const std::wstring& radioButtonText, const utility::ComponentSettings& settings, const std::string& functionName, const std::string& moduleName);
 
 			~radioButtonData() = default;
 		};
@@ -52,8 +58,6 @@ namespace gui_framework
 		GroupBox(const std::wstring& groupBoxClassName, const std::wstring& groupBoxName, const utility::ComponentSettings& settings, BaseComponent* parent, const std::string& groupBoxFunctionName);
 
 		void addRadioButton(const radioButtonData& data);
-
-		virtual json::JSONBuilder getStructure() const override;
 
 		~GroupBox() = default;
 	};
