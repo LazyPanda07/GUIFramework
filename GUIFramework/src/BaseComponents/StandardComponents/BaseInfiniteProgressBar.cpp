@@ -71,7 +71,6 @@ namespace gui_framework
 		using json::utility::objectSmartPointer;
 
 		json::JSONBuilder builder = BaseComponent::getStructure();
-
 		get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())])->data.push_back({ "animationPeriod"s, static_cast<int64_t>(animationPeriod) });
 
 		return builder;

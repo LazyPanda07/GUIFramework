@@ -272,9 +272,9 @@ namespace gui_framework
 			return iterators::loadable_const_forward_iterator({}, images.size());
 		}
 
-		void BaseLoadableHolder::loadBaseLoadableHolderStructure(json::utility::objectSmartPointer<json::utility::jsonObject>& current) const
+		pair<string, json::utility::jsonObject::variantType>& BaseLoadableHolder::loadBaseLoadableHolderStructure(json::utility::objectSmartPointer<json::utility::jsonObject>& current) const
 		{
-			current->data.push_back({ "imageHolder"s,  move(this->getStructure()["imageHolder"]) });
+			return current->data.emplace_back(make_pair("imageHolder"s, move(this->getStructure()["imageHolder"])));
 		}
 
 		BaseLoadableHolder::~BaseLoadableHolder()

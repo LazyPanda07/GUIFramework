@@ -115,6 +115,11 @@ namespace gui_framework
 		return -1;
 	}
 
+	const string& BaseComposite::getCreationType() const
+	{
+		return serialized_creation_type::baseComposite;
+	}
+
 	vector<pair<string, json::utility::objectSmartPointer<json::utility::jsonObject>>> BaseComposite::getChildrenStructure() const
 	{
 		vector<json::JSONBuilder> childrenStructure;
@@ -136,6 +141,11 @@ namespace gui_framework
 		return data;
 	}
 
+	void BaseComposite::addChild(BaseComponent* child)
+	{
+		children.push_back(unique_ptr<BaseComponent>(child));
+	}
+
 	BaseComposite::BaseComposite(const wstring& className, const wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent, const string& windowFunctionName) :
 		BaseComponent
 		(
@@ -150,11 +160,6 @@ namespace gui_framework
 		smallIcon(nullptr)
 	{
 
-	}
-
-	void BaseComposite::addChild(BaseComponent* child)
-	{
-		children.push_back(unique_ptr<BaseComponent>(child));
 	}
 
 	void BaseComposite::removeChild(BaseComponent* child)

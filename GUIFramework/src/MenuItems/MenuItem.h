@@ -10,11 +10,22 @@ namespace gui_framework
 	{
 	private:
 		std::function<void()> onClick;
+		std::string functionName;
+		std::string moduleName;
 
 	public:
 		MenuItem(const std::wstring& text, const std::function<void()>& onClick);
 
+		/// @brief 
+		/// @param text 
+		/// @param functionName 
+		/// @param moduleName 
+		/// @exception CantFindFunctionFromModuleException 
+		MenuItem(const std::wstring& text, const std::string& functionName, const std::string& moduleName);
+
 		void processMessage() override;
+
+		json::JSONBuilder getStructure() const override;
 
 		~MenuItem() = default;
 	};

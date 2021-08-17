@@ -11,6 +11,8 @@ namespace gui_framework
 	public:
 		MultipleSelectListBox(const std::wstring& listBoxName, const utility::ComponentSettings& settings, BaseComponent* parent, bool isSorting = false);
 
+		json::JSONBuilder getStructure() const override;
+
 		~MultipleSelectListBox() = default;
 	};
 }

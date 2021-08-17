@@ -17,6 +17,8 @@ namespace gui_framework
 	public:
 		BaseTextIconListView(const std::wstring& listViewName, const utility::ComponentSettings& settings, BaseComponent* parent, utility::iconListViewType type, uint16_t iconsWidth, uint16_t iconsHeight, size_t count = standard_sizes::defaultImagesCount);
 
+		virtual json::JSONBuilder getStructure() const override;
+
 		virtual ~BaseTextIconListView() = default;
 	};
 }

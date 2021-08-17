@@ -18,4 +18,17 @@ namespace gui_framework
 			utility::appendStyle(handle, LBS_SORT);
 		}
 	}
+
+	json::JSONBuilder MultipleSelectListBox::getStructure() const
+	{
+		using json::utility::jsonObject;
+		using json::utility::objectSmartPointer;
+
+		json::JSONBuilder builder = BaseMultipleSelectListBox::getStructure();
+		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
+
+		__utility::changeClassName(current, serialized_classes::multipleSelectListBox);
+
+		return builder;
+	}
 }

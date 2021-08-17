@@ -11,6 +11,8 @@ namespace gui_framework
 	public:
 		DropDownComboBox(const std::wstring& comboBoxName, const utility::ComponentSettings& settings, BaseComponent* parent);
 
+		virtual json::JSONBuilder getStructure() const override;
+
 		~DropDownComboBox() = default;
 	};
 }

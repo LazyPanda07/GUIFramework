@@ -15,11 +15,13 @@ namespace gui_framework
 		public:
 			RadioButton(const std::wstring& radioButtonName, const std::wstring& radioButtonText, const utility::ComponentSettings& settings, BaseComponent* parent, const std::function<void()>& onClick);
 
+			RadioButton(const std::wstring& radioButtonName, const std::wstring& radioButtonText, const utility::ComponentSettings& settings, BaseComponent* parent, const std::string& functionName, const std::string& moduleName);
+
 			~RadioButton() = default;
 		};
 
 	public:
-		struct radioButtonData
+		struct GUI_FRAMEWORK_API radioButtonData
 		{
 			std::wstring radioButtonName;
 			std::wstring radioButtonText;
@@ -28,11 +30,27 @@ namespace gui_framework
 			uint16_t width;
 			uint16_t height;
 			std::function<void()> onClick;
+			std::string functionName;
+			std::string moduleName;
+
+			radioButtonData();
 
 			radioButtonData(const std::wstring& radioButtonName, const std::wstring& radioButtonText, const utility::ComponentSettings& settings, const std::function<void()>& onClick);
 
+			/// @brief 
+			/// @param radioButtonName 
+			/// @param radioButtonText 
+			/// @param settings 
+			/// @param functionName 
+			/// @param moduleName 
+			/// @exception CantFindFunctionFromModuleException 
+			radioButtonData(const std::wstring& radioButtonName, const std::wstring& radioButtonText, const utility::ComponentSettings& settings, const std::string& functionName, const std::string& moduleName);
+
 			~radioButtonData() = default;
 		};
+
+	protected:
+		virtual const std::string& getCreationType() const override;
 
 	public:
 		/// @brief 

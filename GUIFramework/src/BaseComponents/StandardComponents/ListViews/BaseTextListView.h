@@ -14,6 +14,8 @@ namespace gui_framework
 	public:
 		BaseTextListView(const std::wstring& listViewName, const utility::ComponentSettings& settings, BaseComponent* parent);
 
+		virtual json::JSONBuilder getStructure() const override;
+
 		virtual ~BaseTextListView() = default;
 	};
 }

@@ -2,6 +2,8 @@
 
 #include "pch.h"
 
+#include "JSONUtility.h"
+
 namespace gui_framework
 {
 	namespace utility
@@ -34,6 +36,8 @@ namespace gui_framework
 		/// @exception json::exceptions::WrongEncodingException 
 		GUI_FRAMEWORK_API_FUNCTION std::wstring to_wstring(const std::string& stringToConvert, uint32_t codepage);
 
+		/// @brief Get handle to current executable
+		/// @return 
 		GUI_FRAMEWORK_API_FUNCTION HMODULE getCurrentModule();
 
 		/// @brief Make function with current build configuration compatibility
@@ -42,6 +46,11 @@ namespace gui_framework
 		/// @return Compatible smart pointer
 		template<typename T, typename... Args>
 		smartPointerType<T> make_smart_pointer(Args&&... args);
+	}
+
+	namespace __utility
+	{
+		GUI_FRAMEWORK_API_FUNCTION void changeClassName(json::utility::objectSmartPointer<json::utility::jsonObject>& object, const std::string& className);
 	}
 }
 
