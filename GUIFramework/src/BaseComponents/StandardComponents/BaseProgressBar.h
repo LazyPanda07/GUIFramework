@@ -21,9 +21,6 @@ namespace gui_framework
 		int maxRange;
 		int updateStep;
 
-	protected:
-		virtual json::JSONBuilder getStructure() const override;
-
 	public:
 		BaseProgressBar(const std::wstring& progressBarName, const utility::ComponentSettings& settings, BaseComponent* parent, int minRange = defaultMinRange, int maxRange = defaultMaxRange, int updateStep = defaultUpdateStep);
 
@@ -63,6 +60,8 @@ namespace gui_framework
 		/// @param blue 
 		/// @exception NotImplemented Text color does not affects at progress bar
 		virtual void setTextColor(uint8_t red, uint8_t green, uint8_t blue) final override;
+
+		virtual json::JSONBuilder getStructure() const override;
 
 		virtual ~BaseProgressBar() = default;
 	};

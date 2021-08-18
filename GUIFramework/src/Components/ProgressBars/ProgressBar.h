@@ -14,6 +14,8 @@ namespace gui_framework
 	public:
 		ProgressBar(const std::wstring& progressBarName, const utility::ComponentSettings& settings, BaseComponent* parent, int minRange = defaultMinRange, int maxRange = defaultMaxRange, int updateStep = defaultUpdateStep);
 
+		json::JSONBuilder getStructure() const override;
+
 		~ProgressBar() = default;
 	};
 }

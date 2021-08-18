@@ -333,8 +333,6 @@ namespace gui_framework
 				heightSum + requiredSize.cy * 2,
 				true
 			);
-
-			ShowWindow(handle, SW_SHOW);
 		}
 	}
 
@@ -353,19 +351,30 @@ namespace gui_framework
 		using json::utility::jsonObject;
 		using json::utility::objectSmartPointer;
 
-		if (functionName.empty())
+		uint32_t codepage = ISerializable::getCodepage();
+		json::JSONBuilder builder = BaseComponent::getStructure();
+		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, codepage)]);
+		vector<objectSmartPointer<jsonObject>> values;
+		LRESULT currentSize = this->size();
+
+		if (functionName.size())
 		{
-			return BaseComponent::getStructure();
+			current->data.push_back({ "functionName"s, functionName });
+
+			current->data.push_back({ "moduleName"s, moduleName });
+
+			current->data.push_back({ "pathToModule"s, GUIFramework::get().getModulesPaths().at(moduleName) });
 		}
 
-		json::JSONBuilder builder = BaseComponent::getStructure();
-		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
+		if (currentSize > 0)
+		{
+			for (size_t i = 0; i < static_cast<size_t>(currentSize); i++)
+			{
+				json::utility::appendArray(utility::to_string(this->getValue(i), codepage), values);
+			}
 
-		current->data.push_back({ "functionName"s, functionName });
-
-		current->data.push_back({ "moduleName"s, moduleName });
-
-		current->data.push_back({ "pathToModule"s, GUIFramework::get().getModulesPaths().at(moduleName) });
+			current->data.push_back({ "comboBoxValues"s, move(values) });
+		}
 
 		return builder;
 	}

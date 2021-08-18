@@ -16,9 +16,6 @@ namespace gui_framework
 		SIZE requiredSize;
 		uint8_t columnsWidth;
 
-	protected:
-		virtual json::JSONBuilder getStructure() const override;
-
 	public:
 		BaseListBox(const std::wstring& listBoxName, const utility::ComponentSettings& settings, const styles::ListBoxStyles& styles, BaseComponent* parent);
 
@@ -113,7 +110,9 @@ namespace gui_framework
 		/// @param width 
 		/// @param height 
 		/// @exception SelectListException 
-		virtual void resize(uint16_t width, uint16_t height);
+		virtual void resize(uint16_t width, uint16_t height) override;
+
+		virtual json::JSONBuilder getStructure() const override;
 
 		virtual ~BaseListBox() = default;
 	};

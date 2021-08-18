@@ -12,12 +12,18 @@ namespace gui_framework
 		class GUI_FRAMEWORK_API ITextIconListView : public IBaseListViewOperations
 		{
 		private:
+			void onRemove(size_t index) final override;
+
+		private:
 			utility::IconsHolder& icons;
+			std::unordered_map<size_t, size_t> textData;
 
 		public:
 			ITextIconListView(HWND handle, utility::IconsHolder& icons);
 
 			virtual LRESULT addTextIconItem(const std::wstring& text, const std::filesystem::path& pathToIcon);
+
+			virtual LRESULT insertTextIconItem(const std::wstring& text, const std::filesystem::path& pathToIcon, size_t index);
 
 			/// @brief 
 			/// @param index 

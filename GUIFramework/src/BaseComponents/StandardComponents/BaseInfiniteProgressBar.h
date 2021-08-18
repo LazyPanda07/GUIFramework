@@ -14,9 +14,6 @@ namespace gui_framework
 	protected:
 		int animationPeriod;
 
-	protected:
-		virtual json::JSONBuilder getStructure() const override;
-
 	public:
 		/// @brief 
 		/// @param progressBarName 
@@ -53,6 +50,8 @@ namespace gui_framework
 		/// @param blue 
 		/// @exception NotImplemented Text color does not affects at progress bar
 		virtual void setTextColor(uint8_t red, uint8_t green, uint8_t blue) final override;
+
+		virtual json::JSONBuilder getStructure() const override;
 
 		virtual ~BaseInfiniteProgressBar() = default;
 	};

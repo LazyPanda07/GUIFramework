@@ -1,5 +1,9 @@
 var namespacegui__framework =
 [
+    [ "__utility", "namespacegui__framework_1_1____utility.html", [
+      [ "changeClassName", "namespacegui__framework_1_1____utility.html#a94619fe68a8cd93c7ef48d60f537777a", null ],
+      [ "changeClassName", "namespacegui__framework_1_1____utility.html#abd5790d375d9ea08c45187dd8b829d25", null ]
+    ] ],
     [ "custom_window_messages", "namespacegui__framework_1_1custom__window__messages.html", [
       [ "deinitTopLevelWindowPointer", "namespacegui__framework_1_1custom__window__messages.html#ae277398e850c3e6adb8b9c3c5caa97c3", null ],
       [ "initTopLevelWindowPointer", "namespacegui__framework_1_1custom__window__messages.html#a9d6c2d2d357b573767b5837f204407ce", null ]
@@ -30,6 +34,43 @@ var namespacegui__framework =
     ] ],
     [ "libraries", "namespacegui__framework_1_1libraries.html", [
       [ "msftEditLibrary", "namespacegui__framework_1_1libraries.html#aa0a8f6ff8009d943b34253c4a50409c2", null ]
+    ] ],
+    [ "serialized_classes", "namespacegui__framework_1_1serialized__classes.html", [
+      [ "button", "namespacegui__framework_1_1serialized__classes.html#a80d0325ecdff3843e476d733fc25f127", null ],
+      [ "checkBox", "namespacegui__framework_1_1serialized__classes.html#a20c16d87691d4c24d96397fc4a454517", null ],
+      [ "childWindow", "namespacegui__framework_1_1serialized__classes.html#acaac7429b9016910c3a9017c8b3a4762", null ],
+      [ "dropDownComboBox", "namespacegui__framework_1_1serialized__classes.html#aa9e5e5df403bd23b7333b15dd58a5a38", null ],
+      [ "dropDownListComboBox", "namespacegui__framework_1_1serialized__classes.html#a178e3a918902c972c32a1f46aa40e98e", null ],
+      [ "editControl", "namespacegui__framework_1_1serialized__classes.html#a40c75df2775722353a46757762d592b4", null ],
+      [ "groupBox", "namespacegui__framework_1_1serialized__classes.html#a8df8e8e5635cea7fd395213ac65af043", null ],
+      [ "horizontalTrackbarControl", "namespacegui__framework_1_1serialized__classes.html#a40bb4737e05f77568509eb5bfce013f6", null ],
+      [ "iconListView", "namespacegui__framework_1_1serialized__classes.html#a59991ec08f9aa9ce9a48314d612eed51", null ],
+      [ "infiniteProgressBar", "namespacegui__framework_1_1serialized__classes.html#a323e4c709459a2dd45c658109d06d08e", null ],
+      [ "listBox", "namespacegui__framework_1_1serialized__classes.html#ad87b11bd0d2a94b34f751658d21e353c", null ],
+      [ "listIconListView", "namespacegui__framework_1_1serialized__classes.html#aad524a8498483bb6f1e562f4871d3ea2", null ],
+      [ "listTextIconListView", "namespacegui__framework_1_1serialized__classes.html#acbc220ca1bc4f97007c1f9d086fb7826", null ],
+      [ "listTextListView", "namespacegui__framework_1_1serialized__classes.html#ada847dd3d2c16796e2c0685ec34c3877", null ],
+      [ "multipleSelectListBox", "namespacegui__framework_1_1serialized__classes.html#ac577d444f4ddbe4b0fae4fc832103881", null ],
+      [ "progressBar", "namespacegui__framework_1_1serialized__classes.html#a7eaa4399f3bf4f789d5252158c0a6e40", null ],
+      [ "richEdit", "namespacegui__framework_1_1serialized__classes.html#a336b1dfb87f8b8786aae21fe7c5c553d", null ],
+      [ "separateWindow", "namespacegui__framework_1_1serialized__classes.html#a6225ac8fa9976705940dd10da7f6db6a", null ],
+      [ "simpleComboBox", "namespacegui__framework_1_1serialized__classes.html#ae1936ce6c24f0139858105c168106d87", null ],
+      [ "staticControl", "namespacegui__framework_1_1serialized__classes.html#aceb4c8286e7d9eea6471136d17aa800b", null ],
+      [ "tabControl", "namespacegui__framework_1_1serialized__classes.html#a242c7cc43f73c09024a7ec9249ad7580", null ],
+      [ "textIconListView", "namespacegui__framework_1_1serialized__classes.html#a29b642ff22e4e75e0ebde8ac7c60d7b1", null ],
+      [ "textListView", "namespacegui__framework_1_1serialized__classes.html#a390e70b04dfb64f64dbbcbd82d0a5344", null ],
+      [ "verticalTrackbarControl", "namespacegui__framework_1_1serialized__classes.html#a10d86c6144927373093a96941107430c", null ]
+    ] ],
+    [ "serialized_creation_type", "namespacegui__framework_1_1serialized__creation__type.html", [
+      [ "baseChildWindow", "namespacegui__framework_1_1serialized__creation__type.html#a5f46bfa0db155279bc65bb8a7d9548fe", null ],
+      [ "baseComposite", "namespacegui__framework_1_1serialized__creation__type.html#abb1314a05ec33f4f3b9bbf17693eb997", null ],
+      [ "baseDialogBox", "namespacegui__framework_1_1serialized__creation__type.html#a105d171cc8c93c4083961b216cc6bfca", null ],
+      [ "baseSeparateWindow", "namespacegui__framework_1_1serialized__creation__type.html#a7833cc2919fb98e3586bf733ad74a8a6", null ],
+      [ "baseWindow", "namespacegui__framework_1_1serialized__creation__type.html#a76051f0ca3461e164d4b00194f84e7b9", null ],
+      [ "childWindow", "namespacegui__framework_1_1serialized__creation__type.html#a976fa9b241d49a6465a2c662ba0ec899", null ],
+      [ "dialogBox", "namespacegui__framework_1_1serialized__creation__type.html#a878eb0713bcbee1b9a6cde375cd63b2c", null ],
+      [ "groupBox", "namespacegui__framework_1_1serialized__creation__type.html#aedc300e233a1f957157050a8bad88025", null ],
+      [ "separateWindow", "namespacegui__framework_1_1serialized__creation__type.html#ac6c2ee84aa53ea6d9c6373fb49292e48", null ]
     ] ],
     [ "standard_classes", "namespacegui__framework_1_1standard__classes.html", [
       [ "button", "namespacegui__framework_1_1standard__classes.html#a3a70e6e92deddb65c6406def06e23ec8", null ],

@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.7.5-beta</span>
+   &#160;<span id="projectnumber">0.8-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -85,7 +85,6 @@ $(document).ready(function(){initNavTree('classgui__framework_1_1_base_trackbar_
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classgui__framework_1_1_base_trackbar_control-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">gui_framework::BaseTrackbarControl Class Reference</div>  </div>
@@ -138,6 +137,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a336557c4c79b7c50f15472f7ccfb772e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_trackbar_control.html#a336557c4c79b7c50f15472f7ccfb772e">setTextColor</a> (uint8_t red, uint8_t green, uint8_t blue) final override</td></tr>
 <tr class="memdesc:a336557c4c79b7c50f15472f7ccfb772e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Not implemented.  <a href="classgui__framework_1_1_base_trackbar_control.html#a336557c4c79b7c50f15472f7ccfb772e">More...</a><br /></td></tr>
 <tr class="separator:a336557c4c79b7c50f15472f7ccfb772e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab37df18ec2e82bf3582393bad8b65446"><td class="memItemLeft" align="right" valign="top">virtual json::JSONBuilder&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_trackbar_control.html#ab37df18ec2e82bf3582393bad8b65446">getStructure</a> () const override</td></tr>
+<tr class="separator:ab37df18ec2e82bf3582393bad8b65446"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef71e055ea173fa265f34449202b020a"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_trackbar_control.html#aef71e055ea173fa265f34449202b020a">~BaseTrackbarControl</a> ()=default</td></tr>
 <tr class="separator:aef71e055ea173fa265f34449202b020a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classgui__framework_1_1_base_component"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classgui__framework_1_1_base_component')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></td></tr>
@@ -205,16 +206,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8feceb56504671870fc49a814a212516 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#a8feceb56504671870fc49a814a212516">~ISerializable</a> ()=default</td></tr>
 <tr class="separator:a8feceb56504671870fc49a814a212516 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
-Protected Member Functions</h2></td></tr>
-<tr class="memitem:ab37df18ec2e82bf3582393bad8b65446"><td class="memItemLeft" align="right" valign="top">virtual json::JSONBuilder&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_trackbar_control.html#ab37df18ec2e82bf3582393bad8b65446">getStructure</a> () const override</td></tr>
-<tr class="separator:ab37df18ec2e82bf3582393bad8b65446"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_methods_classgui__framework_1_1_base_component"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classgui__framework_1_1_base_component')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></td></tr>
-<tr class="memitem:aa271d9c3ad5e9a9374c7d3a334327cdc inherit pro_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#aa271d9c3ad5e9a9374c7d3a334327cdc">preWindowMessagesHandle</a> (HWND <a class="el" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, UINT message, WPARAM wparam, LPARAM lparam, bool &amp;isUsed)</td></tr>
-<tr class="separator:aa271d9c3ad5e9a9374c7d3a334327cdc inherit pro_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a636cece7fe5db06982150a8eb9e13e10 inherit pro_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a636cece7fe5db06982150a8eb9e13e10">windowMessagesHandle</a> (HWND <a class="el" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, UINT message, WPARAM wparam, LPARAM lparam, bool &amp;isUsed)</td></tr>
-<tr class="separator:a636cece7fe5db06982150a8eb9e13e10 inherit pro_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_types_classgui__framework_1_1_base_component"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classgui__framework_1_1_base_component')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></td></tr>
@@ -229,6 +220,11 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a377a3b392aa9778b11347f3b69acbd42 inherit pub_static_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a377a3b392aa9778b11347f3b69acbd42">runFunctionAsync</a> (std::function&lt; void()&gt; &amp;&amp;callable, const std::function&lt; void()&gt; &amp;callback=nullptr) noexcept</td></tr>
 <tr class="memdesc:a377a3b392aa9778b11347f3b69acbd42 inherit pub_static_methods_classgui__framework_1_1_base_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add task to thread pool.  <a href="classgui__framework_1_1_base_component.html#a377a3b392aa9778b11347f3b69acbd42">More...</a><br /></td></tr>
 <tr class="separator:a377a3b392aa9778b11347f3b69acbd42 inherit pub_static_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classgui__framework_1_1_base_component"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classgui__framework_1_1_base_component')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></td></tr>
+<tr class="memitem:aa271d9c3ad5e9a9374c7d3a334327cdc inherit pro_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#aa271d9c3ad5e9a9374c7d3a334327cdc">preWindowMessagesHandle</a> (HWND <a class="el" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, UINT message, WPARAM wparam, LPARAM lparam, bool &amp;isUsed)</td></tr>
+<tr class="separator:aa271d9c3ad5e9a9374c7d3a334327cdc inherit pro_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a636cece7fe5db06982150a8eb9e13e10 inherit pro_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a636cece7fe5db06982150a8eb9e13e10">windowMessagesHandle</a> (HWND <a class="el" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, UINT message, WPARAM wparam, LPARAM lparam, bool &amp;isUsed)</td></tr>
+<tr class="separator:a636cece7fe5db06982150a8eb9e13e10 inherit pro_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classgui__framework_1_1_base_component"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classgui__framework_1_1_base_component')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></td></tr>
 <tr class="memitem:a1576375d22cf283d598e22f4a11aca2f inherit pro_attribs_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a1576375d22cf283d598e22f4a11aca2f">parent</a></td></tr>
 <tr class="separator:a1576375d22cf283d598e22f4a11aca2f inherit pro_attribs_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -300,7 +296,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_trackbar_control_8cpp_source.html#l00029">29</a> of file <a class="el" href="_base_trackbar_control_8cpp_source.html">BaseTrackbarControl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_trackbar_control_8cpp_source.html#l00011">11</a> of file <a class="el" href="_base_trackbar_control_8cpp_source.html">BaseTrackbarControl.cpp</a>.</p>
 
 </div>
 </div>
@@ -353,7 +349,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_trackbar_control_8cpp_source.html#l00042">42</a> of file <a class="el" href="_base_trackbar_control_8cpp_source.html">BaseTrackbarControl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_trackbar_control_8cpp_source.html#l00024">24</a> of file <a class="el" href="_base_trackbar_control_8cpp_source.html">BaseTrackbarControl.cpp</a>.</p>
 
 </div>
 </div>
@@ -380,7 +376,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_trackbar_control_8cpp_source.html#l00082">82</a> of file <a class="el" href="_base_trackbar_control_8cpp_source.html">BaseTrackbarControl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_trackbar_control_8cpp_source.html#l00064">64</a> of file <a class="el" href="_base_trackbar_control_8cpp_source.html">BaseTrackbarControl.cpp</a>.</p>
 
 </div>
 </div>
@@ -407,7 +403,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_trackbar_control_8cpp_source.html#l00077">77</a> of file <a class="el" href="_base_trackbar_control_8cpp_source.html">BaseTrackbarControl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_trackbar_control_8cpp_source.html#l00059">59</a> of file <a class="el" href="_base_trackbar_control_8cpp_source.html">BaseTrackbarControl.cpp</a>.</p>
 
 </div>
 </div>
@@ -434,7 +430,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_trackbar_control_8cpp_source.html#l00072">72</a> of file <a class="el" href="_base_trackbar_control_8cpp_source.html">BaseTrackbarControl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_trackbar_control_8cpp_source.html#l00054">54</a> of file <a class="el" href="_base_trackbar_control_8cpp_source.html">BaseTrackbarControl.cpp</a>.</p>
 
 </div>
 </div>
@@ -461,7 +457,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_trackbar_control_8cpp_source.html#l00092">92</a> of file <a class="el" href="_base_trackbar_control_8cpp_source.html">BaseTrackbarControl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_trackbar_control_8cpp_source.html#l00074">74</a> of file <a class="el" href="_base_trackbar_control_8cpp_source.html">BaseTrackbarControl.cpp</a>.</p>
 
 </div>
 </div>
@@ -488,7 +484,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_trackbar_control_8cpp_source.html#l00087">87</a> of file <a class="el" href="_base_trackbar_control_8cpp_source.html">BaseTrackbarControl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_trackbar_control_8cpp_source.html#l00069">69</a> of file <a class="el" href="_base_trackbar_control_8cpp_source.html">BaseTrackbarControl.cpp</a>.</p>
 
 </div>
 </div>
@@ -510,14 +506,16 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classgui__framework_1_1_base_component.html#a874eae6d7db8309155a9946aef01199a">gui_framework::BaseComponent</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_base_trackbar_control_8cpp_source.html#l00011">11</a> of file <a class="el" href="_base_trackbar_control_8cpp_source.html">BaseTrackbarControl.cpp</a>.</p>
+<p>Reimplemented in <a class="el" href="classgui__framework_1_1_vertical_trackbar_control.html#aec5cdc9e7b75a7ec674af088176d554f">gui_framework::VerticalTrackbarControl</a>, and <a class="el" href="classgui__framework_1_1_horizontal_trackbar_control.html#a96108dc6a482b9bb0c67bad1f0e50e2b">gui_framework::HorizontalTrackbarControl</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_base_trackbar_control_8cpp_source.html#l00084">84</a> of file <a class="el" href="_base_trackbar_control_8cpp_source.html">BaseTrackbarControl.cpp</a>.</p>
 
 </div>
 </div>
@@ -545,7 +543,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_trackbar_control_8cpp_source.html#l00057">57</a> of file <a class="el" href="_base_trackbar_control_8cpp_source.html">BaseTrackbarControl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_trackbar_control_8cpp_source.html#l00039">39</a> of file <a class="el" href="_base_trackbar_control_8cpp_source.html">BaseTrackbarControl.cpp</a>.</p>
 
 </div>
 </div>
@@ -573,7 +571,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_trackbar_control_8cpp_source.html#l00052">52</a> of file <a class="el" href="_base_trackbar_control_8cpp_source.html">BaseTrackbarControl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_trackbar_control_8cpp_source.html#l00034">34</a> of file <a class="el" href="_base_trackbar_control_8cpp_source.html">BaseTrackbarControl.cpp</a>.</p>
 
 </div>
 </div>
@@ -601,7 +599,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_trackbar_control_8cpp_source.html#l00067">67</a> of file <a class="el" href="_base_trackbar_control_8cpp_source.html">BaseTrackbarControl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_trackbar_control_8cpp_source.html#l00049">49</a> of file <a class="el" href="_base_trackbar_control_8cpp_source.html">BaseTrackbarControl.cpp</a>.</p>
 
 </div>
 </div>
@@ -629,7 +627,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_trackbar_control_8cpp_source.html#l00062">62</a> of file <a class="el" href="_base_trackbar_control_8cpp_source.html">BaseTrackbarControl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_trackbar_control_8cpp_source.html#l00044">44</a> of file <a class="el" href="_base_trackbar_control_8cpp_source.html">BaseTrackbarControl.cpp</a>.</p>
 
 </div>
 </div>
@@ -691,7 +689,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classgui__framework_1_1_base_component.html#a9dba22822b7f830295e104fa27af284c">gui_framework::BaseComponent</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_base_trackbar_control_8cpp_source.html#l00097">97</a> of file <a class="el" href="_base_trackbar_control_8cpp_source.html">BaseTrackbarControl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_trackbar_control_8cpp_source.html#l00079">79</a> of file <a class="el" href="_base_trackbar_control_8cpp_source.html">BaseTrackbarControl.cpp</a>.</p>
 
 </div>
 </div>
@@ -718,7 +716,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_trackbar_control_8cpp_source.html#l00047">47</a> of file <a class="el" href="_base_trackbar_control_8cpp_source.html">BaseTrackbarControl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_trackbar_control_8cpp_source.html#l00029">29</a> of file <a class="el" href="_base_trackbar_control_8cpp_source.html">BaseTrackbarControl.cpp</a>.</p>
 
 </div>
 </div>

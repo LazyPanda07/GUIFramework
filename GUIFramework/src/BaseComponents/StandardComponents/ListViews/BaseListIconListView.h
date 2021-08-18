@@ -24,6 +24,8 @@ namespace gui_framework
 		/// @exception NotImplemented Text color does not affects at list view with icon
 		virtual void setTextColor(uint8_t red, uint8_t green, uint8_t blue) override;
 
+		virtual json::JSONBuilder getStructure() const override;
+
 		virtual ~BaseListIconListView() = default;
 	};
 }

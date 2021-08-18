@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.7.5-beta</span>
+   &#160;<span id="projectnumber">0.8-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -114,6 +114,8 @@ Inheritance diagram for gui_framework::IconListView:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a0ba929d3cf3e50f37674c50b67a78e4b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_icon_list_view.html#a0ba929d3cf3e50f37674c50b67a78e4b">IconListView</a> (const std::wstring &amp;listViewName, const <a class="el" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a> &amp;settings, <a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> *<a class="el" href="classgui__framework_1_1_base_component.html#a1576375d22cf283d598e22f4a11aca2f">parent</a>, <a class="el" href="namespacegui__framework_1_1utility.html#a4bd7b1a1121bbfb16d0a1f9b4ba266de">utility::iconListViewType</a> type)</td></tr>
 <tr class="separator:a0ba929d3cf3e50f37674c50b67a78e4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a568d1ee79bb17b750bc0e7526039eceb"><td class="memItemLeft" align="right" valign="top">json::JSONBuilder&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_icon_list_view.html#a568d1ee79bb17b750bc0e7526039eceb">getStructure</a> () const override</td></tr>
+<tr class="separator:a568d1ee79bb17b750bc0e7526039eceb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae26be4f28a395c53072aec69cd51f0bc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_icon_list_view.html#ae26be4f28a395c53072aec69cd51f0bc">~IconListView</a> ()=default</td></tr>
 <tr class="separator:ae26be4f28a395c53072aec69cd51f0bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classgui__framework_1_1_base_icon_list_view"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classgui__framework_1_1_base_icon_list_view')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classgui__framework_1_1_base_icon_list_view.html">gui_framework::BaseIconListView</a></td></tr>
@@ -182,8 +184,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8b4685df88fa1edf51da5f29895961a4 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56df6db296a420576396a4629236aa41 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual COLORREF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a56df6db296a420576396a4629236aa41">getTextColor</a> () const final</td></tr>
 <tr class="separator:a56df6db296a420576396a4629236aa41 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a874eae6d7db8309155a9946aef01199a inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual json::JSONBuilder&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a874eae6d7db8309155a9946aef01199a">getStructure</a> () const override</td></tr>
-<tr class="separator:a874eae6d7db8309155a9946aef01199a inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a274274f6f28b2e93f73544634b640d56 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a274274f6f28b2e93f73544634b640d56">~BaseComponent</a> ()</td></tr>
 <tr class="separator:a274274f6f28b2e93f73544634b640d56 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html">gui_framework::interfaces::ISerializable</a></td></tr>
@@ -200,6 +200,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a27467883881bf4db61bb4702b4911703 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_icon_list_view"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a226122dabf51a03f3c98c8e1d5d8e1f6 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_icon_list_view"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_icon_list_view.html#a226122dabf51a03f3c98c8e1d5d8e1f6">addIconItem</a> (const std::filesystem::path &amp;pathToIcon)</td></tr>
 <tr class="separator:a226122dabf51a03f3c98c8e1d5d8e1f6 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_icon_list_view"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b4c2f39c3897952bce28c5a6af686e0 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_icon_list_view"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_icon_list_view.html#a8b4c2f39c3897952bce28c5a6af686e0">insertIconItem</a> (const std::filesystem::path &amp;pathToIcon, size_t index)</td></tr>
+<tr class="separator:a8b4c2f39c3897952bce28c5a6af686e0 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_icon_list_view"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26d7dfef0a9beb9141857248c0d6290c inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_icon_list_view"><td class="memItemLeft" align="right" valign="top">virtual std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_icon_list_view.html#a26d7dfef0a9beb9141857248c0d6290c">getIconPath</a> (size_t index) const</td></tr>
 <tr class="separator:a26d7dfef0a9beb9141857248c0d6290c inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_icon_list_view"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1a82ed39e2982413d5c6defa043b65c inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_icon_list_view"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_icon_list_view.html#ad1a82ed39e2982413d5c6defa043b65c">getIconIndex</a> (size_t index) const</td></tr>
@@ -209,8 +211,10 @@ Public Member Functions</h2></td></tr>
 <tr class="inherit_header pub_methods_classgui__framework_1_1interfaces_1_1_i_base_list_view_operations"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classgui__framework_1_1interfaces_1_1_i_base_list_view_operations')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classgui__framework_1_1interfaces_1_1_i_base_list_view_operations.html">gui_framework::interfaces::IBaseListViewOperations</a></td></tr>
 <tr class="memitem:ac44dfb57b3caab9c86f15db6e44b2100 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_base_list_view_operations"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_base_list_view_operations.html#ac44dfb57b3caab9c86f15db6e44b2100">IBaseListViewOperations</a> (HWND handle)</td></tr>
 <tr class="separator:ac44dfb57b3caab9c86f15db6e44b2100 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_base_list_view_operations"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62088dc6d1ee8e7fba0e49cd1d3fcd6f inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_base_list_view_operations"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_base_list_view_operations.html#a62088dc6d1ee8e7fba0e49cd1d3fcd6f">deleteItem</a> (size_t index) final</td></tr>
-<tr class="separator:a62088dc6d1ee8e7fba0e49cd1d3fcd6f inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_base_list_view_operations"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeca9cec98cc6a438bd6e9395090bff16 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_base_list_view_operations"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_base_list_view_operations.html#aeca9cec98cc6a438bd6e9395090bff16">removeItem</a> (size_t index) final</td></tr>
+<tr class="separator:aeca9cec98cc6a438bd6e9395090bff16 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_base_list_view_operations"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8110d4ff257fae538d7d22893c48d090 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_base_list_view_operations"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_base_list_view_operations.html#a8110d4ff257fae538d7d22893c48d090">size</a> () const final</td></tr>
+<tr class="separator:a8110d4ff257fae538d7d22893c48d090 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_base_list_view_operations"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19fa5d921fb9e0eaf3531b732e3ed276 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_base_list_view_operations"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_base_list_view_operations.html#a19fa5d921fb9e0eaf3531b732e3ed276">~IBaseListViewOperations</a> ()=default</td></tr>
 <tr class="separator:a19fa5d921fb9e0eaf3531b732e3ed276 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_base_list_view_operations"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -234,6 +238,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a636cece7fe5db06982150a8eb9e13e10 inherit pro_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a636cece7fe5db06982150a8eb9e13e10">windowMessagesHandle</a> (HWND <a class="el" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, UINT message, WPARAM wparam, LPARAM lparam, bool &amp;isUsed)</td></tr>
 <tr class="separator:a636cece7fe5db06982150a8eb9e13e10 inherit pro_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classgui__framework_1_1interfaces_1_1_i_base_list_view_operations"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classgui__framework_1_1interfaces_1_1_i_base_list_view_operations')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classgui__framework_1_1interfaces_1_1_i_base_list_view_operations.html">gui_framework::interfaces::IBaseListViewOperations</a></td></tr>
+<tr class="memitem:aeecbc57868272ccf34d96309318df52e inherit pro_methods_classgui__framework_1_1interfaces_1_1_i_base_list_view_operations"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_base_list_view_operations.html#aeecbc57868272ccf34d96309318df52e">onRemove</a> (size_t index)</td></tr>
+<tr class="separator:aeecbc57868272ccf34d96309318df52e inherit pro_methods_classgui__framework_1_1interfaces_1_1_i_base_list_view_operations"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee9b7818e4efad95a2309adbe31e86d7 inherit pro_methods_classgui__framework_1_1interfaces_1_1_i_base_list_view_operations"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_base_list_view_operations.html#aee9b7818e4efad95a2309adbe31e86d7">addItem</a> (const LVITEMW &amp;item)</td></tr>
 <tr class="separator:aee9b7818e4efad95a2309adbe31e86d7 inherit pro_methods_classgui__framework_1_1interfaces_1_1_i_base_list_view_operations"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9eda2faffe0e18727c4d7a83ef9df0d inherit pro_methods_classgui__framework_1_1interfaces_1_1_i_base_list_view_operations"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_base_list_view_operations.html#af9eda2faffe0e18727c4d7a83ef9df0d">setItem</a> (const LVITEMW &amp;item)</td></tr>
@@ -340,6 +346,36 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a568d1ee79bb17b750bc0e7526039eceb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a568d1ee79bb17b750bc0e7526039eceb">&#9670;&nbsp;</a></span>getStructure()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">json::JSONBuilder gui_framework::IconListView::getStructure </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classgui__framework_1_1_base_icon_list_view.html#a0ab77ef0b3296386917a819fd8d6ab1a">gui_framework::BaseIconListView</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_icon_list_view_8cpp_source.html#l00022">22</a> of file <a class="el" href="_icon_list_view_8cpp_source.html">IconListView.cpp</a>.</p>
 
 </div>
 </div>

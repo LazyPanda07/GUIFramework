@@ -2,7 +2,6 @@ var classgui__framework_1_1_base_composite =
 [
     [ "BaseComposite", "classgui__framework_1_1_base_composite.html#ab378df34d1e2eafee5ebeda2074edba5", null ],
     [ "~BaseComposite", "classgui__framework_1_1_base_composite.html#a4d6d50985c481dae71dcb09ae527f3e7", null ],
-    [ "addChild", "classgui__framework_1_1_base_composite.html#a2755c6a6aca5ed51a9e24b987a3af323", null ],
     [ "addPopupMenu", "classgui__framework_1_1_base_composite.html#a411e3e9140e1a2731df48e8ac6b5893b", null ],
     [ "begin", "classgui__framework_1_1_base_composite.html#a36148305df7442496ba5a8a3c6b36ec0", null ],
     [ "cbegin", "classgui__framework_1_1_base_composite.html#a09b496cc49852e57b169e880c73c696c", null ],
@@ -14,6 +13,7 @@ var classgui__framework_1_1_base_composite =
     [ "findChild", "classgui__framework_1_1_base_composite.html#a54f3dff4ca2e948461f4c18a69cd833a", null ],
     [ "findChildren", "classgui__framework_1_1_base_composite.html#a27d4bb107763afe92b9dabba56f99ff9", null ],
     [ "getChildren", "classgui__framework_1_1_base_composite.html#a39539aed053e40905f147cd9da5003eb", null ],
+    [ "getCreationType", "classgui__framework_1_1_base_composite.html#ad9147db4e3cca4a0694a3b262044edef", null ],
     [ "getMainMenu", "classgui__framework_1_1_base_composite.html#a29f3b6cabb0fe06c0bd2e9cab8de8ac1", null ],
     [ "getMainMenu", "classgui__framework_1_1_base_composite.html#a02f66f4ee3ee1191b27bc29a765c0151", null ],
     [ "getPopupMenus", "classgui__framework_1_1_base_composite.html#aff93c143210949150b5ce5203e0cc418", null ],
@@ -27,11 +27,12 @@ var classgui__framework_1_1_base_composite =
     [ "setLargeIcon", "classgui__framework_1_1_base_composite.html#acd7cb91db3db51cdca9b5c231164cc92", null ],
     [ "setSmallIcon", "classgui__framework_1_1_base_composite.html#ac1a8b83ad28e122d61acc2716512d959", null ],
     [ "windowMessagesHandle", "classgui__framework_1_1_base_composite.html#ab788d4dc310ef2e8eda23e9475da7ea7", null ],
+    [ "BaseComponent", "classgui__framework_1_1_base_composite.html#ad89e05696f39a7a3b7908a11c22f82e0", null ],
     [ "children", "classgui__framework_1_1_base_composite.html#a8ada7cbe6d3d5b01e621fa47ee040c9c", null ],
     [ "largeIcon", "classgui__framework_1_1_base_composite.html#a6cc2c87df8a1655c4b9ecac905a7b531", null ],
     [ "mainMenu", "classgui__framework_1_1_base_composite.html#a02be7d9aee6b1c4089c248d70a9da03c", null ],
-    [ "pathToLargeIcon", "classgui__framework_1_1_base_composite.html#a24fec1660f27d1599a6d44e8c1135355", null ],
-    [ "pathToSmallIcon", "classgui__framework_1_1_base_composite.html#aeaa887f3cb4d6458faf948639dd55a88", null ],
+    [ "pathToLargeIcon", "classgui__framework_1_1_base_composite.html#a88ed491afa835ef9aac8863af1053a2b", null ],
+    [ "pathToSmallIcon", "classgui__framework_1_1_base_composite.html#a41563e16b969fe6f32b17964d1ccc8dc", null ],
     [ "popupMenus", "classgui__framework_1_1_base_composite.html#a53920c5848be5ec370aaad3f055ad8a8", null ],
     [ "smallIcon", "classgui__framework_1_1_base_composite.html#a5482fa48df4e4b1beb7ee6f64b0a41f2", null ]
 ];

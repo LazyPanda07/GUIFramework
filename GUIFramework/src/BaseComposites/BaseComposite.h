@@ -20,8 +20,8 @@ namespace gui_framework
 		std::unique_ptr<Menu> mainMenu;
 		HICON largeIcon;
 		HICON smallIcon;
-		std::string pathToSmallIcon;
-		std::string pathToLargeIcon;
+		std::filesystem::path pathToSmallIcon;
+		std::filesystem::path pathToLargeIcon;
 
 	protected:
 		virtual LRESULT preWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
@@ -30,15 +30,16 @@ namespace gui_framework
 
 		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) final override;
 
+	protected:
+		virtual const std::string& getCreationType() const;
+
 	private:
 		std::vector<std::pair<std::string, json::utility::objectSmartPointer<json::utility::jsonObject>>> getChildrenStructure() const;
 
+		virtual void addChild(BaseComponent* child) final;
+
 	public:
 		BaseComposite(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent = nullptr, const std::string& windowFunctionName = "");
-
-		/// @brief BaseComponent's constructor calls this method if parent != nullptr, there is no need to explicitly call this method
-		/// @param child BaseComposite takes control for all children
-		virtual void addChild(BaseComponent* child) final;
 
 		virtual void removeChild(BaseComponent* child) final;
 
@@ -95,5 +96,7 @@ namespace gui_framework
 		virtual json::JSONBuilder getStructure() const override;
 
 		virtual ~BaseComposite();
+
+		friend class BaseComponent;
 	};
 }

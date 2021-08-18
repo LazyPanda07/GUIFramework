@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.7.5-beta</span>
+   &#160;<span id="projectnumber">0.8-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -98,215 +98,246 @@ $(document).ready(function(){initNavTree('_base_rich_edit_8cpp_source.html','');
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_rich_edit.html#a5b0e9edd94997732cc8b0f6533e9b27a">   12</a></span>&#160;    LRESULT BaseRichEdit::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, <span class="keywordtype">bool</span>&amp; isUsed)</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">void</span> BaseRichEdit::addCallback(urlDetectEvent event, <span class="keyword">const</span> <span class="keyword">function</span>&lt;<span class="keywordtype">void</span>(<span class="keyword">const</span> wstring&amp;)&gt;&amp; callback, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; functionName, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; moduleName)</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        isUsed = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordflow">if</span> (message == WM_NOTIFY &amp;&amp; this-&gt;getAutoURLDetect())</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            NMHDR* notification = <span class="keyword">reinterpret_cast&lt;</span>NMHDR*<span class="keyword">&gt;</span>(lparam);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <span class="keywordflow">if</span> (notification-&gt;code == EN_LINK)</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                ENLINK* ptrLink = <span class="keyword">reinterpret_cast&lt;</span>ENLINK*<span class="keyword">&gt;</span>(lparam);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordflow">if</span> (event == urlDetectEvent::setCursor)</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            callbacks[7] = callback;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            callbacksFunctionNamesAndModules[7] = make_pair(functionName, moduleName);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        }</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            callbacks[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(event) % urlDetectEventSize] = callback;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                <span class="keyword">const</span> <span class="keyword">function</span>&lt;void(<span class="keyword">const</span> wstring&amp;)&gt;&amp; callback = callbacks[(<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(ptrLink-&gt;msg))];</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <span class="keywordflow">if</span> (callback)</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                    isUsed = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                    callback</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                    (</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                        this-&gt;getText().substr</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                        (</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                            ptrLink-&gt;chrg.cpMin,</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                            <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(ptrLink-&gt;chrg.cpMax) - ptrLink-&gt;chrg.cpMin</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                        )</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                    );</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_rich_edit.html#a33e2ff026ae68f0cdba10162eff082be">   47</a></span>&#160;    BaseRichEdit::BaseRichEdit(<span class="keyword">const</span> wstring&amp; richEditName, <span class="keyword">const</span> <a class="code" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a>&amp; settings, <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* parent, <span class="keywordtype">bool</span> isMultiLine) :</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        (</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            wstring(standard_classes::<a class="code" href="namespacegui__framework_1_1standard__classes.html#a57b557e0f5b320b012d2af64d4246290">richEdit</a>),</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            richEditName,</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            settings,</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            styles::DefaultRichEditStyles(isMultiLine),</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            parent</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        ),</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        IResizableComponent</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        (</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            handle,</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            parent ? parent-&gt;getHandle() : nullptr</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        ),</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        ITextOperations(handle)</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        this-&gt;<a class="code" href="classgui__framework_1_1interfaces_1_1_i_text_operations.html#a6236a648c9d82e9f658127d6e872839d">setText</a>(L<span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        ranges::for_each(<a class="code" href="classgui__framework_1_1_base_rich_edit.html#ab3e563fb3cc2e5ea31d8c7178c8c0f14">callbacks</a>, [](<span class="keyword">function</span>&lt;<span class="keywordtype">void</span>(<span class="keyword">const</span> wstring&amp;)&gt;&amp; callback) { callback = <span class="keyword">nullptr</span>; });</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        ranges::for_each(<a class="code" href="classgui__framework_1_1_base_rich_edit.html#a01d1b1cbd3861ff40520b3d0c1ab06c8">callbacksFunctionNamesAndModules</a>, [](pair&lt;string, string&gt;&amp; data) { data = make_pair(<span class="stringliteral">&quot;&quot;</span>s, <span class="stringliteral">&quot;&quot;</span>s); });</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgui__framework_1_1_base_rich_edit.html#aed87ad2df9cdf8526c2b95426e11b899">BaseRichEdit::addUrlDetectEvent</a>(urlDetectEvent event, <span class="keyword">const</span> <span class="keyword">function</span>&lt;<span class="keywordtype">void</span>(<span class="keyword">const</span> wstring&amp;)&gt;&amp; eventCallback)</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <a class="code" href="classgui__framework_1_1_base_rich_edit.html#ab3e563fb3cc2e5ea31d8c7178c8c0f14">callbacks</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(event)] = eventCallback;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="classgui__framework_1_1_base_rich_edit.html#a01d1b1cbd3861ff40520b3d0c1ab06c8">callbacksFunctionNamesAndModules</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(event)] = make_pair(<span class="stringliteral">&quot;&quot;</span>s, <span class="stringliteral">&quot;&quot;</span>s);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgui__framework_1_1_base_rich_edit.html#aed87ad2df9cdf8526c2b95426e11b899">BaseRichEdit::addUrlDetectEvent</a>(urlDetectEvent event, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; functionName, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; moduleName)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            callbacksFunctionNamesAndModules[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(event) % urlDetectEventSize] = make_pair(functionName, moduleName);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        }</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_rich_edit.html#a5b0e9edd94997732cc8b0f6533e9b27a">   28</a></span>&#160;    LRESULT BaseRichEdit::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, <span class="keywordtype">bool</span>&amp; isUsed)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        isUsed = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">if</span> (message == WM_NOTIFY &amp;&amp; this-&gt;getAutoURLDetect())</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            NMHDR* notification = <span class="keyword">reinterpret_cast&lt;</span>NMHDR*<span class="keyword">&gt;</span>(lparam);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keywordflow">if</span> (notification-&gt;code == EN_LINK)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                ENLINK* ptrLink = <span class="keyword">reinterpret_cast&lt;</span>ENLINK*<span class="keyword">&gt;</span>(lparam);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <span class="keyword">const</span> <span class="keyword">function</span>&lt;void(<span class="keyword">const</span> wstring&amp;)&gt;&amp; callback = this-&gt;getCallback(<span class="keyword">static_cast&lt;</span><a class="code" href="classgui__framework_1_1_base_rich_edit.html#abf55c644c6c2640d8c662dd7179ab1f3">urlDetectEvent</a><span class="keyword">&gt;</span>(ptrLink-&gt;msg));</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <span class="keywordflow">if</span> (callback)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                    isUsed = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                    callback</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                    (</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                        this-&gt;getText().substr</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                        (</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                            ptrLink-&gt;chrg.cpMin,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                            <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(ptrLink-&gt;chrg.cpMax) - ptrLink-&gt;chrg.cpMin</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                        )</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                    );</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_rich_edit.html#a33e2ff026ae68f0cdba10162eff082be">   63</a></span>&#160;    BaseRichEdit::BaseRichEdit(<span class="keyword">const</span> wstring&amp; richEditName, <span class="keyword">const</span> <a class="code" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a>&amp; settings, <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* parent, <span class="keywordtype">bool</span> isMultiLine) :</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        (</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            wstring(standard_classes::<a class="code" href="namespacegui__framework_1_1standard__classes.html#a57b557e0f5b320b012d2af64d4246290">richEdit</a>),</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            richEditName,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            settings,</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            styles::DefaultRichEditStyles(isMultiLine),</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            parent</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        ),</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        IResizableComponent</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        (</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            handle,</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            parent ? parent-&gt;getHandle() : nullptr</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        ),</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        ITextOperations(handle)</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        GUIFramework&amp; instance = <a class="code" href="classgui__framework_1_1_g_u_i_framework.html#a3ddb6e3b33f9143d5e4eb5c2111d1d6b">GUIFramework::get</a>();</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keyword">const</span> HMODULE&amp; module = instance.getModules().at(moduleName);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="namespacegui__framework.html#ae93e197b03ab535325f85dbd87c4cf7c">richEditCallbackSignature</a> tem = <span class="keyword">reinterpret_cast&lt;</span><a class="code" href="namespacegui__framework.html#ae93e197b03ab535325f85dbd87c4cf7c">richEditCallbackSignature</a><span class="keyword">&gt;</span>(GetProcAddress(module, functionName.data()));</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">if</span> (!tem)</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordflow">throw</span> exceptions::CantFindFunctionFromModuleException(functionName, moduleName);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <a class="code" href="classgui__framework_1_1_base_rich_edit.html#ab3e563fb3cc2e5ea31d8c7178c8c0f14">callbacks</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(event)] = tem;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        this-&gt;<a class="code" href="classgui__framework_1_1interfaces_1_1_i_text_operations.html#a6236a648c9d82e9f658127d6e872839d">setText</a>(L<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        ranges::for_each(<a class="code" href="classgui__framework_1_1_base_rich_edit.html#ab3e563fb3cc2e5ea31d8c7178c8c0f14">callbacks</a>, [](<span class="keyword">function</span>&lt;<span class="keywordtype">void</span>(<span class="keyword">const</span> wstring&amp;)&gt;&amp; callback) { callback = <span class="keyword">nullptr</span>; });</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        ranges::for_each(<a class="code" href="classgui__framework_1_1_base_rich_edit.html#a01d1b1cbd3861ff40520b3d0c1ab06c8">callbacksFunctionNamesAndModules</a>, [](pair&lt;string, string&gt;&amp; data) { data = make_pair(<span class="stringliteral">&quot;&quot;</span>s, <span class="stringliteral">&quot;&quot;</span>s); });</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgui__framework_1_1_base_rich_edit.html#aed87ad2df9cdf8526c2b95426e11b899">BaseRichEdit::addUrlDetectEvent</a>(urlDetectEvent event, <span class="keyword">const</span> <span class="keyword">function</span>&lt;<span class="keywordtype">void</span>(<span class="keyword">const</span> wstring&amp;)&gt;&amp; eventCallback)</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        this-&gt;addCallback(event, eventCallback, <span class="stringliteral">&quot;&quot;</span>s, <span class="stringliteral">&quot;&quot;</span>s);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="classgui__framework_1_1_base_rich_edit.html#a01d1b1cbd3861ff40520b3d0c1ab06c8">callbacksFunctionNamesAndModules</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(event)] = make_pair(functionName, moduleName);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_rich_edit.html#acf50e2d2bfa111189ab21415b620a85b">   94</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgui__framework_1_1_base_rich_edit.html#acf50e2d2bfa111189ab21415b620a85b">BaseRichEdit::removeUrlDetectEvent</a>(<a class="code" href="classgui__framework_1_1_base_rich_edit.html#abf55c644c6c2640d8c662dd7179ab1f3">urlDetectEvent</a> event)</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <a class="code" href="classgui__framework_1_1_base_rich_edit.html#ab3e563fb3cc2e5ea31d8c7178c8c0f14">callbacks</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(event)] = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgui__framework_1_1_base_rich_edit.html#aed87ad2df9cdf8526c2b95426e11b899">BaseRichEdit::addUrlDetectEvent</a>(urlDetectEvent event, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; functionName, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; moduleName)</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        GUIFramework&amp; instance = <a class="code" href="classgui__framework_1_1_g_u_i_framework.html#a3ddb6e3b33f9143d5e4eb5c2111d1d6b">GUIFramework::get</a>();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keyword">const</span> HMODULE&amp; module = instance.getModules().at(moduleName);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <a class="code" href="namespacegui__framework.html#ae93e197b03ab535325f85dbd87c4cf7c">richEditCallbackSignature</a> tem = <span class="keyword">reinterpret_cast&lt;</span><a class="code" href="namespacegui__framework.html#ae93e197b03ab535325f85dbd87c4cf7c">richEditCallbackSignature</a><span class="keyword">&gt;</span>(GetProcAddress(module, functionName.data()));</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="classgui__framework_1_1_base_rich_edit.html#a01d1b1cbd3861ff40520b3d0c1ab06c8">callbacksFunctionNamesAndModules</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(event)] = make_pair(<span class="stringliteral">&quot;&quot;</span>s, <span class="stringliteral">&quot;&quot;</span>s);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_rich_edit.html#aca2e15966dcf9d386342d3affdcd2e63">  101</a></span>&#160;    LRESULT <a class="code" href="classgui__framework_1_1_base_rich_edit.html#aca2e15966dcf9d386342d3affdcd2e63">BaseRichEdit::findSubstring</a>(<span class="keyword">const</span> wstring&amp; subStringToFind, <span class="keywordtype">bool</span> isMatchCase)</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        FINDTEXTEXW findText;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        findText.chrg.cpMin = 0;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        findText.chrg.cpMax = -1;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        findText.lpstrText = subStringToFind.data();</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordflow">return</span> SendMessageW(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, EM_FINDTEXTEXW, NULL | FR_DOWN | (isMatchCase ? FR_MATCHCASE : NULL), <span class="keyword">reinterpret_cast&lt;</span>LPARAM<span class="keyword">&gt;</span>(&amp;findText));</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_rich_edit.html#a28e3b67f20ffbba552803455e03b3104">  113</a></span>&#160;    LRESULT <a class="code" href="classgui__framework_1_1_base_rich_edit.html#a28e3b67f20ffbba552803455e03b3104">BaseRichEdit::findString</a>(<span class="keyword">const</span> wstring&amp; stringToFind, <span class="keywordtype">bool</span> isMatchCase)</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        FINDTEXTEXW findText;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        findText.chrg.cpMin = 0;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        findText.chrg.cpMax = -1;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        findText.lpstrText = stringToFind.data();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">if</span> (!tem)</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="keywordflow">throw</span> exceptions::CantFindFunctionFromModuleException(functionName, moduleName);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        this-&gt;addCallback(event, tem, functionName, moduleName);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_rich_edit.html#acf50e2d2bfa111189ab21415b620a85b">  106</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgui__framework_1_1_base_rich_edit.html#acf50e2d2bfa111189ab21415b620a85b">BaseRichEdit::removeUrlDetectEvent</a>(<a class="code" href="classgui__framework_1_1_base_rich_edit.html#abf55c644c6c2640d8c662dd7179ab1f3">urlDetectEvent</a> event)</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">if</span> (event == <a class="code" href="classgui__framework_1_1_base_rich_edit.html#abf55c644c6c2640d8c662dd7179ab1f3a5a69f9315e4bb59223621009e87cbc8d">urlDetectEvent::setCursor</a>)</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <a class="code" href="classgui__framework_1_1_base_rich_edit.html#ab3e563fb3cc2e5ea31d8c7178c8c0f14">callbacks</a>[7] = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <a class="code" href="classgui__framework_1_1_base_rich_edit.html#a01d1b1cbd3861ff40520b3d0c1ab06c8">callbacksFunctionNamesAndModules</a>[7] = make_pair(<span class="stringliteral">&quot;&quot;</span>s, <span class="stringliteral">&quot;&quot;</span>s);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <a class="code" href="classgui__framework_1_1_base_rich_edit.html#ab3e563fb3cc2e5ea31d8c7178c8c0f14">callbacks</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(event) % <a class="code" href="classgui__framework_1_1_base_rich_edit.html#a72cb6f1d60c9a2f9e7007c11ae18bd4e">urlDetectEventSize</a>] = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <a class="code" href="classgui__framework_1_1_base_rich_edit.html#a01d1b1cbd3861ff40520b3d0c1ab06c8">callbacksFunctionNamesAndModules</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(event) % <a class="code" href="classgui__framework_1_1_base_rich_edit.html#a72cb6f1d60c9a2f9e7007c11ae18bd4e">urlDetectEventSize</a>] = make_pair(<span class="stringliteral">&quot;&quot;</span>s, <span class="stringliteral">&quot;&quot;</span>s);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">return</span> SendMessageW(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, EM_FINDTEXTEXW, FR_WHOLEWORD | FR_DOWN | (isMatchCase ? FR_MATCHCASE : NULL), <span class="keyword">reinterpret_cast&lt;</span>LPARAM<span class="keyword">&gt;</span>(&amp;findText));</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    }</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_rich_edit.html#a99a7734c996dc4c84115279362db2dc3">  125</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgui__framework_1_1_base_rich_edit.html#a99a7734c996dc4c84115279362db2dc3">BaseRichEdit::setAutoURLDetect</a>(<span class="keywordtype">bool</span> autoURLDetect)</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    {</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordflow">if</span> (autoURLDetect)</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        {</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            SendMessageW(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, EM_SETEVENTMASK, NULL, SendMessageW(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, EM_GETEVENTMASK, NULL, NULL) | ENM_LINK);</div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_rich_edit.html#aca2e15966dcf9d386342d3affdcd2e63">  122</a></span>&#160;    LRESULT <a class="code" href="classgui__framework_1_1_base_rich_edit.html#aca2e15966dcf9d386342d3affdcd2e63">BaseRichEdit::findSubstring</a>(<span class="keyword">const</span> wstring&amp; subStringToFind, <span class="keywordtype">bool</span> isMatchCase)</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        FINDTEXTEXW findText;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        findText.chrg.cpMin = 0;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        findText.chrg.cpMax = -1;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        findText.lpstrText = subStringToFind.data();</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            SendMessageW(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, EM_AUTOURLDETECT, AURL_ENABLEURL, NULL);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        }</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        {</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            SendMessageW(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, EM_SETEVENTMASK, NULL, SendMessageW(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, EM_GETEVENTMASK, NULL, NULL) &amp; ~ENM_LINK);</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            SendMessageW(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, EM_AUTOURLDETECT, NULL, NULL);</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        }</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordflow">return</span> SendMessageW(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, EM_FINDTEXTEXW, NULL | FR_DOWN | (isMatchCase ? FR_MATCHCASE : NULL), <span class="keyword">reinterpret_cast&lt;</span>LPARAM<span class="keyword">&gt;</span>(&amp;findText));</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    }</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_rich_edit.html#a28e3b67f20ffbba552803455e03b3104">  134</a></span>&#160;    LRESULT <a class="code" href="classgui__framework_1_1_base_rich_edit.html#a28e3b67f20ffbba552803455e03b3104">BaseRichEdit::findString</a>(<span class="keyword">const</span> wstring&amp; stringToFind, <span class="keywordtype">bool</span> isMatchCase)</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    {</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        FINDTEXTEXW findText;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        findText.chrg.cpMin = 0;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        findText.chrg.cpMax = -1;</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
-<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_rich_edit.html#a00d331e8e19e08f47d51193b0ac17e6f">  141</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgui__framework_1_1_base_rich_edit.html#a00d331e8e19e08f47d51193b0ac17e6f">BaseRichEdit::setLimitText</a>(uint64_t count)</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    {</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        SendMessageW(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, EM_EXLIMITTEXT, NULL, count);</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        findText.lpstrText = stringToFind.data();</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keywordflow">return</span> SendMessageW(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, EM_FINDTEXTEXW, FR_WHOLEWORD | FR_DOWN | (isMatchCase ? FR_MATCHCASE : NULL), <span class="keyword">reinterpret_cast&lt;</span>LPARAM<span class="keyword">&gt;</span>(&amp;findText));</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    }</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
-<div class="line"><a name="l00146"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_rich_edit.html#ad9c813e5ba0b4cae075b9ea89101f835">  146</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classgui__framework_1_1_base_rich_edit.html#ad9c813e5ba0b4cae075b9ea89101f835">BaseRichEdit::getAutoURLDetect</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keywordflow">return</span> SendMessageW(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, EM_GETAUTOURLDETECT, NULL, NULL);</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    }</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
-<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_rich_edit.html#a2d321e91aa2d43d81381f0148eecf7ad">  151</a></span>&#160;    wstring <a class="code" href="classgui__framework_1_1_base_rich_edit.html#a2d321e91aa2d43d81381f0148eecf7ad">BaseRichEdit::getSelectedText</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        CHARRANGE range;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        SendMessageW(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, EM_EXGETSEL, NULL, <span class="keyword">reinterpret_cast&lt;</span>LPARAM<span class="keyword">&gt;</span>(&amp;range));</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="keywordflow">return</span> this-&gt;<a class="code" href="classgui__framework_1_1interfaces_1_1_i_text_operations.html#a6f2fc83f8b34e8b608f8570b7703915e">getText</a>().substr(range.cpMin, <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(range.cpMax) - range.cpMin);</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    }</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
-<div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_rich_edit.html#abe18d7d262aa479d30306d76ef2be318">  160</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgui__framework_1_1_base_rich_edit.html#abe18d7d262aa479d30306d76ef2be318">BaseRichEdit::setBackgroundColor</a>(uint8_t red, uint8_t green, uint8_t blue)</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    {</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <a class="code" href="classgui__framework_1_1_base_component.html#ae2f1b329acc98ad498e18f4d5330f027">BaseComponent::setBackgroundColor</a>(red, green, blue);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        SendMessageW(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, EM_SETBKGNDCOLOR, NULL, <span class="keyword">static_cast&lt;</span>LPARAM<span class="keyword">&gt;</span>(<a class="code" href="classgui__framework_1_1_base_component.html#aa5a56227ac3689163f958e778f0df1ca">backgroundColor</a>));</div>
+<div class="line"><a name="l00146"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_rich_edit.html#a99a7734c996dc4c84115279362db2dc3">  146</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgui__framework_1_1_base_rich_edit.html#a99a7734c996dc4c84115279362db2dc3">BaseRichEdit::setAutoURLDetect</a>(<span class="keywordtype">bool</span> autoURLDetect)</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    {</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keywordflow">if</span> (autoURLDetect)</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        {</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            SendMessageW(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, EM_SETEVENTMASK, NULL, SendMessageW(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, EM_GETEVENTMASK, NULL, NULL) | ENM_LINK);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            SendMessageW(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, EM_AUTOURLDETECT, AURL_ENABLEURL, NULL);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        }</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        {</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            SendMessageW(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, EM_SETEVENTMASK, NULL, SendMessageW(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, EM_GETEVENTMASK, NULL, NULL) &amp; ~ENM_LINK);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            SendMessageW(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, EM_AUTOURLDETECT, NULL, NULL);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        }</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    }</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_rich_edit.html#a00d331e8e19e08f47d51193b0ac17e6f">  162</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgui__framework_1_1_base_rich_edit.html#a00d331e8e19e08f47d51193b0ac17e6f">BaseRichEdit::setLimitText</a>(uint64_t count)</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    {</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        SendMessageW(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, EM_EXLIMITTEXT, NULL, count);</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    }</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
-<div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_rich_edit.html#a09d6d56819fc8fc9caaf1b39e962f910">  167</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgui__framework_1_1_base_rich_edit.html#a09d6d56819fc8fc9caaf1b39e962f910">BaseRichEdit::setTextColor</a>(uint8_t red, uint8_t green, uint8_t blue)</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    {</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <a class="code" href="classgui__framework_1_1_base_component.html#a9dba22822b7f830295e104fa27af284c">BaseComponent::setTextColor</a>(red, green, blue);</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        CHARFORMAT2W textFormat;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        textFormat.cbSize = <span class="keyword">sizeof</span>(CHARFORMAT2W);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        textFormat.dwMask = CFM_COLOR;</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        textFormat.crTextColor = RGB(red, green, blue);</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        textFormat.dwEffects = NULL;</div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_rich_edit.html#ad9c813e5ba0b4cae075b9ea89101f835">  167</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classgui__framework_1_1_base_rich_edit.html#ad9c813e5ba0b4cae075b9ea89101f835">BaseRichEdit::getAutoURLDetect</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="keywordflow">return</span> SendMessageW(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, EM_GETAUTOURLDETECT, NULL, NULL);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    }</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
+<div class="line"><a name="l00172"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_rich_edit.html#a2d321e91aa2d43d81381f0148eecf7ad">  172</a></span>&#160;    wstring <a class="code" href="classgui__framework_1_1_base_rich_edit.html#a2d321e91aa2d43d81381f0148eecf7ad">BaseRichEdit::getSelectedText</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        CHARRANGE range;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        SendMessageW(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, EM_EXGETSEL, NULL, <span class="keyword">reinterpret_cast&lt;</span>LPARAM<span class="keyword">&gt;</span>(&amp;range));</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        SendMessageW(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, EM_SETCHARFORMAT, SCF_ALL, <span class="keyword">reinterpret_cast&lt;</span>LPARAM<span class="keyword">&gt;</span>(&amp;textFormat));</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="keywordflow">return</span> this-&gt;<a class="code" href="classgui__framework_1_1interfaces_1_1_i_text_operations.html#a6f2fc83f8b34e8b608f8570b7703915e">getText</a>().substr(range.cpMin, <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(range.cpMax) - range.cpMin);</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    }</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
-<div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_rich_edit.html#a5efc3f658002087aee204a5f95a52ada">  181</a></span>&#160;    json::JSONBuilder <a class="code" href="classgui__framework_1_1_base_rich_edit.html#a5efc3f658002087aee204a5f95a52ada">BaseRichEdit::getStructure</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_rich_edit.html#ab95e2bc9a36410a59b9e3f75f27f2455">  181</a></span>&#160;    <span class="keyword">const</span> <span class="keyword">function</span>&lt;void(<span class="keyword">const</span> wstring&amp;)&gt;&amp; <a class="code" href="classgui__framework_1_1_base_rich_edit.html#ab95e2bc9a36410a59b9e3f75f27f2455">BaseRichEdit::getCallback</a>(<a class="code" href="classgui__framework_1_1_base_rich_edit.html#abf55c644c6c2640d8c662dd7179ab1f3">urlDetectEvent</a> event)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="keyword">using</span> json::utility::objectSmartPointer;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="keyword">using</span> json::utility::jsonObject;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        pair&lt;string, string&gt; emptyPair = make_pair(<span class="stringliteral">&quot;&quot;</span>s, <span class="stringliteral">&quot;&quot;</span>s);</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="keywordflow">if</span> (ranges::all_of(<a class="code" href="classgui__framework_1_1_base_rich_edit.html#a01d1b1cbd3861ff40520b3d0c1ab06c8">callbacksFunctionNamesAndModules</a>, [&amp;emptyPair](<span class="keyword">const</span> pair&lt;string, string&gt;&amp; data) { <span class="keywordflow">return</span> data == emptyPair; }))</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        {</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classgui__framework_1_1_base_component.html#a874eae6d7db8309155a9946aef01199a">BaseComponent::getStructure</a>();</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        }</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        json::JSONBuilder builder = <a class="code" href="classgui__framework_1_1_base_component.html#a874eae6d7db8309155a9946aef01199a">BaseComponent::getStructure</a>();</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        objectSmartPointer&lt;jsonObject&gt;&amp; current = get&lt;objectSmartPointer&lt;jsonObject&gt;&gt;(builder[<a class="code" href="namespacegui__framework_1_1utility.html#abbafc9708435f466d89c4f977dcd460d">utility::to_string</a>(<a class="code" href="classgui__framework_1_1_base_component.html#ab927f5791c7605446203f7f7f6e0bb83">windowName</a>, ISerializable::getCodepage())]);</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        vector&lt;objectSmartPointer&lt;jsonObject&gt;&gt; jsonCallbacks;</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; modulesPaths = <a class="code" href="classgui__framework_1_1_g_u_i_framework.html#a3ddb6e3b33f9143d5e4eb5c2111d1d6b">GUIFramework::get</a>().<a class="code" href="classgui__framework_1_1_g_u_i_framework.html#a069c0332eb3869de86e90557a8af9d88">getModulesPaths</a>();</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="keywordflow">if</span> (event == <a class="code" href="classgui__framework_1_1_base_rich_edit.html#abf55c644c6c2640d8c662dd7179ab1f3a5a69f9315e4bb59223621009e87cbc8d">urlDetectEvent::setCursor</a>)</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        {</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classgui__framework_1_1_base_rich_edit.html#ab3e563fb3cc2e5ea31d8c7178c8c0f14">callbacks</a>[7];</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        }</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        </div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classgui__framework_1_1_base_rich_edit.html#ab3e563fb3cc2e5ea31d8c7178c8c0f14">callbacks</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(event) % <a class="code" href="classgui__framework_1_1_base_rich_edit.html#a72cb6f1d60c9a2f9e7007c11ae18bd4e">urlDetectEventSize</a>];</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    }</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_rich_edit.html#abe18d7d262aa479d30306d76ef2be318">  191</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgui__framework_1_1_base_rich_edit.html#abe18d7d262aa479d30306d76ef2be318">BaseRichEdit::setBackgroundColor</a>(uint8_t red, uint8_t green, uint8_t blue)</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    {</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <a class="code" href="classgui__framework_1_1_base_component.html#ae2f1b329acc98ad498e18f4d5330f027">BaseComponent::setBackgroundColor</a>(red, green, blue);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        SendMessageW(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, EM_SETBKGNDCOLOR, NULL, <span class="keyword">static_cast&lt;</span>LPARAM<span class="keyword">&gt;</span>(<a class="code" href="classgui__framework_1_1_base_component.html#aa5a56227ac3689163f958e778f0df1ca">backgroundColor</a>));</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    }</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="classgui__framework_1_1_base_rich_edit.html#a01d1b1cbd3861ff40520b3d0c1ab06c8">callbacksFunctionNamesAndModules</a>.size(); i++)</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        {</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classgui__framework_1_1_base_rich_edit.html#a01d1b1cbd3861ff40520b3d0c1ab06c8">callbacksFunctionNamesAndModules</a>[i] == emptyPair)</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            {</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            }</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            objectSmartPointer&lt;jsonObject&gt; <span class="keywordtype">object</span> = json::utility::make_object&lt;jsonObject&gt;();</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            <span class="keywordtype">object</span>-&gt;data.push_back({ <span class="stringliteral">&quot;callbackType&quot;</span>s, <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(i) });</div>
+<div class="line"><a name="l00198"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_rich_edit.html#a09d6d56819fc8fc9caaf1b39e962f910">  198</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgui__framework_1_1_base_rich_edit.html#a09d6d56819fc8fc9caaf1b39e962f910">BaseRichEdit::setTextColor</a>(uint8_t red, uint8_t green, uint8_t blue)</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    {</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <a class="code" href="classgui__framework_1_1_base_component.html#a9dba22822b7f830295e104fa27af284c">BaseComponent::setTextColor</a>(red, green, blue);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        CHARFORMAT2W textFormat;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        textFormat.cbSize = <span class="keyword">sizeof</span>(CHARFORMAT2W);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        textFormat.dwMask = CFM_COLOR;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        textFormat.crTextColor = RGB(red, green, blue);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        textFormat.dwEffects = NULL;</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            <span class="keywordtype">object</span>-&gt;data.push_back({ <span class="stringliteral">&quot;callbackName&quot;</span>s, <a class="code" href="classgui__framework_1_1_base_rich_edit.html#a01d1b1cbd3861ff40520b3d0c1ab06c8">callbacksFunctionNamesAndModules</a>[i].first });</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            <span class="keywordtype">object</span>-&gt;data.push_back({ <span class="stringliteral">&quot;callbackModule&quot;</span>s, modulesPaths.at(<a class="code" href="classgui__framework_1_1_base_rich_edit.html#a01d1b1cbd3861ff40520b3d0c1ab06c8">callbacksFunctionNamesAndModules</a>[i].second) });</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;            json::utility::appendArray(move(<span class="keywordtype">object</span>), jsonCallbacks);</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        }</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        current-&gt;data.push_back({ <span class="stringliteral">&quot;callbacks&quot;</span>s, move(jsonCallbacks) });</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <span class="keywordflow">return</span> builder;</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    }</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;}</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        SendMessageW(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, EM_SETCHARFORMAT, SCF_ALL, <span class="keyword">reinterpret_cast&lt;</span>LPARAM<span class="keyword">&gt;</span>(&amp;textFormat));</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    }</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
+<div class="line"><a name="l00212"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_rich_edit.html#a5efc3f658002087aee204a5f95a52ada">  212</a></span>&#160;    json::JSONBuilder <a class="code" href="classgui__framework_1_1_base_rich_edit.html#a5efc3f658002087aee204a5f95a52ada">BaseRichEdit::getStructure</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        <span class="keyword">using</span> json::utility::objectSmartPointer;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <span class="keyword">using</span> json::utility::jsonObject;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        pair&lt;string, string&gt; emptyPair = make_pair(<span class="stringliteral">&quot;&quot;</span>s, <span class="stringliteral">&quot;&quot;</span>s);</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <span class="keywordflow">if</span> (ranges::all_of(<a class="code" href="classgui__framework_1_1_base_rich_edit.html#a01d1b1cbd3861ff40520b3d0c1ab06c8">callbacksFunctionNamesAndModules</a>, [&amp;emptyPair](<span class="keyword">const</span> pair&lt;string, string&gt;&amp; data) { <span class="keywordflow">return</span> data == emptyPair; }))</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        {</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classgui__framework_1_1_base_component.html#a874eae6d7db8309155a9946aef01199a">BaseComponent::getStructure</a>();</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        }</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        json::JSONBuilder builder = <a class="code" href="classgui__framework_1_1_base_component.html#a874eae6d7db8309155a9946aef01199a">BaseComponent::getStructure</a>();</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        objectSmartPointer&lt;jsonObject&gt;&amp; current = get&lt;objectSmartPointer&lt;jsonObject&gt;&gt;(builder[<a class="code" href="namespacegui__framework_1_1utility.html#abbafc9708435f466d89c4f977dcd460d">utility::to_string</a>(<a class="code" href="classgui__framework_1_1_base_component.html#ab927f5791c7605446203f7f7f6e0bb83">windowName</a>, ISerializable::getCodepage())]);</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        vector&lt;objectSmartPointer&lt;jsonObject&gt;&gt; jsonCallbacks;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; modulesPaths = <a class="code" href="classgui__framework_1_1_g_u_i_framework.html#a3ddb6e3b33f9143d5e4eb5c2111d1d6b">GUIFramework::get</a>().<a class="code" href="classgui__framework_1_1_g_u_i_framework.html#a069c0332eb3869de86e90557a8af9d88">getModulesPaths</a>();</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="classgui__framework_1_1_base_rich_edit.html#a01d1b1cbd3861ff40520b3d0c1ab06c8">callbacksFunctionNamesAndModules</a>.size(); i++)</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        {</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classgui__framework_1_1_base_rich_edit.html#a01d1b1cbd3861ff40520b3d0c1ab06c8">callbacksFunctionNamesAndModules</a>[i] == emptyPair)</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            {</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            }</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;            objectSmartPointer&lt;jsonObject&gt; <span class="keywordtype">object</span> = json::utility::make_object&lt;jsonObject&gt;();</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            <span class="keywordtype">object</span>-&gt;data.push_back({ <span class="stringliteral">&quot;callbackType&quot;</span>s, <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(i) });</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;            <span class="keywordtype">object</span>-&gt;data.push_back({ <span class="stringliteral">&quot;callbackName&quot;</span>s, <a class="code" href="classgui__framework_1_1_base_rich_edit.html#a01d1b1cbd3861ff40520b3d0c1ab06c8">callbacksFunctionNamesAndModules</a>[i].first });</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            <span class="keywordtype">object</span>-&gt;data.push_back({ <span class="stringliteral">&quot;callbackModule&quot;</span>s, modulesPaths.at(<a class="code" href="classgui__framework_1_1_base_rich_edit.html#a01d1b1cbd3861ff40520b3d0c1ab06c8">callbacksFunctionNamesAndModules</a>[i].second) });</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            json::utility::appendArray(move(<span class="keywordtype">object</span>), jsonCallbacks);</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        }</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        current-&gt;data.push_back({ <span class="stringliteral">&quot;callbacks&quot;</span>s, move(jsonCallbacks) });</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        <span class="keywordflow">return</span> builder;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    }</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;}</div>
 <div class="ttc" id="a_base_rich_edit_8h_html"><div class="ttname"><a href="_base_rich_edit_8h.html">BaseRichEdit.h</a></div></div>
 <div class="ttc" id="a_cant_find_function_from_module_exception_8h_html"><div class="ttname"><a href="_cant_find_function_from_module_exception_8h.html">CantFindFunctionFromModuleException.h</a></div></div>
 <div class="ttc" id="a_default_rich_edit_styles_8h_html"><div class="ttname"><a href="_default_rich_edit_styles_8h.html">DefaultRichEditStyles.h</a></div></div>
@@ -317,28 +348,31 @@ $(document).ready(function(){initNavTree('_base_rich_edit_8cpp_source.html','');
 <div class="ttc" id="aclassgui__framework_1_1_base_component_html_ab927f5791c7605446203f7f7f6e0bb83"><div class="ttname"><a href="classgui__framework_1_1_base_component.html#ab927f5791c7605446203f7f7f6e0bb83">gui_framework::BaseComponent::windowName</a></div><div class="ttdeci">const std::wstring windowName</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00034">BaseComponent.h:34</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1_base_component_html_abff4f6befd00a3e67037b12fa9d9613a"><div class="ttname"><a href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">gui_framework::BaseComponent::handle</a></div><div class="ttdeci">HWND handle</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00035">BaseComponent.h:35</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1_base_component_html_ae2f1b329acc98ad498e18f4d5330f027"><div class="ttname"><a href="classgui__framework_1_1_base_component.html#ae2f1b329acc98ad498e18f4d5330f027">gui_framework::BaseComponent::setBackgroundColor</a></div><div class="ttdeci">virtual void setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue)</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00219">BaseComponent.cpp:219</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_rich_edit_html_a00d331e8e19e08f47d51193b0ac17e6f"><div class="ttname"><a href="classgui__framework_1_1_base_rich_edit.html#a00d331e8e19e08f47d51193b0ac17e6f">gui_framework::BaseRichEdit::setLimitText</a></div><div class="ttdeci">virtual void setLimitText(uint64_t count) final</div><div class="ttdef"><b>Definition:</b> <a href="_base_rich_edit_8cpp_source.html#l00141">BaseRichEdit.cpp:141</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_rich_edit_html_a00d331e8e19e08f47d51193b0ac17e6f"><div class="ttname"><a href="classgui__framework_1_1_base_rich_edit.html#a00d331e8e19e08f47d51193b0ac17e6f">gui_framework::BaseRichEdit::setLimitText</a></div><div class="ttdeci">virtual void setLimitText(uint64_t count) final</div><div class="ttdef"><b>Definition:</b> <a href="_base_rich_edit_8cpp_source.html#l00162">BaseRichEdit.cpp:162</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1_base_rich_edit_html_a01d1b1cbd3861ff40520b3d0c1ab06c8"><div class="ttname"><a href="classgui__framework_1_1_base_rich_edit.html#a01d1b1cbd3861ff40520b3d0c1ab06c8">gui_framework::BaseRichEdit::callbacksFunctionNamesAndModules</a></div><div class="ttdeci">std::array&lt; std::pair&lt; std::string, std::string &gt;, urlDetectEventSize &gt; callbacksFunctionNamesAndModules</div><div class="ttdef"><b>Definition:</b> <a href="_base_rich_edit_8h_source.html#l00033">BaseRichEdit.h:33</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_rich_edit_html_a09d6d56819fc8fc9caaf1b39e962f910"><div class="ttname"><a href="classgui__framework_1_1_base_rich_edit.html#a09d6d56819fc8fc9caaf1b39e962f910">gui_framework::BaseRichEdit::setTextColor</a></div><div class="ttdeci">virtual void setTextColor(uint8_t red, uint8_t green, uint8_t blue) final override</div><div class="ttdef"><b>Definition:</b> <a href="_base_rich_edit_8cpp_source.html#l00167">BaseRichEdit.cpp:167</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_rich_edit_html_a28e3b67f20ffbba552803455e03b3104"><div class="ttname"><a href="classgui__framework_1_1_base_rich_edit.html#a28e3b67f20ffbba552803455e03b3104">gui_framework::BaseRichEdit::findString</a></div><div class="ttdeci">virtual LRESULT findString(const std::wstring &amp;stringToFind, bool isMatchCase=true) final</div><div class="ttdef"><b>Definition:</b> <a href="_base_rich_edit_8cpp_source.html#l00113">BaseRichEdit.cpp:113</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_rich_edit_html_a2d321e91aa2d43d81381f0148eecf7ad"><div class="ttname"><a href="classgui__framework_1_1_base_rich_edit.html#a2d321e91aa2d43d81381f0148eecf7ad">gui_framework::BaseRichEdit::getSelectedText</a></div><div class="ttdeci">virtual std::wstring getSelectedText() const final</div><div class="ttdef"><b>Definition:</b> <a href="_base_rich_edit_8cpp_source.html#l00151">BaseRichEdit.cpp:151</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_rich_edit_html_a5efc3f658002087aee204a5f95a52ada"><div class="ttname"><a href="classgui__framework_1_1_base_rich_edit.html#a5efc3f658002087aee204a5f95a52ada">gui_framework::BaseRichEdit::getStructure</a></div><div class="ttdeci">virtual json::JSONBuilder getStructure() const override</div><div class="ttdef"><b>Definition:</b> <a href="_base_rich_edit_8cpp_source.html#l00181">BaseRichEdit.cpp:181</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_rich_edit_html_a99a7734c996dc4c84115279362db2dc3"><div class="ttname"><a href="classgui__framework_1_1_base_rich_edit.html#a99a7734c996dc4c84115279362db2dc3">gui_framework::BaseRichEdit::setAutoURLDetect</a></div><div class="ttdeci">virtual void setAutoURLDetect(bool autoURLDetect) final</div><div class="ttdef"><b>Definition:</b> <a href="_base_rich_edit_8cpp_source.html#l00125">BaseRichEdit.cpp:125</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_rich_edit_html_a09d6d56819fc8fc9caaf1b39e962f910"><div class="ttname"><a href="classgui__framework_1_1_base_rich_edit.html#a09d6d56819fc8fc9caaf1b39e962f910">gui_framework::BaseRichEdit::setTextColor</a></div><div class="ttdeci">virtual void setTextColor(uint8_t red, uint8_t green, uint8_t blue) final override</div><div class="ttdef"><b>Definition:</b> <a href="_base_rich_edit_8cpp_source.html#l00198">BaseRichEdit.cpp:198</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_rich_edit_html_a28e3b67f20ffbba552803455e03b3104"><div class="ttname"><a href="classgui__framework_1_1_base_rich_edit.html#a28e3b67f20ffbba552803455e03b3104">gui_framework::BaseRichEdit::findString</a></div><div class="ttdeci">virtual LRESULT findString(const std::wstring &amp;stringToFind, bool isMatchCase=true) final</div><div class="ttdef"><b>Definition:</b> <a href="_base_rich_edit_8cpp_source.html#l00134">BaseRichEdit.cpp:134</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_rich_edit_html_a2d321e91aa2d43d81381f0148eecf7ad"><div class="ttname"><a href="classgui__framework_1_1_base_rich_edit.html#a2d321e91aa2d43d81381f0148eecf7ad">gui_framework::BaseRichEdit::getSelectedText</a></div><div class="ttdeci">virtual std::wstring getSelectedText() const final</div><div class="ttdef"><b>Definition:</b> <a href="_base_rich_edit_8cpp_source.html#l00172">BaseRichEdit.cpp:172</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_rich_edit_html_a5efc3f658002087aee204a5f95a52ada"><div class="ttname"><a href="classgui__framework_1_1_base_rich_edit.html#a5efc3f658002087aee204a5f95a52ada">gui_framework::BaseRichEdit::getStructure</a></div><div class="ttdeci">virtual json::JSONBuilder getStructure() const override</div><div class="ttdef"><b>Definition:</b> <a href="_base_rich_edit_8cpp_source.html#l00212">BaseRichEdit.cpp:212</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_rich_edit_html_a72cb6f1d60c9a2f9e7007c11ae18bd4e"><div class="ttname"><a href="classgui__framework_1_1_base_rich_edit.html#a72cb6f1d60c9a2f9e7007c11ae18bd4e">gui_framework::BaseRichEdit::urlDetectEventSize</a></div><div class="ttdeci">static constexpr uint8_t urlDetectEventSize</div><div class="ttdef"><b>Definition:</b> <a href="_base_rich_edit_8h_source.html#l00029">BaseRichEdit.h:29</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_rich_edit_html_a99a7734c996dc4c84115279362db2dc3"><div class="ttname"><a href="classgui__framework_1_1_base_rich_edit.html#a99a7734c996dc4c84115279362db2dc3">gui_framework::BaseRichEdit::setAutoURLDetect</a></div><div class="ttdeci">virtual void setAutoURLDetect(bool autoURLDetect) final</div><div class="ttdef"><b>Definition:</b> <a href="_base_rich_edit_8cpp_source.html#l00146">BaseRichEdit.cpp:146</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1_base_rich_edit_html_ab3e563fb3cc2e5ea31d8c7178c8c0f14"><div class="ttname"><a href="classgui__framework_1_1_base_rich_edit.html#ab3e563fb3cc2e5ea31d8c7178c8c0f14">gui_framework::BaseRichEdit::callbacks</a></div><div class="ttdeci">std::array&lt; std::function&lt; void(const std::wstring &amp;)&gt;, urlDetectEventSize &gt; callbacks</div><div class="ttdef"><b>Definition:</b> <a href="_base_rich_edit_8h_source.html#l00032">BaseRichEdit.h:32</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_rich_edit_html_abe18d7d262aa479d30306d76ef2be318"><div class="ttname"><a href="classgui__framework_1_1_base_rich_edit.html#abe18d7d262aa479d30306d76ef2be318">gui_framework::BaseRichEdit::setBackgroundColor</a></div><div class="ttdeci">virtual void setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue) final override</div><div class="ttdef"><b>Definition:</b> <a href="_base_rich_edit_8cpp_source.html#l00160">BaseRichEdit.cpp:160</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_rich_edit_html_ab95e2bc9a36410a59b9e3f75f27f2455"><div class="ttname"><a href="classgui__framework_1_1_base_rich_edit.html#ab95e2bc9a36410a59b9e3f75f27f2455">gui_framework::BaseRichEdit::getCallback</a></div><div class="ttdeci">virtual const std::function&lt; void(const std::wstring &amp;)&gt; &amp; getCallback(urlDetectEvent event) const final</div><div class="ttdef"><b>Definition:</b> <a href="_base_rich_edit_8cpp_source.html#l00181">BaseRichEdit.cpp:181</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_rich_edit_html_abe18d7d262aa479d30306d76ef2be318"><div class="ttname"><a href="classgui__framework_1_1_base_rich_edit.html#abe18d7d262aa479d30306d76ef2be318">gui_framework::BaseRichEdit::setBackgroundColor</a></div><div class="ttdeci">virtual void setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue) final override</div><div class="ttdef"><b>Definition:</b> <a href="_base_rich_edit_8cpp_source.html#l00191">BaseRichEdit.cpp:191</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1_base_rich_edit_html_abf55c644c6c2640d8c662dd7179ab1f3"><div class="ttname"><a href="classgui__framework_1_1_base_rich_edit.html#abf55c644c6c2640d8c662dd7179ab1f3">gui_framework::BaseRichEdit::urlDetectEvent</a></div><div class="ttdeci">urlDetectEvent</div><div class="ttdef"><b>Definition:</b> <a href="_base_rich_edit_8h_source.html#l00017">BaseRichEdit.h:18</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_rich_edit_html_aca2e15966dcf9d386342d3affdcd2e63"><div class="ttname"><a href="classgui__framework_1_1_base_rich_edit.html#aca2e15966dcf9d386342d3affdcd2e63">gui_framework::BaseRichEdit::findSubstring</a></div><div class="ttdeci">virtual LRESULT findSubstring(const std::wstring &amp;subStringToFind, bool isMatchCase=true) final</div><div class="ttdef"><b>Definition:</b> <a href="_base_rich_edit_8cpp_source.html#l00101">BaseRichEdit.cpp:101</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_rich_edit_html_acf50e2d2bfa111189ab21415b620a85b"><div class="ttname"><a href="classgui__framework_1_1_base_rich_edit.html#acf50e2d2bfa111189ab21415b620a85b">gui_framework::BaseRichEdit::removeUrlDetectEvent</a></div><div class="ttdeci">virtual void removeUrlDetectEvent(urlDetectEvent event) final</div><div class="ttdef"><b>Definition:</b> <a href="_base_rich_edit_8cpp_source.html#l00094">BaseRichEdit.cpp:94</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_rich_edit_html_ad9c813e5ba0b4cae075b9ea89101f835"><div class="ttname"><a href="classgui__framework_1_1_base_rich_edit.html#ad9c813e5ba0b4cae075b9ea89101f835">gui_framework::BaseRichEdit::getAutoURLDetect</a></div><div class="ttdeci">virtual bool getAutoURLDetect() const final</div><div class="ttdef"><b>Definition:</b> <a href="_base_rich_edit_8cpp_source.html#l00146">BaseRichEdit.cpp:146</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_rich_edit_html_abf55c644c6c2640d8c662dd7179ab1f3a5a69f9315e4bb59223621009e87cbc8d"><div class="ttname"><a href="classgui__framework_1_1_base_rich_edit.html#abf55c644c6c2640d8c662dd7179ab1f3a5a69f9315e4bb59223621009e87cbc8d">gui_framework::BaseRichEdit::urlDetectEvent::setCursor</a></div><div class="ttdeci">@ setCursor</div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_rich_edit_html_aca2e15966dcf9d386342d3affdcd2e63"><div class="ttname"><a href="classgui__framework_1_1_base_rich_edit.html#aca2e15966dcf9d386342d3affdcd2e63">gui_framework::BaseRichEdit::findSubstring</a></div><div class="ttdeci">virtual LRESULT findSubstring(const std::wstring &amp;subStringToFind, bool isMatchCase=true) final</div><div class="ttdef"><b>Definition:</b> <a href="_base_rich_edit_8cpp_source.html#l00122">BaseRichEdit.cpp:122</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_rich_edit_html_acf50e2d2bfa111189ab21415b620a85b"><div class="ttname"><a href="classgui__framework_1_1_base_rich_edit.html#acf50e2d2bfa111189ab21415b620a85b">gui_framework::BaseRichEdit::removeUrlDetectEvent</a></div><div class="ttdeci">virtual void removeUrlDetectEvent(urlDetectEvent event) final</div><div class="ttdef"><b>Definition:</b> <a href="_base_rich_edit_8cpp_source.html#l00106">BaseRichEdit.cpp:106</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_rich_edit_html_ad9c813e5ba0b4cae075b9ea89101f835"><div class="ttname"><a href="classgui__framework_1_1_base_rich_edit.html#ad9c813e5ba0b4cae075b9ea89101f835">gui_framework::BaseRichEdit::getAutoURLDetect</a></div><div class="ttdeci">virtual bool getAutoURLDetect() const final</div><div class="ttdef"><b>Definition:</b> <a href="_base_rich_edit_8cpp_source.html#l00167">BaseRichEdit.cpp:167</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1_base_rich_edit_html_aed87ad2df9cdf8526c2b95426e11b899"><div class="ttname"><a href="classgui__framework_1_1_base_rich_edit.html#aed87ad2df9cdf8526c2b95426e11b899">gui_framework::BaseRichEdit::addUrlDetectEvent</a></div><div class="ttdeci">virtual void addUrlDetectEvent(urlDetectEvent event, const std::function&lt; void(const std::wstring &amp;)&gt; &amp;eventCallback) final</div></div>
 <div class="ttc" id="aclassgui__framework_1_1_g_u_i_framework_html_a069c0332eb3869de86e90557a8af9d88"><div class="ttname"><a href="classgui__framework_1_1_g_u_i_framework.html#a069c0332eb3869de86e90557a8af9d88">gui_framework::GUIFramework::getModulesPaths</a></div><div class="ttdeci">const std::unordered_map&lt; std::string, std::string &gt; &amp; getModulesPaths() const</div><div class="ttdoc">Get all loaded modules paths.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_8cpp_source.html#l00638">GUIFramework.cpp:638</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_g_u_i_framework_html_a3ddb6e3b33f9143d5e4eb5c2111d1d6b"><div class="ttname"><a href="classgui__framework_1_1_g_u_i_framework.html#a3ddb6e3b33f9143d5e4eb5c2111d1d6b">gui_framework::GUIFramework::get</a></div><div class="ttdeci">static GUIFramework &amp; get()</div><div class="ttdoc">Singleton instance access.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_8h_source.html#l00204">GUIFramework.h:204</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_g_u_i_framework_html_a3ddb6e3b33f9143d5e4eb5c2111d1d6b"><div class="ttname"><a href="classgui__framework_1_1_g_u_i_framework.html#a3ddb6e3b33f9143d5e4eb5c2111d1d6b">gui_framework::GUIFramework::get</a></div><div class="ttdeci">static GUIFramework &amp; get()</div><div class="ttdoc">Singleton instance access.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_8h_source.html#l00205">GUIFramework.h:205</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1interfaces_1_1_i_text_operations_html_a6236a648c9d82e9f658127d6e872839d"><div class="ttname"><a href="classgui__framework_1_1interfaces_1_1_i_text_operations.html#a6236a648c9d82e9f658127d6e872839d">gui_framework::interfaces::ITextOperations::setText</a></div><div class="ttdeci">virtual void setText(const std::wstring &amp;text) const final</div><div class="ttdef"><b>Definition:</b> <a href="_i_text_operations_8cpp_source.html#l00018">ITextOperations.cpp:18</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1interfaces_1_1_i_text_operations_html_a6f2fc83f8b34e8b608f8570b7703915e"><div class="ttname"><a href="classgui__framework_1_1interfaces_1_1_i_text_operations.html#a6f2fc83f8b34e8b608f8570b7703915e">gui_framework::interfaces::ITextOperations::getText</a></div><div class="ttdeci">virtual std::wstring getText() const final</div><div class="ttdoc">Get text from control.</div><div class="ttdef"><b>Definition:</b> <a href="_i_text_operations_8cpp_source.html#l00023">ITextOperations.cpp:23</a></div></div>
 <div class="ttc" id="anamespacegui__framework_1_1standard__classes_html_a57b557e0f5b320b012d2af64d4246290"><div class="ttname"><a href="namespacegui__framework_1_1standard__classes.html#a57b557e0f5b320b012d2af64d4246290">gui_framework::standard_classes::richEdit</a></div><div class="ttdeci">constexpr std::wstring_view richEdit</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00020">GUIFrameworkConstants.h:20</a></div></div>
 <div class="ttc" id="anamespacegui__framework_1_1utility_html_abbafc9708435f466d89c4f977dcd460d"><div class="ttname"><a href="namespacegui__framework_1_1utility.html#abbafc9708435f466d89c4f977dcd460d">gui_framework::utility::to_string</a></div><div class="ttdeci">string to_string(const wstring &amp;stringToConvert, uint32_t codepage)</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00035">Utility.cpp:35</a></div></div>
 <div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00016">BaseComponent.cpp:17</a></div></div>
-<div class="ttc" id="anamespacegui__framework_html_ae93e197b03ab535325f85dbd87c4cf7c"><div class="ttname"><a href="namespacegui__framework.html#ae93e197b03ab535325f85dbd87c4cf7c">gui_framework::richEditCallbackSignature</a></div><div class="ttdeci">void(*)(const std::wstring &amp;) richEditCallbackSignature</div><div class="ttdoc">Used in rich edit auto url detect events.</div><div class="ttdef"><b>Definition:</b> <a href="_base_rich_edit_8h_source.html#l00069">BaseRichEdit.h:69</a></div></div>
+<div class="ttc" id="anamespacegui__framework_html_ae93e197b03ab535325f85dbd87c4cf7c"><div class="ttname"><a href="namespacegui__framework.html#ae93e197b03ab535325f85dbd87c4cf7c">gui_framework::richEditCallbackSignature</a></div><div class="ttdeci">void(*)(const std::wstring &amp;) richEditCallbackSignature</div><div class="ttdoc">Used in rich edit auto url detect events.</div><div class="ttdef"><b>Definition:</b> <a href="_base_rich_edit_8h_source.html#l00074">BaseRichEdit.h:74</a></div></div>
 <div class="ttc" id="apch_8h_html"><div class="ttname"><a href="pch_8h.html">pch.h</a></div></div>
 <div class="ttc" id="astructgui__framework_1_1utility_1_1_component_settings_html"><div class="ttname"><a href="structgui__framework_1_1utility_1_1_component_settings.html">gui_framework::utility::ComponentSettings</a></div><div class="ttdoc">All settings for windows.</div><div class="ttdef"><b>Definition:</b> <a href="_component_settings_8h_source.html#l00010">ComponentSettings.h:11</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

@@ -115,6 +115,11 @@ namespace gui_framework
 		return -1;
 	}
 
+	const string& BaseComposite::getCreationType() const
+	{
+		return serialized_creation_type::baseComposite;
+	}
+
 	vector<pair<string, json::utility::objectSmartPointer<json::utility::jsonObject>>> BaseComposite::getChildrenStructure() const
 	{
 		vector<json::JSONBuilder> childrenStructure;
@@ -136,6 +141,11 @@ namespace gui_framework
 		return data;
 	}
 
+	void BaseComposite::addChild(BaseComponent* child)
+	{
+		children.push_back(unique_ptr<BaseComponent>(child));
+	}
+
 	BaseComposite::BaseComposite(const wstring& className, const wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent, const string& windowFunctionName) :
 		BaseComponent
 		(
@@ -150,11 +160,6 @@ namespace gui_framework
 		smallIcon(nullptr)
 	{
 
-	}
-
-	void BaseComposite::addChild(BaseComponent* child)
-	{
-		children.push_back(unique_ptr<BaseComponent>(child));
 	}
 
 	void BaseComposite::removeChild(BaseComponent* child)
@@ -327,7 +332,7 @@ namespace gui_framework
 			throw exceptions::FileDoesNotExist(pathToLargeIcon);
 		}
 
-		this->pathToLargeIcon = pathToLargeIcon.string();
+		this->pathToLargeIcon = pathToLargeIcon;
 
 		if (largeIcon)
 		{
@@ -348,7 +353,7 @@ namespace gui_framework
 			throw exceptions::FileDoesNotExist(pathToSmallIcon);
 		}
 
-		this->pathToSmallIcon = pathToSmallIcon.string();
+		this->pathToSmallIcon = pathToSmallIcon;
 
 		if (smallIcon)
 		{
@@ -401,14 +406,14 @@ namespace gui_framework
 		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
 		GUIFramework& instance = GUIFramework::get();
 
-		if (pathToSmallIcon.size())
+		if (!pathToSmallIcon.empty())
 		{
-			current->data.push_back({ "pathToSmallIcon"s, pathToSmallIcon });
+			current->data.push_back({ "pathToSmallIcon"s, utility::getStringFromRawPath(pathToSmallIcon) });
 		}
 
-		if (pathToLargeIcon.size())
+		if (!pathToLargeIcon.empty())
 		{
-			current->data.push_back({ "pathToLargeIcon"s, pathToLargeIcon });
+			current->data.push_back({ "pathToLargeIcon"s, utility::getStringFromRawPath(pathToLargeIcon) });
 		}
 
 		if (mainMenu)

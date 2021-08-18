@@ -114,5 +114,27 @@ namespace gui_framework
 		{
 			return GetModuleHandleW(nullptr);
 		}
+
+		GUI_FRAMEWORK_API_FUNCTION string getStringFromRawPath(const filesystem::path& pathFromRawString)
+		{
+			ostringstream fixRawString;
+			string fixedPath;
+
+			fixRawString << pathFromRawString;
+
+			fixedPath = fixRawString.str();
+
+			erase(fixedPath, '\"');
+
+			return fixedPath;
+		}
+	}
+
+	namespace __utility
+	{
+		void changeClassName(json::utility::objectSmartPointer<json::utility::jsonObject>& object, const string& className)
+		{
+			get<string>(ranges::find_if(object->data, [](const pair<string, json::utility::jsonObject::variantType>& value) { return value.first == "className"; })->second) = className;
+		}
 	}
 }

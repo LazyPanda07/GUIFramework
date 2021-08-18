@@ -113,7 +113,7 @@ namespace gui_framework
 
 			virtual iterators::loadable_const_forward_iterator cend() const noexcept final override;
 
-			virtual void loadBaseLoadableHolderStructure(json::utility::objectSmartPointer<json::utility::jsonObject>& current) const final;
+			virtual std::pair<std::string, json::utility::jsonObject::variantType>& loadBaseLoadableHolderStructure(json::utility::objectSmartPointer<json::utility::jsonObject>& current) const final;
 
 			virtual ~BaseLoadableHolder();
 		};
