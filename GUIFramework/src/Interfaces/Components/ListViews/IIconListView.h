@@ -19,6 +19,8 @@ namespace gui_framework
 
 			virtual LRESULT addIconItem(const std::filesystem::path& pathToIcon);
 
+			virtual LRESULT insertIconItem(const std::filesystem::path& pathToIcon, size_t index);
+
 			virtual std::filesystem::path getIconPath(size_t index) const;
 
 			virtual size_t getIconIndex(size_t index) const;

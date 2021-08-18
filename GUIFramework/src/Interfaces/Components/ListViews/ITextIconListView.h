@@ -19,6 +19,8 @@ namespace gui_framework
 
 			virtual LRESULT addTextIconItem(const std::wstring& text, const std::filesystem::path& pathToIcon);
 
+			virtual LRESULT insertTextIconItem(const std::wstring& text, const std::filesystem::path& pathToIcon, size_t index);
+
 			/// @brief 
 			/// @param index 
 			/// @return Item text - icon index - path to icon

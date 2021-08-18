@@ -15,11 +15,17 @@ namespace gui_framework
 
 		LRESULT ITextListView::addTextItem(const wstring& text)
 		{
+			return this->insertTextItem(text, this->size());
+		}
+
+		LRESULT ITextListView::insertTextItem(const wstring& text, size_t index)
+		{
 			LVITEMW item = {};
 
 			item.mask = LVIF_TEXT;
 			item.pszText = const_cast<wchar_t*>(text.data());
 			item.cchTextMax = static_cast<int>(text.size());
+			item.iItem = static_cast<int>(index);
 
 			return this->addItem(item);
 		}

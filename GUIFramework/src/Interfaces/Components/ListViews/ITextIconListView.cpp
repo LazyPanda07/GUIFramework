@@ -16,6 +16,11 @@ namespace gui_framework
 
 		LRESULT ITextIconListView::addTextIconItem(const wstring& text, const filesystem::path& pathToIcon)
 		{
+			return this->insertTextIconItem(text, pathToIcon, this->size());
+		}
+
+		LRESULT ITextIconListView::insertTextIconItem(const wstring& text, const filesystem::path& pathToIcon, size_t index)
+		{
 			LVITEMW item = {};
 
 			if (!icons.contains(pathToIcon))
@@ -27,6 +32,7 @@ namespace gui_framework
 			item.pszText = const_cast<wchar_t*>(text.data());
 			item.cchTextMax = static_cast<int>(text.size());
 			item.iImage = icons[pathToIcon];
+			item.iItem = static_cast<int>(index);
 
 			return this->addItem(item);
 		}

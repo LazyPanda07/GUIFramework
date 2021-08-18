@@ -16,6 +16,11 @@ namespace gui_framework
 
 		LRESULT IIconListView::addIconItem(const filesystem::path& pathToIcon)
 		{
+			return this->insertIconItem(pathToIcon, this->size());
+		}
+
+		LRESULT IIconListView::insertIconItem(const filesystem::path& pathToIcon, size_t index)
+		{
 			LVITEMW item = {};
 
 			if (!icons.contains(pathToIcon))
@@ -25,6 +30,7 @@ namespace gui_framework
 
 			item.mask = LVIF_IMAGE;
 			item.iImage = icons[pathToIcon];
+			item.iItem = static_cast<int>(index);
 
 			return this->addItem(item);
 		}

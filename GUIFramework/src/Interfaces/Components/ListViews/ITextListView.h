@@ -15,6 +15,8 @@ namespace gui_framework
 
 			virtual LRESULT addTextItem(const std::wstring& text);
 
+			virtual LRESULT insertTextItem(const std::wstring& text, size_t index);
+
 			virtual std::wstring getItemText(size_t index) const;
 
 			virtual ~ITextListView() = default;
