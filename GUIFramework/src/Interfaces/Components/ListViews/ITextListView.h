@@ -10,6 +10,12 @@ namespace gui_framework
 		/// @brief Provides adding text items for list views
 		class GUI_FRAMEWORK_API ITextListView : public IBaseListViewOperations
 		{
+		private:
+			virtual void onRemove(size_t index) final override;
+
+		private:
+			std::unordered_map<size_t, size_t> textData;	// index - size
+
 		public:
 			ITextListView(HWND handle);
 

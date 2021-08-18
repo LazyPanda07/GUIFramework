@@ -40,6 +40,7 @@ namespace gui_framework
 			LVITEMW item = {};
 
 			item.iItem = static_cast<int>(index);
+			item.mask = LVIF_IMAGE;
 
 			this->getItem(item);
 
@@ -51,6 +52,7 @@ namespace gui_framework
 			LVITEMW item = {};
 
 			item.iItem = static_cast<int>(index);
+			item.mask = LVIF_IMAGE;
 
 			this->getItem(item);
 

@@ -12,7 +12,11 @@ namespace gui_framework
 		class GUI_FRAMEWORK_API ITextIconListView : public IBaseListViewOperations
 		{
 		private:
+			void onRemove(size_t index) final override;
+
+		private:
 			utility::IconsHolder& icons;
+			std::unordered_map<size_t, size_t> textData;
 
 		public:
 			ITextIconListView(HWND handle, utility::IconsHolder& icons);
