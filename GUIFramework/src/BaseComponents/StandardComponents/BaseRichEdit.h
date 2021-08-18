@@ -32,6 +32,9 @@ namespace gui_framework
 		std::array<std::function<void(const std::wstring&)>, urlDetectEventSize> callbacks;
 		std::array<std::pair<std::string, std::string>, urlDetectEventSize> callbacksFunctionNamesAndModules;	// function name - module name
 
+	private:
+		void addCallback(urlDetectEvent event, const std::function<void(const std::wstring&)>& callback, const std::string& functionName, const std::string& moduleName);
+
 	protected:
 		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
 
@@ -55,6 +58,8 @@ namespace gui_framework
 		virtual bool getAutoURLDetect() const final;
 
 		virtual std::wstring getSelectedText() const final;
+
+		virtual const std::function<void(const std::wstring&)>& getCallback(urlDetectEvent event) const final;
 
 		virtual void setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue) final override;
 

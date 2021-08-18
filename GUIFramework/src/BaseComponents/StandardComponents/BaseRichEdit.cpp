@@ -9,6 +9,22 @@ using namespace std;
 
 namespace gui_framework
 {
+	void BaseRichEdit::addCallback(urlDetectEvent event, const function<void(const wstring&)>& callback, const string& functionName, const string& moduleName)
+	{
+		if (event == urlDetectEvent::setCursor)
+		{
+			callbacks[7] = callback;
+
+			callbacksFunctionNamesAndModules[7] = make_pair(functionName, moduleName);
+		}
+		else
+		{
+			callbacks[static_cast<size_t>(event) % urlDetectEventSize] = callback;
+
+			callbacksFunctionNamesAndModules[static_cast<size_t>(event) % urlDetectEventSize] = make_pair(functionName, moduleName);
+		}
+	}
+
 	LRESULT BaseRichEdit::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
 	{
 		isUsed = false;
@@ -21,7 +37,7 @@ namespace gui_framework
 			{
 				ENLINK* ptrLink = reinterpret_cast<ENLINK*>(lparam);
 
-				const function<void(const wstring&)>& callback = callbacks[(static_cast<size_t>(ptrLink->msg))];
+				const function<void(const wstring&)>& callback = this->getCallback(static_cast<urlDetectEvent>(ptrLink->msg));
 
 				if (callback)
 				{
@@ -69,9 +85,7 @@ namespace gui_framework
 
 	void BaseRichEdit::addUrlDetectEvent(urlDetectEvent event, const function<void(const wstring&)>& eventCallback)
 	{
-		callbacks[static_cast<size_t>(event)] = eventCallback;
-
-		callbacksFunctionNamesAndModules[static_cast<size_t>(event)] = make_pair(""s, ""s);
+		this->addCallback(event, eventCallback, ""s, ""s);
 	}
 
 	void BaseRichEdit::addUrlDetectEvent(urlDetectEvent event, const string& functionName, const string& moduleName)
@@ -86,16 +100,23 @@ namespace gui_framework
 			throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName);
 		}
 
-		callbacks[static_cast<size_t>(event)] = tem;
-
-		callbacksFunctionNamesAndModules[static_cast<size_t>(event)] = make_pair(functionName, moduleName);
+		this->addCallback(event, tem, functionName, moduleName);
 	}
 
 	void BaseRichEdit::removeUrlDetectEvent(urlDetectEvent event)
 	{
-		callbacks[static_cast<size_t>(event)] = nullptr;
+		if (event == urlDetectEvent::setCursor)
+		{
+			callbacks[7] = nullptr;
 
-		callbacksFunctionNamesAndModules[static_cast<size_t>(event)] = make_pair(""s, ""s);
+			callbacksFunctionNamesAndModules[7] = make_pair(""s, ""s);
+		}
+		else
+		{
+			callbacks[static_cast<size_t>(event) % urlDetectEventSize] = nullptr;
+
+			callbacksFunctionNamesAndModules[static_cast<size_t>(event) % urlDetectEventSize] = make_pair(""s, ""s);
+		}
 	}
 
 	LRESULT BaseRichEdit::findSubstring(const wstring& subStringToFind, bool isMatchCase)
@@ -155,6 +176,16 @@ namespace gui_framework
 		SendMessageW(handle, EM_EXGETSEL, NULL, reinterpret_cast<LPARAM>(&range));
 
 		return this->getText().substr(range.cpMin, static_cast<size_t>(range.cpMax) - range.cpMin);
+	}
+
+	const function<void(const wstring&)>& BaseRichEdit::getCallback(urlDetectEvent event) const
+	{
+		if (event == urlDetectEvent::setCursor)
+		{
+			return callbacks[7];
+		}
+		
+		return callbacks[static_cast<size_t>(event) % urlDetectEventSize];
 	}
 
 	void BaseRichEdit::setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue)
