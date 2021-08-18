@@ -20,8 +20,8 @@ namespace gui_framework
 		std::unique_ptr<Menu> mainMenu;
 		HICON largeIcon;
 		HICON smallIcon;
-		std::string pathToSmallIcon;
-		std::string pathToLargeIcon;
+		std::filesystem::path pathToSmallIcon;
+		std::filesystem::path pathToLargeIcon;
 
 	protected:
 		virtual LRESULT preWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;

@@ -57,7 +57,7 @@ namespace gui_framework
 
 			try
 			{
-				text.resize(textData.at(index));
+				text.resize(textData.at(index) + 1);
 			}
 			catch (const out_of_range&)
 			{
@@ -67,9 +67,11 @@ namespace gui_framework
 			item.iItem = static_cast<int>(index);
 			item.mask = LVIF_TEXT | LVIF_IMAGE;
 			item.pszText = text.data();
-			item.cchTextMax = text.size();
+			item.cchTextMax = static_cast<int>(text.size());
 
 			this->getItem(item);
+
+			text.pop_back();
 
 			return { text, static_cast<uint16_t>(item.iImage), icons[item.iImage] };
 		}
