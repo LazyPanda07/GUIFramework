@@ -408,12 +408,30 @@ namespace gui_framework
 
 		if (!pathToSmallIcon.empty())
 		{
-			current->data.push_back({ "pathToSmallIcon"s, pathToSmallIcon.string() });
+			ostringstream fixRawString;
+			string fixedPath;
+
+			fixRawString << pathToSmallIcon;
+
+			fixedPath = fixRawString.str();
+
+			erase(fixedPath, '\"');
+
+			current->data.push_back({ "pathToSmallIcon"s, move(fixedPath) });
 		}
 
 		if (!pathToLargeIcon.empty())
 		{
-			current->data.push_back({ "pathToLargeIcon"s, pathToLargeIcon.string() });
+			ostringstream fixRawString;
+			string fixedPath;
+
+			fixRawString << pathToSmallIcon;
+
+			fixedPath = fixRawString.str();
+
+			erase(fixedPath, '\"');
+
+			current->data.push_back({ "pathToLargeIcon"s, move(fixedPath) });
 		}
 
 		if (mainMenu)
