@@ -2,15 +2,22 @@
 
 #include "GUIFramework.h"
 #include "Utility/Holders/WindowHolder.h"
+#include "Components/RichEdit.h"
+#include "Components/StaticControl.h"
 #include "Composites/SeparateWindow.h"
-#include "Components/ListViews/ListTextListView.h"
-#include "Components/ListViews/TextListView.h"
+#include "Components/ListViews/ListTextIconListView.h"
+#include "MenuItems/MenuItem.h"
+#include "MenuItems/DropDownMenuItem.h"
+#include "Composites/ChildWindow.h"
+#include "Composites/DialogBox.h"
 
 #pragma comment (lib, "GUIFramework.lib")
 
 using namespace std;
 
 CREATE_DEFAULT_WINDOW_FUNCTION(main)
+
+CREATE_DEFAULT_WINDOW_FUNCTION(child)
 
 void test()
 {
@@ -22,12 +29,20 @@ void test()
 	{
 		WindowHolder holder(make_unique<SeparateWindow>(L"MainWindow", L"Главное окно", settings, "main"));
 		SeparateWindow* ptr = dynamic_cast<SeparateWindow*>(holder.get());
+		ChildWindow* child = new ChildWindow(L"ChildWindow", L"Child window name", utility::ComponentSettings(600, 400, 200, 200), ptr, "child");
+		ListTextIconListView* list = new ListTextIconListView(L"List", utility::ComponentSettings(0, 0, 300, 200), ptr, utility::iconListViewType::smallIcon);
+		RichEdit* richEdit = new RichEdit(L"RichEdit", utility::ComponentSettings(300, 0, 300, 200), ptr, true);
+		new StaticControl(L"Text", L"Текст внутри ChildWindow", 0, 0, child);
 
-		ListTextListView* list = new ListTextListView(L"Test", utility::ComponentSettings(0, 0, 400, 400), ptr);
+		richEdit->setAutoURLDetect(true);
 
-		list->addTextItem(L"First");
+		richEdit->addUrlDetectEvent(BaseRichEdit::urlDetectEvent::mouseMove, "testEdit", "callbacks");
 
-		list->addTextItem(L"Second");
+		list->addTextIconItem(L"First", "assets/icon.ico");
+
+		list->addTextIconItem(L"Second", "assets/icon.ico");
+
+		cout << *ptr << endl;
 
 		ptr->setExitMode(BaseComponent::exitMode::quit);
 

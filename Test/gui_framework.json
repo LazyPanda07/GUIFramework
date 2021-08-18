@@ -4,7 +4,7 @@
     "threadsCount": 4,
     "modules": [
       {
-        "moduleName": "functions",
+        "moduleName": "callbacks",
         "pathToModule": "assets/Dynamic.dll"
       }
     ]
