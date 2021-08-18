@@ -69,6 +69,8 @@ var namespacegui__framework_1_1utility =
     ] ],
     [ "appendStyle", "namespacegui__framework_1_1utility.html#ae97300d8014320696e57f502a858c570", null ],
     [ "getCurrentModule", "namespacegui__framework_1_1utility.html#a1945ec50b055f688bbb3e7c6cae8de64", null ],
+    [ "getStringFromRawPath", "namespacegui__framework_1_1utility.html#a5bbb52bed6f3db5b95d081389deaa0fa", null ],
+    [ "getStringFromRawPath", "namespacegui__framework_1_1utility.html#a87517c2384e0f810d1779081e1c19f41", null ],
     [ "make_smart_pointer", "namespacegui__framework_1_1utility.html#a60d17f3aed2f6fbe1b6e77907e237ff0", null ],
     [ "removeStyle", "namespacegui__framework_1_1utility.html#a746d8e6e6277a08c83bd0bfd523d2e04", null ],
     [ "to_string", "namespacegui__framework_1_1utility.html#acfc6bead05acb26a7a347dea0e5fc169", null ],

@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.7.5-beta</span>
+   &#160;<span id="projectnumber">0.8-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -113,6 +113,8 @@ Inheritance diagram for gui_framework::RichEdit:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a78ac8918c09e76aab8d5ce1b37a1a84e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_rich_edit.html#a78ac8918c09e76aab8d5ce1b37a1a84e">RichEdit</a> (const std::wstring &amp;richEditName, const <a class="el" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a> &amp;settings, <a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> *<a class="el" href="classgui__framework_1_1_base_component.html#a1576375d22cf283d598e22f4a11aca2f">parent</a>, bool isMultiLine=false)</td></tr>
 <tr class="separator:a78ac8918c09e76aab8d5ce1b37a1a84e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63d286ffe6492235ac564d55803bdc0e"><td class="memItemLeft" align="right" valign="top">json::JSONBuilder&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_rich_edit.html#a63d286ffe6492235ac564d55803bdc0e">getStructure</a> () const override</td></tr>
+<tr class="separator:a63d286ffe6492235ac564d55803bdc0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aecd8f5ee62bcab4d4cd08963457a19eb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_rich_edit.html#aecd8f5ee62bcab4d4cd08963457a19eb">~RichEdit</a> ()=default</td></tr>
 <tr class="separator:aecd8f5ee62bcab4d4cd08963457a19eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classgui__framework_1_1_base_rich_edit"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classgui__framework_1_1_base_rich_edit')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classgui__framework_1_1_base_rich_edit.html">gui_framework::BaseRichEdit</a></td></tr>
@@ -136,12 +138,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad9c813e5ba0b4cae075b9ea89101f835 inherit pub_methods_classgui__framework_1_1_base_rich_edit"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d321e91aa2d43d81381f0148eecf7ad inherit pub_methods_classgui__framework_1_1_base_rich_edit"><td class="memItemLeft" align="right" valign="top">virtual std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_rich_edit.html#a2d321e91aa2d43d81381f0148eecf7ad">getSelectedText</a> () const final</td></tr>
 <tr class="separator:a2d321e91aa2d43d81381f0148eecf7ad inherit pub_methods_classgui__framework_1_1_base_rich_edit"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab95e2bc9a36410a59b9e3f75f27f2455 inherit pub_methods_classgui__framework_1_1_base_rich_edit"><td class="memItemLeft" align="right" valign="top">virtual const std::function&lt; void(const std::wstring &amp;)&gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_rich_edit.html#ab95e2bc9a36410a59b9e3f75f27f2455">getCallback</a> (<a class="el" href="classgui__framework_1_1_base_rich_edit.html#abf55c644c6c2640d8c662dd7179ab1f3">urlDetectEvent</a> event) const final</td></tr>
+<tr class="separator:ab95e2bc9a36410a59b9e3f75f27f2455 inherit pub_methods_classgui__framework_1_1_base_rich_edit"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe18d7d262aa479d30306d76ef2be318 inherit pub_methods_classgui__framework_1_1_base_rich_edit"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_rich_edit.html#abe18d7d262aa479d30306d76ef2be318">setBackgroundColor</a> (uint8_t red, uint8_t green, uint8_t blue) final override</td></tr>
 <tr class="separator:abe18d7d262aa479d30306d76ef2be318 inherit pub_methods_classgui__framework_1_1_base_rich_edit"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09d6d56819fc8fc9caaf1b39e962f910 inherit pub_methods_classgui__framework_1_1_base_rich_edit"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_rich_edit.html#a09d6d56819fc8fc9caaf1b39e962f910">setTextColor</a> (uint8_t red, uint8_t green, uint8_t blue) final override</td></tr>
 <tr class="separator:a09d6d56819fc8fc9caaf1b39e962f910 inherit pub_methods_classgui__framework_1_1_base_rich_edit"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5efc3f658002087aee204a5f95a52ada inherit pub_methods_classgui__framework_1_1_base_rich_edit"><td class="memItemLeft" align="right" valign="top">virtual json::JSONBuilder&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_rich_edit.html#a5efc3f658002087aee204a5f95a52ada">getStructure</a> () const override</td></tr>
-<tr class="separator:a5efc3f658002087aee204a5f95a52ada inherit pub_methods_classgui__framework_1_1_base_rich_edit"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae92c8a07985e30e2ef372a66d046ec46 inherit pub_methods_classgui__framework_1_1_base_rich_edit"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_rich_edit.html#ae92c8a07985e30e2ef372a66d046ec46">~BaseRichEdit</a> ()=default</td></tr>
 <tr class="separator:ae92c8a07985e30e2ef372a66d046ec46 inherit pub_methods_classgui__framework_1_1_base_rich_edit"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classgui__framework_1_1_base_component"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classgui__framework_1_1_base_component')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></td></tr>
@@ -394,6 +396,36 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a63d286ffe6492235ac564d55803bdc0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63d286ffe6492235ac564d55803bdc0e">&#9670;&nbsp;</a></span>getStructure()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">json::JSONBuilder gui_framework::RichEdit::getStructure </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classgui__framework_1_1_base_rich_edit.html#a5efc3f658002087aee204a5f95a52ada">gui_framework::BaseRichEdit</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_rich_edit_8cpp_source.html#l00020">20</a> of file <a class="el" href="_rich_edit_8cpp_source.html">RichEdit.cpp</a>.</p>
 
 </div>
 </div>

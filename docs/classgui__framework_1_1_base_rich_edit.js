@@ -17,6 +17,7 @@ var classgui__framework_1_1_base_rich_edit =
     [ "findString", "classgui__framework_1_1_base_rich_edit.html#a28e3b67f20ffbba552803455e03b3104", null ],
     [ "findSubstring", "classgui__framework_1_1_base_rich_edit.html#aca2e15966dcf9d386342d3affdcd2e63", null ],
     [ "getAutoURLDetect", "classgui__framework_1_1_base_rich_edit.html#ad9c813e5ba0b4cae075b9ea89101f835", null ],
+    [ "getCallback", "classgui__framework_1_1_base_rich_edit.html#ab95e2bc9a36410a59b9e3f75f27f2455", null ],
     [ "getSelectedText", "classgui__framework_1_1_base_rich_edit.html#a2d321e91aa2d43d81381f0148eecf7ad", null ],
     [ "getStructure", "classgui__framework_1_1_base_rich_edit.html#a5efc3f658002087aee204a5f95a52ada", null ],
     [ "removeUrlDetectEvent", "classgui__framework_1_1_base_rich_edit.html#acf50e2d2bfa111189ab21415b620a85b", null ],

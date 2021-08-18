@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.7.5-beta</span>
+   &#160;<span id="projectnumber">0.8-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -90,26 +90,65 @@ $(document).ready(function(){initNavTree('_menu_item_8cpp_source.html',''); init
 <a href="_menu_item_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pch_8h.html">pch.h</a>&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_menu_item_8h.html">MenuItem.h</a>&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_cant_find_function_from_module_exception_8h.html">Exceptions/CantFindFunctionFromModuleException.h</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_menu_item.html#add2ef1e109f6b6c63461d926f301270f">    8</a></span>&#160;    MenuItem::MenuItem(<span class="keyword">const</span> wstring&amp; text, <span class="keyword">const</span> <span class="keyword">function</span>&lt;<span class="keywordtype">void</span>()&gt;&amp; onClick) :</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <a class="code" href="classgui__framework_1_1_base_menu_item.html">BaseMenuItem</a>(text),</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        onClick(onClick)</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    }</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    MenuItem::MenuItem(<span class="keyword">const</span> wstring&amp; text, <span class="keyword">const</span> <span class="keyword">function</span>&lt;<span class="keywordtype">void</span>()&gt;&amp; onClick) :</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        BaseMenuItem(text),</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        onClick(onClick)</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    {</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_menu_item.html#ae75fb0ccb755649729514df10e02e603">   15</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgui__framework_1_1_menu_item.html#ae75fb0ccb755649729514df10e02e603">MenuItem::processMessage</a>()</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        onClick();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    }</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    }</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    MenuItem::MenuItem(<span class="keyword">const</span> wstring&amp; text, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; functionName, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; moduleName) :</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        BaseMenuItem(text),</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        functionName(functionName),</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        moduleName(moduleName)</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        GUIFramework&amp; instance = GUIFramework::get();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">const</span> HMODULE&amp; module = instance.getModules().at(moduleName);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="namespacegui__framework.html#a5c2c0a8327422f8318f9c225fa2bf27d">onClickSignature</a> tem = <span class="keyword">reinterpret_cast&lt;</span><a class="code" href="namespacegui__framework.html#a5c2c0a8327422f8318f9c225fa2bf27d">onClickSignature</a><span class="keyword">&gt;</span>(GetProcAddress(module, functionName.data()));</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">if</span> (!tem)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keywordflow">throw</span> exceptions::CantFindFunctionFromModuleException(functionName, moduleName);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        onClick = tem;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_menu_item.html#ae75fb0ccb755649729514df10e02e603">   35</a></span>&#160;    <span class="keywordtype">void</span> MenuItem::processMessage()</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        onClick();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_menu_item.html#a98ffe5fe8bbf21351ef19dfd782eb959">   40</a></span>&#160;    json::JSONBuilder MenuItem::getStructure()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keyword">using</span> json::utility::jsonObject;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keyword">using</span> json::utility::objectSmartPointer;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">if</span> (functionName.empty())</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordflow">return</span> BaseMenuItem::getStructure();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        json::JSONBuilder builder = BaseMenuItem::getStructure();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        builder.</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            append(<span class="stringliteral">&quot;functionName&quot;</span>, functionName).</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            append(<span class="stringliteral">&quot;moduleName&quot;</span>, moduleName);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">return</span> builder;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<div class="ttc" id="a_cant_find_function_from_module_exception_8h_html"><div class="ttname"><a href="_cant_find_function_from_module_exception_8h.html">CantFindFunctionFromModuleException.h</a></div></div>
 <div class="ttc" id="a_menu_item_8h_html"><div class="ttname"><a href="_menu_item_8h.html">MenuItem.h</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_menu_item_html"><div class="ttname"><a href="classgui__framework_1_1_base_menu_item.html">gui_framework::BaseMenuItem</a></div><div class="ttdoc">Base class for all menu items.</div><div class="ttdef"><b>Definition:</b> <a href="_base_menu_item_8h_source.html#l00009">BaseMenuItem.h:10</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_menu_item_html_ae75fb0ccb755649729514df10e02e603"><div class="ttname"><a href="classgui__framework_1_1_menu_item.html#ae75fb0ccb755649729514df10e02e603">gui_framework::MenuItem::processMessage</a></div><div class="ttdeci">void processMessage() override</div><div class="ttdef"><b>Definition:</b> <a href="_menu_item_8cpp_source.html#l00015">MenuItem.cpp:15</a></div></div>
 <div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00016">BaseComponent.cpp:17</a></div></div>
+<div class="ttc" id="anamespacegui__framework_html_a5c2c0a8327422f8318f9c225fa2bf27d"><div class="ttname"><a href="namespacegui__framework.html#a5c2c0a8327422f8318f9c225fa2bf27d">gui_framework::onClickSignature</a></div><div class="ttdeci">void(*)() onClickSignature</div><div class="ttdoc">Default on click signature.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00137">GUIFrameworkConstants.h:137</a></div></div>
 <div class="ttc" id="apch_8h_html"><div class="ttname"><a href="pch_8h.html">pch.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

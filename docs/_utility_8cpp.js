@@ -1,7 +1,9 @@
 var _utility_8cpp =
 [
     [ "appendStyle", "_utility_8cpp.html#ae97300d8014320696e57f502a858c570", null ],
+    [ "changeClassName", "_utility_8cpp.html#abd5790d375d9ea08c45187dd8b829d25", null ],
     [ "getCurrentModule", "_utility_8cpp.html#a1945ec50b055f688bbb3e7c6cae8de64", null ],
+    [ "getStringFromRawPath", "_utility_8cpp.html#a5bbb52bed6f3db5b95d081389deaa0fa", null ],
     [ "removeStyle", "_utility_8cpp.html#a746d8e6e6277a08c83bd0bfd523d2e04", null ],
     [ "to_string", "_utility_8cpp.html#abbafc9708435f466d89c4f977dcd460d", null ],
     [ "to_wstring", "_utility_8cpp.html#a14e878f929340a06b7a3c1e370c623af", null ],
