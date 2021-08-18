@@ -30,21 +30,25 @@ namespace gui_framework
 		json::JSONBuilder builder = BaseListView::getStructure();
 		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, codepage)]);
 		vector<objectSmartPointer<jsonObject>> textValues;
+		vector<objectSmartPointer<jsonObject>> iconValues;
 		size_t size = this->size();
+
+		current->data.push_back({ "imagesWidth"s, static_cast<uint64_t>(icons.getImagesWidth()) });
+		current->data.push_back({ "imagesHeight"s, static_cast<uint64_t>(icons.getImagesHeight()) });
 
 		if (size)
 		{
 			for (size_t i = 0; i < size; i++)
 			{
-				json::utility::appendArray(utility::to_string(get<wstring>(this->getTextIconItem(i)), codepage), textValues);
+				auto [text, _, pathToIcon] = this->getTextIconItem(i);
+
+				json::utility::appendArray(utility::to_string(text, codepage), textValues);
+
+				json::utility::appendArray(pathToIcon.string(), iconValues);
 			}
 
-			auto& iconsHolderStructure = icons.loadBaseLoadableHolderStructure(current);
-			auto& object = get<objectSmartPointer<jsonObject>>(iconsHolderStructure.second);
-
-			iconsHolderStructure.first = "listViewValues";
-
-			object->data.push_back({ "listViewTextValue"s, move(textValues) });
+			current->data.push_back({ "listViewTextValues"s, move(textValues) });
+			current->data.push_back({ "listViewIconValues"s, move(iconValues) });
 		}
 
 		return builder;

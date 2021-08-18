@@ -7,6 +7,11 @@ namespace gui_framework
 {
 	namespace interfaces
 	{
+		void IBaseListViewOperations::onRemove(size_t index)
+		{
+
+		}
+
 		LRESULT IBaseListViewOperations::addItem(const LVITEMW& item)
 		{
 			LRESULT result = SendMessageW(listViewHandle, LVM_INSERTITEM, NULL, reinterpret_cast<LPARAM>(&item));
@@ -38,13 +43,15 @@ namespace gui_framework
 
 		}
 
-		bool IBaseListViewOperations::deleteItem(size_t index)
+		bool IBaseListViewOperations::removeItem(size_t index)
 		{
 			bool result = SendMessageW(listViewHandle, LVM_DELETEITEM, index, NULL);
 
 			if (result)
 			{
 				listViewSize--;
+
+				this->onRemove(index);
 			}
 
 			return result;
