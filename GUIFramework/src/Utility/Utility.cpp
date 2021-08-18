@@ -114,6 +114,20 @@ namespace gui_framework
 		{
 			return GetModuleHandleW(nullptr);
 		}
+
+		GUI_FRAMEWORK_API_FUNCTION string getStringFromRawPath(const filesystem::path& pathFromRawString)
+		{
+			ostringstream fixRawString;
+			string fixedPath;
+
+			fixRawString << pathFromRawString;
+
+			fixedPath = fixRawString.str();
+
+			erase(fixedPath, '\"');
+
+			return fixedPath;
+		}
 	}
 
 	namespace __utility

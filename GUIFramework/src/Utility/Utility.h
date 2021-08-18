@@ -40,6 +40,11 @@ namespace gui_framework
 		/// @return 
 		GUI_FRAMEWORK_API_FUNCTION HMODULE getCurrentModule();
 
+		/// @brief Get string with \\ from raw string contructed path
+		/// @param pathFromRawString 
+		/// @return 
+		GUI_FRAMEWORK_API_FUNCTION std::string getStringFromRawPath(const std::filesystem::path& pathFromRawString);
+
 		/// @brief Make function with current build configuration compatibility
 		/// @tparam T Type
 		/// @param ...args Constructor arguments 
