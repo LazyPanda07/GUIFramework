@@ -40,7 +40,7 @@ void test()
 
 		list->addTextIconItem(L"First", "assets/icon.ico");
 
-		list->addTextIconItem(L"Second", "assets/icon.ico");
+		list->addTextIconItem(L"Second", "assets/another_icon.ico");
 
 		ptr->setExitMode(BaseComponent::exitMode::quit);
 
