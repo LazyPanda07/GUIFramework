@@ -42,11 +42,11 @@ void test()
 
 		list->addTextIconItem(L"Second", "assets/icon.ico");
 
-		cout << *ptr << endl;
-
 		ptr->setExitMode(BaseComponent::exitMode::quit);
 
 		ptr->setLargeIcon(R"(assets\icon.ico)");
+
+		thread([ptr]() { this_thread::sleep_for(2s); ofstream("test.json") << *ptr << endl; }).detach();
 
 		holder.runMainLoop();
 	}
