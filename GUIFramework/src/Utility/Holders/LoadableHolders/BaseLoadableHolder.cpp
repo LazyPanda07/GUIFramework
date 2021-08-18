@@ -12,7 +12,7 @@ namespace gui_framework
 			type(type),
 			data(move(data))
 		{
-			
+
 		}
 
 		BaseLoadableHolder::imageData::imageData(const imageData& other) :
@@ -119,11 +119,11 @@ namespace gui_framework
 
 				break;
 			case imageType::icon:
-				resultIndex = images.emplace(pathToImage, imageData(ImageList_AddIcon(imageList, reinterpret_cast<HICON>(image)), type, image)).first->second.index;
+				resultIndex = images.emplace(pathToImage, imageData(ImageList_AddIcon(imageList, reinterpret_cast<HICON>(image)), type, reinterpret_cast<HICON>(image))).first->second.index;
 
 				break;
 			case imageType::cursor:
-				resultIndex = images.emplace(pathToImage, imageData(ImageList_AddIcon(imageList, reinterpret_cast<HCURSOR>(image)), type, image)).first->second.index;
+				resultIndex = images.emplace(pathToImage, imageData(ImageList_AddIcon(imageList, reinterpret_cast<HCURSOR>(image)), type, reinterpret_cast<HCURSOR>(image))).first->second.index;
 
 				break;
 
