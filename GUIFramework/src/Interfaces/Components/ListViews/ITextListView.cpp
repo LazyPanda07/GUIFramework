@@ -46,25 +46,27 @@ namespace gui_framework
 		wstring ITextListView::getItemText(size_t index) const
 		{
 			LVITEMW item = {};
-			wstring result;
+			wstring text;
 
 			try
 			{
-				result.resize(textData.at(index));
+				text.resize(textData.at(index) + 1);
 			}
 			catch (const out_of_range&)
 			{
-				return result;
+				return text;
 			}
 
 			item.iItem = static_cast<int>(index);
 			item.mask = LVIF_TEXT;
-			item.pszText = result.data();
-			item.cchTextMax = result.size();
+			item.pszText = text.data();
+			item.cchTextMax = static_cast<int>(text.size());
 
 			this->getItem(item);
 
-			return result;
+			text.pop_back();
+
+			return text;
 		}
 	}
 }

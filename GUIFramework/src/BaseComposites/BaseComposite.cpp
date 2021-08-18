@@ -332,7 +332,7 @@ namespace gui_framework
 			throw exceptions::FileDoesNotExist(pathToLargeIcon);
 		}
 
-		this->pathToLargeIcon = pathToLargeIcon.string();
+		this->pathToLargeIcon = pathToLargeIcon;
 
 		if (largeIcon)
 		{
@@ -353,7 +353,7 @@ namespace gui_framework
 			throw exceptions::FileDoesNotExist(pathToSmallIcon);
 		}
 
-		this->pathToSmallIcon = pathToSmallIcon.string();
+		this->pathToSmallIcon = pathToSmallIcon;
 
 		if (smallIcon)
 		{
@@ -406,14 +406,14 @@ namespace gui_framework
 		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
 		GUIFramework& instance = GUIFramework::get();
 
-		if (pathToSmallIcon.size())
+		if (!pathToSmallIcon.empty())
 		{
-			current->data.push_back({ "pathToSmallIcon"s, pathToSmallIcon });
+			current->data.push_back({ "pathToSmallIcon"s, pathToSmallIcon.string() });
 		}
 
-		if (pathToLargeIcon.size())
+		if (!pathToLargeIcon.empty())
 		{
-			current->data.push_back({ "pathToLargeIcon"s, pathToLargeIcon });
+			current->data.push_back({ "pathToLargeIcon"s, pathToLargeIcon.string() });
 		}
 
 		if (mainMenu)
