@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.7.5-beta</span>
+   &#160;<span id="projectnumber">0.8-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -124,13 +124,17 @@ Inheritance diagram for gui_framework::interfaces::IBaseListViewOperations:</div
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac44dfb57b3caab9c86f15db6e44b2100"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_base_list_view_operations.html#ac44dfb57b3caab9c86f15db6e44b2100">IBaseListViewOperations</a> (HWND handle)</td></tr>
 <tr class="separator:ac44dfb57b3caab9c86f15db6e44b2100"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62088dc6d1ee8e7fba0e49cd1d3fcd6f"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_base_list_view_operations.html#a62088dc6d1ee8e7fba0e49cd1d3fcd6f">deleteItem</a> (size_t index) final</td></tr>
-<tr class="separator:a62088dc6d1ee8e7fba0e49cd1d3fcd6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeca9cec98cc6a438bd6e9395090bff16"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_base_list_view_operations.html#aeca9cec98cc6a438bd6e9395090bff16">removeItem</a> (size_t index) final</td></tr>
+<tr class="separator:aeca9cec98cc6a438bd6e9395090bff16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8110d4ff257fae538d7d22893c48d090"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_base_list_view_operations.html#a8110d4ff257fae538d7d22893c48d090">size</a> () const final</td></tr>
+<tr class="separator:a8110d4ff257fae538d7d22893c48d090"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19fa5d921fb9e0eaf3531b732e3ed276"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_base_list_view_operations.html#a19fa5d921fb9e0eaf3531b732e3ed276">~IBaseListViewOperations</a> ()=default</td></tr>
 <tr class="separator:a19fa5d921fb9e0eaf3531b732e3ed276"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
+<tr class="memitem:aeecbc57868272ccf34d96309318df52e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_base_list_view_operations.html#aeecbc57868272ccf34d96309318df52e">onRemove</a> (size_t index)</td></tr>
+<tr class="separator:aeecbc57868272ccf34d96309318df52e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee9b7818e4efad95a2309adbe31e86d7"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_base_list_view_operations.html#aee9b7818e4efad95a2309adbe31e86d7">addItem</a> (const LVITEMW &amp;item)</td></tr>
 <tr class="separator:aee9b7818e4efad95a2309adbe31e86d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9eda2faffe0e18727c4d7a83ef9df0d"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_base_list_view_operations.html#af9eda2faffe0e18727c4d7a83ef9df0d">setItem</a> (const LVITEMW &amp;item)</td></tr>
@@ -159,7 +163,7 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_i_base_list_view_operations_8cpp_source.html#l00032">32</a> of file <a class="el" href="_i_base_list_view_operations_8cpp_source.html">IBaseListViewOperations.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_base_list_view_operations_8cpp_source.html#l00039">39</a> of file <a class="el" href="_i_base_list_view_operations_8cpp_source.html">IBaseListViewOperations.cpp</a>.</p>
 
 </div>
 </div>
@@ -213,35 +217,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_i_base_list_view_operations_8cpp_source.html#l00010">10</a> of file <a class="el" href="_i_base_list_view_operations_8cpp_source.html">IBaseListViewOperations.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a62088dc6d1ee8e7fba0e49cd1d3fcd6f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a62088dc6d1ee8e7fba0e49cd1d3fcd6f">&#9670;&nbsp;</a></span>deleteItem()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool gui_framework::interfaces::IBaseListViewOperations::deleteItem </td>
-          <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>index</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_i_base_list_view_operations_8cpp_source.html#l00038">38</a> of file <a class="el" href="_i_base_list_view_operations_8cpp_source.html">IBaseListViewOperations.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_base_list_view_operations_8cpp_source.html#l00015">15</a> of file <a class="el" href="_i_base_list_view_operations_8cpp_source.html">IBaseListViewOperations.cpp</a>.</p>
 
 </div>
 </div>
@@ -269,7 +245,63 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_i_base_list_view_operations_8cpp_source.html#l00027">27</a> of file <a class="el" href="_i_base_list_view_operations_8cpp_source.html">IBaseListViewOperations.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_base_list_view_operations_8cpp_source.html#l00034">34</a> of file <a class="el" href="_i_base_list_view_operations_8cpp_source.html">IBaseListViewOperations.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aeecbc57868272ccf34d96309318df52e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeecbc57868272ccf34d96309318df52e">&#9670;&nbsp;</a></span>onRemove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gui_framework::interfaces::IBaseListViewOperations::onRemove </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_i_base_list_view_operations_8cpp_source.html#l00010">10</a> of file <a class="el" href="_i_base_list_view_operations_8cpp_source.html">IBaseListViewOperations.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aeca9cec98cc6a438bd6e9395090bff16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeca9cec98cc6a438bd6e9395090bff16">&#9670;&nbsp;</a></span>removeItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool gui_framework::interfaces::IBaseListViewOperations::removeItem </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_i_base_list_view_operations_8cpp_source.html#l00046">46</a> of file <a class="el" href="_i_base_list_view_operations_8cpp_source.html">IBaseListViewOperations.cpp</a>.</p>
 
 </div>
 </div>
@@ -297,7 +329,34 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_i_base_list_view_operations_8cpp_source.html#l00022">22</a> of file <a class="el" href="_i_base_list_view_operations_8cpp_source.html">IBaseListViewOperations.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_base_list_view_operations_8cpp_source.html#l00029">29</a> of file <a class="el" href="_i_base_list_view_operations_8cpp_source.html">IBaseListViewOperations.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a8110d4ff257fae538d7d22893c48d090"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8110d4ff257fae538d7d22893c48d090">&#9670;&nbsp;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t gui_framework::interfaces::IBaseListViewOperations::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_i_base_list_view_operations_8cpp_source.html#l00060">60</a> of file <a class="el" href="_i_base_list_view_operations_8cpp_source.html">IBaseListViewOperations.cpp</a>.</p>
 
 </div>
 </div>

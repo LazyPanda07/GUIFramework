@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.7.5-beta</span>
+   &#160;<span id="projectnumber">0.8-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -203,11 +203,36 @@ $(document).ready(function(){initNavTree('_utility_8cpp_source.html',''); initRe
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        {</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <span class="keywordflow">return</span> GetModuleHandleW(<span class="keyword">nullptr</span>);</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        }</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;}</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="namespacegui__framework_1_1utility.html#a5bbb52bed6f3db5b95d081389deaa0fa">  118</a></span>&#160;        <a class="code" href="_g_u_i_framework_constants_8h.html#a767f18c6bddef6da85ce42f210726a25">GUI_FRAMEWORK_API_FUNCTION</a> <span class="keywordtype">string</span> <a class="code" href="namespacegui__framework_1_1utility.html#a5bbb52bed6f3db5b95d081389deaa0fa">getStringFromRawPath</a>(<span class="keyword">const</span> filesystem::path&amp; pathFromRawString)</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            ostringstream fixRawString;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <span class="keywordtype">string</span> fixedPath;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            fixRawString &lt;&lt; pathFromRawString;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            fixedPath = fixRawString.str();</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            erase(fixedPath, <span class="charliteral">&#39;\&quot;&#39;</span>);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="keywordflow">return</span> fixedPath;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="namespacegui__framework_1_1____utility.html">  133</a></span>&#160;    <span class="keyword">namespace </span>__utility</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    {</div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="namespacegui__framework_1_1____utility.html#abd5790d375d9ea08c45187dd8b829d25">  135</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="namespacegui__framework_1_1____utility.html#abd5790d375d9ea08c45187dd8b829d25">changeClassName</a>(json::utility::objectSmartPointer&lt;json::utility::jsonObject&gt;&amp; <span class="keywordtype">object</span>, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; className)</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        {</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            get&lt;string&gt;(ranges::find_if(object-&gt;data, [](<span class="keyword">const</span> pair&lt;string, json::utility::jsonObject::variantType&gt;&amp; value) { return value.first == <span class="stringliteral">&quot;className&quot;</span>; })-&gt;second) = className;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        }</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;}</div>
+<div class="ttc" id="a_g_u_i_framework_constants_8h_html_a767f18c6bddef6da85ce42f210726a25"><div class="ttname"><a href="_g_u_i_framework_constants_8h.html#a767f18c6bddef6da85ce42f210726a25">GUI_FRAMEWORK_API_FUNCTION</a></div><div class="ttdeci">#define GUI_FRAMEWORK_API_FUNCTION</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00158">GUIFrameworkConstants.h:158</a></div></div>
 <div class="ttc" id="a_utility_8h_html"><div class="ttname"><a href="_utility_8h.html">Utility.h</a></div></div>
+<div class="ttc" id="anamespacegui__framework_1_1____utility_html_abd5790d375d9ea08c45187dd8b829d25"><div class="ttname"><a href="namespacegui__framework_1_1____utility.html#abd5790d375d9ea08c45187dd8b829d25">gui_framework::__utility::changeClassName</a></div><div class="ttdeci">void changeClassName(json::utility::objectSmartPointer&lt; json::utility::jsonObject &gt; &amp;object, const string &amp;className)</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00135">Utility.cpp:135</a></div></div>
 <div class="ttc" id="anamespacegui__framework_1_1utility_html_a14e878f929340a06b7a3c1e370c623af"><div class="ttname"><a href="namespacegui__framework_1_1utility.html#a14e878f929340a06b7a3c1e370c623af">gui_framework::utility::to_wstring</a></div><div class="ttdeci">wstring to_wstring(const string &amp;stringToConvert, uint32_t codepage)</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00076">Utility.cpp:76</a></div></div>
-<div class="ttc" id="anamespacegui__framework_1_1utility_html_a1945ec50b055f688bbb3e7c6cae8de64"><div class="ttname"><a href="namespacegui__framework_1_1utility.html#a1945ec50b055f688bbb3e7c6cae8de64">gui_framework::utility::getCurrentModule</a></div><div class="ttdeci">HMODULE getCurrentModule()</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00113">Utility.cpp:113</a></div></div>
+<div class="ttc" id="anamespacegui__framework_1_1utility_html_a1945ec50b055f688bbb3e7c6cae8de64"><div class="ttname"><a href="namespacegui__framework_1_1utility.html#a1945ec50b055f688bbb3e7c6cae8de64">gui_framework::utility::getCurrentModule</a></div><div class="ttdeci">HMODULE getCurrentModule()</div><div class="ttdoc">Get handle to current executable.</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00113">Utility.cpp:113</a></div></div>
+<div class="ttc" id="anamespacegui__framework_1_1utility_html_a5bbb52bed6f3db5b95d081389deaa0fa"><div class="ttname"><a href="namespacegui__framework_1_1utility.html#a5bbb52bed6f3db5b95d081389deaa0fa">gui_framework::utility::getStringFromRawPath</a></div><div class="ttdeci">GUI_FRAMEWORK_API_FUNCTION string getStringFromRawPath(const filesystem::path &amp;pathFromRawString)</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00118">Utility.cpp:118</a></div></div>
 <div class="ttc" id="anamespacegui__framework_1_1utility_html_a746d8e6e6277a08c83bd0bfd523d2e04"><div class="ttname"><a href="namespacegui__framework_1_1utility.html#a746d8e6e6277a08c83bd0bfd523d2e04">gui_framework::utility::removeStyle</a></div><div class="ttdeci">void removeStyle(HWND handle, LONG_PTR styleToRemove)</div><div class="ttdoc">Remove WinAPI style.</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00025">Utility.cpp:25</a></div></div>
 <div class="ttc" id="anamespacegui__framework_1_1utility_html_a9102f958e07350e5f2ab564c5c30d66c"><div class="ttname"><a href="namespacegui__framework_1_1utility.html#a9102f958e07350e5f2ab564c5c30d66c">gui_framework::utility::unregisterClass</a></div><div class="ttdeci">void unregisterClass(const wstring &amp;className)</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00010">Utility.cpp:10</a></div></div>
 <div class="ttc" id="anamespacegui__framework_1_1utility_html_abbafc9708435f466d89c4f977dcd460d"><div class="ttname"><a href="namespacegui__framework_1_1utility.html#abbafc9708435f466d89c4f977dcd460d">gui_framework::utility::to_string</a></div><div class="ttdeci">string to_string(const wstring &amp;stringToConvert, uint32_t codepage)</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00035">Utility.cpp:35</a></div></div>

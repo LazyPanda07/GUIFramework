@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.7.5-beta</span>
+   &#160;<span id="projectnumber">0.8-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -156,6 +156,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad9c813e5ba0b4cae075b9ea89101f835"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d321e91aa2d43d81381f0148eecf7ad"><td class="memItemLeft" align="right" valign="top">virtual std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_rich_edit.html#a2d321e91aa2d43d81381f0148eecf7ad">getSelectedText</a> () const final</td></tr>
 <tr class="separator:a2d321e91aa2d43d81381f0148eecf7ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab95e2bc9a36410a59b9e3f75f27f2455"><td class="memItemLeft" align="right" valign="top">virtual const std::function&lt; void(const std::wstring &amp;)&gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_rich_edit.html#ab95e2bc9a36410a59b9e3f75f27f2455">getCallback</a> (<a class="el" href="classgui__framework_1_1_base_rich_edit.html#abf55c644c6c2640d8c662dd7179ab1f3">urlDetectEvent</a> event) const final</td></tr>
+<tr class="separator:ab95e2bc9a36410a59b9e3f75f27f2455"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe18d7d262aa479d30306d76ef2be318"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_rich_edit.html#abe18d7d262aa479d30306d76ef2be318">setBackgroundColor</a> (uint8_t red, uint8_t green, uint8_t blue) final override</td></tr>
 <tr class="separator:abe18d7d262aa479d30306d76ef2be318"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09d6d56819fc8fc9caaf1b39e962f910"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_rich_edit.html#a09d6d56819fc8fc9caaf1b39e962f910">setTextColor</a> (uint8_t red, uint8_t green, uint8_t blue) final override</td></tr>
@@ -410,7 +412,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00047">47</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00063">63</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
 
 </div>
 </div>
@@ -552,7 +554,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00113">113</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00134">134</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
 
 </div>
 </div>
@@ -590,7 +592,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00101">101</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00122">122</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
 
 </div>
 </div>
@@ -617,7 +619,35 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00146">146</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00167">167</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ab95e2bc9a36410a59b9e3f75f27f2455"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab95e2bc9a36410a59b9e3f75f27f2455">&#9670;&nbsp;</a></span>getCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const function&lt; void(const wstring &amp;)&gt; &amp; gui_framework::BaseRichEdit::getCallback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classgui__framework_1_1_base_rich_edit.html#abf55c644c6c2640d8c662dd7179ab1f3">urlDetectEvent</a>&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00181">181</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
 
 </div>
 </div>
@@ -644,7 +674,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00151">151</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00172">172</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
 
 </div>
 </div>
@@ -673,7 +703,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classgui__framework_1_1_base_component.html#a874eae6d7db8309155a9946aef01199a">gui_framework::BaseComponent</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00181">181</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
+<p>Reimplemented in <a class="el" href="classgui__framework_1_1_rich_edit.html#a63d286ffe6492235ac564d55803bdc0e">gui_framework::RichEdit</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00212">212</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
 
 </div>
 </div>
@@ -701,7 +733,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00094">94</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00106">106</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
 
 </div>
 </div>
@@ -729,7 +761,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00125">125</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00146">146</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
 
 </div>
 </div>
@@ -775,7 +807,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classgui__framework_1_1_base_component.html#ae2f1b329acc98ad498e18f4d5330f027">gui_framework::BaseComponent</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00160">160</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00191">191</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
 
 </div>
 </div>
@@ -803,7 +835,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00141">141</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00162">162</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
 
 </div>
 </div>
@@ -849,7 +881,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classgui__framework_1_1_base_component.html#a9dba22822b7f830295e104fa27af284c">gui_framework::BaseComponent</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00167">167</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00198">198</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
 
 </div>
 </div>
@@ -907,7 +939,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classgui__framework_1_1_base_component.html#a636cece7fe5db06982150a8eb9e13e10">gui_framework::BaseComponent</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00012">12</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_rich_edit_8cpp_source.html#l00028">28</a> of file <a class="el" href="_base_rich_edit_8cpp_source.html">BaseRichEdit.cpp</a>.</p>
 
 </div>
 </div>

@@ -1,13 +1,13 @@
 var classgui__framework_1_1_g_u_i_framework =
 [
     [ "hotkeyData", "structgui__framework_1_1_g_u_i_framework_1_1hotkey_data.html", "structgui__framework_1_1_g_u_i_framework_1_1hotkey_data" ],
-    [ "addCreator", "classgui__framework_1_1_g_u_i_framework.html#a589bb4e6c619e302b2f87e15a2985da7", null ],
+    [ "addCreator", "classgui__framework_1_1_g_u_i_framework.html#a70614da1e1f8ecca45f674a7bd87638b", null ],
     [ "addTask", "classgui__framework_1_1_g_u_i_framework.html#aba953f14d707b9d3253f655d95cd54e2", null ],
     [ "addTask", "classgui__framework_1_1_g_u_i_framework.html#ab77a09a4df9c4e126be1b9b1f55f1737", null ],
     [ "findComponent", "classgui__framework_1_1_g_u_i_framework.html#a73ddfec743b06fc8fd6fbd85b6cd4663", null ],
     [ "findComponent", "classgui__framework_1_1_g_u_i_framework.html#ab739e2b9458c6850fa30c570b3ff82e7", null ],
     [ "getCantLoadedModules", "classgui__framework_1_1_g_u_i_framework.html#a0aa718fbeffaf31e2de9bcbc54062b57", null ],
-    [ "getCreators", "classgui__framework_1_1_g_u_i_framework.html#a3c8d818b688a1c63d3f5dccb0c28925b", null ],
+    [ "getCreators", "classgui__framework_1_1_g_u_i_framework.html#a7c0ef4c4e1f9e21ea7906584f93441c3", null ],
     [ "getJSONSettings", "classgui__framework_1_1_g_u_i_framework.html#a9035e07c42c7e025f46601a4aee83cdc", null ],
     [ "getModules", "classgui__framework_1_1_g_u_i_framework.html#a6e59c92739b588f7ef87ec77247ed35b", null ],
     [ "getModulesPaths", "classgui__framework_1_1_g_u_i_framework.html#a069c0332eb3869de86e90557a8af9d88", null ],

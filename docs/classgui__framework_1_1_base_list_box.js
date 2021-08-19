@@ -14,7 +14,7 @@ var classgui__framework_1_1_base_list_box =
     [ "getValue", "classgui__framework_1_1_base_list_box.html#a58fc839753afbaa623cb140339149744", null ],
     [ "insertValue", "classgui__framework_1_1_base_list_box.html#a628af8d5bb8b857c007b7d42f064b37c", null ],
     [ "removeValue", "classgui__framework_1_1_base_list_box.html#a6331ea3cc2488540e0a42859ee77a32a", null ],
-    [ "resize", "classgui__framework_1_1_base_list_box.html#a0a2cd05d08a9b33a2248ee50fcf578b9", null ],
+    [ "resize", "classgui__framework_1_1_base_list_box.html#ae36afe3f2d72ccff07d9610a5bf7b8a6", null ],
     [ "setColumnsWidth", "classgui__framework_1_1_base_list_box.html#a999139009efd6d15c83a0aec8ad1020b", null ],
     [ "setCurrentSelection", "classgui__framework_1_1_base_list_box.html#a9aed8ff4b89e4ae2492f1703fa035349", null ],
     [ "setItemsHeight", "classgui__framework_1_1_base_list_box.html#a60fc704ca949b59696690a093fc9ef43", null ],
