@@ -28,6 +28,7 @@ namespace gui_framework
 	{
 		inline const std::string button = "Button";
 		inline const std::string checkBox = "CheckBox";
+		inline const std::string imageButton = "ImageButton";
 		inline const std::string editControl = "Edit";
 		inline const std::string richEdit = "RichEdit";
 		inline const std::string staticControl = "Static";

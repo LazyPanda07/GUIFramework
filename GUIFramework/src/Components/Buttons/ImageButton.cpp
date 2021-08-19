@@ -119,4 +119,66 @@ namespace gui_framework
 	{
 		this->drawImage();
 	}
+
+	void ImageButton::setImage(const filesystem::path& pathToImage, drawingType type, uint16_t imageWidth, uint16_t imageHeight)
+	{
+		this->pathToImage = pathToImage;
+		this->type = type;
+		this->imageWidth = imageWidth;
+		this->imageHeight = imageHeight;
+
+		this->drawImage();
+	}
+
+	const filesystem::path& ImageButton::getPathToImage() const
+	{
+		return pathToImage;
+	}
+
+	uint16_t ImageButton::getImageWidth() const
+	{
+		return imageWidth;
+	}
+
+	uint16_t ImageButton::getImageHeight() const
+	{
+		return imageHeight;
+	}
+
+	ImageButton::drawingType ImageButton::getDrawingType() const
+	{
+		return type;
+	}
+
+	json::JSONBuilder ImageButton::getStructure() const
+	{
+		using json::utility::objectSmartPointer;
+		using json::utility::jsonObject;
+
+		json::JSONBuilder builder = BaseButton::getStructure();
+		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
+
+		__utility::changeClassName(current, serialized_classes::imageButton);
+
+		current->data.push_back({ "imageWidth"s, static_cast<uint64_t>(imageWidth) });
+		current->data.push_back({ "imageHeight"s, static_cast<uint64_t>(imageHeight) });
+
+		current->data.push_back({ "pathToImage"s, utility::getStringFromRawPath(pathToImage) });
+
+		current->data.push_back({ "drawingType"s, static_cast<uint64_t>(type) });
+
+		return builder;
+	}
+
+	ImageButton::~ImageButton()
+	{
+		try
+		{
+			DeleteObject(any_cast<HBITMAP>(image));
+		}
+		catch (const bad_any_cast&)
+		{
+			DeleteObject(any_cast<HICON>(image));
+		}
+	}
 }

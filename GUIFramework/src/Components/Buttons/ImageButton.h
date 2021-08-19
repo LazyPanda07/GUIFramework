@@ -5,6 +5,7 @@
 
 namespace gui_framework
 {
+	/// @brief Button with image
 	class GUI_FRAMEWORK_API ImageButton : 
 		public BaseButton,
 		public interfaces::IResizableComponent
@@ -32,6 +33,18 @@ namespace gui_framework
 
 		ImageButton(const std::wstring& buttonName, const std::filesystem::path& pathToImage, drawingType type, uint16_t imageWidth, uint16_t imageHeight, int x, int y, BaseComponent* parent, const std::string& functionName, const std::string& moduleName, uint16_t width = standard_sizes::buttonWidth, uint16_t height = standard_sizes::buttonHeight);
 
-		~ImageButton() = default;
+		void setImage(const std::filesystem::path& pathToImage, drawingType type, uint16_t imageWidth, uint16_t imageHeight);
+
+		const std::filesystem::path& getPathToImage() const;
+
+		uint16_t getImageWidth() const;
+
+		uint16_t getImageHeight() const;
+
+		drawingType getDrawingType() const;
+
+		json::JSONBuilder getStructure() const override;
+
+		~ImageButton();
 	};
 }
