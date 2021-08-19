@@ -17,7 +17,7 @@ namespace gui_framework
 		return serialized_creation_type::baseDialogBox;
 	}
 
-	BaseDialogBox::BaseDialogBox(const wstring& className, const wstring& title, const utility::ComponentSettings& settings, BaseComponent* parent, const string& dialogBoxFunctionName) :
+	BaseDialogBox::BaseDialogBox(const wstring& className, const wstring& title, const utility::ComponentSettings& settings, BaseComponent* parent, const string& dialogBoxFunctionName, const string& moduleName, uint16_t smallIconResource, uint16_t largeIconResource) :
 		BaseComposite
 		(
 			className,
@@ -25,7 +25,10 @@ namespace gui_framework
 			settings,
 			styles::DialogBoxStyles(),
 			parent,
-			dialogBoxFunctionName
+			dialogBoxFunctionName,
+			moduleName,
+			smallIconResource,
+			largeIconResource
 		)
 	{
 		this->hide();
