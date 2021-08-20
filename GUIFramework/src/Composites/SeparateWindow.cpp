@@ -10,7 +10,7 @@ namespace gui_framework
 		return serialized_creation_type::separateWindow;
 	}
 
-	SeparateWindow::SeparateWindow(const std::wstring& className, const std::wstring& titleName, const utility::ComponentSettings& settings, const std::string& windowFunctionName, bool maximize, bool minimize) :
+	SeparateWindow::SeparateWindow(const std::wstring& className, const std::wstring& titleName, const utility::ComponentSettings& settings, const std::string& windowFunctionName, bool maximize, bool minimize, const string& moduleName, uint16_t smallIconResource, uint16_t largeIconResource) :
 		BaseSeparateWindow
 		(
 			className,
@@ -18,13 +18,16 @@ namespace gui_framework
 			settings,
 			windowFunctionName,
 			maximize,
-			minimize
+			minimize,
+			moduleName,
+			smallIconResource,
+			largeIconResource
 		),
 		IResizableComponent
 		(
 			handle,
 			nullptr
-		)	
+		)
 	{
 
 	}

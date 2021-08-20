@@ -7,7 +7,7 @@ namespace gui_framework
 {
 	using DialogBoxBuilder = DialogBox::DialogBoxBuilder;
 
-	DialogBoxBuilder::DialogBoxBuilder(const wstring& className, const wstring& dialogBoxName, int x, int y, const string& dialogBoxFunctionName) :
+	DialogBoxBuilder::DialogBoxBuilder(const wstring& className, const wstring& dialogBoxName, int x, int y, const string& dialogBoxFunctionName, const string& moduleName, uint16_t smallIconResource, uint16_t largeIconResource) :
 		settings
 		(
 			x,
@@ -18,7 +18,10 @@ namespace gui_framework
 		className(className),
 		dialogBoxName(dialogBoxName),
 		parent(nullptr),
-		functionName(dialogBoxFunctionName)
+		functionName(dialogBoxFunctionName),
+		moduleName(moduleName),
+		smallIconResource(smallIconResource),
+		largeIconResource(largeIconResource)
 	{
 
 	}
@@ -39,7 +42,7 @@ namespace gui_framework
 
 	DialogBox* DialogBoxBuilder::build() const
 	{
-		DialogBox* result = new DialogBox(className, dialogBoxName, settings, parent, functionName);
+		DialogBox* result = new DialogBox(className, dialogBoxName, settings, parent, functionName, moduleName, smallIconResource, largeIconResource);
 		GUIFramework& reference = GUIFramework::get();
 		uint16_t currentTopOffset = 0;
 
@@ -88,7 +91,7 @@ namespace gui_framework
 		componentName(componentName),
 		text(text),
 		offsets(move(offsets)),
-		typeHash(typeHash),		
+		typeHash(typeHash),
 		width(width),
 		height(height),
 		type(type),
@@ -104,14 +107,17 @@ namespace gui_framework
 		return serialized_creation_type::dialogBox;
 	}
 
-	DialogBox::DialogBox(const wstring& className, const wstring& dialogBoxName, const utility::ComponentSettings& settings, BaseComponent* parent, const string& dialogBoxFunctionName) :
+	DialogBox::DialogBox(const wstring& className, const wstring& dialogBoxName, const utility::ComponentSettings& settings, BaseComponent* parent, const string& dialogBoxFunctionName, const string& moduleName, uint16_t smallIconResource, uint16_t largeIconResource) :
 		BaseDialogBox
 		(
 			className,
 			dialogBoxName,
 			settings,
 			parent,
-			dialogBoxFunctionName
+			dialogBoxFunctionName,
+			moduleName,
+			smallIconResource,
+			largeIconResource
 		),
 		INonResizableComponent
 		(
