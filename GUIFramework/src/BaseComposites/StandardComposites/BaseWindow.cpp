@@ -39,7 +39,7 @@ namespace gui_framework
 		return serialized_creation_type::baseWindow;
 	}
 
-	BaseWindow::BaseWindow(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent, const string& windowFunctionName) :
+	BaseWindow::BaseWindow(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent, const string& windowFunctionName, const string& moduleName, uint16_t smallIconResource, uint16_t largeIconResource) :
 		BaseComposite
 		(
 			className,
@@ -47,7 +47,10 @@ namespace gui_framework
 			settings,
 			styles,
 			parent,
-			windowFunctionName
+			windowFunctionName,
+			moduleName,
+			smallIconResource,
+			largeIconResource
 		)
 	{
 

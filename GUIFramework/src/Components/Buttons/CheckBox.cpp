@@ -33,7 +33,6 @@ namespace gui_framework
 
 		json::JSONBuilder builder = BaseCheckBox::getStructure();
 		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
-		const auto& modulesPaths = GUIFramework::get().getModulesPaths();
 
 		__utility::changeClassName(current, serialized_classes::checkBox);
 

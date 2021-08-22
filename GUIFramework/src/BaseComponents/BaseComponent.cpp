@@ -53,7 +53,7 @@ namespace gui_framework
 		return -1;
 	}
 
-	BaseComponent::BaseComponent(const wstring& className, const wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent, const string& windowFunctionName) :
+	BaseComponent::BaseComponent(const wstring& className, const wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent, const string& windowFunctionName, const string& moduleName, uint16_t smallIconResource, uint16_t largeIconResources) :
 		parent(parent),
 		className(className),
 		windowName(windowName),
@@ -99,6 +99,30 @@ namespace gui_framework
 				classStruct.hCursor = LoadCursorW(nullptr, IDC_ARROW);
 				classStruct.lpfnWndProc = windowFunction;
 				classStruct.hbrBackground = reinterpret_cast<HBRUSH>(COLOR_WINDOW);
+
+				if (smallIconResource)
+				{
+					if (moduleName.size())
+					{
+						classStruct.hIconSm = static_cast<HICON>(LoadImageW(modules.at(moduleName), MAKEINTRESOURCEW(largeIconResources), IMAGE_ICON, standard_sizes::smallIconWidth, standard_sizes::smallIconHeight, NULL));
+					}
+					else
+					{
+						classStruct.hIconSm = static_cast<HICON>(LoadImageW(classStruct.hInstance, MAKEINTRESOURCEW(largeIconResources), IMAGE_ICON, standard_sizes::smallIconWidth, standard_sizes::smallIconHeight, NULL));
+					}
+				}
+
+				if (largeIconResources)
+				{
+					if (moduleName.size())
+					{
+						classStruct.hIcon = static_cast<HICON>(LoadImageW(modules.at(moduleName), MAKEINTRESOURCEW(largeIconResources), IMAGE_ICON, standard_sizes::largeIconWidth, standard_sizes::largeIconHeight, NULL));
+					}
+					else
+					{
+						classStruct.hIcon = static_cast<HICON>(LoadImageW(classStruct.hInstance, MAKEINTRESOURCEW(largeIconResources), IMAGE_ICON, standard_sizes::largeIconWidth, standard_sizes::largeIconHeight, NULL));
+					}
+				}
 
 				RegisterClassExW(&classStruct);
 			}
