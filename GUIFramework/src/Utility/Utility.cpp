@@ -7,12 +7,12 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		void unregisterClass(const wstring& className)
+		GUI_FRAMEWORK_API_FUNCTION void unregisterClass(const wstring& className)
 		{
 			UnregisterClassW(className.data(), GetModuleHandleW(nullptr));
 		}
 
-		void appendStyle(HWND handle, LONG_PTR newStyle)
+		GUI_FRAMEWORK_API_FUNCTION void appendStyle(HWND handle, LONG_PTR newStyle)
 		{
 			SetWindowLongPtrW
 			(
@@ -22,7 +22,7 @@ namespace gui_framework
 			);
 		}
 
-		void removeStyle(HWND handle, LONG_PTR styleToRemove)
+		GUI_FRAMEWORK_API_FUNCTION void removeStyle(HWND handle, LONG_PTR styleToRemove)
 		{
 			SetWindowLongPtrW
 			(
@@ -32,7 +32,7 @@ namespace gui_framework
 			);
 		}
 
-		string to_string(const wstring& stringToConvert, uint32_t codepage)
+		GUI_FRAMEWORK_API_FUNCTION string to_string(const wstring& stringToConvert, uint32_t codepage)
 		{
 			string result;
 
@@ -73,7 +73,7 @@ namespace gui_framework
 			return result;
 		}
 
-		wstring to_wstring(const string& stringToConvert, uint32_t codepage)
+		GUI_FRAMEWORK_API_FUNCTION wstring to_wstring(const string& stringToConvert, uint32_t codepage)
 		{
 			wstring result;
 
@@ -110,7 +110,7 @@ namespace gui_framework
 			return result;
 		}
 
-		HMODULE getCurrentModule()
+		GUI_FRAMEWORK_API_FUNCTION HMODULE getCurrentModule()
 		{
 			return GetModuleHandleW(nullptr);
 		}
@@ -132,7 +132,7 @@ namespace gui_framework
 
 	namespace __utility
 	{
-		void changeClassName(json::utility::objectSmartPointer<json::utility::jsonObject>& object, const string& className)
+		GUI_FRAMEWORK_API_FUNCTION void changeClassName(json::utility::objectSmartPointer<json::utility::jsonObject>& object, const string& className)
 		{
 			get<string>(ranges::find_if(object->data, [](const pair<string, json::utility::jsonObject::variantType>& value) { return value.first == "className"; })->second) = className;
 		}

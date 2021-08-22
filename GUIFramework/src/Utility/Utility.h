@@ -60,7 +60,7 @@ namespace gui_framework
 }
 
 template<typename T, typename... Args>
-smartPointerType<T> gui_framework::utility::make_smart_pointer(Args&&... args)
+inline smartPointerType<T> gui_framework::utility::make_smart_pointer(Args&&... args)
 {
 	if constexpr (std::is_same_v<std::unique_ptr<T>, smartPointerType<T>>)
 	{

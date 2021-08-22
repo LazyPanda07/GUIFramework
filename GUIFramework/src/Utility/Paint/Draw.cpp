@@ -12,22 +12,22 @@ namespace gui_framework
 	{
 		namespace paint
 		{
-			bool drawImageByIndex(const BaseWindow* window, const ImagesHolder& holder, int x, int y, uint16_t index)
+			GUI_FRAMEWORK_API_FUNCTION bool drawImageByIndex(const BaseWindow* window, const ImagesHolder& holder, int x, int y, uint16_t index)
 			{
 				return drawImplementation(window, holder, x, y, index);
 			}
 
-			bool drawImageByPath(const BaseWindow* window, const ImagesHolder& holder, int x, int y, const filesystem::path& pathToImage)
+			GUI_FRAMEWORK_API_FUNCTION bool drawImageByPath(const BaseWindow* window, const ImagesHolder& holder, int x, int y, const filesystem::path& pathToImage)
 			{
 				return drawImplementation(window, holder, x, y, pathToImage);
 			}
 
-			bool drawIconByIndex(const BaseWindow* window, const IconsHolder& holder, int x, int y, uint16_t index)
+			GUI_FRAMEWORK_API_FUNCTION bool drawIconByIndex(const BaseWindow* window, const IconsHolder& holder, int x, int y, uint16_t index)
 			{
 				return drawImplementation(window, holder, x, y, index);
 			}
 
-			bool drawIconByPath(const BaseWindow* window, const IconsHolder& holder, int x, int y, const filesystem::path& pathToImage)
+			GUI_FRAMEWORK_API_FUNCTION bool drawIconByPath(const BaseWindow* window, const IconsHolder& holder, int x, int y, const filesystem::path& pathToImage)
 			{
 				return drawImplementation(window, holder, x, y, pathToImage);
 			}
