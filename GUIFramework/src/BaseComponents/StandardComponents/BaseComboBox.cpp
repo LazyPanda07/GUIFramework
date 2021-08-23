@@ -41,6 +41,21 @@ namespace gui_framework
 		return -1;
 	}
 
+	void BaseComboBox::loadOnSelectionChangeFromModule(function<void(BaseComboBox&)>& onSelectionChange, const string& functionName, const string& moduleName)
+	{
+		GUIFramework& instance = GUIFramework::get();
+		const HMODULE& module = instance.getModules().at(moduleName);
+
+		comboBoxCallbackSignature tem = reinterpret_cast<comboBoxCallbackSignature>(GetProcAddress(module, functionName.data()));
+
+		if (!tem)
+		{
+			throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName);
+		}
+
+		onSelectionChange = tem;
+	}
+
 	BaseComboBox::BaseComboBox(const wstring& comboBoxName, const utility::ComponentSettings& settings, const styles::ComboBoxStyles& styles, BaseComponent* parent) :
 		BaseComponent
 		(

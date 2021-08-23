@@ -19,7 +19,7 @@ namespace gui_framework
 			onClickFunctionName(onClickFunctionName),
 			onClickFunctionModule(onClickFunctionModule)
 		{
-			utility::loadFunctionFromModule(onClick, onClickFunctionName, onClickFunctionModule);
+			
 		}
 
 		any AdditionalCreationData<Button>::getData() const
@@ -45,20 +45,7 @@ namespace gui_framework
 			onClickFunctionName(onCheckFunctionName),
 			onClickFunctionModule(onCheckFunctionModule)
 		{
-			if (onCheckFunctionName.size())
-			{
-				utility::loadFunctionFromModule(onCheck, onCheckFunctionName, onCheckFunctionModule);
-			}
-
-			if (onClearFunctionName.size())
-			{
-				utility::loadFunctionFromModule(onCheck, onClearFunctionName, onClearFunctionModule);
-			}
-
-			if (onClickFunctionName.size())
-			{
-				utility::loadFunctionFromModule(onCheck, onClickFunctionName, onClickFunctionModule);
-			}
+			
 		}
 
 		any AdditionalCreationData<CheckBox>::getData() const
