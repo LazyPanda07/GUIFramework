@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "headers.h"
 #include "BaseRichEdit.h"
 
 #include "Styles/Components/DefaultRichEditStyles.h"

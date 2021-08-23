@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "headers.h"
 #include "BaseSeparateWindow.h"
 
 #include "Styles/Composites/SeparateWindowStyles.h"

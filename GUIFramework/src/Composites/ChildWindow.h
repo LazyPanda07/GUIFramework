@@ -1,6 +1,6 @@
 #pragma once
 
-#include "pch.h"
+#include "headers.h"
 #include "BaseComposites/StandardComposites/BaseChildWindow.h"
 #include "Interfaces/Components/IResizableComponent.h"
 

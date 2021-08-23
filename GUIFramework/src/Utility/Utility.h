@@ -1,6 +1,6 @@
 #pragma once
 
-#include "pch.h"
+#include "headers.h"
 
 #include "JSONUtility.h"
 
@@ -44,6 +44,20 @@ namespace gui_framework
 		/// @param pathFromRawString 
 		/// @return 
 		GUI_FRAMEWORK_API_FUNCTION std::string getStringFromRawPath(const std::filesystem::path& pathFromRawString);
+
+		/// @brief Load function from module
+		/// @param onClick Output parameter for function load
+		/// @param functionName Name of function in module
+		/// @param moduleName Name of module in JSON array modules in gui_framework.json
+		/// @exception CantFindFunctionFromModuleException 
+		GUI_FRAMEWORK_API_FUNCTION void loadFunctionFromModule(std::function<void()>& onClick, const std::string& functionName, const std::string& moduleName);
+
+		/// @brief Load function from module
+		/// @param eventCallback Output parameter for function load
+		/// @param functionName Name of function in module
+		/// @param moduleName Name of module in JSON array modules in gui_framework.json
+		/// @exception CantFindFunctionFromModuleException 
+		GUI_FRAMEWORK_API_FUNCTION void loadEventCallbackFromModule(std::function<void(const std::wstring&)>& eventCallback, const std::string& functionName, const std::string& moduleName);
 
 		/// @brief Make function with current build configuration compatibility
 		/// @tparam T Type

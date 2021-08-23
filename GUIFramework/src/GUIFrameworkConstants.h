@@ -1,6 +1,6 @@
 #pragma once
 
-#include "pch.h"
+#include "headers.h"
 
 #include <string>
 #include <cstdint>
@@ -138,7 +138,7 @@ namespace gui_framework
 	using onClickSignature = void(*)();
 }
 
-/// @brief Insert this macro before serializable function implementation
+/// @brief Insert this macro before serializable function declaration and implementation
 #define IMPLEMENT_SERIALIZABLE_FUNCTION extern "C" __declspec(dllexport) 
 
 #ifdef GUI_FRAMEWORK_DLL

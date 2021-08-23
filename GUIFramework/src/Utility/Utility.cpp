@@ -1,5 +1,7 @@
-#include "pch.h"
+#include "headers.h"
 #include "Utility.h"
+
+#include "Exceptions/CantFindFunctionFromModuleException.h"
 
 using namespace std;
 
@@ -127,6 +129,36 @@ namespace gui_framework
 			erase(fixedPath, '\"');
 
 			return fixedPath;
+		}
+
+		GUI_FRAMEWORK_API_FUNCTION void loadFunctionFromModule(function<void()>& onClick, const string& functionName, const string& moduleName)
+		{
+			GUIFramework& instance = GUIFramework::get();
+			const HMODULE& module = instance.getModules().at(moduleName);
+
+			onClickSignature tem = reinterpret_cast<onClickSignature>(GetProcAddress(module, functionName.data()));
+
+			if (!tem)
+			{
+				throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName);
+			}
+
+			onClick = tem;
+		}
+
+		GUI_FRAMEWORK_API_FUNCTION void loadEventCallbackFromModule(function<void(const wstring&)>& eventCallback, const string& functionName, const string& moduleName)
+		{
+			GUIFramework& instance = GUIFramework::get();
+			const HMODULE& module = instance.getModules().at(moduleName);
+
+			richEditCallbackSignature tem = reinterpret_cast<richEditCallbackSignature>(GetProcAddress(module, functionName.data()));
+
+			if (!tem)
+			{
+				throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName);
+			}
+
+			eventCallback = tem;
 		}
 	}
 

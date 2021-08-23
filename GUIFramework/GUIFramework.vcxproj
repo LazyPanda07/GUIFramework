@@ -182,7 +182,7 @@
     <ClInclude Include="src\Menu\Menu.h" />
     <ClInclude Include="src\MenuItems\DropDownMenuItem.h" />
     <ClInclude Include="src\Menu\MenuItems\BaseMenuItem.h" />
-    <ClInclude Include="src\pch.h" />
+    <ClInclude Include="src\headers.h" />
     <ClInclude Include="src\BaseComposites\StandardComposites\BaseSeparateWindow.h" />
     <ClInclude Include="src\Utility\ComponentSettings.h" />
     <ClInclude Include="src\Utility\Holders\LoadableHolders\Iterators\loadable_const_forward_iterator.h" />
@@ -341,7 +341,7 @@
     <ClCompile Include="src\Menu\Menu.cpp" />
     <ClCompile Include="src\MenuItems\DropDownMenuItem.cpp" />
     <ClCompile Include="src\Menu\MenuItems\BaseMenuItem.cpp" />
-    <ClCompile Include="src\pch.cpp" />
+    <ClCompile Include="src\headers.cpp" />
     <ClCompile Include="src\BaseComposites\StandardComposites\BaseSeparateWindow.cpp" />
     <ClCompile Include="src\Utility\ComponentSettings.cpp" />
     <ClCompile Include="src\Utility\Holders\LoadableHolders\Iterators\loadable_const_forward_iterator.cpp" />

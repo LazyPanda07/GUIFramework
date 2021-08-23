@@ -1,6 +1,6 @@
 #pragma once
 
-#include "pch.h"
+#include "headers.h"
 #include "BaseComponents/StandardComponents/BaseButton.h"
 #include "Interfaces/Components/IResizableComponent.h"
 
