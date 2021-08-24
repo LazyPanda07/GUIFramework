@@ -11,9 +11,11 @@ namespace gui_framework
 	{
 		BaseComponent* ButtonCreator::create(const wstring& windowName, const utility::ComponentSettings& settings, const any& additionalData, BaseComponent* parent)
 		{
-			auto [text, onClick] = any_cast<tuple<wstring, function<void()>>>(additionalData);
+			auto [text, onClick, onClickFunctionName, onClickFunctionModule] = any_cast<tuple<wstring, function<void()>, string, string>>(additionalData);
 
-			return new Button(windowName, text, settings.x, settings.y, parent, onClick, settings.width, settings.height);
+			return onClickFunctionName.empty() ?
+				new Button(windowName, text, settings.x, settings.y, parent, onClick, settings.width, settings.height) :
+				new Button(windowName, text, settings.x, settings.y, parent, onClickFunctionName, onClickFunctionModule, settings.width, settings.height);
 		}
 	}
 }

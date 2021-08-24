@@ -11,9 +11,17 @@ namespace gui_framework
 	{
 		BaseComponent* DropDownComboBoxCreator::create(const wstring& windowName, const utility::ComponentSettings& settings, const any& additionalData, BaseComponent* parent)
 		{
-			BaseComboBox* result = new DropDownComboBox(windowName, utility::ComponentSettings(settings.x, settings.y, settings.width, settings.height), parent);
+			auto [values, onSelectionChange, functionName, moduleName] = any_cast<tuple<vector<wstring>, function<void(BaseComboBox&)>, string, string>>(additionalData);
+			BaseComboBox* result = new DropDownComboBox(windowName, settings, parent);
 
-			vector<wstring> values = any_cast<vector<wstring>>(additionalData);
+			if (onSelectionChange)
+			{
+				result->setOnSelectionChange(onSelectionChange);
+			}
+			else if (functionName.size())
+			{
+				result->setOnSelectionChange(functionName, moduleName);
+			}
 
 			for (const auto& i : values)
 			{
