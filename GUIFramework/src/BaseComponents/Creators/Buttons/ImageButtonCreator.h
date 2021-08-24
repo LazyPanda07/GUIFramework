@@ -1,21 +1,21 @@
 #pragma once
 
 #include "headers.h"
-#include "BaseComponentCreator.h"
+#include "BaseComponents/Creators/BaseComponentCreator.h"
 
 namespace gui_framework
 {
 	namespace utility
 	{
-		/// @brief CheckBox creator
-		class GUI_FRAMEWORK_API CheckBoxCreator : public BaseComponentCreator
+		/// @brief ImageButton creator
+		class GUI_FRAMEWORK_API ImageButtonCreator : public BaseComponentCreator
 		{
 		public:
-			CheckBoxCreator() = default;
-
+			ImageButtonCreator() = default;
+			
 			BaseComponent* create(const std::wstring& windowName, const utility::ComponentSettings& settings, const std::any& additionalData, BaseComponent* parent) override;
 
-			~CheckBoxCreator() = default;
+			~ImageButtonCreator() = default;
 		};
 	}
 }

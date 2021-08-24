@@ -1,7 +1,7 @@
 #pragma once
 
 #include "headers.h"
-#include "BaseComponents/StandardComponents/BaseButton.h"
+#include "BaseComponents/StandardComponents/Buttons/BaseButton.h"
 #include "Interfaces/Components/IResizableComponent.h"
 
 namespace gui_framework

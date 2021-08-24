@@ -1,7 +1,7 @@
 #pragma once
 
 #include "headers.h"
-#include "BaseComponentCreator.h"
+#include "BaseComponents/Creators/BaseComponentCreator.h"
 
 namespace gui_framework
 {

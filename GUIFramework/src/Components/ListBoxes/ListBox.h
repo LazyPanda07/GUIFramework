@@ -1,7 +1,7 @@
 #pragma once
 
 #include "headers.h"
-#include "BaseComponents/StandardComponents/BaseListBox.h"
+#include "BaseComponents/StandardComponents/ListBoxes/BaseListBox.h"
 
 namespace gui_framework
 {

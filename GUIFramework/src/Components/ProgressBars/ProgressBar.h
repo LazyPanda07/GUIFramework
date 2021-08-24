@@ -1,7 +1,7 @@
 #pragma once
 
 #include "headers.h"
-#include "BaseComponents/StandardComponents/BaseProgressBar.h"
+#include "BaseComponents/StandardComponents/ProgressBars/BaseProgressBar.h"
 #include "Interfaces/Components/IResizableComponent.h"
 
 namespace gui_framework
