@@ -55,7 +55,9 @@
     <ClInclude Include="src\BaseComponents\Creators\TabControlCreator.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\ProgressBars\BaseProgressBar.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseTrackbarControl.h" />
+    <ClInclude Include="src\ComponentsHeader.h" />
     <ClInclude Include="src\Components\Buttons\ImageButton.h" />
+    <ClInclude Include="src\CompositesHeader.h" />
     <ClInclude Include="src\Composites\GroupBox.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\ListViews\BaseIconListView.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\ProgressBars\BaseInfiniteProgressBar.h" />
@@ -225,7 +227,9 @@
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseComboBox.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseEditControl.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseTrackbarControl.cpp" />
+    <ClCompile Include="src\ComponentsHeader.cpp" />
     <ClCompile Include="src\Components\Buttons\ImageButton.cpp" />
+    <ClCompile Include="src\CompositesHeader.cpp" />
     <ClCompile Include="src\Composites\GroupBox.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\ProgressBars\BaseInfiniteProgressBar.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\ListBoxes\BaseListBox.cpp" />
