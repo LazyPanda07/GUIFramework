@@ -125,6 +125,7 @@
     <ClInclude Include="src\Composites\ChildWindow.h" />
     <ClInclude Include="src\Composites\DialogBox.h" />
     <ClInclude Include="src\Composites\SeparateWindow.h" />
+    <ClInclude Include="src\Deserialization\Recreator.h" />
     <ClInclude Include="src\Exceptions\CantFindFunctionFromModuleException.h" />
     <ClInclude Include="src\Exceptions\CantLoadModuleException.h" />
     <ClInclude Include="src\Exceptions\FileDoesNotExist.h" />
@@ -292,6 +293,7 @@
     <ClCompile Include="src\Composites\ChildWindow.cpp" />
     <ClCompile Include="src\Composites\DialogBox.cpp" />
     <ClCompile Include="src\Composites\SeparateWindow.cpp" />
+    <ClCompile Include="src\Deserialization\Recreator.cpp" />
     <ClCompile Include="src\Exceptions\BaseGUIFrameworkException.cpp" />
     <ClCompile Include="src\Exceptions\CantFindCompositeFunctionException.cpp" />
     <ClCompile Include="src\Exceptions\CantFindFunctionFromModuleException.cpp" />

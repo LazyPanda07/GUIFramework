@@ -132,7 +132,7 @@ namespace gui_framework
 		};
 	}
 
-	inline constexpr std::string_view guiFrameworkVersion = "0.8.1-beta";
+	inline constexpr std::string_view guiFrameworkVersion = "0.8.2-beta";
 
 	/// @brief Default on click signature
 	using onClickSignature = void(*)();
