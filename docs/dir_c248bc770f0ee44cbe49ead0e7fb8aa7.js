@@ -6,7 +6,8 @@ var dir_c248bc770f0ee44cbe49ead0e7fb8aa7 =
     [ "ButtonAdditionalCreationData.cpp", "_button_additional_creation_data_8cpp.html", null ],
     [ "ButtonAdditionalCreationData.h", "_button_additional_creation_data_8h.html", [
       [ "AdditionalCreationData< Button >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_button_01_4.html", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_button_01_4" ],
-      [ "AdditionalCreationData< CheckBox >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_check_box_01_4.html", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_check_box_01_4" ]
+      [ "AdditionalCreationData< CheckBox >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_check_box_01_4.html", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_check_box_01_4" ],
+      [ "AdditionalCreationData< ImageButton >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_image_button_01_4.html", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_image_button_01_4" ]
     ] ],
     [ "ChildWindowAdditionalCreationData.cpp", "_child_window_additional_creation_data_8cpp.html", null ],
     [ "ChildWindowAdditionalCreationData.h", "_child_window_additional_creation_data_8h.html", [

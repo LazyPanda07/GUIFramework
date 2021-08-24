@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.8-beta</span>
+   &#160;<span id="projectnumber">0.8.1-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -131,8 +131,8 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4b4f7216831d51b2d2cf22c90872394f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a4b4f7216831d51b2d2cf22c90872394f">BaseComponent</a> (const std::wstring &amp;<a class="el" href="classgui__framework_1_1_base_component.html#a7a8719af09a90cd4de26d3a295882e86">className</a>, const std::wstring &amp;<a class="el" href="classgui__framework_1_1_base_component.html#ab927f5791c7605446203f7f7f6e0bb83">windowName</a>, const <a class="el" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a> &amp;settings, const <a class="el" href="classgui__framework_1_1interfaces_1_1_i_styles.html">interfaces::IStyles</a> &amp;<a class="el" href="classgui__framework_1_1_base_component.html#aec8d3af6711b0c012f2f7f90cc7d4141">styles</a>, <a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> *<a class="el" href="classgui__framework_1_1_base_component.html#a1576375d22cf283d598e22f4a11aca2f">parent</a>=nullptr, const std::string &amp;windowFunctionName=&quot;&quot;)</td></tr>
-<tr class="separator:a4b4f7216831d51b2d2cf22c90872394f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e962868a5b9fbce0854fea8bfb57f89"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a5e962868a5b9fbce0854fea8bfb57f89">BaseComponent</a> (const std::wstring &amp;<a class="el" href="classgui__framework_1_1_base_component.html#a7a8719af09a90cd4de26d3a295882e86">className</a>, const std::wstring &amp;<a class="el" href="classgui__framework_1_1_base_component.html#ab927f5791c7605446203f7f7f6e0bb83">windowName</a>, const <a class="el" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a> &amp;settings, const <a class="el" href="classgui__framework_1_1interfaces_1_1_i_styles.html">interfaces::IStyles</a> &amp;<a class="el" href="classgui__framework_1_1_base_component.html#aec8d3af6711b0c012f2f7f90cc7d4141">styles</a>, <a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> *<a class="el" href="classgui__framework_1_1_base_component.html#a1576375d22cf283d598e22f4a11aca2f">parent</a>=nullptr, const std::string &amp;windowFunctionName=&quot;&quot;, const std::string &amp;moduleName=&quot;&quot;, uint16_t smallIconResource=NULL, uint16_t largeIconResource=NULL)</td></tr>
+<tr class="separator:a5e962868a5b9fbce0854fea8bfb57f89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80afd36bdaaa52f7137371ec9c8cdac5"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a80afd36bdaaa52f7137371ec9c8cdac5">isComposite</a> () const</td></tr>
 <tr class="separator:a80afd36bdaaa52f7137371ec9c8cdac5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d83634fe44ae3639664a09f14007268"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a4d83634fe44ae3639664a09f14007268">handleMessages</a> (HWND <a class="el" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, UINT message, WPARAM wparam, LPARAM lparam, bool &amp;isUsed) final</td></tr>
@@ -283,8 +283,8 @@ Friends</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a4b4f7216831d51b2d2cf22c90872394f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b4f7216831d51b2d2cf22c90872394f">&#9670;&nbsp;</a></span>BaseComponent()</h2>
+<a id="a5e962868a5b9fbce0854fea8bfb57f89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e962868a5b9fbce0854fea8bfb57f89">&#9670;&nbsp;</a></span>BaseComponent()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -323,7 +323,25 @@ Friends</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>windowFunctionName</em> = <code>&quot;&quot;</code>&#160;</td>
+          <td class="paramname"><em>windowFunctionName</em> = <code>&quot;&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>moduleName</em> = <code>&quot;&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>smallIconResource</em> = <code>NULL</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>largeIconResource</em> = <code>NULL</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -335,6 +353,9 @@ Friends</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">windowFunctionName</td><td>Value that you pass in CREATE_DEFAULT_WINDOW_FUNCTION macro </td></tr>
+    <tr><td class="paramname">moduleName</td><td>Name of loaded resource module with icons </td></tr>
+    <tr><td class="paramname">smallIconResource</td><td>Integer value from auto generated Visual Studio resources </td></tr>
+    <tr><td class="paramname">largeIconResource</td><td>Integer value from auto generated Visual Studio resources </td></tr>
   </table>
   </dd>
 </dl>
@@ -366,7 +387,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00374">374</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00398">398</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -394,7 +415,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00180">180</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00204">204</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -421,7 +442,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00166">166</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00190">190</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -448,7 +469,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00281">281</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00305">305</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -475,7 +496,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00272">272</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00296">296</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -502,7 +523,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00263">263</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00287">287</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -529,7 +550,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00312">312</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00336">336</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -556,7 +577,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00248">248</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00272">272</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -583,7 +604,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00258">258</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00282">282</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -610,7 +631,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00253">253</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00277">277</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -637,7 +658,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00292">292</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00316">316</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -664,7 +685,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00297">297</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00321">321</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -691,7 +712,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00302">302</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00326">326</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -718,7 +739,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00238">238</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00262">262</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -747,7 +768,7 @@ Friends</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Components returns id, composites returns 0 <br  />
  </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00307">307</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00331">331</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -774,7 +795,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00233">233</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00257">257</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -803,9 +824,9 @@ Friends</h2></td></tr>
 
 <p>Implements <a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#abd8e17c9b5087e477f9f035b9138148b">gui_framework::interfaces::ISerializable</a>.</p>
 
-<p>Reimplemented in <a class="el" href="classgui__framework_1_1_vertical_trackbar_control.html#aec5cdc9e7b75a7ec674af088176d554f">gui_framework::VerticalTrackbarControl</a>, <a class="el" href="classgui__framework_1_1_horizontal_trackbar_control.html#a96108dc6a482b9bb0c67bad1f0e50e2b">gui_framework::HorizontalTrackbarControl</a>, <a class="el" href="classgui__framework_1_1_tab_control.html#a2279bb70edd8be6b4299907a741d00df">gui_framework::TabControl</a>, <a class="el" href="classgui__framework_1_1_rich_edit.html#a63d286ffe6492235ac564d55803bdc0e">gui_framework::RichEdit</a>, <a class="el" href="classgui__framework_1_1_progress_bar.html#a891a563eff8913c1f9b37ccba1e81d67">gui_framework::ProgressBar</a>, <a class="el" href="classgui__framework_1_1_infinite_progress_bar.html#a775dbf65e2c309e0034f8ab92b957c17">gui_framework::InfiniteProgressBar</a>, <a class="el" href="classgui__framework_1_1_text_list_view.html#a7fb909cb99448e8b74e697bc93829aa9">gui_framework::TextListView</a>, <a class="el" href="classgui__framework_1_1_text_icon_list_view.html#a28dd537a6f40b0b9a08862e0c8fd5084">gui_framework::TextIconListView</a>, <a class="el" href="classgui__framework_1_1_list_text_list_view.html#a0d88683cd9a5a9c1eb1925b00a153930">gui_framework::ListTextListView</a>, <a class="el" href="classgui__framework_1_1_list_text_icon_list_view.html#a62e057876b26d7c1c1b9242e0deebeb3">gui_framework::ListTextIconListView</a>, <a class="el" href="classgui__framework_1_1_list_icon_list_view.html#af467be363be3eebee0989c56b7f3fa67">gui_framework::ListIconListView</a>, <a class="el" href="classgui__framework_1_1_icon_list_view.html#a568d1ee79bb17b750bc0e7526039eceb">gui_framework::IconListView</a>, <a class="el" href="classgui__framework_1_1_multiple_select_list_box.html#abb96085f99ac636032d607453fa90ced">gui_framework::MultipleSelectListBox</a>, <a class="el" href="classgui__framework_1_1_simple_combo_box.html#a7fe2d9a4f4b04e5a38ce81f4ed631b0b">gui_framework::SimpleComboBox</a>, <a class="el" href="classgui__framework_1_1_drop_down_list_combo_box.html#aaa4b3aa303a78f0a29e9efdd9ef106ac">gui_framework::DropDownListComboBox</a>, <a class="el" href="classgui__framework_1_1_drop_down_combo_box.html#a6947d0f219e5f0c5feec3f1b6093e5b5">gui_framework::DropDownComboBox</a>, <a class="el" href="classgui__framework_1_1_check_box.html#a90894fde04b1e9b5019fa475822a5a73">gui_framework::CheckBox</a>, <a class="el" href="classgui__framework_1_1_base_window.html#a601fc7e12ff4afa848514f40b844457c">gui_framework::BaseWindow</a>, <a class="el" href="classgui__framework_1_1_base_composite.html#a03f0ef2ce7916eb5e8833831fd24bd1f">gui_framework::BaseComposite</a>, <a class="el" href="classgui__framework_1_1_base_text_list_view.html#a675148daba7ef1f4e61b3e0d17b9ab60">gui_framework::BaseTextListView</a>, <a class="el" href="classgui__framework_1_1_base_text_icon_list_view.html#a6f84f41bb5dcb7d94765f53585b8e9e3">gui_framework::BaseTextIconListView</a>, <a class="el" href="classgui__framework_1_1_base_list_text_list_view.html#a7a31cf39a90b1d0eb3b68c2bbb3a4c94">gui_framework::BaseListTextListView</a>, <a class="el" href="classgui__framework_1_1_base_list_text_icon_list_view.html#a90e09f05df0a5d968fd7de206d025c07">gui_framework::BaseListTextIconListView</a>, <a class="el" href="classgui__framework_1_1_base_list_icon_list_view.html#aeb1e923d5cb7cb4111a80d5142ef90ed">gui_framework::BaseListIconListView</a>, <a class="el" href="classgui__framework_1_1_base_icon_list_view.html#a0ab77ef0b3296386917a819fd8d6ab1a">gui_framework::BaseIconListView</a>, <a class="el" href="classgui__framework_1_1_base_trackbar_control.html#ab37df18ec2e82bf3582393bad8b65446">gui_framework::BaseTrackbarControl</a>, <a class="el" href="classgui__framework_1_1_base_tab_control.html#a0298efc8e7000f84e297967dec4be701">gui_framework::BaseTabControl</a>, <a class="el" href="classgui__framework_1_1_base_rich_edit.html#a5efc3f658002087aee204a5f95a52ada">gui_framework::BaseRichEdit</a>, <a class="el" href="classgui__framework_1_1_base_progress_bar.html#ada7817b13dd8ba5fba8b64ceb5aeb05f">gui_framework::BaseProgressBar</a>, <a class="el" href="classgui__framework_1_1_base_multiple_select_list_box.html#a5e96b134a3ab5d2d08c9f5cab1cbd777">gui_framework::BaseMultipleSelectListBox</a>, <a class="el" href="classgui__framework_1_1_base_list_box.html#a6ae2994ceb712fed4c87028bfc074f24">gui_framework::BaseListBox</a>, <a class="el" href="classgui__framework_1_1_base_infinite_progress_bar.html#aef87a4d4cf2df246e328ed3462949ba7">gui_framework::BaseInfiniteProgressBar</a>, <a class="el" href="classgui__framework_1_1_base_edit_control.html#a8c180badbdcd6fa74f2887b5e5ac4121">gui_framework::BaseEditControl</a>, <a class="el" href="classgui__framework_1_1_base_combo_box.html#a67b687ab959e0a847952423d3b4eae12">gui_framework::BaseComboBox</a>, <a class="el" href="classgui__framework_1_1_base_check_box.html#a8d57c8af5e51b7c687bcf49ff279e0fd">gui_framework::BaseCheckBox</a>, and <a class="el" href="classgui__framework_1_1_base_button.html#ab35197f855f37974e25dda6b24314545">gui_framework::BaseButton</a>.</p>
+<p>Reimplemented in <a class="el" href="classgui__framework_1_1_vertical_trackbar_control.html#aec5cdc9e7b75a7ec674af088176d554f">gui_framework::VerticalTrackbarControl</a>, <a class="el" href="classgui__framework_1_1_horizontal_trackbar_control.html#a96108dc6a482b9bb0c67bad1f0e50e2b">gui_framework::HorizontalTrackbarControl</a>, <a class="el" href="classgui__framework_1_1_tab_control.html#a2279bb70edd8be6b4299907a741d00df">gui_framework::TabControl</a>, <a class="el" href="classgui__framework_1_1_rich_edit.html#a63d286ffe6492235ac564d55803bdc0e">gui_framework::RichEdit</a>, <a class="el" href="classgui__framework_1_1_progress_bar.html#a891a563eff8913c1f9b37ccba1e81d67">gui_framework::ProgressBar</a>, <a class="el" href="classgui__framework_1_1_infinite_progress_bar.html#a775dbf65e2c309e0034f8ab92b957c17">gui_framework::InfiniteProgressBar</a>, <a class="el" href="classgui__framework_1_1_text_list_view.html#a7fb909cb99448e8b74e697bc93829aa9">gui_framework::TextListView</a>, <a class="el" href="classgui__framework_1_1_text_icon_list_view.html#a28dd537a6f40b0b9a08862e0c8fd5084">gui_framework::TextIconListView</a>, <a class="el" href="classgui__framework_1_1_list_text_list_view.html#a0d88683cd9a5a9c1eb1925b00a153930">gui_framework::ListTextListView</a>, <a class="el" href="classgui__framework_1_1_list_text_icon_list_view.html#a62e057876b26d7c1c1b9242e0deebeb3">gui_framework::ListTextIconListView</a>, <a class="el" href="classgui__framework_1_1_list_icon_list_view.html#af467be363be3eebee0989c56b7f3fa67">gui_framework::ListIconListView</a>, <a class="el" href="classgui__framework_1_1_icon_list_view.html#a568d1ee79bb17b750bc0e7526039eceb">gui_framework::IconListView</a>, <a class="el" href="classgui__framework_1_1_multiple_select_list_box.html#abb96085f99ac636032d607453fa90ced">gui_framework::MultipleSelectListBox</a>, <a class="el" href="classgui__framework_1_1_simple_combo_box.html#a7fe2d9a4f4b04e5a38ce81f4ed631b0b">gui_framework::SimpleComboBox</a>, <a class="el" href="classgui__framework_1_1_drop_down_list_combo_box.html#aaa4b3aa303a78f0a29e9efdd9ef106ac">gui_framework::DropDownListComboBox</a>, <a class="el" href="classgui__framework_1_1_drop_down_combo_box.html#a6947d0f219e5f0c5feec3f1b6093e5b5">gui_framework::DropDownComboBox</a>, <a class="el" href="classgui__framework_1_1_image_button.html#ac4f80b8b508b0c2f382c2199148a0cd2">gui_framework::ImageButton</a>, <a class="el" href="classgui__framework_1_1_check_box.html#a90894fde04b1e9b5019fa475822a5a73">gui_framework::CheckBox</a>, <a class="el" href="classgui__framework_1_1_base_window.html#a601fc7e12ff4afa848514f40b844457c">gui_framework::BaseWindow</a>, <a class="el" href="classgui__framework_1_1_base_composite.html#a03f0ef2ce7916eb5e8833831fd24bd1f">gui_framework::BaseComposite</a>, <a class="el" href="classgui__framework_1_1_base_progress_bar.html#ada7817b13dd8ba5fba8b64ceb5aeb05f">gui_framework::BaseProgressBar</a>, <a class="el" href="classgui__framework_1_1_base_infinite_progress_bar.html#aef87a4d4cf2df246e328ed3462949ba7">gui_framework::BaseInfiniteProgressBar</a>, <a class="el" href="classgui__framework_1_1_base_text_list_view.html#a675148daba7ef1f4e61b3e0d17b9ab60">gui_framework::BaseTextListView</a>, <a class="el" href="classgui__framework_1_1_base_text_icon_list_view.html#a6f84f41bb5dcb7d94765f53585b8e9e3">gui_framework::BaseTextIconListView</a>, <a class="el" href="classgui__framework_1_1_base_list_text_list_view.html#a7a31cf39a90b1d0eb3b68c2bbb3a4c94">gui_framework::BaseListTextListView</a>, <a class="el" href="classgui__framework_1_1_base_list_text_icon_list_view.html#a90e09f05df0a5d968fd7de206d025c07">gui_framework::BaseListTextIconListView</a>, <a class="el" href="classgui__framework_1_1_base_list_icon_list_view.html#aeb1e923d5cb7cb4111a80d5142ef90ed">gui_framework::BaseListIconListView</a>, <a class="el" href="classgui__framework_1_1_base_icon_list_view.html#a0ab77ef0b3296386917a819fd8d6ab1a">gui_framework::BaseIconListView</a>, <a class="el" href="classgui__framework_1_1_base_multiple_select_list_box.html#a5e96b134a3ab5d2d08c9f5cab1cbd777">gui_framework::BaseMultipleSelectListBox</a>, <a class="el" href="classgui__framework_1_1_base_list_box.html#a6ae2994ceb712fed4c87028bfc074f24">gui_framework::BaseListBox</a>, <a class="el" href="classgui__framework_1_1_base_check_box.html#a8d57c8af5e51b7c687bcf49ff279e0fd">gui_framework::BaseCheckBox</a>, <a class="el" href="classgui__framework_1_1_base_button.html#ab35197f855f37974e25dda6b24314545">gui_framework::BaseButton</a>, <a class="el" href="classgui__framework_1_1_base_trackbar_control.html#ab37df18ec2e82bf3582393bad8b65446">gui_framework::BaseTrackbarControl</a>, <a class="el" href="classgui__framework_1_1_base_tab_control.html#a0298efc8e7000f84e297967dec4be701">gui_framework::BaseTabControl</a>, <a class="el" href="classgui__framework_1_1_base_rich_edit.html#a5efc3f658002087aee204a5f95a52ada">gui_framework::BaseRichEdit</a>, <a class="el" href="classgui__framework_1_1_base_edit_control.html#a8c180badbdcd6fa74f2887b5e5ac4121">gui_framework::BaseEditControl</a>, and <a class="el" href="classgui__framework_1_1_base_combo_box.html#a67b687ab959e0a847952423d3b4eae12">gui_framework::BaseComboBox</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00322">322</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00346">346</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -832,7 +853,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00317">317</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00341">341</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -859,7 +880,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00243">243</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00267">267</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -915,7 +936,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00154">154</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00178">178</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -944,7 +965,7 @@ Friends</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classgui__framework_1_1_base_composite.html#a6f0726dccdb362d62f42dcff5cd87942">gui_framework::BaseComposite</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00149">149</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00173">173</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -1136,9 +1157,9 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classgui__framework_1_1_base_composite.html#a675b7528598adfbc93e6183fad8de216">gui_framework::BaseComposite</a>, <a class="el" href="classgui__framework_1_1_base_window.html#a3bfb7ebe5e6af2f83bb35b45b7244192">gui_framework::BaseWindow</a>, <a class="el" href="classgui__framework_1_1_base_list_view.html#a5bf19f8aef5901d87e62d5f3bc5f7b50">gui_framework::BaseListView</a>, <a class="el" href="classgui__framework_1_1_base_tab_control.html#ab6c332e1cef2dc5371413dcdbe959044">gui_framework::BaseTabControl</a>, <a class="el" href="classgui__framework_1_1_base_rich_edit.html#abe18d7d262aa479d30306d76ef2be318">gui_framework::BaseRichEdit</a>, <a class="el" href="classgui__framework_1_1_base_progress_bar.html#ac3bbf8b711b9af9520c7b550d828763b">gui_framework::BaseProgressBar</a>, <a class="el" href="classgui__framework_1_1_base_infinite_progress_bar.html#ade0bbe2068cd1a4726196de33ad31432">gui_framework::BaseInfiniteProgressBar</a>, and <a class="el" href="classgui__framework_1_1_base_combo_box.html#aade08088d156f60fa7319c8f64e9b932">gui_framework::BaseComboBox</a>.</p>
+<p>Reimplemented in <a class="el" href="classgui__framework_1_1_base_composite.html#a675b7528598adfbc93e6183fad8de216">gui_framework::BaseComposite</a>, <a class="el" href="classgui__framework_1_1_base_window.html#a3bfb7ebe5e6af2f83bb35b45b7244192">gui_framework::BaseWindow</a>, <a class="el" href="classgui__framework_1_1_base_progress_bar.html#ac3bbf8b711b9af9520c7b550d828763b">gui_framework::BaseProgressBar</a>, <a class="el" href="classgui__framework_1_1_base_infinite_progress_bar.html#ade0bbe2068cd1a4726196de33ad31432">gui_framework::BaseInfiniteProgressBar</a>, <a class="el" href="classgui__framework_1_1_base_list_view.html#a5bf19f8aef5901d87e62d5f3bc5f7b50">gui_framework::BaseListView</a>, <a class="el" href="classgui__framework_1_1_base_tab_control.html#ab6c332e1cef2dc5371413dcdbe959044">gui_framework::BaseTabControl</a>, <a class="el" href="classgui__framework_1_1_base_rich_edit.html#abe18d7d262aa479d30306d76ef2be318">gui_framework::BaseRichEdit</a>, and <a class="el" href="classgui__framework_1_1_base_combo_box.html#aade08088d156f60fa7319c8f64e9b932">gui_framework::BaseComboBox</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00219">219</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00243">243</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -1166,7 +1187,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00199">199</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00223">223</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -1194,7 +1215,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00194">194</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00218">218</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -1222,7 +1243,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00204">204</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00228">228</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -1250,7 +1271,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00209">209</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00233">233</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -1278,7 +1299,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00214">214</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00238">238</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -1322,9 +1343,9 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classgui__framework_1_1_base_list_view.html#a4290e33e54ca45bd286257cf7528cf46">gui_framework::BaseListView</a>, <a class="el" href="classgui__framework_1_1_base_list_icon_list_view.html#ae115d1b881d08025c41058070687cc62">gui_framework::BaseListIconListView</a>, <a class="el" href="classgui__framework_1_1_base_icon_list_view.html#a7041adf4e7e2740ef352a628fd123b4c">gui_framework::BaseIconListView</a>, <a class="el" href="classgui__framework_1_1_base_trackbar_control.html#a336557c4c79b7c50f15472f7ccfb772e">gui_framework::BaseTrackbarControl</a>, <a class="el" href="classgui__framework_1_1_base_tab_control.html#aa20da2dc52c7bdae55f4960e3ea000be">gui_framework::BaseTabControl</a>, <a class="el" href="classgui__framework_1_1_base_rich_edit.html#a09d6d56819fc8fc9caaf1b39e962f910">gui_framework::BaseRichEdit</a>, <a class="el" href="classgui__framework_1_1_base_progress_bar.html#a05c499b9b728aec7948ecc686121a64c">gui_framework::BaseProgressBar</a>, <a class="el" href="classgui__framework_1_1_base_infinite_progress_bar.html#a8ad22c5f338c8ccc4bea7cf022417d18">gui_framework::BaseInfiniteProgressBar</a>, <a class="el" href="classgui__framework_1_1_base_combo_box.html#ab9ac06e14375a41cd0db219f1030b40d">gui_framework::BaseComboBox</a>, and <a class="el" href="classgui__framework_1_1_base_button.html#aafe12f92e9407defc8e3211518f52025">gui_framework::BaseButton</a>.</p>
+<p>Reimplemented in <a class="el" href="classgui__framework_1_1_base_list_view.html#a4290e33e54ca45bd286257cf7528cf46">gui_framework::BaseListView</a>, <a class="el" href="classgui__framework_1_1_base_list_icon_list_view.html#ae115d1b881d08025c41058070687cc62">gui_framework::BaseListIconListView</a>, <a class="el" href="classgui__framework_1_1_base_progress_bar.html#a05c499b9b728aec7948ecc686121a64c">gui_framework::BaseProgressBar</a>, <a class="el" href="classgui__framework_1_1_base_infinite_progress_bar.html#a8ad22c5f338c8ccc4bea7cf022417d18">gui_framework::BaseInfiniteProgressBar</a>, <a class="el" href="classgui__framework_1_1_base_icon_list_view.html#a7041adf4e7e2740ef352a628fd123b4c">gui_framework::BaseIconListView</a>, <a class="el" href="classgui__framework_1_1_base_button.html#aafe12f92e9407defc8e3211518f52025">gui_framework::BaseButton</a>, <a class="el" href="classgui__framework_1_1_base_trackbar_control.html#a336557c4c79b7c50f15472f7ccfb772e">gui_framework::BaseTrackbarControl</a>, <a class="el" href="classgui__framework_1_1_base_tab_control.html#aa20da2dc52c7bdae55f4960e3ea000be">gui_framework::BaseTabControl</a>, <a class="el" href="classgui__framework_1_1_base_rich_edit.html#a09d6d56819fc8fc9caaf1b39e962f910">gui_framework::BaseRichEdit</a>, and <a class="el" href="classgui__framework_1_1_base_combo_box.html#ab9ac06e14375a41cd0db219f1030b40d">gui_framework::BaseComboBox</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00226">226</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00250">250</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
 </div>
 </div>
@@ -1380,7 +1401,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classgui__framework_1_1_base_tab_control.html#a705e7fa0d724d7c17e1cd6d9db6a38ba">gui_framework::BaseTabControl</a>, <a class="el" href="classgui__framework_1_1_base_rich_edit.html#a5b0e9edd94997732cc8b0f6533e9b27a">gui_framework::BaseRichEdit</a>, <a class="el" href="classgui__framework_1_1_base_button.html#acf8c3970175cea31fe83422412203bb8">gui_framework::BaseButton</a>, <a class="el" href="classgui__framework_1_1_base_composite.html#ab788d4dc310ef2e8eda23e9475da7ea7">gui_framework::BaseComposite</a>, and <a class="el" href="classgui__framework_1_1_base_combo_box.html#a9113c5f3d49291253ae45c93c6f629b9">gui_framework::BaseComboBox</a>.</p>
+<p>Reimplemented in <a class="el" href="classgui__framework_1_1_base_button.html#acf8c3970175cea31fe83422412203bb8">gui_framework::BaseButton</a>, <a class="el" href="classgui__framework_1_1_base_tab_control.html#a705e7fa0d724d7c17e1cd6d9db6a38ba">gui_framework::BaseTabControl</a>, <a class="el" href="classgui__framework_1_1_base_rich_edit.html#a5b0e9edd94997732cc8b0f6533e9b27a">gui_framework::BaseRichEdit</a>, <a class="el" href="classgui__framework_1_1_base_composite.html#ab788d4dc310ef2e8eda23e9475da7ea7">gui_framework::BaseComposite</a>, and <a class="el" href="classgui__framework_1_1_base_combo_box.html#a9113c5f3d49291253ae45c93c6f629b9">gui_framework::BaseComboBox</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="_base_component_8cpp_source.html#l00049">49</a> of file <a class="el" href="_base_component_8cpp_source.html">BaseComponent.cpp</a>.</p>
 
@@ -1407,7 +1428,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00113">113</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_8h_source.html#l00117">117</a> of file <a class="el" href="_base_component_8h_source.html">BaseComponent.h</a>.</p>
 
 </div>
 </div>

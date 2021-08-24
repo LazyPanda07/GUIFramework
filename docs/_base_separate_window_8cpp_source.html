@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.8-beta</span>
+   &#160;<span id="projectnumber">0.8.1-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -87,7 +87,7 @@ $(document).ready(function(){initNavTree('_base_separate_window_8cpp_source.html
 <div class="title">BaseSeparateWindow.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_base_separate_window_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pch_8h.html">pch.h</a>&quot;</span></div>
+<a href="_base_separate_window_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="headers_8h.html">headers.h</a>&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_base_separate_window_8h.html">BaseSeparateWindow.h</a>&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_separate_window_styles_8h.html">Styles/Composites/SeparateWindowStyles.h</a>&quot;</span></div>
@@ -101,7 +101,7 @@ $(document).ready(function(){initNavTree('_base_separate_window_8cpp_source.html
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacegui__framework_1_1serialized__creation__type.html#a7833cc2919fb98e3586bf733ad74a8a6">serialized_creation_type::baseSeparateWindow</a>;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    }</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_separate_window.html#a267d3460ee18a2838be9db3da60e6e36">   15</a></span>&#160;    BaseSeparateWindow::BaseSeparateWindow(<span class="keyword">const</span> wstring&amp; className, <span class="keyword">const</span> wstring&amp; titleName, <span class="keyword">const</span> <a class="code" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a>&amp; settings, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; windowFunctionName, <span class="keywordtype">bool</span> maximize, <span class="keywordtype">bool</span> minimize) :</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_separate_window.html#ac4af2d5b64dab8103a398b14e4606f96">   15</a></span>&#160;    BaseSeparateWindow::BaseSeparateWindow(<span class="keyword">const</span> wstring&amp; className, <span class="keyword">const</span> wstring&amp; titleName, <span class="keyword">const</span> <a class="code" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a>&amp; settings, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; windowFunctionName, <span class="keywordtype">bool</span> maximize, <span class="keywordtype">bool</span> minimize, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; moduleName, uint16_t smallIconResource, uint16_t largeIconResource) :</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="classgui__framework_1_1_base_window.html">BaseWindow</a></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        (</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            className,</div>
@@ -109,19 +109,22 @@ $(document).ready(function(){initNavTree('_base_separate_window_8cpp_source.html
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            settings,</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            styles::SeparateWindowStyles(maximize, minimize),</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            nullptr,</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            windowFunctionName</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        )</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            windowFunctionName,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            moduleName,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            smallIconResource,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            largeIconResource</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        )</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
 <div class="ttc" id="a_base_separate_window_8h_html"><div class="ttname"><a href="_base_separate_window_8h.html">BaseSeparateWindow.h</a></div></div>
 <div class="ttc" id="a_separate_window_styles_8h_html"><div class="ttname"><a href="_separate_window_styles_8h.html">SeparateWindowStyles.h</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1_base_window_html"><div class="ttname"><a href="classgui__framework_1_1_base_window.html">gui_framework::BaseWindow</a></div><div class="ttdoc">Base class for composite windows.</div><div class="ttdef"><b>Definition:</b> <a href="_base_window_8h_source.html#l00010">BaseWindow.h:11</a></div></div>
-<div class="ttc" id="anamespacegui__framework_1_1serialized__creation__type_html_a7833cc2919fb98e3586bf733ad74a8a6"><div class="ttname"><a href="namespacegui__framework_1_1serialized__creation__type.html#a7833cc2919fb98e3586bf733ad74a8a6">gui_framework::serialized_creation_type::baseSeparateWindow</a></div><div class="ttdeci">const std::string baseSeparateWindow</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00059">GUIFrameworkConstants.h:59</a></div></div>
+<div class="ttc" id="aheaders_8h_html"><div class="ttname"><a href="headers_8h.html">headers.h</a></div></div>
+<div class="ttc" id="anamespacegui__framework_1_1serialized__creation__type_html_a7833cc2919fb98e3586bf733ad74a8a6"><div class="ttname"><a href="namespacegui__framework_1_1serialized__creation__type.html#a7833cc2919fb98e3586bf733ad74a8a6">gui_framework::serialized_creation_type::baseSeparateWindow</a></div><div class="ttdeci">const std::string baseSeparateWindow</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00060">GUIFrameworkConstants.h:60</a></div></div>
 <div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00016">BaseComponent.cpp:17</a></div></div>
-<div class="ttc" id="apch_8h_html"><div class="ttname"><a href="pch_8h.html">pch.h</a></div></div>
 <div class="ttc" id="astructgui__framework_1_1utility_1_1_component_settings_html"><div class="ttname"><a href="structgui__framework_1_1utility_1_1_component_settings.html">gui_framework::utility::ComponentSettings</a></div><div class="ttdoc">All settings for windows.</div><div class="ttdef"><b>Definition:</b> <a href="_component_settings_8h_source.html#l00010">ComponentSettings.h:11</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

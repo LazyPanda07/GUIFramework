@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.8-beta</span>
+   &#160;<span id="projectnumber">0.8.1-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -87,7 +87,7 @@ $(document).ready(function(){initNavTree('_window_holder_8cpp_source.html',''); 
 <div class="title">WindowHolder.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_window_holder_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pch_8h.html">pch.h</a>&quot;</span></div>
+<a href="_window_holder_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="headers_8h.html">headers.h</a>&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_window_holder_8h.html">WindowHolder.h</a>&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_get_last_error_exception_8h.html">Exceptions/GetLastErrorException.h</a>&quot;</span></div>
@@ -96,9 +96,9 @@ $(document).ready(function(){initNavTree('_window_holder_8cpp_source.html',''); 
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_window_holder.html#aecb53d69696a6a57409bd3c087a8a186">   10</a></span>&#160;    WindowHolder::WindowHolder(unique_ptr&lt;BaseComposite&gt;&amp;&amp; compositeWindow, <span class="keywordtype">bool</span> <a class="code" href="namespacegui__framework_1_1utility.html#a9102f958e07350e5f2ab564c5c30d66c">unregisterClass</a>) noexcept :</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_window_holder.html#aecb53d69696a6a57409bd3c087a8a186">   10</a></span>&#160;    WindowHolder::WindowHolder(unique_ptr&lt;BaseComposite&gt;&amp;&amp; compositeWindow, <span class="keywordtype">bool</span> <a class="code" href="namespacegui__framework_1_1utility.html#a65a23a22c41efc51dfb5a09323416f5a">unregisterClass</a>) noexcept :</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        compositeWindow(move(compositeWindow)),</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <a class="code" href="namespacegui__framework_1_1utility.html#a9102f958e07350e5f2ab564c5c30d66c">unregisterClass</a>(<a class="code" href="namespacegui__framework_1_1utility.html#a9102f958e07350e5f2ab564c5c30d66c">unregisterClass</a>)</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <a class="code" href="namespacegui__framework_1_1utility.html#a65a23a22c41efc51dfb5a09323416f5a">unregisterClass</a>(<a class="code" href="namespacegui__framework_1_1utility.html#a65a23a22c41efc51dfb5a09323416f5a">unregisterClass</a>)</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    {</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    }</div>
@@ -144,9 +144,9 @@ $(document).ready(function(){initNavTree('_window_holder_8cpp_source.html',''); 
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
 <div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_window_holder.html#a7aa08c2616dc9e203b8da26019b1f519">   56</a></span>&#160;    WindowHolder::~WindowHolder()</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespacegui__framework_1_1utility.html#a9102f958e07350e5f2ab564c5c30d66c">unregisterClass</a>)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespacegui__framework_1_1utility.html#a65a23a22c41efc51dfb5a09323416f5a">unregisterClass</a>)</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <a class="code" href="namespacegui__framework_1_1utility.html#a9102f958e07350e5f2ab564c5c30d66c">utility::unregisterClass</a>(compositeWindow-&gt;getClassName());</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <a class="code" href="namespacegui__framework_1_1utility.html#a65a23a22c41efc51dfb5a09323416f5a">utility::unregisterClass</a>(compositeWindow-&gt;getClassName());</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
@@ -154,11 +154,11 @@ $(document).ready(function(){initNavTree('_window_holder_8cpp_source.html',''); 
 <div class="ttc" id="a_window_holder_8h_html"><div class="ttname"><a href="_window_holder_8h.html">WindowHolder.h</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1_base_composite_html"><div class="ttname"><a href="classgui__framework_1_1_base_composite.html">gui_framework::BaseComposite</a></div><div class="ttdoc">Base class for all windows that has children windows.</div><div class="ttdef"><b>Definition:</b> <a href="_base_composite_8h_source.html#l00013">BaseComposite.h:16</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1_g_u_i_framework_html"><div class="ttname"><a href="classgui__framework_1_1_g_u_i_framework.html">gui_framework::GUIFramework</a></div><div class="ttdoc">Singleton with GUIFramework settings and some functionality.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_8h_source.html#l00015">GUIFramework.h:16</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_g_u_i_framework_html_afb16602f3cfa9d6374d5e04a59974a4f"><div class="ttname"><a href="classgui__framework_1_1_g_u_i_framework.html#afb16602f3cfa9d6374d5e04a59974a4f">gui_framework::GUIFramework::unregisterHotkey</a></div><div class="ttdeci">bool unregisterHotkey(uint32_t hotkeyId)</div><div class="ttdoc">Thread safe unregister hotkey.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_8cpp_source.html#l00501">GUIFramework.cpp:501</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_g_u_i_framework_html_afb16602f3cfa9d6374d5e04a59974a4f"><div class="ttname"><a href="classgui__framework_1_1_g_u_i_framework.html#afb16602f3cfa9d6374d5e04a59974a4f">gui_framework::GUIFramework::unregisterHotkey</a></div><div class="ttdeci">bool unregisterHotkey(uint32_t hotkeyId)</div><div class="ttdoc">Thread safe unregister hotkey.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_8cpp_source.html#l00505">GUIFramework.cpp:505</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1exceptions_1_1_get_last_error_exception_html"><div class="ttname"><a href="classgui__framework_1_1exceptions_1_1_get_last_error_exception.html">gui_framework::exceptions::GetLastErrorException</a></div><div class="ttdoc">Exception that receive error code from GetLastError function.</div><div class="ttdef"><b>Definition:</b> <a href="_get_last_error_exception_8h_source.html#l00011">GetLastErrorException.h:12</a></div></div>
-<div class="ttc" id="anamespacegui__framework_1_1utility_html_a9102f958e07350e5f2ab564c5c30d66c"><div class="ttname"><a href="namespacegui__framework_1_1utility.html#a9102f958e07350e5f2ab564c5c30d66c">gui_framework::utility::unregisterClass</a></div><div class="ttdeci">void unregisterClass(const wstring &amp;className)</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00010">Utility.cpp:10</a></div></div>
+<div class="ttc" id="aheaders_8h_html"><div class="ttname"><a href="headers_8h.html">headers.h</a></div></div>
+<div class="ttc" id="anamespacegui__framework_1_1utility_html_a65a23a22c41efc51dfb5a09323416f5a"><div class="ttname"><a href="namespacegui__framework_1_1utility.html#a65a23a22c41efc51dfb5a09323416f5a">gui_framework::utility::unregisterClass</a></div><div class="ttdeci">GUI_FRAMEWORK_API_FUNCTION void unregisterClass(const wstring &amp;className)</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00012">Utility.cpp:12</a></div></div>
 <div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00016">BaseComponent.cpp:17</a></div></div>
-<div class="ttc" id="apch_8h_html"><div class="ttname"><a href="pch_8h.html">pch.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

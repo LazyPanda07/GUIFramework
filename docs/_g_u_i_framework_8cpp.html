@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.8-beta</span>
+   &#160;<span id="projectnumber">0.8.1-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -89,27 +89,28 @@ $(document).ready(function(){initNavTree('_g_u_i_framework_8cpp.html',''); initR
 <div class="title">GUIFramework.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="pch_8h_source.html">pch.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="headers_8h_source.html">headers.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_g_u_i_framework_8h_source.html">GUIFramework.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_get_last_error_exception_8h_source.html">Exceptions/GetLastErrorException.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_file_does_not_exist_8h_source.html">Exceptions/FileDoesNotExist.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_cant_load_module_exception_8h_source.html">Exceptions/CantLoadModuleException.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_cant_find_function_from_module_exception_8h_source.html">Exceptions/CantFindFunctionFromModuleException.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_button_creator_8h_source.html">BaseComponents/Creators/ButtonCreator.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_button_creator_8h_source.html">BaseComponents/Creators/Buttons/ButtonCreator.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_check_box_creator_8h_source.html">BaseComponents/Creators/Buttons/CheckBoxCreator.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_image_button_creator_8h_source.html">BaseComponents/Creators/Buttons/ImageButtonCreator.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_drop_down_combo_box_creator_8h_source.html">BaseComponents/Creators/ComboBoxes/DropDownComboBoxCreator.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_drop_down_list_combo_box_creator_8h_source.html">BaseComponents/Creators/ComboBoxes/DropDownListComboBoxCreator.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_simple_combo_box_creator_8h_source.html">BaseComponents/Creators/ComboBoxes/SimpleComboBoxCreator.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_list_box_creator_8h_source.html">BaseComponents/Creators/ListBoxes/ListBoxCreator.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_multiple_select_list_box_creator_8h_source.html">BaseComponents/Creators/ListBoxes/MultipleSelectListBoxCreator.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_progress_bar_creator_8h_source.html">BaseComponents/Creators/ProgressBars/ProgressBarCreator.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_infinite_progress_bar_creator_8h_source.html">BaseComponents/Creators/ProgressBars/InfiniteProgressBarCreator.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_edit_control_creator_8h_source.html">BaseComponents/Creators/EditControlCreator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_drop_down_combo_box_creator_8h_source.html">BaseComponents/Creators/DropDownComboBoxCreator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_drop_down_list_combo_box_creator_8h_source.html">BaseComponents/Creators/DropDownListComboBoxCreator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_simple_combo_box_creator_8h_source.html">BaseComponents/Creators/SimpleComboBoxCreator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_list_box_creator_8h_source.html">BaseComponents/Creators/ListBoxCreator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_multiple_select_list_box_creator_8h_source.html">BaseComponents/Creators/MultipleSelectListBoxCreator.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_rich_edit_creator_8h_source.html">BaseComponents/Creators/RichEditCreator.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_static_control_creator_8h_source.html">BaseComponents/Creators/StaticControlCreator.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_separate_window_creator_8h_source.html">BaseComponents/Creators/SeparateWindowCreator.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_child_window_creator_8h_source.html">BaseComponents/Creators/ChildWindowCreator.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_tab_control_creator_8h_source.html">BaseComponents/Creators/TabControlCreator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_progress_bar_creator_8h_source.html">BaseComponents/Creators/ProgressBarCreator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_infinite_progress_bar_creator_8h_source.html">BaseComponents/Creators/InfiniteProgressBarCreator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_check_box_creator_8h_source.html">BaseComponents/Creators/CheckBoxCreator.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_group_box_creator_8h_source.html">BaseComponents/Creators/GroupBoxCreator.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_icon_list_view_creator_8h_source.html">BaseComponents/Creators/ListViews/IconListViewCreator.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_text_list_view_creator_8h_source.html">BaseComponents/Creators/ListViews/TextListViewCreator.h</a>&quot;</code><br />
@@ -121,6 +122,7 @@ $(document).ready(function(){initNavTree('_g_u_i_framework_8cpp.html',''); initR
 <code>#include &quot;<a class="el" href="_vertical_trackbar_control_creator_8h_source.html">BaseComponents/Creators/Trackbars/VerticalTrackbarControlCreator.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_button_8h_source.html">Components/Buttons/Button.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_check_box_8h_source.html">Components/Buttons/CheckBox.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_image_button_8h_source.html">Components/Buttons/ImageButton.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_edit_control_8h_source.html">Components/EditControl.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_drop_down_combo_box_8h_source.html">Components/ComboBoxes/DropDownComboBox.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_drop_down_list_combo_box_8h_source.html">Components/ComboBoxes/DropDownListComboBox.h</a>&quot;</code><br />
