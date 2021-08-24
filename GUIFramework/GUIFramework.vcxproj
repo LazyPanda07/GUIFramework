@@ -30,6 +30,7 @@
     <ClInclude Include="src\BaseComponents\BaseComponent.h" />
     <ClInclude Include="src\BaseComponents\Creators\CheckBoxCreator.h" />
     <ClInclude Include="src\BaseComponents\Creators\GroupBoxCreator.h" />
+    <ClInclude Include="src\BaseComponents\Creators\ImageButtonCreator.h" />
     <ClInclude Include="src\BaseComponents\Creators\Trackbars\HorizontalTrackbarControlCreator.h" />
     <ClInclude Include="src\BaseComponents\Creators\Trackbars\VerticalTrackbarControlCreator.h" />
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseCheckBox.h" />
@@ -196,6 +197,7 @@
     <ClCompile Include="src\BaseComponents\BaseComponent.cpp" />
     <ClCompile Include="src\BaseComponents\Creators\CheckBoxCreator.cpp" />
     <ClCompile Include="src\BaseComponents\Creators\GroupBoxCreator.cpp" />
+    <ClCompile Include="src\BaseComponents\Creators\ImageButtonCreator.cpp" />
     <ClCompile Include="src\BaseComponents\Creators\Trackbars\HorizontalTrackbarControlCreator.cpp" />
     <ClCompile Include="src\BaseComponents\Creators\Trackbars\VerticalTrackbarControlCreator.cpp" />
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseCheckBox.cpp" />

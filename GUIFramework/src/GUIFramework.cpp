@@ -22,6 +22,7 @@
 #include "BaseComponents/Creators/InfiniteProgressBarCreator.h"
 #include "BaseComponents/Creators/CheckBoxCreator.h"
 #include "BaseComponents/Creators/GroupBoxCreator.h"
+#include "BaseComponents/Creators/ImageButtonCreator.h"
 
 #include "BaseComponents/Creators/ListViews/IconListViewCreator.h"
 #include "BaseComponents/Creators/ListViews/TextListViewCreator.h"
@@ -35,6 +36,7 @@
 
 #include "Components/Buttons/Button.h"
 #include "Components/Buttons/CheckBox.h"
+#include "Components/Buttons/ImageButton.h"
 #include "Components/EditControl.h"
 #include "Components/ComboBoxes/DropDownComboBox.h"
 #include "Components/ComboBoxes/DropDownListComboBox.h"
@@ -83,11 +85,13 @@ namespace gui_framework
 
 	void GUIFramework::initCreators()
 	{
-		creators.reserve(24);
+		creators.reserve(25);
 
 		this->addCreator<Button, utility::ButtonCreator>(serialized_classes::button);
 
 		this->addCreator<CheckBox, utility::CheckBoxCreator>(serialized_classes::checkBox);
+
+		this->addCreator<ImageButton, utility::ImageButtonCreator>(serialized_classes::imageButton);
 
 		this->addCreator<EditControl, utility::EditControlCreator>(serialized_classes::editControl);
 
