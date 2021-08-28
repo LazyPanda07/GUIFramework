@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.8-beta</span>
+   &#160;<span id="projectnumber">0.8.1-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -90,8 +90,9 @@ $(document).ready(function(){initNavTree('_utility_8cpp.html',''); initResizable
 <div class="title">Utility.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="pch_8h_source.html">pch.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="headers_8h_source.html">headers.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_utility_8h_source.html">Utility.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_cant_find_function_from_module_exception_8h_source.html">Exceptions/CantFindFunctionFromModuleException.h</a>&quot;</code><br />
 </div>
 <p><a href="_utility_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -106,25 +107,29 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a9102f958e07350e5f2ab564c5c30d66c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1utility.html#a9102f958e07350e5f2ab564c5c30d66c">gui_framework::utility::unregisterClass</a> (const wstring &amp;className)</td></tr>
-<tr class="separator:a9102f958e07350e5f2ab564c5c30d66c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae97300d8014320696e57f502a858c570"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1utility.html#ae97300d8014320696e57f502a858c570">gui_framework::utility::appendStyle</a> (HWND handle, LONG_PTR newStyle)</td></tr>
+<tr class="memitem:a65a23a22c41efc51dfb5a09323416f5a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_g_u_i_framework_constants_8h.html#a767f18c6bddef6da85ce42f210726a25">GUI_FRAMEWORK_API_FUNCTION</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1utility.html#a65a23a22c41efc51dfb5a09323416f5a">gui_framework::utility::unregisterClass</a> (const wstring &amp;className)</td></tr>
+<tr class="separator:a65a23a22c41efc51dfb5a09323416f5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae97300d8014320696e57f502a858c570"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_g_u_i_framework_constants_8h.html#a767f18c6bddef6da85ce42f210726a25">GUI_FRAMEWORK_API_FUNCTION</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1utility.html#ae97300d8014320696e57f502a858c570">gui_framework::utility::appendStyle</a> (HWND handle, LONG_PTR newStyle)</td></tr>
 <tr class="memdesc:ae97300d8014320696e57f502a858c570"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append WinAPI style.  <a href="namespacegui__framework_1_1utility.html#ae97300d8014320696e57f502a858c570">More...</a><br /></td></tr>
 <tr class="separator:ae97300d8014320696e57f502a858c570"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a746d8e6e6277a08c83bd0bfd523d2e04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1utility.html#a746d8e6e6277a08c83bd0bfd523d2e04">gui_framework::utility::removeStyle</a> (HWND handle, LONG_PTR styleToRemove)</td></tr>
+<tr class="memitem:a746d8e6e6277a08c83bd0bfd523d2e04"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_g_u_i_framework_constants_8h.html#a767f18c6bddef6da85ce42f210726a25">GUI_FRAMEWORK_API_FUNCTION</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1utility.html#a746d8e6e6277a08c83bd0bfd523d2e04">gui_framework::utility::removeStyle</a> (HWND handle, LONG_PTR styleToRemove)</td></tr>
 <tr class="memdesc:a746d8e6e6277a08c83bd0bfd523d2e04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove WinAPI style.  <a href="namespacegui__framework_1_1utility.html#a746d8e6e6277a08c83bd0bfd523d2e04">More...</a><br /></td></tr>
 <tr class="separator:a746d8e6e6277a08c83bd0bfd523d2e04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abbafc9708435f466d89c4f977dcd460d"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1utility.html#abbafc9708435f466d89c4f977dcd460d">gui_framework::utility::to_string</a> (const wstring &amp;stringToConvert, uint32_t codepage)</td></tr>
-<tr class="separator:abbafc9708435f466d89c4f977dcd460d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14e878f929340a06b7a3c1e370c623af"><td class="memItemLeft" align="right" valign="top">wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1utility.html#a14e878f929340a06b7a3c1e370c623af">gui_framework::utility::to_wstring</a> (const string &amp;stringToConvert, uint32_t codepage)</td></tr>
-<tr class="separator:a14e878f929340a06b7a3c1e370c623af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1945ec50b055f688bbb3e7c6cae8de64"><td class="memItemLeft" align="right" valign="top">HMODULE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1utility.html#a1945ec50b055f688bbb3e7c6cae8de64">gui_framework::utility::getCurrentModule</a> ()</td></tr>
+<tr class="memitem:a29e6b8bdafb60965ca6109d0ad4bf869"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_g_u_i_framework_constants_8h.html#a767f18c6bddef6da85ce42f210726a25">GUI_FRAMEWORK_API_FUNCTION</a> string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1utility.html#a29e6b8bdafb60965ca6109d0ad4bf869">gui_framework::utility::to_string</a> (const wstring &amp;stringToConvert, uint32_t codepage)</td></tr>
+<tr class="separator:a29e6b8bdafb60965ca6109d0ad4bf869"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78299194d620a892a4503b2db7474e89"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_g_u_i_framework_constants_8h.html#a767f18c6bddef6da85ce42f210726a25">GUI_FRAMEWORK_API_FUNCTION</a> wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1utility.html#a78299194d620a892a4503b2db7474e89">gui_framework::utility::to_wstring</a> (const string &amp;stringToConvert, uint32_t codepage)</td></tr>
+<tr class="separator:a78299194d620a892a4503b2db7474e89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1945ec50b055f688bbb3e7c6cae8de64"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_g_u_i_framework_constants_8h.html#a767f18c6bddef6da85ce42f210726a25">GUI_FRAMEWORK_API_FUNCTION</a> HMODULE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1utility.html#a1945ec50b055f688bbb3e7c6cae8de64">gui_framework::utility::getCurrentModule</a> ()</td></tr>
 <tr class="memdesc:a1945ec50b055f688bbb3e7c6cae8de64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get handle to current executable.  <a href="namespacegui__framework_1_1utility.html#a1945ec50b055f688bbb3e7c6cae8de64">More...</a><br /></td></tr>
 <tr class="separator:a1945ec50b055f688bbb3e7c6cae8de64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5bbb52bed6f3db5b95d081389deaa0fa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_g_u_i_framework_constants_8h.html#a767f18c6bddef6da85ce42f210726a25">GUI_FRAMEWORK_API_FUNCTION</a> string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1utility.html#a5bbb52bed6f3db5b95d081389deaa0fa">gui_framework::utility::getStringFromRawPath</a> (const filesystem::path &amp;pathFromRawString)</td></tr>
 <tr class="separator:a5bbb52bed6f3db5b95d081389deaa0fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd5790d375d9ea08c45187dd8b829d25"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1____utility.html#abd5790d375d9ea08c45187dd8b829d25">gui_framework::__utility::changeClassName</a> (json::utility::objectSmartPointer&lt; json::utility::jsonObject &gt; &amp;object, const string &amp;className)</td></tr>
-<tr class="separator:abd5790d375d9ea08c45187dd8b829d25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afeb3936adb603e27607c38ac3ecc4c7c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_g_u_i_framework_constants_8h.html#a767f18c6bddef6da85ce42f210726a25">GUI_FRAMEWORK_API_FUNCTION</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1utility.html#afeb3936adb603e27607c38ac3ecc4c7c">gui_framework::utility::loadFunctionFromModule</a> (function&lt; void()&gt; &amp;onClick, const string &amp;functionName, const string &amp;moduleName)</td></tr>
+<tr class="separator:afeb3936adb603e27607c38ac3ecc4c7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33ceab61b479c2967a8800dbcaaa156a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_g_u_i_framework_constants_8h.html#a767f18c6bddef6da85ce42f210726a25">GUI_FRAMEWORK_API_FUNCTION</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1utility.html#a33ceab61b479c2967a8800dbcaaa156a">gui_framework::utility::loadEventCallbackFromModule</a> (function&lt; void(const wstring &amp;)&gt; &amp;eventCallback, const string &amp;functionName, const string &amp;moduleName)</td></tr>
+<tr class="separator:a33ceab61b479c2967a8800dbcaaa156a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6cd70b10bf97022485ed69c926e7871"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_g_u_i_framework_constants_8h.html#a767f18c6bddef6da85ce42f210726a25">GUI_FRAMEWORK_API_FUNCTION</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1____utility.html#ab6cd70b10bf97022485ed69c926e7871">gui_framework::__utility::changeClassName</a> (json::utility::objectSmartPointer&lt; json::utility::jsonObject &gt; &amp;object, const string &amp;className)</td></tr>
+<tr class="separator:ab6cd70b10bf97022485ed69c926e7871"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

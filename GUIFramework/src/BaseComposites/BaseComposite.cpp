@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "headers.h"
 #include "BaseComposite.h"
 
 #include "Interfaces/Components/IResizableComponent.h"
@@ -146,7 +146,7 @@ namespace gui_framework
 		children.push_back(unique_ptr<BaseComponent>(child));
 	}
 
-	BaseComposite::BaseComposite(const wstring& className, const wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent, const string& windowFunctionName) :
+	BaseComposite::BaseComposite(const wstring& className, const wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent, const string& windowFunctionName, const string& moduleName, uint16_t smallIconResource, uint16_t largeIconResource) :
 		BaseComponent
 		(
 			className,
@@ -154,7 +154,10 @@ namespace gui_framework
 			settings,
 			styles,
 			parent,
-			windowFunctionName
+			windowFunctionName,
+			moduleName,
+			smallIconResource,
+			largeIconResource
 		),
 		largeIcon(nullptr),
 		smallIcon(nullptr)

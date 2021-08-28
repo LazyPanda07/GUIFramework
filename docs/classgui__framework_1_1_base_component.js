@@ -4,7 +4,7 @@ var classgui__framework_1_1_base_component =
       [ "destroyWindow", "classgui__framework_1_1_base_component.html#adadba923c5fcc012ce8b50e592080bcda3619de6b97539298d3d046e6dbbe48cc", null ],
       [ "quit", "classgui__framework_1_1_base_component.html#adadba923c5fcc012ce8b50e592080bcdadbd73c2b545209688ed794c0d5413d5a", null ]
     ] ],
-    [ "BaseComponent", "classgui__framework_1_1_base_component.html#a4b4f7216831d51b2d2cf22c90872394f", null ],
+    [ "BaseComponent", "classgui__framework_1_1_base_component.html#a5e962868a5b9fbce0854fea8bfb57f89", null ],
     [ "~BaseComponent", "classgui__framework_1_1_base_component.html#a274274f6f28b2e93f73544634b640d56", null ],
     [ "asyncDestroyComponent", "classgui__framework_1_1_base_component.html#ae670a5510c2e9a1cbaa4d00220555b07", null ],
     [ "destroyComponent", "classgui__framework_1_1_base_component.html#aa91c935601d05ca54c2002b4832d260f", null ],

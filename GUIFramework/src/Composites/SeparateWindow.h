@@ -1,6 +1,6 @@
 #pragma once
 
-#include "pch.h"
+#include "headers.h"
 #include "BaseComposites/StandardComposites/BaseSeparateWindow.h"
 #include "Interfaces/Components/IResizableComponent.h"
 
@@ -15,7 +15,11 @@ namespace gui_framework
 		virtual const std::string& getCreationType() const override;
 
 	public:
-		SeparateWindow(const std::wstring& className, const std::wstring& titleName, const utility::ComponentSettings& settings, const std::string& windowFunctionName, bool maximize = false, bool minimize = false);
+		/// @brief 
+		/// @param moduleName Name of loaded resource module with icons
+		/// @param smallIconResource Integer value from auto generated Visual Studio resources
+		/// @param largeIconResource Integer value from auto generated Visual Studio resources
+		SeparateWindow(const std::wstring& className, const std::wstring& titleName, const utility::ComponentSettings& settings, const std::string& windowFunctionName, bool maximize = false, bool minimize = false, const std::string& moduleName = "", uint16_t smallIconResource = NULL, uint16_t largeIconResource = NULL);
 
 		~SeparateWindow() = default;
 	};

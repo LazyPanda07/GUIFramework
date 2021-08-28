@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "headers.h"
 #include "INonResizableComponent.h"
 
 #include "Exceptions/NotImplemented.h"

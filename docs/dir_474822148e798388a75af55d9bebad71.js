@@ -10,13 +10,17 @@ var dir_474822148e798388a75af55d9bebad71 =
     [ "MenuItems", "dir_dca5549e17e2892857a30daa34461e71.html", "dir_dca5549e17e2892857a30daa34461e71" ],
     [ "Styles", "dir_33b19810e37ab787ebd5fb1fffc41dec.html", "dir_33b19810e37ab787ebd5fb1fffc41dec" ],
     [ "Utility", "dir_1b8d12f05f344750fc083bc1c78427be.html", "dir_1b8d12f05f344750fc083bc1c78427be" ],
+    [ "ComponentsHeader.cpp", "_components_header_8cpp.html", null ],
+    [ "ComponentsHeader.h", "_components_header_8h.html", null ],
+    [ "CompositesHeader.cpp", "_composites_header_8cpp.html", null ],
+    [ "CompositesHeader.h", "_composites_header_8h.html", null ],
     [ "GUIFramework.cpp", "_g_u_i_framework_8cpp.html", null ],
     [ "GUIFramework.h", "_g_u_i_framework_8h.html", [
       [ "GUIFramework", "classgui__framework_1_1_g_u_i_framework.html", "classgui__framework_1_1_g_u_i_framework" ],
       [ "hotkeyData", "structgui__framework_1_1_g_u_i_framework_1_1hotkey_data.html", "structgui__framework_1_1_g_u_i_framework_1_1hotkey_data" ]
     ] ],
     [ "GUIFrameworkConstants.h", "_g_u_i_framework_constants_8h.html", "_g_u_i_framework_constants_8h" ],
-    [ "pch.cpp", "pch_8cpp.html", null ],
-    [ "pch.h", "pch_8h.html", null ],
+    [ "headers.cpp", "headers_8cpp.html", null ],
+    [ "headers.h", "headers_8h.html", null ],
     [ "WindowMessages.h", "_window_messages_8h.html", "_window_messages_8h" ]
 ];

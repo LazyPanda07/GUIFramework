@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "headers.h"
 #include "VerticalTrackbarControlCreator.h"
 
 #include "Components/Trackbars/VerticalTrackbarControl.h"

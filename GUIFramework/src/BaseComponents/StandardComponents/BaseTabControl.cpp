@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "headers.h"
 #include "BaseTabControl.h"
 
 #include "Styles/DefaultStyles.h"

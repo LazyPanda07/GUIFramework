@@ -1,6 +1,6 @@
 #pragma once
 
-#include "pch.h"
+#include "headers.h"
 
 #include <string>
 #include <cstdint>
@@ -28,6 +28,7 @@ namespace gui_framework
 	{
 		inline const std::string button = "Button";
 		inline const std::string checkBox = "CheckBox";
+		inline const std::string imageButton = "ImageButton";
 		inline const std::string editControl = "Edit";
 		inline const std::string richEdit = "RichEdit";
 		inline const std::string staticControl = "Static";
@@ -94,11 +95,11 @@ namespace gui_framework
 
 		inline constexpr uint16_t defaultImagesCount = 16;
 
-		inline constexpr uint16_t largeIconWidth = 32;
-		inline constexpr uint16_t largeIconHeight = 32;
+		inline const uint16_t largeIconWidth = GetSystemMetrics(SM_CXICON);
+		inline const uint16_t largeIconHeight = GetSystemMetrics(SM_CYICON);
 
-		inline constexpr uint16_t smallIconWidth = 16;
-		inline constexpr uint16_t smallIconHeight = 16;
+		inline const uint16_t smallIconWidth = GetSystemMetrics(SM_CXSMICON);
+		inline const uint16_t smallIconHeight = GetSystemMetrics(SM_CYSMICON);
 
 		inline constexpr uint16_t additionalListViewReportColumnWidth = 10;
 	}
@@ -131,13 +132,13 @@ namespace gui_framework
 		};
 	}
 
-	inline constexpr std::string_view guiFrameworkVersion = "0.8.1-beta";
+	inline constexpr std::string_view guiFrameworkVersion = "0.8.2-beta";
 
 	/// @brief Default on click signature
 	using onClickSignature = void(*)();
 }
 
-/// @brief Insert this macro before serializable function implementation
+/// @brief Insert this macro before serializable function declaration and implementation
 #define IMPLEMENT_SERIALIZABLE_FUNCTION extern "C" __declspec(dllexport) 
 
 #ifdef GUI_FRAMEWORK_DLL

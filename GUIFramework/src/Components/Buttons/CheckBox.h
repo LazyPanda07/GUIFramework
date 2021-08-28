@@ -1,7 +1,7 @@
 #pragma once
 
-#include "pch.h"
-#include "BaseComponents/StandardComponents/BaseCheckBox.h"
+#include "headers.h"
+#include "BaseComponents/StandardComponents/Buttons/BaseCheckBox.h"
 
 namespace gui_framework
 {
