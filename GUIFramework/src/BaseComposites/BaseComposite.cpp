@@ -15,26 +15,32 @@ namespace gui_framework
 
 		if (message == WM_SIZE)
 		{
-			interfaces::IResizableComponent* resizableComposite = dynamic_cast<interfaces::IResizableComponent*>(this);
+			BaseComponent* component = GUIFramework::get().findComponent(handle);
 
-			if (resizableComposite && !resizableComposite->getBlockResize())
+			if (component && component->isComposite())
 			{
-				isUsed = true;
+				interfaces::IResizableComponent* resizableComposite = dynamic_cast<interfaces::IResizableComponent*>(component);
 
-				uint16_t width = LOWORD(lparam);
-				uint16_t height = HIWORD(lparam);
-
-				for (const auto& i : children)
+				if (resizableComposite && !resizableComposite->getBlockResize())
 				{
-					interfaces::IResizableComponent* resizable = dynamic_cast<interfaces::IResizableComponent*>(i.get());
+					isUsed = true;
 
-					if (resizable)
+					const vector<unique_ptr<BaseComponent>>& childrenToResize = static_cast<BaseComposite*>(component)->getChildren();
+					uint16_t width = LOWORD(lparam);
+					uint16_t height = HIWORD(lparam);
+
+					for (const auto& i : childrenToResize)
 					{
-						resizable->resize(width, height);
-					}
-				}
+						interfaces::IResizableComponent* resizable = dynamic_cast<interfaces::IResizableComponent*>(i.get());
 
-				return 0;
+						if (resizable)
+						{
+							resizable->resize(width, height);
+						}
+					}
+
+					return 0;
+				}
 			}
 		}
 
