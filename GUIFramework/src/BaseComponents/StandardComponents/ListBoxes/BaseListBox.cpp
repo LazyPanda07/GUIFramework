@@ -239,8 +239,8 @@ namespace gui_framework
 					handle,
 					static_cast<int>(desiredX * widthCoefficient),
 					static_cast<int>(desiredY * (static_cast<double>(height) / parentHeight)),
-					desiredWidth,
-					static_cast<int>(desiredHeight * widthCoefficient),
+					static_cast<int>(desiredWidth * widthCoefficient),
+					desiredHeight,
 					true
 				);
 
