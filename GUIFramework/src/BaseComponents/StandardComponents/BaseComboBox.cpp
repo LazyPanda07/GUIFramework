@@ -322,7 +322,7 @@ namespace gui_framework
 					handle,
 					static_cast<int>(desiredX * widthCoefficient),
 					static_cast<int>(desiredY * (static_cast<double>(height) / parentHeight)),
-					static_cast<int>(desiredWidth * widthCoefficient + standard_sizes::comboBoxAdditionalWidth),
+					static_cast<int>(desiredWidth * widthCoefficient),
 					desiredHeight,
 					true
 				);
@@ -360,7 +360,7 @@ namespace gui_framework
 				handle,
 				static_cast<int>(desiredX * (static_cast<double>(width) / parentWidth)),
 				static_cast<int>(desiredY * (static_cast<double>(height) / parentHeight)),
-				max(requiredSize.cx + standard_sizes::comboBoxAdditionalWidth, static_cast<long>(desiredWidth * (static_cast<double>(width) / parentWidth) + standard_sizes::comboBoxAdditionalWidth)),
+				max(requiredSize.cx + standard_sizes::comboBoxAdditionalWidth, static_cast<long>(desiredWidth * (static_cast<double>(width) / parentWidth))),
 				heightSum + requiredSize.cy * 2,
 				true
 			);
