@@ -313,6 +313,18 @@ namespace gui_framework
 
 			if (currentSize == CB_ERR || !currentSize)
 			{
+				MoveWindow
+				(
+					handle,
+					static_cast<int>(desiredX * (static_cast<double>(width) / parentWidth)),
+					static_cast<int>(desiredY * (static_cast<double>(height) / parentHeight)),
+					desiredWidth,
+					desiredHeight,
+					true
+				);
+
+				ShowWindow(handle, SW_SHOW);
+
 				return;
 			}
 

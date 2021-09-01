@@ -174,7 +174,7 @@ namespace gui_framework
 		{
 			try
 			{
-				if (GUIFramework::get().getJSONSettings().getBool("useNotImplementedExceptions"))
+				if (GUIFramework::get().getJSONSettings().getBool("usingNotImplementedExceptions"))
 				{
 					throw exceptions::NotImplemented(methodName, className);
 				}

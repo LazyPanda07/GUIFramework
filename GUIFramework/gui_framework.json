@@ -2,6 +2,6 @@
   "settings": {
     "usingDefaultCreators": true,
     "threadsCount": 4,
-    "useNotImplementedExceptions": false
+    "usingNotImplementedExceptions": false
   }
 }
