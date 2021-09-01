@@ -102,7 +102,7 @@ namespace gui_framework
 
 	void BaseButton::setTextColor(uint8_t red, uint8_t green, uint8_t blue)
 	{
-		throw exceptions::NotImplemented(__FUNCTION__, "BaseButton");
+		__utility::throwNotImplementedException(__FUNCTION__, "BaseButton"sv);
 	}
 
 	json::JSONBuilder BaseButton::getStructure() const

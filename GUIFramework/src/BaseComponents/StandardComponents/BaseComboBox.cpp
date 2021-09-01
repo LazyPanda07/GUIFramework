@@ -342,8 +342,8 @@ namespace gui_framework
 			MoveWindow
 			(
 				handle,
-				desiredX,
-				desiredY,
+				static_cast<int>(desiredX * (static_cast<double>(width) / parentWidth)),
+				static_cast<int>(desiredY * (static_cast<double>(height) / parentHeight)),
 				requiredSize.cx + standard_sizes::comboBoxAdditionalWidth,
 				heightSum + requiredSize.cy * 2,
 				true
@@ -353,12 +353,12 @@ namespace gui_framework
 
 	void BaseComboBox::setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue)
 	{
-		throw exceptions::NotImplemented(__FUNCTION__, "BaseComboBox");
+		__utility::throwNotImplementedException(__FUNCTION__, "BaseComboBox"sv);
 	}
 
 	void BaseComboBox::setTextColor(uint8_t red, uint8_t green, uint8_t blue)
 	{
-		throw exceptions::NotImplemented(__FUNCTION__, "BaseComboBox");
+		__utility::throwNotImplementedException(__FUNCTION__, "BaseComboBox"sv);
 	}
 
 	json::JSONBuilder BaseComboBox::getStructure() const

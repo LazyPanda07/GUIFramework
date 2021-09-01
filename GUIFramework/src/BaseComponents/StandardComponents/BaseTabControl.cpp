@@ -442,12 +442,12 @@ namespace gui_framework
 
 	void BaseTabControl::setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue)
 	{
-		throw exceptions::NotImplemented(__FUNCTION__, "BaseTabControl");
+		__utility::throwNotImplementedException(__FUNCTION__, "BaseTabControl"sv);
 	}
 
 	void BaseTabControl::setTextColor(uint8_t red, uint8_t green, uint8_t blue)
 	{
-		throw exceptions::NotImplemented(__FUNCTION__, "BaseTabControl");
+		__utility::throwNotImplementedException(__FUNCTION__, "BaseTabControl"sv);
 	}
 
 	json::JSONBuilder BaseTabControl::getStructure() const

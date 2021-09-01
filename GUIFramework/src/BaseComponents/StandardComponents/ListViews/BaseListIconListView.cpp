@@ -24,7 +24,7 @@ namespace gui_framework
 
 	void BaseListIconListView::setTextColor(uint8_t red, uint8_t green, uint8_t blue)
 	{
-		throw exceptions::NotImplemented(__FUNCTION__, "BaseListIconListView");
+		__utility::throwNotImplementedException(__FUNCTION__, "BaseListIconListView"sv);
 	}
 
 	json::JSONBuilder BaseListIconListView::getStructure() const

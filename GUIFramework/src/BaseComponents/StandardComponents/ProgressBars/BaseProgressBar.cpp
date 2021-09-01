@@ -95,7 +95,7 @@ namespace gui_framework
 
 	void BaseProgressBar::setTextColor(uint8_t red, uint8_t green, uint8_t blue)
 	{
-		throw exceptions::NotImplemented(__FUNCTION__, "BaseProgressBar");
+		__utility::throwNotImplementedException(__FUNCTION__, "BaseProgressBar"sv);
 	}
 
 	json::JSONBuilder BaseProgressBar::getStructure() const

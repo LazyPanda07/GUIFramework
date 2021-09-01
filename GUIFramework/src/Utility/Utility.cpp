@@ -2,6 +2,7 @@
 #include "Utility.h"
 
 #include "Exceptions/CantFindFunctionFromModuleException.h"
+#include "Exceptions/NotImplemented.h"
 
 using namespace std;
 
@@ -167,6 +168,21 @@ namespace gui_framework
 		GUI_FRAMEWORK_API_FUNCTION void changeClassName(json::utility::objectSmartPointer<json::utility::jsonObject>& object, const string& className)
 		{
 			get<string>(ranges::find_if(object->data, [](const pair<string, json::utility::jsonObject::variantType>& value) { return value.first == "className"; })->second) = className;
+		}
+
+		GUI_FRAMEWORK_API_FUNCTION void throwNotImplementedException(string_view methodName, string_view className)
+		{
+			try
+			{
+				if (GUIFramework::get().getJSONSettings().getBool("useNotImplementedExceptions"))
+				{
+					throw exceptions::NotImplemented(methodName, className);
+				}
+			}
+			catch (const json::exceptions::CantFindValueException&)
+			{
+
+			}
 		}
 	}
 }

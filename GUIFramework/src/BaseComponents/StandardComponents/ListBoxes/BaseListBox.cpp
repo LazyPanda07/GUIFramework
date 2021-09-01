@@ -254,13 +254,13 @@ namespace gui_framework
 				}
 			}
 
-			uint16_t height = 0;
+			uint16_t newHeight = 0;
 
 			if (heightSum > desiredHeight)
 			{
 				utility::appendStyle(handle, WS_VSCROLL);
 
-				height = desiredHeight;
+				newHeight = desiredHeight;
 			}
 			else
 			{
@@ -268,16 +268,16 @@ namespace gui_framework
 
 				this->setItemsHeight(static_cast<uint8_t>(requiredSize.cy));
 
-				height = static_cast<uint16_t>(heightSum + requiredSize.cy * 2);
+				newHeight = static_cast<uint16_t>(heightSum + requiredSize.cy * 2);
 			}
 
 			MoveWindow
 			(
 				handle,
-				desiredX,
-				desiredY,
+				static_cast<int>(desiredX * (static_cast<double>(width) / parentWidth)),
+				static_cast<int>(desiredY * (static_cast<double>(height) / parentHeight)),
 				requiredSize.cx + standard_sizes::listBoxAdditionalWidth,
-				height,
+				newHeight,
 				true
 			);
 

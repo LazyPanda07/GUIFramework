@@ -27,8 +27,8 @@ namespace gui_framework
 			IResizableComponent(HWND resizeableHandle, HWND parent, bool autoResize = false, bool blockResize = false);
 
 			/// @brief Resize component
-			/// @param width New width of the client area
-			/// @param height New height of the client area
+			/// @param width New width of the parent area
+			/// @param height New height of the parent area
 			virtual void resize(uint16_t width, uint16_t height);
 
 			virtual RECT calculateNewSizes(uint16_t width, uint16_t height) final;

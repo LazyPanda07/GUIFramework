@@ -7,7 +7,7 @@ namespace gui_framework
 {
 	namespace exceptions
 	{
-		NotImplemented::NotImplemented(const string& methodName, const string& className) :
+		NotImplemented::NotImplemented(string_view methodName, string_view className) :
 			BaseGUIFrameworkException(format(exception_messages::notImplemented, methodName, className))
 		{
 

@@ -78,7 +78,7 @@ namespace gui_framework
 
 	void BaseTrackbarControl::setTextColor(uint8_t red, uint8_t green, uint8_t blue)
 	{
-		throw exceptions::NotImplemented(__FUNCTION__, "BaseTrackbarControl");
+		__utility::throwNotImplementedException(__FUNCTION__, "BaseTrackbarControl"sv);
 	}
 
 	json::JSONBuilder BaseTrackbarControl::getStructure() const
