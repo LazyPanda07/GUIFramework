@@ -4,7 +4,9 @@
 #include "Exceptions/SelectListException.h"
 
 #pragma push_macro("min")
+#pragma push_macro("max")
 #undef min
+#undef max
 
 using namespace std;
 
@@ -230,13 +232,15 @@ namespace gui_framework
 
 			if (currentSize == CB_ERR || !currentSize)
 			{
+				double widthCoefficient = static_cast<double>(width) / parentWidth;
+
 				MoveWindow
 				(
 					handle,
-					static_cast<int>(desiredX * (static_cast<double>(width) / parentWidth)),
+					static_cast<int>(desiredX * widthCoefficient),
 					static_cast<int>(desiredY * (static_cast<double>(height) / parentHeight)),
 					desiredWidth,
-					desiredHeight,
+					static_cast<int>(desiredHeight * widthCoefficient),
 					true
 				);
 
@@ -288,7 +292,7 @@ namespace gui_framework
 				handle,
 				static_cast<int>(desiredX * (static_cast<double>(width) / parentWidth)),
 				static_cast<int>(desiredY * (static_cast<double>(height) / parentHeight)),
-				requiredSize.cx + standard_sizes::listBoxAdditionalWidth,
+				max(requiredSize.cx + standard_sizes::listBoxAdditionalWidth, static_cast<long>(desiredWidth * (static_cast<double>(width) / parentWidth))),
 				newHeight,
 				true
 			);
@@ -325,3 +329,4 @@ namespace gui_framework
 }
 
 #pragma pop_macro("min")
+#pragma pop_macro("max")
