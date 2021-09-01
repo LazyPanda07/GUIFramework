@@ -91,7 +91,7 @@ namespace gui_framework
 			throw exceptions::SelectListException(__FUNCTION__, result, exception_messages::notEnoughSpace);
 		}
 
-		this->resize(NULL, NULL);
+		this->resize(BaseComponent::parent->getActualWidth(), BaseComponent::parent->getActualHeight());
 
 		return result;
 	}
@@ -105,7 +105,7 @@ namespace gui_framework
 			throw exceptions::SelectListException(__FUNCTION__, result);
 		}
 
-		this->resize(NULL, NULL);
+		this->resize(BaseComponent::parent->getActualWidth(), BaseComponent::parent->getActualHeight());
 
 		return result;
 	}
@@ -123,7 +123,7 @@ namespace gui_framework
 			throw exceptions::SelectListException(__FUNCTION__, result, exception_messages::notEnoughSpace);
 		}
 
-		this->resize(NULL, NULL);
+		this->resize(BaseComponent::parent->getActualWidth(), BaseComponent::parent->getActualHeight());
 
 		return result;
 	}
@@ -137,7 +137,7 @@ namespace gui_framework
 			throw exceptions::SelectListException(__FUNCTION__, result);
 		}
 
-		this->resize(NULL, NULL);
+		this->resize(BaseComponent::parent->getActualWidth(), BaseComponent::parent->getActualHeight());
 
 		return result;
 	}
