@@ -27,7 +27,7 @@ namespace gui_framework
 			parent ? parent->getHandle() : nullptr,
 			true
 		),
-		requiredSize{ settings.width, settings.height },
+		requiredSize{ 0, 0 },
 		columnsWidth(0)
 	{
 
