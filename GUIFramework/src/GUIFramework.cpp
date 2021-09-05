@@ -260,7 +260,14 @@ namespace gui_framework
 
 			if (threadsCount != -1)
 			{
-				threadPool = make_unique<threading::ThreadPool>(static_cast<uint32_t>(threadsCount));
+				if (threadsCount)
+				{
+					threadPool = make_unique<threading::ThreadPool>(static_cast<uint32_t>(threadsCount));
+				}
+				else
+				{
+					threadPool = make_unique<threading::ThreadPool>();
+				}
 			}
 		}
 		catch (const json::exceptions::CantFindValueException&)
