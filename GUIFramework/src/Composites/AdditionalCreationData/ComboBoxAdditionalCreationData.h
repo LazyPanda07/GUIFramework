@@ -1,6 +1,6 @@
 #pragma once
 
-#include "pch.h"
+#include "headers.h"
 #include "AdditionalCreationData.h"
 #include "Components/ComboBoxes/DropDownComboBox.h"
 #include "Components/ComboBoxes/DropDownListComboBox.h"
@@ -16,11 +16,16 @@ namespace gui_framework
 		{
 		protected:
 			std::vector<std::wstring> values;
+			std::function<void(BaseComboBox&)> onSelectionChange;
+			std::string functionName;
+			std::string moduleName;
 
 		public:
 			AdditionalCreationData() = default;
 
-			AdditionalCreationData(const std::vector<std::wstring>& values);
+			AdditionalCreationData(const std::vector<std::wstring>& values, const std::function<void(BaseComboBox&)>& onSelectionChange = nullptr);
+
+			AdditionalCreationData(const std::vector<std::wstring>& values, const std::string& functionName, const std::string& moduleName);
 
 			virtual std::any getData() const;
 
@@ -33,11 +38,16 @@ namespace gui_framework
 		{
 		protected:
 			std::vector<std::wstring> values;
+			std::function<void(BaseComboBox&)> onSelectionChange;
+			std::string functionName;
+			std::string moduleName;
 
 		public:
 			AdditionalCreationData() = default;
 
-			AdditionalCreationData(const std::vector<std::wstring>& values);
+			AdditionalCreationData(const std::vector<std::wstring>& values, const std::function<void(BaseComboBox&)>& onSelectionChange = nullptr);
+
+			AdditionalCreationData(const std::vector<std::wstring>& values, const std::string& functionName, const std::string& moduleName);
 
 			virtual std::any getData() const;
 
@@ -50,11 +60,16 @@ namespace gui_framework
 		{
 		protected:
 			std::vector<std::wstring> values;
+			std::function<void(BaseComboBox&)> onSelectionChange;
+			std::string functionName;
+			std::string moduleName;
 
 		public:
 			AdditionalCreationData() = default;
 
-			AdditionalCreationData(const std::vector<std::wstring>& values);
+			AdditionalCreationData(const std::vector<std::wstring>& values, const std::function<void(BaseComboBox&)>& onSelectionChange = nullptr);
+
+			AdditionalCreationData(const std::vector<std::wstring>& values, const std::string& functionName, const std::string& moduleName);
 
 			virtual std::any getData() const;
 

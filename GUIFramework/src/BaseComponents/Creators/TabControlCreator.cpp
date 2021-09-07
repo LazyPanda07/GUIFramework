@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "headers.h"
 #include "TabControlCreator.h"
 
 #include "Components/TabControl.h"
@@ -19,15 +19,36 @@ namespace gui_framework
 			{
 				if (i.text.size() && !i.pathToImage.empty())
 				{
-					result->appendTextAndImage(i.text, i.pathToImage, i.callback);
+					if (i.functionName.empty())
+					{
+						result->appendTextAndImage(i.text, i.pathToImage, i.callback);
+					}
+					else
+					{
+						result->appendTextAndImage(i.text, i.pathToImage, i.functionName, i.moduleName);
+					}
 				}
 				else if (i.text.size())
 				{
-					result->appendText(i.text, i.callback);
+					if (i.functionName.empty())
+					{
+						result->appendText(i.text, i.callback);
+					}
+					else
+					{
+						result->appendText(i.text, i.functionName, i.moduleName);
+					}
 				}
 				else if (!i.pathToImage.empty())
 				{
-					result->appendImage(i.pathToImage, i.callback);
+					if (i.functionName.empty())
+					{
+						result->appendImage(i.pathToImage, i.callback);
+					}
+					else
+					{
+						result->appendImage(i.pathToImage, i.functionName, i.moduleName);
+					}
 				}
 			}
 

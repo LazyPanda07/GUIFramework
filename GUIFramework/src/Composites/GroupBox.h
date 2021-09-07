@@ -1,7 +1,7 @@
 #pragma once
 
-#include "pch.h"
-#include "BaseComponents/StandardComponents/BaseButton.h"
+#include "headers.h"
+#include "BaseComponents/StandardComponents/Buttons/BaseButton.h"
 #include "BaseComposites/BaseComposite.h"
 
 namespace gui_framework

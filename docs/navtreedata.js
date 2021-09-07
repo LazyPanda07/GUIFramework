@@ -62,14 +62,15 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_additional_creation_data_8h.html",
-"_drop_down_list_combo_box_creator_8cpp_source.html",
-"_list_box_additional_creation_data_8cpp_source.html",
-"classgui__framework_1_1_base_button.html#aaccdf27d78ea7e370c485855d6f441a7",
-"classgui__framework_1_1_base_multiple_select_list_box.html#aa04d1b4425600af590fcbf08614da1db",
-"classgui__framework_1_1_multiple_select_list_box.html",
-"classgui__framework_1_1styles_1_1_drop_down_combo_box_styles.html",
-"classgui__framework_1_1utility_1_1_base_loadable_holder.html#a7bba67968ff183d8ad7049ff4d4e0059",
-"namespacegui__framework_1_1____utility.html#a94619fe68a8cd93c7ef48d60f537777a"
+"_drop_down_combo_box_styles_8cpp_source.html",
+"_infinite_progress_bar_creator_8h.html",
+"_vertical_trackbar_control_styles_8cpp_source.html",
+"classgui__framework_1_1_base_list_text_icon_list_view.html#ab11d8a9698f1aa381fe02f33ee7422ba",
+"classgui__framework_1_1_list_box.html#affc5e50f16e1c6b008ad0d9254afe002",
+"classgui__framework_1_1iterators_1_1loadable__forward__iterator.html#a1e1c22939a5a66dddb58ac772cc6593c",
+"classgui__framework_1_1utility_1_1_additional_creation_data_3_01_rich_edit_01_4.html#ae83487752e7729f1d4d369e1ab77a51b",
+"dir_dca5549e17e2892857a30daa34461e71.html",
+"structgui__framework_1_1_group_box_1_1radio_button_data.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

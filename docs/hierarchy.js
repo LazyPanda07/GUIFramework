@@ -10,6 +10,7 @@ var hierarchy =
     [ "gui_framework::utility::AdditionalCreationData< GroupBox >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_group_box_01_4.html", null ],
     [ "gui_framework::utility::AdditionalCreationData< HorizontalTrackbarControl >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_horizontal_trackbar_control_01_4.html", null ],
     [ "gui_framework::utility::AdditionalCreationData< IconListView >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_icon_list_view_01_4.html", null ],
+    [ "gui_framework::utility::AdditionalCreationData< ImageButton >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_image_button_01_4.html", null ],
     [ "gui_framework::utility::AdditionalCreationData< InfiniteProgressBar >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_infinite_progress_bar_01_4.html", null ],
     [ "gui_framework::utility::AdditionalCreationData< ListBox >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_list_box_01_4.html", null ],
     [ "gui_framework::utility::AdditionalCreationData< ListIconListView >", "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_list_icon_list_view_01_4.html", null ],
@@ -35,6 +36,7 @@ var hierarchy =
       [ "gui_framework::utility::GroupBoxCreator", "classgui__framework_1_1utility_1_1_group_box_creator.html", null ],
       [ "gui_framework::utility::HorizontalTrackbarControlCreator", "classgui__framework_1_1utility_1_1_horizontal_trackbar_control_creator.html", null ],
       [ "gui_framework::utility::IconListViewCreator", "classgui__framework_1_1utility_1_1_icon_list_view_creator.html", null ],
+      [ "gui_framework::utility::ImageButtonCreator", "classgui__framework_1_1utility_1_1_image_button_creator.html", null ],
       [ "gui_framework::utility::InfiniteProgressBarCreator", "classgui__framework_1_1utility_1_1_infinite_progress_bar_creator.html", null ],
       [ "gui_framework::utility::ListBoxCreator", "classgui__framework_1_1utility_1_1_list_box_creator.html", null ],
       [ "gui_framework::utility::ListIconListViewCreator", "classgui__framework_1_1utility_1_1_list_icon_list_view_creator.html", null ],
@@ -147,6 +149,7 @@ var hierarchy =
       [ "gui_framework::Button", "classgui__framework_1_1_button.html", null ],
       [ "gui_framework::ChildWindow", "classgui__framework_1_1_child_window.html", null ],
       [ "gui_framework::EditControl", "classgui__framework_1_1_edit_control.html", null ],
+      [ "gui_framework::ImageButton", "classgui__framework_1_1_image_button.html", null ],
       [ "gui_framework::InfiniteProgressBar", "classgui__framework_1_1_infinite_progress_bar.html", null ],
       [ "gui_framework::ProgressBar", "classgui__framework_1_1_progress_bar.html", null ],
       [ "gui_framework::SeparateWindow", "classgui__framework_1_1_separate_window.html", null ],
@@ -159,7 +162,8 @@ var hierarchy =
           [ "gui_framework::BaseCheckBox", "classgui__framework_1_1_base_check_box.html", [
             [ "gui_framework::CheckBox", "classgui__framework_1_1_check_box.html", null ]
           ] ],
-          [ "gui_framework::Button", "classgui__framework_1_1_button.html", null ]
+          [ "gui_framework::Button", "classgui__framework_1_1_button.html", null ],
+          [ "gui_framework::ImageButton", "classgui__framework_1_1_image_button.html", null ]
         ] ],
         [ "gui_framework::BaseComboBox", "classgui__framework_1_1_base_combo_box.html", null ],
         [ "gui_framework::BaseComposite", "classgui__framework_1_1_base_composite.html", null ],

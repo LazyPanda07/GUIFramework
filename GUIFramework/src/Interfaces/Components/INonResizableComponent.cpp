@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "headers.h"
 #include "INonResizableComponent.h"
 
 #include "Exceptions/NotImplemented.h"
@@ -19,7 +19,7 @@ namespace gui_framework
 
 		void INonResizableComponent::resize(uint16_t width, uint16_t height)
 		{
-			throw exceptions::NotImplemented(__FUNCTION__, "INonResizableComponent");
+			__utility::throwNotImplementedException(__FUNCTION__, "INonResizableComponent"sv);
 		}
 	}
 }

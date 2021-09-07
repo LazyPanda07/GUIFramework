@@ -1,6 +1,6 @@
 #pragma once
 
-#include "pch.h"
+#include "headers.h"
 #include "BaseComponents/BaseComponent.h"
 #include "Interfaces/Components/IResizableComponent.h"
 #include "Styles/Components/ComboBoxes/ComboBoxStyles.h"
@@ -20,6 +20,14 @@ namespace gui_framework
 
 	protected:
 		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) final override;
+
+	public:
+		/// @brief Load function from module
+		/// @param onSelectionChange Output parameter for function load
+		/// @param functionName Name of function in module
+		/// @param moduleName Name of module in JSON array modules in gui_framework.json
+		/// @exception CantFindFunctionFromModuleException 
+		static void loadOnSelectionChangeFromModule(std::function<void(BaseComboBox&)>& onSelectionChange, const std::string& functionName, const std::string& moduleName);
 
 	public:
 		enum class itemHeightEnum

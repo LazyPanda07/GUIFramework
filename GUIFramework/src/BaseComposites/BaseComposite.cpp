@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "headers.h"
 #include "BaseComposite.h"
 
 #include "Interfaces/Components/IResizableComponent.h"
@@ -15,26 +15,32 @@ namespace gui_framework
 
 		if (message == WM_SIZE)
 		{
-			interfaces::IResizableComponent* resizableComposite = dynamic_cast<interfaces::IResizableComponent*>(this);
+			BaseComponent* component = GUIFramework::get().findComponent(handle);
 
-			if (resizableComposite && !resizableComposite->getBlockResize())
+			if (component && component->isComposite())
 			{
-				isUsed = true;
+				interfaces::IResizableComponent* resizableComposite = dynamic_cast<interfaces::IResizableComponent*>(component);
 
-				uint16_t width = LOWORD(lparam);
-				uint16_t height = HIWORD(lparam);
-
-				for (const auto& i : children)
+				if (resizableComposite && !resizableComposite->getBlockResize())
 				{
-					interfaces::IResizableComponent* resizable = dynamic_cast<interfaces::IResizableComponent*>(i.get());
+					isUsed = true;
 
-					if (resizable)
+					const vector<unique_ptr<BaseComponent>>& childrenToResize = static_cast<BaseComposite*>(component)->getChildren();
+					uint16_t width = LOWORD(lparam);
+					uint16_t height = HIWORD(lparam);
+
+					for (const auto& i : childrenToResize)
 					{
-						resizable->resize(width, height);
-					}
-				}
+						interfaces::IResizableComponent* resizable = dynamic_cast<interfaces::IResizableComponent*>(i.get());
 
-				return 0;
+						if (resizable)
+						{
+							resizable->resize(width, height);
+						}
+					}
+
+					return 0;
+				}
 			}
 		}
 
@@ -146,7 +152,7 @@ namespace gui_framework
 		children.push_back(unique_ptr<BaseComponent>(child));
 	}
 
-	BaseComposite::BaseComposite(const wstring& className, const wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent, const string& windowFunctionName) :
+	BaseComposite::BaseComposite(const wstring& className, const wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent, const string& windowFunctionName, const string& moduleName, uint16_t smallIconResource, uint16_t largeIconResource) :
 		BaseComponent
 		(
 			className,
@@ -154,7 +160,10 @@ namespace gui_framework
 			settings,
 			styles,
 			parent,
-			windowFunctionName
+			windowFunctionName,
+			moduleName,
+			smallIconResource,
+			largeIconResource
 		),
 		largeIcon(nullptr),
 		smallIcon(nullptr)

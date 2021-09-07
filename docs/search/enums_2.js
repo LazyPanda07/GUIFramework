@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['horizontaltickposition_2295',['horizontalTickPosition',['../classgui__framework_1_1_horizontal_trackbar_control.html#a40c44b65f9f2033859e569b4c7da3b33',1,'gui_framework::HorizontalTrackbarControl']]]
+  ['exitmode_2354',['exitMode',['../classgui__framework_1_1_base_component.html#adadba923c5fcc012ce8b50e592080bcd',1,'gui_framework::BaseComponent']]]
 ];

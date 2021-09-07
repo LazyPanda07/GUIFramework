@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "headers.h"
 #include "GUIFramework.h"
 
 #include "Exceptions/GetLastErrorException.h"
@@ -6,21 +6,22 @@
 #include "Exceptions/CantLoadModuleException.h"
 #include "Exceptions/CantFindFunctionFromModuleException.h"
 
-#include "BaseComponents/Creators/ButtonCreator.h"
+#include "BaseComponents/Creators/Buttons/ButtonCreator.h"
+#include "BaseComponents/Creators/Buttons/CheckBoxCreator.h"
+#include "BaseComponents/Creators/Buttons/ImageButtonCreator.h"
+#include "BaseComponents/Creators/ComboBoxes/DropDownComboBoxCreator.h"
+#include "BaseComponents/Creators/ComboBoxes/DropDownListComboBoxCreator.h"
+#include "BaseComponents/Creators/ComboBoxes/SimpleComboBoxCreator.h"
+#include "BaseComponents/Creators/ListBoxes/ListBoxCreator.h"
+#include "BaseComponents/Creators/ListBoxes/MultipleSelectListBoxCreator.h"
+#include "BaseComponents/Creators/ProgressBars/ProgressBarCreator.h"
+#include "BaseComponents/Creators/ProgressBars/InfiniteProgressBarCreator.h"
 #include "BaseComponents/Creators/EditControlCreator.h"
-#include "BaseComponents/Creators/DropDownComboBoxCreator.h"
-#include "BaseComponents/Creators/DropDownListComboBoxCreator.h"
-#include "BaseComponents/Creators/SimpleComboBoxCreator.h"
-#include "BaseComponents/Creators/ListBoxCreator.h"
-#include "BaseComponents/Creators/MultipleSelectListBoxCreator.h"
 #include "BaseComponents/Creators/RichEditCreator.h"
 #include "BaseComponents/Creators/StaticControlCreator.h"
 #include "BaseComponents/Creators/SeparateWindowCreator.h"
 #include "BaseComponents/Creators/ChildWindowCreator.h"
 #include "BaseComponents/Creators/TabControlCreator.h"
-#include "BaseComponents/Creators/ProgressBarCreator.h"
-#include "BaseComponents/Creators/InfiniteProgressBarCreator.h"
-#include "BaseComponents/Creators/CheckBoxCreator.h"
 #include "BaseComponents/Creators/GroupBoxCreator.h"
 
 #include "BaseComponents/Creators/ListViews/IconListViewCreator.h"
@@ -35,6 +36,7 @@
 
 #include "Components/Buttons/Button.h"
 #include "Components/Buttons/CheckBox.h"
+#include "Components/Buttons/ImageButton.h"
 #include "Components/EditControl.h"
 #include "Components/ComboBoxes/DropDownComboBox.h"
 #include "Components/ComboBoxes/DropDownListComboBox.h"
@@ -83,11 +85,13 @@ namespace gui_framework
 
 	void GUIFramework::initCreators()
 	{
-		creators.reserve(24);
+		creators.reserve(25);
 
 		this->addCreator<Button, utility::ButtonCreator>(serialized_classes::button);
 
 		this->addCreator<CheckBox, utility::CheckBoxCreator>(serialized_classes::checkBox);
+
+		this->addCreator<ImageButton, utility::ImageButtonCreator>(serialized_classes::imageButton);
 
 		this->addCreator<EditControl, utility::EditControlCreator>(serialized_classes::editControl);
 
@@ -256,7 +260,14 @@ namespace gui_framework
 
 			if (threadsCount != -1)
 			{
-				threadPool = make_unique<threading::ThreadPool>(static_cast<uint32_t>(threadsCount));
+				if (threadsCount)
+				{
+					threadPool = make_unique<threading::ThreadPool>(static_cast<uint32_t>(threadsCount));
+				}
+				else
+				{
+					threadPool = make_unique<threading::ThreadPool>();
+				}
 			}
 		}
 		catch (const json::exceptions::CantFindValueException&)

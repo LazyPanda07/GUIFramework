@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "headers.h"
 #include "BaseSeparateWindow.h"
 
 #include "Styles/Composites/SeparateWindowStyles.h"
@@ -12,7 +12,7 @@ namespace gui_framework
 		return serialized_creation_type::baseSeparateWindow;
 	}
 
-	BaseSeparateWindow::BaseSeparateWindow(const wstring& className, const wstring& titleName, const utility::ComponentSettings& settings, const string& windowFunctionName, bool maximize, bool minimize) :
+	BaseSeparateWindow::BaseSeparateWindow(const wstring& className, const wstring& titleName, const utility::ComponentSettings& settings, const string& windowFunctionName, bool maximize, bool minimize, const string& moduleName, uint16_t smallIconResource, uint16_t largeIconResource) :
 		BaseWindow
 		(
 			className,
@@ -20,7 +20,10 @@ namespace gui_framework
 			settings,
 			styles::SeparateWindowStyles(maximize, minimize),
 			nullptr,
-			windowFunctionName
+			windowFunctionName,
+			moduleName,
+			smallIconResource,
+			largeIconResource
 		)
 	{
 		
