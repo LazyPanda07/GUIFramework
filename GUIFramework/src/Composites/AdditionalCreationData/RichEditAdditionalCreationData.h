@@ -29,7 +29,7 @@ namespace gui_framework
 			/// @param callbacksFunctionNamesAndModules Function name - module name
 			/// @param textLimitCount 
 			/// @param isMultiLine 
-			AdditionalCreationData(const std::array<std::pair<std::string, std::string>, BaseRichEdit::urlDetectEventSize>& callbacksFunctionNamesAndModules = {}, uint64_t textLimitCount = 0, bool isMultiLine = false);
+			AdditionalCreationData(const std::array<std::pair<std::string, std::string>, BaseRichEdit::urlDetectEventSize>& callbacksFunctionNamesAndModules, uint64_t textLimitCount = 0, bool isMultiLine = false);
 
 			virtual std::any getData() const;
 
