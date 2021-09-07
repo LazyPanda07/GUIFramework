@@ -7,7 +7,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		AdditionalCreationData<RichEdit>::AdditionalCreationData(const array<function<void(const wstring&)>, BaseRichEdit::urlDetectEventSize>& callbacks, uint64_t textLimitCount, bool isMultiLine) :
+		AdditionalCreationData<RichEdit>::AdditionalCreationData(const array<function<void(const wstring&)>, BaseRichEdit::urlDetectEventSize>& callbacks, bool isMultiLine, uint64_t textLimitCount) :
 			callbacks(callbacks),
 			textLimitCount(textLimitCount),
 			isMultiLine(isMultiLine)
@@ -15,7 +15,7 @@ namespace gui_framework
 
 		}
 
-		AdditionalCreationData<RichEdit>::AdditionalCreationData(const array<pair<string, string>, BaseRichEdit::urlDetectEventSize>& callbacksFunctionNamesAndModules, uint64_t textLimitCount, bool isMultiLine) :
+		AdditionalCreationData<RichEdit>::AdditionalCreationData(const array<pair<string, string>, BaseRichEdit::urlDetectEventSize>& callbacksFunctionNamesAndModules, bool isMultiLine, uint64_t textLimitCount) :
 			callbacksFunctionNamesAndModules(callbacksFunctionNamesAndModules),
 			textLimitCount(textLimitCount),
 			isMultiLine(isMultiLine)
