@@ -22,6 +22,7 @@ namespace gui_framework
 		inline constexpr std::wstring_view listView = WC_LISTVIEWW;
 		inline constexpr std::wstring_view progressBar = PROGRESS_CLASSW;
 		inline constexpr std::wstring_view trackbarControl = TRACKBAR_CLASSW;
+		inline constexpr std::wstring_view scrollBar = WC_SCROLLBARW;
 	}
 
 	namespace serialized_classes
