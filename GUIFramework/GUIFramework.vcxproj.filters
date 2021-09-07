@@ -519,6 +519,30 @@
     <ClInclude Include="src\Deserialization\Recreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="src\BaseComponents\StandardComponents\ScrollBars\BaseScrollBar.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BaseComponents\StandardComponents\ScrollBars\BaseVerticalScrollBar.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BaseComponents\StandardComponents\ScrollBars\BaseHorizontalScrollBar.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Styles\Components\ScrollBars\ScrollBarStyles.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Styles\Components\ScrollBars\HorizontalScrollBarStyles.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Styles\Components\ScrollBars\VerticalScrollBarStyles.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Styles\Components\ScrollBars\VerticalAndHorizontalScrollBarStyles.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BaseComponents\StandardComponents\ScrollBars\BaseVerticalAndHorizontalScrollBar.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\headers.cpp">
@@ -999,6 +1023,30 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Deserialization\Recreator.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BaseComponents\StandardComponents\ScrollBars\BaseScrollBar.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BaseComponents\StandardComponents\ScrollBars\BaseVerticalScrollBar.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BaseComponents\StandardComponents\ScrollBars\BaseHorizontalScrollBar.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Styles\Components\ScrollBars\ScrollBarStyles.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Styles\Components\ScrollBars\HorizontalScrollBarStyles.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Styles\Components\ScrollBars\VerticalScrollBarStyles.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Styles\Components\ScrollBars\VerticalAndHorizontalScrollBarStyles.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BaseComponents\StandardComponents\ScrollBars\BaseVerticalAndHorizontalScrollBar.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
