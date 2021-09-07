@@ -40,5 +40,8 @@ bin/
 # Build folder
 build/
 
+# Assets
+!Dynamic.dll
+
 # GUIFrameworkBuilder
 !GUIFrameworkBuilder.exe
