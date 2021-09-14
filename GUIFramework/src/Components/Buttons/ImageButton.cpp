@@ -61,18 +61,12 @@ namespace gui_framework
 		}
 	}
 
-	ImageButton::ImageButton(const wstring& buttonName, const filesystem::path& pathToImage, drawingType type, uint16_t imageWidth, uint16_t imageHeight, int x, int y, BaseComponent* parent, const function<void()>& onClick, uint16_t width, uint16_t height) :
+	ImageButton::ImageButton(const wstring& buttonName, const filesystem::path& pathToImage, drawingType type, uint16_t imageWidth, uint16_t imageHeight, const utility::ComponentSettings& settings, BaseComponent* parent, const function<void()>& onClick) :
 		BaseButton
 		(
 			buttonName,
 			L"",
-			utility::ComponentSettings
-			(
-				x,
-				y,
-				width,
-				height
-			),
+			settings,
 			styles::DefaultButtonStyles(),
 			parent,
 			onClick
@@ -90,18 +84,12 @@ namespace gui_framework
 		this->drawImage();
 	}
 
-	ImageButton::ImageButton(const wstring& buttonName, const filesystem::path& pathToImage, drawingType type, uint16_t imageWidth, uint16_t imageHeight, int x, int y, BaseComponent* parent, const string& functionName, const string& moduleName, uint16_t width, uint16_t height) :
+	ImageButton::ImageButton(const wstring& buttonName, const filesystem::path& pathToImage, drawingType type, uint16_t imageWidth, uint16_t imageHeight, const utility::ComponentSettings& settings, BaseComponent* parent, const string& functionName, const string& moduleName) :
 		BaseButton
 		(
 			buttonName,
 			L"",
-			utility::ComponentSettings
-			(
-				x,
-				y,
-				width,
-				height
-			),
+			settings,
 			styles::DefaultButtonStyles(),
 			parent,
 			functionName,
