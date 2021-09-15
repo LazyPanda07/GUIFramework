@@ -2,15 +2,12 @@
 
 #include "GUIFramework.h"
 #include "Utility/Holders/WindowHolder.h"
-#include "Components/RichEdit.h"
-#include "Components/StaticControl.h"
-#include "Composites/SeparateWindow.h"
-#include "Components/ListViews/ListTextIconListView.h"
 #include "MenuItems/MenuItem.h"
 #include "MenuItems/DropDownMenuItem.h"
-#include "Composites/ChildWindow.h"
-#include "Composites/DialogBox.h"
-#include "Components/Buttons/ImageButton.h"
+#include "ComponentsHeader.h"
+#include "CompositesHeader.h"
+
+#include "Deserialization/Recreator.h"
 
 #pragma comment (lib, "GUIFramework.lib")
 
@@ -20,7 +17,7 @@ CREATE_DEFAULT_WINDOW_FUNCTION(main)
 
 CREATE_DEFAULT_WINDOW_FUNCTION(child)
 
-void test()
+void standard()
 {
 	using namespace gui_framework;
 
@@ -57,6 +54,23 @@ void test()
 	}
 }
 
+void test()
+{
+	using namespace gui_framework;
+
+	try
+	{
+		Recreator recreator(filesystem::path("test.json"));
+		WindowHolder holder(recreator.deserialize());
+
+		holder.runMainLoop();
+	}
+	catch (const exception& e)
+	{
+		cout << e.what() << endl;
+	}
+}
+
 int main(int argc, char** argv)
 {
 	try
@@ -72,7 +86,7 @@ int main(int argc, char** argv)
 
 	SetConsoleOutputCP(CP_UTF8);
 
-	thread(test).detach();
+	thread(standard).detach();
 
 	string s;
 
