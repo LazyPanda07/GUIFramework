@@ -23,13 +23,13 @@ namespace gui_framework
 			/// @param callbacks 
 			/// @param textLimitCount 
 			/// @param isMultiLine 
-			AdditionalCreationData(const std::array<std::function<void(const std::wstring&)>, BaseRichEdit::urlDetectEventSize>& callbacks = {}, uint64_t textLimitCount = 0, bool isMultiLine = false);
+			AdditionalCreationData(const std::array<std::function<void(const std::wstring&)>, BaseRichEdit::urlDetectEventSize>& callbacks = {}, bool isMultiLine = true, uint64_t textLimitCount = 0);
 
 			/// @brief Each index in array equals to urlDetectEvent value % 8, except urlDetectEvent::setCursor must be 7 index
 			/// @param callbacksFunctionNamesAndModules Function name - module name
 			/// @param textLimitCount 
 			/// @param isMultiLine 
-			AdditionalCreationData(const std::array<std::pair<std::string, std::string>, BaseRichEdit::urlDetectEventSize>& callbacksFunctionNamesAndModules = {}, uint64_t textLimitCount = 0, bool isMultiLine = false);
+			AdditionalCreationData(const std::array<std::pair<std::string, std::string>, BaseRichEdit::urlDetectEventSize>& callbacksFunctionNamesAndModules, bool isMultiLine = true, uint64_t textLimitCount = 0);
 
 			virtual std::any getData() const;
 
