@@ -6,7 +6,7 @@ namespace gui_framework
 {
 	namespace deserializers
 	{
-		class SeparateWindowDeserializer : public interfaces::IDeserializer
+		class GUI_FRAMEWORK_API SeparateWindowDeserializer : public interfaces::IDeserializer
 		{
 		public:
 			SeparateWindowDeserializer() = default;

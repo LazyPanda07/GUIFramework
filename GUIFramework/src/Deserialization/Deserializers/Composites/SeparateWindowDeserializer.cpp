@@ -1,6 +1,8 @@
 #include "headers.h"
 #include "SeparateWindowDeserializer.h"
 
+#include "ChildWindowDeserializer.h"
+
 using namespace std;
 
 namespace gui_framework
@@ -10,15 +12,15 @@ namespace gui_framework
 		BaseComponent* SeparateWindowDeserializer::deserialize(const string& componentName, const json::utility::objectSmartPointer<json::utility::jsonObject>& description, BaseComposite* parent) const
 		{
 			SeparateWindow* result = nullptr;
-			uint64_t codepage = interfaces::ISerializable::getCodepage();
+			uint32_t codepage = interfaces::ISerializable::getCodepage();
 			const unique_ptr<utility::BaseComponentCreator>& creator = GUIFramework::get().getCreators().at(utility::getTypeHash<SeparateWindow>());
 			utility::AdditionalCreationData<SeparateWindow> creationData(utility::to_wstring(description->getString("className"), CP_UTF8), description->getString("windowFunctionName"));
 			utility::ComponentSettings settings
 			(
-				description->getInt("desiredX"),
-				description->getInt("desiredY"),
-				description->getInt("desiredWidth"),
-				description->getInt("desiredHeight")
+				static_cast<int>(description->getInt("desiredX")),
+				static_cast<int>(description->getInt("desiredY")),
+				static_cast<uint16_t>(description->getUnsignedInt("desiredWidth")),
+				static_cast<uint16_t>(description->getUnsignedInt("desiredHeight"))
 			);
 			const auto& backgroundColor = json::utility::JSONArrayWrapper(description->getArray("backgroundColor")).getAsInt64_tArray();
 			const auto& textColor = json::utility::JSONArrayWrapper(description->getArray("textColor")).getAsInt64_tArray();;
@@ -44,7 +46,7 @@ namespace gui_framework
 
 			for (const auto& i : children)
 			{
-
+				
 			}
 
 			return result;
