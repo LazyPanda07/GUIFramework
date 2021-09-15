@@ -8,7 +8,7 @@ namespace gui_framework
 	BaseListView::BaseListView(const wstring& listViewName, const utility::ComponentSettings& settings, const styles::ListViewStyles& styles, BaseComponent* parent) :
 		BaseComponent
 		(
-			wstring(standard_classes::listView),
+			standard_classes::listView,
 			listViewName,
 			settings,
 			styles,

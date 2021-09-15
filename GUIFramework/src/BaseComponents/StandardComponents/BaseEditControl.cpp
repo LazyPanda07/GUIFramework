@@ -11,7 +11,7 @@ namespace gui_framework
 	BaseEditControl::BaseEditControl(const std::wstring& editControlName, const utility::ComponentSettings& settings, BaseComponent* parent, bool isMultiLine) :
 		BaseComponent
 		(
-			wstring(standard_classes::editControl),
+			standard_classes::editControl,
 			editControlName,
 			settings,
 			styles::EditControlStyles(isMultiLine),

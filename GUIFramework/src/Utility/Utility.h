@@ -69,8 +69,6 @@ namespace gui_framework
 
 	namespace __utility
 	{
-		GUI_FRAMEWORK_API_FUNCTION void changeClassName(json::utility::objectSmartPointer<json::utility::jsonObject>& object, const std::string& className);
-
 		GUI_FRAMEWORK_API_FUNCTION void throwNotImplementedException(std::string_view methodName, std::string_view className);
 	}
 }

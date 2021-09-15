@@ -14,6 +14,8 @@ namespace gui_framework
 	public:
 		EditControl(const std::wstring& editControlName, int x, int y, BaseComponent* parent, uint16_t width = standard_sizes::editControlWidth, uint16_t height = standard_sizes::editControlHeight, bool isMultiLine = false);
 
+		size_t getHash() const override;
+
 		~EditControl() = default;
 	};
 }

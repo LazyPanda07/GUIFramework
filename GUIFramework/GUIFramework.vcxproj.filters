@@ -147,67 +147,67 @@
     <ClInclude Include="src\Composites\DialogBox.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\Creators\BaseComponentCreator.h">
+    <ClInclude Include="src\Utility\Creators\BaseComponentCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\Creators\Buttons\ButtonCreator.h">
+    <ClInclude Include="src\Utility\Creators\Components\Buttons\ButtonCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Composites\AdditionalCreationData\AdditionalCreationData.h">
+    <ClInclude Include="src\Utility\AdditionalCreationData\AdditionalCreationData.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Composites\AdditionalCreationData\ButtonAdditionalCreationData.h">
+    <ClInclude Include="src\Utility\AdditionalCreationData\ButtonAdditionalCreationData.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\Creators\EditControlCreator.h">
+    <ClInclude Include="src\Utility\Creators\Components\EditControlCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\Creators\ComboBoxes\DropDownComboBoxCreator.h">
+    <ClInclude Include="src\Utility\Creators\Components\ComboBoxes\DropDownComboBoxCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Composites\AdditionalCreationData\ComboBoxAdditionalCreationData.h">
+    <ClInclude Include="src\Utility\AdditionalCreationData\ComboBoxAdditionalCreationData.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Composites\AdditionalCreationData\EditControlAdditionalCreationData.h">
+    <ClInclude Include="src\Utility\AdditionalCreationData\EditControlAdditionalCreationData.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\Creators\ComboBoxes\DropDownListComboBoxCreator.h">
+    <ClInclude Include="src\Utility\Creators\Components\ComboBoxes\DropDownListComboBoxCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\Creators\ComboBoxes\SimpleComboBoxCreator.h">
+    <ClInclude Include="src\Utility\Creators\Components\ComboBoxes\SimpleComboBoxCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\Creators\ListBoxes\ListBoxCreator.h">
+    <ClInclude Include="src\Utility\Creators\Components\ListBoxes\ListBoxCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Composites\AdditionalCreationData\ListBoxAdditionalCreationData.h">
+    <ClInclude Include="src\Utility\AdditionalCreationData\ListBoxAdditionalCreationData.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\Creators\ListBoxes\MultipleSelectListBoxCreator.h">
+    <ClInclude Include="src\Utility\Creators\Components\ListBoxes\MultipleSelectListBoxCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\Creators\RichEditCreator.h">
+    <ClInclude Include="src\Utility\Creators\Components\RichEditCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Composites\AdditionalCreationData\RichEditAdditionalCreationData.h">
+    <ClInclude Include="src\Utility\AdditionalCreationData\RichEditAdditionalCreationData.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\Creators\StaticControlCreator.h">
+    <ClInclude Include="src\Utility\Creators\Components\StaticControlCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Composites\AdditionalCreationData\StaticControlAdditionalCreationData.h">
+    <ClInclude Include="src\Utility\AdditionalCreationData\StaticControlAdditionalCreationData.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\Creators\SeparateWindowCreator.h">
+    <ClInclude Include="src\Utility\Creators\Composites\SeparateWindowCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\Creators\ChildWindowCreator.h">
+    <ClInclude Include="src\Utility\Creators\Composites\ChildWindowCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Composites\AdditionalCreationData\SeparateWindowAdditionalCreationData.h">
+    <ClInclude Include="src\Utility\AdditionalCreationData\SeparateWindowAdditionalCreationData.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Composites\AdditionalCreationData\ChildWindowAdditionalCreationData.h">
+    <ClInclude Include="src\Utility\AdditionalCreationData\ChildWindowAdditionalCreationData.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Menu\Menu.h">
@@ -234,10 +234,10 @@
     <ClInclude Include="src\Components\TabControl.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Composites\AdditionalCreationData\TabControlAdditionalCreationData.h">
+    <ClInclude Include="src\Utility\AdditionalCreationData\TabControlAdditionalCreationData.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\Creators\TabControlCreator.h">
+    <ClInclude Include="src\Utility\Creators\Components\TabControlCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Utility\Holders\WindowHolder.h">
@@ -312,31 +312,31 @@
     <ClInclude Include="src\Components\ListViews\TextListView.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\Creators\ListViews\IconListViewCreator.h">
+    <ClInclude Include="src\Utility\Creators\Components\ListViews\IconListViewCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Composites\AdditionalCreationData\IconListViewAdditionalCreationData.h">
+    <ClInclude Include="src\Utility\AdditionalCreationData\IconListViewAdditionalCreationData.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\Creators\ListViews\ListIconListViewCreator.h">
+    <ClInclude Include="src\Utility\Creators\Components\ListViews\ListIconListViewCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\Creators\ListViews\TextListViewCreator.h">
+    <ClInclude Include="src\Utility\Creators\Components\ListViews\TextListViewCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Composites\AdditionalCreationData\TextListViewAdditionalCreationData.h">
+    <ClInclude Include="src\Utility\AdditionalCreationData\TextListViewAdditionalCreationData.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\Creators\ListViews\ListTextListViewCreator.h">
+    <ClInclude Include="src\Utility\Creators\Components\ListViews\ListTextListViewCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\Creators\ListViews\TextIconListViewCreator.h">
+    <ClInclude Include="src\Utility\Creators\Components\ListViews\TextIconListViewCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Composites\AdditionalCreationData\TextIconListViewAdditionalCreationData.h">
+    <ClInclude Include="src\Utility\AdditionalCreationData\TextIconListViewAdditionalCreationData.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\Creators\ListViews\ListTextIconListViewCreator.h">
+    <ClInclude Include="src\Utility\Creators\Components\ListViews\ListTextIconListViewCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\BaseComponents\StandardComponents\ProgressBars\BaseProgressBar.h">
@@ -351,13 +351,13 @@
     <ClInclude Include="src\Components\ProgressBars\InfiniteProgressBar.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\Creators\ProgressBars\ProgressBarCreator.h">
+    <ClInclude Include="src\Utility\Creators\Components\ProgressBars\ProgressBarCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Composites\AdditionalCreationData\ProgressBarAdditionalCreationData.h">
+    <ClInclude Include="src\Utility\AdditionalCreationData\ProgressBarAdditionalCreationData.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\Creators\ProgressBars\InfiniteProgressBarCreator.h">
+    <ClInclude Include="src\Utility\Creators\Components\ProgressBars\InfiniteProgressBarCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Interfaces\Components\IProgressBarColor.h">
@@ -369,16 +369,16 @@
     <ClInclude Include="src\Components\Buttons\CheckBox.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\Creators\Buttons\CheckBoxCreator.h">
+    <ClInclude Include="src\Utility\Creators\Components\Buttons\CheckBoxCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Composites\GroupBox.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\Creators\GroupBoxCreator.h">
+    <ClInclude Include="src\Utility\Creators\Composites\GroupBoxCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Composites\AdditionalCreationData\GroupBoxAdditionalCreationData.h">
+    <ClInclude Include="src\Utility\AdditionalCreationData\GroupBoxAdditionalCreationData.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\BaseComponents\StandardComponents\BaseTrackbarControl.h">
@@ -390,13 +390,13 @@
     <ClInclude Include="src\Components\Trackbars\VerticalTrackbarControl.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\Creators\Trackbars\HorizontalTrackbarControlCreator.h">
+    <ClInclude Include="src\Utility\Creators\Components\Trackbars\HorizontalTrackbarControlCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\Creators\Trackbars\VerticalTrackbarControlCreator.h">
+    <ClInclude Include="src\Utility\Creators\Components\Trackbars\VerticalTrackbarControlCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Composites\AdditionalCreationData\TrackbarControlAdditionalCreationData.h">
+    <ClInclude Include="src\Utility\AdditionalCreationData\TrackbarControlAdditionalCreationData.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Utility\Paint\Draw.h">
@@ -507,7 +507,7 @@
     <ClInclude Include="src\Components\Buttons\ImageButton.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseComponents\Creators\Buttons\ImageButtonCreator.h">
+    <ClInclude Include="src\Utility\Creators\Components\Buttons\ImageButtonCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\ComponentsHeader.h">
@@ -541,6 +541,12 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\BaseComponents\StandardComponents\ScrollBars\BaseVerticalAndHorizontalScrollBar.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Deserialization\Deserializers\Composites\SeparateWindowDeserializer.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Interfaces\Utility\IDeserializer.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
@@ -659,61 +665,61 @@
     <ClCompile Include="src\Composites\DialogBox.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComponents\Creators\Buttons\ButtonCreator.cpp">
+    <ClCompile Include="src\Utility\Creators\Components\Buttons\ButtonCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Composites\AdditionalCreationData\ButtonAdditionalCreationData.cpp">
+    <ClCompile Include="src\Utility\AdditionalCreationData\ButtonAdditionalCreationData.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComponents\Creators\EditControlCreator.cpp">
+    <ClCompile Include="src\Utility\Creators\Components\EditControlCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComponents\Creators\ComboBoxes\DropDownComboBoxCreator.cpp">
+    <ClCompile Include="src\Utility\Creators\Components\ComboBoxes\DropDownComboBoxCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Composites\AdditionalCreationData\ComboBoxAdditionalCreationData.cpp">
+    <ClCompile Include="src\Utility\AdditionalCreationData\ComboBoxAdditionalCreationData.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Composites\AdditionalCreationData\EditControlAdditionalCreationData.cpp">
+    <ClCompile Include="src\Utility\AdditionalCreationData\EditControlAdditionalCreationData.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComponents\Creators\ComboBoxes\DropDownListComboBoxCreator.cpp">
+    <ClCompile Include="src\Utility\Creators\Components\ComboBoxes\DropDownListComboBoxCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComponents\Creators\ComboBoxes\SimpleComboBoxCreator.cpp">
+    <ClCompile Include="src\Utility\Creators\Components\ComboBoxes\SimpleComboBoxCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComponents\Creators\ListBoxes\ListBoxCreator.cpp">
+    <ClCompile Include="src\Utility\Creators\Components\ListBoxes\ListBoxCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Composites\AdditionalCreationData\ListBoxAdditionalCreationData.cpp">
+    <ClCompile Include="src\Utility\AdditionalCreationData\ListBoxAdditionalCreationData.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComponents\Creators\ListBoxes\MultipleSelectListBoxCreator.cpp">
+    <ClCompile Include="src\Utility\Creators\Components\ListBoxes\MultipleSelectListBoxCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComponents\Creators\RichEditCreator.cpp">
+    <ClCompile Include="src\Utility\Creators\Components\RichEditCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Composites\AdditionalCreationData\RichEditAdditionalCreationData.cpp">
+    <ClCompile Include="src\Utility\AdditionalCreationData\RichEditAdditionalCreationData.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComponents\Creators\StaticControlCreator.cpp">
+    <ClCompile Include="src\Utility\Creators\Components\StaticControlCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Composites\AdditionalCreationData\StaticControlAdditionalCreationData.cpp">
+    <ClCompile Include="src\Utility\AdditionalCreationData\StaticControlAdditionalCreationData.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComponents\Creators\SeparateWindowCreator.cpp">
+    <ClCompile Include="src\Utility\Creators\Composites\SeparateWindowCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComponents\Creators\ChildWindowCreator.cpp">
+    <ClCompile Include="src\Utility\Creators\Composites\ChildWindowCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Composites\AdditionalCreationData\SeparateWindowAdditionalCreationData.cpp">
+    <ClCompile Include="src\Utility\AdditionalCreationData\SeparateWindowAdditionalCreationData.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Composites\AdditionalCreationData\ChildWindowAdditionalCreationData.cpp">
+    <ClCompile Include="src\Utility\AdditionalCreationData\ChildWindowAdditionalCreationData.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Menu\Menu.cpp">
@@ -740,10 +746,10 @@
     <ClCompile Include="src\Components\TabControl.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Composites\AdditionalCreationData\TabControlAdditionalCreationData.cpp">
+    <ClCompile Include="src\Utility\AdditionalCreationData\TabControlAdditionalCreationData.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComponents\Creators\TabControlCreator.cpp">
+    <ClCompile Include="src\Utility\Creators\Components\TabControlCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Utility\Holders\WindowHolder.cpp">
@@ -818,31 +824,31 @@
     <ClCompile Include="src\Components\ListViews\TextListView.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComponents\Creators\ListViews\IconListViewCreator.cpp">
+    <ClCompile Include="src\Utility\Creators\Components\ListViews\IconListViewCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Composites\AdditionalCreationData\IconListViewAdditionalCreationData.cpp">
+    <ClCompile Include="src\Utility\AdditionalCreationData\IconListViewAdditionalCreationData.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComponents\Creators\ListViews\ListIconListViewCreator.cpp">
+    <ClCompile Include="src\Utility\Creators\Components\ListViews\ListIconListViewCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComponents\Creators\ListViews\TextListViewCreator.cpp">
+    <ClCompile Include="src\Utility\Creators\Components\ListViews\TextListViewCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Composites\AdditionalCreationData\TextListViewAdditionalCreationData.cpp">
+    <ClCompile Include="src\Utility\AdditionalCreationData\TextListViewAdditionalCreationData.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComponents\Creators\ListViews\ListTextListViewCreator.cpp">
+    <ClCompile Include="src\Utility\Creators\Components\ListViews\ListTextListViewCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComponents\Creators\ListViews\TextIconListViewCreator.cpp">
+    <ClCompile Include="src\Utility\Creators\Components\ListViews\TextIconListViewCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Composites\AdditionalCreationData\TextIconListViewAdditionalCreationData.cpp">
+    <ClCompile Include="src\Utility\AdditionalCreationData\TextIconListViewAdditionalCreationData.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComponents\Creators\ListViews\ListTextIconListViewCreator.cpp">
+    <ClCompile Include="src\Utility\Creators\Components\ListViews\ListTextIconListViewCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\BaseComponents\StandardComponents\ProgressBars\BaseProgressBar.cpp">
@@ -857,13 +863,13 @@
     <ClCompile Include="src\Components\ProgressBars\InfiniteProgressBar.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComponents\Creators\ProgressBars\ProgressBarCreator.cpp">
+    <ClCompile Include="src\Utility\Creators\Components\ProgressBars\ProgressBarCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Composites\AdditionalCreationData\ProgressBarAdditionalCreationData.cpp">
+    <ClCompile Include="src\Utility\AdditionalCreationData\ProgressBarAdditionalCreationData.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComponents\Creators\ProgressBars\InfiniteProgressBarCreator.cpp">
+    <ClCompile Include="src\Utility\Creators\Components\ProgressBars\InfiniteProgressBarCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Interfaces\Components\IProgressBarColor.cpp">
@@ -875,16 +881,16 @@
     <ClCompile Include="src\Components\Buttons\CheckBox.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComponents\Creators\Buttons\CheckBoxCreator.cpp">
+    <ClCompile Include="src\Utility\Creators\Components\Buttons\CheckBoxCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Composites\GroupBox.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComponents\Creators\GroupBoxCreator.cpp">
+    <ClCompile Include="src\Utility\Creators\Composites\GroupBoxCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Composites\AdditionalCreationData\GroupBoxAdditionalCreationData.cpp">
+    <ClCompile Include="src\Utility\AdditionalCreationData\GroupBoxAdditionalCreationData.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\BaseComponents\StandardComponents\BaseTrackbarControl.cpp">
@@ -896,13 +902,13 @@
     <ClCompile Include="src\Components\Trackbars\VerticalTrackbarControl.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComponents\Creators\Trackbars\HorizontalTrackbarControlCreator.cpp">
+    <ClCompile Include="src\Utility\Creators\Components\Trackbars\HorizontalTrackbarControlCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComponents\Creators\Trackbars\VerticalTrackbarControlCreator.cpp">
+    <ClCompile Include="src\Utility\Creators\Components\Trackbars\VerticalTrackbarControlCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Composites\AdditionalCreationData\TrackbarControlAdditionalCreationData.cpp">
+    <ClCompile Include="src\Utility\AdditionalCreationData\TrackbarControlAdditionalCreationData.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Utility\Paint\Draw.cpp">
@@ -1013,7 +1019,7 @@
     <ClCompile Include="src\Components\Buttons\ImageButton.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\BaseComponents\Creators\Buttons\ImageButtonCreator.cpp">
+    <ClCompile Include="src\Utility\Creators\Components\Buttons\ImageButtonCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\ComponentsHeader.cpp">
@@ -1047,6 +1053,12 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\BaseComponents\StandardComponents\ScrollBars\BaseVerticalAndHorizontalScrollBar.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Deserialization\Deserializers\Composites\SeparateWindowDeserializer.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Interfaces\Utility\IDeserializer.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

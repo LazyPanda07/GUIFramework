@@ -11,7 +11,7 @@ namespace gui_framework
 	BaseTrackbarControl::BaseTrackbarControl(const wstring& trackbarName, const utility::ComponentSettings& settings, const styles::TrackbarControlStyles& styles, BaseComponent* parent) :
 		BaseComponent
 		(
-			wstring(standard_classes::trackbarControl),
+			standard_classes::trackbarControl,
 			trackbarName,
 			settings,
 			styles,

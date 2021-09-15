@@ -27,4 +27,9 @@ namespace gui_framework
 	{
 
 	}
+
+	size_t StaticControl::getHash() const
+	{
+		return typeid(StaticControl).hash_code();
+	}
 }

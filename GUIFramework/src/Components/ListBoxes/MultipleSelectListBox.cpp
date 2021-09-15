@@ -19,6 +19,11 @@ namespace gui_framework
 		}
 	}
 
+	size_t MultipleSelectListBox::getHash() const
+	{
+		return typeid(MultipleSelectListBox).hash_code();
+	}
+
 	json::JSONBuilder MultipleSelectListBox::getStructure() const
 	{
 		using json::utility::jsonObject;
@@ -26,8 +31,6 @@ namespace gui_framework
 
 		json::JSONBuilder builder = BaseMultipleSelectListBox::getStructure();
 		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
-
-		__utility::changeClassName(current, serialized_classes::multipleSelectListBox);
 
 		return builder;
 	}

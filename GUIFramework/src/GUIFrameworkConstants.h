@@ -12,59 +12,17 @@ namespace gui_framework
 {
 	namespace standard_classes
 	{
-		inline constexpr std::wstring_view button = WC_BUTTONW;
-		inline constexpr std::wstring_view editControl = WC_EDITW;
-		inline constexpr std::wstring_view staticControl = WC_STATICW;
-		inline constexpr std::wstring_view comboBox = WC_COMBOBOXW;
-		inline constexpr std::wstring_view listBox = WC_LISTBOXW;
-		inline constexpr std::wstring_view richEdit = MSFTEDIT_CLASS;
-		inline constexpr std::wstring_view tabControl = WC_TABCONTROLW;
-		inline constexpr std::wstring_view listView = WC_LISTVIEWW;
-		inline constexpr std::wstring_view progressBar = PROGRESS_CLASSW;
-		inline constexpr std::wstring_view trackbarControl = TRACKBAR_CLASSW;
-		inline constexpr std::wstring_view scrollBar = WC_SCROLLBARW;
-	}
-
-	namespace serialized_classes
-	{
-		inline const std::string button = "Button";
-		inline const std::string checkBox = "CheckBox";
-		inline const std::string imageButton = "ImageButton";
-		inline const std::string editControl = "Edit";
-		inline const std::string richEdit = "RichEdit";
-		inline const std::string staticControl = "Static";
-		inline const std::string separateWindow = "SeparateWindow";
-		inline const std::string childWindow = "ChildWindow";
-		inline const std::string tabControl = "TabConrol";
-		inline const std::string groupBox = "GroupBox";
-		inline const std::string progressBar = "ProgressBar";
-		inline const std::string infiniteProgressBar = "InfiniteProgressBar";
-		inline const std::string dropDownComboBox = "DropDownComboBox";
-		inline const std::string dropDownListComboBox = "DropDownListComboBox";
-		inline const std::string simpleComboBox = "SimpleComboBox";
-		inline const std::string listBox = "ListBox";
-		inline const std::string multipleSelectListBox = "MultipleSelectListBox";
-		inline const std::string iconListView = "IconListView";
-		inline const std::string listIconListView = "ListIconListView";
-		inline const std::string textListView = "TextListView";
-		inline const std::string listTextListView = "ListTextListView";
-		inline const std::string textIconListView = "TextIconListView";
-		inline const std::string listTextIconListView = "ListTextIconListView";
-		inline const std::string horizontalTrackbarControl = "HorizontalTrackbarControl";
-		inline const std::string verticalTrackbarControl = "VerticalTrackbarControl";
-	}
-
-	namespace serialized_creation_type
-	{
-		inline const std::string baseComposite = "BaseComposite";
-		inline const std::string baseWindow = "BaseWindow";
-		inline const std::string baseSeparateWindow = "BaseSeparateWindow";
-		inline const std::string baseChildWindow = "BaseChildWindow";
-		inline const std::string baseDialogBox = "BaseDialogBox";
-		inline const std::string separateWindow = "SeparateWindow";
-		inline const std::string childWindow = "ChildWindow";
-		inline const std::string dialogBox = "DialogBox";
-		inline const std::string groupBox = "GroupBox";
+		inline const std::wstring button = WC_BUTTONW;
+		inline const std::wstring editControl = WC_EDITW;
+		inline const std::wstring staticControl = WC_STATICW;
+		inline const std::wstring comboBox = WC_COMBOBOXW;
+		inline const std::wstring listBox = WC_LISTBOXW;
+		inline const std::wstring richEdit = MSFTEDIT_CLASS;
+		inline const std::wstring tabControl = WC_TABCONTROLW;
+		inline const std::wstring listView = WC_LISTVIEWW;
+		inline const std::wstring progressBar = PROGRESS_CLASSW;
+		inline const std::wstring trackbarControl = TRACKBAR_CLASSW;
+		inline const std::wstring scrollBar = WC_SCROLLBARW;
 	}
 
 	namespace standard_menu_items

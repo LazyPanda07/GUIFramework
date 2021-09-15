@@ -61,7 +61,7 @@ namespace gui_framework
 	BaseComboBox::BaseComboBox(const wstring& comboBoxName, const utility::ComponentSettings& settings, const styles::ComboBoxStyles& styles, BaseComponent* parent) :
 		BaseComponent
 		(
-			wstring(standard_classes::comboBox),
+			standard_classes::comboBox,
 			comboBoxName,
 			settings,
 			styles,

@@ -11,7 +11,7 @@ namespace gui_framework
 	BaseInfiniteProgressBar::BaseInfiniteProgressBar(const wstring& progressBarName, const utility::ComponentSettings& settings, BaseComponent* parent, int animationPeriod) :
 		BaseComponent
 		(
-			wstring(standard_classes::progressBar),
+			standard_classes::progressBar,
 			progressBarName,
 			settings,
 			styles::InfiniteProgressBarStyles(),

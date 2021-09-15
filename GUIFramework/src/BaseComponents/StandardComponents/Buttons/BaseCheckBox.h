@@ -34,6 +34,10 @@ namespace gui_framework
 
 		virtual const std::function<void()>& getOnClear() const final;
 
+		/// @brief Used as key in creators
+		/// @return typeid().hash_code()
+		virtual size_t getHash() const override = 0;
+
 		virtual json::JSONBuilder getStructure() const override;
 
 		virtual ~BaseCheckBox() = default;

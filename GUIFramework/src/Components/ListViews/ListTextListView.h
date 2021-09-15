@@ -11,6 +11,8 @@ namespace gui_framework
 	public:
 		ListTextListView(const std::wstring& listViewName, const utility::ComponentSettings& settings, BaseComponent* parent);
 
+		size_t getHash() const override;
+
 		json::JSONBuilder getStructure() const override;
 
 		~ListTextListView() = default;

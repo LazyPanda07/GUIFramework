@@ -22,6 +22,8 @@ namespace gui_framework
 		/// @param animationPeriod Period between animation in milliseconds
 		InfiniteProgressBar(const std::wstring& progressBarName, const utility::ComponentSettings& settings, BaseComponent* parent, int animationPeriod = NULL);
 
+		size_t getHash() const override;
+
 		json::JSONBuilder getStructure() const override;
 
 		~InfiniteProgressBar() = default;

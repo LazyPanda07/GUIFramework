@@ -57,4 +57,9 @@ namespace gui_framework
 	{
 
 	}
+
+	size_t Button::getHash() const
+	{
+		return typeid(Button).hash_code();
+	}
 }
