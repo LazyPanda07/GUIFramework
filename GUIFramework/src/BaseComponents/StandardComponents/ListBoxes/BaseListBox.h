@@ -112,6 +112,10 @@ namespace gui_framework
 		/// @exception SelectListException 
 		virtual void resize(uint16_t width, uint16_t height) override;
 
+		/// @brief Used as key in creators
+		/// @return typeid().hash_code()
+		virtual size_t getHash() const override = 0;
+
 		virtual json::JSONBuilder getStructure() const override;
 
 		virtual ~BaseListBox() = default;

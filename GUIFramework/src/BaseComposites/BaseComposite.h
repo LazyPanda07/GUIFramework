@@ -86,7 +86,7 @@ namespace gui_framework
 
 		/// @brief Used as key in creators
 		/// @return typeid().hash_code() 
-		virtual size_t getHash() const = 0;
+		virtual size_t getHash() const override = 0;
 
 		virtual iterators::composite_forward_iterator begin() noexcept override;
 

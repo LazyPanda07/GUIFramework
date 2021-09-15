@@ -47,6 +47,10 @@ namespace gui_framework
 
 		virtual void show() const final;
 
+		/// @brief Used as key in creators
+		/// @return typeid().hash_code()
+		virtual size_t getHash() const override = 0;
+
 		virtual ~BaseDialogBox() = default;
 	};
 }

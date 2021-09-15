@@ -1,7 +1,7 @@
 #pragma once
 
 #include "headers.h"
-#include "BaseComponents/Creators/BaseComponentCreator.h"
+#include "Utility/Creators/BaseComponentCreator.h"
 
 #pragma comment (lib, "Comctl32.lib")
 #pragma comment (lib, "UxTheme.lib")

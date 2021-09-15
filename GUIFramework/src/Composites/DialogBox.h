@@ -2,8 +2,7 @@
 
 #include "headers.h"
 #include "BaseComposites/StandardComposites/BaseDialogBox.h"
-#include "Interfaces/Components/INonResizableComponent.h"	
-#include "Composites/AdditionalCreationData/AdditionalCreationData.h"
+#include "Interfaces/Components/INonResizableComponent.h"
 
 #undef DialogBox
 

@@ -11,6 +11,10 @@ namespace gui_framework
 	public:
 		BaseChildWindow(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, BaseComponent* parent, const std::string& windowFunctionName = "");
 
+		/// @brief Used as key in creators
+		/// @return typeid().hash_code()
+		virtual size_t getHash() const override = 0;
+
 		virtual ~BaseChildWindow() = default;
 	};
 }

@@ -41,6 +41,10 @@ namespace gui_framework
 		/// @exception NotImplemented Text color does not affects at track bars
 		virtual void setTextColor(uint8_t red, uint8_t green, uint8_t blue) final override;
 
+		/// @brief Used as key in creators
+		/// @return typeid().hash_code()
+		virtual size_t getHash() const override = 0;
+
 		virtual json::JSONBuilder getStructure() const override;
 
 		virtual ~BaseTrackbarControl() = default;

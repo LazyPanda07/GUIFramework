@@ -23,6 +23,10 @@ namespace gui_framework
 
 		virtual const std::wstring& getPlaceholder() const final;
 
+		/// @brief Used as key in creators
+		/// @return typeid().hash_code()
+		virtual size_t getHash() const override = 0;
+
 		virtual json::JSONBuilder getStructure() const override;
 
 		virtual ~BaseEditControl() = default;
