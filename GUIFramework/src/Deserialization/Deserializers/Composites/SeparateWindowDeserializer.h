@@ -12,11 +12,11 @@ namespace gui_framework
 			SeparateWindowDeserializer() = default;
 
 			/// @brief SeparateWindow has no parent, you must manage the pointer
-			/// @param className 
+			/// @param componentName 
 			/// @param description 
 			/// @param parent Not used
 			/// @return Not handled by parent
-			virtual BaseComponent* deserialize(const std::string& className, const json::utility::objectSmartPointer<json::utility::jsonObject>& description, BaseComposite* parent = nullptr) const final override;
+			virtual BaseComponent* deserialize(const std::string& componentName, const json::utility::objectSmartPointer<json::utility::jsonObject>& description, BaseComposite* parent = nullptr) const final override;
 
 			~SeparateWindowDeserializer() = default;
 		};

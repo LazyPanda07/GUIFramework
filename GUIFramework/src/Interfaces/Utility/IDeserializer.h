@@ -15,11 +15,11 @@ namespace gui_framework
 			IDeserializer() = default;
 
 			/// @brief Created component pointer already handled by its parent
-			/// @param className Field name from JSON
+			/// @param componentName Field name from JSON
 			/// @param description Field data from JSON
 			/// @param parent Parent composite or nullptr if has no parent
 			/// @return 
-			virtual BaseComponent* deserialize(const std::string& className, const json::utility::objectSmartPointer<json::utility::jsonObject>& description, BaseComposite* parent) const = 0;
+			virtual BaseComponent* deserialize(const std::string& componentName, const json::utility::objectSmartPointer<json::utility::jsonObject>& description, BaseComposite* parent) const = 0;
 
 			virtual ~IDeserializer() = default;
 		};

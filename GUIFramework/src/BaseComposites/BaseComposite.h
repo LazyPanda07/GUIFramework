@@ -15,6 +15,7 @@ namespace gui_framework
 		public interfaces::IIterable<BaseComponent, iterators::composite_forward_iterator, iterators::composite_const_forward_iterator>
 	{
 	protected:
+		std::string windowFunctionName;
 		std::vector<std::unique_ptr<BaseComponent>> children;
 		std::unordered_map<HMENU, Menu> popupMenus;
 		std::unique_ptr<Menu> mainMenu;
