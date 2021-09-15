@@ -160,7 +160,7 @@ namespace gui_framework
 			smallIconResource,
 			largeIconResource
 		),
-		windowFunctionName(windowFunctionName),
+		windowFunctionName(windowFunctionName + "WindowFunction"),
 		largeIcon(nullptr),
 		smallIcon(nullptr)
 	{
