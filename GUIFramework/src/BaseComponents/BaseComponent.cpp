@@ -387,6 +387,8 @@ namespace gui_framework
 
 		structure->data.push_back({ "styles"s, styles->getStyles() });
 
+		structure->data.push_back({ "extendedStyles"s, styles->getExtendedStyles() });
+
 		builder.push_back(make_pair(utility::to_string(windowName, codepage), move(structure)));
 
 		return builder;

@@ -160,6 +160,7 @@ namespace gui_framework
 			smallIconResource,
 			largeIconResource
 		),
+		windowFunctionName(windowFunctionName),
 		largeIcon(nullptr),
 		smallIcon(nullptr)
 	{
@@ -409,6 +410,8 @@ namespace gui_framework
 		vector<pair<string, objectSmartPointer<jsonObject>>> data = this->getChildrenStructure();
 		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
 		GUIFramework& instance = GUIFramework::get();
+
+		current->data.push_back({ "windowFunctionName"s, windowFunctionName });
 
 		if (!pathToSmallIcon.empty())
 		{

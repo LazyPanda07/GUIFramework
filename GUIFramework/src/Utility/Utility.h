@@ -65,6 +65,9 @@ namespace gui_framework
 		/// @return Compatible smart pointer
 		template<typename T, typename... Args>
 		smartPointerType<T> make_smart_pointer(Args&&... args);
+
+		template<typename T>
+		size_t getTypeHash();
 	}
 
 	namespace __utility
@@ -84,4 +87,10 @@ inline smartPointerType<T> gui_framework::utility::make_smart_pointer(Args&&... 
 	{
 		return std::make_shared<T>(std::forward<Args>(args)...);
 	}
+}
+
+template<typename T>
+inline size_t gui_framework::utility::getTypeHash()
+{
+	return typeid(T).hash_code();
 }
