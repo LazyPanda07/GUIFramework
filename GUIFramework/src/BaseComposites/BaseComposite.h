@@ -30,9 +30,6 @@ namespace gui_framework
 
 		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) final override;
 
-	protected:
-		virtual const std::string& getCreationType() const;
-
 	private:
 		std::vector<std::pair<std::string, json::utility::objectSmartPointer<json::utility::jsonObject>>> getChildrenStructure() const;
 
@@ -86,6 +83,10 @@ namespace gui_framework
 		/// @param pathToSmallIcon 
 		/// @exception FileDoesNotExist
 		virtual void setSmallIcon(const std::filesystem::path& pathToSmallIcon) final;
+
+		/// @brief Used as key in creators
+		/// @return typeid().hash_code() 
+		virtual size_t getHash() const = 0;
 
 		virtual iterators::composite_forward_iterator begin() noexcept override;
 

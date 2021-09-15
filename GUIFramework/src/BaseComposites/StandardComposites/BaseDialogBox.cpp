@@ -12,11 +12,6 @@ namespace gui_framework
 		return static_cast<messageBoxResponse>(MessageBoxW(parent ? parent->getHandle() : nullptr, text.data(), title.data(), static_cast<UINT>(type) | (helpButton ? MB_HELP : NULL)));
 	}
 
-	const string& BaseDialogBox::getCreationType() const
-	{
-		return serialized_creation_type::baseDialogBox;
-	}
-
 	BaseDialogBox::BaseDialogBox(const wstring& className, const wstring& title, const utility::ComponentSettings& settings, BaseComponent* parent, const string& dialogBoxFunctionName, const string& moduleName, uint16_t smallIconResource, uint16_t largeIconResource) :
 		BaseComposite
 		(

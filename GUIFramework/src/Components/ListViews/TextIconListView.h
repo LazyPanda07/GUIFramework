@@ -11,6 +11,8 @@ namespace gui_framework
 	public:
 		TextIconListView(const std::wstring& listViewName, const utility::ComponentSettings& settings, BaseComponent* parent, utility::iconListViewType type);
 
+		size_t getHash() const override;
+
 		json::JSONBuilder getStructure() const override;
 
 		~TextIconListView() = default;

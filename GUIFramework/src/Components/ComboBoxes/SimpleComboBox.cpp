@@ -19,6 +19,11 @@ namespace gui_framework
 
 	}
 
+	size_t SimpleComboBox::getHash() const
+	{
+		return typeid(SimpleComboBox).hash_code();
+	}
+
 	json::JSONBuilder SimpleComboBox::getStructure() const
 	{
 		using json::utility::jsonObject;
@@ -26,8 +31,6 @@ namespace gui_framework
 
 		json::JSONBuilder builder = BaseComboBox::getStructure();
 		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
-
-		__utility::changeClassName(current, serialized_classes::simpleComboBox);
 
 		return builder;
 	}

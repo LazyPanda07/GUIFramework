@@ -31,7 +31,7 @@ namespace gui_framework
 	BaseButton::BaseButton(const wstring& buttonName, const wstring& buttonText, const utility::ComponentSettings& settings, const styles::ButtonStyles& styles, BaseComponent* parent, const function<void()>& onClick) :
 		BaseComponent
 		(
-			wstring(standard_classes::button),
+			standard_classes::button,
 			buttonName,
 			settings,
 			styles,

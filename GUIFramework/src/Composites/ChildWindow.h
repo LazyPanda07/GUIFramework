@@ -11,11 +11,10 @@ namespace gui_framework
 		public BaseChildWindow,
 		public interfaces::IResizableComponent	
 	{
-	protected:
-		virtual const std::string& getCreationType() const override;
-
 	public:
 		ChildWindow(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, BaseComponent* parent, const std::string& windowFunctionName = "");
+
+		size_t getHash() const override;
 
 		~ChildWindow() = default;
 	};

@@ -32,6 +32,11 @@ namespace gui_framework
 		}
 	}
 
+	size_t HorizontalTrackbarControl::getHash() const
+	{
+		return typeid(HorizontalTrackbarControl).hash_code();
+	}
+
 	json::JSONBuilder HorizontalTrackbarControl::getStructure() const
 	{
 		using json::utility::objectSmartPointer;
@@ -39,8 +44,6 @@ namespace gui_framework
 
 		json::JSONBuilder builder = BaseTrackbarControl::getStructure();
 		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
-		
-		__utility::changeClassName(current, serialized_classes::horizontalTrackbarControl);
 
 		return builder;
 	}

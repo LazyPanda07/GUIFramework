@@ -27,4 +27,9 @@ namespace gui_framework
 	{
 
 	}
+
+	size_t EditControl::getHash() const
+	{
+		return typeid(EditControl).hash_code();
+	}
 }

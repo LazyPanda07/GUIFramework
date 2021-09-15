@@ -26,9 +26,6 @@ namespace gui_framework
 	protected:
 		std::unordered_map<std::string, drawedImages> pictures;
 
-	protected:
-		virtual const std::string& getCreationType() const override;
-
 	public:
 		/// @brief 
 		/// @param moduleName Name of loaded resource module with icons

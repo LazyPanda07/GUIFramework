@@ -110,6 +110,10 @@ namespace gui_framework
 
 		virtual COLORREF getTextColor() const final;
 
+		/// @brief Used as key in creators
+		/// @return typeid().hash_code()
+		virtual size_t getHash() const = 0;
+
 		virtual json::JSONBuilder getStructure() const override;
 		
 		virtual ~BaseComponent();

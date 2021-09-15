@@ -87,64 +87,64 @@ namespace gui_framework
 	{
 		creators.reserve(25);
 
-		this->addCreator<Button, utility::ButtonCreator>(serialized_classes::button);
+		this->addCreator<Button, utility::ButtonCreator>();
 
-		this->addCreator<CheckBox, utility::CheckBoxCreator>(serialized_classes::checkBox);
+		this->addCreator<CheckBox, utility::CheckBoxCreator>();
 
-		this->addCreator<ImageButton, utility::ImageButtonCreator>(serialized_classes::imageButton);
+		this->addCreator<ImageButton, utility::ImageButtonCreator>();
 
-		this->addCreator<EditControl, utility::EditControlCreator>(serialized_classes::editControl);
+		this->addCreator<EditControl, utility::EditControlCreator>();
 
-		this->addCreator<RichEdit, utility::RichEditCreator>(serialized_classes::richEdit);
+		this->addCreator<RichEdit, utility::RichEditCreator>();
 
-		this->addCreator<StaticControl, utility::StaticControlCreator>(serialized_classes::staticControl);
+		this->addCreator<StaticControl, utility::StaticControlCreator>();
 
-		this->addCreator<SeparateWindow, utility::SeparateWindowCreator>(serialized_classes::separateWindow);
+		this->addCreator<SeparateWindow, utility::SeparateWindowCreator>();
 
-		this->addCreator<ChildWindow, utility::ChildWindowCreator>(serialized_classes::childWindow);
+		this->addCreator<ChildWindow, utility::ChildWindowCreator>();
 
-		this->addCreator<TabControl, utility::TabControlCreator>(serialized_classes::tabControl);
+		this->addCreator<TabControl, utility::TabControlCreator>();
 
-		this->addCreator<GroupBox, utility::GroupBoxCreator>(serialized_classes::groupBox);
+		this->addCreator<GroupBox, utility::GroupBoxCreator>();
 
 #pragma region ProgressBars
-		this->addCreator<ProgressBar, utility::ProgressBarCreator>(serialized_classes::progressBar);
+		this->addCreator<ProgressBar, utility::ProgressBarCreator>();
 
-		this->addCreator<InfiniteProgressBar, utility::InfiniteProgressBarCreator>(serialized_classes::infiniteProgressBar);
+		this->addCreator<InfiniteProgressBar, utility::InfiniteProgressBarCreator>();
 #pragma endregion
 
 #pragma region ComboBoxes
-		this->addCreator<DropDownComboBox, utility::DropDownComboBoxCreator>(serialized_classes::dropDownComboBox);
+		this->addCreator<DropDownComboBox, utility::DropDownComboBoxCreator>();
 
-		this->addCreator<DropDownListComboBox, utility::DropDownListComboBoxCreator>(serialized_classes::dropDownListComboBox);
+		this->addCreator<DropDownListComboBox, utility::DropDownListComboBoxCreator>();
 
-		this->addCreator<SimpleComboBox, utility::SimpleComboBoxCreator>(serialized_classes::simpleComboBox);
+		this->addCreator<SimpleComboBox, utility::SimpleComboBoxCreator>();
 #pragma endregion
 
 #pragma region ListBoxes
-		this->addCreator<ListBox, utility::ListBoxCreator>(serialized_classes::listBox);
+		this->addCreator<ListBox, utility::ListBoxCreator>();
 
-		this->addCreator<MultipleSelectListBox, utility::MultipleSelectListBoxCreator>(serialized_classes::multipleSelectListBox);
+		this->addCreator<MultipleSelectListBox, utility::MultipleSelectListBoxCreator>();
 #pragma endregion
 
 #pragma region ListViews
-		this->addCreator<IconListView, utility::IconListViewCreator>(serialized_classes::iconListView);
+		this->addCreator<IconListView, utility::IconListViewCreator>();
 
-		this->addCreator<ListIconListView, utility::ListIconListViewCreator>(serialized_classes::listIconListView);
+		this->addCreator<ListIconListView, utility::ListIconListViewCreator>();
 
-		this->addCreator<TextListView, utility::TextListViewCreator>(serialized_classes::textListView);
+		this->addCreator<TextListView, utility::TextListViewCreator>();
 
-		this->addCreator<ListTextListView, utility::ListTextListViewCreator>(serialized_classes::listTextListView);
+		this->addCreator<ListTextListView, utility::ListTextListViewCreator>();
 
-		this->addCreator<TextIconListView, utility::TextIconListViewCreator>(serialized_classes::textIconListView);
+		this->addCreator<TextIconListView, utility::TextIconListViewCreator>();
 
-		this->addCreator<ListTextIconListView, utility::ListTextIconListViewCreator>(serialized_classes::listTextIconListView);
+		this->addCreator<ListTextIconListView, utility::ListTextIconListViewCreator>();
 #pragma endregion
 
 #pragma region Trackbars
-		this->addCreator<HorizontalTrackbarControl, utility::HorizontalTrackbarControlCreator>(serialized_classes::horizontalTrackbarControl);
+		this->addCreator<HorizontalTrackbarControl, utility::HorizontalTrackbarControlCreator>();
 
-		this->addCreator<VerticalTrackbarControl, utility::VerticalTrackbarControlCreator>(serialized_classes::verticalTrackbarControl);
+		this->addCreator<VerticalTrackbarControl, utility::VerticalTrackbarControlCreator>();
 #pragma endregion
 	}
 

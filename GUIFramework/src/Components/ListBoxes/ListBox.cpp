@@ -21,4 +21,9 @@ namespace gui_framework
 			utility::appendStyle(handle, LBS_SORT);
 		}
 	}
+
+	size_t ListBox::getHash() const
+	{
+		return typeid(ListBox).hash_code();
+	}
 }

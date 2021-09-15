@@ -68,7 +68,7 @@ namespace gui_framework
 	BaseTabControl::BaseTabControl(const wstring& tabControlName, const utility::ComponentSettings& settings, uint16_t imagesWidth, uint16_t imagesHeight, BaseComponent* parent) :
 		BaseComponent
 		(
-			wstring(standard_classes::tabControl),
+			standard_classes::tabControl,
 			tabControlName,
 			settings,
 			styles::DefaultStyles(),

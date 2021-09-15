@@ -8,7 +8,7 @@ namespace gui_framework
 	BaseScrollBar::BaseScrollBar(const wstring& scrollBarName, const utility::ComponentSettings& settings, const styles::ScrollBarStyles& styles, BaseComponent* parent) : 
 		BaseComponent
 		(
-			wstring(standard_classes::scrollBar),
+			standard_classes::scrollBar,
 			scrollBarName,
 			settings,
 			styles,

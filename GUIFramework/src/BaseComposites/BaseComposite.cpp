@@ -121,11 +121,6 @@ namespace gui_framework
 		return -1;
 	}
 
-	const string& BaseComposite::getCreationType() const
-	{
-		return serialized_creation_type::baseComposite;
-	}
-
 	vector<pair<string, json::utility::objectSmartPointer<json::utility::jsonObject>>> BaseComposite::getChildrenStructure() const
 	{
 		vector<json::JSONBuilder> childrenStructure;

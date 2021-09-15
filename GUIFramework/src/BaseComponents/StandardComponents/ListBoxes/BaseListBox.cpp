@@ -15,7 +15,7 @@ namespace gui_framework
 	BaseListBox::BaseListBox(const wstring& listBoxName, const utility::ComponentSettings& settings, const styles::ListBoxStyles& styles, BaseComponent* parent) :
 		BaseComponent
 		(
-			wstring(standard_classes::listBox),
+			standard_classes::listBox,
 			listBoxName,
 			settings,
 			styles,

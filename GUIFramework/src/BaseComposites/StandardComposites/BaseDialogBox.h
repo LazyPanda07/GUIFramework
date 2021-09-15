@@ -36,9 +36,6 @@ namespace gui_framework
 	public:
 		static messageBoxResponse createMessageBox(const std::wstring& text, const std::wstring& title, messageBoxType type, BaseComponent* parent = nullptr, bool helpButton = false);
 
-	protected:
-		virtual const std::string& getCreationType() const override;
-
 	public:
 		/// @brief 
 		/// @param moduleName Name of loaded resource module with icons

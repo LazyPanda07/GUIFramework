@@ -63,7 +63,7 @@ namespace gui_framework
 	BaseRichEdit::BaseRichEdit(const wstring& richEditName, const utility::ComponentSettings& settings, BaseComponent* parent, bool isMultiLine) :
 		BaseComponent
 		(
-			wstring(standard_classes::richEdit),
+			standard_classes::richEdit,
 			richEditName,
 			settings,
 			styles::DefaultRichEditStyles(isMultiLine),

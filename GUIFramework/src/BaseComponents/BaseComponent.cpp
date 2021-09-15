@@ -366,6 +366,8 @@ namespace gui_framework
 		appendArray(static_cast<int64_t>(GetBValue(textColor)), textColorJSON);
 
 		structure->data.push_back({ "className"s, utility::to_string(className, codepage) });
+		
+		structure->data.push_back({ "hash"s, this->getHash() });
 
 		structure->data.push_back({ "desiredX"s, desiredX });
 		structure->data.push_back({ "desiredY"s, desiredY });
@@ -384,11 +386,6 @@ namespace gui_framework
 		}
 
 		structure->data.push_back({ "styles"s, styles->getStyles() });
-
-		if (this->isComposite())
-		{
-			structure->data.push_back({ "creationType"s, static_cast<const BaseComposite*>(this)->getCreationType() });
-		}
 
 		builder.push_back(make_pair(utility::to_string(windowName, codepage), move(structure)));
 

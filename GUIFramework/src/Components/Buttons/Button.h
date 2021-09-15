@@ -16,6 +16,8 @@ namespace gui_framework
 
 		Button(const std::wstring& buttonName, const std::wstring& buttonText, int x, int y, BaseComponent* parent, const std::string& functionName, const std::string& moduleName, uint16_t width = standard_sizes::buttonWidth, uint16_t height = standard_sizes::buttonHeight);
 
+		size_t getHash() const override;
+
 		~Button() = default;
 	};
 }

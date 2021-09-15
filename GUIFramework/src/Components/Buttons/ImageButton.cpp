@@ -138,6 +138,11 @@ namespace gui_framework
 		return type;
 	}
 
+	size_t ImageButton::getHash() const
+	{
+		return typeid(ImageButton).hash_code();
+	}
+
 	json::JSONBuilder ImageButton::getStructure() const
 	{
 		using json::utility::objectSmartPointer;
@@ -145,8 +150,6 @@ namespace gui_framework
 
 		json::JSONBuilder builder = BaseButton::getStructure();
 		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
-
-		__utility::changeClassName(current, serialized_classes::imageButton);
 
 		current->data.push_back({ "imageWidth"s, static_cast<uint64_t>(imageWidth) });
 		current->data.push_back({ "imageHeight"s, static_cast<uint64_t>(imageHeight) });

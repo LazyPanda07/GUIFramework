@@ -11,7 +11,7 @@ namespace gui_framework
 	BaseProgressBar::BaseProgressBar(const wstring& progressBarName, const utility::ComponentSettings& settings, BaseComponent* parent, int minRange, int maxRange, int updateStep) :
 		BaseComponent
 		(
-			wstring(standard_classes::progressBar),
+			standard_classes::progressBar,
 			progressBarName,
 			settings,
 			styles::DefaultStyles(),

@@ -23,6 +23,11 @@ namespace gui_framework
 
 	}
 
+	size_t TabControl::getHash() const
+	{
+		return typeid(TabControl).hash_code();
+	}
+
 	json::JSONBuilder TabControl::getStructure() const
 	{
 		using json::utility::jsonObject;
@@ -30,8 +35,6 @@ namespace gui_framework
 
 		json::JSONBuilder builder = BaseTabControl::getStructure();
 		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
-
-		__utility::changeClassName(current, serialized_classes::tabControl);
 
 		return builder;
 	}

@@ -43,6 +43,8 @@ namespace gui_framework
 
 		drawingType getDrawingType() const;
 
+		size_t getHash() const override;
+
 		json::JSONBuilder getStructure() const override;
 
 		~ImageButton();

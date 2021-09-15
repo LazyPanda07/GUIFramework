@@ -165,11 +165,6 @@ namespace gui_framework
 
 	namespace __utility
 	{
-		GUI_FRAMEWORK_API_FUNCTION void changeClassName(json::utility::objectSmartPointer<json::utility::jsonObject>& object, const string& className)
-		{
-			get<string>(ranges::find_if(object->data, [](const pair<string, json::utility::jsonObject::variantType>& value) { return value.first == "className"; })->second) = className;
-		}
-
 		GUI_FRAMEWORK_API_FUNCTION void throwNotImplementedException(string_view methodName, string_view className)
 		{
 			try
