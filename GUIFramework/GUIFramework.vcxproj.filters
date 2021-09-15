@@ -543,6 +543,12 @@
     <ClInclude Include="src\BaseComponents\StandardComponents\ScrollBars\BaseVerticalAndHorizontalScrollBar.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="src\Deserialization\Deserializers\Composites\SeparateWindowDeserializer.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Interfaces\Utility\IDeserializer.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\headers.cpp">
@@ -1047,6 +1053,12 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\BaseComponents\StandardComponents\ScrollBars\BaseVerticalAndHorizontalScrollBar.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Deserialization\Deserializers\Composites\SeparateWindowDeserializer.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Interfaces\Utility\IDeserializer.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

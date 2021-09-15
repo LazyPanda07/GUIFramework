@@ -9,21 +9,22 @@ namespace gui_framework
 		/// @brief Provides interface for serializable to JSON format
 		class GUI_FRAMEWORK_API ISerializable
 		{
-		private:
-			uint32_t codepage;
+		public:
+			static uint32_t getCodepage();
 
 		public:
-			ISerializable();
-
-			virtual void setCodepage(uint32_t codepage) final;
+			ISerializable() = default;
 
 			virtual json::JSONBuilder getStructure() const = 0;
-
-			virtual uint32_t getCodepage() const final;
 
 			friend std::ostream& operator << (std::ostream& outputStream, const ISerializable& serializable);
 
 			virtual ~ISerializable() = default;
 		};
+
+		inline uint32_t ISerializable::getCodepage()
+		{
+			return static_cast<uint32_t>(CP_UTF8);
+		}
 	}
 }

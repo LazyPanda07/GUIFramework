@@ -27,6 +27,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Interfaces\Utility\IDeserializer.h" />
+    <ClInclude Include="src\Deserialization\Deserializers\Composites\SeparateWindowDeserializer.h" />
     <ClInclude Include="src\BaseComponents\BaseComponent.h" />
     <ClInclude Include="src\BaseComponents\Creators\Buttons\CheckBoxCreator.h" />
     <ClInclude Include="src\BaseComponents\Creators\GroupBoxCreator.h" />
@@ -205,6 +207,8 @@
     <ClInclude Include="src\WindowMessages.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Interfaces\Utility\IDeserializer.cpp" />
+    <ClCompile Include="src\Deserialization\Deserializers\Composites\SeparateWindowDeserializer.cpp" />
     <ClCompile Include="src\BaseComponents\BaseComponent.cpp" />
     <ClCompile Include="src\BaseComponents\Creators\Buttons\CheckBoxCreator.cpp" />
     <ClCompile Include="src\BaseComponents\Creators\GroupBoxCreator.cpp" />
