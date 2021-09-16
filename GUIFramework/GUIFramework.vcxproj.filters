@@ -1061,10 +1061,10 @@
     <ClCompile Include="src\Deserialization\Deserializers\Composites\SeparateWindowDeserializer.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Interfaces\Utility\IDeserializer.cpp">
+    <ClCompile Include="src\Deserialization\Deserializers\Composites\ChildWindowDeserializer.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Deserialization\Deserializers\Composites\ChildWindowDeserializer.cpp">
+    <ClCompile Include="src\Interfaces\Utility\IDeserializer.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

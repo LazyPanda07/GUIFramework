@@ -11,6 +11,9 @@ namespace gui_framework
 	{
 		BaseComponent* SeparateWindowDeserializer::deserialize(const string& componentName, const json::utility::objectSmartPointer<json::utility::jsonObject>& description, BaseComposite* parent) const
 		{
+			using json::utility::objectSmartPointer;
+			using json::utility::jsonObject;
+
 			SeparateWindow* result = nullptr;
 			uint32_t codepage = interfaces::ISerializable::getCodepage();
 			const unique_ptr<utility::BaseComponentCreator>& creator = GUIFramework::get().getCreators().at(utility::getTypeHash<SeparateWindow>());
@@ -46,7 +49,12 @@ namespace gui_framework
 
 			for (const auto& i : children)
 			{
-				
+				const auto& [componentName, data] = get<objectSmartPointer<jsonObject>>(i->data.front().second)->data.front();
+				const auto& description = get<objectSmartPointer<jsonObject>>(data);
+
+				const unique_ptr<interfaces::IDeserializer>& deserializer = GUIFramework::get().getDeserializers().at(description->getUnsignedInt("hash"));
+
+				deserializer->deserialize(componentName, description, result);
 			}
 
 			return result;

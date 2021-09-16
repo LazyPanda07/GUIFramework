@@ -67,6 +67,9 @@
 #include "Components/Trackbars/HorizontalTrackbarControl.h"
 #include "Components/Trackbars/VerticalTrackbarControl.h"
 
+#include "Deserialization/Deserializers/Composites/ChildWindowDeserializer.h"
+#include "Deserialization/Deserializers/Composites/SeparateWindowDeserializer.h"
+
 using namespace std;
 
 namespace gui_framework
@@ -150,6 +153,71 @@ namespace gui_framework
 		this->addCreator<HorizontalTrackbarControl, utility::HorizontalTrackbarControlCreator>();
 
 		this->addCreator<VerticalTrackbarControl, utility::VerticalTrackbarControlCreator>();
+#pragma endregion
+	}
+
+	void GUIFramework::initDeserializers()
+	{
+		deserializers.reserve(25);
+
+		// this->addDeserializer<Button, deserializers::ButtonDeserializer>();
+		// 
+		// this->addDeserializer<CheckBox, deserializers::CheckBoxDeserializer>();
+		// 
+		// this->addDeserializer<ImageButton, deserializers::ImageButtonDeserializer>();
+		// 
+		// this->addDeserializer<EditControl, deserializers::EditControlDeserializer>();
+		// 
+		// this->addDeserializer<RichEdit, deserializers::RichEditDeserializer>();
+		// 
+		// this->addDeserializer<StaticControl, deserializers::StaticControlDeserializer>();
+
+		this->addDeserializer<SeparateWindow, deserializers::SeparateWindowDeserializer>();
+
+		this->addDeserializer<ChildWindow, deserializers::ChildWindowDeserializer>();
+
+		// this->addDeserializer<TabControl, deserializers::TabControlDeserializer>();
+		// 
+		// this->addDeserializer<GroupBox, deserializers::GroupBoxDeserializer>();
+
+#pragma region ProgressBars
+		// this->addDeserializer<ProgressBar, deserializers::ProgressBarDeserializer>();
+		// 
+		// this->addDeserializer<InfiniteProgressBar, deserializers::InfiniteProgressBarDeserializer>();
+#pragma endregion
+
+#pragma region ComboBoxes
+		// this->addDeserializer<DropDownComboBox, deserializers::DropDownComboBoxDeserializer>();
+		// 
+		// this->addDeserializer<DropDownListComboBox, deserializers::DropDownListComboBoxDeserializer>();
+		// 
+		// this->addDeserializer<SimpleComboBox, deserializers::SimpleComboBoxDeserializer>();
+#pragma endregion
+
+#pragma region ListBoxes
+		// this->addDeserializer<ListBox, deserializers::ListBoxDeserializer>();
+		// 
+		// this->addDeserializer<MultipleSelectListBox, deserializers::MultipleSelectListBoxDeserializer>();
+#pragma endregion
+
+#pragma region ListViews
+		// this->addDeserializer<IconListView, deserializers::IconListViewDeserializer>();
+		// 
+		// this->addDeserializer<ListIconListView, deserializers::ListIconListViewDeserializer>();
+		// 
+		// this->addDeserializer<TextListView, deserializers::TextListViewDeserializer>();
+		// 
+		// this->addDeserializer<ListTextListView, deserializers::ListTextListViewDeserializer>();
+		// 
+		// this->addDeserializer<TextIconListView, deserializers::TextIconListViewDeserializer>();
+		// 
+		// this->addDeserializer<ListTextIconListView, deserializers::ListTextIconListViewDeserializer>();
+#pragma endregion
+
+#pragma region Trackbars
+		// this->addDeserializer<HorizontalTrackbarControl, deserializers::HorizontalTrackbarControlDeserializer>();
+		// 
+		// this->addDeserializer<VerticalTrackbarControl, deserializers::VerticalTrackbarControlDeserializer>();
 #pragma endregion
 	}
 
@@ -288,9 +356,21 @@ namespace gui_framework
 
 		try
 		{
-			if (settingsObject->getBool(json_settings::usingDefaultCreatorsSetting))
+			if (settingsObject->getBool(json_settings::usingCreatorsSetting))
 			{
 				this->initCreators();
+			}
+		}
+		catch (const json::exceptions::CantFindValueException&)
+		{
+
+		}
+
+		try
+		{
+			if (settingsObject->getBool(json_settings::usingDeserializersSetting))
+			{
+				this->initDeserializers();
 			}
 		}
 		catch (const json::exceptions::CantFindValueException&)
@@ -639,6 +719,11 @@ namespace gui_framework
 	const unordered_map<size_t, smartPointerType<utility::BaseComponentCreator>>& GUIFramework::getCreators() const
 	{
 		return creators;
+	}
+
+	const unordered_map<size_t, smartPointerType<interfaces::IDeserializer>>& GUIFramework::getDeserializers() const
+	{
+		return deserializers;
 	}
 
 	const json::JSONParser& GUIFramework::getJSONSettings() const

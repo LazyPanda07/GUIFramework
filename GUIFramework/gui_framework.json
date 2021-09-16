@@ -1,6 +1,7 @@
 {
   "settings": {
-    "usingDefaultCreators": true,
+    "usingCreators": true,
+    "usingDeserializers": true,
     "threadsCount": 4,
     "usingNotImplementedExceptions": false
   }

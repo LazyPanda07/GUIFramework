@@ -69,7 +69,8 @@ namespace gui_framework
 
 		inline const std::string settingsObject = "settings";
 
-		inline const std::string usingDefaultCreatorsSetting = "usingDefaultCreators";
+		inline const std::string usingCreatorsSetting = "usingCreators";
+		inline const std::string usingDeserializersSetting = "usingDeserializers";
 		inline const std::string threadsCountSetting = "threadsCount";
 		inline const std::string modulesSetting = "modules";
 		inline const std::string moduleNameSetting = "moduleName";
