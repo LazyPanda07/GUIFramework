@@ -209,9 +209,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Deserialization\Deserializers\Composites\ChildWindowDeserializer.cpp" />
-    <ClCompile Include="src\Interfaces\Utility\IDeserializer.cpp" />
     <ClCompile Include="src\Deserialization\Deserializers\Composites\SeparateWindowDeserializer.cpp" />
     <ClCompile Include="src\BaseComponents\BaseComponent.cpp" />
+    <ClCompile Include="src\Interfaces\Utility\IDeserializer.cpp" />
     <ClCompile Include="src\Utility\Creators\Components\Buttons\CheckBoxCreator.cpp" />
     <ClCompile Include="src\Utility\Creators\Composites\GroupBoxCreator.cpp" />
     <ClCompile Include="src\Utility\Creators\Components\Buttons\ImageButtonCreator.cpp" />

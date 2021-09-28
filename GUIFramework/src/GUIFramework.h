@@ -2,6 +2,7 @@
 
 #include "headers.h"
 #include "Utility/Creators/BaseComponentCreator.h"
+#include "Interfaces/Utility/IDeserializer.h"
 
 #pragma comment (lib, "Comctl32.lib")
 #pragma comment (lib, "UxTheme.lib")
@@ -45,6 +46,7 @@ namespace gui_framework
 		std::unordered_map<std::string, HMODULE> modules;
 		std::unordered_map<std::string, std::string> modulesPaths;
 		std::unordered_map<size_t, smartPointerType<utility::BaseComponentCreator>> creators;
+		std::unordered_map<size_t, smartPointerType<interfaces::IDeserializer>> deserializers;
 #pragma region Ids
 		std::unordered_multimap<std::wstring, uint32_t> generatedIds;
 		std::queue<uint32_t> availableIds;
@@ -71,6 +73,8 @@ namespace gui_framework
 
 	private:
 		void initCreators();
+
+		void initDeserializers();
 
 		void addComponent(BaseComponent* component);
 
@@ -152,6 +156,10 @@ namespace gui_framework
 		template<std::derived_from<BaseComponent> T, std::derived_from<utility::BaseComponentCreator> CreatorT, typename... Args>
 		void addCreator(Args&&... args);
 
+		/// @brief Add derived from IDeserializer deserializer
+		template<std::derived_from<BaseComponent> T, std::derived_from<interfaces::IDeserializer> DeserializerT, typename... Args>
+		void addDeserializer(Args&&... args);
+
 		/// @brief Thread safe 
 		/// @param handle 
 		/// @return Found component or nullptr
@@ -174,6 +182,10 @@ namespace gui_framework
 		/// @brief Get all current registered creators
 		/// @return creators
 		const std::unordered_map<size_t, smartPointerType<utility::BaseComponentCreator>>& getCreators() const;
+
+		/// @brief Get all current registered deserializers
+		/// @return deserializers
+		const std::unordered_map<size_t, smartPointerType<interfaces::IDeserializer>>& getDeserializers() const;
 
 		/// @brief Get settings from gui_framework.json
 		/// @return jsonSettings
@@ -212,5 +224,11 @@ namespace gui_framework
 	void GUIFramework::addCreator(Args&&... args)
 	{
 		creators[typeid(T).hash_code()] = smartPointerType<CreatorT>(new CreatorT(std::forward<Args>(args)...));
+	}
+
+	template<std::derived_from<BaseComponent> T, std::derived_from<interfaces::IDeserializer> DeserializerT, typename... Args>
+	void GUIFramework::addDeserializer(Args&&... args)
+	{
+		deserializers[typeid(T).hash_code()] = smartPointerType<DeserializerT>(new DeserializerT(std::forward<Args>(args)...));
 	}
 }

@@ -1,7 +1,6 @@
 #pragma once
 
 #include "headers.h"
-
 #include "BaseComposites/BaseComposite.h"
 
 namespace gui_framework
@@ -9,7 +8,7 @@ namespace gui_framework
 	namespace interfaces
 	{
 		/// @brief Interface for all deserializers
-		class IDeserializer
+		class GUI_FRAMEWORK_API IDeserializer
 		{
 		public:
 			IDeserializer() = default;
