@@ -86,9 +86,9 @@ namespace gui_framework
 	{
 		enum class additionalKey
 		{
-			alt,
+			alt = MOD_ALT,
 			control,
-			shift = 4
+			shift = MOD_SHIFT
 		};
 	}
 

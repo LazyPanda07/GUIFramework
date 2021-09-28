@@ -11,7 +11,7 @@ namespace gui_framework
 	public:
 		enum class messageBoxType
 		{
-			ok,
+			ok = MB_OK,
 			okCancel,
 			abortRetryIgnore,
 			yesNoCancel,
@@ -22,14 +22,14 @@ namespace gui_framework
 
 		enum class messageBoxResponse
 		{
-			ok = 1,
+			ok = IDOK,
 			cancel,
 			abort,
 			retry,
 			ignore,
 			yes,
 			no,
-			tryAgain = 10,
+			tryAgain = IDTRYAGAIN,
 			continueResponse
 		};
 
