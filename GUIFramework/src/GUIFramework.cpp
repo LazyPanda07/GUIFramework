@@ -97,6 +97,20 @@ set<uint32_t> makeHotkey(uint32_t key, const vector<gui_framework::hotkeys::addi
 
 namespace gui_framework
 {
+	GUIFramework::hotkeyData::hotkeyData() :
+		key(static_cast<uint32_t>(-1))
+	{
+
+	}
+
+	GUIFramework::hotkeyData::hotkeyData(uint32_t key, const function<void()>& hotkeyEvent, const vector<hotkeys::additionalKeys>& additionalKeys) :
+		key(key),
+		hotkeyEvent(hotkeyEvent),
+		additionalKeys(additionalKeys)
+	{
+
+	}
+
 	GUIFramework::hotkeyData::hotkeyData(uint32_t key, const string& functionName, const string& moduleName, const vector<hotkeys::additionalKeys>& additionalKeys) :
 		key(key),
 		functionName(functionName),
@@ -328,23 +342,31 @@ namespace gui_framework
 	void GUIFramework::processHotkeys() const
 	{
 		static array<BYTE, 256> keysState = {};
-		set<uint32_t> hotkey;
 		
 		if (GetKeyboardState(keysState.data()))
 		{
-			for (size_t i = 0; i < keysState.size(); i++)
+			static set<const set<uint32_t>*> possibleHotkeys;
+
+			possibleHotkeys.clear();
+
+			ranges::for_each(allHotkeys, [](const set<uint32_t>& keys) { possibleHotkeys.insert(&keys); });
+
+			for (const auto& i : allHotkeys)
 			{
-				if (keysState[i])
+				for (const auto& j : i)
 				{
-					hotkey.insert(static_cast<uint32_t>(i));
+					if (!keysState[j])
+					{
+						possibleHotkeys.erase(&i);
+					}
 				}
 			}
 
-			auto hotkeyIt = hotkeys.find(hash<set<uint32_t>>()(hotkey));
-
-			if (hotkeyIt != hotkeys.end())
+			if (possibleHotkeys.size())
 			{
-				hotkeyIt->second();
+				const set<uint32_t>& hotkey = **possibleHotkeys.begin();
+
+				hotkeys.at(hash<set<uint32_t>>()(hotkey))();
 			}
 		}
 	}
@@ -543,13 +565,16 @@ namespace gui_framework
 
 	size_t GUIFramework::registerHotkey(uint32_t key, const function<void()>& onClick, const vector<hotkeys::additionalKeys>& additionalKeys)
 	{
-		size_t id = hash<set<uint32_t>>()(makeHotkey(key, additionalKeys));
+		set<uint32_t> hotkey = makeHotkey(key, additionalKeys);
+		size_t id = hash<set<uint32_t>>()(hotkey);
 
 		unique_lock<mutex> lock(hotkeyIdMutex);
 
 		hotkeys[id] = onClick;
 
-		serializableHotkeysData[id] = hotkeyData();
+		allHotkeys.push_back(move(hotkey));
+
+		serializableHotkeysData[id] = hotkeyData(key, onClick, additionalKeys);
 
 		return id;
 	}
@@ -576,7 +601,8 @@ namespace gui_framework
 		{
 			unique_lock<mutex> lock(hotkeyIdMutex);
 
-			serializableHotkeysData[id] = hotkeyData(key, functionName, moduleName, additionalKeys);
+			serializableHotkeysData[id].functionName = functionName;
+			serializableHotkeysData[id].moduleName = moduleName;
 		}
 
 		return id;
@@ -590,7 +616,11 @@ namespace gui_framework
 
 		if (it != hotkeys.end())
 		{
+			set<uint32_t> hotkey = makeHotkey(serializableHotkeysData[hotkeyId].key, serializableHotkeysData[hotkeyId].additionalKeys);
+
 			hotkeys.erase(it);
+
+			erase(allHotkeys, hotkey);
 
 			serializableHotkeysData.erase(hotkeyId);
 
@@ -604,12 +634,15 @@ namespace gui_framework
 	{
 		unique_lock<mutex> lock(hotkeyIdMutex);
 
-		size_t hotkeyId = hash<set<uint32_t>>()(makeHotkey(key, additionalKeys));
+		set<uint32_t> hotkey = makeHotkey(key, additionalKeys);
+		size_t hotkeyId = hash<set<uint32_t>>()(hotkey);
 		auto it = hotkeys.find(hotkeyId);
 
 		if (it != hotkeys.end())
 		{
 			hotkeys.erase(it);
+
+			erase(allHotkeys, hotkey);
 
 			serializableHotkeysData.erase(hotkeyId);
 
