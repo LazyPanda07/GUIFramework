@@ -32,10 +32,7 @@ namespace gui_framework
 
 		while (code = GetMessageW(&message, nullptr, NULL, NULL) > 0)
 		{
-			if (message.message == WM_HOTKEY && message.wParam >= 0)
-			{
-				instance.processHotkey(static_cast<uint32_t>(message.wParam));
-			}
+			instance.processHotkeys();
 
 			TranslateMessage(&message);
 
