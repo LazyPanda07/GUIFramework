@@ -219,35 +219,6 @@ namespace gui_framework
 #pragma endregion
 	};
 
-	__forceinline void GUIFramework::processHotkeys() const
-	{
-		static std::set<const std::set<uint32_t>*> possibleHotkeys;
-
-		possibleHotkeys.clear();
-
-		std::ranges::for_each(allHotkeys, [](const std::set<uint32_t>& keys) { possibleHotkeys.insert(&keys); });
-
-		for (const auto& i : allHotkeys)
-		{
-			for (const auto& j : i)
-			{
-				if (!GetAsyncKeyState(j))
-				{
-					possibleHotkeys.erase(&i);
-
-					break;
-				}
-			}
-		}
-
-		if (possibleHotkeys.size())
-		{
-			const std::set<uint32_t>& hotkey = **possibleHotkeys.begin();
-
-			hotkeys.at(std::hash<std::set<uint32_t>>()(hotkey))();
-		}
-	}
-
 	inline GUIFramework& GUIFramework::get()
 	{
 		static GUIFramework instance;
