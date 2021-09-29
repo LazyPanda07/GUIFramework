@@ -94,24 +94,3 @@ inline size_t gui_framework::utility::getTypeHash()
 {
 	return typeid(T).hash_code();
 }
-
-template<>
-struct std::hash<std::set<uint32_t>>
-{
-	size_t operator () (const std::set<uint32_t>& data)
-	{
-		if (data.empty())
-		{
-			return 0;
-		}
-
-		size_t result = 1;
-
-		for (const auto& i : data)
-		{
-			result = 31 * result + i;
-		}
-
-		return result;
-	}
-};
