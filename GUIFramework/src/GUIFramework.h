@@ -19,11 +19,14 @@ namespace gui_framework
 		struct GUI_FRAMEWORK_API hotkeyData
 		{
 			uint32_t key;
+			std::function<void()> hotkeyEvent;
 			std::string functionName;
 			std::string moduleName;
 			std::vector<hotkeys::additionalKeys> additionalKeys;
+		
+			hotkeyData();
 
-			hotkeyData() = default;
+			hotkeyData(uint32_t key, const std::function<void()>& hotkeyEvent, const std::vector<hotkeys::additionalKeys>& additionalKeys);
 
 			hotkeyData(uint32_t key, const std::string& functionName, const std::string& moduleName, const std::vector<hotkeys::additionalKeys>& additionalKeys);
 
@@ -54,7 +57,7 @@ namespace gui_framework
 #pragma endregion
 #pragma region Hotkeys
 		std::unordered_map<size_t, std::function<void()>> hotkeys;
-		std::unordered_map<size_t, std::vector<uint32_t>> hotkeysCombinations;
+		std::vector<std::set<uint32_t>> allHotkeys;
 		std::unordered_map<size_t, hotkeyData> serializableHotkeysData;
 		std::mutex hotkeyIdMutex;
 #pragma endregion
