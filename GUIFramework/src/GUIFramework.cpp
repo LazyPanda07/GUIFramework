@@ -72,27 +72,6 @@
 
 using namespace std;
 
-template<>
-struct hash<set<uint32_t>>
-{
-	size_t operator () (const set<uint32_t>& data)
-	{
-		if (data.empty())
-		{
-			return 0;
-		}
-
-		size_t result = 1;
-
-		for (const auto& i : data)
-		{
-			result = 31 * result + i;
-		}
-
-		return result;
-	}
-};
-
 set<uint32_t> makeHotkey(uint32_t key, const vector<gui_framework::hotkeys::additionalKeys>& additionalKeys);
 
 namespace gui_framework
@@ -117,7 +96,7 @@ namespace gui_framework
 		moduleName(moduleName),
 		additionalKeys(additionalKeys)
 	{
-		
+
 	}
 
 	void GUIFramework::initCreators()
@@ -337,38 +316,6 @@ namespace gui_framework
 		}
 
 		return result;
-	}
-
-	void GUIFramework::processHotkeys() const
-	{
-		static array<BYTE, 256> keysState = {};
-		
-		if (GetKeyboardState(keysState.data()))
-		{
-			static set<const set<uint32_t>*> possibleHotkeys;
-
-			possibleHotkeys.clear();
-
-			ranges::for_each(allHotkeys, [](const set<uint32_t>& keys) { possibleHotkeys.insert(&keys); });
-
-			for (const auto& i : allHotkeys)
-			{
-				for (const auto& j : i)
-				{
-					if (!keysState[j])
-					{
-						possibleHotkeys.erase(&i);
-					}
-				}
-			}
-
-			if (possibleHotkeys.size())
-			{
-				const set<uint32_t>& hotkey = **possibleHotkeys.begin();
-
-				hotkeys.at(hash<set<uint32_t>>()(hotkey))();
-			}
-		}
 	}
 
 	GUIFramework::GUIFramework() :
