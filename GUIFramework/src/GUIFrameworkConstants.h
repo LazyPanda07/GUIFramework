@@ -84,11 +84,11 @@ namespace gui_framework
 
 	namespace hotkeys
 	{
-		enum class additionalKey
+		enum class additionalKeys
 		{
-			alt = MOD_ALT,
+			shift = VK_SHIFT,
 			control,
-			shift = MOD_SHIFT
+			alt
 		};
 	}
 

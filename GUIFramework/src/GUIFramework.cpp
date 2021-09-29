@@ -72,23 +72,38 @@
 
 using namespace std;
 
+template<>
+struct hash<set<uint32_t>>
+{
+	size_t operator () (const set<uint32_t>& data)
+	{
+		if (data.empty())
+		{
+			return 0;
+		}
+
+		size_t result = 1;
+
+		for (const auto& i : data)
+		{
+			result = 31 * result + i;
+		}
+
+		return result;
+	}
+};
+
+set<uint32_t> makeHotkey(uint32_t key, const vector<gui_framework::hotkeys::additionalKeys>& additionalKeys);
+
 namespace gui_framework
 {
-	GUIFramework::hotkeyData::hotkeyData() :
-		hotkeyCode(static_cast<uint32_t>(-1)),
-		noRepeat(false)
-	{
-
-	}
-
-	GUIFramework::hotkeyData::hotkeyData(uint32_t hotkeyCode, const string& functionName, const string& moduleName, const vector<hotkeys::additionalKey>& additionalKeys, bool noRepeat) :
-		hotkeyCode(hotkeyCode),
+	GUIFramework::hotkeyData::hotkeyData(uint32_t key, const string& functionName, const string& moduleName, const vector<hotkeys::additionalKeys>& additionalKeys) :
+		key(key),
 		functionName(functionName),
 		moduleName(moduleName),
-		additionalKeys(additionalKeys),
-		noRepeat(noRepeat)
+		additionalKeys(additionalKeys)
 	{
-
+		
 	}
 
 	void GUIFramework::initCreators()
@@ -310,20 +325,33 @@ namespace gui_framework
 		return result;
 	}
 
-	void GUIFramework::processHotkey(uint32_t hotkey) const
+	void GUIFramework::processHotkeys() const
 	{
-		const function<void()>& onClick = hotkeys.at(hotkey);
-
-		if (onClick)
+		static array<BYTE, 256> keysState = {};
+		set<uint32_t> hotkey;
+		
+		if (GetKeyboardState(keysState.data()))
 		{
-			onClick();
+			for (size_t i = 0; i < keysState.size(); i++)
+			{
+				if (keysState[i])
+				{
+					hotkey.insert(static_cast<uint32_t>(i));
+				}
+			}
+
+			auto hotkeyIt = hotkeys.find(hash<set<uint32_t>>()(hotkey));
+
+			if (hotkeyIt != hotkeys.end())
+			{
+				hotkeyIt->second();
+			}
 		}
 	}
 
 	GUIFramework::GUIFramework() :
 		jsonSettings(ifstream(json_settings::settingsJSONFile.data())),
 		nextId(1),
-		nextHotkeyId(0),
 		modulesNeedToLoad(1),
 		currentLoadedModules(modulesNeedToLoad)
 	{
@@ -396,7 +424,7 @@ namespace gui_framework
 
 				if (modulePath.index() == static_cast<size_t>(json::utility::variantTypeEnum::jString))
 				{
-					modulePathString= std::get<string>(modulePath);
+					modulePathString = std::get<string>(modulePath);
 				}
 
 				{
@@ -513,65 +541,25 @@ namespace gui_framework
 		threadPool->addTask(move(task), callback);
 	}
 
-	uint32_t GUIFramework::registerHotkey(uint32_t hotkey, const function<void()>& onClick, const vector<hotkeys::additionalKey>& additionalKeys, bool noRepeat)
+	size_t GUIFramework::registerHotkey(uint32_t key, const function<void()>& onClick, const vector<hotkeys::additionalKeys>& additionalKeys)
 	{
-		uint32_t additional = 0;
-		uint32_t id;
-
-		for (const auto& i : additionalKeys)
-		{
-			additional |= static_cast<uint32_t>(i);
-		}
-
-		if (noRepeat)
-		{
-			additional |= MOD_NOREPEAT;
-		}
+		size_t id = hash<set<uint32_t>>()(makeHotkey(key, additionalKeys));
 
 		unique_lock<mutex> lock(hotkeyIdMutex);
 
-		if (availableHotkeyIds.size())
-		{
-			id = availableHotkeyIds.front();
+		hotkeys[id] = onClick;
 
-			availableHotkeyIds.pop();
-		}
-		else
-		{
-			id = nextHotkeyId++;
-		}
-
-		if (!RegisterHotKey(nullptr, id, additional, hotkey))
-		{
-			availableHotkeyIds.push(id);
-
-			throw exceptions::GetLastErrorException(GetLastError());
-		}
-		else
-		{
-			if (hotkeys.size() == id)
-			{
-				hotkeys.push_back(onClick);
-
-				serializableHotkeysData.emplace_back();
-			}
-			else
-			{
-				hotkeys[id] = onClick;
-
-				serializableHotkeysData[id] = hotkeyData();
-			}
-		}
+		serializableHotkeysData[id] = hotkeyData();
 
 		return id;
 	}
 
-	uint32_t GUIFramework::registerHotkey(uint32_t hotkey, const string& functionName, const string& moduleName, const vector<hotkeys::additionalKey>& additionalKeys, bool noRepeat)
+	size_t GUIFramework::registerHotkey(uint32_t key, const string& functionName, const string& moduleName, const vector<hotkeys::additionalKeys>& additionalKeys)
 	{
 		onClickSignature tem = nullptr;
 
 		{
-			unique_lock<mutex> lock(hotkeyIdMutex);
+			unique_lock<mutex> lock(loadModulesMutex);
 
 			const HMODULE& module = this->getModules().at(moduleName);
 
@@ -583,42 +571,66 @@ namespace gui_framework
 			}
 		}
 
-		uint32_t id = this->registerHotkey(hotkey, tem, additionalKeys, noRepeat);
+		size_t id = this->registerHotkey(key, tem, additionalKeys);
 
 		{
 			unique_lock<mutex> lock(hotkeyIdMutex);
 
-			serializableHotkeysData[id] = hotkeyData(hotkey, functionName, moduleName, additionalKeys, noRepeat);
+			serializableHotkeysData[id] = hotkeyData(key, functionName, moduleName, additionalKeys);
 		}
 
 		return id;
 	}
 
-	bool GUIFramework::unregisterHotkey(uint32_t hotkeyId)
+	bool GUIFramework::unregisterHotkey(size_t hotkeyId)
 	{
 		unique_lock<mutex> lock(hotkeyIdMutex);
 
-		bool result = UnregisterHotKey(nullptr, hotkeyId);
+		auto it = hotkeys.find(hotkeyId);
 
-		if (result)
+		if (it != hotkeys.end())
 		{
-			availableHotkeyIds.push(hotkeyId);
+			hotkeys.erase(it);
 
-			hotkeys[hotkeyId] = nullptr;
+			serializableHotkeysData.erase(hotkeyId);
 
-			serializableHotkeysData[hotkeyId] = hotkeyData();
+			return true;
 		}
 
-		return result;
+		return false;
+	}
+
+	bool GUIFramework::unregisterHotkey(uint32_t key, const std::vector<hotkeys::additionalKeys>& additionalKeys)
+	{
+		unique_lock<mutex> lock(hotkeyIdMutex);
+
+		size_t hotkeyId = hash<set<uint32_t>>()(makeHotkey(key, additionalKeys));
+		auto it = hotkeys.find(hotkeyId);
+
+		if (it != hotkeys.end())
+		{
+			hotkeys.erase(it);
+
+			serializableHotkeysData.erase(hotkeyId);
+
+			return true;
+		}
+
+		return false;
 	}
 
 	vector<GUIFramework::hotkeyData> GUIFramework::getRegisteredHotkeys()
 	{
-		unique_lock<mutex> lock(hotkeyIdMutex);
-
 		vector<hotkeyData> result;
 
-		ranges::for_each(serializableHotkeysData, [&result](const hotkeyData& data) { if (data.functionName.size()) { result.emplace_back(data); } });
+		result.reserve(serializableHotkeysData.size());
+
+		unique_lock<mutex> lock(hotkeyIdMutex);
+
+		for (const auto& [key, value] : serializableHotkeysData)
+		{
+			result.emplace_back(value);
+		}
 
 		return result;
 	}
@@ -686,25 +698,24 @@ namespace gui_framework
 
 		vector<objectSmartPointer<jsonObject>> result;
 
-		for (const auto& i : serializableHotkeysData)
+		for (const auto& [key, value] : serializableHotkeysData)
 		{
-			if (i.functionName.size())
+			if (value.functionName.size())
 			{
 				objectSmartPointer<jsonObject> object = json::utility::make_object<jsonObject>();
 
-				object->data.push_back({ "hotkeyCode"s, static_cast<uint64_t>(i.hotkeyCode) });
-				object->data.push_back({ "functionName"s, i.functionName });
-				object->data.push_back({ "moduleName"s, i.moduleName });
-				object->data.push_back({ "pathToModule"s, modulesPaths.at(i.moduleName) });
-				object->data.push_back({ "noRepeat"s, i.noRepeat });
+				object->data.push_back({ "key"s, static_cast<uint64_t>(value.key) });
+				object->data.push_back({ "functionName"s, value.functionName });
+				object->data.push_back({ "moduleName"s, value.moduleName });
+				object->data.push_back({ "pathToModule"s, modulesPaths.at(value.moduleName) });
 
-				if (i.additionalKeys.size())
+				if (value.additionalKeys.size())
 				{
 					vector<objectSmartPointer<jsonObject>> additionalKeys;
 
-					additionalKeys.reserve(i.additionalKeys.size());
+					additionalKeys.reserve(value.additionalKeys.size());
 
-					ranges::for_each(i.additionalKeys, [&additionalKeys](const hotkeys::additionalKey& key) { json::utility::appendArray(static_cast<int64_t>(key), additionalKeys); });
+					ranges::for_each(value.additionalKeys, [&additionalKeys](const hotkeys::additionalKeys& key) { json::utility::appendArray(static_cast<int64_t>(key), additionalKeys); });
 
 					object->data.push_back({ "additionalKeys"s, move(additionalKeys) });
 				}
@@ -752,4 +763,15 @@ namespace gui_framework
 
 		return cantLoadedModules;
 	}
+}
+
+set<uint32_t> makeHotkey(uint32_t key, const vector<gui_framework::hotkeys::additionalKeys>& additionalKeys)
+{
+	set<uint32_t> hotkey;
+
+	for_each(additionalKeys.begin(), additionalKeys.end(), [&hotkey](gui_framework::hotkeys::additionalKeys additionalKey) { hotkey.insert(static_cast<uint32_t>(additionalKey)); });
+
+	hotkey.insert(key);
+
+	return hotkey;
 }

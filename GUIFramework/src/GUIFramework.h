@@ -18,15 +18,14 @@ namespace gui_framework
 	public:
 		struct GUI_FRAMEWORK_API hotkeyData
 		{
-			uint32_t hotkeyCode;
+			uint32_t key;
 			std::string functionName;
 			std::string moduleName;
-			std::vector<hotkeys::additionalKey> additionalKeys;
-			bool noRepeat;
+			std::vector<hotkeys::additionalKeys> additionalKeys;
 
-			hotkeyData();
+			hotkeyData() = default;
 
-			hotkeyData(uint32_t hotkeyCode, const std::string& functionName, const std::string& moduleName, const std::vector<hotkeys::additionalKey>& additionalKeys = {}, bool noRepeat = false);
+			hotkeyData(uint32_t key, const std::string& functionName, const std::string& moduleName, const std::vector<hotkeys::additionalKeys>& additionalKeys);
 
 			hotkeyData(const hotkeyData&) = default;
 
@@ -54,11 +53,10 @@ namespace gui_framework
 		uint32_t nextId;
 #pragma endregion
 #pragma region Hotkeys
-		std::vector<std::function<void()>> hotkeys;
-		std::vector<hotkeyData> serializableHotkeysData;
-		std::queue<uint32_t> availableHotkeyIds;
+		std::unordered_map<size_t, std::function<void()>> hotkeys;
+		std::unordered_map<size_t, std::vector<uint32_t>> hotkeysCombinations;
+		std::unordered_map<size_t, hotkeyData> serializableHotkeysData;
 		std::mutex hotkeyIdMutex;
-		uint32_t nextHotkeyId;
 #pragma endregion
 #pragma region ComponentsFinding
 		std::vector<BaseComponent*> components;
@@ -89,7 +87,7 @@ namespace gui_framework
 
 		std::vector<uint32_t> getIds(const std::wstring& windowName);
 
-		void processHotkey(uint32_t hotkey) const;
+		void processHotkeys() const;
 
 	private:
 		GUIFramework();
@@ -115,27 +113,32 @@ namespace gui_framework
 		void addTask(std::function<void()>&& task, const std::function<void()>& callback = nullptr);
 
 		/// @brief Only works in thread, that call runMainLoop from WindowHolder. Thread safe register hotkey
-		/// @param hotkey Value from https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
+		/// @param key Value from https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
+		/// @param onClick Function to call
 		/// @param additionalKeys 
-		/// @param noRepeat 
 		/// @return Hotkey id
-		/// @exception GetLastErrorException 
-		uint32_t registerHotkey(uint32_t hotkey, const std::function<void()>& onClick, const std::vector<hotkeys::additionalKey>& additionalKeys = {}, bool noRepeat = false);
+		size_t registerHotkey(uint32_t key, const std::function<void()>& onClick, const std::vector<hotkeys::additionalKeys>& additionalKeys = {});
 
 		/// @brief Only works in thread, that call runMainLoop from WindowHolder. Thread safe register hotkey
-		/// @param hotkey Value from https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
+		/// @param key Value from https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
+		/// @param functionName Name of function to call
+		/// @param moduleName Name of module where function store
 		/// @param additionalKeys 
-		/// @param noRepeat 
 		/// @return Hotkey id
-		/// @exception GetLastErrorException 
 		/// @exception CantFindFunctionFromModuleException 
 		/// @exception std::out_of_range Can't find moduleName in loaded modules
-		uint32_t registerHotkey(uint32_t hotkey, const std::string& functionName, const std::string& moduleName, const std::vector<hotkeys::additionalKey>& additionalKeys = {}, bool noRepeat = false);
+		size_t registerHotkey(uint32_t key, const std::string& functionName, const std::string& moduleName, const std::vector<hotkeys::additionalKeys>& additionalKeys = {});
 
 		/// @brief Thread safe unregister hotkey
-		/// @param hotkeyId 
-		/// @return Success
-		bool unregisterHotkey(uint32_t hotkeyId);
+		/// @param hotkeyId Return value from registerHotkey
+		/// @return Is successed
+		bool unregisterHotkey(size_t hotkeyId);
+
+		/// @brief Thread safe unregister hotkey
+		/// @param key Value from https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
+		/// @param additionalKeys
+		/// @return Is successed
+		bool unregisterHotkey(uint32_t key, const std::vector<hotkeys::additionalKeys>& additionalKeys = {});
 
 		/// @brief Thread safe get hotkeys
 		/// @return Registered hotkeys
