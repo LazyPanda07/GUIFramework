@@ -12,6 +12,7 @@ namespace gui_framework
 			std::wstring text;
 			std::string onClickFunctionName;
 			std::string onClickFunctionModule;
+			std::string pathToModule;
 
 		public:
 			ButtonParser() = default;

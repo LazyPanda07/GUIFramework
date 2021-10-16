@@ -71,6 +71,7 @@
 #include "Deserialization/Deserializers/Composites/SeparateWindowDeserializer.h"
 #include "Deserialization/Deserializers/Components/EditControlDeserializer.h"
 #include "Deserialization/Deserializers/Components/ButtonDeserializer.h"
+#include "Deserialization/Deserializers/Components/RichEditDeserializer.h"
 
 using namespace std;
 
@@ -183,8 +184,8 @@ namespace gui_framework
 		// this->addDeserializer<ImageButton, deserializers::ImageButtonDeserializer>();
 		// 
 		this->addDeserializer<EditControl, deserializers::EditControlDeserializer>();
-		// 
-		// this->addDeserializer<RichEdit, deserializers::RichEditDeserializer>();
+		
+		this->addDeserializer<RichEdit, deserializers::RichEditDeserializer>();
 		// 
 		// this->addDeserializer<StaticControl, deserializers::StaticControlDeserializer>();
 

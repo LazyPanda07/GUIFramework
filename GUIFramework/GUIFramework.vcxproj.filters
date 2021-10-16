@@ -567,6 +567,12 @@
     <ClInclude Include="src\Deserialization\Deserializers\Parsers\ButtonParser.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="src\Deserialization\Deserializers\Components\RichEditDeserializer.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Deserialization\Deserializers\Parsers\RichEditParser.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\headers.cpp">
@@ -1095,6 +1101,12 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Deserialization\Deserializers\Parsers\ButtonParser.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Deserialization\Deserializers\Components\RichEditDeserializer.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Deserialization\Deserializers\Parsers\RichEditParser.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
