@@ -45,6 +45,8 @@ void standard()
 		ptr->setLargeIcon(R"(assets\icon.ico)");
 
 		new EditControl(L"Edit", 0, 0, ptr);
+
+		new Button(L"Button", L"Text", 0, 20, ptr);
 		
 		thread([ptr]() { this_thread::sleep_for(2s); ofstream("test.json") << *ptr << endl; }).detach();
 
