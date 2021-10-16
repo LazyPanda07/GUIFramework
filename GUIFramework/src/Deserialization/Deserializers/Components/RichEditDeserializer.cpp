@@ -20,7 +20,7 @@ namespace gui_framework
 			RichEdit* result = nullptr;
 			uint32_t codepage = interfaces::ISerializable::getCodepage();
 			const unique_ptr<utility::BaseComponentCreator>& creator = GUIFramework::get().getCreators().at(utility::getTypeHash<RichEdit>());
-			utility::AdditionalCreationData<RichEdit> creationData(parser.callbacks);
+			utility::AdditionalCreationData<RichEdit> creationData(parser.callbacks, parser.isMultiLine, parser.limitTextCount);
 
 			result = static_cast<RichEdit*>(creator->create(utility::to_wstring(componentName, codepage), parser.settings, creationData.getData(), parent));
 

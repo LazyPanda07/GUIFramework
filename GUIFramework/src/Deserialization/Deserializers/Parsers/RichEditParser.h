@@ -10,6 +10,8 @@ namespace gui_framework
 		struct GUI_FRAMEWORK_API RichEditParser : public BaseComponentParser
 		{
 			std::array<std::pair<std::string, std::string>, BaseRichEdit::urlDetectEventSize> callbacks;
+			bool isMultiLine;
+			uint64_t limitTextCount;
 
 		public:
 			RichEditParser();

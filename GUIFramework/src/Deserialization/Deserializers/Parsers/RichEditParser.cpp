@@ -18,6 +18,10 @@ namespace gui_framework
 
 			const auto& jsonCallbacks = description->getArray("callbacks");
 
+			isMultiLine = description->getBool("isMultiLine");
+
+			limitTextCount = description->getUnsignedInt("limitTextCount");
+
 			for (const auto& i : jsonCallbacks)
 			{
 				callbacks[i->getInt("callbackType")] = { i->getString("callbackName"), i->getString("callbackModule") };
