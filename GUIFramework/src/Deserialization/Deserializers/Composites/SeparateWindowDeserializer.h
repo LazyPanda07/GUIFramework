@@ -17,7 +17,7 @@ namespace gui_framework
 			/// @param description 
 			/// @param parent Not used
 			/// @return Not handled by parent
-			virtual BaseComponent* deserialize(const std::string& componentName, const json::utility::objectSmartPointer<json::utility::jsonObject>& description, BaseComposite* parent = nullptr) const final override;
+			BaseComponent* deserialize(const std::string& componentName, const json::utility::objectSmartPointer<json::utility::jsonObject>& description, BaseComposite* parent = nullptr) const override;
 
 			~SeparateWindowDeserializer() = default;
 		};
