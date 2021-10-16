@@ -561,7 +561,7 @@
     <ClInclude Include="src\Deserialization\Deserializers\Components\EditControlDeserializer.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Deserialization\Deserializers\Components\ButtonDeserializer.h">
+    <ClInclude Include="src\Deserialization\Deserializers\Components\Buttons\ButtonDeserializer.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Deserialization\Deserializers\Parsers\ButtonParser.h">
@@ -574,6 +574,18 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Deserialization\Deserializers\Components\StaticControlDeserializer.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Deserialization\Deserializers\Components\Buttons\CheckBoxDeserializer.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Deserialization\Deserializers\Components\Buttons\ImageButtonDeserializer.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Deserialization\Deserializers\Parsers\CheckBoxParser.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Deserialization\Deserializers\Parsers\ImageButtonParser.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
@@ -1100,7 +1112,7 @@
     <ClCompile Include="src\Deserialization\Deserializers\Components\EditControlDeserializer.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Deserialization\Deserializers\Components\ButtonDeserializer.cpp">
+    <ClCompile Include="src\Deserialization\Deserializers\Components\Buttons\ButtonDeserializer.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Deserialization\Deserializers\Parsers\ButtonParser.cpp">
@@ -1113,6 +1125,18 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Deserialization\Deserializers\Components\StaticControlDeserializer.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Deserialization\Deserializers\Components\Buttons\CheckBoxDeserializer.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Deserialization\Deserializers\Components\Buttons\ImageButtonDeserializer.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Deserialization\Deserializers\Parsers\CheckBoxParser.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Deserialization\Deserializers\Parsers\ImageButtonParser.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

@@ -69,9 +69,14 @@
 
 #include "Deserialization/Deserializers/Composites/ChildWindowDeserializer.h"
 #include "Deserialization/Deserializers/Composites/SeparateWindowDeserializer.h"
+
 #include "Deserialization/Deserializers/Components/EditControlDeserializer.h"
-#include "Deserialization/Deserializers/Components/ButtonDeserializer.h"
 #include "Deserialization/Deserializers/Components/RichEditDeserializer.h"
+#include "Deserialization/Deserializers/Components/StaticControlDeserializer.h"
+
+#include "Deserialization/Deserializers/Components/Buttons/ButtonDeserializer.h"
+#include "Deserialization/Deserializers/Components/Buttons/ImageButtonDeserializer.h"
+#include "Deserialization/Deserializers/Components/Buttons/CheckBoxDeserializer.h"
 
 using namespace std;
 
@@ -178,16 +183,16 @@ namespace gui_framework
 		deserializers.reserve(25);
 
 		this->addDeserializer<Button, deserializers::ButtonDeserializer>();
-		// 
-		// this->addDeserializer<CheckBox, deserializers::CheckBoxDeserializer>();
-		// 
-		// this->addDeserializer<ImageButton, deserializers::ImageButtonDeserializer>();
-		// 
+		
+		this->addDeserializer<CheckBox, deserializers::CheckBoxDeserializer>();
+		
+		this->addDeserializer<ImageButton, deserializers::ImageButtonDeserializer>();
+		
 		this->addDeserializer<EditControl, deserializers::EditControlDeserializer>();
 		
 		this->addDeserializer<RichEdit, deserializers::RichEditDeserializer>();
-		// 
-		// this->addDeserializer<StaticControl, deserializers::StaticControlDeserializer>();
+		
+		this->addDeserializer<StaticControl, deserializers::StaticControlDeserializer>();
 
 		this->addDeserializer<SeparateWindow, deserializers::SeparateWindowDeserializer>();
 
