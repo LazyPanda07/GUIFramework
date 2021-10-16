@@ -78,6 +78,8 @@ namespace gui_framework
 
 		virtual void setTextColor(uint8_t red, uint8_t green, uint8_t blue);
 
+		virtual void setStyles(interfaces::IStyles& styles) final;
+
 		virtual BaseComponent* getParent() const final;
 
 		virtual HWND getHandle() const final;
@@ -109,6 +111,8 @@ namespace gui_framework
 		virtual COLORREF getBackgroundColor() const final;
 
 		virtual COLORREF getTextColor() const final;
+
+		virtual const smartPointerType<interfaces::IStyles>& getStyles() const final;
 
 		/// @brief Used as key in creators
 		/// @return typeid().hash_code()

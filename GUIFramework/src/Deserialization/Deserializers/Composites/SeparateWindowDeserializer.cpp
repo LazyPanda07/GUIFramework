@@ -32,9 +32,17 @@ namespace gui_framework
 
 			result->setExitMode(parser.mode);
 
-			result->setLargeIcon(parser.pathToLargeIcon);
+			result->setStyles(parser.styles);
 
-			result->setSmallIcon(parser.pathToSmallIcon);
+			if (parser.pathToLargeIcon.size())
+			{
+				result->setLargeIcon(parser.pathToLargeIcon);
+			}
+
+			if (parser.pathToSmallIcon.size())
+			{
+				result->setSmallIcon(parser.pathToSmallIcon);
+			}
 
 			for (const auto& i : children)
 			{
