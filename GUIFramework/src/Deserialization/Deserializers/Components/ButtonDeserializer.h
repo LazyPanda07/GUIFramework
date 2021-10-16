@@ -7,14 +7,14 @@ namespace gui_framework
 {
 	namespace deserializers
 	{
-		class GUI_FRAMEWORK_API EditControlDeserializer : public interfaces::IDeserializer
+		class GUI_FRAMEWORK_API ButtonDeserializer : public interfaces::IDeserializer
 		{
 		public:
-			EditControlDeserializer() = default;
+			ButtonDeserializer() = default;
 
 			BaseComponent* deserialize(const std::string& componentName, const json::utility::objectSmartPointer<json::utility::jsonObject>& description, BaseComposite* parent) const override;
 
-			~EditControlDeserializer() = default;
+			~ButtonDeserializer() = default;
 		};
 	}
 }

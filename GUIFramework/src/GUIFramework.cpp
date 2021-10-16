@@ -69,6 +69,8 @@
 
 #include "Deserialization/Deserializers/Composites/ChildWindowDeserializer.h"
 #include "Deserialization/Deserializers/Composites/SeparateWindowDeserializer.h"
+#include "Deserialization/Deserializers/Components/EditControlDeserializer.h"
+#include "Deserialization/Deserializers/Components/ButtonDeserializer.h"
 
 using namespace std;
 
@@ -174,13 +176,13 @@ namespace gui_framework
 	{
 		deserializers.reserve(25);
 
-		// this->addDeserializer<Button, deserializers::ButtonDeserializer>();
+		this->addDeserializer<Button, deserializers::ButtonDeserializer>();
 		// 
 		// this->addDeserializer<CheckBox, deserializers::CheckBoxDeserializer>();
 		// 
 		// this->addDeserializer<ImageButton, deserializers::ImageButtonDeserializer>();
 		// 
-		// this->addDeserializer<EditControl, deserializers::EditControlDeserializer>();
+		this->addDeserializer<EditControl, deserializers::EditControlDeserializer>();
 		// 
 		// this->addDeserializer<RichEdit, deserializers::RichEditDeserializer>();
 		// 

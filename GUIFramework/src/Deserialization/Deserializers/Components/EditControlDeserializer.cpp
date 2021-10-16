@@ -12,7 +12,7 @@ namespace gui_framework
 		{
 			using json::utility::objectSmartPointer;
 			using json::utility::jsonObject;
-			
+
 			parsers::BaseComponentParser parser;
 
 			parser.parse(description);
@@ -27,18 +27,9 @@ namespace gui_framework
 
 			result->setTextColor(parser.textColor[0], parser.textColor[1], parser.textColor[2]);
 
-			result->setExitMode(parser.mode);
-
 			result->setStyles(parser.styles);
 
-			try
-			{
-				result->setPlaceholder(utility::to_wstring(description->getString("placeholder"), codepage));
-			}
-			catch (const json::exceptions::CantFindValueException&)
-			{
-
-			}
+			result->setPlaceholder(utility::to_wstring(description->getString("placeholder"), codepage));
 
 			return result;
 		}
