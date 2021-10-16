@@ -32,11 +32,14 @@ namespace gui_framework
 
 		while (code = GetMessageW(&message, nullptr, NULL, NULL) > 0)
 		{
-			instance.processHotkeys();
-
 			TranslateMessage(&message);
 
 			DispatchMessageW(&message);
+
+			if (message.message == WM_KEYDOWN)
+			{
+				instance.processHotkeys();
+			}
 		}
 
 		for (const auto& i : registeredHotkeyIds)

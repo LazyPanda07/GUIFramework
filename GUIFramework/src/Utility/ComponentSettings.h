@@ -14,6 +14,8 @@ namespace gui_framework
 			uint16_t width;
 			uint16_t height;
 
+			ComponentSettings() = default;
+
 			/// @brief Create settings for createing all windows
 			/// @param x Top left corner x coordinate
 			/// @param y Top left corner y coordinate

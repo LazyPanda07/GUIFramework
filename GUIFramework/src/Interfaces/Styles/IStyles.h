@@ -21,6 +21,8 @@ namespace gui_framework
 		public:
 			IStyles();
 
+			IStyles(LONG_PTR styles, LONG_PTR extendedStyles);
+
 			IStyles(const IStyles&) = default;
 
 			IStyles(IStyles&&) noexcept = default;

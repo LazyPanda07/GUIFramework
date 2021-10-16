@@ -254,6 +254,11 @@ namespace gui_framework
 		InvalidateRect(handle, nullptr, true);
 	}
 
+	void BaseComponent::setStyles(interfaces::IStyles& styles)
+	{
+		this->styles = utility::make_smart_pointer<interfaces::IStyles>(styles);
+	}
+
 	BaseComponent* BaseComponent::getParent() const
 	{
 		return parent;
@@ -341,6 +346,11 @@ namespace gui_framework
 	COLORREF BaseComponent::getTextColor() const
 	{
 		return textColor;
+	}
+
+	const smartPointerType<interfaces::IStyles>& BaseComponent::getStyles() const
+	{
+		return styles;
 	}
 
 	json::JSONBuilder BaseComponent::getStructure() const

@@ -24,6 +24,13 @@ namespace gui_framework
 			
 		}
 
+		IStyles::IStyles(LONG_PTR styles, LONG_PTR extendedStyles) :
+			styles(styles),
+			extendedStyles(extendedStyles)
+		{
+
+		}
+
 		LONG_PTR IStyles::getStyles() const
 		{
 			return styles;
