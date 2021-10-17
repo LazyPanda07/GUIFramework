@@ -78,6 +78,9 @@
 #include "Deserialization/Deserializers/Components/Buttons/ImageButtonDeserializer.h"
 #include "Deserialization/Deserializers/Components/Buttons/CheckBoxDeserializer.h"
 
+#include "Deserialization/Deserializers/Components/Trackbars/HorizontalTrackbarControlDeserializer.h"
+#include "Deserialization/Deserializers/Components/Trackbars/VerticalTrackbarControlDeserializer.h"
+
 using namespace std;
 
 template<>
@@ -237,9 +240,9 @@ namespace gui_framework
 #pragma endregion
 
 #pragma region Trackbars
-		// this->addDeserializer<HorizontalTrackbarControl, deserializers::HorizontalTrackbarControlDeserializer>();
-		// 
-		// this->addDeserializer<VerticalTrackbarControl, deserializers::VerticalTrackbarControlDeserializer>();
+		this->addDeserializer<HorizontalTrackbarControl, deserializers::HorizontalTrackbarControlDeserializer>();
+		
+		this->addDeserializer<VerticalTrackbarControl, deserializers::VerticalTrackbarControlDeserializer>();
 #pragma endregion
 	}
 

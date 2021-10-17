@@ -33,6 +33,8 @@
     <ClInclude Include="src\Deserialization\Deserializers\Components\EditControlDeserializer.h" />
     <ClInclude Include="src\Deserialization\Deserializers\Components\RichEditDeserializer.h" />
     <ClInclude Include="src\Deserialization\Deserializers\Components\StaticControlDeserializer.h" />
+    <ClInclude Include="src\Deserialization\Deserializers\Components\Trackbars\HorizontalTrackbarControlDeserializer.h" />
+    <ClInclude Include="src\Deserialization\Deserializers\Components\Trackbars\VerticalTrackbarControlDeserializer.h" />
     <ClInclude Include="src\Deserialization\Deserializers\Composites\ChildWindowDeserializer.h" />
     <ClInclude Include="src\Deserialization\Deserializers\Parsers\BaseComponentParser.h" />
     <ClInclude Include="src\Deserialization\Deserializers\Parsers\BaseCompositeParser.h" />
@@ -40,6 +42,7 @@
     <ClInclude Include="src\Deserialization\Deserializers\Parsers\CheckBoxParser.h" />
     <ClInclude Include="src\Deserialization\Deserializers\Parsers\ImageButtonParser.h" />
     <ClInclude Include="src\Deserialization\Deserializers\Parsers\RichEditParser.h" />
+    <ClInclude Include="src\Deserialization\Deserializers\Parsers\TrackbarControlParser.h" />
     <ClInclude Include="src\Interfaces\Utility\IDeserializer.h" />
     <ClInclude Include="src\Deserialization\Deserializers\Composites\SeparateWindowDeserializer.h" />
     <ClInclude Include="src\BaseComponents\BaseComponent.h" />
@@ -226,6 +229,8 @@
     <ClCompile Include="src\Deserialization\Deserializers\Components\EditControlDeserializer.cpp" />
     <ClCompile Include="src\Deserialization\Deserializers\Components\RichEditDeserializer.cpp" />
     <ClCompile Include="src\Deserialization\Deserializers\Components\StaticControlDeserializer.cpp" />
+    <ClCompile Include="src\Deserialization\Deserializers\Components\Trackbars\HorizontalTrackbarControlDeserializer.cpp" />
+    <ClCompile Include="src\Deserialization\Deserializers\Components\Trackbars\VerticalTrackbarControlDeserializer.cpp" />
     <ClCompile Include="src\Deserialization\Deserializers\Composites\ChildWindowDeserializer.cpp" />
     <ClCompile Include="src\Deserialization\Deserializers\Composites\SeparateWindowDeserializer.cpp" />
     <ClCompile Include="src\BaseComponents\BaseComponent.cpp" />
@@ -235,6 +240,7 @@
     <ClCompile Include="src\Deserialization\Deserializers\Parsers\CheckBoxParser.cpp" />
     <ClCompile Include="src\Deserialization\Deserializers\Parsers\ImageButtonParser.cpp" />
     <ClCompile Include="src\Deserialization\Deserializers\Parsers\RichEditParser.cpp" />
+    <ClCompile Include="src\Deserialization\Deserializers\Parsers\TrackbarControlParser.cpp" />
     <ClCompile Include="src\Interfaces\Utility\IDeserializer.cpp" />
     <ClCompile Include="src\Utility\Creators\Components\Buttons\CheckBoxCreator.cpp" />
     <ClCompile Include="src\Utility\Creators\Composites\GroupBoxCreator.cpp" />

@@ -188,7 +188,7 @@ namespace gui_framework
 		{
 			return callbacks[7];
 		}
-		
+
 		return callbacks[static_cast<size_t>(event) % urlDetectEventSize];
 	}
 
@@ -229,9 +229,9 @@ namespace gui_framework
 		vector<objectSmartPointer<jsonObject>> jsonCallbacks;
 		const auto& modulesPaths = GUIFramework::get().getModulesPaths();
 
-		builder["isMultiLine"] = isMultiLine;
+		current->data.push_back({ "isMultiLine"s, isMultiLine });
 
-		builder["limitTextCount"] = limitTextCount;
+		current->data.push_back({ "limitTextCount"s, limitTextCount });
 
 		for (size_t i = 0; i < callbacksFunctionNamesAndModules.size(); i++)
 		{
