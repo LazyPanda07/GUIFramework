@@ -1,6 +1,6 @@
 #include "HorizontalTrackbarControlDeserializer.h"
 
-#include "Deserialization/Deserializers/Parsers/TrackbarControlParser.h"
+#include "Deserialization/Parsers/TrackbarControlParser.h"
 #include "Components/Trackbars/HorizontalTrackbarControl.h"
 
 using namespace std;

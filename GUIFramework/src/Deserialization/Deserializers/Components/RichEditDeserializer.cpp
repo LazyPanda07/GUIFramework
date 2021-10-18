@@ -1,6 +1,6 @@
 #include "RichEditDeserializer.h"
 
-#include "Deserialization/Deserializers/Parsers/RichEditParser.h"
+#include "Deserialization/Parsers/RichEditParser.h"
 
 using namespace std;
 

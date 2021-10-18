@@ -1,6 +1,6 @@
 #include "EditControlDeserializer.h"
 
-#include "Deserialization/Deserializers/Parsers/BaseComponentParser.h"
+#include "Deserialization/Parsers/BaseComponentParser.h"
 
 using namespace std;
 

@@ -13,7 +13,7 @@ namespace gui_framework
 		class GUI_FRAMEWORK_API AdditionalCreationData<TabControl>
 		{
 		protected:
-			std::vector<TabControl::tabData> data;
+			std::vector<BaseTabControl::tabData> data;
 			uint16_t imagesWidth;
 			uint16_t imagesHeight;
 

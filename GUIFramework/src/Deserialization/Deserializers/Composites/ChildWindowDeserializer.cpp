@@ -1,7 +1,7 @@
 #include "headers.h"
 #include "ChildWindowDeserializer.h"
 
-#include "Deserialization/Deserializers/Parsers/BaseCompositeParser.h"
+#include "Deserialization/Parsers/BaseCompositeParser.h"
 
 using namespace std;
 
