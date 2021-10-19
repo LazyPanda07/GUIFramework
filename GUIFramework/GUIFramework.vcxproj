@@ -37,10 +37,12 @@
     <ClInclude Include="src\Deserialization\Deserializers\Components\Trackbars\HorizontalTrackbarControlDeserializer.h" />
     <ClInclude Include="src\Deserialization\Deserializers\Components\Trackbars\VerticalTrackbarControlDeserializer.h" />
     <ClInclude Include="src\Deserialization\Deserializers\Composites\ChildWindowDeserializer.h" />
+    <ClInclude Include="src\Deserialization\Deserializers\Composites\GroupBoxDeserializer.h" />
     <ClInclude Include="src\Deserialization\Parsers\BaseComponentParser.h" />
     <ClInclude Include="src\Deserialization\Parsers\BaseCompositeParser.h" />
     <ClInclude Include="src\Deserialization\Parsers\ButtonParser.h" />
     <ClInclude Include="src\Deserialization\Parsers\CheckBoxParser.h" />
+    <ClInclude Include="src\Deserialization\Parsers\GroupBoxParser.h" />
     <ClInclude Include="src\Deserialization\Parsers\ImageButtonParser.h" />
     <ClInclude Include="src\Deserialization\Parsers\RichEditParser.h" />
     <ClInclude Include="src\Deserialization\Parsers\TabControlParser.h" />
@@ -235,12 +237,14 @@
     <ClCompile Include="src\Deserialization\Deserializers\Components\Trackbars\HorizontalTrackbarControlDeserializer.cpp" />
     <ClCompile Include="src\Deserialization\Deserializers\Components\Trackbars\VerticalTrackbarControlDeserializer.cpp" />
     <ClCompile Include="src\Deserialization\Deserializers\Composites\ChildWindowDeserializer.cpp" />
+    <ClCompile Include="src\Deserialization\Deserializers\Composites\GroupBoxDeserializer.cpp" />
     <ClCompile Include="src\Deserialization\Deserializers\Composites\SeparateWindowDeserializer.cpp" />
     <ClCompile Include="src\BaseComponents\BaseComponent.cpp" />
     <ClCompile Include="src\Deserialization\Parsers\BaseComponentParser.cpp" />
     <ClCompile Include="src\Deserialization\Parsers\BaseCompositeParser.cpp" />
     <ClCompile Include="src\Deserialization\Parsers\ButtonParser.cpp" />
     <ClCompile Include="src\Deserialization\Parsers\CheckBoxParser.cpp" />
+    <ClCompile Include="src\Deserialization\Parsers\GroupBoxParser.cpp" />
     <ClCompile Include="src\Deserialization\Parsers\ImageButtonParser.cpp" />
     <ClCompile Include="src\Deserialization\Parsers\RichEditParser.cpp" />
     <ClCompile Include="src\Deserialization\Parsers\TabControlParser.cpp" />

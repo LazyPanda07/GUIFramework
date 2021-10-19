@@ -603,6 +603,12 @@
     <ClInclude Include="src\Deserialization\Parsers\TabControlParser.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="src\Deserialization\Deserializers\Composites\GroupBoxDeserializer.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Deserialization\Parsers\GroupBoxParser.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\headers.cpp">
@@ -1167,6 +1173,12 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Deserialization\Parsers\TabControlParser.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Deserialization\Deserializers\Composites\GroupBoxDeserializer.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Deserialization\Parsers\GroupBoxParser.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

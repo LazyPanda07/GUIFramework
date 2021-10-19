@@ -19,22 +19,22 @@ namespace gui_framework
 
 			for (const auto& i : jsonTabs)
 			{
-				tabs.emplace_back();
+				auto& tab = tabs.emplace_back();
 
 				if (i->contains("tabText", json::utility::variantTypeEnum::jString))
 				{
-					tabs.back().text = utility::to_wstring(i->getString("tabText"), interfaces::ISerializable::getCodepage());
+					tab.text = utility::to_wstring(i->getString("tabText"), interfaces::ISerializable::getCodepage());
 				}
 
 				if (i->contains("tabImagePath", json::utility::variantTypeEnum::jString))
 				{
-					tabs.back().pathToImage = i->getString("tabImagePath");
+					tab.pathToImage = i->getString("tabImagePath");
 				}
 
 				if (i->contains("functionName", json::utility::variantTypeEnum::jString))
 				{
-					tabs.back().functionName = i->getString("functionName");
-					tabs.back().moduleName = i->getString("moduleName");
+					tab.functionName = i->getString("functionName");
+					tab.moduleName = i->getString("moduleName");
 				}
 			}
 		}

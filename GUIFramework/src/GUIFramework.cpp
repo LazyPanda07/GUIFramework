@@ -69,6 +69,7 @@
 
 #include "Deserialization/Deserializers/Composites/ChildWindowDeserializer.h"
 #include "Deserialization/Deserializers/Composites/SeparateWindowDeserializer.h"
+#include "Deserialization/Deserializers/Composites/GroupBoxDeserializer.h"
 
 #include "Deserialization/Deserializers/Components/EditControlDeserializer.h"
 #include "Deserialization/Deserializers/Components/RichEditDeserializer.h"
@@ -204,7 +205,7 @@ namespace gui_framework
 
 		this->addDeserializer<TabControl, deserializers::TabControlDeserializer>();
 		
-		// this->addDeserializer<GroupBox, deserializers::GroupBoxDeserializer>();
+		this->addDeserializer<GroupBox, deserializers::GroupBoxDeserializer>();
 
 #pragma region ProgressBars
 		// this->addDeserializer<ProgressBar, deserializers::ProgressBarDeserializer>();
