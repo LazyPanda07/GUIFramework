@@ -1,7 +1,7 @@
 #pragma once
 
 #include "headers.h"
-#include "BaseComponentParser.h"
+#include "Deserialization/Parsers/BaseComponentParser.h"
 
 namespace gui_framework
 {

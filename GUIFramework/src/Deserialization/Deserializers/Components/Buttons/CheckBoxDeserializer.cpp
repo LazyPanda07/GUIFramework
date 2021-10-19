@@ -1,6 +1,6 @@
 #include "CheckBoxDeserializer.h"
 
-#include "Deserialization/Parsers/CheckBoxParser.h"
+#include "Deserialization/Parsers/Buttons/CheckBoxParser.h"
 
 using namespace std;
 

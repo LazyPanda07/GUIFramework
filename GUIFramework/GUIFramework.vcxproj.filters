@@ -564,7 +564,7 @@
     <ClInclude Include="src\Deserialization\Deserializers\Components\Buttons\ButtonDeserializer.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Deserialization\Parsers\ButtonParser.h">
+    <ClInclude Include="src\Deserialization\Parsers\Buttons\ButtonParser.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Deserialization\Deserializers\Components\RichEditDeserializer.h">
@@ -582,10 +582,10 @@
     <ClInclude Include="src\Deserialization\Deserializers\Components\Buttons\ImageButtonDeserializer.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Deserialization\Parsers\CheckBoxParser.h">
+    <ClInclude Include="src\Deserialization\Parsers\Buttons\CheckBoxParser.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Deserialization\Parsers\ImageButtonParser.h">
+    <ClInclude Include="src\Deserialization\Parsers\Buttons\ImageButtonParser.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Deserialization\Parsers\TrackbarControlParser.h">
@@ -607,6 +607,18 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Deserialization\Parsers\GroupBoxParser.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Deserialization\Parsers\ProgressBars\ProgressBarParser.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Deserialization\Parsers\ProgressBars\InfiniteProgressBarParser.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Deserialization\Deserializers\Components\ProgressBars\ProgressBarDeserializer.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Deserialization\Deserializers\Components\ProgressBars\InfiniteProgressBarDeserializer.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
@@ -1136,7 +1148,7 @@
     <ClCompile Include="src\Deserialization\Deserializers\Components\Buttons\ButtonDeserializer.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Deserialization\Parsers\ButtonParser.cpp">
+    <ClCompile Include="src\Deserialization\Parsers\Buttons\ButtonParser.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Deserialization\Deserializers\Components\RichEditDeserializer.cpp">
@@ -1154,10 +1166,10 @@
     <ClCompile Include="src\Deserialization\Deserializers\Components\Buttons\ImageButtonDeserializer.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Deserialization\Parsers\CheckBoxParser.cpp">
+    <ClCompile Include="src\Deserialization\Parsers\Buttons\CheckBoxParser.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Deserialization\Parsers\ImageButtonParser.cpp">
+    <ClCompile Include="src\Deserialization\Parsers\Buttons\ImageButtonParser.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Deserialization\Parsers\TrackbarControlParser.cpp">
@@ -1179,6 +1191,18 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Deserialization\Parsers\GroupBoxParser.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Deserialization\Parsers\ProgressBars\ProgressBarParser.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Deserialization\Parsers\ProgressBars\InfiniteProgressBarParser.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Deserialization\Deserializers\Components\ProgressBars\ProgressBarDeserializer.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Deserialization\Deserializers\Components\ProgressBars\InfiniteProgressBarDeserializer.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

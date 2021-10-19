@@ -80,6 +80,9 @@
 #include "Deserialization/Deserializers/Components/Buttons/ImageButtonDeserializer.h"
 #include "Deserialization/Deserializers/Components/Buttons/CheckBoxDeserializer.h"
 
+#include "Deserialization/Deserializers/Components/ProgressBars/ProgressBarDeserializer.h"
+#include "Deserialization/Deserializers/Components/ProgressBars/InfiniteProgressBarDeserializer.h"
+
 #include "Deserialization/Deserializers/Components/Trackbars/HorizontalTrackbarControlDeserializer.h"
 #include "Deserialization/Deserializers/Components/Trackbars/VerticalTrackbarControlDeserializer.h"
 
@@ -208,9 +211,9 @@ namespace gui_framework
 		this->addDeserializer<GroupBox, deserializers::GroupBoxDeserializer>();
 
 #pragma region ProgressBars
-		// this->addDeserializer<ProgressBar, deserializers::ProgressBarDeserializer>();
-		// 
-		// this->addDeserializer<InfiniteProgressBar, deserializers::InfiniteProgressBarDeserializer>();
+		this->addDeserializer<ProgressBar, deserializers::ProgressBarDeserializer>();
+		
+		this->addDeserializer<InfiniteProgressBar, deserializers::InfiniteProgressBarDeserializer>();
 #pragma endregion
 
 #pragma region ComboBoxes
