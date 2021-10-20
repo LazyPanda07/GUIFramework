@@ -35,6 +35,12 @@ namespace gui_framework
 
 			virtual LONG_PTR getExtendedStyles() const final;
 
+			virtual bool operator == (const IStyles& other) const final;
+
+			virtual std::istream& operator >> (std::istream& stream) final;
+
+			virtual std::ostream& operator << (std::ostream& stream) const final;
+
 			virtual ~IStyles() = default;
 		};
 	}
