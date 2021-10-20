@@ -9,6 +9,7 @@ namespace gui_framework
 		struct GUI_FRAMEWORK_API BaseCompositeParser : public BaseComponentParser
 		{
 			std::string windowFunctionName;
+			BaseComposite::exitMode mode;
 			std::string pathToLargeIcon;
 			std::string pathToSmallIcon;
 

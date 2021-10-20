@@ -24,6 +24,8 @@ namespace gui_framework
 			{
 				pathToSmallIcon = description->getString("pathToSmallIcon");
 			}
+
+			mode = static_cast<gui_framework::BaseComposite::exitMode>(description->getInt("exitMode"));
 		}
 	}
 }

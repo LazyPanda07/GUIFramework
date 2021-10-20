@@ -62,7 +62,6 @@ namespace gui_framework
 		desiredHeight(settings.height),
 		desiredX(settings.x),
 		desiredY(settings.y),
-		mode(exitMode::destroyWindow),
 		id(parent ? GUIFramework::get().generateId(windowName) : NULL),
 		backgroundColor(RGB(255, 255, 255)),
 		textColor(RGB(0, 0, 0))
@@ -235,11 +234,6 @@ namespace gui_framework
 		this->desiredY = desiredY;
 	}
 
-	void BaseComponent::setExitMode(exitMode mode)
-	{
-		this->mode = mode;
-	}
-
 	void BaseComponent::setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue)
 	{
 		backgroundColor = RGB(red, green, blue);
@@ -328,11 +322,6 @@ namespace gui_framework
 		return desiredY;
 	}
 
-	BaseComponent::exitMode BaseComponent::getExitMode() const
-	{
-		return mode;
-	}
-
 	uint32_t BaseComponent::getId() const
 	{
 		return id;
@@ -387,8 +376,6 @@ namespace gui_framework
 
 		structure->data.push_back({ "backgroundColor"s, move(backgroundColorJSON) });
 		structure->data.push_back({ "textColor"s, move(textColorJSON) });
-
-		structure->data.push_back({ "exitMode"s, static_cast<int64_t>(mode) });
 
 		if (textOperations)
 		{

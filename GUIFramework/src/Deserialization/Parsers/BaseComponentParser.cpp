@@ -32,8 +32,6 @@ namespace gui_framework
 			{
 				textColor[i] = static_cast<uint8_t>(temTextColor[i]);
 			}
-
-			mode = static_cast<gui_framework::BaseComponent::exitMode>(description->getInt("exitMode"));
 		}
 	}
 }

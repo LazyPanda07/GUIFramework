@@ -14,8 +14,16 @@ namespace gui_framework
 		public BaseComponent,
 		public interfaces::IIterable<BaseComponent, iterators::composite_forward_iterator, iterators::composite_const_forward_iterator>
 	{
+	public:
+		enum class exitMode
+		{
+			destroyWindow,
+			quit
+		};
+
 	protected:
 		std::string windowFunctionName;
+		exitMode mode;
 		std::vector<std::unique_ptr<BaseComponent>> children;
 		std::unordered_map<HMENU, Menu> popupMenus;
 		std::unique_ptr<Menu> mainMenu;
@@ -53,8 +61,6 @@ namespace gui_framework
 
 		virtual std::vector<BaseComponent*> findChildren(const std::wstring& windowName) const final;
 
-		virtual const std::vector<std::unique_ptr<BaseComponent>>& getChildren() const final;
-
 		/// @brief It needs to be called once
 		/// @return Created main menu
 		virtual std::unique_ptr<Menu>& createMainMenu(const std::wstring& menuName) final;
@@ -68,6 +74,12 @@ namespace gui_framework
 		virtual void removePopupMenus(const std::wstring& menuName);
 
 		virtual bool isComposite() const final override;
+
+		virtual void setExitMode(exitMode mode) final;
+
+		virtual exitMode getExitMode() const final;
+
+		virtual const std::vector<std::unique_ptr<BaseComponent>>& getChildren() const final;
 
 		virtual const std::unique_ptr<Menu>& getMainMenu() const final;
 
@@ -105,4 +117,53 @@ namespace gui_framework
 
 		friend class BaseComponent;
 	};
+}
+
+#define CREATE_DEFAULT_WINDOW_FUNCTION(className) extern "C" __declspec(dllexport) LRESULT className##WindowFunction (HWND handle, UINT message, WPARAM wparam, LPARAM lparam)  \
+{ \
+	static gui_framework::BaseComposite* topLevelWindow = nullptr; \
+	\
+	switch(message) \
+	{ \
+	case WM_DESTROY: \
+		if(topLevelWindow) \
+		{ \
+			if (topLevelWindow->getHandle() == handle && topLevelWindow->getExitMode() == gui_framework::BaseComponent::exitMode::quit) \
+			{ \
+				PostQuitMessage(0); \
+			} \
+		} \
+		else \
+		{ \
+			return DefWindowProcW(handle, message, wparam, lparam); \
+		} \
+			\
+		return 0; \
+		\
+	case gui_framework::custom_window_messages::initTopLevelWindowPointer: \
+		topLevelWindow = reinterpret_cast<gui_framework::BaseComponent*>(wparam); \
+			\
+		return 0; \
+		\
+	case gui_framework::custom_window_messages::deinitTopLevelWindowPointer: \
+		topLevelWindow = nullptr; \
+			\
+		return 0; \
+		\
+	} \
+		\
+	if (topLevelWindow) \
+	{ \
+		bool isUsed = false; \
+			\
+		LRESULT result = topLevelWindow->handleMessages(handle, message, wparam, lparam, isUsed); \
+			\
+		return isUsed ? \
+			result : \
+			DefWindowProcW(handle, message, wparam, lparam); \
+	} \
+	else \
+	{ \
+		return DefWindowProcW(handle, message, wparam, lparam); \
+	} \
 }
