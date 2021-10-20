@@ -128,7 +128,7 @@ namespace gui_framework
 	case WM_DESTROY: \
 		if(topLevelWindow) \
 		{ \
-			if (topLevelWindow->getHandle() == handle && topLevelWindow->getExitMode() == gui_framework::BaseComponent::exitMode::quit) \
+			if (topLevelWindow->getHandle() == handle && topLevelWindow->getExitMode() == gui_framework::BaseComposite::exitMode::quit) \
 			{ \
 				PostQuitMessage(0); \
 			} \
@@ -141,7 +141,7 @@ namespace gui_framework
 		return 0; \
 		\
 	case gui_framework::custom_window_messages::initTopLevelWindowPointer: \
-		topLevelWindow = reinterpret_cast<gui_framework::BaseComponent*>(wparam); \
+		topLevelWindow = reinterpret_cast<gui_framework::BaseComposite*>(wparam); \
 			\
 		return 0; \
 		\
