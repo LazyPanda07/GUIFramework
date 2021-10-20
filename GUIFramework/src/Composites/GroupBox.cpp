@@ -98,7 +98,7 @@ namespace gui_framework
 			groupBoxFunctionName
 		)
 	{
-		
+
 	}
 
 	void GroupBox::addRadioButton(const radioButtonData& data)

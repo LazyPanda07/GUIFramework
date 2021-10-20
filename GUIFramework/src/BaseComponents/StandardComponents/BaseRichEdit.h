@@ -31,6 +31,8 @@ namespace gui_framework
 	protected:
 		std::array<std::function<void(const std::wstring&)>, urlDetectEventSize> callbacks;
 		std::array<std::pair<std::string, std::string>, urlDetectEventSize> callbacksFunctionNamesAndModules;	// function name - module name
+		bool isMultiLine;
+		uint64_t limitTextCount;
 
 	private:
 		void addCallback(urlDetectEvent event, const std::function<void(const std::wstring&)>& callback, const std::string& functionName, const std::string& moduleName);
@@ -60,6 +62,8 @@ namespace gui_framework
 		virtual std::wstring getSelectedText() const final;
 
 		virtual const std::function<void(const std::wstring&)>& getCallback(urlDetectEvent event) const final;
+
+		virtual bool getIsMultiLine() const final;
 
 		virtual void setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue) final override;
 

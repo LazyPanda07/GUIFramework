@@ -11,13 +11,6 @@ namespace gui_framework
 	class GUI_FRAMEWORK_API BaseComponent : public interfaces::ISerializable
 	{
 	public:
-		enum class exitMode
-		{
-			destroyWindow,
-			quit
-		};
-
-	public:
 		/// @brief Add task to thread pool
 		/// @param callable Function to call async
 		/// @param callback Function to call after callable invokes
@@ -37,7 +30,6 @@ namespace gui_framework
 		uint16_t desiredHeight;
 		int desiredX;
 		int desiredY;
-		exitMode mode;
 		uint32_t id;
 		COLORREF backgroundColor;
 		COLORREF textColor;
@@ -72,8 +64,6 @@ namespace gui_framework
 
 		virtual void setDesiredY(int desiredY) final;
 
-		virtual void setExitMode(exitMode mode) final;
-
 		virtual void setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue);
 
 		virtual void setTextColor(uint8_t red, uint8_t green, uint8_t blue);
@@ -102,8 +92,6 @@ namespace gui_framework
 
 		virtual int getDesiredY() const final;
 
-		virtual exitMode getExitMode() const final;
-
 		/// @brief 
 		/// @return Components returns id, composites returns 0 
 		virtual uint32_t getId() const final;
@@ -124,53 +112,4 @@ namespace gui_framework
 
 		friend class BaseComposite;
 	};
-}
-
-#define CREATE_DEFAULT_WINDOW_FUNCTION(className) extern "C" __declspec(dllexport) LRESULT className##WindowFunction (HWND handle, UINT message, WPARAM wparam, LPARAM lparam)  \
-{ \
-	static gui_framework::BaseComponent* topLevelWindow = nullptr; \
-	\
-	switch(message) \
-	{ \
-	case WM_DESTROY: \
-		if(topLevelWindow) \
-		{ \
-			if (topLevelWindow->getHandle() == handle && topLevelWindow->getExitMode() == gui_framework::BaseComponent::exitMode::quit) \
-			{ \
-				PostQuitMessage(0); \
-			} \
-		} \
-		else \
-		{ \
-			return DefWindowProcW(handle, message, wparam, lparam); \
-		} \
-			\
-		return 0; \
-		\
-	case gui_framework::custom_window_messages::initTopLevelWindowPointer: \
-		topLevelWindow = reinterpret_cast<gui_framework::BaseComponent*>(wparam); \
-			\
-		return 0; \
-		\
-	case gui_framework::custom_window_messages::deinitTopLevelWindowPointer: \
-		topLevelWindow = nullptr; \
-			\
-		return 0; \
-		\
-	} \
-		\
-	if (topLevelWindow) \
-	{ \
-		bool isUsed = false; \
-			\
-		LRESULT result = topLevelWindow->handleMessages(handle, message, wparam, lparam, isUsed); \
-			\
-		return isUsed ? \
-			result : \
-			DefWindowProcW(handle, message, wparam, lparam); \
-	} \
-	else \
-	{ \
-		return DefWindowProcW(handle, message, wparam, lparam); \
-	} \
 }

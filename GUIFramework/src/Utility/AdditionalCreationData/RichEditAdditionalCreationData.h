@@ -15,21 +15,21 @@ namespace gui_framework
 		protected:
 			std::array<std::function<void(const std::wstring&)>, BaseRichEdit::urlDetectEventSize> callbacks;
 			std::array<std::pair<std::string, std::string>, BaseRichEdit::urlDetectEventSize> callbacksFunctionNamesAndModules;	// function name - module name
-			uint64_t textLimitCount;
+			uint64_t limitTextCount;
 			bool isMultiLine;
 
 		public:
 			/// @brief Each index in array equals to urlDetectEvent value % 8, except urlDetectEvent::setCursor must be 7 index
 			/// @param callbacks 
-			/// @param textLimitCount 
+			/// @param limitTextCount 
 			/// @param isMultiLine 
-			AdditionalCreationData(const std::array<std::function<void(const std::wstring&)>, BaseRichEdit::urlDetectEventSize>& callbacks = {}, bool isMultiLine = true, uint64_t textLimitCount = 0);
+			AdditionalCreationData(const std::array<std::function<void(const std::wstring&)>, BaseRichEdit::urlDetectEventSize>& callbacks = {}, bool isMultiLine = true, uint64_t limitTextCount = 0);
 
 			/// @brief Each index in array equals to urlDetectEvent value % 8, except urlDetectEvent::setCursor must be 7 index
 			/// @param callbacksFunctionNamesAndModules Function name - module name
-			/// @param textLimitCount 
+			/// @param limitTextCount 
 			/// @param isMultiLine 
-			AdditionalCreationData(const std::array<std::pair<std::string, std::string>, BaseRichEdit::urlDetectEventSize>& callbacksFunctionNamesAndModules, bool isMultiLine = true, uint64_t textLimitCount = 0);
+			AdditionalCreationData(const std::array<std::pair<std::string, std::string>, BaseRichEdit::urlDetectEventSize>& callbacksFunctionNamesAndModules, bool isMultiLine = true, uint64_t limitTextCount = 0);
 
 			virtual std::any getData() const;
 

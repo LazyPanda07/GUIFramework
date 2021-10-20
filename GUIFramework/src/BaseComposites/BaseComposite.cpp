@@ -161,6 +161,7 @@ namespace gui_framework
 			largeIconResource
 		),
 		windowFunctionName(windowFunctionName),
+		mode(exitMode::destroyWindow),
 		largeIcon(nullptr),
 		smallIcon(nullptr)
 	{
@@ -260,11 +261,6 @@ namespace gui_framework
 		return result;
 	}
 
-	const vector<unique_ptr<BaseComponent>>& BaseComposite::getChildren() const
-	{
-		return children;
-	}
-
 	unique_ptr<Menu>& BaseComposite::createMainMenu(const wstring& menuName)
 	{
 		popupMenus.clear();
@@ -304,6 +300,21 @@ namespace gui_framework
 	bool BaseComposite::isComposite() const
 	{
 		return true;
+	}
+
+	void BaseComposite::setExitMode(exitMode mode)
+	{
+		this->mode = mode;
+	}
+
+	BaseComposite::exitMode BaseComposite::getExitMode() const
+	{
+		return mode;
+	}
+
+	const vector<unique_ptr<BaseComponent>>& BaseComposite::getChildren() const
+	{
+		return children;
 	}
 
 	const unique_ptr<Menu>& BaseComposite::getMainMenu() const
@@ -412,6 +423,8 @@ namespace gui_framework
 		GUIFramework& instance = GUIFramework::get();
 
 		current->data.push_back({ "windowFunctionName"s, windowFunctionName });
+
+		current->data.push_back({ "exitMode"s, static_cast<int64_t>(mode) });
 
 		if (!pathToSmallIcon.empty())
 		{

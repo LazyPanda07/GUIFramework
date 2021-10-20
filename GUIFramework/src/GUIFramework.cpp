@@ -69,8 +69,26 @@
 
 #include "Deserialization/Deserializers/Composites/ChildWindowDeserializer.h"
 #include "Deserialization/Deserializers/Composites/SeparateWindowDeserializer.h"
+#include "Deserialization/Deserializers/Composites/GroupBoxDeserializer.h"
+
 #include "Deserialization/Deserializers/Components/EditControlDeserializer.h"
-#include "Deserialization/Deserializers/Components/ButtonDeserializer.h"
+#include "Deserialization/Deserializers/Components/RichEditDeserializer.h"
+#include "Deserialization/Deserializers/Components/StaticControlDeserializer.h"
+#include "Deserialization/Deserializers/Components/TabControlDeserializer.h"
+
+#include "Deserialization/Deserializers/Components/Buttons/ButtonDeserializer.h"
+#include "Deserialization/Deserializers/Components/Buttons/ImageButtonDeserializer.h"
+#include "Deserialization/Deserializers/Components/Buttons/CheckBoxDeserializer.h"
+
+#include "Deserialization/Deserializers/Components/ProgressBars/ProgressBarDeserializer.h"
+#include "Deserialization/Deserializers/Components/ProgressBars/InfiniteProgressBarDeserializer.h"
+
+#include "Deserialization/Deserializers/Components/Trackbars/HorizontalTrackbarControlDeserializer.h"
+#include "Deserialization/Deserializers/Components/Trackbars/VerticalTrackbarControlDeserializer.h"
+
+#include "Deserialization/Deserializers/Components/ComboBoxes/DropDownComboBoxDeserializer.h"
+#include "Deserialization/Deserializers/Components/ComboBoxes/DropDownListComboBoxDeserializer.h"
+#include "Deserialization/Deserializers/Components/ComboBoxes/SimpleComboBoxDeserializer.h"
 
 using namespace std;
 
@@ -177,37 +195,37 @@ namespace gui_framework
 		deserializers.reserve(25);
 
 		this->addDeserializer<Button, deserializers::ButtonDeserializer>();
-		// 
-		// this->addDeserializer<CheckBox, deserializers::CheckBoxDeserializer>();
-		// 
-		// this->addDeserializer<ImageButton, deserializers::ImageButtonDeserializer>();
-		// 
+		
+		this->addDeserializer<CheckBox, deserializers::CheckBoxDeserializer>();
+		
+		this->addDeserializer<ImageButton, deserializers::ImageButtonDeserializer>();
+		
 		this->addDeserializer<EditControl, deserializers::EditControlDeserializer>();
-		// 
-		// this->addDeserializer<RichEdit, deserializers::RichEditDeserializer>();
-		// 
-		// this->addDeserializer<StaticControl, deserializers::StaticControlDeserializer>();
+		
+		this->addDeserializer<RichEdit, deserializers::RichEditDeserializer>();
+		
+		this->addDeserializer<StaticControl, deserializers::StaticControlDeserializer>();
 
 		this->addDeserializer<SeparateWindow, deserializers::SeparateWindowDeserializer>();
 
 		this->addDeserializer<ChildWindow, deserializers::ChildWindowDeserializer>();
 
-		// this->addDeserializer<TabControl, deserializers::TabControlDeserializer>();
-		// 
-		// this->addDeserializer<GroupBox, deserializers::GroupBoxDeserializer>();
+		this->addDeserializer<TabControl, deserializers::TabControlDeserializer>();
+		
+		this->addDeserializer<GroupBox, deserializers::GroupBoxDeserializer>();
 
 #pragma region ProgressBars
-		// this->addDeserializer<ProgressBar, deserializers::ProgressBarDeserializer>();
-		// 
-		// this->addDeserializer<InfiniteProgressBar, deserializers::InfiniteProgressBarDeserializer>();
+		this->addDeserializer<ProgressBar, deserializers::ProgressBarDeserializer>();
+		
+		this->addDeserializer<InfiniteProgressBar, deserializers::InfiniteProgressBarDeserializer>();
 #pragma endregion
 
 #pragma region ComboBoxes
-		// this->addDeserializer<DropDownComboBox, deserializers::DropDownComboBoxDeserializer>();
-		// 
-		// this->addDeserializer<DropDownListComboBox, deserializers::DropDownListComboBoxDeserializer>();
-		// 
-		// this->addDeserializer<SimpleComboBox, deserializers::SimpleComboBoxDeserializer>();
+		this->addDeserializer<DropDownComboBox, deserializers::DropDownComboBoxDeserializer>();
+		
+		this->addDeserializer<DropDownListComboBox, deserializers::DropDownListComboBoxDeserializer>();
+		
+		this->addDeserializer<SimpleComboBox, deserializers::SimpleComboBoxDeserializer>();
 #pragma endregion
 
 #pragma region ListBoxes
@@ -231,9 +249,9 @@ namespace gui_framework
 #pragma endregion
 
 #pragma region Trackbars
-		// this->addDeserializer<HorizontalTrackbarControl, deserializers::HorizontalTrackbarControlDeserializer>();
-		// 
-		// this->addDeserializer<VerticalTrackbarControl, deserializers::VerticalTrackbarControlDeserializer>();
+		this->addDeserializer<HorizontalTrackbarControl, deserializers::HorizontalTrackbarControlDeserializer>();
+		
+		this->addDeserializer<VerticalTrackbarControl, deserializers::VerticalTrackbarControlDeserializer>();
 #pragma endregion
 	}
 

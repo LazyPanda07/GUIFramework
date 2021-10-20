@@ -17,6 +17,8 @@ namespace gui_framework
 			onClickFunctionName = description->getString("functionName");
 
 			onClickFunctionModule = description->getString("moduleName");
+
+			pathToModule = description->getString("pathToModule");
 		}
 	}
 }

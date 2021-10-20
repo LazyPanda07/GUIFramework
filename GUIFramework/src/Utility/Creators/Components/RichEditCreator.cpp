@@ -11,7 +11,7 @@ namespace gui_framework
 	{
 		BaseComponent* RichEditCreator::create(const wstring& windowName, const utility::ComponentSettings& settings, const any& additionalData, BaseComponent* parent)
 		{
-			auto [callbacks, callbacksFunctionNamesAndModules, textLimitCount, isMultiLine] =
+			auto [callbacks, callbacksFunctionNamesAndModules, limitTextCount, isMultiLine] =
 				any_cast<tuple<array<function<void(const wstring&)>, BaseRichEdit::urlDetectEventSize>, array<pair<string, string>, BaseRichEdit::urlDetectEventSize>, uint64_t, bool>>(additionalData);
 
 			RichEdit* result = new RichEdit(windowName, utility::ComponentSettings(settings.x, settings.y, settings.width, settings.height), parent, isMultiLine);
@@ -127,7 +127,7 @@ namespace gui_framework
 				}
 			}
 
-			result->setLimitText(textLimitCount);
+			result->setLimitText(limitTextCount);
 
 			return result;
 		}

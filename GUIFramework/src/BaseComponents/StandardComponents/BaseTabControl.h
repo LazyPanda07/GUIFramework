@@ -18,6 +18,8 @@ namespace gui_framework
 			std::string functionName;
 			std::string moduleName;
 
+			tabData() = default;
+
 			tabData(const std::wstring& text, const std::filesystem::path& pathToImage, const std::function<void()>& callback);
 
 			tabData(const std::wstring& text, const std::filesystem::path& pathToImage, const std::string& functionName, const std::string& moduleName);

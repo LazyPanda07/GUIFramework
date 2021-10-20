@@ -1,6 +1,6 @@
 #include "ButtonDeserializer.h"
 
-#include "Deserialization/Deserializers/Parsers/ButtonParser.h"
+#include "Deserialization/Parsers/Buttons/ButtonParser.h"
 
 using namespace std;
 

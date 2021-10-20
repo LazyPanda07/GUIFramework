@@ -21,7 +21,7 @@ namespace gui_framework
 			styles(NULL),
 			extendedStyles(NULL)
 		{
-			
+
 		}
 
 		IStyles::IStyles(LONG_PTR styles, LONG_PTR extendedStyles) :
@@ -39,6 +39,21 @@ namespace gui_framework
 		LONG_PTR IStyles::getExtendedStyles() const
 		{
 			return extendedStyles;
+		}
+
+		bool IStyles::operator == (const IStyles& other) const
+		{
+			return styles == styles || extendedStyles == extendedStyles;
+		}
+
+		istream& IStyles::operator >> (istream& stream)
+		{
+			return stream >> styles >> extendedStyles;
+		}
+
+		ostream& IStyles::operator << (ostream& stream) const
+		{
+			return stream << styles << ' ' << extendedStyles;
 		}
 	}
 }
