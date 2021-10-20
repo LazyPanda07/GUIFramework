@@ -86,6 +86,10 @@
 #include "Deserialization/Deserializers/Components/Trackbars/HorizontalTrackbarControlDeserializer.h"
 #include "Deserialization/Deserializers/Components/Trackbars/VerticalTrackbarControlDeserializer.h"
 
+#include "Deserialization/Deserializers/Components/ComboBoxes/DropDownComboBoxDeserializer.h"
+#include "Deserialization/Deserializers/Components/ComboBoxes/DropDownListComboBoxDeserializer.h"
+#include "Deserialization/Deserializers/Components/ComboBoxes/SimpleComboBoxDeserializer.h"
+
 using namespace std;
 
 template<>
@@ -217,11 +221,11 @@ namespace gui_framework
 #pragma endregion
 
 #pragma region ComboBoxes
-		// this->addDeserializer<DropDownComboBox, deserializers::DropDownComboBoxDeserializer>();
-		// 
-		// this->addDeserializer<DropDownListComboBox, deserializers::DropDownListComboBoxDeserializer>();
-		// 
-		// this->addDeserializer<SimpleComboBox, deserializers::SimpleComboBoxDeserializer>();
+		this->addDeserializer<DropDownComboBox, deserializers::DropDownComboBoxDeserializer>();
+		
+		this->addDeserializer<DropDownListComboBox, deserializers::DropDownListComboBoxDeserializer>();
+		
+		this->addDeserializer<SimpleComboBox, deserializers::SimpleComboBoxDeserializer>();
 #pragma endregion
 
 #pragma region ListBoxes

@@ -30,6 +30,9 @@
     <ClInclude Include="src\Deserialization\Deserializers\Components\Buttons\ButtonDeserializer.h" />
     <ClInclude Include="src\Deserialization\Deserializers\Components\Buttons\CheckBoxDeserializer.h" />
     <ClInclude Include="src\Deserialization\Deserializers\Components\Buttons\ImageButtonDeserializer.h" />
+    <ClInclude Include="src\Deserialization\Deserializers\Components\ComboBoxes\DropDownComboBoxDeserializer.h" />
+    <ClInclude Include="src\Deserialization\Deserializers\Components\ComboBoxes\DropDownListComboBoxDeserializer.h" />
+    <ClInclude Include="src\Deserialization\Deserializers\Components\ComboBoxes\SimpleComboBoxDeserializer.h" />
     <ClInclude Include="src\Deserialization\Deserializers\Components\EditControlDeserializer.h" />
     <ClInclude Include="src\Deserialization\Deserializers\Components\ProgressBars\InfiniteProgressBarDeserializer.h" />
     <ClInclude Include="src\Deserialization\Deserializers\Components\ProgressBars\ProgressBarDeserializer.h" />
@@ -44,6 +47,7 @@
     <ClInclude Include="src\Deserialization\Parsers\BaseCompositeParser.h" />
     <ClInclude Include="src\Deserialization\Parsers\Buttons\ButtonParser.h" />
     <ClInclude Include="src\Deserialization\Parsers\Buttons\CheckBoxParser.h" />
+    <ClInclude Include="src\Deserialization\Parsers\ComboBoxParser.h" />
     <ClInclude Include="src\Deserialization\Parsers\GroupBoxParser.h" />
     <ClInclude Include="src\Deserialization\Parsers\Buttons\ImageButtonParser.h" />
     <ClInclude Include="src\Deserialization\Parsers\ProgressBars\InfiniteProgressBarParser.h" />
@@ -234,6 +238,9 @@
     <ClCompile Include="src\Deserialization\Deserializers\Components\Buttons\ButtonDeserializer.cpp" />
     <ClCompile Include="src\Deserialization\Deserializers\Components\Buttons\CheckBoxDeserializer.cpp" />
     <ClCompile Include="src\Deserialization\Deserializers\Components\Buttons\ImageButtonDeserializer.cpp" />
+    <ClCompile Include="src\Deserialization\Deserializers\Components\ComboBoxes\DropDownComboBoxDeserializer.cpp" />
+    <ClCompile Include="src\Deserialization\Deserializers\Components\ComboBoxes\DropDownListComboBoxDeserializer.cpp" />
+    <ClCompile Include="src\Deserialization\Deserializers\Components\ComboBoxes\SimpleComboBoxDeserializer.cpp" />
     <ClCompile Include="src\Deserialization\Deserializers\Components\EditControlDeserializer.cpp" />
     <ClCompile Include="src\Deserialization\Deserializers\Components\ProgressBars\InfiniteProgressBarDeserializer.cpp" />
     <ClCompile Include="src\Deserialization\Deserializers\Components\ProgressBars\ProgressBarDeserializer.cpp" />
@@ -250,6 +257,7 @@
     <ClCompile Include="src\Deserialization\Parsers\BaseCompositeParser.cpp" />
     <ClCompile Include="src\Deserialization\Parsers\Buttons\ButtonParser.cpp" />
     <ClCompile Include="src\Deserialization\Parsers\Buttons\CheckBoxParser.cpp" />
+    <ClCompile Include="src\Deserialization\Parsers\ComboBoxParser.cpp" />
     <ClCompile Include="src\Deserialization\Parsers\GroupBoxParser.cpp" />
     <ClCompile Include="src\Deserialization\Parsers\Buttons\ImageButtonParser.cpp" />
     <ClCompile Include="src\Deserialization\Parsers\ProgressBars\InfiniteProgressBarParser.cpp" />
