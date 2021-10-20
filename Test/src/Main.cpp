@@ -40,7 +40,7 @@ void standard()
 		
 		list->addTextIconItem(L"Second", "assets/another_icon.ico");
 		
-		ptr->setExitMode(BaseComponent::exitMode::quit);
+		ptr->setExitMode(BaseComposite::exitMode::quit);
 		
 		ptr->setLargeIcon(R"(assets\icon.ico)");
 		
