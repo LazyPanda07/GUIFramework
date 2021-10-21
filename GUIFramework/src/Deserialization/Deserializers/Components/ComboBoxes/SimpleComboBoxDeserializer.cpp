@@ -19,7 +19,7 @@ namespace gui_framework
 
 			SimpleComboBox* result = nullptr;
 			uint32_t codepage = interfaces::ISerializable::getCodepage();
-			const unique_ptr<utility::BaseComponentCreator>& creator = GUIFramework::get().getCreators().at(utility::getTypeHash<SimpleComboBox>());
+			const smartPointerType<utility::BaseComponentCreator>& creator = GUIFramework::get().getCreators().at(utility::getTypeHash<SimpleComboBox>());
 			utility::AdditionalCreationData<SimpleComboBox> creationData(parser.values, parser.functionName, parser.moduleName);
 
 			result = static_cast<SimpleComboBox*>(creator->create(utility::to_wstring(componentName, codepage), parser.settings, creationData.getData(), parent));
