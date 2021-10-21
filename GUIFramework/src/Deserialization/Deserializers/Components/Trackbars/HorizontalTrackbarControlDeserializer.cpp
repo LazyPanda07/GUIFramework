@@ -20,7 +20,7 @@ namespace gui_framework
 
 			HorizontalTrackbarControl* result = nullptr;
 			uint32_t codepage = interfaces::ISerializable::getCodepage();
-			const unique_ptr<utility::BaseComponentCreator>& creator = GUIFramework::get().getCreators().at(utility::getTypeHash<HorizontalTrackbarControl>());
+			const smartPointerType<utility::BaseComponentCreator>& creator = GUIFramework::get().getCreators().at(utility::getTypeHash<HorizontalTrackbarControl>());
 			utility::AdditionalCreationData<HorizontalTrackbarControl> creationData;
 
 			result = static_cast<HorizontalTrackbarControl*>(creator->create(utility::to_wstring(componentName, codepage), parser.settings, creationData.getData(), parent));

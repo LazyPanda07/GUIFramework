@@ -20,7 +20,7 @@ namespace gui_framework
 
 			GroupBox* result = nullptr;
 			uint32_t codepage = interfaces::ISerializable::getCodepage();
-			const unique_ptr<utility::BaseComponentCreator>& creator = GUIFramework::get().getCreators().at(utility::getTypeHash<GroupBox>());
+			const smartPointerType<utility::BaseComponentCreator>& creator = GUIFramework::get().getCreators().at(utility::getTypeHash<GroupBox>());
 			utility::AdditionalCreationData<GroupBox> creationData(parser.className, parser.windowFunctionName, parser.data);
 
 			result = static_cast<GroupBox*>(creator->create(utility::to_wstring(componentName, codepage), parser.settings, creationData.getData(), parent));

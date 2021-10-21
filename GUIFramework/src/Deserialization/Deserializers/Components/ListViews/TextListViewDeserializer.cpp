@@ -19,7 +19,7 @@ namespace gui_framework
 
 			TextListView* result = nullptr;
 			uint32_t codepage = interfaces::ISerializable::getCodepage();
-			const unique_ptr<utility::BaseComponentCreator>& creator = GUIFramework::get().getCreators().at(utility::getTypeHash<TextListView>());
+			const smartPointerType<utility::BaseComponentCreator>& creator = GUIFramework::get().getCreators().at(utility::getTypeHash<TextListView>());
 			utility::AdditionalCreationData<TextListView> creationData(parser.values);
 
 			result = static_cast<TextListView*>(creator->create(utility::to_wstring(componentName, codepage), parser.settings, creationData.getData(), parent));

@@ -19,7 +19,7 @@ namespace gui_framework
 
 			ProgressBar* result = nullptr;
 			uint32_t codepage = interfaces::ISerializable::getCodepage();
-			const unique_ptr<utility::BaseComponentCreator>& creator = GUIFramework::get().getCreators().at(utility::getTypeHash<ProgressBar>());
+			const smartPointerType<utility::BaseComponentCreator>& creator = GUIFramework::get().getCreators().at(utility::getTypeHash<ProgressBar>());
 			utility::AdditionalCreationData<ProgressBar> creationData(parser.minRange, parser.maxRange, parser.updateStep);
 
 			result = static_cast<ProgressBar*>(creator->create(utility::to_wstring(componentName, codepage), parser.settings, creationData.getData(), parent));

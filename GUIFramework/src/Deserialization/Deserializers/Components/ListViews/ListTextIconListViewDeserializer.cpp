@@ -19,7 +19,7 @@ namespace gui_framework
 
 			ListTextIconListView* result = nullptr;
 			uint32_t codepage = interfaces::ISerializable::getCodepage();
-			const unique_ptr<utility::BaseComponentCreator>& creator = GUIFramework::get().getCreators().at(utility::getTypeHash<ListTextIconListView>());
+			const smartPointerType<utility::BaseComponentCreator>& creator = GUIFramework::get().getCreators().at(utility::getTypeHash<ListTextIconListView>());
 			vector<pair<wstring, filesystem::path>> values;
 
 			values.reserve(parser.values.size());

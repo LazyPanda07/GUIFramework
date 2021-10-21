@@ -19,7 +19,7 @@ namespace gui_framework
 
 			DropDownComboBox* result = nullptr;
 			uint32_t codepage = interfaces::ISerializable::getCodepage();
-			const unique_ptr<utility::BaseComponentCreator>& creator = GUIFramework::get().getCreators().at(utility::getTypeHash<DropDownComboBox>());
+			const smartPointerType<utility::BaseComponentCreator>& creator = GUIFramework::get().getCreators().at(utility::getTypeHash<DropDownComboBox>());
 			utility::AdditionalCreationData<DropDownComboBox> creationData(parser.values, parser.functionName, parser.moduleName);
 
 			result = static_cast<DropDownComboBox*>(creator->create(utility::to_wstring(componentName, codepage), parser.settings, creationData.getData(), parent));

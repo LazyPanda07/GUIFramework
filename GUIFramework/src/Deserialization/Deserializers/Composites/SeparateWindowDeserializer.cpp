@@ -20,7 +20,7 @@ namespace gui_framework
 
 			SeparateWindow* result = nullptr;
 			uint32_t codepage = interfaces::ISerializable::getCodepage();
-			const unique_ptr<utility::BaseComponentCreator>& creator = GUIFramework::get().getCreators().at(utility::getTypeHash<SeparateWindow>());
+			const smartPointerType<utility::BaseComponentCreator>& creator = GUIFramework::get().getCreators().at(utility::getTypeHash<SeparateWindow>());
 			utility::AdditionalCreationData<SeparateWindow> creationData(parser.className, parser.windowFunctionName);
 			const auto& children = description->getArray("children");
 
@@ -49,7 +49,7 @@ namespace gui_framework
 				const auto& [componentName, data] = get<objectSmartPointer<jsonObject>>(i->data.front().second)->data.front();
 				const auto& description = get<objectSmartPointer<jsonObject>>(data);
 
-				const unique_ptr<interfaces::IDeserializer>& deserializer = GUIFramework::get().getDeserializers().at(description->getUnsignedInt("hash"));
+				const smartPointerType<interfaces::IDeserializer>& deserializer = GUIFramework::get().getDeserializers().at(description->getUnsignedInt("hash"));
 
 				deserializer->deserialize(componentName, description, result);
 			}
