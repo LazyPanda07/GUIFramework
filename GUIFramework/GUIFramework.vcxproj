@@ -36,6 +36,12 @@
     <ClInclude Include="src\Deserialization\Deserializers\Components\EditControlDeserializer.h" />
     <ClInclude Include="src\Deserialization\Deserializers\Components\ListBoxes\ListBoxDeserializer.h" />
     <ClInclude Include="src\Deserialization\Deserializers\Components\ListBoxes\MultipleSelectListBoxDeserializer.h" />
+    <ClInclude Include="src\Deserialization\Deserializers\Components\ListViews\IconListViewDeserializer.h" />
+    <ClInclude Include="src\Deserialization\Deserializers\Components\ListViews\ListIconListViewDeserializer.h" />
+    <ClInclude Include="src\Deserialization\Deserializers\Components\ListViews\ListTextIconListViewDeserializer.h" />
+    <ClInclude Include="src\Deserialization\Deserializers\Components\ListViews\ListTextListViewDeserializer.h" />
+    <ClInclude Include="src\Deserialization\Deserializers\Components\ListViews\TextIconListViewDeserializer.h" />
+    <ClInclude Include="src\Deserialization\Deserializers\Components\ListViews\TextListViewDeserializer.h" />
     <ClInclude Include="src\Deserialization\Deserializers\Components\ProgressBars\InfiniteProgressBarDeserializer.h" />
     <ClInclude Include="src\Deserialization\Deserializers\Components\ProgressBars\ProgressBarDeserializer.h" />
     <ClInclude Include="src\Deserialization\Deserializers\Components\RichEditDeserializer.h" />
@@ -250,6 +256,12 @@
     <ClCompile Include="src\Deserialization\Deserializers\Components\EditControlDeserializer.cpp" />
     <ClCompile Include="src\Deserialization\Deserializers\Components\ListBoxes\ListBoxDeserializer.cpp" />
     <ClCompile Include="src\Deserialization\Deserializers\Components\ListBoxes\MultipleSelectListBoxDeserializer.cpp" />
+    <ClCompile Include="src\Deserialization\Deserializers\Components\ListViews\IconListViewDeserializer.cpp" />
+    <ClCompile Include="src\Deserialization\Deserializers\Components\ListViews\ListIconListViewDeserializer.cpp" />
+    <ClCompile Include="src\Deserialization\Deserializers\Components\ListViews\ListTextIconListViewDeserializer.cpp" />
+    <ClCompile Include="src\Deserialization\Deserializers\Components\ListViews\ListTextListViewDeserializer.cpp" />
+    <ClCompile Include="src\Deserialization\Deserializers\Components\ListViews\TextIconListViewDeserializer.cpp" />
+    <ClCompile Include="src\Deserialization\Deserializers\Components\ListViews\TextListViewDeserializer.cpp" />
     <ClCompile Include="src\Deserialization\Deserializers\Components\ProgressBars\InfiniteProgressBarDeserializer.cpp" />
     <ClCompile Include="src\Deserialization\Deserializers\Components\ProgressBars\ProgressBarDeserializer.cpp" />
     <ClCompile Include="src\Deserialization\Deserializers\Components\RichEditDeserializer.cpp" />

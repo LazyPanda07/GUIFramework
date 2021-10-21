@@ -93,6 +93,13 @@
 #include "Deserialization/Deserializers/Components/ListBoxes/ListBoxDeserializer.h"
 #include "Deserialization/Deserializers/Components/ListBoxes/MultipleSelectListBoxDeserializer.h"
 
+#include "Deserialization/Deserializers/Components/ListViews/IconListViewDeserializer.h"
+#include "Deserialization/Deserializers/Components/ListViews/ListIconListViewDeserializer.h"
+#include "Deserialization/Deserializers/Components/ListViews/ListTextIconListViewDeserializer.h"
+#include "Deserialization/Deserializers/Components/ListViews/ListTextListViewDeserializer.h"
+#include "Deserialization/Deserializers/Components/ListViews/TextIconListViewDeserializer.h"
+#include "Deserialization/Deserializers/Components/ListViews/TextListViewDeserializer.h"
+
 using namespace std;
 
 template<>
@@ -238,17 +245,17 @@ namespace gui_framework
 #pragma endregion
 
 #pragma region ListViews
-		// this->addDeserializer<IconListView, deserializers::IconListViewDeserializer>();
-		// 
-		// this->addDeserializer<ListIconListView, deserializers::ListIconListViewDeserializer>();
-		// 
-		// this->addDeserializer<TextListView, deserializers::TextListViewDeserializer>();
-		// 
-		// this->addDeserializer<ListTextListView, deserializers::ListTextListViewDeserializer>();
-		// 
-		// this->addDeserializer<TextIconListView, deserializers::TextIconListViewDeserializer>();
-		// 
-		// this->addDeserializer<ListTextIconListView, deserializers::ListTextIconListViewDeserializer>();
+		this->addDeserializer<IconListView, deserializers::IconListViewDeserializer>();
+		
+		this->addDeserializer<ListIconListView, deserializers::ListIconListViewDeserializer>();
+		
+		this->addDeserializer<TextListView, deserializers::TextListViewDeserializer>();
+		
+		this->addDeserializer<ListTextListView, deserializers::ListTextListViewDeserializer>();
+		
+		this->addDeserializer<TextIconListView, deserializers::TextIconListViewDeserializer>();
+		
+		this->addDeserializer<ListTextIconListView, deserializers::ListTextIconListViewDeserializer>();
 #pragma endregion
 
 #pragma region Trackbars
