@@ -1,7 +1,7 @@
 #pragma once
 
-#include "pch.h"
-#include "BaseComponents/StandardComponents/BaseListBox.h"
+#include "headers.h"
+#include "BaseComponents/StandardComponents/ListBoxes/BaseListBox.h"
 
 namespace gui_framework
 {
@@ -10,6 +10,8 @@ namespace gui_framework
 	{
 	public:
 		ListBox(const std::wstring& listBoxName, const utility::ComponentSettings& settings, BaseComponent* parent, bool isSorting = false);
+
+		size_t getHash() const override;
 
 		~ListBox() = default;
 	};

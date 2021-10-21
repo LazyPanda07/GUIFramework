@@ -1,6 +1,6 @@
 #pragma once
 
-#include "pch.h"
+#include "headers.h"
 #include "BaseComponents/StandardComponents/BaseTabControl.h"
 #include "Interfaces/Components/IResizableComponent.h"
 
@@ -13,6 +13,8 @@ namespace gui_framework
 	{
 	public:
 		TabControl(const std::wstring& tabControlName, const utility::ComponentSettings& settings, BaseComponent* parent, uint16_t imagesWidth = NULL, uint16_t imagesHeight = NULL);
+
+		size_t getHash() const override;
 
 		json::JSONBuilder getStructure() const override;
 

@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.8-beta</span>
+   &#160;<span id="projectnumber">0.8.3-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -108,8 +108,8 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af25aa0eb06a30488a16a60b6b9084536"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_dialog_box_1_1_dialog_box_builder.html#af25aa0eb06a30488a16a60b6b9084536">DialogBoxBuilder</a> (const std::wstring &amp;className, const std::wstring &amp;dialogBoxName, int x, int y, const std::string &amp;dialogBoxFunctionName)</td></tr>
-<tr class="separator:af25aa0eb06a30488a16a60b6b9084536"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabe85dd25b93939a5dd6148cd2af71c7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_dialog_box_1_1_dialog_box_builder.html#aabe85dd25b93939a5dd6148cd2af71c7">DialogBoxBuilder</a> (const std::wstring &amp;className, const std::wstring &amp;dialogBoxName, int x, int y, const std::string &amp;dialogBoxFunctionName, const std::string &amp;moduleName=&quot;&quot;, uint16_t smallIconResource=NULL, uint16_t largeIconResource=NULL)</td></tr>
+<tr class="separator:aabe85dd25b93939a5dd6148cd2af71c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04c8efc2f08a03dd2b0a04c2ea0d56c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgui__framework_1_1_dialog_box_1_1_dialog_box_builder.html">DialogBoxBuilder</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_dialog_box_1_1_dialog_box_builder.html#a04c8efc2f08a03dd2b0a04c2ea0d56c8">clear</a> ()</td></tr>
 <tr class="separator:a04c8efc2f08a03dd2b0a04c2ea0d56c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ba7218d5d4b4103d5c472e2c227c244"><td class="memTemplParams" colspan="2">template&lt;std::derived_from&lt; BaseComponent &gt; T&gt; </td></tr>
@@ -128,7 +128,7 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Builder for dialog boxes. </p>
 
-<p class="definition">Definition at line <a class="el" href="_dialog_box_8h_source.html#l00019">19</a> of file <a class="el" href="_dialog_box_8h_source.html">DialogBox.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dialog_box_8h_source.html#l00018">18</a> of file <a class="el" href="_dialog_box_8h_source.html">DialogBox.h</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a1911e5452e9eee157a71b4e1db7e85e8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1911e5452e9eee157a71b4e1db7e85e8">&#9670;&nbsp;</a></span>alignment</h2>
@@ -155,13 +155,13 @@ Public Member Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a1911e5452e9eee157a71b4e1db7e85e8a7c4f29407893c334a6cb7a87bf045c0d"></a>right&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_dialog_box_8h_source.html#l00022">22</a> of file <a class="el" href="_dialog_box_8h_source.html">DialogBox.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dialog_box_8h_source.html#l00021">21</a> of file <a class="el" href="_dialog_box_8h_source.html">DialogBox.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="af25aa0eb06a30488a16a60b6b9084536"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af25aa0eb06a30488a16a60b6b9084536">&#9670;&nbsp;</a></span>DialogBoxBuilder()</h2>
+<a id="aabe85dd25b93939a5dd6148cd2af71c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabe85dd25b93939a5dd6148cd2af71c7">&#9670;&nbsp;</a></span>DialogBoxBuilder()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -194,7 +194,25 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>dialogBoxFunctionName</em>&#160;</td>
+          <td class="paramname"><em>dialogBoxFunctionName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>moduleName</em> = <code>&quot;&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>smallIconResource</em> = <code>NULL</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>largeIconResource</em> = <code>NULL</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -203,6 +221,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">moduleName</td><td>Name of loaded resource module with icons </td></tr>
+    <tr><td class="paramname">smallIconResource</td><td>Integer value from auto generated Visual Studio resources </td></tr>
+    <tr><td class="paramname">largeIconResource</td><td>Integer value from auto generated Visual Studio resources </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="_dialog_box_8cpp_source.html#l00010">10</a> of file <a class="el" href="_dialog_box_8cpp_source.html">DialogBox.cpp</a>.</p>
 
@@ -310,7 +336,7 @@ template&lt;std::derived_from&lt; BaseComponent &gt; T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_dialog_box_8h_source.html#l00080">80</a> of file <a class="el" href="_dialog_box_8h_source.html">DialogBox.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dialog_box_8h_source.html#l00089">89</a> of file <a class="el" href="_dialog_box_8h_source.html">DialogBox.h</a>.</p>
 
 </div>
 </div>
@@ -408,7 +434,7 @@ template&lt;std::derived_from&lt; BaseComponent &gt; T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_dialog_box_8cpp_source.html#l00033">33</a> of file <a class="el" href="_dialog_box_8cpp_source.html">DialogBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dialog_box_8cpp_source.html#l00036">36</a> of file <a class="el" href="_dialog_box_8cpp_source.html">DialogBox.cpp</a>.</p>
 
 </div>
 </div>
@@ -435,7 +461,7 @@ template&lt;std::derived_from&lt; BaseComponent &gt; T&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_dialog_box_8cpp_source.html#l00040">40</a> of file <a class="el" href="_dialog_box_8cpp_source.html">DialogBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dialog_box_8cpp_source.html#l00043">43</a> of file <a class="el" href="_dialog_box_8cpp_source.html">DialogBox.cpp</a>.</p>
 
 </div>
 </div>
@@ -454,7 +480,7 @@ template&lt;std::derived_from&lt; BaseComponent &gt; T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_dialog_box_8cpp_source.html#l00026">26</a> of file <a class="el" href="_dialog_box_8cpp_source.html">DialogBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dialog_box_8cpp_source.html#l00029">29</a> of file <a class="el" href="_dialog_box_8cpp_source.html">DialogBox.cpp</a>.</p>
 
 </div>
 </div>

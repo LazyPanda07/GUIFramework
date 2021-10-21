@@ -1,6 +1,6 @@
 #pragma once
 
-#include "pch.h"
+#include "headers.h"
 #include "BaseComponents/StandardComponents/ListViews/BaseTextListView.h"
 
 namespace gui_framework
@@ -10,6 +10,8 @@ namespace gui_framework
 	{
 	public:
 		TextListView(const std::wstring& listViewName, const utility::ComponentSettings& settings, BaseComponent* parent);
+
+		size_t getHash() const override;
 
 		json::JSONBuilder getStructure() const override;
 

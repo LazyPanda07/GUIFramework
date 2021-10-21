@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "headers.h"
 #include "ListBox.h"
 
 #include "Styles/Components/ListBoxes/DefaultListBoxStyles.h"
@@ -12,13 +12,15 @@ namespace gui_framework
 		(
 			listBoxName,
 			settings,
-			styles::DefaultListBoxStyles(),
+			styles::DefaultListBoxStyles(isSorting),
 			parent
 		)
 	{
-		if (isSorting)
-		{
-			utility::appendStyle(handle, LBS_SORT);
-		}
+		
+	}
+
+	size_t ListBox::getHash() const
+	{
+		return typeid(ListBox).hash_code();
 	}
 }

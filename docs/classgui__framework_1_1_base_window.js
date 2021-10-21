@@ -1,10 +1,10 @@
 var classgui__framework_1_1_base_window =
 [
-    [ "BaseWindow", "classgui__framework_1_1_base_window.html#ad80eafb494c0ce772ceb0d1d0e6d761c", null ],
+    [ "BaseWindow", "classgui__framework_1_1_base_window.html#a2e1a91d8d445d2b8d1bf2f2b0c7a05c1", null ],
     [ "~BaseWindow", "classgui__framework_1_1_base_window.html#a9e7ef6f954af0c728a81afa2f1e29222", null ],
     [ "addImage", "classgui__framework_1_1_base_window.html#a66dedcbb95bdcc0e7727403f7f4f7ac8", null ],
     [ "drawAllImages", "classgui__framework_1_1_base_window.html#a6a73ed8d9f9668400bac07318481f905", null ],
-    [ "getCreationType", "classgui__framework_1_1_base_window.html#a08e654370fed2a92f15cbc7b2ddfb108", null ],
+    [ "getHash", "classgui__framework_1_1_base_window.html#a8134e2d281b664c55d754f4998e5518a", null ],
     [ "getStructure", "classgui__framework_1_1_base_window.html#a601fc7e12ff4afa848514f40b844457c", null ],
     [ "initDrawing", "classgui__framework_1_1_base_window.html#a053e4b215c7f758fb79617985e1a80f7", null ],
     [ "removeImage", "classgui__framework_1_1_base_window.html#ad90e769faef9292c9bfe84980df274e3", null ],

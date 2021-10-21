@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.8-beta</span>
+   &#160;<span id="projectnumber">0.8.3-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -92,21 +92,31 @@ $(document).ready(function(){initNavTree('functions_t.html',''); initResizable()
 <li>TabControlCreator()
 : <a class="el" href="classgui__framework_1_1utility_1_1_tab_control_creator.html#a0248721f3a4ed29ef5d75012f4a72948">gui_framework::utility::TabControlCreator</a>
 </li>
+<li>TabControlDeserializer()
+: <a class="el" href="classgui__framework_1_1deserializers_1_1_tab_control_deserializer.html#a4db0f577dbc9c7556c79573779f1155f">gui_framework::deserializers::TabControlDeserializer</a>
+</li>
+<li>TabControlParser()
+: <a class="el" href="structgui__framework_1_1parsers_1_1_tab_control_parser.html#a833639fe0fca55243e36705acbdac632">gui_framework::parsers::TabControlParser</a>
+</li>
 <li>tabData()
-: <a class="el" href="structgui__framework_1_1_base_tab_control_1_1tab_data.html#a6a67feb02c2cd66c85e42ceae8b0860a">gui_framework::BaseTabControl::tabData</a>
+: <a class="el" href="structgui__framework_1_1_base_tab_control_1_1tab_data.html#a37967ed57ec13a833d0cd8241c63763d">gui_framework::BaseTabControl::tabData</a>
 </li>
 <li>tabs
 : <a class="el" href="classgui__framework_1_1_base_tab_control.html#ad132fcba4407ba83736ecf56704f7771">gui_framework::BaseTabControl</a>
+, <a class="el" href="structgui__framework_1_1parsers_1_1_tab_control_parser.html#aafdec082bff664891023de0889b81bc0">gui_framework::parsers::TabControlParser</a>
 </li>
 <li>text
 : <a class="el" href="structgui__framework_1_1_base_tab_control_1_1tab_data.html#acd7401959f6b87652dd6e6149586e41e">gui_framework::BaseTabControl::tabData</a>
 , <a class="el" href="classgui__framework_1_1interfaces_1_1_i_menu_item.html#a5c326fbc909b29d4026235ba0e15cd39">gui_framework::interfaces::IMenuItem</a>
+, <a class="el" href="structgui__framework_1_1parsers_1_1_button_parser.html#abb668caa9744b271df0a4c3009142801">gui_framework::parsers::ButtonParser</a>
 , <a class="el" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_button_01_4.html#aa69bf50ce9fc00101d893a4f6e8bec87">gui_framework::utility::AdditionalCreationData&lt; Button &gt;</a>
 , <a class="el" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_check_box_01_4.html#afbd2004beb824805b17850306208872d">gui_framework::utility::AdditionalCreationData&lt; CheckBox &gt;</a>
+, <a class="el" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_image_button_01_4.html#a2600259ac8d1bbe968a3178747e9fb5b">gui_framework::utility::AdditionalCreationData&lt; ImageButton &gt;</a>
 , <a class="el" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_static_control_01_4.html#a5b44e40fb2696543c9f8b804ffa22a50">gui_framework::utility::AdditionalCreationData&lt; StaticControl &gt;</a>
 </li>
 <li>textColor
 : <a class="el" href="classgui__framework_1_1_base_component.html#aa6bedc9892f3eb8ae57193275bab2242">gui_framework::BaseComponent</a>
+, <a class="el" href="structgui__framework_1_1parsers_1_1_base_component_parser.html#aed22441d784d3113cc6eaf07161b5694">gui_framework::parsers::BaseComponentParser</a>
 </li>
 <li>textHandle
 : <a class="el" href="classgui__framework_1_1interfaces_1_1_i_text_operations.html#a48cf7da66c946761627d116c38063eac">gui_framework::interfaces::ITextOperations</a>
@@ -117,8 +127,11 @@ $(document).ready(function(){initNavTree('functions_t.html',''); initResizable()
 <li>TextIconListViewCreator()
 : <a class="el" href="classgui__framework_1_1utility_1_1_text_icon_list_view_creator.html#a34078c63a60fd8701cdb5a32789fcbf0">gui_framework::utility::TextIconListViewCreator</a>
 </li>
-<li>textLimitCount
-: <a class="el" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_rich_edit_01_4.html#aa51e59387d6c6b9116139a98f98b408a">gui_framework::utility::AdditionalCreationData&lt; RichEdit &gt;</a>
+<li>TextIconListViewDeserializer()
+: <a class="el" href="classgui__framework_1_1deserializers_1_1_text_icon_list_view_deserializer.html#ae4f525cff004cf3819463e1ffe30ab9f">gui_framework::deserializers::TextIconListViewDeserializer</a>
+</li>
+<li>TextIconListViewParser()
+: <a class="el" href="structgui__framework_1_1parsers_1_1_text_icon_list_view_parser.html#a7595128da4032188f861ffe52ae2799a">gui_framework::parsers::TextIconListViewParser</a>
 </li>
 <li>TextListView()
 : <a class="el" href="classgui__framework_1_1_text_list_view.html#a9cf9bbd7e20a889a85bbd5ab505c02d2">gui_framework::TextListView</a>
@@ -126,15 +139,27 @@ $(document).ready(function(){initNavTree('functions_t.html',''); initResizable()
 <li>TextListViewCreator()
 : <a class="el" href="classgui__framework_1_1utility_1_1_text_list_view_creator.html#a69c22de4b965109b2e2347cf8735d4bd">gui_framework::utility::TextListViewCreator</a>
 </li>
+<li>TextListViewDeserializer()
+: <a class="el" href="classgui__framework_1_1deserializers_1_1_text_list_view_deserializer.html#aee42ee965c8a000cc16eace287174a98">gui_framework::deserializers::TextListViewDeserializer</a>
+</li>
+<li>TextListViewParser()
+: <a class="el" href="structgui__framework_1_1parsers_1_1_text_list_view_parser.html#ab016d104510e55e45bfea4f15542feeb">gui_framework::parsers::TextListViewParser</a>
+</li>
 <li>TextListViewStyles()
 : <a class="el" href="classgui__framework_1_1styles_1_1_text_list_view_styles.html#a18e33cb3644b5fca913362143a858a80">gui_framework::styles::TextListViewStyles</a>
+</li>
+<li>TrackbarControlParser()
+: <a class="el" href="structgui__framework_1_1parsers_1_1_trackbar_control_parser.html#a07235e7e96dd45aa2670c29a25350aed">gui_framework::parsers::TrackbarControlParser</a>
 </li>
 <li>TrackbarControlStyles()
 : <a class="el" href="classgui__framework_1_1styles_1_1_trackbar_control_styles.html#a2f4f0a3b9721b511f93e8939b731c982">gui_framework::styles::TrackbarControlStyles</a>
 </li>
 <li>type
 : <a class="el" href="classgui__framework_1_1interfaces_1_1_i_menu_item.html#a0b9e9c2b085fa0e0c7e75c97ce4f74f3">gui_framework::interfaces::IMenuItem</a>
+, <a class="el" href="structgui__framework_1_1parsers_1_1_icon_list_view_parser.html#ab73654f2164f2c55564bfa390983c1fd">gui_framework::parsers::IconListViewParser</a>
+, <a class="el" href="structgui__framework_1_1parsers_1_1_image_button_parser.html#abbcb7c1c8f4d4c23c142faab710f8f98">gui_framework::parsers::ImageButtonParser</a>
 , <a class="el" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_icon_list_view_01_4.html#a185a68614c73a62360323fc7cc1bdd2e">gui_framework::utility::AdditionalCreationData&lt; IconListView &gt;</a>
+, <a class="el" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_image_button_01_4.html#ac1f93c4075aafd182ce67cf65e27fa7d">gui_framework::utility::AdditionalCreationData&lt; ImageButton &gt;</a>
 , <a class="el" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_list_icon_list_view_01_4.html#a912b59be57971714874cb1452cc8679c">gui_framework::utility::AdditionalCreationData&lt; ListIconListView &gt;</a>
 , <a class="el" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_list_text_icon_list_view_01_4.html#a094b5878a5a12f5959e7d2d0f0984b60">gui_framework::utility::AdditionalCreationData&lt; ListTextIconListView &gt;</a>
 , <a class="el" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_text_icon_list_view_01_4.html#af25b6c9bb7d59e9c5a7aabd5ef5d2e85">gui_framework::utility::AdditionalCreationData&lt; TextIconListView &gt;</a>

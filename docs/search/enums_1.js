@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['exitmode_2294',['exitMode',['../classgui__framework_1_1_base_component.html#adadba923c5fcc012ce8b50e592080bcd',1,'gui_framework::BaseComponent']]]
+  ['drawingtype_2787',['drawingType',['../classgui__framework_1_1_image_button.html#a33f6314ec376eb78a1b8131f98981073',1,'gui_framework::ImageButton']]]
 ];

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "pch.h"
+#include "headers.h"
 #include "BaseComponents/StandardComponents/BaseComboBox.h"
 
 namespace gui_framework
@@ -11,7 +11,9 @@ namespace gui_framework
 	public:
 		DropDownComboBox(const std::wstring& comboBoxName, const utility::ComponentSettings& settings, BaseComponent* parent);
 
-		virtual json::JSONBuilder getStructure() const override;
+		size_t getHash() const override;
+
+		json::JSONBuilder getStructure() const override;
 
 		~DropDownComboBox() = default;
 	};

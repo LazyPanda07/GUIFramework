@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "headers.h"
 #include "IResizableComponent.h"
 
 #pragma warning(disable: 6387)

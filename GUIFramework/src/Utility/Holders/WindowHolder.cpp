@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "headers.h"
 #include "WindowHolder.h"
 
 #include "Exceptions/GetLastErrorException.h"
@@ -32,14 +32,14 @@ namespace gui_framework
 
 		while (code = GetMessageW(&message, nullptr, NULL, NULL) > 0)
 		{
-			if (message.message == WM_HOTKEY && message.wParam >= 0)
-			{
-				instance.processHotkey(static_cast<uint32_t>(message.wParam));
-			}
-
 			TranslateMessage(&message);
 
 			DispatchMessageW(&message);
+
+			if (message.message == WM_KEYDOWN)
+			{
+				instance.processHotkeys();
+			}
 		}
 
 		for (const auto& i : registeredHotkeyIds)

@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "headers.h"
 #include "Button.h"
 
 #include "Styles/Components/Buttons/DefaultButtonStyles.h"
@@ -56,5 +56,10 @@ namespace gui_framework
 		)
 	{
 
+	}
+
+	size_t Button::getHash() const
+	{
+		return typeid(Button).hash_code();
 	}
 }

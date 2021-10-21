@@ -1,6 +1,6 @@
 #pragma once
 
-#include "pch.h"
+#include "headers.h"
 #include "BaseComponents/BaseComponent.h"
 #include "Interfaces/Components/ITextOperations.h"
 
@@ -22,6 +22,10 @@ namespace gui_framework
 		virtual bool setPlaceholder(const std::wstring& placeholder) final;
 
 		virtual const std::wstring& getPlaceholder() const final;
+
+		/// @brief Used as key in creators
+		/// @return typeid().hash_code()
+		virtual size_t getHash() const override = 0;
 
 		virtual json::JSONBuilder getStructure() const override;
 

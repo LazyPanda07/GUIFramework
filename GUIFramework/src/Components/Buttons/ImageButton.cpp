@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "headers.h"
 #include "ImageButton.h"
 
 #include "Styles/Components/Buttons/DefaultButtonStyles.h"
@@ -61,18 +61,12 @@ namespace gui_framework
 		}
 	}
 
-	ImageButton::ImageButton(const wstring& buttonName, const filesystem::path& pathToImage, drawingType type, uint16_t imageWidth, uint16_t imageHeight, int x, int y, BaseComponent* parent, const function<void()>& onClick, uint16_t width, uint16_t height) :
+	ImageButton::ImageButton(const wstring& buttonName, const filesystem::path& pathToImage, drawingType type, uint16_t imageWidth, uint16_t imageHeight, const utility::ComponentSettings& settings, BaseComponent* parent, const function<void()>& onClick) :
 		BaseButton
 		(
 			buttonName,
 			L"",
-			utility::ComponentSettings
-			(
-				x,
-				y,
-				width,
-				height
-			),
+			settings,
 			styles::DefaultButtonStyles(),
 			parent,
 			onClick
@@ -90,18 +84,12 @@ namespace gui_framework
 		this->drawImage();
 	}
 
-	ImageButton::ImageButton(const wstring& buttonName, const filesystem::path& pathToImage, drawingType type, uint16_t imageWidth, uint16_t imageHeight, int x, int y, BaseComponent* parent, const string& functionName, const string& moduleName, uint16_t width, uint16_t height) :
+	ImageButton::ImageButton(const wstring& buttonName, const filesystem::path& pathToImage, drawingType type, uint16_t imageWidth, uint16_t imageHeight, const utility::ComponentSettings& settings, BaseComponent* parent, const string& functionName, const string& moduleName) :
 		BaseButton
 		(
 			buttonName,
 			L"",
-			utility::ComponentSettings
-			(
-				x,
-				y,
-				width,
-				height
-			),
+			settings,
 			styles::DefaultButtonStyles(),
 			parent,
 			functionName,
@@ -150,6 +138,11 @@ namespace gui_framework
 		return type;
 	}
 
+	size_t ImageButton::getHash() const
+	{
+		return typeid(ImageButton).hash_code();
+	}
+
 	json::JSONBuilder ImageButton::getStructure() const
 	{
 		using json::utility::objectSmartPointer;
@@ -157,8 +150,6 @@ namespace gui_framework
 
 		json::JSONBuilder builder = BaseButton::getStructure();
 		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
-
-		__utility::changeClassName(current, serialized_classes::imageButton);
 
 		current->data.push_back({ "imageWidth"s, static_cast<uint64_t>(imageWidth) });
 		current->data.push_back({ "imageHeight"s, static_cast<uint64_t>(imageHeight) });

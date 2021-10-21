@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "headers.h"
 #include "ListTextIconListView.h"
 
 using namespace std;
@@ -19,6 +19,11 @@ namespace gui_framework
 		
 	}
 
+	size_t ListTextIconListView::getHash() const
+	{
+		return typeid(ListTextIconListView).hash_code();
+	}
+
 	json::JSONBuilder ListTextIconListView::getStructure() const
 	{
 		using json::utility::jsonObject;
@@ -26,8 +31,6 @@ namespace gui_framework
 
 		json::JSONBuilder builder = BaseListTextIconListView::getStructure();
 		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
-
-		__utility::changeClassName(current, serialized_classes::listTextIconListView);
 
 		return builder;
 	}

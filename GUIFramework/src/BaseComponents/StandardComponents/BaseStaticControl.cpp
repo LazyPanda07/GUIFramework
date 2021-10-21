@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "headers.h"
 #include "BaseStaticControl.h"
 
 #include "Styles/Components/StaticControlStyles.h"
@@ -10,7 +10,7 @@ namespace gui_framework
 	BaseStaticControl::BaseStaticControl(const wstring& staticControlName, const wstring& staticControlText, const utility::ComponentSettings& settings, BaseComponent* parent) :
 		BaseComponent
 		(
-			wstring(standard_classes::staticControl),
+			standard_classes::staticControl,
 			staticControlName,
 			settings,
 			styles::StaticControlStyles(),

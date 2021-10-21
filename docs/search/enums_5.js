@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['urldetectevent_2301',['urlDetectEvent',['../classgui__framework_1_1_base_rich_edit.html#abf55c644c6c2640d8c662dd7179ab1f3',1,'gui_framework::BaseRichEdit']]]
+  ['messageboxresponse_2793',['messageBoxResponse',['../classgui__framework_1_1_base_dialog_box.html#a66c5cb34004ac273196f855bf18afbfa',1,'gui_framework::BaseDialogBox']]],
+  ['messageboxtype_2794',['messageBoxType',['../classgui__framework_1_1_base_dialog_box.html#a4c390f225765a7ff69983db9d232b6e3',1,'gui_framework::BaseDialogBox']]]
 ];

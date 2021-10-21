@@ -1,7 +1,7 @@
 #pragma once
 
-#include "pch.h"
-#include "BaseComponents/StandardComponents/BaseInfiniteProgressBar.h"
+#include "headers.h"
+#include "BaseComponents/StandardComponents/ProgressBars/BaseInfiniteProgressBar.h"
 #include "Interfaces/Components/IResizableComponent.h"
 
 namespace gui_framework
@@ -21,6 +21,8 @@ namespace gui_framework
 		/// @param parent 
 		/// @param animationPeriod Period between animation in milliseconds
 		InfiniteProgressBar(const std::wstring& progressBarName, const utility::ComponentSettings& settings, BaseComponent* parent, int animationPeriod = NULL);
+
+		size_t getHash() const override;
 
 		json::JSONBuilder getStructure() const override;
 

@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "headers.h"
 #include "BaseTrackbarControl.h"
 
 #include "Styles/DefaultStyles.h"
@@ -11,7 +11,7 @@ namespace gui_framework
 	BaseTrackbarControl::BaseTrackbarControl(const wstring& trackbarName, const utility::ComponentSettings& settings, const styles::TrackbarControlStyles& styles, BaseComponent* parent) :
 		BaseComponent
 		(
-			wstring(standard_classes::trackbarControl),
+			standard_classes::trackbarControl,
 			trackbarName,
 			settings,
 			styles,
@@ -78,7 +78,7 @@ namespace gui_framework
 
 	void BaseTrackbarControl::setTextColor(uint8_t red, uint8_t green, uint8_t blue)
 	{
-		throw exceptions::NotImplemented(__FUNCTION__, "BaseTrackbarControl");
+		__utility::throwNotImplementedException(__FUNCTION__, "BaseTrackbarControl"sv);
 	}
 
 	json::JSONBuilder BaseTrackbarControl::getStructure() const
@@ -88,13 +88,13 @@ namespace gui_framework
 
 		json::JSONBuilder builder = BaseComponent::getStructure();
 
-		auto& object = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
+		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
 
-		object->data.push_back({ "minRange"s, static_cast<int64_t>(this->getMinRange()) });
-		object->data.push_back({ "maxRange"s, static_cast<int64_t>(this->getMaxRange()) });
+		current->data.push_back({ "minRange"s, static_cast<int64_t>(this->getMinRange()) });
+		current->data.push_back({ "maxRange"s, static_cast<int64_t>(this->getMaxRange()) });
 
-		object->data.push_back({ "selectionStart"s, static_cast<int64_t>(this->getSelectionStart()) });
-		object->data.push_back({ "selectionEnd"s, static_cast<int64_t>(this->getSelectionEnd()) });
+		current->data.push_back({ "selectionStart"s, static_cast<int64_t>(this->getSelectionStart()) });
+		current->data.push_back({ "selectionEnd"s, static_cast<int64_t>(this->getSelectionEnd()) });
 
 		return builder;
 	}

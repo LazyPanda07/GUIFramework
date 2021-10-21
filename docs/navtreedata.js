@@ -42,7 +42,7 @@ var NAVTREE =
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", "functions_func" ],
-        [ "Variables", "functions_vars.html", null ],
+        [ "Variables", "functions_vars.html", "functions_vars" ],
         [ "Enumerations", "functions_enum.html", null ],
         [ "Related Functions", "functions_rela.html", null ]
       ] ]
@@ -62,14 +62,17 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_additional_creation_data_8h.html",
-"_drop_down_list_combo_box_creator_8cpp_source.html",
-"_list_box_additional_creation_data_8cpp_source.html",
-"classgui__framework_1_1_base_button.html#aaccdf27d78ea7e370c485855d6f441a7",
-"classgui__framework_1_1_base_multiple_select_list_box.html#aa04d1b4425600af590fcbf08614da1db",
-"classgui__framework_1_1_multiple_select_list_box.html",
-"classgui__framework_1_1styles_1_1_drop_down_combo_box_styles.html",
-"classgui__framework_1_1utility_1_1_base_loadable_holder.html#a7bba67968ff183d8ad7049ff4d4e0059",
-"namespacegui__framework_1_1____utility.html#a94619fe68a8cd93c7ef48d60f537777a"
+"_cursors_holder_8h_source.html",
+"_i_text_icon_list_view_8cpp_source.html",
+"_separate_window_additional_creation_data_8cpp_source.html",
+"classgui__framework_1_1_base_combo_box.html#acfe9b4c371940f61dc513d610541c9f8",
+"classgui__framework_1_1_base_rich_edit.html#a99a7734c996dc4c84115279362db2dc3",
+"classgui__framework_1_1_menu.html#a1bf1253fb6905ab2d5514cac98907ae5",
+"classgui__framework_1_1interfaces_1_1_i_menu_item.html#a86914dc8a7f0d9e282361bd80e9b49ae",
+"classgui__framework_1_1utility_1_1_additional_creation_data_3_01_drop_down_combo_box_01_4.html#a05cce5a378873a58fc7bf115a3d98d9b",
+"classgui__framework_1_1utility_1_1_image_button_creator.html#a4317eee973da0d3c2ff866164d691eaa",
+"namespacegui__framework_1_1deserializers.html",
+"structgui__framework_1_1parsers_1_1_trackbar_control_parser.html#ae58d4735fc6981c45d7bf9ec4a8f4e5c"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

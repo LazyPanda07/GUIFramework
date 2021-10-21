@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.8-beta</span>
+   &#160;<span id="projectnumber">0.8.3-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -87,7 +87,7 @@ $(document).ready(function(){initNavTree('_menu_8cpp_source.html',''); initResiz
 <div class="title">Menu.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_menu_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pch_8h.html">pch.h</a>&quot;</span></div>
+<a href="_menu_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="headers_8h.html">headers.h</a>&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_menu_8h.html">Menu.h</a>&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using namespace </span>std;</div>
@@ -219,7 +219,7 @@ $(document).ready(function(){initNavTree('_menu_8cpp_source.html',''); initResiz
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        }</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        builder.</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            append(<span class="stringliteral">&quot;menuName&quot;</span>s, <a class="code" href="namespacegui__framework_1_1utility.html#abbafc9708435f466d89c4f977dcd460d">utility::to_string</a>(name, codepage)).</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            append(<span class="stringliteral">&quot;menuName&quot;</span>s, <a class="code" href="namespacegui__framework_1_1utility.html#a29e6b8bdafb60965ca6109d0ad4bf869">utility::to_string</a>(name, codepage)).</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            append(<span class="stringliteral">&quot;menuId&quot;</span>s, <span class="keyword">reinterpret_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(handle)).</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            append(<span class="stringliteral">&quot;items&quot;</span>s, move(children));</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
@@ -244,10 +244,10 @@ $(document).ready(function(){initNavTree('_menu_8cpp_source.html',''); initResiz
 <div class="ttc" id="aclassgui__framework_1_1_menu_html_a9806ef1779049ef3f77b5bd48f8055d5"><div class="ttname"><a href="classgui__framework_1_1_menu.html#a9806ef1779049ef3f77b5bd48f8055d5">gui_framework::Menu::removeMenuItem</a></div><div class="ttdeci">void removeMenuItem(uint32_t index)</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00069">Menu.cpp:69</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1_menu_html_ab982318126cbd7d4d8d5de969a176d2b"><div class="ttname"><a href="classgui__framework_1_1_menu.html#ab982318126cbd7d4d8d5de969a176d2b">gui_framework::Menu::~Menu</a></div><div class="ttdeci">~Menu()</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00140">Menu.cpp:140</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1_menu_html_ad1a2a13022ca63659a014c59d4b5f246"><div class="ttname"><a href="classgui__framework_1_1_menu.html#ad1a2a13022ca63659a014c59d4b5f246">gui_framework::Menu::addMenuItem</a></div><div class="ttdeci">Menu &amp; addMenuItem(std::unique_ptr&lt; interfaces::IMenuItem &gt; &amp;&amp;item)</div><div class="ttdoc">Also calls item's createMenuItem method.</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00057">Menu.cpp:57</a></div></div>
-<div class="ttc" id="anamespacegui__framework_1_1standard__menu__items_html_acd826e0552d9392c7e519b1d7e0ff599"><div class="ttname"><a href="namespacegui__framework_1_1standard__menu__items.html#acd826e0552d9392c7e519b1d7e0ff599">gui_framework::standard_menu_items::dropDownMenuItem</a></div><div class="ttdeci">constexpr std::string_view dropDownMenuItem</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00070">GUIFrameworkConstants.h:70</a></div></div>
-<div class="ttc" id="anamespacegui__framework_1_1utility_html_abbafc9708435f466d89c4f977dcd460d"><div class="ttname"><a href="namespacegui__framework_1_1utility.html#abbafc9708435f466d89c4f977dcd460d">gui_framework::utility::to_string</a></div><div class="ttdeci">string to_string(const wstring &amp;stringToConvert, uint32_t codepage)</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00035">Utility.cpp:35</a></div></div>
+<div class="ttc" id="aheaders_8h_html"><div class="ttname"><a href="headers_8h.html">headers.h</a></div></div>
+<div class="ttc" id="anamespacegui__framework_1_1standard__menu__items_html_acd826e0552d9392c7e519b1d7e0ff599"><div class="ttname"><a href="namespacegui__framework_1_1standard__menu__items.html#acd826e0552d9392c7e519b1d7e0ff599">gui_framework::standard_menu_items::dropDownMenuItem</a></div><div class="ttdeci">constexpr std::string_view dropDownMenuItem</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00030">GUIFrameworkConstants.h:30</a></div></div>
+<div class="ttc" id="anamespacegui__framework_1_1utility_html_a29e6b8bdafb60965ca6109d0ad4bf869"><div class="ttname"><a href="namespacegui__framework_1_1utility.html#a29e6b8bdafb60965ca6109d0ad4bf869">gui_framework::utility::to_string</a></div><div class="ttdeci">GUI_FRAMEWORK_API_FUNCTION string to_string(const wstring &amp;stringToConvert, uint32_t codepage)</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00038">Utility.cpp:38</a></div></div>
 <div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00016">BaseComponent.cpp:17</a></div></div>
-<div class="ttc" id="apch_8h_html"><div class="ttname"><a href="pch_8h.html">pch.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

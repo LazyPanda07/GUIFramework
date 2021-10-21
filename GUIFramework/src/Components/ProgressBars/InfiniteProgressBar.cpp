@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "headers.h"
 #include "InfiniteProgressBar.h"
 
 using namespace std;
@@ -22,6 +22,11 @@ namespace gui_framework
 		
 	}
 
+	size_t InfiniteProgressBar::getHash() const
+	{
+		return typeid(InfiniteProgressBar).hash_code();
+	}
+
 	json::JSONBuilder InfiniteProgressBar::getStructure() const
 	{
 		using json::utility::jsonObject;
@@ -29,8 +34,6 @@ namespace gui_framework
 
 		json::JSONBuilder builder = BaseInfiniteProgressBar::getStructure();
 		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
-
-		__utility::changeClassName(current, serialized_classes::infiniteProgressBar);
 
 		return builder;
 	}

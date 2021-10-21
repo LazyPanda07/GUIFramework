@@ -1,5 +1,6 @@
 var structgui__framework_1_1_base_tab_control_1_1tab_data =
 [
+    [ "tabData", "structgui__framework_1_1_base_tab_control_1_1tab_data.html#a37967ed57ec13a833d0cd8241c63763d", null ],
     [ "tabData", "structgui__framework_1_1_base_tab_control_1_1tab_data.html#a6a67feb02c2cd66c85e42ceae8b0860a", null ],
     [ "tabData", "structgui__framework_1_1_base_tab_control_1_1tab_data.html#abf88f8bc5b43162aba2ccf5863d1aab6", null ],
     [ "tabData", "structgui__framework_1_1_base_tab_control_1_1tab_data.html#a36ad08f90ae901b4eaef4cafe030ceef", null ],

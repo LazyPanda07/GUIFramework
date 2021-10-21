@@ -1,6 +1,6 @@
 #pragma once
 
-#include "pch.h"
+#include "headers.h"
 #include "BaseComponents/StandardComponents/BaseRichEdit.h"
 
 namespace gui_framework
@@ -10,6 +10,8 @@ namespace gui_framework
 	{
 	public:
 		RichEdit(const std::wstring& richEditName, const utility::ComponentSettings& settings, BaseComponent* parent, bool isMultiLine = false);
+
+		size_t getHash() const override;
 
 		json::JSONBuilder getStructure() const override;
 

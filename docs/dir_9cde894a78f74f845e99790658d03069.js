@@ -1,6 +1,5 @@
 var dir_9cde894a78f74f845e99790658d03069 =
 [
-    [ "AdditionalCreationData", "dir_c248bc770f0ee44cbe49ead0e7fb8aa7.html", "dir_c248bc770f0ee44cbe49ead0e7fb8aa7" ],
     [ "ChildWindow.cpp", "_child_window_8cpp.html", null ],
     [ "ChildWindow.h", "_child_window_8h.html", [
       [ "ChildWindow", "classgui__framework_1_1_child_window.html", "classgui__framework_1_1_child_window" ]

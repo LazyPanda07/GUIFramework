@@ -2,6 +2,7 @@ var classgui__framework_1_1_base_check_box =
 [
     [ "BaseCheckBox", "classgui__framework_1_1_base_check_box.html#ae921138e2c2ad8c16ade1c558a690e1a", null ],
     [ "~BaseCheckBox", "classgui__framework_1_1_base_check_box.html#a6dd3409f8bcee37e9c2a8ad9b18c7ef0", null ],
+    [ "getHash", "classgui__framework_1_1_base_check_box.html#a2b2e8a147c9a564d0a0a794fe3766249", null ],
     [ "getOnCheck", "classgui__framework_1_1_base_check_box.html#a18b58609b13567da46f9e25b7119aa19", null ],
     [ "getOnClear", "classgui__framework_1_1_base_check_box.html#acf9381be934f3cd548b0f35ac99e62ce", null ],
     [ "getStructure", "classgui__framework_1_1_base_check_box.html#a8d57c8af5e51b7c687bcf49ff279e0fd", null ],

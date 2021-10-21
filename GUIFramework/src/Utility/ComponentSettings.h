@@ -1,6 +1,6 @@
 #pragma once
 
-#include "pch.h"
+#include "headers.h"
 
 namespace gui_framework
 {
@@ -13,6 +13,8 @@ namespace gui_framework
 			int y;
 			uint16_t width;
 			uint16_t height;
+
+			ComponentSettings() = default;
 
 			/// @brief Create settings for createing all windows
 			/// @param x Top left corner x coordinate

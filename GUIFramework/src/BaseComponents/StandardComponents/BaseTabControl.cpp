@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "headers.h"
 #include "BaseTabControl.h"
 
 #include "Styles/DefaultStyles.h"
@@ -68,7 +68,7 @@ namespace gui_framework
 	BaseTabControl::BaseTabControl(const wstring& tabControlName, const utility::ComponentSettings& settings, uint16_t imagesWidth, uint16_t imagesHeight, BaseComponent* parent) :
 		BaseComponent
 		(
-			wstring(standard_classes::tabControl),
+			standard_classes::tabControl,
 			tabControlName,
 			settings,
 			styles::DefaultStyles(),
@@ -442,12 +442,12 @@ namespace gui_framework
 
 	void BaseTabControl::setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue)
 	{
-		throw exceptions::NotImplemented(__FUNCTION__, "BaseTabControl");
+		__utility::throwNotImplementedException(__FUNCTION__, "BaseTabControl"sv);
 	}
 
 	void BaseTabControl::setTextColor(uint8_t red, uint8_t green, uint8_t blue)
 	{
-		throw exceptions::NotImplemented(__FUNCTION__, "BaseTabControl");
+		__utility::throwNotImplementedException(__FUNCTION__, "BaseTabControl"sv);
 	}
 
 	json::JSONBuilder BaseTabControl::getStructure() const
@@ -458,6 +458,10 @@ namespace gui_framework
 		json::JSONBuilder builder = BaseComponent::getStructure();
 		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
 		vector<objectSmartPointer<jsonObject>> jsonTabs;
+
+		current->data.push_back({ "imagesWidth"s, static_cast<uint64_t>(images.getImagesWidth()) });
+
+		current->data.push_back({ "imagesHeight"s, static_cast<uint64_t>(images.getImagesHeight()) });
 
 		auto serializeText = [this](objectSmartPointer<jsonObject>& object, const tabData& data)
 		{

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "pch.h"
+#include "headers.h"
 #include "BaseComponents/BaseComponent.h"
 #include "Utility/Holders/LoadableHolders/ImagesHolder.h"
 
@@ -17,6 +17,8 @@ namespace gui_framework
 			std::function<void()> callback;
 			std::string functionName;
 			std::string moduleName;
+
+			tabData() = default;
 
 			tabData(const std::wstring& text, const std::filesystem::path& pathToImage, const std::function<void()>& callback);
 
@@ -186,6 +188,10 @@ namespace gui_framework
 		/// @param blue 
 		/// @exception NotImplemented Text color does not affects at tab control
 		virtual void setTextColor(uint8_t red, uint8_t green, uint8_t blue) final override;
+
+		/// @brief Used as key in creators
+		/// @return typeid().hash_code()
+		virtual size_t getHash() const override = 0;
 
 		virtual json::JSONBuilder getStructure() const override;
 

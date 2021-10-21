@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "headers.h"
 #include "TextListView.h"
 
 using namespace std;
@@ -16,6 +16,11 @@ namespace gui_framework
 
 	}
 
+	size_t TextListView::getHash() const
+	{
+		return typeid(TextListView).hash_code();
+	}
+
 	json::JSONBuilder TextListView::getStructure() const
 	{
 		using json::utility::jsonObject;
@@ -23,8 +28,6 @@ namespace gui_framework
 
 		json::JSONBuilder builder = BaseTextListView::getStructure();
 		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
-
-		__utility::changeClassName(current, serialized_classes::textListView);
 
 		return builder;
 	}

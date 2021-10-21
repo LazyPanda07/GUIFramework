@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "headers.h"
 #include "BaseComposite.h"
 
 #include "Interfaces/Components/IResizableComponent.h"
@@ -15,26 +15,32 @@ namespace gui_framework
 
 		if (message == WM_SIZE)
 		{
-			interfaces::IResizableComponent* resizableComposite = dynamic_cast<interfaces::IResizableComponent*>(this);
+			BaseComponent* component = GUIFramework::get().findComponent(handle);
 
-			if (resizableComposite && !resizableComposite->getBlockResize())
+			if (component && component->isComposite())
 			{
-				isUsed = true;
+				interfaces::IResizableComponent* resizableComposite = dynamic_cast<interfaces::IResizableComponent*>(component);
 
-				uint16_t width = LOWORD(lparam);
-				uint16_t height = HIWORD(lparam);
-
-				for (const auto& i : children)
+				if (resizableComposite && !resizableComposite->getBlockResize())
 				{
-					interfaces::IResizableComponent* resizable = dynamic_cast<interfaces::IResizableComponent*>(i.get());
+					isUsed = true;
 
-					if (resizable)
+					const vector<unique_ptr<BaseComponent>>& childrenToResize = static_cast<BaseComposite*>(component)->getChildren();
+					uint16_t width = LOWORD(lparam);
+					uint16_t height = HIWORD(lparam);
+
+					for (const auto& i : childrenToResize)
 					{
-						resizable->resize(width, height);
-					}
-				}
+						interfaces::IResizableComponent* resizable = dynamic_cast<interfaces::IResizableComponent*>(i.get());
 
-				return 0;
+						if (resizable)
+						{
+							resizable->resize(width, height);
+						}
+					}
+
+					return 0;
+				}
 			}
 		}
 
@@ -115,11 +121,6 @@ namespace gui_framework
 		return -1;
 	}
 
-	const string& BaseComposite::getCreationType() const
-	{
-		return serialized_creation_type::baseComposite;
-	}
-
 	vector<pair<string, json::utility::objectSmartPointer<json::utility::jsonObject>>> BaseComposite::getChildrenStructure() const
 	{
 		vector<json::JSONBuilder> childrenStructure;
@@ -159,6 +160,8 @@ namespace gui_framework
 			smallIconResource,
 			largeIconResource
 		),
+		windowFunctionName(windowFunctionName),
+		mode(exitMode::destroyWindow),
 		largeIcon(nullptr),
 		smallIcon(nullptr)
 	{
@@ -258,11 +261,6 @@ namespace gui_framework
 		return result;
 	}
 
-	const vector<unique_ptr<BaseComponent>>& BaseComposite::getChildren() const
-	{
-		return children;
-	}
-
 	unique_ptr<Menu>& BaseComposite::createMainMenu(const wstring& menuName)
 	{
 		popupMenus.clear();
@@ -302,6 +300,21 @@ namespace gui_framework
 	bool BaseComposite::isComposite() const
 	{
 		return true;
+	}
+
+	void BaseComposite::setExitMode(exitMode mode)
+	{
+		this->mode = mode;
+	}
+
+	BaseComposite::exitMode BaseComposite::getExitMode() const
+	{
+		return mode;
+	}
+
+	const vector<unique_ptr<BaseComponent>>& BaseComposite::getChildren() const
+	{
+		return children;
 	}
 
 	const unique_ptr<Menu>& BaseComposite::getMainMenu() const
@@ -408,6 +421,10 @@ namespace gui_framework
 		vector<pair<string, objectSmartPointer<jsonObject>>> data = this->getChildrenStructure();
 		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
 		GUIFramework& instance = GUIFramework::get();
+
+		current->data.push_back({ "windowFunctionName"s, windowFunctionName });
+
+		current->data.push_back({ "exitMode"s, static_cast<int64_t>(mode) });
 
 		if (!pathToSmallIcon.empty())
 		{

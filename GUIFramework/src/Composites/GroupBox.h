@@ -1,7 +1,7 @@
 #pragma once
 
-#include "pch.h"
-#include "BaseComponents/StandardComponents/BaseButton.h"
+#include "headers.h"
+#include "BaseComponents/StandardComponents/Buttons/BaseButton.h"
 #include "BaseComposites/BaseComposite.h"
 
 namespace gui_framework
@@ -16,6 +16,8 @@ namespace gui_framework
 			RadioButton(const std::wstring& radioButtonName, const std::wstring& radioButtonText, const utility::ComponentSettings& settings, BaseComponent* parent, const std::function<void()>& onClick);
 
 			RadioButton(const std::wstring& radioButtonName, const std::wstring& radioButtonText, const utility::ComponentSettings& settings, BaseComponent* parent, const std::string& functionName, const std::string& moduleName);
+
+			size_t getHash() const override;
 
 			~RadioButton() = default;
 		};
@@ -49,9 +51,6 @@ namespace gui_framework
 			~radioButtonData() = default;
 		};
 
-	protected:
-		virtual const std::string& getCreationType() const override;
-
 	public:
 		/// @brief 
 		/// @param groupBoxClassName 
@@ -65,6 +64,8 @@ namespace gui_framework
 		GroupBox(const std::wstring& groupBoxClassName, const std::wstring& groupBoxName, const utility::ComponentSettings& settings, BaseComponent* parent, const std::string& groupBoxFunctionName);
 
 		void addRadioButton(const radioButtonData& data);
+
+		size_t getHash() const override;
 
 		~GroupBox() = default;
 	};

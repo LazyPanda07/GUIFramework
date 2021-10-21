@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "headers.h"
 #include "BaseRichEdit.h"
 
 #include "Styles/Components/DefaultRichEditStyles.h"
@@ -63,7 +63,7 @@ namespace gui_framework
 	BaseRichEdit::BaseRichEdit(const wstring& richEditName, const utility::ComponentSettings& settings, BaseComponent* parent, bool isMultiLine) :
 		BaseComponent
 		(
-			wstring(standard_classes::richEdit),
+			standard_classes::richEdit,
 			richEditName,
 			settings,
 			styles::DefaultRichEditStyles(isMultiLine),
@@ -74,7 +74,9 @@ namespace gui_framework
 			handle,
 			parent ? parent->getHandle() : nullptr
 		),
-		ITextOperations(handle)
+		ITextOperations(handle),
+		isMultiLine(isMultiLine),
+		limitTextCount(0)
 	{
 		this->setText(L"");
 
@@ -161,6 +163,8 @@ namespace gui_framework
 
 	void BaseRichEdit::setLimitText(uint64_t count)
 	{
+		limitTextCount = count;
+
 		SendMessageW(handle, EM_EXLIMITTEXT, NULL, count);
 	}
 
@@ -184,8 +188,13 @@ namespace gui_framework
 		{
 			return callbacks[7];
 		}
-		
+
 		return callbacks[static_cast<size_t>(event) % urlDetectEventSize];
+	}
+
+	bool BaseRichEdit::getIsMultiLine() const
+	{
+		return isMultiLine;
 	}
 
 	void BaseRichEdit::setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue)
@@ -215,16 +224,14 @@ namespace gui_framework
 		using json::utility::jsonObject;
 
 		pair<string, string> emptyPair = make_pair(""s, ""s);
-
-		if (ranges::all_of(callbacksFunctionNamesAndModules, [&emptyPair](const pair<string, string>& data) { return data == emptyPair; }))
-		{
-			return BaseComponent::getStructure();
-		}
-
 		json::JSONBuilder builder = BaseComponent::getStructure();
 		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
 		vector<objectSmartPointer<jsonObject>> jsonCallbacks;
 		const auto& modulesPaths = GUIFramework::get().getModulesPaths();
+
+		current->data.push_back({ "isMultiLine"s, isMultiLine });
+
+		current->data.push_back({ "limitTextCount"s, limitTextCount });
 
 		for (size_t i = 0; i < callbacksFunctionNamesAndModules.size(); i++)
 		{

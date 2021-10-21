@@ -1,6 +1,6 @@
 #pragma once
 
-#include "pch.h"
+#include "headers.h"
 #include "BaseComponents/StandardComponents/BaseStaticControl.h"
 #include "Interfaces/Components/IResizableComponent.h"
 
@@ -13,6 +13,8 @@ namespace gui_framework
 	{
 	public:
 		StaticControl(const std::wstring& staticControlName, const std::wstring& editControlText, int x, int y, BaseComponent* parent, uint16_t width = standard_sizes::staticControlWidth, uint16_t height = standard_sizes::staticControlHeight);
+
+		size_t getHash() const override;
 
 		~StaticControl() = default;
 	};

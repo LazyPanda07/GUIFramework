@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "headers.h"
 #include "GroupBox.h"
 
 #include "Styles/Components/Buttons/RadioButtonStyles.h"
@@ -36,6 +36,11 @@ namespace gui_framework
 		)
 	{
 
+	}
+
+	size_t GroupBox::RadioButton::getHash() const
+	{
+		return typeid(RadioButton).hash_code();
 	}
 
 	GroupBox::radioButtonData::radioButtonData() :
@@ -82,11 +87,6 @@ namespace gui_framework
 		onClick = tem;
 	}
 
-	const string& GroupBox::getCreationType() const
-	{
-		return serialized_creation_type::groupBox;
-	}
-
 	GroupBox::GroupBox(const wstring& groupBoxClassName, const wstring& groupBoxName, const utility::ComponentSettings& settings, BaseComponent* parent, const string& groupBoxFunctionName) :
 		BaseComposite
 		(
@@ -98,7 +98,7 @@ namespace gui_framework
 			groupBoxFunctionName
 		)
 	{
-		
+
 	}
 
 	void GroupBox::addRadioButton(const radioButtonData& data)
@@ -111,5 +111,10 @@ namespace gui_framework
 		{
 			new RadioButton(data.radioButtonName, data.radioButtonText, utility::ComponentSettings(data.x, data.y, data.width, data.height), this, data.functionName, data.moduleName);
 		}
+	}
+
+	size_t GroupBox::getHash() const
+	{
+		return typeid(GroupBox).hash_code();
 	}
 }

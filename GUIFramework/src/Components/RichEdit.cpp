@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "headers.h"
 #include "RichEdit.h"
 
 using namespace std;
@@ -17,6 +17,11 @@ namespace gui_framework
 
 	}
 
+	size_t RichEdit::getHash() const
+	{
+		return typeid(RichEdit).hash_code();
+	}
+
 	json::JSONBuilder RichEdit::getStructure() const
 	{
 		using json::utility::objectSmartPointer;
@@ -24,8 +29,6 @@ namespace gui_framework
 
 		json::JSONBuilder builder = BaseRichEdit::getStructure();
 		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
-
-		__utility::changeClassName(current, serialized_classes::richEdit);
 
 		return builder;
 	}

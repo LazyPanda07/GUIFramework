@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "headers.h"
 #include "EditControl.h"
 
 using namespace std;
@@ -26,5 +26,10 @@ namespace gui_framework
 		)
 	{
 
+	}
+
+	size_t EditControl::getHash() const
+	{
+		return typeid(EditControl).hash_code();
 	}
 }

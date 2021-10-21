@@ -1,6 +1,6 @@
 #pragma once
 
-#include "pch.h"
+#include "headers.h"
 #include "BaseListView.h"
 #include "Styles/Components/ListViews/ListListViewStyles.h"
 
@@ -11,6 +11,10 @@ namespace gui_framework
 	{
 	public:
 		BaseListListView(const std::wstring& listViewName, const utility::ComponentSettings& settings, const styles::ListListViewStyles& styles, BaseComponent* parent);
+
+		/// @brief Used as key in creators
+		/// @return typeid().hash_code()
+		virtual size_t getHash() const override = 0;
 
 		virtual ~BaseListListView() = default;
 	};

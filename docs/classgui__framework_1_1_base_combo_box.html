@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.8-beta</span>
+   &#160;<span id="projectnumber">0.8.3-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -86,11 +86,12 @@ $(document).ready(function(){initNavTree('classgui__framework_1_1_base_combo_box
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classgui__framework_1_1_base_combo_box-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">gui_framework::BaseComboBox Class Reference</div>  </div>
+<div class="title">gui_framework::BaseComboBox Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -119,11 +120,6 @@ Public Types</h2></td></tr>
 , <a class="el" href="classgui__framework_1_1_base_combo_box.html#a148ff392d7d0af526dafcb102b98513aa647c2f2946dee4dd8800b92c2f241081">selectionFieldItem</a>
  }</td></tr>
 <tr class="separator:a148ff392d7d0af526dafcb102b98513a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_types_classgui__framework_1_1_base_component"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classgui__framework_1_1_base_component')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></td></tr>
-<tr class="memitem:adadba923c5fcc012ce8b50e592080bcd inherit pub_types_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#adadba923c5fcc012ce8b50e592080bcd">exitMode</a> { <a class="el" href="classgui__framework_1_1_base_component.html#adadba923c5fcc012ce8b50e592080bcda3619de6b97539298d3d046e6dbbe48cc">destroyWindow</a>
-, <a class="el" href="classgui__framework_1_1_base_component.html#adadba923c5fcc012ce8b50e592080bcdadbd73c2b545209688ed794c0d5413d5a">quit</a>
- }</td></tr>
-<tr class="separator:adadba923c5fcc012ce8b50e592080bcd inherit pub_types_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -177,13 +173,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab9ac06e14375a41cd0db219f1030b40d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_combo_box.html#ab9ac06e14375a41cd0db219f1030b40d">setTextColor</a> (uint8_t red, uint8_t green, uint8_t blue) final override</td></tr>
 <tr class="memdesc:ab9ac06e14375a41cd0db219f1030b40d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Not implemented.  <a href="classgui__framework_1_1_base_combo_box.html#ab9ac06e14375a41cd0db219f1030b40d">More...</a><br /></td></tr>
 <tr class="separator:ab9ac06e14375a41cd0db219f1030b40d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8f999deff251aae6ea741eb8198914a"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_combo_box.html#ab8f999deff251aae6ea741eb8198914a">getHash</a> () const override=0</td></tr>
+<tr class="memdesc:ab8f999deff251aae6ea741eb8198914a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used as key in creators.  <a href="classgui__framework_1_1_base_combo_box.html#ab8f999deff251aae6ea741eb8198914a">More...</a><br /></td></tr>
+<tr class="separator:ab8f999deff251aae6ea741eb8198914a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67b687ab959e0a847952423d3b4eae12"><td class="memItemLeft" align="right" valign="top">virtual json::JSONBuilder&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_combo_box.html#a67b687ab959e0a847952423d3b4eae12">getStructure</a> () const override</td></tr>
 <tr class="separator:a67b687ab959e0a847952423d3b4eae12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0e1148b03af791fdf1239fc3fb1fe1f"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_combo_box.html#aa0e1148b03af791fdf1239fc3fb1fe1f">~BaseComboBox</a> ()=default</td></tr>
 <tr class="separator:aa0e1148b03af791fdf1239fc3fb1fe1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classgui__framework_1_1_base_component"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classgui__framework_1_1_base_component')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></td></tr>
-<tr class="memitem:a4b4f7216831d51b2d2cf22c90872394f inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a4b4f7216831d51b2d2cf22c90872394f">BaseComponent</a> (const std::wstring &amp;<a class="el" href="classgui__framework_1_1_base_component.html#a7a8719af09a90cd4de26d3a295882e86">className</a>, const std::wstring &amp;<a class="el" href="classgui__framework_1_1_base_component.html#ab927f5791c7605446203f7f7f6e0bb83">windowName</a>, const <a class="el" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a> &amp;settings, const <a class="el" href="classgui__framework_1_1interfaces_1_1_i_styles.html">interfaces::IStyles</a> &amp;<a class="el" href="classgui__framework_1_1_base_component.html#aec8d3af6711b0c012f2f7f90cc7d4141">styles</a>, <a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> *<a class="el" href="classgui__framework_1_1_base_component.html#a1576375d22cf283d598e22f4a11aca2f">parent</a>=nullptr, const std::string &amp;windowFunctionName=&quot;&quot;)</td></tr>
-<tr class="separator:a4b4f7216831d51b2d2cf22c90872394f inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e962868a5b9fbce0854fea8bfb57f89 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a5e962868a5b9fbce0854fea8bfb57f89">BaseComponent</a> (const std::wstring &amp;<a class="el" href="classgui__framework_1_1_base_component.html#a7a8719af09a90cd4de26d3a295882e86">className</a>, const std::wstring &amp;<a class="el" href="classgui__framework_1_1_base_component.html#ab927f5791c7605446203f7f7f6e0bb83">windowName</a>, const <a class="el" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a> &amp;settings, const <a class="el" href="classgui__framework_1_1interfaces_1_1_i_styles.html">interfaces::IStyles</a> &amp;<a class="el" href="classgui__framework_1_1_base_component.html#aec8d3af6711b0c012f2f7f90cc7d4141">styles</a>, <a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> *<a class="el" href="classgui__framework_1_1_base_component.html#a1576375d22cf283d598e22f4a11aca2f">parent</a>=nullptr, const std::string &amp;windowFunctionName=&quot;&quot;, const std::string &amp;moduleName=&quot;&quot;, uint16_t smallIconResource=NULL, uint16_t largeIconResource=NULL)</td></tr>
+<tr class="separator:a5e962868a5b9fbce0854fea8bfb57f89 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80afd36bdaaa52f7137371ec9c8cdac5 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a80afd36bdaaa52f7137371ec9c8cdac5">isComposite</a> () const</td></tr>
 <tr class="separator:a80afd36bdaaa52f7137371ec9c8cdac5 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d83634fe44ae3639664a09f14007268 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a4d83634fe44ae3639664a09f14007268">handleMessages</a> (HWND <a class="el" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, UINT message, WPARAM wparam, LPARAM lparam, bool &amp;isUsed) final</td></tr>
@@ -200,8 +199,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad77a109aa5d3d108614a0ee07102ab30 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90444b6b79044a9c7a0d35fb2333c77d inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a90444b6b79044a9c7a0d35fb2333c77d">setDesiredY</a> (int <a class="el" href="classgui__framework_1_1_base_component.html#a3d15724eb33a896f282d5199f825d03b">desiredY</a>) final</td></tr>
 <tr class="separator:a90444b6b79044a9c7a0d35fb2333c77d inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a970624b3baad18e031f53ce52a0a3f45 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a970624b3baad18e031f53ce52a0a3f45">setExitMode</a> (<a class="el" href="classgui__framework_1_1_base_component.html#adadba923c5fcc012ce8b50e592080bcd">exitMode</a> <a class="el" href="classgui__framework_1_1_base_component.html#a55051bf0a8f4a9e513a7531fc9998145">mode</a>) final</td></tr>
-<tr class="separator:a970624b3baad18e031f53ce52a0a3f45 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cdf152fd93973ef43b7e44d72103ff4 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a3cdf152fd93973ef43b7e44d72103ff4">setStyles</a> (<a class="el" href="classgui__framework_1_1interfaces_1_1_i_styles.html">interfaces::IStyles</a> &amp;<a class="el" href="classgui__framework_1_1_base_component.html#aec8d3af6711b0c012f2f7f90cc7d4141">styles</a>) final</td></tr>
+<tr class="separator:a3cdf152fd93973ef43b7e44d72103ff4 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae01a3e23cbef564fc8d7e3d9ec26251b inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#ae01a3e23cbef564fc8d7e3d9ec26251b">getParent</a> () const final</td></tr>
 <tr class="separator:ae01a3e23cbef564fc8d7e3d9ec26251b inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab12780fecd5f22ec01d21a82d9ac87b7 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual HWND&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#ab12780fecd5f22ec01d21a82d9ac87b7">getHandle</a> () const final</td></tr>
@@ -224,23 +223,19 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9823e64caacc15b01f9cb589f2533788 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17fa3959fff385601eb76e6e5110e6f2 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a17fa3959fff385601eb76e6e5110e6f2">getDesiredY</a> () const final</td></tr>
 <tr class="separator:a17fa3959fff385601eb76e6e5110e6f2 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5053112354d8f89a6e426688e0bf150a inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classgui__framework_1_1_base_component.html#adadba923c5fcc012ce8b50e592080bcd">exitMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a5053112354d8f89a6e426688e0bf150a">getExitMode</a> () const final</td></tr>
-<tr class="separator:a5053112354d8f89a6e426688e0bf150a inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1719b34576b8ceb271cdb04611ed4523 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a1719b34576b8ceb271cdb04611ed4523">getId</a> () const final</td></tr>
 <tr class="separator:a1719b34576b8ceb271cdb04611ed4523 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b4685df88fa1edf51da5f29895961a4 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual COLORREF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a8b4685df88fa1edf51da5f29895961a4">getBackgroundColor</a> () const final</td></tr>
 <tr class="separator:a8b4685df88fa1edf51da5f29895961a4 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56df6db296a420576396a4629236aa41 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual COLORREF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a56df6db296a420576396a4629236aa41">getTextColor</a> () const final</td></tr>
 <tr class="separator:a56df6db296a420576396a4629236aa41 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a824af5aba3ff0c622d7452f0d9387f26 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67">smartPointerType</a>&lt; <a class="el" href="classgui__framework_1_1interfaces_1_1_i_styles.html">interfaces::IStyles</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a824af5aba3ff0c622d7452f0d9387f26">getStyles</a> () const final</td></tr>
+<tr class="separator:a824af5aba3ff0c622d7452f0d9387f26 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a274274f6f28b2e93f73544634b640d56 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a274274f6f28b2e93f73544634b640d56">~BaseComponent</a> ()</td></tr>
 <tr class="separator:a274274f6f28b2e93f73544634b640d56 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html">gui_framework::interfaces::ISerializable</a></td></tr>
-<tr class="memitem:a87182b138b089b88b869a22876076b1d inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#a87182b138b089b88b869a22876076b1d">ISerializable</a> ()</td></tr>
-<tr class="separator:a87182b138b089b88b869a22876076b1d inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b10a13a7dcad84dd2a7e6e885b45672 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#a2b10a13a7dcad84dd2a7e6e885b45672">setCodepage</a> (uint32_t codepage) final</td></tr>
-<tr class="separator:a2b10a13a7dcad84dd2a7e6e885b45672 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe1577de1770a62d3dcc6161c3475c7a inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#afe1577de1770a62d3dcc6161c3475c7a">getCodepage</a> () const final</td></tr>
-<tr class="separator:afe1577de1770a62d3dcc6161c3475c7a inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1028f9985162ed38dd68b2bdface7f93 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#a1028f9985162ed38dd68b2bdface7f93">ISerializable</a> ()=default</td></tr>
+<tr class="separator:a1028f9985162ed38dd68b2bdface7f93 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8feceb56504671870fc49a814a212516 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#a8feceb56504671870fc49a814a212516">~ISerializable</a> ()=default</td></tr>
 <tr class="separator:a8feceb56504671870fc49a814a212516 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classgui__framework_1_1interfaces_1_1_i_resizable_component"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classgui__framework_1_1interfaces_1_1_i_resizable_component')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classgui__framework_1_1interfaces_1_1_i_resizable_component.html">gui_framework::interfaces::IResizableComponent</a></td></tr>
@@ -258,6 +253,22 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a2747bd3b00421f633b0bad2d17a4603e inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_resizable_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8076c433950f9187a9bf54607cb1746 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_resizable_component"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_resizable_component.html#af8076c433950f9187a9bf54607cb1746">~IResizableComponent</a> ()=default</td></tr>
 <tr class="separator:af8076c433950f9187a9bf54607cb1746 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_resizable_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:accbc82acb98bc9ab463bbb427eee6f49"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_combo_box.html#accbc82acb98bc9ab463bbb427eee6f49">loadOnSelectionChangeFromModule</a> (std::function&lt; void(<a class="el" href="classgui__framework_1_1_base_combo_box.html">BaseComboBox</a> &amp;)&gt; &amp;<a class="el" href="classgui__framework_1_1_base_combo_box.html#a00a1c26198e7c1057c8874c13c2a283e">onSelectionChange</a>, const std::string &amp;<a class="el" href="classgui__framework_1_1_base_combo_box.html#a05483f622fe4c54b75840b9141c8e2c9">functionName</a>, const std::string &amp;<a class="el" href="classgui__framework_1_1_base_combo_box.html#aed26d26f4761454543197611531dd045">moduleName</a>)</td></tr>
+<tr class="memdesc:accbc82acb98bc9ab463bbb427eee6f49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load function from module.  <a href="classgui__framework_1_1_base_combo_box.html#accbc82acb98bc9ab463bbb427eee6f49">More...</a><br /></td></tr>
+<tr class="separator:accbc82acb98bc9ab463bbb427eee6f49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_static_methods_classgui__framework_1_1_base_component"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classgui__framework_1_1_base_component')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></td></tr>
+<tr class="memitem:ac823322fa8ec6712f4585239835b3fdb inherit pub_static_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#ac823322fa8ec6712f4585239835b3fdb">runFunctionAsync</a> (const std::function&lt; void()&gt; &amp;callable, const std::function&lt; void()&gt; &amp;callback=nullptr) noexcept</td></tr>
+<tr class="memdesc:ac823322fa8ec6712f4585239835b3fdb inherit pub_static_methods_classgui__framework_1_1_base_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add task to thread pool.  <a href="classgui__framework_1_1_base_component.html#ac823322fa8ec6712f4585239835b3fdb">More...</a><br /></td></tr>
+<tr class="separator:ac823322fa8ec6712f4585239835b3fdb inherit pub_static_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a377a3b392aa9778b11347f3b69acbd42 inherit pub_static_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a377a3b392aa9778b11347f3b69acbd42">runFunctionAsync</a> (std::function&lt; void()&gt; &amp;&amp;callable, const std::function&lt; void()&gt; &amp;callback=nullptr) noexcept</td></tr>
+<tr class="memdesc:a377a3b392aa9778b11347f3b69acbd42 inherit pub_static_methods_classgui__framework_1_1_base_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add task to thread pool.  <a href="classgui__framework_1_1_base_component.html#a377a3b392aa9778b11347f3b69acbd42">More...</a><br /></td></tr>
+<tr class="separator:a377a3b392aa9778b11347f3b69acbd42 inherit pub_static_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_static_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classgui__framework_1_1interfaces_1_1_i_serializable')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html">gui_framework::interfaces::ISerializable</a></td></tr>
+<tr class="memitem:ae3b3d5735f3d842d4f1b438a3f4eb33e inherit pub_static_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#ae3b3d5735f3d842d4f1b438a3f4eb33e">getCodepage</a> ()</td></tr>
+<tr class="separator:ae3b3d5735f3d842d4f1b438a3f4eb33e inherit pub_static_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -294,8 +305,6 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a45714d8af7df9cc43ed7a0acc02a7c9f inherit pro_attribs_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d15724eb33a896f282d5199f825d03b inherit pro_attribs_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a3d15724eb33a896f282d5199f825d03b">desiredY</a></td></tr>
 <tr class="separator:a3d15724eb33a896f282d5199f825d03b inherit pro_attribs_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55051bf0a8f4a9e513a7531fc9998145 inherit pro_attribs_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgui__framework_1_1_base_component.html#adadba923c5fcc012ce8b50e592080bcd">exitMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a55051bf0a8f4a9e513a7531fc9998145">mode</a></td></tr>
-<tr class="separator:a55051bf0a8f4a9e513a7531fc9998145 inherit pro_attribs_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24a743c99e4ca9bd6a5e1ea2fbd3aea7 inherit pro_attribs_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a24a743c99e4ca9bd6a5e1ea2fbd3aea7">id</a></td></tr>
 <tr class="separator:a24a743c99e4ca9bd6a5e1ea2fbd3aea7 inherit pro_attribs_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5a56227ac3689163f958e778f0df1ca inherit pro_attribs_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">COLORREF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#aa5a56227ac3689163f958e778f0df1ca">backgroundColor</a></td></tr>
@@ -321,16 +330,6 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a22728c7060d6fdf510b86158d37dcc3a inherit pro_attribs_classgui__framework_1_1interfaces_1_1_i_resizable_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54f030b9ff3cc12acfc57031a14938c9 inherit pro_attribs_classgui__framework_1_1interfaces_1_1_i_resizable_component"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_resizable_component.html#a54f030b9ff3cc12acfc57031a14938c9">parentHeight</a></td></tr>
 <tr class="separator:a54f030b9ff3cc12acfc57031a14938c9 inherit pro_attribs_classgui__framework_1_1interfaces_1_1_i_resizable_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_static_methods_classgui__framework_1_1_base_component"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classgui__framework_1_1_base_component')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></td></tr>
-<tr class="memitem:ac823322fa8ec6712f4585239835b3fdb inherit pub_static_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#ac823322fa8ec6712f4585239835b3fdb">runFunctionAsync</a> (const std::function&lt; void()&gt; &amp;callable, const std::function&lt; void()&gt; &amp;callback=nullptr) noexcept</td></tr>
-<tr class="memdesc:ac823322fa8ec6712f4585239835b3fdb inherit pub_static_methods_classgui__framework_1_1_base_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add task to thread pool.  <a href="classgui__framework_1_1_base_component.html#ac823322fa8ec6712f4585239835b3fdb">More...</a><br /></td></tr>
-<tr class="separator:ac823322fa8ec6712f4585239835b3fdb inherit pub_static_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a377a3b392aa9778b11347f3b69acbd42 inherit pub_static_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a377a3b392aa9778b11347f3b69acbd42">runFunctionAsync</a> (std::function&lt; void()&gt; &amp;&amp;callable, const std::function&lt; void()&gt; &amp;callback=nullptr) noexcept</td></tr>
-<tr class="memdesc:a377a3b392aa9778b11347f3b69acbd42 inherit pub_static_methods_classgui__framework_1_1_base_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add task to thread pool.  <a href="classgui__framework_1_1_base_component.html#a377a3b392aa9778b11347f3b69acbd42">More...</a><br /></td></tr>
-<tr class="separator:a377a3b392aa9778b11347f3b69acbd42 inherit pub_static_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base class for all combo boxes. </p>
@@ -361,7 +360,7 @@ Additional Inherited Members</h2></td></tr>
 <tr><td class="fieldname"><a id="a148ff392d7d0af526dafcb102b98513aa647c2f2946dee4dd8800b92c2f241081"></a>selectionFieldItem&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_base_combo_box_8h_source.html#l00025">25</a> of file <a class="el" href="_base_combo_box_8h_source.html">BaseComboBox.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_combo_box_8h_source.html#l00033">33</a> of file <a class="el" href="_base_combo_box_8h_source.html">BaseComboBox.h</a>.</p>
 
 </div>
 </div>
@@ -404,7 +403,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00044">44</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00061">61</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
 
 </div>
 </div>
@@ -472,7 +471,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00064">64</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00081">81</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
 
 </div>
 </div>
@@ -525,7 +524,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00114">114</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00131">131</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
 
 </div>
 </div>
@@ -552,7 +551,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00205">205</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00222">222</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
 
 </div>
 </div>
@@ -596,7 +595,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00140">140</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00157">157</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
 
 </div>
 </div>
@@ -640,7 +639,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00128">128</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00145">145</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
 
 </div>
 </div>
@@ -675,7 +674,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00176">176</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00193">193</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
 
 </div>
 </div>
@@ -710,7 +709,39 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00279">279</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00296">296</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ab8f999deff251aae6ea741eb8198914a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8f999deff251aae6ea741eb8198914a">&#9670;&nbsp;</a></span>getHash()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual size_t gui_framework::BaseComboBox::getHash </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Used as key in creators. </p>
+<dl class="section return"><dt>Returns</dt><dd>typeid().hash_code() </dd></dl>
+
+<p>Implements <a class="el" href="classgui__framework_1_1_base_component.html#a7dc0cc180feee4a7691dc1037f1438de">gui_framework::BaseComponent</a>.</p>
+
+<p>Implemented in <a class="el" href="classgui__framework_1_1_simple_combo_box.html#abd0f1551590cd417245bcda55b7d9382">gui_framework::SimpleComboBox</a>, <a class="el" href="classgui__framework_1_1_drop_down_list_combo_box.html#aa2e97738f9e3b409c4ccdafc04400363">gui_framework::DropDownListComboBox</a>, and <a class="el" href="classgui__framework_1_1_drop_down_combo_box.html#a829fa53def5b320901b771409ceaf385">gui_framework::DropDownComboBox</a>.</p>
 
 </div>
 </div>
@@ -752,7 +783,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00267">267</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00284">284</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
 
 </div>
 </div>
@@ -783,7 +814,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classgui__framework_1_1_simple_combo_box.html#a7fe2d9a4f4b04e5a38ce81f4ed631b0b">gui_framework::SimpleComboBox</a>, <a class="el" href="classgui__framework_1_1_drop_down_list_combo_box.html#aaa4b3aa303a78f0a29e9efdd9ef106ac">gui_framework::DropDownListComboBox</a>, and <a class="el" href="classgui__framework_1_1_drop_down_combo_box.html#a6947d0f219e5f0c5feec3f1b6093e5b5">gui_framework::DropDownComboBox</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00349">349</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00382">382</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
 
 </div>
 </div>
@@ -825,7 +856,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00152">152</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00169">169</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
 
 </div>
 </div>
@@ -878,7 +909,68 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00096">96</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00113">113</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
+
+</div>
+</div>
+<a id="accbc82acb98bc9ab463bbb427eee6f49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accbc82acb98bc9ab463bbb427eee6f49">&#9670;&nbsp;</a></span>loadOnSelectionChangeFromModule()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gui_framework::BaseComboBox::loadOnSelectionChangeFromModule </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; void(<a class="el" href="classgui__framework_1_1_base_combo_box.html">BaseComboBox</a> &amp;)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>onSelectionChange</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>functionName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>moduleName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Load function from module. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">onSelectionChange</td><td>Output parameter for function load </td></tr>
+    <tr><td class="paramname">functionName</td><td>Name of function in module </td></tr>
+    <tr><td class="paramname">moduleName</td><td>Name of module in JSON array modules in gui_framework.json </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">CantFindFunctionFromModuleException</td><td><br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00046">46</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
 
 </div>
 </div>
@@ -920,7 +1012,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00082">82</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00099">99</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
 
 </div>
 </div>
@@ -974,7 +1066,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classgui__framework_1_1interfaces_1_1_i_resizable_component.html#a5afd12e065fd4ae4fa2a1298370af868">gui_framework::interfaces::IResizableComponent</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00291">291</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00308">308</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
 
 </div>
 </div>
@@ -1036,7 +1128,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classgui__framework_1_1_base_component.html#ae2f1b329acc98ad498e18f4d5330f027">gui_framework::BaseComponent</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00339">339</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00372">372</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
 
 </div>
 </div>
@@ -1078,7 +1170,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00181">181</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00198">198</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
 
 </div>
 </div>
@@ -1120,7 +1212,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00229">229</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00246">246</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
 
 </div>
 </div>
@@ -1173,7 +1265,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00217">217</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00234">234</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
 
 </div>
 </div>
@@ -1294,7 +1386,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00210">210</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00227">227</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
 
 </div>
 </div>
@@ -1356,7 +1448,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classgui__framework_1_1_base_component.html#a9dba22822b7f830295e104fa27af284c">gui_framework::BaseComponent</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00344">344</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00377">377</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
 
 </div>
 </div>
@@ -1391,7 +1483,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00193">193</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00210">210</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
 
 </div>
 </div>
@@ -1449,7 +1541,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classgui__framework_1_1_base_component.html#a636cece7fe5db06982150a8eb9e13e10">gui_framework::BaseComponent</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00018">18</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_combo_box_8cpp_source.html#l00020">20</a> of file <a class="el" href="_base_combo_box_8cpp_source.html">BaseComboBox.cpp</a>.</p>
 
 </div>
 </div>

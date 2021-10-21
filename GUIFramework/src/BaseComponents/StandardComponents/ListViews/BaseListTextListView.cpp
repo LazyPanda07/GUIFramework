@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "headers.h"
 #include "BaseListTextListView.h"
 
 #include "Styles/Components/ListViews/ListTextListViewStyles.h"
@@ -38,7 +38,7 @@ namespace gui_framework
 				json::utility::appendArray(utility::to_string(this->getItemText(i), codepage), values);
 			}
 
-			current->data.push_back({ "listViewValues"s, move(values) });
+			current->data.push_back({ "listViewTextValues"s, move(values) });
 		}
 
 		return builder;

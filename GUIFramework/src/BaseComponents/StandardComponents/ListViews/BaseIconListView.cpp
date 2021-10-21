@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "headers.h"
 #include "BaseIconListView.h"
 
 #include "Styles/Components/ListViews/IconListViewStyles.h"
@@ -24,7 +24,7 @@ namespace gui_framework
 
 	void BaseIconListView::setTextColor(uint8_t red, uint8_t green, uint8_t blue)
 	{
-		throw exceptions::NotImplemented(__FUNCTION__, "BaseIconListView");
+		__utility::throwNotImplementedException(__FUNCTION__, "BaseIconListView"sv);
 	}
 
 	json::JSONBuilder BaseIconListView::getStructure() const
@@ -48,7 +48,7 @@ namespace gui_framework
 				json::utility::appendArray(this->getIconPath(i).string(), values);
 			}
 
-			current->data.push_back({ "listViewValues"s, move(values) });
+			current->data.push_back({ "listViewIconValues"s, move(values) });
 		}
 
 		return builder;

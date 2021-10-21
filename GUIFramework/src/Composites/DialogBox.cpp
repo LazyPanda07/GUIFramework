@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "headers.h"
 #include "DialogBox.h"
 
 using namespace std;
@@ -102,11 +102,6 @@ namespace gui_framework
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	const string& DialogBox::getCreationType() const
-	{
-		return serialized_creation_type::dialogBox;
-	}
-
 	DialogBox::DialogBox(const wstring& className, const wstring& dialogBoxName, const utility::ComponentSettings& settings, BaseComponent* parent, const string& dialogBoxFunctionName, const string& moduleName, uint16_t smallIconResource, uint16_t largeIconResource) :
 		BaseDialogBox
 		(
@@ -125,5 +120,10 @@ namespace gui_framework
 		)
 	{
 
+	}
+
+	size_t DialogBox::getHash() const
+	{
+		return typeid(DialogBox).hash_code();
 	}
 }

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "pch.h"
+#include "headers.h"
 #include "BaseComposites/BaseComposite.h"
 
 namespace gui_framework
@@ -11,7 +11,7 @@ namespace gui_framework
 	public:
 		enum class messageBoxType
 		{
-			ok,
+			ok = MB_OK,
 			okCancel,
 			abortRetryIgnore,
 			yesNoCancel,
@@ -22,22 +22,19 @@ namespace gui_framework
 
 		enum class messageBoxResponse
 		{
-			ok = 1,
+			ok = IDOK,
 			cancel,
 			abort,
 			retry,
 			ignore,
 			yes,
 			no,
-			tryAgain = 10,
+			tryAgain = IDTRYAGAIN,
 			continueResponse
 		};
 
 	public:
 		static messageBoxResponse createMessageBox(const std::wstring& text, const std::wstring& title, messageBoxType type, BaseComponent* parent = nullptr, bool helpButton = false);
-
-	protected:
-		virtual const std::string& getCreationType() const override;
 
 	public:
 		/// @brief 
@@ -49,6 +46,10 @@ namespace gui_framework
 		virtual void hide() const final;
 
 		virtual void show() const final;
+
+		/// @brief Used as key in creators
+		/// @return typeid().hash_code()
+		virtual size_t getHash() const override = 0;
 
 		virtual ~BaseDialogBox() = default;
 	};

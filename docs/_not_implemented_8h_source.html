@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.8-beta</span>
+   &#160;<span id="projectnumber">0.8.3-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -89,7 +89,7 @@ $(document).ready(function(){initNavTree('_not_implemented_8h_source.html',''); 
 <div class="contents">
 <a href="_not_implemented_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pch_8h.html">pch.h</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="headers_8h.html">headers.h</a>&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_base_g_u_i_framework_exception_8h.html">BaseGUIFrameworkException.h</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
@@ -99,7 +99,7 @@ $(document).ready(function(){initNavTree('_not_implemented_8h_source.html',''); 
 <div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classgui__framework_1_1exceptions_1_1_not_implemented.html">   11</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classgui__framework_1_1exceptions_1_1_not_implemented.html">NotImplemented</a> : <span class="keyword">public</span> <a class="code" href="classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception.html">BaseGUIFrameworkException</a></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        {</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            <a class="code" href="classgui__framework_1_1exceptions_1_1_not_implemented.html#abb7174a5714ac274e3ad3b26be92b2a3">NotImplemented</a>(<span class="keyword">const</span> std::string&amp; methodName, <span class="keyword">const</span> std::string&amp; className);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            <a class="code" href="classgui__framework_1_1exceptions_1_1_not_implemented.html#ab02d41c6138e89f28ebb4d2f2786e049">NotImplemented</a>(std::string_view methodName, std::string_view className);</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
 <div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classgui__framework_1_1exceptions_1_1_not_implemented.html#a7ccba471027a17ca6805f8f175b46ff7">   16</a></span>&#160;            <a class="code" href="classgui__framework_1_1exceptions_1_1_not_implemented.html#a7ccba471027a17ca6805f8f175b46ff7">~NotImplemented</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        };</div>
@@ -109,9 +109,9 @@ $(document).ready(function(){initNavTree('_not_implemented_8h_source.html',''); 
 <div class="ttc" id="aclassgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception_html"><div class="ttname"><a href="classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception.html">gui_framework::exceptions::BaseGUIFrameworkException</a></div><div class="ttdoc">Base class for all GUIFramework exceptions.</div><div class="ttdef"><b>Definition:</b> <a href="_base_g_u_i_framework_exception_8h_source.html#l00011">BaseGUIFrameworkException.h:12</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1exceptions_1_1_not_implemented_html"><div class="ttname"><a href="classgui__framework_1_1exceptions_1_1_not_implemented.html">gui_framework::exceptions::NotImplemented</a></div><div class="ttdoc">Throws by not implemented methods.</div><div class="ttdef"><b>Definition:</b> <a href="_not_implemented_8h_source.html#l00011">NotImplemented.h:12</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1exceptions_1_1_not_implemented_html_a7ccba471027a17ca6805f8f175b46ff7"><div class="ttname"><a href="classgui__framework_1_1exceptions_1_1_not_implemented.html#a7ccba471027a17ca6805f8f175b46ff7">gui_framework::exceptions::NotImplemented::~NotImplemented</a></div><div class="ttdeci">~NotImplemented()=default</div></div>
-<div class="ttc" id="aclassgui__framework_1_1exceptions_1_1_not_implemented_html_abb7174a5714ac274e3ad3b26be92b2a3"><div class="ttname"><a href="classgui__framework_1_1exceptions_1_1_not_implemented.html#abb7174a5714ac274e3ad3b26be92b2a3">gui_framework::exceptions::NotImplemented::NotImplemented</a></div><div class="ttdeci">NotImplemented(const std::string &amp;methodName, const std::string &amp;className)</div><div class="ttdef"><b>Definition:</b> <a href="_not_implemented_8cpp_source.html#l00010">NotImplemented.cpp:10</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1exceptions_1_1_not_implemented_html_ab02d41c6138e89f28ebb4d2f2786e049"><div class="ttname"><a href="classgui__framework_1_1exceptions_1_1_not_implemented.html#ab02d41c6138e89f28ebb4d2f2786e049">gui_framework::exceptions::NotImplemented::NotImplemented</a></div><div class="ttdeci">NotImplemented(std::string_view methodName, std::string_view className)</div><div class="ttdef"><b>Definition:</b> <a href="_not_implemented_8cpp_source.html#l00010">NotImplemented.cpp:10</a></div></div>
+<div class="ttc" id="aheaders_8h_html"><div class="ttname"><a href="headers_8h.html">headers.h</a></div></div>
 <div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00016">BaseComponent.cpp:17</a></div></div>
-<div class="ttc" id="apch_8h_html"><div class="ttname"><a href="pch_8h.html">pch.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

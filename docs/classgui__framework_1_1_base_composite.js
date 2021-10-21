@@ -1,6 +1,10 @@
 var classgui__framework_1_1_base_composite =
 [
-    [ "BaseComposite", "classgui__framework_1_1_base_composite.html#ab378df34d1e2eafee5ebeda2074edba5", null ],
+    [ "exitMode", "classgui__framework_1_1_base_composite.html#a438c1f5c9ef171bc01b2ac420fee985c", [
+      [ "destroyWindow", "classgui__framework_1_1_base_composite.html#a438c1f5c9ef171bc01b2ac420fee985ca3619de6b97539298d3d046e6dbbe48cc", null ],
+      [ "quit", "classgui__framework_1_1_base_composite.html#a438c1f5c9ef171bc01b2ac420fee985cadbd73c2b545209688ed794c0d5413d5a", null ]
+    ] ],
+    [ "BaseComposite", "classgui__framework_1_1_base_composite.html#aa8dbcb69923c9eca0acb7f1e890a1250", null ],
     [ "~BaseComposite", "classgui__framework_1_1_base_composite.html#a4d6d50985c481dae71dcb09ae527f3e7", null ],
     [ "addPopupMenu", "classgui__framework_1_1_base_composite.html#a411e3e9140e1a2731df48e8ac6b5893b", null ],
     [ "begin", "classgui__framework_1_1_base_composite.html#a36148305df7442496ba5a8a3c6b36ec0", null ],
@@ -13,7 +17,8 @@ var classgui__framework_1_1_base_composite =
     [ "findChild", "classgui__framework_1_1_base_composite.html#a54f3dff4ca2e948461f4c18a69cd833a", null ],
     [ "findChildren", "classgui__framework_1_1_base_composite.html#a27d4bb107763afe92b9dabba56f99ff9", null ],
     [ "getChildren", "classgui__framework_1_1_base_composite.html#a39539aed053e40905f147cd9da5003eb", null ],
-    [ "getCreationType", "classgui__framework_1_1_base_composite.html#ad9147db4e3cca4a0694a3b262044edef", null ],
+    [ "getExitMode", "classgui__framework_1_1_base_composite.html#a7801d0e1ed3955b33f29c8843cbb169e", null ],
+    [ "getHash", "classgui__framework_1_1_base_composite.html#a50307db942e7e39d97c694aaf274627f", null ],
     [ "getMainMenu", "classgui__framework_1_1_base_composite.html#a29f3b6cabb0fe06c0bd2e9cab8de8ac1", null ],
     [ "getMainMenu", "classgui__framework_1_1_base_composite.html#a02f66f4ee3ee1191b27bc29a765c0151", null ],
     [ "getPopupMenus", "classgui__framework_1_1_base_composite.html#aff93c143210949150b5ce5203e0cc418", null ],
@@ -24,6 +29,7 @@ var classgui__framework_1_1_base_composite =
     [ "removeComponents", "classgui__framework_1_1_base_composite.html#ac9db859f2129f674e8c6dc2b2965bf62", null ],
     [ "removePopupMenus", "classgui__framework_1_1_base_composite.html#a9f936e466efe0f2e46c350fa2b16a28e", null ],
     [ "setBackgroundColor", "classgui__framework_1_1_base_composite.html#a675b7528598adfbc93e6183fad8de216", null ],
+    [ "setExitMode", "classgui__framework_1_1_base_composite.html#ac652a1740402df821a2eb1f39f2f848a", null ],
     [ "setLargeIcon", "classgui__framework_1_1_base_composite.html#acd7cb91db3db51cdca9b5c231164cc92", null ],
     [ "setSmallIcon", "classgui__framework_1_1_base_composite.html#ac1a8b83ad28e122d61acc2716512d959", null ],
     [ "windowMessagesHandle", "classgui__framework_1_1_base_composite.html#ab788d4dc310ef2e8eda23e9475da7ea7", null ],
@@ -31,8 +37,10 @@ var classgui__framework_1_1_base_composite =
     [ "children", "classgui__framework_1_1_base_composite.html#a8ada7cbe6d3d5b01e621fa47ee040c9c", null ],
     [ "largeIcon", "classgui__framework_1_1_base_composite.html#a6cc2c87df8a1655c4b9ecac905a7b531", null ],
     [ "mainMenu", "classgui__framework_1_1_base_composite.html#a02be7d9aee6b1c4089c248d70a9da03c", null ],
+    [ "mode", "classgui__framework_1_1_base_composite.html#a48f1d5a8df767f482e228ba04caaedea", null ],
     [ "pathToLargeIcon", "classgui__framework_1_1_base_composite.html#a88ed491afa835ef9aac8863af1053a2b", null ],
     [ "pathToSmallIcon", "classgui__framework_1_1_base_composite.html#a41563e16b969fe6f32b17964d1ccc8dc", null ],
     [ "popupMenus", "classgui__framework_1_1_base_composite.html#a53920c5848be5ec370aaad3f055ad8a8", null ],
-    [ "smallIcon", "classgui__framework_1_1_base_composite.html#a5482fa48df4e4b1beb7ee6f64b0a41f2", null ]
+    [ "smallIcon", "classgui__framework_1_1_base_composite.html#a5482fa48df4e4b1beb7ee6f64b0a41f2", null ],
+    [ "windowFunctionName", "classgui__framework_1_1_base_composite.html#adfd81e2967cce16cfef62b7be0d7dbf3", null ]
 ];

@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "headers.h"
 #include "BaseComponent.h"
 
 #include "BaseComposites/BaseComposite.h"
@@ -62,7 +62,6 @@ namespace gui_framework
 		desiredHeight(settings.height),
 		desiredX(settings.x),
 		desiredY(settings.y),
-		mode(exitMode::destroyWindow),
 		id(parent ? GUIFramework::get().generateId(windowName) : NULL),
 		backgroundColor(RGB(255, 255, 255)),
 		textColor(RGB(0, 0, 0))
@@ -235,11 +234,6 @@ namespace gui_framework
 		this->desiredY = desiredY;
 	}
 
-	void BaseComponent::setExitMode(exitMode mode)
-	{
-		this->mode = mode;
-	}
-
 	void BaseComponent::setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue)
 	{
 		backgroundColor = RGB(red, green, blue);
@@ -252,6 +246,25 @@ namespace gui_framework
 		textColor = RGB(red, green, blue);
 
 		InvalidateRect(handle, nullptr, true);
+	}
+
+	void BaseComponent::setStyles(interfaces::IStyles& styles)
+	{
+		this->styles = utility::make_smart_pointer<interfaces::IStyles>(styles);
+
+		SetWindowLongPtrW
+		(
+			handle,
+			GWL_STYLE,
+			this->styles->getStyles()
+		);
+
+		SetWindowLongPtrW
+		(
+			handle,
+			GWL_EXSTYLE,
+			this->styles->getExtendedStyles()
+		);
 	}
 
 	BaseComponent* BaseComponent::getParent() const
@@ -323,11 +336,6 @@ namespace gui_framework
 		return desiredY;
 	}
 
-	BaseComponent::exitMode BaseComponent::getExitMode() const
-	{
-		return mode;
-	}
-
 	uint32_t BaseComponent::getId() const
 	{
 		return id;
@@ -341,6 +349,11 @@ namespace gui_framework
 	COLORREF BaseComponent::getTextColor() const
 	{
 		return textColor;
+	}
+
+	const smartPointerType<interfaces::IStyles>& BaseComponent::getStyles() const
+	{
+		return styles;
 	}
 
 	json::JSONBuilder BaseComponent::getStructure() const
@@ -366,6 +379,8 @@ namespace gui_framework
 		appendArray(static_cast<int64_t>(GetBValue(textColor)), textColorJSON);
 
 		structure->data.push_back({ "className"s, utility::to_string(className, codepage) });
+		
+		structure->data.push_back({ "hash"s, this->getHash() });
 
 		structure->data.push_back({ "desiredX"s, desiredX });
 		structure->data.push_back({ "desiredY"s, desiredY });
@@ -376,8 +391,6 @@ namespace gui_framework
 		structure->data.push_back({ "backgroundColor"s, move(backgroundColorJSON) });
 		structure->data.push_back({ "textColor"s, move(textColorJSON) });
 
-		structure->data.push_back({ "exitMode"s, static_cast<int64_t>(mode) });
-
 		if (textOperations)
 		{
 			structure->data.push_back({ "text"s, utility::to_string(textOperations->getText(), codepage) });
@@ -385,10 +398,7 @@ namespace gui_framework
 
 		structure->data.push_back({ "styles"s, styles->getStyles() });
 
-		if (this->isComposite())
-		{
-			structure->data.push_back({ "creationType"s, static_cast<const BaseComposite*>(this)->getCreationType() });
-		}
+		structure->data.push_back({ "extendedStyles"s, styles->getExtendedStyles() });
 
 		builder.push_back(make_pair(utility::to_string(windowName, codepage), move(structure)));
 

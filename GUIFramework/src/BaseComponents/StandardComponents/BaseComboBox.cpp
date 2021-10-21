@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "headers.h"
 #include "BaseComboBox.h"
 
 #include "Exceptions/SelectListException.h"
@@ -9,7 +9,9 @@
 #pragma warning(disable: 4267)
 
 #pragma push_macro("min")
+#pragma push_macro("max")
 #undef min
+#undef max
 
 using namespace std;
 
@@ -41,10 +43,25 @@ namespace gui_framework
 		return -1;
 	}
 
+	void BaseComboBox::loadOnSelectionChangeFromModule(function<void(BaseComboBox&)>& onSelectionChange, const string& functionName, const string& moduleName)
+	{
+		GUIFramework& instance = GUIFramework::get();
+		const HMODULE& module = instance.getModules().at(moduleName);
+
+		comboBoxCallbackSignature tem = reinterpret_cast<comboBoxCallbackSignature>(GetProcAddress(module, functionName.data()));
+
+		if (!tem)
+		{
+			throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName);
+		}
+
+		onSelectionChange = tem;
+	}
+
 	BaseComboBox::BaseComboBox(const wstring& comboBoxName, const utility::ComponentSettings& settings, const styles::ComboBoxStyles& styles, BaseComponent* parent) :
 		BaseComponent
 		(
-			wstring(standard_classes::comboBox),
+			standard_classes::comboBox,
 			comboBoxName,
 			settings,
 			styles,
@@ -56,7 +73,7 @@ namespace gui_framework
 			parent ? parent->getHandle() : nullptr,
 			true
 		),
-		requiredSize{ settings.width, settings.height }
+		requiredSize{ 0, 0 }
 	{
 
 	}
@@ -74,7 +91,7 @@ namespace gui_framework
 			throw exceptions::SelectListException(__FUNCTION__, result, exception_messages::notEnoughSpace);
 		}
 
-		this->resize(NULL, NULL);
+		this->resize(BaseComponent::parent->getActualWidth(), BaseComponent::parent->getActualHeight());
 
 		return result;
 	}
@@ -88,7 +105,7 @@ namespace gui_framework
 			throw exceptions::SelectListException(__FUNCTION__, result);
 		}
 
-		this->resize(NULL, NULL);
+		this->resize(BaseComponent::parent->getActualWidth(), BaseComponent::parent->getActualHeight());
 
 		return result;
 	}
@@ -106,7 +123,7 @@ namespace gui_framework
 			throw exceptions::SelectListException(__FUNCTION__, result, exception_messages::notEnoughSpace);
 		}
 
-		this->resize(NULL, NULL);
+		this->resize(BaseComponent::parent->getActualWidth(), BaseComponent::parent->getActualHeight());
 
 		return result;
 	}
@@ -120,7 +137,7 @@ namespace gui_framework
 			throw exceptions::SelectListException(__FUNCTION__, result);
 		}
 
-		this->resize(NULL, NULL);
+		this->resize(BaseComponent::parent->getActualWidth(), BaseComponent::parent->getActualHeight());
 
 		return result;
 	}
@@ -298,6 +315,20 @@ namespace gui_framework
 
 			if (currentSize == CB_ERR || !currentSize)
 			{
+				double widthCoefficient = static_cast<double>(width) / parentWidth;
+
+				MoveWindow
+				(
+					handle,
+					static_cast<int>(desiredX * widthCoefficient),
+					static_cast<int>(desiredY * (static_cast<double>(height) / parentHeight)),
+					static_cast<int>(desiredWidth * widthCoefficient),
+					desiredHeight,
+					true
+				);
+
+				ShowWindow(handle, SW_SHOW);
+
 				return;
 			}
 
@@ -327,23 +358,25 @@ namespace gui_framework
 			MoveWindow
 			(
 				handle,
-				desiredX,
-				desiredY,
-				requiredSize.cx + standard_sizes::comboBoxAdditionalWidth,
+				static_cast<int>(desiredX * (static_cast<double>(width) / parentWidth)),
+				static_cast<int>(desiredY * (static_cast<double>(height) / parentHeight)),
+				max(requiredSize.cx + standard_sizes::comboBoxAdditionalWidth, static_cast<long>(desiredWidth * (static_cast<double>(width) / parentWidth))),
 				heightSum + requiredSize.cy * 2,
 				true
 			);
+
+			ShowWindow(handle, SW_SHOW);
 		}
 	}
 
 	void BaseComboBox::setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue)
 	{
-		throw exceptions::NotImplemented(__FUNCTION__, "BaseComboBox");
+		__utility::throwNotImplementedException(__FUNCTION__, "BaseComboBox"sv);
 	}
 
 	void BaseComboBox::setTextColor(uint8_t red, uint8_t green, uint8_t blue)
 	{
-		throw exceptions::NotImplemented(__FUNCTION__, "BaseComboBox");
+		__utility::throwNotImplementedException(__FUNCTION__, "BaseComboBox"sv);
 	}
 
 	json::JSONBuilder BaseComboBox::getStructure() const
@@ -381,3 +414,4 @@ namespace gui_framework
 }
 
 #pragma pop_macro("min")
+#pragma pop_macro("max")

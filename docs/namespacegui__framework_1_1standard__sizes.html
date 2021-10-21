@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.8-beta</span>
+   &#160;<span id="projectnumber">0.8.3-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -118,14 +118,14 @@ Variables</h2></td></tr>
 <tr class="separator:a1eb22a43d0bb081bc61b66b89c35fc33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a018fae1303ab52531f18a98e80fc15e7"><td class="memItemLeft" align="right" valign="top">constexpr uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1standard__sizes.html#a018fae1303ab52531f18a98e80fc15e7">defaultImagesCount</a> = 16</td></tr>
 <tr class="separator:a018fae1303ab52531f18a98e80fc15e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ceba9e6349e07f57ff44081bd2b208c"><td class="memItemLeft" align="right" valign="top">constexpr uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1standard__sizes.html#a0ceba9e6349e07f57ff44081bd2b208c">largeIconWidth</a> = 32</td></tr>
-<tr class="separator:a0ceba9e6349e07f57ff44081bd2b208c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66fd6d3d948ddc2363a845a9d84ff9fd"><td class="memItemLeft" align="right" valign="top">constexpr uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1standard__sizes.html#a66fd6d3d948ddc2363a845a9d84ff9fd">largeIconHeight</a> = 32</td></tr>
-<tr class="separator:a66fd6d3d948ddc2363a845a9d84ff9fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4af2006499a6a8d402ccc7861beb821"><td class="memItemLeft" align="right" valign="top">constexpr uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1standard__sizes.html#ab4af2006499a6a8d402ccc7861beb821">smallIconWidth</a> = 16</td></tr>
-<tr class="separator:ab4af2006499a6a8d402ccc7861beb821"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f7f2e637c8499e76e01b4e314da8134"><td class="memItemLeft" align="right" valign="top">constexpr uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1standard__sizes.html#a1f7f2e637c8499e76e01b4e314da8134">smallIconHeight</a> = 16</td></tr>
-<tr class="separator:a1f7f2e637c8499e76e01b4e314da8134"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4a52d99a5f0791115b21443c995fb03"><td class="memItemLeft" align="right" valign="top">const uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1standard__sizes.html#ae4a52d99a5f0791115b21443c995fb03">largeIconWidth</a> = GetSystemMetrics(SM_CXICON)</td></tr>
+<tr class="separator:ae4a52d99a5f0791115b21443c995fb03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32daec1006daa20c25f2cc0c17bc1487"><td class="memItemLeft" align="right" valign="top">const uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1standard__sizes.html#a32daec1006daa20c25f2cc0c17bc1487">largeIconHeight</a> = GetSystemMetrics(SM_CYICON)</td></tr>
+<tr class="separator:a32daec1006daa20c25f2cc0c17bc1487"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63969dbd0eee9d560b7c588ede24efde"><td class="memItemLeft" align="right" valign="top">const uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1standard__sizes.html#a63969dbd0eee9d560b7c588ede24efde">smallIconWidth</a> = GetSystemMetrics(SM_CXSMICON)</td></tr>
+<tr class="separator:a63969dbd0eee9d560b7c588ede24efde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4bc732733510b8fcf873c8d199c0192"><td class="memItemLeft" align="right" valign="top">const uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1standard__sizes.html#aa4bc732733510b8fcf873c8d199c0192">smallIconHeight</a> = GetSystemMetrics(SM_CYSMICON)</td></tr>
+<tr class="separator:aa4bc732733510b8fcf873c8d199c0192"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a411003476965ae5667265e2e56687220"><td class="memItemLeft" align="right" valign="top">constexpr uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1standard__sizes.html#a411003476965ae5667265e2e56687220">additionalListViewReportColumnWidth</a> = 10</td></tr>
 <tr class="separator:a411003476965ae5667265e2e56687220"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -150,7 +150,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00103">103</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00063">63</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
 
 </div>
 </div>
@@ -174,7 +174,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00077">77</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00037">37</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
 
 </div>
 </div>
@@ -198,7 +198,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00076">76</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00036">36</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
 
 </div>
 </div>
@@ -222,7 +222,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00080">80</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00040">40</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
 
 </div>
 </div>
@@ -246,7 +246,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00079">79</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00039">39</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
 
 </div>
 </div>
@@ -270,7 +270,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00088">88</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00048">48</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
 
 </div>
 </div>
@@ -294,7 +294,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00095">95</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00055">55</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
 
 </div>
 </div>
@@ -318,7 +318,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00093">93</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00053">53</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
 
 </div>
 </div>
@@ -342,7 +342,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00092">92</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00052">52</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
 
 </div>
 </div>
@@ -366,7 +366,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00083">83</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00043">43</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
 
 </div>
 </div>
@@ -390,12 +390,12 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00082">82</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00042">42</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
 
 </div>
 </div>
-<a id="a66fd6d3d948ddc2363a845a9d84ff9fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66fd6d3d948ddc2363a845a9d84ff9fd">&#9670;&nbsp;</a></span>largeIconHeight</h2>
+<a id="a32daec1006daa20c25f2cc0c17bc1487"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32daec1006daa20c25f2cc0c17bc1487">&#9670;&nbsp;</a></span>largeIconHeight</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -404,22 +404,22 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr uint16_t gui_framework::standard_sizes::largeIconHeight = 32</td>
+          <td class="memname">const uint16_t gui_framework::standard_sizes::largeIconHeight = GetSystemMetrics(SM_CYICON)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00098">98</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00058">58</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
 
 </div>
 </div>
-<a id="a0ceba9e6349e07f57ff44081bd2b208c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ceba9e6349e07f57ff44081bd2b208c">&#9670;&nbsp;</a></span>largeIconWidth</h2>
+<a id="ae4a52d99a5f0791115b21443c995fb03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4a52d99a5f0791115b21443c995fb03">&#9670;&nbsp;</a></span>largeIconWidth</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -428,17 +428,17 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr uint16_t gui_framework::standard_sizes::largeIconWidth = 32</td>
+          <td class="memname">const uint16_t gui_framework::standard_sizes::largeIconWidth = GetSystemMetrics(SM_CXICON)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00097">97</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00057">57</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
 
 </div>
 </div>
@@ -462,12 +462,12 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00090">90</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00050">50</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
 
 </div>
 </div>
-<a id="a1f7f2e637c8499e76e01b4e314da8134"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1f7f2e637c8499e76e01b4e314da8134">&#9670;&nbsp;</a></span>smallIconHeight</h2>
+<a id="aa4bc732733510b8fcf873c8d199c0192"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4bc732733510b8fcf873c8d199c0192">&#9670;&nbsp;</a></span>smallIconHeight</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -476,22 +476,22 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr uint16_t gui_framework::standard_sizes::smallIconHeight = 16</td>
+          <td class="memname">const uint16_t gui_framework::standard_sizes::smallIconHeight = GetSystemMetrics(SM_CYSMICON)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00101">101</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00061">61</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
 
 </div>
 </div>
-<a id="ab4af2006499a6a8d402ccc7861beb821"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab4af2006499a6a8d402ccc7861beb821">&#9670;&nbsp;</a></span>smallIconWidth</h2>
+<a id="a63969dbd0eee9d560b7c588ede24efde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63969dbd0eee9d560b7c588ede24efde">&#9670;&nbsp;</a></span>smallIconWidth</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -500,17 +500,17 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr uint16_t gui_framework::standard_sizes::smallIconWidth = 16</td>
+          <td class="memname">const uint16_t gui_framework::standard_sizes::smallIconWidth = GetSystemMetrics(SM_CXSMICON)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00100">100</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00060">60</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
 
 </div>
 </div>
@@ -534,7 +534,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00086">86</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00046">46</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
 
 </div>
 </div>
@@ -558,7 +558,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00085">85</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00045">45</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
 
 </div>
 </div>

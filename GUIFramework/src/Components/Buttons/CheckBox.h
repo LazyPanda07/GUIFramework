@@ -1,7 +1,7 @@
 #pragma once
 
-#include "pch.h"
-#include "BaseComponents/StandardComponents/BaseCheckBox.h"
+#include "headers.h"
+#include "BaseComponents/StandardComponents/Buttons/BaseCheckBox.h"
 
 namespace gui_framework
 {
@@ -10,6 +10,8 @@ namespace gui_framework
 	{
 	public:
 		CheckBox(const std::wstring& checkBoxName, const std::wstring& checkBoxText, int x, int y, BaseComponent* parent, const std::function<void()>& onCheck, const std::function<void()>& onClear, const std::function<void()>& onClick = nullptr, uint16_t width = standard_sizes::checkBoxWidth, uint16_t height = standard_sizes::checkBoxHeight);
+
+		size_t getHash() const override;
 
 		json::JSONBuilder getStructure() const override;
 

@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "headers.h"
 #include "CheckBox.h"
 
 using namespace std;
@@ -26,6 +26,11 @@ namespace gui_framework
 
 	}
 
+	size_t CheckBox::getHash() const
+	{
+		return typeid(CheckBox).hash_code();
+	}
+
 	json::JSONBuilder CheckBox::getStructure() const
 	{
 		using json::utility::jsonObject;
@@ -33,8 +38,6 @@ namespace gui_framework
 
 		json::JSONBuilder builder = BaseCheckBox::getStructure();
 		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
-
-		__utility::changeClassName(current, serialized_classes::checkBox);
 
 		return builder;
 	}

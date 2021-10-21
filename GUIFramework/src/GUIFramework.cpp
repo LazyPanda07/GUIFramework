@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "headers.h"
 #include "GUIFramework.h"
 
 #include "Exceptions/GetLastErrorException.h"
@@ -6,35 +6,42 @@
 #include "Exceptions/CantLoadModuleException.h"
 #include "Exceptions/CantFindFunctionFromModuleException.h"
 
-#include "BaseComponents/Creators/ButtonCreator.h"
-#include "BaseComponents/Creators/EditControlCreator.h"
-#include "BaseComponents/Creators/DropDownComboBoxCreator.h"
-#include "BaseComponents/Creators/DropDownListComboBoxCreator.h"
-#include "BaseComponents/Creators/SimpleComboBoxCreator.h"
-#include "BaseComponents/Creators/ListBoxCreator.h"
-#include "BaseComponents/Creators/MultipleSelectListBoxCreator.h"
-#include "BaseComponents/Creators/RichEditCreator.h"
-#include "BaseComponents/Creators/StaticControlCreator.h"
-#include "BaseComponents/Creators/SeparateWindowCreator.h"
-#include "BaseComponents/Creators/ChildWindowCreator.h"
-#include "BaseComponents/Creators/TabControlCreator.h"
-#include "BaseComponents/Creators/ProgressBarCreator.h"
-#include "BaseComponents/Creators/InfiniteProgressBarCreator.h"
-#include "BaseComponents/Creators/CheckBoxCreator.h"
-#include "BaseComponents/Creators/GroupBoxCreator.h"
+#include "Utility/Creators/Components/Buttons/ButtonCreator.h"
+#include "Utility/Creators/Components/Buttons/CheckBoxCreator.h"
+#include "Utility/Creators/Components/Buttons/ImageButtonCreator.h"
 
-#include "BaseComponents/Creators/ListViews/IconListViewCreator.h"
-#include "BaseComponents/Creators/ListViews/TextListViewCreator.h"
-#include "BaseComponents/Creators/ListViews/TextIconListViewCreator.h"
-#include "BaseComponents/Creators/ListViews/ListIconListViewCreator.h"
-#include "BaseComponents/Creators/ListViews/ListTextListViewCreator.h"
-#include "BaseComponents/Creators/ListViews/ListTextIconListViewCreator.h"
+#include "Utility/Creators/Components/ListBoxes/ListBoxCreator.h"
+#include "Utility/Creators/Components/ListBoxes/MultipleSelectListBoxCreator.h"
 
-#include "BaseComponents/Creators/Trackbars/HorizontalTrackbarControlCreator.h"
-#include "BaseComponents/Creators/Trackbars/VerticalTrackbarControlCreator.h"
+#include "Utility/Creators/Components/ProgressBars/ProgressBarCreator.h"
+#include "Utility/Creators/Components/ProgressBars/InfiniteProgressBarCreator.h"
+
+#include "Utility/Creators/Components/EditControlCreator.h"
+#include "Utility/Creators/Components/RichEditCreator.h"
+#include "Utility/Creators/Components/StaticControlCreator.h"
+#include "Utility/Creators/Components/TabControlCreator.h"
+
+#include "Utility/Creators/Components/ComboBoxes/DropDownComboBoxCreator.h"
+#include "Utility/Creators/Components/ComboBoxes/DropDownListComboBoxCreator.h"
+#include "Utility/Creators/Components/ComboBoxes/SimpleComboBoxCreator.h"
+
+#include "Utility/Creators/Components/ListViews/IconListViewCreator.h"
+#include "Utility/Creators/Components/ListViews/TextListViewCreator.h"
+#include "Utility/Creators/Components/ListViews/TextIconListViewCreator.h"
+#include "Utility/Creators/Components/ListViews/ListIconListViewCreator.h"
+#include "Utility/Creators/Components/ListViews/ListTextListViewCreator.h"
+#include "Utility/Creators/Components/ListViews/ListTextIconListViewCreator.h"
+
+#include "Utility/Creators/Components/Trackbars/HorizontalTrackbarControlCreator.h"
+#include "Utility/Creators/Components/Trackbars/VerticalTrackbarControlCreator.h"
+
+#include "Utility/Creators/Composites/SeparateWindowCreator.h"
+#include "Utility/Creators/Composites/ChildWindowCreator.h"
+#include "Utility/Creators/Composites/GroupBoxCreator.h"
 
 #include "Components/Buttons/Button.h"
 #include "Components/Buttons/CheckBox.h"
+#include "Components/Buttons/ImageButton.h"
 #include "Components/EditControl.h"
 #include "Components/ComboBoxes/DropDownComboBox.h"
 #include "Components/ComboBoxes/DropDownListComboBox.h"
@@ -60,87 +67,201 @@
 #include "Components/Trackbars/HorizontalTrackbarControl.h"
 #include "Components/Trackbars/VerticalTrackbarControl.h"
 
+#include "Deserialization/Deserializers/Composites/ChildWindowDeserializer.h"
+#include "Deserialization/Deserializers/Composites/SeparateWindowDeserializer.h"
+#include "Deserialization/Deserializers/Composites/GroupBoxDeserializer.h"
+
+#include "Deserialization/Deserializers/Components/EditControlDeserializer.h"
+#include "Deserialization/Deserializers/Components/RichEditDeserializer.h"
+#include "Deserialization/Deserializers/Components/StaticControlDeserializer.h"
+#include "Deserialization/Deserializers/Components/TabControlDeserializer.h"
+
+#include "Deserialization/Deserializers/Components/Buttons/ButtonDeserializer.h"
+#include "Deserialization/Deserializers/Components/Buttons/ImageButtonDeserializer.h"
+#include "Deserialization/Deserializers/Components/Buttons/CheckBoxDeserializer.h"
+
+#include "Deserialization/Deserializers/Components/ProgressBars/ProgressBarDeserializer.h"
+#include "Deserialization/Deserializers/Components/ProgressBars/InfiniteProgressBarDeserializer.h"
+
+#include "Deserialization/Deserializers/Components/Trackbars/HorizontalTrackbarControlDeserializer.h"
+#include "Deserialization/Deserializers/Components/Trackbars/VerticalTrackbarControlDeserializer.h"
+
+#include "Deserialization/Deserializers/Components/ComboBoxes/DropDownComboBoxDeserializer.h"
+#include "Deserialization/Deserializers/Components/ComboBoxes/DropDownListComboBoxDeserializer.h"
+#include "Deserialization/Deserializers/Components/ComboBoxes/SimpleComboBoxDeserializer.h"
+
+#include "Deserialization/Deserializers/Components/ListBoxes/ListBoxDeserializer.h"
+#include "Deserialization/Deserializers/Components/ListBoxes/MultipleSelectListBoxDeserializer.h"
+
+#include "Deserialization/Deserializers/Components/ListViews/IconListViewDeserializer.h"
+#include "Deserialization/Deserializers/Components/ListViews/ListIconListViewDeserializer.h"
+#include "Deserialization/Deserializers/Components/ListViews/ListTextIconListViewDeserializer.h"
+#include "Deserialization/Deserializers/Components/ListViews/ListTextListViewDeserializer.h"
+#include "Deserialization/Deserializers/Components/ListViews/TextIconListViewDeserializer.h"
+#include "Deserialization/Deserializers/Components/ListViews/TextListViewDeserializer.h"
+
 using namespace std;
+
+template<>
+struct hash<set<uint32_t>>
+{
+	size_t operator () (const set<uint32_t>& data);
+};
+
+set<uint32_t> makeHotkey(uint32_t key, const vector<gui_framework::hotkeys::additionalKeys>& additionalKeys);
 
 namespace gui_framework
 {
 	GUIFramework::hotkeyData::hotkeyData() :
-		hotkeyCode(static_cast<uint32_t>(-1)),
-		noRepeat(false)
+		key(static_cast<uint32_t>(-1))
 	{
 
 	}
 
-	GUIFramework::hotkeyData::hotkeyData(uint32_t hotkeyCode, const string& functionName, const string& moduleName, const vector<hotkeys::additionalKey>& additionalKeys, bool noRepeat) :
-		hotkeyCode(hotkeyCode),
+	GUIFramework::hotkeyData::hotkeyData(uint32_t key, const function<void()>& hotkeyEvent, const vector<hotkeys::additionalKeys>& additionalKeys) :
+		key(key),
+		hotkeyEvent(hotkeyEvent),
+		additionalKeys(additionalKeys)
+	{
+
+	}
+
+	GUIFramework::hotkeyData::hotkeyData(uint32_t key, const string& functionName, const string& moduleName, const vector<hotkeys::additionalKeys>& additionalKeys) :
+		key(key),
 		functionName(functionName),
 		moduleName(moduleName),
-		additionalKeys(additionalKeys),
-		noRepeat(noRepeat)
+		additionalKeys(additionalKeys)
 	{
 
 	}
 
 	void GUIFramework::initCreators()
 	{
-		creators.reserve(24);
+		creators.reserve(25);
 
-		this->addCreator<Button, utility::ButtonCreator>(serialized_classes::button);
+		this->addCreator<Button, utility::ButtonCreator>();
 
-		this->addCreator<CheckBox, utility::CheckBoxCreator>(serialized_classes::checkBox);
+		this->addCreator<CheckBox, utility::CheckBoxCreator>();
 
-		this->addCreator<EditControl, utility::EditControlCreator>(serialized_classes::editControl);
+		this->addCreator<ImageButton, utility::ImageButtonCreator>();
 
-		this->addCreator<RichEdit, utility::RichEditCreator>(serialized_classes::richEdit);
+		this->addCreator<EditControl, utility::EditControlCreator>();
 
-		this->addCreator<StaticControl, utility::StaticControlCreator>(serialized_classes::staticControl);
+		this->addCreator<RichEdit, utility::RichEditCreator>();
 
-		this->addCreator<SeparateWindow, utility::SeparateWindowCreator>(serialized_classes::separateWindow);
+		this->addCreator<StaticControl, utility::StaticControlCreator>();
 
-		this->addCreator<ChildWindow, utility::ChildWindowCreator>(serialized_classes::childWindow);
+		this->addCreator<SeparateWindow, utility::SeparateWindowCreator>();
 
-		this->addCreator<TabControl, utility::TabControlCreator>(serialized_classes::tabControl);
+		this->addCreator<ChildWindow, utility::ChildWindowCreator>();
 
-		this->addCreator<GroupBox, utility::GroupBoxCreator>(serialized_classes::groupBox);
+		this->addCreator<TabControl, utility::TabControlCreator>();
+
+		this->addCreator<GroupBox, utility::GroupBoxCreator>();
 
 #pragma region ProgressBars
-		this->addCreator<ProgressBar, utility::ProgressBarCreator>(serialized_classes::progressBar);
+		this->addCreator<ProgressBar, utility::ProgressBarCreator>();
 
-		this->addCreator<InfiniteProgressBar, utility::InfiniteProgressBarCreator>(serialized_classes::infiniteProgressBar);
+		this->addCreator<InfiniteProgressBar, utility::InfiniteProgressBarCreator>();
 #pragma endregion
 
 #pragma region ComboBoxes
-		this->addCreator<DropDownComboBox, utility::DropDownComboBoxCreator>(serialized_classes::dropDownComboBox);
+		this->addCreator<DropDownComboBox, utility::DropDownComboBoxCreator>();
 
-		this->addCreator<DropDownListComboBox, utility::DropDownListComboBoxCreator>(serialized_classes::dropDownListComboBox);
+		this->addCreator<DropDownListComboBox, utility::DropDownListComboBoxCreator>();
 
-		this->addCreator<SimpleComboBox, utility::SimpleComboBoxCreator>(serialized_classes::simpleComboBox);
+		this->addCreator<SimpleComboBox, utility::SimpleComboBoxCreator>();
 #pragma endregion
 
 #pragma region ListBoxes
-		this->addCreator<ListBox, utility::ListBoxCreator>(serialized_classes::listBox);
+		this->addCreator<ListBox, utility::ListBoxCreator>();
 
-		this->addCreator<MultipleSelectListBox, utility::MultipleSelectListBoxCreator>(serialized_classes::multipleSelectListBox);
+		this->addCreator<MultipleSelectListBox, utility::MultipleSelectListBoxCreator>();
 #pragma endregion
 
 #pragma region ListViews
-		this->addCreator<IconListView, utility::IconListViewCreator>(serialized_classes::iconListView);
+		this->addCreator<IconListView, utility::IconListViewCreator>();
 
-		this->addCreator<ListIconListView, utility::ListIconListViewCreator>(serialized_classes::listIconListView);
+		this->addCreator<ListIconListView, utility::ListIconListViewCreator>();
 
-		this->addCreator<TextListView, utility::TextListViewCreator>(serialized_classes::textListView);
+		this->addCreator<TextListView, utility::TextListViewCreator>();
 
-		this->addCreator<ListTextListView, utility::ListTextListViewCreator>(serialized_classes::listTextListView);
+		this->addCreator<ListTextListView, utility::ListTextListViewCreator>();
 
-		this->addCreator<TextIconListView, utility::TextIconListViewCreator>(serialized_classes::textIconListView);
+		this->addCreator<TextIconListView, utility::TextIconListViewCreator>();
 
-		this->addCreator<ListTextIconListView, utility::ListTextIconListViewCreator>(serialized_classes::listTextIconListView);
+		this->addCreator<ListTextIconListView, utility::ListTextIconListViewCreator>();
 #pragma endregion
 
 #pragma region Trackbars
-		this->addCreator<HorizontalTrackbarControl, utility::HorizontalTrackbarControlCreator>(serialized_classes::horizontalTrackbarControl);
+		this->addCreator<HorizontalTrackbarControl, utility::HorizontalTrackbarControlCreator>();
 
-		this->addCreator<VerticalTrackbarControl, utility::VerticalTrackbarControlCreator>(serialized_classes::verticalTrackbarControl);
+		this->addCreator<VerticalTrackbarControl, utility::VerticalTrackbarControlCreator>();
+#pragma endregion
+	}
+
+	void GUIFramework::initDeserializers()
+	{
+		deserializers.reserve(25);
+
+		this->addDeserializer<Button, deserializers::ButtonDeserializer>();
+		
+		this->addDeserializer<CheckBox, deserializers::CheckBoxDeserializer>();
+		
+		this->addDeserializer<ImageButton, deserializers::ImageButtonDeserializer>();
+		
+		this->addDeserializer<EditControl, deserializers::EditControlDeserializer>();
+		
+		this->addDeserializer<RichEdit, deserializers::RichEditDeserializer>();
+		
+		this->addDeserializer<StaticControl, deserializers::StaticControlDeserializer>();
+
+		this->addDeserializer<SeparateWindow, deserializers::SeparateWindowDeserializer>();
+
+		this->addDeserializer<ChildWindow, deserializers::ChildWindowDeserializer>();
+
+		this->addDeserializer<TabControl, deserializers::TabControlDeserializer>();
+		
+		this->addDeserializer<GroupBox, deserializers::GroupBoxDeserializer>();
+
+#pragma region ProgressBars
+		this->addDeserializer<ProgressBar, deserializers::ProgressBarDeserializer>();
+		
+		this->addDeserializer<InfiniteProgressBar, deserializers::InfiniteProgressBarDeserializer>();
+#pragma endregion
+
+#pragma region ComboBoxes
+		this->addDeserializer<DropDownComboBox, deserializers::DropDownComboBoxDeserializer>();
+		
+		this->addDeserializer<DropDownListComboBox, deserializers::DropDownListComboBoxDeserializer>();
+		
+		this->addDeserializer<SimpleComboBox, deserializers::SimpleComboBoxDeserializer>();
+#pragma endregion
+
+#pragma region ListBoxes
+		this->addDeserializer<ListBox, deserializers::ListBoxDeserializer>();
+		
+		this->addDeserializer<MultipleSelectListBox, deserializers::MultipleSelectListBoxDeserializer>();
+#pragma endregion
+
+#pragma region ListViews
+		this->addDeserializer<IconListView, deserializers::IconListViewDeserializer>();
+		
+		this->addDeserializer<ListIconListView, deserializers::ListIconListViewDeserializer>();
+		
+		this->addDeserializer<TextListView, deserializers::TextListViewDeserializer>();
+		
+		this->addDeserializer<ListTextListView, deserializers::ListTextListViewDeserializer>();
+		
+		this->addDeserializer<TextIconListView, deserializers::TextIconListViewDeserializer>();
+		
+		this->addDeserializer<ListTextIconListView, deserializers::ListTextIconListViewDeserializer>();
+#pragma endregion
+
+#pragma region Trackbars
+		this->addDeserializer<HorizontalTrackbarControl, deserializers::HorizontalTrackbarControlDeserializer>();
+		
+		this->addDeserializer<VerticalTrackbarControl, deserializers::VerticalTrackbarControlDeserializer>();
 #pragma endregion
 	}
 
@@ -233,20 +354,38 @@ namespace gui_framework
 		return result;
 	}
 
-	void GUIFramework::processHotkey(uint32_t hotkey) const
+	void GUIFramework::processHotkeys() const
 	{
-		const function<void()>& onClick = hotkeys.at(hotkey);
+		static set<const set<uint32_t>*> possibleHotkeys;
 
-		if (onClick)
+		possibleHotkeys.clear();
+
+		ranges::for_each(allHotkeys, [](const set<uint32_t>& keys) { possibleHotkeys.insert(&keys); });
+
+		for (const auto& i : allHotkeys)
 		{
-			onClick();
+			for (const auto& j : i)
+			{
+				if (!GetAsyncKeyState(j))
+				{
+					possibleHotkeys.erase(&i);
+
+					break;
+				}
+			}
+		}
+
+		if (possibleHotkeys.size())
+		{
+			const set<uint32_t>& hotkey = **possibleHotkeys.begin();
+
+			hotkeys.at(hash<set<uint32_t>>()(hotkey))();
 		}
 	}
 
 	GUIFramework::GUIFramework() :
 		jsonSettings(ifstream(json_settings::settingsJSONFile.data())),
 		nextId(1),
-		nextHotkeyId(0),
 		modulesNeedToLoad(1),
 		currentLoadedModules(modulesNeedToLoad)
 	{
@@ -256,7 +395,14 @@ namespace gui_framework
 
 			if (threadsCount != -1)
 			{
-				threadPool = make_unique<threading::ThreadPool>(static_cast<uint32_t>(threadsCount));
+				if (threadsCount)
+				{
+					threadPool = make_unique<threading::ThreadPool>(static_cast<uint32_t>(threadsCount));
+				}
+				else
+				{
+					threadPool = make_unique<threading::ThreadPool>();
+				}
 			}
 		}
 		catch (const json::exceptions::CantFindValueException&)
@@ -272,9 +418,21 @@ namespace gui_framework
 
 		try
 		{
-			if (settingsObject->getBool(json_settings::usingDefaultCreatorsSetting))
+			if (settingsObject->getBool(json_settings::usingCreatorsSetting))
 			{
 				this->initCreators();
+			}
+		}
+		catch (const json::exceptions::CantFindValueException&)
+		{
+
+		}
+
+		try
+		{
+			if (settingsObject->getBool(json_settings::usingDeserializersSetting))
+			{
+				this->initDeserializers();
 			}
 		}
 		catch (const json::exceptions::CantFindValueException&)
@@ -300,7 +458,7 @@ namespace gui_framework
 
 				if (modulePath.index() == static_cast<size_t>(json::utility::variantTypeEnum::jString))
 				{
-					modulePathString= std::get<string>(modulePath);
+					modulePathString = std::get<string>(modulePath);
 				}
 
 				{
@@ -417,65 +575,28 @@ namespace gui_framework
 		threadPool->addTask(move(task), callback);
 	}
 
-	uint32_t GUIFramework::registerHotkey(uint32_t hotkey, const function<void()>& onClick, const vector<hotkeys::additionalKey>& additionalKeys, bool noRepeat)
+	size_t GUIFramework::registerHotkey(uint32_t key, const function<void()>& onClick, const vector<hotkeys::additionalKeys>& additionalKeys)
 	{
-		uint32_t additional = 0;
-		uint32_t id;
-
-		for (const auto& i : additionalKeys)
-		{
-			additional |= static_cast<uint32_t>(i);
-		}
-
-		if (noRepeat)
-		{
-			additional |= MOD_NOREPEAT;
-		}
+		set<uint32_t> hotkey = makeHotkey(key, additionalKeys);
+		size_t id = hash<set<uint32_t>>()(hotkey);
 
 		unique_lock<mutex> lock(hotkeyIdMutex);
 
-		if (availableHotkeyIds.size())
-		{
-			id = availableHotkeyIds.front();
+		hotkeys[id] = onClick;
 
-			availableHotkeyIds.pop();
-		}
-		else
-		{
-			id = nextHotkeyId++;
-		}
+		allHotkeys.push_back(move(hotkey));
 
-		if (!RegisterHotKey(nullptr, id, additional, hotkey))
-		{
-			availableHotkeyIds.push(id);
-
-			throw exceptions::GetLastErrorException(GetLastError());
-		}
-		else
-		{
-			if (hotkeys.size() == id)
-			{
-				hotkeys.push_back(onClick);
-
-				serializableHotkeysData.emplace_back();
-			}
-			else
-			{
-				hotkeys[id] = onClick;
-
-				serializableHotkeysData[id] = hotkeyData();
-			}
-		}
+		serializableHotkeysData[id] = hotkeyData(key, onClick, additionalKeys);
 
 		return id;
 	}
 
-	uint32_t GUIFramework::registerHotkey(uint32_t hotkey, const string& functionName, const string& moduleName, const vector<hotkeys::additionalKey>& additionalKeys, bool noRepeat)
+	size_t GUIFramework::registerHotkey(uint32_t key, const string& functionName, const string& moduleName, const vector<hotkeys::additionalKeys>& additionalKeys)
 	{
 		onClickSignature tem = nullptr;
 
 		{
-			unique_lock<mutex> lock(hotkeyIdMutex);
+			unique_lock<mutex> lock(loadModulesMutex);
 
 			const HMODULE& module = this->getModules().at(moduleName);
 
@@ -487,42 +608,74 @@ namespace gui_framework
 			}
 		}
 
-		uint32_t id = this->registerHotkey(hotkey, tem, additionalKeys, noRepeat);
+		size_t id = this->registerHotkey(key, tem, additionalKeys);
 
 		{
 			unique_lock<mutex> lock(hotkeyIdMutex);
 
-			serializableHotkeysData[id] = hotkeyData(hotkey, functionName, moduleName, additionalKeys, noRepeat);
+			serializableHotkeysData[id].functionName = functionName;
+			serializableHotkeysData[id].moduleName = moduleName;
 		}
 
 		return id;
 	}
 
-	bool GUIFramework::unregisterHotkey(uint32_t hotkeyId)
+	bool GUIFramework::unregisterHotkey(size_t hotkeyId)
 	{
 		unique_lock<mutex> lock(hotkeyIdMutex);
 
-		bool result = UnregisterHotKey(nullptr, hotkeyId);
+		auto it = hotkeys.find(hotkeyId);
 
-		if (result)
+		if (it != hotkeys.end())
 		{
-			availableHotkeyIds.push(hotkeyId);
+			set<uint32_t> hotkey = makeHotkey(serializableHotkeysData[hotkeyId].key, serializableHotkeysData[hotkeyId].additionalKeys);
 
-			hotkeys[hotkeyId] = nullptr;
+			hotkeys.erase(it);
 
-			serializableHotkeysData[hotkeyId] = hotkeyData();
+			erase(allHotkeys, hotkey);
+
+			serializableHotkeysData.erase(hotkeyId);
+
+			return true;
 		}
 
-		return result;
+		return false;
+	}
+
+	bool GUIFramework::unregisterHotkey(uint32_t key, const std::vector<hotkeys::additionalKeys>& additionalKeys)
+	{
+		unique_lock<mutex> lock(hotkeyIdMutex);
+
+		set<uint32_t> hotkey = makeHotkey(key, additionalKeys);
+		size_t hotkeyId = hash<set<uint32_t>>()(hotkey);
+		auto it = hotkeys.find(hotkeyId);
+
+		if (it != hotkeys.end())
+		{
+			hotkeys.erase(it);
+
+			erase(allHotkeys, hotkey);
+
+			serializableHotkeysData.erase(hotkeyId);
+
+			return true;
+		}
+
+		return false;
 	}
 
 	vector<GUIFramework::hotkeyData> GUIFramework::getRegisteredHotkeys()
 	{
-		unique_lock<mutex> lock(hotkeyIdMutex);
-
 		vector<hotkeyData> result;
 
-		ranges::for_each(serializableHotkeysData, [&result](const hotkeyData& data) { if (data.functionName.size()) { result.emplace_back(data); } });
+		result.reserve(serializableHotkeysData.size());
+
+		unique_lock<mutex> lock(hotkeyIdMutex);
+
+		for (const auto& [key, value] : serializableHotkeysData)
+		{
+			result.emplace_back(value);
+		}
 
 		return result;
 	}
@@ -590,25 +743,24 @@ namespace gui_framework
 
 		vector<objectSmartPointer<jsonObject>> result;
 
-		for (const auto& i : serializableHotkeysData)
+		for (const auto& [key, value] : serializableHotkeysData)
 		{
-			if (i.functionName.size())
+			if (value.functionName.size())
 			{
 				objectSmartPointer<jsonObject> object = json::utility::make_object<jsonObject>();
 
-				object->data.push_back({ "hotkeyCode"s, static_cast<uint64_t>(i.hotkeyCode) });
-				object->data.push_back({ "functionName"s, i.functionName });
-				object->data.push_back({ "moduleName"s, i.moduleName });
-				object->data.push_back({ "pathToModule"s, modulesPaths.at(i.moduleName) });
-				object->data.push_back({ "noRepeat"s, i.noRepeat });
+				object->data.push_back({ "key"s, static_cast<uint64_t>(value.key) });
+				object->data.push_back({ "functionName"s, value.functionName });
+				object->data.push_back({ "moduleName"s, value.moduleName });
+				object->data.push_back({ "pathToModule"s, modulesPaths.at(value.moduleName) });
 
-				if (i.additionalKeys.size())
+				if (value.additionalKeys.size())
 				{
 					vector<objectSmartPointer<jsonObject>> additionalKeys;
 
-					additionalKeys.reserve(i.additionalKeys.size());
+					additionalKeys.reserve(value.additionalKeys.size());
 
-					ranges::for_each(i.additionalKeys, [&additionalKeys](const hotkeys::additionalKey& key) { json::utility::appendArray(static_cast<int64_t>(key), additionalKeys); });
+					ranges::for_each(value.additionalKeys, [&additionalKeys](const hotkeys::additionalKeys& key) { json::utility::appendArray(static_cast<int64_t>(key), additionalKeys); });
 
 					object->data.push_back({ "additionalKeys"s, move(additionalKeys) });
 				}
@@ -623,6 +775,11 @@ namespace gui_framework
 	const unordered_map<size_t, smartPointerType<utility::BaseComponentCreator>>& GUIFramework::getCreators() const
 	{
 		return creators;
+	}
+
+	const unordered_map<size_t, smartPointerType<interfaces::IDeserializer>>& GUIFramework::getDeserializers() const
+	{
+		return deserializers;
 	}
 
 	const json::JSONParser& GUIFramework::getJSONSettings() const
@@ -651,4 +808,32 @@ namespace gui_framework
 
 		return cantLoadedModules;
 	}
+}
+
+size_t hash<set<uint32_t>>::operator () (const set<uint32_t>& data)
+{
+	if (data.empty())
+	{
+		return 0;
+	}
+
+	size_t result = 1;
+
+	for (const auto& i : data)
+	{
+		result = 31 * result + i;
+	}
+
+	return result;
+}
+
+set<uint32_t> makeHotkey(uint32_t key, const vector<gui_framework::hotkeys::additionalKeys>& additionalKeys)
+{
+	set<uint32_t> hotkey;
+
+	for_each(additionalKeys.begin(), additionalKeys.end(), [&hotkey](gui_framework::hotkeys::additionalKeys additionalKey) { hotkey.insert(static_cast<uint32_t>(additionalKey)); });
+
+	hotkey.insert(key);
+
+	return hotkey;
 }

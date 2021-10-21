@@ -1,7 +1,7 @@
 #pragma once
 
-#include "pch.h"
-#include "BaseComponents/StandardComponents/BaseMultipleSelectListBox.h"
+#include "headers.h"
+#include "BaseComponents/StandardComponents/ListBoxes/BaseMultipleSelectListBox.h"
 
 namespace gui_framework
 {
@@ -10,6 +10,8 @@ namespace gui_framework
 	{
 	public:
 		MultipleSelectListBox(const std::wstring& listBoxName, const utility::ComponentSettings& settings, BaseComponent* parent, bool isSorting = false);
+
+		size_t getHash() const override;
 
 		json::JSONBuilder getStructure() const override;
 

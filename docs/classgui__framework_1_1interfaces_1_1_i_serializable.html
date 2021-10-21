@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.8-beta</span>
+   &#160;<span id="projectnumber">0.8.3-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -85,6 +85,7 @@ $(document).ready(function(){initNavTree('classgui__framework_1_1interfaces_1_1_
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classgui__framework_1_1interfaces_1_1_i_serializable-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -115,9 +116,10 @@ Inheritance diagram for gui_framework::interfaces::ISerializable:</div>
 <area href="classgui__framework_1_1_base_list_view.html" title="Base class for all list views." alt="gui_framework::BaseListView" shape="rect" coords="264,448,518,472"/>
 <area href="classgui__framework_1_1_base_progress_bar.html" title="Base class for all updatable progress bars." alt="gui_framework::BaseProgressBar" shape="rect" coords="264,504,518,528"/>
 <area href="classgui__framework_1_1_base_rich_edit.html" title="Base class for all rich edit controls." alt="gui_framework::BaseRichEdit" shape="rect" coords="264,560,518,584"/>
-<area href="classgui__framework_1_1_base_static_control.html" title="Base class for all static controls." alt="gui_framework::BaseStaticControl" shape="rect" coords="264,616,518,640"/>
-<area href="classgui__framework_1_1_base_tab_control.html" title="Base class for all tab controls." alt="gui_framework::BaseTabControl" shape="rect" coords="264,672,518,696"/>
-<area href="classgui__framework_1_1_base_trackbar_control.html" title="Base class for all tracbar controls." alt="gui_framework::BaseTrackbarControl" shape="rect" coords="264,728,518,752"/>
+<area href="classgui__framework_1_1_base_scroll_bar.html" alt="gui_framework::BaseScrollBar" shape="rect" coords="264,616,518,640"/>
+<area href="classgui__framework_1_1_base_static_control.html" title="Base class for all static controls." alt="gui_framework::BaseStaticControl" shape="rect" coords="264,672,518,696"/>
+<area href="classgui__framework_1_1_base_tab_control.html" title="Base class for all tab controls." alt="gui_framework::BaseTabControl" shape="rect" coords="264,728,518,752"/>
+<area href="classgui__framework_1_1_base_trackbar_control.html" title="Base class for all tracbar controls." alt="gui_framework::BaseTrackbarControl" shape="rect" coords="264,784,518,808"/>
 <area href="classgui__framework_1_1_base_menu_item.html" title="Base class for all menu items." alt="gui_framework::BaseMenuItem" shape="rect" coords="792,112,1046,136"/>
 <area href="classgui__framework_1_1_drop_down_menu_item.html" title="Standard drop-down menu item." alt="gui_framework::DropDownMenuItem" shape="rect" coords="792,168,1046,192"/>
 <area href="classgui__framework_1_1utility_1_1_cursors_holder.html" title="Cursors loader." alt="gui_framework::utility::CursorsHolder" shape="rect" coords="1320,112,1574,136"/>
@@ -128,16 +130,17 @@ Inheritance diagram for gui_framework::interfaces::ISerializable:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a87182b138b089b88b869a22876076b1d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#a87182b138b089b88b869a22876076b1d">ISerializable</a> ()</td></tr>
-<tr class="separator:a87182b138b089b88b869a22876076b1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b10a13a7dcad84dd2a7e6e885b45672"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#a2b10a13a7dcad84dd2a7e6e885b45672">setCodepage</a> (uint32_t codepage) final</td></tr>
-<tr class="separator:a2b10a13a7dcad84dd2a7e6e885b45672"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1028f9985162ed38dd68b2bdface7f93"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#a1028f9985162ed38dd68b2bdface7f93">ISerializable</a> ()=default</td></tr>
+<tr class="separator:a1028f9985162ed38dd68b2bdface7f93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd8e17c9b5087e477f9f035b9138148b"><td class="memItemLeft" align="right" valign="top">virtual json::JSONBuilder&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#abd8e17c9b5087e477f9f035b9138148b">getStructure</a> () const =0</td></tr>
 <tr class="separator:abd8e17c9b5087e477f9f035b9138148b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe1577de1770a62d3dcc6161c3475c7a"><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#afe1577de1770a62d3dcc6161c3475c7a">getCodepage</a> () const final</td></tr>
-<tr class="separator:afe1577de1770a62d3dcc6161c3475c7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8feceb56504671870fc49a814a212516"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#a8feceb56504671870fc49a814a212516">~ISerializable</a> ()=default</td></tr>
 <tr class="separator:a8feceb56504671870fc49a814a212516"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ae3b3d5735f3d842d4f1b438a3f4eb33e"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#ae3b3d5735f3d842d4f1b438a3f4eb33e">getCodepage</a> ()</td></tr>
+<tr class="separator:ae3b3d5735f3d842d4f1b438a3f4eb33e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -149,11 +152,14 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_i_serializable_8h_source.html#l00010">10</a> of file <a class="el" href="_i_serializable_8h_source.html">ISerializable.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a87182b138b089b88b869a22876076b1d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a87182b138b089b88b869a22876076b1d">&#9670;&nbsp;</a></span>ISerializable()</h2>
+<a id="a1028f9985162ed38dd68b2bdface7f93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1028f9985162ed38dd68b2bdface7f93">&#9670;&nbsp;</a></span>ISerializable()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">gui_framework::interfaces::ISerializable::ISerializable </td>
@@ -162,9 +168,12 @@ Friends</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_i_serializable_8cpp_source.html#l00010">10</a> of file <a class="el" href="_i_serializable_8cpp_source.html">ISerializable.cpp</a>.</p>
 
 </div>
 </div>
@@ -194,8 +203,8 @@ Friends</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="afe1577de1770a62d3dcc6161c3475c7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe1577de1770a62d3dcc6161c3475c7a">&#9670;&nbsp;</a></span>getCodepage()</h2>
+<a id="ae3b3d5735f3d842d4f1b438a3f4eb33e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3b3d5735f3d842d4f1b438a3f4eb33e">&#9670;&nbsp;</a></span>getCodepage()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -207,17 +216,17 @@ Friends</h2></td></tr>
           <td class="memname">uint32_t gui_framework::interfaces::ISerializable::getCodepage </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_i_serializable_8cpp_source.html#l00021">21</a> of file <a class="el" href="_i_serializable_8cpp_source.html">ISerializable.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_serializable_8h_source.html#l00025">25</a> of file <a class="el" href="_i_serializable_8h_source.html">ISerializable.h</a>.</p>
 
 </div>
 </div>
@@ -244,35 +253,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classgui__framework_1_1_menu_item.html#a98ffe5fe8bbf21351ef19dfd782eb959">gui_framework::MenuItem</a>, <a class="el" href="classgui__framework_1_1_menu.html#a6daf4796d2759b96ae7c323e2ec0d8db">gui_framework::Menu</a>, <a class="el" href="classgui__framework_1_1interfaces_1_1_i_menu_item.html#a11725b99f241c64c8767738fcb88c823">gui_framework::interfaces::IMenuItem</a>, <a class="el" href="classgui__framework_1_1_vertical_trackbar_control.html#aec5cdc9e7b75a7ec674af088176d554f">gui_framework::VerticalTrackbarControl</a>, <a class="el" href="classgui__framework_1_1_horizontal_trackbar_control.html#a96108dc6a482b9bb0c67bad1f0e50e2b">gui_framework::HorizontalTrackbarControl</a>, <a class="el" href="classgui__framework_1_1_tab_control.html#a2279bb70edd8be6b4299907a741d00df">gui_framework::TabControl</a>, <a class="el" href="classgui__framework_1_1_rich_edit.html#a63d286ffe6492235ac564d55803bdc0e">gui_framework::RichEdit</a>, <a class="el" href="classgui__framework_1_1_progress_bar.html#a891a563eff8913c1f9b37ccba1e81d67">gui_framework::ProgressBar</a>, <a class="el" href="classgui__framework_1_1_infinite_progress_bar.html#a775dbf65e2c309e0034f8ab92b957c17">gui_framework::InfiniteProgressBar</a>, <a class="el" href="classgui__framework_1_1_text_list_view.html#a7fb909cb99448e8b74e697bc93829aa9">gui_framework::TextListView</a>, <a class="el" href="classgui__framework_1_1_text_icon_list_view.html#a28dd537a6f40b0b9a08862e0c8fd5084">gui_framework::TextIconListView</a>, <a class="el" href="classgui__framework_1_1_list_text_list_view.html#a0d88683cd9a5a9c1eb1925b00a153930">gui_framework::ListTextListView</a>, <a class="el" href="classgui__framework_1_1_list_text_icon_list_view.html#a62e057876b26d7c1c1b9242e0deebeb3">gui_framework::ListTextIconListView</a>, <a class="el" href="classgui__framework_1_1_list_icon_list_view.html#af467be363be3eebee0989c56b7f3fa67">gui_framework::ListIconListView</a>, <a class="el" href="classgui__framework_1_1_icon_list_view.html#a568d1ee79bb17b750bc0e7526039eceb">gui_framework::IconListView</a>, <a class="el" href="classgui__framework_1_1_multiple_select_list_box.html#abb96085f99ac636032d607453fa90ced">gui_framework::MultipleSelectListBox</a>, <a class="el" href="classgui__framework_1_1_simple_combo_box.html#a7fe2d9a4f4b04e5a38ce81f4ed631b0b">gui_framework::SimpleComboBox</a>, <a class="el" href="classgui__framework_1_1_drop_down_list_combo_box.html#aaa4b3aa303a78f0a29e9efdd9ef106ac">gui_framework::DropDownListComboBox</a>, <a class="el" href="classgui__framework_1_1_drop_down_combo_box.html#a6947d0f219e5f0c5feec3f1b6093e5b5">gui_framework::DropDownComboBox</a>, <a class="el" href="classgui__framework_1_1_check_box.html#a90894fde04b1e9b5019fa475822a5a73">gui_framework::CheckBox</a>, <a class="el" href="classgui__framework_1_1_base_window.html#a601fc7e12ff4afa848514f40b844457c">gui_framework::BaseWindow</a>, <a class="el" href="classgui__framework_1_1_base_composite.html#a03f0ef2ce7916eb5e8833831fd24bd1f">gui_framework::BaseComposite</a>, <a class="el" href="classgui__framework_1_1_base_text_list_view.html#a675148daba7ef1f4e61b3e0d17b9ab60">gui_framework::BaseTextListView</a>, <a class="el" href="classgui__framework_1_1_base_text_icon_list_view.html#a6f84f41bb5dcb7d94765f53585b8e9e3">gui_framework::BaseTextIconListView</a>, <a class="el" href="classgui__framework_1_1_base_list_text_list_view.html#a7a31cf39a90b1d0eb3b68c2bbb3a4c94">gui_framework::BaseListTextListView</a>, <a class="el" href="classgui__framework_1_1_base_list_text_icon_list_view.html#a90e09f05df0a5d968fd7de206d025c07">gui_framework::BaseListTextIconListView</a>, <a class="el" href="classgui__framework_1_1_base_list_icon_list_view.html#aeb1e923d5cb7cb4111a80d5142ef90ed">gui_framework::BaseListIconListView</a>, <a class="el" href="classgui__framework_1_1_base_icon_list_view.html#a0ab77ef0b3296386917a819fd8d6ab1a">gui_framework::BaseIconListView</a>, <a class="el" href="classgui__framework_1_1_base_trackbar_control.html#ab37df18ec2e82bf3582393bad8b65446">gui_framework::BaseTrackbarControl</a>, <a class="el" href="classgui__framework_1_1_base_tab_control.html#a0298efc8e7000f84e297967dec4be701">gui_framework::BaseTabControl</a>, <a class="el" href="classgui__framework_1_1_base_rich_edit.html#a5efc3f658002087aee204a5f95a52ada">gui_framework::BaseRichEdit</a>, <a class="el" href="classgui__framework_1_1_base_progress_bar.html#ada7817b13dd8ba5fba8b64ceb5aeb05f">gui_framework::BaseProgressBar</a>, <a class="el" href="classgui__framework_1_1_base_multiple_select_list_box.html#a5e96b134a3ab5d2d08c9f5cab1cbd777">gui_framework::BaseMultipleSelectListBox</a>, <a class="el" href="classgui__framework_1_1_base_list_box.html#a6ae2994ceb712fed4c87028bfc074f24">gui_framework::BaseListBox</a>, <a class="el" href="classgui__framework_1_1_base_infinite_progress_bar.html#aef87a4d4cf2df246e328ed3462949ba7">gui_framework::BaseInfiniteProgressBar</a>, <a class="el" href="classgui__framework_1_1_base_edit_control.html#a8c180badbdcd6fa74f2887b5e5ac4121">gui_framework::BaseEditControl</a>, <a class="el" href="classgui__framework_1_1_base_combo_box.html#a67b687ab959e0a847952423d3b4eae12">gui_framework::BaseComboBox</a>, <a class="el" href="classgui__framework_1_1_base_check_box.html#a8d57c8af5e51b7c687bcf49ff279e0fd">gui_framework::BaseCheckBox</a>, <a class="el" href="classgui__framework_1_1_base_button.html#ab35197f855f37974e25dda6b24314545">gui_framework::BaseButton</a>, <a class="el" href="classgui__framework_1_1_base_component.html#a874eae6d7db8309155a9946aef01199a">gui_framework::BaseComponent</a>, and <a class="el" href="classgui__framework_1_1_drop_down_menu_item.html#a913810b8c18d779a1ac077bf0b601e37">gui_framework::DropDownMenuItem</a>.</p>
-
-</div>
-</div>
-<a id="a2b10a13a7dcad84dd2a7e6e885b45672"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b10a13a7dcad84dd2a7e6e885b45672">&#9670;&nbsp;</a></span>setCodepage()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void gui_framework::interfaces::ISerializable::setCodepage </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>codepage</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_i_serializable_8cpp_source.html#l00016">16</a> of file <a class="el" href="_i_serializable_8cpp_source.html">ISerializable.cpp</a>.</p>
+<p>Implemented in <a class="el" href="classgui__framework_1_1_menu_item.html#a98ffe5fe8bbf21351ef19dfd782eb959">gui_framework::MenuItem</a>, <a class="el" href="classgui__framework_1_1_menu.html#a6daf4796d2759b96ae7c323e2ec0d8db">gui_framework::Menu</a>, <a class="el" href="classgui__framework_1_1interfaces_1_1_i_menu_item.html#a11725b99f241c64c8767738fcb88c823">gui_framework::interfaces::IMenuItem</a>, <a class="el" href="classgui__framework_1_1_vertical_trackbar_control.html#aec5cdc9e7b75a7ec674af088176d554f">gui_framework::VerticalTrackbarControl</a>, <a class="el" href="classgui__framework_1_1_horizontal_trackbar_control.html#a96108dc6a482b9bb0c67bad1f0e50e2b">gui_framework::HorizontalTrackbarControl</a>, <a class="el" href="classgui__framework_1_1_tab_control.html#a2279bb70edd8be6b4299907a741d00df">gui_framework::TabControl</a>, <a class="el" href="classgui__framework_1_1_rich_edit.html#a63d286ffe6492235ac564d55803bdc0e">gui_framework::RichEdit</a>, <a class="el" href="classgui__framework_1_1_progress_bar.html#a891a563eff8913c1f9b37ccba1e81d67">gui_framework::ProgressBar</a>, <a class="el" href="classgui__framework_1_1_infinite_progress_bar.html#a775dbf65e2c309e0034f8ab92b957c17">gui_framework::InfiniteProgressBar</a>, <a class="el" href="classgui__framework_1_1_text_list_view.html#a7fb909cb99448e8b74e697bc93829aa9">gui_framework::TextListView</a>, <a class="el" href="classgui__framework_1_1_text_icon_list_view.html#a28dd537a6f40b0b9a08862e0c8fd5084">gui_framework::TextIconListView</a>, <a class="el" href="classgui__framework_1_1_list_text_list_view.html#a0d88683cd9a5a9c1eb1925b00a153930">gui_framework::ListTextListView</a>, <a class="el" href="classgui__framework_1_1_list_text_icon_list_view.html#a62e057876b26d7c1c1b9242e0deebeb3">gui_framework::ListTextIconListView</a>, <a class="el" href="classgui__framework_1_1_list_icon_list_view.html#af467be363be3eebee0989c56b7f3fa67">gui_framework::ListIconListView</a>, <a class="el" href="classgui__framework_1_1_icon_list_view.html#a568d1ee79bb17b750bc0e7526039eceb">gui_framework::IconListView</a>, <a class="el" href="classgui__framework_1_1_multiple_select_list_box.html#abb96085f99ac636032d607453fa90ced">gui_framework::MultipleSelectListBox</a>, <a class="el" href="classgui__framework_1_1_simple_combo_box.html#a7fe2d9a4f4b04e5a38ce81f4ed631b0b">gui_framework::SimpleComboBox</a>, <a class="el" href="classgui__framework_1_1_drop_down_list_combo_box.html#aaa4b3aa303a78f0a29e9efdd9ef106ac">gui_framework::DropDownListComboBox</a>, <a class="el" href="classgui__framework_1_1_drop_down_combo_box.html#a6947d0f219e5f0c5feec3f1b6093e5b5">gui_framework::DropDownComboBox</a>, <a class="el" href="classgui__framework_1_1_image_button.html#ac4f80b8b508b0c2f382c2199148a0cd2">gui_framework::ImageButton</a>, <a class="el" href="classgui__framework_1_1_check_box.html#a90894fde04b1e9b5019fa475822a5a73">gui_framework::CheckBox</a>, <a class="el" href="classgui__framework_1_1_base_window.html#a601fc7e12ff4afa848514f40b844457c">gui_framework::BaseWindow</a>, <a class="el" href="classgui__framework_1_1_base_composite.html#a03f0ef2ce7916eb5e8833831fd24bd1f">gui_framework::BaseComposite</a>, <a class="el" href="classgui__framework_1_1_base_progress_bar.html#ada7817b13dd8ba5fba8b64ceb5aeb05f">gui_framework::BaseProgressBar</a>, <a class="el" href="classgui__framework_1_1_base_infinite_progress_bar.html#aef87a4d4cf2df246e328ed3462949ba7">gui_framework::BaseInfiniteProgressBar</a>, <a class="el" href="classgui__framework_1_1_base_text_list_view.html#a675148daba7ef1f4e61b3e0d17b9ab60">gui_framework::BaseTextListView</a>, <a class="el" href="classgui__framework_1_1_base_text_icon_list_view.html#a6f84f41bb5dcb7d94765f53585b8e9e3">gui_framework::BaseTextIconListView</a>, <a class="el" href="classgui__framework_1_1_base_list_text_list_view.html#a7a31cf39a90b1d0eb3b68c2bbb3a4c94">gui_framework::BaseListTextListView</a>, <a class="el" href="classgui__framework_1_1_base_list_text_icon_list_view.html#a90e09f05df0a5d968fd7de206d025c07">gui_framework::BaseListTextIconListView</a>, <a class="el" href="classgui__framework_1_1_base_list_icon_list_view.html#aeb1e923d5cb7cb4111a80d5142ef90ed">gui_framework::BaseListIconListView</a>, <a class="el" href="classgui__framework_1_1_base_icon_list_view.html#a0ab77ef0b3296386917a819fd8d6ab1a">gui_framework::BaseIconListView</a>, <a class="el" href="classgui__framework_1_1_base_multiple_select_list_box.html#a5e96b134a3ab5d2d08c9f5cab1cbd777">gui_framework::BaseMultipleSelectListBox</a>, <a class="el" href="classgui__framework_1_1_base_list_box.html#a6ae2994ceb712fed4c87028bfc074f24">gui_framework::BaseListBox</a>, <a class="el" href="classgui__framework_1_1_base_check_box.html#a8d57c8af5e51b7c687bcf49ff279e0fd">gui_framework::BaseCheckBox</a>, <a class="el" href="classgui__framework_1_1_base_button.html#ab35197f855f37974e25dda6b24314545">gui_framework::BaseButton</a>, <a class="el" href="classgui__framework_1_1_base_trackbar_control.html#ab37df18ec2e82bf3582393bad8b65446">gui_framework::BaseTrackbarControl</a>, <a class="el" href="classgui__framework_1_1_base_tab_control.html#a0298efc8e7000f84e297967dec4be701">gui_framework::BaseTabControl</a>, <a class="el" href="classgui__framework_1_1_base_rich_edit.html#a5efc3f658002087aee204a5f95a52ada">gui_framework::BaseRichEdit</a>, <a class="el" href="classgui__framework_1_1_base_edit_control.html#a8c180badbdcd6fa74f2887b5e5ac4121">gui_framework::BaseEditControl</a>, <a class="el" href="classgui__framework_1_1_base_combo_box.html#a67b687ab959e0a847952423d3b4eae12">gui_framework::BaseComboBox</a>, <a class="el" href="classgui__framework_1_1_base_component.html#a874eae6d7db8309155a9946aef01199a">gui_framework::BaseComponent</a>, and <a class="el" href="classgui__framework_1_1_drop_down_menu_item.html#a913810b8c18d779a1ac077bf0b601e37">gui_framework::DropDownMenuItem</a>.</p>
 
 </div>
 </div>
@@ -313,9 +294,8 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>GUIFramework/src/Interfaces/Utility/<a class="el" href="_i_serializable_8h_source.html">ISerializable.h</a></li>
-<li>GUIFramework/src/Interfaces/Utility/<a class="el" href="_i_serializable_8cpp_source.html">ISerializable.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

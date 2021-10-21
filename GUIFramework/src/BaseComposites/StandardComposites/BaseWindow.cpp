@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "headers.h"
 #include "BaseWindow.h"
 
 #include "Exceptions/FileDoesNotExist.h"
@@ -32,11 +32,6 @@ namespace gui_framework
 		images->removeImage(index);
 
 		coordinates.erase(index);
-	}
-
-	const string& BaseWindow::getCreationType() const
-	{
-		return serialized_creation_type::baseWindow;
 	}
 
 	BaseWindow::BaseWindow(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent, const string& windowFunctionName, const string& moduleName, uint16_t smallIconResource, uint16_t largeIconResource) :

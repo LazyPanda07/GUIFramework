@@ -1,6 +1,6 @@
 #pragma once
 
-#include "pch.h"
+#include "headers.h"
 #include "BaseComponents/StandardComponents/BaseTrackbarControl.h"
 
 namespace gui_framework
@@ -19,7 +19,9 @@ namespace gui_framework
 	public:
 		HorizontalTrackbarControl(const std::wstring& trackbarName, const utility::ComponentSettings& settings, BaseComponent* parent, bool autoTicks = true, horizontalTickPosition position = horizontalTickPosition::bottom, bool selectionRange = false, bool noTicks = false);
 
-		virtual json::JSONBuilder getStructure() const override;
+		size_t getHash() const override;
+
+		json::JSONBuilder getStructure() const override;
 
 		~HorizontalTrackbarControl() = default;
 	};

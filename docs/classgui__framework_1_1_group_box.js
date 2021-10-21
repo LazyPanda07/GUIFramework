@@ -4,5 +4,5 @@ var classgui__framework_1_1_group_box =
     [ "GroupBox", "classgui__framework_1_1_group_box.html#a790eb7975f6bc808b8dfcb1efb674e6e", null ],
     [ "~GroupBox", "classgui__framework_1_1_group_box.html#ac9ebc34969db2083694b303c27f5e37a", null ],
     [ "addRadioButton", "classgui__framework_1_1_group_box.html#a2c2e62ff45b0fd50f0182ece830c5a1b", null ],
-    [ "getCreationType", "classgui__framework_1_1_group_box.html#a213f64d7de18420c3cbb698a681cf995", null ]
+    [ "getHash", "classgui__framework_1_1_group_box.html#a42d5f228de4bf8bb31866efa5f09a33b", null ]
 ];
