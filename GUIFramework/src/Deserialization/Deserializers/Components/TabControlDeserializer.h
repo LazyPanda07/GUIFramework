@@ -7,6 +7,7 @@ namespace gui_framework
 {
 	namespace deserializers
 	{
+		/// @brief Deserialize TabControl from JSON
 		class GUI_FRAMEWORK_API TabControlDeserializer : public interfaces::IDeserializer
 		{
 		public:

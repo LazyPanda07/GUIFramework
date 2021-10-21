@@ -7,6 +7,7 @@ namespace gui_framework
 {
 	namespace deserializers
 	{
+		/// @brief Deserialize GroupBox from JSON
 		class GUI_FRAMEWORK_API GroupBoxDeserializer : public interfaces::IDeserializer
 		{
 		public:

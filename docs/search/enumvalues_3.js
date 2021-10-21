@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['destroywindow_2375',['destroyWindow',['../classgui__framework_1_1_base_component.html#adadba923c5fcc012ce8b50e592080bcda3619de6b97539298d3d046e6dbbe48cc',1,'gui_framework::BaseComponent']]]
+  ['destroywindow_2809',['destroyWindow',['../classgui__framework_1_1_base_composite.html#a438c1f5c9ef171bc01b2ac420fee985ca3619de6b97539298d3d046e6dbbe48cc',1,'gui_framework::BaseComposite']]]
 ];

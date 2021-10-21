@@ -4,6 +4,7 @@ var dir_e26a3f9e84f4c910235ed176785f491f =
     [ "ListBoxes", "dir_9d946924fe95085c89e57850d10ca6ed.html", "dir_9d946924fe95085c89e57850d10ca6ed" ],
     [ "ListViews", "dir_b46c9f41f3f44e77b47f9bffa68d5b16.html", "dir_b46c9f41f3f44e77b47f9bffa68d5b16" ],
     [ "ProgressBars", "dir_ecc175d581b9d22edfed64778ff5b037.html", "dir_ecc175d581b9d22edfed64778ff5b037" ],
+    [ "ScrollBars", "dir_45be5c8753aa6226ca95c2341b302456.html", "dir_45be5c8753aa6226ca95c2341b302456" ],
     [ "BaseComboBox.cpp", "_base_combo_box_8cpp.html", null ],
     [ "BaseComboBox.h", "_base_combo_box_8h.html", "_base_combo_box_8h" ],
     [ "BaseEditControl.cpp", "_base_edit_control_8cpp.html", null ],

@@ -6,6 +6,7 @@ namespace gui_framework
 {
 	namespace parsers
 	{
+		/// @brief Parse CheckBox specific properties
 		struct GUI_FRAMEWORK_API CheckBoxParser : public ButtonParser
 		{
 			std::string onCheckFunctionName;

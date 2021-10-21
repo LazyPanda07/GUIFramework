@@ -11,7 +11,7 @@ namespace gui_framework
 		class GUI_FRAMEWORK_API DefaultListBoxStyles : public ListBoxStyles
 		{
 		public:
-			DefaultListBoxStyles() = default;
+			DefaultListBoxStyles(bool isSorting = false);
 
 			~DefaultListBoxStyles() = default;
 		};

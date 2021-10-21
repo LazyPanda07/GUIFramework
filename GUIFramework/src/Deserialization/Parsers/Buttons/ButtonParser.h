@@ -7,6 +7,7 @@ namespace gui_framework
 {
 	namespace parsers
 	{
+		/// @brief Parse Button specific properties
 		struct GUI_FRAMEWORK_API ButtonParser : public BaseComponentParser
 		{
 			std::wstring text;

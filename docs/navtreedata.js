@@ -42,7 +42,7 @@ var NAVTREE =
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", "functions_func" ],
-        [ "Variables", "functions_vars.html", null ],
+        [ "Variables", "functions_vars.html", "functions_vars" ],
         [ "Enumerations", "functions_enum.html", null ],
         [ "Related Functions", "functions_rela.html", null ]
       ] ]
@@ -62,15 +62,17 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_additional_creation_data_8h.html",
-"_drop_down_combo_box_styles_8cpp_source.html",
-"_infinite_progress_bar_creator_8h.html",
-"_vertical_trackbar_control_styles_8cpp_source.html",
-"classgui__framework_1_1_base_list_text_icon_list_view.html#ab11d8a9698f1aa381fe02f33ee7422ba",
-"classgui__framework_1_1_list_box.html#affc5e50f16e1c6b008ad0d9254afe002",
-"classgui__framework_1_1iterators_1_1loadable__forward__iterator.html#a1e1c22939a5a66dddb58ac772cc6593c",
-"classgui__framework_1_1utility_1_1_additional_creation_data_3_01_rich_edit_01_4.html#ae83487752e7729f1d4d369e1ab77a51b",
-"dir_dca5549e17e2892857a30daa34461e71.html",
-"structgui__framework_1_1_group_box_1_1radio_button_data.html"
+"_cursors_holder_8h_source.html",
+"_i_text_icon_list_view_8cpp_source.html",
+"_separate_window_additional_creation_data_8cpp_source.html",
+"classgui__framework_1_1_base_combo_box.html#acfe9b4c371940f61dc513d610541c9f8",
+"classgui__framework_1_1_base_rich_edit.html#a99a7734c996dc4c84115279362db2dc3",
+"classgui__framework_1_1_menu.html#a1bf1253fb6905ab2d5514cac98907ae5",
+"classgui__framework_1_1interfaces_1_1_i_menu_item.html#a86914dc8a7f0d9e282361bd80e9b49ae",
+"classgui__framework_1_1utility_1_1_additional_creation_data_3_01_drop_down_combo_box_01_4.html#a05cce5a378873a58fc7bf115a3d98d9b",
+"classgui__framework_1_1utility_1_1_image_button_creator.html#a4317eee973da0d3c2ff866164d691eaa",
+"namespacegui__framework_1_1deserializers.html",
+"structgui__framework_1_1parsers_1_1_trackbar_control_parser.html#ae58d4735fc6981c45d7bf9ec4a8f4e5c"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

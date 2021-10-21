@@ -6,6 +6,7 @@ namespace gui_framework
 {
 	namespace parsers
 	{
+		/// @brief Parse TabControl specific properties
 		struct GUI_FRAMEWORK_API TabControlParser : public BaseComponentParser
 		{
 			std::vector<BaseTabControl::tabData> tabs;

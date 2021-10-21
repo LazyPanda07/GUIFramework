@@ -6,6 +6,7 @@ namespace gui_framework
 {
 	namespace parsers
 	{
+		/// @brief Parse ProgressBar specific properties
 		struct GUI_FRAMEWORK_API ProgressBarParser : public BaseComponentParser
 		{
 			int minRange;

@@ -7,6 +7,7 @@ namespace gui_framework
 {
 	namespace parsers
 	{
+		/// @brief Parse RichEdit specific properties
 		struct GUI_FRAMEWORK_API RichEditParser : public BaseComponentParser
 		{
 			std::array<std::pair<std::string, std::string>, BaseRichEdit::urlDetectEventSize> callbacks;

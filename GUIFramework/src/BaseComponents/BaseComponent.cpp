@@ -251,6 +251,20 @@ namespace gui_framework
 	void BaseComponent::setStyles(interfaces::IStyles& styles)
 	{
 		this->styles = utility::make_smart_pointer<interfaces::IStyles>(styles);
+
+		SetWindowLongPtrW
+		(
+			handle,
+			GWL_STYLE,
+			this->styles->getStyles()
+		);
+
+		SetWindowLongPtrW
+		(
+			handle,
+			GWL_EXSTYLE,
+			this->styles->getExtendedStyles()
+		);
 	}
 
 	BaseComponent* BaseComponent::getParent() const

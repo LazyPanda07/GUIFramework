@@ -10,6 +10,7 @@ var classgui__framework_1_1_base_tab_control =
     [ "appendTextAndImage", "classgui__framework_1_1_base_tab_control.html#a8655ce23c3417a3daddad9e12306dbe0", null ],
     [ "appendTextAndImage", "classgui__framework_1_1_base_tab_control.html#ae77a43b6e8d33bdc18b44e7712bf30d4", null ],
     [ "clear", "classgui__framework_1_1_base_tab_control.html#a4a585df080d4d6ec8164fd81dc2c8ab9", null ],
+    [ "getHash", "classgui__framework_1_1_base_tab_control.html#a699a6b9c45165e08b80fd37559eed6e1", null ],
     [ "getImagesHeight", "classgui__framework_1_1_base_tab_control.html#add2d6821177afae68662e6b2b6dc3de8", null ],
     [ "getImagesWidth", "classgui__framework_1_1_base_tab_control.html#a083f7ee76419f491b4d02ae616e3e178", null ],
     [ "getItem", "classgui__framework_1_1_base_tab_control.html#a3110aff9c73cc6d3f10689753bff14df", null ],

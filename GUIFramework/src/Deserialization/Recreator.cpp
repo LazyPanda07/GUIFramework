@@ -23,8 +23,6 @@ namespace gui_framework
 	{
 		const auto& [componentName, description] = **windowedApplicationStructure.begin();
 
-		// TODO: Pick right deserializer
-
 		return unique_ptr<BaseComposite>
 			(
 				static_cast<BaseComposite*>

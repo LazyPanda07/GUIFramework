@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.8.1-beta</span>
+   &#160;<span id="projectnumber">0.8.3-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -86,11 +86,10 @@ $(document).ready(function(){initNavTree('classgui__framework_1_1_base_window.ht
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classgui__framework_1_1_base_window-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">gui_framework::BaseWindow Class Reference</div>  </div>
+<div class="title">gui_framework::BaseWindow Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -116,7 +115,7 @@ Inheritance diagram for gui_framework::BaseWindow:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2e1a91d8d445d2b8d1bf2f2b0c7a05c1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_window.html#a2e1a91d8d445d2b8d1bf2f2b0c7a05c1">BaseWindow</a> (const std::wstring &amp;<a class="el" href="classgui__framework_1_1_base_component.html#a7a8719af09a90cd4de26d3a295882e86">className</a>, const std::wstring &amp;<a class="el" href="classgui__framework_1_1_base_component.html#ab927f5791c7605446203f7f7f6e0bb83">windowName</a>, const <a class="el" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a> &amp;settings, const <a class="el" href="classgui__framework_1_1interfaces_1_1_i_styles.html">interfaces::IStyles</a> &amp;<a class="el" href="classgui__framework_1_1_base_component.html#aec8d3af6711b0c012f2f7f90cc7d4141">styles</a>, <a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> *<a class="el" href="classgui__framework_1_1_base_component.html#a1576375d22cf283d598e22f4a11aca2f">parent</a>=nullptr, const std::string &amp;windowFunctionName=&quot;&quot;, const std::string &amp;moduleName=&quot;&quot;, uint16_t smallIconResource=NULL, uint16_t largeIconResource=NULL)</td></tr>
+<tr class="memitem:a2e1a91d8d445d2b8d1bf2f2b0c7a05c1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_window.html#a2e1a91d8d445d2b8d1bf2f2b0c7a05c1">BaseWindow</a> (const std::wstring &amp;<a class="el" href="classgui__framework_1_1_base_component.html#a7a8719af09a90cd4de26d3a295882e86">className</a>, const std::wstring &amp;<a class="el" href="classgui__framework_1_1_base_component.html#ab927f5791c7605446203f7f7f6e0bb83">windowName</a>, const <a class="el" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a> &amp;settings, const <a class="el" href="classgui__framework_1_1interfaces_1_1_i_styles.html">interfaces::IStyles</a> &amp;<a class="el" href="classgui__framework_1_1_base_component.html#aec8d3af6711b0c012f2f7f90cc7d4141">styles</a>, <a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> *<a class="el" href="classgui__framework_1_1_base_component.html#a1576375d22cf283d598e22f4a11aca2f">parent</a>=nullptr, const std::string &amp;<a class="el" href="classgui__framework_1_1_base_composite.html#adfd81e2967cce16cfef62b7be0d7dbf3">windowFunctionName</a>=&quot;&quot;, const std::string &amp;moduleName=&quot;&quot;, uint16_t smallIconResource=NULL, uint16_t largeIconResource=NULL)</td></tr>
 <tr class="separator:a2e1a91d8d445d2b8d1bf2f2b0c7a05c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a053e4b215c7f758fb79617985e1a80f7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_window.html#a053e4b215c7f758fb79617985e1a80f7">initDrawing</a> (const std::string &amp;pictureBlockName, uint16_t imagesWidth, uint16_t imagesHeight, <a class="el" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a4a51f316eaed8d199b7faa998ca407bf">utility::BaseLoadableHolder::imageType</a> type) final</td></tr>
 <tr class="memdesc:a053e4b215c7f758fb79617985e1a80f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize block of pictures with same size.  <a href="classgui__framework_1_1_base_window.html#a053e4b215c7f758fb79617985e1a80f7">More...</a><br /></td></tr>
@@ -132,12 +131,15 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6a73ed8d9f9668400bac07318481f905"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3bfb7ebe5e6af2f83bb35b45b7244192"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_window.html#a3bfb7ebe5e6af2f83bb35b45b7244192">setBackgroundColor</a> (uint8_t red, uint8_t green, uint8_t blue) final override</td></tr>
 <tr class="separator:a3bfb7ebe5e6af2f83bb35b45b7244192"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8134e2d281b664c55d754f4998e5518a"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_window.html#a8134e2d281b664c55d754f4998e5518a">getHash</a> () const override=0</td></tr>
+<tr class="memdesc:a8134e2d281b664c55d754f4998e5518a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used as key in creators.  <a href="classgui__framework_1_1_base_window.html#a8134e2d281b664c55d754f4998e5518a">More...</a><br /></td></tr>
+<tr class="separator:a8134e2d281b664c55d754f4998e5518a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a601fc7e12ff4afa848514f40b844457c"><td class="memItemLeft" align="right" valign="top">virtual json::JSONBuilder&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_window.html#a601fc7e12ff4afa848514f40b844457c">getStructure</a> () const override</td></tr>
 <tr class="separator:a601fc7e12ff4afa848514f40b844457c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e7ef6f954af0c728a81afa2f1e29222"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_window.html#a9e7ef6f954af0c728a81afa2f1e29222">~BaseWindow</a> ()=default</td></tr>
 <tr class="separator:a9e7ef6f954af0c728a81afa2f1e29222"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classgui__framework_1_1_base_composite"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classgui__framework_1_1_base_composite')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classgui__framework_1_1_base_composite.html">gui_framework::BaseComposite</a></td></tr>
-<tr class="memitem:aa8dbcb69923c9eca0acb7f1e890a1250 inherit pub_methods_classgui__framework_1_1_base_composite"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#aa8dbcb69923c9eca0acb7f1e890a1250">BaseComposite</a> (const std::wstring &amp;<a class="el" href="classgui__framework_1_1_base_component.html#a7a8719af09a90cd4de26d3a295882e86">className</a>, const std::wstring &amp;<a class="el" href="classgui__framework_1_1_base_component.html#ab927f5791c7605446203f7f7f6e0bb83">windowName</a>, const <a class="el" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a> &amp;settings, const <a class="el" href="classgui__framework_1_1interfaces_1_1_i_styles.html">interfaces::IStyles</a> &amp;<a class="el" href="classgui__framework_1_1_base_component.html#aec8d3af6711b0c012f2f7f90cc7d4141">styles</a>, <a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> *<a class="el" href="classgui__framework_1_1_base_component.html#a1576375d22cf283d598e22f4a11aca2f">parent</a>=nullptr, const std::string &amp;windowFunctionName=&quot;&quot;, const std::string &amp;moduleName=&quot;&quot;, uint16_t smallIconResource=NULL, uint16_t largeIconResource=NULL)</td></tr>
+<tr class="memitem:aa8dbcb69923c9eca0acb7f1e890a1250 inherit pub_methods_classgui__framework_1_1_base_composite"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#aa8dbcb69923c9eca0acb7f1e890a1250">BaseComposite</a> (const std::wstring &amp;<a class="el" href="classgui__framework_1_1_base_component.html#a7a8719af09a90cd4de26d3a295882e86">className</a>, const std::wstring &amp;<a class="el" href="classgui__framework_1_1_base_component.html#ab927f5791c7605446203f7f7f6e0bb83">windowName</a>, const <a class="el" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a> &amp;settings, const <a class="el" href="classgui__framework_1_1interfaces_1_1_i_styles.html">interfaces::IStyles</a> &amp;<a class="el" href="classgui__framework_1_1_base_component.html#aec8d3af6711b0c012f2f7f90cc7d4141">styles</a>, <a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> *<a class="el" href="classgui__framework_1_1_base_component.html#a1576375d22cf283d598e22f4a11aca2f">parent</a>=nullptr, const std::string &amp;<a class="el" href="classgui__framework_1_1_base_composite.html#adfd81e2967cce16cfef62b7be0d7dbf3">windowFunctionName</a>=&quot;&quot;, const std::string &amp;moduleName=&quot;&quot;, uint16_t smallIconResource=NULL, uint16_t largeIconResource=NULL)</td></tr>
 <tr class="separator:aa8dbcb69923c9eca0acb7f1e890a1250 inherit pub_methods_classgui__framework_1_1_base_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9d720914013a1c9485e5b4d8667d5cc inherit pub_methods_classgui__framework_1_1_base_composite"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#ab9d720914013a1c9485e5b4d8667d5cc">removeChild</a> (<a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> *child) final</td></tr>
 <tr class="separator:ab9d720914013a1c9485e5b4d8667d5cc inherit pub_methods_classgui__framework_1_1_base_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -149,8 +151,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a54f3dff4ca2e948461f4c18a69cd833a inherit pub_methods_classgui__framework_1_1_base_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27d4bb107763afe92b9dabba56f99ff9 inherit pub_methods_classgui__framework_1_1_base_composite"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; <a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#a27d4bb107763afe92b9dabba56f99ff9">findChildren</a> (const std::wstring &amp;<a class="el" href="classgui__framework_1_1_base_component.html#ab927f5791c7605446203f7f7f6e0bb83">windowName</a>) const final</td></tr>
 <tr class="separator:a27d4bb107763afe92b9dabba56f99ff9 inherit pub_methods_classgui__framework_1_1_base_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39539aed053e40905f147cd9da5003eb inherit pub_methods_classgui__framework_1_1_base_composite"><td class="memItemLeft" align="right" valign="top">virtual const std::vector&lt; std::unique_ptr&lt; <a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#a39539aed053e40905f147cd9da5003eb">getChildren</a> () const final</td></tr>
-<tr class="separator:a39539aed053e40905f147cd9da5003eb inherit pub_methods_classgui__framework_1_1_base_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace7fef499597d67329a46067ba6c961c inherit pub_methods_classgui__framework_1_1_base_composite"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; <a class="el" href="classgui__framework_1_1_menu.html">Menu</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#ace7fef499597d67329a46067ba6c961c">createMainMenu</a> (const std::wstring &amp;menuName) final</td></tr>
 <tr class="memdesc:ace7fef499597d67329a46067ba6c961c inherit pub_methods_classgui__framework_1_1_base_composite"><td class="mdescLeft">&#160;</td><td class="mdescRight">It needs to be called once.  <a href="classgui__framework_1_1_base_composite.html#ace7fef499597d67329a46067ba6c961c">More...</a><br /></td></tr>
 <tr class="separator:ace7fef499597d67329a46067ba6c961c inherit pub_methods_classgui__framework_1_1_base_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -162,6 +162,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9f936e466efe0f2e46c350fa2b16a28e inherit pub_methods_classgui__framework_1_1_base_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f0726dccdb362d62f42dcff5cd87942 inherit pub_methods_classgui__framework_1_1_base_composite"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#a6f0726dccdb362d62f42dcff5cd87942">isComposite</a> () const final override</td></tr>
 <tr class="separator:a6f0726dccdb362d62f42dcff5cd87942 inherit pub_methods_classgui__framework_1_1_base_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac652a1740402df821a2eb1f39f2f848a inherit pub_methods_classgui__framework_1_1_base_composite"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#ac652a1740402df821a2eb1f39f2f848a">setExitMode</a> (<a class="el" href="classgui__framework_1_1_base_composite.html#a438c1f5c9ef171bc01b2ac420fee985c">exitMode</a> <a class="el" href="classgui__framework_1_1_base_composite.html#a48f1d5a8df767f482e228ba04caaedea">mode</a>) final</td></tr>
+<tr class="separator:ac652a1740402df821a2eb1f39f2f848a inherit pub_methods_classgui__framework_1_1_base_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7801d0e1ed3955b33f29c8843cbb169e inherit pub_methods_classgui__framework_1_1_base_composite"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classgui__framework_1_1_base_composite.html#a438c1f5c9ef171bc01b2ac420fee985c">exitMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#a7801d0e1ed3955b33f29c8843cbb169e">getExitMode</a> () const final</td></tr>
+<tr class="separator:a7801d0e1ed3955b33f29c8843cbb169e inherit pub_methods_classgui__framework_1_1_base_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39539aed053e40905f147cd9da5003eb inherit pub_methods_classgui__framework_1_1_base_composite"><td class="memItemLeft" align="right" valign="top">virtual const std::vector&lt; std::unique_ptr&lt; <a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#a39539aed053e40905f147cd9da5003eb">getChildren</a> () const final</td></tr>
+<tr class="separator:a39539aed053e40905f147cd9da5003eb inherit pub_methods_classgui__framework_1_1_base_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29f3b6cabb0fe06c0bd2e9cab8de8ac1 inherit pub_methods_classgui__framework_1_1_base_composite"><td class="memItemLeft" align="right" valign="top">virtual const std::unique_ptr&lt; <a class="el" href="classgui__framework_1_1_menu.html">Menu</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#a29f3b6cabb0fe06c0bd2e9cab8de8ac1">getMainMenu</a> () const final</td></tr>
 <tr class="separator:a29f3b6cabb0fe06c0bd2e9cab8de8ac1 inherit pub_methods_classgui__framework_1_1_base_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02f66f4ee3ee1191b27bc29a765c0151 inherit pub_methods_classgui__framework_1_1_base_composite"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; <a class="el" href="classgui__framework_1_1_menu.html">Menu</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#a02f66f4ee3ee1191b27bc29a765c0151">getMainMenu</a> () final</td></tr>
@@ -201,10 +207,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad77a109aa5d3d108614a0ee07102ab30 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90444b6b79044a9c7a0d35fb2333c77d inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a90444b6b79044a9c7a0d35fb2333c77d">setDesiredY</a> (int <a class="el" href="classgui__framework_1_1_base_component.html#a3d15724eb33a896f282d5199f825d03b">desiredY</a>) final</td></tr>
 <tr class="separator:a90444b6b79044a9c7a0d35fb2333c77d inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a970624b3baad18e031f53ce52a0a3f45 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a970624b3baad18e031f53ce52a0a3f45">setExitMode</a> (<a class="el" href="classgui__framework_1_1_base_component.html#adadba923c5fcc012ce8b50e592080bcd">exitMode</a> <a class="el" href="classgui__framework_1_1_base_component.html#a55051bf0a8f4a9e513a7531fc9998145">mode</a>) final</td></tr>
-<tr class="separator:a970624b3baad18e031f53ce52a0a3f45 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9dba22822b7f830295e104fa27af284c inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a9dba22822b7f830295e104fa27af284c">setTextColor</a> (uint8_t red, uint8_t green, uint8_t blue)</td></tr>
 <tr class="separator:a9dba22822b7f830295e104fa27af284c inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cdf152fd93973ef43b7e44d72103ff4 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a3cdf152fd93973ef43b7e44d72103ff4">setStyles</a> (<a class="el" href="classgui__framework_1_1interfaces_1_1_i_styles.html">interfaces::IStyles</a> &amp;<a class="el" href="classgui__framework_1_1_base_component.html#aec8d3af6711b0c012f2f7f90cc7d4141">styles</a>) final</td></tr>
+<tr class="separator:a3cdf152fd93973ef43b7e44d72103ff4 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae01a3e23cbef564fc8d7e3d9ec26251b inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#ae01a3e23cbef564fc8d7e3d9ec26251b">getParent</a> () const final</td></tr>
 <tr class="separator:ae01a3e23cbef564fc8d7e3d9ec26251b inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab12780fecd5f22ec01d21a82d9ac87b7 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual HWND&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#ab12780fecd5f22ec01d21a82d9ac87b7">getHandle</a> () const final</td></tr>
@@ -227,43 +233,31 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9823e64caacc15b01f9cb589f2533788 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17fa3959fff385601eb76e6e5110e6f2 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a17fa3959fff385601eb76e6e5110e6f2">getDesiredY</a> () const final</td></tr>
 <tr class="separator:a17fa3959fff385601eb76e6e5110e6f2 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5053112354d8f89a6e426688e0bf150a inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classgui__framework_1_1_base_component.html#adadba923c5fcc012ce8b50e592080bcd">exitMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a5053112354d8f89a6e426688e0bf150a">getExitMode</a> () const final</td></tr>
-<tr class="separator:a5053112354d8f89a6e426688e0bf150a inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1719b34576b8ceb271cdb04611ed4523 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a1719b34576b8ceb271cdb04611ed4523">getId</a> () const final</td></tr>
 <tr class="separator:a1719b34576b8ceb271cdb04611ed4523 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b4685df88fa1edf51da5f29895961a4 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual COLORREF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a8b4685df88fa1edf51da5f29895961a4">getBackgroundColor</a> () const final</td></tr>
 <tr class="separator:a8b4685df88fa1edf51da5f29895961a4 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56df6db296a420576396a4629236aa41 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual COLORREF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a56df6db296a420576396a4629236aa41">getTextColor</a> () const final</td></tr>
 <tr class="separator:a56df6db296a420576396a4629236aa41 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a824af5aba3ff0c622d7452f0d9387f26 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67">smartPointerType</a>&lt; <a class="el" href="classgui__framework_1_1interfaces_1_1_i_styles.html">interfaces::IStyles</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a824af5aba3ff0c622d7452f0d9387f26">getStyles</a> () const final</td></tr>
+<tr class="separator:a824af5aba3ff0c622d7452f0d9387f26 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a274274f6f28b2e93f73544634b640d56 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a274274f6f28b2e93f73544634b640d56">~BaseComponent</a> ()</td></tr>
 <tr class="separator:a274274f6f28b2e93f73544634b640d56 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html">gui_framework::interfaces::ISerializable</a></td></tr>
-<tr class="memitem:a87182b138b089b88b869a22876076b1d inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#a87182b138b089b88b869a22876076b1d">ISerializable</a> ()</td></tr>
-<tr class="separator:a87182b138b089b88b869a22876076b1d inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b10a13a7dcad84dd2a7e6e885b45672 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#a2b10a13a7dcad84dd2a7e6e885b45672">setCodepage</a> (uint32_t codepage) final</td></tr>
-<tr class="separator:a2b10a13a7dcad84dd2a7e6e885b45672 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe1577de1770a62d3dcc6161c3475c7a inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#afe1577de1770a62d3dcc6161c3475c7a">getCodepage</a> () const final</td></tr>
-<tr class="separator:afe1577de1770a62d3dcc6161c3475c7a inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1028f9985162ed38dd68b2bdface7f93 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#a1028f9985162ed38dd68b2bdface7f93">ISerializable</a> ()=default</td></tr>
+<tr class="separator:a1028f9985162ed38dd68b2bdface7f93 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8feceb56504671870fc49a814a212516 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#a8feceb56504671870fc49a814a212516">~ISerializable</a> ()=default</td></tr>
 <tr class="separator:a8feceb56504671870fc49a814a212516 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
-Protected Member Functions</h2></td></tr>
-<tr class="memitem:a08e654370fed2a92f15cbc7b2ddfb108"><td class="memItemLeft" align="right" valign="top">virtual const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_window.html#a08e654370fed2a92f15cbc7b2ddfb108">getCreationType</a> () const override</td></tr>
-<tr class="separator:a08e654370fed2a92f15cbc7b2ddfb108"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_methods_classgui__framework_1_1_base_composite"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classgui__framework_1_1_base_composite')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classgui__framework_1_1_base_composite.html">gui_framework::BaseComposite</a></td></tr>
-<tr class="memitem:a909113930affed5ce99cb639151fac03 inherit pro_methods_classgui__framework_1_1_base_composite"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#a909113930affed5ce99cb639151fac03">preWindowMessagesHandle</a> (HWND <a class="el" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, UINT message, WPARAM wparam, LPARAM lparam, bool &amp;isUsed) override</td></tr>
-<tr class="separator:a909113930affed5ce99cb639151fac03 inherit pro_methods_classgui__framework_1_1_base_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52c78dcf2326abc5fb672827f0dc7c3d inherit pro_methods_classgui__framework_1_1_base_composite"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#a52c78dcf2326abc5fb672827f0dc7c3d">compositeWindowMessagesHandle</a> (HWND <a class="el" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, UINT message, WPARAM wparam, LPARAM lparam, bool &amp;isUsed)</td></tr>
-<tr class="separator:a52c78dcf2326abc5fb672827f0dc7c3d inherit pro_methods_classgui__framework_1_1_base_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab788d4dc310ef2e8eda23e9475da7ea7 inherit pro_methods_classgui__framework_1_1_base_composite"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#ab788d4dc310ef2e8eda23e9475da7ea7">windowMessagesHandle</a> (HWND <a class="el" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, UINT message, WPARAM wparam, LPARAM lparam, bool &amp;isUsed) final override</td></tr>
-<tr class="separator:ab788d4dc310ef2e8eda23e9475da7ea7 inherit pro_methods_classgui__framework_1_1_base_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a965b69cc50c3bdb70f420b3facae38d2"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, drawedImages &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_window.html#a965b69cc50c3bdb70f420b3facae38d2">pictures</a></td></tr>
 <tr class="separator:a965b69cc50c3bdb70f420b3facae38d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classgui__framework_1_1_base_composite"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classgui__framework_1_1_base_composite')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classgui__framework_1_1_base_composite.html">gui_framework::BaseComposite</a></td></tr>
+<tr class="memitem:adfd81e2967cce16cfef62b7be0d7dbf3 inherit pro_attribs_classgui__framework_1_1_base_composite"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#adfd81e2967cce16cfef62b7be0d7dbf3">windowFunctionName</a></td></tr>
+<tr class="separator:adfd81e2967cce16cfef62b7be0d7dbf3 inherit pro_attribs_classgui__framework_1_1_base_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48f1d5a8df767f482e228ba04caaedea inherit pro_attribs_classgui__framework_1_1_base_composite"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgui__framework_1_1_base_composite.html#a438c1f5c9ef171bc01b2ac420fee985c">exitMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#a48f1d5a8df767f482e228ba04caaedea">mode</a></td></tr>
+<tr class="separator:a48f1d5a8df767f482e228ba04caaedea inherit pro_attribs_classgui__framework_1_1_base_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ada7cbe6d3d5b01e621fa47ee040c9c inherit pro_attribs_classgui__framework_1_1_base_composite"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::unique_ptr&lt; <a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#a8ada7cbe6d3d5b01e621fa47ee040c9c">children</a></td></tr>
 <tr class="separator:a8ada7cbe6d3d5b01e621fa47ee040c9c inherit pro_attribs_classgui__framework_1_1_base_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53920c5848be5ec370aaad3f055ad8a8 inherit pro_attribs_classgui__framework_1_1_base_composite"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; HMENU, <a class="el" href="classgui__framework_1_1_menu.html">Menu</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#a53920c5848be5ec370aaad3f055ad8a8">popupMenus</a></td></tr>
@@ -295,8 +289,6 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a45714d8af7df9cc43ed7a0acc02a7c9f inherit pro_attribs_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d15724eb33a896f282d5199f825d03b inherit pro_attribs_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a3d15724eb33a896f282d5199f825d03b">desiredY</a></td></tr>
 <tr class="separator:a3d15724eb33a896f282d5199f825d03b inherit pro_attribs_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55051bf0a8f4a9e513a7531fc9998145 inherit pro_attribs_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgui__framework_1_1_base_component.html#adadba923c5fcc012ce8b50e592080bcd">exitMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a55051bf0a8f4a9e513a7531fc9998145">mode</a></td></tr>
-<tr class="separator:a55051bf0a8f4a9e513a7531fc9998145 inherit pro_attribs_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24a743c99e4ca9bd6a5e1ea2fbd3aea7 inherit pro_attribs_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a24a743c99e4ca9bd6a5e1ea2fbd3aea7">id</a></td></tr>
 <tr class="separator:a24a743c99e4ca9bd6a5e1ea2fbd3aea7 inherit pro_attribs_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5a56227ac3689163f958e778f0df1ca inherit pro_attribs_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">COLORREF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#aa5a56227ac3689163f958e778f0df1ca">backgroundColor</a></td></tr>
@@ -308,11 +300,11 @@ Protected Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_types_classgui__framework_1_1_base_component"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classgui__framework_1_1_base_component')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></td></tr>
-<tr class="memitem:adadba923c5fcc012ce8b50e592080bcd inherit pub_types_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#adadba923c5fcc012ce8b50e592080bcd">exitMode</a> { <a class="el" href="classgui__framework_1_1_base_component.html#adadba923c5fcc012ce8b50e592080bcda3619de6b97539298d3d046e6dbbe48cc">destroyWindow</a>
-, <a class="el" href="classgui__framework_1_1_base_component.html#adadba923c5fcc012ce8b50e592080bcdadbd73c2b545209688ed794c0d5413d5a">quit</a>
+<tr class="inherit_header pub_types_classgui__framework_1_1_base_composite"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classgui__framework_1_1_base_composite')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classgui__framework_1_1_base_composite.html">gui_framework::BaseComposite</a></td></tr>
+<tr class="memitem:a438c1f5c9ef171bc01b2ac420fee985c inherit pub_types_classgui__framework_1_1_base_composite"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#a438c1f5c9ef171bc01b2ac420fee985c">exitMode</a> { <a class="el" href="classgui__framework_1_1_base_composite.html#a438c1f5c9ef171bc01b2ac420fee985ca3619de6b97539298d3d046e6dbbe48cc">destroyWindow</a>
+, <a class="el" href="classgui__framework_1_1_base_composite.html#a438c1f5c9ef171bc01b2ac420fee985cadbd73c2b545209688ed794c0d5413d5a">quit</a>
  }</td></tr>
-<tr class="separator:adadba923c5fcc012ce8b50e592080bcd inherit pub_types_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a438c1f5c9ef171bc01b2ac420fee985c inherit pub_types_classgui__framework_1_1_base_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_methods_classgui__framework_1_1_base_component"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classgui__framework_1_1_base_component')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></td></tr>
 <tr class="memitem:ac823322fa8ec6712f4585239835b3fdb inherit pub_static_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#ac823322fa8ec6712f4585239835b3fdb">runFunctionAsync</a> (const std::function&lt; void()&gt; &amp;callable, const std::function&lt; void()&gt; &amp;callback=nullptr) noexcept</td></tr>
 <tr class="memdesc:ac823322fa8ec6712f4585239835b3fdb inherit pub_static_methods_classgui__framework_1_1_base_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add task to thread pool.  <a href="classgui__framework_1_1_base_component.html#ac823322fa8ec6712f4585239835b3fdb">More...</a><br /></td></tr>
@@ -320,6 +312,16 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a377a3b392aa9778b11347f3b69acbd42 inherit pub_static_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a377a3b392aa9778b11347f3b69acbd42">runFunctionAsync</a> (std::function&lt; void()&gt; &amp;&amp;callable, const std::function&lt; void()&gt; &amp;callback=nullptr) noexcept</td></tr>
 <tr class="memdesc:a377a3b392aa9778b11347f3b69acbd42 inherit pub_static_methods_classgui__framework_1_1_base_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add task to thread pool.  <a href="classgui__framework_1_1_base_component.html#a377a3b392aa9778b11347f3b69acbd42">More...</a><br /></td></tr>
 <tr class="separator:a377a3b392aa9778b11347f3b69acbd42 inherit pub_static_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_static_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classgui__framework_1_1interfaces_1_1_i_serializable')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html">gui_framework::interfaces::ISerializable</a></td></tr>
+<tr class="memitem:ae3b3d5735f3d842d4f1b438a3f4eb33e inherit pub_static_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#ae3b3d5735f3d842d4f1b438a3f4eb33e">getCodepage</a> ()</td></tr>
+<tr class="separator:ae3b3d5735f3d842d4f1b438a3f4eb33e inherit pub_static_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classgui__framework_1_1_base_composite"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classgui__framework_1_1_base_composite')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classgui__framework_1_1_base_composite.html">gui_framework::BaseComposite</a></td></tr>
+<tr class="memitem:a909113930affed5ce99cb639151fac03 inherit pro_methods_classgui__framework_1_1_base_composite"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#a909113930affed5ce99cb639151fac03">preWindowMessagesHandle</a> (HWND <a class="el" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, UINT message, WPARAM wparam, LPARAM lparam, bool &amp;isUsed) override</td></tr>
+<tr class="separator:a909113930affed5ce99cb639151fac03 inherit pro_methods_classgui__framework_1_1_base_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52c78dcf2326abc5fb672827f0dc7c3d inherit pro_methods_classgui__framework_1_1_base_composite"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#a52c78dcf2326abc5fb672827f0dc7c3d">compositeWindowMessagesHandle</a> (HWND <a class="el" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, UINT message, WPARAM wparam, LPARAM lparam, bool &amp;isUsed)</td></tr>
+<tr class="separator:a52c78dcf2326abc5fb672827f0dc7c3d inherit pro_methods_classgui__framework_1_1_base_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab788d4dc310ef2e8eda23e9475da7ea7 inherit pro_methods_classgui__framework_1_1_base_composite"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#ab788d4dc310ef2e8eda23e9475da7ea7">windowMessagesHandle</a> (HWND <a class="el" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, UINT message, WPARAM wparam, LPARAM lparam, bool &amp;isUsed) final override</td></tr>
+<tr class="separator:ab788d4dc310ef2e8eda23e9475da7ea7 inherit pro_methods_classgui__framework_1_1_base_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base class for composite windows. </p>
@@ -402,7 +404,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_window_8cpp_source.html#l00042">42</a> of file <a class="el" href="_base_window_8cpp_source.html">BaseWindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_window_8cpp_source.html#l00037">37</a> of file <a class="el" href="_base_window_8cpp_source.html">BaseWindow.cpp</a>.</p>
 
 </div>
 </div>
@@ -497,7 +499,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_window_8cpp_source.html#l00084">84</a> of file <a class="el" href="_base_window_8cpp_source.html">BaseWindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_window_8cpp_source.html#l00079">79</a> of file <a class="el" href="_base_window_8cpp_source.html">BaseWindow.cpp</a>.</p>
 
 </div>
 </div>
@@ -526,12 +528,12 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Clear window and draw all images. </p>
 
-<p class="definition">Definition at line <a class="el" href="_base_window_8cpp_source.html#l00107">107</a> of file <a class="el" href="_base_window_8cpp_source.html">BaseWindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_window_8cpp_source.html#l00102">102</a> of file <a class="el" href="_base_window_8cpp_source.html">BaseWindow.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a08e654370fed2a92f15cbc7b2ddfb108"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08e654370fed2a92f15cbc7b2ddfb108">&#9670;&nbsp;</a></span>getCreationType()</h2>
+<a id="a8134e2d281b664c55d754f4998e5518a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8134e2d281b664c55d754f4998e5518a">&#9670;&nbsp;</a></span>getHash()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -540,7 +542,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const string &amp; gui_framework::BaseWindow::getCreationType </td>
+          <td class="memname">virtual size_t gui_framework::BaseWindow::getHash </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -548,16 +550,17 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="classgui__framework_1_1_base_composite.html#ad9147db4e3cca4a0694a3b262044edef">gui_framework::BaseComposite</a>.</p>
+<p>Used as key in creators. </p>
+<dl class="section return"><dt>Returns</dt><dd>typeid().hash_code() </dd></dl>
 
-<p>Reimplemented in <a class="el" href="classgui__framework_1_1_separate_window.html#a290df4aefc901267912369167fd17e5f">gui_framework::SeparateWindow</a>, <a class="el" href="classgui__framework_1_1_child_window.html#a917a49f893aa98b7fc15f099508838df">gui_framework::ChildWindow</a>, <a class="el" href="classgui__framework_1_1_base_separate_window.html#a4d698c6c9c998ecfb4d2969fbaa48c11">gui_framework::BaseSeparateWindow</a>, and <a class="el" href="classgui__framework_1_1_base_child_window.html#a117fe86056e57958b1d62d1b49cb09e3">gui_framework::BaseChildWindow</a>.</p>
+<p>Implements <a class="el" href="classgui__framework_1_1_base_composite.html#a50307db942e7e39d97c694aaf274627f">gui_framework::BaseComposite</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_base_window_8cpp_source.html#l00037">37</a> of file <a class="el" href="_base_window_8cpp_source.html">BaseWindow.cpp</a>.</p>
+<p>Implemented in <a class="el" href="classgui__framework_1_1_base_separate_window.html#a866bafe1c4c8b46322412bee80d6daaa">gui_framework::BaseSeparateWindow</a>, <a class="el" href="classgui__framework_1_1_base_child_window.html#aebde3ae307f47d1155fe30d0f42133e3">gui_framework::BaseChildWindow</a>, <a class="el" href="classgui__framework_1_1_separate_window.html#a995b4f6e6d9e8e960c4d3dcd91ed83d0">gui_framework::SeparateWindow</a>, and <a class="el" href="classgui__framework_1_1_child_window.html#a6ead5760721b5cf9f7bbe5aa104b719b">gui_framework::ChildWindow</a>.</p>
 
 </div>
 </div>
@@ -586,7 +589,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classgui__framework_1_1_base_composite.html#a03f0ef2ce7916eb5e8833831fd24bd1f">gui_framework::BaseComposite</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_base_window_8cpp_source.html#l00158">158</a> of file <a class="el" href="_base_window_8cpp_source.html">BaseWindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_window_8cpp_source.html#l00153">153</a> of file <a class="el" href="_base_window_8cpp_source.html">BaseWindow.cpp</a>.</p>
 
 </div>
 </div>
@@ -653,7 +656,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_window_8cpp_source.html#l00059">59</a> of file <a class="el" href="_base_window_8cpp_source.html">BaseWindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_window_8cpp_source.html#l00054">54</a> of file <a class="el" href="_base_window_8cpp_source.html">BaseWindow.cpp</a>.</p>
 
 </div>
 </div>
@@ -707,7 +710,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_window_8cpp_source.html#l00098">98</a> of file <a class="el" href="_base_window_8cpp_source.html">BaseWindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_window_8cpp_source.html#l00093">93</a> of file <a class="el" href="_base_window_8cpp_source.html">BaseWindow.cpp</a>.</p>
 
 </div>
 </div>
@@ -753,7 +756,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classgui__framework_1_1_base_composite.html#a675b7528598adfbc93e6183fad8de216">gui_framework::BaseComposite</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_base_window_8cpp_source.html#l00151">151</a> of file <a class="el" href="_base_window_8cpp_source.html">BaseWindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_window_8cpp_source.html#l00146">146</a> of file <a class="el" href="_base_window_8cpp_source.html">BaseWindow.cpp</a>.</p>
 
 </div>
 </div>

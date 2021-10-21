@@ -22,7 +22,7 @@ var classgui__framework_1_1_base_dialog_box =
     ] ],
     [ "BaseDialogBox", "classgui__framework_1_1_base_dialog_box.html#adcca7270937f5f330d16beab61780205", null ],
     [ "~BaseDialogBox", "classgui__framework_1_1_base_dialog_box.html#a449b12f85afc3a3e36bf4af9ca5d83ef", null ],
-    [ "getCreationType", "classgui__framework_1_1_base_dialog_box.html#ace35f5cb41776c757c3ae82a68a53800", null ],
+    [ "getHash", "classgui__framework_1_1_base_dialog_box.html#a222e3ab69288979ba8332f1405c0ec6e", null ],
     [ "hide", "classgui__framework_1_1_base_dialog_box.html#ab42fa2e33c4941adc4d211e47f237fb4", null ],
     [ "show", "classgui__framework_1_1_base_dialog_box.html#a69e8591d39fa0702815f7c43fd4563b1", null ]
 ];

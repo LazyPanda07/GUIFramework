@@ -7,6 +7,7 @@ namespace gui_framework
 {
 	namespace deserializers
 	{
+		/// @brief Deserialize StaticControl from JSON
 		class GUI_FRAMEWORK_API StaticControlDeserializer : public interfaces::IDeserializer
 		{
 		public:

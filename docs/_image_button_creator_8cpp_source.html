@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GUIFramework: GUIFramework/src/BaseComponents/Creators/Buttons/ImageButtonCreator.cpp Source File</title>
+<title>GUIFramework: GUIFramework/src/Utility/Creators/Components/Buttons/ImageButtonCreator.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.8.1-beta</span>
+   &#160;<span id="projectnumber">0.8.3-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -103,8 +103,8 @@ $(document).ready(function(){initNavTree('_image_button_creator_8cpp_source.html
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            <span class="keyword">auto</span> [text, pathToImage, imageWidth, imageHeight, type, onClick, onClickFunctionName, onClickFunctionModule] = any_cast&lt;tuple&lt;wstring, filesystem::path, uint16_t, uint16_t, <a class="code" href="classgui__framework_1_1_image_button.html#a33f6314ec376eb78a1b8131f98981073">ImageButton::drawingType</a>, <span class="keyword">function</span>&lt;void()&gt;, string, <span class="keywordtype">string</span>&gt;&gt;(additionalData);</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            </div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <span class="keywordflow">return</span> onClickFunctionName.empty() ?</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                <span class="keyword">new</span> <a class="code" href="classgui__framework_1_1_image_button.html">ImageButton</a>(windowName, pathToImage, type, imageWidth, imageHeight, settings.<a class="code" href="structgui__framework_1_1utility_1_1_component_settings.html#a6838816279065fadae087a1e1ec0a3e7">x</a>, settings.<a class="code" href="structgui__framework_1_1utility_1_1_component_settings.html#a3d3e5c4eb6a404a2c6b0888ff6fbfdb2">y</a>, parent, onClick, settings.<a class="code" href="structgui__framework_1_1utility_1_1_component_settings.html#a16e36a9bbf7476a9ba9d215ddd8b0ce8">width</a>, settings.<a class="code" href="structgui__framework_1_1utility_1_1_component_settings.html#a64055dca192a579b9b51d29ad80a3bb1">height</a>) :</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                <span class="keyword">new</span> <a class="code" href="classgui__framework_1_1_image_button.html">ImageButton</a>(windowName, pathToImage, type, imageWidth, imageHeight, settings.<a class="code" href="structgui__framework_1_1utility_1_1_component_settings.html#a6838816279065fadae087a1e1ec0a3e7">x</a>, settings.<a class="code" href="structgui__framework_1_1utility_1_1_component_settings.html#a3d3e5c4eb6a404a2c6b0888ff6fbfdb2">y</a>, parent, onClickFunctionName, onClickFunctionModule, settings.<a class="code" href="structgui__framework_1_1utility_1_1_component_settings.html#a16e36a9bbf7476a9ba9d215ddd8b0ce8">width</a>, settings.<a class="code" href="structgui__framework_1_1utility_1_1_component_settings.html#a64055dca192a579b9b51d29ad80a3bb1">height</a>);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                <span class="keyword">new</span> <a class="code" href="classgui__framework_1_1_image_button.html">ImageButton</a>(windowName, pathToImage, type, imageWidth, imageHeight, settings, parent, onClick) :</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                <span class="keyword">new</span> <a class="code" href="classgui__framework_1_1_image_button.html">ImageButton</a>(windowName, pathToImage, type, imageWidth, imageHeight, settings, parent, onClickFunctionName, onClickFunctionModule);</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        }</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    }</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
@@ -116,16 +116,12 @@ $(document).ready(function(){initNavTree('_image_button_creator_8cpp_source.html
 <div class="ttc" id="aheaders_8h_html"><div class="ttname"><a href="headers_8h.html">headers.h</a></div></div>
 <div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00016">BaseComponent.cpp:17</a></div></div>
 <div class="ttc" id="astructgui__framework_1_1utility_1_1_component_settings_html"><div class="ttname"><a href="structgui__framework_1_1utility_1_1_component_settings.html">gui_framework::utility::ComponentSettings</a></div><div class="ttdoc">All settings for windows.</div><div class="ttdef"><b>Definition:</b> <a href="_component_settings_8h_source.html#l00010">ComponentSettings.h:11</a></div></div>
-<div class="ttc" id="astructgui__framework_1_1utility_1_1_component_settings_html_a16e36a9bbf7476a9ba9d215ddd8b0ce8"><div class="ttname"><a href="structgui__framework_1_1utility_1_1_component_settings.html#a16e36a9bbf7476a9ba9d215ddd8b0ce8">gui_framework::utility::ComponentSettings::width</a></div><div class="ttdeci">uint16_t width</div><div class="ttdef"><b>Definition:</b> <a href="_component_settings_8h_source.html#l00014">ComponentSettings.h:14</a></div></div>
-<div class="ttc" id="astructgui__framework_1_1utility_1_1_component_settings_html_a3d3e5c4eb6a404a2c6b0888ff6fbfdb2"><div class="ttname"><a href="structgui__framework_1_1utility_1_1_component_settings.html#a3d3e5c4eb6a404a2c6b0888ff6fbfdb2">gui_framework::utility::ComponentSettings::y</a></div><div class="ttdeci">int y</div><div class="ttdef"><b>Definition:</b> <a href="_component_settings_8h_source.html#l00013">ComponentSettings.h:13</a></div></div>
-<div class="ttc" id="astructgui__framework_1_1utility_1_1_component_settings_html_a64055dca192a579b9b51d29ad80a3bb1"><div class="ttname"><a href="structgui__framework_1_1utility_1_1_component_settings.html#a64055dca192a579b9b51d29ad80a3bb1">gui_framework::utility::ComponentSettings::height</a></div><div class="ttdeci">uint16_t height</div><div class="ttdef"><b>Definition:</b> <a href="_component_settings_8h_source.html#l00015">ComponentSettings.h:15</a></div></div>
-<div class="ttc" id="astructgui__framework_1_1utility_1_1_component_settings_html_a6838816279065fadae087a1e1ec0a3e7"><div class="ttname"><a href="structgui__framework_1_1utility_1_1_component_settings.html#a6838816279065fadae087a1e1ec0a3e7">gui_framework::utility::ComponentSettings::x</a></div><div class="ttdeci">int x</div><div class="ttdef"><b>Definition:</b> <a href="_component_settings_8h_source.html#l00012">ComponentSettings.h:12</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_2f1c88f5c534480c246abfedb48e5a6c.html">GUIFramework</a></li><li class="navelem"><a class="el" href="dir_474822148e798388a75af55d9bebad71.html">src</a></li><li class="navelem"><a class="el" href="dir_233239e9c3cdaad21f1975796fd347f8.html">BaseComponents</a></li><li class="navelem"><a class="el" href="dir_87c8b2a138c7456ef8fc9905ca0e826d.html">Creators</a></li><li class="navelem"><a class="el" href="dir_634d41d7f0b538f629aef2177693b519.html">Buttons</a></li><li class="navelem"><a class="el" href="_image_button_creator_8cpp.html">ImageButtonCreator.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_2f1c88f5c534480c246abfedb48e5a6c.html">GUIFramework</a></li><li class="navelem"><a class="el" href="dir_474822148e798388a75af55d9bebad71.html">src</a></li><li class="navelem"><a class="el" href="dir_1b8d12f05f344750fc083bc1c78427be.html">Utility</a></li><li class="navelem"><a class="el" href="dir_5037ac9e68c45527170a68854cf80abd.html">Creators</a></li><li class="navelem"><a class="el" href="dir_c8fe6494a1779fe84de25ec9e7d14b25.html">Components</a></li><li class="navelem"><a class="el" href="dir_fe932d67c7ef1c552e1070da71f90e64.html">Buttons</a></li><li class="navelem"><a class="el" href="_image_button_creator_8cpp.html">ImageButtonCreator.cpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

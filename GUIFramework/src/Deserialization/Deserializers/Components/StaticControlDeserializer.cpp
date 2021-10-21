@@ -19,7 +19,7 @@ namespace gui_framework
 
 			StaticControl* result = nullptr;
 			uint32_t codepage = interfaces::ISerializable::getCodepage();
-			const unique_ptr<utility::BaseComponentCreator>& creator = GUIFramework::get().getCreators().at(utility::getTypeHash<StaticControl>());
+			const smartPointerType<utility::BaseComponentCreator>& creator = GUIFramework::get().getCreators().at(utility::getTypeHash<StaticControl>());
 			utility::AdditionalCreationData<StaticControl> creationData(utility::to_wstring(description->getString("text"), codepage));
 
 			result = static_cast<StaticControl*>(creator->create(utility::to_wstring(componentName, codepage), parser.settings, creationData.getData(), parent));

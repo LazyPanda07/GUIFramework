@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['notimplemented_1284',['NotImplemented',['../classgui__framework_1_1exceptions_1_1_not_implemented.html',1,'gui_framework::exceptions']]]
+  ['notimplemented_1502',['NotImplemented',['../classgui__framework_1_1exceptions_1_1_not_implemented.html',1,'gui_framework::exceptions']]]
 ];

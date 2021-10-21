@@ -19,7 +19,7 @@ namespace gui_framework
 
 			CheckBox* result = nullptr;
 			uint32_t codepage = interfaces::ISerializable::getCodepage();
-			const unique_ptr<utility::BaseComponentCreator>& creator = GUIFramework::get().getCreators().at(utility::getTypeHash<CheckBox>());
+			const smartPointerType<utility::BaseComponentCreator>& creator = GUIFramework::get().getCreators().at(utility::getTypeHash<CheckBox>());
 			utility::AdditionalCreationData<CheckBox> creationData
 			(
 				parser.text,

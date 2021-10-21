@@ -6,6 +6,7 @@ namespace gui_framework
 {
 	namespace parsers
 	{
+		/// @brief Parse ImageButton specific properties
 		struct GUI_FRAMEWORK_API ImageButtonParser : public ButtonParser
 		{
 			uint16_t imageWidth;

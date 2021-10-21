@@ -9,6 +9,7 @@ var classgui__framework_1_1_base_list_box =
     [ "findSubstring", "classgui__framework_1_1_base_list_box.html#ac9ff8d86ee17333146cbbc2883eb8abd", null ],
     [ "getColumnsWidth", "classgui__framework_1_1_base_list_box.html#a5da93436444094329f5a59e3054ed477", null ],
     [ "getCurrentSelectionIndex", "classgui__framework_1_1_base_list_box.html#afd962bbc263e8f66dc03751f18b189cc", null ],
+    [ "getHash", "classgui__framework_1_1_base_list_box.html#a5d61fffcc5a7993a88c25677cad60ba1", null ],
     [ "getItemsHeight", "classgui__framework_1_1_base_list_box.html#aca4ef4d9a0f97e39288b59540125d0c8", null ],
     [ "getStructure", "classgui__framework_1_1_base_list_box.html#a6ae2994ceb712fed4c87028bfc074f24", null ],
     [ "getValue", "classgui__framework_1_1_base_list_box.html#a58fc839753afbaa623cb140339149744", null ],

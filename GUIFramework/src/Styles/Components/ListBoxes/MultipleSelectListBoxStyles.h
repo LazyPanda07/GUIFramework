@@ -11,7 +11,7 @@ namespace gui_framework
 		class GUI_FRAMEWORK_API MultipleSelectListBoxStyles : public ListBoxStyles
 		{
 		public:
-			MultipleSelectListBoxStyles();
+			MultipleSelectListBoxStyles(bool isSorting = false);
 
 			~MultipleSelectListBoxStyles() = default;
 		};

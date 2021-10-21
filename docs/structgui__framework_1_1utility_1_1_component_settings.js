@@ -1,5 +1,6 @@
 var structgui__framework_1_1utility_1_1_component_settings =
 [
+    [ "ComponentSettings", "structgui__framework_1_1utility_1_1_component_settings.html#aa9739c43318eada8abf08ed32c658c91", null ],
     [ "ComponentSettings", "structgui__framework_1_1utility_1_1_component_settings.html#a7f44eeff1da55990aec07336893c6352", null ],
     [ "~ComponentSettings", "structgui__framework_1_1utility_1_1_component_settings.html#ae7ce7a444d046726b5cc6d3a54570ffe", null ],
     [ "height", "structgui__framework_1_1utility_1_1_component_settings.html#a64055dca192a579b9b51d29ad80a3bb1", null ],
