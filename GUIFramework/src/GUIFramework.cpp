@@ -90,6 +90,9 @@
 #include "Deserialization/Deserializers/Components/ComboBoxes/DropDownListComboBoxDeserializer.h"
 #include "Deserialization/Deserializers/Components/ComboBoxes/SimpleComboBoxDeserializer.h"
 
+#include "Deserialization/Deserializers/Components/ListBoxes/ListBoxDeserializer.h"
+#include "Deserialization/Deserializers/Components/ListBoxes/MultipleSelectListBoxDeserializer.h"
+
 using namespace std;
 
 template<>
@@ -229,9 +232,9 @@ namespace gui_framework
 #pragma endregion
 
 #pragma region ListBoxes
-		// this->addDeserializer<ListBox, deserializers::ListBoxDeserializer>();
-		// 
-		// this->addDeserializer<MultipleSelectListBox, deserializers::MultipleSelectListBoxDeserializer>();
+		this->addDeserializer<ListBox, deserializers::ListBoxDeserializer>();
+		
+		this->addDeserializer<MultipleSelectListBox, deserializers::MultipleSelectListBoxDeserializer>();
 #pragma endregion
 
 #pragma region ListViews

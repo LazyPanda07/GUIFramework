@@ -119,7 +119,7 @@ namespace gui_framework
 	};
 }
 
-#define CREATE_DEFAULT_WINDOW_FUNCTION(className) extern "C" __declspec(dllexport) LRESULT className##WindowFunction (HWND handle, UINT message, WPARAM wparam, LPARAM lparam)  \
+#define CREATE_DEFAULT_WINDOW_FUNCTION(className) extern "C" __declspec(dllexport) LRESULT className##WindowFunction(HWND handle, UINT message, WPARAM wparam, LPARAM lparam)  \
 { \
 	static gui_framework::BaseComposite* topLevelWindow = nullptr; \
 	\

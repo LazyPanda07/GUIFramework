@@ -12,14 +12,11 @@ namespace gui_framework
 		(
 			listBoxName,
 			settings,
-			styles::DefaultListBoxStyles(),
+			styles::DefaultListBoxStyles(isSorting),
 			parent
 		)
 	{
-		if (isSorting)
-		{
-			utility::appendStyle(handle, LBS_SORT);
-		}
+		
 	}
 
 	size_t ListBox::getHash() const
