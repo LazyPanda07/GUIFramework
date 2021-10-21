@@ -18,6 +18,8 @@ var classgui__framework_1_1_base_rich_edit =
     [ "findSubstring", "classgui__framework_1_1_base_rich_edit.html#aca2e15966dcf9d386342d3affdcd2e63", null ],
     [ "getAutoURLDetect", "classgui__framework_1_1_base_rich_edit.html#ad9c813e5ba0b4cae075b9ea89101f835", null ],
     [ "getCallback", "classgui__framework_1_1_base_rich_edit.html#ab95e2bc9a36410a59b9e3f75f27f2455", null ],
+    [ "getHash", "classgui__framework_1_1_base_rich_edit.html#a25f9f9dd15313accd3148d4c23df4e13", null ],
+    [ "getIsMultiLine", "classgui__framework_1_1_base_rich_edit.html#a39a2f6b54e37ff844e1a11a7db9d1521", null ],
     [ "getSelectedText", "classgui__framework_1_1_base_rich_edit.html#a2d321e91aa2d43d81381f0148eecf7ad", null ],
     [ "getStructure", "classgui__framework_1_1_base_rich_edit.html#a5efc3f658002087aee204a5f95a52ada", null ],
     [ "removeUrlDetectEvent", "classgui__framework_1_1_base_rich_edit.html#acf50e2d2bfa111189ab21415b620a85b", null ],
@@ -27,5 +29,7 @@ var classgui__framework_1_1_base_rich_edit =
     [ "setTextColor", "classgui__framework_1_1_base_rich_edit.html#a09d6d56819fc8fc9caaf1b39e962f910", null ],
     [ "windowMessagesHandle", "classgui__framework_1_1_base_rich_edit.html#a5b0e9edd94997732cc8b0f6533e9b27a", null ],
     [ "callbacks", "classgui__framework_1_1_base_rich_edit.html#ab3e563fb3cc2e5ea31d8c7178c8c0f14", null ],
-    [ "callbacksFunctionNamesAndModules", "classgui__framework_1_1_base_rich_edit.html#a01d1b1cbd3861ff40520b3d0c1ab06c8", null ]
+    [ "callbacksFunctionNamesAndModules", "classgui__framework_1_1_base_rich_edit.html#a01d1b1cbd3861ff40520b3d0c1ab06c8", null ],
+    [ "isMultiLine", "classgui__framework_1_1_base_rich_edit.html#ac7b0ca2bc8b88c5f3e1d402ec2359f81", null ],
+    [ "limitTextCount", "classgui__framework_1_1_base_rich_edit.html#ad77bef0c96ae4cdf7dacb1c5c3e822c7", null ]
 ];

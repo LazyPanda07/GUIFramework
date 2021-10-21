@@ -53,9 +53,32 @@ var hierarchy =
       [ "gui_framework::utility::TextListViewCreator", "classgui__framework_1_1utility_1_1_text_list_view_creator.html", null ],
       [ "gui_framework::utility::VerticalTrackbarControlCreator", "classgui__framework_1_1utility_1_1_vertical_trackbar_control_creator.html", null ]
     ] ],
+    [ "gui_framework::parsers::BaseComponentParser", "structgui__framework_1_1parsers_1_1_base_component_parser.html", [
+      [ "gui_framework::parsers::BaseCompositeParser", "structgui__framework_1_1parsers_1_1_base_composite_parser.html", [
+        [ "gui_framework::parsers::GroupBoxParser", "structgui__framework_1_1parsers_1_1_group_box_parser.html", null ]
+      ] ],
+      [ "gui_framework::parsers::ButtonParser", "structgui__framework_1_1parsers_1_1_button_parser.html", [
+        [ "gui_framework::parsers::CheckBoxParser", "structgui__framework_1_1parsers_1_1_check_box_parser.html", null ],
+        [ "gui_framework::parsers::ImageButtonParser", "structgui__framework_1_1parsers_1_1_image_button_parser.html", null ]
+      ] ],
+      [ "gui_framework::parsers::ComboBoxParser", "structgui__framework_1_1parsers_1_1_combo_box_parser.html", null ],
+      [ "gui_framework::parsers::IconListViewParser", "structgui__framework_1_1parsers_1_1_icon_list_view_parser.html", [
+        [ "gui_framework::parsers::TextIconListViewParser", "structgui__framework_1_1parsers_1_1_text_icon_list_view_parser.html", null ]
+      ] ],
+      [ "gui_framework::parsers::InfiniteProgressBarParser", "structgui__framework_1_1parsers_1_1_infinite_progress_bar_parser.html", null ],
+      [ "gui_framework::parsers::ListBoxParser", "structgui__framework_1_1parsers_1_1_list_box_parser.html", null ],
+      [ "gui_framework::parsers::ProgressBarParser", "structgui__framework_1_1parsers_1_1_progress_bar_parser.html", null ],
+      [ "gui_framework::parsers::RichEditParser", "structgui__framework_1_1parsers_1_1_rich_edit_parser.html", null ],
+      [ "gui_framework::parsers::TabControlParser", "structgui__framework_1_1parsers_1_1_tab_control_parser.html", null ],
+      [ "gui_framework::parsers::TextListViewParser", "structgui__framework_1_1parsers_1_1_text_list_view_parser.html", [
+        [ "gui_framework::parsers::TextIconListViewParser", "structgui__framework_1_1parsers_1_1_text_icon_list_view_parser.html", null ]
+      ] ],
+      [ "gui_framework::parsers::TrackbarControlParser", "structgui__framework_1_1parsers_1_1_trackbar_control_parser.html", null ]
+    ] ],
     [ "gui_framework::utility::ComponentSettings", "structgui__framework_1_1utility_1_1_component_settings.html", null ],
     [ "gui_framework::DialogBox::DialogBoxBuilder", "classgui__framework_1_1_dialog_box_1_1_dialog_box_builder.html", null ],
     [ "gui_framework::GUIFramework", "classgui__framework_1_1_g_u_i_framework.html", null ],
+    [ "hash< set< uint32_t > >", "structhash_3_01set_3_01uint32__t_01_4_01_4.html", null ],
     [ "gui_framework::GUIFramework::hotkeyData", "structgui__framework_1_1_g_u_i_framework_1_1hotkey_data.html", null ],
     [ "gui_framework::interfaces::IBaseConstForwardIterator< T, IBaseConstIteratorSubclass >", "classgui__framework_1_1interfaces_1_1_i_base_const_forward_iterator.html", [
       [ "gui_framework::interfaces::IBaseForwardIterator< BaseComponent, composite_forward_iterator >", "classgui__framework_1_1interfaces_1_1_i_base_forward_iterator.html", [
@@ -97,6 +120,33 @@ var hierarchy =
           [ "gui_framework::TextListView", "classgui__framework_1_1_text_list_view.html", null ]
         ] ]
       ] ]
+    ] ],
+    [ "gui_framework::interfaces::IDeserializer", "classgui__framework_1_1interfaces_1_1_i_deserializer.html", [
+      [ "gui_framework::deserializers::ButtonDeserializer", "classgui__framework_1_1deserializers_1_1_button_deserializer.html", null ],
+      [ "gui_framework::deserializers::CheckBoxDeserializer", "classgui__framework_1_1deserializers_1_1_check_box_deserializer.html", null ],
+      [ "gui_framework::deserializers::ChildWindowDeserializer", "classgui__framework_1_1deserializers_1_1_child_window_deserializer.html", null ],
+      [ "gui_framework::deserializers::DropDownComboBoxDeserializer", "classgui__framework_1_1deserializers_1_1_drop_down_combo_box_deserializer.html", null ],
+      [ "gui_framework::deserializers::DropDownListComboBoxDeserializer", "classgui__framework_1_1deserializers_1_1_drop_down_list_combo_box_deserializer.html", null ],
+      [ "gui_framework::deserializers::EditControlDeserializer", "classgui__framework_1_1deserializers_1_1_edit_control_deserializer.html", null ],
+      [ "gui_framework::deserializers::GroupBoxDeserializer", "classgui__framework_1_1deserializers_1_1_group_box_deserializer.html", null ],
+      [ "gui_framework::deserializers::HorizontalTrackbarControlDeserializer", "classgui__framework_1_1deserializers_1_1_horizontal_trackbar_control_deserializer.html", null ],
+      [ "gui_framework::deserializers::IconListViewDeserializer", "classgui__framework_1_1deserializers_1_1_icon_list_view_deserializer.html", null ],
+      [ "gui_framework::deserializers::ImageButtonDeserializer", "classgui__framework_1_1deserializers_1_1_image_button_deserializer.html", null ],
+      [ "gui_framework::deserializers::InfiniteProgressBarDeserializer", "classgui__framework_1_1deserializers_1_1_infinite_progress_bar_deserializer.html", null ],
+      [ "gui_framework::deserializers::ListBoxDeserializer", "classgui__framework_1_1deserializers_1_1_list_box_deserializer.html", null ],
+      [ "gui_framework::deserializers::ListIconListViewDeserializer", "classgui__framework_1_1deserializers_1_1_list_icon_list_view_deserializer.html", null ],
+      [ "gui_framework::deserializers::ListTextIconListViewDeserializer", "classgui__framework_1_1deserializers_1_1_list_text_icon_list_view_deserializer.html", null ],
+      [ "gui_framework::deserializers::ListTextListViewDeserializer", "classgui__framework_1_1deserializers_1_1_list_text_list_view_deserializer.html", null ],
+      [ "gui_framework::deserializers::MultipleSelectListBoxDeserializer", "classgui__framework_1_1deserializers_1_1_multiple_select_list_box_deserializer.html", null ],
+      [ "gui_framework::deserializers::ProgressBarDeserializer", "classgui__framework_1_1deserializers_1_1_progress_bar_deserializer.html", null ],
+      [ "gui_framework::deserializers::RichEditDeserializer", "classgui__framework_1_1deserializers_1_1_rich_edit_deserializer.html", null ],
+      [ "gui_framework::deserializers::SeparateWindowDeserializer", "classgui__framework_1_1deserializers_1_1_separate_window_deserializer.html", null ],
+      [ "gui_framework::deserializers::SimpleComboBoxDeserializer", "classgui__framework_1_1deserializers_1_1_simple_combo_box_deserializer.html", null ],
+      [ "gui_framework::deserializers::StaticControlDeserializer", "classgui__framework_1_1deserializers_1_1_static_control_deserializer.html", null ],
+      [ "gui_framework::deserializers::TabControlDeserializer", "classgui__framework_1_1deserializers_1_1_tab_control_deserializer.html", null ],
+      [ "gui_framework::deserializers::TextIconListViewDeserializer", "classgui__framework_1_1deserializers_1_1_text_icon_list_view_deserializer.html", null ],
+      [ "gui_framework::deserializers::TextListViewDeserializer", "classgui__framework_1_1deserializers_1_1_text_list_view_deserializer.html", null ],
+      [ "gui_framework::deserializers::VerticalTrackbarControlDeserializer", "classgui__framework_1_1deserializers_1_1_vertical_trackbar_control_deserializer.html", null ]
     ] ],
     [ "interfaces::IIterable", null, [
       [ "gui_framework::BaseComposite", "classgui__framework_1_1_base_composite.html", [
@@ -184,6 +234,11 @@ var hierarchy =
         ] ],
         [ "gui_framework::BaseProgressBar", "classgui__framework_1_1_base_progress_bar.html", null ],
         [ "gui_framework::BaseRichEdit", "classgui__framework_1_1_base_rich_edit.html", null ],
+        [ "gui_framework::BaseScrollBar", "classgui__framework_1_1_base_scroll_bar.html", [
+          [ "gui_framework::BaseHorizontalScrollBar", "classgui__framework_1_1_base_horizontal_scroll_bar.html", null ],
+          [ "gui_framework::BaseVerticalAndHorizontalScrollBar", "classgui__framework_1_1_base_vertical_and_horizontal_scroll_bar.html", null ],
+          [ "gui_framework::BaseVerticalScrollBar", "classgui__framework_1_1_base_vertical_scroll_bar.html", null ]
+        ] ],
         [ "gui_framework::BaseStaticControl", "classgui__framework_1_1_base_static_control.html", [
           [ "gui_framework::StaticControl", "classgui__framework_1_1_static_control.html", null ]
         ] ],
@@ -232,6 +287,14 @@ var hierarchy =
           ] ],
           [ "gui_framework::styles::TextListViewStyles", "classgui__framework_1_1styles_1_1_text_list_view_styles.html", null ]
         ] ],
+        [ "gui_framework::styles::ScrollBarStyles", "classgui__framework_1_1styles_1_1_scroll_bar_styles.html", [
+          [ "gui_framework::styles::HorizontalScrollBarStyles", "classgui__framework_1_1styles_1_1_horizontal_scroll_bar_styles.html", [
+            [ "gui_framework::styles::VerticalAndHorizontalScrollBarStyles", "classgui__framework_1_1styles_1_1_vertical_and_horizontal_scroll_bar_styles.html", null ]
+          ] ],
+          [ "gui_framework::styles::VerticalScrollBarStyles", "classgui__framework_1_1styles_1_1_vertical_scroll_bar_styles.html", [
+            [ "gui_framework::styles::VerticalAndHorizontalScrollBarStyles", "classgui__framework_1_1styles_1_1_vertical_and_horizontal_scroll_bar_styles.html", null ]
+          ] ]
+        ] ],
         [ "gui_framework::styles::SeparateWindowStyles", "classgui__framework_1_1styles_1_1_separate_window_styles.html", null ],
         [ "gui_framework::styles::StaticControlStyles", "classgui__framework_1_1styles_1_1_static_control_styles.html", null ],
         [ "gui_framework::styles::TrackbarControlStyles", "classgui__framework_1_1styles_1_1_trackbar_control_styles.html", [
@@ -247,6 +310,7 @@ var hierarchy =
       [ "gui_framework::BaseStaticControl", "classgui__framework_1_1_base_static_control.html", null ]
     ] ],
     [ "gui_framework::GroupBox::radioButtonData", "structgui__framework_1_1_group_box_1_1radio_button_data.html", null ],
+    [ "gui_framework::Recreator", "classgui__framework_1_1_recreator.html", null ],
     [ "std::runtime_error", null, [
       [ "gui_framework::exceptions::BaseGUIFrameworkException", "classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception.html", [
         [ "gui_framework::exceptions::CantFindCompositeFunctionException", "classgui__framework_1_1exceptions_1_1_cant_find_composite_function_exception.html", null ],

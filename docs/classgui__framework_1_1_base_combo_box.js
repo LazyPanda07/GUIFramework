@@ -13,6 +13,7 @@ var classgui__framework_1_1_base_combo_box =
     [ "findSubstring", "classgui__framework_1_1_base_combo_box.html#a26da393175c0dc0daeb16a4651432142", null ],
     [ "getCurrentSelectionIndex", "classgui__framework_1_1_base_combo_box.html#af323ac0b4c26619d630f97bf9b15a15d", null ],
     [ "getDroppedWidth", "classgui__framework_1_1_base_combo_box.html#a46094262ddba078c9b397e31f155e362", null ],
+    [ "getHash", "classgui__framework_1_1_base_combo_box.html#ab8f999deff251aae6ea741eb8198914a", null ],
     [ "getItemHeight", "classgui__framework_1_1_base_combo_box.html#a8dfa3518cbfa085ce5b666c1853b1c21", null ],
     [ "getStructure", "classgui__framework_1_1_base_combo_box.html#a67b687ab959e0a847952423d3b4eae12", null ],
     [ "getValue", "classgui__framework_1_1_base_combo_box.html#aec396e739dd0d83b0956fe48716d2de6", null ],

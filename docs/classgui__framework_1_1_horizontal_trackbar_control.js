@@ -7,5 +7,6 @@ var classgui__framework_1_1_horizontal_trackbar_control =
     ] ],
     [ "HorizontalTrackbarControl", "classgui__framework_1_1_horizontal_trackbar_control.html#adad4b0f7b5722a226ca84464508eea5b", null ],
     [ "~HorizontalTrackbarControl", "classgui__framework_1_1_horizontal_trackbar_control.html#acaffc2536378984b66e9e0bc3dd460ac", null ],
+    [ "getHash", "classgui__framework_1_1_horizontal_trackbar_control.html#ae205f88e7f056b304874ea3088f069e5", null ],
     [ "getStructure", "classgui__framework_1_1_horizontal_trackbar_control.html#a96108dc6a482b9bb0c67bad1f0e50e2b", null ]
 ];

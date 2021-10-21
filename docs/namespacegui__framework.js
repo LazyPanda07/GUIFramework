@@ -1,13 +1,14 @@
 var namespacegui__framework =
 [
     [ "__utility", "namespacegui__framework_1_1____utility.html", [
-      [ "changeClassName", "namespacegui__framework_1_1____utility.html#a94619fe68a8cd93c7ef48d60f537777a", null ],
-      [ "changeClassName", "namespacegui__framework_1_1____utility.html#ab6cd70b10bf97022485ed69c926e7871", null ]
+      [ "throwNotImplementedException", "namespacegui__framework_1_1____utility.html#a49f152f000e27aebdc729ebd5816d395", null ],
+      [ "throwNotImplementedException", "namespacegui__framework_1_1____utility.html#adbc415e7ba81e1456aaacfbb65ea8100", null ]
     ] ],
     [ "custom_window_messages", "namespacegui__framework_1_1custom__window__messages.html", [
       [ "deinitTopLevelWindowPointer", "namespacegui__framework_1_1custom__window__messages.html#ae277398e850c3e6adb8b9c3c5caa97c3", null ],
       [ "initTopLevelWindowPointer", "namespacegui__framework_1_1custom__window__messages.html#a9d6c2d2d357b573767b5837f204407ce", null ]
     ] ],
+    [ "deserializers", "namespacegui__framework_1_1deserializers.html", "namespacegui__framework_1_1deserializers" ],
     [ "exception_messages", "namespacegui__framework_1_1exception__messages.html", [
       [ "alreadyRegisteredClassName", "namespacegui__framework_1_1exception__messages.html#aad27b7d23cdb5e8e50c7fcbead0af7b5", null ],
       [ "notEnoughSpace", "namespacegui__framework_1_1exception__messages.html#ae6c9818db47860199d4328499127075f", null ],
@@ -15,10 +16,10 @@ var namespacegui__framework =
     ] ],
     [ "exceptions", "namespacegui__framework_1_1exceptions.html", "namespacegui__framework_1_1exceptions" ],
     [ "hotkeys", "namespacegui__framework_1_1hotkeys.html", [
-      [ "additionalKey", "namespacegui__framework_1_1hotkeys.html#a8c2f6d478b57ff78909ffc4e60136e1f", [
-        [ "alt", "namespacegui__framework_1_1hotkeys.html#a8c2f6d478b57ff78909ffc4e60136e1fa34823136d0dd91d0f5d22db740f7679c", null ],
-        [ "control", "namespacegui__framework_1_1hotkeys.html#a8c2f6d478b57ff78909ffc4e60136e1fafc5364bf9dbfa34954526becad136d4b", null ],
-        [ "shift", "namespacegui__framework_1_1hotkeys.html#a8c2f6d478b57ff78909ffc4e60136e1fa2ab64f4ee279e5baf7ab7059b15e6d12", null ]
+      [ "additionalKeys", "namespacegui__framework_1_1hotkeys.html#af7004d43e2976ef86b2bcc7e46959e23", [
+        [ "shift", "namespacegui__framework_1_1hotkeys.html#af7004d43e2976ef86b2bcc7e46959e23a2ab64f4ee279e5baf7ab7059b15e6d12", null ],
+        [ "control", "namespacegui__framework_1_1hotkeys.html#af7004d43e2976ef86b2bcc7e46959e23afc5364bf9dbfa34954526becad136d4b", null ],
+        [ "alt", "namespacegui__framework_1_1hotkeys.html#af7004d43e2976ef86b2bcc7e46959e23a34823136d0dd91d0f5d22db740f7679c", null ]
       ] ]
     ] ],
     [ "interfaces", "namespacegui__framework_1_1interfaces.html", "namespacegui__framework_1_1interfaces" ],
@@ -30,60 +31,25 @@ var namespacegui__framework =
       [ "settingsJSONFile", "namespacegui__framework_1_1json__settings.html#a9426e6e8ca2d732bdae204bdc9903564", null ],
       [ "settingsObject", "namespacegui__framework_1_1json__settings.html#a31fd95ffa91c694e93b01a23a07305f3", null ],
       [ "threadsCountSetting", "namespacegui__framework_1_1json__settings.html#af4f5086d138e7948e61b65288c1b5bf4", null ],
-      [ "usingDefaultCreatorsSetting", "namespacegui__framework_1_1json__settings.html#a7ddcf0e329446aee3695a8d5fe493839", null ]
+      [ "usingCreatorsSetting", "namespacegui__framework_1_1json__settings.html#a9ba5f6294c34d0955eb701cb877f4052", null ],
+      [ "usingDeserializersSetting", "namespacegui__framework_1_1json__settings.html#a1464ce3cf0137eceee50b13ebdfec722", null ]
     ] ],
     [ "libraries", "namespacegui__framework_1_1libraries.html", [
       [ "msftEditLibrary", "namespacegui__framework_1_1libraries.html#aa0a8f6ff8009d943b34253c4a50409c2", null ]
     ] ],
-    [ "serialized_classes", "namespacegui__framework_1_1serialized__classes.html", [
-      [ "button", "namespacegui__framework_1_1serialized__classes.html#a80d0325ecdff3843e476d733fc25f127", null ],
-      [ "checkBox", "namespacegui__framework_1_1serialized__classes.html#a20c16d87691d4c24d96397fc4a454517", null ],
-      [ "childWindow", "namespacegui__framework_1_1serialized__classes.html#acaac7429b9016910c3a9017c8b3a4762", null ],
-      [ "dropDownComboBox", "namespacegui__framework_1_1serialized__classes.html#aa9e5e5df403bd23b7333b15dd58a5a38", null ],
-      [ "dropDownListComboBox", "namespacegui__framework_1_1serialized__classes.html#a178e3a918902c972c32a1f46aa40e98e", null ],
-      [ "editControl", "namespacegui__framework_1_1serialized__classes.html#a40c75df2775722353a46757762d592b4", null ],
-      [ "groupBox", "namespacegui__framework_1_1serialized__classes.html#a8df8e8e5635cea7fd395213ac65af043", null ],
-      [ "horizontalTrackbarControl", "namespacegui__framework_1_1serialized__classes.html#a40bb4737e05f77568509eb5bfce013f6", null ],
-      [ "iconListView", "namespacegui__framework_1_1serialized__classes.html#a59991ec08f9aa9ce9a48314d612eed51", null ],
-      [ "imageButton", "namespacegui__framework_1_1serialized__classes.html#aacdd3713435572772922dc467c84d003", null ],
-      [ "infiniteProgressBar", "namespacegui__framework_1_1serialized__classes.html#a323e4c709459a2dd45c658109d06d08e", null ],
-      [ "listBox", "namespacegui__framework_1_1serialized__classes.html#ad87b11bd0d2a94b34f751658d21e353c", null ],
-      [ "listIconListView", "namespacegui__framework_1_1serialized__classes.html#aad524a8498483bb6f1e562f4871d3ea2", null ],
-      [ "listTextIconListView", "namespacegui__framework_1_1serialized__classes.html#acbc220ca1bc4f97007c1f9d086fb7826", null ],
-      [ "listTextListView", "namespacegui__framework_1_1serialized__classes.html#ada847dd3d2c16796e2c0685ec34c3877", null ],
-      [ "multipleSelectListBox", "namespacegui__framework_1_1serialized__classes.html#ac577d444f4ddbe4b0fae4fc832103881", null ],
-      [ "progressBar", "namespacegui__framework_1_1serialized__classes.html#a7eaa4399f3bf4f789d5252158c0a6e40", null ],
-      [ "richEdit", "namespacegui__framework_1_1serialized__classes.html#a336b1dfb87f8b8786aae21fe7c5c553d", null ],
-      [ "separateWindow", "namespacegui__framework_1_1serialized__classes.html#a6225ac8fa9976705940dd10da7f6db6a", null ],
-      [ "simpleComboBox", "namespacegui__framework_1_1serialized__classes.html#ae1936ce6c24f0139858105c168106d87", null ],
-      [ "staticControl", "namespacegui__framework_1_1serialized__classes.html#aceb4c8286e7d9eea6471136d17aa800b", null ],
-      [ "tabControl", "namespacegui__framework_1_1serialized__classes.html#a242c7cc43f73c09024a7ec9249ad7580", null ],
-      [ "textIconListView", "namespacegui__framework_1_1serialized__classes.html#a29b642ff22e4e75e0ebde8ac7c60d7b1", null ],
-      [ "textListView", "namespacegui__framework_1_1serialized__classes.html#a390e70b04dfb64f64dbbcbd82d0a5344", null ],
-      [ "verticalTrackbarControl", "namespacegui__framework_1_1serialized__classes.html#a10d86c6144927373093a96941107430c", null ]
-    ] ],
-    [ "serialized_creation_type", "namespacegui__framework_1_1serialized__creation__type.html", [
-      [ "baseChildWindow", "namespacegui__framework_1_1serialized__creation__type.html#a5f46bfa0db155279bc65bb8a7d9548fe", null ],
-      [ "baseComposite", "namespacegui__framework_1_1serialized__creation__type.html#abb1314a05ec33f4f3b9bbf17693eb997", null ],
-      [ "baseDialogBox", "namespacegui__framework_1_1serialized__creation__type.html#a105d171cc8c93c4083961b216cc6bfca", null ],
-      [ "baseSeparateWindow", "namespacegui__framework_1_1serialized__creation__type.html#a7833cc2919fb98e3586bf733ad74a8a6", null ],
-      [ "baseWindow", "namespacegui__framework_1_1serialized__creation__type.html#a76051f0ca3461e164d4b00194f84e7b9", null ],
-      [ "childWindow", "namespacegui__framework_1_1serialized__creation__type.html#a976fa9b241d49a6465a2c662ba0ec899", null ],
-      [ "dialogBox", "namespacegui__framework_1_1serialized__creation__type.html#a878eb0713bcbee1b9a6cde375cd63b2c", null ],
-      [ "groupBox", "namespacegui__framework_1_1serialized__creation__type.html#aedc300e233a1f957157050a8bad88025", null ],
-      [ "separateWindow", "namespacegui__framework_1_1serialized__creation__type.html#ac6c2ee84aa53ea6d9c6373fb49292e48", null ]
-    ] ],
+    [ "parsers", "namespacegui__framework_1_1parsers.html", "namespacegui__framework_1_1parsers" ],
     [ "standard_classes", "namespacegui__framework_1_1standard__classes.html", [
-      [ "button", "namespacegui__framework_1_1standard__classes.html#a3a70e6e92deddb65c6406def06e23ec8", null ],
-      [ "comboBox", "namespacegui__framework_1_1standard__classes.html#a268c9d59b1fb54e307a88f7693eb19a2", null ],
-      [ "editControl", "namespacegui__framework_1_1standard__classes.html#a3d184f6df6f95fabed1653b545c3c027", null ],
-      [ "listBox", "namespacegui__framework_1_1standard__classes.html#af6e71a5d5e0e7847e41cd158ae68221c", null ],
-      [ "listView", "namespacegui__framework_1_1standard__classes.html#adac4b5d75af78a7cfa79e019c9b43f2f", null ],
-      [ "progressBar", "namespacegui__framework_1_1standard__classes.html#a694547b9a5cc0c43d8c380808274f278", null ],
-      [ "richEdit", "namespacegui__framework_1_1standard__classes.html#a57b557e0f5b320b012d2af64d4246290", null ],
-      [ "staticControl", "namespacegui__framework_1_1standard__classes.html#ac86ad99c706e27ca256a71b2b0ee9dd8", null ],
-      [ "tabControl", "namespacegui__framework_1_1standard__classes.html#af681e6f51d464b74820da2ac2fc43efc", null ],
-      [ "trackbarControl", "namespacegui__framework_1_1standard__classes.html#ad0d62ae00bdf396ab427a4ab041e75e5", null ]
+      [ "button", "namespacegui__framework_1_1standard__classes.html#a91692a80ee64cd0fa57a997678eba3d6", null ],
+      [ "comboBox", "namespacegui__framework_1_1standard__classes.html#a2b51b49907b5aff37bcf59ecc833dbca", null ],
+      [ "editControl", "namespacegui__framework_1_1standard__classes.html#a1d0ecb983243bb5de6f719aacebcc492", null ],
+      [ "listBox", "namespacegui__framework_1_1standard__classes.html#ac8b9748495f9040dd6a675d92448724f", null ],
+      [ "listView", "namespacegui__framework_1_1standard__classes.html#a894d1eca20b5b89b0ad76db044b290ae", null ],
+      [ "progressBar", "namespacegui__framework_1_1standard__classes.html#af0e29a2fba9b69e276cc9d3bceb41b7f", null ],
+      [ "richEdit", "namespacegui__framework_1_1standard__classes.html#a89948339c3c0f3064062d52573741f7c", null ],
+      [ "scrollBar", "namespacegui__framework_1_1standard__classes.html#a323ec93e554ba28de19efc29b3d86726", null ],
+      [ "staticControl", "namespacegui__framework_1_1standard__classes.html#aaa416ce763f1ae730d8e9666f5d02775", null ],
+      [ "tabControl", "namespacegui__framework_1_1standard__classes.html#af1ba74f542fa7ded58f67a9b49f49eb5", null ],
+      [ "trackbarControl", "namespacegui__framework_1_1standard__classes.html#aaeed3f292443e53634408db778f3b423", null ]
     ] ],
     [ "standard_menu_items", "namespacegui__framework_1_1standard__menu__items.html", [
       [ "dropDownMenuItem", "namespacegui__framework_1_1standard__menu__items.html#acd826e0552d9392c7e519b1d7e0ff599", null ],
@@ -132,6 +98,10 @@ var namespacegui__framework =
     [ "BaseTextListView", "classgui__framework_1_1_base_text_list_view.html", "classgui__framework_1_1_base_text_list_view" ],
     [ "BaseInfiniteProgressBar", "classgui__framework_1_1_base_infinite_progress_bar.html", "classgui__framework_1_1_base_infinite_progress_bar" ],
     [ "BaseProgressBar", "classgui__framework_1_1_base_progress_bar.html", "classgui__framework_1_1_base_progress_bar" ],
+    [ "BaseHorizontalScrollBar", "classgui__framework_1_1_base_horizontal_scroll_bar.html", "classgui__framework_1_1_base_horizontal_scroll_bar" ],
+    [ "BaseScrollBar", "classgui__framework_1_1_base_scroll_bar.html", "classgui__framework_1_1_base_scroll_bar" ],
+    [ "BaseVerticalAndHorizontalScrollBar", "classgui__framework_1_1_base_vertical_and_horizontal_scroll_bar.html", "classgui__framework_1_1_base_vertical_and_horizontal_scroll_bar" ],
+    [ "BaseVerticalScrollBar", "classgui__framework_1_1_base_vertical_scroll_bar.html", "classgui__framework_1_1_base_vertical_scroll_bar" ],
     [ "BaseComposite", "classgui__framework_1_1_base_composite.html", "classgui__framework_1_1_base_composite" ],
     [ "BaseChildWindow", "classgui__framework_1_1_base_child_window.html", "classgui__framework_1_1_base_child_window" ],
     [ "BaseDialogBox", "classgui__framework_1_1_base_dialog_box.html", "classgui__framework_1_1_base_dialog_box" ],
@@ -163,6 +133,7 @@ var namespacegui__framework =
     [ "DialogBox", "classgui__framework_1_1_dialog_box.html", "classgui__framework_1_1_dialog_box" ],
     [ "GroupBox", "classgui__framework_1_1_group_box.html", "classgui__framework_1_1_group_box" ],
     [ "SeparateWindow", "classgui__framework_1_1_separate_window.html", "classgui__framework_1_1_separate_window" ],
+    [ "Recreator", "classgui__framework_1_1_recreator.html", "classgui__framework_1_1_recreator" ],
     [ "GUIFramework", "classgui__framework_1_1_g_u_i_framework.html", "classgui__framework_1_1_g_u_i_framework" ],
     [ "Menu", "classgui__framework_1_1_menu.html", "classgui__framework_1_1_menu" ],
     [ "BaseMenuItem", "classgui__framework_1_1_base_menu_item.html", "classgui__framework_1_1_base_menu_item" ],
