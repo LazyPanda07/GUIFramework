@@ -7,6 +7,7 @@ namespace gui_framework
 {
 	namespace deserializers
 	{
+		/// @brief Deserialize CheckBox from JSON
 		class GUI_FRAMEWORK_API CheckBoxDeserializer : public interfaces::IDeserializer
 		{
 		public:

@@ -7,6 +7,7 @@ namespace gui_framework
 {
 	namespace deserializers
 	{
+		/// @brief Deserialize ChildWindow from JSON
 		class GUI_FRAMEWORK_API ChildWindowDeserializer : public interfaces::IDeserializer
 		{
 		public:

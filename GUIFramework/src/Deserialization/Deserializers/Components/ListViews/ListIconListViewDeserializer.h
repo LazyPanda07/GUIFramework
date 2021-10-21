@@ -7,6 +7,7 @@ namespace gui_framework
 {
 	namespace deserializers
 	{
+		/// @brief Deserialize ListIconListView from JSON
 		class GUI_FRAMEWORK_API ListIconListViewDeserializer : public interfaces::IDeserializer
 		{
 		public:

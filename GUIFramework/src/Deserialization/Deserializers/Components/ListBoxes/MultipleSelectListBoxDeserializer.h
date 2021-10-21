@@ -7,6 +7,7 @@ namespace gui_framework
 {
 	namespace deserializers
 	{
+		/// @brief Deserialize MultipleSelectListBox from JSON
 		class GUI_FRAMEWORK_API MultipleSelectListBoxDeserializer : public interfaces::IDeserializer
 		{
 		public:

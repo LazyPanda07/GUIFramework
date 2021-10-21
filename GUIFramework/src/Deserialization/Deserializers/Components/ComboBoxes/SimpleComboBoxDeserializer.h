@@ -7,6 +7,7 @@ namespace gui_framework
 {
 	namespace deserializers
 	{
+		/// @brief Deserialize SimpleComboBox from JSON
 		class GUI_FRAMEWORK_API SimpleComboBoxDeserializer : public interfaces::IDeserializer
 		{
 		public:

@@ -6,6 +6,7 @@ namespace gui_framework
 {
 	namespace parsers
 	{
+		/// @brief Parse DropDownComboBox, DropDownListComboBox, SimpleComboBox specific properties
 		struct GUI_FRAMEWORK_API ComboBoxParser : public BaseComponentParser
 		{
 			std::vector<std::wstring> values;

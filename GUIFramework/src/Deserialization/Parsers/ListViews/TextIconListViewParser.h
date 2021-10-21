@@ -7,6 +7,7 @@ namespace gui_framework
 {
 	namespace parsers
 	{
+		/// @brief Parse TextIconListView and ListTextIconListView specific properties
 		struct GUI_FRAMEWORK_API TextIconListViewParser :
 			public IconListViewParser,
 			public TextListViewParser

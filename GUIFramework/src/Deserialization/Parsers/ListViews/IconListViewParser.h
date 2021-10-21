@@ -7,6 +7,7 @@ namespace gui_framework
 {
 	namespace parsers
 	{
+		/// @brief Parse IconListView and ListIconListView specific properties
 		struct GUI_FRAMEWORK_API IconListViewParser : virtual public BaseComponentParser
 		{
 			std::vector<std::filesystem::path> icons;

@@ -6,6 +6,7 @@ namespace gui_framework
 {
 	namespace parsers
 	{
+		/// @brief Parse BaseComposite properties
 		struct GUI_FRAMEWORK_API BaseCompositeParser : public BaseComponentParser
 		{
 			std::string windowFunctionName;

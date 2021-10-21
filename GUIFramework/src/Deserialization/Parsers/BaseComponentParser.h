@@ -6,6 +6,7 @@ namespace gui_framework
 {
 	namespace parsers
 	{
+		/// @brief Parse BaseComponent properties
 		struct GUI_FRAMEWORK_API BaseComponentParser
 		{
 			std::wstring className;

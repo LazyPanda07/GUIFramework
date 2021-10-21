@@ -7,6 +7,7 @@ namespace gui_framework
 {
 	namespace deserializers
 	{
+		/// @brief Deserialize SeparateWindow from JSON
 		class GUI_FRAMEWORK_API SeparateWindowDeserializer : public interfaces::IDeserializer
 		{
 		public:

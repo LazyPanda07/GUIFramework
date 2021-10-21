@@ -7,6 +7,7 @@ namespace gui_framework
 {
 	namespace deserializers
 	{
+		/// @brief Deserialize InfiniteProgressBar from JSON
 		class GUI_FRAMEWORK_API InfiniteProgressBarDeserializer : public interfaces::IDeserializer
 		{
 		public:

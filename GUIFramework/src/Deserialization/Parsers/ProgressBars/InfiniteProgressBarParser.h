@@ -6,6 +6,7 @@ namespace gui_framework
 {
 	namespace parsers
 	{
+		/// @brief Parse InfiniteProgressBar specific properties
 		struct GUI_FRAMEWORK_API InfiniteProgressBarParser : public BaseComponentParser
 		{
 			int animationPeriod;

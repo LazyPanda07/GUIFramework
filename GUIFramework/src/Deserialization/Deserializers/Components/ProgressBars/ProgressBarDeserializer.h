@@ -7,6 +7,7 @@ namespace gui_framework
 {
 	namespace deserializers
 	{
+		/// @brief Deserialize ProgressBar from JSON
 		class GUI_FRAMEWORK_API ProgressBarDeserializer : public interfaces::IDeserializer
 		{
 		public:

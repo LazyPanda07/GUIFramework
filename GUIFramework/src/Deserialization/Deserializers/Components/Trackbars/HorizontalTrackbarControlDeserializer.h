@@ -7,6 +7,7 @@ namespace gui_framework
 {
 	namespace deserializers
 	{
+		/// @brief Deserialize HorizontalTrackbarControl from JSON
 		class GUI_FRAMEWORK_API HorizontalTrackbarControlDeserializer : public interfaces::IDeserializer
 		{
 		public:

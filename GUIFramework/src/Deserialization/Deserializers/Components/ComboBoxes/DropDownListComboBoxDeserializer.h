@@ -7,6 +7,7 @@ namespace gui_framework
 {
 	namespace deserializers
 	{
+		/// @brief Deserialize DropDownListComboBox from JSON
 		class GUI_FRAMEWORK_API DropDownListComboBoxDeserializer : public interfaces::IDeserializer
 		{
 		public:

@@ -7,6 +7,7 @@ namespace gui_framework
 {
 	namespace deserializers
 	{
+		/// @brief Deserialize EditControl from JSON
 		class GUI_FRAMEWORK_API EditControlDeserializer : public interfaces::IDeserializer
 		{
 		public:

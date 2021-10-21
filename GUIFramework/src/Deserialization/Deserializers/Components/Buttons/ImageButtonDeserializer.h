@@ -7,6 +7,7 @@ namespace gui_framework
 {
 	namespace deserializers
 	{
+		/// @brief Deserialize ImageButton from JSON
 		class GUI_FRAMEWORK_API ImageButtonDeserializer : public interfaces::IDeserializer
 		{
 		public:
