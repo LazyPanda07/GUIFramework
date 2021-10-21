@@ -48,7 +48,7 @@ namespace gui_framework
 				json::utility::appendArray(this->getIconPath(i).string(), values);
 			}
 
-			current->data.push_back({ "listViewValues"s, move(values) });
+			current->data.push_back({ "listViewIconValues"s, move(values) });
 		}
 
 		return builder;

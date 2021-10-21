@@ -53,6 +53,9 @@
     <ClInclude Include="src\Deserialization\Parsers\GroupBoxParser.h" />
     <ClInclude Include="src\Deserialization\Parsers\Buttons\ImageButtonParser.h" />
     <ClInclude Include="src\Deserialization\Parsers\ListBoxParser.h" />
+    <ClInclude Include="src\Deserialization\Parsers\ListViews\IconListViewParser.h" />
+    <ClInclude Include="src\Deserialization\Parsers\ListViews\TextIconListViewParser.h" />
+    <ClInclude Include="src\Deserialization\Parsers\ListViews\TextListViewParser.h" />
     <ClInclude Include="src\Deserialization\Parsers\ProgressBars\InfiniteProgressBarParser.h" />
     <ClInclude Include="src\Deserialization\Parsers\ProgressBars\ProgressBarParser.h" />
     <ClInclude Include="src\Deserialization\Parsers\RichEditParser.h" />
@@ -266,6 +269,9 @@
     <ClCompile Include="src\Deserialization\Parsers\GroupBoxParser.cpp" />
     <ClCompile Include="src\Deserialization\Parsers\Buttons\ImageButtonParser.cpp" />
     <ClCompile Include="src\Deserialization\Parsers\ListBoxParser.cpp" />
+    <ClCompile Include="src\Deserialization\Parsers\ListViews\IconListViewParser.cpp" />
+    <ClCompile Include="src\Deserialization\Parsers\ListViews\TextIconListViewParser.cpp" />
+    <ClCompile Include="src\Deserialization\Parsers\ListViews\TextListViewParser.cpp" />
     <ClCompile Include="src\Deserialization\Parsers\ProgressBars\InfiniteProgressBarParser.cpp" />
     <ClCompile Include="src\Deserialization\Parsers\ProgressBars\ProgressBarParser.cpp" />
     <ClCompile Include="src\Deserialization\Parsers\RichEditParser.cpp" />
