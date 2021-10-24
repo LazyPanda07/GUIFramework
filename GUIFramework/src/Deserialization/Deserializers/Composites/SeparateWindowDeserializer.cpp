@@ -65,12 +65,14 @@ namespace gui_framework
 
 				for (const auto& i : menuParser.mainMenuItems)
 				{
-					const string& text = i->getString("itemText");
-					const string& type = i->getString("itemType");
+					const objectSmartPointer<jsonObject>& item = get<objectSmartPointer<jsonObject>>(i->data.front().second);
+
+					const string& text = item->getString("itemText");
+					const string& type = item->getString("itemType");
 
 					if (type == standard_menu_items::menuItem)
 					{
-						mainMenu->addMenuItem(make_unique<MenuItem>(utility::to_wstring(text, codepage), i->getString("functionName"), i->getString("moduleName")));
+						mainMenu->addMenuItem(make_unique<MenuItem>(utility::to_wstring(text, codepage), item->getString("functionName"), item->getString("moduleName")));
 					}
 					else if (type == standard_menu_items::dropDownMenuItem)
 					{
