@@ -113,6 +113,25 @@ namespace gui_framework
 		}
 	}
 
+	unique_ptr<Menu>& GroupBox::createMainMenu(const wstring& menuName)
+	{
+		__utility::throwNotImplementedException(__FUNCTION__, "GroupBox"sv);
+
+		return BaseComposite::createMainMenu(menuName);
+	}
+
+	Menu& GroupBox::addPopupMenu(const wstring& menuName)
+	{
+		__utility::throwNotImplementedException(__FUNCTION__, "GroupBox"sv);
+
+		return BaseComposite::addPopupMenu(menuName);
+	}
+
+	void GroupBox::removePopupMenus(const wstring& menuName)
+	{
+		__utility::throwNotImplementedException(__FUNCTION__, "GroupBox"sv);
+	}
+
 	size_t GroupBox::getHash() const
 	{
 		return typeid(GroupBox).hash_code();
