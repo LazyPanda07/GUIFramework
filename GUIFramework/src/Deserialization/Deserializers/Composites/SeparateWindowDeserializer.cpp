@@ -37,8 +37,7 @@ namespace gui_framework
 			uint32_t codepage = interfaces::ISerializable::getCodepage();
 			const smartPointerType<utility::BaseComponentCreator>& creator = GUIFramework::get().getCreators().at(utility::getTypeHash<SeparateWindow>());
 			utility::AdditionalCreationData<SeparateWindow> creationData(parser.className, parser.windowFunctionName);
-			const auto& children = description->getArray("children");
-
+			
 			result = static_cast<SeparateWindow*>(creator->create(utility::to_wstring(componentName, codepage), parser.settings, creationData.getData(), nullptr));
 
 			result->setBackgroundColor(parser.backgroundColor[0], parser.backgroundColor[1], parser.backgroundColor[2]);
@@ -86,14 +85,19 @@ namespace gui_framework
 				}
 			}
 
-			for (const auto& i : children)
+			if (description->contains("children", json::utility::variantTypeEnum::jJSONArray))
 			{
-				const auto& [componentName, data] = get<objectSmartPointer<jsonObject>>(i->data.front().second)->data.front();
-				const auto& description = get<objectSmartPointer<jsonObject>>(data);
+				const auto& children = description->getArray("children");
 
-				const smartPointerType<interfaces::IDeserializer>& deserializer = GUIFramework::get().getDeserializers().at(description->getUnsignedInt("hash"));
+				for (const auto& i : children)
+				{
+					const auto& [componentName, data] = get<objectSmartPointer<jsonObject>>(i->data.front().second)->data.front();
+					const auto& description = get<objectSmartPointer<jsonObject>>(data);
 
-				deserializer->deserialize(componentName, description, result);
+					const smartPointerType<interfaces::IDeserializer>& deserializer = GUIFramework::get().getDeserializers().at(description->getUnsignedInt("hash"));
+
+					deserializer->deserialize(componentName, description, result);
+				}
 			}
 
 			return result;
