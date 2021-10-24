@@ -33,18 +33,6 @@ namespace gui_framework
 
 	namespace standard_sizes
 	{
-		inline constexpr uint16_t buttonWidth = 200;
-		inline constexpr uint16_t buttonHeight = 20;
-
-		inline constexpr uint16_t checkBoxWidth = 200;
-		inline constexpr uint16_t checkBoxHeight = 20;
-
-		inline constexpr uint16_t editControlWidth = 200;
-		inline constexpr uint16_t editControlHeight = 20;
-
-		inline constexpr uint16_t staticControlWidth = 200;
-		inline constexpr uint16_t staticControlHeight = 40;
-
 		inline constexpr uint16_t comboBoxAdditionalWidth = 10;
 
 		inline constexpr uint16_t listBoxAdditionalWidth = 20;

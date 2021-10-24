@@ -13,7 +13,7 @@ namespace gui_framework
 		{
 			auto [minRange, maxRange, updateStep] = any_cast<tuple<int, int, int>>(additionalData);
 
-			return new ProgressBar(windowName, utility::ComponentSettings(settings.x, settings.y, settings.width, settings.height), parent, minRange, maxRange, updateStep);
+			return new ProgressBar(windowName, settings, parent, minRange, maxRange, updateStep);
 		}
 	}
 }

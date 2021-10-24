@@ -7,18 +7,12 @@ using namespace std;
 
 namespace gui_framework
 {
-	Button::Button(const wstring& buttonName, const wstring& buttonText, int x, int y, BaseComponent* parent, const function<void()>& onClick, uint16_t width, uint16_t height) :
+	Button::Button(const wstring& buttonName, const wstring& buttonText, const utility::ComponentSettings& settings, BaseComponent* parent, const function<void()>& onClick) :
 		BaseButton
 		(
 			buttonName,
 			buttonText,
-			utility::ComponentSettings
-			(
-				x,
-				y,
-				width,
-				height
-			),
+			settings,
 			styles::DefaultButtonStyles(),
 			parent,
 			onClick
@@ -32,18 +26,12 @@ namespace gui_framework
 
 	}
 
-	Button::Button(const wstring& buttonName, const wstring& buttonText, int x, int y, BaseComponent* parent, const string& functionName, const string& moduleName, uint16_t width, uint16_t height) :
+	Button::Button(const wstring& buttonName, const wstring& buttonText, const utility::ComponentSettings& settings, BaseComponent* parent, const string& functionName, const string& moduleName) :
 		BaseButton
 		(
 			buttonName,
 			buttonText,
-			utility::ComponentSettings
-			(
-				x,
-				y,
-				width,
-				height
-			),
+			settings,
 			styles::DefaultButtonStyles(),
 			parent,
 			functionName,

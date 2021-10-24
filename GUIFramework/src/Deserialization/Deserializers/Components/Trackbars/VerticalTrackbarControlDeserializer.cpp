@@ -35,8 +35,6 @@ namespace gui_framework
 
 			result->setSelectionEnd(parser.selectionEnd);
 
-			result->setStyles(parser.styles);
-
 			return result;
 		}
 	}

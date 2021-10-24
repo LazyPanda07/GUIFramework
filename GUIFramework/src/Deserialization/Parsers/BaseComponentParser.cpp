@@ -18,7 +18,7 @@ namespace gui_framework
 			settings.y = static_cast<int>(description->getInt("desiredY"));
 			settings.width = static_cast<uint16_t>(description->getUnsignedInt("desiredWidth"));
 			settings.height = static_cast<uint16_t>(description->getUnsignedInt("desiredHeight"));
-			styles = interfaces::IStyles(description->getInt("styles"), description->getInt("extendedStyles"));
+			settings.styles = interfaces::IStyles(description->getInt("styles"), description->getInt("extendedStyles"));
 
 			const auto& temBackgroundColor = json::utility::JSONArrayWrapper(description->getArray("backgroundColor")).getAsInt64_tArray();
 			const auto& temTextColor = json::utility::JSONArrayWrapper(description->getArray("textColor")).getAsInt64_tArray();;

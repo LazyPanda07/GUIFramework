@@ -14,7 +14,7 @@ namespace gui_framework
 			auto [text, onCheck, onClear, onClick, onCheckFunctionName, onCheckFunctionModule, onClearFunctionName, onClearFunctionModule, onClickFunctionName, onClickFunctionModule] =
 				any_cast<tuple<wstring, function<void()>, function<void()>, function<void()>, string, string, string, string, string, string>>(additionalData);
 
-			CheckBox* result = new CheckBox(windowName, text, settings.x, settings.y, parent, nullptr, nullptr, nullptr, settings.width, settings.height);
+			CheckBox* result = new CheckBox(windowName, text, settings, parent, nullptr, nullptr, nullptr);
 
 			if (onCheck)
 			{

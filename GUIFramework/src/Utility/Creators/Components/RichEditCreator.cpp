@@ -14,7 +14,7 @@ namespace gui_framework
 			auto [callbacks, callbacksFunctionNamesAndModules, limitTextCount, isMultiLine] =
 				any_cast<tuple<array<function<void(const wstring&)>, BaseRichEdit::urlDetectEventSize>, array<pair<string, string>, BaseRichEdit::urlDetectEventSize>, uint64_t, bool>>(additionalData);
 
-			RichEdit* result = new RichEdit(windowName, utility::ComponentSettings(settings.x, settings.y, settings.width, settings.height), parent, isMultiLine);
+			RichEdit* result = new RichEdit(windowName, settings, parent, isMultiLine);
 
 			if (any_of(callbacks.begin(), callbacks.end(), [](const function<void(const wstring&)>& callback) { return callback; }) ||
 				any_of(callbacksFunctionNamesAndModules.begin(), callbacksFunctionNamesAndModules.end(), [](const pair<string, string>& data) { return data.first.size(); }))

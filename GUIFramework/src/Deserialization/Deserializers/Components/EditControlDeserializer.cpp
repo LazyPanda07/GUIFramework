@@ -27,8 +27,6 @@ namespace gui_framework
 
 			result->setTextColor(parser.textColor[0], parser.textColor[1], parser.textColor[2]);
 
-			result->setStyles(parser.styles);
-
 			result->setPlaceholder(utility::to_wstring(description->getString("placeholder"), codepage));
 
 			return result;

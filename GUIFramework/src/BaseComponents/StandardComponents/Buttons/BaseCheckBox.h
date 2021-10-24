@@ -8,6 +8,10 @@ namespace gui_framework
 	/// @brief Base class for all check boxes
 	class GUI_FRAMEWORK_API BaseCheckBox : public BaseButton
 	{
+	public:
+		inline static constexpr uint16_t checkBoxWidth = 200;
+		inline static constexpr uint16_t checkBoxHeight = 20;
+
 	protected:
 		std::function<void()> onCheck;
 		std::function<void()> onClear;

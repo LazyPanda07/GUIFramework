@@ -12,6 +12,10 @@ namespace gui_framework
 		public BaseComponent,
 		public interfaces::ITextOperations
 	{
+	public:
+		inline static constexpr uint16_t buttonWidth = 200;
+		inline static constexpr uint16_t buttonHeight = 20;
+
 	protected:
 		std::function<void()> onClick;
 		std::string functionName;
