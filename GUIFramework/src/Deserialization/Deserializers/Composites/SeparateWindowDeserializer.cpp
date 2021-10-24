@@ -1,7 +1,13 @@
 #include "headers.h"
 #include "SeparateWindowDeserializer.h"
 
+#include "MenuItems/MenuItem.h"
+#include "MenuItems/DropDownMenuItem.h"
+
 #include "Deserialization/Parsers/BaseCompositeParser.h"
+#include "Deserialization/Parsers/MenuParser.h"
+
+#include "Exceptions/Deserialization/WrongMenuTypeException.h"
 
 using namespace std;
 
@@ -15,8 +21,17 @@ namespace gui_framework
 			using json::utility::jsonObject;
 
 			parsers::BaseCompositeParser parser;
+			parsers::MenuParser menuParser;
+			bool hasMenus = false;
 
 			parser.parse(description);
+
+			if (description->contains("menuStructure", json::utility::variantTypeEnum::jJSONObject))
+			{
+				menuParser.parse(const_cast<objectSmartPointer<jsonObject>&>(description->getObject("menuStructure")));
+
+				hasMenus = true;
+			}
 
 			SeparateWindow* result = nullptr;
 			uint32_t codepage = interfaces::ISerializable::getCodepage();
@@ -42,6 +57,31 @@ namespace gui_framework
 			if (parser.pathToSmallIcon.size())
 			{
 				result->setSmallIcon(parser.pathToSmallIcon);
+			}
+
+			if (hasMenus)
+			{
+				auto& mainMenu = result->createMainMenu(menuParser.mainMenuName);
+
+				for (const auto& i : menuParser.mainMenuItems)
+				{
+					const string& text = i->getString("itemText");
+					const string& type = i->getString("itemType");
+
+					if (type == standard_menu_items::menuItem)
+					{
+						mainMenu->addMenuItem(make_unique<MenuItem>(utility::to_wstring(text, codepage), i->getString("functionName"), i->getString("moduleName")));
+					}
+					else if (type == standard_menu_items::dropDownMenuItem)
+					{
+
+					}
+					else
+					{
+						throw exceptions::deserialization::WrongMenuTypeException(type);
+					}
+
+				}
 			}
 
 			for (const auto& i : children)
