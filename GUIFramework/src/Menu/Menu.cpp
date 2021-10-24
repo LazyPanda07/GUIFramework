@@ -121,6 +121,12 @@ namespace gui_framework
 			child->data.push_back({ "itemText"s, itemText });
 			child->data.push_back({ "itemType"s, itemType });
 
+			if (structure.contains("functionName", json::utility::variantTypeEnum::jString))
+			{
+				child->data.push_back({ "functionName"s, get<string>(structure["functionName"]) });
+				child->data.push_back({ "moduleName"s, get<string>(structure["moduleName"]) });
+			}
+
 			if (itemType == standard_menu_items::dropDownMenuItem)
 			{
 				child->data.push_back({ "popupId"s, get<uint64_t>(structure["popupId"]) });
