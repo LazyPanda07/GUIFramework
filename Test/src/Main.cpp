@@ -29,14 +29,6 @@ void standard()
 		SeparateWindow* ptr = dynamic_cast<SeparateWindow*>(holder.get());
 		ChildWindow* child = new ChildWindow(L"ChildWindow", L"Child window name", utility::ComponentSettings(600, 400, 200, 200), ptr, "child");
 
-		auto& menu = ptr->createMainMenu(L"RoflMenu");
-
-		menu->addMenuItem(make_unique<MenuItem>(L"First", "test", "callbacks"));
-
-		menu->addMenuItem(make_unique<MenuItem>(L"Second", "test", "callbacks"));
-
-		menu->addMenuItem(make_unique<MenuItem>(L"Third", "test", "callbacks"));
-
 		ptr->setExitMode(BaseComposite::exitMode::quit);
 		
 		ptr->setLargeIcon(R"(assets\icon.ico)");
@@ -85,7 +77,7 @@ int main(int argc, char** argv)
 
 	SetConsoleOutputCP(CP_UTF8);
 
-	thread(test).detach();
+	thread(standard).detach();
 
 	string s;
 
