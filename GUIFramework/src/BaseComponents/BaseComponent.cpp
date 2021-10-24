@@ -129,10 +129,10 @@ namespace gui_framework
 
 		handle = CreateWindowExW
 		(
-			static_cast<DWORD>(styles.getExtendedStyles()),
+			static_cast<DWORD>(styles.getExtendedStyles() | settings.styles.getExtendedStyles()),
 			classStruct.lpszClassName,
 			windowName.data(),
-			static_cast<DWORD>(styles.getStyles()) | (parent ? WS_CHILDWINDOW | WS_BORDER : WS_OVERLAPPEDWINDOW),
+			static_cast<DWORD>(styles.getStyles()) | static_cast<DWORD>(settings.styles.getStyles()) | (parent ? WS_CHILDWINDOW | WS_BORDER : WS_OVERLAPPEDWINDOW),
 			settings.x,
 			settings.y,
 			settings.width,
@@ -246,25 +246,6 @@ namespace gui_framework
 		textColor = RGB(red, green, blue);
 
 		InvalidateRect(handle, nullptr, true);
-	}
-
-	void BaseComponent::setStyles(interfaces::IStyles& styles)
-	{
-		this->styles = utility::make_smart_pointer<interfaces::IStyles>(styles);
-
-		SetWindowLongPtrW
-		(
-			handle,
-			GWL_STYLE,
-			this->styles->getStyles()
-		);
-
-		SetWindowLongPtrW
-		(
-			handle,
-			GWL_EXSTYLE,
-			this->styles->getExtendedStyles()
-		);
 	}
 
 	BaseComponent* BaseComponent::getParent() const

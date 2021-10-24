@@ -12,7 +12,7 @@ namespace gui_framework
 		BaseComponent* SimpleComboBoxCreator::create(const wstring& windowName, const utility::ComponentSettings& settings, const any& additionalData, BaseComponent* parent)
 		{
 			auto [values, onSelectionChange, functionName, moduleName] = any_cast<tuple<vector<wstring>, function<void(BaseComboBox&)>, string, string>>(additionalData);
-			BaseComboBox* result = new SimpleComboBox(windowName, utility::ComponentSettings(settings.x, settings.y, settings.width, settings.height), parent);
+			BaseComboBox* result = new SimpleComboBox(windowName, settings, parent);
 
 			if (onSelectionChange)
 			{

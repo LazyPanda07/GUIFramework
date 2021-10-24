@@ -46,8 +46,6 @@ namespace gui_framework
 
 			result->setExitMode(parser.mode);
 
-			result->setStyles(parser.styles);
-
 			if (parser.pathToLargeIcon.size())
 			{
 				result->setLargeIcon(parser.pathToLargeIcon);

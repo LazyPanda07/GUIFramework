@@ -28,8 +28,6 @@ namespace gui_framework
 
 			result->setTextColor(parser.textColor[0], parser.textColor[1], parser.textColor[2]);
 
-			result->setStyles(parser.styles);
-
 			return result;
 		}
 	}

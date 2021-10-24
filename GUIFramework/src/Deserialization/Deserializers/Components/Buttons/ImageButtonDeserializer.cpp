@@ -26,8 +26,6 @@ namespace gui_framework
 
 			result->setBackgroundColor(parser.backgroundColor[0], parser.backgroundColor[1], parser.backgroundColor[2]);
 
-			result->setStyles(parser.styles);
-
 			return result;
 		}
 	}

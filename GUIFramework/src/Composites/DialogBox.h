@@ -29,15 +29,13 @@ namespace gui_framework
 			struct builderComponentData
 			{
 				std::wstring componentName;
-				std::wstring text;
 				RECT offsets;
 				size_t typeHash;
-				uint16_t width;
-				uint16_t height;
+				utility::ComponentSettings settings;
 				alignment type;
 				std::any additionalData;
 
-				builderComponentData(const std::wstring& componentName, const std::wstring& text, RECT&& offsets, size_t typeHash, uint16_t width, uint16_t height, alignment type, std::any&& additionalData);
+				builderComponentData(const std::wstring& componentName, const interfaces::IStyles& styles, RECT&& offsets, size_t typeHash, uint16_t width, uint16_t height, alignment type, std::any&& additionalData);
 			};
 
 		private:
@@ -61,7 +59,7 @@ namespace gui_framework
 			DialogBoxBuilder& clear();
 
 			template<std::derived_from<BaseComponent> T>
-			DialogBoxBuilder& addComponent(const std::wstring& componentName, uint16_t width, uint16_t height, alignment type, const utility::AdditionalCreationData<T>& additionalData = utility::AdditionalCreationData<T>(), int leftOffset = 0, int topOffset = 0, int rightOffset = 0, int bottomOffset = 0, const std::wstring& text = L"");
+			DialogBoxBuilder& addComponent(const std::wstring& componentName, uint16_t width, uint16_t height, alignment type, const utility::AdditionalCreationData<T>& additionalData = utility::AdditionalCreationData<T>(), int leftOffset = 0, int topOffset = 0, int rightOffset = 0, int bottomOffset = 0, const interfaces::IStyles& styles = interfaces::IStyles());
 
 			DialogBoxBuilder& addParent(BaseComposite* parent);
 
@@ -86,7 +84,7 @@ namespace gui_framework
 	};
 
 	template<std::derived_from<BaseComponent> T>
-	DialogBox::DialogBoxBuilder& DialogBox::DialogBoxBuilder::addComponent(const std::wstring& componentName, uint16_t width, uint16_t height, alignment type, const utility::AdditionalCreationData<T>& additionalData, int leftOffset, int topOffset, int rightOffset, int bottomOffset, const std::wstring& text)
+	DialogBox::DialogBoxBuilder& DialogBox::DialogBoxBuilder::addComponent(const std::wstring& componentName, uint16_t width, uint16_t height, alignment type, const utility::AdditionalCreationData<T>& additionalData, int leftOffset, int topOffset, int rightOffset, int bottomOffset, const interfaces::IStyles& styles)
 	{
 		if (settings.width < leftOffset + width + rightOffset + standard_sizes::dialogBoxBuilderMinWidth)
 		{
@@ -95,7 +93,7 @@ namespace gui_framework
 
 		settings.height += topOffset + height + bottomOffset;
 
-		components.emplace_back(componentName, text, RECT(leftOffset, topOffset, rightOffset, bottomOffset), typeid(T).hash_code(), width, height, type, additionalData.getData());
+		components.emplace_back(componentName, styles, RECT(leftOffset, topOffset, rightOffset, bottomOffset), typeid(T).hash_code(), width, height, type, additionalData.getData());
 
 		return *this;
 	}
