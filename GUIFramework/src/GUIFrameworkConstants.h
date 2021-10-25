@@ -27,8 +27,8 @@ namespace gui_framework
 
 	namespace standard_menu_items
 	{
-		inline constexpr std::string_view dropDownMenuItem = "DropDown";
-		inline constexpr std::string_view menuItem = "MenuItem";
+		inline const std::string dropDownMenuItem = "DropDown";
+		inline const std::string menuItem = "MenuItem";
 	}
 
 	namespace standard_sizes

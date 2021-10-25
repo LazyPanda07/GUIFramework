@@ -8,7 +8,7 @@ namespace gui_framework
 	namespace exceptions
 	{
 		SelectListException::SelectListException(const string& method, LRESULT errorCode, const string_view& additionalDescription) :
-			BaseGUIFrameworkException(format(R"(Exception in method "{}" with error code "{}". {})", method, errorCode, additionalDescription))
+			BaseGUIFrameworkException(format(R"(Exception in method "{}" with error code "{}". {})"sv, method, errorCode, additionalDescription))
 		{
 
 		}

@@ -8,7 +8,7 @@ namespace gui_framework
 	namespace exceptions
 	{
 		CantLoadModuleException::CantLoadModuleException(const string& moduleName) :
-			BaseGUIFrameworkException(format(R"(Can't load "{}" module or it's dependencies)", moduleName))
+			BaseGUIFrameworkException(format(R"(Can't load "{}" module or it's dependencies)"sv, moduleName))
 		{
 
 		}

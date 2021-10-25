@@ -9,7 +9,7 @@ namespace gui_framework
 		IMenuItem
 		(
 			text,
-			string(standard_menu_items::menuItem)
+			standard_menu_items::menuItem
 		)
 	{
 
