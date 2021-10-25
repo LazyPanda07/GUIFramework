@@ -29,6 +29,22 @@ void standard()
 		SeparateWindow* ptr = dynamic_cast<SeparateWindow*>(holder.get());
 		ChildWindow* child = new ChildWindow(L"ChildWindow", L"Child window name", utility::ComponentSettings(600, 400, 200, 200), ptr, "child");
 
+		auto& menu = ptr->createMainMenu(L"Menu");
+
+		auto& popup = ptr->addPopupMenu(L"Popup");
+
+		auto& insidePopup = ptr->addPopupMenu(L"InsidePopup");
+
+		insidePopup.addMenuItem(make_unique<MenuItem>(L"Second", "test", "callbacks"));
+
+		popup.addMenuItem(make_unique<MenuItem>(L"First", "test", "callbacks"));
+
+		menu->addMenuItem(make_unique<MenuItem>(L"Third", "test", "callbacks"));
+
+		popup.addMenuItem(make_unique<DropDownMenuItem>(L"Inside popup", insidePopup.getHandle()));
+
+		menu->addMenuItem(make_unique<DropDownMenuItem>(L"PopupMenu", popup.getHandle()));
+
 		ptr->setExitMode(BaseComposite::exitMode::quit);
 		
 		ptr->setLargeIcon(R"(assets\icon.ico)");
