@@ -64,7 +64,10 @@ namespace gui_framework
 							}
 						}
 
-						menu.addMenuItem(DropDownMenuItemDeserializer(menuHolder).deserializeDropDownMenuItem(text, insidePopupId, popupItems, menu));
+						if (popupMenu)
+						{
+							menu.addMenuItem(DropDownMenuItemDeserializer(menuHolder).deserializeDropDownMenuItem(text, insidePopupId, popupItems, *popupMenu));
+						}
 					}
 					else
 					{
