@@ -80,7 +80,7 @@ namespace gui_framework
 
 						for (const auto& j : menuParser.popupItems)
 						{
-							const objectSmartPointer<jsonObject>& popupItem = get<objectSmartPointer<jsonObject>>(i->data.front().second);
+							const objectSmartPointer<jsonObject>& popupItem = get<objectSmartPointer<jsonObject>>(j->data.front().second);
 
 							if (popupItem->getUnsignedInt("menuId") == popupId)
 							{
