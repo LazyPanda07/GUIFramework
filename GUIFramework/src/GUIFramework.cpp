@@ -783,7 +783,7 @@ namespace gui_framework
 		{
 			const objectSmartPointer<jsonObject>& hotkey = std::get<objectSmartPointer<jsonObject>>(i->data.front().second);
 
-			uint64_t key = hotkey->getUnsignedInt("key");
+			uint32_t key = static_cast<uint32_t>(hotkey->getUnsignedInt("key"));
 			const string& functionName = hotkey->getString("functionName");
 			const string& moduleName = hotkey->getString("moduleName");
 			vector<uint64_t> tem = json::utility::JSONArrayWrapper(hotkey->getArray("additionalKeys")).getAsUInt64_tArray();
