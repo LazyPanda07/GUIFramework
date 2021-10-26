@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.8.3-beta</span>
+   &#160;<span id="projectnumber">0.8.4-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -145,49 +145,47 @@ $(document).ready(function(){initNavTree('_base_component_8h_source.html',''); i
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        virtual <span class="keywordtype">void</span> setTextColor(uint8_t red, uint8_t green, uint8_t blue);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        virtual <span class="keywordtype">void</span> setStyles(interfaces::IStyles&amp; styles) final;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        virtual <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* getParent() const final;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        virtual <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* getParent() const final;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        virtual HWND getHandle() const final;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        virtual HWND getHandle() const final;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        virtual const std::wstring&amp; getWindowName() const final;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        virtual const std::wstring&amp; getWindowName() const final;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        virtual const std::wstring&amp; getClassName() const final;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        virtual const std::wstring&amp; getClassName() const final;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        virtual uint16_t getDesiredWidth() const final;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        virtual uint16_t getDesiredWidth() const final;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        virtual uint16_t getDesiredHeight() const final;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        virtual uint16_t getDesiredHeight() const final;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        virtual uint16_t getActualWidth() const final;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        virtual uint16_t getActualWidth() const final;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        virtual uint16_t getActualHeight() const final;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        virtual RECT getActualCoordinates() const final;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        virtual uint16_t getActualHeight() const final;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        virtual RECT getActualCoordinates() const final;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        virtual <span class="keywordtype">int</span> getDesiredX() const final;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        virtual <span class="keywordtype">int</span> getDesiredX() const final;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        virtual <span class="keywordtype">int</span> getDesiredY() const final;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        virtual <span class="keywordtype">int</span> getDesiredY() const final;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        virtual uint32_t getId() const final;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        virtual uint32_t getId() const final;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        virtual COLORREF getBackgroundColor() const final;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        virtual COLORREF getBackgroundColor() const final;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        virtual COLORREF getTextColor() const final;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        virtual COLORREF getTextColor() const final;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        virtual const <a class="code" href="_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67">smartPointerType</a>&lt;interfaces::IStyles&gt;&amp; getStyles() const final;</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        virtual const <a class="code" href="_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67">smartPointerType</a>&lt;interfaces::IStyles&gt;&amp; getStyles() const final;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#a7dc0cc180feee4a7691dc1037f1438de">  107</a></span>&#160;        virtual <span class="keywordtype">size_t</span> getHash() const = 0;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        virtual json::JSONBuilder getStructure() const override;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        virtual ~<a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>();</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#a9ed7ee1de0b791a2603f899e3a181961">  113</a></span>&#160;        friend class <a class="code" href="classgui__framework_1_1_base_composite.html">BaseComposite</a>;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    };</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
-<div class="ttc" id="a_g_u_i_framework_constants_8h_html_a15da9ebdfa896557bb941a5da31021ba"><div class="ttname"><a href="_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba">GUI_FRAMEWORK_API</a></div><div class="ttdeci">#define GUI_FRAMEWORK_API</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00118">GUIFrameworkConstants.h:118</a></div></div>
-<div class="ttc" id="a_g_u_i_framework_constants_8h_html_aaeb2028aa1fe1f81b8bc210cbf2d0b67"><div class="ttname"><a href="_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67">smartPointerType</a></div><div class="ttdeci">std::unique_ptr&lt; T &gt; smartPointerType</div><div class="ttdoc">Compatible smart pointer type.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00123">GUIFrameworkConstants.h:123</a></div></div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#a7dc0cc180feee4a7691dc1037f1438de">  105</a></span>&#160;        virtual <span class="keywordtype">size_t</span> getHash() const = 0;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        virtual json::JSONBuilder getStructure() const override;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        virtual ~<a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>();</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_component.html#a9ed7ee1de0b791a2603f899e3a181961">  111</a></span>&#160;        friend class <a class="code" href="classgui__framework_1_1_base_composite.html">BaseComposite</a>;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    };</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
+<div class="ttc" id="a_g_u_i_framework_constants_8h_html_a15da9ebdfa896557bb941a5da31021ba"><div class="ttname"><a href="_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba">GUI_FRAMEWORK_API</a></div><div class="ttdeci">#define GUI_FRAMEWORK_API</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00106">GUIFrameworkConstants.h:106</a></div></div>
+<div class="ttc" id="a_g_u_i_framework_constants_8h_html_aaeb2028aa1fe1f81b8bc210cbf2d0b67"><div class="ttname"><a href="_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67">smartPointerType</a></div><div class="ttdeci">std::unique_ptr&lt; T &gt; smartPointerType</div><div class="ttdoc">Compatible smart pointer type.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00111">GUIFrameworkConstants.h:111</a></div></div>
 <div class="ttc" id="a_i_serializable_8h_html"><div class="ttname"><a href="_i_serializable_8h.html">ISerializable.h</a></div></div>
 <div class="ttc" id="a_i_styles_8h_html"><div class="ttname"><a href="_i_styles_8h.html">IStyles.h</a></div></div>
 <div class="ttc" id="a_icons_holder_8h_html"><div class="ttname"><a href="_icons_holder_8h.html">IconsHolder.h</a></div></div>

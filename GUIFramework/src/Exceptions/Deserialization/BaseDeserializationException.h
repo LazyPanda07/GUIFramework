@@ -8,6 +8,7 @@ namespace gui_framework
 	{
 		namespace deserialization
 		{
+			/// @brief Base class for all deserialize exceptions
 			class GUI_FRAMEWORK_API BaseDeserializationException : public BaseGUIFrameworkException
 			{
 			public:

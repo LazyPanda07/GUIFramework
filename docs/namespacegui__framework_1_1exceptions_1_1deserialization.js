@@ -1,0 +1,5 @@
+var namespacegui__framework_1_1exceptions_1_1deserialization =
+[
+    [ "BaseDeserializationException", "classgui__framework_1_1exceptions_1_1deserialization_1_1_base_deserialization_exception.html", "classgui__framework_1_1exceptions_1_1deserialization_1_1_base_deserialization_exception" ],
+    [ "WrongMenuTypeException", "classgui__framework_1_1exceptions_1_1deserialization_1_1_wrong_menu_type_exception.html", "classgui__framework_1_1exceptions_1_1deserialization_1_1_wrong_menu_type_exception" ]
+];

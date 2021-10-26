@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.8.3-beta</span>
+   &#160;<span id="projectnumber">0.8.4-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -114,6 +114,15 @@ Inheritance diagram for gui_framework::ChildWindow:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2e6c2cf62ad0573533f90059f8e9a290"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_child_window.html#a2e6c2cf62ad0573533f90059f8e9a290">ChildWindow</a> (const std::wstring &amp;<a class="el" href="classgui__framework_1_1_base_component.html#a7a8719af09a90cd4de26d3a295882e86">className</a>, const std::wstring &amp;<a class="el" href="classgui__framework_1_1_base_component.html#ab927f5791c7605446203f7f7f6e0bb83">windowName</a>, const <a class="el" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a> &amp;settings, <a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> *parent, const std::string &amp;<a class="el" href="classgui__framework_1_1_base_composite.html#adfd81e2967cce16cfef62b7be0d7dbf3">windowFunctionName</a>=&quot;&quot;)</td></tr>
 <tr class="separator:a2e6c2cf62ad0573533f90059f8e9a290"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ad45b597a247d4f6b2e62e325047e0c"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classgui__framework_1_1_menu.html">Menu</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_child_window.html#a9ad45b597a247d4f6b2e62e325047e0c">createMainMenu</a> (const std::wstring &amp;menuName) override</td></tr>
+<tr class="memdesc:a9ad45b597a247d4f6b2e62e325047e0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Not implemented.  <a href="classgui__framework_1_1_child_window.html#a9ad45b597a247d4f6b2e62e325047e0c">More...</a><br /></td></tr>
+<tr class="separator:a9ad45b597a247d4f6b2e62e325047e0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcb8db948ad9f0e757eddf3052e4c27e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgui__framework_1_1_menu.html">Menu</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_child_window.html#adcb8db948ad9f0e757eddf3052e4c27e">addPopupMenu</a> (const std::wstring &amp;menuName) override</td></tr>
+<tr class="memdesc:adcb8db948ad9f0e757eddf3052e4c27e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Not implemented.  <a href="classgui__framework_1_1_child_window.html#adcb8db948ad9f0e757eddf3052e4c27e">More...</a><br /></td></tr>
+<tr class="separator:adcb8db948ad9f0e757eddf3052e4c27e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cb62ae9da2fc345fc49be29de2d7c8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_child_window.html#a9cb62ae9da2fc345fc49be29de2d7c8d">removePopupMenus</a> (const std::wstring &amp;menuName) override</td></tr>
+<tr class="memdesc:a9cb62ae9da2fc345fc49be29de2d7c8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Not implemented.  <a href="classgui__framework_1_1_child_window.html#a9cb62ae9da2fc345fc49be29de2d7c8d">More...</a><br /></td></tr>
+<tr class="separator:a9cb62ae9da2fc345fc49be29de2d7c8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ead5760721b5cf9f7bbe5aa104b719b"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_child_window.html#a6ead5760721b5cf9f7bbe5aa104b719b">getHash</a> () const override</td></tr>
 <tr class="memdesc:a6ead5760721b5cf9f7bbe5aa104b719b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used as key in creators.  <a href="classgui__framework_1_1_child_window.html#a6ead5760721b5cf9f7bbe5aa104b719b">More...</a><br /></td></tr>
 <tr class="separator:a6ead5760721b5cf9f7bbe5aa104b719b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -158,15 +167,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a54f3dff4ca2e948461f4c18a69cd833a inherit pub_methods_classgui__framework_1_1_base_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27d4bb107763afe92b9dabba56f99ff9 inherit pub_methods_classgui__framework_1_1_base_composite"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; <a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#a27d4bb107763afe92b9dabba56f99ff9">findChildren</a> (const std::wstring &amp;<a class="el" href="classgui__framework_1_1_base_component.html#ab927f5791c7605446203f7f7f6e0bb83">windowName</a>) const final</td></tr>
 <tr class="separator:a27d4bb107763afe92b9dabba56f99ff9 inherit pub_methods_classgui__framework_1_1_base_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace7fef499597d67329a46067ba6c961c inherit pub_methods_classgui__framework_1_1_base_composite"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; <a class="el" href="classgui__framework_1_1_menu.html">Menu</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#ace7fef499597d67329a46067ba6c961c">createMainMenu</a> (const std::wstring &amp;menuName) final</td></tr>
-<tr class="memdesc:ace7fef499597d67329a46067ba6c961c inherit pub_methods_classgui__framework_1_1_base_composite"><td class="mdescLeft">&#160;</td><td class="mdescRight">It needs to be called once.  <a href="classgui__framework_1_1_base_composite.html#ace7fef499597d67329a46067ba6c961c">More...</a><br /></td></tr>
-<tr class="separator:ace7fef499597d67329a46067ba6c961c inherit pub_methods_classgui__framework_1_1_base_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a411e3e9140e1a2731df48e8ac6b5893b inherit pub_methods_classgui__framework_1_1_base_composite"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classgui__framework_1_1_menu.html">Menu</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#a411e3e9140e1a2731df48e8ac6b5893b">addPopupMenu</a> (const std::wstring &amp;menuName) final</td></tr>
-<tr class="memdesc:a411e3e9140e1a2731df48e8ac6b5893b inherit pub_methods_classgui__framework_1_1_base_composite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Don't call move operator with return value.  <a href="classgui__framework_1_1_base_composite.html#a411e3e9140e1a2731df48e8ac6b5893b">More...</a><br /></td></tr>
-<tr class="separator:a411e3e9140e1a2731df48e8ac6b5893b inherit pub_methods_classgui__framework_1_1_base_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f936e466efe0f2e46c350fa2b16a28e inherit pub_methods_classgui__framework_1_1_base_composite"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#a9f936e466efe0f2e46c350fa2b16a28e">removePopupMenus</a> (const std::wstring &amp;menuName)</td></tr>
-<tr class="memdesc:a9f936e466efe0f2e46c350fa2b16a28e inherit pub_methods_classgui__framework_1_1_base_composite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove all pop-up menus with menuName.  <a href="classgui__framework_1_1_base_composite.html#a9f936e466efe0f2e46c350fa2b16a28e">More...</a><br /></td></tr>
-<tr class="separator:a9f936e466efe0f2e46c350fa2b16a28e inherit pub_methods_classgui__framework_1_1_base_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f0726dccdb362d62f42dcff5cd87942 inherit pub_methods_classgui__framework_1_1_base_composite"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#a6f0726dccdb362d62f42dcff5cd87942">isComposite</a> () const final override</td></tr>
 <tr class="separator:a6f0726dccdb362d62f42dcff5cd87942 inherit pub_methods_classgui__framework_1_1_base_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac652a1740402df821a2eb1f39f2f848a inherit pub_methods_classgui__framework_1_1_base_composite"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#ac652a1740402df821a2eb1f39f2f848a">setExitMode</a> (<a class="el" href="classgui__framework_1_1_base_composite.html#a438c1f5c9ef171bc01b2ac420fee985c">exitMode</a> <a class="el" href="classgui__framework_1_1_base_composite.html#a48f1d5a8df767f482e228ba04caaedea">mode</a>) final</td></tr>
@@ -216,8 +216,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a90444b6b79044a9c7a0d35fb2333c77d inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9dba22822b7f830295e104fa27af284c inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a9dba22822b7f830295e104fa27af284c">setTextColor</a> (uint8_t red, uint8_t green, uint8_t blue)</td></tr>
 <tr class="separator:a9dba22822b7f830295e104fa27af284c inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3cdf152fd93973ef43b7e44d72103ff4 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a3cdf152fd93973ef43b7e44d72103ff4">setStyles</a> (<a class="el" href="classgui__framework_1_1interfaces_1_1_i_styles.html">interfaces::IStyles</a> &amp;<a class="el" href="classgui__framework_1_1_base_component.html#aec8d3af6711b0c012f2f7f90cc7d4141">styles</a>) final</td></tr>
-<tr class="separator:a3cdf152fd93973ef43b7e44d72103ff4 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae01a3e23cbef564fc8d7e3d9ec26251b inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#ae01a3e23cbef564fc8d7e3d9ec26251b">getParent</a> () const final</td></tr>
 <tr class="separator:ae01a3e23cbef564fc8d7e3d9ec26251b inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab12780fecd5f22ec01d21a82d9ac87b7 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual HWND&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#ab12780fecd5f22ec01d21a82d9ac87b7">getHandle</a> () const final</td></tr>
@@ -412,7 +410,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_child_window_8cpp_source.html#l00008">8</a> of file <a class="el" href="_child_window_8cpp_source.html">ChildWindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_child_window_8cpp_source.html#l00010">10</a> of file <a class="el" href="_child_window_8cpp_source.html">ChildWindow.cpp</a>.</p>
 
 </div>
 </div>
@@ -442,6 +440,82 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="adcb8db948ad9f0e757eddf3052e4c27e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcb8db948ad9f0e757eddf3052e4c27e">&#9670;&nbsp;</a></span>addPopupMenu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classgui__framework_1_1_menu.html">Menu</a> &amp; gui_framework::ChildWindow::addPopupMenu </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>menuName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Not implemented. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">NotImplemented</td><td><a class="el" href="classgui__framework_1_1_child_window.html" title="Standard child window.">ChildWindow</a> can't contain menus </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="classgui__framework_1_1_base_composite.html#a97818d3d668728f49f3caf043c010d5f">gui_framework::BaseComposite</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_child_window_8cpp_source.html#l00035">35</a> of file <a class="el" href="_child_window_8cpp_source.html">ChildWindow.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a9ad45b597a247d4f6b2e62e325047e0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ad45b597a247d4f6b2e62e325047e0c">&#9670;&nbsp;</a></span>createMainMenu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unique_ptr&lt; <a class="el" href="classgui__framework_1_1_menu.html">Menu</a> &gt; &amp; gui_framework::ChildWindow::createMainMenu </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>menuName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Not implemented. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">NotImplemented</td><td><a class="el" href="classgui__framework_1_1_child_window.html" title="Standard child window.">ChildWindow</a> can't contain menus </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="classgui__framework_1_1_base_composite.html#a8216f6857b3a6d857c34633f67892e2f">gui_framework::BaseComposite</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_child_window_8cpp_source.html#l00028">28</a> of file <a class="el" href="_child_window_8cpp_source.html">ChildWindow.cpp</a>.</p>
+
+</div>
+</div>
 <a id="a6ead5760721b5cf9f7bbe5aa104b719b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6ead5760721b5cf9f7bbe5aa104b719b">&#9670;&nbsp;</a></span>getHash()</h2>
 
@@ -470,7 +544,45 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classgui__framework_1_1_base_child_window.html#aebde3ae307f47d1155fe30d0f42133e3">gui_framework::BaseChildWindow</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_child_window_8cpp_source.html#l00026">26</a> of file <a class="el" href="_child_window_8cpp_source.html">ChildWindow.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_child_window_8cpp_source.html#l00047">47</a> of file <a class="el" href="_child_window_8cpp_source.html">ChildWindow.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a9cb62ae9da2fc345fc49be29de2d7c8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cb62ae9da2fc345fc49be29de2d7c8d">&#9670;&nbsp;</a></span>removePopupMenus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gui_framework::ChildWindow::removePopupMenus </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>menuName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Not implemented. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">NotImplemented</td><td><a class="el" href="classgui__framework_1_1_child_window.html" title="Standard child window.">ChildWindow</a> can't contain menus </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="classgui__framework_1_1_base_composite.html#a9f936e466efe0f2e46c350fa2b16a28e">gui_framework::BaseComposite</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_child_window_8cpp_source.html#l00042">42</a> of file <a class="el" href="_child_window_8cpp_source.html">ChildWindow.cpp</a>.</p>
 
 </div>
 </div>
