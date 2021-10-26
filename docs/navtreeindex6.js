@@ -1,5 +1,6 @@
 var NAVTREEINDEX6 =
 {
+"classgui__framework_1_1_list_text_icon_list_view.html":[1,0,0,48],
 "classgui__framework_1_1_list_text_icon_list_view.html#a09963ca54b00d416b24a4824ed7cdcba":[1,0,0,48,1],
 "classgui__framework_1_1_list_text_icon_list_view.html#a3203df7070ea2f74c07b594099bb3079":[1,0,0,48,0],
 "classgui__framework_1_1_list_text_icon_list_view.html#a421784fbbd51a797213de882c9a1f2dc":[1,0,0,48,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX6 =
 "classgui__framework_1_1interfaces_1_1_i_base_list_view_operations.html#a19fa5d921fb9e0eaf3531b732e3ed276":[1,0,0,2,4,1],
 "classgui__framework_1_1interfaces_1_1_i_base_list_view_operations.html#a4e16f3ca0fecd29ec66173c155031d01":[1,0,0,2,4,3],
 "classgui__framework_1_1interfaces_1_1_i_base_list_view_operations.html#a8110d4ff257fae538d7d22893c48d090":[1,0,0,2,4,7],
-"classgui__framework_1_1interfaces_1_1_i_base_list_view_operations.html#ac44dfb57b3caab9c86f15db6e44b2100":[1,0,0,2,4,0],
-"classgui__framework_1_1interfaces_1_1_i_base_list_view_operations.html#aeca9cec98cc6a438bd6e9395090bff16":[1,0,0,2,4,5]
+"classgui__framework_1_1interfaces_1_1_i_base_list_view_operations.html#ac44dfb57b3caab9c86f15db6e44b2100":[1,0,0,2,4,0]
 };

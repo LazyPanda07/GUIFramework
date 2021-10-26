@@ -1,5 +1,6 @@
 var NAVTREEINDEX10 =
 {
+"headers_8cpp_source.html":[2,0,0,0,18],
 "headers_8h.html":[2,0,0,0,19],
 "headers_8h_source.html":[2,0,0,0,19],
 "hierarchy.html":[1,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX10 =
 "structgui__framework_1_1parsers_1_1_rich_edit_parser.html":[1,0,0,4,14],
 "structgui__framework_1_1parsers_1_1_rich_edit_parser.html#a0460e636df86566362fb3980bd265585":[1,0,0,4,14,5],
 "structgui__framework_1_1parsers_1_1_rich_edit_parser.html#a48e394a8dae1a501960cabec88861d9e":[1,0,0,4,14,3],
-"structgui__framework_1_1parsers_1_1_rich_edit_parser.html#a56b1cb99e4f91f8a5ff6d0997effff2f":[1,0,0,4,14,4],
-"structgui__framework_1_1parsers_1_1_rich_edit_parser.html#a656ba705cd7c621e03f8a96a7f0a4cb1":[1,0,0,4,14,2]
+"structgui__framework_1_1parsers_1_1_rich_edit_parser.html#a56b1cb99e4f91f8a5ff6d0997effff2f":[1,0,0,4,14,4]
 };
