@@ -480,9 +480,9 @@ namespace gui_framework
 			}
 		}
 
-		if (!current->contains("hotkeys", json::utility::variantTypeEnum::jJSONObject) && instance.getRegisteredHotkeys().size())
+		if (!builder.contains("hotkeys", json::utility::variantTypeEnum::jJSONObject) && instance.getRegisteredHotkeys().size())
 		{
-			current->data.push_back({ "hotkeys"s, move(instance.serializeHotkeys()) });
+			builder["hotkeys"] = move(instance.serializeHotkeys());
 		}
 
 		return builder;
