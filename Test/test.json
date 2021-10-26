@@ -25,21 +25,21 @@
       "mainMenuName": "Menu",
       "mainMenuItems": [
         {
+          "itemText": "PopupMenu",
+          "itemType": "DropDown",
+          "popupId": 267322763
+        },
+        {
           "itemText": "Third",
           "itemType": "MenuItem",
           "functionName": "test",
           "moduleName": "callbacks"
-        },
-        {
-          "itemText": "PopupMenu",
-          "itemType": "DropDown",
-          "popupId": 379389001
         }
       ],
       "popupItems": [
         {
           "menuName": "Popup",
-          "menuId": 379389001,
+          "menuId": 267322763,
           "items": [
             {
               "itemText": "First",
@@ -50,13 +50,13 @@
             {
               "itemText": "Inside popup",
               "itemType": "DropDown",
-              "popupId": 34145483
+              "popupId": 5571029
             }
           ]
         },
         {
           "menuName": "InsidePopup",
-          "menuId": 34145483,
+          "menuId": 5571029,
           "items": [
             {
               "itemText": "Second",

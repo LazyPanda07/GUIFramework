@@ -39,11 +39,11 @@ void standard()
 
 		popup.addMenuItem(make_unique<MenuItem>(L"First", "test", "callbacks"));
 
-		menu->addMenuItem(make_unique<MenuItem>(L"Third", "test", "callbacks"));
-
 		popup.addMenuItem(make_unique<DropDownMenuItem>(L"Inside popup", insidePopup.getHandle()));
 
 		menu->addMenuItem(make_unique<DropDownMenuItem>(L"PopupMenu", popup.getHandle()));
+
+		menu->addMenuItem(make_unique<MenuItem>(L"Third", "test", "callbacks"));
 
 		ptr->setExitMode(BaseComposite::exitMode::quit);
 		
