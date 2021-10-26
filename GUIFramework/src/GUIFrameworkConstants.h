@@ -27,24 +27,12 @@ namespace gui_framework
 
 	namespace standard_menu_items
 	{
-		inline constexpr std::string_view dropDownMenuItem = "DropDown";
-		inline constexpr std::string_view menuItem = "MenuItem";
+		inline const std::string dropDownMenuItem = "DropDown";
+		inline const std::string menuItem = "MenuItem";
 	}
 
 	namespace standard_sizes
 	{
-		inline constexpr uint16_t buttonWidth = 200;
-		inline constexpr uint16_t buttonHeight = 20;
-
-		inline constexpr uint16_t checkBoxWidth = 200;
-		inline constexpr uint16_t checkBoxHeight = 20;
-
-		inline constexpr uint16_t editControlWidth = 200;
-		inline constexpr uint16_t editControlHeight = 20;
-
-		inline constexpr uint16_t staticControlWidth = 200;
-		inline constexpr uint16_t staticControlHeight = 40;
-
 		inline constexpr uint16_t comboBoxAdditionalWidth = 10;
 
 		inline constexpr uint16_t listBoxAdditionalWidth = 20;
@@ -92,7 +80,7 @@ namespace gui_framework
 		};
 	}
 
-	inline constexpr std::string_view guiFrameworkVersion = "0.8.3-beta";
+	inline constexpr std::string_view guiFrameworkVersion = "0.8.4-beta";
 
 	/// @brief Default on click signature
 	using onClickSignature = void(*)();

@@ -208,7 +208,7 @@ namespace gui_framework
 				}
 			}
 
-			throw out_of_range(format("Can't find imageType at {} index", imageIndex));
+			throw out_of_range(format("Can't find imageType at {} index"sv, imageIndex));
 		}
 
 		HIMAGELIST BaseLoadableHolder::getImageList() const
@@ -231,7 +231,7 @@ namespace gui_framework
 				}
 			}
 
-			throw out_of_range(format("Can't find image at {} index", index));
+			throw out_of_range(format("Can't find image at {} index"sv, index));
 		}
 
 		iterators::loadable_forward_iterator BaseLoadableHolder::begin() noexcept

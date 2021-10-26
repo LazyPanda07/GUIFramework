@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.8.3-beta</span>
+   &#160;<span id="projectnumber">0.8.4-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -90,41 +90,70 @@ $(document).ready(function(){initNavTree('_child_window_8cpp_source.html',''); i
 <a href="_child_window_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="headers_8h.html">headers.h</a>&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_child_window_8h.html">ChildWindow.h</a>&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_not_implemented_8h.html">Exceptions/NotImplemented.h</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_child_window.html#a2e6c2cf62ad0573533f90059f8e9a290">    8</a></span>&#160;    ChildWindow::ChildWindow(<span class="keyword">const</span> wstring&amp; className, <span class="keyword">const</span> wstring&amp; windowName, <span class="keyword">const</span> <a class="code" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a>&amp; settings, <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* parent, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; windowFunctionName) :</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <a class="code" href="classgui__framework_1_1_base_child_window.html">BaseChildWindow</a></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        (</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            className,</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            windowName,</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            settings,</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            parent,</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            windowFunctionName</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        ),</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        IResizableComponent</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        (</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            handle,</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            parent-&gt;getHandle()</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        )</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    }</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_child_window.html#a2e6c2cf62ad0573533f90059f8e9a290">   10</a></span>&#160;    ChildWindow::ChildWindow(<span class="keyword">const</span> wstring&amp; className, <span class="keyword">const</span> wstring&amp; windowName, <span class="keyword">const</span> <a class="code" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a>&amp; settings, <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* parent, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; windowFunctionName) :</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <a class="code" href="classgui__framework_1_1_base_child_window.html">BaseChildWindow</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        (</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            className,</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            windowName,</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            settings,</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            parent,</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            windowFunctionName</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        ),</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        IResizableComponent</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        (</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            handle,</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            parent-&gt;getHandle()</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        )</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    {</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_child_window.html#a6ead5760721b5cf9f7bbe5aa104b719b">   26</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="classgui__framework_1_1_child_window.html#a6ead5760721b5cf9f7bbe5aa104b719b">ChildWindow::getHash</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">typeid</span>(<a class="code" href="classgui__framework_1_1_child_window.html#a2e6c2cf62ad0573533f90059f8e9a290">ChildWindow</a>).hash_code();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_child_window.html#a9ad45b597a247d4f6b2e62e325047e0c">   28</a></span>&#160;    unique_ptr&lt;Menu&gt;&amp; <a class="code" href="classgui__framework_1_1_child_window.html#a9ad45b597a247d4f6b2e62e325047e0c">ChildWindow::createMainMenu</a>(<span class="keyword">const</span> wstring&amp; menuName)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="namespacegui__framework_1_1____utility.html#adbc415e7ba81e1456aaacfbb65ea8100">__utility::throwNotImplementedException</a>(__FUNCTION__, <span class="stringliteral">&quot;ChildWindow&quot;</span>sv);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classgui__framework_1_1_base_composite.html#a8216f6857b3a6d857c34633f67892e2f">BaseComposite::createMainMenu</a>(menuName);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_child_window.html#adcb8db948ad9f0e757eddf3052e4c27e">   35</a></span>&#160;    <a class="code" href="classgui__framework_1_1_menu.html">Menu</a>&amp; <a class="code" href="classgui__framework_1_1_child_window.html#adcb8db948ad9f0e757eddf3052e4c27e">ChildWindow::addPopupMenu</a>(<span class="keyword">const</span> wstring&amp; menuName)</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="namespacegui__framework_1_1____utility.html#adbc415e7ba81e1456aaacfbb65ea8100">__utility::throwNotImplementedException</a>(__FUNCTION__, <span class="stringliteral">&quot;ChildWindow&quot;</span>sv);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classgui__framework_1_1_base_composite.html#a97818d3d668728f49f3caf043c010d5f">BaseComposite::addPopupMenu</a>(menuName);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_child_window.html#a9cb62ae9da2fc345fc49be29de2d7c8d">   42</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgui__framework_1_1_child_window.html#a9cb62ae9da2fc345fc49be29de2d7c8d">ChildWindow::removePopupMenus</a>(<span class="keyword">const</span> wstring&amp; menuName)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="namespacegui__framework_1_1____utility.html#adbc415e7ba81e1456aaacfbb65ea8100">__utility::throwNotImplementedException</a>(__FUNCTION__, <span class="stringliteral">&quot;ChildWindow&quot;</span>sv);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_child_window.html#a6ead5760721b5cf9f7bbe5aa104b719b">   47</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="classgui__framework_1_1_child_window.html#a6ead5760721b5cf9f7bbe5aa104b719b">ChildWindow::getHash</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">typeid</span>(<a class="code" href="classgui__framework_1_1_child_window.html#a2e6c2cf62ad0573533f90059f8e9a290">ChildWindow</a>).hash_code();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
 <div class="ttc" id="a_child_window_8h_html"><div class="ttname"><a href="_child_window_8h.html">ChildWindow.h</a></div></div>
+<div class="ttc" id="a_not_implemented_8h_html"><div class="ttname"><a href="_not_implemented_8h.html">NotImplemented.h</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1_base_child_window_html"><div class="ttname"><a href="classgui__framework_1_1_base_child_window.html">gui_framework::BaseChildWindow</a></div><div class="ttdoc">Base class for all nested windows.</div><div class="ttdef"><b>Definition:</b> <a href="_base_child_window_8h_source.html#l00009">BaseChildWindow.h:10</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1_base_component_html"><div class="ttname"><a href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></div><div class="ttdoc">Base class for all windows, controls, etc.</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00011">BaseComponent.h:12</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_child_window_html_a2e6c2cf62ad0573533f90059f8e9a290"><div class="ttname"><a href="classgui__framework_1_1_child_window.html#a2e6c2cf62ad0573533f90059f8e9a290">gui_framework::ChildWindow::ChildWindow</a></div><div class="ttdeci">ChildWindow(const std::wstring &amp;className, const std::wstring &amp;windowName, const utility::ComponentSettings &amp;settings, BaseComponent *parent, const std::string &amp;windowFunctionName=&quot;&quot;)</div><div class="ttdef"><b>Definition:</b> <a href="_child_window_8cpp_source.html#l00008">ChildWindow.cpp:8</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_child_window_html_a6ead5760721b5cf9f7bbe5aa104b719b"><div class="ttname"><a href="classgui__framework_1_1_child_window.html#a6ead5760721b5cf9f7bbe5aa104b719b">gui_framework::ChildWindow::getHash</a></div><div class="ttdeci">size_t getHash() const override</div><div class="ttdoc">Used as key in creators.</div><div class="ttdef"><b>Definition:</b> <a href="_child_window_8cpp_source.html#l00026">ChildWindow.cpp:26</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_composite_html_a8216f6857b3a6d857c34633f67892e2f"><div class="ttname"><a href="classgui__framework_1_1_base_composite.html#a8216f6857b3a6d857c34633f67892e2f">gui_framework::BaseComposite::createMainMenu</a></div><div class="ttdeci">virtual std::unique_ptr&lt; Menu &gt; &amp; createMainMenu(const std::wstring &amp;menuName)</div><div class="ttdoc">It needs to be called once.</div><div class="ttdef"><b>Definition:</b> <a href="_base_composite_8cpp_source.html#l00264">BaseComposite.cpp:264</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_composite_html_a97818d3d668728f49f3caf043c010d5f"><div class="ttname"><a href="classgui__framework_1_1_base_composite.html#a97818d3d668728f49f3caf043c010d5f">gui_framework::BaseComposite::addPopupMenu</a></div><div class="ttdeci">virtual Menu &amp; addPopupMenu(const std::wstring &amp;menuName)</div><div class="ttdoc">Don't call move operator with return value.</div><div class="ttdef"><b>Definition:</b> <a href="_base_composite_8cpp_source.html#l00273">BaseComposite.cpp:273</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_child_window_html_a2e6c2cf62ad0573533f90059f8e9a290"><div class="ttname"><a href="classgui__framework_1_1_child_window.html#a2e6c2cf62ad0573533f90059f8e9a290">gui_framework::ChildWindow::ChildWindow</a></div><div class="ttdeci">ChildWindow(const std::wstring &amp;className, const std::wstring &amp;windowName, const utility::ComponentSettings &amp;settings, BaseComponent *parent, const std::string &amp;windowFunctionName=&quot;&quot;)</div><div class="ttdef"><b>Definition:</b> <a href="_child_window_8cpp_source.html#l00010">ChildWindow.cpp:10</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_child_window_html_a6ead5760721b5cf9f7bbe5aa104b719b"><div class="ttname"><a href="classgui__framework_1_1_child_window.html#a6ead5760721b5cf9f7bbe5aa104b719b">gui_framework::ChildWindow::getHash</a></div><div class="ttdeci">size_t getHash() const override</div><div class="ttdoc">Used as key in creators.</div><div class="ttdef"><b>Definition:</b> <a href="_child_window_8cpp_source.html#l00047">ChildWindow.cpp:47</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_child_window_html_a9ad45b597a247d4f6b2e62e325047e0c"><div class="ttname"><a href="classgui__framework_1_1_child_window.html#a9ad45b597a247d4f6b2e62e325047e0c">gui_framework::ChildWindow::createMainMenu</a></div><div class="ttdeci">std::unique_ptr&lt; Menu &gt; &amp; createMainMenu(const std::wstring &amp;menuName) override</div><div class="ttdoc">Not implemented.</div><div class="ttdef"><b>Definition:</b> <a href="_child_window_8cpp_source.html#l00028">ChildWindow.cpp:28</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_child_window_html_a9cb62ae9da2fc345fc49be29de2d7c8d"><div class="ttname"><a href="classgui__framework_1_1_child_window.html#a9cb62ae9da2fc345fc49be29de2d7c8d">gui_framework::ChildWindow::removePopupMenus</a></div><div class="ttdeci">void removePopupMenus(const std::wstring &amp;menuName) override</div><div class="ttdoc">Not implemented.</div><div class="ttdef"><b>Definition:</b> <a href="_child_window_8cpp_source.html#l00042">ChildWindow.cpp:42</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_child_window_html_adcb8db948ad9f0e757eddf3052e4c27e"><div class="ttname"><a href="classgui__framework_1_1_child_window.html#adcb8db948ad9f0e757eddf3052e4c27e">gui_framework::ChildWindow::addPopupMenu</a></div><div class="ttdeci">Menu &amp; addPopupMenu(const std::wstring &amp;menuName) override</div><div class="ttdoc">Not implemented.</div><div class="ttdef"><b>Definition:</b> <a href="_child_window_8cpp_source.html#l00035">ChildWindow.cpp:35</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_menu_html"><div class="ttname"><a href="classgui__framework_1_1_menu.html">gui_framework::Menu</a></div><div class="ttdoc">Menu class.</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8h_source.html#l00009">Menu.h:10</a></div></div>
 <div class="ttc" id="aheaders_8h_html"><div class="ttname"><a href="headers_8h.html">headers.h</a></div></div>
+<div class="ttc" id="anamespacegui__framework_1_1____utility_html_adbc415e7ba81e1456aaacfbb65ea8100"><div class="ttname"><a href="namespacegui__framework_1_1____utility.html#adbc415e7ba81e1456aaacfbb65ea8100">gui_framework::__utility::throwNotImplementedException</a></div><div class="ttdeci">GUI_FRAMEWORK_API_FUNCTION void throwNotImplementedException(string_view methodName, string_view className)</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00168">Utility.cpp:168</a></div></div>
 <div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00016">BaseComponent.cpp:17</a></div></div>
-<div class="ttc" id="astructgui__framework_1_1utility_1_1_component_settings_html"><div class="ttname"><a href="structgui__framework_1_1utility_1_1_component_settings.html">gui_framework::utility::ComponentSettings</a></div><div class="ttdoc">All settings for windows.</div><div class="ttdef"><b>Definition:</b> <a href="_component_settings_8h_source.html#l00010">ComponentSettings.h:11</a></div></div>
+<div class="ttc" id="astructgui__framework_1_1utility_1_1_component_settings_html"><div class="ttname"><a href="structgui__framework_1_1utility_1_1_component_settings.html">gui_framework::utility::ComponentSettings</a></div><div class="ttdoc">All settings for windows.</div><div class="ttdef"><b>Definition:</b> <a href="_component_settings_8h_source.html#l00011">ComponentSettings.h:12</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -11,6 +11,10 @@ namespace gui_framework
 		public BaseComponent,
 		public interfaces::ITextOperations
 	{
+	public:
+		inline static constexpr uint16_t editControlWidth = 200;
+		inline static constexpr uint16_t editControlHeight = 20;
+
 	protected:
 		std::wstring placeholder;
 

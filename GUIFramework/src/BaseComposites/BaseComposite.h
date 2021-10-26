@@ -63,11 +63,11 @@ namespace gui_framework
 
 		/// @brief It needs to be called once
 		/// @return Created main menu
-		virtual std::unique_ptr<Menu>& createMainMenu(const std::wstring& menuName) final;
+		virtual std::unique_ptr<Menu>& createMainMenu(const std::wstring& menuName);
 
 		/// @brief Don't call move operator with return value
 		/// @return Created pop-up menu
-		virtual Menu& addPopupMenu(const std::wstring& menuName) final;
+		virtual Menu& addPopupMenu(const std::wstring& menuName);
 
 		/// @brief Remove all pop-up menus with menuName
 		/// @param menuName 

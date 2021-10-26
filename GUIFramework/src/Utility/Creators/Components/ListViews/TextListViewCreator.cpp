@@ -11,7 +11,7 @@ namespace gui_framework
 	{
 		BaseComponent* TextListViewCreator::create(const wstring& windowName, const utility::ComponentSettings& settings, const any& additionalData, BaseComponent* parent)
 		{
-			TextListView* result = new TextListView(windowName, utility::ComponentSettings(settings.x, settings.y, settings.width, settings.height), parent);
+			TextListView* result = new TextListView(windowName, settings, parent);
 			vector<wstring> data = any_cast<vector<wstring>>(additionalData);
 
 			for (const auto& i : data)

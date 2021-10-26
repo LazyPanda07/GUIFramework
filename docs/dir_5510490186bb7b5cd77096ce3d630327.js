@@ -23,6 +23,10 @@ var dir_5510490186bb7b5cd77096ce3d630327 =
     [ "ListBoxParser.h", "_list_box_parser_8h.html", [
       [ "ListBoxParser", "structgui__framework_1_1parsers_1_1_list_box_parser.html", "structgui__framework_1_1parsers_1_1_list_box_parser" ]
     ] ],
+    [ "MenuParser.cpp", "_menu_parser_8cpp.html", null ],
+    [ "MenuParser.h", "_menu_parser_8h.html", [
+      [ "MenuParser", "structgui__framework_1_1parsers_1_1_menu_parser.html", "structgui__framework_1_1parsers_1_1_menu_parser" ]
+    ] ],
     [ "RichEditParser.cpp", "_rich_edit_parser_8cpp.html", null ],
     [ "RichEditParser.h", "_rich_edit_parser_8h.html", [
       [ "RichEditParser", "structgui__framework_1_1parsers_1_1_rich_edit_parser.html", "structgui__framework_1_1parsers_1_1_rich_edit_parser" ]

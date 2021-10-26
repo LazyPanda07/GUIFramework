@@ -11,7 +11,7 @@ namespace gui_framework
 	{
 		BaseComponent* EditControlCreator::create(const wstring& windowName, const utility::ComponentSettings& settings, const any& additionalData, BaseComponent* parent)
 		{
-			EditControl* result = new EditControl(windowName, settings.x, settings.y, parent, settings.width, settings.height);
+			EditControl* result = new EditControl(windowName, settings, parent);
 
 			try
 			{

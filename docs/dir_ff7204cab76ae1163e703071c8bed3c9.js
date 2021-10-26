@@ -1,5 +1,6 @@
 var dir_ff7204cab76ae1163e703071c8bed3c9 =
 [
+    [ "Deserialization", "dir_d97fcb2f9056b42bd0b2e290800ba388.html", "dir_d97fcb2f9056b42bd0b2e290800ba388" ],
     [ "BaseGUIFrameworkException.cpp", "_base_g_u_i_framework_exception_8cpp.html", null ],
     [ "BaseGUIFrameworkException.h", "_base_g_u_i_framework_exception_8h.html", [
       [ "BaseGUIFrameworkException", "classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception.html", "classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception" ]

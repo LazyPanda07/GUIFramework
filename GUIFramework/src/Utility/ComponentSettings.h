@@ -1,6 +1,7 @@
 #pragma once
 
 #include "headers.h"
+#include "Interfaces/Styles/IStyles.h"
 
 namespace gui_framework
 {
@@ -13,6 +14,7 @@ namespace gui_framework
 			int y;
 			uint16_t width;
 			uint16_t height;
+			interfaces::IStyles styles;
 
 			ComponentSettings() = default;
 

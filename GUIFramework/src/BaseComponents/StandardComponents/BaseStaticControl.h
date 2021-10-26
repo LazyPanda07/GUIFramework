@@ -12,6 +12,10 @@ namespace gui_framework
 		public interfaces::ITextOperations
 	{
 	public:
+		inline static constexpr uint16_t staticControlWidth = 200;
+		inline static constexpr uint16_t staticControlHeight = 40;
+
+	public:
 		BaseStaticControl(const std::wstring& staticControlName, const std::wstring& staticControlText, const utility::ComponentSettings& settings, BaseComponent* parent);
 
 		/// @brief Used as key in creators

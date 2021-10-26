@@ -1,5 +1,6 @@
 var namespacegui__framework_1_1exceptions =
 [
+    [ "deserialization", "namespacegui__framework_1_1exceptions_1_1deserialization.html", "namespacegui__framework_1_1exceptions_1_1deserialization" ],
     [ "BaseGUIFrameworkException", "classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception.html", "classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception" ],
     [ "CantFindCompositeFunctionException", "classgui__framework_1_1exceptions_1_1_cant_find_composite_function_exception.html", "classgui__framework_1_1exceptions_1_1_cant_find_composite_function_exception" ],
     [ "CantFindFunctionFromModuleException", "classgui__framework_1_1exceptions_1_1_cant_find_function_from_module_exception.html", "classgui__framework_1_1exceptions_1_1_cant_find_function_from_module_exception" ],

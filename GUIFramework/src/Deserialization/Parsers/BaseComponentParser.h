@@ -13,7 +13,6 @@ namespace gui_framework
 			utility::ComponentSettings settings;
 			std::array<uint8_t, 3> backgroundColor;
 			std::array<uint8_t, 3> textColor;
-			interfaces::IStyles styles;
 
 		public:
 			BaseComponentParser() = default;

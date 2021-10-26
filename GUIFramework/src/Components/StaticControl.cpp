@@ -5,18 +5,12 @@ using namespace std;
 
 namespace gui_framework
 {
-	StaticControl::StaticControl(const wstring& staticControlName, const wstring& editControlText, int x, int y, BaseComponent* parent, uint16_t width, uint16_t height) :
+	StaticControl::StaticControl(const wstring& staticControlName, const wstring& editControlText, const utility::ComponentSettings& settings, BaseComponent* parent) :
 		BaseStaticControl
 		(
 			staticControlName,
 			editControlText,
-			utility::ComponentSettings
-			(
-				x,
-				y,
-				width,
-				height
-			),
+			settings,
 			parent
 		),
 		IResizableComponent

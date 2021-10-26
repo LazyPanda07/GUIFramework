@@ -58,46 +58,42 @@ namespace gui_framework
 
 				break;
 			case gui_framework::DialogBox::DialogBoxBuilder::alignment::center:
-				xPosition = (settings.width - i.width) / 2;
+				xPosition = (settings.width - i.settings.width) / 2;
 
 				break;
 			case gui_framework::DialogBox::DialogBoxBuilder::alignment::right:
-				xPosition = settings.width - i.width - i.offsets.right;
+				xPosition = settings.width - i.settings.width - i.offsets.right;
 
 				break;
 			}
 
+			const_cast<builderComponentData&>(i).settings.x = xPosition;
+			const_cast<builderComponentData&>(i).settings.y = currentTopOffset;
+
 			reference.getCreators().at(i.typeHash)->create
 			(
 				i.componentName,
-				utility::ComponentSettings
-				(
-					xPosition,
-					currentTopOffset,
-					i.width,
-					i.height
-				),
+				i.settings,
 				i.additionalData,
 				result
 			);
 
-			currentTopOffset += static_cast<uint16_t>(i.height + i.offsets.bottom);
+			currentTopOffset += static_cast<uint16_t>(i.settings.height + i.offsets.bottom);
 		}
 
 		return result;
 	}
 
-	DialogBoxBuilder::builderComponentData::builderComponentData(const wstring& componentName, const wstring& text, RECT&& offsets, size_t typeHash, uint16_t width, uint16_t height, alignment type, any&& additionalData) :
+	DialogBoxBuilder::builderComponentData::builderComponentData(const wstring& componentName, const interfaces::IStyles& styles, RECT&& offsets, size_t typeHash, uint16_t width, uint16_t height, alignment type, any&& additionalData) :
 		componentName(componentName),
-		text(text),
 		offsets(move(offsets)),
 		typeHash(typeHash),
-		width(width),
-		height(height),
 		type(type),
 		additionalData(move(additionalData))
 	{
-
+		settings.width = width;
+		settings.height = height;
+		settings.styles = styles;
 	}
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

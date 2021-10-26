@@ -9,7 +9,7 @@ namespace gui_framework
 		IMenuItem
 		(
 			text,
-			string(standard_menu_items::dropDownMenuItem)
+			standard_menu_items::dropDownMenuItem
 		),
 		popupMenuHandle(popupMenuHandle)
 	{

@@ -22,8 +22,7 @@ namespace gui_framework
 			uint32_t codepage = interfaces::ISerializable::getCodepage();
 			const smartPointerType<utility::BaseComponentCreator>& creator = GUIFramework::get().getCreators().at(utility::getTypeHash<ChildWindow>());
 			utility::AdditionalCreationData<ChildWindow> creationData(parser.className, parser.windowFunctionName);
-			const auto& children = description->getArray("children");
-
+			
 			result = static_cast<ChildWindow*>(creator->create(utility::to_wstring(componentName, codepage), parser.settings, creationData.getData(), parent));
 
 			result->setBackgroundColor(parser.backgroundColor[0], parser.backgroundColor[1], parser.backgroundColor[2]);
@@ -31,8 +30,6 @@ namespace gui_framework
 			result->setTextColor(parser.textColor[0], parser.textColor[1], parser.textColor[2]);
 
 			result->setExitMode(parser.mode);
-
-			result->setStyles(parser.styles);
 
 			if (parser.pathToLargeIcon.size())
 			{
@@ -44,14 +41,19 @@ namespace gui_framework
 				result->setSmallIcon(parser.pathToSmallIcon);
 			}
 
-			for (const auto& i : children)
+			if (description->contains("children", json::utility::variantTypeEnum::jJSONArray))
 			{
-				const auto& [componentName, data] = get<objectSmartPointer<jsonObject>>(i->data.front().second)->data.front();
-				const auto& description = get<objectSmartPointer<jsonObject>>(data);
+				const auto& children = description->getArray("children");
 
-				const smartPointerType<interfaces::IDeserializer>& deserializer = GUIFramework::get().getDeserializers().at(description->getUnsignedInt("hash"));
+				for (const auto& i : children)
+				{
+					const auto& [componentName, data] = get<objectSmartPointer<jsonObject>>(i->data.front().second)->data.front();
+					const auto& description = get<objectSmartPointer<jsonObject>>(data);
 
-				deserializer->deserialize(componentName, description, result);
+					const smartPointerType<interfaces::IDeserializer>& deserializer = GUIFramework::get().getDeserializers().at(description->getUnsignedInt("hash"));
+
+					deserializer->deserialize(componentName, description, result);
+				}
 			}
 
 			return result;

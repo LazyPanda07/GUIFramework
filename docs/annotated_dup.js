@@ -26,9 +26,14 @@ var annotated_dup =
         [ "VerticalTrackbarControlDeserializer", "classgui__framework_1_1deserializers_1_1_vertical_trackbar_control_deserializer.html", "classgui__framework_1_1deserializers_1_1_vertical_trackbar_control_deserializer" ],
         [ "ChildWindowDeserializer", "classgui__framework_1_1deserializers_1_1_child_window_deserializer.html", "classgui__framework_1_1deserializers_1_1_child_window_deserializer" ],
         [ "GroupBoxDeserializer", "classgui__framework_1_1deserializers_1_1_group_box_deserializer.html", "classgui__framework_1_1deserializers_1_1_group_box_deserializer" ],
-        [ "SeparateWindowDeserializer", "classgui__framework_1_1deserializers_1_1_separate_window_deserializer.html", "classgui__framework_1_1deserializers_1_1_separate_window_deserializer" ]
+        [ "SeparateWindowDeserializer", "classgui__framework_1_1deserializers_1_1_separate_window_deserializer.html", "classgui__framework_1_1deserializers_1_1_separate_window_deserializer" ],
+        [ "DropDownMenuItemDeserializer", "classgui__framework_1_1deserializers_1_1_drop_down_menu_item_deserializer.html", "classgui__framework_1_1deserializers_1_1_drop_down_menu_item_deserializer" ]
       ] ],
       [ "exceptions", "namespacegui__framework_1_1exceptions.html", [
+        [ "deserialization", "namespacegui__framework_1_1exceptions_1_1deserialization.html", [
+          [ "BaseDeserializationException", "classgui__framework_1_1exceptions_1_1deserialization_1_1_base_deserialization_exception.html", "classgui__framework_1_1exceptions_1_1deserialization_1_1_base_deserialization_exception" ],
+          [ "WrongMenuTypeException", "classgui__framework_1_1exceptions_1_1deserialization_1_1_wrong_menu_type_exception.html", "classgui__framework_1_1exceptions_1_1deserialization_1_1_wrong_menu_type_exception" ]
+        ] ],
         [ "BaseGUIFrameworkException", "classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception.html", "classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception" ],
         [ "CantFindCompositeFunctionException", "classgui__framework_1_1exceptions_1_1_cant_find_composite_function_exception.html", "classgui__framework_1_1exceptions_1_1_cant_find_composite_function_exception" ],
         [ "CantFindFunctionFromModuleException", "classgui__framework_1_1exceptions_1_1_cant_find_function_from_module_exception.html", "classgui__framework_1_1exceptions_1_1_cant_find_function_from_module_exception" ],
@@ -72,6 +77,7 @@ var annotated_dup =
         [ "IconListViewParser", "structgui__framework_1_1parsers_1_1_icon_list_view_parser.html", "structgui__framework_1_1parsers_1_1_icon_list_view_parser" ],
         [ "TextIconListViewParser", "structgui__framework_1_1parsers_1_1_text_icon_list_view_parser.html", "structgui__framework_1_1parsers_1_1_text_icon_list_view_parser" ],
         [ "TextListViewParser", "structgui__framework_1_1parsers_1_1_text_list_view_parser.html", "structgui__framework_1_1parsers_1_1_text_list_view_parser" ],
+        [ "MenuParser", "structgui__framework_1_1parsers_1_1_menu_parser.html", "structgui__framework_1_1parsers_1_1_menu_parser" ],
         [ "InfiniteProgressBarParser", "structgui__framework_1_1parsers_1_1_infinite_progress_bar_parser.html", "structgui__framework_1_1parsers_1_1_infinite_progress_bar_parser" ],
         [ "ProgressBarParser", "structgui__framework_1_1parsers_1_1_progress_bar_parser.html", "structgui__framework_1_1parsers_1_1_progress_bar_parser" ],
         [ "RichEditParser", "structgui__framework_1_1parsers_1_1_rich_edit_parser.html", "structgui__framework_1_1parsers_1_1_rich_edit_parser" ],

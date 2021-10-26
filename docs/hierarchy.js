@@ -77,6 +77,7 @@ var hierarchy =
     ] ],
     [ "gui_framework::utility::ComponentSettings", "structgui__framework_1_1utility_1_1_component_settings.html", null ],
     [ "gui_framework::DialogBox::DialogBoxBuilder", "classgui__framework_1_1_dialog_box_1_1_dialog_box_builder.html", null ],
+    [ "gui_framework::deserializers::DropDownMenuItemDeserializer", "classgui__framework_1_1deserializers_1_1_drop_down_menu_item_deserializer.html", null ],
     [ "gui_framework::GUIFramework", "classgui__framework_1_1_g_u_i_framework.html", null ],
     [ "hash< set< uint32_t > >", "structhash_3_01set_3_01uint32__t_01_4_01_4.html", null ],
     [ "gui_framework::GUIFramework::hotkeyData", "structgui__framework_1_1_g_u_i_framework_1_1hotkey_data.html", null ],
@@ -309,6 +310,7 @@ var hierarchy =
       [ "gui_framework::BaseRichEdit", "classgui__framework_1_1_base_rich_edit.html", null ],
       [ "gui_framework::BaseStaticControl", "classgui__framework_1_1_base_static_control.html", null ]
     ] ],
+    [ "gui_framework::parsers::MenuParser", "structgui__framework_1_1parsers_1_1_menu_parser.html", null ],
     [ "gui_framework::GroupBox::radioButtonData", "structgui__framework_1_1_group_box_1_1radio_button_data.html", null ],
     [ "gui_framework::Recreator", "classgui__framework_1_1_recreator.html", null ],
     [ "std::runtime_error", null, [
@@ -319,7 +321,10 @@ var hierarchy =
         [ "gui_framework::exceptions::FileDoesNotExist", "classgui__framework_1_1exceptions_1_1_file_does_not_exist.html", null ],
         [ "gui_framework::exceptions::GetLastErrorException", "classgui__framework_1_1exceptions_1_1_get_last_error_exception.html", null ],
         [ "gui_framework::exceptions::NotImplemented", "classgui__framework_1_1exceptions_1_1_not_implemented.html", null ],
-        [ "gui_framework::exceptions::SelectListException", "classgui__framework_1_1exceptions_1_1_select_list_exception.html", null ]
+        [ "gui_framework::exceptions::SelectListException", "classgui__framework_1_1exceptions_1_1_select_list_exception.html", null ],
+        [ "gui_framework::exceptions::deserialization::BaseDeserializationException", "classgui__framework_1_1exceptions_1_1deserialization_1_1_base_deserialization_exception.html", [
+          [ "gui_framework::exceptions::deserialization::WrongMenuTypeException", "classgui__framework_1_1exceptions_1_1deserialization_1_1_wrong_menu_type_exception.html", null ]
+        ] ]
       ] ]
     ] ],
     [ "gui_framework::BaseTabControl::tabData", "structgui__framework_1_1_base_tab_control_1_1tab_data.html", null ],

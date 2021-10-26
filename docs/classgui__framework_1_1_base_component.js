@@ -29,7 +29,6 @@ var classgui__framework_1_1_base_component =
     [ "setDesiredWidth", "classgui__framework_1_1_base_component.html#a7bb01e4f57c3066b96e38c20ea9207a2", null ],
     [ "setDesiredX", "classgui__framework_1_1_base_component.html#ad77a109aa5d3d108614a0ee07102ab30", null ],
     [ "setDesiredY", "classgui__framework_1_1_base_component.html#a90444b6b79044a9c7a0d35fb2333c77d", null ],
-    [ "setStyles", "classgui__framework_1_1_base_component.html#a3cdf152fd93973ef43b7e44d72103ff4", null ],
     [ "setTextColor", "classgui__framework_1_1_base_component.html#a9dba22822b7f830295e104fa27af284c", null ],
     [ "windowMessagesHandle", "classgui__framework_1_1_base_component.html#a636cece7fe5db06982150a8eb9e13e10", null ],
     [ "BaseComposite", "classgui__framework_1_1_base_component.html#a9ed7ee1de0b791a2603f899e3a181961", null ],

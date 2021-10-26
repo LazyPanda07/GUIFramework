@@ -24,8 +24,6 @@ namespace gui_framework
 
 			result = static_cast<MultipleSelectListBox*>(creator->create(utility::to_wstring(componentName, codepage), parser.settings, creationData.getData(), parent));
 
-			result->setStyles(parser.styles);
-
 			return result;
 		}
 	}

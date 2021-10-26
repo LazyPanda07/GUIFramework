@@ -11,6 +11,7 @@ var namespacegui__framework_1_1parsers =
     [ "IconListViewParser", "structgui__framework_1_1parsers_1_1_icon_list_view_parser.html", "structgui__framework_1_1parsers_1_1_icon_list_view_parser" ],
     [ "TextIconListViewParser", "structgui__framework_1_1parsers_1_1_text_icon_list_view_parser.html", "structgui__framework_1_1parsers_1_1_text_icon_list_view_parser" ],
     [ "TextListViewParser", "structgui__framework_1_1parsers_1_1_text_list_view_parser.html", "structgui__framework_1_1parsers_1_1_text_list_view_parser" ],
+    [ "MenuParser", "structgui__framework_1_1parsers_1_1_menu_parser.html", "structgui__framework_1_1parsers_1_1_menu_parser" ],
     [ "InfiniteProgressBarParser", "structgui__framework_1_1parsers_1_1_infinite_progress_bar_parser.html", "structgui__framework_1_1parsers_1_1_infinite_progress_bar_parser" ],
     [ "ProgressBarParser", "structgui__framework_1_1parsers_1_1_progress_bar_parser.html", "structgui__framework_1_1parsers_1_1_progress_bar_parser" ],
     [ "RichEditParser", "structgui__framework_1_1parsers_1_1_rich_edit_parser.html", "structgui__framework_1_1parsers_1_1_rich_edit_parser" ],
