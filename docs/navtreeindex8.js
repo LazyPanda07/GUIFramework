@@ -1,5 +1,6 @@
 var NAVTREEINDEX8 =
 {
+"classgui__framework_1_1utility_1_1_additional_creation_data_3_01_check_box_01_4.html":[1,0,0,6,2],
 "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_check_box_01_4.html#a1c74160180e3987dcc19b5a935374e8c":[1,0,0,6,2,9],
 "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_check_box_01_4.html#a2b53606bb0bb7a05d8137e0e1d2d1e64":[1,0,0,6,2,3],
 "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_check_box_01_4.html#a36e9a0f96507c35adb7cf63330883c7c":[1,0,0,6,2,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX8 =
 "classgui__framework_1_1utility_1_1_drop_down_combo_box_creator.html#a884c5c2b49dedecb4be048114a31ae4c":[1,0,0,6,31,0],
 "classgui__framework_1_1utility_1_1_drop_down_list_combo_box_creator.html":[1,0,0,6,32],
 "classgui__framework_1_1utility_1_1_drop_down_list_combo_box_creator.html#a337ce2d9339114de3f436c7d7df41ae0":[1,0,0,6,32,2],
-"classgui__framework_1_1utility_1_1_drop_down_list_combo_box_creator.html#a3fcbae6068745eee24cae17852c62477":[1,0,0,6,32,1],
-"classgui__framework_1_1utility_1_1_drop_down_list_combo_box_creator.html#aacf60cbd4a4a4e70f6daaa581c77ab80":[1,0,0,6,32,0]
+"classgui__framework_1_1utility_1_1_drop_down_list_combo_box_creator.html#a3fcbae6068745eee24cae17852c62477":[1,0,0,6,32,1]
 };

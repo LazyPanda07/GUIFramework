@@ -5,6 +5,7 @@ var classgui__framework_1_1_g_u_i_framework =
     [ "addDeserializer", "classgui__framework_1_1_g_u_i_framework.html#aeb308a574ad7f9c0484f67177b68b578", null ],
     [ "addTask", "classgui__framework_1_1_g_u_i_framework.html#aba953f14d707b9d3253f655d95cd54e2", null ],
     [ "addTask", "classgui__framework_1_1_g_u_i_framework.html#ab77a09a4df9c4e126be1b9b1f55f1737", null ],
+    [ "deserializeHotkeys", "classgui__framework_1_1_g_u_i_framework.html#a46b28940cc7861105f46290889357e71", null ],
     [ "findComponent", "classgui__framework_1_1_g_u_i_framework.html#a73ddfec743b06fc8fd6fbd85b6cd4663", null ],
     [ "findComponent", "classgui__framework_1_1_g_u_i_framework.html#ab739e2b9458c6850fa30c570b3ff82e7", null ],
     [ "getCantLoadedModules", "classgui__framework_1_1_g_u_i_framework.html#a0aa718fbeffaf31e2de9bcbc54062b57", null ],

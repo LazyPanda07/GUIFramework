@@ -153,6 +153,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac531144a5b143dbeba7b753c8133af39"><td class="memItemLeft" align="right" valign="top">std::vector&lt; json::utility::objectSmartPointer&lt; json::utility::jsonObject &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_g_u_i_framework.html#ac531144a5b143dbeba7b753c8133af39">serializeHotkeys</a> ()</td></tr>
 <tr class="memdesc:ac531144a5b143dbeba7b753c8133af39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize hotkeys.  <a href="classgui__framework_1_1_g_u_i_framework.html#ac531144a5b143dbeba7b753c8133af39">More...</a><br /></td></tr>
 <tr class="separator:ac531144a5b143dbeba7b753c8133af39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46b28940cc7861105f46290889357e71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_g_u_i_framework.html#a46b28940cc7861105f46290889357e71">deserializeHotkeys</a> (const json::utility::objectSmartPointer&lt; json::utility::jsonObject &gt; &amp;description)</td></tr>
+<tr class="memdesc:a46b28940cc7861105f46290889357e71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deserialize hotkeys.  <a href="classgui__framework_1_1_g_u_i_framework.html#a46b28940cc7861105f46290889357e71">More...</a><br /></td></tr>
+<tr class="separator:a46b28940cc7861105f46290889357e71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c0ef4c4e1f9e21ea7906584f93441c3"><td class="memItemLeft" align="right" valign="top">const std::unordered_map&lt; size_t, <a class="el" href="_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67">smartPointerType</a>&lt; <a class="el" href="classgui__framework_1_1utility_1_1_base_component_creator.html">utility::BaseComponentCreator</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_g_u_i_framework.html#a7c0ef4c4e1f9e21ea7906584f93441c3">getCreators</a> () const</td></tr>
 <tr class="memdesc:a7c0ef4c4e1f9e21ea7906584f93441c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all current registered creators.  <a href="classgui__framework_1_1_g_u_i_framework.html#a7c0ef4c4e1f9e21ea7906584f93441c3">More...</a><br /></td></tr>
 <tr class="separator:a7c0ef4c4e1f9e21ea7906584f93441c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -213,7 +216,7 @@ template&lt;std::derived_from&lt; BaseComponent &gt; T, std::derived_from&lt; ut
 
 <p>Add derived from BaseComponentCreator creator. </p>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8h_source.html#l00230">230</a> of file <a class="el" href="_g_u_i_framework_8h_source.html">GUIFramework.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8h_source.html#l00234">234</a> of file <a class="el" href="_g_u_i_framework_8h_source.html">GUIFramework.h</a>.</p>
 
 </div>
 </div>
@@ -237,7 +240,7 @@ template&lt;std::derived_from&lt; BaseComponent &gt; T, std::derived_from&lt; in
 
 <p>Add derived from IDeserializer deserializer. </p>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8h_source.html#l00236">236</a> of file <a class="el" href="_g_u_i_framework_8h_source.html">GUIFramework.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8h_source.html#l00240">240</a> of file <a class="el" href="_g_u_i_framework_8h_source.html">GUIFramework.h</a>.</p>
 
 </div>
 </div>
@@ -324,6 +327,34 @@ template&lt;std::derived_from&lt; BaseComponent &gt; T, std::derived_from&lt; in
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a46b28940cc7861105f46290889357e71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46b28940cc7861105f46290889357e71">&#9670;&nbsp;</a></span>deserializeHotkeys()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gui_framework::GUIFramework::deserializeHotkeys </td>
+          <td>(</td>
+          <td class="paramtype">const json::utility::objectSmartPointer&lt; json::utility::jsonObject &gt; &amp;&#160;</td>
+          <td class="paramname"><em>description</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Deserialize hotkeys. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">description</td><td>Description of holder window with 'hotkeys' object </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00775">775</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
 
 </div>
 </div>
@@ -415,7 +446,7 @@ template&lt;std::derived_from&lt; BaseComponent &gt; T, std::derived_from&lt; in
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8h_source.html#l00222">222</a> of file <a class="el" href="_g_u_i_framework_8h_source.html">GUIFramework.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8h_source.html#l00226">226</a> of file <a class="el" href="_g_u_i_framework_8h_source.html">GUIFramework.h</a>.</p>
 
 </div>
 </div>
@@ -438,7 +469,7 @@ template&lt;std::derived_from&lt; BaseComponent &gt; T, std::derived_from&lt; in
 <dl class="section return"><dt>Returns</dt><dd><br  />
  </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00805">805</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00828">828</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
 
 </div>
 </div>
@@ -460,7 +491,7 @@ template&lt;std::derived_from&lt; BaseComponent &gt; T, std::derived_from&lt; in
 <p>Get all current registered creators. </p>
 <dl class="section return"><dt>Returns</dt><dd>creators </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00775">775</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00798">798</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
 
 </div>
 </div>
@@ -482,7 +513,7 @@ template&lt;std::derived_from&lt; BaseComponent &gt; T, std::derived_from&lt; in
 <p>Get all current registered deserializers. </p>
 <dl class="section return"><dt>Returns</dt><dd>deserializers </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00780">780</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00803">803</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
 
 </div>
 </div>
@@ -504,7 +535,7 @@ template&lt;std::derived_from&lt; BaseComponent &gt; T, std::derived_from&lt; in
 <p>Get settings from gui_framework.json. </p>
 <dl class="section return"><dt>Returns</dt><dd>jsonSettings </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00785">785</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00808">808</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
 
 </div>
 </div>
@@ -527,7 +558,7 @@ template&lt;std::derived_from&lt; BaseComponent &gt; T, std::derived_from&lt; in
 <dl class="section return"><dt>Returns</dt><dd><br  />
  </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00790">790</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00813">813</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
 
 </div>
 </div>
@@ -550,7 +581,7 @@ template&lt;std::derived_from&lt; BaseComponent &gt; T, std::derived_from&lt; in
 <dl class="section return"><dt>Returns</dt><dd><br  />
  </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00795">795</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00818">818</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
 
 </div>
 </div>
@@ -624,7 +655,7 @@ template&lt;std::derived_from&lt; BaseComponent &gt; T, std::derived_from&lt; in
 <dl class="section return"><dt>Returns</dt><dd><br  />
  </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00800">800</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8cpp_source.html#l00823">823</a> of file <a class="el" href="_g_u_i_framework_8cpp_source.html">GUIFramework.cpp</a>.</p>
 
 </div>
 </div>
@@ -918,7 +949,7 @@ template&lt;std::derived_from&lt; BaseComponent &gt; T, std::derived_from&lt; in
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8h_source.html#l00216">216</a> of file <a class="el" href="_g_u_i_framework_8h_source.html">GUIFramework.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8h_source.html#l00220">220</a> of file <a class="el" href="_g_u_i_framework_8h_source.html">GUIFramework.h</a>.</p>
 
 </div>
 </div>
@@ -942,7 +973,7 @@ template&lt;std::derived_from&lt; BaseComponent &gt; T, std::derived_from&lt; in
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8h_source.html#l00218">218</a> of file <a class="el" href="_g_u_i_framework_8h_source.html">GUIFramework.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_8h_source.html#l00222">222</a> of file <a class="el" href="_g_u_i_framework_8h_source.html">GUIFramework.h</a>.</p>
 
 </div>
 </div>

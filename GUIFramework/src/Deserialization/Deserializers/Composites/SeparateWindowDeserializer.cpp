@@ -100,6 +100,11 @@ namespace gui_framework
 				}
 			}
 
+			if (description->contains("hotkeys", json::utility::variantTypeEnum::jJSONArray))
+			{
+				GUIFramework::get().deserializeHotkeys(description);
+			}
+
 			if (description->contains("children", json::utility::variantTypeEnum::jJSONArray))
 			{
 				const auto& children = description->getArray("children");
