@@ -93,7 +93,7 @@ int main(int argc, char** argv)
 
 	SetConsoleOutputCP(CP_UTF8);
 
-	thread(standard).detach();
+	thread(test).detach();
 
 	string s;
 
