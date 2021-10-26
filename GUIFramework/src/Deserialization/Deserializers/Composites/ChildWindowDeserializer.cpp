@@ -41,6 +41,11 @@ namespace gui_framework
 				result->setSmallIcon(parser.pathToSmallIcon);
 			}
 
+			if (parser.onDestroyFunctionName.size())
+			{
+				result->setOnDestroy(parser.onDestroyFunctionName, parser.onDestroyFunctionModuleName);
+			}
+
 			if (description->contains("children", json::utility::variantTypeEnum::jJSONArray))
 			{
 				const auto& children = description->getArray("children");
