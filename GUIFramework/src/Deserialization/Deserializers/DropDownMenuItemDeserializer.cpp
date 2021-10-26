@@ -51,7 +51,20 @@ namespace gui_framework
 					}
 					else if (type == standard_menu_items::dropDownMenuItem)
 					{
-						menu.addMenuItem(DropDownMenuItemDeserializer(menuHolder).deserializeDropDownMenuItem(text, dropDownItem->getUnsignedInt("popupId"), popupItems, menu));
+						Menu* popupMenu = nullptr;
+						uint64_t insidePopupId = dropDownItem->getUnsignedInt("popupId");
+
+						for (const auto& j : popupItems)
+						{
+							const objectSmartPointer<jsonObject>& popupItem = get<objectSmartPointer<jsonObject>>(j->data.front().second);
+
+							if (popupItem->getUnsignedInt("menuId") == insidePopupId)
+							{
+								popupMenu = &menuHolder->addPopupMenu(utility::to_wstring(popupItem->getString("menuName"), codepage));
+							}
+						}
+
+						menu.addMenuItem(DropDownMenuItemDeserializer(menuHolder).deserializeDropDownMenuItem(text, insidePopupId, popupItems, menu));
 					}
 					else
 					{
