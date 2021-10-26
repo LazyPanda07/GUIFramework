@@ -772,6 +772,29 @@ namespace gui_framework
 		return result;
 	}
 
+	void GUIFramework::deserializeHotkeys(const json::utility::objectSmartPointer<json::utility::jsonObject>& description)
+	{
+		using json::utility::objectSmartPointer;
+		using json::utility::jsonObject;
+
+		const auto& jsonHotkeys = description->getArray("hotkeys");
+
+		for (const auto& i : jsonHotkeys)
+		{
+			const objectSmartPointer<jsonObject>& hotkey = std::get<objectSmartPointer<jsonObject>>(i->data.front().second);
+
+			uint64_t key = hotkey->getUnsignedInt("key");
+			const string& functionName = hotkey->getString("functionName");
+			const string& moduleName = hotkey->getString("moduleName");
+			vector<uint64_t> tem = json::utility::JSONArrayWrapper(hotkey->getArray("additionalKeys")).getAsUInt64_tArray();
+			vector<hotkeys::additionalKeys> additionalKeys;
+
+			ranges::for_each(tem, [&additionalKeys](uint64_t additionalKey) { additionalKeys.push_back(static_cast<hotkeys::additionalKeys>(additionalKey)); });
+
+			this->registerHotkey(key, functionName, moduleName, additionalKeys);
+		}
+	}
+
 	const unordered_map<size_t, smartPointerType<utility::BaseComponentCreator>>& GUIFramework::getCreators() const
 	{
 		return creators;
