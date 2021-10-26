@@ -1,6 +1,8 @@
 #include "headers.h"
 #include "Utility.h"
 
+#include "BaseComposites/StandardComposites/BaseSeparateWindow.h"
+
 #include "Exceptions/CantFindFunctionFromModuleException.h"
 #include "Exceptions/NotImplemented.h"
 
@@ -178,6 +180,21 @@ namespace gui_framework
 			{
 
 			}
+		}
+
+		GUI_FRAMEWORK_API_FUNCTION bool useOnClose(any topLevelWindow)
+		{
+			BaseSeparateWindow* tem = dynamic_cast<BaseSeparateWindow*>(any_cast<BaseComposite*>(topLevelWindow));
+
+			if (tem)
+			{
+				if (tem->getOnClose()())
+				{
+					return true;
+				}
+			}
+
+			return false;
 		}
 	}
 }

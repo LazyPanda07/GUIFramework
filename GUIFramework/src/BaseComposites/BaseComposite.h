@@ -6,6 +6,7 @@
 #include "Interfaces/Iterators/IIterable.h"
 #include "Iterators/composite_forward_iterator.h"
 #include "Iterators/composite_const_forward_iterator.h"
+#include "Utility/Utility.h"
 
 namespace gui_framework
 {
@@ -142,14 +143,9 @@ namespace gui_framework
 	case WM_CLOSE:	\
 		if (topLevelWindow && (topLevelWindow->getHandle() == handle && topLevelWindow->getExitMode() == gui_framework::BaseComposite::exitMode::quit)) \
 		{	\
-			class BaseSeparateWindow* tem = dynamic_cast<class BaseSeparateWindow*>(topLevelWindow);	\
-				\
-			if (tem)	\
+			if (__utility::useOnClose(topLevelWindow))	\
 			{	\
-				if (tem->getOnClose()())	\
-				{	\
-					DestroyWindow(handle);	\
-				}	\
+				DestroyWindow(handle);	\
 			}	\
 				\
 			return 0;	\
