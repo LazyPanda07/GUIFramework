@@ -678,6 +678,9 @@
     <ClInclude Include="src\Exceptions\Deserialization\WrongMenuTypeException.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="src\Deserialization\Deserializers\DropDownMenuItemDeserializer.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\headers.cpp">
@@ -1317,6 +1320,9 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Exceptions\Deserialization\WrongMenuTypeException.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Deserialization\Deserializers\DropDownMenuItemDeserializer.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

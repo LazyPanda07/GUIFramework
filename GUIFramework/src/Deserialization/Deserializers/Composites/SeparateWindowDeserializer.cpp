@@ -7,6 +7,8 @@
 #include "Deserialization/Parsers/BaseCompositeParser.h"
 #include "Deserialization/Parsers/MenuParser.h"
 
+#include "Deserialization/Deserializers/DropDownMenuItemDeserializer.h"
+
 #include "Exceptions/Deserialization/WrongMenuTypeException.h"
 
 using namespace std;
@@ -64,22 +66,37 @@ namespace gui_framework
 				{
 					const objectSmartPointer<jsonObject>& item = get<objectSmartPointer<jsonObject>>(i->data.front().second);
 
-					const string& text = item->getString("itemText");
+					wstring text = utility::to_wstring(item->getString("itemText"), codepage);
 					const string& type = item->getString("itemType");
 
 					if (type == standard_menu_items::menuItem)
 					{
-						mainMenu->addMenuItem(make_unique<MenuItem>(utility::to_wstring(text, codepage), item->getString("functionName"), item->getString("moduleName")));
+						mainMenu->addMenuItem(make_unique<MenuItem>(text, item->getString("functionName"), item->getString("moduleName")));
 					}
 					else if (type == standard_menu_items::dropDownMenuItem)
 					{
+						uint64_t popupId = item->getUnsignedInt("popupId");
+						Menu* popupMenu = nullptr;
 
+						for (const auto& j : menuParser.popupItems)
+						{
+							const objectSmartPointer<jsonObject>& popupItem = get<objectSmartPointer<jsonObject>>(i->data.front().second);
+
+							if (popupItem->getUnsignedInt("menuId") == popupId)
+							{
+								popupMenu = &result->addPopupMenu(utility::to_wstring(popupItem->getString("menuName"), codepage));
+							}
+						}
+
+						if (popupMenu)
+						{
+							mainMenu->addMenuItem(DropDownMenuItemDeserializer(result).deserializeDropDownMenuItem(text, popupId, menuParser.popupItems, *popupMenu));
+						}
 					}
 					else
 					{
 						throw exceptions::deserialization::WrongMenuTypeException(type);
 					}
-
 				}
 			}
 

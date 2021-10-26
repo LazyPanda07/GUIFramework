@@ -11,7 +11,7 @@ namespace gui_framework
 			WrongMenuTypeException::WrongMenuTypeException(const string& type) :
 				BaseDeserializationException
 				(
-					format(R"(Undefined menu type "{}". Only available types: "{}", "{}")", type, standard_menu_items::menuItem, standard_menu_items::dropDownMenuItem)
+					format(R"(Undefined menu type "{}". Only available types: "{}", "{}")"sv, type, standard_menu_items::menuItem, standard_menu_items::dropDownMenuItem)
 				)
 			{
 
