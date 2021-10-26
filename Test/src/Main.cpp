@@ -29,21 +29,11 @@ void standard()
 		SeparateWindow* ptr = dynamic_cast<SeparateWindow*>(holder.get());
 		ChildWindow* child = new ChildWindow(L"ChildWindow", L"Child window name", utility::ComponentSettings(600, 400, 200, 200), ptr, "child");
 
-		auto& menu = ptr->createMainMenu(L"Menu");
+		auto& instance = GUIFramework::get();
 
-		auto& popup = ptr->addPopupMenu(L"Popup");
+		instance.registerHotkey(0x53, "test", "callbacks", { hotkeys::additionalKeys::control });
 
-		auto& insidePopup = ptr->addPopupMenu(L"InsidePopup");
-
-		insidePopup.addMenuItem(make_unique<MenuItem>(L"Second", "test", "callbacks"));
-
-		popup.addMenuItem(make_unique<MenuItem>(L"First", "test", "callbacks"));
-
-		popup.addMenuItem(make_unique<DropDownMenuItem>(L"Inside popup", insidePopup.getHandle()));
-
-		menu->addMenuItem(make_unique<DropDownMenuItem>(L"PopupMenu", popup.getHandle()));
-
-		menu->addMenuItem(make_unique<MenuItem>(L"Third", "test", "callbacks"));
+		instance.registerHotkey(0x5A, "test", "callbacks", { hotkeys::additionalKeys::control, hotkeys::additionalKeys::shift });
 
 		ptr->setExitMode(BaseComposite::exitMode::quit);
 		
@@ -93,7 +83,7 @@ int main(int argc, char** argv)
 
 	SetConsoleOutputCP(CP_UTF8);
 
-	thread(test).detach();
+	thread(standard).detach();
 
 	string s;
 
