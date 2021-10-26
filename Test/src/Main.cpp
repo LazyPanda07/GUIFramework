@@ -29,11 +29,7 @@ void standard()
 		SeparateWindow* ptr = dynamic_cast<SeparateWindow*>(holder.get());
 		ChildWindow* child = new ChildWindow(L"ChildWindow", L"Child window name", utility::ComponentSettings(600, 400, 200, 200), ptr, "child");
 
-		auto& instance = GUIFramework::get();
-
-		instance.registerHotkey(0x53, "test", "callbacks", { hotkeys::additionalKeys::control });
-
-		instance.registerHotkey(0x5A, "test", "callbacks", { hotkeys::additionalKeys::control, hotkeys::additionalKeys::shift });
+		ptr->setOnClose([ptr]() { return DialogBox::createMessageBox(L"Close?", L"Closing", DialogBox::messageBoxType::okCancel, ptr) == DialogBox::messageBoxResponse::ok; });
 
 		ptr->setExitMode(BaseComposite::exitMode::quit);
 		
