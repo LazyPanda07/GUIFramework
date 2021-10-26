@@ -52,28 +52,20 @@ var namespacegui__framework =
       [ "trackbarControl", "namespacegui__framework_1_1standard__classes.html#aaeed3f292443e53634408db778f3b423", null ]
     ] ],
     [ "standard_menu_items", "namespacegui__framework_1_1standard__menu__items.html", [
-      [ "dropDownMenuItem", "namespacegui__framework_1_1standard__menu__items.html#acd826e0552d9392c7e519b1d7e0ff599", null ],
-      [ "menuItem", "namespacegui__framework_1_1standard__menu__items.html#a15d8d4d9b0a61c66441e8675dbc892c9", null ]
+      [ "dropDownMenuItem", "namespacegui__framework_1_1standard__menu__items.html#a7c8d005201403b3916d6a1df61d5369f", null ],
+      [ "menuItem", "namespacegui__framework_1_1standard__menu__items.html#a86abf6e74e70c5decd7cff8ba62cd8af", null ]
     ] ],
     [ "standard_sizes", "namespacegui__framework_1_1standard__sizes.html", [
       [ "additionalListViewReportColumnWidth", "namespacegui__framework_1_1standard__sizes.html#a411003476965ae5667265e2e56687220", null ],
-      [ "buttonHeight", "namespacegui__framework_1_1standard__sizes.html#ad9a5341565621f03854e8c9e0d942e8f", null ],
-      [ "buttonWidth", "namespacegui__framework_1_1standard__sizes.html#af458d40e3a798d830af7f24830173cc7", null ],
-      [ "checkBoxHeight", "namespacegui__framework_1_1standard__sizes.html#a7e29e7a576f983497b8347cc45b21191", null ],
-      [ "checkBoxWidth", "namespacegui__framework_1_1standard__sizes.html#a30ae3f2a8d6104c5e384ac6ee22db3f2", null ],
       [ "comboBoxAdditionalWidth", "namespacegui__framework_1_1standard__sizes.html#af5dff7df0d040f20e7069da7f8ce28da", null ],
       [ "defaultImagesCount", "namespacegui__framework_1_1standard__sizes.html#a018fae1303ab52531f18a98e80fc15e7", null ],
       [ "dialogBoxBuilderMinHeight", "namespacegui__framework_1_1standard__sizes.html#a1eb22a43d0bb081bc61b66b89c35fc33", null ],
       [ "dialogBoxBuilderMinWidth", "namespacegui__framework_1_1standard__sizes.html#a0fcf0837ccf940788169d753bad717de", null ],
-      [ "editControlHeight", "namespacegui__framework_1_1standard__sizes.html#adb1974c26e1895c1ba8ab8c6ef7e04dd", null ],
-      [ "editControlWidth", "namespacegui__framework_1_1standard__sizes.html#a2e493c26d6d61ce38aa1da20fa61717f", null ],
       [ "largeIconHeight", "namespacegui__framework_1_1standard__sizes.html#a32daec1006daa20c25f2cc0c17bc1487", null ],
       [ "largeIconWidth", "namespacegui__framework_1_1standard__sizes.html#ae4a52d99a5f0791115b21443c995fb03", null ],
       [ "listBoxAdditionalWidth", "namespacegui__framework_1_1standard__sizes.html#a064e45c055ec4208917e9f5663ec53a5", null ],
       [ "smallIconHeight", "namespacegui__framework_1_1standard__sizes.html#aa4bc732733510b8fcf873c8d199c0192", null ],
-      [ "smallIconWidth", "namespacegui__framework_1_1standard__sizes.html#a63969dbd0eee9d560b7c588ede24efde", null ],
-      [ "staticControlHeight", "namespacegui__framework_1_1standard__sizes.html#a07a74c45cb8206bb4a4f918a5cb9d131", null ],
-      [ "staticControlWidth", "namespacegui__framework_1_1standard__sizes.html#a62f0c5bf3fb69dfcd5a07cad5f90306f", null ]
+      [ "smallIconWidth", "namespacegui__framework_1_1standard__sizes.html#a63969dbd0eee9d560b7c588ede24efde", null ]
     ] ],
     [ "styles", "namespacegui__framework_1_1styles.html", "namespacegui__framework_1_1styles" ],
     [ "utility", "namespacegui__framework_1_1utility.html", "namespacegui__framework_1_1utility" ],

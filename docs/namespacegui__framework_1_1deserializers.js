@@ -24,5 +24,6 @@ var namespacegui__framework_1_1deserializers =
     [ "VerticalTrackbarControlDeserializer", "classgui__framework_1_1deserializers_1_1_vertical_trackbar_control_deserializer.html", "classgui__framework_1_1deserializers_1_1_vertical_trackbar_control_deserializer" ],
     [ "ChildWindowDeserializer", "classgui__framework_1_1deserializers_1_1_child_window_deserializer.html", "classgui__framework_1_1deserializers_1_1_child_window_deserializer" ],
     [ "GroupBoxDeserializer", "classgui__framework_1_1deserializers_1_1_group_box_deserializer.html", "classgui__framework_1_1deserializers_1_1_group_box_deserializer" ],
-    [ "SeparateWindowDeserializer", "classgui__framework_1_1deserializers_1_1_separate_window_deserializer.html", "classgui__framework_1_1deserializers_1_1_separate_window_deserializer" ]
+    [ "SeparateWindowDeserializer", "classgui__framework_1_1deserializers_1_1_separate_window_deserializer.html", "classgui__framework_1_1deserializers_1_1_separate_window_deserializer" ],
+    [ "DropDownMenuItemDeserializer", "classgui__framework_1_1deserializers_1_1_drop_down_menu_item_deserializer.html", "classgui__framework_1_1deserializers_1_1_drop_down_menu_item_deserializer" ]
 ];

@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.8.3-beta</span>
+   &#160;<span id="projectnumber">0.8.4-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('_get_last_error_exception_8cpp_source.
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">namespace </span>exceptions</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    {</div>
 <div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classgui__framework_1_1exceptions_1_1_get_last_error_exception.html#a65c57a8416cc4dde082a32f4d9878954">   10</a></span>&#160;        GetLastErrorException::GetLastErrorException(DWORD errorCode) :</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            <a class="code" href="classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception.html">BaseGUIFrameworkException</a>(format(R<span class="stringliteral">&quot;(GetLastError returns &quot;{}&quot;)&quot;, errorCode))</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            <a class="code" href="classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception.html">BaseGUIFrameworkException</a>(format(R<span class="stringliteral">&quot;(GetLastError returns &quot;{}&quot;)&quot;sv, errorCode))</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="stringliteral">        {</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="stringliteral"></span> </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="stringliteral">        }</span></div>
