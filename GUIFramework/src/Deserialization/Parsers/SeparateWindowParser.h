@@ -6,6 +6,7 @@ namespace gui_framework
 {
 	namespace parsers
 	{
+		/// @brief Parse SeparateWindow specific properties
 		struct GUI_FRAMEWORK_API SeparateWindowParser : public BaseCompositeParser
 		{
 			std::string onCloseFunctionName;
