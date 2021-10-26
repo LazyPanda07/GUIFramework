@@ -4,6 +4,7 @@
 #include "Interfaces/Components/IResizableComponent.h"
 
 #include "Exceptions/FileDoesNotExist.h"
+#include "Exceptions/CantFindFunctionFromModuleException.h"
 
 using namespace std;
 
@@ -163,7 +164,8 @@ namespace gui_framework
 		windowFunctionName(windowFunctionName),
 		mode(exitMode::destroyWindow),
 		largeIcon(nullptr),
-		smallIcon(nullptr)
+		smallIcon(nullptr),
+		onDestroy([]() {})
 	{
 
 	}
@@ -307,40 +309,6 @@ namespace gui_framework
 		this->mode = mode;
 	}
 
-	BaseComposite::exitMode BaseComposite::getExitMode() const
-	{
-		return mode;
-	}
-
-	const vector<unique_ptr<BaseComponent>>& BaseComposite::getChildren() const
-	{
-		return children;
-	}
-
-	const unique_ptr<Menu>& BaseComposite::getMainMenu() const
-	{
-		return mainMenu;
-	}
-
-	unique_ptr<Menu>& BaseComposite::getMainMenu()
-	{
-		return mainMenu;
-	}
-
-	vector<const Menu*> BaseComposite::getPopupMenus() const
-	{
-		vector<const Menu*> result;
-
-		result.reserve(popupMenus.size());
-
-		for (const auto& [_, popupMenu] : popupMenus)
-		{
-			result.push_back(&popupMenu);
-		}
-
-		return result;
-	}
-
 	void BaseComposite::setLargeIcon(const filesystem::path& pathToLargeIcon)
 	{
 		if (!filesystem::exists(pathToLargeIcon))
@@ -381,6 +349,71 @@ namespace gui_framework
 		smallIcon = static_cast<HICON>(LoadImageW(nullptr, pathToSmallIcon.wstring().data(), IMAGE_ICON, standard_sizes::smallIconWidth, standard_sizes::smallIconHeight, LR_LOADFROMFILE));
 
 		SendMessageW(handle, WM_SETICON, ICON_SMALL, reinterpret_cast<LPARAM>(smallIcon));
+	}
+
+	void BaseComposite::setOnDestroy(const function<void()>& onDestroy)
+	{
+		this->onDestroy = onDestroy;
+
+		onDestroyFunctionName.clear();
+		onDestroyFunctionModuleName.clear();
+	}
+
+	void BaseComposite::setOnDestroy(const string& onDestroyFunctionName, const string& onDestroyFunctionModuleName)
+	{
+		GUIFramework& instance = GUIFramework::get();
+		const HMODULE& module = instance.getModules().at(onDestroyFunctionModuleName);
+
+		onDestroySignature tem = reinterpret_cast<onDestroySignature>(GetProcAddress(module, onDestroyFunctionName.data()));
+
+		if (!tem)
+		{
+			throw exceptions::CantFindFunctionFromModuleException(onDestroyFunctionName, onDestroyFunctionModuleName);
+		}
+
+		onDestroy = tem;
+
+		this->onDestroyFunctionName = onDestroyFunctionName;
+		this->onDestroyFunctionModuleName = onDestroyFunctionModuleName;
+	}
+
+	BaseComposite::exitMode BaseComposite::getExitMode() const
+	{
+		return mode;
+	}
+
+	const vector<unique_ptr<BaseComponent>>& BaseComposite::getChildren() const
+	{
+		return children;
+	}
+
+	const unique_ptr<Menu>& BaseComposite::getMainMenu() const
+	{
+		return mainMenu;
+	}
+
+	unique_ptr<Menu>& BaseComposite::getMainMenu()
+	{
+		return mainMenu;
+	}
+
+	vector<const Menu*> BaseComposite::getPopupMenus() const
+	{
+		vector<const Menu*> result;
+
+		result.reserve(popupMenus.size());
+
+		for (const auto& [_, popupMenu] : popupMenus)
+		{
+			result.push_back(&popupMenu);
+		}
+
+		return result;
+	}
+
+	const function<void()>& BaseComposite::getOnDestroy() const
+	{
+		return onDestroy;
 	}
 
 	iterators::composite_forward_iterator BaseComposite::begin() noexcept
@@ -434,6 +467,12 @@ namespace gui_framework
 		if (!pathToLargeIcon.empty())
 		{
 			current->data.push_back({ "pathToLargeIcon"s, utility::getStringFromRawPath(pathToLargeIcon) });
+		}
+
+		if (onDestroyFunctionName.size())
+		{
+			current->data.push_back({ "onDestroyFunctionName"s, onDestroyFunctionName });
+			current->data.push_back({ "onDestroyFunctionModuleName"s, onDestroyFunctionModuleName });
 		}
 
 		if (mainMenu)

@@ -67,6 +67,7 @@
     <ClInclude Include="src\Deserialization\Parsers\ProgressBars\InfiniteProgressBarParser.h" />
     <ClInclude Include="src\Deserialization\Parsers\ProgressBars\ProgressBarParser.h" />
     <ClInclude Include="src\Deserialization\Parsers\RichEditParser.h" />
+    <ClInclude Include="src\Deserialization\Parsers\SeparateWindowParser.h" />
     <ClInclude Include="src\Deserialization\Parsers\TabControlParser.h" />
     <ClInclude Include="src\Deserialization\Parsers\TrackbarControlParser.h" />
     <ClInclude Include="src\Exceptions\Deserialization\BaseDeserializationException.h" />
@@ -293,6 +294,7 @@
     <ClCompile Include="src\Deserialization\Parsers\ProgressBars\InfiniteProgressBarParser.cpp" />
     <ClCompile Include="src\Deserialization\Parsers\ProgressBars\ProgressBarParser.cpp" />
     <ClCompile Include="src\Deserialization\Parsers\RichEditParser.cpp" />
+    <ClCompile Include="src\Deserialization\Parsers\SeparateWindowParser.cpp" />
     <ClCompile Include="src\Deserialization\Parsers\TabControlParser.cpp" />
     <ClCompile Include="src\Deserialization\Parsers\TrackbarControlParser.cpp" />
     <ClCompile Include="src\Exceptions\Deserialization\BaseDeserializationException.cpp" />

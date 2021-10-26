@@ -13,6 +13,8 @@ namespace gui_framework
 			BaseComposite::exitMode mode;
 			std::string pathToLargeIcon;
 			std::string pathToSmallIcon;
+			std::string onDestroyFunctionName;
+			std::string onDestroyFunctionModuleName;
 
 		public:
 			BaseCompositeParser() = default;
