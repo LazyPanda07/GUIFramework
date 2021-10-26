@@ -412,8 +412,6 @@ namespace gui_framework
 
 		InitCommonControlsEx(&comm);
 
-		// TODO: insert current module
-
 		modules.insert({ "MSFT"s, LoadLibraryW(libraries::msftEditLibrary.data()) });
 
 		const json::utility::objectSmartPointer<json::utility::jsonObject>& settingsObject = jsonSettings.getObject(json_settings::settingsObject);
