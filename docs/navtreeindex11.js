@@ -1,5 +1,6 @@
 var NAVTREEINDEX11 =
 {
+"structgui__framework_1_1parsers_1_1_rich_edit_parser.html#a656ba705cd7c621e03f8a96a7f0a4cb1":[1,0,0,4,14,2],
 "structgui__framework_1_1parsers_1_1_rich_edit_parser.html#a79cd0240e54e38c1bd6d6a48d46b0c1c":[1,0,0,4,14,0],
 "structgui__framework_1_1parsers_1_1_rich_edit_parser.html#aae20372adb127a2115d7764f1265dce1":[1,0,0,4,14,1],
 "structgui__framework_1_1parsers_1_1_tab_control_parser.html":[1,0,0,4,15],

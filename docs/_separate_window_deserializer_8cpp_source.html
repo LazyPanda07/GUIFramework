@@ -189,25 +189,30 @@ $(document).ready(function(){initNavTree('_separate_window_deserializer_8cpp_sou
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                }</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            }</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keywordflow">if</span> (description-&gt;contains(<span class="stringliteral">&quot;children&quot;</span>, json::utility::variantTypeEnum::jJSONArray))</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keywordflow">if</span> (description-&gt;contains(<span class="stringliteral">&quot;hotkeys&quot;</span>, json::utility::variantTypeEnum::jJSONArray))</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            {</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span>&amp; children = description-&gt;getArray(<span class="stringliteral">&quot;children&quot;</span>);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; i : children)</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; [componentName, data] = get&lt;objectSmartPointer&lt;jsonObject&gt;&gt;(i-&gt;data.front().second)-&gt;data.front();</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; description = get&lt;objectSmartPointer&lt;jsonObject&gt;&gt;(data);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                GUIFramework::get().deserializeHotkeys(description);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keywordflow">if</span> (description-&gt;contains(<span class="stringliteral">&quot;children&quot;</span>, json::utility::variantTypeEnum::jJSONArray))</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span>&amp; children = description-&gt;getArray(<span class="stringliteral">&quot;children&quot;</span>);</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                    <span class="keyword">const</span> <a class="code" href="_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67">smartPointerType&lt;interfaces::IDeserializer&gt;</a>&amp; deserializer = GUIFramework::get().getDeserializers().at(description-&gt;getUnsignedInt(<span class="stringliteral">&quot;hash&quot;</span>));</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                    deserializer-&gt;deserialize(componentName, description, result);</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                }</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            }</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        }</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; i : children)</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; [componentName, data] = get&lt;objectSmartPointer&lt;jsonObject&gt;&gt;(i-&gt;data.front().second)-&gt;data.front();</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; description = get&lt;objectSmartPointer&lt;jsonObject&gt;&gt;(data);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                    <span class="keyword">const</span> <a class="code" href="_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67">smartPointerType&lt;interfaces::IDeserializer&gt;</a>&amp; deserializer = GUIFramework::get().getDeserializers().at(description-&gt;getUnsignedInt(<span class="stringliteral">&quot;hash&quot;</span>));</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                    deserializer-&gt;deserialize(componentName, description, result);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                }</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;}</div>
 <div class="ttc" id="a_base_composite_parser_8h_html"><div class="ttname"><a href="_base_composite_parser_8h.html">BaseCompositeParser.h</a></div></div>
 <div class="ttc" id="a_drop_down_menu_item_8h_html"><div class="ttname"><a href="_drop_down_menu_item_8h.html">DropDownMenuItem.h</a></div></div>
 <div class="ttc" id="a_drop_down_menu_item_deserializer_8h_html"><div class="ttname"><a href="_drop_down_menu_item_deserializer_8h.html">DropDownMenuItemDeserializer.h</a></div></div>

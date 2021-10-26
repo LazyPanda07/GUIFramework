@@ -185,6 +185,10 @@ namespace gui_framework
 		/// @return JSON array with hotkeys data
 		std::vector<json::utility::objectSmartPointer<json::utility::jsonObject>> serializeHotkeys();
 
+		/// @brief Deserialize hotkeys
+		/// @param description Description of holder window with 'hotkeys' object
+		void deserializeHotkeys(const json::utility::objectSmartPointer<json::utility::jsonObject>& description);
+
 		/// @brief Get all current registered creators
 		/// @return creators
 		const std::unordered_map<size_t, smartPointerType<utility::BaseComponentCreator>>& getCreators() const;

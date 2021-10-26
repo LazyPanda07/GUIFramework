@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"classgui__framework_1_1interfaces_1_1_i_base_list_view_operations.html#aeca9cec98cc6a438bd6e9395090bff16":[1,0,0,2,4,5],
 "classgui__framework_1_1interfaces_1_1_i_base_list_view_operations.html#aee9b7818e4efad95a2309adbe31e86d7":[1,0,0,2,4,2],
 "classgui__framework_1_1interfaces_1_1_i_base_list_view_operations.html#aeecbc57868272ccf34d96309318df52e":[1,0,0,2,4,4],
 "classgui__framework_1_1interfaces_1_1_i_base_list_view_operations.html#af9eda2faffe0e18727c4d7a83ef9df0d":[1,0,0,2,4,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX7 =
 "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_button_01_4.html#a84fcfb9dab7cab0c11e09afccdb63fc9":[1,0,0,6,1,5],
 "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_button_01_4.html#aa69bf50ce9fc00101d893a4f6e8bec87":[1,0,0,6,1,8],
 "classgui__framework_1_1utility_1_1_additional_creation_data_3_01_button_01_4.html#aca1d0824aab8b2bc5d3d38fbfe68ec67":[1,0,0,6,1,2],
-"classgui__framework_1_1utility_1_1_additional_creation_data_3_01_button_01_4.html#aef9a011c005148d88edc8d397d021be2":[1,0,0,6,1,3],
-"classgui__framework_1_1utility_1_1_additional_creation_data_3_01_check_box_01_4.html":[1,0,0,6,2]
+"classgui__framework_1_1utility_1_1_additional_creation_data_3_01_button_01_4.html#aef9a011c005148d88edc8d397d021be2":[1,0,0,6,1,3]
 };

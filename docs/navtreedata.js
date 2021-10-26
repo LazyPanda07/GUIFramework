@@ -67,12 +67,12 @@ var NAVTREEINDEX =
 "_separate_window_8cpp_source.html",
 "classgui__framework_1_1_base_combo_box.html#a8764b2c833e30d2b06d5522d8ca52c0f",
 "classgui__framework_1_1_base_rich_edit.html#a28e3b67f20ffbba552803455e03b3104",
-"classgui__framework_1_1_list_text_icon_list_view.html#a09963ca54b00d416b24a4824ed7cdcba",
-"classgui__framework_1_1interfaces_1_1_i_base_list_view_operations.html#aee9b7818e4efad95a2309adbe31e86d7",
-"classgui__framework_1_1utility_1_1_additional_creation_data_3_01_check_box_01_4.html#a1c74160180e3987dcc19b5a935374e8c",
-"classgui__framework_1_1utility_1_1_edit_control_creator.html",
-"headers_8h.html",
-"structgui__framework_1_1parsers_1_1_rich_edit_parser.html#a79cd0240e54e38c1bd6d6a48d46b0c1c"
+"classgui__framework_1_1_list_text_icon_list_view.html",
+"classgui__framework_1_1interfaces_1_1_i_base_list_view_operations.html#aeca9cec98cc6a438bd6e9395090bff16",
+"classgui__framework_1_1utility_1_1_additional_creation_data_3_01_check_box_01_4.html",
+"classgui__framework_1_1utility_1_1_drop_down_list_combo_box_creator.html#aacf60cbd4a4a4e70f6daaa581c77ab80",
+"headers_8cpp_source.html",
+"structgui__framework_1_1parsers_1_1_rich_edit_parser.html#a656ba705cd7c621e03f8a96a7f0a4cb1"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
