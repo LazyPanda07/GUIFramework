@@ -74,6 +74,8 @@ namespace gui_framework
 	{
 		GUI_FRAMEWORK_API_FUNCTION void throwNotImplementedException(std::string_view methodName, std::string_view className);
 
+		GUI_FRAMEWORK_API_FUNCTION std::string extendedException(const std::string& exceptionMessage, std::string_view fileName, std::string_view methodName, int line);
+
 		GUI_FRAMEWORK_API_FUNCTION bool useOnClose(std::any topLevelWindow);
 	}
 }
