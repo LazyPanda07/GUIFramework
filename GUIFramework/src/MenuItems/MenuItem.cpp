@@ -26,7 +26,7 @@ namespace gui_framework
 
 		if (!tem)
 		{
-			throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName);
+			throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName, __FILE__, __FUNCTION__, __LINE__);
 		}
 
 		onClick = tem;

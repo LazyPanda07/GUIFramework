@@ -82,7 +82,7 @@ namespace gui_framework
 
 		if (!filesystem::exists(pathToImage))
 		{
-			throw exceptions::FileDoesNotExist(pathToImage);
+			throw exceptions::FileDoesNotExist(pathToImage, __FILE__, __FUNCTION__, __LINE__);
 		}
 
 		images.addImage(this, x, y, pathToImage);

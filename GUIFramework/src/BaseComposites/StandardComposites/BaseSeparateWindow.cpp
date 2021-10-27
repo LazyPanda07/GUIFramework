@@ -33,7 +33,7 @@ namespace gui_framework
 	{
 		if (!filesystem::exists(pathToLargeIcon))
 		{
-			throw exceptions::FileDoesNotExist(pathToLargeIcon);
+			throw exceptions::FileDoesNotExist(pathToLargeIcon, __FILE__, __FUNCTION__, __LINE__);
 		}
 
 		this->pathToLargeIcon = pathToLargeIcon;
@@ -54,7 +54,7 @@ namespace gui_framework
 	{
 		if (!filesystem::exists(pathToSmallIcon))
 		{
-			throw exceptions::FileDoesNotExist(pathToSmallIcon);
+			throw exceptions::FileDoesNotExist(pathToSmallIcon, __FILE__, __FUNCTION__, __LINE__);
 		}
 
 		this->pathToSmallIcon = pathToSmallIcon;
@@ -88,7 +88,7 @@ namespace gui_framework
 
 		if (!tem)
 		{
-			throw exceptions::CantFindFunctionFromModuleException(onCloseFunctionName, onCloseFunctionModuleName);
+			throw exceptions::CantFindFunctionFromModuleException(onCloseFunctionName, onCloseFunctionModuleName, __FILE__, __FUNCTION__, __LINE__);
 		}
 
 		onClose = tem;

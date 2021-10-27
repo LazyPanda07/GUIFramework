@@ -12,7 +12,7 @@ namespace gui_framework
 			class GUI_FRAMEWORK_API WrongMenuTypeException : public BaseDeserializationException
 			{
 			public:
-				WrongMenuTypeException(const std::string& type);
+				WrongMenuTypeException(const std::string& type, std::string_view fileName, std::string_view methodName, int line);
 
 				~WrongMenuTypeException() = default;
 			};

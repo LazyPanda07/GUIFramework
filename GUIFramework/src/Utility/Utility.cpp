@@ -143,7 +143,7 @@ namespace gui_framework
 
 			if (!tem)
 			{
-				throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName);
+				throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName, __FILE__, __FUNCTION__, __LINE__);
 			}
 
 			onClick = tem;
@@ -158,7 +158,7 @@ namespace gui_framework
 
 			if (!tem)
 			{
-				throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName);
+				throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName, __FILE__, __FUNCTION__, __LINE__);
 			}
 
 			eventCallback = tem;
@@ -173,7 +173,7 @@ namespace gui_framework
 			{
 				if (GUIFramework::get().getJSONSettings().getBool("usingNotImplementedExceptions"))
 				{
-					throw exceptions::NotImplemented(methodName, className);
+					throw exceptions::NotImplemented(methodName, className, __FILE__, __LINE__);
 				}
 			}
 			catch (const json::exceptions::CantFindValueException&)

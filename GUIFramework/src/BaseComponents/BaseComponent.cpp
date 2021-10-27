@@ -1,15 +1,17 @@
 #include "headers.h"
 #include "BaseComponent.h"
 
-#include "BaseComposites/BaseComposite.h"
-#include "Interfaces/Components/IResizableComponent.h"
-#include "Interfaces/Components/ITextOperations.h"
+#include "BaseComposites\\BaseComposite.h"
+#include "Interfaces\\Components\\IResizableComponent.h"
+#include "Interfaces\\Components\\ITextOperations.h"
 
-#include "Exceptions/CantFindCompositeFunctionException.h"
-#include "Exceptions/FileDoesNotExist.h"
+#include "Exceptions\\CantFindCompositeFunctionException.h"
+#include "Exceptions\\FileDoesNotExist.h"
 
 #pragma warning(disable: 6387)
 #pragma warning(disable: 4312)
+
+#define __FILENAME__ (strrchr(__FILE__, '\\') ? strrchr(__FILE__, '\\') + 1 : __FILE__)
 
 using namespace std;
 
@@ -89,7 +91,7 @@ namespace gui_framework
 
 				if (!windowFunction)
 				{
-					throw exceptions::CantFindCompositeFunctionException(windowFunctionName + "WindowFunction");
+					throw exceptions::CantFindCompositeFunctionException(windowFunctionName + "WindowFunction", __FILE__, __FUNCTION__, __LINE__);
 				}
 
 				classStruct.cbSize = sizeof(WNDCLASSEXW);

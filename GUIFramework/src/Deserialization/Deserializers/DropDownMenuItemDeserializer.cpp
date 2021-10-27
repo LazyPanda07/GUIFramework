@@ -71,7 +71,7 @@ namespace gui_framework
 					}
 					else
 					{
-						throw exceptions::deserialization::WrongMenuTypeException(type);
+						throw exceptions::deserialization::WrongMenuTypeException(type, __FILE__, __FUNCTION__, __LINE__);
 					}
 				}
 			}

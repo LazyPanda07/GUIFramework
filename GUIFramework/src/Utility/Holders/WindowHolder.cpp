@@ -49,7 +49,7 @@ namespace gui_framework
 
 		if (code == -1)
 		{
-			throw exceptions::GetLastErrorException(code);
+			throw exceptions::GetLastErrorException(code, __FILE__, __FUNCTION__, __LINE__);
 		}
 	}
 

@@ -324,7 +324,7 @@ namespace gui_framework
 
 		if (!tem)
 		{
-			throw exceptions::CantFindFunctionFromModuleException(onDestroyFunctionName, onDestroyFunctionModuleName);
+			throw exceptions::CantFindFunctionFromModuleException(onDestroyFunctionName, onDestroyFunctionModuleName, __FILE__, __FUNCTION__, __LINE__);
 		}
 
 		onDestroy = tem;

@@ -33,7 +33,7 @@ namespace gui_framework
 
 		if (!tem)
 		{
-			throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName);
+			throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName, __FILE__, __FUNCTION__, __LINE__);
 		}
 
 		callback = tem;
@@ -125,7 +125,7 @@ namespace gui_framework
 
 			if (!tem)
 			{
-				throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName);
+				throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName, __FILE__, __FUNCTION__, __LINE__);
 			}
 
 			callbacks.insert(callbacks.begin() + index, tem);
@@ -150,7 +150,7 @@ namespace gui_framework
 	{
 		if (!filesystem::exists(pathToImage))
 		{
-			throw exceptions::FileDoesNotExist(pathToImage);
+			throw exceptions::FileDoesNotExist(pathToImage, __FILE__, __FUNCTION__, __LINE__);
 		}
 
 		TCITEMW item = {};
@@ -179,7 +179,7 @@ namespace gui_framework
 	{
 		if (!filesystem::exists(pathToImage))
 		{
-			throw exceptions::FileDoesNotExist(pathToImage);
+			throw exceptions::FileDoesNotExist(pathToImage, __FILE__, __FUNCTION__, __LINE__);
 		}
 
 		TCITEMW item = {};
@@ -200,7 +200,7 @@ namespace gui_framework
 
 			if (!tem)
 			{
-				throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName);
+				throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName, __FILE__, __FUNCTION__, __LINE__);
 			}
 
 			callbacks.insert(callbacks.begin() + index, tem);
@@ -225,7 +225,7 @@ namespace gui_framework
 	{
 		if (!filesystem::exists(pathToImage))
 		{
-			throw exceptions::FileDoesNotExist(pathToImage);
+			throw exceptions::FileDoesNotExist(pathToImage, __FILE__, __FUNCTION__, __LINE__);
 		}
 
 		TCITEMW item = {};
@@ -256,7 +256,7 @@ namespace gui_framework
 	{
 		if (!filesystem::exists(pathToImage))
 		{
-			throw exceptions::FileDoesNotExist(pathToImage);
+			throw exceptions::FileDoesNotExist(pathToImage, __FILE__, __FUNCTION__, __LINE__);
 		}
 
 		TCITEMW item = {};
@@ -279,7 +279,7 @@ namespace gui_framework
 
 			if (!tem)
 			{
-				throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName);
+				throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName, __FILE__, __FUNCTION__, __LINE__);
 			}
 
 			callbacks.insert(callbacks.begin() + index, tem);
@@ -327,7 +327,7 @@ namespace gui_framework
 	{
 		if (!pathToImage.empty() && !filesystem::exists(pathToImage))
 		{
-			throw exceptions::FileDoesNotExist(pathToImage);
+			throw exceptions::FileDoesNotExist(pathToImage, __FILE__, __FUNCTION__, __LINE__);
 		}
 
 		TCITEMW item = {};
@@ -373,12 +373,12 @@ namespace gui_framework
 
 		if (!tem)
 		{
-			throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName);
+			throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName, __FILE__, __FUNCTION__, __LINE__);
 		}
 
 		if (!pathToImage.empty() && !filesystem::exists(pathToImage))
 		{
-			throw exceptions::FileDoesNotExist(pathToImage);
+			throw exceptions::FileDoesNotExist(pathToImage, __FILE__, __FUNCTION__, __LINE__);
 		}
 
 		TCITEMW item = {};

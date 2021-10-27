@@ -12,7 +12,7 @@ namespace gui_framework
 			class GUI_FRAMEWORK_API BaseDeserializationException : public BaseGUIFrameworkException
 			{
 			public:
-				BaseDeserializationException(const std::string& exceptionMessage);
+				BaseDeserializationException(const std::string& exceptionMessage, std::string_view fileName, std::string_view methodName, int line);
 
 				virtual ~BaseDeserializationException() = default;
 			};

@@ -39,11 +39,11 @@ namespace gui_framework
 
 		if (result == LB_ERR)
 		{
-			throw exceptions::SelectListException(__FUNCTION__, result);
+			throw exceptions::SelectListException(__FUNCTION__, result, __FILE__, __FUNCTION__, __LINE__);
 		}
 		else if (result == LB_ERRSPACE)
 		{
-			throw exceptions::SelectListException(__FUNCTION__, result, exception_messages::notEnoughSpace);
+			throw exceptions::SelectListException(__FUNCTION__, result, __FILE__, __FUNCTION__, __LINE__, exception_messages::notEnoughSpace);
 		}
 
 		this->resize(BaseComponent::parent->getActualWidth(), BaseComponent::parent->getActualHeight());
@@ -57,7 +57,7 @@ namespace gui_framework
 
 		if (result == LB_ERR)
 		{
-			throw exceptions::SelectListException(__FUNCTION__, result);
+			throw exceptions::SelectListException(__FUNCTION__, result, __FILE__, __FUNCTION__, __LINE__);
 		}
 
 		this->resize(BaseComponent::parent->getActualWidth(), BaseComponent::parent->getActualHeight());
@@ -71,11 +71,11 @@ namespace gui_framework
 
 		if (result == LB_ERR)
 		{
-			throw exceptions::SelectListException(__FUNCTION__, result);
+			throw exceptions::SelectListException(__FUNCTION__, result, __FILE__, __FUNCTION__, __LINE__);
 		}
 		else if (result == LB_ERRSPACE)
 		{
-			throw exceptions::SelectListException(__FUNCTION__, result, exception_messages::notEnoughSpace);
+			throw exceptions::SelectListException(__FUNCTION__, result, __FILE__, __FUNCTION__, __LINE__, exception_messages::notEnoughSpace);
 		}
 
 		this->resize(BaseComponent::parent->getActualWidth(), BaseComponent::parent->getActualHeight());
@@ -89,7 +89,7 @@ namespace gui_framework
 
 		if (result == LB_ERR)
 		{
-			throw exceptions::SelectListException(__FUNCTION__, result);
+			throw exceptions::SelectListException(__FUNCTION__, result, __FILE__, __FUNCTION__, __LINE__);
 		}
 
 		this->resize(BaseComponent::parent->getActualWidth(), BaseComponent::parent->getActualHeight());
@@ -103,7 +103,7 @@ namespace gui_framework
 
 		if (findedIndex == LB_ERR)
 		{
-			throw exceptions::SelectListException(__FUNCTION__, findedIndex);
+			throw exceptions::SelectListException(__FUNCTION__, findedIndex, __FILE__, __FUNCTION__, __LINE__);
 		}
 
 		return findedIndex;
@@ -115,7 +115,7 @@ namespace gui_framework
 
 		if (findedIndex == LB_ERR)
 		{
-			throw exceptions::SelectListException(__FUNCTION__, findedIndex);
+			throw exceptions::SelectListException(__FUNCTION__, findedIndex, __FILE__, __FUNCTION__, __LINE__);
 		}
 
 		return findedIndex;
@@ -128,7 +128,7 @@ namespace gui_framework
 
 		if (size == LB_ERR)
 		{
-			throw exceptions::SelectListException(__FUNCTION__, size);
+			throw exceptions::SelectListException(__FUNCTION__, size, __FILE__, __FUNCTION__, __LINE__);
 		}
 
 		result.resize(++size);
@@ -137,7 +137,7 @@ namespace gui_framework
 
 		if (errorCode == LB_ERR)
 		{
-			throw exceptions::SelectListException(__FUNCTION__, errorCode);
+			throw exceptions::SelectListException(__FUNCTION__, errorCode, __FILE__, __FUNCTION__, __LINE__);
 		}
 
 		result.pop_back();
@@ -156,7 +156,7 @@ namespace gui_framework
 
 		if (result == LB_ERR)
 		{
-			throw exceptions::SelectListException(__FUNCTION__, result);
+			throw exceptions::SelectListException(__FUNCTION__, result, __FILE__, __FUNCTION__, __LINE__);
 		}
 
 		return result;
@@ -168,7 +168,7 @@ namespace gui_framework
 
 		if (result == LB_ERR)
 		{
-			throw exceptions::SelectListException(__FUNCTION__, result);
+			throw exceptions::SelectListException(__FUNCTION__, result, __FILE__, __FUNCTION__, __LINE__);
 		}
 
 		return result;
@@ -185,7 +185,7 @@ namespace gui_framework
 
 		if (result == LB_ERR)
 		{
-			throw exceptions::SelectListException(__FUNCTION__, result);
+			throw exceptions::SelectListException(__FUNCTION__, result, __FILE__, __FUNCTION__, __LINE__);
 		}
 
 		return result;
@@ -197,7 +197,7 @@ namespace gui_framework
 
 		if (result == LB_ERR)
 		{
-			throw exceptions::SelectListException(__FUNCTION__, result);
+			throw exceptions::SelectListException(__FUNCTION__, result, __FILE__, __FUNCTION__, __LINE__);
 		}
 
 		columnsWidth = width;
@@ -211,7 +211,7 @@ namespace gui_framework
 
 		if (result == LB_ERR)
 		{
-			throw exceptions::SelectListException(__FUNCTION__, result);
+			throw exceptions::SelectListException(__FUNCTION__, result, __FILE__, __FUNCTION__, __LINE__);
 		}
 
 		return result;
