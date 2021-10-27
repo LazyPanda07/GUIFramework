@@ -31,6 +31,10 @@ var dir_5510490186bb7b5cd77096ce3d630327 =
     [ "RichEditParser.h", "_rich_edit_parser_8h.html", [
       [ "RichEditParser", "structgui__framework_1_1parsers_1_1_rich_edit_parser.html", "structgui__framework_1_1parsers_1_1_rich_edit_parser" ]
     ] ],
+    [ "SeparateWindowParser.cpp", "_separate_window_parser_8cpp.html", null ],
+    [ "SeparateWindowParser.h", "_separate_window_parser_8h.html", [
+      [ "SeparateWindowParser", "structgui__framework_1_1parsers_1_1_separate_window_parser.html", "structgui__framework_1_1parsers_1_1_separate_window_parser" ]
+    ] ],
     [ "TabControlParser.cpp", "_tab_control_parser_8cpp.html", null ],
     [ "TabControlParser.h", "_tab_control_parser_8h.html", [
       [ "TabControlParser", "structgui__framework_1_1parsers_1_1_tab_control_parser.html", "structgui__framework_1_1parsers_1_1_tab_control_parser" ]

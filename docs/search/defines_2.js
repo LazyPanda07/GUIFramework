@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['implement_5fserializable_5ffunction_2892',['IMPLEMENT_SERIALIZABLE_FUNCTION',['../_g_u_i_framework_constants_8h.html#afc2f3ab01c298b1975e099d1674e37f9',1,'GUIFrameworkConstants.h']]]
+  ['gui_5fframework_5fapi_2933',['GUI_FRAMEWORK_API',['../_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba',1,'GUIFrameworkConstants.h']]],
+  ['gui_5fframework_5fapi_5ffunction_2934',['GUI_FRAMEWORK_API_FUNCTION',['../_g_u_i_framework_constants_8h.html#a767f18c6bddef6da85ce42f210726a25',1,'GUIFrameworkConstants.h']]]
 ];

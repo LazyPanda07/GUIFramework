@@ -6,7 +6,6 @@
 #include "Interfaces/Iterators/IIterable.h"
 #include "Iterators/composite_forward_iterator.h"
 #include "Iterators/composite_const_forward_iterator.h"
-#include "Utility/Utility.h"
 
 namespace gui_framework
 {
@@ -28,10 +27,6 @@ namespace gui_framework
 		std::vector<std::unique_ptr<BaseComponent>> children;
 		std::unordered_map<HMENU, Menu> popupMenus;
 		std::unique_ptr<Menu> mainMenu;
-		HICON largeIcon;
-		HICON smallIcon;
-		std::filesystem::path pathToSmallIcon;
-		std::filesystem::path pathToLargeIcon;
 		std::function<void()> onDestroy;
 		std::string onDestroyFunctionName;
 		std::string onDestroyFunctionModuleName;
@@ -80,16 +75,6 @@ namespace gui_framework
 		virtual bool isComposite() const final override;
 
 		virtual void setExitMode(exitMode mode) final;
-
-		/// @brief Set large icon(32x32) for specific window
-		/// @param pathToLargeIcon 
-		/// @exception FileDoesNotExist
-		virtual void setLargeIcon(const std::filesystem::path& pathToLargeIcon) final;
-
-		/// @brief Set small icon(16x16) for specific window
-		/// @param pathToSmallIcon 
-		/// @exception FileDoesNotExist
-		virtual void setSmallIcon(const std::filesystem::path& pathToSmallIcon) final;
 
 		virtual void setOnDestroy(const std::function<void()>& onDestroy) final;
 
@@ -143,7 +128,7 @@ namespace gui_framework
 	case WM_CLOSE:	\
 		if (topLevelWindow && (topLevelWindow->getHandle() == handle && topLevelWindow->getExitMode() == gui_framework::BaseComposite::exitMode::quit)) \
 		{	\
-			if (__utility::useOnClose(topLevelWindow))	\
+			if (gui_framework::__utility::useOnClose(topLevelWindow))	\
 			{	\
 				DestroyWindow(handle);	\
 			}	\

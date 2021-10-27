@@ -11,7 +11,7 @@ namespace gui_framework
 		class GUI_FRAMEWORK_API GetLastErrorException : public BaseGUIFrameworkException
 		{
 		public:
-			GetLastErrorException(DWORD errorCode);
+			GetLastErrorException(DWORD errorCode, std::string_view fileName, std::string_view methodName, int line);
 
 			~GetLastErrorException() = default;
 		};

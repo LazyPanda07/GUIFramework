@@ -55,7 +55,8 @@ var hierarchy =
     ] ],
     [ "gui_framework::parsers::BaseComponentParser", "structgui__framework_1_1parsers_1_1_base_component_parser.html", [
       [ "gui_framework::parsers::BaseCompositeParser", "structgui__framework_1_1parsers_1_1_base_composite_parser.html", [
-        [ "gui_framework::parsers::GroupBoxParser", "structgui__framework_1_1parsers_1_1_group_box_parser.html", null ]
+        [ "gui_framework::parsers::GroupBoxParser", "structgui__framework_1_1parsers_1_1_group_box_parser.html", null ],
+        [ "gui_framework::parsers::SeparateWindowParser", "structgui__framework_1_1parsers_1_1_separate_window_parser.html", null ]
       ] ],
       [ "gui_framework::parsers::ButtonParser", "structgui__framework_1_1parsers_1_1_button_parser.html", [
         [ "gui_framework::parsers::CheckBoxParser", "structgui__framework_1_1parsers_1_1_check_box_parser.html", null ],

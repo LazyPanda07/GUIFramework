@@ -477,14 +477,14 @@ namespace gui_framework
 						{
 							if (!filesystem::exists(moduleName))
 							{
-								throw exceptions::FileDoesNotExist(moduleName);
+								throw exceptions::FileDoesNotExist(moduleName, __FILE__, __FUNCTION__, __LINE__);
 							}
 						}
 						else
 						{
 							if (!filesystem::exists(modulePathString))
 							{
-								throw exceptions::FileDoesNotExist(modulePathString);
+								throw exceptions::FileDoesNotExist(modulePathString, __FILE__, __FUNCTION__, __LINE__);
 							}
 						}
 					}
@@ -514,11 +514,11 @@ namespace gui_framework
 						{
 							if (modulePathString.empty())
 							{
-								throw exceptions::CantLoadModuleException(moduleName);
+								throw exceptions::CantLoadModuleException(moduleName, __FILE__, __FUNCTION__, __LINE__);
 							}
 							else
 							{
-								throw exceptions::CantLoadModuleException(modulePathString);
+								throw exceptions::CantLoadModuleException(modulePathString, __FILE__, __FUNCTION__, __LINE__);
 							}
 						}
 						catch (const exceptions::CantLoadModuleException& e)
@@ -604,7 +604,7 @@ namespace gui_framework
 
 			if (!tem)
 			{
-				throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName);
+				throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName, __FILE__, __FUNCTION__, __LINE__);
 			}
 		}
 
@@ -684,14 +684,14 @@ namespace gui_framework
 	{
 		if (!filesystem::exists(pathToModule))
 		{
-			throw exceptions::FileDoesNotExist(moduleName);
+			throw exceptions::FileDoesNotExist(moduleName, __FILE__, __FUNCTION__, __LINE__);
 		}
 
 		HMODULE	module = LoadLibraryA(pathToModule.string().data());
 
 		if (!module)
 		{
-			throw exceptions::CantLoadModuleException(moduleName);
+			throw exceptions::CantLoadModuleException(moduleName, __FILE__, __FUNCTION__, __LINE__);
 		}
 
 		modules.insert({ moduleName, module });
