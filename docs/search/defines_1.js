@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['gui_5fframework_5fapi_2890',['GUI_FRAMEWORK_API',['../_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba',1,'GUIFrameworkConstants.h']]],
-  ['gui_5fframework_5fapi_5ffunction_2891',['GUI_FRAMEWORK_API_FUNCTION',['../_g_u_i_framework_constants_8h.html#a767f18c6bddef6da85ce42f210726a25',1,'GUIFrameworkConstants.h']]]
+  ['create_5fdefault_5fwindow_5ffunction_2932',['CREATE_DEFAULT_WINDOW_FUNCTION',['../_base_composite_8h.html#ae001e6c0e20a554bf6fb9aa8de4f6a20',1,'BaseComposite.h']]]
 ];

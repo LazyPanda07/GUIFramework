@@ -81,6 +81,7 @@ var annotated_dup =
         [ "InfiniteProgressBarParser", "structgui__framework_1_1parsers_1_1_infinite_progress_bar_parser.html", "structgui__framework_1_1parsers_1_1_infinite_progress_bar_parser" ],
         [ "ProgressBarParser", "structgui__framework_1_1parsers_1_1_progress_bar_parser.html", "structgui__framework_1_1parsers_1_1_progress_bar_parser" ],
         [ "RichEditParser", "structgui__framework_1_1parsers_1_1_rich_edit_parser.html", "structgui__framework_1_1parsers_1_1_rich_edit_parser" ],
+        [ "SeparateWindowParser", "structgui__framework_1_1parsers_1_1_separate_window_parser.html", "structgui__framework_1_1parsers_1_1_separate_window_parser" ],
         [ "TabControlParser", "structgui__framework_1_1parsers_1_1_tab_control_parser.html", "structgui__framework_1_1parsers_1_1_tab_control_parser" ],
         [ "TrackbarControlParser", "structgui__framework_1_1parsers_1_1_trackbar_control_parser.html", "structgui__framework_1_1parsers_1_1_trackbar_control_parser" ]
       ] ],
