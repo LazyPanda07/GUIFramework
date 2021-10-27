@@ -10,6 +10,16 @@ namespace gui_framework
 		{
 			BaseComponentParser::parse(description);
 
+			if (description->contains("pathToLargeIcon", json::utility::variantTypeEnum::jString))
+			{
+				pathToLargeIcon = description->getString("pathToLargeIcon");
+			}
+
+			if (description->contains("pathToSmallIcon", json::utility::variantTypeEnum::jString))
+			{
+				pathToSmallIcon = description->getString("pathToSmallIcon");
+			}
+
 			if (description->contains("onCloseFunctionName", json::utility::variantTypeEnum::jString))
 			{
 				onCloseFunctionName = description->getString("onCloseFunctionName");

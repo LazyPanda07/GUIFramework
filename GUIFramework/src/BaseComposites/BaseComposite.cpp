@@ -163,8 +163,6 @@ namespace gui_framework
 		),
 		windowFunctionName(windowFunctionName),
 		mode(exitMode::destroyWindow),
-		largeIcon(nullptr),
-		smallIcon(nullptr),
 		onDestroy([]() {})
 	{
 
@@ -309,48 +307,6 @@ namespace gui_framework
 		this->mode = mode;
 	}
 
-	void BaseComposite::setLargeIcon(const filesystem::path& pathToLargeIcon)
-	{
-		if (!filesystem::exists(pathToLargeIcon))
-		{
-			throw exceptions::FileDoesNotExist(pathToLargeIcon);
-		}
-
-		this->pathToLargeIcon = pathToLargeIcon;
-
-		if (largeIcon)
-		{
-			DestroyIcon(largeIcon);
-
-			largeIcon = nullptr;
-		}
-
-		largeIcon = static_cast<HICON>(LoadImageW(nullptr, pathToLargeIcon.wstring().data(), IMAGE_ICON, standard_sizes::largeIconWidth, standard_sizes::largeIconHeight, LR_LOADFROMFILE));
-
-		SendMessageW(handle, WM_SETICON, ICON_BIG, reinterpret_cast<LPARAM>(largeIcon));
-	}
-
-	void BaseComposite::setSmallIcon(const filesystem::path& pathToSmallIcon)
-	{
-		if (!filesystem::exists(pathToSmallIcon))
-		{
-			throw exceptions::FileDoesNotExist(pathToSmallIcon);
-		}
-
-		this->pathToSmallIcon = pathToSmallIcon;
-
-		if (smallIcon)
-		{
-			DestroyIcon(smallIcon);
-
-			smallIcon = nullptr;
-		}
-
-		smallIcon = static_cast<HICON>(LoadImageW(nullptr, pathToSmallIcon.wstring().data(), IMAGE_ICON, standard_sizes::smallIconWidth, standard_sizes::smallIconHeight, LR_LOADFROMFILE));
-
-		SendMessageW(handle, WM_SETICON, ICON_SMALL, reinterpret_cast<LPARAM>(smallIcon));
-	}
-
 	void BaseComposite::setOnDestroy(const function<void()>& onDestroy)
 	{
 		this->onDestroy = onDestroy;
@@ -459,16 +415,6 @@ namespace gui_framework
 
 		current->data.push_back({ "exitMode"s, static_cast<int64_t>(mode) });
 
-		if (!pathToSmallIcon.empty())
-		{
-			current->data.push_back({ "pathToSmallIcon"s, utility::getStringFromRawPath(pathToSmallIcon) });
-		}
-
-		if (!pathToLargeIcon.empty())
-		{
-			current->data.push_back({ "pathToLargeIcon"s, utility::getStringFromRawPath(pathToLargeIcon) });
-		}
-
 		if (onDestroyFunctionName.size())
 		{
 			current->data.push_back({ "onDestroyFunctionName"s, onDestroyFunctionName });
@@ -534,9 +480,6 @@ namespace gui_framework
 		ranges::for_each(children, [&components](const unique_ptr<BaseComponent>& component) { components.push_back(component.get()); });
 
 		ranges::for_each(components, [this](BaseComponent* component) { this->removeChild(component); });
-
-		DestroyIcon(largeIcon);
-		DestroyIcon(smallIcon);
 
 		SendMessageW(handle, custom_window_messages::deinitTopLevelWindowPointer, NULL, NULL);
 	}

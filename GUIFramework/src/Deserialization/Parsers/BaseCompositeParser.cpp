@@ -15,16 +15,6 @@ namespace gui_framework
 
 			windowFunctionName = description->getString("windowFunctionName");
 
-			if (description->contains( "pathToLargeIcon", json::utility::variantTypeEnum::jString))
-			{
-				pathToLargeIcon = description->getString("pathToLargeIcon");
-			}
-
-			if (description->contains( "pathToSmallIcon", json::utility::variantTypeEnum::jString))
-			{
-				pathToSmallIcon = description->getString("pathToSmallIcon");
-			}
-
 			if (description->contains("onDestroyFunctionName", json::utility::variantTypeEnum::jString))
 			{
 				onDestroyFunctionName = description->getString("onDestroyFunctionName");

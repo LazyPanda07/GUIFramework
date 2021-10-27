@@ -9,6 +9,8 @@ namespace gui_framework
 		/// @brief Parse SeparateWindow specific properties
 		struct GUI_FRAMEWORK_API SeparateWindowParser : public BaseCompositeParser
 		{
+			std::string pathToLargeIcon;
+			std::string pathToSmallIcon;
 			std::string onCloseFunctionName;
 			std::string onCloseFunctionModuleName;
 

@@ -11,8 +11,6 @@ namespace gui_framework
 		{
 			std::string windowFunctionName;
 			BaseComposite::exitMode mode;
-			std::string pathToLargeIcon;
-			std::string pathToSmallIcon;
 			std::string onDestroyFunctionName;
 			std::string onDestroyFunctionModuleName;
 

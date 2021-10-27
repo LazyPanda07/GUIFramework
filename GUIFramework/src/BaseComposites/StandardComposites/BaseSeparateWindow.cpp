@@ -3,6 +3,7 @@
 
 #include "Styles/Composites/SeparateWindowStyles.h"
 #include "Exceptions/CantFindFunctionFromModuleException.h"
+#include "Exceptions/FileDoesNotExist.h"
 
 using namespace std;
 
@@ -21,9 +22,53 @@ namespace gui_framework
 			smallIconResource,
 			largeIconResource
 		),
+		largeIcon(nullptr),
+		smallIcon(nullptr),
 		onClose([]() { return true; })
 	{
 
+	}
+
+	void BaseSeparateWindow::setLargeIcon(const filesystem::path& pathToLargeIcon)
+	{
+		if (!filesystem::exists(pathToLargeIcon))
+		{
+			throw exceptions::FileDoesNotExist(pathToLargeIcon);
+		}
+
+		this->pathToLargeIcon = pathToLargeIcon;
+
+		if (largeIcon)
+		{
+			DestroyIcon(largeIcon);
+
+			largeIcon = nullptr;
+		}
+
+		largeIcon = static_cast<HICON>(LoadImageW(nullptr, pathToLargeIcon.wstring().data(), IMAGE_ICON, standard_sizes::largeIconWidth, standard_sizes::largeIconHeight, LR_LOADFROMFILE));
+
+		SendMessageW(handle, WM_SETICON, ICON_BIG, reinterpret_cast<LPARAM>(largeIcon));
+	}
+
+	void BaseSeparateWindow::setSmallIcon(const filesystem::path& pathToSmallIcon)
+	{
+		if (!filesystem::exists(pathToSmallIcon))
+		{
+			throw exceptions::FileDoesNotExist(pathToSmallIcon);
+		}
+
+		this->pathToSmallIcon = pathToSmallIcon;
+
+		if (smallIcon)
+		{
+			DestroyIcon(smallIcon);
+
+			smallIcon = nullptr;
+		}
+
+		smallIcon = static_cast<HICON>(LoadImageW(nullptr, pathToSmallIcon.wstring().data(), IMAGE_ICON, standard_sizes::smallIconWidth, standard_sizes::smallIconHeight, LR_LOADFROMFILE));
+
+		SendMessageW(handle, WM_SETICON, ICON_SMALL, reinterpret_cast<LPARAM>(smallIcon));
 	}
 
 	void BaseSeparateWindow::setOnClose(const function<bool()>& onClose)
@@ -65,6 +110,16 @@ namespace gui_framework
 		json::JSONBuilder builder = BaseWindow::getStructure();
 		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
 
+		if (!pathToSmallIcon.empty())
+		{
+			current->data.push_back({ "pathToSmallIcon"s, utility::getStringFromRawPath(pathToSmallIcon) });
+		}
+
+		if (!pathToLargeIcon.empty())
+		{
+			current->data.push_back({ "pathToLargeIcon"s, utility::getStringFromRawPath(pathToLargeIcon) });
+		}
+
 		if (onCloseFunctionName.size())
 		{
 			current->data.push_back({ "onCloseFunctionName"s, onCloseFunctionName });
@@ -73,5 +128,10 @@ namespace gui_framework
 
 		return builder;
 	}
-}
 
+	BaseSeparateWindow::~BaseSeparateWindow()
+	{
+		DestroyIcon(largeIcon);
+		DestroyIcon(smallIcon);
+	}
+}

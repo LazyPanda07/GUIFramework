@@ -31,16 +31,6 @@ namespace gui_framework
 
 			result->setExitMode(parser.mode);
 
-			if (parser.pathToLargeIcon.size())
-			{
-				result->setLargeIcon(parser.pathToLargeIcon);
-			}
-
-			if (parser.pathToSmallIcon.size())
-			{
-				result->setSmallIcon(parser.pathToSmallIcon);
-			}
-
 			if (parser.onDestroyFunctionName.size())
 			{
 				result->setOnDestroy(parser.onDestroyFunctionName, parser.onDestroyFunctionModuleName);
