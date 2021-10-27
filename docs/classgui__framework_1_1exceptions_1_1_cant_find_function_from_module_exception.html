@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.8.4-beta</span>
+   &#160;<span id="projectnumber">0.8.5-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -107,13 +107,13 @@ Inheritance diagram for gui_framework::exceptions::CantFindFunctionFromModuleExc
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a21967e62272efad60333b52c7b396418"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1exceptions_1_1_cant_find_function_from_module_exception.html#a21967e62272efad60333b52c7b396418">CantFindFunctionFromModuleException</a> (const std::string &amp;functionName, const std::string &amp;moduleName)</td></tr>
-<tr class="separator:a21967e62272efad60333b52c7b396418"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac78b842e0c057217ce8d51847dd43519"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1exceptions_1_1_cant_find_function_from_module_exception.html#ac78b842e0c057217ce8d51847dd43519">CantFindFunctionFromModuleException</a> (const std::string &amp;functionName, const std::string &amp;moduleName, std::string_view fileName, std::string_view methodName, int line)</td></tr>
+<tr class="separator:ac78b842e0c057217ce8d51847dd43519"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e49c75c674a5d7b252e37f15fb7034b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1exceptions_1_1_cant_find_function_from_module_exception.html#a3e49c75c674a5d7b252e37f15fb7034b">~CantFindFunctionFromModuleException</a> ()=default</td></tr>
 <tr class="separator:a3e49c75c674a5d7b252e37f15fb7034b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception.html">gui_framework::exceptions::BaseGUIFrameworkException</a></td></tr>
-<tr class="memitem:a7c415b4df03d68dd1484163a37e5c0dd inherit pub_methods_classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception.html#a7c415b4df03d68dd1484163a37e5c0dd">BaseGUIFrameworkException</a> (const std::string &amp;exceptionMessage)</td></tr>
-<tr class="separator:a7c415b4df03d68dd1484163a37e5c0dd inherit pub_methods_classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1d38a13b6df96458dab42f9b780a4ab inherit pub_methods_classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception.html#ac1d38a13b6df96458dab42f9b780a4ab">BaseGUIFrameworkException</a> (const std::string &amp;exceptionMessage, std::string_view fileName, std::string_view methodName, int line)</td></tr>
+<tr class="separator:ac1d38a13b6df96458dab42f9b780a4ab inherit pub_methods_classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c5106402c82a6919b0c92cc24301699 inherit pub_methods_classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception.html#a7c5106402c82a6919b0c92cc24301699">~BaseGUIFrameworkException</a> ()=default</td></tr>
 <tr class="separator:a7c5106402c82a6919b0c92cc24301699 inherit pub_methods_classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -122,8 +122,8 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_cant_find_function_from_module_exception_8h_source.html#l00010">10</a> of file <a class="el" href="_cant_find_function_from_module_exception_8h_source.html">CantFindFunctionFromModuleException.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a21967e62272efad60333b52c7b396418"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21967e62272efad60333b52c7b396418">&#9670;&nbsp;</a></span>CantFindFunctionFromModuleException()</h2>
+<a id="ac78b842e0c057217ce8d51847dd43519"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac78b842e0c057217ce8d51847dd43519">&#9670;&nbsp;</a></span>CantFindFunctionFromModuleException()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -138,7 +138,25 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>moduleName</em>&#160;</td>
+          <td class="paramname"><em>moduleName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string_view&#160;</td>
+          <td class="paramname"><em>fileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string_view&#160;</td>
+          <td class="paramname"><em>methodName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>line</em>&#160;</td>
         </tr>
         <tr>
           <td></td>

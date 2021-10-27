@@ -27,10 +27,9 @@ namespace gui_framework
 		std::vector<std::unique_ptr<BaseComponent>> children;
 		std::unordered_map<HMENU, Menu> popupMenus;
 		std::unique_ptr<Menu> mainMenu;
-		HICON largeIcon;
-		HICON smallIcon;
-		std::filesystem::path pathToSmallIcon;
-		std::filesystem::path pathToLargeIcon;
+		std::function<void()> onDestroy;
+		std::string onDestroyFunctionName;
+		std::string onDestroyFunctionModuleName;
 
 	protected:
 		virtual LRESULT preWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
@@ -77,6 +76,15 @@ namespace gui_framework
 
 		virtual void setExitMode(exitMode mode) final;
 
+		virtual void setOnDestroy(const std::function<void()>& onDestroy) final;
+
+		/// @brief Load function from module. Can be seriazlied
+		/// @param onDestroyFunctionName 
+		/// @param onDestroyFunctionModuleName 
+		/// @exception CantFindFunctionFromModuleException 
+		/// @exception std::out_of_range Can't find moduleName in loaded modules
+		virtual void setOnDestroy(const std::string& onDestroyFunctionName, const std::string& onDestroyFunctionModuleName) final;
+
 		virtual exitMode getExitMode() const final;
 
 		virtual const std::vector<std::unique_ptr<BaseComponent>>& getChildren() const final;
@@ -87,15 +95,7 @@ namespace gui_framework
 
 		virtual std::vector<const Menu*> getPopupMenus() const final;
 
-		/// @brief Set large icon(32x32) for specific window
-		/// @param pathToLargeIcon 
-		/// @exception FileDoesNotExist
-		virtual void setLargeIcon(const std::filesystem::path& pathToLargeIcon) final;
-
-		/// @brief Set small icon(16x16) for specific window
-		/// @param pathToSmallIcon 
-		/// @exception FileDoesNotExist
-		virtual void setSmallIcon(const std::filesystem::path& pathToSmallIcon) final;
+		virtual const std::function<void()>& getOnDestroy() const final;
 
 		/// @brief Used as key in creators
 		/// @return typeid().hash_code() 
@@ -125,33 +125,50 @@ namespace gui_framework
 	\
 	switch(message) \
 	{ \
-	case WM_DESTROY: \
-		if(topLevelWindow) \
-		{ \
-			if (topLevelWindow->getHandle() == handle && topLevelWindow->getExitMode() == gui_framework::BaseComposite::exitMode::quit) \
-			{ \
-				PostQuitMessage(0); \
-			} \
+	case WM_CLOSE:	\
+		if (topLevelWindow && (topLevelWindow->getHandle() == handle && topLevelWindow->getExitMode() == gui_framework::BaseComposite::exitMode::quit)) \
+		{	\
+			if (gui_framework::__utility::useOnClose(topLevelWindow))	\
+			{	\
+				DestroyWindow(handle);	\
+			}	\
+				\
+			return 0;	\
 		} \
 		else \
 		{ \
 			return DefWindowProcW(handle, message, wparam, lparam); \
 		} \
 			\
-		return 0; \
-		\
+	case WM_DESTROY: \
+		if (topLevelWindow) \
+		{ \
+			topLevelWindow->getOnDestroy()();	\
+				\
+			if (topLevelWindow->getHandle() == handle && topLevelWindow->getExitMode() == gui_framework::BaseComposite::exitMode::quit) \
+			{	\
+				PostQuitMessage(0); \
+			}	\
+				\
+			return 0;	\
+		} \
+		else \
+		{ \
+			return DefWindowProcW(handle, message, wparam, lparam); \
+		} \
+			\
 	case gui_framework::custom_window_messages::initTopLevelWindowPointer: \
 		topLevelWindow = reinterpret_cast<gui_framework::BaseComposite*>(wparam); \
 			\
 		return 0; \
-		\
+			\
 	case gui_framework::custom_window_messages::deinitTopLevelWindowPointer: \
 		topLevelWindow = nullptr; \
 			\
 		return 0; \
-		\
+			\
 	} \
-		\
+			\
 	if (topLevelWindow) \
 	{ \
 		bool isUsed = false; \

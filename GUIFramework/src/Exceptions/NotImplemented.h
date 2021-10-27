@@ -11,7 +11,7 @@ namespace gui_framework
 		class NotImplemented : public BaseGUIFrameworkException
 		{
 		public:
-			NotImplemented(std::string_view methodName, std::string_view className);
+			NotImplemented(std::string_view methodName, std::string_view className, std::string_view fileName, int line);
 
 			~NotImplemented() = default;
 		};

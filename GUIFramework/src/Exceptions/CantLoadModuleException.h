@@ -10,7 +10,7 @@ namespace gui_framework
 		class GUI_FRAMEWORK_API CantLoadModuleException : public BaseGUIFrameworkException
 		{
 		public:
-			CantLoadModuleException(const std::string& moduleName);
+			CantLoadModuleException(const std::string& moduleName, std::string_view fileName, std::string_view methodName, int line);
 
 			~CantLoadModuleException() = default;
 		};

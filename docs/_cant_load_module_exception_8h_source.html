@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.8.4-beta</span>
+   &#160;<span id="projectnumber">0.8.5-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -98,18 +98,18 @@ $(document).ready(function(){initNavTree('_cant_load_module_exception_8h_source.
 <div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classgui__framework_1_1exceptions_1_1_cant_load_module_exception.html">   10</a></span>&#160;        <span class="keyword">class </span><a class="code" href="_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba">GUI_FRAMEWORK_API</a> <a class="code" href="classgui__framework_1_1exceptions_1_1_cant_load_module_exception.html">CantLoadModuleException</a> : <span class="keyword">public</span> <a class="code" href="classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception.html">BaseGUIFrameworkException</a></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        {</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            <a class="code" href="classgui__framework_1_1exceptions_1_1_cant_load_module_exception.html">CantLoadModuleException</a>(<span class="keyword">const</span> std::string&amp; moduleName);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            <a class="code" href="classgui__framework_1_1exceptions_1_1_cant_load_module_exception.html">CantLoadModuleException</a>(<span class="keyword">const</span> std::string&amp; moduleName, std::string_view fileName, std::string_view methodName, <span class="keywordtype">int</span> line);</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classgui__framework_1_1exceptions_1_1_cant_load_module_exception.html#a8dd909ae234de4c640cc63124ff28ba1">   15</a></span>&#160;            <a class="code" href="classgui__framework_1_1exceptions_1_1_cant_load_module_exception.html#a8dd909ae234de4c640cc63124ff28ba1">~CantLoadModuleException</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        };</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    }</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
 <div class="ttc" id="a_base_g_u_i_framework_exception_8h_html"><div class="ttname"><a href="_base_g_u_i_framework_exception_8h.html">BaseGUIFrameworkException.h</a></div></div>
-<div class="ttc" id="a_g_u_i_framework_constants_8h_html_a15da9ebdfa896557bb941a5da31021ba"><div class="ttname"><a href="_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba">GUI_FRAMEWORK_API</a></div><div class="ttdeci">#define GUI_FRAMEWORK_API</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00106">GUIFrameworkConstants.h:106</a></div></div>
+<div class="ttc" id="a_g_u_i_framework_constants_8h_html_a15da9ebdfa896557bb941a5da31021ba"><div class="ttname"><a href="_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba">GUI_FRAMEWORK_API</a></div><div class="ttdeci">#define GUI_FRAMEWORK_API</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00114">GUIFrameworkConstants.h:114</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception_html"><div class="ttname"><a href="classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception.html">gui_framework::exceptions::BaseGUIFrameworkException</a></div><div class="ttdoc">Base class for all GUIFramework exceptions.</div><div class="ttdef"><b>Definition:</b> <a href="_base_g_u_i_framework_exception_8h_source.html#l00011">BaseGUIFrameworkException.h:12</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1exceptions_1_1_cant_load_module_exception_html"><div class="ttname"><a href="classgui__framework_1_1exceptions_1_1_cant_load_module_exception.html">gui_framework::exceptions::CantLoadModuleException</a></div><div class="ttdoc">Throws by GUIFramework::get(), GUIFramework::loadModule()</div><div class="ttdef"><b>Definition:</b> <a href="_cant_load_module_exception_8h_source.html#l00010">CantLoadModuleException.h:11</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1exceptions_1_1_cant_load_module_exception_html_a8dd909ae234de4c640cc63124ff28ba1"><div class="ttname"><a href="classgui__framework_1_1exceptions_1_1_cant_load_module_exception.html#a8dd909ae234de4c640cc63124ff28ba1">gui_framework::exceptions::CantLoadModuleException::~CantLoadModuleException</a></div><div class="ttdeci">~CantLoadModuleException()=default</div></div>
-<div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00016">BaseComponent.cpp:17</a></div></div>
+<div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00018">BaseComponent.cpp:19</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

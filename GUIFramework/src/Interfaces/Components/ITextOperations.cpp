@@ -31,7 +31,7 @@ namespace gui_framework
 
 				if (errorCode)
 				{
-					throw exceptions::GetLastErrorException(errorCode);
+					throw exceptions::GetLastErrorException(errorCode, __FILE__, __FUNCTION__, __LINE__);
 				}
 			}
 

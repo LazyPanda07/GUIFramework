@@ -11,7 +11,7 @@ namespace gui_framework
 		class GUI_FRAMEWORK_API SelectListException : public BaseGUIFrameworkException
 		{
 		public:
-			SelectListException(const std::string& method, LRESULT errorCode, const std::string_view& additionalDescription = "");
+			SelectListException(const std::string& method, LRESULT errorCode, std::string_view fileName, std::string_view methodName, int line, std::string_view additionalDescription = "");
 
 			~SelectListException() = default;
 		};

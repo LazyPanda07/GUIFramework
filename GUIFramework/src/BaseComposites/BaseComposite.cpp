@@ -4,6 +4,7 @@
 #include "Interfaces/Components/IResizableComponent.h"
 
 #include "Exceptions/FileDoesNotExist.h"
+#include "Exceptions/CantFindFunctionFromModuleException.h"
 
 using namespace std;
 
@@ -162,8 +163,7 @@ namespace gui_framework
 		),
 		windowFunctionName(windowFunctionName),
 		mode(exitMode::destroyWindow),
-		largeIcon(nullptr),
-		smallIcon(nullptr)
+		onDestroy([]() {})
 	{
 
 	}
@@ -307,6 +307,32 @@ namespace gui_framework
 		this->mode = mode;
 	}
 
+	void BaseComposite::setOnDestroy(const function<void()>& onDestroy)
+	{
+		this->onDestroy = onDestroy;
+
+		onDestroyFunctionName.clear();
+		onDestroyFunctionModuleName.clear();
+	}
+
+	void BaseComposite::setOnDestroy(const string& onDestroyFunctionName, const string& onDestroyFunctionModuleName)
+	{
+		GUIFramework& instance = GUIFramework::get();
+		const HMODULE& module = instance.getModules().at(onDestroyFunctionModuleName);
+
+		onDestroySignature tem = reinterpret_cast<onDestroySignature>(GetProcAddress(module, onDestroyFunctionName.data()));
+
+		if (!tem)
+		{
+			throw exceptions::CantFindFunctionFromModuleException(onDestroyFunctionName, onDestroyFunctionModuleName, __FILE__, __FUNCTION__, __LINE__);
+		}
+
+		onDestroy = tem;
+
+		this->onDestroyFunctionName = onDestroyFunctionName;
+		this->onDestroyFunctionModuleName = onDestroyFunctionModuleName;
+	}
+
 	BaseComposite::exitMode BaseComposite::getExitMode() const
 	{
 		return mode;
@@ -341,46 +367,9 @@ namespace gui_framework
 		return result;
 	}
 
-	void BaseComposite::setLargeIcon(const filesystem::path& pathToLargeIcon)
+	const function<void()>& BaseComposite::getOnDestroy() const
 	{
-		if (!filesystem::exists(pathToLargeIcon))
-		{
-			throw exceptions::FileDoesNotExist(pathToLargeIcon);
-		}
-
-		this->pathToLargeIcon = pathToLargeIcon;
-
-		if (largeIcon)
-		{
-			DestroyIcon(largeIcon);
-
-			largeIcon = nullptr;
-		}
-
-		largeIcon = static_cast<HICON>(LoadImageW(nullptr, pathToLargeIcon.wstring().data(), IMAGE_ICON, standard_sizes::largeIconWidth, standard_sizes::largeIconHeight, LR_LOADFROMFILE));
-
-		SendMessageW(handle, WM_SETICON, ICON_BIG, reinterpret_cast<LPARAM>(largeIcon));
-	}
-
-	void BaseComposite::setSmallIcon(const filesystem::path& pathToSmallIcon)
-	{
-		if (!filesystem::exists(pathToSmallIcon))
-		{
-			throw exceptions::FileDoesNotExist(pathToSmallIcon);
-		}
-
-		this->pathToSmallIcon = pathToSmallIcon;
-
-		if (smallIcon)
-		{
-			DestroyIcon(smallIcon);
-
-			smallIcon = nullptr;
-		}
-
-		smallIcon = static_cast<HICON>(LoadImageW(nullptr, pathToSmallIcon.wstring().data(), IMAGE_ICON, standard_sizes::smallIconWidth, standard_sizes::smallIconHeight, LR_LOADFROMFILE));
-
-		SendMessageW(handle, WM_SETICON, ICON_SMALL, reinterpret_cast<LPARAM>(smallIcon));
+		return onDestroy;
 	}
 
 	iterators::composite_forward_iterator BaseComposite::begin() noexcept
@@ -426,14 +415,10 @@ namespace gui_framework
 
 		current->data.push_back({ "exitMode"s, static_cast<int64_t>(mode) });
 
-		if (!pathToSmallIcon.empty())
+		if (onDestroyFunctionName.size())
 		{
-			current->data.push_back({ "pathToSmallIcon"s, utility::getStringFromRawPath(pathToSmallIcon) });
-		}
-
-		if (!pathToLargeIcon.empty())
-		{
-			current->data.push_back({ "pathToLargeIcon"s, utility::getStringFromRawPath(pathToLargeIcon) });
+			current->data.push_back({ "onDestroyFunctionName"s, onDestroyFunctionName });
+			current->data.push_back({ "onDestroyFunctionModuleName"s, onDestroyFunctionModuleName });
 		}
 
 		if (mainMenu)
@@ -495,9 +480,6 @@ namespace gui_framework
 		ranges::for_each(children, [&components](const unique_ptr<BaseComponent>& component) { components.push_back(component.get()); });
 
 		ranges::for_each(components, [this](BaseComponent* component) { this->removeChild(component); });
-
-		DestroyIcon(largeIcon);
-		DestroyIcon(smallIcon);
 
 		SendMessageW(handle, custom_window_messages::deinitTopLevelWindowPointer, NULL, NULL);
 	}

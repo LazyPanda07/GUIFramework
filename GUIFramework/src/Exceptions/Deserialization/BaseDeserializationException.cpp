@@ -8,8 +8,8 @@ namespace gui_framework
 	{
 		namespace deserialization
 		{
-			BaseDeserializationException::BaseDeserializationException(const string& exceptionMessage) :
-				BaseGUIFrameworkException(exceptionMessage)
+			BaseDeserializationException::BaseDeserializationException(const string& exceptionMessage, string_view fileName, string_view methodName, int line) :
+				BaseGUIFrameworkException(exceptionMessage, fileName, methodName, line)
 			{
 
 			}

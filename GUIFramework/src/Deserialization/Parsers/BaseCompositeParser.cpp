@@ -15,14 +15,10 @@ namespace gui_framework
 
 			windowFunctionName = description->getString("windowFunctionName");
 
-			if (ranges::find_if(description->data, [](const auto& value) { return value.first == "pathToLargeIcon"; }) != description->data.end())
+			if (description->contains("onDestroyFunctionName", json::utility::variantTypeEnum::jString))
 			{
-				pathToLargeIcon = description->getString("pathToLargeIcon");
-			}
-
-			if (ranges::find_if(description->data, [](const auto& value) { return value.first == "pathToSmallIcon"; }) != description->data.end())
-			{
-				pathToSmallIcon = description->getString("pathToSmallIcon");
+				onDestroyFunctionName = description->getString("onDestroyFunctionName");
+				onDestroyFunctionModuleName = description->getString("onDestroyFunctionModuleName");
 			}
 
 			mode = static_cast<gui_framework::BaseComposite::exitMode>(description->getInt("exitMode"));

@@ -1,6 +1,8 @@
 #include "headers.h"
 #include "Utility.h"
 
+#include "BaseComposites/StandardComposites/BaseSeparateWindow.h"
+
 #include "Exceptions/CantFindFunctionFromModuleException.h"
 #include "Exceptions/NotImplemented.h"
 
@@ -141,7 +143,7 @@ namespace gui_framework
 
 			if (!tem)
 			{
-				throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName);
+				throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName, __FILE__, __FUNCTION__, __LINE__);
 			}
 
 			onClick = tem;
@@ -156,7 +158,7 @@ namespace gui_framework
 
 			if (!tem)
 			{
-				throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName);
+				throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName, __FILE__, __FUNCTION__, __LINE__);
 			}
 
 			eventCallback = tem;
@@ -169,15 +171,47 @@ namespace gui_framework
 		{
 			try
 			{
-				if (GUIFramework::get().getJSONSettings().getBool("usingNotImplementedExceptions"))
+				if (GUIFramework::get().getJSONSettings().getBool(json_settings::usingNotImplementedExceptions))
 				{
-					throw exceptions::NotImplemented(methodName, className);
+					throw exceptions::NotImplemented(methodName, className, __FILE__, __LINE__);
 				}
 			}
 			catch (const json::exceptions::CantFindValueException&)
 			{
 
 			}
+		}
+
+		GUI_FRAMEWORK_API_FUNCTION string extendedException(const string& exceptionMessage, string_view fileName, string_view methodName, int line)
+		{
+			try
+			{
+				if (GUIFramework::get().getJSONSettings().getBool(json_settings::usingExtendedExceptions))
+				{
+					return format(R"({} in file "{}" in "{}" method on {} line)"sv, exceptionMessage, fileName.substr(fileName.rfind('\\') + 1), methodName, line);
+				}
+			}
+			catch (const json::exceptions::CantFindValueException&)
+			{
+				
+			}
+
+			return exceptionMessage;
+		}
+
+		GUI_FRAMEWORK_API_FUNCTION bool useOnClose(any topLevelWindow)
+		{
+			BaseSeparateWindow* tem = dynamic_cast<BaseSeparateWindow*>(any_cast<BaseComposite*>(topLevelWindow));
+
+			if (tem)
+			{
+				if (tem->getOnClose()())
+				{
+					return true;
+				}
+			}
+
+			return false;
 		}
 	}
 }

@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.8.4-beta</span>
+   &#160;<span id="projectnumber">0.8.5-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -152,6 +152,11 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6f0726dccdb362d62f42dcff5cd87942"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac652a1740402df821a2eb1f39f2f848a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#ac652a1740402df821a2eb1f39f2f848a">setExitMode</a> (<a class="el" href="classgui__framework_1_1_base_composite.html#a438c1f5c9ef171bc01b2ac420fee985c">exitMode</a> <a class="el" href="classgui__framework_1_1_base_composite.html#a48f1d5a8df767f482e228ba04caaedea">mode</a>) final</td></tr>
 <tr class="separator:ac652a1740402df821a2eb1f39f2f848a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59f5486d24f7d03620daece230099c13"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#a59f5486d24f7d03620daece230099c13">setOnDestroy</a> (const std::function&lt; void()&gt; &amp;<a class="el" href="classgui__framework_1_1_base_composite.html#af39b969cc4dadd798ef9774306066fc5">onDestroy</a>) final</td></tr>
+<tr class="separator:a59f5486d24f7d03620daece230099c13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a18df5ab0ec82f5c884f30ee645b7f7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#a3a18df5ab0ec82f5c884f30ee645b7f7">setOnDestroy</a> (const std::string &amp;<a class="el" href="classgui__framework_1_1_base_composite.html#aab9aec87186a225236d3653655090f7d">onDestroyFunctionName</a>, const std::string &amp;<a class="el" href="classgui__framework_1_1_base_composite.html#a5108adb742a7af7dac98864ee0332322">onDestroyFunctionModuleName</a>) final</td></tr>
+<tr class="memdesc:a3a18df5ab0ec82f5c884f30ee645b7f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load function from module. Can be seriazlied.  <a href="classgui__framework_1_1_base_composite.html#a3a18df5ab0ec82f5c884f30ee645b7f7">More...</a><br /></td></tr>
+<tr class="separator:a3a18df5ab0ec82f5c884f30ee645b7f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7801d0e1ed3955b33f29c8843cbb169e"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classgui__framework_1_1_base_composite.html#a438c1f5c9ef171bc01b2ac420fee985c">exitMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#a7801d0e1ed3955b33f29c8843cbb169e">getExitMode</a> () const final</td></tr>
 <tr class="separator:a7801d0e1ed3955b33f29c8843cbb169e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39539aed053e40905f147cd9da5003eb"><td class="memItemLeft" align="right" valign="top">virtual const std::vector&lt; std::unique_ptr&lt; <a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#a39539aed053e40905f147cd9da5003eb">getChildren</a> () const final</td></tr>
@@ -162,12 +167,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a02f66f4ee3ee1191b27bc29a765c0151"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff93c143210949150b5ce5203e0cc418"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; const <a class="el" href="classgui__framework_1_1_menu.html">Menu</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#aff93c143210949150b5ce5203e0cc418">getPopupMenus</a> () const final</td></tr>
 <tr class="separator:aff93c143210949150b5ce5203e0cc418"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd7cb91db3db51cdca9b5c231164cc92"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#acd7cb91db3db51cdca9b5c231164cc92">setLargeIcon</a> (const std::filesystem::path &amp;<a class="el" href="classgui__framework_1_1_base_composite.html#a88ed491afa835ef9aac8863af1053a2b">pathToLargeIcon</a>) final</td></tr>
-<tr class="memdesc:acd7cb91db3db51cdca9b5c231164cc92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set large icon(32x32) for specific window.  <a href="classgui__framework_1_1_base_composite.html#acd7cb91db3db51cdca9b5c231164cc92">More...</a><br /></td></tr>
-<tr class="separator:acd7cb91db3db51cdca9b5c231164cc92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1a8b83ad28e122d61acc2716512d959"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#ac1a8b83ad28e122d61acc2716512d959">setSmallIcon</a> (const std::filesystem::path &amp;<a class="el" href="classgui__framework_1_1_base_composite.html#a41563e16b969fe6f32b17964d1ccc8dc">pathToSmallIcon</a>) final</td></tr>
-<tr class="memdesc:ac1a8b83ad28e122d61acc2716512d959"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set small icon(16x16) for specific window.  <a href="classgui__framework_1_1_base_composite.html#ac1a8b83ad28e122d61acc2716512d959">More...</a><br /></td></tr>
-<tr class="separator:ac1a8b83ad28e122d61acc2716512d959"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c79eebd126ff3be8453bb4d86df8330"><td class="memItemLeft" align="right" valign="top">virtual const std::function&lt; void()&gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#a8c79eebd126ff3be8453bb4d86df8330">getOnDestroy</a> () const final</td></tr>
+<tr class="separator:a8c79eebd126ff3be8453bb4d86df8330"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a50307db942e7e39d97c694aaf274627f"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#a50307db942e7e39d97c694aaf274627f">getHash</a> () const override=0</td></tr>
 <tr class="memdesc:a50307db942e7e39d97c694aaf274627f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used as key in creators.  <a href="classgui__framework_1_1_base_composite.html#a50307db942e7e39d97c694aaf274627f">More...</a><br /></td></tr>
 <tr class="separator:a50307db942e7e39d97c694aaf274627f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -263,14 +264,12 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a53920c5848be5ec370aaad3f055ad8a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02be7d9aee6b1c4089c248d70a9da03c"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classgui__framework_1_1_menu.html">Menu</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#a02be7d9aee6b1c4089c248d70a9da03c">mainMenu</a></td></tr>
 <tr class="separator:a02be7d9aee6b1c4089c248d70a9da03c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6cc2c87df8a1655c4b9ecac905a7b531"><td class="memItemLeft" align="right" valign="top">HICON&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#a6cc2c87df8a1655c4b9ecac905a7b531">largeIcon</a></td></tr>
-<tr class="separator:a6cc2c87df8a1655c4b9ecac905a7b531"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5482fa48df4e4b1beb7ee6f64b0a41f2"><td class="memItemLeft" align="right" valign="top">HICON&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#a5482fa48df4e4b1beb7ee6f64b0a41f2">smallIcon</a></td></tr>
-<tr class="separator:a5482fa48df4e4b1beb7ee6f64b0a41f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41563e16b969fe6f32b17964d1ccc8dc"><td class="memItemLeft" align="right" valign="top">std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#a41563e16b969fe6f32b17964d1ccc8dc">pathToSmallIcon</a></td></tr>
-<tr class="separator:a41563e16b969fe6f32b17964d1ccc8dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88ed491afa835ef9aac8863af1053a2b"><td class="memItemLeft" align="right" valign="top">std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#a88ed491afa835ef9aac8863af1053a2b">pathToLargeIcon</a></td></tr>
-<tr class="separator:a88ed491afa835ef9aac8863af1053a2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af39b969cc4dadd798ef9774306066fc5"><td class="memItemLeft" align="right" valign="top">std::function&lt; void()&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#af39b969cc4dadd798ef9774306066fc5">onDestroy</a></td></tr>
+<tr class="separator:af39b969cc4dadd798ef9774306066fc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab9aec87186a225236d3653655090f7d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#aab9aec87186a225236d3653655090f7d">onDestroyFunctionName</a></td></tr>
+<tr class="separator:aab9aec87186a225236d3653655090f7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5108adb742a7af7dac98864ee0332322"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_composite.html#a5108adb742a7af7dac98864ee0332322">onDestroyFunctionModuleName</a></td></tr>
+<tr class="separator:a5108adb742a7af7dac98864ee0332322"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classgui__framework_1_1_base_component"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classgui__framework_1_1_base_component')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></td></tr>
 <tr class="memitem:a1576375d22cf283d598e22f4a11aca2f inherit pro_attribs_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a1576375d22cf283d598e22f4a11aca2f">parent</a></td></tr>
 <tr class="separator:a1576375d22cf283d598e22f4a11aca2f inherit pro_attribs_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -425,7 +424,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_composite_8cpp_source.html#l00150">150</a> of file <a class="el" href="_base_composite_8cpp_source.html">BaseComposite.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_composite_8cpp_source.html#l00151">151</a> of file <a class="el" href="_base_composite_8cpp_source.html">BaseComposite.cpp</a>.</p>
 
 </div>
 </div>
@@ -452,7 +451,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_composite_8cpp_source.html#l00491">491</a> of file <a class="el" href="_base_composite_8cpp_source.html">BaseComposite.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_composite_8cpp_source.html#l00476">476</a> of file <a class="el" href="_base_composite_8cpp_source.html">BaseComposite.cpp</a>.</p>
 
 </div>
 </div>
@@ -513,7 +512,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_composite_8cpp_source.html#l00386">386</a> of file <a class="el" href="_base_composite_8cpp_source.html">BaseComposite.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_composite_8cpp_source.html#l00375">375</a> of file <a class="el" href="_base_composite_8cpp_source.html">BaseComposite.cpp</a>.</p>
 
 </div>
 </div>
@@ -540,7 +539,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_composite_8cpp_source.html#l00391">391</a> of file <a class="el" href="_base_composite_8cpp_source.html">BaseComposite.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_composite_8cpp_source.html#l00380">380</a> of file <a class="el" href="_base_composite_8cpp_source.html">BaseComposite.cpp</a>.</p>
 
 </div>
 </div>
@@ -567,7 +566,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_composite_8cpp_source.html#l00401">401</a> of file <a class="el" href="_base_composite_8cpp_source.html">BaseComposite.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_composite_8cpp_source.html#l00390">390</a> of file <a class="el" href="_base_composite_8cpp_source.html">BaseComposite.cpp</a>.</p>
 
 </div>
 </div>
@@ -623,7 +622,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_composite_8cpp_source.html#l00050">50</a> of file <a class="el" href="_base_composite_8cpp_source.html">BaseComposite.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_composite_8cpp_source.html#l00051">51</a> of file <a class="el" href="_base_composite_8cpp_source.html">BaseComposite.cpp</a>.</p>
 
 </div>
 </div>
@@ -683,7 +682,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_composite_8cpp_source.html#l00396">396</a> of file <a class="el" href="_base_composite_8cpp_source.html">BaseComposite.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_composite_8cpp_source.html#l00385">385</a> of file <a class="el" href="_base_composite_8cpp_source.html">BaseComposite.cpp</a>.</p>
 
 </div>
 </div>
@@ -792,7 +791,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_composite_8cpp_source.html#l00315">315</a> of file <a class="el" href="_base_composite_8cpp_source.html">BaseComposite.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_composite_8cpp_source.html#l00341">341</a> of file <a class="el" href="_base_composite_8cpp_source.html">BaseComposite.cpp</a>.</p>
 
 </div>
 </div>
@@ -819,7 +818,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_composite_8cpp_source.html#l00310">310</a> of file <a class="el" href="_base_composite_8cpp_source.html">BaseComposite.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_composite_8cpp_source.html#l00336">336</a> of file <a class="el" href="_base_composite_8cpp_source.html">BaseComposite.cpp</a>.</p>
 
 </div>
 </div>
@@ -879,7 +878,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_composite_8cpp_source.html#l00320">320</a> of file <a class="el" href="_base_composite_8cpp_source.html">BaseComposite.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_composite_8cpp_source.html#l00346">346</a> of file <a class="el" href="_base_composite_8cpp_source.html">BaseComposite.cpp</a>.</p>
 
 </div>
 </div>
@@ -906,7 +905,34 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_composite_8cpp_source.html#l00325">325</a> of file <a class="el" href="_base_composite_8cpp_source.html">BaseComposite.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_composite_8cpp_source.html#l00351">351</a> of file <a class="el" href="_base_composite_8cpp_source.html">BaseComposite.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a8c79eebd126ff3be8453bb4d86df8330"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c79eebd126ff3be8453bb4d86df8330">&#9670;&nbsp;</a></span>getOnDestroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const function&lt; void()&gt; &amp; gui_framework::BaseComposite::getOnDestroy </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_base_composite_8cpp_source.html#l00370">370</a> of file <a class="el" href="_base_composite_8cpp_source.html">BaseComposite.cpp</a>.</p>
 
 </div>
 </div>
@@ -933,7 +959,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_composite_8cpp_source.html#l00330">330</a> of file <a class="el" href="_base_composite_8cpp_source.html">BaseComposite.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_composite_8cpp_source.html#l00356">356</a> of file <a class="el" href="_base_composite_8cpp_source.html">BaseComposite.cpp</a>.</p>
 
 </div>
 </div>
@@ -962,9 +988,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classgui__framework_1_1_base_component.html#a874eae6d7db8309155a9946aef01199a">gui_framework::BaseComponent</a>.</p>
 
-<p>Reimplemented in <a class="el" href="classgui__framework_1_1_base_window.html#a601fc7e12ff4afa848514f40b844457c">gui_framework::BaseWindow</a>.</p>
+<p>Reimplemented in <a class="el" href="classgui__framework_1_1_base_window.html#a601fc7e12ff4afa848514f40b844457c">gui_framework::BaseWindow</a>, and <a class="el" href="classgui__framework_1_1_base_separate_window.html#a02ab46a635597c9c0f7946b39f775408">gui_framework::BaseSeparateWindow</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_base_composite_8cpp_source.html#l00415">415</a> of file <a class="el" href="_base_composite_8cpp_source.html">BaseComposite.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_composite_8cpp_source.html#l00404">404</a> of file <a class="el" href="_base_composite_8cpp_source.html">BaseComposite.cpp</a>.</p>
 
 </div>
 </div>
@@ -1051,7 +1077,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classgui__framework_1_1_base_component.html#aa271d9c3ad5e9a9374c7d3a334327cdc">gui_framework::BaseComponent</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_base_composite_8cpp_source.html#l00012">12</a> of file <a class="el" href="_base_composite_8cpp_source.html">BaseComposite.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_composite_8cpp_source.html#l00013">13</a> of file <a class="el" href="_base_composite_8cpp_source.html">BaseComposite.cpp</a>.</p>
 
 </div>
 </div>
@@ -1194,7 +1220,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classgui__framework_1_1_base_window.html#a3bfb7ebe5e6af2f83bb35b45b7244192">gui_framework::BaseWindow</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_base_composite_8cpp_source.html#l00406">406</a> of file <a class="el" href="_base_composite_8cpp_source.html">BaseComposite.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_composite_8cpp_source.html#l00395">395</a> of file <a class="el" href="_base_composite_8cpp_source.html">BaseComposite.cpp</a>.</p>
 
 </div>
 </div>
@@ -1226,8 +1252,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="acd7cb91db3db51cdca9b5c231164cc92"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd7cb91db3db51cdca9b5c231164cc92">&#9670;&nbsp;</a></span>setLargeIcon()</h2>
+<a id="a59f5486d24f7d03620daece230099c13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59f5486d24f7d03620daece230099c13">&#9670;&nbsp;</a></span>setOnDestroy() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1236,10 +1262,10 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void gui_framework::BaseComposite::setLargeIcon </td>
+          <td class="memname">virtual void gui_framework::BaseComposite::setOnDestroy </td>
           <td>(</td>
-          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
-          <td class="paramname"><em>pathToLargeIcon</em></td><td>)</td>
+          <td class="paramtype">const std::function&lt; void()&gt; &amp;&#160;</td>
+          <td class="paramname"><em>onDestroy</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1250,26 +1276,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Set large icon(32x32) for specific window. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pathToLargeIcon</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">FileDoesNotExist</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="_base_composite_8cpp_source.html#l00344">344</a> of file <a class="el" href="_base_composite_8cpp_source.html">BaseComposite.cpp</a>.</p>
-
 </div>
 </div>
-<a id="ac1a8b83ad28e122d61acc2716512d959"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac1a8b83ad28e122d61acc2716512d959">&#9670;&nbsp;</a></span>setSmallIcon()</h2>
+<a id="a3a18df5ab0ec82f5c884f30ee645b7f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a18df5ab0ec82f5c884f30ee645b7f7">&#9670;&nbsp;</a></span>setOnDestroy() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1278,11 +1288,21 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void gui_framework::BaseComposite::setSmallIcon </td>
+          <td class="memname">virtual void gui_framework::BaseComposite::setOnDestroy </td>
           <td>(</td>
-          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
-          <td class="paramname"><em>pathToSmallIcon</em></td><td>)</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>onDestroyFunctionName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>onDestroyFunctionModuleName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -1292,21 +1312,21 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Set small icon(16x16) for specific window. </p>
+<p>Load function from module. Can be seriazlied. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pathToSmallIcon</td><td></td></tr>
+    <tr><td class="paramname">onDestroyFunctionName</td><td></td></tr>
+    <tr><td class="paramname">onDestroyFunctionModuleName</td><td></td></tr>
   </table>
   </dd>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">FileDoesNotExist</td><td></td></tr>
+    <tr><td class="paramname">CantFindFunctionFromModuleException</td><td></td></tr>
+    <tr><td class="paramname">std::out_of_range</td><td>Can't find moduleName in loaded modules </td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="_base_composite_8cpp_source.html#l00365">365</a> of file <a class="el" href="_base_composite_8cpp_source.html">BaseComposite.cpp</a>.</p>
 
 </div>
 </div>
@@ -1364,7 +1384,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classgui__framework_1_1_base_component.html#a636cece7fe5db06982150a8eb9e13e10">gui_framework::BaseComponent</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_base_composite_8cpp_source.html#l00088">88</a> of file <a class="el" href="_base_composite_8cpp_source.html">BaseComposite.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_composite_8cpp_source.html#l00089">89</a> of file <a class="el" href="_base_composite_8cpp_source.html">BaseComposite.cpp</a>.</p>
 
 </div>
 </div>
@@ -1418,30 +1438,6 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a6cc2c87df8a1655c4b9ecac905a7b531"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6cc2c87df8a1655c4b9ecac905a7b531">&#9670;&nbsp;</a></span>largeIcon</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">HICON gui_framework::BaseComposite::largeIcon</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_base_composite_8h_source.html#l00030">30</a> of file <a class="el" href="_base_composite_8h_source.html">BaseComposite.h</a>.</p>
-
-</div>
-</div>
 <a id="a02be7d9aee6b1c4089c248d70a9da03c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a02be7d9aee6b1c4089c248d70a9da03c">&#9670;&nbsp;</a></span>mainMenu</h2>
 
@@ -1490,8 +1486,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a88ed491afa835ef9aac8863af1053a2b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a88ed491afa835ef9aac8863af1053a2b">&#9670;&nbsp;</a></span>pathToLargeIcon</h2>
+<a id="af39b969cc4dadd798ef9774306066fc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af39b969cc4dadd798ef9774306066fc5">&#9670;&nbsp;</a></span>onDestroy</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1500,7 +1496,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::filesystem::path gui_framework::BaseComposite::pathToLargeIcon</td>
+          <td class="memname">std::function&lt;void()&gt; gui_framework::BaseComposite::onDestroy</td>
         </tr>
       </table>
   </td>
@@ -1510,12 +1506,12 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_composite_8h_source.html#l00033">33</a> of file <a class="el" href="_base_composite_8h_source.html">BaseComposite.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_composite_8h_source.html#l00030">30</a> of file <a class="el" href="_base_composite_8h_source.html">BaseComposite.h</a>.</p>
 
 </div>
 </div>
-<a id="a41563e16b969fe6f32b17964d1ccc8dc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a41563e16b969fe6f32b17964d1ccc8dc">&#9670;&nbsp;</a></span>pathToSmallIcon</h2>
+<a id="a5108adb742a7af7dac98864ee0332322"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5108adb742a7af7dac98864ee0332322">&#9670;&nbsp;</a></span>onDestroyFunctionModuleName</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1524,7 +1520,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::filesystem::path gui_framework::BaseComposite::pathToSmallIcon</td>
+          <td class="memname">std::string gui_framework::BaseComposite::onDestroyFunctionModuleName</td>
         </tr>
       </table>
   </td>
@@ -1535,6 +1531,30 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_base_composite_8h_source.html#l00032">32</a> of file <a class="el" href="_base_composite_8h_source.html">BaseComposite.h</a>.</p>
+
+</div>
+</div>
+<a id="aab9aec87186a225236d3653655090f7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab9aec87186a225236d3653655090f7d">&#9670;&nbsp;</a></span>onDestroyFunctionName</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string gui_framework::BaseComposite::onDestroyFunctionName</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_base_composite_8h_source.html#l00031">31</a> of file <a class="el" href="_base_composite_8h_source.html">BaseComposite.h</a>.</p>
 
 </div>
 </div>
@@ -1559,30 +1579,6 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_base_composite_8h_source.html#l00028">28</a> of file <a class="el" href="_base_composite_8h_source.html">BaseComposite.h</a>.</p>
-
-</div>
-</div>
-<a id="a5482fa48df4e4b1beb7ee6f64b0a41f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5482fa48df4e4b1beb7ee6f64b0a41f2">&#9670;&nbsp;</a></span>smallIcon</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">HICON gui_framework::BaseComposite::smallIcon</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_base_composite_8h_source.html#l00031">31</a> of file <a class="el" href="_base_composite_8h_source.html">BaseComposite.h</a>.</p>
 
 </div>
 </div>

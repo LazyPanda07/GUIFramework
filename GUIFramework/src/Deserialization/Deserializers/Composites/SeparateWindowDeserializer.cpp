@@ -4,7 +4,7 @@
 #include "MenuItems/MenuItem.h"
 #include "MenuItems/DropDownMenuItem.h"
 
-#include "Deserialization/Parsers/BaseCompositeParser.h"
+#include "Deserialization/Parsers/SeparateWindowParser.h"
 #include "Deserialization/Parsers/MenuParser.h"
 
 #include "Deserialization/Deserializers/DropDownMenuItemDeserializer.h"
@@ -22,7 +22,7 @@ namespace gui_framework
 			using json::utility::objectSmartPointer;
 			using json::utility::jsonObject;
 
-			parsers::BaseCompositeParser parser;
+			parsers::SeparateWindowParser parser;
 			parsers::MenuParser menuParser;
 			bool hasMenus = false;
 
@@ -56,6 +56,16 @@ namespace gui_framework
 			if (parser.pathToSmallIcon.size())
 			{
 				result->setSmallIcon(parser.pathToSmallIcon);
+			}
+
+			if (parser.onDestroyFunctionName.size())
+			{
+				result->setOnDestroy(parser.onDestroyFunctionName, parser.onDestroyFunctionModuleName);
+			}
+
+			if (parser.onCloseFunctionName.size())
+			{
+				result->setOnDestroy(parser.onCloseFunctionName, parser.onCloseFunctionModuleName);
 			}
 
 			if (hasMenus)
@@ -95,7 +105,7 @@ namespace gui_framework
 					}
 					else
 					{
-						throw exceptions::deserialization::WrongMenuTypeException(type);
+						throw exceptions::deserialization::WrongMenuTypeException(type, __FILE__, __FUNCTION__, __LINE__);
 					}
 				}
 			}

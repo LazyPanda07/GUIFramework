@@ -11,7 +11,7 @@ namespace gui_framework
 		class GUI_FRAMEWORK_API CantFindCompositeFunctionException : public BaseGUIFrameworkException
 		{
 		public:
-			CantFindCompositeFunctionException(const std::string& functionName);
+			CantFindCompositeFunctionException(const std::string& functionName, std::string_view fileName, std::string_view methodName, int line);
 
 			~CantFindCompositeFunctionException() = default;
 		};

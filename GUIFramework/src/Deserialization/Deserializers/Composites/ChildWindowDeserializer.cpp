@@ -31,14 +31,9 @@ namespace gui_framework
 
 			result->setExitMode(parser.mode);
 
-			if (parser.pathToLargeIcon.size())
+			if (parser.onDestroyFunctionName.size())
 			{
-				result->setLargeIcon(parser.pathToLargeIcon);
-			}
-
-			if (parser.pathToSmallIcon.size())
-			{
-				result->setSmallIcon(parser.pathToSmallIcon);
+				result->setOnDestroy(parser.onDestroyFunctionName, parser.onDestroyFunctionModuleName);
 			}
 
 			if (description->contains("children", json::utility::variantTypeEnum::jJSONArray))

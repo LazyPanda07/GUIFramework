@@ -29,7 +29,7 @@ namespace gui_framework
 
 		if (result == LB_ERR)
 		{
-			throw exceptions::SelectListException(__FUNCTION__, result);
+			throw exceptions::SelectListException(__FUNCTION__, result, __FILE__, __FUNCTION__, __LINE__);
 		}
 
 		return result;
@@ -45,7 +45,7 @@ namespace gui_framework
 
 		if (result == LB_ERR)
 		{
-			throw exceptions::SelectListException(__FUNCTION__, result);
+			throw exceptions::SelectListException(__FUNCTION__, result, __FILE__, __FUNCTION__, __LINE__);
 		}
 
 		items.reserve(itemsCount);
@@ -62,7 +62,7 @@ namespace gui_framework
 	{
 		if (SendMessageW(handle, LB_SELITEMRANGEEX, firstItemIndex, lastItemIndex) == LB_ERR)
 		{
-			throw exceptions::SelectListException(__FUNCTION__, LB_ERR);
+			throw exceptions::SelectListException(__FUNCTION__, LB_ERR, __FILE__, __FUNCTION__, __LINE__);
 		}
 	}
 
@@ -72,7 +72,7 @@ namespace gui_framework
 
 		if (result == LB_ERR)
 		{
-			throw exceptions::SelectListException(__FUNCTION__, result);
+			throw exceptions::SelectListException(__FUNCTION__, result, __FILE__, __FUNCTION__, __LINE__);
 		}
 
 		return result;

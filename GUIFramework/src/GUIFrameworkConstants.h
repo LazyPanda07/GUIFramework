@@ -60,6 +60,8 @@ namespace gui_framework
 		inline const std::string usingCreatorsSetting = "usingCreators";
 		inline const std::string usingDeserializersSetting = "usingDeserializers";
 		inline const std::string threadsCountSetting = "threadsCount";
+		inline const std::string usingNotImplementedExceptions = "usingNotImplementedExceptions";
+		inline const std::string usingExtendedExceptions = "usingExtendedExceptions";
 		inline const std::string modulesSetting = "modules";
 		inline const std::string moduleNameSetting = "moduleName";
 		inline constexpr std::string_view pathToModuleSettings = "pathToModule";
@@ -80,10 +82,16 @@ namespace gui_framework
 		};
 	}
 
-	inline constexpr std::string_view guiFrameworkVersion = "0.8.4-beta";
+	inline constexpr std::string_view guiFrameworkVersion = "0.8.5-beta";
 
 	/// @brief Default on click signature
 	using onClickSignature = void(*)();
+
+	/// @brief Default on destroy signature. Called before window is destroyed
+	using onDestroySignature = void(*)();
+
+	/// @brief Default on close signature. Worked only in BaseSeparateWindow subclasses. Called if user pressed close button
+	using onCloseSignature = bool(*)();
 }
 
 /// @brief Insert this macro before serializable function declaration and implementation

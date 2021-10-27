@@ -4,6 +4,8 @@ var _g_u_i_framework_constants_8h =
     [ "GUI_FRAMEWORK_API_FUNCTION", "_g_u_i_framework_constants_8h.html#a767f18c6bddef6da85ce42f210726a25", null ],
     [ "IMPLEMENT_SERIALIZABLE_FUNCTION", "_g_u_i_framework_constants_8h.html#afc2f3ab01c298b1975e099d1674e37f9", null ],
     [ "onClickSignature", "_g_u_i_framework_constants_8h.html#a5c2c0a8327422f8318f9c225fa2bf27d", null ],
+    [ "onCloseSignature", "_g_u_i_framework_constants_8h.html#a04962e85abffea22d24989bdd3e6f8f8", null ],
+    [ "onDestroySignature", "_g_u_i_framework_constants_8h.html#a18efcfbf1849af342705442339a511cf", null ],
     [ "smartPointerType", "_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67", null ],
     [ "additionalKeys", "_g_u_i_framework_constants_8h.html#af7004d43e2976ef86b2bcc7e46959e23", [
       [ "shift", "_g_u_i_framework_constants_8h.html#af7004d43e2976ef86b2bcc7e46959e23a2ab64f4ee279e5baf7ab7059b15e6d12", null ],
@@ -42,5 +44,7 @@ var _g_u_i_framework_constants_8h =
     [ "threadsCountSetting", "_g_u_i_framework_constants_8h.html#af4f5086d138e7948e61b65288c1b5bf4", null ],
     [ "trackbarControl", "_g_u_i_framework_constants_8h.html#aaeed3f292443e53634408db778f3b423", null ],
     [ "usingCreatorsSetting", "_g_u_i_framework_constants_8h.html#a9ba5f6294c34d0955eb701cb877f4052", null ],
-    [ "usingDeserializersSetting", "_g_u_i_framework_constants_8h.html#a1464ce3cf0137eceee50b13ebdfec722", null ]
+    [ "usingDeserializersSetting", "_g_u_i_framework_constants_8h.html#a1464ce3cf0137eceee50b13ebdfec722", null ],
+    [ "usingExtendedExceptions", "_g_u_i_framework_constants_8h.html#afa56893c0a9d9cc350c076e41c27e315", null ],
+    [ "usingNotImplementedExceptions", "_g_u_i_framework_constants_8h.html#a3de59689d9d39b2d89560ff4da6942b8", null ]
 ];
