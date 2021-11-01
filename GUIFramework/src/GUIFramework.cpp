@@ -357,6 +357,7 @@ namespace gui_framework
 	void GUIFramework::processHotkeys() const
 	{
 		static set<const set<uint32_t>*> possibleHotkeys;
+		static constexpr int keyDownBit = 1 << 16;
 
 		possibleHotkeys.clear();
 
@@ -366,7 +367,7 @@ namespace gui_framework
 		{
 			for (const auto& j : i)
 			{
-				if (!GetAsyncKeyState(j))
+				if (!(GetAsyncKeyState(j) & keyDownBit))
 				{
 					possibleHotkeys.erase(&i);
 
