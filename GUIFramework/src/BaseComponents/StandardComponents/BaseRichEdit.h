@@ -1,5 +1,7 @@
 #pragma once
 
+/// @file BaseRichEdit.h
+
 #include "headers.h"
 #include "BaseComponents/BaseComponent.h"
 #include "Interfaces/Components/IResizableComponent.h"

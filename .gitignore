@@ -45,3 +45,6 @@ build/
 
 # GUIFrameworkBuilder
 !GUIFrameworkBuilder.exe
+
+# Localization
+ProjectLocalization/

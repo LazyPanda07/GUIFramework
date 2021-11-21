@@ -1,5 +1,7 @@
 #pragma once
 
+/// @file BaseComboBox.h
+
 #include "headers.h"
 #include "BaseComponents/BaseComponent.h"
 #include "Interfaces/Components/IResizableComponent.h"
