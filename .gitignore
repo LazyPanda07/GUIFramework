@@ -48,3 +48,6 @@ ProjectLocalization/
 
 # CustomBuildSteps
 !CustomBuildSteps.exe
+
+# CleanCustomBuildSteps
+!CleanCustomBuildSteps.exe

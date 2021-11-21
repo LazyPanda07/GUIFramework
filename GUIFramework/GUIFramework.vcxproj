@@ -469,6 +469,7 @@
     <ClCompile Include="src\Utility\Holders\WindowHolder.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="CleanCustomBuildSteps.exe" />
     <None Include="CustomBuildSteps.exe" />
     <None Include="GUIFrameworkMacros.props" />
     <None Include="gui_framework.json" />
@@ -617,7 +618,11 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <CustomBuildStep>
-      <Command>start CustomBuildSteps.exe $(Outdir) $(ProjectDir)src $(SolutionDir)build $(SolutionDir)docs $(Configuration)-$(Platform) $(SolutionDir)JSON\src $(SolutionDir)ThreadPool\src</Command>
+      <Command>call CustomBuildSteps.exe $(Outdir) $(ProjectDir)src $(SolutionDir)build $(SolutionDir)docs $(Configuration)-$(Platform) $(SolutionDir)JSON\src $(SolutionDir)ThreadPool\src $(SolutionDir)Localization\src
+call CleanCustomBuildSteps.exe erase_file $(SolutionDir)build\$(Configuration)-$(Platform)\dlls\Localization.dll
+call CleanCustomBuildSteps.exe erase_empty_folder $(SolutionDir)build\$(Configuration)-$(Platform)\dlls\
+mkdir  $(SolutionDir)build\$(Configuration)-$(Platform)\executables\
+copy /Y $(SolutionDir)Localization\assets\LocalizationUtils.exe $(SolutionDir)build\$(Configuration)-$(Platform)\executables\</Command>
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>output.txt</Outputs>
@@ -642,7 +647,11 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <CustomBuildStep>
-      <Command>start CustomBuildSteps.exe $(Outdir) $(ProjectDir)src $(SolutionDir)build $(SolutionDir)docs $(Configuration)-$(Platform) $(SolutionDir)JSON\src $(SolutionDir)ThreadPool\src</Command>
+      <Command>call CustomBuildSteps.exe $(Outdir) $(ProjectDir)src $(SolutionDir)build $(SolutionDir)docs $(Configuration)-$(Platform) $(SolutionDir)JSON\src $(SolutionDir)ThreadPool\src $(SolutionDir)Localization\src
+call CleanCustomBuildSteps.exe erase_file $(SolutionDir)build\$(Configuration)-$(Platform)\dlls\Localization.dll
+call CleanCustomBuildSteps.exe erase_empty_folder $(SolutionDir)build\$(Configuration)-$(Platform)\dlls\
+mkdir  $(SolutionDir)build\$(Configuration)-$(Platform)\executables\
+copy /Y $(SolutionDir)Localization\assets\LocalizationUtils.exe $(SolutionDir)build\$(Configuration)-$(Platform)\executables\</Command>
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>output.txt</Outputs>
@@ -671,7 +680,11 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <CustomBuildStep>
-      <Command>start CustomBuildSteps.exe $(Outdir) $(ProjectDir)src $(SolutionDir)build $(SolutionDir)docs $(Configuration)-$(Platform) $(SolutionDir)JSON\src $(SolutionDir)ThreadPool\src</Command>
+      <Command>call CustomBuildSteps.exe $(Outdir) $(ProjectDir)src $(SolutionDir)build $(SolutionDir)docs $(Configuration)-$(Platform) $(SolutionDir)JSON\src $(SolutionDir)ThreadPool\src $(SolutionDir)Localization\src
+call CleanCustomBuildSteps.exe erase_file $(SolutionDir)build\$(Configuration)-$(Platform)\dlls\Localization.dll
+call CleanCustomBuildSteps.exe erase_empty_folder $(SolutionDir)build\$(Configuration)-$(Platform)\dlls\
+mkdir  $(SolutionDir)build\$(Configuration)-$(Platform)\executables\
+copy /Y $(SolutionDir)Localization\assets\LocalizationUtils.exe $(SolutionDir)build\$(Configuration)-$(Platform)\executables\</Command>
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>output.txt</Outputs>
@@ -700,7 +713,11 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <CustomBuildStep>
-      <Command>start CustomBuildSteps.exe $(Outdir) $(ProjectDir)src $(SolutionDir)build $(SolutionDir)docs $(Configuration)-$(Platform) $(SolutionDir)JSON\src $(SolutionDir)ThreadPool\src</Command>
+      <Command>call CustomBuildSteps.exe $(Outdir) $(ProjectDir)src $(SolutionDir)build $(SolutionDir)docs $(Configuration)-$(Platform) $(SolutionDir)JSON\src $(SolutionDir)ThreadPool\src $(SolutionDir)Localization\src
+call CleanCustomBuildSteps.exe erase_file $(SolutionDir)build\$(Configuration)-$(Platform)\dlls\Localization.dll
+call CleanCustomBuildSteps.exe erase_empty_folder $(SolutionDir)build\$(Configuration)-$(Platform)\dlls\
+mkdir  $(SolutionDir)build\$(Configuration)-$(Platform)\executables\
+copy /Y $(SolutionDir)Localization\assets\LocalizationUtils.exe $(SolutionDir)build\$(Configuration)-$(Platform)\executables\</Command>
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>output.txt</Outputs>
@@ -729,7 +746,11 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <CustomBuildStep>
-      <Command>start CustomBuildSteps.exe $(Outdir) $(ProjectDir)src $(SolutionDir)build $(SolutionDir)docs $(Configuration)-$(Platform) $(SolutionDir)JSON\src $(SolutionDir)ThreadPool\src</Command>
+      <Command>call CustomBuildSteps.exe $(Outdir) $(ProjectDir)src $(SolutionDir)build $(SolutionDir)docs $(Configuration)-$(Platform) $(SolutionDir)JSON\src $(SolutionDir)ThreadPool\src $(SolutionDir)Localization\src
+call CleanCustomBuildSteps.exe erase_file $(SolutionDir)build\$(Configuration)-$(Platform)\dlls\Localization.dll
+call CleanCustomBuildSteps.exe erase_empty_folder $(SolutionDir)build\$(Configuration)-$(Platform)\dlls\
+mkdir  $(SolutionDir)build\$(Configuration)-$(Platform)\executables\
+copy /Y $(SolutionDir)Localization\assets\LocalizationUtils.exe $(SolutionDir)build\$(Configuration)-$(Platform)\executables\</Command>
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>output.txt</Outputs>
@@ -758,7 +779,11 @@
       <GenerateDebugInformation>false</GenerateDebugInformation>
     </Link>
     <CustomBuildStep>
-      <Command>start CustomBuildSteps.exe $(Outdir) $(ProjectDir)src $(SolutionDir)build $(SolutionDir)docs $(Configuration)-$(Platform) $(SolutionDir)JSON\src $(SolutionDir)ThreadPool\src</Command>
+      <Command>call CustomBuildSteps.exe $(Outdir) $(ProjectDir)src $(SolutionDir)build $(SolutionDir)docs $(Configuration)-$(Platform) $(SolutionDir)JSON\src $(SolutionDir)ThreadPool\src $(SolutionDir)Localization\src
+call CleanCustomBuildSteps.exe erase_file $(SolutionDir)build\$(Configuration)-$(Platform)\dlls\Localization.dll
+call CleanCustomBuildSteps.exe erase_empty_folder $(SolutionDir)build\$(Configuration)-$(Platform)\dlls\
+mkdir  $(SolutionDir)build\$(Configuration)-$(Platform)\executables\
+copy /Y $(SolutionDir)Localization\assets\LocalizationUtils.exe $(SolutionDir)build\$(Configuration)-$(Platform)\executables\</Command>
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>output.txt</Outputs>

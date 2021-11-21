@@ -1336,5 +1336,6 @@
     <None Include="gui_framework.json" />
     <None Include="GUIFrameworkMacros.props" />
     <None Include="CustomBuildSteps.exe" />
+    <None Include="CleanCustomBuildSteps.exe" />
   </ItemGroup>
 </Project>
