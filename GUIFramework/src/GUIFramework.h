@@ -9,6 +9,7 @@
 
 #pragma comment (lib, "JSON.lib")
 #pragma comment (lib, "ThreadPool.lib")
+#pragma comment (lib, "Localization.lib")
 
 namespace gui_framework
 {

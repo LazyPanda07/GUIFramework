@@ -46,6 +46,8 @@
 #include "Exceptions/WrongEncodingException.h"
 #include "ThreadPool.h"
 #include "SingletonThreadPool.h"
+#include "TextLocalization.h"
+#include "WTextLocalization.h"
 
 #include "GUIFramework.h"
 

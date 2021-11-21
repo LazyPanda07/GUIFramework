@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31321.278
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GUIFramework", "GUIFramework\GUIFramework.vcxproj", "{4ABC2B87-48DB-4481-8D94-4DE3DE15A82E}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ThreadPool", "ThreadPool\ThreadPool.vcxproj", "{BDE48484-5593-484F-9F84-FC01F8CF83A9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{8D47C82A-93AD-4FBB-A9EF-5B3D230CE83A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Localization", "Localization\Localization.vcxproj", "{D2968AC9-BAC3-4F25-9698-5C1CF6C4FA35}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +95,30 @@ Global
 		{BDE48484-5593-484F-9F84-FC01F8CF83A9}.ReleaseDLL|x64.Build.0 = ReleaseDLL|x64
 		{BDE48484-5593-484F-9F84-FC01F8CF83A9}.ReleaseDLL|x86.ActiveCfg = ReleaseDLL|Win32
 		{BDE48484-5593-484F-9F84-FC01F8CF83A9}.ReleaseDLL|x86.Build.0 = ReleaseDLL|Win32
+		{D2968AC9-BAC3-4F25-9698-5C1CF6C4FA35}.Debug|x64.ActiveCfg = Debug|x64
+		{D2968AC9-BAC3-4F25-9698-5C1CF6C4FA35}.Debug|x64.Build.0 = Debug|x64
+		{D2968AC9-BAC3-4F25-9698-5C1CF6C4FA35}.Debug|x86.ActiveCfg = Debug|x64
+		{D2968AC9-BAC3-4F25-9698-5C1CF6C4FA35}.Debug|x86.Build.0 = Debug|x64
+		{D2968AC9-BAC3-4F25-9698-5C1CF6C4FA35}.DebugDLL|x64.ActiveCfg = Debug|x64
+		{D2968AC9-BAC3-4F25-9698-5C1CF6C4FA35}.DebugDLL|x64.Build.0 = Debug|x64
+		{D2968AC9-BAC3-4F25-9698-5C1CF6C4FA35}.DebugDLL|x86.ActiveCfg = Debug|x64
+		{D2968AC9-BAC3-4F25-9698-5C1CF6C4FA35}.DebugDLL|x86.Build.0 = Debug|x64
+		{D2968AC9-BAC3-4F25-9698-5C1CF6C4FA35}.ProductionRelease|x64.ActiveCfg = Release|x64
+		{D2968AC9-BAC3-4F25-9698-5C1CF6C4FA35}.ProductionRelease|x64.Build.0 = Release|x64
+		{D2968AC9-BAC3-4F25-9698-5C1CF6C4FA35}.ProductionRelease|x86.ActiveCfg = Debug|x64
+		{D2968AC9-BAC3-4F25-9698-5C1CF6C4FA35}.ProductionRelease|x86.Build.0 = Debug|x64
+		{D2968AC9-BAC3-4F25-9698-5C1CF6C4FA35}.ProductionReleaseDLL|x64.ActiveCfg = Release|x64
+		{D2968AC9-BAC3-4F25-9698-5C1CF6C4FA35}.ProductionReleaseDLL|x64.Build.0 = Release|x64
+		{D2968AC9-BAC3-4F25-9698-5C1CF6C4FA35}.ProductionReleaseDLL|x86.ActiveCfg = Debug|x64
+		{D2968AC9-BAC3-4F25-9698-5C1CF6C4FA35}.ProductionReleaseDLL|x86.Build.0 = Debug|x64
+		{D2968AC9-BAC3-4F25-9698-5C1CF6C4FA35}.Release|x64.ActiveCfg = Release|x64
+		{D2968AC9-BAC3-4F25-9698-5C1CF6C4FA35}.Release|x64.Build.0 = Release|x64
+		{D2968AC9-BAC3-4F25-9698-5C1CF6C4FA35}.Release|x86.ActiveCfg = Release|x64
+		{D2968AC9-BAC3-4F25-9698-5C1CF6C4FA35}.Release|x86.Build.0 = Release|x64
+		{D2968AC9-BAC3-4F25-9698-5C1CF6C4FA35}.ReleaseDLL|x64.ActiveCfg = Release|x64
+		{D2968AC9-BAC3-4F25-9698-5C1CF6C4FA35}.ReleaseDLL|x64.Build.0 = Release|x64
+		{D2968AC9-BAC3-4F25-9698-5C1CF6C4FA35}.ReleaseDLL|x86.ActiveCfg = Debug|x64
+		{D2968AC9-BAC3-4F25-9698-5C1CF6C4FA35}.ReleaseDLL|x86.Build.0 = Debug|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -100,6 +126,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{F6B57139-D9F3-4B02-AA92-4E1F417649DA} = {8D47C82A-93AD-4FBB-A9EF-5B3D230CE83A}
 		{BDE48484-5593-484F-9F84-FC01F8CF83A9} = {8D47C82A-93AD-4FBB-A9EF-5B3D230CE83A}
+		{D2968AC9-BAC3-4F25-9698-5C1CF6C4FA35} = {8D47C82A-93AD-4FBB-A9EF-5B3D230CE83A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5BF5DB94-5EDF-452D-9290-6DF114036CE9}

@@ -43,5 +43,8 @@ build/
 # GUIFrameworkBuilder
 !GUIFrameworkBuilder.exe
 
+# Localization
+ProjectLocalization/
+
 # CustomBuildSteps
 !CustomBuildSteps.exe
