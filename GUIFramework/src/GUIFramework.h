@@ -104,6 +104,12 @@ namespace gui_framework
 		/// @exception json::exceptions::CantFindValueException Unable to find setting in gui_framework.json on first GUIFramework::get() call
 		static GUIFramework& get();
 
+		/// @brief Restart application with given exit code
+		/// @param exitCode Exit code for previous application
+		/// @exception GetLastErrorException 
+		static void restartApplication(int exitCode = 0);
+
+	public:
 		/// @brief Add task to thread pool. Thread safe method
 		/// @param task Task function
 		/// @param callback After execution task callback function
@@ -185,11 +191,6 @@ namespace gui_framework
 		/// @brief Check if modules are loaded. You can call getCantLoadedModules() to check if loaded modules have failed
 		/// @return 
 		bool isModulesLoaded() const;
-
-		/// @brief Restart application with given exit code
-		/// @param exitCode Exit code for previous application
-		/// @exception GetLastErrorException 
-		void restartApplication(int exitCode) const;
 
 		/// @brief Get all current registered creators
 		/// @return creators

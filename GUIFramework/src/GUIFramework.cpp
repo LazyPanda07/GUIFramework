@@ -558,6 +558,38 @@ namespace gui_framework
 		}
 	}
 
+	void GUIFramework::restartApplication(int exitCode)
+	{
+		int argc = 0;
+		wchar_t** argv = nullptr;
+		wstring_view commandLine = GetCommandLineW();
+		STARTUPINFO startInfo = {};
+		PROCESS_INFORMATION processInfo = {};
+
+		startInfo.cb = sizeof(startInfo);
+
+		argv = CommandLineToArgvW(commandLine.data(), &argc);
+
+		if (!CreateProcessW
+		(
+			argv[0],
+			const_cast<wchar_t*>(commandLine.data()),
+			nullptr,
+			nullptr,
+			false,
+			NULL,
+			nullptr,
+			nullptr,
+			&startInfo,
+			&processInfo
+		))
+		{
+			throw gui_framework::exceptions::GetLastErrorException(GetLastError(), __FILE__, __FUNCTION__, __LINE__);
+		}
+
+		exit(exitCode);
+	}
+
 	void GUIFramework::addTask(const function<void()>& task, const function<void()>& callback)
 	{
 		if (!threadPool)
@@ -801,38 +833,6 @@ namespace gui_framework
 	bool GUIFramework::isModulesLoaded() const
 	{
 		return modulesNeedToLoad == currentLoadedModules;
-	}
-
-	void GUIFramework::restartApplication(int exitCode) const
-	{
-		int argc = 0;
-		wchar_t** argv = nullptr;
-		wstring_view commandLine = GetCommandLineW();
-		STARTUPINFO startInfo = {};
-		PROCESS_INFORMATION processInfo = {};
-
-		startInfo.cb = sizeof(startInfo);
-
-		argv = CommandLineToArgvW(commandLine.data(), &argc);
-
-		if (!CreateProcessW
-			(
-				argv[0],
-				const_cast<wchar_t*>(commandLine.data()),
-				nullptr,
-				nullptr,
-				false,
-				NULL,
-				nullptr,
-				nullptr,
-				&startInfo,
-				&processInfo
-			))
-		{
-			throw gui_framework::exceptions::GetLastErrorException(GetLastError(), __FILE__, __FUNCTION__, __LINE__);
-		}
-
-		exit(exitCode);
 	}
 
 	const unordered_map<size_t, smartPointerType<utility::BaseComponentCreator>>& GUIFramework::getCreators() const
