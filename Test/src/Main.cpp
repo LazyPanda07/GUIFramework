@@ -7,8 +7,6 @@
 #include "ComponentsHeader.h"
 #include "CompositesHeader.h"
 
-#include "Deserialization/Recreator.h"
-
 #pragma comment (lib, "GUIFramework.lib")
 
 using namespace std;
@@ -35,32 +33,11 @@ void standard()
 		
 		ptr->setLargeIcon(R"(assets\icon.ico)");
 
-		thread([ptr]() { this_thread::sleep_for(2s); ofstream("test.json") << ptr->getStructure(); }).detach();
-
 		holder.runMainLoop();
 	}
 	catch (const std::exception& e)
 	{
 		cout << e.what() << endl;
-	}
-}
-
-void test()
-{
-	using namespace gui_framework;
-
-	try
-	{
-		Recreator recreator(filesystem::path("test.json"));
-		WindowHolder holder(recreator.deserialize());
-
-		holder.runMainLoop();
-	}
-	catch (const exception& e)
-	{
-		cout << e.what() << endl;
-
-		exit(0);
 	}
 }
 
@@ -79,14 +56,7 @@ int main(int argc, char** argv)
 
 	SetConsoleOutputCP(CP_UTF8);
 
-	thread(standard).detach();
-
-	string s;
-
-	while (cin >> s)
-	{
-
-	}
+	standard();
 
 	return 0;
 }
