@@ -59,6 +59,10 @@ namespace gui_framework
 		/// @exception CantFindFunctionFromModuleException 
 		GUI_FRAMEWORK_API_FUNCTION void loadEventCallbackFromModule(std::function<void(const std::wstring&)>& eventCallback, const std::string& functionName, const std::string& moduleName);
 
+		/// @brief Get current version of GUIFramework
+		/// @return 
+		GUI_FRAMEWORK_API_FUNCTION std::string getGUIFrameworkVersion();
+
 		/// @brief Make function with current build configuration compatibility
 		/// @tparam T Type
 		/// @param ...args Constructor arguments 
