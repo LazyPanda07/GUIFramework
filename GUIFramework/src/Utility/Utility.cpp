@@ -163,6 +163,11 @@ namespace gui_framework
 
 			eventCallback = tem;
 		}
+
+		GUI_FRAMEWORK_API_FUNCTION string getGUIFrameworkVersion()
+		{
+			return "0.9-beta"s;
+		}
 	}
 
 	namespace __utility
