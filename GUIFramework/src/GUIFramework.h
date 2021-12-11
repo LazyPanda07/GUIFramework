@@ -159,14 +159,6 @@ namespace gui_framework
 		/// @param moduleName Name of module to unload
 		void unloadModule(const std::string& moduleName);
 
-		/// @brief Add derived from BaseComponentCreator creator
-		template<std::derived_from<BaseComponent> T, std::derived_from<utility::BaseComponentCreator> CreatorT, typename... Args>
-		void addCreator(Args&&... args);
-
-		/// @brief Add derived from IDeserializer deserializer
-		template<std::derived_from<BaseComponent> T, std::derived_from<interfaces::IDeserializer> DeserializerT, typename... Args>
-		void addDeserializer(Args&&... args);
-
 		/// @brief Thread safe 
 		/// @param handle 
 		/// @return Found component or nullptr
@@ -190,6 +182,15 @@ namespace gui_framework
 		/// @param description Description of holder window with 'hotkeys' object
 		void deserializeHotkeys(const json::utility::objectSmartPointer<json::utility::jsonObject>& description);
 
+		/// @brief Check if modules are loaded. You can call getCantLoadedModules() to check if loaded modules have failed
+		/// @return 
+		bool isModulesLoaded() const;
+
+		/// @brief Restart application with given exit code
+		/// @param exitCode Exit code for previous application
+		/// @exception GetLastErrorException 
+		void restartApplication(int exitCode) const;
+
 		/// @brief Get all current registered creators
 		/// @return creators
 		const std::unordered_map<size_t, smartPointerType<utility::BaseComponentCreator>>& getCreators() const;
@@ -210,13 +211,17 @@ namespace gui_framework
 		/// @return 
 		const std::unordered_map<std::string, std::string>& getModulesPaths() const;
 
-		/// @brief Check if modules are loaded. You can call getCantLoadedModules() to check if loaded modules have failed
-		/// @return 
-		bool isModulesLoaded() const;
-
 		/// @brief List of all exceptions in load modules process
 		/// @return 
 		std::vector<std::string> getCantLoadedModules();
+
+		/// @brief Add derived from BaseComponentCreator creator
+		template<std::derived_from<BaseComponent> T, std::derived_from<utility::BaseComponentCreator> CreatorT, typename... Args>
+		void addCreator(Args&&... args);
+
+		/// @brief Add derived from IDeserializer deserializer
+		template<std::derived_from<BaseComponent> T, std::derived_from<interfaces::IDeserializer> DeserializerT, typename... Args>
+		void addDeserializer(Args&&... args);
 #pragma region FriendClasses
 		friend class BaseComponent;
 
