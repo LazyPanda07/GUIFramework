@@ -1,6 +1,9 @@
 #include "ButtonDeserializer.h"
 
 #include "Deserialization/Parsers/Buttons/ButtonParser.h"
+#include "Utility/AdditionalCreationData/ButtonAdditionalCreationData.h"
+#include "Components/Buttons/Button.h"
+#include "GUIFramework.h"
 
 using namespace std;
 

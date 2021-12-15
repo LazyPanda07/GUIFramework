@@ -1,6 +1,8 @@
 #include "DropDownListComboBoxDeserializer.h"
 
 #include "Deserialization/Parsers/ComboBoxParser.h"
+#include "GUIFramework.h"
+#include "Utility/AdditionalCreationData/ComboBoxAdditionalCreationData.h"
 
 using namespace std;
 

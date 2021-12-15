@@ -3,6 +3,7 @@
 #include "headers.h"
 #include "BaseComponents/BaseComponent.h"
 #include "Interfaces/Components/ITextOperations.h"
+#include "Interfaces/Localization/ISingleTextLocalized.h"
 #include "Styles/Components/Buttons/ButtonStyles.h"
 
 namespace gui_framework
@@ -10,7 +11,8 @@ namespace gui_framework
 	/// @brief Base class for all buttons
 	class GUI_FRAMEWORK_API BaseButton :
 		public BaseComponent,
-		public interfaces::ITextOperations
+		public interfaces::ITextOperations,
+		public interfaces::ISingleTextLocalized
 	{
 	public:
 		inline static constexpr uint16_t buttonWidth = 200;
@@ -23,6 +25,8 @@ namespace gui_framework
 
 	protected:
 		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
+
+		virtual void updateLocalization(const std::wstring& localizedText) override;
 
 	public:
 		BaseButton(const std::wstring& buttonName, const std::wstring& buttonText, const utility::ComponentSettings& settings, const styles::ButtonStyles& styles, BaseComponent* parent, const std::function<void()>& onClick = nullptr);

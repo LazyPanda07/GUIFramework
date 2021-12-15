@@ -8,6 +8,11 @@ using namespace std;
 
 namespace gui_framework
 {
+	void BaseEditControl::updateLocalization(const wstring& localizedText)
+	{
+		this->setPlaceholder(localizedText);
+	}
+
 	BaseEditControl::BaseEditControl(const std::wstring& editControlName, const utility::ComponentSettings& settings, BaseComponent* parent, bool isMultiLine) :
 		BaseComponent
 		(

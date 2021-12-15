@@ -2,6 +2,7 @@
 #include "BaseComposite.h"
 
 #include "Interfaces/Components/IResizableComponent.h"
+#include "GUIFramework.h"
 
 #include "Exceptions/FileDoesNotExist.h"
 #include "Exceptions/CantFindFunctionFromModuleException.h"
@@ -133,7 +134,7 @@ namespace gui_framework
 
 		for (size_t i = 0; i < children.size(); i++)
 		{
-			string childWindowName = utility::to_string(children[i]->getWindowName(), children[i]->getCodepage());
+			string childWindowName = utility::to_string(children[i]->getWindowName(), interfaces::ISerializable::getCodepage());
 
 			auto& childStructure = get<json::utility::objectSmartPointer<json::utility::jsonObject>>(childrenStructure[i][childWindowName]);
 

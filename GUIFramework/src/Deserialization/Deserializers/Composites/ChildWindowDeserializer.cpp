@@ -2,6 +2,8 @@
 #include "ChildWindowDeserializer.h"
 
 #include "Deserialization/Parsers/BaseCompositeParser.h"
+#include "GUIFramework.h"
+#include "Utility/AdditionalCreationData/ChildWindowAdditionalCreationData.h"
 
 using namespace std;
 

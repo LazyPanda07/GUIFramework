@@ -1,6 +1,8 @@
 #pragma once
 
 #include "headers.h"
+#include "Utility/Utility.h"
+#include "Utility/ComponentSettings.h"
 #include "Utility/Holders/LoadableHolders/IconsHolder.h"
 #include "Interfaces/Styles/IStyles.h"
 #include "Interfaces/Utility/ISerializable.h"

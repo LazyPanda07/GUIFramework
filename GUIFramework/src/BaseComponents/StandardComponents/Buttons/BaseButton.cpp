@@ -1,5 +1,6 @@
-#include "headers.h"
 #include "BaseButton.h"
+
+#include "GUIFramework.h"
 
 #include "Exceptions/GetLastErrorException.h"
 #include "Exceptions/NotImplemented.h"
@@ -26,6 +27,11 @@ namespace gui_framework
 		isUsed = false;
 
 		return -1;
+	}
+
+	void BaseButton::updateLocalization(const wstring& localizedText)
+	{
+		this->setText(localizedText);
 	}
 
 	BaseButton::BaseButton(const wstring& buttonName, const wstring& buttonText, const utility::ComponentSettings& settings, const styles::ButtonStyles& styles, BaseComponent* parent, const function<void()>& onClick) :

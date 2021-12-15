@@ -1,5 +1,6 @@
-#include "headers.h"
 #include "BaseSeparateWindow.h"
+
+#include "GUIFramework.h"
 
 #include "Styles/Composites/SeparateWindowStyles.h"
 #include "Exceptions/CantFindFunctionFromModuleException.h"

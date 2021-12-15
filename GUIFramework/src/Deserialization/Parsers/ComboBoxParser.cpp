@@ -1,5 +1,8 @@
 #include "ComboBoxParser.h"
 
+#include "Utility/Utility.h"
+#include "Interfaces/Utility/ISerializable.h"
+
 using namespace std;
 
 namespace gui_framework

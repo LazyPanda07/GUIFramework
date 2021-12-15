@@ -2,6 +2,7 @@
 
 #include "headers.h"
 #include "MenuItems/DropDownMenuItem.h"
+#include "BaseComposites/StandardComposites/BaseSeparateWindow.h"
 
 namespace gui_framework
 {

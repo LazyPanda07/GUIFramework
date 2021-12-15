@@ -1,6 +1,8 @@
 #include "DropDownMenuItemDeserializer.h"
 
 #include "MenuItems/MenuItem.h"
+#include "Utility/Utility.h"
+#include "BaseComposites/StandardComposites/BaseSeparateWindow.h"
 
 #include "Exceptions/Deserialization/WrongMenuTypeException.h"
 

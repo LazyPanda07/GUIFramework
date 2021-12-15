@@ -2,6 +2,8 @@
 #include "GroupBoxDeserializer.h"
 
 #include "Deserialization/Parsers/GroupBoxParser.h"
+#include "GUIFramework.h"
+#include "Utility/AdditionalCreationData/GroupBoxAdditionalCreationData.h"
 
 using namespace std;
 

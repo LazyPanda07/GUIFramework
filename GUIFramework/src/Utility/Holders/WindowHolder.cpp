@@ -1,6 +1,8 @@
 #include "headers.h"
 #include "WindowHolder.h"
 
+#include "GUIFramework.h"
+
 #include "Exceptions/GetLastErrorException.h"
 
 using namespace std;

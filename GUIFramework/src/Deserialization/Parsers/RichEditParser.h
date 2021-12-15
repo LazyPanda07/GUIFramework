@@ -2,6 +2,7 @@
 
 #include "headers.h"
 #include "BaseComponentParser.h"
+#include "BaseComponents/StandardComponents/BaseRichEdit.h"
 
 namespace gui_framework
 {

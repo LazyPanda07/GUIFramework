@@ -2,6 +2,7 @@
 #include "BaseRichEdit.h"
 
 #include "Styles/Components/DefaultRichEditStyles.h"
+#include "GUIFramework.h"
 
 #include "Exceptions/CantFindFunctionFromModuleException.h"
 

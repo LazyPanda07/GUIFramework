@@ -2,6 +2,7 @@
 #include "BaseTabControl.h"
 
 #include "Styles/DefaultStyles.h"
+#include "GUIFramework.h"
 
 #include "Exceptions/FileDoesNotExist.h"
 #include "Exceptions/NotImplemented.h"

@@ -1,6 +1,8 @@
 #include "EditControlDeserializer.h"
 
 #include "Deserialization/Parsers/BaseComponentParser.h"
+#include "GUIFramework.h"
+#include "Utility/AdditionalCreationData/EditControlAdditionalCreationData.h"
 
 using namespace std;
 

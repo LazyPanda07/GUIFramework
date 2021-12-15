@@ -1,6 +1,8 @@
 #include "TabControlDeserializer.h"
 
 #include "Deserialization/Parsers/TabControlParser.h"
+#include "GUIFramework.h"
+#include "Utility/AdditionalCreationData/TabControlAdditionalCreationData.h"
 
 using namespace std;
 

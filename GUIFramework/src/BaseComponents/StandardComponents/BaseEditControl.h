@@ -3,13 +3,15 @@
 #include "headers.h"
 #include "BaseComponents/BaseComponent.h"
 #include "Interfaces/Components/ITextOperations.h"
+#include "Interfaces/Localization/ISingleTextLocalized.h"
 
 namespace gui_framework
 {
 	/// @brief Base class for all edit controls
 	class GUI_FRAMEWORK_API BaseEditControl :
 		public BaseComponent,
-		public interfaces::ITextOperations
+		public interfaces::ITextOperations,
+		public interfaces::ISingleTextLocalized
 	{
 	public:
 		inline static constexpr uint16_t editControlWidth = 200;
@@ -17,6 +19,9 @@ namespace gui_framework
 
 	protected:
 		std::wstring placeholder;
+
+	protected:
+		virtual void updateLocalization(const std::wstring& localizedText) override;
 
 	public:
 		BaseEditControl(const std::wstring& editControlName, const utility::ComponentSettings& settings, BaseComponent* parent, bool isMultiLine = false);

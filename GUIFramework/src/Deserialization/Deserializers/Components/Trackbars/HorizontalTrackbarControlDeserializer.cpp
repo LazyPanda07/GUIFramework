@@ -2,6 +2,8 @@
 
 #include "Deserialization/Parsers/TrackbarControlParser.h"
 #include "Components/Trackbars/HorizontalTrackbarControl.h"
+#include "GUIFramework.h"
+#include "Utility/AdditionalCreationData/TrackbarControlAdditionalCreationData.h"
 
 using namespace std;
 

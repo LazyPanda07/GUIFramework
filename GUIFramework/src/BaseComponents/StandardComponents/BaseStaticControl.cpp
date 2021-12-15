@@ -7,6 +7,11 @@ using namespace std;
 
 namespace gui_framework
 {
+	void BaseStaticControl::updateLocalization(const wstring& localizedText)
+	{
+		this->setText(localizedText);
+	}
+
 	BaseStaticControl::BaseStaticControl(const wstring& staticControlName, const wstring& staticControlText, const utility::ComponentSettings& settings, BaseComponent* parent) :
 		BaseComponent
 		(

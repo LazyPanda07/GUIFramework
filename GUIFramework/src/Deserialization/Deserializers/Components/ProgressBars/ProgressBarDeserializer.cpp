@@ -1,6 +1,8 @@
 #include "ProgressBarDeserializer.h"
 
 #include "Deserialization/Parsers/ProgressBars/ProgressBarParser.h"
+#include "GUIFramework.h"
+#include "Utility/AdditionalCreationData/ProgressBarAdditionalCreationData.h"
 
 using namespace std;
 

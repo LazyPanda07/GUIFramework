@@ -1,11 +1,19 @@
 #include "BaseCompositeParser.h"
 
+#include "BaseComposites/BaseComposite.h"
+
 using namespace std;
 
 namespace gui_framework
 {
 	namespace parsers
 	{
+		BaseCompositeParser::BaseCompositeParser() :
+			mode(BaseComposite::exitMode::destroyWindow)
+		{
+
+		}
+
 		void BaseCompositeParser::parse(const json::utility::objectSmartPointer<json::utility::jsonObject>& description)
 		{
 			using json::utility::objectSmartPointer;

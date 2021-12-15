@@ -3,6 +3,9 @@
 
 #include "MenuItems/MenuItem.h"
 #include "MenuItems/DropDownMenuItem.h"
+#include "Composites/SeparateWindow.h"
+#include "GUIFramework.h"
+#include "Utility/AdditionalCreationData/SeparateWindowAdditionalCreationData.h"
 
 #include "Deserialization/Parsers/SeparateWindowParser.h"
 #include "Deserialization/Parsers/MenuParser.h"

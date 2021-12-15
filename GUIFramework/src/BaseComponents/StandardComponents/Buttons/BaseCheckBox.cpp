@@ -2,6 +2,7 @@
 #include "BaseCheckBox.h"
 
 #include "Styles/Components/Buttons/CheckBoxStyles.h"
+#include "GUIFramework.h"
 
 #include "Exceptions/CantFindFunctionFromModuleException.h"
 

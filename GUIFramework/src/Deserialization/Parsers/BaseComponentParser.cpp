@@ -1,11 +1,22 @@
 #include "BaseComponentParser.h"
 
+#include "Utility/Utility.h"
+#include "Interfaces/Utility/ISerializable.h"
+#include "Interfaces/Styles/IStyles.h"
+
 using namespace std;
 
 namespace gui_framework
 {
 	namespace parsers
 	{
+		BaseComponentParser::BaseComponentParser() :
+			backgroundColor{ 255, 255, 255 },
+			textColor{ 0, 0, 0 }
+		{
+
+		}
+
 		void BaseComponentParser::parse(const json::utility::objectSmartPointer<json::utility::jsonObject>& description)
 		{
 			using json::utility::objectSmartPointer;

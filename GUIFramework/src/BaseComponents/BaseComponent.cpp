@@ -1,12 +1,13 @@
 #include "headers.h"
 #include "BaseComponent.h"
 
-#include "BaseComposites\\BaseComposite.h"
-#include "Interfaces\\Components\\IResizableComponent.h"
-#include "Interfaces\\Components\\ITextOperations.h"
+#include "BaseComposites/BaseComposite.h"
+#include "GUIFramework.h"
+#include "Interfaces/Components/IResizableComponent.h"
+#include "Interfaces/Components/ITextOperations.h"
 
-#include "Exceptions\\CantFindCompositeFunctionException.h"
-#include "Exceptions\\FileDoesNotExist.h"
+#include "Exceptions/CantFindCompositeFunctionException.h"
+#include "Exceptions/FileDoesNotExist.h"
 
 #pragma warning(disable: 6387)
 #pragma warning(disable: 4312)

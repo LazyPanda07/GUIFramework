@@ -1,6 +1,8 @@
 #include "headers.h"
 #include "MenuItem.h"
 
+#include "GUIFramework.h"
+
 #include "Exceptions/CantFindFunctionFromModuleException.h"
 
 using namespace std;

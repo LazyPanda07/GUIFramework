@@ -1,6 +1,8 @@
 #include "RichEditDeserializer.h"
 
 #include "Deserialization/Parsers/RichEditParser.h"
+#include "GUIFramework.h"
+#include "Utility/AdditionalCreationData/RichEditAdditionalCreationData.h"
 
 using namespace std;
 

@@ -1,6 +1,8 @@
 #include "ListBoxDeserializer.h"
 
 #include "Deserialization/Parsers/ListBoxParser.h"
+#include "GUIFramework.h"
+#include "Utility/AdditionalCreationData/ListBoxAdditionalCreationData.h"
 
 using namespace std;
 

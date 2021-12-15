@@ -1,7 +1,5 @@
 #pragma once
 
-#include "headers.h"
-
 namespace gui_framework
 {
 	namespace custom_window_messages

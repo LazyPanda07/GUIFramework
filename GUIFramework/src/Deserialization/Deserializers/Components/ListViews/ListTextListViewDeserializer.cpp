@@ -1,6 +1,8 @@
 #include "ListTextListViewDeserializer.h"
 
 #include "Deserialization/Parsers/ListViews/TextListViewParser.h"
+#include "GUIFramework.h"
+#include "Utility/AdditionalCreationData/TextListViewAdditionalCreationData.h"
 
 using namespace std;
 

@@ -1,6 +1,8 @@
 #include "StaticControlDeserializer.h"
 
 #include "Deserialization/Parsers/BaseComponentParser.h"
+#include "GUIFramework.h"
+#include "Utility/AdditionalCreationData/StaticControlAdditionalCreationData.h"
 
 using namespace std;
 

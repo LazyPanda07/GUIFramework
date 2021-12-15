@@ -1,6 +1,7 @@
 #pragma once
 
 #include "BaseCompositeParser.h"
+#include "Composites/GroupBox.h"
 
 namespace gui_framework
 {

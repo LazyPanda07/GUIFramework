@@ -1,6 +1,8 @@
 #include "IconListViewDeserializer.h"
 
 #include "Deserialization/Parsers/ListViews/IconListViewParser.h"
+#include "GUIFramework.h"
+#include "Utility/AdditionalCreationData/IconListViewAdditionalCreationData.h"
 
 using namespace std;
 

@@ -1,11 +1,21 @@
 #include "IconListViewParser.h"
 
+#include "Utility/Holders/LoadableHolders/BaseLoadableHolder.h"
+
 using namespace std;
 
 namespace gui_framework
 {
 	namespace parsers
 	{
+		IconListViewParser::IconListViewParser() :
+			imagesWidth(0),
+			imagesHeight(0),
+			type(utility::iconListViewType::icon)
+		{
+
+		}
+
 		void IconListViewParser::parse(const json::utility::objectSmartPointer<json::utility::jsonObject>& description)
 		{
 			BaseComponentParser::parse(description);

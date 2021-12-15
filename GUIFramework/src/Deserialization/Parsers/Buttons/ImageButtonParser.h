@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ButtonParser.h"
+#include "Components/Buttons/ImageButton.h"
 
 namespace gui_framework
 {

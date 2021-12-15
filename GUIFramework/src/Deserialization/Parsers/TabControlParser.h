@@ -1,6 +1,7 @@
 #pragma once
 
 #include "BaseComponentParser.h"
+#include "BaseComponents/StandardComponents/BaseTabControl.h"
 
 namespace gui_framework
 {
