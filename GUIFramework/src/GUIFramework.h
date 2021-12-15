@@ -192,6 +192,10 @@ namespace gui_framework
 		/// @return 
 		bool isModulesLoaded() const;
 
+		/// @brief Change localization for all components
+		/// @param language New language
+		void changeLocalization(const std::string& language) const;
+
 		/// @brief Get all current registered creators
 		/// @return creators
 		const std::unordered_map<size_t, smartPointerType<utility::BaseComponentCreator>>& getCreators() const;

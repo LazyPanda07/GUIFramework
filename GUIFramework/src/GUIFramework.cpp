@@ -100,6 +100,8 @@
 #include "Deserialization/Deserializers/Components/ListViews/TextIconListViewDeserializer.h"
 #include "Deserialization/Deserializers/Components/ListViews/TextListViewDeserializer.h"
 
+#include "Interfaces/Localization/ITextLocalized.h"
+
 #pragma warning(disable: 6335)
 
 using namespace std;
@@ -833,6 +835,22 @@ namespace gui_framework
 	bool GUIFramework::isModulesLoaded() const
 	{
 		return modulesNeedToLoad == currentLoadedModules;
+	}
+
+	void GUIFramework::changeLocalization(const string& language) const
+	{
+		localization::TextLocalization::get().changeLanguage(language);
+		localization::WTextLocalization::get().changeLanguage(language);
+
+		for (const auto& component : components)
+		{
+			interfaces::ITextLocalized* localizable = dynamic_cast<interfaces::ITextLocalized*>(component);
+
+			if (localizable && localizable->getAutoUpdate())
+			{
+				localizable->updateLocalizationEvent();
+			}
+		}
 	}
 
 	const unordered_map<size_t, smartPointerType<utility::BaseComponentCreator>>& GUIFramework::getCreators() const

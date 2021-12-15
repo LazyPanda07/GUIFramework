@@ -6,6 +6,9 @@ namespace gui_framework
 {
 	namespace interfaces
 	{
+		/// @brief Provides changing localization in component by calling GUIFramework::changeLocalization
+		///
+		/// Doesn't change components windows names
 		class GUI_FRAMEWORK_API ITextLocalized
 		{
 		private:

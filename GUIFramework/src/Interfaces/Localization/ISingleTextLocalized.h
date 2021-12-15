@@ -6,6 +6,7 @@ namespace gui_framework
 {
 	namespace interfaces
 	{
+		/// @brief Change localization of buttons, edit controls, etc.
 		class GUI_FRAMEWORK_API ISingleTextLocalized : public ITextLocalized
 		{
 		private:
