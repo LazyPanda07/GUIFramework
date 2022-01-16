@@ -30,16 +30,15 @@ namespace gui_framework
 	json::JSONBuilder BaseIconListView::getStructure() const
 	{
 		using json::utility::jsonObject;
-		using json::utility::objectSmartPointer;
 
 		uint32_t codepage = ISerializable::getCodepage();
 		json::JSONBuilder builder = BaseListView::getStructure();
-		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, codepage)]);
-		vector<objectSmartPointer<jsonObject>> values;
+		jsonObject& current = get<jsonObject>(builder[utility::to_string(windowName, codepage)]);
+		vector<jsonObject> values;
 		size_t size = this->size();
 
-		current->data.push_back({ "imagesWidth"s, static_cast<uint64_t>(icons.getImagesWidth()) });
-		current->data.push_back({ "imagesHeight"s, static_cast<uint64_t>(icons.getImagesHeight()) });
+		current.data.push_back({ "imagesWidth"s, static_cast<uint64_t>(icons.getImagesWidth()) });
+		current.data.push_back({ "imagesHeight"s, static_cast<uint64_t>(icons.getImagesHeight()) });
 
 		if (size)
 		{
@@ -48,7 +47,7 @@ namespace gui_framework
 				json::utility::appendArray(this->getIconPath(i).string(), values);
 			}
 
-			current->data.push_back({ "listViewIconValues"s, move(values) });
+			current.data.push_back({ "listViewIconValues"s, move(values) });
 		}
 
 		return builder;

@@ -9,18 +9,17 @@ namespace gui_framework
 {
 	namespace parsers
 	{
-		void MenuParser::parse(json::utility::objectSmartPointer<json::utility::jsonObject>& description)
+		void MenuParser::parse(json::utility::jsonObject& description)
 		{
-			using json::utility::objectSmartPointer;
 			using json::utility::jsonObject;
 
 			uint32_t codepage = interfaces::ISerializable::getCodepage();
 
-			mainMenuName = utility::to_wstring(description->getString("mainMenuName"), codepage);
+			mainMenuName = utility::to_wstring(description.getString("mainMenuName"), codepage);
 
-			mainMenuItems = move(const_cast<vector<objectSmartPointer<jsonObject>>&>(description->getArray("mainMenuItems")));
+			mainMenuItems = move(const_cast<vector<jsonObject>&>(description.getArray("mainMenuItems")));
 
-			popupItems = move(const_cast<vector<objectSmartPointer<jsonObject>>&>(description->getArray("popupItems")));
+			popupItems = move(const_cast<vector<jsonObject>&>(description.getArray("popupItems")));
 		}
 	}
 }

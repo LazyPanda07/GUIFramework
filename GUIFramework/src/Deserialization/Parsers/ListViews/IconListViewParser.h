@@ -19,7 +19,7 @@ namespace gui_framework
 		public:
 			IconListViewParser();
 
-			virtual void parse(const json::utility::objectSmartPointer<json::utility::jsonObject>& description) override;
+			virtual void parse(const json::utility::jsonObject& description) override;
 
 			~IconListViewParser() = default;
 		};

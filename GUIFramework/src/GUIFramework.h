@@ -182,11 +182,11 @@ namespace gui_framework
 
 		/// @brief Serialize hotkeys
 		/// @return JSON array with hotkeys data
-		std::vector<json::utility::objectSmartPointer<json::utility::jsonObject>> serializeHotkeys();
+		std::vector<json::utility::jsonObject> serializeHotkeys();
 
 		/// @brief Deserialize hotkeys
 		/// @param description Description of holder window with 'hotkeys' object
-		void deserializeHotkeys(const json::utility::objectSmartPointer<json::utility::jsonObject>& description);
+		void deserializeHotkeys(const json::utility::jsonObject& description);
 
 		/// @brief Check if modules are loaded. You can call getCantLoadedModules() to check if loaded modules have failed
 		/// @return 

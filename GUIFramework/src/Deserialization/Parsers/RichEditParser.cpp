@@ -12,19 +12,19 @@ namespace gui_framework
 
 		}
 
-		void RichEditParser::parse(const json::utility::objectSmartPointer<json::utility::jsonObject>& description)
+		void RichEditParser::parse(const json::utility::jsonObject& description)
 		{
 			BaseComponentParser::parse(description);
 
-			const auto& jsonCallbacks = description->getArray("callbacks");
+			const auto& jsonCallbacks = description.getArray("callbacks");
 
-			isMultiLine = description->getBool("isMultiLine");
+			isMultiLine = description.getBool("isMultiLine");
 
-			limitTextCount = description->getUnsignedInt("limitTextCount");
+			limitTextCount = description.getUnsignedInt("limitTextCount");
 
 			for (const auto& i : jsonCallbacks)
 			{
-				callbacks[i->getInt("callbackType")] = { i->getString("callbackName"), i->getString("callbackModule") };
+				callbacks[i.getInt("callbackType")] = { i.getString("callbackName"), i.getString("callbackModule") };
 			}
 		}
 	}

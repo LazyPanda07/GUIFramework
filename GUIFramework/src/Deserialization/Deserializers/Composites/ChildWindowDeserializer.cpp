@@ -11,9 +11,8 @@ namespace gui_framework
 {
 	namespace deserializers
 	{
-		BaseComponent* ChildWindowDeserializer::deserialize(const string& componentName, const json::utility::objectSmartPointer<json::utility::jsonObject>& description, BaseComposite* parent) const
+		BaseComponent* ChildWindowDeserializer::deserialize(const string& componentName, const json::utility::jsonObject& description, BaseComposite* parent) const
 		{
-			using json::utility::objectSmartPointer;
 			using json::utility::jsonObject;
 
 			parsers::BaseCompositeParser parser;
@@ -38,16 +37,16 @@ namespace gui_framework
 				result->setOnDestroy(parser.onDestroyFunctionName, parser.onDestroyFunctionModuleName);
 			}
 
-			if (description->contains("children", json::utility::variantTypeEnum::jJSONArray))
+			if (description.contains("children", json::utility::variantTypeEnum::jJSONArray))
 			{
-				const auto& children = description->getArray("children");
+				const auto& children = description.getArray("children");
 
 				for (const auto& i : children)
 				{
-					const auto& [componentName, data] = get<objectSmartPointer<jsonObject>>(i->data.front().second)->data.front();
-					const auto& description = get<objectSmartPointer<jsonObject>>(data);
+					const auto& [componentName, data] = get<jsonObject>(i.data.front().second).data.front();
+					const auto& description = get<jsonObject>(data);
 
-					const smartPointerType<interfaces::IDeserializer>& deserializer = GUIFramework::get().getDeserializers().at(description->getUnsignedInt("hash"));
+					const smartPointerType<interfaces::IDeserializer>& deserializer = GUIFramework::get().getDeserializers().at(description.getUnsignedInt("hash"));
 
 					deserializer->deserialize(componentName, description, result);
 				}

@@ -454,44 +454,43 @@ namespace gui_framework
 	json::JSONBuilder BaseTabControl::getStructure() const
 	{
 		using json::utility::jsonObject;
-		using json::utility::objectSmartPointer;
 
 		json::JSONBuilder builder = BaseComponent::getStructure();
-		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
-		vector<objectSmartPointer<jsonObject>> jsonTabs;
+		jsonObject& current = get<jsonObject>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
+		vector<jsonObject> jsonTabs;
 
-		current->data.push_back({ "imagesWidth"s, static_cast<uint64_t>(images.getImagesWidth()) });
+		current.data.push_back({ "imagesWidth"s, static_cast<uint64_t>(images.getImagesWidth()) });
 
-		current->data.push_back({ "imagesHeight"s, static_cast<uint64_t>(images.getImagesHeight()) });
+		current.data.push_back({ "imagesHeight"s, static_cast<uint64_t>(images.getImagesHeight()) });
 
-		auto serializeText = [this](objectSmartPointer<jsonObject>& object, const tabData& data)
+		auto serializeText = [this](jsonObject& object, const tabData& data)
 		{
 			if (data.text.empty())
 			{
 				return;
 			}
 
-			object->data.push_back({ "tabText"s, utility::to_string(data.text, ISerializable::getCodepage()) });
+			object.data.push_back({ "tabText"s, utility::to_string(data.text, ISerializable::getCodepage()) });
 		};
-		auto serializePathToImage = [](objectSmartPointer<jsonObject>& object, const tabData& data)
+		auto serializePathToImage = [](jsonObject& object, const tabData& data)
 		{
 			if (data.pathToImage.empty())
 			{
 				return;
 			}
 
-			object->data.push_back({ "tabImagePath"s, data.pathToImage.string() });
+			object.data.push_back({ "tabImagePath"s, data.pathToImage.string() });
 		};
-		auto serializeCallback = [](objectSmartPointer<jsonObject>& object, const tabData& data)
+		auto serializeCallback = [](jsonObject& object, const tabData& data)
 		{
-			object->data.push_back({ "functionName"s, data.functionName });
-			object->data.push_back({ "moduleName"s, data.moduleName });
-			object->data.push_back({ "pathToModule"s, GUIFramework::get().getModulesPaths().at(data.moduleName) });
+			object.data.push_back({ "functionName"s, data.functionName });
+			object.data.push_back({ "moduleName"s, data.moduleName });
+			object.data.push_back({ "pathToModule"s, GUIFramework::get().getModulesPaths().at(data.moduleName) });
 		};
 
 		for (const auto& i : tabs)
 		{
-			objectSmartPointer<jsonObject> object = json::utility::make_object<jsonObject>();
+			jsonObject object;
 
 			if (i.functionName.size())
 			{
@@ -513,7 +512,7 @@ namespace gui_framework
 			}
 		}
 
-		current->data.push_back({ "tabs"s, move(jsonTabs) });
+		current.data.push_back({ "tabs"s, move(jsonTabs) });
 
 		return builder;
 	}

@@ -68,10 +68,9 @@ namespace gui_framework
 	json::JSONBuilder BaseInfiniteProgressBar::getStructure() const
 	{
 		using json::utility::jsonObject;
-		using json::utility::objectSmartPointer;
 
 		json::JSONBuilder builder = BaseComponent::getStructure();
-		get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())])->data.push_back({ "animationPeriod"s, static_cast<int64_t>(animationPeriod) });
+		get<jsonObject>(builder[utility::to_string(windowName, ISerializable::getCodepage())]).data.push_back({ "animationPeriod"s, static_cast<int64_t>(animationPeriod) });
 
 		return builder;
 	}

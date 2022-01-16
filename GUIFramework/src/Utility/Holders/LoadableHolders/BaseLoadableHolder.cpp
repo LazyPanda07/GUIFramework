@@ -81,28 +81,27 @@ namespace gui_framework
 
 		json::JSONBuilder BaseLoadableHolder::getStructure() const
 		{
-			using json::utility::objectSmartPointer;
 			using json::utility::jsonObject;
 
 			uint32_t codepage = ISerializable::getCodepage();
 			json::JSONBuilder builder(codepage);
-			objectSmartPointer<jsonObject> object = json::utility::make_object<jsonObject>();
-			vector<objectSmartPointer<jsonObject>> jsonImages;
+			jsonObject object;
+			vector<jsonObject> jsonImages;
 
-			object->data.push_back({ "imagesWidth"s, static_cast<uint64_t>(imagesWidth) });
-			object->data.push_back({ "imagesHeight"s, static_cast<uint64_t>(imagesHeight) });
+			object.data.push_back({ "imagesWidth"s, static_cast<uint64_t>(imagesWidth) });
+			object.data.push_back({ "imagesHeight"s, static_cast<uint64_t>(imagesHeight) });
 
 			for (const auto& [path, data] : images)
 			{
-				objectSmartPointer<jsonObject> image = json::utility::make_object<jsonObject>();
+				jsonObject image;
 
-				image->data.push_back({ "pathToImage"s, utility::to_string(path, codepage) });
-				image->data.push_back({ "type"s, static_cast<uint64_t>(data.type) });
+				image.data.push_back({ "pathToImage"s, utility::to_string(path, codepage) });
+				image.data.push_back({ "type"s, static_cast<uint64_t>(data.type) });
 
 				json::utility::appendArray(move(image), jsonImages);
 			}
 
-			object->data.push_back({ "images"s, move(jsonImages) });
+			object.data.push_back({ "images"s, move(jsonImages) });
 
 			builder.append("imageHolder"s, move(object));
 
@@ -274,9 +273,9 @@ namespace gui_framework
 			return iterators::loadable_const_forward_iterator({}, images.size());
 		}
 
-		pair<string, json::utility::jsonObject::variantType>& BaseLoadableHolder::loadBaseLoadableHolderStructure(json::utility::objectSmartPointer<json::utility::jsonObject>& current) const
+		pair<string, json::utility::jsonObject::variantType>& BaseLoadableHolder::loadBaseLoadableHolderStructure(json::utility::jsonObject& current) const
 		{
-			return current->data.emplace_back(make_pair("imageHolder"s, move(this->getStructure()["imageHolder"])));
+			return current.data.emplace_back(make_pair("imageHolder"s, move(this->getStructure()["imageHolder"])));
 		}
 
 		BaseLoadableHolder::~BaseLoadableHolder()

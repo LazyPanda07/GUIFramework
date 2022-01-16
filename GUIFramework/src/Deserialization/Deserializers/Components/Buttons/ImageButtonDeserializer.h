@@ -13,7 +13,7 @@ namespace gui_framework
 		public:
 			ImageButtonDeserializer() = default;
 
-			BaseComponent* deserialize(const std::string& componentName, const json::utility::objectSmartPointer<json::utility::jsonObject>& description, BaseComposite* parent) const override;
+			BaseComponent* deserialize(const std::string& componentName, const json::utility::jsonObject& description, BaseComposite* parent) const override;
 
 			~ImageButtonDeserializer() = default;
 		};

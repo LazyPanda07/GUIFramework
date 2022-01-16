@@ -342,16 +342,15 @@ namespace gui_framework
 
 	json::JSONBuilder BaseComponent::getStructure() const
 	{
-		using json::utility::objectSmartPointer;
 		using json::utility::jsonObject;
 		using json::utility::appendArray;
 
 		uint32_t codepage = ISerializable::getCodepage();
 		json::JSONBuilder builder(codepage);
 
-		objectSmartPointer<jsonObject> structure = json::utility::make_object<jsonObject>();
-		vector<objectSmartPointer<jsonObject>> backgroundColorJSON;
-		vector<objectSmartPointer<jsonObject>> textColorJSON;
+		jsonObject structure;
+		vector<jsonObject> backgroundColorJSON;
+		vector<jsonObject> textColorJSON;
 		const interfaces::ITextOperations* textOperations = dynamic_cast<const interfaces::ITextOperations*>(this);
 
 		appendArray(static_cast<int64_t>(GetRValue(backgroundColor)), backgroundColorJSON);
@@ -362,27 +361,27 @@ namespace gui_framework
 		appendArray(static_cast<int64_t>(GetGValue(textColor)), textColorJSON);
 		appendArray(static_cast<int64_t>(GetBValue(textColor)), textColorJSON);
 
-		structure->data.push_back({ "className"s, utility::to_string(className, codepage) });
+		structure.data.push_back({ "className"s, utility::to_string(className, codepage) });
 		
-		structure->data.push_back({ "hash"s, this->getHash() });
+		structure.data.push_back({ "hash"s, this->getHash() });
 
-		structure->data.push_back({ "desiredX"s, desiredX });
-		structure->data.push_back({ "desiredY"s, desiredY });
+		structure.data.push_back({ "desiredX"s, desiredX });
+		structure.data.push_back({ "desiredY"s, desiredY });
 
-		structure->data.push_back({ "desiredWidth"s, static_cast<uint64_t>(desiredWidth) });
-		structure->data.push_back({ "desiredHeight"s, static_cast<uint64_t>(desiredHeight) });
+		structure.data.push_back({ "desiredWidth"s, static_cast<uint64_t>(desiredWidth) });
+		structure.data.push_back({ "desiredHeight"s, static_cast<uint64_t>(desiredHeight) });
 
-		structure->data.push_back({ "backgroundColor"s, move(backgroundColorJSON) });
-		structure->data.push_back({ "textColor"s, move(textColorJSON) });
+		structure.data.push_back({ "backgroundColor"s, move(backgroundColorJSON) });
+		structure.data.push_back({ "textColor"s, move(textColorJSON) });
 
 		if (textOperations)
 		{
-			structure->data.push_back({ "text"s, utility::to_string(textOperations->getText(), codepage) });
+			structure.data.push_back({ "text"s, utility::to_string(textOperations->getText(), codepage) });
 		}
 
-		structure->data.push_back({ "styles"s, styles->getStyles() });
+		structure.data.push_back({ "styles"s, styles->getStyles() });
 
-		structure->data.push_back({ "extendedStyles"s, styles->getExtendedStyles() });
+		structure.data.push_back({ "extendedStyles"s, styles->getExtendedStyles() });
 
 		builder.push_back(make_pair(utility::to_string(windowName, codepage), move(structure)));
 

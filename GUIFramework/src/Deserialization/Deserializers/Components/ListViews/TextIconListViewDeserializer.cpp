@@ -10,9 +10,8 @@ namespace gui_framework
 {
 	namespace deserializers
 	{
-		BaseComponent* TextIconListViewDeserializer::deserialize(const string& componentName, const json::utility::objectSmartPointer<json::utility::jsonObject>& description, BaseComposite* parent) const
+		BaseComponent* TextIconListViewDeserializer::deserialize(const string& componentName, const json::utility::jsonObject& description, BaseComposite* parent) const
 		{
-			using json::utility::objectSmartPointer;
 			using json::utility::jsonObject;
 
 			parsers::TextIconListViewParser parser;

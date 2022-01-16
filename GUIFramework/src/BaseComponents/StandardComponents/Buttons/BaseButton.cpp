@@ -114,7 +114,6 @@ namespace gui_framework
 	json::JSONBuilder BaseButton::getStructure() const
 	{
 		using json::utility::jsonObject;
-		using json::utility::objectSmartPointer;
 
 		if (functionName.empty())
 		{
@@ -122,13 +121,13 @@ namespace gui_framework
 		}
 
 		json::JSONBuilder builder = BaseComponent::getStructure();
-		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
+		jsonObject& current = get<jsonObject>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
 
-		current->data.push_back({ "functionName"s, functionName });
+		current.data.push_back({ "functionName"s, functionName });
 
-		current->data.push_back({ "moduleName"s, moduleName });
+		current.data.push_back({ "moduleName"s, moduleName });
 
-		current->data.push_back({ "pathToModule"s, GUIFramework::get().getModulesPaths().at(moduleName) });
+		current.data.push_back({ "pathToModule"s, GUIFramework::get().getModulesPaths().at(moduleName) });
 
 		return builder;
 	}

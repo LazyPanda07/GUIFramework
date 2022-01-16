@@ -18,7 +18,7 @@ namespace gui_framework
 		public:
 			BaseCompositeParser();
 
-			virtual void parse(const json::utility::objectSmartPointer<json::utility::jsonObject>& description) override;
+			virtual void parse(const json::utility::jsonObject& description) override;
 
 			virtual ~BaseCompositeParser() = default;
 		};

@@ -23,12 +23,11 @@ namespace gui_framework
 	json::JSONBuilder BaseTextListView::getStructure() const
 	{
 		using json::utility::jsonObject;
-		using json::utility::objectSmartPointer;
 
 		uint32_t codepage = ISerializable::getCodepage();
 		json::JSONBuilder builder = BaseListView::getStructure();
-		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, codepage)]);
-		vector<objectSmartPointer<jsonObject>> values;
+		jsonObject& current = get<jsonObject>(builder[utility::to_string(windowName, codepage)]);
+		vector<jsonObject> values;
 		size_t size = this->size();
 		
 		if (size)
@@ -38,7 +37,7 @@ namespace gui_framework
 				json::utility::appendArray(utility::to_string(this->getItemText(i), codepage), values);
 			}
 
-			current->data.push_back({ "listViewTextValues"s, move(values) });
+			current.data.push_back({ "listViewTextValues"s, move(values) });
 		}
 
 		return builder;

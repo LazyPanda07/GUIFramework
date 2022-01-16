@@ -18,7 +18,7 @@ namespace gui_framework
 		public:
 			BaseComponentParser();
 
-			virtual void parse(const json::utility::objectSmartPointer<json::utility::jsonObject>& description);
+			virtual void parse(const json::utility::jsonObject& description);
 
 			virtual ~BaseComponentParser() = default;
 		};

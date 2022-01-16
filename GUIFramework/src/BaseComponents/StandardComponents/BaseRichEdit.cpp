@@ -221,18 +221,17 @@ namespace gui_framework
 
 	json::JSONBuilder BaseRichEdit::getStructure() const
 	{
-		using json::utility::objectSmartPointer;
 		using json::utility::jsonObject;
 
 		pair<string, string> emptyPair = make_pair(""s, ""s);
 		json::JSONBuilder builder = BaseComponent::getStructure();
-		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
-		vector<objectSmartPointer<jsonObject>> jsonCallbacks;
+		jsonObject& current = get<jsonObject>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
+		vector<jsonObject> jsonCallbacks;
 		const auto& modulesPaths = GUIFramework::get().getModulesPaths();
 
-		current->data.push_back({ "isMultiLine"s, isMultiLine });
+		current.data.push_back({ "isMultiLine"s, isMultiLine });
 
-		current->data.push_back({ "limitTextCount"s, limitTextCount });
+		current.data.push_back({ "limitTextCount"s, limitTextCount });
 
 		for (size_t i = 0; i < callbacksFunctionNamesAndModules.size(); i++)
 		{
@@ -241,18 +240,18 @@ namespace gui_framework
 				continue;
 			}
 
-			objectSmartPointer<jsonObject> object = json::utility::make_object<jsonObject>();
+			jsonObject object;
 
-			object->data.push_back({ "callbackType"s, static_cast<uint64_t>(i) });
+			object.data.push_back({ "callbackType"s, static_cast<uint64_t>(i) });
 
-			object->data.push_back({ "callbackName"s, callbacksFunctionNamesAndModules[i].first });
+			object.data.push_back({ "callbackName"s, callbacksFunctionNamesAndModules[i].first });
 
-			object->data.push_back({ "callbackModule"s, modulesPaths.at(callbacksFunctionNamesAndModules[i].second) });
+			object.data.push_back({ "callbackModule"s, modulesPaths.at(callbacksFunctionNamesAndModules[i].second) });
 
 			json::utility::appendArray(move(object), jsonCallbacks);
 		}
 
-		current->data.push_back({ "callbacks"s, move(jsonCallbacks) });
+		current.data.push_back({ "callbacks"s, move(jsonCallbacks) });
 
 		return builder;
 	}

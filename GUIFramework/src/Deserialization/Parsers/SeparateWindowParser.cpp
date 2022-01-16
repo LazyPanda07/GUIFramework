@@ -6,24 +6,24 @@ namespace gui_framework
 {
 	namespace parsers
 	{
-		void SeparateWindowParser::parse(const json::utility::objectSmartPointer<json::utility::jsonObject>& description)
+		void SeparateWindowParser::parse(const json::utility::jsonObject& description)
 		{
 			BaseComponentParser::parse(description);
 
-			if (description->contains("pathToLargeIcon", json::utility::variantTypeEnum::jString))
+			if (description.contains("pathToLargeIcon", json::utility::variantTypeEnum::jString))
 			{
-				pathToLargeIcon = description->getString("pathToLargeIcon");
+				pathToLargeIcon = description.getString("pathToLargeIcon");
 			}
 
-			if (description->contains("pathToSmallIcon", json::utility::variantTypeEnum::jString))
+			if (description.contains("pathToSmallIcon", json::utility::variantTypeEnum::jString))
 			{
-				pathToSmallIcon = description->getString("pathToSmallIcon");
+				pathToSmallIcon = description.getString("pathToSmallIcon");
 			}
 
-			if (description->contains("onCloseFunctionName", json::utility::variantTypeEnum::jString))
+			if (description.contains("onCloseFunctionName", json::utility::variantTypeEnum::jString))
 			{
-				onCloseFunctionName = description->getString("onCloseFunctionName");
-				onCloseFunctionModuleName = description->getString("onCloseFunctionModuleName");
+				onCloseFunctionName = description.getString("onCloseFunctionName");
+				onCloseFunctionModuleName = description.getString("onCloseFunctionModuleName");
 			}
 		}
 	}

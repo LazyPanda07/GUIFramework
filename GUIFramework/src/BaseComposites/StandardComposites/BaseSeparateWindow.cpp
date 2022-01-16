@@ -106,25 +106,24 @@ namespace gui_framework
 	json::JSONBuilder BaseSeparateWindow::getStructure() const
 	{
 		using json::utility::jsonObject;
-		using json::utility::objectSmartPointer;
 
 		json::JSONBuilder builder = BaseWindow::getStructure();
-		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
+		jsonObject& current = get<jsonObject>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
 
 		if (!pathToSmallIcon.empty())
 		{
-			current->data.push_back({ "pathToSmallIcon"s, utility::getStringFromRawPath(pathToSmallIcon) });
+			current.data.push_back({ "pathToSmallIcon"s, utility::getStringFromRawPath(pathToSmallIcon) });
 		}
 
 		if (!pathToLargeIcon.empty())
 		{
-			current->data.push_back({ "pathToLargeIcon"s, utility::getStringFromRawPath(pathToLargeIcon) });
+			current.data.push_back({ "pathToLargeIcon"s, utility::getStringFromRawPath(pathToLargeIcon) });
 		}
 
 		if (onCloseFunctionName.size())
 		{
-			current->data.push_back({ "onCloseFunctionName"s, onCloseFunctionName });
-			current->data.push_back({ "onCloseFunctionModuleName"s, onCloseFunctionModuleName });
+			current.data.push_back({ "onCloseFunctionName"s, onCloseFunctionName });
+			current.data.push_back({ "onCloseFunctionModuleName"s, onCloseFunctionModuleName });
 		}
 
 		return builder;

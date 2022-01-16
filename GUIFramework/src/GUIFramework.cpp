@@ -419,11 +419,11 @@ namespace gui_framework
 
 		modules.insert({ "MSFT"s, LoadLibraryW(libraries::msftEditLibrary.data()) });
 
-		const json::utility::objectSmartPointer<json::utility::jsonObject>& settingsObject = jsonSettings.getObject(json_settings::settingsObject);
+		const json::utility::jsonObject& settingsObject = jsonSettings.getObject(json_settings::settingsObject);
 
 		try
 		{
-			if (settingsObject->getBool(json_settings::usingCreatorsSetting))
+			if (settingsObject.getBool(json_settings::usingCreatorsSetting))
 			{
 				this->initCreators();
 			}
@@ -435,7 +435,7 @@ namespace gui_framework
 
 		try
 		{
-			if (settingsObject->getBool(json_settings::usingDeserializersSetting))
+			if (settingsObject.getBool(json_settings::usingDeserializersSetting))
 			{
 				this->initDeserializers();
 			}
@@ -447,7 +447,7 @@ namespace gui_framework
 
 		try
 		{
-			auto& jsonModules = settingsObject->getArray(json_settings::modulesSetting);
+			auto& jsonModules = settingsObject.getArray(json_settings::modulesSetting);
 
 			modulesNeedToLoad += static_cast<int>(jsonModules.size());
 
@@ -455,9 +455,9 @@ namespace gui_framework
 
 			for (const auto& i : jsonModules)
 			{
-				const auto& moduleObject = std::get<json::utility::objectSmartPointer<json::utility::jsonObject>>(i->data.front().second);
-				const string& moduleName = moduleObject->getString(json_settings::moduleNameSetting);
-				const auto& modulePath = find_if(moduleObject->data.begin(), moduleObject->data.end(),
+				const auto& moduleObject = std::get<json::utility::jsonObject>(i.data.front().second);
+				const string& moduleName = moduleObject.getString(json_settings::moduleNameSetting);
+				const auto& modulePath = find_if(moduleObject.data.begin(), moduleObject.data.end(),
 					[](const pair<string, json::utility::jsonObject::variantType>& value) { return value.first == json_settings::pathToModuleSettings; })->second;
 				string modulePathString;
 
@@ -771,35 +771,33 @@ namespace gui_framework
 		return ranges::find(components, component) != components.end();
 	}
 
-	vector<json::utility::objectSmartPointer<json::utility::jsonObject>> GUIFramework::serializeHotkeys()
+	vector<json::utility::jsonObject> GUIFramework::serializeHotkeys()
 	{
-		unique_lock<mutex> lock(hotkeyIdMutex);
-
-		using json::utility::objectSmartPointer;
 		using json::utility::jsonObject;
 
-		vector<objectSmartPointer<jsonObject>> result;
+		unique_lock<mutex> lock(hotkeyIdMutex);
+		vector<jsonObject> result;
 
 		for (const auto& [key, value] : serializableHotkeysData)
 		{
 			if (value.functionName.size())
 			{
-				objectSmartPointer<jsonObject> object = json::utility::make_object<jsonObject>();
+				jsonObject object;
 
-				object->data.push_back({ "key"s, static_cast<uint64_t>(value.key) });
-				object->data.push_back({ "functionName"s, value.functionName });
-				object->data.push_back({ "moduleName"s, value.moduleName });
-				object->data.push_back({ "pathToModule"s, modulesPaths.at(value.moduleName) });
+				object.data.push_back({ "key"s, static_cast<uint64_t>(value.key) });
+				object.data.push_back({ "functionName"s, value.functionName });
+				object.data.push_back({ "moduleName"s, value.moduleName });
+				object.data.push_back({ "pathToModule"s, modulesPaths.at(value.moduleName) });
 
 				if (value.additionalKeys.size())
 				{
-					vector<objectSmartPointer<jsonObject>> additionalKeys;
+					vector<jsonObject> additionalKeys;
 
 					additionalKeys.reserve(value.additionalKeys.size());
 
 					ranges::for_each(value.additionalKeys, [&additionalKeys](const hotkeys::additionalKeys& key) { json::utility::appendArray(static_cast<int64_t>(key), additionalKeys); });
 
-					object->data.push_back({ "additionalKeys"s, move(additionalKeys) });
+					object.data.push_back({ "additionalKeys"s, move(additionalKeys) });
 				}
 
 				json::utility::appendArray(move(object), result);
@@ -809,21 +807,20 @@ namespace gui_framework
 		return result;
 	}
 
-	void GUIFramework::deserializeHotkeys(const json::utility::objectSmartPointer<json::utility::jsonObject>& description)
+	void GUIFramework::deserializeHotkeys(const json::utility::jsonObject& description)
 	{
-		using json::utility::objectSmartPointer;
 		using json::utility::jsonObject;
 
-		const auto& jsonHotkeys = description->getArray("hotkeys");
+		const auto& jsonHotkeys = description.getArray("hotkeys");
 
 		for (const auto& i : jsonHotkeys)
 		{
-			const objectSmartPointer<jsonObject>& hotkey = std::get<objectSmartPointer<jsonObject>>(i->data.front().second);
+			const jsonObject& hotkey = std::get<jsonObject>(i.data.front().second);
 
-			uint32_t key = static_cast<uint32_t>(hotkey->getUnsignedInt("key"));
-			const string& functionName = hotkey->getString("functionName");
-			const string& moduleName = hotkey->getString("moduleName");
-			vector<uint64_t> tem = json::utility::JSONArrayWrapper(hotkey->getArray("additionalKeys")).getAsUInt64_tArray();
+			uint32_t key = static_cast<uint32_t>(hotkey.getUnsignedInt("key"));
+			const string& functionName = hotkey.getString("functionName");
+			const string& moduleName = hotkey.getString("moduleName");
+			vector<uint64_t> tem = json::utility::JSONArrayWrapper(hotkey.getArray("additionalKeys")).getAsUInt64_tArray();
 			vector<hotkeys::additionalKeys> additionalKeys;
 
 			ranges::for_each(tem, [&additionalKeys](uint64_t additionalKey) { additionalKeys.push_back(static_cast<hotkeys::additionalKeys>(additionalKey)); });

@@ -9,11 +9,11 @@ namespace gui_framework
 {
 	namespace parsers
 	{
-		void ComboBoxParser::parse(const json::utility::objectSmartPointer<json::utility::jsonObject>& description)
+		void ComboBoxParser::parse(const json::utility::jsonObject& description)
 		{
 			BaseComponentParser::parse(description);
 
-			vector<string> tem = json::utility::JSONArrayWrapper(description->getArray("comboBoxValues")).getAsStringArray();
+			vector<string> tem = json::utility::JSONArrayWrapper(description.getArray("comboBoxValues")).getAsStringArray();
 			uint32_t codepage = interfaces::ISerializable::getCodepage();
 
 			values.reserve(tem.size());
@@ -23,8 +23,8 @@ namespace gui_framework
 				values.emplace_back(utility::to_wstring(i, codepage));
 			}
 
-			functionName = description->getString("functionName");
-			moduleName = description->getString("moduleName");
+			functionName = description.getString("functionName");
+			moduleName = description.getString("moduleName");
 		}
 	}
 }

@@ -304,15 +304,14 @@ namespace gui_framework
 	json::JSONBuilder BaseListBox::getStructure() const
 	{
 		using json::utility::jsonObject;
-		using json::utility::objectSmartPointer;
 
 		uint32_t codepage = ISerializable::getCodepage();
 		json::JSONBuilder builder = BaseComponent::getStructure();
-		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, codepage)]);
-		vector<objectSmartPointer<jsonObject>> values;
+		jsonObject& current = get<jsonObject>(builder[utility::to_string(windowName, codepage)]);
+		vector<jsonObject> values;
 		LRESULT currentSize = this->size();
 
-		current->data.push_back({ "columnWidth"s, static_cast<uint64_t>(columnsWidth) });
+		current.data.push_back({ "columnWidth"s, static_cast<uint64_t>(columnsWidth) });
 
 		if (currentSize > 0)
 		{
@@ -321,7 +320,7 @@ namespace gui_framework
 				json::utility::appendArray(utility::to_string(this->getValue(i), codepage), values);
 			}
 
-			current->data.push_back({ "listBoxValues"s, move(values) });
+			current.data.push_back({ "listBoxValues"s, move(values) });
 		}
 
 		return builder;

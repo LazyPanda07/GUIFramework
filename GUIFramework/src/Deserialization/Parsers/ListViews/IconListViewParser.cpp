@@ -16,11 +16,11 @@ namespace gui_framework
 
 		}
 
-		void IconListViewParser::parse(const json::utility::objectSmartPointer<json::utility::jsonObject>& description)
+		void IconListViewParser::parse(const json::utility::jsonObject& description)
 		{
 			BaseComponentParser::parse(description);
 
-			vector<string> tem = json::utility::JSONArrayWrapper(description->getArray("listViewIconValues")).getAsStringArray();
+			vector<string> tem = json::utility::JSONArrayWrapper(description.getArray("listViewIconValues")).getAsStringArray();
 
 			icons.reserve(tem.size());
 
@@ -29,8 +29,8 @@ namespace gui_framework
 				icons.emplace_back(i);
 			}
 
-			imagesWidth = static_cast<uint16_t>(description->getUnsignedInt("imagesWidth"));
-			imagesHeight= static_cast<uint16_t>(description->getUnsignedInt("imagesHeight"));
+			imagesWidth = static_cast<uint16_t>(description.getUnsignedInt("imagesWidth"));
+			imagesHeight= static_cast<uint16_t>(description.getUnsignedInt("imagesHeight"));
 
 			if (imagesWidth == standard_sizes::largeIconWidth && imagesHeight == standard_sizes::largeIconHeight)
 			{
