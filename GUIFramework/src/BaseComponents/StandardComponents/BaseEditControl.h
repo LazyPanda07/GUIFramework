@@ -9,9 +9,9 @@ namespace gui_framework
 {
 	/// @brief Base class for all edit controls
 	class GUI_FRAMEWORK_API BaseEditControl :
-		public BaseComponent,
+		public interfaces::ISingleTextLocalized,
 		public interfaces::ITextOperations,
-		public interfaces::ISingleTextLocalized
+		public BaseComponent
 	{
 	public:
 		inline static constexpr uint16_t editControlWidth = 200;

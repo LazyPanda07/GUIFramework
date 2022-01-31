@@ -6,6 +6,7 @@
 #include "Utility/Holders/LoadableHolders/IconsHolder.h"
 #include "Interfaces/Styles/IStyles.h"
 #include "Interfaces/Utility/ISerializable.h"
+#include "Interfaces/Localization/ITextLocalized.h"
 
 namespace gui_framework
 {
@@ -41,6 +42,13 @@ namespace gui_framework
 		virtual LRESULT preWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed);
 
 		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed);
+
+	protected:
+		/// @brief Override for custom localization
+		/// 
+		/// Your interface must be implemented before BaseComponent subclass inheritance
+		/// @param localized Non nullptr base localization class pointer
+		virtual void setLocalizationKeys(interfaces::ITextLocalized* localized, const std::vector<std::string>& localizationKeys);
 
 	public:
 		/// @brief 

@@ -17,7 +17,7 @@ namespace gui_framework
 			{
 				result->setPlaceholder(any_cast<wstring>(additionalData));
 			}
-			catch (const std::exception&)
+			catch (const exception&)
 			{
 
 			}

@@ -5,6 +5,8 @@
 #include "GUIFramework.h"
 #include "Interfaces/Components/IResizableComponent.h"
 #include "Interfaces/Components/ITextOperations.h"
+#include "Interfaces/Localization/IMultipleTextLocalized.h"
+#include "Interfaces/Localization/ISingleTextLocalized.h"
 
 #include "Exceptions/CantFindCompositeFunctionException.h"
 #include "Exceptions/FileDoesNotExist.h"
@@ -56,6 +58,21 @@ namespace gui_framework
 		return -1;
 	}
 
+	void BaseComponent::setLocalizationKeys(interfaces::ITextLocalized* localized, const vector<string>& localizationKeys)
+	{
+		if (interfaces::ISingleTextLocalized* single = dynamic_cast<interfaces::ISingleTextLocalized*>(localized); single && localizationKeys.size())
+		{
+			single->setLocalizationKey(localizationKeys.front());
+		}
+		else if (interfaces::IMultipleTextLocalized* multi = dynamic_cast<interfaces::IMultipleTextLocalized*>(localized))
+		{
+			for (const string& localizationKey : localizationKeys)
+			{
+				multi->appendLocalizationKey(localizationKey);
+			}
+		}
+	}
+
 	BaseComponent::BaseComponent(const wstring& className, const wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent, const string& windowFunctionName, const string& moduleName, uint16_t smallIconResource, uint16_t largeIconResources) :
 		parent(parent),
 		className(className),
@@ -70,7 +87,7 @@ namespace gui_framework
 		textColor(RGB(0, 0, 0))
 	{
 		WNDCLASSEXW classStruct = {};
-
+		interfaces::ITextLocalized* localized = dynamic_cast<interfaces::ITextLocalized*>(this);
 		const unordered_map<string, HMODULE>& modules = GUIFramework::get().getModules();
 		const HMODULE* findedModule = nullptr;
 
@@ -170,6 +187,13 @@ namespace gui_framework
 		}
 
 		ShowWindow(handle, SW_SHOW);
+
+		if (localized)
+		{
+			this->setLocalizationKeys(localized, settings.localizationKeys);
+
+			localized->updateLocalizationEvent();
+		}
 	}
 
 	bool BaseComponent::isComposite() const
