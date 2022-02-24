@@ -24,7 +24,7 @@ namespace gui_framework
 		),
 		ITextOperations(handle)
 	{
-		this->setText(L"");
+		ITextOperations::setText(L"");
 	}
 
 	bool BaseEditControl::setPlaceholder(const std::wstring& placeholder)
@@ -54,5 +54,12 @@ namespace gui_framework
 		get<jsonObject>(builder[utility::to_string(windowName, codepage)]).data.push_back({ "placeholder"s, utility::to_string(placeholder, codepage) });
 
 		return builder;
+	}
+
+	void BaseEditControl::setText(const string& localizationKey)
+	{
+		this->setLocalizationKey(localizationKey);
+
+		ITextOperations::setText(localizationKey);
 	}
 }

@@ -17,7 +17,7 @@ namespace gui_framework
 
 			for (const auto& i : data)
 			{
-				result->addTextIconItem(i.first, i.second);
+				static_cast<interfaces::ITextIconListView*>(result)->addTextIconItem(i.first, i.second);
 			}
 
 			return result;

@@ -58,6 +58,8 @@ namespace gui_framework
 
 	LRESULT BaseListBox::addValue(const string& localizationKey)
 	{
+		this->addLocalizationKey(localizationKey);
+
 		return this->addValue(localization::WTextLocalization::get()[localizationKey]);
 	}
 
@@ -97,6 +99,8 @@ namespace gui_framework
 
 	LRESULT BaseListBox::insertValue(const string& localizationKey, LRESULT index)
 	{
+		this->addLocalizationKey(localizationKey);
+
 		return this->insertValue(localization::WTextLocalization::get()[localizationKey], index);
 	}
 
@@ -116,6 +120,8 @@ namespace gui_framework
 
 	LRESULT BaseListBox::changeValue(const string& localizationKey, LRESULT index)
 	{
+		this->addLocalizationKey(localizationKey);
+
 		return this->changeValue(localization::WTextLocalization::get()[localizationKey], index);
 	}
 

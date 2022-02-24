@@ -15,7 +15,9 @@ namespace gui_framework
 		public:
 			ITextOperations(HWND handle);
 
-			virtual void setText(const std::wstring& text) const final;
+			virtual void setText(const std::wstring& text) final;
+
+			virtual void setText(const std::string& localizationKey);
 
 			/// @brief Get text from control
 			/// @return Text from control

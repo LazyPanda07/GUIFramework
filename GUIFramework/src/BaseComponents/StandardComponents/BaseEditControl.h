@@ -38,6 +38,8 @@ namespace gui_framework
 
 		virtual json::JSONBuilder getStructure() const override;
 
+		virtual void setText(const std::string& localizationKey) final override;
+
 		virtual ~BaseEditControl() = default;
 	};
 }

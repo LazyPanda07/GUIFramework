@@ -14,21 +14,41 @@ namespace gui_framework
 
 		void IMultipleTextLocalized::addLocalizationKey(const string& localizationKey)
 		{
+			if (ranges::find(localizationKeys, localizationKey) != localizationKeys.end())
+			{
+				return;
+			}
+
 			localizationKeys.push_back(localizationKey);
 		}
 
 		void IMultipleTextLocalized::addLocalizationKey(string&& localizationKey) noexcept
 		{
+			if (ranges::find(localizationKeys, localizationKey) != localizationKeys.end())
+			{
+				return;
+			}
+
 			localizationKeys.push_back(move(localizationKey));
 		}
 
 		void IMultipleTextLocalized::insertLocalizationKey(size_t index, const string& localizationKey)
 		{
+			if (ranges::find(localizationKeys, localizationKey) != localizationKeys.end())
+			{
+				return;
+			}
+
 			localizationKeys.insert(localizationKeys.begin() + index, localizationKey);
 		}
 
 		void IMultipleTextLocalized::insertLocalizationKey(size_t index, string&& localizationKey) noexcept
 		{
+			if (ranges::find(localizationKeys, localizationKey) != localizationKeys.end())
+			{
+				return;
+			}
+
 			localizationKeys.insert(localizationKeys.begin() + index, move(localizationKey));
 		}
 

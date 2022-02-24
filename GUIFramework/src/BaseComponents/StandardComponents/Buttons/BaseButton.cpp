@@ -31,7 +31,7 @@ namespace gui_framework
 
 	void BaseButton::updateLocalization(const wstring& localizedText)
 	{
-		this->setText(localizedText);
+		ITextOperations::setText(localizedText);
 	}
 
 	BaseButton::BaseButton(const wstring& buttonName, const wstring& buttonText, const utility::ComponentSettings& settings, const styles::ButtonStyles& styles, BaseComponent* parent, const function<void()>& onClick) :
@@ -46,7 +46,7 @@ namespace gui_framework
 		ITextOperations(handle),
 		onClick(onClick)
 	{
-		this->setText(buttonText);
+		ITextOperations::setText(buttonText);
 	}
 
 	BaseButton::BaseButton(const wstring& buttonName, const wstring& buttonText, const utility::ComponentSettings& settings, const styles::ButtonStyles& styles, BaseComponent* parent, const string& functionName, const string& moduleName) :
@@ -60,7 +60,7 @@ namespace gui_framework
 		),
 		ITextOperations(handle)
 	{
-		this->setText(buttonText);
+		ITextOperations::setText(buttonText);
 
 		this->setOnClick(functionName, moduleName);
 	}
@@ -130,5 +130,12 @@ namespace gui_framework
 		current.data.push_back({ "pathToModule"s, GUIFramework::get().getModulesPaths().at(moduleName) });
 
 		return builder;
+	}
+
+	void BaseButton::setText(const string& localizationKey)
+	{
+		this->setLocalizationKey(localizationKey);
+
+		ITextOperations::setText(localizationKey);
 	}
 }

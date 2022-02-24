@@ -27,6 +27,8 @@ namespace gui_framework
 		/// @return typeid().hash_code()
 		virtual size_t getHash() const override = 0;
 
+		virtual void setText(const std::string& localizationKey) final override;
+
 		virtual ~BaseStaticControl() = default;
 	};
 }

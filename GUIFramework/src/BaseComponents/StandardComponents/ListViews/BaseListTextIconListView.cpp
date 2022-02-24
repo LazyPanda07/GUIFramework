@@ -7,6 +7,13 @@ using namespace std;
 
 namespace gui_framework
 {
+	void BaseListTextIconListView::updateLocalization(size_t index, const wstring& localizedText)
+	{
+		auto&& [text, iconIndex, pathToIcon] = this->getTextIconItem(index);
+
+		ITextIconListView::changeTextIconItem(localizedText, pathToIcon, index);
+	}
+
 	BaseListTextIconListView::BaseListTextIconListView(const wstring& listViewName, const utility::ComponentSettings& settings, BaseComponent* parent, utility::iconListViewType type, uint16_t iconsWidth, uint16_t iconsHeight, size_t count) :
 		BaseListListView
 		(
@@ -51,5 +58,26 @@ namespace gui_framework
 		}
 
 		return builder;
+	}
+
+	LRESULT BaseListTextIconListView::addTextIconItem(const string& localizationKey, const filesystem::path& pathToIcon)
+	{
+		this->addLocalizationKey(localizationKey);
+		
+		return ITextIconListView::addTextIconItem(localizationKey, pathToIcon);
+	}
+
+	LRESULT BaseListTextIconListView::insertTextIconItem(const string& localizationKey, const filesystem::path& pathToIcon, size_t index)
+	{
+		this->addLocalizationKey(localizationKey);
+
+		return ITextIconListView::insertTextIconItem(localizationKey, pathToIcon, index);
+	}
+
+	LRESULT BaseListTextIconListView::changeTextIconItem(const string& localizationKey, const filesystem::path& pathToIcon, size_t index)
+	{
+		this->addLocalizationKey(localizationKey);
+
+		return ITextIconListView::changeTextIconItem(localizationKey, pathToIcon, index);
 	}
 }

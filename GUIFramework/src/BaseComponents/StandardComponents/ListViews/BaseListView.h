@@ -2,6 +2,7 @@
 
 #include "headers.h"
 #include "BaseComponents/BaseComponent.h"
+#include "Interfaces/Localization/IMultipleTextLocalized.h"
 #include "Styles/Components/ListViews/ListViewStyles.h"
 
 namespace gui_framework
