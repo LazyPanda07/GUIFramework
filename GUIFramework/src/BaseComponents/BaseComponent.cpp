@@ -68,7 +68,7 @@ namespace gui_framework
 		{
 			for (const string& localizationKey : localizationKeys)
 			{
-				multi->appendLocalizationKey(localizationKey);
+				multi->addLocalizationKey(localizationKey);
 			}
 		}
 	}

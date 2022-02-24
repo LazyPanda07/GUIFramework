@@ -12,12 +12,12 @@ namespace gui_framework
 
 		}
 
-		void IMultipleTextLocalized::appendLocalizationKey(const string& localizationKey)
+		void IMultipleTextLocalized::addLocalizationKey(const string& localizationKey)
 		{
 			localizationKeys.push_back(localizationKey);
 		}
 
-		void IMultipleTextLocalized::appendLocalizationKey(string&& localizationKey) noexcept
+		void IMultipleTextLocalized::addLocalizationKey(string&& localizationKey) noexcept
 		{
 			localizationKeys.push_back(move(localizationKey));
 		}

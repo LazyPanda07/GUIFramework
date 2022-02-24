@@ -12,6 +12,11 @@ using namespace std;
 
 namespace gui_framework
 {
+	void BaseListBox::updateLocalization(size_t index, const wstring& localizedText)
+	{
+		this->changeValue(localizedText, index);
+	}
+
 	BaseListBox::BaseListBox(const wstring& listBoxName, const utility::ComponentSettings& settings, const styles::ListBoxStyles& styles, BaseComponent* parent) :
 		BaseComponent
 		(
@@ -51,6 +56,11 @@ namespace gui_framework
 		return result;
 	}
 
+	LRESULT BaseListBox::addValue(const string& localizationKey)
+	{
+		return this->addValue(localization::WTextLocalization::get()[localizationKey]);
+	}
+
 	LRESULT BaseListBox::removeValue(size_t index)
 	{
 		LRESULT result = SendMessageW(handle, LB_DELETESTRING, index, NULL);
@@ -59,6 +69,8 @@ namespace gui_framework
 		{
 			throw exceptions::SelectListException(__FUNCTION__, result, __FILE__, __FUNCTION__, __LINE__);
 		}
+
+		IMultipleTextLocalized::removeLocalizationKey(index);
 
 		this->resize(BaseComponent::parent->getActualWidth(), BaseComponent::parent->getActualHeight());
 
@@ -83,6 +95,11 @@ namespace gui_framework
 		return result;
 	}
 
+	LRESULT BaseListBox::insertValue(const string& localizationKey, LRESULT index)
+	{
+		return this->insertValue(localization::WTextLocalization::get()[localizationKey], index);
+	}
+
 	LRESULT BaseListBox::changeValue(const wstring& newValue, LRESULT index)
 	{
 		LRESULT result = SendMessageW(handle, LB_SETITEMDATA, index, reinterpret_cast<LPARAM>(newValue.data()));
@@ -95,6 +112,11 @@ namespace gui_framework
 		this->resize(BaseComponent::parent->getActualWidth(), BaseComponent::parent->getActualHeight());
 
 		return result;
+	}
+
+	LRESULT BaseListBox::changeValue(const string& localizationKey, LRESULT index)
+	{
+		return this->changeValue(localization::WTextLocalization::get()[localizationKey], index);
 	}
 
 	LRESULT BaseListBox::findSubstring(const wstring& subStringToFind)

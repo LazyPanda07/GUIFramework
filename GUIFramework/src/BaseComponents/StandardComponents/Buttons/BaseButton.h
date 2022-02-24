@@ -10,9 +10,9 @@ namespace gui_framework
 {
 	/// @brief Base class for all buttons
 	class GUI_FRAMEWORK_API BaseButton :
-		public interfaces::ITextOperations,
 		public interfaces::ISingleTextLocalized,
-		public BaseComponent
+		public BaseComponent,
+		public interfaces::ITextOperations
 	{
 	public:
 		inline static constexpr uint16_t buttonWidth = 200;

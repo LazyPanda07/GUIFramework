@@ -9,9 +9,9 @@ namespace gui_framework
 {
 	/// @brief Base class for all static controls
 	class GUI_FRAMEWORK_API BaseStaticControl :
-		public interfaces::ITextOperations,
 		public interfaces::ISingleTextLocalized,
-		public BaseComponent
+		public BaseComponent,
+		public interfaces::ITextOperations
 	{
 	public:
 		inline static constexpr uint16_t staticControlWidth = 200;

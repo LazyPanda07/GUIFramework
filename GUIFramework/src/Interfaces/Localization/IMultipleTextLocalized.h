@@ -18,9 +18,9 @@ namespace gui_framework
 		public:
 			IMultipleTextLocalized(bool autoUpdate = true);
 
-			virtual void appendLocalizationKey(const std::string& localizationKey) final;
+			virtual void addLocalizationKey(const std::string& localizationKey) final;
 
-			virtual void appendLocalizationKey(std::string&& localizationKey) noexcept final;
+			virtual void addLocalizationKey(std::string&& localizationKey) noexcept final;
 
 			virtual void insertLocalizationKey(size_t index, const std::string& localizationKey) final;
 
