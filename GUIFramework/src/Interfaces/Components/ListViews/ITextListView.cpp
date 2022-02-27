@@ -12,6 +12,18 @@ namespace gui_framework
 			textData.erase(index);
 		}
 
+		LVITEMW ITextListView::makeItem(const wstring& text, size_t index)
+		{
+			LVITEMW item = {};
+
+			item.mask = LVIF_TEXT;
+			item.pszText = const_cast<wchar_t*>(text.data());
+			item.cchTextMax = static_cast<int>(text.size());
+			item.iItem = static_cast<int>(index);
+
+			return item;
+		}
+
 		ITextListView::ITextListView(HWND handle) :
 			IBaseListViewOperations(handle)
 		{
@@ -23,17 +35,14 @@ namespace gui_framework
 			return this->insertTextItem(text, this->size());
 		}
 
-		LRESULT ITextListView::insertTextItem(const wstring& text, size_t index)
+		LRESULT ITextListView::addTextItem(const string& localizationKey)
 		{
-			LVITEMW item = {};
-			LRESULT result;
+			return this->insertTextItem(localization::WTextLocalization::get()[localizationKey], this->size());
+		}
 
-			item.mask = LVIF_TEXT;
-			item.pszText = const_cast<wchar_t*>(text.data());
-			item.cchTextMax = static_cast<int>(text.size());
-			item.iItem = static_cast<int>(index);
-
-			result = this->addItem(item);
+		LRESULT ITextListView::insertTextItem(const wstring& text, size_t index)
+		{	
+			LRESULT result = this->addItem(this->makeItem(text, index));
 
 			if (result != -1)
 			{
@@ -41,6 +50,21 @@ namespace gui_framework
 			}
 
 			return result;
+		}
+
+		LRESULT ITextListView::insertTextItem(const string& localizationKey, size_t index)
+		{
+			return this->insertTextItem(localization::WTextLocalization::get()[localizationKey], this->size());
+		}
+
+		LRESULT ITextListView::changeTextItem(const wstring& text, size_t index)
+		{
+			return this->setItem(this->makeItem(text, index));
+		}
+
+		LRESULT ITextListView::changeTextItem(const string& localizationKey, size_t index)
+		{
+			return this->changeTextItem(localization::WTextLocalization::get()[localizationKey], index);
 		}
 
 		wstring ITextListView::getItemText(size_t index) const

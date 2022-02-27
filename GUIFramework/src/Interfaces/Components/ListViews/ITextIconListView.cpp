@@ -66,7 +66,14 @@ namespace gui_framework
 
 		LRESULT ITextIconListView::changeTextIconItem(const wstring& text, const filesystem::path& pathToIcon, size_t index)
 		{
-			return this->setItem(this->makeItem(text, pathToIcon, index));
+			LRESULT result = this->setItem(this->makeItem(text, pathToIcon, index));
+
+			if (result != -1)
+			{
+				textData[index] = text.size();
+			}
+
+			return result;
 		}
 
 		LRESULT ITextIconListView::changeTextIconItem(const string& localizationKey, const filesystem::path& pathToIcon, size_t index)
