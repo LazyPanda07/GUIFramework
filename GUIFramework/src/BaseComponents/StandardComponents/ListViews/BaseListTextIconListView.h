@@ -3,6 +3,7 @@
 #include "headers.h"
 #include "BaseListListView.h"
 #include "Interfaces/Components/ListViews/ITextIconListView.h"
+#include "Interfaces/Localization/IMultipleTextLocalized.h"
 
 namespace gui_framework
 {

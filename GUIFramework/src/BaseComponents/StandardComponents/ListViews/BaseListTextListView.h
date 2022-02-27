@@ -3,6 +3,7 @@
 #include "headers.h"
 #include "BaseListListView.h"
 #include "Interfaces/Components/ListViews/ITextListView.h"
+#include "Interfaces/Localization/IMultipleTextLocalized.h"
 
 namespace gui_framework
 {
@@ -12,7 +13,7 @@ namespace gui_framework
 		public BaseListListView,
 		public interfaces::ITextListView
 	{
-	private:
+	protected:
 		virtual void updateLocalization(size_t index, const std::wstring& localizedText) override;
 
 	public:

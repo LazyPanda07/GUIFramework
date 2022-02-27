@@ -7,6 +7,11 @@ using namespace std;
 
 namespace gui_framework
 {
+	void BaseTextListView::updateLocalization(size_t index, const wstring& localizedText)
+	{
+		ITextListView::changeTextItem(localizedText, index);
+	}
+
 	BaseTextListView::BaseTextListView(const wstring& listViewName, const utility::ComponentSettings& settings, BaseComponent* parent) :
 		BaseListView
 		(
@@ -29,7 +34,7 @@ namespace gui_framework
 		jsonObject& current = get<jsonObject>(builder[utility::to_string(windowName, codepage)]);
 		vector<jsonObject> values;
 		size_t size = this->size();
-		
+
 		if (size)
 		{
 			for (size_t i = 0; i < size; i++)
@@ -41,5 +46,26 @@ namespace gui_framework
 		}
 
 		return builder;
+	}
+
+	LRESULT BaseTextListView::addTextItem(const string& localizationKey)
+	{
+		this->addLocalizationKey(localizationKey);
+
+		return ITextListView::addTextItem(localizationKey);
+	}
+
+	LRESULT BaseTextListView::insertTextItem(const string& localizationKey, size_t index)
+	{
+		this->addLocalizationKey(localizationKey);
+
+		return ITextListView::insertTextItem(localizationKey, index);
+	}
+
+	LRESULT BaseTextListView::changeTextItem(const string& localizationKey, size_t index)
+	{
+		this->addLocalizationKey(localizationKey);
+
+		return ITextListView::changeTextItem(localizationKey, index);
 	}
 }
