@@ -27,6 +27,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\AdditionalCreationDataHeader.h" />
     <ClInclude Include="src\Deserialization\Deserializers\Components\Buttons\ButtonDeserializer.h" />
     <ClInclude Include="src\Deserialization\Deserializers\Components\Buttons\CheckBoxDeserializer.h" />
     <ClInclude Include="src\Deserialization\Deserializers\Components\Buttons\ImageButtonDeserializer.h" />
