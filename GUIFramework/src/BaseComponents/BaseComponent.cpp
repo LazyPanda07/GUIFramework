@@ -375,6 +375,7 @@ namespace gui_framework
 		jsonObject structure;
 		vector<jsonObject> backgroundColorJSON;
 		vector<jsonObject> textColorJSON;
+		vector<jsonObject> localizationKeys;
 		const interfaces::ITextOperations* textOperations = dynamic_cast<const interfaces::ITextOperations*>(this);
 
 		appendArray(static_cast<int64_t>(GetRValue(backgroundColor)), backgroundColorJSON);
@@ -406,6 +407,23 @@ namespace gui_framework
 		structure.data.push_back({ "styles"s, styles->getStyles() });
 
 		structure.data.push_back({ "extendedStyles"s, styles->getExtendedStyles() });
+
+		if (const interfaces::ISingleTextLocalized* single = dynamic_cast<const interfaces::ISingleTextLocalized*>(this))
+		{
+			appendArray(single->getLocalizationKey(), localizationKeys);
+		}
+		else if (const interfaces::IMultipleTextLocalized* multiple = dynamic_cast<const interfaces::IMultipleTextLocalized*>(this))
+		{
+			for (const string& localizationKey : multiple->getLocalizationKeys())
+			{
+				appendArray(localizationKey, localizationKeys);
+			}
+		}
+
+		if (localizationKeys.size())
+		{
+			structure.data.push_back({ "localizationKeys"s, move(localizationKeys) });
+		}
 
 		builder.push_back(make_pair(utility::to_string(windowName, codepage), move(structure)));
 
