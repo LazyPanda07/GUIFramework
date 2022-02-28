@@ -13,11 +13,6 @@ namespace gui_framework
 			LONG_PTR styles;
 			LONG_PTR extendedStyles;
 
-		protected:
-			virtual void appendStyle(LONG_PTR style) final;
-
-			virtual void appendExtendedStyle(LONG_PTR extendedStyle) final;
-
 		public:
 			IStyles();
 
@@ -30,6 +25,14 @@ namespace gui_framework
 			IStyles& operator = (const IStyles&) = default;
 
 			IStyles& operator = (IStyles&&) noexcept = default;
+
+			/// @brief Add new WinAPI style
+			/// @param style 
+			void appendStyle(LONG_PTR style);
+
+			/// @brief Add new WinAPI extended style
+			/// @param extendedStyle 
+			void appendExtendedStyle(LONG_PTR extendedStyle);
 
 			virtual LONG_PTR getStyles() const final;
 

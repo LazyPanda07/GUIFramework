@@ -112,7 +112,7 @@ struct hash<set<uint32_t>>
 	size_t operator () (const set<uint32_t>& data);
 };
 
-set<uint32_t> makeHotkey(uint32_t key, const vector<gui_framework::hotkeys::additionalKeys>& additionalKeys);
+static set<uint32_t> makeHotkey(uint32_t key, const vector<gui_framework::hotkeys::additionalKeys>& additionalKeys);
 
 namespace gui_framework
 {

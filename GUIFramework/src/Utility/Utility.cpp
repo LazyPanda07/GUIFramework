@@ -168,7 +168,7 @@ namespace gui_framework
 
 		GUI_FRAMEWORK_API_FUNCTION string getGUIFrameworkVersion()
 		{
-			return "0.9-beta"s;
+			return "0.9.0-beta"s;
 		}
 	}
 
