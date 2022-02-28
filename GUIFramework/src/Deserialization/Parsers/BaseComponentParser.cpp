@@ -30,8 +30,19 @@ namespace gui_framework
 			settings.height = static_cast<uint16_t>(description.getUnsignedInt("desiredHeight"));
 			settings.styles = interfaces::IStyles(description.getInt("styles"), description.getInt("extendedStyles"));
 
-			const auto& temBackgroundColor = json::utility::JSONArrayWrapper(description.getArray("backgroundColor")).getAsInt64_tArray();
-			const auto& temTextColor = json::utility::JSONArrayWrapper(description.getArray("textColor")).getAsInt64_tArray();;
+			const vector<int64_t>& temBackgroundColor = json::utility::JSONArrayWrapper(description.getArray("backgroundColor")).getAsInt64_tArray();
+			const vector<int64_t>& temTextColor = json::utility::JSONArrayWrapper(description.getArray("textColor")).getAsInt64_tArray();
+
+			try
+			{
+				const vector<string>& temLocalizationKeys = json::utility::JSONArrayWrapper(description.getArray("localizationKeys")).getAsStringArray();
+
+				ranges::copy(temLocalizationKeys, back_inserter(settings.localizationKeys));
+			}
+			catch (const json::exceptions::CantFindValueException&)
+			{
+
+			}
 
 			for (size_t i = 0; i < temBackgroundColor.size(); i++)
 			{
