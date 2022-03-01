@@ -46,7 +46,10 @@ namespace gui_framework
 
 		for (const auto& component : instance.components)
 		{
-			EnableWindow(component->getHandle(), false);
+			if (component != this)
+			{
+				EnableWindow(component->getHandle(), false);
+			}
 		}
 
 		return holder.runMainLoop();
@@ -61,7 +64,10 @@ namespace gui_framework
 
 			for (const auto& component : instance.components)
 			{
-				EnableWindow(component->getHandle(), true);
+				if (component != this)
+				{
+					EnableWindow(component->getHandle(), true);
+				}
 			}
 		}
 	}
