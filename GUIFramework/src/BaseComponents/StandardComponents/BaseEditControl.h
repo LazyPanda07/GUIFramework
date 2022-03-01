@@ -41,5 +41,7 @@ namespace gui_framework
 		virtual void setText(const std::string& localizationKey) final override;
 
 		virtual ~BaseEditControl() = default;
+
+		using interfaces::ITextOperations::setText;
 	};
 }

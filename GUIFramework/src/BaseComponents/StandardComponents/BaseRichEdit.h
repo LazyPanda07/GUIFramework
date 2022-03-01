@@ -78,6 +78,8 @@ namespace gui_framework
 		virtual json::JSONBuilder getStructure() const override;
 
 		virtual ~BaseRichEdit() = default;
+
+		using interfaces::ITextOperations::setText;
 	};
 
 	/// @brief Used in rich edit auto url detect events
