@@ -32,5 +32,11 @@ namespace gui_framework
 		virtual LRESULT changeTextItem(const std::string& localizationKey, size_t index) final override;
 
 		virtual ~BaseListTextListView() = default;
+
+		using interfaces::ITextListView::addTextItem;
+
+		using interfaces::ITextListView::insertTextItem;
+
+		using interfaces::ITextListView::changeTextItem;
 	};
 }

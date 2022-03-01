@@ -35,5 +35,11 @@ namespace gui_framework
 		virtual LRESULT changeTextIconItem(const std::string& localizationKey, const std::filesystem::path& pathToIcon, size_t index) override final;
 
 		virtual ~BaseTextIconListView() = default;
+
+		using interfaces::ITextIconListView::addTextIconItem;
+
+		using interfaces::ITextIconListView::insertTextIconItem;
+
+		using interfaces::ITextIconListView::changeTextIconItem;
 	};
 }

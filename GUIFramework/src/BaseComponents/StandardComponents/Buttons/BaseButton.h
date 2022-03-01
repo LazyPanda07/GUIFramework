@@ -73,5 +73,7 @@ namespace gui_framework
 		virtual void setText(const std::string& localizationKey) final override;
 
 		virtual ~BaseButton() = default;
+
+		using interfaces::ITextOperations::setText;
 	};
 }
