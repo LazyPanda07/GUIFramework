@@ -11,44 +11,6 @@ using namespace std;
 
 namespace gui_framework
 {
-	LRESULT BaseComposite::preWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
-	{
-		isUsed = false;
-
-		if (message == WM_SIZE)
-		{
-			BaseComponent* component = GUIFramework::get().findComponent(handle);
-
-			if (component && component->isComposite())
-			{
-				interfaces::IResizableComponent* resizableComposite = dynamic_cast<interfaces::IResizableComponent*>(component);
-
-				if (resizableComposite && !resizableComposite->getBlockResize())
-				{
-					isUsed = true;
-
-					const vector<unique_ptr<BaseComponent>>& childrenToResize = static_cast<BaseComposite*>(component)->getChildren();
-					uint16_t width = LOWORD(lparam);
-					uint16_t height = HIWORD(lparam);
-
-					for (const auto& i : childrenToResize)
-					{
-						interfaces::IResizableComponent* resizable = dynamic_cast<interfaces::IResizableComponent*>(i.get());
-
-						if (resizable)
-						{
-							resizable->resize(width, height);
-						}
-					}
-
-					return 0;
-				}
-			}
-		}
-
-		return -1;
-	}
-
 	LRESULT BaseComposite::compositeWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
 	{
 		if (message >= WM_CTLCOLOREDIT && message <= WM_CTLCOLORSTATIC)
@@ -123,6 +85,44 @@ namespace gui_framework
 		return -1;
 	}
 
+	LRESULT BaseComposite::preWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
+	{
+		isUsed = false;
+
+		if (message == WM_SIZE)
+		{
+			BaseComponent* component = GUIFramework::get().findComponent(handle);
+
+			if (component && component->isComposite())
+			{
+				interfaces::IResizableComponent* resizableComposite = dynamic_cast<interfaces::IResizableComponent*>(component);
+
+				if (resizableComposite && !resizableComposite->getBlockResize())
+				{
+					isUsed = true;
+
+					const vector<unique_ptr<BaseComponent>>& childrenToResize = static_cast<BaseComposite*>(component)->getChildren();
+					uint16_t width = LOWORD(lparam);
+					uint16_t height = HIWORD(lparam);
+
+					for (const auto& i : childrenToResize)
+					{
+						interfaces::IResizableComponent* resizable = dynamic_cast<interfaces::IResizableComponent*>(i.get());
+
+						if (resizable)
+						{
+							resizable->resize(width, height);
+						}
+					}
+
+					return 0;
+				}
+			}
+		}
+
+		return -1;
+	}
+
 	vector<pair<string, json::utility::jsonObject>> BaseComposite::getChildrenStructure() const
 	{
 		vector<json::JSONBuilder> childrenStructure;
@@ -149,6 +149,11 @@ namespace gui_framework
 		children.push_back(unique_ptr<BaseComponent>(child));
 	}
 
+	void BaseComposite::setExitCode(int exitCode)
+	{
+		this->exitCode = exitCode;
+	}
+
 	BaseComposite::BaseComposite(const wstring& className, const wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent, const string& windowFunctionName, const string& moduleName, uint16_t smallIconResource, uint16_t largeIconResource) :
 		BaseComponent
 		(
@@ -164,7 +169,8 @@ namespace gui_framework
 		),
 		windowFunctionName(windowFunctionName),
 		mode(exitMode::destroyWindow),
-		onDestroy([]() {})
+		onDestroy([]() {}),
+		exitCode(0)
 	{
 
 	}
@@ -337,6 +343,11 @@ namespace gui_framework
 	BaseComposite::exitMode BaseComposite::getExitMode() const
 	{
 		return mode;
+	}
+
+	int BaseComposite::getExitCode() const
+	{
+		return exitCode;
 	}
 
 	const vector<unique_ptr<BaseComponent>>& BaseComposite::getChildren() const

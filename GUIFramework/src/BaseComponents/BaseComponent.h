@@ -60,62 +60,62 @@ namespace gui_framework
 
 		virtual bool isComposite() const;
 
-		virtual LRESULT handleMessages(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) final;
+		LRESULT handleMessages(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed);
 
-		virtual bool destroyComponent() final;
+		bool destroyComponent();
 
-		virtual bool asyncDestroyComponent() final;
+		bool asyncDestroyComponent();
 
-		virtual void setDesiredWidth(uint16_t desiredWidth) final;
+		void setDesiredWidth(uint16_t desiredWidth);
 
-		virtual void setDesiredHeight(uint16_t desiredHeight) final;
+		void setDesiredHeight(uint16_t desiredHeight);
 
-		virtual void setDesiredX(int desiredX) final;
+		void setDesiredX(int desiredX);
 
-		virtual void setDesiredY(int desiredY) final;
+		void setDesiredY(int desiredY);
 
 		virtual void setBackgroundColor(uint8_t red, uint8_t green, uint8_t blue);
 
 		virtual void setTextColor(uint8_t red, uint8_t green, uint8_t blue);
 
-		virtual BaseComponent* getParent() const final;
+		BaseComponent* getParent() const;
 
-		virtual HWND getHandle() const final;
+		HWND getHandle() const;
 
-		virtual const std::wstring& getWindowName() const final;
+		const std::wstring& getWindowName() const;
 
-		virtual const std::wstring& getClassName() const final;
+		const std::wstring& getClassName() const;
 
-		virtual uint16_t getDesiredWidth() const final;
+		uint16_t getDesiredWidth() const;
 
-		virtual uint16_t getDesiredHeight() const final;
+		uint16_t getDesiredHeight() const;
 
-		virtual uint16_t getActualWidth() const final;
+		uint16_t getActualWidth() const;
 
-		virtual uint16_t getActualHeight() const final;
-		
-		virtual RECT getActualCoordinates() const final;
+		uint16_t getActualHeight() const;
 
-		virtual int getDesiredX() const final;
+		RECT getActualCoordinates() const;
 
-		virtual int getDesiredY() const final;
+		int getDesiredX() const;
+
+		int getDesiredY() const;
 
 		/// @brief 
 		/// @return Components returns id, composites returns 0 
-		virtual uint32_t getId() const final;
+		uint32_t getId() const;
 
-		virtual COLORREF getBackgroundColor() const final;
+		COLORREF getBackgroundColor() const;
 
-		virtual COLORREF getTextColor() const final;
+		COLORREF getTextColor() const;
 
-		virtual const smartPointerType<interfaces::IStyles>& getStyles() const final;
+		const smartPointerType<interfaces::IStyles>& getStyles() const;
 
 		/// @brief Used as key in creators
 		/// @return typeid().hash_code()
 		virtual size_t getHash() const = 0;
 
 		virtual json::JSONBuilder getStructure() const override;
-		
+
 		virtual ~BaseComponent();
 
 		friend class BaseComposite;

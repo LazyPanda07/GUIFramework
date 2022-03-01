@@ -9,6 +9,14 @@
 
 namespace gui_framework
 {
+	namespace interfaces
+	{
+		class ICloseable;
+	}
+}
+
+namespace gui_framework
+{
 	/// @brief Base class for all windows that has children windows
 	class GUI_FRAMEWORK_API BaseComposite :
 		public BaseComponent,
@@ -24,6 +32,7 @@ namespace gui_framework
 	protected:
 		std::string windowFunctionName;
 		exitMode mode;
+		int exitCode;
 		std::vector<std::unique_ptr<BaseComponent>> children;
 		std::unordered_map<HMENU, Menu> popupMenus;
 		std::unique_ptr<Menu> mainMenu;
@@ -32,16 +41,18 @@ namespace gui_framework
 		std::string onDestroyFunctionModuleName;
 
 	protected:
-		virtual LRESULT preWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
-
 		virtual LRESULT compositeWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed);
 
-		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) final override;
+		LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
+
+		virtual LRESULT preWindowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
 
 	private:
 		std::vector<std::pair<std::string, json::utility::jsonObject>> getChildrenStructure() const;
 
-		virtual void addChild(BaseComponent* child) final;
+		void addChild(BaseComponent* child);
+
+		void setExitCode(int exitCode);
 
 	public:
 		/// @brief 
@@ -50,15 +61,15 @@ namespace gui_framework
 		/// @param largeIconResource Integer value from auto generated Visual Studio resources
 		BaseComposite(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent = nullptr, const std::string& windowFunctionName = "", const std::string& moduleName = "", uint16_t smallIconResource = NULL, uint16_t largeIconResource = NULL);
 
-		virtual void removeChild(BaseComponent* child) final;
+		void removeChild(BaseComponent* child);
 
-		virtual void removeComponents(const std::wstring& componentName) final;
+		void removeComponents(const std::wstring& componentName);
 
-		virtual BaseComponent* findChild(const std::wstring& windowName) const final;
+		BaseComponent* findChild(const std::wstring& windowName) const;
 
-		virtual BaseComponent* findChild(HWND handle) const final;
+		BaseComponent* findChild(HWND handle) const;
 
-		virtual std::vector<BaseComponent*> findChildren(const std::wstring& windowName) const final;
+		std::vector<BaseComponent*> findChildren(const std::wstring& windowName) const;
 
 		/// @brief It needs to be called once
 		/// @return Created main menu
@@ -72,30 +83,32 @@ namespace gui_framework
 		/// @param menuName 
 		virtual void removePopupMenus(const std::wstring& menuName);
 
-		virtual bool isComposite() const final override;
+		bool isComposite() const override;
 
-		virtual void setExitMode(exitMode mode) final;
+		void setExitMode(exitMode mode);
 
-		virtual void setOnDestroy(const std::function<void()>& onDestroy) final;
+		void setOnDestroy(const std::function<void()>& onDestroy);
 
 		/// @brief Load function from module. Can be seriazlied
 		/// @param onDestroyFunctionName 
 		/// @param onDestroyFunctionModuleName 
 		/// @exception CantFindFunctionFromModuleException 
 		/// @exception std::out_of_range Can't find moduleName in loaded modules
-		virtual void setOnDestroy(const std::string& onDestroyFunctionName, const std::string& onDestroyFunctionModuleName) final;
+		void setOnDestroy(const std::string& onDestroyFunctionName, const std::string& onDestroyFunctionModuleName);
 
-		virtual exitMode getExitMode() const final;
+		exitMode getExitMode() const;
 
-		virtual const std::vector<std::unique_ptr<BaseComponent>>& getChildren() const final;
+		int getExitCode() const;
 
-		virtual const std::unique_ptr<Menu>& getMainMenu() const final;
+		const std::vector<std::unique_ptr<BaseComponent>>& getChildren() const;
 
-		virtual std::unique_ptr<Menu>& getMainMenu() final;
+		const std::unique_ptr<Menu>& getMainMenu() const;
 
-		virtual std::vector<const Menu*> getPopupMenus() const final;
+		std::unique_ptr<Menu>& getMainMenu();
 
-		virtual const std::function<void()>& getOnDestroy() const final;
+		std::vector<const Menu*> getPopupMenus() const;
+
+		const std::function<void()>& getOnDestroy() const;
 
 		/// @brief Used as key in creators
 		/// @return typeid().hash_code() 
@@ -114,8 +127,11 @@ namespace gui_framework
 		virtual json::JSONBuilder getStructure() const override;
 
 		virtual ~BaseComposite();
-
+#pragma region FriendClasses
 		friend class BaseComponent;
+
+		friend class interfaces::ICloseable;
+#pragma endregion
 	};
 }
 
@@ -147,7 +163,7 @@ namespace gui_framework
 				\
 			if (topLevelWindow->getHandle() == handle && topLevelWindow->getExitMode() == gui_framework::BaseComposite::exitMode::quit) \
 			{	\
-				PostQuitMessage(0); \
+				PostQuitMessage(topLevelWindow->getExitCode()); \
 			}	\
 				\
 			return 0;	\
