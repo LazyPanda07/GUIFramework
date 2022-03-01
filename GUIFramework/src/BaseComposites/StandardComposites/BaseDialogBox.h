@@ -51,7 +51,7 @@ namespace gui_framework
 		/// @param largeIconResource Integer value from auto generated Visual Studio resources
 		BaseDialogBox(const std::wstring& className, const std::wstring& title, const utility::ComponentSettings& settings, const std::string& dialogBoxFunctionName = "", const std::string& moduleName = "", uint16_t smallIconResource = NULL, uint16_t largeIconResource = NULL);
 
-		void showDialog();
+		int showDialog();
 
 		/// @brief Used as key in creators
 		/// @return typeid().hash_code()

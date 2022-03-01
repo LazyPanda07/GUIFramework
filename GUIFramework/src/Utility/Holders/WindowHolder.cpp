@@ -61,7 +61,7 @@ namespace gui_framework
 			throw exceptions::GetLastErrorException(code, __FILE__, __FUNCTION__, __LINE__);
 		}
 
-		return code;
+		return static_cast<int>(message.message);
 	}
 
 	WindowHolder::~WindowHolder()

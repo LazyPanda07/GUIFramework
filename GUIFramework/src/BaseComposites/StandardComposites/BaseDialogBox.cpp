@@ -34,10 +34,11 @@ namespace gui_framework
 		this->hide();
 	}
 
-	void BaseDialogBox::showDialog()
+	int BaseDialogBox::showDialog()
 	{
 		GUIFramework& instance = GUIFramework::get();
 		lock_guard<mutex> lock(instance.componentsMutex);
+		WindowHolder holder(this);
 
 		isShowDialogUsed = true;
 
@@ -48,9 +49,7 @@ namespace gui_framework
 			EnableWindow(component->getHandle(), false);
 		}
 
-		WindowHolder holder(this);
-
-		holder.runMainLoop();
+		return holder.runMainLoop();
 	}
 
 	BaseDialogBox::~BaseDialogBox()

@@ -14,7 +14,7 @@ namespace gui_framework
 		public:
 			ICloseable(HWND closeableHandle);
 
-			bool close();
+			bool close(int exitCode);
 
 			virtual ~ICloseable() = default;
 		};
