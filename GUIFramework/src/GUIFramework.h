@@ -231,6 +231,8 @@ namespace gui_framework
 		friend class BaseComponent;
 
 		friend class WindowHolder;
+
+		friend class BaseDialogBox;
 #pragma endregion
 	};
 

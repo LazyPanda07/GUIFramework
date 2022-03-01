@@ -43,7 +43,6 @@ namespace gui_framework
 			utility::ComponentSettings settings;
 			std::wstring className;
 			std::wstring dialogBoxName;
-			BaseComposite* parent;
 			std::string functionName;
 			std::vector<builderComponentData> components;
 			std::string moduleName;
@@ -62,8 +61,6 @@ namespace gui_framework
 			template<std::derived_from<BaseComponent> T>
 			DialogBoxBuilder& addComponent(const std::wstring& componentName, uint16_t width, uint16_t height, alignment type, const utility::AdditionalCreationData<T>& additionalData = utility::AdditionalCreationData<T>(), int leftOffset = 0, int topOffset = 0, int rightOffset = 0, int bottomOffset = 0, const interfaces::IStyles& styles = interfaces::IStyles());
 
-			DialogBoxBuilder& addParent(BaseComposite* parent);
-
 			/// @brief 
 			/// @return
 			/// @exception std::out_of_range Can't find creator for one of components 
@@ -77,7 +74,7 @@ namespace gui_framework
 		/// @param moduleName Name of loaded resource module with icons
 		/// @param smallIconResource Integer value from auto generated Visual Studio resources
 		/// @param largeIconResource Integer value from auto generated Visual Studio resources
-		DialogBox(const std::wstring& className, const std::wstring& dialogBoxName, const utility::ComponentSettings& settings, BaseComponent* parent = nullptr, const std::string& dialogBoxFunctionName = "", const std::string& moduleName = "", uint16_t smallIconResource = NULL, uint16_t largeIconResource = NULL);
+		DialogBox(const std::wstring& className, const std::wstring& dialogBoxName, const utility::ComponentSettings& settings, const std::string& dialogBoxFunctionName = "", const std::string& moduleName = "", uint16_t smallIconResource = NULL, uint16_t largeIconResource = NULL);
 
 		size_t getHash() const override;
 

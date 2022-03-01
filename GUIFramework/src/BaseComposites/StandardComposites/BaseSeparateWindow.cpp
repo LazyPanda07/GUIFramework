@@ -23,6 +23,7 @@ namespace gui_framework
 			smallIconResource,
 			largeIconResource
 		),
+		ICloseable(handle),
 		largeIcon(nullptr),
 		smallIcon(nullptr),
 		onClose([]() { return true; })

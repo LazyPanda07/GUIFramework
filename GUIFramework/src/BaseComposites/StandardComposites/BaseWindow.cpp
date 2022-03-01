@@ -46,7 +46,8 @@ namespace gui_framework
 			moduleName,
 			smallIconResource,
 			largeIconResource
-		)
+		),
+		IComponentVisibility(handle)
 	{
 
 	}

@@ -19,7 +19,6 @@ namespace gui_framework
 		),
 		className(className),
 		dialogBoxName(dialogBoxName),
-		parent(nullptr),
 		functionName(dialogBoxFunctionName),
 		moduleName(moduleName),
 		smallIconResource(smallIconResource),
@@ -35,16 +34,9 @@ namespace gui_framework
 		return *this;
 	}
 
-	DialogBoxBuilder& DialogBoxBuilder::addParent(BaseComposite* parent)
-	{
-		this->parent = parent;
-
-		return *this;
-	}
-
 	DialogBox* DialogBoxBuilder::build() const
 	{
-		DialogBox* result = new DialogBox(className, dialogBoxName, settings, parent, functionName, moduleName, smallIconResource, largeIconResource);
+		DialogBox* result = new DialogBox(className, dialogBoxName, settings, functionName, moduleName, smallIconResource, largeIconResource);
 		GUIFramework& reference = GUIFramework::get();
 		uint16_t currentTopOffset = 0;
 
@@ -100,13 +92,12 @@ namespace gui_framework
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	DialogBox::DialogBox(const wstring& className, const wstring& dialogBoxName, const utility::ComponentSettings& settings, BaseComponent* parent, const string& dialogBoxFunctionName, const string& moduleName, uint16_t smallIconResource, uint16_t largeIconResource) :
+	DialogBox::DialogBox(const wstring& className, const wstring& dialogBoxName, const utility::ComponentSettings& settings, const string& dialogBoxFunctionName, const string& moduleName, uint16_t smallIconResource, uint16_t largeIconResource) :
 		BaseDialogBox
 		(
 			className,
 			dialogBoxName,
 			settings,
-			parent,
 			dialogBoxFunctionName,
 			moduleName,
 			smallIconResource,

@@ -1,7 +1,9 @@
 #include "headers.h"
 #include "BaseDialogBox.h"
 
+#include "GUIFramework.h"
 #include "Styles/Composites/DialogBoxStyles.h"
+#include "Utility//Holders/WindowHolder.h"
 
 using namespace std;
 
@@ -12,30 +14,56 @@ namespace gui_framework
 		return static_cast<messageBoxResponse>(MessageBoxW(parent ? parent->getHandle() : nullptr, text.data(), title.data(), static_cast<UINT>(type) | (helpButton ? MB_HELP : NULL)));
 	}
 
-	BaseDialogBox::BaseDialogBox(const wstring& className, const wstring& title, const utility::ComponentSettings& settings, BaseComponent* parent, const string& dialogBoxFunctionName, const string& moduleName, uint16_t smallIconResource, uint16_t largeIconResource) :
+	BaseDialogBox::BaseDialogBox(const wstring& className, const wstring& title, const utility::ComponentSettings& settings, const string& dialogBoxFunctionName, const string& moduleName, uint16_t smallIconResource, uint16_t largeIconResource) :
 		BaseComposite
 		(
 			className,
 			title,
 			settings,
 			styles::DialogBoxStyles(),
-			parent,
+			nullptr,
 			dialogBoxFunctionName,
 			moduleName,
 			smallIconResource,
 			largeIconResource
-		)
+		),
+		IComponentVisibility(handle),
+		ICloseable(handle),
+		isShowDialogUsed(false)
 	{
 		this->hide();
 	}
 
-	void BaseDialogBox::hide() const
+	void BaseDialogBox::showDialog()
 	{
-		ShowWindow(handle, SW_HIDE);
+		GUIFramework& instance = GUIFramework::get();
+		lock_guard<mutex> lock(instance.componentsMutex);
+
+		isShowDialogUsed = true;
+
+		this->show();
+
+		for (const auto& component : instance.components)
+		{
+			EnableWindow(component->getHandle(), false);
+		}
+
+		WindowHolder holder(this);
+
+		holder.runMainLoop();
 	}
 
-	void BaseDialogBox::show() const
+	BaseDialogBox::~BaseDialogBox()
 	{
-		ShowWindow(handle, SW_SHOW);
+		if (isShowDialogUsed)
+		{
+			GUIFramework& instance = GUIFramework::get();
+			lock_guard<mutex> lock(instance.componentsMutex);
+
+			for (const auto& component : instance.components)
+			{
+				EnableWindow(component->getHandle(), true);
+			}
+		}
 	}
 }
