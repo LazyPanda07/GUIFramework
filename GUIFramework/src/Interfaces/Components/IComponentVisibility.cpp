@@ -14,12 +14,12 @@ namespace gui_framework
 
 		void IComponentVisibility::show() const
 		{
-			ShowWindow(componentVisibilityHandle, SW_HIDE);
+			ShowWindow(componentVisibilityHandle, SW_SHOW);
 		}
 
 		void IComponentVisibility::hide() const
 		{
-			ShowWindow(componentVisibilityHandle, SW_SHOW);
+			ShowWindow(componentVisibilityHandle, SW_HIDE);
 		}
 	}
 }
