@@ -2,6 +2,7 @@
 
 #include "headers.h"
 #include "Deserialization/Parsers/BaseComponentParser.h"
+#include "Utility/Holders/LoadableHolders/BaseLoadableHolder.h"
 
 namespace gui_framework
 {
@@ -16,9 +17,9 @@ namespace gui_framework
 			utility::iconListViewType type;
 
 		public:
-			IconListViewParser() = default;
+			IconListViewParser();
 
-			virtual void parse(const json::utility::objectSmartPointer<json::utility::jsonObject>& description) override;
+			virtual void parse(const json::utility::jsonObject& description) override;
 
 			~IconListViewParser() = default;
 		};

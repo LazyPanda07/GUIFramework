@@ -28,7 +28,14 @@ namespace gui_framework
 
 		LRESULT IBaseListViewOperations::setItem(const LVITEMW& item)
 		{
-			return SendMessageW(listViewHandle, LVM_SETITEM, NULL, reinterpret_cast<LPARAM>(&item));
+			LRESULT result = SendMessageW(listViewHandle, LVM_SETITEM, NULL, reinterpret_cast<LPARAM>(&item));
+
+			if (result != -1)
+			{
+				SendMessageW(listViewHandle, LVM_ISITEMVISIBLE, result, NULL);
+			}
+
+			return result;
 		}
 
 		void IBaseListViewOperations::getItem(LVITEMW& item) const

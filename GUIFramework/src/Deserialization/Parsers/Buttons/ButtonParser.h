@@ -18,7 +18,7 @@ namespace gui_framework
 		public:
 			ButtonParser() = default;
 
-			void parse(const json::utility::objectSmartPointer<json::utility::jsonObject>& description) override;
+			void parse(const json::utility::jsonObject& description) override;
 
 			~ButtonParser() = default;
 		};

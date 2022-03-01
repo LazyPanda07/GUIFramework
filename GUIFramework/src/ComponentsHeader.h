@@ -30,3 +30,5 @@
 #include "Components/EditControl.h"
 #include "Components/StaticControl.h"
 #include "Components/TabControl.h"
+
+#include "GUIFramework.h"

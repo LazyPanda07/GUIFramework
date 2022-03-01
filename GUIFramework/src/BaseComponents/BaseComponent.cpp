@@ -1,12 +1,15 @@
 #include "headers.h"
 #include "BaseComponent.h"
 
-#include "BaseComposites\\BaseComposite.h"
-#include "Interfaces\\Components\\IResizableComponent.h"
-#include "Interfaces\\Components\\ITextOperations.h"
+#include "BaseComposites/BaseComposite.h"
+#include "GUIFramework.h"
+#include "Interfaces/Components/IResizableComponent.h"
+#include "Interfaces/Components/ITextOperations.h"
+#include "Interfaces/Localization/IMultipleTextLocalized.h"
+#include "Interfaces/Localization/ISingleTextLocalized.h"
 
-#include "Exceptions\\CantFindCompositeFunctionException.h"
-#include "Exceptions\\FileDoesNotExist.h"
+#include "Exceptions/CantFindCompositeFunctionException.h"
+#include "Exceptions/FileDoesNotExist.h"
 
 #pragma warning(disable: 6387)
 #pragma warning(disable: 4312)
@@ -55,6 +58,21 @@ namespace gui_framework
 		return -1;
 	}
 
+	void BaseComponent::setLocalizationKeys(interfaces::ITextLocalized* localized, const vector<string>& localizationKeys)
+	{
+		if (interfaces::ISingleTextLocalized* single = dynamic_cast<interfaces::ISingleTextLocalized*>(localized); single && localizationKeys.size())
+		{
+			single->setLocalizationKey(localizationKeys.front());
+		}
+		else if (interfaces::IMultipleTextLocalized* multi = dynamic_cast<interfaces::IMultipleTextLocalized*>(localized))
+		{
+			for (const string& localizationKey : localizationKeys)
+			{
+				multi->addLocalizationKey(localizationKey);
+			}
+		}
+	}
+
 	BaseComponent::BaseComponent(const wstring& className, const wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent, const string& windowFunctionName, const string& moduleName, uint16_t smallIconResource, uint16_t largeIconResources) :
 		parent(parent),
 		className(className),
@@ -69,7 +87,7 @@ namespace gui_framework
 		textColor(RGB(0, 0, 0))
 	{
 		WNDCLASSEXW classStruct = {};
-
+		interfaces::ITextLocalized* localized = dynamic_cast<interfaces::ITextLocalized*>(this);
 		const unordered_map<string, HMODULE>& modules = GUIFramework::get().getModules();
 		const HMODULE* findedModule = nullptr;
 
@@ -169,6 +187,13 @@ namespace gui_framework
 		}
 
 		ShowWindow(handle, SW_SHOW);
+
+		if (localized)
+		{
+			this->setLocalizationKeys(localized, settings.localizationKeys);
+
+			localized->updateLocalizationEvent();
+		}
 	}
 
 	bool BaseComponent::isComposite() const
@@ -341,16 +366,16 @@ namespace gui_framework
 
 	json::JSONBuilder BaseComponent::getStructure() const
 	{
-		using json::utility::objectSmartPointer;
 		using json::utility::jsonObject;
 		using json::utility::appendArray;
 
 		uint32_t codepage = ISerializable::getCodepage();
 		json::JSONBuilder builder(codepage);
 
-		objectSmartPointer<jsonObject> structure = json::utility::make_object<jsonObject>();
-		vector<objectSmartPointer<jsonObject>> backgroundColorJSON;
-		vector<objectSmartPointer<jsonObject>> textColorJSON;
+		jsonObject structure;
+		vector<jsonObject> backgroundColorJSON;
+		vector<jsonObject> textColorJSON;
+		vector<jsonObject> localizationKeys;
 		const interfaces::ITextOperations* textOperations = dynamic_cast<const interfaces::ITextOperations*>(this);
 
 		appendArray(static_cast<int64_t>(GetRValue(backgroundColor)), backgroundColorJSON);
@@ -361,27 +386,44 @@ namespace gui_framework
 		appendArray(static_cast<int64_t>(GetGValue(textColor)), textColorJSON);
 		appendArray(static_cast<int64_t>(GetBValue(textColor)), textColorJSON);
 
-		structure->data.push_back({ "className"s, utility::to_string(className, codepage) });
+		structure.data.push_back({ "className"s, utility::to_string(className, codepage) });
 		
-		structure->data.push_back({ "hash"s, this->getHash() });
+		structure.data.push_back({ "hash"s, this->getHash() });
 
-		structure->data.push_back({ "desiredX"s, desiredX });
-		structure->data.push_back({ "desiredY"s, desiredY });
+		structure.data.push_back({ "desiredX"s, desiredX });
+		structure.data.push_back({ "desiredY"s, desiredY });
 
-		structure->data.push_back({ "desiredWidth"s, static_cast<uint64_t>(desiredWidth) });
-		structure->data.push_back({ "desiredHeight"s, static_cast<uint64_t>(desiredHeight) });
+		structure.data.push_back({ "desiredWidth"s, static_cast<uint64_t>(desiredWidth) });
+		structure.data.push_back({ "desiredHeight"s, static_cast<uint64_t>(desiredHeight) });
 
-		structure->data.push_back({ "backgroundColor"s, move(backgroundColorJSON) });
-		structure->data.push_back({ "textColor"s, move(textColorJSON) });
+		structure.data.push_back({ "backgroundColor"s, move(backgroundColorJSON) });
+		structure.data.push_back({ "textColor"s, move(textColorJSON) });
 
 		if (textOperations)
 		{
-			structure->data.push_back({ "text"s, utility::to_string(textOperations->getText(), codepage) });
+			structure.data.push_back({ "text"s, utility::to_string(textOperations->getText(), codepage) });
 		}
 
-		structure->data.push_back({ "styles"s, styles->getStyles() });
+		structure.data.push_back({ "styles"s, styles->getStyles() });
 
-		structure->data.push_back({ "extendedStyles"s, styles->getExtendedStyles() });
+		structure.data.push_back({ "extendedStyles"s, styles->getExtendedStyles() });
+
+		if (const interfaces::ISingleTextLocalized* single = dynamic_cast<const interfaces::ISingleTextLocalized*>(this))
+		{
+			appendArray(single->getLocalizationKey(), localizationKeys);
+		}
+		else if (const interfaces::IMultipleTextLocalized* multiple = dynamic_cast<const interfaces::IMultipleTextLocalized*>(this))
+		{
+			for (const string& localizationKey : multiple->getLocalizationKeys())
+			{
+				appendArray(localizationKey, localizationKeys);
+			}
+		}
+
+		if (localizationKeys.size())
+		{
+			structure.data.push_back({ "localizationKeys"s, move(localizationKeys) });
+		}
 
 		builder.push_back(make_pair(utility::to_string(windowName, codepage), move(structure)));
 

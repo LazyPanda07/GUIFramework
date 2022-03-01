@@ -1,12 +1,21 @@
 #include "headers.h"
 #include "WindowHolder.h"
 
+#include "GUIFramework.h"
+
 #include "Exceptions/GetLastErrorException.h"
 
 using namespace std;
 
 namespace gui_framework
 {
+	WindowHolder::WindowHolder(BaseDialogBox* dialogBox) :
+		compositeWindow(dialogBox),
+		unregisterClass(false)
+	{
+
+	}
+
 	WindowHolder::WindowHolder(unique_ptr<BaseComposite>&& compositeWindow, bool unregisterClass) noexcept :
 		compositeWindow(move(compositeWindow)),
 		unregisterClass(unregisterClass)
@@ -24,7 +33,7 @@ namespace gui_framework
 		return compositeWindow.get();
 	}
 
-	void WindowHolder::runMainLoop(const vector<uint32_t>& registeredHotkeyIds)
+	int WindowHolder::runMainLoop(const vector<uint32_t>& registeredHotkeyIds)
 	{
 		MSG message = {};
 		int code;
@@ -51,6 +60,8 @@ namespace gui_framework
 		{
 			throw exceptions::GetLastErrorException(code, __FILE__, __FUNCTION__, __LINE__);
 		}
+
+		return code;
 	}
 
 	WindowHolder::~WindowHolder()

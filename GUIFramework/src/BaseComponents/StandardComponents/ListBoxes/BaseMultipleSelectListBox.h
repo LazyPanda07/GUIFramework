@@ -11,11 +11,11 @@ namespace gui_framework
 	public:
 		BaseMultipleSelectListBox(const std::wstring& listBoxName, const utility::ComponentSettings& settings, BaseComponent* parent);
 
-		virtual LRESULT getCurrentSelections() const final;
+		LRESULT getCurrentSelections() const ;
 
-		virtual std::vector<std::wstring> getSelectedItems() const final;
+		std::vector<std::wstring> getSelectedItems() const;
 
-		virtual void selectMultipleItems(WPARAM firstItemIndex, LPARAM lastItemIndex) const final;
+		void selectMultipleItems(WPARAM firstItemIndex, LPARAM lastItemIndex) const;
 
 		virtual LRESULT setCurrentSelection(LRESULT index) const final override;
 

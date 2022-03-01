@@ -2,6 +2,7 @@
 #include "BaseComposite.h"
 
 #include "Interfaces/Components/IResizableComponent.h"
+#include "GUIFramework.h"
 
 #include "Exceptions/FileDoesNotExist.h"
 #include "Exceptions/CantFindFunctionFromModuleException.h"
@@ -122,10 +123,10 @@ namespace gui_framework
 		return -1;
 	}
 
-	vector<pair<string, json::utility::objectSmartPointer<json::utility::jsonObject>>> BaseComposite::getChildrenStructure() const
+	vector<pair<string, json::utility::jsonObject>> BaseComposite::getChildrenStructure() const
 	{
 		vector<json::JSONBuilder> childrenStructure;
-		vector<pair<string, json::utility::objectSmartPointer<json::utility::jsonObject>>> data;
+		vector<pair<string, json::utility::jsonObject>> data;
 
 		childrenStructure.reserve(children.size());
 
@@ -133,9 +134,9 @@ namespace gui_framework
 
 		for (size_t i = 0; i < children.size(); i++)
 		{
-			string childWindowName = utility::to_string(children[i]->getWindowName(), children[i]->getCodepage());
+			string childWindowName = utility::to_string(children[i]->getWindowName(), interfaces::ISerializable::getCodepage());
 
-			auto& childStructure = get<json::utility::objectSmartPointer<json::utility::jsonObject>>(childrenStructure[i][childWindowName]);
+			auto& childStructure = get<json::utility::jsonObject>(childrenStructure[i][childWindowName]);
 
 			data.push_back({ move(childWindowName), move(childStructure) });
 		}
@@ -404,62 +405,61 @@ namespace gui_framework
 	json::JSONBuilder BaseComposite::getStructure() const
 	{
 		using json::utility::jsonObject;
-		using json::utility::objectSmartPointer;
 
 		json::JSONBuilder builder = BaseComponent::getStructure();
-		vector<pair<string, objectSmartPointer<jsonObject>>> data = this->getChildrenStructure();
-		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
+		vector<pair<string, jsonObject>> data = this->getChildrenStructure();
+		jsonObject& current = get<jsonObject>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
 		GUIFramework& instance = GUIFramework::get();
 
-		current->data.push_back({ "windowFunctionName"s, windowFunctionName });
+		current.data.push_back({ "windowFunctionName"s, windowFunctionName });
 
-		current->data.push_back({ "exitMode"s, static_cast<int64_t>(mode) });
+		current.data.push_back({ "exitMode"s, static_cast<int64_t>(mode) });
 
 		if (onDestroyFunctionName.size())
 		{
-			current->data.push_back({ "onDestroyFunctionName"s, onDestroyFunctionName });
-			current->data.push_back({ "onDestroyFunctionModuleName"s, onDestroyFunctionModuleName });
+			current.data.push_back({ "onDestroyFunctionName"s, onDestroyFunctionName });
+			current.data.push_back({ "onDestroyFunctionModuleName"s, onDestroyFunctionModuleName });
 		}
 
 		if (mainMenu)
 		{
-			objectSmartPointer<jsonObject> menuStructure = json::utility::make_object<jsonObject>();
+			jsonObject menuStructure;
 			json::JSONBuilder mainMenuBuilder = mainMenu->getStructure();
-			vector<objectSmartPointer<jsonObject>> popupItems;
+			vector<jsonObject> popupItems;
 
-			menuStructure->data.push_back({ "mainMenuName"s, get<string>(mainMenuBuilder["menuName"]) });
+			menuStructure.data.push_back({ "mainMenuName"s, get<string>(mainMenuBuilder["menuName"]) });
 
-			menuStructure->data.push_back({ "mainMenuItems"s, move(mainMenuBuilder["items"]) });
+			menuStructure.data.push_back({ "mainMenuItems"s, move(mainMenuBuilder["items"]) });
 
 			for (const auto& [menuHandle, menu] : popupMenus)
 			{
-				objectSmartPointer<jsonObject> tem = json::utility::make_object<jsonObject>();
+				jsonObject tem;
 				json::JSONBuilder temBuilder = menu.getStructure();
 
-				tem->data.push_back({ "menuName"s, get<string>(temBuilder["menuName"]) });
-				tem->data.push_back({ "menuId"s, get<uint64_t>(temBuilder["menuId"]) });
-				tem->data.push_back({ "items"s, move(temBuilder["items"]) });
+				tem.data.push_back({ "menuName"s, get<string>(temBuilder["menuName"]) });
+				tem.data.push_back({ "menuId"s, get<uint64_t>(temBuilder["menuId"]) });
+				tem.data.push_back({ "items"s, move(temBuilder["items"]) });
 
 				json::utility::appendArray(move(tem), popupItems);
 			}
 
-			menuStructure->data.push_back({ "popupItems"s, move(popupItems) });
+			menuStructure.data.push_back({ "popupItems"s, move(popupItems) });
 
-			current->data.push_back(make_pair("menuStructure"s, move(menuStructure)));
+			current.data.push_back(make_pair("menuStructure"s, move(menuStructure)));
 		}
 
 		if (data.size())
 		{
-			vector<objectSmartPointer<jsonObject>>& childrenStructures = get<vector<objectSmartPointer<jsonObject>>>(current->data.emplace_back(make_pair("children"s, vector<objectSmartPointer<jsonObject>>())).second);
+			vector<jsonObject>& childrenStructures = get<vector<jsonObject>>(current.data.emplace_back(make_pair("children"s, vector<jsonObject>())).second);
 
 			for (auto& i : data)
 			{
-				objectSmartPointer<jsonObject> topLevel = json::utility::make_object<jsonObject>();
-				objectSmartPointer<jsonObject> tem = json::utility::make_object<jsonObject>();
+				jsonObject topLevel;
+				jsonObject tem;
 
-				tem->data.push_back(move(i));
+				tem.data.push_back(move(i));
 
-				topLevel->data.push_back({ ""s, move(tem) });
+				topLevel.data.push_back({ ""s, move(tem) });
 
 				childrenStructures.push_back(move(topLevel));
 			}

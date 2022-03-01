@@ -19,7 +19,7 @@ namespace gui_framework
 			/// @param parent Not used
 			/// @return Not handled by parent
 			/// @exception WrongMenuTypeException
-			BaseComponent* deserialize(const std::string& componentName, const json::utility::objectSmartPointer<json::utility::jsonObject>& description, BaseComposite* parent = nullptr) const override;
+			BaseComponent* deserialize(const std::string& componentName, const json::utility::jsonObject& description, BaseComposite* parent = nullptr) const override;
 
 			~SeparateWindowDeserializer() = default;
 		};

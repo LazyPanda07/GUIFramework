@@ -104,6 +104,12 @@ namespace gui_framework
 		/// @exception json::exceptions::CantFindValueException Unable to find setting in gui_framework.json on first GUIFramework::get() call
 		static GUIFramework& get();
 
+		/// @brief Restart application with given exit code
+		/// @param exitCode Exit code for previous application
+		/// @exception GetLastErrorException 
+		static void restartApplication(int exitCode = 0);
+
+	public:
 		/// @brief Add task to thread pool. Thread safe method
 		/// @param task Task function
 		/// @param callback After execution task callback function
@@ -176,20 +182,19 @@ namespace gui_framework
 
 		/// @brief Serialize hotkeys
 		/// @return JSON array with hotkeys data
-		std::vector<json::utility::objectSmartPointer<json::utility::jsonObject>> serializeHotkeys();
+		std::vector<json::utility::jsonObject> serializeHotkeys();
 
 		/// @brief Deserialize hotkeys
 		/// @param description Description of holder window with 'hotkeys' object
-		void deserializeHotkeys(const json::utility::objectSmartPointer<json::utility::jsonObject>& description);
+		void deserializeHotkeys(const json::utility::jsonObject& description);
 
 		/// @brief Check if modules are loaded. You can call getCantLoadedModules() to check if loaded modules have failed
 		/// @return 
 		bool isModulesLoaded() const;
 
-		/// @brief Restart application with given exit code
-		/// @param exitCode Exit code for previous application
-		/// @exception GetLastErrorException 
-		void restartApplication(int exitCode) const;
+		/// @brief Change localization for all components
+		/// @param language New language
+		void changeLocalization(const std::string& language) const;
 
 		/// @brief Get all current registered creators
 		/// @return creators
@@ -226,6 +231,8 @@ namespace gui_framework
 		friend class BaseComponent;
 
 		friend class WindowHolder;
+
+		friend class BaseDialogBox;
 #pragma endregion
 	};
 

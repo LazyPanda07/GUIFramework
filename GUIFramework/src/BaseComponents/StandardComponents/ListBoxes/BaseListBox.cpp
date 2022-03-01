@@ -12,6 +12,11 @@ using namespace std;
 
 namespace gui_framework
 {
+	void BaseListBox::updateLocalization(size_t index, const wstring& localizedText)
+	{
+		this->changeValue(localizedText, index);
+	}
+
 	BaseListBox::BaseListBox(const wstring& listBoxName, const utility::ComponentSettings& settings, const styles::ListBoxStyles& styles, BaseComponent* parent) :
 		BaseComponent
 		(
@@ -51,6 +56,13 @@ namespace gui_framework
 		return result;
 	}
 
+	LRESULT BaseListBox::addValue(const string& localizationKey)
+	{
+		this->addLocalizationKey(localizationKey);
+
+		return this->addValue(localization::WTextLocalization::get()[localizationKey]);
+	}
+
 	LRESULT BaseListBox::removeValue(size_t index)
 	{
 		LRESULT result = SendMessageW(handle, LB_DELETESTRING, index, NULL);
@@ -59,6 +71,8 @@ namespace gui_framework
 		{
 			throw exceptions::SelectListException(__FUNCTION__, result, __FILE__, __FUNCTION__, __LINE__);
 		}
+
+		IMultipleTextLocalized::removeLocalizationKey(index);
 
 		this->resize(BaseComponent::parent->getActualWidth(), BaseComponent::parent->getActualHeight());
 
@@ -83,6 +97,13 @@ namespace gui_framework
 		return result;
 	}
 
+	LRESULT BaseListBox::insertValue(const string& localizationKey, LRESULT index)
+	{
+		this->addLocalizationKey(localizationKey);
+
+		return this->insertValue(localization::WTextLocalization::get()[localizationKey], index);
+	}
+
 	LRESULT BaseListBox::changeValue(const wstring& newValue, LRESULT index)
 	{
 		LRESULT result = SendMessageW(handle, LB_SETITEMDATA, index, reinterpret_cast<LPARAM>(newValue.data()));
@@ -95,6 +116,13 @@ namespace gui_framework
 		this->resize(BaseComponent::parent->getActualWidth(), BaseComponent::parent->getActualHeight());
 
 		return result;
+	}
+
+	LRESULT BaseListBox::changeValue(const string& localizationKey, LRESULT index)
+	{
+		this->addLocalizationKey(localizationKey);
+
+		return this->changeValue(localization::WTextLocalization::get()[localizationKey], index);
 	}
 
 	LRESULT BaseListBox::findSubstring(const wstring& subStringToFind)
@@ -304,15 +332,14 @@ namespace gui_framework
 	json::JSONBuilder BaseListBox::getStructure() const
 	{
 		using json::utility::jsonObject;
-		using json::utility::objectSmartPointer;
 
 		uint32_t codepage = ISerializable::getCodepage();
 		json::JSONBuilder builder = BaseComponent::getStructure();
-		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, codepage)]);
-		vector<objectSmartPointer<jsonObject>> values;
+		jsonObject& current = get<jsonObject>(builder[utility::to_string(windowName, codepage)]);
+		vector<jsonObject> values;
 		LRESULT currentSize = this->size();
 
-		current->data.push_back({ "columnWidth"s, static_cast<uint64_t>(columnsWidth) });
+		current.data.push_back({ "columnWidth"s, static_cast<uint64_t>(columnsWidth) });
 
 		if (currentSize > 0)
 		{
@@ -321,7 +348,7 @@ namespace gui_framework
 				json::utility::appendArray(utility::to_string(this->getValue(i), codepage), values);
 			}
 
-			current->data.push_back({ "listBoxValues"s, move(values) });
+			current.data.push_back({ "listBoxValues"s, move(values) });
 		}
 
 		return builder;

@@ -2,6 +2,8 @@
 
 #include "Deserialization/Parsers/TrackbarControlParser.h"
 #include "Components/Trackbars/HorizontalTrackbarControl.h"
+#include "GUIFramework.h"
+#include "Utility/AdditionalCreationData/TrackbarControlAdditionalCreationData.h"
 
 using namespace std;
 
@@ -9,9 +11,8 @@ namespace gui_framework
 {
 	namespace deserializers
 	{
-		BaseComponent* HorizontalTrackbarControlDeserializer::deserialize(const std::string & componentName, const json::utility::objectSmartPointer<json::utility::jsonObject>&description, BaseComposite * parent) const
+		BaseComponent* HorizontalTrackbarControlDeserializer::deserialize(const std::string & componentName, const json::utility::jsonObject&description, BaseComposite * parent) const
 		{
-			using json::utility::objectSmartPointer;
 			using json::utility::jsonObject;
 
 			parsers::TrackbarControlParser parser;

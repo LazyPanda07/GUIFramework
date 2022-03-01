@@ -14,7 +14,7 @@ namespace gui_framework
 		public:
 			InfiniteProgressBarParser() = default;
 
-			void parse(const json::utility::objectSmartPointer<json::utility::jsonObject>& description) override;
+			void parse(const json::utility::jsonObject& description) override;
 
 			~InfiniteProgressBarParser() = default;
 		};

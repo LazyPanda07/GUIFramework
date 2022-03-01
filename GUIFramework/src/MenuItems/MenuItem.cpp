@@ -1,6 +1,8 @@
 #include "headers.h"
 #include "MenuItem.h"
 
+#include "GUIFramework.h"
+
 #include "Exceptions/CantFindFunctionFromModuleException.h"
 
 using namespace std;
@@ -40,7 +42,6 @@ namespace gui_framework
 	json::JSONBuilder MenuItem::getStructure() const
 	{
 		using json::utility::jsonObject;
-		using json::utility::objectSmartPointer;
 
 		if (functionName.empty())
 		{

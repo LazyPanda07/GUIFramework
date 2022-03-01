@@ -3,11 +3,14 @@
 #include "headers.h"
 #include "BaseComposites/BaseComposite.h"
 #include "Utility/Holders/LoadableHolders/BaseLoadableHolder.h"
+#include "Interfaces/Components/IComponentVisibility.h"
 
 namespace gui_framework
 {
 	/// @brief Base class for composite windows
-	class GUI_FRAMEWORK_API BaseWindow : public BaseComposite
+	class GUI_FRAMEWORK_API BaseWindow :
+		public BaseComposite,
+		public interfaces::IComponentVisibility
 	{
 	private:
 		struct drawedImages

@@ -2,6 +2,7 @@
 
 #include "headers.h"
 #include "MenuItems/DropDownMenuItem.h"
+#include "BaseComposites/StandardComposites/BaseSeparateWindow.h"
 
 namespace gui_framework
 {
@@ -23,7 +24,7 @@ namespace gui_framework
 			/// @param menu 
 			/// @return
 			/// @exception WrongMenuTypeException 
-			std::unique_ptr<DropDownMenuItem> deserializeDropDownMenuItem(const std::wstring& text, uint64_t popupId, const std::vector<json::utility::objectSmartPointer<json::utility::jsonObject>>& popupItems, Menu& menu);
+			std::unique_ptr<DropDownMenuItem> deserializeDropDownMenuItem(const std::wstring& text, uint64_t popupId, const std::vector<json::utility::jsonObject>& popupItems, Menu& menu);
 
 			~DropDownMenuItemDeserializer() = default;
 		};

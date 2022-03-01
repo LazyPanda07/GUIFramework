@@ -15,9 +15,14 @@ namespace gui_framework
 
 		}
 
-		void ITextOperations::setText(const wstring& text) const
+		void ITextOperations::setText(const wstring& text)
 		{
 			SetWindowTextW(textHandle, text.data());
+		}
+
+		void ITextOperations::setText(const string& localizationKey)
+		{
+			this->setText(localization::WTextLocalization::get()[localizationKey]);
 		}
 
 		wstring ITextOperations::getText() const

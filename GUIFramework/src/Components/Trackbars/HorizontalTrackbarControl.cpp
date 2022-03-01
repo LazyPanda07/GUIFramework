@@ -39,11 +39,10 @@ namespace gui_framework
 
 	json::JSONBuilder HorizontalTrackbarControl::getStructure() const
 	{
-		using json::utility::objectSmartPointer;
 		using json::utility::jsonObject;
 
 		json::JSONBuilder builder = BaseTrackbarControl::getStructure();
-		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
+		jsonObject& current = get<jsonObject>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
 
 		return builder;
 	}

@@ -2,6 +2,7 @@
 
 #include "headers.h"
 #include "BaseComponentParser.h"
+#include "BaseComponents/StandardComponents/BaseRichEdit.h"
 
 namespace gui_framework
 {
@@ -17,7 +18,7 @@ namespace gui_framework
 		public:
 			RichEditParser();
 
-			void parse(const json::utility::objectSmartPointer<json::utility::jsonObject>& description) override;
+			void parse(const json::utility::jsonObject& description) override;
 
 			~RichEditParser() = default;
 		};

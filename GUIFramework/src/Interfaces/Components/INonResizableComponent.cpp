@@ -1,6 +1,8 @@
 #include "headers.h"
 #include "INonResizableComponent.h"
 
+#include "Utility/Utility.h"
+
 #include "Exceptions/NotImplemented.h"
 
 using namespace std;

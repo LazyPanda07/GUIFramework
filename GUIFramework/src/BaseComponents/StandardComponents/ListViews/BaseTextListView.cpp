@@ -7,6 +7,11 @@ using namespace std;
 
 namespace gui_framework
 {
+	void BaseTextListView::updateLocalization(size_t index, const wstring& localizedText)
+	{
+		ITextListView::changeTextItem(localizedText, index);
+	}
+
 	BaseTextListView::BaseTextListView(const wstring& listViewName, const utility::ComponentSettings& settings, BaseComponent* parent) :
 		BaseListView
 		(
@@ -23,14 +28,13 @@ namespace gui_framework
 	json::JSONBuilder BaseTextListView::getStructure() const
 	{
 		using json::utility::jsonObject;
-		using json::utility::objectSmartPointer;
 
 		uint32_t codepage = ISerializable::getCodepage();
 		json::JSONBuilder builder = BaseListView::getStructure();
-		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, codepage)]);
-		vector<objectSmartPointer<jsonObject>> values;
+		jsonObject& current = get<jsonObject>(builder[utility::to_string(windowName, codepage)]);
+		vector<jsonObject> values;
 		size_t size = this->size();
-		
+
 		if (size)
 		{
 			for (size_t i = 0; i < size; i++)
@@ -38,9 +42,30 @@ namespace gui_framework
 				json::utility::appendArray(utility::to_string(this->getItemText(i), codepage), values);
 			}
 
-			current->data.push_back({ "listViewTextValues"s, move(values) });
+			current.data.push_back({ "listViewTextValues"s, move(values) });
 		}
 
 		return builder;
+	}
+
+	LRESULT BaseTextListView::addTextItem(const string& localizationKey)
+	{
+		this->addLocalizationKey(localizationKey);
+
+		return ITextListView::addTextItem(localizationKey);
+	}
+
+	LRESULT BaseTextListView::insertTextItem(const string& localizationKey, size_t index)
+	{
+		this->addLocalizationKey(localizationKey);
+
+		return ITextListView::insertTextItem(localizationKey, index);
+	}
+
+	LRESULT BaseTextListView::changeTextItem(const string& localizationKey, size_t index)
+	{
+		this->addLocalizationKey(localizationKey);
+
+		return ITextListView::changeTextItem(localizationKey, index);
 	}
 }

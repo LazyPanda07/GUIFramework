@@ -1,5 +1,6 @@
-#include "headers.h"
 #include "BaseComboBox.h"
+
+#include "GUIFramework.h"
 
 #include "Exceptions/SelectListException.h"
 #include "Exceptions/NotImplemented.h"
@@ -382,21 +383,20 @@ namespace gui_framework
 	json::JSONBuilder BaseComboBox::getStructure() const
 	{
 		using json::utility::jsonObject;
-		using json::utility::objectSmartPointer;
 
 		uint32_t codepage = ISerializable::getCodepage();
 		json::JSONBuilder builder = BaseComponent::getStructure();
-		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, codepage)]);
-		vector<objectSmartPointer<jsonObject>> values;
+		jsonObject& current = get<jsonObject>(builder[utility::to_string(windowName, codepage)]);
+		vector<jsonObject> values;
 		LRESULT currentSize = this->size();
 
 		if (functionName.size())
 		{
-			current->data.push_back({ "functionName"s, functionName });
+			current.data.push_back({ "functionName"s, functionName });
 
-			current->data.push_back({ "moduleName"s, moduleName });
+			current.data.push_back({ "moduleName"s, moduleName });
 
-			current->data.push_back({ "pathToModule"s, GUIFramework::get().getModulesPaths().at(moduleName) });
+			current.data.push_back({ "pathToModule"s, GUIFramework::get().getModulesPaths().at(moduleName) });
 		}
 
 		if (currentSize > 0)
@@ -406,7 +406,7 @@ namespace gui_framework
 				json::utility::appendArray(utility::to_string(this->getValue(i), codepage), values);
 			}
 
-			current->data.push_back({ "comboBoxValues"s, move(values) });
+			current.data.push_back({ "comboBoxValues"s, move(values) });
 		}
 
 		return builder;

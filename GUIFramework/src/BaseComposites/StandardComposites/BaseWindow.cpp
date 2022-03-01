@@ -46,7 +46,8 @@ namespace gui_framework
 			moduleName,
 			smallIconResource,
 			largeIconResource
-		)
+		),
+		IComponentVisibility(handle)
 	{
 
 	}
@@ -152,7 +153,6 @@ namespace gui_framework
 
 	json::JSONBuilder BaseWindow::getStructure() const
 	{
-		using json::utility::objectSmartPointer;
 		using json::utility::jsonObject;
 
 		if (pictures.empty())
@@ -161,12 +161,12 @@ namespace gui_framework
 		}
 
 		json::JSONBuilder builder = BaseComposite::getStructure();
-		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
+		jsonObject& current = get<jsonObject>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
 
 		for (const auto& [pictureBlockName, data] : pictures)
 		{
 			string imageHolderName = pictureBlockName + "ImageHolder";
-			vector<objectSmartPointer<jsonObject>> jsonCoordinates;
+			vector<jsonObject> jsonCoordinates;
 
 			auto& lastImageHolderStructure = data.images->loadBaseLoadableHolderStructure(current);
 
@@ -174,15 +174,15 @@ namespace gui_framework
 
 			for (const auto& [index, coordinates] : data.coordinates)
 			{
-				objectSmartPointer<jsonObject> object = json::utility::make_object<jsonObject>();
+				jsonObject object;
 
-				object->data.push_back({ "x"s, static_cast<int64_t>(coordinates.first) });
-				object->data.push_back({ "y"s, static_cast<int64_t>(coordinates.second) });
+				object.data.push_back({ "x"s, static_cast<int64_t>(coordinates.first) });
+				object.data.push_back({ "y"s, static_cast<int64_t>(coordinates.second) });
 
 				json::utility::appendArray(move(object), jsonCoordinates);
 			}
 
-			get<objectSmartPointer<jsonObject>>(lastImageHolderStructure.second)->data.push_back({ "coordinates"s, move(jsonCoordinates) });
+			get<jsonObject>(lastImageHolderStructure.second).data.push_back({ "coordinates"s, move(jsonCoordinates) });
 		}
 
 		return builder;

@@ -3,12 +3,14 @@
 #include "headers.h"
 #include "BaseComponents/BaseComponent.h"
 #include "Interfaces/Components/ITextOperations.h"
+#include "Interfaces/Localization/ISingleTextLocalized.h"
 #include "Styles/Components/Buttons/ButtonStyles.h"
 
 namespace gui_framework
 {
 	/// @brief Base class for all buttons
 	class GUI_FRAMEWORK_API BaseButton :
+		public interfaces::ISingleTextLocalized,
 		public BaseComponent,
 		public interfaces::ITextOperations
 	{
@@ -24,6 +26,8 @@ namespace gui_framework
 	protected:
 		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
 
+		virtual void updateLocalization(const std::wstring& localizedText) override;
+
 	public:
 		BaseButton(const std::wstring& buttonName, const std::wstring& buttonText, const utility::ComponentSettings& settings, const styles::ButtonStyles& styles, BaseComponent* parent, const std::function<void()>& onClick = nullptr);
 
@@ -34,7 +38,7 @@ namespace gui_framework
 
 		/// @brief Can't serialize
 		/// @param onClick 
-		virtual void setOnClick(const std::function<void()>& onClick) final;
+		void setOnClick(const std::function<void()>& onClick);
 
 		/// @brief Load function from module. Can be seriazlied
 		/// @param functionName 
@@ -43,15 +47,15 @@ namespace gui_framework
 		/// @exception std::out_of_range Can't find moduleName in loaded modules
 		virtual void setOnClick(const std::string& functionName, const std::string& moduleName);
 
-		virtual const std::function<void()>& getOnClick() const final;
+		const std::function<void()>& getOnClick() const;
 
 		/// @brief Get onClick function name from loaded module
 		/// @return functionName
-		virtual const std::string& getFunctionName() const final;
+		const std::string& getFunctionName() const;
 
 		/// @brief Get onClick function associated module name
 		/// @return moduleName 
-		virtual const std::string& getModuleName() const final;
+		const std::string& getModuleName() const;
 
 		/// @brief Not implemented
 		/// @param red 
@@ -66,6 +70,8 @@ namespace gui_framework
 
 		virtual json::JSONBuilder getStructure() const override;
 
-		~BaseButton() = default;
+		virtual void setText(const std::string& localizationKey) final override;
+
+		virtual ~BaseButton() = default;
 	};
 }

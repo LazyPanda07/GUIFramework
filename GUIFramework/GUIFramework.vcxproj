@@ -27,6 +27,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\AdditionalCreationDataHeader.h" />
     <ClInclude Include="src\Deserialization\Deserializers\Components\Buttons\ButtonDeserializer.h" />
     <ClInclude Include="src\Deserialization\Deserializers\Components\Buttons\CheckBoxDeserializer.h" />
     <ClInclude Include="src\Deserialization\Deserializers\Components\Buttons\ImageButtonDeserializer.h" />
@@ -72,6 +73,11 @@
     <ClInclude Include="src\Deserialization\Parsers\TrackbarControlParser.h" />
     <ClInclude Include="src\Exceptions\Deserialization\BaseDeserializationException.h" />
     <ClInclude Include="src\Exceptions\Deserialization\WrongMenuTypeException.h" />
+    <ClInclude Include="src\Interfaces\Components\ICloseable.h" />
+    <ClInclude Include="src\Interfaces\Components\IComponentVisibility.h" />
+    <ClInclude Include="src\Interfaces\Localization\IMultipleTextLocalized.h" />
+    <ClInclude Include="src\Interfaces\Localization\ISingleTextLocalized.h" />
+    <ClInclude Include="src\Interfaces\Localization\ITextLocalized.h" />
     <ClInclude Include="src\Interfaces\Utility\IDeserializer.h" />
     <ClInclude Include="src\Deserialization\Deserializers\Composites\SeparateWindowDeserializer.h" />
     <ClInclude Include="src\BaseComponents\BaseComponent.h" />
@@ -299,6 +305,11 @@
     <ClCompile Include="src\Deserialization\Parsers\TrackbarControlParser.cpp" />
     <ClCompile Include="src\Exceptions\Deserialization\BaseDeserializationException.cpp" />
     <ClCompile Include="src\Exceptions\Deserialization\WrongMenuTypeException.cpp" />
+    <ClCompile Include="src\Interfaces\Components\ICloseable.cpp" />
+    <ClCompile Include="src\Interfaces\Components\IComponentVisibility.cpp" />
+    <ClCompile Include="src\Interfaces\Localization\IMultipleTextLocalized.cpp" />
+    <ClCompile Include="src\Interfaces\Localization\ISingleTextLocalized.cpp" />
+    <ClCompile Include="src\Interfaces\Localization\ITextLocalized.cpp" />
     <ClCompile Include="src\Interfaces\Utility\IDeserializer.cpp" />
     <ClCompile Include="src\Utility\Creators\Components\Buttons\CheckBoxCreator.cpp" />
     <ClCompile Include="src\Utility\Creators\Composites\GroupBoxCreator.cpp" />

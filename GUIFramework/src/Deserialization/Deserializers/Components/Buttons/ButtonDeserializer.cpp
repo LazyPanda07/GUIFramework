@@ -1,6 +1,9 @@
 #include "ButtonDeserializer.h"
 
 #include "Deserialization/Parsers/Buttons/ButtonParser.h"
+#include "Utility/AdditionalCreationData/ButtonAdditionalCreationData.h"
+#include "Components/Buttons/Button.h"
+#include "GUIFramework.h"
 
 using namespace std;
 
@@ -8,9 +11,8 @@ namespace gui_framework
 {
 	namespace deserializers
 	{
-		BaseComponent* ButtonDeserializer::deserialize(const string& componentName, const json::utility::objectSmartPointer<json::utility::jsonObject>& description, BaseComposite* parent) const
+		BaseComponent* ButtonDeserializer::deserialize(const string& componentName, const json::utility::jsonObject& description, BaseComposite* parent) const
 		{
-			using json::utility::objectSmartPointer;
 			using json::utility::jsonObject;
 
 			parsers::ButtonParser parser;

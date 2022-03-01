@@ -100,6 +100,8 @@
 #include "Deserialization/Deserializers/Components/ListViews/TextIconListViewDeserializer.h"
 #include "Deserialization/Deserializers/Components/ListViews/TextListViewDeserializer.h"
 
+#include "Interfaces/Localization/ITextLocalized.h"
+
 #pragma warning(disable: 6335)
 
 using namespace std;
@@ -110,7 +112,7 @@ struct hash<set<uint32_t>>
 	size_t operator () (const set<uint32_t>& data);
 };
 
-set<uint32_t> makeHotkey(uint32_t key, const vector<gui_framework::hotkeys::additionalKeys>& additionalKeys);
+static set<uint32_t> makeHotkey(uint32_t key, const vector<gui_framework::hotkeys::additionalKeys>& additionalKeys);
 
 namespace gui_framework
 {
@@ -417,11 +419,11 @@ namespace gui_framework
 
 		modules.insert({ "MSFT"s, LoadLibraryW(libraries::msftEditLibrary.data()) });
 
-		const json::utility::objectSmartPointer<json::utility::jsonObject>& settingsObject = jsonSettings.getObject(json_settings::settingsObject);
+		const json::utility::jsonObject& settingsObject = jsonSettings.getObject(json_settings::settingsObject);
 
 		try
 		{
-			if (settingsObject->getBool(json_settings::usingCreatorsSetting))
+			if (settingsObject.getBool(json_settings::usingCreatorsSetting))
 			{
 				this->initCreators();
 			}
@@ -433,7 +435,7 @@ namespace gui_framework
 
 		try
 		{
-			if (settingsObject->getBool(json_settings::usingDeserializersSetting))
+			if (settingsObject.getBool(json_settings::usingDeserializersSetting))
 			{
 				this->initDeserializers();
 			}
@@ -445,7 +447,7 @@ namespace gui_framework
 
 		try
 		{
-			auto& jsonModules = settingsObject->getArray(json_settings::modulesSetting);
+			auto& jsonModules = settingsObject.getArray(json_settings::modulesSetting);
 
 			modulesNeedToLoad += static_cast<int>(jsonModules.size());
 
@@ -453,9 +455,9 @@ namespace gui_framework
 
 			for (const auto& i : jsonModules)
 			{
-				const auto& moduleObject = std::get<json::utility::objectSmartPointer<json::utility::jsonObject>>(i->data.front().second);
-				const string& moduleName = moduleObject->getString(json_settings::moduleNameSetting);
-				const auto& modulePath = find_if(moduleObject->data.begin(), moduleObject->data.end(),
+				const auto& moduleObject = std::get<json::utility::jsonObject>(i.data.front().second);
+				const string& moduleName = moduleObject.getString(json_settings::moduleNameSetting);
+				const auto& modulePath = find_if(moduleObject.data.begin(), moduleObject.data.end(),
 					[](const pair<string, json::utility::jsonObject::variantType>& value) { return value.first == json_settings::pathToModuleSettings; })->second;
 				string modulePathString;
 
@@ -556,6 +558,38 @@ namespace gui_framework
 		{
 			FreeLibrary(module);
 		}
+	}
+
+	void GUIFramework::restartApplication(int exitCode)
+	{
+		int argc = 0;
+		wchar_t** argv = nullptr;
+		wstring_view commandLine = GetCommandLineW();
+		STARTUPINFO startInfo = {};
+		PROCESS_INFORMATION processInfo = {};
+
+		startInfo.cb = sizeof(startInfo);
+
+		argv = CommandLineToArgvW(commandLine.data(), &argc);
+
+		if (!CreateProcessW
+		(
+			argv[0],
+			const_cast<wchar_t*>(commandLine.data()),
+			nullptr,
+			nullptr,
+			false,
+			NULL,
+			nullptr,
+			nullptr,
+			&startInfo,
+			&processInfo
+		))
+		{
+			throw gui_framework::exceptions::GetLastErrorException(GetLastError(), __FILE__, __FUNCTION__, __LINE__);
+		}
+
+		exit(exitCode);
 	}
 
 	void GUIFramework::addTask(const function<void()>& task, const function<void()>& callback)
@@ -737,35 +771,33 @@ namespace gui_framework
 		return ranges::find(components, component) != components.end();
 	}
 
-	vector<json::utility::objectSmartPointer<json::utility::jsonObject>> GUIFramework::serializeHotkeys()
+	vector<json::utility::jsonObject> GUIFramework::serializeHotkeys()
 	{
-		unique_lock<mutex> lock(hotkeyIdMutex);
-
-		using json::utility::objectSmartPointer;
 		using json::utility::jsonObject;
 
-		vector<objectSmartPointer<jsonObject>> result;
+		unique_lock<mutex> lock(hotkeyIdMutex);
+		vector<jsonObject> result;
 
 		for (const auto& [key, value] : serializableHotkeysData)
 		{
 			if (value.functionName.size())
 			{
-				objectSmartPointer<jsonObject> object = json::utility::make_object<jsonObject>();
+				jsonObject object;
 
-				object->data.push_back({ "key"s, static_cast<uint64_t>(value.key) });
-				object->data.push_back({ "functionName"s, value.functionName });
-				object->data.push_back({ "moduleName"s, value.moduleName });
-				object->data.push_back({ "pathToModule"s, modulesPaths.at(value.moduleName) });
+				object.data.push_back({ "key"s, static_cast<uint64_t>(value.key) });
+				object.data.push_back({ "functionName"s, value.functionName });
+				object.data.push_back({ "moduleName"s, value.moduleName });
+				object.data.push_back({ "pathToModule"s, modulesPaths.at(value.moduleName) });
 
 				if (value.additionalKeys.size())
 				{
-					vector<objectSmartPointer<jsonObject>> additionalKeys;
+					vector<jsonObject> additionalKeys;
 
 					additionalKeys.reserve(value.additionalKeys.size());
 
 					ranges::for_each(value.additionalKeys, [&additionalKeys](const hotkeys::additionalKeys& key) { json::utility::appendArray(static_cast<int64_t>(key), additionalKeys); });
 
-					object->data.push_back({ "additionalKeys"s, move(additionalKeys) });
+					object.data.push_back({ "additionalKeys"s, move(additionalKeys) });
 				}
 
 				json::utility::appendArray(move(object), result);
@@ -775,21 +807,20 @@ namespace gui_framework
 		return result;
 	}
 
-	void GUIFramework::deserializeHotkeys(const json::utility::objectSmartPointer<json::utility::jsonObject>& description)
+	void GUIFramework::deserializeHotkeys(const json::utility::jsonObject& description)
 	{
-		using json::utility::objectSmartPointer;
 		using json::utility::jsonObject;
 
-		const auto& jsonHotkeys = description->getArray("hotkeys");
+		const auto& jsonHotkeys = description.getArray("hotkeys");
 
 		for (const auto& i : jsonHotkeys)
 		{
-			const objectSmartPointer<jsonObject>& hotkey = std::get<objectSmartPointer<jsonObject>>(i->data.front().second);
+			const jsonObject& hotkey = std::get<jsonObject>(i.data.front().second);
 
-			uint32_t key = static_cast<uint32_t>(hotkey->getUnsignedInt("key"));
-			const string& functionName = hotkey->getString("functionName");
-			const string& moduleName = hotkey->getString("moduleName");
-			vector<uint64_t> tem = json::utility::JSONArrayWrapper(hotkey->getArray("additionalKeys")).getAsUInt64_tArray();
+			uint32_t key = static_cast<uint32_t>(hotkey.getUnsignedInt("key"));
+			const string& functionName = hotkey.getString("functionName");
+			const string& moduleName = hotkey.getString("moduleName");
+			vector<uint64_t> tem = json::utility::JSONArrayWrapper(hotkey.getArray("additionalKeys")).getAsUInt64_tArray();
 			vector<hotkeys::additionalKeys> additionalKeys;
 
 			ranges::for_each(tem, [&additionalKeys](uint64_t additionalKey) { additionalKeys.push_back(static_cast<hotkeys::additionalKeys>(additionalKey)); });
@@ -803,36 +834,20 @@ namespace gui_framework
 		return modulesNeedToLoad == currentLoadedModules;
 	}
 
-	void GUIFramework::restartApplication(int exitCode) const
+	void GUIFramework::changeLocalization(const string& language) const
 	{
-		int argc = 0;
-		wchar_t** argv = nullptr;
-		wstring_view commandLine = GetCommandLineW();
-		STARTUPINFO startInfo = {};
-		PROCESS_INFORMATION processInfo = {};
+		localization::TextLocalization::get().changeLanguage(language);
+		localization::WTextLocalization::get().changeLanguage(language);
 
-		startInfo.cb = sizeof(startInfo);
-
-		argv = CommandLineToArgvW(commandLine.data(), &argc);
-
-		if (!CreateProcessW
-			(
-				argv[0],
-				const_cast<wchar_t*>(commandLine.data()),
-				nullptr,
-				nullptr,
-				false,
-				NULL,
-				nullptr,
-				nullptr,
-				&startInfo,
-				&processInfo
-			))
+		for (const auto& component : components)
 		{
-			throw gui_framework::exceptions::GetLastErrorException(GetLastError(), __FILE__, __FUNCTION__, __LINE__);
-		}
+			interfaces::ITextLocalized* localizable = dynamic_cast<interfaces::ITextLocalized*>(component);
 
-		exit(exitCode);
+			if (localizable && localizable->getAutoUpdate())
+			{
+				localizable->updateLocalizationEvent();
+			}
+		}
 	}
 
 	const unordered_map<size_t, smartPointerType<utility::BaseComponentCreator>>& GUIFramework::getCreators() const

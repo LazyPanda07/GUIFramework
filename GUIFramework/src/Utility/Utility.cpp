@@ -2,6 +2,8 @@
 #include "Utility.h"
 
 #include "BaseComposites/StandardComposites/BaseSeparateWindow.h"
+#include "BaseComponents/StandardComponents/BaseRichEdit.h"
+#include "GUIFramework.h"
 
 #include "Exceptions/CantFindFunctionFromModuleException.h"
 #include "Exceptions/NotImplemented.h"

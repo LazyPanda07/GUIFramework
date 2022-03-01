@@ -4,17 +4,22 @@
 #include "BaseComponents/BaseComponent.h"
 #include "Interfaces/Components/IResizableComponent.h"
 #include "Styles/Components/ListBoxes/ListBoxStyles.h"
+#include "Interfaces/Localization/IMultipleTextLocalized.h"
 
 namespace gui_framework
 {
 	/// @brief Base class for all list boxes
 	class GUI_FRAMEWORK_API BaseListBox :
+		public interfaces::IMultipleTextLocalized,
 		public BaseComponent,
 		public interfaces::IResizableComponent
 	{
 	protected:
 		SIZE requiredSize;
 		uint8_t columnsWidth;
+
+	protected:
+		virtual void updateLocalization(size_t index, const std::wstring& localizedText) override;
 
 	public:
 		BaseListBox(const std::wstring& listBoxName, const utility::ComponentSettings& settings, const styles::ListBoxStyles& styles, BaseComponent* parent);
@@ -23,13 +28,20 @@ namespace gui_framework
 		/// @param value 
 		/// @return
 		/// @exception SelectListException 
-		virtual LRESULT addValue(const std::wstring& value) final;
+		LRESULT addValue(const std::wstring& value);
+
+		/// @brief 
+		/// @param localizationKey 
+		/// @return
+		/// @exception SelectListException 
+		/// @exception std::runtime_error
+		LRESULT addValue(const std::string& localizationKey);
 
 		/// @brief 
 		/// @param index 
 		/// @return 
 		/// @exception SelectListException 
-		virtual LRESULT removeValue(size_t index) final;
+		LRESULT removeValue(size_t index);
 
 		/// @brief 
 		/// @param value 
@@ -39,6 +51,13 @@ namespace gui_framework
 		virtual LRESULT insertValue(const std::wstring& value, LRESULT index);
 
 		/// @brief 
+		/// @param localizationKey 
+		/// @param index 
+		/// @return 
+		/// @exception SelectListException 
+		LRESULT insertValue(const std::string& localizationKey, LRESULT index);
+
+		/// @brief 
 		/// @param newValue 
 		/// @param index 
 		/// @return 
@@ -46,27 +65,34 @@ namespace gui_framework
 		virtual LRESULT changeValue(const std::wstring& newValue, LRESULT index);
 
 		/// @brief 
+		/// @param localizationKey 
+		/// @param index 
+		/// @return 
+		/// @exception SelectListException 
+		LRESULT changeValue(const std::string& localizationKey, LRESULT index);
+
+		/// @brief 
 		/// @param subStringToFind 
 		/// @return 
 		/// @exception SelectListException 
-		virtual LRESULT findSubstring(const std::wstring& subStringToFind) final;
+		LRESULT findSubstring(const std::wstring& subStringToFind);
 
 		/// @brief 
 		/// @param stringToFind 
 		/// @return 
 		/// @exception SelectListException 
-		virtual LRESULT findString(const std::wstring& stringToFind) final;
+		LRESULT findString(const std::wstring& stringToFind);
 
 		/// @brief 
 		/// @param index 
 		/// @return 
 		/// @exception SelectListException 
-		virtual std::wstring getValue(size_t index) const final;
+		std::wstring getValue(size_t index) const;
 
 		/// @brief 
 		/// @return 
 		/// @exception SelectListException 
-		virtual LRESULT getCurrentSelectionIndex() const final;
+		LRESULT getCurrentSelectionIndex() const;
 
 		/// @brief 
 		/// @param index 
@@ -77,34 +103,34 @@ namespace gui_framework
 		/// @brief 
 		/// @return 
 		/// @exception SelectListException 
-		virtual LRESULT size() const final;
+		LRESULT size() const;
 
 		/// @brief 
-		virtual void clear() final;
+		void clear();
 
 		/// @brief 
 		/// @param value 
 		/// @param height 
 		/// @return 
 		/// @exception SelectListException 
-		virtual LRESULT setItemsHeight(uint8_t height) final;
+		LRESULT setItemsHeight(uint8_t height);
 
 		/// @brief 
 		/// @param width 
 		/// @return 
 		/// @exception SelectListException 
-		virtual LRESULT setColumnsWidth(uint8_t width) final;
+		LRESULT setColumnsWidth(uint8_t width);
 
 		/// @brief 
 		/// @param value 
 		/// @return 
 		/// @exception SelectListException 
-		virtual LRESULT getItemsHeight() const final;
+		LRESULT getItemsHeight() const;
 
 		/// @brief 
 		/// @return 
 		/// @exception SelectListException 
-		virtual uint8_t getColumnsWidth() const final;
+		uint8_t getColumnsWidth() const;
 
 		/// @brief 
 		/// @param width 

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "BaseComponentParser.h"
+#include "BaseComponents/StandardComponents/BaseTabControl.h"
 
 namespace gui_framework
 {
@@ -16,7 +17,7 @@ namespace gui_framework
 		public:
 			TabControlParser() = default;
 
-			void parse(const json::utility::objectSmartPointer<json::utility::jsonObject>& description) override;
+			void parse(const json::utility::jsonObject& description) override;
 
 			~TabControlParser() = default;
 		};

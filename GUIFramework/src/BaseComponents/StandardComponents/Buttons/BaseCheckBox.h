@@ -26,17 +26,17 @@ namespace gui_framework
 	public:
 		BaseCheckBox(const std::wstring& checkBoxName, const std::wstring& checkBoxText, const utility::ComponentSettings& settings, BaseComponent* parent, const std::function<void()>& onCheck, const std::function<void()>& onClear, const std::function<void()>& onClick = nullptr);
 
-		virtual void setOnCheck(const std::function<void()>& onCheck) final;
+		void setOnCheck(const std::function<void()>& onCheck);
 
-		virtual void setOnCheck(const std::string& functionName, const std::string& moduleName) final;
+		void setOnCheck(const std::string& functionName, const std::string& moduleName);
 
-		virtual void setOnClear(const std::function<void()>& onClear) final;
+		void setOnClear(const std::function<void()>& onClear);
 
-		virtual void setOnClear(const std::string& functionName, const std::string& moduleName) final;
+		void setOnClear(const std::string& functionName, const std::string& moduleName);
 
-		virtual const std::function<void()>& getOnCheck() const final;
+		const std::function<void()>& getOnCheck() const;
 
-		virtual const std::function<void()>& getOnClear() const final;
+		const std::function<void()>& getOnClear() const;
 
 		/// @brief Used as key in creators
 		/// @return typeid().hash_code()

@@ -2,8 +2,6 @@
 
 /// @file GUIFrameworkConstants.h
 
-#include "headers.h"
-
 #include <string>
 #include <cstdint>
 #include <memory>

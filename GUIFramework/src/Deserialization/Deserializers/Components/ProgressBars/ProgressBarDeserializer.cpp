@@ -1,6 +1,8 @@
 #include "ProgressBarDeserializer.h"
 
 #include "Deserialization/Parsers/ProgressBars/ProgressBarParser.h"
+#include "GUIFramework.h"
+#include "Utility/AdditionalCreationData/ProgressBarAdditionalCreationData.h"
 
 using namespace std;
 
@@ -8,9 +10,8 @@ namespace gui_framework
 {
 	namespace deserializers
 	{
-		BaseComponent* ProgressBarDeserializer::deserialize(const std::string& componentName, const json::utility::objectSmartPointer<json::utility::jsonObject>& description, BaseComposite* parent) const
+		BaseComponent* ProgressBarDeserializer::deserialize(const std::string& componentName, const json::utility::jsonObject& description, BaseComposite* parent) const
 		{
-			using json::utility::objectSmartPointer;
 			using json::utility::jsonObject;
 
 			parsers::ProgressBarParser parser;

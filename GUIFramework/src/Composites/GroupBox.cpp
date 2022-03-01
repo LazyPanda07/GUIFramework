@@ -2,6 +2,7 @@
 #include "GroupBox.h"
 
 #include "Styles/Components/Buttons/RadioButtonStyles.h"
+#include "GUIFramework.h"
 
 #include "Exceptions/CantFindFunctionFromModuleException.h"
 

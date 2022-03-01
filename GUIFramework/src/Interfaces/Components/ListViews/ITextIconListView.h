@@ -14,6 +14,8 @@ namespace gui_framework
 		private:
 			void onRemove(size_t index) final override;
 
+			LVITEMW makeItem(const std::wstring& text, const std::filesystem::path& pathToIcon, size_t index);
+
 		private:
 			utility::IconsHolder& icons;
 			std::unordered_map<size_t, size_t> textData;
@@ -23,7 +25,15 @@ namespace gui_framework
 
 			virtual LRESULT addTextIconItem(const std::wstring& text, const std::filesystem::path& pathToIcon);
 
+			virtual LRESULT addTextIconItem(const std::string& localizationKey, const std::filesystem::path& pathToIcon);
+
 			virtual LRESULT insertTextIconItem(const std::wstring& text, const std::filesystem::path& pathToIcon, size_t index);
+
+			virtual LRESULT insertTextIconItem(const std::string& localizationKey, const std::filesystem::path& pathToIcon, size_t index);
+
+			virtual LRESULT changeTextIconItem(const std::wstring& text, const std::filesystem::path& pathToIcon, size_t index);
+
+			virtual LRESULT changeTextIconItem(const std::string& localizationKey, const std::filesystem::path& pathToIcon, size_t index);
 
 			/// @brief 
 			/// @param index 

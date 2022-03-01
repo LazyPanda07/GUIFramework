@@ -1,6 +1,7 @@
 #pragma once
 
 #include "headers.h"
+#include "Utility/ComponentSettings.h"
 
 namespace gui_framework
 {
@@ -15,9 +16,9 @@ namespace gui_framework
 			std::array<uint8_t, 3> textColor;
 
 		public:
-			BaseComponentParser() = default;
+			BaseComponentParser();
 
-			virtual void parse(const json::utility::objectSmartPointer<json::utility::jsonObject>& description);
+			virtual void parse(const json::utility::jsonObject& description);
 
 			virtual ~BaseComponentParser() = default;
 		};

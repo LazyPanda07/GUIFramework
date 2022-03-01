@@ -145,18 +145,17 @@ namespace gui_framework
 
 	json::JSONBuilder ImageButton::getStructure() const
 	{
-		using json::utility::objectSmartPointer;
 		using json::utility::jsonObject;
 
 		json::JSONBuilder builder = BaseButton::getStructure();
-		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
+		jsonObject& current = get<jsonObject>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
 
-		current->data.push_back({ "imageWidth"s, static_cast<uint64_t>(imageWidth) });
-		current->data.push_back({ "imageHeight"s, static_cast<uint64_t>(imageHeight) });
+		current.data.push_back({ "imageWidth"s, static_cast<uint64_t>(imageWidth) });
+		current.data.push_back({ "imageHeight"s, static_cast<uint64_t>(imageHeight) });
 
-		current->data.push_back({ "pathToImage"s, utility::getStringFromRawPath(pathToImage) });
+		current.data.push_back({ "pathToImage"s, utility::getStringFromRawPath(pathToImage) });
 
-		current->data.push_back({ "drawingType"s, static_cast<uint64_t>(type) });
+		current.data.push_back({ "drawingType"s, static_cast<uint64_t>(type) });
 
 		return builder;
 	}

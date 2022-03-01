@@ -101,15 +101,14 @@ namespace gui_framework
 	json::JSONBuilder BaseProgressBar::getStructure() const
 	{
 		using json::utility::jsonObject;
-		using json::utility::objectSmartPointer;
 
 		json::JSONBuilder builder = BaseComponent::getStructure();
-		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
+		jsonObject& current = get<jsonObject>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
 
-		current->data.push_back({ "minRange"s, static_cast<int64_t>(minRange) });
-		current->data.push_back({ "maxRange"s, static_cast<int64_t>(maxRange) });
+		current.data.push_back({ "minRange"s, static_cast<int64_t>(minRange) });
+		current.data.push_back({ "maxRange"s, static_cast<int64_t>(maxRange) });
 
-		current->data.push_back({ "updateStep"s, static_cast<int64_t>(updateStep) });
+		current.data.push_back({ "updateStep"s, static_cast<int64_t>(updateStep) });
 
 		return builder;
 	}
