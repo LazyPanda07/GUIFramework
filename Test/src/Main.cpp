@@ -39,8 +39,11 @@ void standard()
 				builder.addComponent<Button>(L"Button", 200, 20, DialogBox::DialogBoxBuilder::alignment::center);
 
 				DialogBox* dialog = builder.build();
+				Button* button = dynamic_cast<Button*>(dialog->findChild(L"Button"));
 
-				dynamic_cast<Button*>(dialog->findChild(L"Button"))->setOnClick([dialog]()
+				button->setText(L"Close");
+
+				button->setOnClick([dialog]()
 					{
 						dialog->close(10);
 					});
