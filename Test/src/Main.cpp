@@ -26,7 +26,7 @@ void standard()
 	{
 		WindowHolder holder(make_unique<SeparateWindow>(L"MainWindow", L"Главное окно", settings, "main"));
 		SeparateWindow* ptr = dynamic_cast<SeparateWindow*>(holder.get());
-		Button* button = new Button(L"Create", L"Create dialog", utility::ComponentSettings(0, 0, 200, 20), ptr);
+		Button* button = new Button(L"Create", L"Create dialog", utility::ComponentSettings(0, 0, 200, 25), ptr);
 		
 		ptr->setExitMode(BaseComposite::exitMode::quit);
 		
@@ -36,7 +36,7 @@ void standard()
 			{
 				DialogBox::DialogBoxBuilder builder(L"Rofl", L"Name", 400, 400, "dialog");
 
-				builder.addComponent<Button>(L"Button", 200, 25, DialogBox::DialogBoxBuilder::alignment::center);
+				builder.addComponent<Button>(L"Button", 200, 20, DialogBox::DialogBoxBuilder::alignment::center);
 
 				DialogBox* dialog = builder.build();
 				Button* button = dynamic_cast<Button*>(dialog->findChild(L"Button"));
