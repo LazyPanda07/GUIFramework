@@ -32,6 +32,8 @@ namespace gui_framework
 		isShowDialogUsed(false)
 	{
 		this->hide();
+
+		this->setExitMode(exitMode::quit);
 	}
 
 	int BaseDialogBox::showDialog()
