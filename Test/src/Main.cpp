@@ -36,7 +36,7 @@ void standard()
 			{
 				DialogBox::DialogBoxBuilder builder(L"Rofl", L"Name", 400, 400, "dialog");
 
-				builder.addComponent<Button>(L"Button", 200, 20, DialogBox::DialogBoxBuilder::alignment::center);
+				builder.addComponent<Button>(L"Button", 200, 25, DialogBox::DialogBoxBuilder::alignment::center);
 
 				DialogBox* dialog = builder.build();
 				Button* button = dynamic_cast<Button*>(dialog->findChild(L"Button"));
@@ -49,8 +49,6 @@ void standard()
 					});
 
 				cout << dialog->showDialog() << endl;
-
-				cout << "Rofel" << endl;
 			});
 
 		holder.runMainLoop();
