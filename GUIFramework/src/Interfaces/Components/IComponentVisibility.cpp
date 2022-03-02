@@ -15,6 +15,8 @@ namespace gui_framework
 		void IComponentVisibility::show() const
 		{
 			ShowWindow(componentVisibilityHandle, SW_SHOW);
+
+			SetFocus(componentVisibilityHandle);
 		}
 
 		void IComponentVisibility::hide() const
