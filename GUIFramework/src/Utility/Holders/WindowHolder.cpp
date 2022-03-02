@@ -38,9 +38,8 @@ namespace gui_framework
 		MSG message = {};
 		int code;
 		GUIFramework& instance = GUIFramework::get();
-		HWND handle = compositeWindow->getHandle();
 
-		while (code = GetMessageW(&message, handle, NULL, NULL) > 0)
+		while (code = GetMessageW(&message, nullptr, NULL, NULL) > 0)
 		{
 			TranslateMessage(&message);
 
@@ -62,7 +61,7 @@ namespace gui_framework
 			throw exceptions::GetLastErrorException(code, __FILE__, __FUNCTION__, __LINE__);
 		}
 
-		return static_cast<int>(message.message);
+		return static_cast<int>(message.wParam);
 	}
 
 	WindowHolder::~WindowHolder()
