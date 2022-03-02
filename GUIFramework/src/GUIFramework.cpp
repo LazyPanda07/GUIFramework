@@ -271,14 +271,14 @@ namespace gui_framework
 
 	void GUIFramework::addComponent(BaseComponent* component)
 	{
-		unique_lock<mutex> lock(componentsMutex);
+		unique_lock<recursive_mutex> lock(componentsMutex);
 
 		components.push_back(component);
 	}
 
 	void GUIFramework::removeComponent(BaseComponent* component)
 	{
-		unique_lock<mutex> lock(componentsMutex);
+		unique_lock<recursive_mutex> lock(componentsMutex);
 
 		erase(components, component);
 	}
@@ -750,7 +750,7 @@ namespace gui_framework
 
 	BaseComponent* GUIFramework::findComponent(HWND handle)
 	{
-		unique_lock<mutex> lock(componentsMutex);
+		unique_lock<recursive_mutex> lock(componentsMutex);
 
 		auto it = ranges::find_if(components, [&handle](BaseComponent* component) { return component->getHandle() == handle; });
 
@@ -759,7 +759,7 @@ namespace gui_framework
 
 	BaseComponent* GUIFramework::findComponent(const wstring& componentName)
 	{
-		unique_lock<mutex> lock(componentsMutex);
+		unique_lock<recursive_mutex> lock(componentsMutex);
 
 		auto it = ranges::find_if(components, [&componentName](BaseComponent* component) { return component->getWindowName() == componentName; });
 
