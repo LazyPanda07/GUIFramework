@@ -64,7 +64,7 @@ namespace gui_framework
 #pragma endregion
 #pragma region ComponentsFinding
 		std::vector<BaseComponent*> components;
-		std::mutex componentsMutex;
+		std::recursive_mutex componentsMutex;
 #pragma endregion
 #pragma region Modules
 		int modulesNeedToLoad;

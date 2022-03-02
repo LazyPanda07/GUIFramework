@@ -37,7 +37,7 @@ namespace gui_framework
 	int BaseDialogBox::showDialog()
 	{
 		GUIFramework& instance = GUIFramework::get();
-		lock_guard<mutex> lock(instance.componentsMutex);
+		lock_guard<recursive_mutex> lock(instance.componentsMutex);
 		WindowHolder holder(this);
 
 		isShowDialogUsed = true;
@@ -50,8 +50,10 @@ namespace gui_framework
 			{
 				break;
 			}
-
-			EnableWindow(component->getHandle(), false);
+			else if (dynamic_cast<BaseComposite*>(component))
+			{
+				EnableWindow(component->getHandle(), false);
+			}
 		}
 
 		return holder.runMainLoop();
@@ -62,7 +64,7 @@ namespace gui_framework
 		if (isShowDialogUsed)
 		{
 			GUIFramework& instance = GUIFramework::get();
-			lock_guard<mutex> lock(instance.componentsMutex);
+			lock_guard<recursive_mutex> lock(instance.componentsMutex);
 
 			for (const auto& component : instance.components)
 			{
@@ -70,8 +72,10 @@ namespace gui_framework
 				{
 					break;
 				}
-
-				EnableWindow(component->getHandle(), true);
+				else if (dynamic_cast<BaseComposite*>(component))
+				{
+					EnableWindow(component->getHandle(), true);
+				}
 			}
 		}
 	}
