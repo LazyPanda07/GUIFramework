@@ -38,8 +38,9 @@ namespace gui_framework
 		MSG message = {};
 		int code;
 		GUIFramework& instance = GUIFramework::get();
+		HWND handle = compositeWindow->getHandle();
 
-		while (code = GetMessageW(&message, nullptr, NULL, NULL) > 0)
+		while (code = GetMessageW(&message, handle, NULL, NULL) > 0)
 		{
 			TranslateMessage(&message);
 
