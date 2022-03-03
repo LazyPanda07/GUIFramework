@@ -50,7 +50,7 @@ namespace gui_framework
 		std::unordered_map<std::string, std::string> modulesPaths;
 		std::unordered_map<size_t, smartPointerType<utility::BaseComponentCreator>> creators;
 		std::unordered_map<size_t, smartPointerType<interfaces::IDeserializer>> deserializers;
-		DWORD mainThreadId;
+		DWORD uiThreadId;
 #pragma region Ids
 		std::unordered_multimap<std::wstring, uint32_t> generatedIds;
 		std::queue<uint32_t> availableIds;
@@ -111,7 +111,7 @@ namespace gui_framework
 
 		/// @brief Must be called in main function before all other functions
 		/// @exception json::exceptions::CantFindValueException Unable to find setting in gui_framework.json on first GUIFramework::get() call
-		static void initMainThreadId();
+		static void initUIThreadId();
 
 		/// @brief Run function in UI thread
 		/// @param function Function that will run in UI thread
@@ -125,6 +125,10 @@ namespace gui_framework
 		/// @param exitCode Exit code for previous application
 		/// @exception GetLastErrorException 
 		static void restartApplication(int exitCode = 0);
+
+		/// @brief Getter for UI thread id
+		/// @return uiThreadId
+		static DWORD getUIThreadId();
 
 	public:
 		/// @brief Add task to thread pool. Thread safe method

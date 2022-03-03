@@ -560,6 +560,27 @@ namespace gui_framework
 		}
 	}
 
+	void GUIFramework::initUIThreadId()
+	{
+		GUIFramework::get().uiThreadId = GetCurrentThreadId();
+	}
+
+	void GUIFramework::runOnUIThread(const function<void()>& function)
+	{
+		GUIFramework& instance = GUIFramework::get();
+		lock_guard<recursive_mutex> runOnUIThreadLock(instance.runOnUIThreadMutex);
+
+		instance.runOnUIFunctions.push(function);
+	}
+
+	void GUIFramework::runOnUIThread(function<void()>&& function)
+	{
+		GUIFramework& instance = GUIFramework::get();
+		lock_guard<recursive_mutex> runOnUIThreadLock(instance.runOnUIThreadMutex);
+
+		instance.runOnUIFunctions.push(move(function));
+	}
+
 	void GUIFramework::restartApplication(int exitCode)
 	{
 		int argc = 0;
@@ -592,25 +613,9 @@ namespace gui_framework
 		exit(exitCode);
 	}
 
-	void GUIFramework::initMainThreadId()
+	DWORD GUIFramework::getUIThreadId()
 	{
-		GUIFramework::get().mainThreadId = GetCurrentThreadId();
-	}
-
-	void GUIFramework::runOnUIThread(const function<void()>& function)
-	{
-		GUIFramework& instance = GUIFramework::get();
-		lock_guard<recursive_mutex> runOnUIThreadLock(instance.runOnUIThreadMutex);
-
-		instance.runOnUIFunctions.push(function);
-	}
-
-	void GUIFramework::runOnUIThread(function<void()>&& function)
-	{
-		GUIFramework& instance = GUIFramework::get();
-		lock_guard<recursive_mutex> runOnUIThreadLock(instance.runOnUIThreadMutex);
-
-		instance.runOnUIFunctions.push(move(function));
+		return GUIFramework::get().uiThreadId;
 	}
 
 	void GUIFramework::addTask(const function<void()>& task, const function<void()>& callback)

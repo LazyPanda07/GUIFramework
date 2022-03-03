@@ -182,11 +182,6 @@ namespace gui_framework
 		topLevelWindow = nullptr; \
 			\
 		return 0; \
-	case gui_framework::custom_window_messages::runOnUIThreadFunctions:	\
-		(*reinterpret_cast<std::function<void()>*>(wparam))();	\
-			\
-		return 0;	\
-			\
 	} \
 			\
 	if (topLevelWindow) \
