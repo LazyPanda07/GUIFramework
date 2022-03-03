@@ -50,7 +50,7 @@ namespace gui_framework
 			{
 				instance.processHotkeys();
 			}
-			else if (message.message)
+			else if (message.message == custom_window_messages::runOnUIThreadFunctions)
 			{
 				(*reinterpret_cast<std::function<void()>*>(message.wParam))();
 			}
