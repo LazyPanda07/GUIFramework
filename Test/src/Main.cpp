@@ -30,7 +30,7 @@ void standard()
 		
 		ptr->setExitMode(BaseComposite::exitMode::quit);
 		
-		ptr->setLargeIcon(R"(assets\icon.ico)");
+		ptr->setLargeIcon("assets/icon.ico");
 
 		button->setOnClick([]()
 			{
