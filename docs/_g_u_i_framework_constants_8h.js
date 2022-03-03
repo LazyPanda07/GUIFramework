@@ -21,7 +21,6 @@ var _g_u_i_framework_constants_8h =
     [ "dialogBoxBuilderMinWidth", "_g_u_i_framework_constants_8h.html#a0fcf0837ccf940788169d753bad717de", null ],
     [ "dropDownMenuItem", "_g_u_i_framework_constants_8h.html#a7c8d005201403b3916d6a1df61d5369f", null ],
     [ "editControl", "_g_u_i_framework_constants_8h.html#a1d0ecb983243bb5de6f719aacebcc492", null ],
-    [ "guiFrameworkVersion", "_g_u_i_framework_constants_8h.html#a5e94c5c423c72dd9f763bafce9ba4672", null ],
     [ "largeIconHeight", "_g_u_i_framework_constants_8h.html#a32daec1006daa20c25f2cc0c17bc1487", null ],
     [ "largeIconWidth", "_g_u_i_framework_constants_8h.html#ae4a52d99a5f0791115b21443c995fb03", null ],
     [ "listBox", "_g_u_i_framework_constants_8h.html#ac8b9748495f9040dd6a675d92448724f", null ],

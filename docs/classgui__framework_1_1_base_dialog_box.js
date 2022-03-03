@@ -20,9 +20,10 @@ var classgui__framework_1_1_base_dialog_box =
       [ "retryCancel", "classgui__framework_1_1_base_dialog_box.html#a4c390f225765a7ff69983db9d232b6e3a5e9b7be39627d848d0b89d7e464cd9a0", null ],
       [ "cancelTryContinue", "classgui__framework_1_1_base_dialog_box.html#a4c390f225765a7ff69983db9d232b6e3ab5fd22ccf042db114b02c86c7c9f1a18", null ]
     ] ],
-    [ "BaseDialogBox", "classgui__framework_1_1_base_dialog_box.html#adcca7270937f5f330d16beab61780205", null ],
-    [ "~BaseDialogBox", "classgui__framework_1_1_base_dialog_box.html#a449b12f85afc3a3e36bf4af9ca5d83ef", null ],
+    [ "BaseDialogBox", "classgui__framework_1_1_base_dialog_box.html#a97f95d472d9a95ceb1dae0297e7aec57", null ],
+    [ "~BaseDialogBox", "classgui__framework_1_1_base_dialog_box.html#ad0ca14d7c2a49d2916b9bbaf7f4d095b", null ],
     [ "getHash", "classgui__framework_1_1_base_dialog_box.html#a222e3ab69288979ba8332f1405c0ec6e", null ],
-    [ "hide", "classgui__framework_1_1_base_dialog_box.html#ab42fa2e33c4941adc4d211e47f237fb4", null ],
-    [ "show", "classgui__framework_1_1_base_dialog_box.html#a69e8591d39fa0702815f7c43fd4563b1", null ]
+    [ "showDialog", "classgui__framework_1_1_base_dialog_box.html#a0966ac1b535d70cdfb507cc40d87ee04", null ],
+    [ "isShowDialogUsed", "classgui__framework_1_1_base_dialog_box.html#aa60e4efb0606318a544c8bc771ad0ea5", null ],
+    [ "windowWithUserFocus", "classgui__framework_1_1_base_dialog_box.html#a37648f14338a9921f2379739e7201610", null ]
 ];

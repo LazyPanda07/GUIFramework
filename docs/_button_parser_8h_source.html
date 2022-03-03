@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.8.5-beta</span>
+   &#160;<span id="projectnumber">0.9-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -106,17 +106,17 @@ $(document).ready(function(){initNavTree('_button_parser_8h_source.html',''); in
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structgui__framework_1_1parsers_1_1_button_parser.html#a816294e7b4d615e86b37c6a674f112a6">   19</a></span>&#160;            <a class="code" href="structgui__framework_1_1parsers_1_1_button_parser.html#a816294e7b4d615e86b37c6a674f112a6">ButtonParser</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <span class="keywordtype">void</span> parse(<span class="keyword">const</span> json::utility::objectSmartPointer&lt;json::utility::jsonObject&gt;&amp; description) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <span class="keywordtype">void</span> parse(<span class="keyword">const</span> json::utility::jsonObject&amp; description) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="structgui__framework_1_1parsers_1_1_button_parser.html#a73519aaf76535633c09fc272db5d3735">   23</a></span>&#160;            <a class="code" href="structgui__framework_1_1parsers_1_1_button_parser.html#a73519aaf76535633c09fc272db5d3735">~ButtonParser</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        };</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
 <div class="ttc" id="a_base_component_parser_8h_html"><div class="ttname"><a href="_base_component_parser_8h.html">BaseComponentParser.h</a></div></div>
-<div class="ttc" id="a_g_u_i_framework_constants_8h_html_a15da9ebdfa896557bb941a5da31021ba"><div class="ttname"><a href="_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba">GUI_FRAMEWORK_API</a></div><div class="ttdeci">#define GUI_FRAMEWORK_API</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00114">GUIFrameworkConstants.h:114</a></div></div>
+<div class="ttc" id="a_g_u_i_framework_constants_8h_html_a15da9ebdfa896557bb941a5da31021ba"><div class="ttname"><a href="_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba">GUI_FRAMEWORK_API</a></div><div class="ttdeci">#define GUI_FRAMEWORK_API</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00112">GUIFrameworkConstants.h:112</a></div></div>
 <div class="ttc" id="aheaders_8h_html"><div class="ttname"><a href="headers_8h.html">headers.h</a></div></div>
-<div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00018">BaseComponent.cpp:19</a></div></div>
-<div class="ttc" id="astructgui__framework_1_1parsers_1_1_base_component_parser_html"><div class="ttname"><a href="structgui__framework_1_1parsers_1_1_base_component_parser.html">gui_framework::parsers::BaseComponentParser</a></div><div class="ttdoc">Parse BaseComponent properties.</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_parser_8h_source.html#l00010">BaseComponentParser.h:11</a></div></div>
+<div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00021">BaseComponent.cpp:22</a></div></div>
+<div class="ttc" id="astructgui__framework_1_1parsers_1_1_base_component_parser_html"><div class="ttname"><a href="structgui__framework_1_1parsers_1_1_base_component_parser.html">gui_framework::parsers::BaseComponentParser</a></div><div class="ttdoc">Parse BaseComponent properties.</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_parser_8h_source.html#l00011">BaseComponentParser.h:12</a></div></div>
 <div class="ttc" id="astructgui__framework_1_1parsers_1_1_button_parser_html"><div class="ttname"><a href="structgui__framework_1_1parsers_1_1_button_parser.html">gui_framework::parsers::ButtonParser</a></div><div class="ttdoc">Parse Button specific properties.</div><div class="ttdef"><b>Definition:</b> <a href="_button_parser_8h_source.html#l00011">ButtonParser.h:12</a></div></div>
 <div class="ttc" id="astructgui__framework_1_1parsers_1_1_button_parser_html_a1a6e94cf4033534ab681f13d68d0aaf1"><div class="ttname"><a href="structgui__framework_1_1parsers_1_1_button_parser.html#a1a6e94cf4033534ab681f13d68d0aaf1">gui_framework::parsers::ButtonParser::onClickFunctionName</a></div><div class="ttdeci">std::string onClickFunctionName</div><div class="ttdef"><b>Definition:</b> <a href="_button_parser_8h_source.html#l00014">ButtonParser.h:14</a></div></div>
 <div class="ttc" id="astructgui__framework_1_1parsers_1_1_button_parser_html_a73519aaf76535633c09fc272db5d3735"><div class="ttname"><a href="structgui__framework_1_1parsers_1_1_button_parser.html#a73519aaf76535633c09fc272db5d3735">gui_framework::parsers::ButtonParser::~ButtonParser</a></div><div class="ttdeci">~ButtonParser()=default</div></div>

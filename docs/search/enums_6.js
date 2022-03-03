@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['urldetectevent_2882',['urlDetectEvent',['../classgui__framework_1_1_base_rich_edit.html#abf55c644c6c2640d8c662dd7179ab1f3',1,'gui_framework::BaseRichEdit']]]
+  ['urldetectevent_2981',['urlDetectEvent',['../classgui__framework_1_1_base_rich_edit.html#abf55c644c6c2640d8c662dd7179ab1f3',1,'gui_framework::BaseRichEdit']]]
 ];

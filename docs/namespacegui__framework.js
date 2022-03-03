@@ -9,8 +9,9 @@ var namespacegui__framework =
       [ "useOnClose", "namespacegui__framework_1_1____utility.html#a62a7a75c834daff31aea768673c22c9c", null ]
     ] ],
     [ "custom_window_messages", "namespacegui__framework_1_1custom__window__messages.html", [
-      [ "deinitTopLevelWindowPointer", "namespacegui__framework_1_1custom__window__messages.html#ae277398e850c3e6adb8b9c3c5caa97c3", null ],
-      [ "initTopLevelWindowPointer", "namespacegui__framework_1_1custom__window__messages.html#a9d6c2d2d357b573767b5837f204407ce", null ]
+      [ "deinitTopLevelWindowPointer", "namespacegui__framework_1_1custom__window__messages.html#ac0c63572087fb8a17fdb52e43eb45812", null ],
+      [ "initTopLevelWindowPointer", "namespacegui__framework_1_1custom__window__messages.html#a98e48c9c2b79c0afcae6f411d50a2e65", null ],
+      [ "runOnUIThreadFunctions", "namespacegui__framework_1_1custom__window__messages.html#a30cd3a06265c7c5f98da8cffb783d26d", null ]
     ] ],
     [ "deserializers", "namespacegui__framework_1_1deserializers.html", "namespacegui__framework_1_1deserializers" ],
     [ "exception_messages", "namespacegui__framework_1_1exception__messages.html", [
@@ -144,6 +145,5 @@ var namespacegui__framework =
     [ "onCloseSignature", "namespacegui__framework.html#a04962e85abffea22d24989bdd3e6f8f8", null ],
     [ "onDestroySignature", "namespacegui__framework.html#a18efcfbf1849af342705442339a511cf", null ],
     [ "richEditCallbackSignature", "namespacegui__framework.html#ae93e197b03ab535325f85dbd87c4cf7c", null ],
-    [ "tabData", "namespacegui__framework.html#ae3e66f06336365b0dc8c0dac9f239f63", null ],
-    [ "guiFrameworkVersion", "namespacegui__framework.html#a5e94c5c423c72dd9f763bafce9ba4672", null ]
+    [ "tabData", "namespacegui__framework.html#ae3e66f06336365b0dc8c0dac9f239f63", null ]
 ];

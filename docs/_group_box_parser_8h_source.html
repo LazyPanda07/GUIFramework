@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.8.5-beta</span>
+   &#160;<span id="projectnumber">0.9-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -90,32 +90,34 @@ $(document).ready(function(){initNavTree('_group_box_parser_8h_source.html','');
 <a href="_group_box_parser_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_base_composite_parser_8h.html">BaseCompositeParser.h</a>&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keyword">namespace </span>parsers</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    {</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="structgui__framework_1_1parsers_1_1_group_box_parser.html">   10</a></span>&#160;        <span class="keyword">struct </span><a class="code" href="_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba">GUI_FRAMEWORK_API</a> <a class="code" href="structgui__framework_1_1parsers_1_1_group_box_parser.html">GroupBoxParser</a> : <span class="keyword">public</span> <a class="code" href="structgui__framework_1_1parsers_1_1_base_composite_parser.html">BaseCompositeParser</a></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        {</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="structgui__framework_1_1parsers_1_1_group_box_parser.html#aec9af1ef8dab72a37d9f8a603892794c">   12</a></span>&#160;            std::vector&lt;GroupBox::radioButtonData&gt; <a class="code" href="structgui__framework_1_1parsers_1_1_group_box_parser.html#aec9af1ef8dab72a37d9f8a603892794c">data</a>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="structgui__framework_1_1parsers_1_1_group_box_parser.html#aae15d2948ef69e7f4f02ad2f48455f72">   15</a></span>&#160;            <a class="code" href="structgui__framework_1_1parsers_1_1_group_box_parser.html#aae15d2948ef69e7f4f02ad2f48455f72">GroupBoxParser</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <span class="keywordtype">void</span> parse(<span class="keyword">const</span> json::utility::objectSmartPointer&lt;json::utility::jsonObject&gt;&amp;description) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structgui__framework_1_1parsers_1_1_group_box_parser.html#aa9ebae49008963b07726a5d9c5bf4193">   19</a></span>&#160;            <a class="code" href="structgui__framework_1_1parsers_1_1_group_box_parser.html#aa9ebae49008963b07726a5d9c5bf4193">~GroupBoxParser</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        };</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    }</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_group_box_8h.html">Composites/GroupBox.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">namespace </span>parsers</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    {</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="structgui__framework_1_1parsers_1_1_group_box_parser.html">   11</a></span>&#160;        <span class="keyword">struct </span><a class="code" href="_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba">GUI_FRAMEWORK_API</a> <a class="code" href="structgui__framework_1_1parsers_1_1_group_box_parser.html">GroupBoxParser</a> : <span class="keyword">public</span> <a class="code" href="structgui__framework_1_1parsers_1_1_base_composite_parser.html">BaseCompositeParser</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        {</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="structgui__framework_1_1parsers_1_1_group_box_parser.html#aec9af1ef8dab72a37d9f8a603892794c">   13</a></span>&#160;            std::vector&lt;GroupBox::radioButtonData&gt; <a class="code" href="structgui__framework_1_1parsers_1_1_group_box_parser.html#aec9af1ef8dab72a37d9f8a603892794c">data</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="structgui__framework_1_1parsers_1_1_group_box_parser.html#aae15d2948ef69e7f4f02ad2f48455f72">   16</a></span>&#160;            <a class="code" href="structgui__framework_1_1parsers_1_1_group_box_parser.html#aae15d2948ef69e7f4f02ad2f48455f72">GroupBoxParser</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keywordtype">void</span> parse(<span class="keyword">const</span> json::utility::jsonObject&amp;description) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="structgui__framework_1_1parsers_1_1_group_box_parser.html#aa9ebae49008963b07726a5d9c5bf4193">   20</a></span>&#160;            <a class="code" href="structgui__framework_1_1parsers_1_1_group_box_parser.html#aa9ebae49008963b07726a5d9c5bf4193">~GroupBoxParser</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        };</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
 <div class="ttc" id="a_base_composite_parser_8h_html"><div class="ttname"><a href="_base_composite_parser_8h.html">BaseCompositeParser.h</a></div></div>
-<div class="ttc" id="a_g_u_i_framework_constants_8h_html_a15da9ebdfa896557bb941a5da31021ba"><div class="ttname"><a href="_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba">GUI_FRAMEWORK_API</a></div><div class="ttdeci">#define GUI_FRAMEWORK_API</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00114">GUIFrameworkConstants.h:114</a></div></div>
-<div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00018">BaseComponent.cpp:19</a></div></div>
-<div class="ttc" id="astructgui__framework_1_1parsers_1_1_base_composite_parser_html"><div class="ttname"><a href="structgui__framework_1_1parsers_1_1_base_composite_parser.html">gui_framework::parsers::BaseCompositeParser</a></div><div class="ttdoc">Parse BaseComposite properties.</div><div class="ttdef"><b>Definition:</b> <a href="_base_composite_parser_8h_source.html#l00010">BaseCompositeParser.h:11</a></div></div>
-<div class="ttc" id="astructgui__framework_1_1parsers_1_1_group_box_parser_html"><div class="ttname"><a href="structgui__framework_1_1parsers_1_1_group_box_parser.html">gui_framework::parsers::GroupBoxParser</a></div><div class="ttdoc">Parse GroupBox specific properties.</div><div class="ttdef"><b>Definition:</b> <a href="_group_box_parser_8h_source.html#l00010">GroupBoxParser.h:11</a></div></div>
+<div class="ttc" id="a_g_u_i_framework_constants_8h_html_a15da9ebdfa896557bb941a5da31021ba"><div class="ttname"><a href="_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba">GUI_FRAMEWORK_API</a></div><div class="ttdeci">#define GUI_FRAMEWORK_API</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00112">GUIFrameworkConstants.h:112</a></div></div>
+<div class="ttc" id="a_group_box_8h_html"><div class="ttname"><a href="_group_box_8h.html">GroupBox.h</a></div></div>
+<div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00021">BaseComponent.cpp:22</a></div></div>
+<div class="ttc" id="astructgui__framework_1_1parsers_1_1_base_composite_parser_html"><div class="ttname"><a href="structgui__framework_1_1parsers_1_1_base_composite_parser.html">gui_framework::parsers::BaseCompositeParser</a></div><div class="ttdoc">Parse BaseComposite properties.</div><div class="ttdef"><b>Definition:</b> <a href="_base_composite_parser_8h_source.html#l00011">BaseCompositeParser.h:12</a></div></div>
+<div class="ttc" id="astructgui__framework_1_1parsers_1_1_group_box_parser_html"><div class="ttname"><a href="structgui__framework_1_1parsers_1_1_group_box_parser.html">gui_framework::parsers::GroupBoxParser</a></div><div class="ttdoc">Parse GroupBox specific properties.</div><div class="ttdef"><b>Definition:</b> <a href="_group_box_parser_8h_source.html#l00011">GroupBoxParser.h:12</a></div></div>
 <div class="ttc" id="astructgui__framework_1_1parsers_1_1_group_box_parser_html_aa9ebae49008963b07726a5d9c5bf4193"><div class="ttname"><a href="structgui__framework_1_1parsers_1_1_group_box_parser.html#aa9ebae49008963b07726a5d9c5bf4193">gui_framework::parsers::GroupBoxParser::~GroupBoxParser</a></div><div class="ttdeci">~GroupBoxParser()=default</div></div>
 <div class="ttc" id="astructgui__framework_1_1parsers_1_1_group_box_parser_html_aae15d2948ef69e7f4f02ad2f48455f72"><div class="ttname"><a href="structgui__framework_1_1parsers_1_1_group_box_parser.html#aae15d2948ef69e7f4f02ad2f48455f72">gui_framework::parsers::GroupBoxParser::GroupBoxParser</a></div><div class="ttdeci">GroupBoxParser()=default</div></div>
-<div class="ttc" id="astructgui__framework_1_1parsers_1_1_group_box_parser_html_aec9af1ef8dab72a37d9f8a603892794c"><div class="ttname"><a href="structgui__framework_1_1parsers_1_1_group_box_parser.html#aec9af1ef8dab72a37d9f8a603892794c">gui_framework::parsers::GroupBoxParser::data</a></div><div class="ttdeci">std::vector&lt; GroupBox::radioButtonData &gt; data</div><div class="ttdef"><b>Definition:</b> <a href="_group_box_parser_8h_source.html#l00012">GroupBoxParser.h:12</a></div></div>
+<div class="ttc" id="astructgui__framework_1_1parsers_1_1_group_box_parser_html_aec9af1ef8dab72a37d9f8a603892794c"><div class="ttname"><a href="structgui__framework_1_1parsers_1_1_group_box_parser.html#aec9af1ef8dab72a37d9f8a603892794c">gui_framework::parsers::GroupBoxParser::data</a></div><div class="ttdeci">std::vector&lt; GroupBox::radioButtonData &gt; data</div><div class="ttdef"><b>Definition:</b> <a href="_group_box_parser_8h_source.html#l00013">GroupBoxParser.h:13</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

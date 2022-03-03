@@ -3,6 +3,7 @@ var _utility_8h =
     [ "appendStyle", "_utility_8h.html#ae97300d8014320696e57f502a858c570", null ],
     [ "extendedException", "_utility_8h.html#a98d0fbb00bf3ff2fef162bafb2a5224d", null ],
     [ "getCurrentModule", "_utility_8h.html#a1945ec50b055f688bbb3e7c6cae8de64", null ],
+    [ "getGUIFrameworkVersion", "_utility_8h.html#ac6becb2cc50030cd8e2594243a70e780", null ],
     [ "getStringFromRawPath", "_utility_8h.html#a87517c2384e0f810d1779081e1c19f41", null ],
     [ "getTypeHash", "_utility_8h.html#a1e95e641e1525fbdcf5bbbacb92c8982", null ],
     [ "loadEventCallbackFromModule", "_utility_8h.html#a1d81059ad17c8bbaf05b0e1036491bbd", null ],

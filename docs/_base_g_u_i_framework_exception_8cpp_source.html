@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.8.5-beta</span>
+   &#160;<span id="projectnumber">0.9-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -90,23 +90,26 @@ $(document).ready(function(){initNavTree('_base_g_u_i_framework_exception_8cpp_s
 <a href="_base_g_u_i_framework_exception_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="headers_8h.html">headers.h</a>&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_base_g_u_i_framework_exception_8h.html">BaseGUIFrameworkException.h</a>&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_utility_8h.html">Utility/Utility.h</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="namespacegui__framework_1_1exceptions.html">    8</a></span>&#160;    <span class="keyword">namespace </span>exceptions</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    {</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception.html#ac1d38a13b6df96458dab42f9b780a4ab">   10</a></span>&#160;        BaseGUIFrameworkException::BaseGUIFrameworkException(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; exceptionMessage, string_view fileName, string_view methodName, <span class="keywordtype">int</span> line) :</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            runtime_error(__utility::<a class="code" href="namespacegui__framework_1_1____utility.html#a75c1c79e2eaf5a3fc05ed16fc4e4a7b3">extendedException</a>(exceptionMessage, fileName, methodName, line))</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        }</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    }</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="namespacegui__framework_1_1exceptions.html">   10</a></span>&#160;    <span class="keyword">namespace </span>exceptions</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    {</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception.html#ac1d38a13b6df96458dab42f9b780a4ab">   12</a></span>&#160;        BaseGUIFrameworkException::BaseGUIFrameworkException(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; exceptionMessage, string_view fileName, string_view methodName, <span class="keywordtype">int</span> line) :</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            runtime_error(__utility::<a class="code" href="namespacegui__framework_1_1____utility.html#a75c1c79e2eaf5a3fc05ed16fc4e4a7b3">extendedException</a>(exceptionMessage, fileName, methodName, line))</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        }</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    }</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
 <div class="ttc" id="a_base_g_u_i_framework_exception_8h_html"><div class="ttname"><a href="_base_g_u_i_framework_exception_8h.html">BaseGUIFrameworkException.h</a></div></div>
+<div class="ttc" id="a_utility_8h_html"><div class="ttname"><a href="_utility_8h.html">Utility.h</a></div></div>
 <div class="ttc" id="aheaders_8h_html"><div class="ttname"><a href="headers_8h.html">headers.h</a></div></div>
-<div class="ttc" id="anamespacegui__framework_1_1____utility_html_a75c1c79e2eaf5a3fc05ed16fc4e4a7b3"><div class="ttname"><a href="namespacegui__framework_1_1____utility.html#a75c1c79e2eaf5a3fc05ed16fc4e4a7b3">gui_framework::__utility::extendedException</a></div><div class="ttdeci">GUI_FRAMEWORK_API_FUNCTION string extendedException(const string &amp;exceptionMessage, string_view fileName, string_view methodName, int line)</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00185">Utility.cpp:185</a></div></div>
-<div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00018">BaseComponent.cpp:19</a></div></div>
+<div class="ttc" id="anamespacegui__framework_1_1____utility_html_a75c1c79e2eaf5a3fc05ed16fc4e4a7b3"><div class="ttname"><a href="namespacegui__framework_1_1____utility.html#a75c1c79e2eaf5a3fc05ed16fc4e4a7b3">gui_framework::__utility::extendedException</a></div><div class="ttdeci">GUI_FRAMEWORK_API_FUNCTION string extendedException(const string &amp;exceptionMessage, string_view fileName, string_view methodName, int line)</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00192">Utility.cpp:192</a></div></div>
+<div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00021">BaseComponent.cpp:22</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

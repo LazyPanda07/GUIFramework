@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['operator_3c_3c_2929',['operator&lt;&lt;',['../classgui__framework_1_1interfaces_1_1_i_serializable.html#a919db0d1d29ab2737a7ce7d3f043b82f',1,'gui_framework::interfaces::ISerializable']]]
+  ['icloseable_3029',['ICloseable',['../classgui__framework_1_1_base_composite.html#a6572ad22139a35f00c8f53a53d2238b5',1,'gui_framework::BaseComposite']]]
 ];

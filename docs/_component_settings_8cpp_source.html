@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.8.5-beta</span>
+   &#160;<span id="projectnumber">0.9-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -90,24 +90,26 @@ $(document).ready(function(){initNavTree('_component_settings_8cpp_source.html',
 <a href="_component_settings_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="headers_8h.html">headers.h</a>&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_component_settings_8h.html">ComponentSettings.h</a>&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keyword">namespace </span>utility</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    {</div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="structgui__framework_1_1utility_1_1_component_settings.html#a7f44eeff1da55990aec07336893c6352">    8</a></span>&#160;        <a class="code" href="structgui__framework_1_1utility_1_1_component_settings.html#aa9739c43318eada8abf08ed32c658c91">ComponentSettings::ComponentSettings</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, uint16_t width, uint16_t height) :</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;            x(x),</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;            y(y),</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            width(width),</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            height(height)</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        }</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    }</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">namespace </span>utility</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        ComponentSettings::ComponentSettings(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, uint16_t width, uint16_t height, <span class="keyword">const</span> vector&lt;string&gt;&amp; localizationKeys) :</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            x(x),</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            y(y),</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            width(width),</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            height(height),</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            localizationKeys(localizationKeys)</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        }</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    }</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
 <div class="ttc" id="a_component_settings_8h_html"><div class="ttname"><a href="_component_settings_8h.html">ComponentSettings.h</a></div></div>
 <div class="ttc" id="aheaders_8h_html"><div class="ttname"><a href="headers_8h.html">headers.h</a></div></div>
-<div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00018">BaseComponent.cpp:19</a></div></div>
-<div class="ttc" id="astructgui__framework_1_1utility_1_1_component_settings_html_aa9739c43318eada8abf08ed32c658c91"><div class="ttname"><a href="structgui__framework_1_1utility_1_1_component_settings.html#aa9739c43318eada8abf08ed32c658c91">gui_framework::utility::ComponentSettings::ComponentSettings</a></div><div class="ttdeci">ComponentSettings()=default</div></div>
+<div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00021">BaseComponent.cpp:22</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

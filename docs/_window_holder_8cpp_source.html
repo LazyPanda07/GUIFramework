@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.8.5-beta</span>
+   &#160;<span id="projectnumber">0.9-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -90,75 +90,116 @@ $(document).ready(function(){initNavTree('_window_holder_8cpp_source.html',''); 
 <a href="_window_holder_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="headers_8h.html">headers.h</a>&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_window_holder_8h.html">WindowHolder.h</a>&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_get_last_error_exception_8h.html">Exceptions/GetLastErrorException.h</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_g_u_i_framework_8h.html">GUIFramework.h</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_get_last_error_exception_8h.html">Exceptions/GetLastErrorException.h</a>&quot;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_window_holder.html#aecb53d69696a6a57409bd3c087a8a186">   10</a></span>&#160;    WindowHolder::WindowHolder(unique_ptr&lt;BaseComposite&gt;&amp;&amp; compositeWindow, <span class="keywordtype">bool</span> <a class="code" href="namespacegui__framework_1_1utility.html#a65a23a22c41efc51dfb5a09323416f5a">unregisterClass</a>) noexcept :</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        compositeWindow(move(compositeWindow)),</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <a class="code" href="namespacegui__framework_1_1utility.html#a65a23a22c41efc51dfb5a09323416f5a">unregisterClass</a>(<a class="code" href="namespacegui__framework_1_1utility.html#a65a23a22c41efc51dfb5a09323416f5a">unregisterClass</a>)</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    }</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    WindowHolder::WindowHolder(BaseDialogBox* dialogBox) :</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        compositeWindow(dialogBox),</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <a class="code" href="namespacegui__framework_1_1utility.html#a65a23a22c41efc51dfb5a09323416f5a">unregisterClass</a>(false)</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    {</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_window_holder.html#a107d333a8d268fdb94d913e71e5bffde">   17</a></span>&#160;    <a class="code" href="classgui__framework_1_1_base_composite.html">BaseComposite</a>* WindowHolder::get()</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">return</span> compositeWindow.get();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    }</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_window_holder.html#aa1e7f8d1fbc992c7dd12026e8927b8bc">   22</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="classgui__framework_1_1_base_composite.html">BaseComposite</a>* WindowHolder::get()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">return</span> compositeWindow.get();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_window_holder.html#aec84d0585ec86b82d2861f26117731c7">   27</a></span>&#160;    <span class="keywordtype">void</span> WindowHolder::runMainLoop(<span class="keyword">const</span> vector&lt;uint32_t&gt;&amp; registeredHotkeyIds)</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        MSG message = {};</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordtype">int</span> code;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="classgui__framework_1_1_g_u_i_framework.html">GUIFramework</a>&amp; instance = GUIFramework::get();</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">while</span> (code = GetMessageW(&amp;message, <span class="keyword">nullptr</span>, NULL, NULL) &gt; 0)</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            TranslateMessage(&amp;message);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            DispatchMessageW(&amp;message);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">if</span> (message.message == WM_KEYDOWN)</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                instance.processHotkeys();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; i : registeredHotkeyIds)</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            instance.<a class="code" href="classgui__framework_1_1_g_u_i_framework.html#ae544d7005539ef804472fcd646db60df">unregisterHotkey</a>(i);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">if</span> (code == -1)</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="classgui__framework_1_1exceptions_1_1_get_last_error_exception.html">exceptions::GetLastErrorException</a>(code, __FILE__, __FUNCTION__, __LINE__);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_window_holder.html#a7aa08c2616dc9e203b8da26019b1f519">   56</a></span>&#160;    WindowHolder::~WindowHolder()</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespacegui__framework_1_1utility.html#a65a23a22c41efc51dfb5a09323416f5a">unregisterClass</a>)</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <a class="code" href="namespacegui__framework_1_1utility.html#a65a23a22c41efc51dfb5a09323416f5a">utility::unregisterClass</a>(compositeWindow-&gt;getClassName());</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    }</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    WindowHolder::WindowHolder(unique_ptr&lt;BaseComposite&gt;&amp;&amp; compositeWindow, <span class="keywordtype">bool</span> <a class="code" href="namespacegui__framework_1_1utility.html#a65a23a22c41efc51dfb5a09323416f5a">unregisterClass</a>) noexcept :</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        compositeWindow(move(compositeWindow)),</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="namespacegui__framework_1_1utility.html#a65a23a22c41efc51dfb5a09323416f5a">unregisterClass</a>(<a class="code" href="namespacegui__framework_1_1utility.html#a65a23a22c41efc51dfb5a09323416f5a">unregisterClass</a>)</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_window_holder.html#a107d333a8d268fdb94d913e71e5bffde">   26</a></span>&#160;    <a class="code" href="classgui__framework_1_1_base_composite.html">BaseComposite</a>* WindowHolder::get()</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">return</span> compositeWindow.get();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_window_holder.html#aa1e7f8d1fbc992c7dd12026e8927b8bc">   31</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="classgui__framework_1_1_base_composite.html">BaseComposite</a>* WindowHolder::get()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">return</span> compositeWindow.get();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_window_holder.html#a974de0236ec10528142f1f47a68fda32">   36</a></span>&#160;    <span class="keywordtype">int</span> WindowHolder::runMainLoop(<span class="keyword">const</span> vector&lt;uint32_t&gt;&amp; registeredHotkeyIds)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        MSG message = {};</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordtype">int</span> code;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="classgui__framework_1_1_g_u_i_framework.html">GUIFramework</a>&amp; instance = GUIFramework::get();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        DWORD currentThreadId = GetCurrentThreadId();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">while</span> (code = GetMessageW(&amp;message, <span class="keyword">nullptr</span>, NULL, NULL) &gt; 0)</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            TranslateMessage(&amp;message);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            DispatchMessageW(&amp;message);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">if</span> (message.message == WM_KEYDOWN)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                instance.processHotkeys();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (message.message == <a class="code" href="namespacegui__framework_1_1custom__window__messages.html#a30cd3a06265c7c5f98da8cffb783d26d">custom_window_messages::runOnUIThreadFunctions</a>)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                (*<span class="keyword">reinterpret_cast&lt;</span>std::function&lt;<span class="keywordtype">void</span>()<span class="keyword">&gt;</span>*&gt;(message.wParam))();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">if</span> (currentThreadId == instance.uiThreadId)</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                lock_guard&lt;recursive_mutex&gt; runOnUIThreadLock(instance.runOnUIThreadMutex);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                queue&lt;<span class="keyword">function</span>&lt;void()&gt;&gt;&amp; runOnUIFunctions = instance.runOnUIFunctions;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keywordflow">while</span> (runOnUIFunctions.size())</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                    <span class="keyword">function</span>&lt;void()&gt;&amp; currentFunction = runOnUIFunctions.front();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                    <span class="keyword">function</span>&lt;void()&gt;* functionWrapper = <span class="keyword">new</span> function&lt;void()&gt;();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                    (*functionWrapper) = [currentFunction, functionWrapper]()</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                    {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                        currentFunction();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                        <span class="keyword">delete</span> functionWrapper;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    };</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                    runOnUIFunctions.pop();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                    PostThreadMessageW(currentThreadId, <a class="code" href="namespacegui__framework_1_1custom__window__messages.html#a30cd3a06265c7c5f98da8cffb783d26d">custom_window_messages::runOnUIThreadFunctions</a>, <span class="keyword">reinterpret_cast&lt;</span>WPARAM<span class="keyword">&gt;</span>(functionWrapper), NULL);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; hotkeyId : registeredHotkeyIds)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            instance.<a class="code" href="classgui__framework_1_1_g_u_i_framework.html#ae544d7005539ef804472fcd646db60df">unregisterHotkey</a>(hotkeyId);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">if</span> (code == -1)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="classgui__framework_1_1exceptions_1_1_get_last_error_exception.html">exceptions::GetLastErrorException</a>(code, __FILE__, __FUNCTION__, __LINE__);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(message.wParam);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_window_holder.html#a7aa08c2616dc9e203b8da26019b1f519">   95</a></span>&#160;    WindowHolder::~WindowHolder()</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespacegui__framework_1_1utility.html#a65a23a22c41efc51dfb5a09323416f5a">unregisterClass</a>)</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <a class="code" href="namespacegui__framework_1_1utility.html#a65a23a22c41efc51dfb5a09323416f5a">utility::unregisterClass</a>(compositeWindow-&gt;getClassName());</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
+<div class="ttc" id="a_g_u_i_framework_8h_html"><div class="ttname"><a href="_g_u_i_framework_8h.html">GUIFramework.h</a></div></div>
 <div class="ttc" id="a_get_last_error_exception_8h_html"><div class="ttname"><a href="_get_last_error_exception_8h.html">GetLastErrorException.h</a></div></div>
 <div class="ttc" id="a_window_holder_8h_html"><div class="ttname"><a href="_window_holder_8h.html">WindowHolder.h</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_composite_html"><div class="ttname"><a href="classgui__framework_1_1_base_composite.html">gui_framework::BaseComposite</a></div><div class="ttdoc">Base class for all windows that has children windows.</div><div class="ttdef"><b>Definition:</b> <a href="_base_composite_8h_source.html#l00013">BaseComposite.h:16</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_g_u_i_framework_html"><div class="ttname"><a href="classgui__framework_1_1_g_u_i_framework.html">gui_framework::GUIFramework</a></div><div class="ttdoc">Singleton with GUIFramework settings and some functionality.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_8h_source.html#l00016">GUIFramework.h:17</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_g_u_i_framework_html_ae544d7005539ef804472fcd646db60df"><div class="ttname"><a href="classgui__framework_1_1_g_u_i_framework.html#ae544d7005539ef804472fcd646db60df">gui_framework::GUIFramework::unregisterHotkey</a></div><div class="ttdeci">bool unregisterHotkey(size_t hotkeyId)</div><div class="ttdoc">Thread safe unregister hotkey.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_8cpp_source.html#l00623">GUIFramework.cpp:623</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_composite_html"><div class="ttname"><a href="classgui__framework_1_1_base_composite.html">gui_framework::BaseComposite</a></div><div class="ttdoc">Base class for all windows that has children windows.</div><div class="ttdef"><b>Definition:</b> <a href="_base_composite_8h_source.html#l00021">BaseComposite.h:24</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_g_u_i_framework_html"><div class="ttname"><a href="classgui__framework_1_1_g_u_i_framework.html">gui_framework::GUIFramework</a></div><div class="ttdoc">Singleton with GUIFramework settings and some functionality.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_8h_source.html#l00017">GUIFramework.h:18</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_g_u_i_framework_html_ae544d7005539ef804472fcd646db60df"><div class="ttname"><a href="classgui__framework_1_1_g_u_i_framework.html#ae544d7005539ef804472fcd646db60df">gui_framework::GUIFramework::unregisterHotkey</a></div><div class="ttdeci">bool unregisterHotkey(size_t hotkeyId)</div><div class="ttdoc">Thread safe unregister hotkey.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_8cpp_source.html#l00686">GUIFramework.cpp:686</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1exceptions_1_1_get_last_error_exception_html"><div class="ttname"><a href="classgui__framework_1_1exceptions_1_1_get_last_error_exception.html">gui_framework::exceptions::GetLastErrorException</a></div><div class="ttdoc">Exception that receive error code from GetLastError function.</div><div class="ttdef"><b>Definition:</b> <a href="_get_last_error_exception_8h_source.html#l00011">GetLastErrorException.h:12</a></div></div>
 <div class="ttc" id="aheaders_8h_html"><div class="ttname"><a href="headers_8h.html">headers.h</a></div></div>
-<div class="ttc" id="anamespacegui__framework_1_1utility_html_a65a23a22c41efc51dfb5a09323416f5a"><div class="ttname"><a href="namespacegui__framework_1_1utility.html#a65a23a22c41efc51dfb5a09323416f5a">gui_framework::utility::unregisterClass</a></div><div class="ttdeci">GUI_FRAMEWORK_API_FUNCTION void unregisterClass(const wstring &amp;className)</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00015">Utility.cpp:15</a></div></div>
-<div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00018">BaseComponent.cpp:19</a></div></div>
+<div class="ttc" id="anamespacegui__framework_1_1custom__window__messages_html_a30cd3a06265c7c5f98da8cffb783d26d"><div class="ttname"><a href="namespacegui__framework_1_1custom__window__messages.html#a30cd3a06265c7c5f98da8cffb783d26d">gui_framework::custom_window_messages::runOnUIThreadFunctions</a></div><div class="ttdeci">constexpr uint32_t runOnUIThreadFunctions</div><div class="ttdoc">WRAPAM contains std::function&lt;void()&gt;*</div><div class="ttdef"><b>Definition:</b> <a href="_window_messages_8h_source.html#l00016">WindowMessages.h:16</a></div></div>
+<div class="ttc" id="anamespacegui__framework_1_1utility_html_a65a23a22c41efc51dfb5a09323416f5a"><div class="ttname"><a href="namespacegui__framework_1_1utility.html#a65a23a22c41efc51dfb5a09323416f5a">gui_framework::utility::unregisterClass</a></div><div class="ttdeci">GUI_FRAMEWORK_API_FUNCTION void unregisterClass(const wstring &amp;className)</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00017">Utility.cpp:17</a></div></div>
+<div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00021">BaseComponent.cpp:22</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

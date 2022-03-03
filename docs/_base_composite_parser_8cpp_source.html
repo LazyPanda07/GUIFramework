@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.8.5-beta</span>
+   &#160;<span id="projectnumber">0.9-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -89,34 +89,49 @@ $(document).ready(function(){initNavTree('_base_composite_parser_8cpp_source.htm
 <div class="contents">
 <a href="_base_composite_parser_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_base_composite_parser_8h.html">BaseCompositeParser.h</a>&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_base_composite_8h.html">BaseComposites/BaseComposite.h</a>&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keyword">namespace </span>parsers</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    {</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="structgui__framework_1_1parsers_1_1_base_composite_parser.html#a4a47d190f222c6d1060a3ace4ba85599">    9</a></span>&#160;        <span class="keywordtype">void</span> BaseCompositeParser::parse(<span class="keyword">const</span> json::utility::objectSmartPointer&lt;json::utility::jsonObject&gt;&amp; description)</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            <span class="keyword">using</span> json::utility::objectSmartPointer;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            <span class="keyword">using</span> json::utility::jsonObject;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            BaseComponentParser::parse(description);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            windowFunctionName = description-&gt;getString(<span class="stringliteral">&quot;windowFunctionName&quot;</span>);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keywordflow">if</span> (description-&gt;contains(<span class="stringliteral">&quot;onDestroyFunctionName&quot;</span>, json::utility::variantTypeEnum::jString))</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                onDestroyFunctionName = description-&gt;getString(<span class="stringliteral">&quot;onDestroyFunctionName&quot;</span>);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                onDestroyFunctionModuleName = description-&gt;getString(<span class="stringliteral">&quot;onDestroyFunctionModuleName&quot;</span>);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            }</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            mode = <span class="keyword">static_cast&lt;</span><a class="code" href="classgui__framework_1_1_base_composite.html#a438c1f5c9ef171bc01b2ac420fee985c">gui_framework::BaseComposite::exitMode</a><span class="keyword">&gt;</span>(description-&gt;getInt(<span class="stringliteral">&quot;exitMode&quot;</span>));</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        }</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">namespace </span>parsers</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    {</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="structgui__framework_1_1parsers_1_1_base_composite_parser.html#ad3e303a54009b696df821b1e66a99c6b">   11</a></span>&#160;        BaseCompositeParser::BaseCompositeParser() :</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            mode(<a class="code" href="classgui__framework_1_1_base_composite.html">BaseComposite</a>::exitMode::destroyWindow)</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        }</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="structgui__framework_1_1parsers_1_1_base_composite_parser.html#aa034559bc6b81add90b5e7c4d65fbb9c">   17</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="structgui__framework_1_1parsers_1_1_base_composite_parser.html#aa034559bc6b81add90b5e7c4d65fbb9c">BaseCompositeParser::parse</a>(<span class="keyword">const</span> json::utility::jsonObject&amp; description)</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <span class="keyword">using</span> json::utility::jsonObject;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <a class="code" href="structgui__framework_1_1parsers_1_1_base_component_parser.html#ac455992c06bea45533928af73dc2211d">BaseComponentParser::parse</a>(description);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <a class="code" href="structgui__framework_1_1parsers_1_1_base_composite_parser.html#a24aee1711eadb11f28dffb4f24945150">windowFunctionName</a> = description.getString(<span class="stringliteral">&quot;windowFunctionName&quot;</span>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keywordflow">if</span> (description.contains(<span class="stringliteral">&quot;onDestroyFunctionName&quot;</span>, json::utility::variantTypeEnum::jString))</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                <a class="code" href="structgui__framework_1_1parsers_1_1_base_composite_parser.html#a49791ec871cc96cd3f3fd9950dc62038">onDestroyFunctionName</a> = description.getString(<span class="stringliteral">&quot;onDestroyFunctionName&quot;</span>);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                <a class="code" href="structgui__framework_1_1parsers_1_1_base_composite_parser.html#abc14151023363a1281149f0e57583b26">onDestroyFunctionModuleName</a> = description.getString(<span class="stringliteral">&quot;onDestroyFunctionModuleName&quot;</span>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <a class="code" href="structgui__framework_1_1parsers_1_1_base_composite_parser.html#a0c8be074410e931b9d97ee9add117dab">mode</a> = <span class="keyword">static_cast&lt;</span><a class="code" href="classgui__framework_1_1_base_composite.html#a438c1f5c9ef171bc01b2ac420fee985c">gui_framework::BaseComposite::exitMode</a><span class="keyword">&gt;</span>(description.getInt(<span class="stringliteral">&quot;exitMode&quot;</span>));</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
+<div class="ttc" id="a_base_composite_8h_html"><div class="ttname"><a href="_base_composite_8h.html">BaseComposite.h</a></div></div>
 <div class="ttc" id="a_base_composite_parser_8h_html"><div class="ttname"><a href="_base_composite_parser_8h.html">BaseCompositeParser.h</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_composite_html_a438c1f5c9ef171bc01b2ac420fee985c"><div class="ttname"><a href="classgui__framework_1_1_base_composite.html#a438c1f5c9ef171bc01b2ac420fee985c">gui_framework::BaseComposite::exitMode</a></div><div class="ttdeci">exitMode</div><div class="ttdef"><b>Definition:</b> <a href="_base_composite_8h_source.html#l00018">BaseComposite.h:19</a></div></div>
-<div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00018">BaseComponent.cpp:19</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_composite_html"><div class="ttname"><a href="classgui__framework_1_1_base_composite.html">gui_framework::BaseComposite</a></div><div class="ttdoc">Base class for all windows that has children windows.</div><div class="ttdef"><b>Definition:</b> <a href="_base_composite_8h_source.html#l00021">BaseComposite.h:24</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_composite_html_a438c1f5c9ef171bc01b2ac420fee985c"><div class="ttname"><a href="classgui__framework_1_1_base_composite.html#a438c1f5c9ef171bc01b2ac420fee985c">gui_framework::BaseComposite::exitMode</a></div><div class="ttdeci">exitMode</div><div class="ttdef"><b>Definition:</b> <a href="_base_composite_8h_source.html#l00026">BaseComposite.h:27</a></div></div>
+<div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00021">BaseComponent.cpp:22</a></div></div>
+<div class="ttc" id="astructgui__framework_1_1parsers_1_1_base_component_parser_html_ac455992c06bea45533928af73dc2211d"><div class="ttname"><a href="structgui__framework_1_1parsers_1_1_base_component_parser.html#ac455992c06bea45533928af73dc2211d">gui_framework::parsers::BaseComponentParser::parse</a></div><div class="ttdeci">virtual void parse(const json::utility::jsonObject &amp;description)</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_parser_8cpp_source.html#l00020">BaseComponentParser.cpp:20</a></div></div>
+<div class="ttc" id="astructgui__framework_1_1parsers_1_1_base_composite_parser_html_a0c8be074410e931b9d97ee9add117dab"><div class="ttname"><a href="structgui__framework_1_1parsers_1_1_base_composite_parser.html#a0c8be074410e931b9d97ee9add117dab">gui_framework::parsers::BaseCompositeParser::mode</a></div><div class="ttdeci">BaseComposite::exitMode mode</div><div class="ttdef"><b>Definition:</b> <a href="_base_composite_parser_8h_source.html#l00014">BaseCompositeParser.h:14</a></div></div>
+<div class="ttc" id="astructgui__framework_1_1parsers_1_1_base_composite_parser_html_a24aee1711eadb11f28dffb4f24945150"><div class="ttname"><a href="structgui__framework_1_1parsers_1_1_base_composite_parser.html#a24aee1711eadb11f28dffb4f24945150">gui_framework::parsers::BaseCompositeParser::windowFunctionName</a></div><div class="ttdeci">std::string windowFunctionName</div><div class="ttdef"><b>Definition:</b> <a href="_base_composite_parser_8h_source.html#l00013">BaseCompositeParser.h:13</a></div></div>
+<div class="ttc" id="astructgui__framework_1_1parsers_1_1_base_composite_parser_html_a49791ec871cc96cd3f3fd9950dc62038"><div class="ttname"><a href="structgui__framework_1_1parsers_1_1_base_composite_parser.html#a49791ec871cc96cd3f3fd9950dc62038">gui_framework::parsers::BaseCompositeParser::onDestroyFunctionName</a></div><div class="ttdeci">std::string onDestroyFunctionName</div><div class="ttdef"><b>Definition:</b> <a href="_base_composite_parser_8h_source.html#l00015">BaseCompositeParser.h:15</a></div></div>
+<div class="ttc" id="astructgui__framework_1_1parsers_1_1_base_composite_parser_html_aa034559bc6b81add90b5e7c4d65fbb9c"><div class="ttname"><a href="structgui__framework_1_1parsers_1_1_base_composite_parser.html#aa034559bc6b81add90b5e7c4d65fbb9c">gui_framework::parsers::BaseCompositeParser::parse</a></div><div class="ttdeci">virtual void parse(const json::utility::jsonObject &amp;description) override</div><div class="ttdef"><b>Definition:</b> <a href="_base_composite_parser_8cpp_source.html#l00017">BaseCompositeParser.cpp:17</a></div></div>
+<div class="ttc" id="astructgui__framework_1_1parsers_1_1_base_composite_parser_html_abc14151023363a1281149f0e57583b26"><div class="ttname"><a href="structgui__framework_1_1parsers_1_1_base_composite_parser.html#abc14151023363a1281149f0e57583b26">gui_framework::parsers::BaseCompositeParser::onDestroyFunctionModuleName</a></div><div class="ttdeci">std::string onDestroyFunctionModuleName</div><div class="ttdef"><b>Definition:</b> <a href="_base_composite_parser_8h_source.html#l00016">BaseCompositeParser.h:16</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

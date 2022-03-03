@@ -6,5 +6,7 @@ var classgui__framework_1_1_base_edit_control =
     [ "getPlaceholder", "classgui__framework_1_1_base_edit_control.html#ae9dc5bc94030c43180afbbe668daab06", null ],
     [ "getStructure", "classgui__framework_1_1_base_edit_control.html#a8c180badbdcd6fa74f2887b5e5ac4121", null ],
     [ "setPlaceholder", "classgui__framework_1_1_base_edit_control.html#ad3f70bbd96d8e35b87faeb1d89d582e0", null ],
+    [ "setText", "classgui__framework_1_1_base_edit_control.html#aff9bc6c0fd3eb6fa9d1e7aa5797f3006", null ],
+    [ "updateLocalization", "classgui__framework_1_1_base_edit_control.html#a7c8015ab7ddd25a7411c6563396606fd", null ],
     [ "placeholder", "classgui__framework_1_1_base_edit_control.html#a052e56b538e85a46071b5f696955762d", null ]
 ];

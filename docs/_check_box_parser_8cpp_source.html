@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.8.5-beta</span>
+   &#160;<span id="projectnumber">0.9-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -95,14 +95,14 @@ $(document).ready(function(){initNavTree('_check_box_parser_8cpp_source.html',''
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keyword">namespace </span>parsers</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    {</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="structgui__framework_1_1parsers_1_1_check_box_parser.html#afa01444e22515a25b7f49acc6d096ddd">    9</a></span>&#160;        <span class="keywordtype">void</span> CheckBoxParser::parse(<span class="keyword">const</span> json::utility::objectSmartPointer&lt;json::utility::jsonObject&gt;&amp; description)</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="structgui__framework_1_1parsers_1_1_check_box_parser.html#aff3863877268d23b4c7ec9c7579dfcc7">    9</a></span>&#160;        <span class="keywordtype">void</span> CheckBoxParser::parse(<span class="keyword">const</span> json::utility::jsonObject&amp; description)</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        {</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            ButtonParser::parse(description);</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            <span class="keywordflow">try</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                onCheckFunctionName = description-&gt;getString(<span class="stringliteral">&quot;checkFunctionName&quot;</span>);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                onCheckModuleName = description-&gt;getString(<span class="stringliteral">&quot;checkModuleName&quot;</span>);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                onCheckFunctionName = description.getString(<span class="stringliteral">&quot;checkFunctionName&quot;</span>);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                onCheckModuleName = description.getString(<span class="stringliteral">&quot;checkModuleName&quot;</span>);</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            }</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keywordflow">catch</span> (<span class="keyword">const</span> json::exceptions::CantFindValueException&amp;)</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            {</div>
@@ -111,8 +111,8 @@ $(document).ready(function(){initNavTree('_check_box_parser_8cpp_source.html',''
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordflow">try</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                onClearFunctionName = description-&gt;getString(<span class="stringliteral">&quot;clearFunctionName&quot;</span>);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                onClearModuleName = description-&gt;getString(<span class="stringliteral">&quot;clearModuleName&quot;</span>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                onClearFunctionName = description.getString(<span class="stringliteral">&quot;clearFunctionName&quot;</span>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                onClearModuleName = description.getString(<span class="stringliteral">&quot;clearModuleName&quot;</span>);</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            }</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keywordflow">catch</span> (<span class="keyword">const</span> json::exceptions::CantFindValueException&amp;)</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            {</div>
@@ -122,7 +122,7 @@ $(document).ready(function(){initNavTree('_check_box_parser_8cpp_source.html',''
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
 <div class="ttc" id="a_check_box_parser_8h_html"><div class="ttname"><a href="_check_box_parser_8h.html">CheckBoxParser.h</a></div></div>
-<div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00018">BaseComponent.cpp:19</a></div></div>
+<div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00021">BaseComponent.cpp:22</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

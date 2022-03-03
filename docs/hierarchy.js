@@ -123,6 +123,23 @@ var hierarchy =
         ] ]
       ] ]
     ] ],
+    [ "gui_framework::interfaces::ICloseable", "classgui__framework_1_1interfaces_1_1_i_closeable.html", [
+      [ "gui_framework::BaseDialogBox", "classgui__framework_1_1_base_dialog_box.html", [
+        [ "gui_framework::DialogBox", "classgui__framework_1_1_dialog_box.html", null ]
+      ] ],
+      [ "gui_framework::BaseSeparateWindow", "classgui__framework_1_1_base_separate_window.html", [
+        [ "gui_framework::SeparateWindow", "classgui__framework_1_1_separate_window.html", null ]
+      ] ]
+    ] ],
+    [ "gui_framework::interfaces::IComponentVisibility", "classgui__framework_1_1interfaces_1_1_i_component_visibility.html", [
+      [ "gui_framework::BaseDialogBox", "classgui__framework_1_1_base_dialog_box.html", null ],
+      [ "gui_framework::BaseWindow", "classgui__framework_1_1_base_window.html", [
+        [ "gui_framework::BaseChildWindow", "classgui__framework_1_1_base_child_window.html", [
+          [ "gui_framework::ChildWindow", "classgui__framework_1_1_child_window.html", null ]
+        ] ],
+        [ "gui_framework::BaseSeparateWindow", "classgui__framework_1_1_base_separate_window.html", null ]
+      ] ]
+    ] ],
     [ "gui_framework::interfaces::IDeserializer", "classgui__framework_1_1interfaces_1_1_i_deserializer.html", [
       [ "gui_framework::deserializers::ButtonDeserializer", "classgui__framework_1_1deserializers_1_1_button_deserializer.html", null ],
       [ "gui_framework::deserializers::CheckBoxDeserializer", "classgui__framework_1_1deserializers_1_1_check_box_deserializer.html", null ],
@@ -152,17 +169,8 @@ var hierarchy =
     ] ],
     [ "interfaces::IIterable", null, [
       [ "gui_framework::BaseComposite", "classgui__framework_1_1_base_composite.html", [
-        [ "gui_framework::BaseDialogBox", "classgui__framework_1_1_base_dialog_box.html", [
-          [ "gui_framework::DialogBox", "classgui__framework_1_1_dialog_box.html", null ]
-        ] ],
-        [ "gui_framework::BaseWindow", "classgui__framework_1_1_base_window.html", [
-          [ "gui_framework::BaseChildWindow", "classgui__framework_1_1_base_child_window.html", [
-            [ "gui_framework::ChildWindow", "classgui__framework_1_1_child_window.html", null ]
-          ] ],
-          [ "gui_framework::BaseSeparateWindow", "classgui__framework_1_1_base_separate_window.html", [
-            [ "gui_framework::SeparateWindow", "classgui__framework_1_1_separate_window.html", null ]
-          ] ]
-        ] ],
+        [ "gui_framework::BaseDialogBox", "classgui__framework_1_1_base_dialog_box.html", null ],
+        [ "gui_framework::BaseWindow", "classgui__framework_1_1_base_window.html", null ],
         [ "gui_framework::GroupBox", "classgui__framework_1_1_group_box.html", null ]
       ] ],
       [ "gui_framework::utility::BaseLoadableHolder", "classgui__framework_1_1utility_1_1_base_loadable_holder.html", [
@@ -303,6 +311,20 @@ var hierarchy =
           [ "gui_framework::styles::HorizontalTrackbarControlStyles", "classgui__framework_1_1styles_1_1_horizontal_trackbar_control_styles.html", null ],
           [ "gui_framework::styles::VerticalTrackbarControlStyles", "classgui__framework_1_1styles_1_1_vertical_trackbar_control_styles.html", null ]
         ] ]
+      ] ]
+    ] ],
+    [ "gui_framework::interfaces::ITextLocalized", "classgui__framework_1_1interfaces_1_1_i_text_localized.html", [
+      [ "gui_framework::interfaces::IMultipleTextLocalized", "classgui__framework_1_1interfaces_1_1_i_multiple_text_localized.html", [
+        [ "gui_framework::BaseListBox", "classgui__framework_1_1_base_list_box.html", null ],
+        [ "gui_framework::BaseListTextIconListView", "classgui__framework_1_1_base_list_text_icon_list_view.html", null ],
+        [ "gui_framework::BaseListTextListView", "classgui__framework_1_1_base_list_text_list_view.html", null ],
+        [ "gui_framework::BaseTextIconListView", "classgui__framework_1_1_base_text_icon_list_view.html", null ],
+        [ "gui_framework::BaseTextListView", "classgui__framework_1_1_base_text_list_view.html", null ]
+      ] ],
+      [ "gui_framework::interfaces::ISingleTextLocalized", "classgui__framework_1_1interfaces_1_1_i_single_text_localized.html", [
+        [ "gui_framework::BaseButton", "classgui__framework_1_1_base_button.html", null ],
+        [ "gui_framework::BaseEditControl", "classgui__framework_1_1_base_edit_control.html", null ],
+        [ "gui_framework::BaseStaticControl", "classgui__framework_1_1_base_static_control.html", null ]
       ] ]
     ] ],
     [ "gui_framework::interfaces::ITextOperations", "classgui__framework_1_1interfaces_1_1_i_text_operations.html", [
