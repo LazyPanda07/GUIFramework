@@ -39,9 +39,12 @@ namespace gui_framework
 		int code;
 		GUIFramework& instance = GUIFramework::get();
 		DWORD currentThreadId = GetCurrentThreadId();
+		bool isFunctionsPosted;
 
 		while (code = GetMessageW(&message, nullptr, NULL, NULL) > 0)
 		{
+			isFunctionsPosted = false;
+
 			TranslateMessage(&message);
 
 			DispatchMessageW(&message);
@@ -60,6 +63,8 @@ namespace gui_framework
 				lock_guard<recursive_mutex> runOnUIThreadLock(instance.runOnUIThreadMutex);
 				queue<function<void()>>& runOnUIFunctions = instance.runOnUIFunctions;
 
+				isFunctionsPosted = runOnUIFunctions.size();
+
 				while (runOnUIFunctions.size())
 				{
 					function<void()>& currentFunction = runOnUIFunctions.front();
@@ -76,6 +81,11 @@ namespace gui_framework
 
 					PostThreadMessageW(currentThreadId, custom_window_messages::runOnUIThreadFunctions, reinterpret_cast<WPARAM>(functionWrapper), NULL);
 				}
+			}
+
+			if (isFunctionsPosted)
+			{
+				UpdateWindow(compositeWindow->getHandle());
 			}
 		}
 
