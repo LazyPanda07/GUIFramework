@@ -66,7 +66,7 @@ int main(int argc, char** argv)
 {
 	try
 	{
-		gui_framework::GUIFramework::initMainThreadId();
+		gui_framework::GUIFramework::initUIThreadId();
 	}
 	catch (const std::exception& e)
 	{
