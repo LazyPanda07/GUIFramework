@@ -592,6 +592,27 @@ namespace gui_framework
 		exit(exitCode);
 	}
 
+	void GUIFramework::initMainThreadId()
+	{
+		GUIFramework::get().mainThreadId = GetCurrentThreadId();
+	}
+
+	void GUIFramework::runOnUIThread(const function<void()>& function)
+	{
+		GUIFramework& instance = GUIFramework::get();
+		lock_guard<recursive_mutex> runOnUIThreadLock(instance.runOnUIThreadMutex);
+
+		instance.runOnUIFunctions.push(function);
+	}
+
+	void GUIFramework::runOnUIThread(function<void()>&& function)
+	{
+		GUIFramework& instance = GUIFramework::get();
+		lock_guard<recursive_mutex> runOnUIThreadLock(instance.runOnUIThreadMutex);
+
+		instance.runOnUIFunctions.push(move(function));
+	}
+
 	void GUIFramework::addTask(const function<void()>& task, const function<void()>& callback)
 	{
 		if (!threadPool)
