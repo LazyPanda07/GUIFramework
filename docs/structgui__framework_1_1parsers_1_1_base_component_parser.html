@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.8.5-beta</span>
+   &#160;<span id="projectnumber">0.9-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -118,10 +118,10 @@ Inheritance diagram for gui_framework::parsers::BaseComponentParser:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:acc5e14f1b20c5a6e7275feeae9ff0401"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgui__framework_1_1parsers_1_1_base_component_parser.html#acc5e14f1b20c5a6e7275feeae9ff0401">BaseComponentParser</a> ()=default</td></tr>
-<tr class="separator:acc5e14f1b20c5a6e7275feeae9ff0401"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c00d6e56248dfd1b25796a54437dedf"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgui__framework_1_1parsers_1_1_base_component_parser.html#a9c00d6e56248dfd1b25796a54437dedf">parse</a> (const json::utility::objectSmartPointer&lt; json::utility::jsonObject &gt; &amp;description)</td></tr>
-<tr class="separator:a9c00d6e56248dfd1b25796a54437dedf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a392dbb3d1f7331e49a33e6109cc24d92"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgui__framework_1_1parsers_1_1_base_component_parser.html#a392dbb3d1f7331e49a33e6109cc24d92">BaseComponentParser</a> ()</td></tr>
+<tr class="separator:a392dbb3d1f7331e49a33e6109cc24d92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac455992c06bea45533928af73dc2211d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgui__framework_1_1parsers_1_1_base_component_parser.html#ac455992c06bea45533928af73dc2211d">parse</a> (const json::utility::jsonObject &amp;description)</td></tr>
+<tr class="separator:ac455992c06bea45533928af73dc2211d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88a894101135831223124c5519cda637"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgui__framework_1_1parsers_1_1_base_component_parser.html#a88a894101135831223124c5519cda637">~BaseComponentParser</a> ()=default</td></tr>
 <tr class="separator:a88a894101135831223124c5519cda637"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -139,16 +139,13 @@ Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Parse <a class="el" href="classgui__framework_1_1_base_component.html" title="Base class for all windows, controls, etc.">BaseComponent</a> properties. </p>
 
-<p class="definition">Definition at line <a class="el" href="_base_component_parser_8h_source.html#l00010">10</a> of file <a class="el" href="_base_component_parser_8h_source.html">BaseComponentParser.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_parser_8h_source.html#l00011">11</a> of file <a class="el" href="_base_component_parser_8h_source.html">BaseComponentParser.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="acc5e14f1b20c5a6e7275feeae9ff0401"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc5e14f1b20c5a6e7275feeae9ff0401">&#9670;&nbsp;</a></span>BaseComponentParser()</h2>
+<a id="a392dbb3d1f7331e49a33e6109cc24d92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a392dbb3d1f7331e49a33e6109cc24d92">&#9670;&nbsp;</a></span>BaseComponentParser()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">gui_framework::parsers::BaseComponentParser::BaseComponentParser </td>
@@ -157,12 +154,9 @@ Public Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">default</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_base_component_parser_8cpp_source.html#l00013">13</a> of file <a class="el" href="_base_component_parser_8cpp_source.html">BaseComponentParser.cpp</a>.</p>
 
 </div>
 </div>
@@ -192,8 +186,8 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a9c00d6e56248dfd1b25796a54437dedf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c00d6e56248dfd1b25796a54437dedf">&#9670;&nbsp;</a></span>parse()</h2>
+<a id="ac455992c06bea45533928af73dc2211d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac455992c06bea45533928af73dc2211d">&#9670;&nbsp;</a></span>parse()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -204,7 +198,7 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">void gui_framework::parsers::BaseComponentParser::parse </td>
           <td>(</td>
-          <td class="paramtype">const json::utility::objectSmartPointer&lt; json::utility::jsonObject &gt; &amp;&#160;</td>
+          <td class="paramtype">const json::utility::jsonObject &amp;&#160;</td>
           <td class="paramname"><em>description</em></td><td>)</td>
           <td></td>
         </tr>
@@ -216,9 +210,9 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="structgui__framework_1_1parsers_1_1_trackbar_control_parser.html#ab4fccac106cb5ea660c75b70994061d0">gui_framework::parsers::TrackbarControlParser</a>, <a class="el" href="structgui__framework_1_1parsers_1_1_tab_control_parser.html#a8c459bef9b0fe6f39490090ced535810">gui_framework::parsers::TabControlParser</a>, <a class="el" href="structgui__framework_1_1parsers_1_1_separate_window_parser.html#ade997aa5fd748d530679e17fc1e99a8d">gui_framework::parsers::SeparateWindowParser</a>, <a class="el" href="structgui__framework_1_1parsers_1_1_rich_edit_parser.html#a656ba705cd7c621e03f8a96a7f0a4cb1">gui_framework::parsers::RichEditParser</a>, <a class="el" href="structgui__framework_1_1parsers_1_1_progress_bar_parser.html#a8bfc0d6fc6e595d9f306618e02dd4a93">gui_framework::parsers::ProgressBarParser</a>, <a class="el" href="structgui__framework_1_1parsers_1_1_infinite_progress_bar_parser.html#a5ccabf427b26d271551be384e3fefaa5">gui_framework::parsers::InfiniteProgressBarParser</a>, <a class="el" href="structgui__framework_1_1parsers_1_1_text_list_view_parser.html#a4ef79897b5054d6eb2e95749df0ecd0a">gui_framework::parsers::TextListViewParser</a>, <a class="el" href="structgui__framework_1_1parsers_1_1_text_icon_list_view_parser.html#a3671d910bdd08ea849d32b7b1dc249c1">gui_framework::parsers::TextIconListViewParser</a>, <a class="el" href="structgui__framework_1_1parsers_1_1_icon_list_view_parser.html#a0f883b12ff9bc30e8c32742c6cca7adf">gui_framework::parsers::IconListViewParser</a>, <a class="el" href="structgui__framework_1_1parsers_1_1_list_box_parser.html#a81f3fc5cf00109e95b2eda33dc1167ac">gui_framework::parsers::ListBoxParser</a>, <a class="el" href="structgui__framework_1_1parsers_1_1_group_box_parser.html#af257bc608adabe18def59b57f236d0b0">gui_framework::parsers::GroupBoxParser</a>, <a class="el" href="structgui__framework_1_1parsers_1_1_combo_box_parser.html#ac5fb1545b19df3dac6f26f3eb2281fec">gui_framework::parsers::ComboBoxParser</a>, <a class="el" href="structgui__framework_1_1parsers_1_1_image_button_parser.html#a708173a41d1cdbf62d9c2fb34afaad6e">gui_framework::parsers::ImageButtonParser</a>, <a class="el" href="structgui__framework_1_1parsers_1_1_check_box_parser.html#afa01444e22515a25b7f49acc6d096ddd">gui_framework::parsers::CheckBoxParser</a>, <a class="el" href="structgui__framework_1_1parsers_1_1_button_parser.html#a241707604cbd323736073120097affda">gui_framework::parsers::ButtonParser</a>, and <a class="el" href="structgui__framework_1_1parsers_1_1_base_composite_parser.html#a4a47d190f222c6d1060a3ace4ba85599">gui_framework::parsers::BaseCompositeParser</a>.</p>
+<p>Reimplemented in <a class="el" href="structgui__framework_1_1parsers_1_1_trackbar_control_parser.html#a54d7b359db0da83addc061cc6ae3583c">gui_framework::parsers::TrackbarControlParser</a>, <a class="el" href="structgui__framework_1_1parsers_1_1_tab_control_parser.html#a38471686d06988ee338f3601c1925e00">gui_framework::parsers::TabControlParser</a>, <a class="el" href="structgui__framework_1_1parsers_1_1_separate_window_parser.html#adb1d7d10b1b6d7e6548bac480a0ac893">gui_framework::parsers::SeparateWindowParser</a>, <a class="el" href="structgui__framework_1_1parsers_1_1_rich_edit_parser.html#a45c6a981eb32a50e5edaaa103e43e846">gui_framework::parsers::RichEditParser</a>, <a class="el" href="structgui__framework_1_1parsers_1_1_progress_bar_parser.html#a62b9e3102d68699676dd280fcafebbb4">gui_framework::parsers::ProgressBarParser</a>, <a class="el" href="structgui__framework_1_1parsers_1_1_infinite_progress_bar_parser.html#a49c495a1c1eb77fc3edbc6f94d300f46">gui_framework::parsers::InfiniteProgressBarParser</a>, <a class="el" href="structgui__framework_1_1parsers_1_1_text_list_view_parser.html#ac60d5bcd4cbfd5f3914f000d2adbf73b">gui_framework::parsers::TextListViewParser</a>, <a class="el" href="structgui__framework_1_1parsers_1_1_text_icon_list_view_parser.html#a2df39ce2940cde4b18c988c3c53c6a76">gui_framework::parsers::TextIconListViewParser</a>, <a class="el" href="structgui__framework_1_1parsers_1_1_icon_list_view_parser.html#a38ab9187602961ce06fe619c601cc27a">gui_framework::parsers::IconListViewParser</a>, <a class="el" href="structgui__framework_1_1parsers_1_1_list_box_parser.html#ad8e096d53a77ec3460401b3626e01a74">gui_framework::parsers::ListBoxParser</a>, <a class="el" href="structgui__framework_1_1parsers_1_1_group_box_parser.html#a9bbdf9d7b51f7812a6b4be39164e745d">gui_framework::parsers::GroupBoxParser</a>, <a class="el" href="structgui__framework_1_1parsers_1_1_combo_box_parser.html#aa8128d9eaebe7c221cc6c83b7b921efa">gui_framework::parsers::ComboBoxParser</a>, <a class="el" href="structgui__framework_1_1parsers_1_1_image_button_parser.html#ae88cab06ec6f586f3485fc81f2be2919">gui_framework::parsers::ImageButtonParser</a>, <a class="el" href="structgui__framework_1_1parsers_1_1_check_box_parser.html#aff3863877268d23b4c7ec9c7579dfcc7">gui_framework::parsers::CheckBoxParser</a>, <a class="el" href="structgui__framework_1_1parsers_1_1_button_parser.html#ae8bf37cd7979917971dddf51950d1cd4">gui_framework::parsers::ButtonParser</a>, and <a class="el" href="structgui__framework_1_1parsers_1_1_base_composite_parser.html#aa034559bc6b81add90b5e7c4d65fbb9c">gui_framework::parsers::BaseCompositeParser</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_base_component_parser_8cpp_source.html#l00009">9</a> of file <a class="el" href="_base_component_parser_8cpp_source.html">BaseComponentParser.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_parser_8cpp_source.html#l00020">20</a> of file <a class="el" href="_base_component_parser_8cpp_source.html">BaseComponentParser.cpp</a>.</p>
 
 </div>
 </div>
@@ -235,7 +229,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_parser_8h_source.html#l00014">14</a> of file <a class="el" href="_base_component_parser_8h_source.html">BaseComponentParser.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_parser_8h_source.html#l00015">15</a> of file <a class="el" href="_base_component_parser_8h_source.html">BaseComponentParser.h</a>.</p>
 
 </div>
 </div>
@@ -251,7 +245,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_parser_8h_source.html#l00012">12</a> of file <a class="el" href="_base_component_parser_8h_source.html">BaseComponentParser.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_parser_8h_source.html#l00013">13</a> of file <a class="el" href="_base_component_parser_8h_source.html">BaseComponentParser.h</a>.</p>
 
 </div>
 </div>
@@ -267,7 +261,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_parser_8h_source.html#l00013">13</a> of file <a class="el" href="_base_component_parser_8h_source.html">BaseComponentParser.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_parser_8h_source.html#l00014">14</a> of file <a class="el" href="_base_component_parser_8h_source.html">BaseComponentParser.h</a>.</p>
 
 </div>
 </div>
@@ -283,7 +277,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_component_parser_8h_source.html#l00015">15</a> of file <a class="el" href="_base_component_parser_8h_source.html">BaseComponentParser.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_component_parser_8h_source.html#l00016">16</a> of file <a class="el" href="_base_component_parser_8h_source.html">BaseComponentParser.h</a>.</p>
 
 </div>
 </div>

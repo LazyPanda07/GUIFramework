@@ -3,6 +3,7 @@ var _utility_8cpp =
     [ "appendStyle", "_utility_8cpp.html#ae97300d8014320696e57f502a858c570", null ],
     [ "extendedException", "_utility_8cpp.html#a75c1c79e2eaf5a3fc05ed16fc4e4a7b3", null ],
     [ "getCurrentModule", "_utility_8cpp.html#a1945ec50b055f688bbb3e7c6cae8de64", null ],
+    [ "getGUIFrameworkVersion", "_utility_8cpp.html#ac6becb2cc50030cd8e2594243a70e780", null ],
     [ "getStringFromRawPath", "_utility_8cpp.html#a5bbb52bed6f3db5b95d081389deaa0fa", null ],
     [ "loadEventCallbackFromModule", "_utility_8cpp.html#a33ceab61b479c2967a8800dbcaaa156a", null ],
     [ "loadFunctionFromModule", "_utility_8cpp.html#afeb3936adb603e27607c38ac3ecc4c7c", null ],

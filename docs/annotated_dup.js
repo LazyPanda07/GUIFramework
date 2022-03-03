@@ -44,6 +44,8 @@ var annotated_dup =
         [ "SelectListException", "classgui__framework_1_1exceptions_1_1_select_list_exception.html", "classgui__framework_1_1exceptions_1_1_select_list_exception" ]
       ] ],
       [ "interfaces", "namespacegui__framework_1_1interfaces.html", [
+        [ "ICloseable", "classgui__framework_1_1interfaces_1_1_i_closeable.html", "classgui__framework_1_1interfaces_1_1_i_closeable" ],
+        [ "IComponentVisibility", "classgui__framework_1_1interfaces_1_1_i_component_visibility.html", "classgui__framework_1_1interfaces_1_1_i_component_visibility" ],
         [ "INonResizableComponent", "classgui__framework_1_1interfaces_1_1_i_non_resizable_component.html", "classgui__framework_1_1interfaces_1_1_i_non_resizable_component" ],
         [ "IProgressBarColor", "classgui__framework_1_1interfaces_1_1_i_progress_bar_color.html", "classgui__framework_1_1interfaces_1_1_i_progress_bar_color" ],
         [ "IResizableComponent", "classgui__framework_1_1interfaces_1_1_i_resizable_component.html", "classgui__framework_1_1interfaces_1_1_i_resizable_component" ],
@@ -54,6 +56,9 @@ var annotated_dup =
         [ "ITextListView", "classgui__framework_1_1interfaces_1_1_i_text_list_view.html", "classgui__framework_1_1interfaces_1_1_i_text_list_view" ],
         [ "IBaseConstForwardIterator", "classgui__framework_1_1interfaces_1_1_i_base_const_forward_iterator.html", "classgui__framework_1_1interfaces_1_1_i_base_const_forward_iterator" ],
         [ "IBaseForwardIterator", "classgui__framework_1_1interfaces_1_1_i_base_forward_iterator.html", "classgui__framework_1_1interfaces_1_1_i_base_forward_iterator" ],
+        [ "IMultipleTextLocalized", "classgui__framework_1_1interfaces_1_1_i_multiple_text_localized.html", "classgui__framework_1_1interfaces_1_1_i_multiple_text_localized" ],
+        [ "ISingleTextLocalized", "classgui__framework_1_1interfaces_1_1_i_single_text_localized.html", "classgui__framework_1_1interfaces_1_1_i_single_text_localized" ],
+        [ "ITextLocalized", "classgui__framework_1_1interfaces_1_1_i_text_localized.html", "classgui__framework_1_1interfaces_1_1_i_text_localized" ],
         [ "IMenuItem", "classgui__framework_1_1interfaces_1_1_i_menu_item.html", "classgui__framework_1_1interfaces_1_1_i_menu_item" ],
         [ "IStyles", "classgui__framework_1_1interfaces_1_1_i_styles.html", "classgui__framework_1_1interfaces_1_1_i_styles" ],
         [ "IDeserializer", "classgui__framework_1_1interfaces_1_1_i_deserializer.html", "classgui__framework_1_1interfaces_1_1_i_deserializer" ],

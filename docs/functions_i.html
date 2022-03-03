@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.8.5-beta</span>
+   &#160;<span id="projectnumber">0.9-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -95,6 +95,12 @@ $(document).ready(function(){initNavTree('functions_i.html',''); initResizable()
 <li>IBaseListViewOperations()
 : <a class="el" href="classgui__framework_1_1interfaces_1_1_i_base_list_view_operations.html#ac44dfb57b3caab9c86f15db6e44b2100">gui_framework::interfaces::IBaseListViewOperations</a>
 </li>
+<li>ICloseable()
+: <a class="el" href="classgui__framework_1_1interfaces_1_1_i_closeable.html#a0af41fbed707fe5c2aeaaea6beff3033">gui_framework::interfaces::ICloseable</a>
+</li>
+<li>IComponentVisibility()
+: <a class="el" href="classgui__framework_1_1interfaces_1_1_i_component_visibility.html#a05f751b60b9c192e6675c1be8f615556">gui_framework::interfaces::IComponentVisibility</a>
+</li>
 <li>IconListView()
 : <a class="el" href="classgui__framework_1_1_icon_list_view.html#a0ba929d3cf3e50f37674c50b67a78e4b">gui_framework::IconListView</a>
 </li>
@@ -105,7 +111,7 @@ $(document).ready(function(){initNavTree('functions_i.html',''); initResizable()
 : <a class="el" href="classgui__framework_1_1deserializers_1_1_icon_list_view_deserializer.html#a9c23cb309aca43b9792b744c089ab1bb">gui_framework::deserializers::IconListViewDeserializer</a>
 </li>
 <li>IconListViewParser()
-: <a class="el" href="structgui__framework_1_1parsers_1_1_icon_list_view_parser.html#aa050dc414098187e6a2fbf3a35a103fe">gui_framework::parsers::IconListViewParser</a>
+: <a class="el" href="structgui__framework_1_1parsers_1_1_icon_list_view_parser.html#a1d0240553cf042f9c7eb95cd48cdb5cb">gui_framework::parsers::IconListViewParser</a>
 </li>
 <li>IconListViewStyles()
 : <a class="el" href="classgui__framework_1_1styles_1_1_icon_list_view_styles.html#a34eb76083152213e34805cf8e92628e1">gui_framework::styles::IconListViewStyles</a>
@@ -180,6 +186,9 @@ $(document).ready(function(){initNavTree('functions_i.html',''); initResizable()
 <li>IMenuItem()
 : <a class="el" href="classgui__framework_1_1interfaces_1_1_i_menu_item.html#acf19118b0ecec45f4a66dcb67ef4b5ce">gui_framework::interfaces::IMenuItem</a>
 </li>
+<li>IMultipleTextLocalized()
+: <a class="el" href="classgui__framework_1_1interfaces_1_1_i_multiple_text_localized.html#afa5f50acb1f53548ae1be9e9f829878c">gui_framework::interfaces::IMultipleTextLocalized</a>
+</li>
 <li>index
 : <a class="el" href="classgui__framework_1_1interfaces_1_1_i_menu_item.html#a6f2df2fa86a0a496880d7b8575b883cc">gui_framework::interfaces::IMenuItem</a>
 , <a class="el" href="structgui__framework_1_1utility_1_1_base_loadable_holder_1_1image_data.html#a3403cb0de97dffefe7306c178d1a04d5">gui_framework::utility::BaseLoadableHolder::imageData</a>
@@ -205,6 +214,9 @@ $(document).ready(function(){initNavTree('functions_i.html',''); initResizable()
 <li>initHeight
 : <a class="el" href="classgui__framework_1_1interfaces_1_1_i_resizable_component.html#a28e9f7955fd7fa8624622f35e1eb5612">gui_framework::interfaces::IResizableComponent</a>
 </li>
+<li>initUIThreadId()
+: <a class="el" href="classgui__framework_1_1_g_u_i_framework.html#a2c723329aedac52db976a4a7d7b351aa">gui_framework::GUIFramework</a>
+</li>
 <li>initWidth
 : <a class="el" href="classgui__framework_1_1interfaces_1_1_i_resizable_component.html#af6c3e74226a95e31799d8b10aeb10a05">gui_framework::interfaces::IResizableComponent</a>
 </li>
@@ -224,6 +236,9 @@ $(document).ready(function(){initNavTree('functions_i.html',''); initResizable()
 : <a class="el" href="classgui__framework_1_1_base_tab_control.html#a6ef439d6c299c68c0a4151a76c712fa4">gui_framework::BaseTabControl</a>
 , <a class="el" href="classgui__framework_1_1utility_1_1_base_loadable_holder.html#a1fdd3caeb20986a8cffa5d0549be853f">gui_framework::utility::BaseLoadableHolder</a>
 </li>
+<li>insertLocalizationKey()
+: <a class="el" href="classgui__framework_1_1interfaces_1_1_i_multiple_text_localized.html#af48e2df889ba37ccb23d7e7f235c02fa">gui_framework::interfaces::IMultipleTextLocalized</a>
+</li>
 <li>insertText()
 : <a class="el" href="classgui__framework_1_1_base_tab_control.html#a0038f9f506b7f8a00161bec29abfb441">gui_framework::BaseTabControl</a>
 </li>
@@ -231,14 +246,21 @@ $(document).ready(function(){initNavTree('functions_i.html',''); initResizable()
 : <a class="el" href="classgui__framework_1_1_base_tab_control.html#a4bd307ce4fc351f3128eb87f04b19397">gui_framework::BaseTabControl</a>
 </li>
 <li>insertTextIconItem()
-: <a class="el" href="classgui__framework_1_1interfaces_1_1_i_text_icon_list_view.html#a35453095a8dee2da5c00353c539e29a1">gui_framework::interfaces::ITextIconListView</a>
+: <a class="el" href="classgui__framework_1_1_base_list_text_icon_list_view.html#ad7a63bc5d2c5b6bdd49c4717ee0e2709">gui_framework::BaseListTextIconListView</a>
+, <a class="el" href="classgui__framework_1_1_base_text_icon_list_view.html#a92990417dfe6f461b877e8ee4d11a4c3">gui_framework::BaseTextIconListView</a>
+, <a class="el" href="classgui__framework_1_1interfaces_1_1_i_text_icon_list_view.html#afe77aeb62c6d4a4120ba76555e37ac77">gui_framework::interfaces::ITextIconListView</a>
 </li>
 <li>insertTextItem()
-: <a class="el" href="classgui__framework_1_1interfaces_1_1_i_text_list_view.html#afacde3f8498d412b56594ce2d11b2372">gui_framework::interfaces::ITextListView</a>
+: <a class="el" href="classgui__framework_1_1_base_list_text_list_view.html#a57a144b28dd37f65e4e90fa7b681bc5c">gui_framework::BaseListTextListView</a>
+, <a class="el" href="classgui__framework_1_1_base_text_list_view.html#aa2759edad2cebedfeed75010f95436c1">gui_framework::BaseTextListView</a>
+, <a class="el" href="classgui__framework_1_1interfaces_1_1_i_text_list_view.html#a19408dbe52ce66ac15a7e8034ba183c0">gui_framework::interfaces::ITextListView</a>
 </li>
 <li>insertValue()
 : <a class="el" href="classgui__framework_1_1_base_combo_box.html#a35dec534d729c2786d7df49e5a7e2531">gui_framework::BaseComboBox</a>
-, <a class="el" href="classgui__framework_1_1_base_list_box.html#a628af8d5bb8b857c007b7d42f064b37c">gui_framework::BaseListBox</a>
+, <a class="el" href="classgui__framework_1_1_base_list_box.html#aa528cc412810da4b2224149556271798">gui_framework::BaseListBox</a>
+</li>
+<li>interfaces::ICloseable
+: <a class="el" href="classgui__framework_1_1_base_composite.html#a6572ad22139a35f00c8f53a53d2238b5">gui_framework::BaseComposite</a>
 </li>
 <li>IProgressBarColor()
 : <a class="el" href="classgui__framework_1_1interfaces_1_1_i_progress_bar_color.html#add27fa73b191bb69e25a7cfc83a9695b">gui_framework::interfaces::IProgressBarColor</a>
@@ -248,13 +270,16 @@ $(document).ready(function(){initNavTree('functions_i.html',''); initResizable()
 </li>
 <li>isComposite()
 : <a class="el" href="classgui__framework_1_1_base_component.html#a80afd36bdaaa52f7137371ec9c8cdac5">gui_framework::BaseComponent</a>
-, <a class="el" href="classgui__framework_1_1_base_composite.html#a6f0726dccdb362d62f42dcff5cd87942">gui_framework::BaseComposite</a>
+, <a class="el" href="classgui__framework_1_1_base_composite.html#a8e267c7f748a1e7afc60606d11ed6098">gui_framework::BaseComposite</a>
 </li>
 <li>ISerializable()
 : <a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#a1028f9985162ed38dd68b2bdface7f93">gui_framework::interfaces::ISerializable</a>
 </li>
 <li>isExist()
 : <a class="el" href="classgui__framework_1_1_g_u_i_framework.html#a74d8f19bb4905f11dc952605fe2d4670">gui_framework::GUIFramework</a>
+</li>
+<li>ISingleTextLocalized()
+: <a class="el" href="classgui__framework_1_1interfaces_1_1_i_single_text_localized.html#a19f8e70c87dddee90d4c311a9a5b9aa9">gui_framework::interfaces::ISingleTextLocalized</a>
 </li>
 <li>isModulesLoaded()
 : <a class="el" href="classgui__framework_1_1_g_u_i_framework.html#afa8edc0ebca623c3e29e33286a9a09f8">gui_framework::GUIFramework</a>
@@ -263,6 +288,9 @@ $(document).ready(function(){initNavTree('functions_i.html',''); initResizable()
 : <a class="el" href="classgui__framework_1_1_base_rich_edit.html#ac7b0ca2bc8b88c5f3e1d402ec2359f81">gui_framework::BaseRichEdit</a>
 , <a class="el" href="structgui__framework_1_1parsers_1_1_rich_edit_parser.html#a56b1cb99e4f91f8a5ff6d0997effff2f">gui_framework::parsers::RichEditParser</a>
 , <a class="el" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_rich_edit_01_4.html#a6e0f09b1baf887548aec026d9b07ea59">gui_framework::utility::AdditionalCreationData&lt; RichEdit &gt;</a>
+</li>
+<li>isShowDialogUsed
+: <a class="el" href="classgui__framework_1_1_base_dialog_box.html#aa60e4efb0606318a544c8bc771ad0ea5">gui_framework::BaseDialogBox</a>
 </li>
 <li>isSorting
 : <a class="el" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_list_box_01_4.html#a2d94a6bb11d0d84a1fb9f4a911f047e3">gui_framework::utility::AdditionalCreationData&lt; ListBox &gt;</a>
@@ -285,6 +313,9 @@ $(document).ready(function(){initNavTree('functions_i.html',''); initResizable()
 </li>
 <li>ITextListView()
 : <a class="el" href="classgui__framework_1_1interfaces_1_1_i_text_list_view.html#a00f502f54ff9e4fd965d140dcdc19057">gui_framework::interfaces::ITextListView</a>
+</li>
+<li>ITextLocalized()
+: <a class="el" href="classgui__framework_1_1interfaces_1_1_i_text_localized.html#a3aee74d0847a32170722d908eefa6c1d">gui_framework::interfaces::ITextLocalized</a>
 </li>
 <li>ITextOperations()
 : <a class="el" href="classgui__framework_1_1interfaces_1_1_i_text_operations.html#a96e0d267ad5c299647a79edabf83ba36">gui_framework::interfaces::ITextOperations</a>

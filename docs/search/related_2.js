@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['windowholder_2930',['WindowHolder',['../classgui__framework_1_1_g_u_i_framework.html#a36d9e0a53f695bf8e7ee1523eb406bfa',1,'gui_framework::GUIFramework']]]
+  ['operator_3c_3c_3030',['operator&lt;&lt;',['../classgui__framework_1_1interfaces_1_1_i_serializable.html#a919db0d1d29ab2737a7ce7d3f043b82f',1,'gui_framework::interfaces::ISerializable']]]
 ];

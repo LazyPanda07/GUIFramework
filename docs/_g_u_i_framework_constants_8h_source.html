@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.8.5-beta</span>
+   &#160;<span id="projectnumber">0.9-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -89,7 +89,6 @@ $(document).ready(function(){initNavTree('_g_u_i_framework_constants_8h_source.h
 <div class="contents">
 <a href="_g_u_i_framework_constants_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="headers_8h.html">headers.h</a>&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
@@ -171,40 +170,37 @@ $(document).ready(function(){initNavTree('_g_u_i_framework_constants_8h_source.h
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        };</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="namespacegui__framework.html#a5e94c5c423c72dd9f763bafce9ba4672">   85</a></span>&#160;    <span class="keyword">inline</span> constexpr std::string_view <a class="code" href="namespacegui__framework.html#a5e94c5c423c72dd9f763bafce9ba4672">guiFrameworkVersion</a> = <span class="stringliteral">&quot;0.8.5-beta&quot;</span>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="namespacegui__framework.html#a5c2c0a8327422f8318f9c225fa2bf27d">   88</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="namespacegui__framework.html#a5c2c0a8327422f8318f9c225fa2bf27d">onClickSignature</a> = void(*)();</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="namespacegui__framework.html#a18efcfbf1849af342705442339a511cf">   91</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="namespacegui__framework.html#a18efcfbf1849af342705442339a511cf">onDestroySignature</a> = void(*)();</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="namespacegui__framework.html#a04962e85abffea22d24989bdd3e6f8f8">   94</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="namespacegui__framework.html#a04962e85abffea22d24989bdd3e6f8f8">onCloseSignature</a> = bool(*)();</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="_g_u_i_framework_constants_8h.html#afc2f3ab01c298b1975e099d1674e37f9">   98</a></span>&#160;<span class="preprocessor">#define IMPLEMENT_SERIALIZABLE_FUNCTION extern &quot;C&quot;</span> __declspec(dllexport) </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#ifdef GUI_FRAMEWORK_DLL</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#define GUI_FRAMEWORK_API __declspec(dllexport)</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#define GUI_FRAMEWORK_API_FUNCTION extern &quot;C&quot;</span> __declspec(dllexport)</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#define JSON_DLL</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#define THREAD_POOL_DLL</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keyword">using</span> <a class="code" href="_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67">smartPointerType</a> = std::shared_ptr&lt;T&gt;;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#pragma warning(disable: 4251)</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">#pragma warning(disable: 4275)</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor">#pragma warning(disable: 4190)</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba">  114</a></span>&#160;<span class="preprocessor">#define GUI_FRAMEWORK_API</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="_g_u_i_framework_constants_8h.html#a767f18c6bddef6da85ce42f210726a25">  115</a></span>&#160;<span class="preprocessor">#define GUI_FRAMEWORK_API_FUNCTION</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67">  119</a></span>&#160;<span class="keyword">using</span> <a class="code" href="_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67">smartPointerType</a> = std::unique_ptr&lt;T&gt;;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// GUI_FRAMEWORK_DLL</span></div>
-<div class="ttc" id="a_g_u_i_framework_constants_8h_html_aaeb2028aa1fe1f81b8bc210cbf2d0b67"><div class="ttname"><a href="_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67">smartPointerType</a></div><div class="ttdeci">std::unique_ptr&lt; T &gt; smartPointerType</div><div class="ttdoc">Compatible smart pointer type.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00119">GUIFrameworkConstants.h:119</a></div></div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="namespacegui__framework.html#a5c2c0a8327422f8318f9c225fa2bf27d">   86</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="namespacegui__framework.html#a5c2c0a8327422f8318f9c225fa2bf27d">onClickSignature</a> = void(*)();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="namespacegui__framework.html#a18efcfbf1849af342705442339a511cf">   89</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="namespacegui__framework.html#a18efcfbf1849af342705442339a511cf">onDestroySignature</a> = void(*)();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="namespacegui__framework.html#a04962e85abffea22d24989bdd3e6f8f8">   92</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="namespacegui__framework.html#a04962e85abffea22d24989bdd3e6f8f8">onCloseSignature</a> = bool(*)();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="_g_u_i_framework_constants_8h.html#afc2f3ab01c298b1975e099d1674e37f9">   96</a></span>&#160;<span class="preprocessor">#define IMPLEMENT_SERIALIZABLE_FUNCTION extern &quot;C&quot;</span> __declspec(dllexport) </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#ifdef GUI_FRAMEWORK_DLL</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#define GUI_FRAMEWORK_API __declspec(dllexport)</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#define GUI_FRAMEWORK_API_FUNCTION extern &quot;C&quot;</span> __declspec(dllexport)</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#define JSON_DLL</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#define THREAD_POOL_DLL</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keyword">using</span> <a class="code" href="_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67">smartPointerType</a> = std::shared_ptr&lt;T&gt;;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#pragma warning(disable: 4251)</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor">#pragma warning(disable: 4275)</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#pragma warning(disable: 4190)</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba">  112</a></span>&#160;<span class="preprocessor">#define GUI_FRAMEWORK_API</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="_g_u_i_framework_constants_8h.html#a767f18c6bddef6da85ce42f210726a25">  113</a></span>&#160;<span class="preprocessor">#define GUI_FRAMEWORK_API_FUNCTION</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67">  117</a></span>&#160;<span class="keyword">using</span> <a class="code" href="_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67">smartPointerType</a> = std::unique_ptr&lt;T&gt;;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// GUI_FRAMEWORK_DLL</span></div>
+<div class="ttc" id="a_g_u_i_framework_constants_8h_html_aaeb2028aa1fe1f81b8bc210cbf2d0b67"><div class="ttname"><a href="_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67">smartPointerType</a></div><div class="ttdeci">std::unique_ptr&lt; T &gt; smartPointerType</div><div class="ttdoc">Compatible smart pointer type.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00117">GUIFrameworkConstants.h:117</a></div></div>
 <div class="ttc" id="a_rich_edit_8h_html"><div class="ttname"><a href="_rich_edit_8h.html">RichEdit.h</a></div></div>
-<div class="ttc" id="aheaders_8h_html"><div class="ttname"><a href="headers_8h.html">headers.h</a></div></div>
 <div class="ttc" id="anamespacegui__framework_1_1hotkeys_html_af7004d43e2976ef86b2bcc7e46959e23"><div class="ttname"><a href="namespacegui__framework_1_1hotkeys.html#af7004d43e2976ef86b2bcc7e46959e23">gui_framework::hotkeys::additionalKeys</a></div><div class="ttdeci">additionalKeys</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00077">GUIFrameworkConstants.h:78</a></div></div>
 <div class="ttc" id="anamespacegui__framework_1_1hotkeys_html_af7004d43e2976ef86b2bcc7e46959e23a2ab64f4ee279e5baf7ab7059b15e6d12"><div class="ttname"><a href="namespacegui__framework_1_1hotkeys.html#af7004d43e2976ef86b2bcc7e46959e23a2ab64f4ee279e5baf7ab7059b15e6d12">gui_framework::hotkeys::additionalKeys::shift</a></div><div class="ttdeci">@ shift</div></div>
 <div class="ttc" id="anamespacegui__framework_1_1hotkeys_html_af7004d43e2976ef86b2bcc7e46959e23a34823136d0dd91d0f5d22db740f7679c"><div class="ttname"><a href="namespacegui__framework_1_1hotkeys.html#af7004d43e2976ef86b2bcc7e46959e23a34823136d0dd91d0f5d22db740f7679c">gui_framework::hotkeys::additionalKeys::alt</a></div><div class="ttdeci">@ alt</div></div>
@@ -243,11 +239,10 @@ $(document).ready(function(){initNavTree('_g_u_i_framework_constants_8h_source.h
 <div class="ttc" id="anamespacegui__framework_1_1standard__sizes_html_aa4bc732733510b8fcf873c8d199c0192"><div class="ttname"><a href="namespacegui__framework_1_1standard__sizes.html#aa4bc732733510b8fcf873c8d199c0192">gui_framework::standard_sizes::smallIconHeight</a></div><div class="ttdeci">const uint16_t smallIconHeight</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00049">GUIFrameworkConstants.h:49</a></div></div>
 <div class="ttc" id="anamespacegui__framework_1_1standard__sizes_html_ae4a52d99a5f0791115b21443c995fb03"><div class="ttname"><a href="namespacegui__framework_1_1standard__sizes.html#ae4a52d99a5f0791115b21443c995fb03">gui_framework::standard_sizes::largeIconWidth</a></div><div class="ttdeci">const uint16_t largeIconWidth</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00045">GUIFrameworkConstants.h:45</a></div></div>
 <div class="ttc" id="anamespacegui__framework_1_1standard__sizes_html_af5dff7df0d040f20e7069da7f8ce28da"><div class="ttname"><a href="namespacegui__framework_1_1standard__sizes.html#af5dff7df0d040f20e7069da7f8ce28da">gui_framework::standard_sizes::comboBoxAdditionalWidth</a></div><div class="ttdeci">constexpr uint16_t comboBoxAdditionalWidth</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00036">GUIFrameworkConstants.h:36</a></div></div>
-<div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00018">BaseComponent.cpp:19</a></div></div>
-<div class="ttc" id="anamespacegui__framework_html_a04962e85abffea22d24989bdd3e6f8f8"><div class="ttname"><a href="namespacegui__framework.html#a04962e85abffea22d24989bdd3e6f8f8">gui_framework::onCloseSignature</a></div><div class="ttdeci">bool(*)() onCloseSignature</div><div class="ttdoc">Default on close signature. Worked only in BaseSeparateWindow subclasses. Called if user pressed clos...</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00094">GUIFrameworkConstants.h:94</a></div></div>
-<div class="ttc" id="anamespacegui__framework_html_a18efcfbf1849af342705442339a511cf"><div class="ttname"><a href="namespacegui__framework.html#a18efcfbf1849af342705442339a511cf">gui_framework::onDestroySignature</a></div><div class="ttdeci">void(*)() onDestroySignature</div><div class="ttdoc">Default on destroy signature. Called before window is destroyed.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00091">GUIFrameworkConstants.h:91</a></div></div>
-<div class="ttc" id="anamespacegui__framework_html_a5c2c0a8327422f8318f9c225fa2bf27d"><div class="ttname"><a href="namespacegui__framework.html#a5c2c0a8327422f8318f9c225fa2bf27d">gui_framework::onClickSignature</a></div><div class="ttdeci">void(*)() onClickSignature</div><div class="ttdoc">Default on click signature.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00088">GUIFrameworkConstants.h:88</a></div></div>
-<div class="ttc" id="anamespacegui__framework_html_a5e94c5c423c72dd9f763bafce9ba4672"><div class="ttname"><a href="namespacegui__framework.html#a5e94c5c423c72dd9f763bafce9ba4672">gui_framework::guiFrameworkVersion</a></div><div class="ttdeci">constexpr std::string_view guiFrameworkVersion</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00085">GUIFrameworkConstants.h:85</a></div></div>
+<div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00021">BaseComponent.cpp:22</a></div></div>
+<div class="ttc" id="anamespacegui__framework_html_a04962e85abffea22d24989bdd3e6f8f8"><div class="ttname"><a href="namespacegui__framework.html#a04962e85abffea22d24989bdd3e6f8f8">gui_framework::onCloseSignature</a></div><div class="ttdeci">bool(*)() onCloseSignature</div><div class="ttdoc">Default on close signature. Worked only in BaseSeparateWindow subclasses. Called if user pressed clos...</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00092">GUIFrameworkConstants.h:92</a></div></div>
+<div class="ttc" id="anamespacegui__framework_html_a18efcfbf1849af342705442339a511cf"><div class="ttname"><a href="namespacegui__framework.html#a18efcfbf1849af342705442339a511cf">gui_framework::onDestroySignature</a></div><div class="ttdeci">void(*)() onDestroySignature</div><div class="ttdoc">Default on destroy signature. Called before window is destroyed.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00089">GUIFrameworkConstants.h:89</a></div></div>
+<div class="ttc" id="anamespacegui__framework_html_a5c2c0a8327422f8318f9c225fa2bf27d"><div class="ttname"><a href="namespacegui__framework.html#a5c2c0a8327422f8318f9c225fa2bf27d">gui_framework::onClickSignature</a></div><div class="ttdeci">void(*)() onClickSignature</div><div class="ttdoc">Default on click signature.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00086">GUIFrameworkConstants.h:86</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

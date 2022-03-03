@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.8.5-beta</span>
+   &#160;<span id="projectnumber">0.9-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -90,101 +90,104 @@ $(document).ready(function(){initNavTree('_drop_down_menu_item_deserializer_8cpp
 <a href="_drop_down_menu_item_deserializer_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_drop_down_menu_item_deserializer_8h.html">DropDownMenuItemDeserializer.h</a>&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_menu_item_8h.html">MenuItems/MenuItem.h</a>&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_wrong_menu_type_exception_8h.html">Exceptions/Deserialization/WrongMenuTypeException.h</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_utility_8h.html">Utility/Utility.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_base_separate_window_8h.html">BaseComposites/StandardComposites/BaseSeparateWindow.h</a>&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_wrong_menu_type_exception_8h.html">Exceptions/Deserialization/WrongMenuTypeException.h</a>&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">namespace </span>deserializers</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    {</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classgui__framework_1_1deserializers_1_1_drop_down_menu_item_deserializer.html#ad9a088cd128391b4c1844b272073f04f">   13</a></span>&#160;        DropDownMenuItemDeserializer::DropDownMenuItemDeserializer(<a class="code" href="classgui__framework_1_1_base_separate_window.html">BaseSeparateWindow</a>* menuHolder) :</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            menuHolder(menuHolder)</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        }</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">namespace </span>deserializers</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    {</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classgui__framework_1_1deserializers_1_1_drop_down_menu_item_deserializer.html#ad9a088cd128391b4c1844b272073f04f">   15</a></span>&#160;        DropDownMenuItemDeserializer::DropDownMenuItemDeserializer(<a class="code" href="classgui__framework_1_1_base_separate_window.html">BaseSeparateWindow</a>* menuHolder) :</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            menuHolder(menuHolder)</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        {</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classgui__framework_1_1deserializers_1_1_drop_down_menu_item_deserializer.html#aae59e994ce232762c653ed0aedad7ef5">   19</a></span>&#160;        unique_ptr&lt;DropDownMenuItem&gt; <a class="code" href="classgui__framework_1_1deserializers_1_1_drop_down_menu_item_deserializer.html#aae59e994ce232762c653ed0aedad7ef5">DropDownMenuItemDeserializer::deserializeDropDownMenuItem</a>(<span class="keyword">const</span> wstring&amp; text, uint64_t popupId, <span class="keyword">const</span> std::vector&lt;json::utility::objectSmartPointer&lt;json::utility::jsonObject&gt;&gt;&amp; popupItems, <a class="code" href="classgui__framework_1_1_menu.html">Menu</a>&amp; menu)</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <span class="keyword">using</span> json::utility::objectSmartPointer;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keyword">using</span> json::utility::jsonObject;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            uint32_t codepage = <a class="code" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#ae3b3d5735f3d842d4f1b438a3f4eb33e">interfaces::ISerializable::getCodepage</a>();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; i : popupItems)</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                <span class="keyword">const</span> objectSmartPointer&lt;jsonObject&gt;&amp; item = get&lt;objectSmartPointer&lt;jsonObject&gt;&gt;(i-&gt;data.front().second);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                uint64_t menuId = item-&gt;getUnsignedInt(<span class="stringliteral">&quot;menuId&quot;</span>);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <span class="keywordflow">if</span> (menuId != popupId)</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                    <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                wstring name = <a class="code" href="namespacegui__framework_1_1utility.html#a78299194d620a892a4503b2db7474e89">utility::to_wstring</a>(item-&gt;getString(<span class="stringliteral">&quot;menuName&quot;</span>), codepage);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <span class="keyword">const</span> vector&lt;objectSmartPointer&lt;jsonObject&gt;&gt;&amp; dropDownItems = item-&gt;getArray(<span class="stringliteral">&quot;items&quot;</span>);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; j : dropDownItems)</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                    <span class="keyword">const</span> objectSmartPointer&lt;jsonObject&gt;&amp; dropDownItem = get&lt;objectSmartPointer&lt;jsonObject&gt;&gt;(j-&gt;data.front().second);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                    wstring text = <a class="code" href="namespacegui__framework_1_1utility.html#a78299194d620a892a4503b2db7474e89">utility::to_wstring</a>(dropDownItem-&gt;getString(<span class="stringliteral">&quot;itemText&quot;</span>), codepage);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; type = dropDownItem-&gt;getString(<span class="stringliteral">&quot;itemType&quot;</span>);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                    <span class="keywordflow">if</span> (type == <a class="code" href="namespacegui__framework_1_1standard__menu__items.html#a86abf6e74e70c5decd7cff8ba62cd8af">standard_menu_items::menuItem</a>)</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                    {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                        menu.<a class="code" href="classgui__framework_1_1_menu.html#ad1a2a13022ca63659a014c59d4b5f246">addMenuItem</a>(make_unique&lt;MenuItem&gt;(text, dropDownItem-&gt;getString(<span class="stringliteral">&quot;functionName&quot;</span>), dropDownItem-&gt;getString(<span class="stringliteral">&quot;moduleName&quot;</span>)));</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                    }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == <a class="code" href="namespacegui__framework_1_1standard__menu__items.html#a7c8d005201403b3916d6a1df61d5369f">standard_menu_items::dropDownMenuItem</a>)</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                    {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                        <a class="code" href="classgui__framework_1_1_menu.html">Menu</a>* popupMenu = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                        uint64_t insidePopupId = dropDownItem-&gt;getUnsignedInt(<span class="stringliteral">&quot;popupId&quot;</span>);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; j : popupItems)</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                        {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                            <span class="keyword">const</span> objectSmartPointer&lt;jsonObject&gt;&amp; popupItem = get&lt;objectSmartPointer&lt;jsonObject&gt;&gt;(j-&gt;data.front().second);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                            <span class="keywordflow">if</span> (popupItem-&gt;getUnsignedInt(<span class="stringliteral">&quot;menuId&quot;</span>) == insidePopupId)</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                            {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                popupMenu = &amp;menuHolder-&gt;<a class="code" href="classgui__framework_1_1_base_composite.html#a97818d3d668728f49f3caf043c010d5f">addPopupMenu</a>(<a class="code" href="namespacegui__framework_1_1utility.html#a78299194d620a892a4503b2db7474e89">utility::to_wstring</a>(popupItem-&gt;getString(<span class="stringliteral">&quot;menuName&quot;</span>), codepage));</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                            }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                        }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                        <span class="keywordflow">if</span> (popupMenu)</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                        {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                            menu.<a class="code" href="classgui__framework_1_1_menu.html#ad1a2a13022ca63659a014c59d4b5f246">addMenuItem</a>(<a class="code" href="classgui__framework_1_1deserializers_1_1_drop_down_menu_item_deserializer.html#ad9a088cd128391b4c1844b272073f04f">DropDownMenuItemDeserializer</a>(menuHolder).deserializeDropDownMenuItem(text, insidePopupId, popupItems, *popupMenu));</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                        }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                    }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                        <span class="keywordflow">throw</span> <a class="code" href="classgui__framework_1_1exceptions_1_1deserialization_1_1_wrong_menu_type_exception.html">exceptions::deserialization::WrongMenuTypeException</a>(type, __FILE__, __FUNCTION__, __LINE__);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                    }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordflow">return</span> make_unique&lt;DropDownMenuItem&gt;(text, menu.<a class="code" href="classgui__framework_1_1_menu.html#a73231f0fca881c7553a3fc96808fed59">getHandle</a>());</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        }</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classgui__framework_1_1deserializers_1_1_drop_down_menu_item_deserializer.html#a328b1faec3f2d7edb02a7774c3757df5">   21</a></span>&#160;        unique_ptr&lt;DropDownMenuItem&gt; <a class="code" href="classgui__framework_1_1deserializers_1_1_drop_down_menu_item_deserializer.html#a328b1faec3f2d7edb02a7774c3757df5">DropDownMenuItemDeserializer::deserializeDropDownMenuItem</a>(<span class="keyword">const</span> wstring&amp; text, uint64_t popupId, <span class="keyword">const</span> std::vector&lt;json::utility::jsonObject&gt;&amp; popupItems, <a class="code" href="classgui__framework_1_1_menu.html">Menu</a>&amp; menu)</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keyword">using</span> json::utility::jsonObject;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            uint32_t codepage = <a class="code" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#ae3b3d5735f3d842d4f1b438a3f4eb33e">interfaces::ISerializable::getCodepage</a>();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; i : popupItems)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                <span class="keyword">const</span> jsonObject&amp; item = get&lt;jsonObject&gt;(i.data.front().second);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                uint64_t menuId = item.getUnsignedInt(<span class="stringliteral">&quot;menuId&quot;</span>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                <span class="keywordflow">if</span> (menuId != popupId)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                    <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                wstring name = <a class="code" href="namespacegui__framework_1_1utility.html#a78299194d620a892a4503b2db7474e89">utility::to_wstring</a>(item.getString(<span class="stringliteral">&quot;menuName&quot;</span>), codepage);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <span class="keyword">const</span> vector&lt;jsonObject&gt;&amp; dropDownItems = item.getArray(<span class="stringliteral">&quot;items&quot;</span>);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; j : dropDownItems)</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                    <span class="keyword">const</span> jsonObject&amp; dropDownItem = get&lt;jsonObject&gt;(j.data.front().second);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                    wstring text = <a class="code" href="namespacegui__framework_1_1utility.html#a78299194d620a892a4503b2db7474e89">utility::to_wstring</a>(dropDownItem.getString(<span class="stringliteral">&quot;itemText&quot;</span>), codepage);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; type = dropDownItem.getString(<span class="stringliteral">&quot;itemType&quot;</span>);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                    <span class="keywordflow">if</span> (type == <a class="code" href="namespacegui__framework_1_1standard__menu__items.html#a86abf6e74e70c5decd7cff8ba62cd8af">standard_menu_items::menuItem</a>)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                    {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                        menu.<a class="code" href="classgui__framework_1_1_menu.html#ad1a2a13022ca63659a014c59d4b5f246">addMenuItem</a>(make_unique&lt;MenuItem&gt;(text, dropDownItem.getString(<span class="stringliteral">&quot;functionName&quot;</span>), dropDownItem.getString(<span class="stringliteral">&quot;moduleName&quot;</span>)));</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == <a class="code" href="namespacegui__framework_1_1standard__menu__items.html#a7c8d005201403b3916d6a1df61d5369f">standard_menu_items::dropDownMenuItem</a>)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                    {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                        <a class="code" href="classgui__framework_1_1_menu.html">Menu</a>* popupMenu = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                        uint64_t insidePopupId = dropDownItem.getUnsignedInt(<span class="stringliteral">&quot;popupId&quot;</span>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; j : popupItems)</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                        {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                            <span class="keyword">const</span> jsonObject&amp; popupItem = get&lt;jsonObject&gt;(j.data.front().second);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                            <span class="keywordflow">if</span> (popupItem.getUnsignedInt(<span class="stringliteral">&quot;menuId&quot;</span>) == insidePopupId)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                            {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                popupMenu = &amp;menuHolder-&gt;<a class="code" href="classgui__framework_1_1_base_composite.html#a97818d3d668728f49f3caf043c010d5f">addPopupMenu</a>(<a class="code" href="namespacegui__framework_1_1utility.html#a78299194d620a892a4503b2db7474e89">utility::to_wstring</a>(popupItem.getString(<span class="stringliteral">&quot;menuName&quot;</span>), codepage));</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                            }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                        }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                        <span class="keywordflow">if</span> (popupMenu)</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                        {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                            menu.<a class="code" href="classgui__framework_1_1_menu.html#ad1a2a13022ca63659a014c59d4b5f246">addMenuItem</a>(<a class="code" href="classgui__framework_1_1deserializers_1_1_drop_down_menu_item_deserializer.html#ad9a088cd128391b4c1844b272073f04f">DropDownMenuItemDeserializer</a>(menuHolder).<a class="code" href="classgui__framework_1_1deserializers_1_1_drop_down_menu_item_deserializer.html#a328b1faec3f2d7edb02a7774c3757df5">deserializeDropDownMenuItem</a>(text, insidePopupId, popupItems, *popupMenu));</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                        }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                    }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                    {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                        <span class="keywordflow">throw</span> <a class="code" href="classgui__framework_1_1exceptions_1_1deserialization_1_1_wrong_menu_type_exception.html">exceptions::deserialization::WrongMenuTypeException</a>(type, __FILE__, __FUNCTION__, __LINE__);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                    }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="keywordflow">return</span> make_unique&lt;DropDownMenuItem&gt;(text, menu.<a class="code" href="classgui__framework_1_1_menu.html#a73231f0fca881c7553a3fc96808fed59">getHandle</a>());</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
+<div class="ttc" id="a_base_separate_window_8h_html"><div class="ttname"><a href="_base_separate_window_8h.html">BaseSeparateWindow.h</a></div></div>
 <div class="ttc" id="a_drop_down_menu_item_deserializer_8h_html"><div class="ttname"><a href="_drop_down_menu_item_deserializer_8h.html">DropDownMenuItemDeserializer.h</a></div></div>
 <div class="ttc" id="a_menu_item_8h_html"><div class="ttname"><a href="_menu_item_8h.html">MenuItem.h</a></div></div>
+<div class="ttc" id="a_utility_8h_html"><div class="ttname"><a href="_utility_8h.html">Utility.h</a></div></div>
 <div class="ttc" id="a_wrong_menu_type_exception_8h_html"><div class="ttname"><a href="_wrong_menu_type_exception_8h.html">WrongMenuTypeException.h</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_composite_html_a97818d3d668728f49f3caf043c010d5f"><div class="ttname"><a href="classgui__framework_1_1_base_composite.html#a97818d3d668728f49f3caf043c010d5f">gui_framework::BaseComposite::addPopupMenu</a></div><div class="ttdeci">virtual Menu &amp; addPopupMenu(const std::wstring &amp;menuName)</div><div class="ttdoc">Don't call move operator with return value.</div><div class="ttdef"><b>Definition:</b> <a href="_base_composite_8cpp_source.html#l00273">BaseComposite.cpp:273</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_separate_window_html"><div class="ttname"><a href="classgui__framework_1_1_base_separate_window.html">gui_framework::BaseSeparateWindow</a></div><div class="ttdoc">Base class for separate windows.</div><div class="ttdef"><b>Definition:</b> <a href="_base_separate_window_8h_source.html#l00009">BaseSeparateWindow.h:10</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_composite_html_a97818d3d668728f49f3caf043c010d5f"><div class="ttname"><a href="classgui__framework_1_1_base_composite.html#a97818d3d668728f49f3caf043c010d5f">gui_framework::BaseComposite::addPopupMenu</a></div><div class="ttdeci">virtual Menu &amp; addPopupMenu(const std::wstring &amp;menuName)</div><div class="ttdoc">Don't call move operator with return value.</div><div class="ttdef"><b>Definition:</b> <a href="_base_composite_8cpp_source.html#l00280">BaseComposite.cpp:280</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_separate_window_html"><div class="ttname"><a href="classgui__framework_1_1_base_separate_window.html">gui_framework::BaseSeparateWindow</a></div><div class="ttdoc">Base class for separate windows.</div><div class="ttdef"><b>Definition:</b> <a href="_base_separate_window_8h_source.html#l00010">BaseSeparateWindow.h:13</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1_menu_html"><div class="ttname"><a href="classgui__framework_1_1_menu.html">gui_framework::Menu</a></div><div class="ttdoc">Menu class.</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8h_source.html#l00009">Menu.h:10</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_menu_html_a73231f0fca881c7553a3fc96808fed59"><div class="ttname"><a href="classgui__framework_1_1_menu.html#a73231f0fca881c7553a3fc96808fed59">gui_framework::Menu::getHandle</a></div><div class="ttdeci">HMENU getHandle() const</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00101">Menu.cpp:101</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_menu_html_ad1a2a13022ca63659a014c59d4b5f246"><div class="ttname"><a href="classgui__framework_1_1_menu.html#ad1a2a13022ca63659a014c59d4b5f246">gui_framework::Menu::addMenuItem</a></div><div class="ttdeci">Menu &amp; addMenuItem(std::unique_ptr&lt; interfaces::IMenuItem &gt; &amp;&amp;item)</div><div class="ttdoc">Also calls item's createMenuItem method.</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00057">Menu.cpp:57</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1deserializers_1_1_drop_down_menu_item_deserializer_html_aae59e994ce232762c653ed0aedad7ef5"><div class="ttname"><a href="classgui__framework_1_1deserializers_1_1_drop_down_menu_item_deserializer.html#aae59e994ce232762c653ed0aedad7ef5">gui_framework::deserializers::DropDownMenuItemDeserializer::deserializeDropDownMenuItem</a></div><div class="ttdeci">std::unique_ptr&lt; DropDownMenuItem &gt; deserializeDropDownMenuItem(const std::wstring &amp;text, uint64_t popupId, const std::vector&lt; json::utility::objectSmartPointer&lt; json::utility::jsonObject &gt;&gt; &amp;popupItems, Menu &amp;menu)</div><div class="ttdef"><b>Definition:</b> <a href="_drop_down_menu_item_deserializer_8cpp_source.html#l00019">DropDownMenuItemDeserializer.cpp:19</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1deserializers_1_1_drop_down_menu_item_deserializer_html_ad9a088cd128391b4c1844b272073f04f"><div class="ttname"><a href="classgui__framework_1_1deserializers_1_1_drop_down_menu_item_deserializer.html#ad9a088cd128391b4c1844b272073f04f">gui_framework::deserializers::DropDownMenuItemDeserializer::DropDownMenuItemDeserializer</a></div><div class="ttdeci">DropDownMenuItemDeserializer(BaseSeparateWindow *menuHolder)</div><div class="ttdef"><b>Definition:</b> <a href="_drop_down_menu_item_deserializer_8cpp_source.html#l00013">DropDownMenuItemDeserializer.cpp:13</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_menu_html_a73231f0fca881c7553a3fc96808fed59"><div class="ttname"><a href="classgui__framework_1_1_menu.html#a73231f0fca881c7553a3fc96808fed59">gui_framework::Menu::getHandle</a></div><div class="ttdeci">HMENU getHandle() const</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00103">Menu.cpp:103</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_menu_html_ad1a2a13022ca63659a014c59d4b5f246"><div class="ttname"><a href="classgui__framework_1_1_menu.html#ad1a2a13022ca63659a014c59d4b5f246">gui_framework::Menu::addMenuItem</a></div><div class="ttdeci">Menu &amp; addMenuItem(std::unique_ptr&lt; interfaces::IMenuItem &gt; &amp;&amp;item)</div><div class="ttdoc">Also calls item's createMenuItem method.</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00059">Menu.cpp:59</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1deserializers_1_1_drop_down_menu_item_deserializer_html_a328b1faec3f2d7edb02a7774c3757df5"><div class="ttname"><a href="classgui__framework_1_1deserializers_1_1_drop_down_menu_item_deserializer.html#a328b1faec3f2d7edb02a7774c3757df5">gui_framework::deserializers::DropDownMenuItemDeserializer::deserializeDropDownMenuItem</a></div><div class="ttdeci">std::unique_ptr&lt; DropDownMenuItem &gt; deserializeDropDownMenuItem(const std::wstring &amp;text, uint64_t popupId, const std::vector&lt; json::utility::jsonObject &gt; &amp;popupItems, Menu &amp;menu)</div><div class="ttdef"><b>Definition:</b> <a href="_drop_down_menu_item_deserializer_8cpp_source.html#l00021">DropDownMenuItemDeserializer.cpp:21</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1deserializers_1_1_drop_down_menu_item_deserializer_html_ad9a088cd128391b4c1844b272073f04f"><div class="ttname"><a href="classgui__framework_1_1deserializers_1_1_drop_down_menu_item_deserializer.html#ad9a088cd128391b4c1844b272073f04f">gui_framework::deserializers::DropDownMenuItemDeserializer::DropDownMenuItemDeserializer</a></div><div class="ttdeci">DropDownMenuItemDeserializer(BaseSeparateWindow *menuHolder)</div><div class="ttdef"><b>Definition:</b> <a href="_drop_down_menu_item_deserializer_8cpp_source.html#l00015">DropDownMenuItemDeserializer.cpp:15</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1exceptions_1_1deserialization_1_1_wrong_menu_type_exception_html"><div class="ttname"><a href="classgui__framework_1_1exceptions_1_1deserialization_1_1_wrong_menu_type_exception.html">gui_framework::exceptions::deserialization::WrongMenuTypeException</a></div><div class="ttdoc">Throws by SeparateWindowDeserializer during deserialize if JSON has wrong itemType value.</div><div class="ttdef"><b>Definition:</b> <a href="_wrong_menu_type_exception_8h_source.html#l00012">WrongMenuTypeException.h:13</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1interfaces_1_1_i_serializable_html_ae3b3d5735f3d842d4f1b438a3f4eb33e"><div class="ttname"><a href="classgui__framework_1_1interfaces_1_1_i_serializable.html#ae3b3d5735f3d842d4f1b438a3f4eb33e">gui_framework::interfaces::ISerializable::getCodepage</a></div><div class="ttdeci">static uint32_t getCodepage()</div><div class="ttdef"><b>Definition:</b> <a href="_i_serializable_8h_source.html#l00025">ISerializable.h:25</a></div></div>
 <div class="ttc" id="anamespacegui__framework_1_1standard__menu__items_html_a7c8d005201403b3916d6a1df61d5369f"><div class="ttname"><a href="namespacegui__framework_1_1standard__menu__items.html#a7c8d005201403b3916d6a1df61d5369f">gui_framework::standard_menu_items::dropDownMenuItem</a></div><div class="ttdeci">const std::string dropDownMenuItem</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00030">GUIFrameworkConstants.h:30</a></div></div>
 <div class="ttc" id="anamespacegui__framework_1_1standard__menu__items_html_a86abf6e74e70c5decd7cff8ba62cd8af"><div class="ttname"><a href="namespacegui__framework_1_1standard__menu__items.html#a86abf6e74e70c5decd7cff8ba62cd8af">gui_framework::standard_menu_items::menuItem</a></div><div class="ttdeci">const std::string menuItem</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00031">GUIFrameworkConstants.h:31</a></div></div>
-<div class="ttc" id="anamespacegui__framework_1_1utility_html_a78299194d620a892a4503b2db7474e89"><div class="ttname"><a href="namespacegui__framework_1_1utility.html#a78299194d620a892a4503b2db7474e89">gui_framework::utility::to_wstring</a></div><div class="ttdeci">GUI_FRAMEWORK_API_FUNCTION wstring to_wstring(const string &amp;stringToConvert, uint32_t codepage)</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00081">Utility.cpp:81</a></div></div>
-<div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00018">BaseComponent.cpp:19</a></div></div>
+<div class="ttc" id="anamespacegui__framework_1_1utility_html_a78299194d620a892a4503b2db7474e89"><div class="ttname"><a href="namespacegui__framework_1_1utility.html#a78299194d620a892a4503b2db7474e89">gui_framework::utility::to_wstring</a></div><div class="ttdeci">GUI_FRAMEWORK_API_FUNCTION wstring to_wstring(const string &amp;stringToConvert, uint32_t codepage)</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00083">Utility.cpp:83</a></div></div>
+<div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00021">BaseComponent.cpp:22</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.8.5-beta</span>
+   &#160;<span id="projectnumber">0.9-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -85,6 +85,7 @@ $(document).ready(function(){initNavTree('classgui__framework_1_1_base_list_box.
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classgui__framework_1_1_base_list_box-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -102,12 +103,14 @@ Inheritance diagram for gui_framework::BaseListBox:</div>
  <div class="center">
   <img src="classgui__framework_1_1_base_list_box.png" usemap="#gui_5Fframework::BaseListBox_map" alt=""/>
   <map id="gui_5Fframework::BaseListBox_map" name="gui_5Fframework::BaseListBox_map">
-<area href="classgui__framework_1_1_base_component.html" title="Base class for all windows, controls, etc." alt="gui_framework::BaseComponent" shape="rect" coords="0,56,283,80"/>
-<area href="classgui__framework_1_1interfaces_1_1_i_resizable_component.html" title="Provides resize, setBlockResize, getBlockResize methods." alt="gui_framework::interfaces::IResizableComponent" shape="rect" coords="293,56,576,80"/>
-<area href="classgui__framework_1_1interfaces_1_1_i_serializable.html" title="Provides interface for serializable to JSON format." alt="gui_framework::interfaces::ISerializable" shape="rect" coords="0,0,283,24"/>
-<area href="classgui__framework_1_1_base_multiple_select_list_box.html" title="Base class for all multiple select list boxes." alt="gui_framework::BaseMultipleSelectListBox" shape="rect" coords="0,168,283,192"/>
-<area href="classgui__framework_1_1_list_box.html" title="Standard list box." alt="gui_framework::ListBox" shape="rect" coords="293,168,576,192"/>
-<area href="classgui__framework_1_1_multiple_select_list_box.html" title="Standard multiple select list box." alt="gui_framework::MultipleSelectListBox" shape="rect" coords="0,224,283,248"/>
+<area href="classgui__framework_1_1interfaces_1_1_i_multiple_text_localized.html" title="Change localization of combo boxes, list views, tab controls, etc." alt="gui_framework::interfaces::IMultipleTextLocalized" shape="rect" coords="0,56,287,80"/>
+<area href="classgui__framework_1_1_base_component.html" title="Base class for all windows, controls, etc." alt="gui_framework::BaseComponent" shape="rect" coords="297,56,584,80"/>
+<area href="classgui__framework_1_1interfaces_1_1_i_resizable_component.html" title="Provides resize, setBlockResize, getBlockResize methods." alt="gui_framework::interfaces::IResizableComponent" shape="rect" coords="594,56,881,80"/>
+<area href="classgui__framework_1_1interfaces_1_1_i_text_localized.html" title="Provides changing localization in component by calling GUIFramework::changeLocalization." alt="gui_framework::interfaces::ITextLocalized" shape="rect" coords="0,0,287,24"/>
+<area href="classgui__framework_1_1interfaces_1_1_i_serializable.html" title="Provides interface for serializable to JSON format." alt="gui_framework::interfaces::ISerializable" shape="rect" coords="297,0,584,24"/>
+<area href="classgui__framework_1_1_base_multiple_select_list_box.html" title="Base class for all multiple select list boxes." alt="gui_framework::BaseMultipleSelectListBox" shape="rect" coords="148,168,435,192"/>
+<area href="classgui__framework_1_1_list_box.html" title="Standard list box." alt="gui_framework::ListBox" shape="rect" coords="445,168,732,192"/>
+<area href="classgui__framework_1_1_multiple_select_list_box.html" title="Standard multiple select list box." alt="gui_framework::MultipleSelectListBox" shape="rect" coords="148,224,435,248"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -115,36 +118,42 @@ Inheritance diagram for gui_framework::BaseListBox:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a40ba9d4912fb4eac43df540d799ac24b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_list_box.html#a40ba9d4912fb4eac43df540d799ac24b">BaseListBox</a> (const std::wstring &amp;listBoxName, const <a class="el" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a> &amp;settings, const <a class="el" href="classgui__framework_1_1styles_1_1_list_box_styles.html">styles::ListBoxStyles</a> &amp;<a class="el" href="classgui__framework_1_1_base_component.html#aec8d3af6711b0c012f2f7f90cc7d4141">styles</a>, <a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> *<a class="el" href="classgui__framework_1_1_base_component.html#a1576375d22cf283d598e22f4a11aca2f">parent</a>)</td></tr>
 <tr class="separator:a40ba9d4912fb4eac43df540d799ac24b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acce850b91ddcfcac36cafc03dec2b5a5"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_list_box.html#acce850b91ddcfcac36cafc03dec2b5a5">addValue</a> (const std::wstring &amp;value) final</td></tr>
-<tr class="separator:acce850b91ddcfcac36cafc03dec2b5a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6331ea3cc2488540e0a42859ee77a32a"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_list_box.html#a6331ea3cc2488540e0a42859ee77a32a">removeValue</a> (size_t index) final</td></tr>
-<tr class="separator:a6331ea3cc2488540e0a42859ee77a32a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a628af8d5bb8b857c007b7d42f064b37c"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_list_box.html#a628af8d5bb8b857c007b7d42f064b37c">insertValue</a> (const std::wstring &amp;value, LRESULT index)</td></tr>
-<tr class="separator:a628af8d5bb8b857c007b7d42f064b37c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa85d4246f068112f6a63bd375826084"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_list_box.html#aaa85d4246f068112f6a63bd375826084">changeValue</a> (const std::wstring &amp;newValue, LRESULT index)</td></tr>
-<tr class="separator:aaa85d4246f068112f6a63bd375826084"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9ff8d86ee17333146cbbc2883eb8abd"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_list_box.html#ac9ff8d86ee17333146cbbc2883eb8abd">findSubstring</a> (const std::wstring &amp;subStringToFind) final</td></tr>
-<tr class="separator:ac9ff8d86ee17333146cbbc2883eb8abd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17dfe0ac51b05acc2463a82766b186b2"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_list_box.html#a17dfe0ac51b05acc2463a82766b186b2">findString</a> (const std::wstring &amp;stringToFind) final</td></tr>
-<tr class="separator:a17dfe0ac51b05acc2463a82766b186b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58fc839753afbaa623cb140339149744"><td class="memItemLeft" align="right" valign="top">virtual std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_list_box.html#a58fc839753afbaa623cb140339149744">getValue</a> (size_t index) const final</td></tr>
-<tr class="separator:a58fc839753afbaa623cb140339149744"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd962bbc263e8f66dc03751f18b189cc"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_list_box.html#afd962bbc263e8f66dc03751f18b189cc">getCurrentSelectionIndex</a> () const final</td></tr>
-<tr class="separator:afd962bbc263e8f66dc03751f18b189cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a6c78798bb0d00d1f748683397ae7e1"><td class="memItemLeft" align="right" valign="top">LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_list_box.html#a7a6c78798bb0d00d1f748683397ae7e1">addValue</a> (const std::wstring &amp;value)</td></tr>
+<tr class="separator:a7a6c78798bb0d00d1f748683397ae7e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fa9fc07eefc95ad03dbed3296fba234"><td class="memItemLeft" align="right" valign="top">LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_list_box.html#a2fa9fc07eefc95ad03dbed3296fba234">addValue</a> (const std::string &amp;localizationKey)</td></tr>
+<tr class="separator:a2fa9fc07eefc95ad03dbed3296fba234"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa44cbfa3c87ad62420dfa1347954e188"><td class="memItemLeft" align="right" valign="top">LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_list_box.html#aa44cbfa3c87ad62420dfa1347954e188">removeValue</a> (size_t index)</td></tr>
+<tr class="separator:aa44cbfa3c87ad62420dfa1347954e188"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa528cc412810da4b2224149556271798"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_list_box.html#aa528cc412810da4b2224149556271798">insertValue</a> (const std::wstring &amp;value, LRESULT index)</td></tr>
+<tr class="separator:aa528cc412810da4b2224149556271798"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d23d2517f58e413ddaa58cbdd76cf5c"><td class="memItemLeft" align="right" valign="top">LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_list_box.html#a4d23d2517f58e413ddaa58cbdd76cf5c">insertValue</a> (const std::string &amp;localizationKey, LRESULT index)</td></tr>
+<tr class="separator:a4d23d2517f58e413ddaa58cbdd76cf5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeaeed87704f74f08a3806c7e8a7526f0"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_list_box.html#aeaeed87704f74f08a3806c7e8a7526f0">changeValue</a> (const std::wstring &amp;newValue, LRESULT index)</td></tr>
+<tr class="separator:aeaeed87704f74f08a3806c7e8a7526f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a295771ec3006e86c5f63c2188c618053"><td class="memItemLeft" align="right" valign="top">LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_list_box.html#a295771ec3006e86c5f63c2188c618053">changeValue</a> (const std::string &amp;localizationKey, LRESULT index)</td></tr>
+<tr class="separator:a295771ec3006e86c5f63c2188c618053"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2494323224357bfc7e2c69eaeca85249"><td class="memItemLeft" align="right" valign="top">LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_list_box.html#a2494323224357bfc7e2c69eaeca85249">findSubstring</a> (const std::wstring &amp;subStringToFind)</td></tr>
+<tr class="separator:a2494323224357bfc7e2c69eaeca85249"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26fde21f870a2c38de79e0807db40239"><td class="memItemLeft" align="right" valign="top">LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_list_box.html#a26fde21f870a2c38de79e0807db40239">findString</a> (const std::wstring &amp;stringToFind)</td></tr>
+<tr class="separator:a26fde21f870a2c38de79e0807db40239"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ca70f306c7897c21a3cd59badb9c19c"><td class="memItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_list_box.html#a1ca70f306c7897c21a3cd59badb9c19c">getValue</a> (size_t index) const</td></tr>
+<tr class="separator:a1ca70f306c7897c21a3cd59badb9c19c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9aa9bcf9210dad11b397c23c0503177"><td class="memItemLeft" align="right" valign="top">LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_list_box.html#aa9aa9bcf9210dad11b397c23c0503177">getCurrentSelectionIndex</a> () const</td></tr>
+<tr class="separator:aa9aa9bcf9210dad11b397c23c0503177"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9aed8ff4b89e4ae2492f1703fa035349"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_list_box.html#a9aed8ff4b89e4ae2492f1703fa035349">setCurrentSelection</a> (LRESULT index) const</td></tr>
 <tr class="separator:a9aed8ff4b89e4ae2492f1703fa035349"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97ad991e631c32871df97e2bb9a9ec0e"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_list_box.html#a97ad991e631c32871df97e2bb9a9ec0e">size</a> () const final</td></tr>
-<tr class="separator:a97ad991e631c32871df97e2bb9a9ec0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8440d3a0244b26bb32c9e6f0517e6302"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_list_box.html#a8440d3a0244b26bb32c9e6f0517e6302">clear</a> () final</td></tr>
-<tr class="separator:a8440d3a0244b26bb32c9e6f0517e6302"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60fc704ca949b59696690a093fc9ef43"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_list_box.html#a60fc704ca949b59696690a093fc9ef43">setItemsHeight</a> (uint8_t height) final</td></tr>
-<tr class="separator:a60fc704ca949b59696690a093fc9ef43"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a999139009efd6d15c83a0aec8ad1020b"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_list_box.html#a999139009efd6d15c83a0aec8ad1020b">setColumnsWidth</a> (uint8_t width) final</td></tr>
-<tr class="separator:a999139009efd6d15c83a0aec8ad1020b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca4ef4d9a0f97e39288b59540125d0c8"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_list_box.html#aca4ef4d9a0f97e39288b59540125d0c8">getItemsHeight</a> () const final</td></tr>
-<tr class="separator:aca4ef4d9a0f97e39288b59540125d0c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5da93436444094329f5a59e3054ed477"><td class="memItemLeft" align="right" valign="top">virtual uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_list_box.html#a5da93436444094329f5a59e3054ed477">getColumnsWidth</a> () const final</td></tr>
-<tr class="separator:a5da93436444094329f5a59e3054ed477"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a344dad6b408bde519ff97455d6aa1b06"><td class="memItemLeft" align="right" valign="top">LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_list_box.html#a344dad6b408bde519ff97455d6aa1b06">size</a> () const</td></tr>
+<tr class="separator:a344dad6b408bde519ff97455d6aa1b06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59594e71b269f1de61657319d723800c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_list_box.html#a59594e71b269f1de61657319d723800c">clear</a> ()</td></tr>
+<tr class="separator:a59594e71b269f1de61657319d723800c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23c14e2c3af8b03ccef019381fbfd955"><td class="memItemLeft" align="right" valign="top">LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_list_box.html#a23c14e2c3af8b03ccef019381fbfd955">setItemsHeight</a> (uint8_t height)</td></tr>
+<tr class="separator:a23c14e2c3af8b03ccef019381fbfd955"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8cf7c4565035f324a399260726d93ad"><td class="memItemLeft" align="right" valign="top">LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_list_box.html#af8cf7c4565035f324a399260726d93ad">setColumnsWidth</a> (uint8_t width)</td></tr>
+<tr class="separator:af8cf7c4565035f324a399260726d93ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a8c7dfd9a7661e735022da49f3c1b73"><td class="memItemLeft" align="right" valign="top">LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_list_box.html#a3a8c7dfd9a7661e735022da49f3c1b73">getItemsHeight</a> () const</td></tr>
+<tr class="separator:a3a8c7dfd9a7661e735022da49f3c1b73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e4056c98b3b0f4066eee55da86e1acf"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_list_box.html#a7e4056c98b3b0f4066eee55da86e1acf">getColumnsWidth</a> () const</td></tr>
+<tr class="separator:a7e4056c98b3b0f4066eee55da86e1acf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae36afe3f2d72ccff07d9610a5bf7b8a6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_list_box.html#ae36afe3f2d72ccff07d9610a5bf7b8a6">resize</a> (uint16_t width, uint16_t height) override</td></tr>
 <tr class="separator:ae36afe3f2d72ccff07d9610a5bf7b8a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d61fffcc5a7993a88c25677cad60ba1"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_list_box.html#a5d61fffcc5a7993a88c25677cad60ba1">getHash</a> () const override=0</td></tr>
@@ -154,59 +163,89 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6ae2994ceb712fed4c87028bfc074f24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6adedd3e23a0dda370e6f5d8efc515c"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_list_box.html#ad6adedd3e23a0dda370e6f5d8efc515c">~BaseListBox</a> ()=default</td></tr>
 <tr class="separator:ad6adedd3e23a0dda370e6f5d8efc515c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classgui__framework_1_1interfaces_1_1_i_multiple_text_localized"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classgui__framework_1_1interfaces_1_1_i_multiple_text_localized')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classgui__framework_1_1interfaces_1_1_i_multiple_text_localized.html">gui_framework::interfaces::IMultipleTextLocalized</a></td></tr>
+<tr class="memitem:afa5f50acb1f53548ae1be9e9f829878c inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_multiple_text_localized"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_multiple_text_localized.html#afa5f50acb1f53548ae1be9e9f829878c">IMultipleTextLocalized</a> (bool autoUpdate=true)</td></tr>
+<tr class="separator:afa5f50acb1f53548ae1be9e9f829878c inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_multiple_text_localized"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad455f7a579a04d9739eaec9b8505324d inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_multiple_text_localized"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_multiple_text_localized.html#ad455f7a579a04d9739eaec9b8505324d">addLocalizationKey</a> (const std::string &amp;localizationKey) final</td></tr>
+<tr class="separator:ad455f7a579a04d9739eaec9b8505324d inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_multiple_text_localized"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00b098331e595d79f747d763673f4fac inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_multiple_text_localized"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_multiple_text_localized.html#a00b098331e595d79f747d763673f4fac">addLocalizationKey</a> (std::string &amp;&amp;localizationKey) noexcept final</td></tr>
+<tr class="separator:a00b098331e595d79f747d763673f4fac inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_multiple_text_localized"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af48e2df889ba37ccb23d7e7f235c02fa inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_multiple_text_localized"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_multiple_text_localized.html#af48e2df889ba37ccb23d7e7f235c02fa">insertLocalizationKey</a> (size_t index, const std::string &amp;localizationKey) final</td></tr>
+<tr class="separator:af48e2df889ba37ccb23d7e7f235c02fa inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_multiple_text_localized"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b93febe1f30d1174984a21b42657975 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_multiple_text_localized"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_multiple_text_localized.html#a6b93febe1f30d1174984a21b42657975">insertLocalizationKey</a> (size_t index, std::string &amp;&amp;localizationKey) noexcept final</td></tr>
+<tr class="separator:a6b93febe1f30d1174984a21b42657975 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_multiple_text_localized"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29774ca64924c8a810148e350ead8d12 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_multiple_text_localized"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_multiple_text_localized.html#a29774ca64924c8a810148e350ead8d12">removeLocalizationKey</a> (size_t index) final</td></tr>
+<tr class="separator:a29774ca64924c8a810148e350ead8d12 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_multiple_text_localized"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dc2737c86c8cf163f77829ede84c7a3 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_multiple_text_localized"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_multiple_text_localized.html#a6dc2737c86c8cf163f77829ede84c7a3">removeLocalizationKey</a> (const std::string &amp;localizationKey) final</td></tr>
+<tr class="separator:a6dc2737c86c8cf163f77829ede84c7a3 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_multiple_text_localized"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b4e7cefc34961bf98b2122f3f980e56 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_multiple_text_localized"><td class="memItemLeft" align="right" valign="top">virtual const std::vector&lt; std::string &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_multiple_text_localized.html#a5b4e7cefc34961bf98b2122f3f980e56">getLocalizationKeys</a> () const final</td></tr>
+<tr class="separator:a5b4e7cefc34961bf98b2122f3f980e56 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_multiple_text_localized"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e22ea603d0543fb412640a1383aea05 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_multiple_text_localized"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_multiple_text_localized.html#a3e22ea603d0543fb412640a1383aea05">updateLocalizationEvent</a> () final override</td></tr>
+<tr class="separator:a3e22ea603d0543fb412640a1383aea05 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_multiple_text_localized"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f71d9b8528ef501a593c922c3219d6e inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_multiple_text_localized"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_multiple_text_localized.html#a2f71d9b8528ef501a593c922c3219d6e">~IMultipleTextLocalized</a> ()=default</td></tr>
+<tr class="separator:a2f71d9b8528ef501a593c922c3219d6e inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_multiple_text_localized"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classgui__framework_1_1interfaces_1_1_i_text_localized"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classgui__framework_1_1interfaces_1_1_i_text_localized')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classgui__framework_1_1interfaces_1_1_i_text_localized.html">gui_framework::interfaces::ITextLocalized</a></td></tr>
+<tr class="memitem:a3aee74d0847a32170722d908eefa6c1d inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_text_localized"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_text_localized.html#a3aee74d0847a32170722d908eefa6c1d">ITextLocalized</a> (bool autoUpdate=true)</td></tr>
+<tr class="separator:a3aee74d0847a32170722d908eefa6c1d inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_text_localized"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a66c9e4645e3b5a3f77bc942d4986d2 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_text_localized"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_text_localized.html#a9a66c9e4645e3b5a3f77bc942d4986d2">setAutoUpdate</a> (bool autoUpdate) final</td></tr>
+<tr class="separator:a9a66c9e4645e3b5a3f77bc942d4986d2 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_text_localized"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3ff8453cdd04cdcf96cf607d9de79e0 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_text_localized"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_text_localized.html#ae3ff8453cdd04cdcf96cf607d9de79e0">getAutoUpdate</a> () const final</td></tr>
+<tr class="separator:ae3ff8453cdd04cdcf96cf607d9de79e0 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_text_localized"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa57dbc42f4cf3e34839dbc931fd1e57b inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_text_localized"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_text_localized.html#aa57dbc42f4cf3e34839dbc931fd1e57b">~ITextLocalized</a> ()=default</td></tr>
+<tr class="separator:aa57dbc42f4cf3e34839dbc931fd1e57b inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_text_localized"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classgui__framework_1_1_base_component"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classgui__framework_1_1_base_component')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></td></tr>
 <tr class="memitem:a5e962868a5b9fbce0854fea8bfb57f89 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a5e962868a5b9fbce0854fea8bfb57f89">BaseComponent</a> (const std::wstring &amp;<a class="el" href="classgui__framework_1_1_base_component.html#a7a8719af09a90cd4de26d3a295882e86">className</a>, const std::wstring &amp;<a class="el" href="classgui__framework_1_1_base_component.html#ab927f5791c7605446203f7f7f6e0bb83">windowName</a>, const <a class="el" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a> &amp;settings, const <a class="el" href="classgui__framework_1_1interfaces_1_1_i_styles.html">interfaces::IStyles</a> &amp;<a class="el" href="classgui__framework_1_1_base_component.html#aec8d3af6711b0c012f2f7f90cc7d4141">styles</a>, <a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> *<a class="el" href="classgui__framework_1_1_base_component.html#a1576375d22cf283d598e22f4a11aca2f">parent</a>=nullptr, const std::string &amp;windowFunctionName=&quot;&quot;, const std::string &amp;moduleName=&quot;&quot;, uint16_t smallIconResource=NULL, uint16_t largeIconResource=NULL)</td></tr>
 <tr class="separator:a5e962868a5b9fbce0854fea8bfb57f89 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80afd36bdaaa52f7137371ec9c8cdac5 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a80afd36bdaaa52f7137371ec9c8cdac5">isComposite</a> () const</td></tr>
 <tr class="separator:a80afd36bdaaa52f7137371ec9c8cdac5 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d83634fe44ae3639664a09f14007268 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a4d83634fe44ae3639664a09f14007268">handleMessages</a> (HWND <a class="el" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, UINT message, WPARAM wparam, LPARAM lparam, bool &amp;isUsed) final</td></tr>
-<tr class="separator:a4d83634fe44ae3639664a09f14007268 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa91c935601d05ca54c2002b4832d260f inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#aa91c935601d05ca54c2002b4832d260f">destroyComponent</a> () final</td></tr>
-<tr class="separator:aa91c935601d05ca54c2002b4832d260f inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae670a5510c2e9a1cbaa4d00220555b07 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#ae670a5510c2e9a1cbaa4d00220555b07">asyncDestroyComponent</a> () final</td></tr>
-<tr class="separator:ae670a5510c2e9a1cbaa4d00220555b07 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7bb01e4f57c3066b96e38c20ea9207a2 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a7bb01e4f57c3066b96e38c20ea9207a2">setDesiredWidth</a> (uint16_t <a class="el" href="classgui__framework_1_1_base_component.html#ac926a20fcbe58d1b4712d2592284ddc2">desiredWidth</a>) final</td></tr>
-<tr class="separator:a7bb01e4f57c3066b96e38c20ea9207a2 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada0f80eac0b8501587f8fa4c640218f2 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#ada0f80eac0b8501587f8fa4c640218f2">setDesiredHeight</a> (uint16_t <a class="el" href="classgui__framework_1_1_base_component.html#a11847788edd849b0b245bd90db0af7bb">desiredHeight</a>) final</td></tr>
-<tr class="separator:ada0f80eac0b8501587f8fa4c640218f2 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad77a109aa5d3d108614a0ee07102ab30 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#ad77a109aa5d3d108614a0ee07102ab30">setDesiredX</a> (int <a class="el" href="classgui__framework_1_1_base_component.html#a45714d8af7df9cc43ed7a0acc02a7c9f">desiredX</a>) final</td></tr>
-<tr class="separator:ad77a109aa5d3d108614a0ee07102ab30 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90444b6b79044a9c7a0d35fb2333c77d inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a90444b6b79044a9c7a0d35fb2333c77d">setDesiredY</a> (int <a class="el" href="classgui__framework_1_1_base_component.html#a3d15724eb33a896f282d5199f825d03b">desiredY</a>) final</td></tr>
-<tr class="separator:a90444b6b79044a9c7a0d35fb2333c77d inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a7908e5bf628b5b1c85abb749f52c5f inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a9a7908e5bf628b5b1c85abb749f52c5f">handleMessages</a> (HWND <a class="el" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, UINT message, WPARAM wparam, LPARAM lparam, bool &amp;isUsed)</td></tr>
+<tr class="separator:a9a7908e5bf628b5b1c85abb749f52c5f inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad130cbb1227608acd3e365945a97655f inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#ad130cbb1227608acd3e365945a97655f">destroyComponent</a> ()</td></tr>
+<tr class="separator:ad130cbb1227608acd3e365945a97655f inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fea4a3cd5c46a1b39182c6455622735 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a3fea4a3cd5c46a1b39182c6455622735">asyncDestroyComponent</a> ()</td></tr>
+<tr class="separator:a3fea4a3cd5c46a1b39182c6455622735 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26655d33fc53823451cf9c7673e46273 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a26655d33fc53823451cf9c7673e46273">setDesiredWidth</a> (uint16_t <a class="el" href="classgui__framework_1_1_base_component.html#ac926a20fcbe58d1b4712d2592284ddc2">desiredWidth</a>)</td></tr>
+<tr class="separator:a26655d33fc53823451cf9c7673e46273 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0da935c556b32ffd9ddcbd4c67a9a060 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a0da935c556b32ffd9ddcbd4c67a9a060">setDesiredHeight</a> (uint16_t <a class="el" href="classgui__framework_1_1_base_component.html#a11847788edd849b0b245bd90db0af7bb">desiredHeight</a>)</td></tr>
+<tr class="separator:a0da935c556b32ffd9ddcbd4c67a9a060 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4b83d3fff563bc50aa92ac8b616c917 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#ae4b83d3fff563bc50aa92ac8b616c917">setDesiredX</a> (int <a class="el" href="classgui__framework_1_1_base_component.html#a45714d8af7df9cc43ed7a0acc02a7c9f">desiredX</a>)</td></tr>
+<tr class="separator:ae4b83d3fff563bc50aa92ac8b616c917 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5294a9f08fc001719dba3a328d0384e4 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a5294a9f08fc001719dba3a328d0384e4">setDesiredY</a> (int <a class="el" href="classgui__framework_1_1_base_component.html#a3d15724eb33a896f282d5199f825d03b">desiredY</a>)</td></tr>
+<tr class="separator:a5294a9f08fc001719dba3a328d0384e4 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2f1b329acc98ad498e18f4d5330f027 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#ae2f1b329acc98ad498e18f4d5330f027">setBackgroundColor</a> (uint8_t red, uint8_t green, uint8_t blue)</td></tr>
 <tr class="separator:ae2f1b329acc98ad498e18f4d5330f027 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9dba22822b7f830295e104fa27af284c inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a9dba22822b7f830295e104fa27af284c">setTextColor</a> (uint8_t red, uint8_t green, uint8_t blue)</td></tr>
 <tr class="separator:a9dba22822b7f830295e104fa27af284c inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae01a3e23cbef564fc8d7e3d9ec26251b inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#ae01a3e23cbef564fc8d7e3d9ec26251b">getParent</a> () const final</td></tr>
-<tr class="separator:ae01a3e23cbef564fc8d7e3d9ec26251b inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab12780fecd5f22ec01d21a82d9ac87b7 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual HWND&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#ab12780fecd5f22ec01d21a82d9ac87b7">getHandle</a> () const final</td></tr>
-<tr class="separator:ab12780fecd5f22ec01d21a82d9ac87b7 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7013181088692986158f428a2e1f80c1 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual const std::wstring &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a7013181088692986158f428a2e1f80c1">getWindowName</a> () const final</td></tr>
-<tr class="separator:a7013181088692986158f428a2e1f80c1 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4831ea4bffa869cf774668f2fa307a6a inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual const std::wstring &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a4831ea4bffa869cf774668f2fa307a6a">getClassName</a> () const final</td></tr>
-<tr class="separator:a4831ea4bffa869cf774668f2fa307a6a inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa03d5033d1bcaa4cb97c42aeaa3704d5 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#aa03d5033d1bcaa4cb97c42aeaa3704d5">getDesiredWidth</a> () const final</td></tr>
-<tr class="separator:aa03d5033d1bcaa4cb97c42aeaa3704d5 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb0f1b23affeb994eff519bd2d5cd845 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#abb0f1b23affeb994eff519bd2d5cd845">getDesiredHeight</a> () const final</td></tr>
-<tr class="separator:abb0f1b23affeb994eff519bd2d5cd845 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2007246eb30386012eae8f51be051052 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a2007246eb30386012eae8f51be051052">getActualWidth</a> () const final</td></tr>
-<tr class="separator:a2007246eb30386012eae8f51be051052 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc149b47370b54de2ed218d17264fd51 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#afc149b47370b54de2ed218d17264fd51">getActualHeight</a> () const final</td></tr>
-<tr class="separator:afc149b47370b54de2ed218d17264fd51 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f276f4574913aa9c4140901c8331169 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual RECT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a9f276f4574913aa9c4140901c8331169">getActualCoordinates</a> () const final</td></tr>
-<tr class="separator:a9f276f4574913aa9c4140901c8331169 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9823e64caacc15b01f9cb589f2533788 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a9823e64caacc15b01f9cb589f2533788">getDesiredX</a> () const final</td></tr>
-<tr class="separator:a9823e64caacc15b01f9cb589f2533788 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17fa3959fff385601eb76e6e5110e6f2 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a17fa3959fff385601eb76e6e5110e6f2">getDesiredY</a> () const final</td></tr>
-<tr class="separator:a17fa3959fff385601eb76e6e5110e6f2 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1719b34576b8ceb271cdb04611ed4523 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a1719b34576b8ceb271cdb04611ed4523">getId</a> () const final</td></tr>
-<tr class="separator:a1719b34576b8ceb271cdb04611ed4523 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b4685df88fa1edf51da5f29895961a4 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual COLORREF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a8b4685df88fa1edf51da5f29895961a4">getBackgroundColor</a> () const final</td></tr>
-<tr class="separator:a8b4685df88fa1edf51da5f29895961a4 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56df6db296a420576396a4629236aa41 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual COLORREF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a56df6db296a420576396a4629236aa41">getTextColor</a> () const final</td></tr>
-<tr class="separator:a56df6db296a420576396a4629236aa41 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a824af5aba3ff0c622d7452f0d9387f26 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67">smartPointerType</a>&lt; <a class="el" href="classgui__framework_1_1interfaces_1_1_i_styles.html">interfaces::IStyles</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a824af5aba3ff0c622d7452f0d9387f26">getStyles</a> () const final</td></tr>
-<tr class="separator:a824af5aba3ff0c622d7452f0d9387f26 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1fd67a68a1205d352cb26931a162da6 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgui__framework_1_1_base_component.html">BaseComponent</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#ad1fd67a68a1205d352cb26931a162da6">getParent</a> () const</td></tr>
+<tr class="separator:ad1fd67a68a1205d352cb26931a162da6 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70ba99ad07500aa2107bcc36d2214fbe inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">HWND&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a70ba99ad07500aa2107bcc36d2214fbe">getHandle</a> () const</td></tr>
+<tr class="separator:a70ba99ad07500aa2107bcc36d2214fbe inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3b5bcf9a85838959ffa71b87e82daa5 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">const std::wstring &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#af3b5bcf9a85838959ffa71b87e82daa5">getWindowName</a> () const</td></tr>
+<tr class="separator:af3b5bcf9a85838959ffa71b87e82daa5 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cc434eae5c9614bed834a0f1821c54b inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">const std::wstring &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a2cc434eae5c9614bed834a0f1821c54b">getClassName</a> () const</td></tr>
+<tr class="separator:a2cc434eae5c9614bed834a0f1821c54b inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42250c56496a79878f64701d70361717 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a42250c56496a79878f64701d70361717">getDesiredWidth</a> () const</td></tr>
+<tr class="separator:a42250c56496a79878f64701d70361717 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a049acbc59f7ecad8e2ec4b778aefc698 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a049acbc59f7ecad8e2ec4b778aefc698">getDesiredHeight</a> () const</td></tr>
+<tr class="separator:a049acbc59f7ecad8e2ec4b778aefc698 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae368503c1556d8bde038dd4ec11d3ec1 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#ae368503c1556d8bde038dd4ec11d3ec1">getActualWidth</a> () const</td></tr>
+<tr class="separator:ae368503c1556d8bde038dd4ec11d3ec1 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacc520e6bcb92c54e6bc3ca5d975efae inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#aacc520e6bcb92c54e6bc3ca5d975efae">getActualHeight</a> () const</td></tr>
+<tr class="separator:aacc520e6bcb92c54e6bc3ca5d975efae inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6cc36f73171b9af0289c10c80ae3a5a inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">RECT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#ab6cc36f73171b9af0289c10c80ae3a5a">getActualCoordinates</a> () const</td></tr>
+<tr class="separator:ab6cc36f73171b9af0289c10c80ae3a5a inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a2765b48dbc6b527ed66f4de928b27e inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a6a2765b48dbc6b527ed66f4de928b27e">getDesiredX</a> () const</td></tr>
+<tr class="separator:a6a2765b48dbc6b527ed66f4de928b27e inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5eb2f79ec0792cac097659e05b30eafe inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a5eb2f79ec0792cac097659e05b30eafe">getDesiredY</a> () const</td></tr>
+<tr class="separator:a5eb2f79ec0792cac097659e05b30eafe inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1cd4376b03ab74500199c2a4cff9045 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#aa1cd4376b03ab74500199c2a4cff9045">getId</a> () const</td></tr>
+<tr class="separator:aa1cd4376b03ab74500199c2a4cff9045 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae135446e2f77b1e33166f8e9e235cb3c inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">COLORREF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#ae135446e2f77b1e33166f8e9e235cb3c">getBackgroundColor</a> () const</td></tr>
+<tr class="separator:ae135446e2f77b1e33166f8e9e235cb3c inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8225811e6bd582bae7f119ab7f10dcdd inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">COLORREF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a8225811e6bd582bae7f119ab7f10dcdd">getTextColor</a> () const</td></tr>
+<tr class="separator:a8225811e6bd582bae7f119ab7f10dcdd inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb6ea58588324261ab82c7c04039725e inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67">smartPointerType</a>&lt; <a class="el" href="classgui__framework_1_1interfaces_1_1_i_styles.html">interfaces::IStyles</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#abb6ea58588324261ab82c7c04039725e">getStyles</a> () const</td></tr>
+<tr class="separator:abb6ea58588324261ab82c7c04039725e inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a274274f6f28b2e93f73544634b640d56 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a274274f6f28b2e93f73544634b640d56">~BaseComponent</a> ()</td></tr>
 <tr class="separator:a274274f6f28b2e93f73544634b640d56 inherit pub_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classgui__framework_1_1interfaces_1_1_i_serializable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html">gui_framework::interfaces::ISerializable</a></td></tr>
@@ -229,6 +268,19 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a2747bd3b00421f633b0bad2d17a4603e inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_resizable_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8076c433950f9187a9bf54607cb1746 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_resizable_component"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_resizable_component.html#af8076c433950f9187a9bf54607cb1746">~IResizableComponent</a> ()=default</td></tr>
 <tr class="separator:af8076c433950f9187a9bf54607cb1746 inherit pub_methods_classgui__framework_1_1interfaces_1_1_i_resizable_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:adb9a24fcaafd025aad1696e9ddfe0fd7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_list_box.html#adb9a24fcaafd025aad1696e9ddfe0fd7">updateLocalization</a> (size_t index, const std::wstring &amp;localizedText) override</td></tr>
+<tr class="separator:adb9a24fcaafd025aad1696e9ddfe0fd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classgui__framework_1_1_base_component"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classgui__framework_1_1_base_component')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></td></tr>
+<tr class="memitem:aa271d9c3ad5e9a9374c7d3a334327cdc inherit pro_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#aa271d9c3ad5e9a9374c7d3a334327cdc">preWindowMessagesHandle</a> (HWND <a class="el" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, UINT message, WPARAM wparam, LPARAM lparam, bool &amp;isUsed)</td></tr>
+<tr class="separator:aa271d9c3ad5e9a9374c7d3a334327cdc inherit pro_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a636cece7fe5db06982150a8eb9e13e10 inherit pro_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a636cece7fe5db06982150a8eb9e13e10">windowMessagesHandle</a> (HWND <a class="el" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, UINT message, WPARAM wparam, LPARAM lparam, bool &amp;isUsed)</td></tr>
+<tr class="separator:a636cece7fe5db06982150a8eb9e13e10 inherit pro_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a248a0b127129cc30bfacd050f48346e6 inherit pro_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a248a0b127129cc30bfacd050f48346e6">setLocalizationKeys</a> (<a class="el" href="classgui__framework_1_1interfaces_1_1_i_text_localized.html">interfaces::ITextLocalized</a> *localized, const std::vector&lt; std::string &gt; &amp;localizationKeys)</td></tr>
+<tr class="memdesc:a248a0b127129cc30bfacd050f48346e6 inherit pro_methods_classgui__framework_1_1_base_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override for custom localization.  <a href="classgui__framework_1_1_base_component.html#a248a0b127129cc30bfacd050f48346e6">More...</a><br /></td></tr>
+<tr class="separator:a248a0b127129cc30bfacd050f48346e6 inherit pro_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -291,16 +343,11 @@ Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_static_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classgui__framework_1_1interfaces_1_1_i_serializable')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html">gui_framework::interfaces::ISerializable</a></td></tr>
 <tr class="memitem:ae3b3d5735f3d842d4f1b438a3f4eb33e inherit pub_static_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_serializable.html#ae3b3d5735f3d842d4f1b438a3f4eb33e">getCodepage</a> ()</td></tr>
 <tr class="separator:ae3b3d5735f3d842d4f1b438a3f4eb33e inherit pub_static_methods_classgui__framework_1_1interfaces_1_1_i_serializable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_methods_classgui__framework_1_1_base_component"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classgui__framework_1_1_base_component')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></td></tr>
-<tr class="memitem:aa271d9c3ad5e9a9374c7d3a334327cdc inherit pro_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#aa271d9c3ad5e9a9374c7d3a334327cdc">preWindowMessagesHandle</a> (HWND <a class="el" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, UINT message, WPARAM wparam, LPARAM lparam, bool &amp;isUsed)</td></tr>
-<tr class="separator:aa271d9c3ad5e9a9374c7d3a334327cdc inherit pro_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a636cece7fe5db06982150a8eb9e13e10 inherit pro_methods_classgui__framework_1_1_base_component"><td class="memItemLeft" align="right" valign="top">virtual LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1_base_component.html#a636cece7fe5db06982150a8eb9e13e10">windowMessagesHandle</a> (HWND <a class="el" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, UINT message, WPARAM wparam, LPARAM lparam, bool &amp;isUsed)</td></tr>
-<tr class="separator:a636cece7fe5db06982150a8eb9e13e10 inherit pro_methods_classgui__framework_1_1_base_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base class for all list boxes. </p>
 
-<p class="definition">Definition at line <a class="el" href="_base_list_box_8h_source.html#l00011">11</a> of file <a class="el" href="_base_list_box_8h_source.html">BaseListBox.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_list_box_8h_source.html#l00012">12</a> of file <a class="el" href="_base_list_box_8h_source.html">BaseListBox.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a40ba9d4912fb4eac43df540d799ac24b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a40ba9d4912fb4eac43df540d799ac24b">&#9670;&nbsp;</a></span>BaseListBox()</h2>
@@ -340,7 +387,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_list_box_8cpp_source.html#l00015">15</a> of file <a class="el" href="_base_list_box_8cpp_source.html">BaseListBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_list_box_8cpp_source.html#l00020">20</a> of file <a class="el" href="_base_list_box_8cpp_source.html">BaseListBox.cpp</a>.</p>
 
 </div>
 </div>
@@ -370,14 +417,43 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="acce850b91ddcfcac36cafc03dec2b5a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acce850b91ddcfcac36cafc03dec2b5a5">&#9670;&nbsp;</a></span>addValue()</h2>
+<a id="a2fa9fc07eefc95ad03dbed3296fba234"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fa9fc07eefc95ad03dbed3296fba234">&#9670;&nbsp;</a></span>addValue() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LRESULT gui_framework::BaseListBox::addValue </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>localizationKey</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">localizationKey</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">SelectListException</td><td></td></tr>
+    <tr><td class="paramname">std::runtime_error</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7a6c78798bb0d00d1f748683397ae7e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a6c78798bb0d00d1f748683397ae7e1">&#9670;&nbsp;</a></span>addValue() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">LRESULT gui_framework::BaseListBox::addValue </td>
@@ -387,11 +463,6 @@ Additional Inherited Members</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -408,12 +479,53 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_list_box_8cpp_source.html#l00036">36</a> of file <a class="el" href="_base_list_box_8cpp_source.html">BaseListBox.cpp</a>.</p>
+</div>
+</div>
+<a id="a295771ec3006e86c5f63c2188c618053"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a295771ec3006e86c5f63c2188c618053">&#9670;&nbsp;</a></span>changeValue() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LRESULT gui_framework::BaseListBox::changeValue </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>localizationKey</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LRESULT&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">localizationKey</td><td></td></tr>
+    <tr><td class="paramname">index</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">SelectListException</td><td><br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="aaa85d4246f068112f6a63bd375826084"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa85d4246f068112f6a63bd375826084">&#9670;&nbsp;</a></span>changeValue()</h2>
+<a id="aeaeed87704f74f08a3806c7e8a7526f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeaeed87704f74f08a3806c7e8a7526f0">&#9670;&nbsp;</a></span>changeValue() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -422,7 +534,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">LRESULT gui_framework::BaseListBox::changeValue </td>
+          <td class="memname">virtual LRESULT gui_framework::BaseListBox::changeValue </td>
           <td>(</td>
           <td class="paramtype">const std::wstring &amp;&#160;</td>
           <td class="paramname"><em>newValue</em>, </td>
@@ -461,18 +573,13 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_list_box_8cpp_source.html#l00086">86</a> of file <a class="el" href="_base_list_box_8cpp_source.html">BaseListBox.cpp</a>.</p>
-
 </div>
 </div>
-<a id="a8440d3a0244b26bb32c9e6f0517e6302"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8440d3a0244b26bb32c9e6f0517e6302">&#9670;&nbsp;</a></span>clear()</h2>
+<a id="a59594e71b269f1de61657319d723800c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59594e71b269f1de61657319d723800c">&#9670;&nbsp;</a></span>clear()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void gui_framework::BaseListBox::clear </td>
@@ -481,25 +588,17 @@ Additional Inherited Members</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_list_box_8cpp_source.html#l00177">177</a> of file <a class="el" href="_base_list_box_8cpp_source.html">BaseListBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_list_box_8cpp_source.html#l00205">205</a> of file <a class="el" href="_base_list_box_8cpp_source.html">BaseListBox.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a17dfe0ac51b05acc2463a82766b186b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a17dfe0ac51b05acc2463a82766b186b2">&#9670;&nbsp;</a></span>findString()</h2>
+<a id="a26fde21f870a2c38de79e0807db40239"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26fde21f870a2c38de79e0807db40239">&#9670;&nbsp;</a></span>findString()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">LRESULT gui_framework::BaseListBox::findString </td>
@@ -509,11 +608,6 @@ Additional Inherited Members</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -530,18 +624,15 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_list_box_8cpp_source.html#l00112">112</a> of file <a class="el" href="_base_list_box_8cpp_source.html">BaseListBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_list_box_8cpp_source.html#l00140">140</a> of file <a class="el" href="_base_list_box_8cpp_source.html">BaseListBox.cpp</a>.</p>
 
 </div>
 </div>
-<a id="ac9ff8d86ee17333146cbbc2883eb8abd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac9ff8d86ee17333146cbbc2883eb8abd">&#9670;&nbsp;</a></span>findSubstring()</h2>
+<a id="a2494323224357bfc7e2c69eaeca85249"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2494323224357bfc7e2c69eaeca85249">&#9670;&nbsp;</a></span>findSubstring()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">LRESULT gui_framework::BaseListBox::findSubstring </td>
@@ -551,11 +642,6 @@ Additional Inherited Members</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -572,18 +658,15 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_list_box_8cpp_source.html#l00100">100</a> of file <a class="el" href="_base_list_box_8cpp_source.html">BaseListBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_list_box_8cpp_source.html#l00128">128</a> of file <a class="el" href="_base_list_box_8cpp_source.html">BaseListBox.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a5da93436444094329f5a59e3054ed477"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5da93436444094329f5a59e3054ed477">&#9670;&nbsp;</a></span>getColumnsWidth()</h2>
+<a id="a7e4056c98b3b0f4066eee55da86e1acf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e4056c98b3b0f4066eee55da86e1acf">&#9670;&nbsp;</a></span>getColumnsWidth()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">uint8_t gui_framework::BaseListBox::getColumnsWidth </td>
@@ -592,11 +675,6 @@ Additional Inherited Members</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
@@ -607,18 +685,15 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_list_box_8cpp_source.html#l00220">220</a> of file <a class="el" href="_base_list_box_8cpp_source.html">BaseListBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_list_box_8cpp_source.html#l00248">248</a> of file <a class="el" href="_base_list_box_8cpp_source.html">BaseListBox.cpp</a>.</p>
 
 </div>
 </div>
-<a id="afd962bbc263e8f66dc03751f18b189cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd962bbc263e8f66dc03751f18b189cc">&#9670;&nbsp;</a></span>getCurrentSelectionIndex()</h2>
+<a id="aa9aa9bcf9210dad11b397c23c0503177"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9aa9bcf9210dad11b397c23c0503177">&#9670;&nbsp;</a></span>getCurrentSelectionIndex()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">LRESULT gui_framework::BaseListBox::getCurrentSelectionIndex </td>
@@ -627,11 +702,6 @@ Additional Inherited Members</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
@@ -642,7 +712,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_list_box_8cpp_source.html#l00148">148</a> of file <a class="el" href="_base_list_box_8cpp_source.html">BaseListBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_list_box_8cpp_source.html#l00176">176</a> of file <a class="el" href="_base_list_box_8cpp_source.html">BaseListBox.cpp</a>.</p>
 
 </div>
 </div>
@@ -678,14 +748,11 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="aca4ef4d9a0f97e39288b59540125d0c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aca4ef4d9a0f97e39288b59540125d0c8">&#9670;&nbsp;</a></span>getItemsHeight()</h2>
+<a id="a3a8c7dfd9a7661e735022da49f3c1b73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a8c7dfd9a7661e735022da49f3c1b73">&#9670;&nbsp;</a></span>getItemsHeight()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">LRESULT gui_framework::BaseListBox::getItemsHeight </td>
@@ -694,11 +761,6 @@ Additional Inherited Members</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -715,7 +777,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_list_box_8cpp_source.html#l00208">208</a> of file <a class="el" href="_base_list_box_8cpp_source.html">BaseListBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_list_box_8cpp_source.html#l00236">236</a> of file <a class="el" href="_base_list_box_8cpp_source.html">BaseListBox.cpp</a>.</p>
 
 </div>
 </div>
@@ -746,18 +808,15 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classgui__framework_1_1_multiple_select_list_box.html#abb96085f99ac636032d607453fa90ced">gui_framework::MultipleSelectListBox</a>, and <a class="el" href="classgui__framework_1_1_base_multiple_select_list_box.html#a5e96b134a3ab5d2d08c9f5cab1cbd777">gui_framework::BaseMultipleSelectListBox</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_base_list_box_8cpp_source.html#l00304">304</a> of file <a class="el" href="_base_list_box_8cpp_source.html">BaseListBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_list_box_8cpp_source.html#l00332">332</a> of file <a class="el" href="_base_list_box_8cpp_source.html">BaseListBox.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a58fc839753afbaa623cb140339149744"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a58fc839753afbaa623cb140339149744">&#9670;&nbsp;</a></span>getValue()</h2>
+<a id="a1ca70f306c7897c21a3cd59badb9c19c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ca70f306c7897c21a3cd59badb9c19c">&#9670;&nbsp;</a></span>getValue()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">wstring gui_framework::BaseListBox::getValue </td>
@@ -767,11 +826,6 @@ Additional Inherited Members</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -788,12 +842,55 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_list_box_8cpp_source.html#l00124">124</a> of file <a class="el" href="_base_list_box_8cpp_source.html">BaseListBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_list_box_8cpp_source.html#l00152">152</a> of file <a class="el" href="_base_list_box_8cpp_source.html">BaseListBox.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a628af8d5bb8b857c007b7d42f064b37c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a628af8d5bb8b857c007b7d42f064b37c">&#9670;&nbsp;</a></span>insertValue()</h2>
+<a id="a4d23d2517f58e413ddaa58cbdd76cf5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d23d2517f58e413ddaa58cbdd76cf5c">&#9670;&nbsp;</a></span>insertValue() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LRESULT gui_framework::BaseListBox::insertValue </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>localizationKey</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LRESULT&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">localizationKey</td><td></td></tr>
+    <tr><td class="paramname">index</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">SelectListException</td><td><br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa528cc412810da4b2224149556271798"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa528cc412810da4b2224149556271798">&#9670;&nbsp;</a></span>insertValue() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -802,7 +899,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">LRESULT gui_framework::BaseListBox::insertValue </td>
+          <td class="memname">virtual LRESULT gui_framework::BaseListBox::insertValue </td>
           <td>(</td>
           <td class="paramtype">const std::wstring &amp;&#160;</td>
           <td class="paramname"><em>value</em>, </td>
@@ -841,18 +938,13 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_list_box_8cpp_source.html#l00068">68</a> of file <a class="el" href="_base_list_box_8cpp_source.html">BaseListBox.cpp</a>.</p>
-
 </div>
 </div>
-<a id="a6331ea3cc2488540e0a42859ee77a32a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6331ea3cc2488540e0a42859ee77a32a">&#9670;&nbsp;</a></span>removeValue()</h2>
+<a id="aa44cbfa3c87ad62420dfa1347954e188"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa44cbfa3c87ad62420dfa1347954e188">&#9670;&nbsp;</a></span>removeValue()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">LRESULT gui_framework::BaseListBox::removeValue </td>
@@ -862,11 +954,6 @@ Additional Inherited Members</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -883,7 +970,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_list_box_8cpp_source.html#l00054">54</a> of file <a class="el" href="_base_list_box_8cpp_source.html">BaseListBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_list_box_8cpp_source.html#l00066">66</a> of file <a class="el" href="_base_list_box_8cpp_source.html">BaseListBox.cpp</a>.</p>
 
 </div>
 </div>
@@ -937,18 +1024,15 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classgui__framework_1_1interfaces_1_1_i_resizable_component.html#a5afd12e065fd4ae4fa2a1298370af868">gui_framework::interfaces::IResizableComponent</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_base_list_box_8cpp_source.html#l00225">225</a> of file <a class="el" href="_base_list_box_8cpp_source.html">BaseListBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_list_box_8cpp_source.html#l00253">253</a> of file <a class="el" href="_base_list_box_8cpp_source.html">BaseListBox.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a999139009efd6d15c83a0aec8ad1020b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a999139009efd6d15c83a0aec8ad1020b">&#9670;&nbsp;</a></span>setColumnsWidth()</h2>
+<a id="af8cf7c4565035f324a399260726d93ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8cf7c4565035f324a399260726d93ad">&#9670;&nbsp;</a></span>setColumnsWidth()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">LRESULT gui_framework::BaseListBox::setColumnsWidth </td>
@@ -958,11 +1042,6 @@ Additional Inherited Members</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -979,7 +1058,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_list_box_8cpp_source.html#l00194">194</a> of file <a class="el" href="_base_list_box_8cpp_source.html">BaseListBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_list_box_8cpp_source.html#l00222">222</a> of file <a class="el" href="_base_list_box_8cpp_source.html">BaseListBox.cpp</a>.</p>
 
 </div>
 </div>
@@ -1023,18 +1102,15 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classgui__framework_1_1_base_multiple_select_list_box.html#a635fad3193fc365dd008905f288cd249">gui_framework::BaseMultipleSelectListBox</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_base_list_box_8cpp_source.html#l00153">153</a> of file <a class="el" href="_base_list_box_8cpp_source.html">BaseListBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_list_box_8cpp_source.html#l00181">181</a> of file <a class="el" href="_base_list_box_8cpp_source.html">BaseListBox.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a60fc704ca949b59696690a093fc9ef43"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a60fc704ca949b59696690a093fc9ef43">&#9670;&nbsp;</a></span>setItemsHeight()</h2>
+<a id="a23c14e2c3af8b03ccef019381fbfd955"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23c14e2c3af8b03ccef019381fbfd955">&#9670;&nbsp;</a></span>setItemsHeight()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">LRESULT gui_framework::BaseListBox::setItemsHeight </td>
@@ -1044,11 +1120,6 @@ Additional Inherited Members</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1066,18 +1137,15 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_list_box_8cpp_source.html#l00182">182</a> of file <a class="el" href="_base_list_box_8cpp_source.html">BaseListBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_list_box_8cpp_source.html#l00210">210</a> of file <a class="el" href="_base_list_box_8cpp_source.html">BaseListBox.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a97ad991e631c32871df97e2bb9a9ec0e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a97ad991e631c32871df97e2bb9a9ec0e">&#9670;&nbsp;</a></span>size()</h2>
+<a id="a344dad6b408bde519ff97455d6aa1b06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a344dad6b408bde519ff97455d6aa1b06">&#9670;&nbsp;</a></span>size()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">LRESULT gui_framework::BaseListBox::size </td>
@@ -1086,11 +1154,6 @@ Additional Inherited Members</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
@@ -1101,7 +1164,47 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_list_box_8cpp_source.html#l00165">165</a> of file <a class="el" href="_base_list_box_8cpp_source.html">BaseListBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_list_box_8cpp_source.html#l00193">193</a> of file <a class="el" href="_base_list_box_8cpp_source.html">BaseListBox.cpp</a>.</p>
+
+</div>
+</div>
+<a id="adb9a24fcaafd025aad1696e9ddfe0fd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb9a24fcaafd025aad1696e9ddfe0fd7">&#9670;&nbsp;</a></span>updateLocalization()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gui_framework::BaseListBox::updateLocalization </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>localizedText</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="classgui__framework_1_1interfaces_1_1_i_multiple_text_localized.html#aaad9c0775831a16cb8702c1f57e122a4">gui_framework::interfaces::IMultipleTextLocalized</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_base_list_box_8cpp_source.html#l00015">15</a> of file <a class="el" href="_base_list_box_8cpp_source.html">BaseListBox.cpp</a>.</p>
 
 </div>
 </div>
@@ -1126,7 +1229,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_list_box_8h_source.html#l00017">17</a> of file <a class="el" href="_base_list_box_8h_source.html">BaseListBox.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_list_box_8h_source.html#l00019">19</a> of file <a class="el" href="_base_list_box_8h_source.html">BaseListBox.h</a>.</p>
 
 </div>
 </div>
@@ -1150,7 +1253,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_base_list_box_8h_source.html#l00016">16</a> of file <a class="el" href="_base_list_box_8h_source.html">BaseListBox.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_list_box_8h_source.html#l00018">18</a> of file <a class="el" href="_base_list_box_8h_source.html">BaseListBox.h</a>.</p>
 
 </div>
 </div>

@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.8.5-beta</span>
+   &#160;<span id="projectnumber">0.9-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -90,170 +90,173 @@ $(document).ready(function(){initNavTree('_menu_8cpp_source.html',''); initResiz
 <a href="_menu_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="headers_8h.html">headers.h</a>&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_menu_8h.html">Menu.h</a>&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_utility_8h.html">Utility/Utility.h</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_menu.html#a2155448171d493387889e49958638d2a">    8</a></span>&#160;    Menu::Menu() :</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        handle(nullptr),</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        parent(nullptr)</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    }</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_menu.html#a2155448171d493387889e49958638d2a">   10</a></span>&#160;    Menu::Menu() :</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        handle(nullptr),</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        parent(nullptr)</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    {</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="classgui__framework_1_1_menu.html#a2155448171d493387889e49958638d2a">Menu::Menu</a>(<span class="keyword">const</span> wstring&amp; name, HWND parent) :</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        name(name),</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        handle(CreateMenu()),</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        parent(parent)</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        MENUINFO info = {};</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        info.cbSize = <span class="keyword">sizeof</span>(info);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        info.dwStyle = MNS_NOTIFYBYPOS;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        info.fMask = MIM_STYLE;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        SetMenuInfo(handle, &amp;info);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    }</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="classgui__framework_1_1_menu.html#a2155448171d493387889e49958638d2a">Menu::Menu</a>(<span class="keyword">const</span> wstring&amp; name, HWND parent) :</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        name(name),</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        handle(CreateMenu()),</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        parent(parent)</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        MENUINFO info = {};</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        info.cbSize = <span class="keyword">sizeof</span>(info);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        info.dwStyle = MNS_NOTIFYBYPOS;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        info.fMask = MIM_STYLE;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">if</span> (parent)</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            SetMenu(parent, handle);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_menu.html#ab1e1aacb4d4831dcdb9475f36bbf82eb">   34</a></span>&#160;    <a class="code" href="classgui__framework_1_1_menu.html#a2155448171d493387889e49958638d2a">Menu::Menu</a>(<a class="code" href="classgui__framework_1_1_menu.html">Menu</a>&amp;&amp; other) noexcept :</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        name(move(other.name)),</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        handle(other.handle),</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        items(move(other.items)),</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        parent(other.parent)</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        other.handle = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        other.parent = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_menu.html#a0d1d17252a36abae06db1d484de90a33">   44</a></span>&#160;    <a class="code" href="classgui__framework_1_1_menu.html">Menu</a>&amp; <a class="code" href="classgui__framework_1_1_menu.html#a438acbe858735ef5e8ebfc0e49cdd824">Menu::operator = </a>(<a class="code" href="classgui__framework_1_1_menu.html">Menu</a>&amp;&amp; other) noexcept</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        name = move(other.name);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        handle = other.handle;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        items = move(other.items);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        parent = other.parent;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        other.handle = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        other.parent = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_menu.html#ad1a2a13022ca63659a014c59d4b5f246">   57</a></span>&#160;    <a class="code" href="classgui__framework_1_1_menu.html">Menu</a>&amp; <a class="code" href="classgui__framework_1_1_menu.html#ad1a2a13022ca63659a014c59d4b5f246">Menu::addMenuItem</a>(unique_ptr&lt;interfaces::IMenuItem&gt;&amp;&amp; item)</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        items.push_back(move(item));</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        items.back()-&gt;createMenuItem(handle);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        items.back()-&gt;setIndex(<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(items.size() - 1));</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        this-&gt;<a class="code" href="classgui__framework_1_1_menu.html#a146f33f09e4fc45ccc30f75f1b7e200f">updateMenu</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        SetMenuInfo(handle, &amp;info);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">if</span> (parent)</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            SetMenu(parent, handle);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_menu.html#ab1e1aacb4d4831dcdb9475f36bbf82eb">   36</a></span>&#160;    <a class="code" href="classgui__framework_1_1_menu.html#a2155448171d493387889e49958638d2a">Menu::Menu</a>(<a class="code" href="classgui__framework_1_1_menu.html">Menu</a>&amp;&amp; other) noexcept :</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        name(move(other.name)),</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        handle(other.handle),</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        items(move(other.items)),</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        parent(other.parent)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        other.handle = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        other.parent = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_menu.html#a0d1d17252a36abae06db1d484de90a33">   46</a></span>&#160;    <a class="code" href="classgui__framework_1_1_menu.html">Menu</a>&amp; <a class="code" href="classgui__framework_1_1_menu.html#a438acbe858735ef5e8ebfc0e49cdd824">Menu::operator = </a>(<a class="code" href="classgui__framework_1_1_menu.html">Menu</a>&amp;&amp; other) noexcept</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        name = move(other.name);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        handle = other.handle;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        items = move(other.items);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        parent = other.parent;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        other.handle = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        other.parent = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_menu.html#ad1a2a13022ca63659a014c59d4b5f246">   59</a></span>&#160;    <a class="code" href="classgui__framework_1_1_menu.html">Menu</a>&amp; <a class="code" href="classgui__framework_1_1_menu.html#ad1a2a13022ca63659a014c59d4b5f246">Menu::addMenuItem</a>(unique_ptr&lt;interfaces::IMenuItem&gt;&amp;&amp; item)</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        items.push_back(move(item));</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        items.back()-&gt;createMenuItem(handle);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        items.back()-&gt;setIndex(<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(items.size() - 1));</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_menu.html#a9806ef1779049ef3f77b5bd48f8055d5">   69</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgui__framework_1_1_menu.html#a9806ef1779049ef3f77b5bd48f8055d5">Menu::removeMenuItem</a>(uint32_t index)</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        items.erase(items.begin() + index);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">for</span> (uint32_t i = index; i &lt; items.size(); i++)</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            items[i]-&gt;setIndex(i);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        this-&gt;<a class="code" href="classgui__framework_1_1_menu.html#a146f33f09e4fc45ccc30f75f1b7e200f">updateMenu</a>();</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_menu.html#a1bf1253fb6905ab2d5514cac98907ae5">   81</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgui__framework_1_1_menu.html#a1bf1253fb6905ab2d5514cac98907ae5">Menu::handleMessage</a>(uint32_t index)</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        items[index]-&gt;processMessage();</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_menu.html#a146f33f09e4fc45ccc30f75f1b7e200f">   86</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgui__framework_1_1_menu.html#a146f33f09e4fc45ccc30f75f1b7e200f">Menu::updateMenu</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        DrawMenuBar(parent);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_menu.html#a3d20a6a3f347b9428af100ff0fe4ff4a">   91</a></span>&#160;    <span class="keyword">const</span> wstring&amp; <a class="code" href="classgui__framework_1_1_menu.html#a3d20a6a3f347b9428af100ff0fe4ff4a">Menu::getName</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">return</span> name;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_menu.html#a0a5809f7c1418e810befaf4b819ae7c5">   96</a></span>&#160;    <span class="keyword">const</span> vector&lt;unique_ptr&lt;interfaces::IMenuItem&gt;&gt;&amp; <a class="code" href="classgui__framework_1_1_menu.html#a0a5809f7c1418e810befaf4b819ae7c5">Menu::getItems</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">return</span> items;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_menu.html#a73231f0fca881c7553a3fc96808fed59">  101</a></span>&#160;    HMENU <a class="code" href="classgui__framework_1_1_menu.html#a73231f0fca881c7553a3fc96808fed59">Menu::getHandle</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">return</span> handle;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_menu.html#a6daf4796d2759b96ae7c323e2ec0d8db">  106</a></span>&#160;    json::JSONBuilder <a class="code" href="classgui__framework_1_1_menu.html#a6daf4796d2759b96ae7c323e2ec0d8db">Menu::getStructure</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        uint32_t codepage = ISerializable::getCodepage();</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        json::JSONBuilder builder(codepage);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        vector&lt;json::utility::objectSmartPointer&lt;json::utility::jsonObject&gt;&gt; children;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        this-&gt;<a class="code" href="classgui__framework_1_1_menu.html#a146f33f09e4fc45ccc30f75f1b7e200f">updateMenu</a>();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_menu.html#a9806ef1779049ef3f77b5bd48f8055d5">   71</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgui__framework_1_1_menu.html#a9806ef1779049ef3f77b5bd48f8055d5">Menu::removeMenuItem</a>(uint32_t index)</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        items.erase(items.begin() + index);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">for</span> (uint32_t i = index; i &lt; items.size(); i++)</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            items[i]-&gt;setIndex(i);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        this-&gt;<a class="code" href="classgui__framework_1_1_menu.html#a146f33f09e4fc45ccc30f75f1b7e200f">updateMenu</a>();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_menu.html#a1bf1253fb6905ab2d5514cac98907ae5">   83</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgui__framework_1_1_menu.html#a1bf1253fb6905ab2d5514cac98907ae5">Menu::handleMessage</a>(uint32_t index)</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        items[index]-&gt;processMessage();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_menu.html#a146f33f09e4fc45ccc30f75f1b7e200f">   88</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgui__framework_1_1_menu.html#a146f33f09e4fc45ccc30f75f1b7e200f">Menu::updateMenu</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        DrawMenuBar(parent);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_menu.html#a3d20a6a3f347b9428af100ff0fe4ff4a">   93</a></span>&#160;    <span class="keyword">const</span> wstring&amp; <a class="code" href="classgui__framework_1_1_menu.html#a3d20a6a3f347b9428af100ff0fe4ff4a">Menu::getName</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">return</span> name;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_menu.html#a0a5809f7c1418e810befaf4b819ae7c5">   98</a></span>&#160;    <span class="keyword">const</span> vector&lt;unique_ptr&lt;interfaces::IMenuItem&gt;&gt;&amp; <a class="code" href="classgui__framework_1_1_menu.html#a0a5809f7c1418e810befaf4b819ae7c5">Menu::getItems</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">return</span> items;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_menu.html#a73231f0fca881c7553a3fc96808fed59">  103</a></span>&#160;    HMENU <a class="code" href="classgui__framework_1_1_menu.html#a73231f0fca881c7553a3fc96808fed59">Menu::getHandle</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">return</span> handle;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_menu.html#a6daf4796d2759b96ae7c323e2ec0d8db">  108</a></span>&#160;    json::JSONBuilder <a class="code" href="classgui__framework_1_1_menu.html#a6daf4796d2759b96ae7c323e2ec0d8db">Menu::getStructure</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        uint32_t codepage = ISerializable::getCodepage();</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        json::JSONBuilder builder(codepage);</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; i : items)</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            json::utility::objectSmartPointer&lt;json::utility::jsonObject&gt; child = json::utility::make_object&lt;json::utility::jsonObject&gt;();</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            json::JSONBuilder structure = i-&gt;getStructure();</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; itemText = get&lt;string&gt;(structure[<span class="stringliteral">&quot;itemText&quot;</span>]);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; itemType = get&lt;string&gt;(structure[<span class="stringliteral">&quot;itemType&quot;</span>]);</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            child-&gt;data.push_back({ <span class="stringliteral">&quot;itemText&quot;</span>s, itemText });</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            child-&gt;data.push_back({ <span class="stringliteral">&quot;itemType&quot;</span>s, itemType });</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <span class="keywordflow">if</span> (structure.contains(<span class="stringliteral">&quot;functionName&quot;</span>, json::utility::variantTypeEnum::jString))</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            {</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                child-&gt;data.push_back({ <span class="stringliteral">&quot;functionName&quot;</span>s, get&lt;string&gt;(structure[<span class="stringliteral">&quot;functionName&quot;</span>]) });</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                child-&gt;data.push_back({ <span class="stringliteral">&quot;moduleName&quot;</span>s, get&lt;string&gt;(structure[<span class="stringliteral">&quot;moduleName&quot;</span>]) });</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            }</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <span class="keywordflow">if</span> (itemType == <a class="code" href="namespacegui__framework_1_1standard__menu__items.html#a7c8d005201403b3916d6a1df61d5369f">standard_menu_items::dropDownMenuItem</a>)</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            {</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                child-&gt;data.push_back({ <span class="stringliteral">&quot;popupId&quot;</span>s, get&lt;uint64_t&gt;(structure[<span class="stringliteral">&quot;popupId&quot;</span>]) });</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            }</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            json::utility::appendArray(move(child), children);</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        }</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        builder.</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            append(<span class="stringliteral">&quot;menuName&quot;</span>s, <a class="code" href="namespacegui__framework_1_1utility.html#a29e6b8bdafb60965ca6109d0ad4bf869">utility::to_string</a>(name, codepage)).</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            append(<span class="stringliteral">&quot;menuId&quot;</span>s, <span class="keyword">reinterpret_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(handle)).</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            append(<span class="stringliteral">&quot;items&quot;</span>s, move(children));</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keywordflow">return</span> builder;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    }</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
-<div class="line"><a name="l00146"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_menu.html#ab982318126cbd7d4d8d5de969a176d2b">  146</a></span>&#160;    <a class="code" href="classgui__framework_1_1_menu.html#ab982318126cbd7d4d8d5de969a176d2b">Menu::~Menu</a>()</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    {</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        DestroyMenu(handle);</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    }</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;}</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        vector&lt;json::utility::jsonObject&gt; children;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; i : items)</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            json::utility::jsonObject child;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            json::JSONBuilder structure = i-&gt;getStructure();</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; itemText = get&lt;string&gt;(structure[<span class="stringliteral">&quot;itemText&quot;</span>]);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; itemType = get&lt;string&gt;(structure[<span class="stringliteral">&quot;itemType&quot;</span>]);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            child.data.push_back({ <span class="stringliteral">&quot;itemText&quot;</span>s, itemText });</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            child.data.push_back({ <span class="stringliteral">&quot;itemType&quot;</span>s, itemType });</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            <span class="keywordflow">if</span> (structure.contains(<span class="stringliteral">&quot;functionName&quot;</span>, json::utility::variantTypeEnum::jString))</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                child.data.push_back({ <span class="stringliteral">&quot;functionName&quot;</span>s, get&lt;string&gt;(structure[<span class="stringliteral">&quot;functionName&quot;</span>]) });</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                child.data.push_back({ <span class="stringliteral">&quot;moduleName&quot;</span>s, get&lt;string&gt;(structure[<span class="stringliteral">&quot;moduleName&quot;</span>]) });</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            <span class="keywordflow">if</span> (itemType == <a class="code" href="namespacegui__framework_1_1standard__menu__items.html#a7c8d005201403b3916d6a1df61d5369f">standard_menu_items::dropDownMenuItem</a>)</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            {</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                child.data.push_back({ <span class="stringliteral">&quot;popupId&quot;</span>s, get&lt;uint64_t&gt;(structure[<span class="stringliteral">&quot;popupId&quot;</span>]) });</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            }</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            json::utility::appendArray(move(child), children);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        }</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        builder.</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            append(<span class="stringliteral">&quot;menuName&quot;</span>s, <a class="code" href="namespacegui__framework_1_1utility.html#a29e6b8bdafb60965ca6109d0ad4bf869">utility::to_string</a>(name, codepage)).</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            append(<span class="stringliteral">&quot;menuId&quot;</span>s, <span class="keyword">reinterpret_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(handle)).</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            append(<span class="stringliteral">&quot;items&quot;</span>s, move(children));</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordflow">return</span> builder;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    }</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_menu.html#ab982318126cbd7d4d8d5de969a176d2b">  148</a></span>&#160;    <a class="code" href="classgui__framework_1_1_menu.html#ab982318126cbd7d4d8d5de969a176d2b">Menu::~Menu</a>()</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    {</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        DestroyMenu(handle);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    }</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;}</div>
 <div class="ttc" id="a_menu_8h_html"><div class="ttname"><a href="_menu_8h.html">Menu.h</a></div></div>
+<div class="ttc" id="a_utility_8h_html"><div class="ttname"><a href="_utility_8h.html">Utility.h</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1_menu_html"><div class="ttname"><a href="classgui__framework_1_1_menu.html">gui_framework::Menu</a></div><div class="ttdoc">Menu class.</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8h_source.html#l00009">Menu.h:10</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_menu_html_a0a5809f7c1418e810befaf4b819ae7c5"><div class="ttname"><a href="classgui__framework_1_1_menu.html#a0a5809f7c1418e810befaf4b819ae7c5">gui_framework::Menu::getItems</a></div><div class="ttdeci">const std::vector&lt; std::unique_ptr&lt; interfaces::IMenuItem &gt; &gt; &amp; getItems() const</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00096">Menu.cpp:96</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_menu_html_a146f33f09e4fc45ccc30f75f1b7e200f"><div class="ttname"><a href="classgui__framework_1_1_menu.html#a146f33f09e4fc45ccc30f75f1b7e200f">gui_framework::Menu::updateMenu</a></div><div class="ttdeci">void updateMenu() const</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00086">Menu.cpp:86</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_menu_html_a1bf1253fb6905ab2d5514cac98907ae5"><div class="ttname"><a href="classgui__framework_1_1_menu.html#a1bf1253fb6905ab2d5514cac98907ae5">gui_framework::Menu::handleMessage</a></div><div class="ttdeci">void handleMessage(uint32_t index)</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00081">Menu.cpp:81</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_menu_html_a2155448171d493387889e49958638d2a"><div class="ttname"><a href="classgui__framework_1_1_menu.html#a2155448171d493387889e49958638d2a">gui_framework::Menu::Menu</a></div><div class="ttdeci">Menu()</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00008">Menu.cpp:8</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_menu_html_a3d20a6a3f347b9428af100ff0fe4ff4a"><div class="ttname"><a href="classgui__framework_1_1_menu.html#a3d20a6a3f347b9428af100ff0fe4ff4a">gui_framework::Menu::getName</a></div><div class="ttdeci">const std::wstring &amp; getName() const</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00091">Menu.cpp:91</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_menu_html_a0a5809f7c1418e810befaf4b819ae7c5"><div class="ttname"><a href="classgui__framework_1_1_menu.html#a0a5809f7c1418e810befaf4b819ae7c5">gui_framework::Menu::getItems</a></div><div class="ttdeci">const std::vector&lt; std::unique_ptr&lt; interfaces::IMenuItem &gt; &gt; &amp; getItems() const</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00098">Menu.cpp:98</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_menu_html_a146f33f09e4fc45ccc30f75f1b7e200f"><div class="ttname"><a href="classgui__framework_1_1_menu.html#a146f33f09e4fc45ccc30f75f1b7e200f">gui_framework::Menu::updateMenu</a></div><div class="ttdeci">void updateMenu() const</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00088">Menu.cpp:88</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_menu_html_a1bf1253fb6905ab2d5514cac98907ae5"><div class="ttname"><a href="classgui__framework_1_1_menu.html#a1bf1253fb6905ab2d5514cac98907ae5">gui_framework::Menu::handleMessage</a></div><div class="ttdeci">void handleMessage(uint32_t index)</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00083">Menu.cpp:83</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_menu_html_a2155448171d493387889e49958638d2a"><div class="ttname"><a href="classgui__framework_1_1_menu.html#a2155448171d493387889e49958638d2a">gui_framework::Menu::Menu</a></div><div class="ttdeci">Menu()</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00010">Menu.cpp:10</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_menu_html_a3d20a6a3f347b9428af100ff0fe4ff4a"><div class="ttname"><a href="classgui__framework_1_1_menu.html#a3d20a6a3f347b9428af100ff0fe4ff4a">gui_framework::Menu::getName</a></div><div class="ttdeci">const std::wstring &amp; getName() const</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00093">Menu.cpp:93</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1_menu_html_a438acbe858735ef5e8ebfc0e49cdd824"><div class="ttname"><a href="classgui__framework_1_1_menu.html#a438acbe858735ef5e8ebfc0e49cdd824">gui_framework::Menu::operator=</a></div><div class="ttdeci">Menu &amp; operator=(const Menu &amp;)=delete</div></div>
-<div class="ttc" id="aclassgui__framework_1_1_menu_html_a6daf4796d2759b96ae7c323e2ec0d8db"><div class="ttname"><a href="classgui__framework_1_1_menu.html#a6daf4796d2759b96ae7c323e2ec0d8db">gui_framework::Menu::getStructure</a></div><div class="ttdeci">json::JSONBuilder getStructure() const override</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00106">Menu.cpp:106</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_menu_html_a73231f0fca881c7553a3fc96808fed59"><div class="ttname"><a href="classgui__framework_1_1_menu.html#a73231f0fca881c7553a3fc96808fed59">gui_framework::Menu::getHandle</a></div><div class="ttdeci">HMENU getHandle() const</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00101">Menu.cpp:101</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_menu_html_a9806ef1779049ef3f77b5bd48f8055d5"><div class="ttname"><a href="classgui__framework_1_1_menu.html#a9806ef1779049ef3f77b5bd48f8055d5">gui_framework::Menu::removeMenuItem</a></div><div class="ttdeci">void removeMenuItem(uint32_t index)</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00069">Menu.cpp:69</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_menu_html_ab982318126cbd7d4d8d5de969a176d2b"><div class="ttname"><a href="classgui__framework_1_1_menu.html#ab982318126cbd7d4d8d5de969a176d2b">gui_framework::Menu::~Menu</a></div><div class="ttdeci">~Menu()</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00146">Menu.cpp:146</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_menu_html_ad1a2a13022ca63659a014c59d4b5f246"><div class="ttname"><a href="classgui__framework_1_1_menu.html#ad1a2a13022ca63659a014c59d4b5f246">gui_framework::Menu::addMenuItem</a></div><div class="ttdeci">Menu &amp; addMenuItem(std::unique_ptr&lt; interfaces::IMenuItem &gt; &amp;&amp;item)</div><div class="ttdoc">Also calls item's createMenuItem method.</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00057">Menu.cpp:57</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_menu_html_a6daf4796d2759b96ae7c323e2ec0d8db"><div class="ttname"><a href="classgui__framework_1_1_menu.html#a6daf4796d2759b96ae7c323e2ec0d8db">gui_framework::Menu::getStructure</a></div><div class="ttdeci">json::JSONBuilder getStructure() const override</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00108">Menu.cpp:108</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_menu_html_a73231f0fca881c7553a3fc96808fed59"><div class="ttname"><a href="classgui__framework_1_1_menu.html#a73231f0fca881c7553a3fc96808fed59">gui_framework::Menu::getHandle</a></div><div class="ttdeci">HMENU getHandle() const</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00103">Menu.cpp:103</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_menu_html_a9806ef1779049ef3f77b5bd48f8055d5"><div class="ttname"><a href="classgui__framework_1_1_menu.html#a9806ef1779049ef3f77b5bd48f8055d5">gui_framework::Menu::removeMenuItem</a></div><div class="ttdeci">void removeMenuItem(uint32_t index)</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00071">Menu.cpp:71</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_menu_html_ab982318126cbd7d4d8d5de969a176d2b"><div class="ttname"><a href="classgui__framework_1_1_menu.html#ab982318126cbd7d4d8d5de969a176d2b">gui_framework::Menu::~Menu</a></div><div class="ttdeci">~Menu()</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00148">Menu.cpp:148</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_menu_html_ad1a2a13022ca63659a014c59d4b5f246"><div class="ttname"><a href="classgui__framework_1_1_menu.html#ad1a2a13022ca63659a014c59d4b5f246">gui_framework::Menu::addMenuItem</a></div><div class="ttdeci">Menu &amp; addMenuItem(std::unique_ptr&lt; interfaces::IMenuItem &gt; &amp;&amp;item)</div><div class="ttdoc">Also calls item's createMenuItem method.</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00059">Menu.cpp:59</a></div></div>
 <div class="ttc" id="aheaders_8h_html"><div class="ttname"><a href="headers_8h.html">headers.h</a></div></div>
 <div class="ttc" id="anamespacegui__framework_1_1standard__menu__items_html_a7c8d005201403b3916d6a1df61d5369f"><div class="ttname"><a href="namespacegui__framework_1_1standard__menu__items.html#a7c8d005201403b3916d6a1df61d5369f">gui_framework::standard_menu_items::dropDownMenuItem</a></div><div class="ttdeci">const std::string dropDownMenuItem</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00030">GUIFrameworkConstants.h:30</a></div></div>
-<div class="ttc" id="anamespacegui__framework_1_1utility_html_a29e6b8bdafb60965ca6109d0ad4bf869"><div class="ttname"><a href="namespacegui__framework_1_1utility.html#a29e6b8bdafb60965ca6109d0ad4bf869">gui_framework::utility::to_string</a></div><div class="ttdeci">GUI_FRAMEWORK_API_FUNCTION string to_string(const wstring &amp;stringToConvert, uint32_t codepage)</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00040">Utility.cpp:40</a></div></div>
-<div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00018">BaseComponent.cpp:19</a></div></div>
+<div class="ttc" id="anamespacegui__framework_1_1utility_html_a29e6b8bdafb60965ca6109d0ad4bf869"><div class="ttname"><a href="namespacegui__framework_1_1utility.html#a29e6b8bdafb60965ca6109d0ad4bf869">gui_framework::utility::to_string</a></div><div class="ttdeci">GUI_FRAMEWORK_API_FUNCTION string to_string(const wstring &amp;stringToConvert, uint32_t codepage)</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00042">Utility.cpp:42</a></div></div>
+<div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00021">BaseComponent.cpp:22</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

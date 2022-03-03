@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['windowholder_1595',['WindowHolder',['../classgui__framework_1_1_window_holder.html',1,'gui_framework']]],
-  ['wrongmenutypeexception_1596',['WrongMenuTypeException',['../classgui__framework_1_1exceptions_1_1deserialization_1_1_wrong_menu_type_exception.html',1,'gui_framework::exceptions::deserialization']]]
+  ['windowholder_1648',['WindowHolder',['../classgui__framework_1_1_window_holder.html',1,'gui_framework']]],
+  ['wrongmenutypeexception_1649',['WrongMenuTypeException',['../classgui__framework_1_1exceptions_1_1deserialization_1_1_wrong_menu_type_exception.html',1,'gui_framework::exceptions::deserialization']]]
 ];

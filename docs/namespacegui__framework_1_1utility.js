@@ -71,6 +71,7 @@ var namespacegui__framework_1_1utility =
     ] ],
     [ "appendStyle", "namespacegui__framework_1_1utility.html#ae97300d8014320696e57f502a858c570", null ],
     [ "getCurrentModule", "namespacegui__framework_1_1utility.html#a1945ec50b055f688bbb3e7c6cae8de64", null ],
+    [ "getGUIFrameworkVersion", "namespacegui__framework_1_1utility.html#ac6becb2cc50030cd8e2594243a70e780", null ],
     [ "getStringFromRawPath", "namespacegui__framework_1_1utility.html#a5bbb52bed6f3db5b95d081389deaa0fa", null ],
     [ "getStringFromRawPath", "namespacegui__framework_1_1utility.html#a87517c2384e0f810d1779081e1c19f41", null ],
     [ "getTypeHash", "namespacegui__framework_1_1utility.html#a1e95e641e1525fbdcf5bbbacb92c8982", null ],

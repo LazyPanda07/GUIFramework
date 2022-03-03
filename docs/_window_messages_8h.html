@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.8.5-beta</span>
+   &#160;<span id="projectnumber">0.9-beta</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -90,8 +90,7 @@ $(document).ready(function(){initNavTree('_window_messages_8h.html',''); initRes
 <div class="title">WindowMessages.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="headers_8h_source.html">headers.h</a>&quot;</code><br />
-</div>
+
 <p><a href="_window_messages_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -103,12 +102,15 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a9d6c2d2d357b573767b5837f204407ce"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1custom__window__messages.html#a9d6c2d2d357b573767b5837f204407ce">gui_framework::custom_window_messages::initTopLevelWindowPointer</a> = 52430</td></tr>
-<tr class="memdesc:a9d6c2d2d357b573767b5837f204407ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">WPARAM contains pointer to <a class="el" href="classgui__framework_1_1_base_composite.html" title="Base class for all windows that has children windows.">BaseComposite</a>.  <a href="namespacegui__framework_1_1custom__window__messages.html#a9d6c2d2d357b573767b5837f204407ce">More...</a><br /></td></tr>
-<tr class="separator:a9d6c2d2d357b573767b5837f204407ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae277398e850c3e6adb8b9c3c5caa97c3"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1custom__window__messages.html#ae277398e850c3e6adb8b9c3c5caa97c3">gui_framework::custom_window_messages::deinitTopLevelWindowPointer</a> = 52431</td></tr>
-<tr class="memdesc:ae277398e850c3e6adb8b9c3c5caa97c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set to nullptr topLevelWindow for recreating window with same window class name.  <a href="namespacegui__framework_1_1custom__window__messages.html#ae277398e850c3e6adb8b9c3c5caa97c3">More...</a><br /></td></tr>
-<tr class="separator:ae277398e850c3e6adb8b9c3c5caa97c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98e48c9c2b79c0afcae6f411d50a2e65"><td class="memItemLeft" align="right" valign="top">constexpr uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1custom__window__messages.html#a98e48c9c2b79c0afcae6f411d50a2e65">gui_framework::custom_window_messages::initTopLevelWindowPointer</a> = 52430</td></tr>
+<tr class="memdesc:a98e48c9c2b79c0afcae6f411d50a2e65"><td class="mdescLeft">&#160;</td><td class="mdescRight">WPARAM contains BaseComposite*.  <a href="namespacegui__framework_1_1custom__window__messages.html#a98e48c9c2b79c0afcae6f411d50a2e65">More...</a><br /></td></tr>
+<tr class="separator:a98e48c9c2b79c0afcae6f411d50a2e65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0c63572087fb8a17fdb52e43eb45812"><td class="memItemLeft" align="right" valign="top">constexpr uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1custom__window__messages.html#ac0c63572087fb8a17fdb52e43eb45812">gui_framework::custom_window_messages::deinitTopLevelWindowPointer</a> = initTopLevelWindowPointer + 1</td></tr>
+<tr class="memdesc:ac0c63572087fb8a17fdb52e43eb45812"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set to nullptr topLevelWindow for recreating window with same window class name.  <a href="namespacegui__framework_1_1custom__window__messages.html#ac0c63572087fb8a17fdb52e43eb45812">More...</a><br /></td></tr>
+<tr class="separator:ac0c63572087fb8a17fdb52e43eb45812"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30cd3a06265c7c5f98da8cffb783d26d"><td class="memItemLeft" align="right" valign="top">constexpr uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1custom__window__messages.html#a30cd3a06265c7c5f98da8cffb783d26d">gui_framework::custom_window_messages::runOnUIThreadFunctions</a> = deinitTopLevelWindowPointer + 1</td></tr>
+<tr class="memdesc:a30cd3a06265c7c5f98da8cffb783d26d"><td class="mdescLeft">&#160;</td><td class="mdescRight">WRAPAM contains std::function&lt;void()&gt;*  <a href="namespacegui__framework_1_1custom__window__messages.html#a30cd3a06265c7c5f98da8cffb783d26d">More...</a><br /></td></tr>
+<tr class="separator:a30cd3a06265c7c5f98da8cffb783d26d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
