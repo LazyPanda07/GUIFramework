@@ -113,11 +113,11 @@ namespace gui_framework
 		/// @exception json::exceptions::CantFindValueException Unable to find setting in gui_framework.json on first GUIFramework::get() call
 		static void initUIThreadId();
 
-		/// @brief Run function in UI thread
+		/// @brief Run function in UI thread. Functions processed only when window in main UI thread has focus
 		/// @param function Function that will run in UI thread
 		static void runOnUIThread(const std::function<void()>& function);
 
-		/// @brief Run function in UI thread
+		/// @brief Run function in UI thread. Functions processed only when window in main UI thread has focus
 		/// @param function Function that will run in UI thread
 		static void runOnUIThread(std::function<void()>&& function);
 
