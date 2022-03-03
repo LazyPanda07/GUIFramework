@@ -14,7 +14,7 @@ using namespace std;
 
 CREATE_DEFAULT_WINDOW_FUNCTION(main)
 
-CREATE_DEFAULT_WINDOW_FUNCTION(dialog)
+CREATE_DEFAULT_WINDOW_FUNCTION(window)
 
 void standard()
 {
@@ -26,29 +26,32 @@ void standard()
 	{
 		WindowHolder holder(make_unique<SeparateWindow>(L"MainWindow", L"Главное окно", settings, "main"));
 		SeparateWindow* ptr = dynamic_cast<SeparateWindow*>(holder.get());
-		Button* button = new Button(L"Create", L"Create dialog", utility::ComponentSettings(0, 0, 200, 25), ptr);
-		
+		Button* button = new Button(L"Create", L"Test", utility::ComponentSettings(0, 0, 200, 25), ptr);
+
 		ptr->setExitMode(BaseComposite::exitMode::quit);
-		
+
 		ptr->setLargeIcon("assets/icon.ico");
 
 		button->setOnClick([]()
 			{
-				DialogBox::DialogBoxBuilder builder(L"Rofl", L"Name", 400, 400, "dialog");
-
-				builder.addComponent<Button>(L"Button", 200, 20, DialogBox::DialogBoxBuilder::alignment::center);
-
-				DialogBox* dialog = builder.build();
-				Button* button = dynamic_cast<Button*>(dialog->findChild(L"Button"));
-
-				button->setText(L"Close");
-
-				button->setOnClick([dialog]()
+				thread([]()
 					{
-						dialog->close(10);
-					});
+						utility::ComponentSettings settings(600, 400, 400, 200);
 
-				cout << dialog->showDialog() << endl;
+						WindowHolder holder(make_unique<SeparateWindow>(L"Window", L"Окно в другом потоке", settings, "window"));
+						SeparateWindow* ptr = dynamic_cast<SeparateWindow*>(holder.get());
+						Button* button = new Button(L"Create", L"Запустить в главном потоке", utility::ComponentSettings(0, 0, 200, 25), ptr);
+
+						button->setOnClick([]()
+							{
+								GUIFramework::get().runOnUIThread([]()
+									{
+										cout << "Nice" << endl;
+									});
+							});
+
+						holder.runMainLoop();
+					}).detach();
 			});
 
 		holder.runMainLoop();
@@ -63,7 +66,7 @@ int main(int argc, char** argv)
 {
 	try
 	{
-		gui_framework::GUIFramework::get();
+		gui_framework::GUIFramework::initMainThreadId();
 	}
 	catch (const std::exception& e)
 	{
