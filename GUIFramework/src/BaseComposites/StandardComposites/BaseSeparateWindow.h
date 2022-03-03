@@ -16,9 +16,6 @@ namespace gui_framework
 		HICON smallIcon;
 		std::filesystem::path pathToSmallIcon;
 		std::filesystem::path pathToLargeIcon;
-		std::function<bool()> onClose;
-		std::string onCloseFunctionName;
-		std::string onCloseFunctionModuleName;
 
 	public:
 		/// @brief 
@@ -36,17 +33,6 @@ namespace gui_framework
 		/// @param pathToSmallIcon 
 		/// @exception FileDoesNotExist
 		virtual void setSmallIcon(const std::filesystem::path& pathToSmallIcon) final;
-
-		virtual void setOnClose(const std::function<bool()>& onClose) final;
-
-		/// @brief Load function from module. Can be seriazlied
-		/// @param onCloseFunctionName 
-		/// @param onCloseFunctionModuleName 
-		/// @exception CantFindFunctionFromModuleException 
-		/// @exception std::out_of_range Can't find moduleName in loaded modules
-		virtual void setOnClose(const std::string& onCloseFunctionName, const std::string& onCloseFunctionModuleName) final;
-
-		virtual const std::function<bool()>& getOnClose() const final;
 
 		/// @brief Used as key in creators
 		/// @return typeid().hash_code()
