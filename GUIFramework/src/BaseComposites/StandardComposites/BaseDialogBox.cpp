@@ -29,7 +29,8 @@ namespace gui_framework
 		),
 		IComponentVisibility(handle),
 		ICloseable(handle),
-		isShowDialogUsed(false)
+		isShowDialogUsed(false),
+		windowWithUserFocus(nullptr)
 	{
 		this->hide();
 
@@ -43,6 +44,8 @@ namespace gui_framework
 		WindowHolder holder(this);
 
 		isShowDialogUsed = true;
+
+		windowWithUserFocus = GetFocus();
 
 		this->show();
 
@@ -79,6 +82,8 @@ namespace gui_framework
 					EnableWindow(component->getHandle(), true);
 				}
 			}
+
+			SetFocus(windowWithUserFocus);
 		}
 	}
 }

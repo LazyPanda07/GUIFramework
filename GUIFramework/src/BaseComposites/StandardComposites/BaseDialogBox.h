@@ -43,6 +43,7 @@ namespace gui_framework
 
 	protected:
 		bool isShowDialogUsed;
+		HWND windowWithUserFocus;
 
 	public:
 		/// @brief 
