@@ -25,8 +25,7 @@ namespace gui_framework
 		),
 		ICloseable(handle),
 		largeIcon(nullptr),
-		smallIcon(nullptr),
-		onClose([]() { return true; })
+		smallIcon(nullptr)
 	{
 
 	}
@@ -71,37 +70,6 @@ namespace gui_framework
 		smallIcon = static_cast<HICON>(LoadImageW(nullptr, pathToSmallIcon.wstring().data(), IMAGE_ICON, standard_sizes::smallIconWidth, standard_sizes::smallIconHeight, LR_LOADFROMFILE));
 
 		SendMessageW(handle, WM_SETICON, ICON_SMALL, reinterpret_cast<LPARAM>(smallIcon));
-	}
-
-	void BaseSeparateWindow::setOnClose(const function<bool()>& onClose)
-	{
-		this->onClose = onClose;
-
-		onCloseFunctionName.clear();
-		onCloseFunctionModuleName.clear();
-	}
-
-	void BaseSeparateWindow::setOnClose(const string& onCloseFunctionName, const string& onCloseFunctionModuleName)
-	{
-		GUIFramework& instance = GUIFramework::get();
-		const HMODULE& module = instance.getModules().at(onCloseFunctionModuleName);
-
-		onCloseSignature tem = reinterpret_cast<onCloseSignature>(GetProcAddress(module, onCloseFunctionName.data()));
-
-		if (!tem)
-		{
-			throw exceptions::CantFindFunctionFromModuleException(onCloseFunctionName, onCloseFunctionModuleName, __FILE__, __FUNCTION__, __LINE__);
-		}
-
-		onClose = tem;
-
-		this->onCloseFunctionName = onCloseFunctionName;
-		this->onCloseFunctionModuleName = onCloseFunctionModuleName;
-	}
-
-	const function<bool()>& BaseSeparateWindow::getOnClose() const
-	{
-		return onClose;
 	}
 
 	json::JSONBuilder BaseSeparateWindow::getStructure() const

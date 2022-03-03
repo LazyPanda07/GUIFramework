@@ -208,17 +208,9 @@ namespace gui_framework
 
 		GUI_FRAMEWORK_API_FUNCTION bool useOnClose(any topLevelWindow)
 		{
-			BaseSeparateWindow* tem = dynamic_cast<BaseSeparateWindow*>(any_cast<BaseComposite*>(topLevelWindow));
-
-			if (tem)
-			{
-				if (tem->getOnClose()())
-				{
-					return true;
-				}
-			}
-
-			return false;
+			interfaces::ICloseable* tem = dynamic_cast<interfaces::ICloseable*>(any_cast<BaseComposite*>(topLevelWindow));
+			
+			return tem && tem->getOnClose()();
 		}
 	}
 }
