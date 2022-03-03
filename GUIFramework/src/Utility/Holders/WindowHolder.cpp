@@ -38,6 +38,7 @@ namespace gui_framework
 		MSG message = {};
 		int code;
 		GUIFramework& instance = GUIFramework::get();
+		DWORD currentThreadId = GetCurrentThreadId();
 
 		while (code = GetMessageW(&message, nullptr, NULL, NULL) > 0)
 		{
@@ -49,11 +50,34 @@ namespace gui_framework
 			{
 				instance.processHotkeys();
 			}
+
+			if (currentThreadId == instance.mainThreadId)
+			{
+				lock_guard<recursive_mutex> runOnUIThreadLock(instance.runOnUIThreadMutex);
+				queue<function<void()>>& runOnUIFunctions = instance.runOnUIFunctions;
+
+				while (runOnUIFunctions.size())
+				{
+					function<void()>& currentFunction = runOnUIFunctions.front();
+					function<void()>* functionWrapper = new function<void()>();
+
+					(*functionWrapper) = [currentFunction, functionWrapper]()
+					{
+						currentFunction();
+
+						delete functionWrapper;
+					};
+
+					runOnUIFunctions.pop();
+
+					PostThreadMessageW(currentThreadId, custom_window_messages::runOnUIThreadFunctions, reinterpret_cast<WPARAM>(functionWrapper), NULL);
+				}
+			}
 		}
 
-		for (const auto& i : registeredHotkeyIds)
+		for (const auto& hotkeyId : registeredHotkeyIds)
 		{
-			instance.unregisterHotkey(i);
+			instance.unregisterHotkey(hotkeyId);
 		}
 
 		if (code == -1)

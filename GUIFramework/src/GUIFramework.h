@@ -50,6 +50,7 @@ namespace gui_framework
 		std::unordered_map<std::string, std::string> modulesPaths;
 		std::unordered_map<size_t, smartPointerType<utility::BaseComponentCreator>> creators;
 		std::unordered_map<size_t, smartPointerType<interfaces::IDeserializer>> deserializers;
+		DWORD mainThreadId;
 #pragma region Ids
 		std::unordered_multimap<std::wstring, uint32_t> generatedIds;
 		std::queue<uint32_t> availableIds;
@@ -71,6 +72,10 @@ namespace gui_framework
 		int currentLoadedModules;
 		std::mutex loadModulesMutex;
 		std::vector<std::string> cantLoadedModules;
+#pragma endregion
+#pragma region RunOnUIThread
+		std::recursive_mutex runOnUIThreadMutex;
+		std::queue<std::function<void()>> runOnUIFunctions;
 #pragma endregion
 
 	private:
@@ -103,6 +108,18 @@ namespace gui_framework
 		/// @return Singleton instance
 		/// @exception json::exceptions::CantFindValueException Unable to find setting in gui_framework.json on first GUIFramework::get() call
 		static GUIFramework& get();
+
+		/// @brief Must be called in main function before all other functions
+		/// @exception json::exceptions::CantFindValueException Unable to find setting in gui_framework.json on first GUIFramework::get() call
+		static void initMainThreadId();
+
+		/// @brief Run function in UI thread
+		/// @param function Function that will run in UI thread
+		static void runOnUIThread(const std::function<void()>& function);
+
+		/// @brief Run function in UI thread
+		/// @param function Function that will run in UI thread
+		static void runOnUIThread(std::function<void()>&& function);
 
 		/// @brief Restart application with given exit code
 		/// @param exitCode Exit code for previous application
