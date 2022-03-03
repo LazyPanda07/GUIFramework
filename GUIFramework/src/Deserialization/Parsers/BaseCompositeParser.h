@@ -1,6 +1,7 @@
 #pragma once
 
 #include "BaseComponentParser.h"
+#include "BaseComposites/BaseComposite.h"
 
 namespace gui_framework
 {
@@ -15,9 +16,9 @@ namespace gui_framework
 			std::string onDestroyFunctionModuleName;
 
 		public:
-			BaseCompositeParser() = default;
+			BaseCompositeParser();
 
-			virtual void parse(const json::utility::objectSmartPointer<json::utility::jsonObject>& description) override;
+			virtual void parse(const json::utility::jsonObject& description) override;
 
 			virtual ~BaseCompositeParser() = default;
 		};

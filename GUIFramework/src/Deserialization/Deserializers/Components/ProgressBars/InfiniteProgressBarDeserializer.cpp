@@ -1,6 +1,8 @@
 #include "InfiniteProgressBarDeserializer.h"
 
 #include "Deserialization/Parsers/ProgressBars/InfiniteProgressBarParser.h"
+#include "GUIFramework.h"
+#include "Utility/AdditionalCreationData/ProgressBarAdditionalCreationData.h"
 
 using namespace std;
 
@@ -8,9 +10,8 @@ namespace gui_framework
 {
 	namespace deserializers
 	{
-		BaseComponent* InfiniteProgressBarDeserializer::deserialize(const std::string& componentName, const json::utility::objectSmartPointer<json::utility::jsonObject>& description, BaseComposite* parent) const
+		BaseComponent* InfiniteProgressBarDeserializer::deserialize(const std::string& componentName, const json::utility::jsonObject& description, BaseComposite* parent) const
 		{
-			using json::utility::objectSmartPointer;
 			using json::utility::jsonObject;
 
 			parsers::InfiniteProgressBarParser parser;

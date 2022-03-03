@@ -50,6 +50,7 @@ namespace gui_framework
 		std::unordered_map<std::string, std::string> modulesPaths;
 		std::unordered_map<size_t, smartPointerType<utility::BaseComponentCreator>> creators;
 		std::unordered_map<size_t, smartPointerType<interfaces::IDeserializer>> deserializers;
+		DWORD uiThreadId;
 #pragma region Ids
 		std::unordered_multimap<std::wstring, uint32_t> generatedIds;
 		std::queue<uint32_t> availableIds;
@@ -64,13 +65,17 @@ namespace gui_framework
 #pragma endregion
 #pragma region ComponentsFinding
 		std::vector<BaseComponent*> components;
-		std::mutex componentsMutex;
+		std::recursive_mutex componentsMutex;
 #pragma endregion
 #pragma region Modules
 		int modulesNeedToLoad;
 		int currentLoadedModules;
 		std::mutex loadModulesMutex;
 		std::vector<std::string> cantLoadedModules;
+#pragma endregion
+#pragma region RunOnUIThread
+		std::recursive_mutex runOnUIThreadMutex;
+		std::queue<std::function<void()>> runOnUIFunctions;
 #pragma endregion
 
 	private:
@@ -104,6 +109,28 @@ namespace gui_framework
 		/// @exception json::exceptions::CantFindValueException Unable to find setting in gui_framework.json on first GUIFramework::get() call
 		static GUIFramework& get();
 
+		/// @brief Must be called in main function before all other functions
+		/// @exception json::exceptions::CantFindValueException Unable to find setting in gui_framework.json on first GUIFramework::get() call
+		static void initUIThreadId();
+
+		/// @brief Run function in UI thread. Functions processed only when window in main UI thread has focus
+		/// @param function Function that will run in UI thread
+		static void runOnUIThread(const std::function<void()>& function);
+
+		/// @brief Run function in UI thread. Functions processed only when window in main UI thread has focus
+		/// @param function Function that will run in UI thread
+		static void runOnUIThread(std::function<void()>&& function);
+
+		/// @brief Restart application with given exit code
+		/// @param exitCode Exit code for previous application
+		/// @exception GetLastErrorException 
+		static void restartApplication(int exitCode = 0);
+
+		/// @brief Getter for UI thread id
+		/// @return uiThreadId
+		static DWORD getUIThreadId();
+
+	public:
 		/// @brief Add task to thread pool. Thread safe method
 		/// @param task Task function
 		/// @param callback After execution task callback function
@@ -159,14 +186,6 @@ namespace gui_framework
 		/// @param moduleName Name of module to unload
 		void unloadModule(const std::string& moduleName);
 
-		/// @brief Add derived from BaseComponentCreator creator
-		template<std::derived_from<BaseComponent> T, std::derived_from<utility::BaseComponentCreator> CreatorT, typename... Args>
-		void addCreator(Args&&... args);
-
-		/// @brief Add derived from IDeserializer deserializer
-		template<std::derived_from<BaseComponent> T, std::derived_from<interfaces::IDeserializer> DeserializerT, typename... Args>
-		void addDeserializer(Args&&... args);
-
 		/// @brief Thread safe 
 		/// @param handle 
 		/// @return Found component or nullptr
@@ -184,11 +203,19 @@ namespace gui_framework
 
 		/// @brief Serialize hotkeys
 		/// @return JSON array with hotkeys data
-		std::vector<json::utility::objectSmartPointer<json::utility::jsonObject>> serializeHotkeys();
+		std::vector<json::utility::jsonObject> serializeHotkeys();
 
 		/// @brief Deserialize hotkeys
 		/// @param description Description of holder window with 'hotkeys' object
-		void deserializeHotkeys(const json::utility::objectSmartPointer<json::utility::jsonObject>& description);
+		void deserializeHotkeys(const json::utility::jsonObject& description);
+
+		/// @brief Check if modules are loaded. You can call getCantLoadedModules() to check if loaded modules have failed
+		/// @return 
+		bool isModulesLoaded() const;
+
+		/// @brief Change localization for all components
+		/// @param language New language
+		void changeLocalization(const std::string& language) const;
 
 		/// @brief Get all current registered creators
 		/// @return creators
@@ -210,17 +237,23 @@ namespace gui_framework
 		/// @return 
 		const std::unordered_map<std::string, std::string>& getModulesPaths() const;
 
-		/// @brief Check if modules are loaded. You can call getCantLoadedModules() to check if loaded modules have failed
-		/// @return 
-		bool isModulesLoaded() const;
-
 		/// @brief List of all exceptions in load modules process
 		/// @return 
 		std::vector<std::string> getCantLoadedModules();
+
+		/// @brief Add derived from BaseComponentCreator creator
+		template<std::derived_from<BaseComponent> T, std::derived_from<utility::BaseComponentCreator> CreatorT, typename... Args>
+		void addCreator(Args&&... args);
+
+		/// @brief Add derived from IDeserializer deserializer
+		template<std::derived_from<BaseComponent> T, std::derived_from<interfaces::IDeserializer> DeserializerT, typename... Args>
+		void addDeserializer(Args&&... args);
 #pragma region FriendClasses
 		friend class BaseComponent;
 
 		friend class WindowHolder;
+
+		friend class BaseDialogBox;
 #pragma endregion
 	};
 

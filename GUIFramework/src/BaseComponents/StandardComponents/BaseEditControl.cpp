@@ -8,6 +8,11 @@ using namespace std;
 
 namespace gui_framework
 {
+	void BaseEditControl::updateLocalization(const wstring& localizedText)
+	{
+		this->setPlaceholder(localizedText);
+	}
+
 	BaseEditControl::BaseEditControl(const std::wstring& editControlName, const utility::ComponentSettings& settings, BaseComponent* parent, bool isMultiLine) :
 		BaseComponent
 		(
@@ -19,7 +24,7 @@ namespace gui_framework
 		),
 		ITextOperations(handle)
 	{
-		this->setText(L"");
+		ITextOperations::setText(L"");
 	}
 
 	bool BaseEditControl::setPlaceholder(const std::wstring& placeholder)
@@ -42,13 +47,19 @@ namespace gui_framework
 	json::JSONBuilder BaseEditControl::getStructure() const
 	{
 		using json::utility::jsonObject;
-		using json::utility::objectSmartPointer;
 
 		json::JSONBuilder builder = BaseComponent::getStructure();
 		uint32_t codepage = ISerializable::getCodepage();
 
-		get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, codepage)])->data.push_back({ "placeholder"s, utility::to_string(placeholder, codepage) });
+		get<jsonObject>(builder[utility::to_string(windowName, codepage)]).data.push_back({ "placeholder"s, utility::to_string(placeholder, codepage) });
 
 		return builder;
+	}
+
+	void BaseEditControl::setText(const string& localizationKey)
+	{
+		this->setLocalizationKey(localizationKey);
+
+		ITextOperations::setText(localizationKey);
 	}
 }

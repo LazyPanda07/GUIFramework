@@ -24,11 +24,10 @@ namespace gui_framework
 
 	json::JSONBuilder RichEdit::getStructure() const
 	{
-		using json::utility::objectSmartPointer;
 		using json::utility::jsonObject;
 
 		json::JSONBuilder builder = BaseRichEdit::getStructure();
-		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
+		jsonObject& current = get<jsonObject>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
 
 		return builder;
 	}

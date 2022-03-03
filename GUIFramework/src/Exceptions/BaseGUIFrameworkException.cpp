@@ -1,6 +1,8 @@
 #include "headers.h"
 #include "BaseGUIFrameworkException.h"
 
+#include "Utility/Utility.h"
+
 using namespace std;
 
 namespace gui_framework

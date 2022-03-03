@@ -3,6 +3,9 @@
 
 #include "MenuItems/MenuItem.h"
 #include "MenuItems/DropDownMenuItem.h"
+#include "Composites/SeparateWindow.h"
+#include "GUIFramework.h"
+#include "Utility/AdditionalCreationData/SeparateWindowAdditionalCreationData.h"
 
 #include "Deserialization/Parsers/SeparateWindowParser.h"
 #include "Deserialization/Parsers/MenuParser.h"
@@ -17,9 +20,8 @@ namespace gui_framework
 {
 	namespace deserializers
 	{
-		BaseComponent* SeparateWindowDeserializer::deserialize(const string& componentName, const json::utility::objectSmartPointer<json::utility::jsonObject>& description, BaseComposite* parent) const
+		BaseComponent* SeparateWindowDeserializer::deserialize(const string& componentName, const json::utility::jsonObject& description, BaseComposite* parent) const
 		{
-			using json::utility::objectSmartPointer;
 			using json::utility::jsonObject;
 
 			parsers::SeparateWindowParser parser;
@@ -28,9 +30,9 @@ namespace gui_framework
 
 			parser.parse(description);
 
-			if (description->contains("menuStructure", json::utility::variantTypeEnum::jJSONObject))
+			if (description.contains("menuStructure", json::utility::variantTypeEnum::jJSONObject))
 			{
-				menuParser.parse(const_cast<objectSmartPointer<jsonObject>&>(description->getObject("menuStructure")));
+				menuParser.parse(const_cast<jsonObject&>(description.getObject("menuStructure")));
 
 				hasMenus = true;
 			}
@@ -74,27 +76,27 @@ namespace gui_framework
 
 				for (const auto& i : menuParser.mainMenuItems)
 				{
-					const objectSmartPointer<jsonObject>& item = get<objectSmartPointer<jsonObject>>(i->data.front().second);
+					const jsonObject& item = get<jsonObject>(i.data.front().second);
 
-					wstring text = utility::to_wstring(item->getString("itemText"), codepage);
-					const string& type = item->getString("itemType");
+					wstring text = utility::to_wstring(item.getString("itemText"), codepage);
+					const string& type = item.getString("itemType");
 
 					if (type == standard_menu_items::menuItem)
 					{
-						mainMenu->addMenuItem(make_unique<MenuItem>(text, item->getString("functionName"), item->getString("moduleName")));
+						mainMenu->addMenuItem(make_unique<MenuItem>(text, item.getString("functionName"), item.getString("moduleName")));
 					}
 					else if (type == standard_menu_items::dropDownMenuItem)
 					{
-						uint64_t popupId = item->getUnsignedInt("popupId");
+						uint64_t popupId = item.getUnsignedInt("popupId");
 						Menu* popupMenu = nullptr;
 
 						for (const auto& j : menuParser.popupItems)
 						{
-							const objectSmartPointer<jsonObject>& popupItem = get<objectSmartPointer<jsonObject>>(j->data.front().second);
+							const jsonObject& popupItem = get<jsonObject>(j.data.front().second);
 
-							if (popupItem->getUnsignedInt("menuId") == popupId)
+							if (popupItem.getUnsignedInt("menuId") == popupId)
 							{
-								popupMenu = &result->addPopupMenu(utility::to_wstring(popupItem->getString("menuName"), codepage));
+								popupMenu = &result->addPopupMenu(utility::to_wstring(popupItem.getString("menuName"), codepage));
 							}
 						}
 
@@ -110,21 +112,21 @@ namespace gui_framework
 				}
 			}
 
-			if (description->contains("hotkeys", json::utility::variantTypeEnum::jJSONArray))
+			if (description.contains("hotkeys", json::utility::variantTypeEnum::jJSONArray))
 			{
 				GUIFramework::get().deserializeHotkeys(description);
 			}
 
-			if (description->contains("children", json::utility::variantTypeEnum::jJSONArray))
+			if (description.contains("children", json::utility::variantTypeEnum::jJSONArray))
 			{
-				const auto& children = description->getArray("children");
+				const auto& children = description.getArray("children");
 
 				for (const auto& i : children)
 				{
-					const auto& [componentName, data] = get<objectSmartPointer<jsonObject>>(i->data.front().second)->data.front();
-					const auto& description = get<objectSmartPointer<jsonObject>>(data);
+					const auto& [componentName, data] = get<jsonObject>(i.data.front().second).data.front();
+					const auto& description = get<jsonObject>(data);
 
-					const smartPointerType<interfaces::IDeserializer>& deserializer = GUIFramework::get().getDeserializers().at(description->getUnsignedInt("hash"));
+					const smartPointerType<interfaces::IDeserializer>& deserializer = GUIFramework::get().getDeserializers().at(description.getUnsignedInt("hash"));
 
 					deserializer->deserialize(componentName, description, result);
 				}

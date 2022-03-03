@@ -16,7 +16,7 @@ namespace gui_framework
 
 			for (const auto& i : data)
 			{
-				result->addTextItem(i);
+				static_cast<interfaces::ITextListView*>(result)->addTextItem(i);
 			}
 
 			return result;

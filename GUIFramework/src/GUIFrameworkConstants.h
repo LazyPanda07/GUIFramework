@@ -2,8 +2,6 @@
 
 /// @file GUIFrameworkConstants.h
 
-#include "headers.h"
-
 #include <string>
 #include <cstdint>
 #include <memory>
@@ -83,8 +81,6 @@ namespace gui_framework
 			alt
 		};
 	}
-
-	inline constexpr std::string_view guiFrameworkVersion = "0.9-beta";
 
 	/// @brief Default on click signature
 	using onClickSignature = void(*)();

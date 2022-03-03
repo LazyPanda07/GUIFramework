@@ -1,27 +1,34 @@
 #include "BaseCompositeParser.h"
 
+#include "BaseComposites/BaseComposite.h"
+
 using namespace std;
 
 namespace gui_framework
 {
 	namespace parsers
 	{
-		void BaseCompositeParser::parse(const json::utility::objectSmartPointer<json::utility::jsonObject>& description)
+		BaseCompositeParser::BaseCompositeParser() :
+			mode(BaseComposite::exitMode::destroyWindow)
 		{
-			using json::utility::objectSmartPointer;
+
+		}
+
+		void BaseCompositeParser::parse(const json::utility::jsonObject& description)
+		{
 			using json::utility::jsonObject;
 
 			BaseComponentParser::parse(description);
 
-			windowFunctionName = description->getString("windowFunctionName");
+			windowFunctionName = description.getString("windowFunctionName");
 
-			if (description->contains("onDestroyFunctionName", json::utility::variantTypeEnum::jString))
+			if (description.contains("onDestroyFunctionName", json::utility::variantTypeEnum::jString))
 			{
-				onDestroyFunctionName = description->getString("onDestroyFunctionName");
-				onDestroyFunctionModuleName = description->getString("onDestroyFunctionModuleName");
+				onDestroyFunctionName = description.getString("onDestroyFunctionName");
+				onDestroyFunctionModuleName = description.getString("onDestroyFunctionModuleName");
 			}
 
-			mode = static_cast<gui_framework::BaseComposite::exitMode>(description->getInt("exitMode"));
+			mode = static_cast<gui_framework::BaseComposite::exitMode>(description.getInt("exitMode"));
 		}
 	}
 }

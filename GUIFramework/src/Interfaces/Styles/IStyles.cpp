@@ -7,16 +7,6 @@ namespace gui_framework
 {
 	namespace interfaces
 	{
-		void IStyles::appendStyle(LONG_PTR style)
-		{
-			styles |= style;
-		}
-
-		void IStyles::appendExtendedStyle(LONG_PTR extendedStyle)
-		{
-			extendedStyles |= extendedStyle;
-		}
-
 		IStyles::IStyles() :
 			styles(NULL),
 			extendedStyles(NULL)
@@ -29,6 +19,16 @@ namespace gui_framework
 			extendedStyles(extendedStyles)
 		{
 
+		}
+
+		void IStyles::appendStyle(LONG_PTR style)
+		{
+			styles |= style;
+		}
+
+		void IStyles::appendExtendedStyle(LONG_PTR extendedStyle)
+		{
+			extendedStyles |= extendedStyle;
 		}
 
 		LONG_PTR IStyles::getStyles() const

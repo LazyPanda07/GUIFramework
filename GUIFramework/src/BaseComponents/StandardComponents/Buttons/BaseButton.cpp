@@ -1,5 +1,6 @@
-#include "headers.h"
 #include "BaseButton.h"
+
+#include "GUIFramework.h"
 
 #include "Exceptions/GetLastErrorException.h"
 #include "Exceptions/NotImplemented.h"
@@ -28,6 +29,11 @@ namespace gui_framework
 		return -1;
 	}
 
+	void BaseButton::updateLocalization(const wstring& localizedText)
+	{
+		ITextOperations::setText(localizedText);
+	}
+
 	BaseButton::BaseButton(const wstring& buttonName, const wstring& buttonText, const utility::ComponentSettings& settings, const styles::ButtonStyles& styles, BaseComponent* parent, const function<void()>& onClick) :
 		BaseComponent
 		(
@@ -40,7 +46,7 @@ namespace gui_framework
 		ITextOperations(handle),
 		onClick(onClick)
 	{
-		this->setText(buttonText);
+		ITextOperations::setText(buttonText);
 	}
 
 	BaseButton::BaseButton(const wstring& buttonName, const wstring& buttonText, const utility::ComponentSettings& settings, const styles::ButtonStyles& styles, BaseComponent* parent, const string& functionName, const string& moduleName) :
@@ -54,7 +60,7 @@ namespace gui_framework
 		),
 		ITextOperations(handle)
 	{
-		this->setText(buttonText);
+		ITextOperations::setText(buttonText);
 
 		this->setOnClick(functionName, moduleName);
 	}
@@ -108,7 +114,6 @@ namespace gui_framework
 	json::JSONBuilder BaseButton::getStructure() const
 	{
 		using json::utility::jsonObject;
-		using json::utility::objectSmartPointer;
 
 		if (functionName.empty())
 		{
@@ -116,14 +121,21 @@ namespace gui_framework
 		}
 
 		json::JSONBuilder builder = BaseComponent::getStructure();
-		objectSmartPointer<jsonObject>& current = get<objectSmartPointer<jsonObject>>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
+		jsonObject& current = get<jsonObject>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
 
-		current->data.push_back({ "functionName"s, functionName });
+		current.data.push_back({ "functionName"s, functionName });
 
-		current->data.push_back({ "moduleName"s, moduleName });
+		current.data.push_back({ "moduleName"s, moduleName });
 
-		current->data.push_back({ "pathToModule"s, GUIFramework::get().getModulesPaths().at(moduleName) });
+		current.data.push_back({ "pathToModule"s, GUIFramework::get().getModulesPaths().at(moduleName) });
 
 		return builder;
+	}
+
+	void BaseButton::setText(const string& localizationKey)
+	{
+		this->setLocalizationKey(localizationKey);
+
+		ITextOperations::setText(localizationKey);
 	}
 }

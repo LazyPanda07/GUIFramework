@@ -2,8 +2,6 @@
 
 #include "headers.h"
 
-#include "JSONUtility.h"
-
 namespace gui_framework
 {
 	namespace utility
@@ -58,6 +56,10 @@ namespace gui_framework
 		/// @param moduleName Name of module in JSON array modules in gui_framework.json
 		/// @exception CantFindFunctionFromModuleException 
 		GUI_FRAMEWORK_API_FUNCTION void loadEventCallbackFromModule(std::function<void(const std::wstring&)>& eventCallback, const std::string& functionName, const std::string& moduleName);
+
+		/// @brief Get current version of GUIFramework
+		/// @return 
+		GUI_FRAMEWORK_API_FUNCTION std::string getGUIFrameworkVersion();
 
 		/// @brief Make function with current build configuration compatibility
 		/// @tparam T Type

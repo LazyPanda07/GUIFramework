@@ -2,6 +2,8 @@
 #include "GroupBoxDeserializer.h"
 
 #include "Deserialization/Parsers/GroupBoxParser.h"
+#include "GUIFramework.h"
+#include "Utility/AdditionalCreationData/GroupBoxAdditionalCreationData.h"
 
 using namespace std;
 
@@ -9,9 +11,8 @@ namespace gui_framework
 {
 	namespace deserializers
 	{
-		BaseComponent* GroupBoxDeserializer::deserialize(const string& componentName, const json::utility::objectSmartPointer<json::utility::jsonObject>& description, BaseComposite* parent) const
+		BaseComponent* GroupBoxDeserializer::deserialize(const string& componentName, const json::utility::jsonObject& description, BaseComposite* parent) const
 		{
-			using json::utility::objectSmartPointer;
 			using json::utility::jsonObject;
 
 			parsers::GroupBoxParser parser;

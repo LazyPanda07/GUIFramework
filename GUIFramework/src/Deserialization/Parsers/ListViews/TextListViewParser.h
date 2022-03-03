@@ -14,7 +14,7 @@ namespace gui_framework
 		public:
 			TextListViewParser() = default;
 
-			virtual void parse(const json::utility::objectSmartPointer<json::utility::jsonObject>& description) override;
+			virtual void parse(const json::utility::jsonObject& description) override;
 
 			~TextListViewParser() = default;
 		};

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "BaseCompositeParser.h"
+#include "Composites/GroupBox.h"
 
 namespace gui_framework
 {
@@ -14,7 +15,7 @@ namespace gui_framework
 		public:
 			GroupBoxParser() = default;
 
-			void parse(const json::utility::objectSmartPointer<json::utility::jsonObject>&description) override;
+			void parse(const json::utility::jsonObject&description) override;
 
 			~GroupBoxParser() = default;
 		};

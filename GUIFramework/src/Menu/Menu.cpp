@@ -1,6 +1,8 @@
 #include "headers.h"
 #include "Menu.h"
 
+#include "Utility/Utility.h"
+
 using namespace std;
 
 namespace gui_framework
@@ -108,28 +110,28 @@ namespace gui_framework
 		uint32_t codepage = ISerializable::getCodepage();
 		json::JSONBuilder builder(codepage);
 
-		vector<json::utility::objectSmartPointer<json::utility::jsonObject>> children;
+		vector<json::utility::jsonObject> children;
 
 		for (const auto& i : items)
 		{
-			json::utility::objectSmartPointer<json::utility::jsonObject> child = json::utility::make_object<json::utility::jsonObject>();
+			json::utility::jsonObject child;
 			json::JSONBuilder structure = i->getStructure();
 
 			const string& itemText = get<string>(structure["itemText"]);
 			const string& itemType = get<string>(structure["itemType"]);
 
-			child->data.push_back({ "itemText"s, itemText });
-			child->data.push_back({ "itemType"s, itemType });
+			child.data.push_back({ "itemText"s, itemText });
+			child.data.push_back({ "itemType"s, itemType });
 
 			if (structure.contains("functionName", json::utility::variantTypeEnum::jString))
 			{
-				child->data.push_back({ "functionName"s, get<string>(structure["functionName"]) });
-				child->data.push_back({ "moduleName"s, get<string>(structure["moduleName"]) });
+				child.data.push_back({ "functionName"s, get<string>(structure["functionName"]) });
+				child.data.push_back({ "moduleName"s, get<string>(structure["moduleName"]) });
 			}
 
 			if (itemType == standard_menu_items::dropDownMenuItem)
 			{
-				child->data.push_back({ "popupId"s, get<uint64_t>(structure["popupId"]) });
+				child.data.push_back({ "popupId"s, get<uint64_t>(structure["popupId"]) });
 			}
 
 			json::utility::appendArray(move(child), children);

@@ -3,11 +3,13 @@
 #include "headers.h"
 #include "BaseComponents/BaseComponent.h"
 #include "Interfaces/Components/ITextOperations.h"
+#include "Interfaces/Localization/ISingleTextLocalized.h"
 
 namespace gui_framework
 {
 	/// @brief Base class for all edit controls
 	class GUI_FRAMEWORK_API BaseEditControl :
+		public interfaces::ISingleTextLocalized,
 		public BaseComponent,
 		public interfaces::ITextOperations
 	{
@@ -17,6 +19,9 @@ namespace gui_framework
 
 	protected:
 		std::wstring placeholder;
+
+	protected:
+		virtual void updateLocalization(const std::wstring& localizedText) override;
 
 	public:
 		BaseEditControl(const std::wstring& editControlName, const utility::ComponentSettings& settings, BaseComponent* parent, bool isMultiLine = false);
@@ -33,6 +38,10 @@ namespace gui_framework
 
 		virtual json::JSONBuilder getStructure() const override;
 
+		virtual void setText(const std::string& localizationKey) final override;
+
 		virtual ~BaseEditControl() = default;
+
+		using interfaces::ITextOperations::setText;
 	};
 }

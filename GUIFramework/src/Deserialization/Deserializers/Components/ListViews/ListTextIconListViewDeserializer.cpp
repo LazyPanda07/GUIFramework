@@ -1,6 +1,8 @@
 #include "ListTextIconListViewDeserializer.h"
 
 #include "Deserialization/Parsers/ListViews/TextIconListViewParser.h"
+#include "GUIFramework.h"
+#include "Utility/AdditionalCreationData/TextIconListViewAdditionalCreationData.h"
 
 using namespace std;
 
@@ -8,9 +10,8 @@ namespace gui_framework
 {
 	namespace deserializers
 	{
-		BaseComponent* ListTextIconListViewDeserializer::deserialize(const string& componentName, const json::utility::objectSmartPointer<json::utility::jsonObject>& description, BaseComposite* parent) const
+		BaseComponent* ListTextIconListViewDeserializer::deserialize(const string& componentName, const json::utility::jsonObject& description, BaseComposite* parent) const
 		{
-			using json::utility::objectSmartPointer;
 			using json::utility::jsonObject;
 
 			parsers::TextIconListViewParser parser;

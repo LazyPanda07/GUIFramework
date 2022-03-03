@@ -15,6 +15,7 @@ namespace gui_framework
 			uint16_t width;
 			uint16_t height;
 			interfaces::IStyles styles;
+			std::vector<std::string> localizationKeys;
 
 			ComponentSettings() = default;
 
@@ -23,7 +24,8 @@ namespace gui_framework
 			/// @param y Top left corner y coordinate
 			/// @param width 
 			/// @param height 
-			ComponentSettings(int x, int y, uint16_t width, uint16_t height);
+			/// @param localizationKeys Optional parameter for localization possibilities
+			ComponentSettings(int x, int y, uint16_t width, uint16_t height, const std::vector<std::string>& localizationKeys = {});
 
 			~ComponentSettings() = default;
 		};

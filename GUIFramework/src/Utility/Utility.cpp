@@ -2,6 +2,8 @@
 #include "Utility.h"
 
 #include "BaseComposites/StandardComposites/BaseSeparateWindow.h"
+#include "BaseComponents/StandardComponents/BaseRichEdit.h"
+#include "GUIFramework.h"
 
 #include "Exceptions/CantFindFunctionFromModuleException.h"
 #include "Exceptions/NotImplemented.h"
@@ -163,6 +165,11 @@ namespace gui_framework
 
 			eventCallback = tem;
 		}
+
+		GUI_FRAMEWORK_API_FUNCTION string getGUIFrameworkVersion()
+		{
+			return "0.9-beta"s;
+		}
 	}
 
 	namespace __utility
@@ -201,17 +208,9 @@ namespace gui_framework
 
 		GUI_FRAMEWORK_API_FUNCTION bool useOnClose(any topLevelWindow)
 		{
-			BaseSeparateWindow* tem = dynamic_cast<BaseSeparateWindow*>(any_cast<BaseComposite*>(topLevelWindow));
-
-			if (tem)
-			{
-				if (tem->getOnClose()())
-				{
-					return true;
-				}
-			}
-
-			return false;
+			interfaces::ICloseable* tem = dynamic_cast<interfaces::ICloseable*>(any_cast<BaseComposite*>(topLevelWindow));
+			
+			return tem && tem->getOnClose()();
 		}
 	}
 }
