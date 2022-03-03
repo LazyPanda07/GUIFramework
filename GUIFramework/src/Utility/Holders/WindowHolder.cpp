@@ -50,8 +50,12 @@ namespace gui_framework
 			{
 				instance.processHotkeys();
 			}
+			else if (message.message)
+			{
+				(*reinterpret_cast<std::function<void()>*>(message.wParam))();
+			}
 
-			if (currentThreadId == instance.mainThreadId)
+			if (currentThreadId == instance.uiThreadId)
 			{
 				lock_guard<recursive_mutex> runOnUIThreadLock(instance.runOnUIThreadMutex);
 				queue<function<void()>>& runOnUIFunctions = instance.runOnUIFunctions;
