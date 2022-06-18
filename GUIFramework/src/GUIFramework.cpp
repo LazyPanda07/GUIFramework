@@ -391,7 +391,9 @@ namespace gui_framework
 	GUIFramework::GUIFramework() :
 		nextId(1),
 		modulesNeedToLoad(1),
-		currentLoadedModules(modulesNeedToLoad)
+		currentLoadedModules(modulesNeedToLoad),
+		isUsingExtendedExceptions(true),
+		isUsingNotImplementedExceptions(false)
 	{
 		if (!filesystem::exists(json_settings::settingsJSONFile))
 		{
@@ -399,6 +401,24 @@ namespace gui_framework
 		}
 
 		jsonSettings = ifstream(json_settings::settingsJSONFile.data());
+
+		try
+		{
+			isUsingExtendedExceptions = jsonSettings.getBool(json_settings::usingExtendedExceptions);
+		}
+		catch (const json::exceptions::CantFindValueException&)
+		{
+
+		}
+
+		try
+		{
+			isUsingNotImplementedExceptions = jsonSettings.getBool(json_settings::usingNotImplementedExceptions);
+		}
+		catch (const json::exceptions::CantFindValueException&)
+		{
+
+		}
 
 		try
 		{
@@ -453,7 +473,7 @@ namespace gui_framework
 
 		try
 		{
-			auto& jsonModules = settingsObject.getArray(json_settings::modulesSetting);
+			const vector<json::utility::jsonObject>& jsonModules = settingsObject.getArray(json_settings::modulesSetting);
 
 			modulesNeedToLoad += static_cast<int>(jsonModules.size());
 
@@ -912,6 +932,16 @@ namespace gui_framework
 		unique_lock<mutex> lock(loadModulesMutex);
 
 		return cantLoadedModules;
+	}
+
+	bool GUIFramework::getIsUsingExtendedExceptions() const
+	{
+		return isUsingExtendedExceptions;
+	}
+
+	bool GUIFramework::getIsUsingNotImplementedExceptions() const
+	{
+		return isUsingNotImplementedExceptions;
 	}
 }
 
