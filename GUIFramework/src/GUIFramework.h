@@ -107,10 +107,12 @@ namespace gui_framework
 		/// @brief Singleton instance access
 		/// @return Singleton instance
 		/// @exception json::exceptions::CantFindValueException Unable to find setting in gui_framework.json on first GUIFramework::get() call
+		/// @excepiton FileDoesNotExist 
 		static GUIFramework& get();
 
 		/// @brief Must be called in main function before all other functions
 		/// @exception json::exceptions::CantFindValueException Unable to find setting in gui_framework.json on first GUIFramework::get() call
+		/// @excepiton FileDoesNotExist 
 		static void initUIThreadId();
 
 		/// @brief Run function in UI thread. Functions processed only when window in main UI thread has focus

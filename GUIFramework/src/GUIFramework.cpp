@@ -389,11 +389,17 @@ namespace gui_framework
 	}
 
 	GUIFramework::GUIFramework() :
-		jsonSettings(ifstream(json_settings::settingsJSONFile.data())),
 		nextId(1),
 		modulesNeedToLoad(1),
 		currentLoadedModules(modulesNeedToLoad)
 	{
+		if (!filesystem::exists(json_settings::settingsJSONFile))
+		{
+			throw exceptions::FileDoesNotExist(json_settings::settingsJSONFile, __FILE__, __FUNCTION__, __LINE__);
+		}
+
+		jsonSettings = ifstream(json_settings::settingsJSONFile.data());
+
 		try
 		{
 			int64_t threadsCount = jsonSettings.getInt(json_settings::threadsCountSetting);
