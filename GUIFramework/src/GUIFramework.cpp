@@ -391,34 +391,14 @@ namespace gui_framework
 	GUIFramework::GUIFramework() :
 		nextId(1),
 		modulesNeedToLoad(1),
-		currentLoadedModules(modulesNeedToLoad),
-		isUsingExtendedExceptions(true),
-		isUsingNotImplementedExceptions(false)
+		currentLoadedModules(modulesNeedToLoad)
 	{
 		if (!filesystem::exists(json_settings::settingsJSONFile))
 		{
-			throw exceptions::FileDoesNotExist(json_settings::settingsJSONFile, __FILE__, __FUNCTION__, __LINE__);
+			throw runtime_error(format(R"(File "{}" does not exist)"sv, json_settings::settingsJSONFile));
 		}
 
 		jsonSettings = ifstream(json_settings::settingsJSONFile.data());
-
-		try
-		{
-			isUsingExtendedExceptions = jsonSettings.getBool(json_settings::usingExtendedExceptions);
-		}
-		catch (const json::exceptions::CantFindValueException&)
-		{
-
-		}
-
-		try
-		{
-			isUsingNotImplementedExceptions = jsonSettings.getBool(json_settings::usingNotImplementedExceptions);
-		}
-		catch (const json::exceptions::CantFindValueException&)
-		{
-
-		}
 
 		try
 		{
@@ -932,16 +912,6 @@ namespace gui_framework
 		unique_lock<mutex> lock(loadModulesMutex);
 
 		return cantLoadedModules;
-	}
-
-	bool GUIFramework::getIsUsingExtendedExceptions() const
-	{
-		return isUsingExtendedExceptions;
-	}
-
-	bool GUIFramework::getIsUsingNotImplementedExceptions() const
-	{
-		return isUsingNotImplementedExceptions;
 	}
 }
 

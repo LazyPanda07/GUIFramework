@@ -51,8 +51,6 @@ namespace gui_framework
 		std::unordered_map<size_t, smartPointerType<utility::BaseComponentCreator>> creators;
 		std::unordered_map<size_t, smartPointerType<interfaces::IDeserializer>> deserializers;
 		DWORD uiThreadId;
-		bool isUsingExtendedExceptions;
-		bool isUsingNotImplementedExceptions;
 #pragma region Ids
 		std::unordered_multimap<std::wstring, uint32_t> generatedIds;
 		std::queue<uint32_t> availableIds;
@@ -109,12 +107,12 @@ namespace gui_framework
 		/// @brief Singleton instance access
 		/// @return Singleton instance
 		/// @exception json::exceptions::CantFindValueException Unable to find setting in gui_framework.json on first GUIFramework::get() call
-		/// @excepiton FileDoesNotExist 
+		/// @excepiton std::runtime_error Can't find gui_framework.json
 		static GUIFramework& get();
 
 		/// @brief Must be called in main function before all other functions
 		/// @exception json::exceptions::CantFindValueException Unable to find setting in gui_framework.json on first GUIFramework::get() call
-		/// @excepiton FileDoesNotExist 
+		/// @excepiton std::runtime_error Can't find gui_framework.json
 		static void initUIThreadId();
 
 		/// @brief Run function in UI thread. Functions processed only when window in main UI thread has focus
@@ -244,14 +242,6 @@ namespace gui_framework
 		/// @brief List of all exceptions in load modules process
 		/// @return 
 		std::vector<std::string> getCantLoadedModules();
-
-		/// @brief Get usingExtendedExceptions setting from gui_framework.json or true if can't load
-		/// @return 
-		bool getIsUsingExtendedExceptions() const;
-
-		/// @brief Get usingNotImplementedExceptions setting from gui_framework.json or false if can't load
-		/// @return 
-		bool getIsUsingNotImplementedExceptions() const;
 
 		/// @brief Add derived from BaseComponentCreator creator
 		template<std::derived_from<BaseComponent> T, std::derived_from<utility::BaseComponentCreator> CreatorT, typename... Args>

@@ -178,7 +178,7 @@ namespace gui_framework
 		{
 			try
 			{
-				if (GUIFramework::get().getIsUsingNotImplementedExceptions())
+				if (GUIFramework::get().getJSONSettings().getBool(json_settings::usingNotImplementedExceptions))
 				{
 					throw exceptions::NotImplemented(methodName, className, __FILE__, __LINE__);
 				}
@@ -193,7 +193,7 @@ namespace gui_framework
 		{
 			try
 			{
-				if (GUIFramework::get().getIsUsingExtendedExceptions())
+				if (GUIFramework::get().getJSONSettings().getBool(json_settings::usingExtendedExceptions))
 				{
 					return format(R"({} in file "{}" in "{}" method on {} line)"sv, exceptionMessage, fileName.substr(fileName.rfind('\\') + 1), methodName, line);
 				}
