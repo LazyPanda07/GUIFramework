@@ -241,6 +241,16 @@ namespace gui_framework
 		return result;
 	}
 
+	bool BaseComponent::enable()
+	{
+		return EnableWindow(handle, true);
+	}
+
+	bool BaseComponent::disable()
+	{
+		return EnableWindow(handle, false);
+	}
+
 	void BaseComponent::setDesiredWidth(uint16_t desiredWidth)
 	{
 		this->desiredWidth = desiredWidth;
@@ -387,7 +397,7 @@ namespace gui_framework
 		appendArray(static_cast<int64_t>(GetBValue(textColor)), textColorJSON);
 
 		structure.data.push_back({ "className"s, utility::to_string(className, codepage) });
-		
+
 		structure.data.push_back({ "hash"s, this->getHash() });
 
 		structure.data.push_back({ "desiredX"s, desiredX });

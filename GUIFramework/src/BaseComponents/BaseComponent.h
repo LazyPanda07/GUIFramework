@@ -66,6 +66,14 @@ namespace gui_framework
 
 		bool asyncDestroyComponent();
 
+		/// @brief If the window was previously disabled, the return value is true.
+		/// @return 
+		bool enable();
+
+		/// @brief If the window was not previously disabled, the return value is false.
+		/// @return 
+		bool disable();
+
 		void setDesiredWidth(uint16_t desiredWidth);
 
 		void setDesiredHeight(uint16_t desiredHeight);
