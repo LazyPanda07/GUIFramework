@@ -1,6 +1,6 @@
 #pragma once
 
-#include "headers.h"
+#include "core.h"
 #include "BaseWindow.h"
 #include "Interfaces/Components/ICloseable.h"
 

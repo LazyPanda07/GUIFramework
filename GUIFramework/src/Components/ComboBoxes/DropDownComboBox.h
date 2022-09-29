@@ -1,6 +1,6 @@
 #pragma once
 
-#include "headers.h"
+#include "core.h"
 #include "BaseComponents/StandardComponents/BaseComboBox.h"
 
 namespace gui_framework

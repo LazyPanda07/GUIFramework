@@ -1,4 +1,4 @@
-#include "headers.h"
+#include "core.h"
 #include "IResizableComponent.h"
 
 #pragma warning(disable: 6387)

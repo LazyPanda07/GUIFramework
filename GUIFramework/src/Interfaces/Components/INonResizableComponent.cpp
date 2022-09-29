@@ -1,4 +1,4 @@
-#include "headers.h"
+#include "core.h"
 #include "INonResizableComponent.h"
 
 #include "Utility/Utility.h"

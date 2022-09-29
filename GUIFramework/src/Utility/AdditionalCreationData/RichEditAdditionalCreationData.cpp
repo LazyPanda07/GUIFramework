@@ -1,4 +1,4 @@
-#include "headers.h"
+#include "core.h"
 #include "RichEditAdditionalCreationData.h"
 
 using namespace std;

@@ -1,4 +1,4 @@
-#include "headers.h"
+#include "core.h"
 #include "BaseComposite.h"
 
 #include "Interfaces/Components/IResizableComponent.h"

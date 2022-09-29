@@ -1,6 +1,6 @@
 #pragma once
 
-#include "headers.h"
+#include "core.h"
 #include "BaseListView.h"
 #include "Interfaces/Components/ListViews/ITextListView.h"
 #include "Interfaces/Localization/IMultipleTextLocalized.h"

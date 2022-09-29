@@ -1,4 +1,4 @@
-#include "headers.h"
+#include "core.h"
 #include "ITextOperations.h"
 
 #include "Exceptions/GetLastErrorException.h"

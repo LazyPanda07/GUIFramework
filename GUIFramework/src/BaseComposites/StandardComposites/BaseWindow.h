@@ -1,6 +1,6 @@
 #pragma once
 
-#include "headers.h"
+#include "core.h"
 #include "BaseComposites/BaseComposite.h"
 #include "Utility/Holders/LoadableHolders/BaseLoadableHolder.h"
 #include "Interfaces/Components/IComponentVisibility.h"

@@ -1,4 +1,4 @@
-#include "headers.h"
+#include "core.h"
 #include "ComboBoxStyles.h"
 
 using namespace std;

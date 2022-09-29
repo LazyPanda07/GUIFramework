@@ -1,6 +1,6 @@
 #pragma once
 
-#include "headers.h"
+#include "core.h"
 #include "BaseComponents/StandardComponents/BaseStaticControl.h"
 #include "Interfaces/Components/IResizableComponent.h"
 

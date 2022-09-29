@@ -1,4 +1,4 @@
-#include "headers.h"
+#include "core.h"
 #include "IStyles.h"
 
 using namespace std;

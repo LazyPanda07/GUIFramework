@@ -1,4 +1,4 @@
-#include "headers.h"
+#include "core.h"
 #include "EditControlCreator.h"
 
 #include "Components/EditControl.h"

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "headers.h"
+#include "core.h"
 
 #include "Composites/ChildWindow.h"
 #include "Composites/DialogBox.h"

@@ -1,4 +1,4 @@
-#include "headers.h"
+#include "core.h"
 #include "GroupBoxCreator.h"
 
 #include "Composites/GroupBox.h"

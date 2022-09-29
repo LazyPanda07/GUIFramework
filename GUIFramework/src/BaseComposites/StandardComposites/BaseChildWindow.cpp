@@ -1,4 +1,4 @@
-#include "headers.h"
+#include "core.h"
 #include "BaseChildWindow.h"
 
 #include "Styles/DefaultStyles.h"

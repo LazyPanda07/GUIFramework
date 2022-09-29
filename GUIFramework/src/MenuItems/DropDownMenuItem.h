@@ -1,6 +1,6 @@
 #pragma once
 
-#include "headers.h"
+#include "core.h"
 #include "Interfaces/Menu/IMenuItem.h"
 
 namespace gui_framework

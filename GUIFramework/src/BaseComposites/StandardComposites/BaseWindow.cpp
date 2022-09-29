@@ -1,4 +1,4 @@
-#include "headers.h"
+#include "core.h"
 #include "BaseWindow.h"
 
 #include "Exceptions/FileDoesNotExist.h"

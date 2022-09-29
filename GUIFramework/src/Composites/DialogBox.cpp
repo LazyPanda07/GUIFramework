@@ -1,4 +1,4 @@
-#include "headers.h"
+#include "core.h"
 #include "DialogBox.h"
 
 #include "GUIFramework.h"

@@ -1,4 +1,4 @@
-#include "headers.h"
+#include "core.h"
 #include "RichEditCreator.h"
 
 #include "Components/RichEdit.h"

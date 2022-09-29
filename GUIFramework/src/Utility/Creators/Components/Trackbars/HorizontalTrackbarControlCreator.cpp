@@ -1,4 +1,4 @@
-#include "headers.h"
+#include "core.h"
 #include "HorizontalTrackbarControlCreator.h"
 
 #include "Components/Trackbars/HorizontalTrackbarControl.h"

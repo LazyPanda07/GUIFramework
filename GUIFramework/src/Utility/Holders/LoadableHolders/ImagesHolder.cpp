@@ -1,4 +1,4 @@
-#include "headers.h"
+#include "core.h"
 #include "ImagesHolder.h"
 
 using namespace std;

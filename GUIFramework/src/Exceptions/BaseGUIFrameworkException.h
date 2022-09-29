@@ -1,6 +1,6 @@
 #pragma once
 
-#include "headers.h"
+#include "core.h"
 #include "ExceptionConstants.h"
 
 namespace gui_framework

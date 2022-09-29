@@ -1,4 +1,4 @@
-#include "headers.h"
+#include "core.h"
 #include "GroupBox.h"
 
 #include "Styles/Components/Buttons/RadioButtonStyles.h"

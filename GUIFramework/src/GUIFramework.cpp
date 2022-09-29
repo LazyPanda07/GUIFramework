@@ -1,4 +1,4 @@
-#include "headers.h"
+#include "core.h"
 #include "GUIFramework.h"
 
 #include "Exceptions/GetLastErrorException.h"

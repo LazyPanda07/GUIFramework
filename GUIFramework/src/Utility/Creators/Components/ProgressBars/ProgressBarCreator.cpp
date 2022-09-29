@@ -1,4 +1,4 @@
-#include "headers.h"
+#include "core.h"
 #include "ProgressBarCreator.h"
 
 #include "Components/ProgressBars/ProgressBar.h"

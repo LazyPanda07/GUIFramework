@@ -1,4 +1,4 @@
-#include "headers.h"
+#include "core.h"
 #include "BaseStaticControl.h"
 
 #include "Styles/Components/StaticControlStyles.h"

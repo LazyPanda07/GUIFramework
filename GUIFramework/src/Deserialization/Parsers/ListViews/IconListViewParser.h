@@ -1,6 +1,6 @@
 #pragma once
 
-#include "headers.h"
+#include "core.h"
 #include "Deserialization/Parsers/BaseComponentParser.h"
 #include "Utility/Holders/LoadableHolders/BaseLoadableHolder.h"
 

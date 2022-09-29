@@ -1,4 +1,4 @@
-#include "headers.h"
+#include "core.h"
 #include "ChildWindow.h"
 
 #include "Exceptions/NotImplemented.h"

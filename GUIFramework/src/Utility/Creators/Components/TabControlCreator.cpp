@@ -1,4 +1,4 @@
-#include "headers.h"
+#include "core.h"
 #include "TabControlCreator.h"
 
 #include "Components/TabControl.h"

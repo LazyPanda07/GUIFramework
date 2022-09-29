@@ -1,4 +1,4 @@
-#include "headers.h"
+#include "core.h"
 #include "BaseTrackbarControl.h"
 
 #include "Styles/DefaultStyles.h"

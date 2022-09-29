@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\headers.h">
+    <ClInclude Include="src\core.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\BaseComposites\StandardComposites\BaseSeparateWindow.h">
@@ -704,7 +704,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\headers.cpp">
+    <ClCompile Include="src\core.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\BaseComposites\StandardComposites\BaseSeparateWindow.cpp">

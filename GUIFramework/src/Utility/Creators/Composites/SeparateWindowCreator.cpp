@@ -1,4 +1,4 @@
-#include "headers.h"
+#include "core.h"
 #include "SeparateWindowCreator.h"
 
 #include "Composites/SeparateWindow.h"
