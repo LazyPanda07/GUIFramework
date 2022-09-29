@@ -45,7 +45,7 @@ namespace gui_framework
 		return -1;
 	}
 
-	BaseCheckBox::BaseCheckBox(const wstring& checkBoxName, const wstring& checkBoxText, const utility::ComponentSettings& settings, BaseComponent* parent, const function<void()>& onCheck, const function<void()>& onClear, const function<void()>& onClick) :
+	BaseCheckBox::BaseCheckBox(const wstring& checkBoxName, const wstring& checkBoxText, const utility::ComponentSettings& settings, BaseComposite* parent, const function<void()>& onCheck, const function<void()>& onClear, const function<void()>& onClick) :
 		BaseButton
 		(
 			checkBoxName,

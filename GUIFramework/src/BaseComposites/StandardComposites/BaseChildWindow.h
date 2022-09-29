@@ -9,7 +9,7 @@ namespace gui_framework
 	class GUI_FRAMEWORK_API BaseChildWindow : public BaseWindow
 	{
 	public:
-		BaseChildWindow(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, BaseComponent* parent, const std::string& windowFunctionName = "");
+		BaseChildWindow(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, BaseComposite* parent, const std::string& windowFunctionName = "");
 
 		/// @brief Used as key in creators
 		/// @return typeid().hash_code()

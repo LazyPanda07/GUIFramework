@@ -10,7 +10,7 @@ namespace gui_framework
 	class GUI_FRAMEWORK_API BaseListView : public BaseComponent
 	{
 	public:
-		BaseListView(const std::wstring& listViewName, const utility::ComponentSettings& settings, const styles::ListViewStyles& styles, BaseComponent* parent);
+		BaseListView(const std::wstring& listViewName, const utility::ComponentSettings& settings, const styles::ListViewStyles& styles, BaseComposite* parent);
 
 		/// @brief Used as key in creators
 		/// @return typeid().hash_code()

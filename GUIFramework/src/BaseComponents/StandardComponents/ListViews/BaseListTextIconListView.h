@@ -20,7 +20,7 @@ namespace gui_framework
 		virtual void updateLocalization(size_t index, const std::wstring& localizedText) override;
 
 	public:
-		BaseListTextIconListView(const std::wstring& listViewName, const utility::ComponentSettings& settings, BaseComponent* parent, utility::iconListViewType type, uint16_t iconsWidth, uint16_t iconsHeight, size_t count = standard_sizes::defaultImagesCount);
+		BaseListTextIconListView(const std::wstring& listViewName, const utility::ComponentSettings& settings, BaseComposite* parent, utility::iconListViewType type, uint16_t iconsWidth, uint16_t iconsHeight, size_t count = standard_sizes::defaultImagesCount);
 
 		/// @brief Used as key in creators
 		/// @return typeid().hash_code()

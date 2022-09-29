@@ -11,7 +11,7 @@ using namespace std;
 
 namespace gui_framework
 {
-	BaseMultipleSelectListBox::BaseMultipleSelectListBox(const wstring& listBoxName, const utility::ComponentSettings& settings, BaseComponent* parent) :
+	BaseMultipleSelectListBox::BaseMultipleSelectListBox(const wstring& listBoxName, const utility::ComponentSettings& settings, BaseComposite* parent) :
 		BaseListBox
 		(
 			listBoxName, 

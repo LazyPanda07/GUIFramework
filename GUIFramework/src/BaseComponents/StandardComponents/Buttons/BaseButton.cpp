@@ -34,7 +34,7 @@ namespace gui_framework
 		ITextOperations::setText(localizedText);
 	}
 
-	BaseButton::BaseButton(const wstring& buttonName, const wstring& buttonText, const utility::ComponentSettings& settings, const styles::ButtonStyles& styles, BaseComponent* parent, const function<void()>& onClick) :
+	BaseButton::BaseButton(const wstring& buttonName, const wstring& buttonText, const utility::ComponentSettings& settings, const styles::ButtonStyles& styles, BaseComposite* parent, const function<void()>& onClick) :
 		BaseComponent
 		(
 			standard_classes::button,
@@ -49,7 +49,7 @@ namespace gui_framework
 		ITextOperations::setText(buttonText);
 	}
 
-	BaseButton::BaseButton(const wstring& buttonName, const wstring& buttonText, const utility::ComponentSettings& settings, const styles::ButtonStyles& styles, BaseComponent* parent, const string& functionName, const string& moduleName) :
+	BaseButton::BaseButton(const wstring& buttonName, const wstring& buttonText, const utility::ComponentSettings& settings, const styles::ButtonStyles& styles, BaseComposite* parent, const string& functionName, const string& moduleName) :
 		BaseComponent
 		(
 			wstring(standard_classes::button),

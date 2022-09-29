@@ -1,4 +1,3 @@
-#include "core.h"
 #include "Button.h"
 
 #include "Styles/Components/Buttons/DefaultButtonStyles.h"
@@ -7,7 +6,7 @@ using namespace std;
 
 namespace gui_framework
 {
-	Button::Button(const wstring& buttonName, const wstring& buttonText, const utility::ComponentSettings& settings, BaseComponent* parent, const function<void()>& onClick) :
+	Button::Button(const wstring& buttonName, const wstring& buttonText, const utility::ComponentSettings& settings, BaseComposite* parent, const function<void()>& onClick) :
 		BaseButton
 		(
 			buttonName,
@@ -21,12 +20,12 @@ namespace gui_framework
 		(
 			handle,
 			parent->getHandle()
-		)	
+		)
 	{
 
 	}
 
-	Button::Button(const wstring& buttonName, const wstring& buttonText, const utility::ComponentSettings& settings, BaseComponent* parent, const string& functionName, const string& moduleName) :
+	Button::Button(const wstring& buttonName, const wstring& buttonText, const utility::ComponentSettings& settings, BaseComposite* parent, const string& functionName, const string& moduleName) :
 		BaseButton
 		(
 			buttonName,

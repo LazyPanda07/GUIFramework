@@ -8,7 +8,7 @@ using namespace std;
 
 namespace gui_framework
 {
-	BaseIconListView::BaseIconListView(const wstring& listViewName, const utility::ComponentSettings& settings, BaseComponent* parent, utility::iconListViewType type, uint16_t iconsWidth, uint16_t iconsHeight, size_t count) :
+	BaseIconListView::BaseIconListView(const wstring& listViewName, const utility::ComponentSettings& settings, BaseComposite* parent, utility::iconListViewType type, uint16_t iconsWidth, uint16_t iconsHeight, size_t count) :
 		BaseListView
 		(
 			listViewName,

@@ -20,7 +20,7 @@ namespace gui_framework
 		/// @param settings 
 		/// @param parent 
 		/// @param animationPeriod Period between animation in milliseconds
-		BaseInfiniteProgressBar(const std::wstring& progressBarName, const utility::ComponentSettings& settings, BaseComponent* parent, int animationPeriod = NULL);
+		BaseInfiniteProgressBar(const std::wstring& progressBarName, const utility::ComponentSettings& settings, BaseComposite* parent, int animationPeriod = NULL);
 
 		virtual void playAnimation() final;
 

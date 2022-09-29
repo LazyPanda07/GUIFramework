@@ -10,7 +10,7 @@ namespace gui_framework
 	class GUI_FRAMEWORK_API BaseTrackbarControl : public BaseComponent
 	{
 	public:
-		BaseTrackbarControl(const std::wstring& trackbarName, const utility::ComponentSettings& settings, const styles::TrackbarControlStyles& styles, BaseComponent* parent);
+		BaseTrackbarControl(const std::wstring& trackbarName, const utility::ComponentSettings& settings, const styles::TrackbarControlStyles& styles, BaseComposite* parent);
 
 		virtual void clearSelection() final;
 

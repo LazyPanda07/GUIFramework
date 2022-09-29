@@ -7,7 +7,7 @@ using namespace std;
 
 namespace gui_framework
 {
-	BaseVerticalAndHorizontalScrollBar::BaseVerticalAndHorizontalScrollBar(const wstring& scrollBarName, const utility::ComponentSettings& settings, BaseComponent* parent) :
+	BaseVerticalAndHorizontalScrollBar::BaseVerticalAndHorizontalScrollBar(const wstring& scrollBarName, const utility::ComponentSettings& settings, BaseComposite* parent) :
 		BaseScrollBar
 		(
 			scrollBarName,

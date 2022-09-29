@@ -39,7 +39,7 @@ namespace gui_framework
 		};
 
 	public:
-		BaseComboBox(const std::wstring& comboBoxName, const utility::ComponentSettings& settings, const styles::ComboBoxStyles& styles, BaseComponent* parent);
+		BaseComboBox(const std::wstring& comboBoxName, const utility::ComponentSettings& settings, const styles::ComboBoxStyles& styles, BaseComposite* parent);
 
 		/// @brief 
 		/// @param value 

@@ -29,9 +29,9 @@ namespace gui_framework
 		void drawImage();
 
 	public:
-		ImageButton(const std::wstring& buttonName, const std::filesystem::path& pathToImage, drawingType type, uint16_t imageWidth, uint16_t imageHeight, const utility::ComponentSettings& settings, BaseComponent* parent, const std::function<void()>& onClick = nullptr);
+		ImageButton(const std::wstring& buttonName, const std::filesystem::path& pathToImage, drawingType type, uint16_t imageWidth, uint16_t imageHeight, const utility::ComponentSettings& settings, BaseComposite* parent, const std::function<void()>& onClick = nullptr);
 
-		ImageButton(const std::wstring& buttonName, const std::filesystem::path& pathToImage, drawingType type, uint16_t imageWidth, uint16_t imageHeight, const utility::ComponentSettings& settings, BaseComponent* parent, const std::string& functionName, const std::string& moduleName);
+		ImageButton(const std::wstring& buttonName, const std::filesystem::path& pathToImage, drawingType type, uint16_t imageWidth, uint16_t imageHeight, const utility::ComponentSettings& settings, BaseComposite* parent, const std::string& functionName, const std::string& moduleName);
 
 		void setImage(const std::filesystem::path& pathToImage, drawingType type, uint16_t imageWidth, uint16_t imageHeight);
 

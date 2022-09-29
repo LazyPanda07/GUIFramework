@@ -1,6 +1,6 @@
-#include "core.h"
 #include "ImageButton.h"
 
+#include "BaseComposites/BaseComposite.h"
 #include "Styles/Components/Buttons/DefaultButtonStyles.h"
 #include "Utility/Holders/LoadableHolders/BaseLoadableHolder.h"
 
@@ -61,7 +61,7 @@ namespace gui_framework
 		}
 	}
 
-	ImageButton::ImageButton(const wstring& buttonName, const filesystem::path& pathToImage, drawingType type, uint16_t imageWidth, uint16_t imageHeight, const utility::ComponentSettings& settings, BaseComponent* parent, const function<void()>& onClick) :
+	ImageButton::ImageButton(const wstring& buttonName, const filesystem::path& pathToImage, drawingType type, uint16_t imageWidth, uint16_t imageHeight, const utility::ComponentSettings& settings, BaseComposite* parent, const function<void()>& onClick) :
 		BaseButton
 		(
 			buttonName,
@@ -84,7 +84,7 @@ namespace gui_framework
 		this->drawImage();
 	}
 
-	ImageButton::ImageButton(const wstring& buttonName, const filesystem::path& pathToImage, drawingType type, uint16_t imageWidth, uint16_t imageHeight, const utility::ComponentSettings& settings, BaseComponent* parent, const string& functionName, const string& moduleName) :
+	ImageButton::ImageButton(const wstring& buttonName, const filesystem::path& pathToImage, drawingType type, uint16_t imageWidth, uint16_t imageHeight, const utility::ComponentSettings& settings, BaseComposite* parent, const string& functionName, const string& moduleName) :
 		BaseButton
 		(
 			buttonName,

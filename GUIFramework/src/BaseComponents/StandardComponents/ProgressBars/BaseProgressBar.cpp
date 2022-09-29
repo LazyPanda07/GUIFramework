@@ -8,7 +8,7 @@ using namespace std;
 
 namespace gui_framework
 {
-	BaseProgressBar::BaseProgressBar(const wstring& progressBarName, const utility::ComponentSettings& settings, BaseComponent* parent, int minRange, int maxRange, int updateStep) :
+	BaseProgressBar::BaseProgressBar(const wstring& progressBarName, const utility::ComponentSettings& settings, BaseComposite* parent, int minRange, int maxRange, int updateStep) :
 		BaseComponent
 		(
 			standard_classes::progressBar,

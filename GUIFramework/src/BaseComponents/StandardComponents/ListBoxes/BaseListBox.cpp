@@ -1,5 +1,6 @@
-#include "core.h"
 #include "BaseListBox.h"
+
+#include "BaseComposites/BaseComposite.h"
 
 #include "Exceptions/SelectListException.h"
 
@@ -17,7 +18,7 @@ namespace gui_framework
 		this->changeValue(localizedText, index);
 	}
 
-	BaseListBox::BaseListBox(const wstring& listBoxName, const utility::ComponentSettings& settings, const styles::ListBoxStyles& styles, BaseComponent* parent) :
+	BaseListBox::BaseListBox(const wstring& listBoxName, const utility::ComponentSettings& settings, const styles::ListBoxStyles& styles, BaseComposite* parent) :
 		BaseComponent
 		(
 			standard_classes::listBox,

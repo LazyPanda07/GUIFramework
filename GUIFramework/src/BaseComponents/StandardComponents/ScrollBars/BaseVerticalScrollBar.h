@@ -7,7 +7,7 @@ namespace gui_framework
 	class GUI_FRAMEWORK_API BaseVerticalScrollBar : public BaseScrollBar
 	{
 	public:
-		BaseVerticalScrollBar(const std::wstring& scrollBarName, const utility::ComponentSettings& settings, BaseComponent* parent);
+		BaseVerticalScrollBar(const std::wstring& scrollBarName, const utility::ComponentSettings& settings, BaseComposite* parent);
 
 		/// @brief Used as key in creators
 		/// @return typeid().hash_code()

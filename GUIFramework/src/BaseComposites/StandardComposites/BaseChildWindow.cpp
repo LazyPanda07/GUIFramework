@@ -7,7 +7,7 @@ using namespace std;
 
 namespace gui_framework
 {
-	BaseChildWindow::BaseChildWindow(const wstring& className, const wstring& windowName, const utility::ComponentSettings& settings, BaseComponent* parent, const string& windowFunctionName) :
+	BaseChildWindow::BaseChildWindow(const wstring& className, const wstring& windowName, const utility::ComponentSettings& settings, BaseComposite* parent, const string& windowFunctionName) :
 		BaseWindow
 		(
 			className,

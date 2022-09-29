@@ -22,7 +22,7 @@ namespace gui_framework
 		int updateStep;
 
 	public:
-		BaseProgressBar(const std::wstring& progressBarName, const utility::ComponentSettings& settings, BaseComponent* parent, int minRange = defaultMinRange, int maxRange = defaultMaxRange, int updateStep = defaultUpdateStep);
+		BaseProgressBar(const std::wstring& progressBarName, const utility::ComponentSettings& settings, BaseComposite* parent, int minRange = defaultMinRange, int maxRange = defaultMaxRange, int updateStep = defaultUpdateStep);
 
 		virtual void update(int newPosition) final;
 

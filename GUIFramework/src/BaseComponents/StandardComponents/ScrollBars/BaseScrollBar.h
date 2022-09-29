@@ -8,7 +8,7 @@ namespace gui_framework
 	class GUI_FRAMEWORK_API BaseScrollBar : public BaseComponent
 	{
 	public:
-		BaseScrollBar(const std::wstring& scrollBarName, const utility::ComponentSettings& settings, const styles::ScrollBarStyles& styles, BaseComponent* parent);
+		BaseScrollBar(const std::wstring& scrollBarName, const utility::ComponentSettings& settings, const styles::ScrollBarStyles& styles, BaseComposite* parent);
 
 		/// @brief Used as key in creators
 		/// @return typeid().hash_code()

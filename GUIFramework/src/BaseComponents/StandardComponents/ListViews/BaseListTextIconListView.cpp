@@ -14,7 +14,7 @@ namespace gui_framework
 		ITextIconListView::changeTextIconItem(localizedText, pathToIcon, index);
 	}
 
-	BaseListTextIconListView::BaseListTextIconListView(const wstring& listViewName, const utility::ComponentSettings& settings, BaseComponent* parent, utility::iconListViewType type, uint16_t iconsWidth, uint16_t iconsHeight, size_t count) :
+	BaseListTextIconListView::BaseListTextIconListView(const wstring& listViewName, const utility::ComponentSettings& settings, BaseComposite* parent, utility::iconListViewType type, uint16_t iconsWidth, uint16_t iconsHeight, size_t count) :
 		BaseListListView
 		(
 			listViewName,

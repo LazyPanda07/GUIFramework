@@ -39,7 +39,7 @@ namespace gui_framework
 		};
 
 	public:
-		static messageBoxResponse createMessageBox(const std::wstring& text, const std::wstring& title, messageBoxType type, BaseComponent* parent = nullptr, bool helpButton = false);
+		static messageBoxResponse createMessageBox(const std::wstring& text, const std::wstring& title, messageBoxType type, BaseComposite* parent = nullptr, bool helpButton = false);
 
 	protected:
 		bool isShowDialogUsed;

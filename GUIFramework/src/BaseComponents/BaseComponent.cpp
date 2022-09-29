@@ -73,7 +73,7 @@ namespace gui_framework
 		}
 	}
 
-	BaseComponent::BaseComponent(const wstring& className, const wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent, const string& windowFunctionName, const string& moduleName, uint16_t smallIconResource, uint16_t largeIconResources) :
+	BaseComponent::BaseComponent(const wstring& className, const wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComposite* parent, const string& windowFunctionName, const string& moduleName, uint16_t smallIconResource, uint16_t largeIconResources) :
 		parent(parent),
 		className(className),
 		windowName(windowName),
@@ -173,10 +173,9 @@ namespace gui_framework
 		}
 		else
 		{
-			BaseComposite* composite = static_cast<BaseComposite*>(parent);
 			BaseComponent* topLevelWindow = parent;
 
-			composite->addChild(this);
+			parent->addChild(this);
 
 			while (topLevelWindow->getParent())
 			{
@@ -194,11 +193,6 @@ namespace gui_framework
 
 			localized->updateLocalizationEvent();
 		}
-	}
-
-	bool BaseComponent::isComposite() const
-	{
-		return false;
 	}
 
 	LRESULT BaseComponent::handleMessages(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)

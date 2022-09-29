@@ -21,7 +21,7 @@ namespace gui_framework
 		virtual void updateLocalization(const std::wstring& localizedText) override;
 
 	public:
-		BaseStaticControl(const std::wstring& staticControlName, const std::wstring& staticControlText, const utility::ComponentSettings& settings, BaseComponent* parent);
+		BaseStaticControl(const std::wstring& staticControlName, const std::wstring& staticControlText, const utility::ComponentSettings& settings, BaseComposite* parent);
 
 		/// @brief Used as key in creators
 		/// @return typeid().hash_code()

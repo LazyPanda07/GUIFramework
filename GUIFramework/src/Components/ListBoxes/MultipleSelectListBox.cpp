@@ -1,11 +1,10 @@
-#include "core.h"
 #include "MultipleSelectListBox.h"
 
 using namespace std;
 
 namespace gui_framework
 {
-	MultipleSelectListBox::MultipleSelectListBox(const wstring& listBoxName, const utility::ComponentSettings& settings, BaseComponent* parent, bool isSorting) :
+	MultipleSelectListBox::MultipleSelectListBox(const wstring& listBoxName, const utility::ComponentSettings& settings, BaseComposite* parent, bool isSorting) :
 		BaseMultipleSelectListBox
 		(
 			listBoxName,

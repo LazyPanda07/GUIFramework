@@ -5,7 +5,7 @@ using namespace std;
 
 namespace gui_framework
 {
-	BaseScrollBar::BaseScrollBar(const wstring& scrollBarName, const utility::ComponentSettings& settings, const styles::ScrollBarStyles& styles, BaseComponent* parent) : 
+	BaseScrollBar::BaseScrollBar(const wstring& scrollBarName, const utility::ComponentSettings& settings, const styles::ScrollBarStyles& styles, BaseComposite* parent) :
 		BaseComponent
 		(
 			standard_classes::scrollBar,

@@ -59,7 +59,7 @@ namespace gui_framework
 		/// @param moduleName Name of loaded resource module with icons
 		/// @param smallIconResource Integer value from auto generated Visual Studio resources
 		/// @param largeIconResource Integer value from auto generated Visual Studio resources
-		BaseComposite(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent = nullptr, const std::string& windowFunctionName = "", const std::string& moduleName = "", uint16_t smallIconResource = NULL, uint16_t largeIconResource = NULL);
+		BaseComposite(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComposite* parent = nullptr, const std::string& windowFunctionName = "", const std::string& moduleName = "", uint16_t smallIconResource = NULL, uint16_t largeIconResource = NULL);
 
 		void removeChild(BaseComponent* child);
 
@@ -82,8 +82,6 @@ namespace gui_framework
 		/// @brief Remove all pop-up menus with menuName
 		/// @param menuName 
 		virtual void removePopupMenus(const std::wstring& menuName);
-
-		bool isComposite() const override;
 
 		void setExitMode(exitMode mode);
 

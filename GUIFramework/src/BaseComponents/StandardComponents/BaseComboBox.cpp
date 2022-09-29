@@ -59,7 +59,7 @@ namespace gui_framework
 		onSelectionChange = tem;
 	}
 
-	BaseComboBox::BaseComboBox(const wstring& comboBoxName, const utility::ComponentSettings& settings, const styles::ComboBoxStyles& styles, BaseComponent* parent) :
+	BaseComboBox::BaseComboBox(const wstring& comboBoxName, const utility::ComponentSettings& settings, const styles::ComboBoxStyles& styles, BaseComposite* parent) :
 		BaseComponent
 		(
 			standard_classes::comboBox,

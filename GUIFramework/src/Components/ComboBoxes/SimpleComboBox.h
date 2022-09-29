@@ -1,6 +1,5 @@
 #pragma once
 
-#include "core.h"
 #include "BaseComponents/StandardComponents/BaseComboBox.h"
 
 namespace gui_framework
@@ -9,7 +8,7 @@ namespace gui_framework
 	class GUI_FRAMEWORK_API SimpleComboBox : public BaseComboBox
 	{
 	public:
-		SimpleComboBox(const std::wstring& comboBoxName, const utility::ComponentSettings& settings, BaseComponent* parent);
+		SimpleComboBox(const std::wstring& comboBoxName, const utility::ComponentSettings& settings, BaseComposite* parent);
 
 		size_t getHash() const override;
 

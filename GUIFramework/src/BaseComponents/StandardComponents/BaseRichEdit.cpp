@@ -61,7 +61,7 @@ namespace gui_framework
 		return -1;
 	}
 
-	BaseRichEdit::BaseRichEdit(const wstring& richEditName, const utility::ComponentSettings& settings, BaseComponent* parent, bool isMultiLine) :
+	BaseRichEdit::BaseRichEdit(const wstring& richEditName, const utility::ComponentSettings& settings, BaseComposite* parent, bool isMultiLine) :
 		BaseComponent
 		(
 			standard_classes::richEdit,

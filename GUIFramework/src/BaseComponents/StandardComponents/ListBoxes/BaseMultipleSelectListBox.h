@@ -9,7 +9,7 @@ namespace gui_framework
 	class GUI_FRAMEWORK_API BaseMultipleSelectListBox : public BaseListBox
 	{
 	public:
-		BaseMultipleSelectListBox(const std::wstring& listBoxName, const utility::ComponentSettings& settings, BaseComponent* parent);
+		BaseMultipleSelectListBox(const std::wstring& listBoxName, const utility::ComponentSettings& settings, BaseComposite* parent);
 
 		LRESULT getCurrentSelections() const ;
 

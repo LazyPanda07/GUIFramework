@@ -43,7 +43,7 @@ namespace gui_framework
 		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
 
 	public:
-		BaseRichEdit(const std::wstring& richEditName, const utility::ComponentSettings& settings, BaseComponent* parent, bool isMultiLine = false);
+		BaseRichEdit(const std::wstring& richEditName, const utility::ComponentSettings& settings, BaseComposite* parent, bool isMultiLine = false);
 
 		virtual void addUrlDetectEvent(urlDetectEvent event, const std::function<void(const std::wstring&)>& eventCallback) final;
 

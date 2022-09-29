@@ -10,6 +10,8 @@
 
 namespace gui_framework
 {
+	class BaseComposite;
+
 	/// @brief Base class for all windows, controls, etc.
 	class GUI_FRAMEWORK_API BaseComponent : public interfaces::ISerializable
 	{
@@ -25,7 +27,7 @@ namespace gui_framework
 		static void runFunctionAsync(std::function<void()>&& callable, const std::function<void()>& callback = nullptr) noexcept;
 
 	protected:
-		BaseComponent* parent;
+		BaseComposite* parent;
 		const std::wstring className;
 		const std::wstring windowName;
 		HWND handle;
@@ -56,9 +58,7 @@ namespace gui_framework
 		/// @param moduleName Name of loaded resource module with icons
 		/// @param smallIconResource Integer value from auto generated Visual Studio resources
 		/// @param largeIconResource Integer value from auto generated Visual Studio resources
-		BaseComponent(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent = nullptr, const std::string& windowFunctionName = "", const std::string& moduleName = "", uint16_t smallIconResource = NULL, uint16_t largeIconResource = NULL);
-
-		virtual bool isComposite() const;
+		BaseComponent(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComposite* parent = nullptr, const std::string& windowFunctionName = "", const std::string& moduleName = "", uint16_t smallIconResource = NULL, uint16_t largeIconResource = NULL);
 
 		LRESULT handleMessages(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed);
 

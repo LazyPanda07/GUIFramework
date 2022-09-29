@@ -17,7 +17,7 @@ namespace gui_framework
 		virtual void updateLocalization(size_t index, const std::wstring& localizedText) override;
 
 	public:
-		BaseTextListView(const std::wstring& listViewName, const utility::ComponentSettings& settings, BaseComponent* parent);
+		BaseTextListView(const std::wstring& listViewName, const utility::ComponentSettings& settings, BaseComposite* parent);
 
 		/// @brief Used as key in creators
 		/// @return typeid().hash_code()

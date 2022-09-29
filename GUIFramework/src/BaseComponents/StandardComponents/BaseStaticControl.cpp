@@ -12,7 +12,7 @@ namespace gui_framework
 		ITextOperations::setText(localizedText);
 	}
 
-	BaseStaticControl::BaseStaticControl(const wstring& staticControlName, const wstring& staticControlText, const utility::ComponentSettings& settings, BaseComponent* parent) :
+	BaseStaticControl::BaseStaticControl(const wstring& staticControlName, const wstring& staticControlText, const utility::ComponentSettings& settings, BaseComposite* parent) :
 		BaseComponent
 		(
 			standard_classes::staticControl,
