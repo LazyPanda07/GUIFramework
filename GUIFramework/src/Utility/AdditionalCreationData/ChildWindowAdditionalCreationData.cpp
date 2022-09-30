@@ -1,4 +1,4 @@
-#include "core.h"
+#include "Core.h"
 #include "ChildWindowAdditionalCreationData.h"
 
 using namespace std;

@@ -1,2 +1,2 @@
-#include "core.h"
+#include "Core.h"
 #include "ComponentsHeader.h"

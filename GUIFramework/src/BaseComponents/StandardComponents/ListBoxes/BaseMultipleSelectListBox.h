@@ -1,6 +1,5 @@
 #pragma once
 
-#include "core.h"
 #include "BaseListBox.h"
 
 namespace gui_framework

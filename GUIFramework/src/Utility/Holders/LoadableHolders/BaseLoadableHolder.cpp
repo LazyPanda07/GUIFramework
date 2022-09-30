@@ -1,4 +1,4 @@
-#include "core.h"
+#include "Core.h"
 #include "BaseLoadableHolder.h"
 
 #include "Utility/Utility.h"

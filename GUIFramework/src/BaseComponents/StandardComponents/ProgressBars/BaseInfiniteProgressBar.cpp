@@ -1,4 +1,4 @@
-#include "core.h"
+#include "Core.h"
 #include "BaseInfiniteProgressBar.h"
 
 #include "Styles/Components/InfiniteProgressBarStyles.h"

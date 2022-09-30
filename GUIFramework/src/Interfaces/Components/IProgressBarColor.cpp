@@ -1,4 +1,4 @@
-#include "core.h"
+#include "Core.h"
 #include "IProgressBarColor.h"
 
 using namespace std;

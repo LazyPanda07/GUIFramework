@@ -1,4 +1,4 @@
-#include "core.h"
+#include "Core.h"
 #include "TrackbarControlAdditionalCreationData.h"
 
 using namespace std;

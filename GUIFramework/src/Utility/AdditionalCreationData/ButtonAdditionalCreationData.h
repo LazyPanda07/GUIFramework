@@ -1,6 +1,6 @@
 #pragma once
 
-#include "core.h"
+#include "Core.h"
 #include "AdditionalCreationData.h"
 #include "Components/Buttons/Button.h"
 #include "Components/Buttons/CheckBox.h"

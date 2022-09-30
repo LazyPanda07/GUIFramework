@@ -1,6 +1,6 @@
 #pragma once
 
-#include "core.h"
+#include "Core.h"
 #include "BaseComponentParser.h"
 #include "BaseComponents/StandardComponents/BaseRichEdit.h"
 

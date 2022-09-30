@@ -1,4 +1,3 @@
-#include "core.h"
 #include "BaseEditControl.h"
 
 #include "Styles/Components/EditControlStyles.h"

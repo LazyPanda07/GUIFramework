@@ -1,4 +1,4 @@
-#include "core.h"
+#include "Core.h"
 #include "NotImplemented.h"
 
 using namespace std;

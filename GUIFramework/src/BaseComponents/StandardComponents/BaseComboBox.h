@@ -2,7 +2,6 @@
 
 /// @file BaseComboBox.h
 
-#include "core.h"
 #include "BaseComponents/BaseComponent.h"
 #include "Interfaces/Components/IResizableComponent.h"
 #include "Styles/Components/ComboBoxes/ComboBoxStyles.h"

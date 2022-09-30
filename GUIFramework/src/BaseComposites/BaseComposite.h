@@ -1,6 +1,6 @@
 #pragma once
 
-#include "core.h"
+#include "Core.h"
 #include "BaseComponents/BaseComponent.h"
 #include "Menu/Menu.h"
 #include "Interfaces/Iterators/IIterable.h"

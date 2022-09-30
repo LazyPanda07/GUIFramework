@@ -1,4 +1,4 @@
-#include "core.h"
+#include "Core.h"
 #include "BaseIconListView.h"
 
 #include "Styles/Components/ListViews/IconListViewStyles.h"

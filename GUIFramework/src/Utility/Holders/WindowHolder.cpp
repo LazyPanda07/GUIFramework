@@ -1,4 +1,4 @@
-#include "core.h"
+#include "Core.h"
 #include "WindowHolder.h"
 
 #include "GUIFramework.h"

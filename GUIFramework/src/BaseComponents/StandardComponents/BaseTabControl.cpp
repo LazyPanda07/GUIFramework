@@ -1,4 +1,3 @@
-#include "core.h"
 #include "BaseTabControl.h"
 
 #include "Styles/DefaultStyles.h"

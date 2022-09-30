@@ -1,6 +1,6 @@
 #pragma once
 
-#include "core.h"
+#include "Core.h"
 #include "IBaseListViewOperations.h"
 #include "Utility/Holders/LoadableHolders/IconsHolder.h"
 

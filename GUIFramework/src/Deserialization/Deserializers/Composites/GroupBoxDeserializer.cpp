@@ -1,4 +1,4 @@
-#include "core.h"
+#include "Core.h"
 #include "GroupBoxDeserializer.h"
 
 #include "Deserialization/Parsers/GroupBoxParser.h"

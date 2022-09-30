@@ -1,4 +1,4 @@
-#include "core.h"
+#include "Core.h"
 #include "CantLoadModuleException.h"
 
 using namespace std;

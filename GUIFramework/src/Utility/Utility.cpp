@@ -1,4 +1,4 @@
-#include "core.h"
+#include "Core.h"
 #include "Utility.h"
 
 #include "BaseComposites/StandardComposites/BaseSeparateWindow.h"

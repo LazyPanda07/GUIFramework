@@ -1,6 +1,6 @@
 #pragma once
 
-#include "core.h"
+#include "Core.h"
 #include "IBaseForwardIterator.h"
 
 namespace gui_framework

@@ -1,4 +1,4 @@
-#include "core.h"
+#include "Core.h"
 #include "MultipleSelectListBoxStyles.h"
 
 using namespace std;

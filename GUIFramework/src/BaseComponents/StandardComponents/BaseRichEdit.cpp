@@ -1,4 +1,3 @@
-#include "core.h"
 #include "BaseRichEdit.h"
 
 #include "Styles/Components/DefaultRichEditStyles.h"

@@ -1,4 +1,4 @@
-#include "core.h"
+#include "Core.h"
 #include "SelectListException.h"
 
 using namespace std;

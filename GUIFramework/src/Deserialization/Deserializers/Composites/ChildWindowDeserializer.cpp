@@ -1,4 +1,4 @@
-#include "core.h"
+#include "Core.h"
 #include "ChildWindowDeserializer.h"
 
 #include "Deserialization/Parsers/BaseCompositeParser.h"

@@ -1,4 +1,4 @@
-#include "core.h"
+#include "Core.h"
 #include "BaseVerticalAndHorizontalScrollBar.h"
 
 #include "Styles/Components/ScrollBars/VerticalAndHorizontalScrollBarStyles.h"

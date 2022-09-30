@@ -1,4 +1,3 @@
-#include "core.h"
 #include "BaseCheckBox.h"
 
 #include "Styles/Components/Buttons/CheckBoxStyles.h"

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "core.h"
+#include "Core.h"
 #include "AdditionalCreationData.h"
 #include "Components/ProgressBars/ProgressBar.h"
 #include "Components/ProgressBars/InfiniteProgressBar.h"

@@ -1,4 +1,4 @@
-#include "core.h"
+#include "Core.h"
 #include "DropDownMenuItem.h"
 
 using namespace std;

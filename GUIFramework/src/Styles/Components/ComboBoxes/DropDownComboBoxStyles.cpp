@@ -1,4 +1,4 @@
-#include "core.h"
+#include "Core.h"
 #include "DropDownComboBoxStyles.h"
 
 using namespace std;

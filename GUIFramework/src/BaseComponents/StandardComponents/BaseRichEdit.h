@@ -2,7 +2,6 @@
 
 /// @file BaseRichEdit.h
 
-#include "core.h"
 #include "BaseComponents/BaseComponent.h"
 #include "Interfaces/Components/IResizableComponent.h"
 #include "Interfaces/Components/ITextOperations.h"

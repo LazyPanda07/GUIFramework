@@ -1,4 +1,4 @@
-#include "core.h"
+#include "Core.h"
 #include "TextListViewStyles.h"
 
 using namespace std;

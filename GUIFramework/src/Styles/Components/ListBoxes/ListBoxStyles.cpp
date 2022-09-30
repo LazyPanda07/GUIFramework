@@ -1,4 +1,4 @@
-#include "core.h"
+#include "Core.h"
 #include "ListBoxStyles.h"
 
 using namespace std;

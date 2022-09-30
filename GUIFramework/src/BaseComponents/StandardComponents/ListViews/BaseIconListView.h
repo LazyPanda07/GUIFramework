@@ -1,6 +1,6 @@
 #pragma once
 
-#include "core.h"
+#include "Core.h"
 #include "BaseListView.h"
 #include "Interfaces/Components/ListViews/IIconListView.h"
 
