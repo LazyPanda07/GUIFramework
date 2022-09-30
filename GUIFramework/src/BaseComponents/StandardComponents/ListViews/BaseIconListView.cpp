@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "BaseIconListView.h"
 
 #include "Styles/Components/ListViews/IconListViewStyles.h"

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Core.h"
 #include "BaseComposites/BaseComposite.h"
 #include "Interfaces/Components/IComponentVisibility.h"
 #include "Interfaces/Components/ICloseable.h"

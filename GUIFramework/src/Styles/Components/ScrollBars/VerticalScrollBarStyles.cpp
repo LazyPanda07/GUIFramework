@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "VerticalScrollBarStyles.h"
 
 using namespace std;

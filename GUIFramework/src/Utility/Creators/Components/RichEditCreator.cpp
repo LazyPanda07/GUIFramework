@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "RichEditCreator.h"
 
 #include "Components/RichEdit.h"

@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "ITextOperations.h"
 
 #include "Exceptions/GetLastErrorException.h"

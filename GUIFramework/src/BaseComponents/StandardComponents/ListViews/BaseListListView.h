@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Core.h"
 #include "BaseListView.h"
 #include "Styles/Components/ListViews/ListListViewStyles.h"
 

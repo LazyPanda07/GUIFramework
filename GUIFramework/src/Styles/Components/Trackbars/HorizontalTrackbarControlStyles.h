@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Core.h"
 #include "TrackbarControlStyles.h"
 #include "Components/Trackbars/HorizontalTrackbarControl.h"
 

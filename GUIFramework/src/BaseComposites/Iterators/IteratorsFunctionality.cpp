@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "IteratorsFunctionality.h"
 
 #include "BaseComposites/BaseComposite.h"

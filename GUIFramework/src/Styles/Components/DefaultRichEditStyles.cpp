@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "DefaultRichEditStyles.h"
 
 using namespace std;

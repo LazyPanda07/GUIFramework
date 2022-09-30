@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "GetLastErrorException.h"
 
 using namespace std;

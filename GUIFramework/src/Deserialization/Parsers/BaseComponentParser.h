@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Core.h"
 #include "Utility/ComponentSettings.h"
 
 namespace gui_framework

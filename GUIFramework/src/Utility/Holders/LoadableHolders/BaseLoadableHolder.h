@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Core.h"
 #include "Interfaces/Iterators/IIterable.h"
 #include "Interfaces/Utility/ISerializable.h"
 #include "Iterators/loadable_forward_iterator.h"

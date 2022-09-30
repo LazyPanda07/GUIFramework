@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "InfiniteProgressBarStyles.h"
 
 using namespace std;

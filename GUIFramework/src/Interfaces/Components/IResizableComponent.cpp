@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "IResizableComponent.h"
 
 #pragma warning(disable: 6387)

@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "composite_const_forward_iterator.h"
 
 #include "IteratorsFunctionality.h"

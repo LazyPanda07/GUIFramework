@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "ComboBoxAdditionalCreationData.h"
 
 using namespace std;

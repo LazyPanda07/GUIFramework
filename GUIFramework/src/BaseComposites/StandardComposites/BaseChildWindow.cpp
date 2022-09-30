@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "BaseChildWindow.h"
 
 #include "Styles/DefaultStyles.h"

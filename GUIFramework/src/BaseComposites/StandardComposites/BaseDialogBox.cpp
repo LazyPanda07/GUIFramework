@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "BaseDialogBox.h"
 
 #include "GUIFramework.h"

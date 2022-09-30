@@ -6,6 +6,7 @@
 #include <cstdint>
 #include <memory>
 
+#include <CommCtrl.h>
 #include <Richedit.h>
 
 namespace gui_framework

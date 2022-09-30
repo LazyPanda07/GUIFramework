@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Core.h"
 #include "ButtonStyles.h"
 
 namespace gui_framework

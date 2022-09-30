@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Core.h"
 #include "BaseComponents/StandardComponents/Buttons/BaseCheckBox.h"
 
 namespace gui_framework

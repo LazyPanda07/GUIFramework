@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "ISerializable.h"
 
 using namespace std;

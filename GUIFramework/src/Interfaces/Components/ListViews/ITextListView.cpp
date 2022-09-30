@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "ITextListView.h"
 
 using namespace std;

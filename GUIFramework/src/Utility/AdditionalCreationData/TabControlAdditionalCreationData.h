@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Core.h"
 #include "AdditionalCreationData.h"
 #include "Components/TabControl.h"
 

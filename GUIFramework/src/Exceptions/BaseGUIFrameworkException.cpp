@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "BaseGUIFrameworkException.h"
 
 #include "Utility/Utility.h"

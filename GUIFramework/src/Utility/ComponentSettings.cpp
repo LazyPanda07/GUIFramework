@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "ComponentSettings.h"
 
 using namespace std;

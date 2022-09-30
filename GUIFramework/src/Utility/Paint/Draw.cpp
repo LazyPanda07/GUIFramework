@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "Draw.h"
 
 using namespace std;

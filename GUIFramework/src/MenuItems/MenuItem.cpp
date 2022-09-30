@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "MenuItem.h"
 
 #include "GUIFramework.h"

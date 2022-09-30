@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "loadable_const_forward_iterator.h"
 
 using namespace std;

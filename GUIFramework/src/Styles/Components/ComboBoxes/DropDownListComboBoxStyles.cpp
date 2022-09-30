@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "DropDownListComboBoxStyles.h"
 
 using namespace std;

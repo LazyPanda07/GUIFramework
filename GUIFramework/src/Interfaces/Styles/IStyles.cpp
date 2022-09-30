@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "IStyles.h"
 
 using namespace std;

@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "BaseMenuItem.h"
 
 using namespace std;

@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "ButtonAdditionalCreationData.h"
 
 using namespace std;

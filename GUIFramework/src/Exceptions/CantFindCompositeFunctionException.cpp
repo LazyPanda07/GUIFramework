@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "CantFindCompositeFunctionException.h"
 
 using namespace std;

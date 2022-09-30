@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Core.h"
 #include "BaseGUIFrameworkException.h"
 
 namespace gui_framework

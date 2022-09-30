@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Core.h"
 #include "MenuItems/DropDownMenuItem.h"
 #include "BaseComposites/StandardComposites/BaseSeparateWindow.h"
 

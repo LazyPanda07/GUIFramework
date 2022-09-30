@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "BaseListView.h"
 
 using namespace std;

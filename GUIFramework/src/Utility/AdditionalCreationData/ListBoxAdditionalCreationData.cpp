@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "ListBoxAdditionalCreationData.h"
 
 using namespace std;

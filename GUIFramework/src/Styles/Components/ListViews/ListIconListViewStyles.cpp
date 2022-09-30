@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "ListIconListViewStyles.h"
 
 using namespace std;

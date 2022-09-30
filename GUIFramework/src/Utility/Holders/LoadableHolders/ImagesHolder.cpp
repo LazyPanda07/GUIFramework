@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "ImagesHolder.h"
 
 using namespace std;

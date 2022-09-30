@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "ListListViewStyles.h"
 
 using namespace std;

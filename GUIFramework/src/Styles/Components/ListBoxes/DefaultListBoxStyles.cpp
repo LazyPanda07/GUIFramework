@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "DefaultListBoxStyles.h"
 
 using namespace std;

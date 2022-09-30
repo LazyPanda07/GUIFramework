@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "SeparateWindowAdditionalCreationData.h"
 
 using namespace std;

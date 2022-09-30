@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "IBaseListViewOperations.h"
 
 using namespace std;

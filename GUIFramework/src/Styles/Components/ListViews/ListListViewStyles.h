@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Core.h"
 #include "ListViewStyles.h"
 
 namespace gui_framework

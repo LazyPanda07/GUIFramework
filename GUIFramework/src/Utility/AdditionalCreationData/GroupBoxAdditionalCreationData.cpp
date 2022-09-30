@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "GroupBoxAdditionalCreationData.h"
 
 using namespace std;

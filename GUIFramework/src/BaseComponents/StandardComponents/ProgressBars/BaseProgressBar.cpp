@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "BaseProgressBar.h"
 
 #include "Styles/DefaultStyles.h"

@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "SimpleComboBoxStyles.h"
 
 using namespace std;

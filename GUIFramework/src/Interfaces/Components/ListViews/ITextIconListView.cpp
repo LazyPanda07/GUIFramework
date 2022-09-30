@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "ITextIconListView.h"
 
 using namespace std;

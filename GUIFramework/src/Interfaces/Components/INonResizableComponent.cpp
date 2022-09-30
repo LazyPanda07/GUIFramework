@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "INonResizableComponent.h"
 
 #include "Utility/Utility.h"

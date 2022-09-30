@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "BaseComposite.h"
 
 #include "Interfaces/Components/IResizableComponent.h"

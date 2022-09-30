@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "TextIconListViewAdditionalCreationData.h"
 
 using namespace std;

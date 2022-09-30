@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "RadioButtonStyles.h"
 
 using namespace std;

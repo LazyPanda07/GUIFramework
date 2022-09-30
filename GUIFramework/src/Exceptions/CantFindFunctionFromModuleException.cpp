@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "CantFindFunctionFromModuleException.h"
 
 using namespace std;

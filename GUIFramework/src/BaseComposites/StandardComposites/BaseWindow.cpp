@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "BaseWindow.h"
 
 #include "Exceptions/FileDoesNotExist.h"

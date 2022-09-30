@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Core.h"
 #include "BaseComposites/BaseComposite.h"
 #include "BaseComposites/StandardComposites/BaseDialogBox.h"
 

@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "CheckBoxStyles.h"
 
 using namespace std;

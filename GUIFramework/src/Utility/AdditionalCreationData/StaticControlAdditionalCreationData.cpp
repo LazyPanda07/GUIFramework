@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "StaticControlAdditionalCreationData.h"
 
 using namespace std;

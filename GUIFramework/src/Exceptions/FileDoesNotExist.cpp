@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "FileDoesNotExist.h"
 
 using namespace std;

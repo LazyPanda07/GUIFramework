@@ -1,7 +1,5 @@
 #pragma once
 
-#include "Core.h"
-
 #include "Interfaces/Utility/ISerializable.h"
 
 namespace gui_framework

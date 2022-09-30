@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "StaticControlStyles.h"
 
 using namespace std;

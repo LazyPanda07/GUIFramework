@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "CursorsHolder.h"
 
 using namespace std;

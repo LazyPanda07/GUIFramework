@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "TabControlAdditionalCreationData.h"
 
 using namespace std;

@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "TrackbarControlStyles.h"
 
 using namespace std;

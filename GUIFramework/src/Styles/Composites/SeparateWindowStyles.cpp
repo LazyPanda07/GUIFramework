@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "SeparateWindowStyles.h"
 
 using namespace std;

@@ -1,4 +1,3 @@
-#include "Core.h"
 #include "Recreator.h"
 
 #include "Deserializers/Composites/SeparateWindowDeserializer.h"
