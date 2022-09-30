@@ -1,4 +1,3 @@
-#include "core.h"
 #include "DropDownListComboBoxCreator.h"
 
 #include "Components/ComboBoxes/DropDownListComboBox.h"
@@ -9,7 +8,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		BaseComponent* DropDownListComboBoxCreator::create(const wstring& windowName, const utility::ComponentSettings& settings, const any& additionalData, BaseComponent* parent)
+		BaseComponent* DropDownListComboBoxCreator::create(const wstring& windowName, const utility::ComponentSettings& settings, const any& additionalData, BaseComposite* parent)
 		{
 			auto [values, onSelectionChange, functionName, moduleName] = any_cast<tuple<vector<wstring>, function<void(BaseComboBox&)>, string, string>>(additionalData);
 			BaseComboBox* result = new DropDownListComboBox(windowName, settings, parent);

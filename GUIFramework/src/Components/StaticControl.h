@@ -1,6 +1,5 @@
 #pragma once
 
-#include "core.h"
 #include "BaseComponents/StandardComponents/BaseStaticControl.h"
 #include "Interfaces/Components/IResizableComponent.h"
 
@@ -12,7 +11,7 @@ namespace gui_framework
 		public interfaces::IResizableComponent
 	{
 	public:
-		StaticControl(const std::wstring& staticControlName, const std::wstring& editControlText, const utility::ComponentSettings& settings, BaseComponent* parent);
+		StaticControl(const std::wstring& staticControlName, const std::wstring& editControlText, const utility::ComponentSettings& settings, BaseComposite* parent);
 
 		size_t getHash() const override;
 

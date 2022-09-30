@@ -1,4 +1,3 @@
-#include "core.h"
 #include "ListBoxCreator.h"
 
 #include "Components/ListBoxes/ListBox.h"
@@ -9,7 +8,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		BaseComponent* ListBoxCreator::create(const wstring& windowName, const utility::ComponentSettings& settings, const any& additionalData, BaseComponent* parent)
+		BaseComponent* ListBoxCreator::create(const wstring& windowName, const utility::ComponentSettings& settings, const any& additionalData, BaseComposite* parent)
 		{
 			auto [values, isSorting] = any_cast<tuple<vector<wstring>, bool>>(additionalData);
 			

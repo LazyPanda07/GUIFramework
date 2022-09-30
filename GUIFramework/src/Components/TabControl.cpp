@@ -1,11 +1,12 @@
-#include "core.h"
 #include "TabControl.h"
+
+#include "BaseComposites/BaseComposite.h"
 
 using namespace std;
 
 namespace gui_framework
 {
-	TabControl::TabControl(const wstring& tabControlName, const utility::ComponentSettings& settings, BaseComponent* parent, uint16_t imagesWidth, uint16_t imagesHeight) :
+	TabControl::TabControl(const wstring& tabControlName, const utility::ComponentSettings& settings, BaseComposite* parent, uint16_t imagesWidth, uint16_t imagesHeight) :
 		BaseTabControl
 		(
 			tabControlName,

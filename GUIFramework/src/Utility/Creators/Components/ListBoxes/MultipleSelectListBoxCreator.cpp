@@ -1,4 +1,3 @@
-#include "core.h"
 #include "MultipleSelectListBoxCreator.h"
 
 #include "Components/ListBoxes/MultipleSelectListBox.h"
@@ -9,7 +8,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		BaseComponent* MultipleSelectListBoxCreator::create(const std::wstring& windowName, const utility::ComponentSettings& settings, const std::any& additionalData, BaseComponent* parent)
+		BaseComponent* MultipleSelectListBoxCreator::create(const std::wstring& windowName, const utility::ComponentSettings& settings, const std::any& additionalData, BaseComposite* parent)
 		{
 			auto [values, isSorting] = any_cast<tuple<vector<wstring>, bool>>(additionalData);
 

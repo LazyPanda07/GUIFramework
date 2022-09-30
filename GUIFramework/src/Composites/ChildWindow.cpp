@@ -1,5 +1,6 @@
-#include "core.h"
 #include "ChildWindow.h"
+
+#include "BaseComposites/BaseComposite.h"
 
 #include "Exceptions/NotImplemented.h"
 
@@ -7,7 +8,7 @@ using namespace std;
 
 namespace gui_framework
 {
-	ChildWindow::ChildWindow(const wstring& className, const wstring& windowName, const utility::ComponentSettings& settings, BaseComponent* parent, const string& windowFunctionName) :
+	ChildWindow::ChildWindow(const wstring& className, const wstring& windowName, const utility::ComponentSettings& settings, BaseComposite* parent, const string& windowFunctionName) :
 		BaseChildWindow
 		(
 			className,

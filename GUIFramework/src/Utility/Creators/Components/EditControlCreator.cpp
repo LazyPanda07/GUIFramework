@@ -1,4 +1,3 @@
-#include "core.h"
 #include "EditControlCreator.h"
 
 #include "Components/EditControl.h"
@@ -9,7 +8,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		BaseComponent* EditControlCreator::create(const wstring& windowName, const utility::ComponentSettings& settings, const any& additionalData, BaseComponent* parent)
+		BaseComponent* EditControlCreator::create(const wstring& windowName, const utility::ComponentSettings& settings, const any& additionalData, BaseComposite* parent)
 		{
 			EditControl* result = new EditControl(windowName, settings, parent);
 

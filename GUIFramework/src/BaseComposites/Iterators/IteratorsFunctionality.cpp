@@ -13,9 +13,8 @@ namespace gui_framework
 		{
 			void getNextComponent(BaseComponent*& currentComponent, stack<BaseComponent*>& parents, stack<size_t>& indices)
 			{
-				if (currentComponent->isComposite())
+				if (BaseComposite* composite = dynamic_cast<BaseComposite*>(currentComponent))
 				{
-					BaseComposite* composite = static_cast<BaseComposite*>(currentComponent);
 					const vector<unique_ptr<BaseComponent>>& components = composite->getChildren();
 
 					if (components.size())

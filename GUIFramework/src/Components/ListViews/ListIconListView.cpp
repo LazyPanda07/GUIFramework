@@ -1,11 +1,10 @@
-#include "core.h"
 #include "ListIconListView.h"
 
 using namespace std;
 
 namespace gui_framework
 {
-	ListIconListView::ListIconListView(const wstring& listViewName, const utility::ComponentSettings& settings, BaseComponent* parent, utility::iconListViewType type) :
+	ListIconListView::ListIconListView(const wstring& listViewName, const utility::ComponentSettings& settings, BaseComposite* parent, utility::iconListViewType type) :
 		BaseListIconListView
 		(
 			listViewName,

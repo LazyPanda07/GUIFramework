@@ -1,6 +1,5 @@
 #pragma once
 
-#include "core.h"
 #include "BaseComponents/StandardComponents/ListViews/BaseListTextIconListView.h"
 
 namespace gui_framework
@@ -9,7 +8,7 @@ namespace gui_framework
 	class ListTextIconListView : public BaseListTextIconListView
 	{
 	public:
-		ListTextIconListView(const std::wstring& listViewName, const utility::ComponentSettings& settings, BaseComponent* parent, utility::iconListViewType type);
+		ListTextIconListView(const std::wstring& listViewName, const utility::ComponentSettings& settings, BaseComposite* parent, utility::iconListViewType type);
 
 		size_t getHash() const override;
 

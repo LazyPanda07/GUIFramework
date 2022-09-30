@@ -1,4 +1,3 @@
-#include "core.h"
 #include "SeparateWindowCreator.h"
 
 #include "Composites/SeparateWindow.h"
@@ -9,7 +8,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		BaseComponent* SeparateWindowCreator::create(const wstring& windowName, const utility::ComponentSettings& settings, const any& additionalData, BaseComponent* parent)
+		BaseComponent* SeparateWindowCreator::create(const wstring& windowName, const utility::ComponentSettings& settings, const any& additionalData, BaseComposite* parent)
 		{
 			auto [className, functionName] = any_cast<tuple<wstring, string>>(additionalData);
 

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "core.h"
 #include "BaseComponents/BaseComponent.h"
 
 namespace gui_framework
@@ -13,7 +12,7 @@ namespace gui_framework
 		public:
 			BaseComponentCreator() = default;
 
-			virtual BaseComponent* create(const std::wstring& windowName, const utility::ComponentSettings& settings, const std::any& additionalData, BaseComponent* parent) = 0;
+			virtual BaseComponent* create(const std::wstring& windowName, const utility::ComponentSettings& settings, const std::any& additionalData, BaseComposite* parent) = 0;
 
 			virtual ~BaseComponentCreator() = default;
 		};

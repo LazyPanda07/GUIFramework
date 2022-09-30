@@ -1,6 +1,5 @@
 #pragma once
 
-#include "core.h"
 #include "BaseComponents/StandardComponents/Buttons/BaseButton.h"
 #include "BaseComposites/BaseComposite.h"
 
@@ -13,9 +12,9 @@ namespace gui_framework
 		class RadioButton : public BaseButton
 		{
 		public:
-			RadioButton(const std::wstring& radioButtonName, const std::wstring& radioButtonText, const utility::ComponentSettings& settings, BaseComponent* parent, const std::function<void()>& onClick);
+			RadioButton(const std::wstring& radioButtonName, const std::wstring& radioButtonText, const utility::ComponentSettings& settings, BaseComposite* parent, const std::function<void()>& onClick);
 
-			RadioButton(const std::wstring& radioButtonName, const std::wstring& radioButtonText, const utility::ComponentSettings& settings, BaseComponent* parent, const std::string& functionName, const std::string& moduleName);
+			RadioButton(const std::wstring& radioButtonName, const std::wstring& radioButtonText, const utility::ComponentSettings& settings, BaseComposite* parent, const std::string& functionName, const std::string& moduleName);
 
 			size_t getHash() const override;
 
@@ -61,7 +60,7 @@ namespace gui_framework
 		/// @param height 
 		/// @param parent 
 		/// @param groupBoxFunctionName Value that you pass in CREATE_DEFAULT_WINDOW_FUNCTION macro
-		GroupBox(const std::wstring& groupBoxClassName, const std::wstring& groupBoxName, const utility::ComponentSettings& settings, BaseComponent* parent, const std::string& groupBoxFunctionName);
+		GroupBox(const std::wstring& groupBoxClassName, const std::wstring& groupBoxName, const utility::ComponentSettings& settings, BaseComposite* parent, const std::string& groupBoxFunctionName);
 
 		void addRadioButton(const radioButtonData& data);
 

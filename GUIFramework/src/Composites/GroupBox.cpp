@@ -1,4 +1,3 @@
-#include "core.h"
 #include "GroupBox.h"
 
 #include "Styles/Components/Buttons/RadioButtonStyles.h"
@@ -10,7 +9,7 @@ using namespace std;
 
 namespace gui_framework
 {
-	GroupBox::RadioButton::RadioButton(const wstring& radioButtonName, const wstring& radioButtonText, const utility::ComponentSettings& settings, BaseComponent* parent, const function<void()>& onClick) :
+	GroupBox::RadioButton::RadioButton(const wstring& radioButtonName, const wstring& radioButtonText, const utility::ComponentSettings& settings, BaseComposite* parent, const function<void()>& onClick) :
 		BaseButton
 		(
 			radioButtonName,
@@ -24,7 +23,7 @@ namespace gui_framework
 
 	}
 
-	GroupBox::RadioButton::RadioButton(const wstring& radioButtonName, const wstring& radioButtonText, const utility::ComponentSettings& settings, BaseComponent* parent, const string& functionName, const string& moduleName) :
+	GroupBox::RadioButton::RadioButton(const wstring& radioButtonName, const wstring& radioButtonText, const utility::ComponentSettings& settings, BaseComposite* parent, const string& functionName, const string& moduleName) :
 		BaseButton
 		(
 			radioButtonName,
@@ -88,7 +87,7 @@ namespace gui_framework
 		onClick = tem;
 	}
 
-	GroupBox::GroupBox(const wstring& groupBoxClassName, const wstring& groupBoxName, const utility::ComponentSettings& settings, BaseComponent* parent, const string& groupBoxFunctionName) :
+	GroupBox::GroupBox(const wstring& groupBoxClassName, const wstring& groupBoxName, const utility::ComponentSettings& settings, BaseComposite* parent, const string& groupBoxFunctionName) :
 		BaseComposite
 		(
 			groupBoxClassName,

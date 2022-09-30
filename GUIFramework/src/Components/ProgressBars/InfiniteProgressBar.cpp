@@ -1,11 +1,12 @@
-#include "core.h"
 #include "InfiniteProgressBar.h"
+
+#include "BaseComposites/BaseComposite.h"
 
 using namespace std;
 
 namespace gui_framework
 {
-	InfiniteProgressBar::InfiniteProgressBar(const wstring& progressBarName, const utility::ComponentSettings& settings, BaseComponent* parent, int animationPeriod) :
+	InfiniteProgressBar::InfiniteProgressBar(const wstring& progressBarName, const utility::ComponentSettings& settings, BaseComposite* parent, int animationPeriod) :
 		BaseInfiniteProgressBar
 		(
 			progressBarName,

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "core.h"
 #include "BaseComponents/StandardComponents/ProgressBars/BaseInfiniteProgressBar.h"
 #include "Interfaces/Components/IResizableComponent.h"
 
@@ -20,7 +19,7 @@ namespace gui_framework
 		/// @param height 
 		/// @param parent 
 		/// @param animationPeriod Period between animation in milliseconds
-		InfiniteProgressBar(const std::wstring& progressBarName, const utility::ComponentSettings& settings, BaseComponent* parent, int animationPeriod = NULL);
+		InfiniteProgressBar(const std::wstring& progressBarName, const utility::ComponentSettings& settings, BaseComposite* parent, int animationPeriod = NULL);
 
 		size_t getHash() const override;
 

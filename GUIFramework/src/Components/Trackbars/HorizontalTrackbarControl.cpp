@@ -1,4 +1,3 @@
-#include "core.h"
 #include "HorizontalTrackbarControl.h"
 
 #include "Styles/Components/Trackbars/HorizontalTrackbarControlStyles.h"
@@ -7,7 +6,7 @@ using namespace std;
 
 namespace gui_framework
 {
-	HorizontalTrackbarControl::HorizontalTrackbarControl(const wstring& trackbarName, const utility::ComponentSettings& settings, BaseComponent* parent, bool autoTicks, horizontalTickPosition position, bool selectionRange, bool noTicks) :
+	HorizontalTrackbarControl::HorizontalTrackbarControl(const wstring& trackbarName, const utility::ComponentSettings& settings, BaseComposite* parent, bool autoTicks, horizontalTickPosition position, bool selectionRange, bool noTicks) :
 		BaseTrackbarControl
 		(
 			trackbarName,

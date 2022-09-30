@@ -211,11 +211,12 @@ namespace gui_framework
 	{
 		bool result = DestroyWindow(handle);
 
-		if (result && parent && parent->isComposite())
+		if (result && parent)
 		{
-			BaseComposite* parentComposite = static_cast<BaseComposite*>(parent);
-
-			parentComposite->removeChild(this);
+			if (BaseComposite* parentComposite = dynamic_cast<BaseComposite*>(parent))
+			{
+				parentComposite->removeChild(this);
+			}
 		}
 
 		return result;
@@ -225,11 +226,12 @@ namespace gui_framework
 	{
 		bool result = PostMessageW(handle, WM_CLOSE, NULL, NULL);
 
-		if (result && parent && parent->isComposite())
+		if (result && parent)
 		{
-			BaseComposite* parentComposite = static_cast<BaseComposite*>(parent);
-
-			parentComposite->removeChild(this);
+			if (BaseComposite* parentComposite = dynamic_cast<BaseComposite*>(parent))
+			{
+				parentComposite->removeChild(this);
+			}
 		}
 
 		return result;

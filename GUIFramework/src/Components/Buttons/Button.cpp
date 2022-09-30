@@ -1,5 +1,6 @@
 #include "Button.h"
 
+#include "BaseComposites/BaseComposite.h"
 #include "Styles/Components/Buttons/DefaultButtonStyles.h"
 
 using namespace std;

@@ -13,7 +13,7 @@ namespace gui_framework
 		public:
 			SimpleComboBoxCreator() = default;
 
-			BaseComponent* create(const std::wstring& windowName, const utility::ComponentSettings& settings, const std::any& additionalData, BaseComponent* parent) override;
+			BaseComponent* create(const std::wstring& windowName, const utility::ComponentSettings& settings, const std::any& additionalData, BaseComposite* parent) override;
 
 			~SimpleComboBoxCreator() = default;
 		};

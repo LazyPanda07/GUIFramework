@@ -1,6 +1,5 @@
 #pragma once
 
-#include "core.h"
 #include "Utility/Creators/BaseComponentCreator.h"
 #include "Interfaces/Utility/IDeserializer.h"
 

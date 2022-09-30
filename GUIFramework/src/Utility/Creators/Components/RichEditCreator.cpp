@@ -9,7 +9,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		BaseComponent* RichEditCreator::create(const wstring& windowName, const utility::ComponentSettings& settings, const any& additionalData, BaseComponent* parent)
+		BaseComponent* RichEditCreator::create(const wstring& windowName, const utility::ComponentSettings& settings, const any& additionalData, BaseComposite* parent)
 		{
 			auto [callbacks, callbacksFunctionNamesAndModules, limitTextCount, isMultiLine] =
 				any_cast<tuple<array<function<void(const wstring&)>, BaseRichEdit::urlDetectEventSize>, array<pair<string, string>, BaseRichEdit::urlDetectEventSize>, uint64_t, bool>>(additionalData);

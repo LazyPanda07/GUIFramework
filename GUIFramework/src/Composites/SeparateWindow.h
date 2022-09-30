@@ -1,6 +1,5 @@
 #pragma once
 
-#include "core.h"
 #include "BaseComposites/StandardComposites/BaseSeparateWindow.h"
 #include "Interfaces/Components/IResizableComponent.h"
 
