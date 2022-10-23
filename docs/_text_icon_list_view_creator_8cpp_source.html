@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.9-beta</span>
+   &#160;<span id="projectnumber">1.0</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -87,40 +87,39 @@ $(document).ready(function(){initNavTree('_text_icon_list_view_creator_8cpp_sour
 <div class="title">TextIconListViewCreator.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_text_icon_list_view_creator_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="headers_8h.html">headers.h</a>&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_text_icon_list_view_creator_8h.html">TextIconListViewCreator.h</a>&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_text_icon_list_view_8h.html">Components/ListViews/TextIconListView.h</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">namespace </span>utility</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    {</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_text_icon_list_view_creator.html#a324d825dc3cd8668bfef97bb9909aa9f">   12</a></span>&#160;        <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* TextIconListViewCreator::create(<span class="keyword">const</span> wstring&amp; windowName, <span class="keyword">const</span> <a class="code" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a>&amp; settings, <span class="keyword">const</span> any&amp; additionalData, <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* parent)</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            <span class="keyword">auto</span> [type, data] = any_cast&lt;tuple&lt;utility::iconListViewType, vector&lt;pair&lt;wstring, filesystem::path&gt;&gt;&gt;&gt;(additionalData);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <a class="code" href="classgui__framework_1_1_text_icon_list_view.html">TextIconListView</a>* result = <span class="keyword">new</span> <a class="code" href="classgui__framework_1_1_text_icon_list_view.html">TextIconListView</a>(windowName, settings, parent, type);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; i : data)</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                <span class="keyword">static_cast&lt;</span><a class="code" href="classgui__framework_1_1interfaces_1_1_i_text_icon_list_view.html">interfaces::ITextIconListView</a>*<span class="keyword">&gt;</span>(result)-&gt;addTextIconItem(i.first, i.second);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            }</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        }</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
+<a href="_text_icon_list_view_creator_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_text_icon_list_view_creator_8h.html">TextIconListViewCreator.h</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_text_icon_list_view_8h.html">Components/ListViews/TextIconListView.h</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">namespace </span>utility</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    {</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_text_icon_list_view_creator.html#a6c521e74b0395029c377383396250cd5">   11</a></span>&#160;        <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* TextIconListViewCreator::create(<span class="keyword">const</span> wstring&amp; windowName, <span class="keyword">const</span> <a class="code" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a>&amp; settings, <span class="keyword">const</span> any&amp; additionalData, <a class="code" href="classgui__framework_1_1_base_composite.html">BaseComposite</a>* parent)</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            <span class="keyword">auto</span> [type, data] = any_cast&lt;tuple&lt;utility::iconListViewType, vector&lt;pair&lt;wstring, filesystem::path&gt;&gt;&gt;&gt;(additionalData);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            <a class="code" href="classgui__framework_1_1_text_icon_list_view.html">TextIconListView</a>* result = <span class="keyword">new</span> <a class="code" href="classgui__framework_1_1_text_icon_list_view.html">TextIconListView</a>(windowName, settings, parent, type);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; i : data)</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                <span class="keyword">static_cast&lt;</span><a class="code" href="classgui__framework_1_1interfaces_1_1_i_text_icon_list_view.html">interfaces::ITextIconListView</a>*<span class="keyword">&gt;</span>(result)-&gt;addTextIconItem(i.first, i.second);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            }</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
 <div class="ttc" id="a_text_icon_list_view_8h_html"><div class="ttname"><a href="_text_icon_list_view_8h.html">TextIconListView.h</a></div></div>
 <div class="ttc" id="a_text_icon_list_view_creator_8h_html"><div class="ttname"><a href="_text_icon_list_view_creator_8h.html">TextIconListViewCreator.h</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_component_html"><div class="ttname"><a href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></div><div class="ttdoc">Base class for all windows, controls, etc.</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00014">BaseComponent.h:15</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_text_icon_list_view_html"><div class="ttname"><a href="classgui__framework_1_1_text_icon_list_view.html">gui_framework::TextIconListView</a></div><div class="ttdoc">Standard list view with text and icon items.</div><div class="ttdef"><b>Definition:</b> <a href="_text_icon_list_view_8h_source.html#l00009">TextIconListView.h:10</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1interfaces_1_1_i_text_icon_list_view_html"><div class="ttname"><a href="classgui__framework_1_1interfaces_1_1_i_text_icon_list_view.html">gui_framework::interfaces::ITextIconListView</a></div><div class="ttdoc">Provides adding text and icon items for list views.</div><div class="ttdef"><b>Definition:</b> <a href="_i_text_icon_list_view_8h_source.html#l00012">ITextIconListView.h:13</a></div></div>
-<div class="ttc" id="aheaders_8h_html"><div class="ttname"><a href="headers_8h.html">headers.h</a></div></div>
-<div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00021">BaseComponent.cpp:22</a></div></div>
-<div class="ttc" id="astructgui__framework_1_1utility_1_1_component_settings_html"><div class="ttname"><a href="structgui__framework_1_1utility_1_1_component_settings.html">gui_framework::utility::ComponentSettings</a></div><div class="ttdoc">All settings for windows.</div><div class="ttdef"><b>Definition:</b> <a href="_component_settings_8h_source.html#l00011">ComponentSettings.h:12</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_component_html"><div class="ttname"><a href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></div><div class="ttdoc">Base class for all windows, controls, etc.</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00016">BaseComponent.h:17</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_composite_html"><div class="ttname"><a href="classgui__framework_1_1_base_composite.html">gui_framework::BaseComposite</a></div><div class="ttdoc">Base class for all windows that has children windows.</div><div class="ttdef"><b>Definition:</b> <a href="_base_composite_8h_source.html#l00020">BaseComposite.h:23</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_text_icon_list_view_html"><div class="ttname"><a href="classgui__framework_1_1_text_icon_list_view.html">gui_framework::TextIconListView</a></div><div class="ttdoc">Standard list view with text and icon items.</div><div class="ttdef"><b>Definition:</b> <a href="_text_icon_list_view_8h_source.html#l00008">TextIconListView.h:9</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1interfaces_1_1_i_text_icon_list_view_html"><div class="ttname"><a href="classgui__framework_1_1interfaces_1_1_i_text_icon_list_view.html">gui_framework::interfaces::ITextIconListView</a></div><div class="ttdoc">Provides adding text and icon items for list views.</div><div class="ttdef"><b>Definition:</b> <a href="_i_text_icon_list_view_8h_source.html#l00011">ITextIconListView.h:12</a></div></div>
+<div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00020">BaseComponent.cpp:21</a></div></div>
+<div class="ttc" id="astructgui__framework_1_1utility_1_1_component_settings_html"><div class="ttname"><a href="structgui__framework_1_1utility_1_1_component_settings.html">gui_framework::utility::ComponentSettings</a></div><div class="ttdoc">All settings for windows.</div><div class="ttdef"><b>Definition:</b> <a href="_component_settings_8h_source.html#l00010">ComponentSettings.h:11</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

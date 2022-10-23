@@ -20,7 +20,7 @@ namespace gui_framework
 
 	unique_ptr<BaseComposite> Recreator::deserialize() const
 	{
-		const auto& [componentName, description] = **windowedApplicationStructure.begin();
+		const auto& [componentName, description] = *windowedApplicationStructure.begin();
 
 		return unique_ptr<BaseComposite>
 			(

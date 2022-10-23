@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.9-beta</span>
+   &#160;<span id="projectnumber">1.0</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -87,117 +87,115 @@ $(document).ready(function(){initNavTree('_base_multiple_select_list_box_8cpp_so
 <div class="title">BaseMultipleSelectListBox.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_base_multiple_select_list_box_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="headers_8h.html">headers.h</a>&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_base_multiple_select_list_box_8h.html">BaseMultipleSelectListBox.h</a>&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_multiple_select_list_box_styles_8h.html">Styles/Components/ListBoxes/MultipleSelectListBoxStyles.h</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_select_list_exception_8h.html">Exceptions/SelectListException.h</a>&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#pragma push_macro(&quot;min&quot;</span>)</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#undef min</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_multiple_select_list_box.html#a0bf03b383b9849eac79c0e5c8916c54f">   14</a></span>&#160;    BaseMultipleSelectListBox::BaseMultipleSelectListBox(<span class="keyword">const</span> wstring&amp; listBoxName, <span class="keyword">const</span> <a class="code" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a>&amp; settings, <a class="code" href="classgui__framework_1_1_base_component.html">BaseComponent</a>* parent) :</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <a class="code" href="classgui__framework_1_1_base_list_box.html">BaseListBox</a></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        (</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            listBoxName, </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            settings,</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            styles::MultipleSelectListBoxStyles(),</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            parent</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        )</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    }</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_multiple_select_list_box.html#aead3b97d7bcf7c880e56556020d5e6d6">   26</a></span>&#160;    LRESULT <a class="code" href="classgui__framework_1_1_base_multiple_select_list_box.html#aead3b97d7bcf7c880e56556020d5e6d6">BaseMultipleSelectListBox::getCurrentSelections</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        LRESULT result = SendMessageW(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, LB_GETSELCOUNT, NULL, NULL);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">if</span> (result == LB_ERR)</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="classgui__framework_1_1exceptions_1_1_select_list_exception.html">exceptions::SelectListException</a>(__FUNCTION__, result, __FILE__, __FUNCTION__, __LINE__);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_multiple_select_list_box.html#a5f77296c0575baaa846c7c69c8e5bf35">   38</a></span>&#160;    vector&lt;wstring&gt; <a class="code" href="classgui__framework_1_1_base_multiple_select_list_box.html#a5f77296c0575baaa846c7c69c8e5bf35">BaseMultipleSelectListBox::getSelectedItems</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        WPARAM itemsCount = this-&gt;<a class="code" href="classgui__framework_1_1_base_multiple_select_list_box.html#aead3b97d7bcf7c880e56556020d5e6d6">getCurrentSelections</a>();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        vector&lt;wstring&gt; items;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        vector&lt;int&gt; indices(itemsCount);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        LRESULT result = SendMessageW(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, LB_GETSELITEMS, itemsCount, <span class="keyword">reinterpret_cast&lt;</span>LPARAM<span class="keyword">&gt;</span>(indices.data()));</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">if</span> (result == LB_ERR)</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="classgui__framework_1_1exceptions_1_1_select_list_exception.html">exceptions::SelectListException</a>(__FUNCTION__, result, __FILE__, __FUNCTION__, __LINE__);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        items.reserve(itemsCount);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; i : indices)</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            items.push_back(this-&gt;<a class="code" href="classgui__framework_1_1_base_list_box.html#a1ca70f306c7897c21a3cd59badb9c19c">getValue</a>(i));</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">return</span> items;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_multiple_select_list_box.html#a2233b35615c35e006cd25c84fc4210a8">   61</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgui__framework_1_1_base_multiple_select_list_box.html#a2233b35615c35e006cd25c84fc4210a8">BaseMultipleSelectListBox::selectMultipleItems</a>(WPARAM firstItemIndex, LPARAM lastItemIndex)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">if</span> (SendMessageW(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, LB_SELITEMRANGEEX, firstItemIndex, lastItemIndex) == LB_ERR)</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="classgui__framework_1_1exceptions_1_1_select_list_exception.html">exceptions::SelectListException</a>(__FUNCTION__, LB_ERR, __FILE__, __FUNCTION__, __LINE__);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_multiple_select_list_box.html#a635fad3193fc365dd008905f288cd249">   69</a></span>&#160;    LRESULT <a class="code" href="classgui__framework_1_1_base_multiple_select_list_box.html#a635fad3193fc365dd008905f288cd249">BaseMultipleSelectListBox::setCurrentSelection</a>(LRESULT index)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        LRESULT result = SendMessageW(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, LB_SETSEL, <span class="keyword">true</span>, index);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">if</span> (result == LB_ERR)</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="classgui__framework_1_1exceptions_1_1_select_list_exception.html">exceptions::SelectListException</a>(__FUNCTION__, result, __FILE__, __FUNCTION__, __LINE__);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_multiple_select_list_box.html#a5e96b134a3ab5d2d08c9f5cab1cbd777">   81</a></span>&#160;    json::JSONBuilder <a class="code" href="classgui__framework_1_1_base_multiple_select_list_box.html#a5e96b134a3ab5d2d08c9f5cab1cbd777">BaseMultipleSelectListBox::getStructure</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keyword">using</span> json::utility::jsonObject;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        json::JSONBuilder builder = <a class="code" href="classgui__framework_1_1_base_component.html#a874eae6d7db8309155a9946aef01199a">BaseComponent::getStructure</a>();</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        jsonObject&amp; current = get&lt;jsonObject&gt;(builder[<a class="code" href="namespacegui__framework_1_1utility.html#a29e6b8bdafb60965ca6109d0ad4bf869">utility::to_string</a>(<a class="code" href="classgui__framework_1_1_base_component.html#ab927f5791c7605446203f7f7f6e0bb83">windowName</a>, ISerializable::getCodepage())]);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">return</span> builder;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#pragma pop_macro(&quot;min&quot;</span>)</div>
+<a href="_base_multiple_select_list_box_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_base_multiple_select_list_box_8h.html">BaseMultipleSelectListBox.h</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_multiple_select_list_box_styles_8h.html">Styles/Components/ListBoxes/MultipleSelectListBoxStyles.h</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_select_list_exception_8h.html">Exceptions/SelectListException.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#pragma push_macro(&quot;min&quot;</span>)</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#undef min</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_multiple_select_list_box.html#a346f02311bf76e3ec88fd20e23e0ccc3">   13</a></span>&#160;    BaseMultipleSelectListBox::BaseMultipleSelectListBox(<span class="keyword">const</span> wstring&amp; listBoxName, <span class="keyword">const</span> <a class="code" href="structgui__framework_1_1utility_1_1_component_settings.html">utility::ComponentSettings</a>&amp; settings, <a class="code" href="classgui__framework_1_1_base_composite.html">BaseComposite</a>* parent) :</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <a class="code" href="classgui__framework_1_1_base_list_box.html">BaseListBox</a></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        (</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            listBoxName, </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            settings,</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            styles::MultipleSelectListBoxStyles(),</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            parent</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        )</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_multiple_select_list_box.html#aead3b97d7bcf7c880e56556020d5e6d6">   25</a></span>&#160;    LRESULT <a class="code" href="classgui__framework_1_1_base_multiple_select_list_box.html#aead3b97d7bcf7c880e56556020d5e6d6">BaseMultipleSelectListBox::getCurrentSelections</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        LRESULT result = SendMessageW(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, LB_GETSELCOUNT, NULL, NULL);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">if</span> (result == LB_ERR)</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="classgui__framework_1_1exceptions_1_1_select_list_exception.html">exceptions::SelectListException</a>(__FUNCTION__, result, __FILE__, __FUNCTION__, __LINE__);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_multiple_select_list_box.html#a5f77296c0575baaa846c7c69c8e5bf35">   37</a></span>&#160;    vector&lt;wstring&gt; <a class="code" href="classgui__framework_1_1_base_multiple_select_list_box.html#a5f77296c0575baaa846c7c69c8e5bf35">BaseMultipleSelectListBox::getSelectedItems</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        WPARAM itemsCount = this-&gt;<a class="code" href="classgui__framework_1_1_base_multiple_select_list_box.html#aead3b97d7bcf7c880e56556020d5e6d6">getCurrentSelections</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        vector&lt;wstring&gt; items;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        vector&lt;int&gt; indices(itemsCount);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        LRESULT result = SendMessageW(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, LB_GETSELITEMS, itemsCount, <span class="keyword">reinterpret_cast&lt;</span>LPARAM<span class="keyword">&gt;</span>(indices.data()));</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">if</span> (result == LB_ERR)</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="classgui__framework_1_1exceptions_1_1_select_list_exception.html">exceptions::SelectListException</a>(__FUNCTION__, result, __FILE__, __FUNCTION__, __LINE__);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        items.reserve(itemsCount);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; i : indices)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            items.push_back(this-&gt;<a class="code" href="classgui__framework_1_1_base_list_box.html#a1ca70f306c7897c21a3cd59badb9c19c">getValue</a>(i));</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">return</span> items;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_multiple_select_list_box.html#a2233b35615c35e006cd25c84fc4210a8">   60</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgui__framework_1_1_base_multiple_select_list_box.html#a2233b35615c35e006cd25c84fc4210a8">BaseMultipleSelectListBox::selectMultipleItems</a>(WPARAM firstItemIndex, LPARAM lastItemIndex)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">if</span> (SendMessageW(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, LB_SELITEMRANGEEX, firstItemIndex, lastItemIndex) == LB_ERR)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="classgui__framework_1_1exceptions_1_1_select_list_exception.html">exceptions::SelectListException</a>(__FUNCTION__, LB_ERR, __FILE__, __FUNCTION__, __LINE__);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_multiple_select_list_box.html#a635fad3193fc365dd008905f288cd249">   68</a></span>&#160;    LRESULT <a class="code" href="classgui__framework_1_1_base_multiple_select_list_box.html#a635fad3193fc365dd008905f288cd249">BaseMultipleSelectListBox::setCurrentSelection</a>(LRESULT index)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        LRESULT result = SendMessageW(<a class="code" href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">handle</a>, LB_SETSEL, <span class="keyword">true</span>, index);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">if</span> (result == LB_ERR)</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="classgui__framework_1_1exceptions_1_1_select_list_exception.html">exceptions::SelectListException</a>(__FUNCTION__, result, __FILE__, __FUNCTION__, __LINE__);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_multiple_select_list_box.html#a5e96b134a3ab5d2d08c9f5cab1cbd777">   80</a></span>&#160;    json::JSONBuilder <a class="code" href="classgui__framework_1_1_base_multiple_select_list_box.html#a5e96b134a3ab5d2d08c9f5cab1cbd777">BaseMultipleSelectListBox::getStructure</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keyword">using</span> json::utility::jsonObject;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        json::JSONBuilder builder = <a class="code" href="classgui__framework_1_1_base_component.html#a874eae6d7db8309155a9946aef01199a">BaseComponent::getStructure</a>();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        jsonObject&amp; current = get&lt;jsonObject&gt;(builder[<a class="code" href="namespacegui__framework_1_1utility.html#abbafc9708435f466d89c4f977dcd460d">utility::to_string</a>(<a class="code" href="classgui__framework_1_1_base_component.html#ab927f5791c7605446203f7f7f6e0bb83">windowName</a>, ISerializable::getCodepage())]);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">return</span> builder;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#pragma pop_macro(&quot;min&quot;</span>)</div>
 <div class="ttc" id="a_base_multiple_select_list_box_8h_html"><div class="ttname"><a href="_base_multiple_select_list_box_8h.html">BaseMultipleSelectListBox.h</a></div></div>
 <div class="ttc" id="a_multiple_select_list_box_styles_8h_html"><div class="ttname"><a href="_multiple_select_list_box_styles_8h.html">MultipleSelectListBoxStyles.h</a></div></div>
 <div class="ttc" id="a_select_list_exception_8h_html"><div class="ttname"><a href="_select_list_exception_8h.html">SelectListException.h</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_component_html"><div class="ttname"><a href="classgui__framework_1_1_base_component.html">gui_framework::BaseComponent</a></div><div class="ttdoc">Base class for all windows, controls, etc.</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00014">BaseComponent.h:15</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_component_html_a874eae6d7db8309155a9946aef01199a"><div class="ttname"><a href="classgui__framework_1_1_base_component.html#a874eae6d7db8309155a9946aef01199a">gui_framework::BaseComponent::getStructure</a></div><div class="ttdeci">virtual json::JSONBuilder getStructure() const override</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00367">BaseComponent.cpp:367</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_component_html_ab927f5791c7605446203f7f7f6e0bb83"><div class="ttname"><a href="classgui__framework_1_1_base_component.html#ab927f5791c7605446203f7f7f6e0bb83">gui_framework::BaseComponent::windowName</a></div><div class="ttdeci">const std::wstring windowName</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00030">BaseComponent.h:30</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_component_html_abff4f6befd00a3e67037b12fa9d9613a"><div class="ttname"><a href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">gui_framework::BaseComponent::handle</a></div><div class="ttdeci">HWND handle</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00031">BaseComponent.h:31</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_list_box_html"><div class="ttname"><a href="classgui__framework_1_1_base_list_box.html">gui_framework::BaseListBox</a></div><div class="ttdoc">Base class for all list boxes.</div><div class="ttdef"><b>Definition:</b> <a href="_base_list_box_8h_source.html#l00012">BaseListBox.h:16</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_list_box_html_a1ca70f306c7897c21a3cd59badb9c19c"><div class="ttname"><a href="classgui__framework_1_1_base_list_box.html#a1ca70f306c7897c21a3cd59badb9c19c">gui_framework::BaseListBox::getValue</a></div><div class="ttdeci">std::wstring getValue(size_t index) const</div><div class="ttdef"><b>Definition:</b> <a href="_base_list_box_8cpp_source.html#l00152">BaseListBox.cpp:152</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_multiple_select_list_box_html_a2233b35615c35e006cd25c84fc4210a8"><div class="ttname"><a href="classgui__framework_1_1_base_multiple_select_list_box.html#a2233b35615c35e006cd25c84fc4210a8">gui_framework::BaseMultipleSelectListBox::selectMultipleItems</a></div><div class="ttdeci">void selectMultipleItems(WPARAM firstItemIndex, LPARAM lastItemIndex) const</div><div class="ttdef"><b>Definition:</b> <a href="_base_multiple_select_list_box_8cpp_source.html#l00061">BaseMultipleSelectListBox.cpp:61</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_multiple_select_list_box_html_a5e96b134a3ab5d2d08c9f5cab1cbd777"><div class="ttname"><a href="classgui__framework_1_1_base_multiple_select_list_box.html#a5e96b134a3ab5d2d08c9f5cab1cbd777">gui_framework::BaseMultipleSelectListBox::getStructure</a></div><div class="ttdeci">virtual json::JSONBuilder getStructure() const override</div><div class="ttdef"><b>Definition:</b> <a href="_base_multiple_select_list_box_8cpp_source.html#l00081">BaseMultipleSelectListBox.cpp:81</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_multiple_select_list_box_html_a5f77296c0575baaa846c7c69c8e5bf35"><div class="ttname"><a href="classgui__framework_1_1_base_multiple_select_list_box.html#a5f77296c0575baaa846c7c69c8e5bf35">gui_framework::BaseMultipleSelectListBox::getSelectedItems</a></div><div class="ttdeci">std::vector&lt; std::wstring &gt; getSelectedItems() const</div><div class="ttdef"><b>Definition:</b> <a href="_base_multiple_select_list_box_8cpp_source.html#l00038">BaseMultipleSelectListBox.cpp:38</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_multiple_select_list_box_html_a635fad3193fc365dd008905f288cd249"><div class="ttname"><a href="classgui__framework_1_1_base_multiple_select_list_box.html#a635fad3193fc365dd008905f288cd249">gui_framework::BaseMultipleSelectListBox::setCurrentSelection</a></div><div class="ttdeci">virtual LRESULT setCurrentSelection(LRESULT index) const final override</div><div class="ttdef"><b>Definition:</b> <a href="_base_multiple_select_list_box_8cpp_source.html#l00069">BaseMultipleSelectListBox.cpp:69</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_multiple_select_list_box_html_aead3b97d7bcf7c880e56556020d5e6d6"><div class="ttname"><a href="classgui__framework_1_1_base_multiple_select_list_box.html#aead3b97d7bcf7c880e56556020d5e6d6">gui_framework::BaseMultipleSelectListBox::getCurrentSelections</a></div><div class="ttdeci">LRESULT getCurrentSelections() const</div><div class="ttdef"><b>Definition:</b> <a href="_base_multiple_select_list_box_8cpp_source.html#l00026">BaseMultipleSelectListBox.cpp:26</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1exceptions_1_1_select_list_exception_html"><div class="ttname"><a href="classgui__framework_1_1exceptions_1_1_select_list_exception.html">gui_framework::exceptions::SelectListException</a></div><div class="ttdoc">Exception for all list classes exceptions.</div><div class="ttdef"><b>Definition:</b> <a href="_select_list_exception_8h_source.html#l00011">SelectListException.h:12</a></div></div>
-<div class="ttc" id="aheaders_8h_html"><div class="ttname"><a href="headers_8h.html">headers.h</a></div></div>
-<div class="ttc" id="anamespacegui__framework_1_1utility_html_a29e6b8bdafb60965ca6109d0ad4bf869"><div class="ttname"><a href="namespacegui__framework_1_1utility.html#a29e6b8bdafb60965ca6109d0ad4bf869">gui_framework::utility::to_string</a></div><div class="ttdeci">GUI_FRAMEWORK_API_FUNCTION string to_string(const wstring &amp;stringToConvert, uint32_t codepage)</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00042">Utility.cpp:42</a></div></div>
-<div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00021">BaseComponent.cpp:22</a></div></div>
-<div class="ttc" id="astructgui__framework_1_1utility_1_1_component_settings_html"><div class="ttname"><a href="structgui__framework_1_1utility_1_1_component_settings.html">gui_framework::utility::ComponentSettings</a></div><div class="ttdoc">All settings for windows.</div><div class="ttdef"><b>Definition:</b> <a href="_component_settings_8h_source.html#l00011">ComponentSettings.h:12</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_component_html_a874eae6d7db8309155a9946aef01199a"><div class="ttname"><a href="classgui__framework_1_1_base_component.html#a874eae6d7db8309155a9946aef01199a">gui_framework::BaseComponent::getStructure</a></div><div class="ttdeci">virtual json::JSONBuilder getStructure() const override</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00372">BaseComponent.cpp:372</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_component_html_ab927f5791c7605446203f7f7f6e0bb83"><div class="ttname"><a href="classgui__framework_1_1_base_component.html#ab927f5791c7605446203f7f7f6e0bb83">gui_framework::BaseComponent::windowName</a></div><div class="ttdeci">const std::wstring windowName</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00032">BaseComponent.h:32</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_component_html_abff4f6befd00a3e67037b12fa9d9613a"><div class="ttname"><a href="classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a">gui_framework::BaseComponent::handle</a></div><div class="ttdeci">HWND handle</div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8h_source.html#l00033">BaseComponent.h:33</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_composite_html"><div class="ttname"><a href="classgui__framework_1_1_base_composite.html">gui_framework::BaseComposite</a></div><div class="ttdoc">Base class for all windows that has children windows.</div><div class="ttdef"><b>Definition:</b> <a href="_base_composite_8h_source.html#l00020">BaseComposite.h:23</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_list_box_html"><div class="ttname"><a href="classgui__framework_1_1_base_list_box.html">gui_framework::BaseListBox</a></div><div class="ttdoc">Base class for all list boxes.</div><div class="ttdef"><b>Definition:</b> <a href="_base_list_box_8h_source.html#l00011">BaseListBox.h:15</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_list_box_html_a1ca70f306c7897c21a3cd59badb9c19c"><div class="ttname"><a href="classgui__framework_1_1_base_list_box.html#a1ca70f306c7897c21a3cd59badb9c19c">gui_framework::BaseListBox::getValue</a></div><div class="ttdeci">std::wstring getValue(size_t index) const</div><div class="ttdef"><b>Definition:</b> <a href="_base_list_box_8cpp_source.html#l00153">BaseListBox.cpp:153</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_multiple_select_list_box_html_a2233b35615c35e006cd25c84fc4210a8"><div class="ttname"><a href="classgui__framework_1_1_base_multiple_select_list_box.html#a2233b35615c35e006cd25c84fc4210a8">gui_framework::BaseMultipleSelectListBox::selectMultipleItems</a></div><div class="ttdeci">void selectMultipleItems(WPARAM firstItemIndex, LPARAM lastItemIndex) const</div><div class="ttdef"><b>Definition:</b> <a href="_base_multiple_select_list_box_8cpp_source.html#l00060">BaseMultipleSelectListBox.cpp:60</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_multiple_select_list_box_html_a5e96b134a3ab5d2d08c9f5cab1cbd777"><div class="ttname"><a href="classgui__framework_1_1_base_multiple_select_list_box.html#a5e96b134a3ab5d2d08c9f5cab1cbd777">gui_framework::BaseMultipleSelectListBox::getStructure</a></div><div class="ttdeci">virtual json::JSONBuilder getStructure() const override</div><div class="ttdef"><b>Definition:</b> <a href="_base_multiple_select_list_box_8cpp_source.html#l00080">BaseMultipleSelectListBox.cpp:80</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_multiple_select_list_box_html_a5f77296c0575baaa846c7c69c8e5bf35"><div class="ttname"><a href="classgui__framework_1_1_base_multiple_select_list_box.html#a5f77296c0575baaa846c7c69c8e5bf35">gui_framework::BaseMultipleSelectListBox::getSelectedItems</a></div><div class="ttdeci">std::vector&lt; std::wstring &gt; getSelectedItems() const</div><div class="ttdef"><b>Definition:</b> <a href="_base_multiple_select_list_box_8cpp_source.html#l00037">BaseMultipleSelectListBox.cpp:37</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_multiple_select_list_box_html_a635fad3193fc365dd008905f288cd249"><div class="ttname"><a href="classgui__framework_1_1_base_multiple_select_list_box.html#a635fad3193fc365dd008905f288cd249">gui_framework::BaseMultipleSelectListBox::setCurrentSelection</a></div><div class="ttdeci">virtual LRESULT setCurrentSelection(LRESULT index) const final override</div><div class="ttdef"><b>Definition:</b> <a href="_base_multiple_select_list_box_8cpp_source.html#l00068">BaseMultipleSelectListBox.cpp:68</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_multiple_select_list_box_html_aead3b97d7bcf7c880e56556020d5e6d6"><div class="ttname"><a href="classgui__framework_1_1_base_multiple_select_list_box.html#aead3b97d7bcf7c880e56556020d5e6d6">gui_framework::BaseMultipleSelectListBox::getCurrentSelections</a></div><div class="ttdeci">LRESULT getCurrentSelections() const</div><div class="ttdef"><b>Definition:</b> <a href="_base_multiple_select_list_box_8cpp_source.html#l00025">BaseMultipleSelectListBox.cpp:25</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1exceptions_1_1_select_list_exception_html"><div class="ttname"><a href="classgui__framework_1_1exceptions_1_1_select_list_exception.html">gui_framework::exceptions::SelectListException</a></div><div class="ttdoc">Exception for all list classes exceptions.</div><div class="ttdef"><b>Definition:</b> <a href="_select_list_exception_8h_source.html#l00010">SelectListException.h:11</a></div></div>
+<div class="ttc" id="anamespacegui__framework_1_1utility_html_abbafc9708435f466d89c4f977dcd460d"><div class="ttname"><a href="namespacegui__framework_1_1utility.html#abbafc9708435f466d89c4f977dcd460d">gui_framework::utility::to_string</a></div><div class="ttdeci">string to_string(const wstring &amp;stringToConvert, uint32_t codepage)</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00041">Utility.cpp:41</a></div></div>
+<div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00020">BaseComponent.cpp:21</a></div></div>
+<div class="ttc" id="astructgui__framework_1_1utility_1_1_component_settings_html"><div class="ttname"><a href="structgui__framework_1_1utility_1_1_component_settings.html">gui_framework::utility::ComponentSettings</a></div><div class="ttdoc">All settings for windows.</div><div class="ttdef"><b>Definition:</b> <a href="_component_settings_8h_source.html#l00010">ComponentSettings.h:11</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -1,6 +1,6 @@
 var classgui__framework_1_1_base_text_list_view =
 [
-    [ "BaseTextListView", "classgui__framework_1_1_base_text_list_view.html#a8cfe067d45a005852109e59d38d21fc4", null ],
+    [ "BaseTextListView", "classgui__framework_1_1_base_text_list_view.html#aa98883af6ec6bacc6d21338670323b23", null ],
     [ "~BaseTextListView", "classgui__framework_1_1_base_text_list_view.html#ad3955f99452963a7fa75cc09768f0710", null ],
     [ "addTextItem", "classgui__framework_1_1_base_text_list_view.html#a64a1854ad7f87a45944de2f750a2ebd9", null ],
     [ "changeTextItem", "classgui__framework_1_1_base_text_list_view.html#a94eeab2166b3e314652266659b7cf73a", null ],

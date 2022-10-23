@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.9-beta</span>
+   &#160;<span id="projectnumber">1.0</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -87,46 +87,44 @@ $(document).ready(function(){initNavTree('_progress_bar_additional_creation_data
 <div class="title">ProgressBarAdditionalCreationData.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_progress_bar_additional_creation_data_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="headers_8h.html">headers.h</a>&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_progress_bar_additional_creation_data_8h.html">ProgressBarAdditionalCreationData.h</a>&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">namespace </span>utility</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    {</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_progress_bar_01_4.html#a957ce16783ea36430ce37efb64f25a36">   10</a></span>&#160;        <a class="code" href="classgui__framework_1_1utility_1_1_additional_creation_data.html">AdditionalCreationData&lt;ProgressBar&gt;::AdditionalCreationData</a>(<span class="keywordtype">int</span> minRange, <span class="keywordtype">int</span> maxRange, <span class="keywordtype">int</span> updateStep) :</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            minRange(minRange),</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            maxRange(maxRange),</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            updateStep(updateStep)</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        }</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_progress_bar_01_4.html#aabe11b7322cbedf9832a1a3a75261ca1">   18</a></span>&#160;        any <a class="code" href="classgui__framework_1_1utility_1_1_additional_creation_data.html#a21e872b6f833b8c17285e8dbd806412c">AdditionalCreationData&lt;ProgressBar&gt;::getData</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <span class="keywordflow">return</span> make_any&lt;tuple&lt;int, int, int&gt;&gt;(minRange, maxRange, updateStep);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        }</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_infinite_progress_bar_01_4.html#a4d1535ee747cd50738da8de36f2d22ee">   23</a></span>&#160;        <a class="code" href="classgui__framework_1_1utility_1_1_additional_creation_data.html#ae2c15498d3c3a75e855c062b5dfcc7d3">AdditionalCreationData&lt;InfiniteProgressBar&gt;::AdditionalCreationData</a>(<span class="keywordtype">int</span> animationPeriod) :</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            animationPeriod(animationPeriod)</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_infinite_progress_bar_01_4.html#a78bb8ca91a4ba7efe0cab21b2add3131">   29</a></span>&#160;        any <a class="code" href="classgui__framework_1_1utility_1_1_additional_creation_data.html#a21e872b6f833b8c17285e8dbd806412c">AdditionalCreationData&lt;InfiniteProgressBar&gt;::getData</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keywordflow">return</span> make_any&lt;int&gt;(animationPeriod);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
+<a href="_progress_bar_additional_creation_data_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_progress_bar_additional_creation_data_8h.html">ProgressBarAdditionalCreationData.h</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keyword">namespace </span>utility</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    {</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_progress_bar_01_4.html#a957ce16783ea36430ce37efb64f25a36">    9</a></span>&#160;        <a class="code" href="classgui__framework_1_1utility_1_1_additional_creation_data.html">AdditionalCreationData&lt;ProgressBar&gt;::AdditionalCreationData</a>(<span class="keywordtype">int</span> minRange, <span class="keywordtype">int</span> maxRange, <span class="keywordtype">int</span> updateStep) :</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;            minRange(minRange),</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            maxRange(maxRange),</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            updateStep(updateStep)</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        }</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_progress_bar_01_4.html#aabe11b7322cbedf9832a1a3a75261ca1">   17</a></span>&#160;        any <a class="code" href="classgui__framework_1_1utility_1_1_additional_creation_data.html#a21e872b6f833b8c17285e8dbd806412c">AdditionalCreationData&lt;ProgressBar&gt;::getData</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <span class="keywordflow">return</span> make_any&lt;tuple&lt;int, int, int&gt;&gt;(minRange, maxRange, updateStep);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        }</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_infinite_progress_bar_01_4.html#a4d1535ee747cd50738da8de36f2d22ee">   22</a></span>&#160;        <a class="code" href="classgui__framework_1_1utility_1_1_additional_creation_data.html#ae2c15498d3c3a75e855c062b5dfcc7d3">AdditionalCreationData&lt;InfiniteProgressBar&gt;::AdditionalCreationData</a>(<span class="keywordtype">int</span> animationPeriod) :</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            animationPeriod(animationPeriod)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classgui__framework_1_1utility_1_1_additional_creation_data_3_01_infinite_progress_bar_01_4.html#a78bb8ca91a4ba7efe0cab21b2add3131">   28</a></span>&#160;        any <a class="code" href="classgui__framework_1_1utility_1_1_additional_creation_data.html#a21e872b6f833b8c17285e8dbd806412c">AdditionalCreationData&lt;InfiniteProgressBar&gt;::getData</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">return</span> make_any&lt;int&gt;(animationPeriod);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
 <div class="ttc" id="a_progress_bar_additional_creation_data_8h_html"><div class="ttname"><a href="_progress_bar_additional_creation_data_8h.html">ProgressBarAdditionalCreationData.h</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1utility_1_1_additional_creation_data_html"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_additional_creation_data.html">gui_framework::utility::AdditionalCreationData</a></div><div class="ttdoc">Base templated class for component creators.</div><div class="ttdef"><b>Definition:</b> <a href="_additional_creation_data_8h_source.html#l00012">AdditionalCreationData.h:13</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1utility_1_1_additional_creation_data_html_a21e872b6f833b8c17285e8dbd806412c"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_additional_creation_data.html#a21e872b6f833b8c17285e8dbd806412c">gui_framework::utility::AdditionalCreationData::getData</a></div><div class="ttdeci">virtual std::any getData() const</div><div class="ttdef"><b>Definition:</b> <a href="_additional_creation_data_8h_source.html#l00023">AdditionalCreationData.h:23</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1utility_1_1_additional_creation_data_html"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_additional_creation_data.html">gui_framework::utility::AdditionalCreationData</a></div><div class="ttdoc">Base templated class for component creators.</div><div class="ttdef"><b>Definition:</b> <a href="_additional_creation_data_8h_source.html#l00011">AdditionalCreationData.h:12</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1utility_1_1_additional_creation_data_html_a21e872b6f833b8c17285e8dbd806412c"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_additional_creation_data.html#a21e872b6f833b8c17285e8dbd806412c">gui_framework::utility::AdditionalCreationData::getData</a></div><div class="ttdeci">virtual std::any getData() const</div><div class="ttdef"><b>Definition:</b> <a href="_additional_creation_data_8h_source.html#l00022">AdditionalCreationData.h:22</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1utility_1_1_additional_creation_data_html_ae2c15498d3c3a75e855c062b5dfcc7d3"><div class="ttname"><a href="classgui__framework_1_1utility_1_1_additional_creation_data.html#ae2c15498d3c3a75e855c062b5dfcc7d3">gui_framework::utility::AdditionalCreationData::AdditionalCreationData</a></div><div class="ttdeci">AdditionalCreationData()=default</div></div>
-<div class="ttc" id="aheaders_8h_html"><div class="ttname"><a href="headers_8h.html">headers.h</a></div></div>
-<div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00021">BaseComponent.cpp:22</a></div></div>
+<div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00020">BaseComponent.cpp:21</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

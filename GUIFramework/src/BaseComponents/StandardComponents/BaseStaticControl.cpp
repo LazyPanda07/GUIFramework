@@ -20,9 +20,19 @@ namespace gui_framework
 			styles::StaticControlStyles(),
 			parent
 		),
-		ITextOperations(handle)
+		ITextOperations(handle, staticControlText)
 	{
-		ITextOperations::setText(staticControlText);
+		this->removeBorder();
+	}
+
+	void BaseStaticControl::addBorder()
+	{
+		gui_framework::utility::appendStyle(handle, WS_BORDER);
+	}
+
+	void BaseStaticControl::removeBorder()
+	{
+		gui_framework::utility::removeStyle(handle, WS_BORDER);
 	}
 
 	void BaseStaticControl::setText(const string& localizationKey)

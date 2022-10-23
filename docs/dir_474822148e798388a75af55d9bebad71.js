@@ -16,13 +16,13 @@ var dir_474822148e798388a75af55d9bebad71 =
     [ "ComponentsHeader.h", "_components_header_8h.html", null ],
     [ "CompositesHeader.cpp", "_composites_header_8cpp.html", null ],
     [ "CompositesHeader.h", "_composites_header_8h.html", null ],
+    [ "Core.cpp", "_core_8cpp.html", null ],
+    [ "Core.h", "_core_8h.html", null ],
     [ "GUIFramework.cpp", "_g_u_i_framework_8cpp.html", "_g_u_i_framework_8cpp" ],
     [ "GUIFramework.h", "_g_u_i_framework_8h.html", [
       [ "GUIFramework", "classgui__framework_1_1_g_u_i_framework.html", "classgui__framework_1_1_g_u_i_framework" ],
       [ "hotkeyData", "structgui__framework_1_1_g_u_i_framework_1_1hotkey_data.html", "structgui__framework_1_1_g_u_i_framework_1_1hotkey_data" ]
     ] ],
     [ "GUIFrameworkConstants.h", "_g_u_i_framework_constants_8h.html", "_g_u_i_framework_constants_8h" ],
-    [ "headers.cpp", "headers_8cpp.html", null ],
-    [ "headers.h", "headers_8h.html", null ],
     [ "WindowMessages.h", "_window_messages_8h.html", "_window_messages_8h" ]
 ];

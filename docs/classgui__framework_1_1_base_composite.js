@@ -4,7 +4,7 @@ var classgui__framework_1_1_base_composite =
       [ "destroyWindow", "classgui__framework_1_1_base_composite.html#a438c1f5c9ef171bc01b2ac420fee985ca3619de6b97539298d3d046e6dbbe48cc", null ],
       [ "quit", "classgui__framework_1_1_base_composite.html#a438c1f5c9ef171bc01b2ac420fee985cadbd73c2b545209688ed794c0d5413d5a", null ]
     ] ],
-    [ "BaseComposite", "classgui__framework_1_1_base_composite.html#aa8dbcb69923c9eca0acb7f1e890a1250", null ],
+    [ "BaseComposite", "classgui__framework_1_1_base_composite.html#a089c692ee5de15a9a0f1cc591c81e8d1", null ],
     [ "~BaseComposite", "classgui__framework_1_1_base_composite.html#a4d6d50985c481dae71dcb09ae527f3e7", null ],
     [ "addPopupMenu", "classgui__framework_1_1_base_composite.html#a97818d3d668728f49f3caf043c010d5f", null ],
     [ "begin", "classgui__framework_1_1_base_composite.html#a36148305df7442496ba5a8a3c6b36ec0", null ],
@@ -25,7 +25,6 @@ var classgui__framework_1_1_base_composite =
     [ "getOnDestroy", "classgui__framework_1_1_base_composite.html#ab4d701fdd99286322c0d45adbcebc0ae", null ],
     [ "getPopupMenus", "classgui__framework_1_1_base_composite.html#aa2f0b33b001ead9ce95381eeb69742ef", null ],
     [ "getStructure", "classgui__framework_1_1_base_composite.html#a03f0ef2ce7916eb5e8833831fd24bd1f", null ],
-    [ "isComposite", "classgui__framework_1_1_base_composite.html#a8e267c7f748a1e7afc60606d11ed6098", null ],
     [ "preWindowMessagesHandle", "classgui__framework_1_1_base_composite.html#a909113930affed5ce99cb639151fac03", null ],
     [ "removeChild", "classgui__framework_1_1_base_composite.html#a9fae96fdf0d4814d9f303fad24fdb136", null ],
     [ "removeComponents", "classgui__framework_1_1_base_composite.html#a907df14dea0e340120d5ae1abaacd849", null ],

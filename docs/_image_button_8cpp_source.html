@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.9-beta</span>
+   &#160;<span id="projectnumber">1.0</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -87,9 +87,9 @@ $(document).ready(function(){initNavTree('_image_button_8cpp_source.html',''); i
 <div class="title">ImageButton.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_image_button_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="headers_8h.html">headers.h</a>&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_image_button_8h.html">ImageButton.h</a>&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<a href="_image_button_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_image_button_8h.html">ImageButton.h</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_base_composite_8h.html">BaseComposites/BaseComposite.h</a>&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_default_button_styles_8h.html">Styles/Components/Buttons/DefaultButtonStyles.h</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_base_loadable_holder_8h.html">Utility/Holders/LoadableHolders/BaseLoadableHolder.h</a>&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
@@ -150,7 +150,7 @@ $(document).ready(function(){initNavTree('_image_button_8cpp_source.html',''); i
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    ImageButton::ImageButton(<span class="keyword">const</span> wstring&amp; buttonName, <span class="keyword">const</span> filesystem::path&amp; pathToImage, drawingType type, uint16_t imageWidth, uint16_t imageHeight, <span class="keyword">const</span> utility::ComponentSettings&amp; settings, BaseComponent* parent, <span class="keyword">const</span> <span class="keyword">function</span>&lt;<span class="keywordtype">void</span>()&gt;&amp; onClick) :</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    ImageButton::ImageButton(<span class="keyword">const</span> wstring&amp; buttonName, <span class="keyword">const</span> filesystem::path&amp; pathToImage, drawingType type, uint16_t imageWidth, uint16_t imageHeight, <span class="keyword">const</span> utility::ComponentSettings&amp; settings, BaseComposite* parent, <span class="keyword">const</span> <span class="keyword">function</span>&lt;<span class="keywordtype">void</span>()&gt;&amp; onClick) :</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        BaseButton</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        (</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            buttonName,</div>
@@ -173,7 +173,7 @@ $(document).ready(function(){initNavTree('_image_button_8cpp_source.html',''); i
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        this-&gt;drawImage();</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    ImageButton::ImageButton(<span class="keyword">const</span> wstring&amp; buttonName, <span class="keyword">const</span> filesystem::path&amp; pathToImage, drawingType type, uint16_t imageWidth, uint16_t imageHeight, <span class="keyword">const</span> utility::ComponentSettings&amp; settings, BaseComponent* parent, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; functionName, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; moduleName) :</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    ImageButton::ImageButton(<span class="keyword">const</span> wstring&amp; buttonName, <span class="keyword">const</span> filesystem::path&amp; pathToImage, drawingType type, uint16_t imageWidth, uint16_t imageHeight, <span class="keyword">const</span> utility::ComponentSettings&amp; settings, BaseComposite* parent, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; functionName, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; moduleName) :</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        BaseButton</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        (</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            buttonName,</div>
@@ -237,12 +237,12 @@ $(document).ready(function(){initNavTree('_image_button_8cpp_source.html',''); i
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keyword">using</span> json::utility::jsonObject;</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        json::JSONBuilder builder = BaseButton::getStructure();</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        jsonObject&amp; current = get&lt;jsonObject&gt;(builder[<a class="code" href="namespacegui__framework_1_1utility.html#a29e6b8bdafb60965ca6109d0ad4bf869">utility::to_string</a>(windowName, ISerializable::getCodepage())]);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        jsonObject&amp; current = get&lt;jsonObject&gt;(builder[<a class="code" href="namespacegui__framework_1_1utility.html#abbafc9708435f466d89c4f977dcd460d">utility::to_string</a>(windowName, ISerializable::getCodepage())]);</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        current.data.push_back({ <span class="stringliteral">&quot;imageWidth&quot;</span>s, <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(imageWidth) });</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        current.data.push_back({ <span class="stringliteral">&quot;imageHeight&quot;</span>s, <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(imageHeight) });</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        current.data.push_back({ <span class="stringliteral">&quot;pathToImage&quot;</span>s, <a class="code" href="namespacegui__framework_1_1utility.html#a5bbb52bed6f3db5b95d081389deaa0fa">utility::getStringFromRawPath</a>(pathToImage) });</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        current.data.push_back({ <span class="stringliteral">&quot;pathToImage&quot;</span>s, <a class="code" href="namespacegui__framework_1_1utility.html#a4a3eea7d16047ee0b0f626e04fa6686c">utility::getStringFromRawPath</a>(pathToImage) });</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        current.data.push_back({ <span class="stringliteral">&quot;drawingType&quot;</span>s, <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(type) });</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
@@ -261,6 +261,7 @@ $(document).ready(function(){initNavTree('_image_button_8cpp_source.html',''); i
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        }</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    }</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;}</div>
+<div class="ttc" id="a_base_composite_8h_html"><div class="ttname"><a href="_base_composite_8h.html">BaseComposite.h</a></div></div>
 <div class="ttc" id="a_base_loadable_holder_8h_html"><div class="ttname"><a href="_base_loadable_holder_8h.html">BaseLoadableHolder.h</a></div></div>
 <div class="ttc" id="a_default_button_styles_8h_html"><div class="ttname"><a href="_default_button_styles_8h.html">DefaultButtonStyles.h</a></div></div>
 <div class="ttc" id="a_image_button_8h_html"><div class="ttname"><a href="_image_button_8h.html">ImageButton.h</a></div></div>
@@ -269,12 +270,11 @@ $(document).ready(function(){initNavTree('_image_button_8cpp_source.html',''); i
 <div class="ttc" id="aclassgui__framework_1_1_image_button_html_a33f6314ec376eb78a1b8131f98981073a1cb251ec0d568de6a929b520c4aed8d1"><div class="ttname"><a href="classgui__framework_1_1_image_button.html#a33f6314ec376eb78a1b8131f98981073a1cb251ec0d568de6a929b520c4aed8d1">gui_framework::ImageButton::drawingType::text</a></div><div class="ttdeci">@ text</div></div>
 <div class="ttc" id="aclassgui__framework_1_1_image_button_html_a33f6314ec376eb78a1b8131f98981073a78805a221a988e79ef3f42d7c5bfd418"><div class="ttname"><a href="classgui__framework_1_1_image_button.html#a33f6314ec376eb78a1b8131f98981073a78805a221a988e79ef3f42d7c5bfd418">gui_framework::ImageButton::drawingType::image</a></div><div class="ttdeci">@ image</div></div>
 <div class="ttc" id="aclassgui__framework_1_1_image_button_html_a33f6314ec376eb78a1b8131f98981073ab407af669ebb1c27249aadf7865f75af"><div class="ttname"><a href="classgui__framework_1_1_image_button.html#a33f6314ec376eb78a1b8131f98981073ab407af669ebb1c27249aadf7865f75af">gui_framework::ImageButton::drawingType::textAndImage</a></div><div class="ttdeci">@ textAndImage</div></div>
-<div class="ttc" id="aheaders_8h_html"><div class="ttname"><a href="headers_8h.html">headers.h</a></div></div>
-<div class="ttc" id="anamespacegui__framework_1_1utility_html_a29e6b8bdafb60965ca6109d0ad4bf869"><div class="ttname"><a href="namespacegui__framework_1_1utility.html#a29e6b8bdafb60965ca6109d0ad4bf869">gui_framework::utility::to_string</a></div><div class="ttdeci">GUI_FRAMEWORK_API_FUNCTION string to_string(const wstring &amp;stringToConvert, uint32_t codepage)</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00042">Utility.cpp:42</a></div></div>
-<div class="ttc" id="anamespacegui__framework_1_1utility_html_a5bbb52bed6f3db5b95d081389deaa0fa"><div class="ttname"><a href="namespacegui__framework_1_1utility.html#a5bbb52bed6f3db5b95d081389deaa0fa">gui_framework::utility::getStringFromRawPath</a></div><div class="ttdeci">GUI_FRAMEWORK_API_FUNCTION string getStringFromRawPath(const filesystem::path &amp;pathFromRawString)</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00125">Utility.cpp:125</a></div></div>
-<div class="ttc" id="anamespacegui__framework_1_1utility_html_a746d8e6e6277a08c83bd0bfd523d2e04"><div class="ttname"><a href="namespacegui__framework_1_1utility.html#a746d8e6e6277a08c83bd0bfd523d2e04">gui_framework::utility::removeStyle</a></div><div class="ttdeci">GUI_FRAMEWORK_API_FUNCTION void removeStyle(HWND handle, LONG_PTR styleToRemove)</div><div class="ttdoc">Remove WinAPI style.</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00032">Utility.cpp:32</a></div></div>
-<div class="ttc" id="anamespacegui__framework_1_1utility_html_ae97300d8014320696e57f502a858c570"><div class="ttname"><a href="namespacegui__framework_1_1utility.html#ae97300d8014320696e57f502a858c570">gui_framework::utility::appendStyle</a></div><div class="ttdeci">GUI_FRAMEWORK_API_FUNCTION void appendStyle(HWND handle, LONG_PTR newStyle)</div><div class="ttdoc">Append WinAPI style.</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00022">Utility.cpp:22</a></div></div>
-<div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00021">BaseComponent.cpp:22</a></div></div>
+<div class="ttc" id="anamespacegui__framework_1_1utility_html_a4a3eea7d16047ee0b0f626e04fa6686c"><div class="ttname"><a href="namespacegui__framework_1_1utility.html#a4a3eea7d16047ee0b0f626e04fa6686c">gui_framework::utility::getStringFromRawPath</a></div><div class="ttdeci">string getStringFromRawPath(const filesystem::path &amp;pathFromRawString)</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00124">Utility.cpp:124</a></div></div>
+<div class="ttc" id="anamespacegui__framework_1_1utility_html_a746d8e6e6277a08c83bd0bfd523d2e04"><div class="ttname"><a href="namespacegui__framework_1_1utility.html#a746d8e6e6277a08c83bd0bfd523d2e04">gui_framework::utility::removeStyle</a></div><div class="ttdeci">void removeStyle(HWND handle, LONG_PTR styleToRemove)</div><div class="ttdoc">Remove WinAPI style.</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00031">Utility.cpp:31</a></div></div>
+<div class="ttc" id="anamespacegui__framework_1_1utility_html_abbafc9708435f466d89c4f977dcd460d"><div class="ttname"><a href="namespacegui__framework_1_1utility.html#abbafc9708435f466d89c4f977dcd460d">gui_framework::utility::to_string</a></div><div class="ttdeci">string to_string(const wstring &amp;stringToConvert, uint32_t codepage)</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00041">Utility.cpp:41</a></div></div>
+<div class="ttc" id="anamespacegui__framework_1_1utility_html_ae97300d8014320696e57f502a858c570"><div class="ttname"><a href="namespacegui__framework_1_1utility.html#ae97300d8014320696e57f502a858c570">gui_framework::utility::appendStyle</a></div><div class="ttdeci">void appendStyle(HWND handle, LONG_PTR newStyle)</div><div class="ttdoc">Append WinAPI style.</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00021">Utility.cpp:21</a></div></div>
+<div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00020">BaseComponent.cpp:21</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

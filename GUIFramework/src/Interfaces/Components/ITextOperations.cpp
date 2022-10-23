@@ -8,10 +8,15 @@ namespace gui_framework
 {
 	namespace interfaces
 	{
-		ITextOperations::ITextOperations(HWND handle) :
+		ITextOperations::ITextOperations(HWND handle, const wstring& text) :
 			textHandle(handle)
 		{
+			this->setText(text);
+		}
 
+		ITextOperations::ITextOperations(HWND handle, const string& localizationKey)
+		{
+			this->setText(localizationKey);
 		}
 
 		void ITextOperations::setText(const wstring& text)

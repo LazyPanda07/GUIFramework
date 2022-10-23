@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.9-beta</span>
+   &#160;<span id="projectnumber">1.0</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -89,30 +89,28 @@ $(document).ready(function(){initNavTree('_base_menu_item_8h_source.html',''); i
 <div class="contents">
 <a href="_base_menu_item_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="headers_8h.html">headers.h</a>&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_i_menu_item_8h.html">Interfaces/Menu/IMenuItem.h</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_menu_item.html">    9</a></span>&#160;    <span class="keyword">class </span><a class="code" href="_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba">GUI_FRAMEWORK_API</a> <a class="code" href="classgui__framework_1_1_base_menu_item.html">BaseMenuItem</a> : <span class="keyword">public</span> <a class="code" href="classgui__framework_1_1interfaces_1_1_i_menu_item.html">interfaces::IMenuItem</a></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <a class="code" href="classgui__framework_1_1_base_menu_item.html">BaseMenuItem</a>(<span class="keyword">const</span> std::wstring&amp; text);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_menu_item.html#a3aab24e363ae304803d40ce970c64850">   14</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classgui__framework_1_1_base_menu_item.html#a3aab24e363ae304803d40ce970c64850">processMessage</a>() = 0;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keyword">virtual</span> std::tuple&lt;uint32_t, uint64_t&gt; getCreationData() const final override;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_menu_item.html#ac049115e5f32a746dd35df04df785ad2">   18</a></span>&#160;        virtual ~<a class="code" href="classgui__framework_1_1_base_menu_item.html">BaseMenuItem</a>() = default;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    };</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
-<div class="ttc" id="a_g_u_i_framework_constants_8h_html_a15da9ebdfa896557bb941a5da31021ba"><div class="ttname"><a href="_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba">GUI_FRAMEWORK_API</a></div><div class="ttdeci">#define GUI_FRAMEWORK_API</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00112">GUIFrameworkConstants.h:112</a></div></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_i_menu_item_8h.html">Interfaces/Menu/IMenuItem.h</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui__framework.html">gui_framework</a></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_menu_item.html">    8</a></span>&#160;    <span class="keyword">class </span><a class="code" href="_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba">GUI_FRAMEWORK_API</a> <a class="code" href="classgui__framework_1_1_base_menu_item.html">BaseMenuItem</a> : <span class="keyword">public</span> <a class="code" href="classgui__framework_1_1interfaces_1_1_i_menu_item.html">interfaces::IMenuItem</a></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <a class="code" href="classgui__framework_1_1_base_menu_item.html">BaseMenuItem</a>(<span class="keyword">const</span> std::wstring&amp; text);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_menu_item.html#a3aab24e363ae304803d40ce970c64850">   13</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classgui__framework_1_1_base_menu_item.html#a3aab24e363ae304803d40ce970c64850">processMessage</a>() = 0;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keyword">virtual</span> std::tuple&lt;uint32_t, uint64_t&gt; getCreationData() const final override;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classgui__framework_1_1_base_menu_item.html#ac049115e5f32a746dd35df04df785ad2">   17</a></span>&#160;        virtual ~<a class="code" href="classgui__framework_1_1_base_menu_item.html">BaseMenuItem</a>() = default;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    };</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
+<div class="ttc" id="a_g_u_i_framework_constants_8h_html_a15da9ebdfa896557bb941a5da31021ba"><div class="ttname"><a href="_g_u_i_framework_constants_8h.html#a15da9ebdfa896557bb941a5da31021ba">GUI_FRAMEWORK_API</a></div><div class="ttdeci">#define GUI_FRAMEWORK_API</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_constants_8h_source.html#l00113">GUIFrameworkConstants.h:113</a></div></div>
 <div class="ttc" id="a_i_menu_item_8h_html"><div class="ttname"><a href="_i_menu_item_8h.html">IMenuItem.h</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_base_menu_item_html"><div class="ttname"><a href="classgui__framework_1_1_base_menu_item.html">gui_framework::BaseMenuItem</a></div><div class="ttdoc">Base class for all menu items.</div><div class="ttdef"><b>Definition:</b> <a href="_base_menu_item_8h_source.html#l00009">BaseMenuItem.h:10</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_base_menu_item_html"><div class="ttname"><a href="classgui__framework_1_1_base_menu_item.html">gui_framework::BaseMenuItem</a></div><div class="ttdoc">Base class for all menu items.</div><div class="ttdef"><b>Definition:</b> <a href="_base_menu_item_8h_source.html#l00008">BaseMenuItem.h:9</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1_base_menu_item_html_a3aab24e363ae304803d40ce970c64850"><div class="ttname"><a href="classgui__framework_1_1_base_menu_item.html#a3aab24e363ae304803d40ce970c64850">gui_framework::BaseMenuItem::processMessage</a></div><div class="ttdeci">virtual void processMessage()=0</div></div>
-<div class="ttc" id="aclassgui__framework_1_1interfaces_1_1_i_menu_item_html"><div class="ttname"><a href="classgui__framework_1_1interfaces_1_1_i_menu_item.html">gui_framework::interfaces::IMenuItem</a></div><div class="ttdoc">Interface for all menu items.</div><div class="ttdef"><b>Definition:</b> <a href="_i_menu_item_8h_source.html#l00012">IMenuItem.h:13</a></div></div>
-<div class="ttc" id="aheaders_8h_html"><div class="ttname"><a href="headers_8h.html">headers.h</a></div></div>
-<div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00021">BaseComponent.cpp:22</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1interfaces_1_1_i_menu_item_html"><div class="ttname"><a href="classgui__framework_1_1interfaces_1_1_i_menu_item.html">gui_framework::interfaces::IMenuItem</a></div><div class="ttdoc">Interface for all menu items.</div><div class="ttdef"><b>Definition:</b> <a href="_i_menu_item_8h_source.html#l00010">IMenuItem.h:11</a></div></div>
+<div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00020">BaseComponent.cpp:21</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

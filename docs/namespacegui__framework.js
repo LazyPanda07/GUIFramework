@@ -2,10 +2,10 @@ var namespacegui__framework =
 [
     [ "__utility", "namespacegui__framework_1_1____utility.html", [
       [ "extendedException", "namespacegui__framework_1_1____utility.html#a98d0fbb00bf3ff2fef162bafb2a5224d", null ],
-      [ "extendedException", "namespacegui__framework_1_1____utility.html#a75c1c79e2eaf5a3fc05ed16fc4e4a7b3", null ],
+      [ "extendedException", "namespacegui__framework_1_1____utility.html#a4d6db79e277690e8e36feb4a21faf940", null ],
       [ "throwNotImplementedException", "namespacegui__framework_1_1____utility.html#a49f152f000e27aebdc729ebd5816d395", null ],
-      [ "throwNotImplementedException", "namespacegui__framework_1_1____utility.html#adbc415e7ba81e1456aaacfbb65ea8100", null ],
-      [ "useOnClose", "namespacegui__framework_1_1____utility.html#ab5db74a8753c7cb133e1dd9fec2c6734", null ],
+      [ "throwNotImplementedException", "namespacegui__framework_1_1____utility.html#a507e18dca45c7f28f80c8f824d660da2", null ],
+      [ "useOnClose", "namespacegui__framework_1_1____utility.html#a06d3e096bea64d05cce6be2454101265", null ],
       [ "useOnClose", "namespacegui__framework_1_1____utility.html#a62a7a75c834daff31aea768673c22c9c", null ]
     ] ],
     [ "custom_window_messages", "namespacegui__framework_1_1custom__window__messages.html", [

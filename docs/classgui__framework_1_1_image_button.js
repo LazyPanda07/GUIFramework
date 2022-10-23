@@ -5,8 +5,8 @@ var classgui__framework_1_1_image_button =
       [ "text", "classgui__framework_1_1_image_button.html#a33f6314ec376eb78a1b8131f98981073a1cb251ec0d568de6a929b520c4aed8d1", null ],
       [ "textAndImage", "classgui__framework_1_1_image_button.html#a33f6314ec376eb78a1b8131f98981073ab407af669ebb1c27249aadf7865f75af", null ]
     ] ],
-    [ "ImageButton", "classgui__framework_1_1_image_button.html#a5727403fc8b863dcdbecda5c7a7ea7dd", null ],
-    [ "ImageButton", "classgui__framework_1_1_image_button.html#ae372329dd319fc52b3224b146b580d10", null ],
+    [ "ImageButton", "classgui__framework_1_1_image_button.html#a5f6fdd61a359bf33dc18e8ffa4026d9e", null ],
+    [ "ImageButton", "classgui__framework_1_1_image_button.html#a08ba18e37d12c38f36a2204211b6b457", null ],
     [ "~ImageButton", "classgui__framework_1_1_image_button.html#a2f52e5ec5adadb65f8d9b2e9f9ebecd9", null ],
     [ "getDrawingType", "classgui__framework_1_1_image_button.html#a92a1c5511c63d50a604e7dc492254dcb", null ],
     [ "getHash", "classgui__framework_1_1_image_button.html#a28219a85cbaa07ccb2d9d18840388373", null ],

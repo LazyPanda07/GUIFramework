@@ -23,15 +23,21 @@ namespace gui_framework
 		/// @param largeIconResource Integer value from auto generated Visual Studio resources
 		BaseSeparateWindow(const std::wstring& className, const std::wstring& titleName, const utility::ComponentSettings& settings, const std::string& windowFunctionName, bool maximize = false, bool minimize = false, const std::string& moduleName = "", uint16_t smallIconResource = NULL, uint16_t largeIconResource = NULL);
 
+		/// @brief Enable resize button and window resizing
+		void enableResize();
+
+		/// @brief Disable resize button and window resizing
+		void disableResize();
+
 		/// @brief Set large icon(32x32) for specific window
 		/// @param pathToLargeIcon 
 		/// @exception FileDoesNotExist
-		virtual void setLargeIcon(const std::filesystem::path& pathToLargeIcon) final;
+		void setLargeIcon(const std::filesystem::path& pathToLargeIcon);
 
 		/// @brief Set small icon(16x16) for specific window
 		/// @param pathToSmallIcon 
 		/// @exception FileDoesNotExist
-		virtual void setSmallIcon(const std::filesystem::path& pathToSmallIcon) final;
+		void setSmallIcon(const std::filesystem::path& pathToSmallIcon);
 
 		/// @brief Used as key in creators
 		/// @return typeid().hash_code()

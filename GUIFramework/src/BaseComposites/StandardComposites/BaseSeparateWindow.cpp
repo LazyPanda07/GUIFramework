@@ -30,6 +30,20 @@ namespace gui_framework
 
 	}
 
+	void BaseSeparateWindow::enableResize()
+	{
+		gui_framework::utility::appendStyle(handle, WS_MAXIMIZEBOX);
+
+		gui_framework::utility::appendStyle(handle, WS_THICKFRAME);
+	}
+
+	void BaseSeparateWindow::disableResize()
+	{
+		gui_framework::utility::removeStyle(handle, WS_MAXIMIZEBOX);
+
+		gui_framework::utility::removeStyle(handle, WS_THICKFRAME);
+	}
+
 	void BaseSeparateWindow::setLargeIcon(const filesystem::path& pathToLargeIcon)
 	{
 		if (!filesystem::exists(pathToLargeIcon))

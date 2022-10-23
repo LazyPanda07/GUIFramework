@@ -1,16 +1,16 @@
 var _utility_8cpp =
 [
     [ "appendStyle", "_utility_8cpp.html#ae97300d8014320696e57f502a858c570", null ],
-    [ "extendedException", "_utility_8cpp.html#a75c1c79e2eaf5a3fc05ed16fc4e4a7b3", null ],
+    [ "extendedException", "_utility_8cpp.html#a4d6db79e277690e8e36feb4a21faf940", null ],
     [ "getCurrentModule", "_utility_8cpp.html#a1945ec50b055f688bbb3e7c6cae8de64", null ],
     [ "getGUIFrameworkVersion", "_utility_8cpp.html#ac6becb2cc50030cd8e2594243a70e780", null ],
-    [ "getStringFromRawPath", "_utility_8cpp.html#a5bbb52bed6f3db5b95d081389deaa0fa", null ],
-    [ "loadEventCallbackFromModule", "_utility_8cpp.html#a33ceab61b479c2967a8800dbcaaa156a", null ],
-    [ "loadFunctionFromModule", "_utility_8cpp.html#afeb3936adb603e27607c38ac3ecc4c7c", null ],
+    [ "getStringFromRawPath", "_utility_8cpp.html#a4a3eea7d16047ee0b0f626e04fa6686c", null ],
+    [ "loadEventCallbackFromModule", "_utility_8cpp.html#a9949e6458956217f852782cde4062ece", null ],
+    [ "loadFunctionFromModule", "_utility_8cpp.html#a29ce005e8c05ed9ed4bc66f6a0944dcb", null ],
     [ "removeStyle", "_utility_8cpp.html#a746d8e6e6277a08c83bd0bfd523d2e04", null ],
-    [ "throwNotImplementedException", "_utility_8cpp.html#adbc415e7ba81e1456aaacfbb65ea8100", null ],
-    [ "to_string", "_utility_8cpp.html#a29e6b8bdafb60965ca6109d0ad4bf869", null ],
-    [ "to_wstring", "_utility_8cpp.html#a78299194d620a892a4503b2db7474e89", null ],
-    [ "unregisterClass", "_utility_8cpp.html#a65a23a22c41efc51dfb5a09323416f5a", null ],
-    [ "useOnClose", "_utility_8cpp.html#ab5db74a8753c7cb133e1dd9fec2c6734", null ]
+    [ "throwNotImplementedException", "_utility_8cpp.html#a507e18dca45c7f28f80c8f824d660da2", null ],
+    [ "to_string", "_utility_8cpp.html#abbafc9708435f466d89c4f977dcd460d", null ],
+    [ "to_wstring", "_utility_8cpp.html#a14e878f929340a06b7a3c1e370c623af", null ],
+    [ "unregisterClass", "_utility_8cpp.html#a9102f958e07350e5f2ab564c5c30d66c", null ],
+    [ "useOnClose", "_utility_8cpp.html#a06d3e096bea64d05cce6be2454101265", null ]
 ];

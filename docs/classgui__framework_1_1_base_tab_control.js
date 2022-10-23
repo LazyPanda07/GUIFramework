@@ -1,7 +1,7 @@
 var classgui__framework_1_1_base_tab_control =
 [
     [ "tabData", "structgui__framework_1_1_base_tab_control_1_1tab_data.html", "structgui__framework_1_1_base_tab_control_1_1tab_data" ],
-    [ "BaseTabControl", "classgui__framework_1_1_base_tab_control.html#a77434660c0d8746e256dc37d94dabb33", null ],
+    [ "BaseTabControl", "classgui__framework_1_1_base_tab_control.html#a8a1903f60ad5431866c59a549f6c2f4d", null ],
     [ "~BaseTabControl", "classgui__framework_1_1_base_tab_control.html#a6d7e78ee515467d152f0519a842fc0e2", null ],
     [ "appendImage", "classgui__framework_1_1_base_tab_control.html#a439a78b68ebd1adaf7106ecf889417c9", null ],
     [ "appendImage", "classgui__framework_1_1_base_tab_control.html#ac2ee5090f6647a8bd134c9cede7a8d86", null ],

@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GUIFramework
-   &#160;<span id="projectnumber">0.9-beta</span>
+   &#160;<span id="projectnumber">1.0</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -118,8 +118,10 @@ Inheritance diagram for gui_framework::interfaces::ITextOperations:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a96e0d267ad5c299647a79edabf83ba36"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_text_operations.html#a96e0d267ad5c299647a79edabf83ba36">ITextOperations</a> (HWND handle)</td></tr>
-<tr class="separator:a96e0d267ad5c299647a79edabf83ba36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa8998c823593dfd4d8f27bdc2ce8b97"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_text_operations.html#afa8998c823593dfd4d8f27bdc2ce8b97">ITextOperations</a> (HWND handle, const std::wstring &amp;text=L&quot;&quot;)</td></tr>
+<tr class="separator:afa8998c823593dfd4d8f27bdc2ce8b97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35a5c3fb0e392a9fdb15fb0ad52e6dcd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_text_operations.html#a35a5c3fb0e392a9fdb15fb0ad52e6dcd">ITextOperations</a> (HWND handle, const std::string &amp;localizationKey)</td></tr>
+<tr class="separator:a35a5c3fb0e392a9fdb15fb0ad52e6dcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3942cfbd28e76670ec6c3cccfe43067"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_text_operations.html#ad3942cfbd28e76670ec6c3cccfe43067">setText</a> (const std::wstring &amp;text)</td></tr>
 <tr class="separator:ad3942cfbd28e76670ec6c3cccfe43067"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2dda8e3d33fde829a6862931d52c8ca4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui__framework_1_1interfaces_1_1_i_text_operations.html#a2dda8e3d33fde829a6862931d52c8ca4">setText</a> (const std::string &amp;localizationKey)</td></tr>
@@ -140,8 +142,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_i_text_operations_8h_source.html#l00010">10</a> of file <a class="el" href="_i_text_operations_8h_source.html">ITextOperations.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a96e0d267ad5c299647a79edabf83ba36"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a96e0d267ad5c299647a79edabf83ba36">&#9670;&nbsp;</a></span>ITextOperations()</h2>
+<a id="afa8998c823593dfd4d8f27bdc2ce8b97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa8998c823593dfd4d8f27bdc2ce8b97">&#9670;&nbsp;</a></span>ITextOperations() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -150,13 +152,49 @@ Protected Attributes</h2></td></tr>
           <td class="memname">gui_framework::interfaces::ITextOperations::ITextOperations </td>
           <td>(</td>
           <td class="paramtype">HWND&#160;</td>
-          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>text</em> = <code>L&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_i_text_operations_8cpp_source.html#l00012">12</a> of file <a class="el" href="_i_text_operations_8cpp_source.html">ITextOperations.cpp</a>.</p>
+</div>
+</div>
+<a id="a35a5c3fb0e392a9fdb15fb0ad52e6dcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35a5c3fb0e392a9fdb15fb0ad52e6dcd">&#9670;&nbsp;</a></span>ITextOperations() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui_framework::interfaces::ITextOperations::ITextOperations </td>
+          <td>(</td>
+          <td class="paramtype">HWND&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>localizationKey</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -218,7 +256,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_i_text_operations_8cpp_source.html#l00028">28</a> of file <a class="el" href="_i_text_operations_8cpp_source.html">ITextOperations.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_text_operations_8cpp_source.html#l00032">32</a> of file <a class="el" href="_i_text_operations_8cpp_source.html">ITextOperations.cpp</a>.</p>
 
 </div>
 </div>

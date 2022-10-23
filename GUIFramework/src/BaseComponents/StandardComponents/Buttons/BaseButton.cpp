@@ -43,10 +43,10 @@ namespace gui_framework
 			styles,
 			parent
 		),
-		ITextOperations(handle),
+		ITextOperations(handle, buttonText),
 		onClick(onClick)
 	{
-		ITextOperations::setText(buttonText);
+		
 	}
 
 	BaseButton::BaseButton(const wstring& buttonName, const wstring& buttonText, const utility::ComponentSettings& settings, const styles::ButtonStyles& styles, BaseComposite* parent, const string& functionName, const string& moduleName) :

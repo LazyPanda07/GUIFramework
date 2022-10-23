@@ -1,7 +1,7 @@
 var classgui__framework_1_1_base_button =
 [
-    [ "BaseButton", "classgui__framework_1_1_base_button.html#a451d89224af07c008034a895f85145f3", null ],
-    [ "BaseButton", "classgui__framework_1_1_base_button.html#a2c003a31cf58a878aed587eaed5a2468", null ],
+    [ "BaseButton", "classgui__framework_1_1_base_button.html#a668fe7651f49c62bd90d2c15614553f7", null ],
+    [ "BaseButton", "classgui__framework_1_1_base_button.html#ab8fac44f4acf0b0bed0180edf4fd3126", null ],
     [ "~BaseButton", "classgui__framework_1_1_base_button.html#a5617bef98e2fa49ab79e243273a28260", null ],
     [ "getFunctionName", "classgui__framework_1_1_base_button.html#a5923561ed40dc413b508faa5a3d24e33", null ],
     [ "getHash", "classgui__framework_1_1_base_button.html#a867f3cb369326b3457cc5ba4daf6544b", null ],

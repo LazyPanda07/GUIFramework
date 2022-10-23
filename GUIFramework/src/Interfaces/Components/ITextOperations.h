@@ -13,7 +13,9 @@ namespace gui_framework
 			HWND textHandle;
 
 		public:
-			ITextOperations(HWND handle);
+			ITextOperations(HWND handle, const std::wstring& text = L"");
+
+			ITextOperations(HWND handle, const std::string& localizationKey);
 
 			void setText(const std::wstring& text);
 
