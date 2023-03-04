@@ -1,27 +1,15 @@
 var dir_5196a9e40f043e9badca2649363af0f9 =
 [
     [ "IconListViewCreator.cpp", "_icon_list_view_creator_8cpp.html", null ],
-    [ "IconListViewCreator.h", "_icon_list_view_creator_8h.html", [
-      [ "IconListViewCreator", "classgui__framework_1_1utility_1_1_icon_list_view_creator.html", "classgui__framework_1_1utility_1_1_icon_list_view_creator" ]
-    ] ],
+    [ "IconListViewCreator.h", "_icon_list_view_creator_8h.html", "_icon_list_view_creator_8h" ],
     [ "ListIconListViewCreator.cpp", "_list_icon_list_view_creator_8cpp.html", null ],
-    [ "ListIconListViewCreator.h", "_list_icon_list_view_creator_8h.html", [
-      [ "ListIconListViewCreator", "classgui__framework_1_1utility_1_1_list_icon_list_view_creator.html", "classgui__framework_1_1utility_1_1_list_icon_list_view_creator" ]
-    ] ],
+    [ "ListIconListViewCreator.h", "_list_icon_list_view_creator_8h.html", "_list_icon_list_view_creator_8h" ],
     [ "ListTextIconListViewCreator.cpp", "_list_text_icon_list_view_creator_8cpp.html", null ],
-    [ "ListTextIconListViewCreator.h", "_list_text_icon_list_view_creator_8h.html", [
-      [ "ListTextIconListViewCreator", "classgui__framework_1_1utility_1_1_list_text_icon_list_view_creator.html", "classgui__framework_1_1utility_1_1_list_text_icon_list_view_creator" ]
-    ] ],
+    [ "ListTextIconListViewCreator.h", "_list_text_icon_list_view_creator_8h.html", "_list_text_icon_list_view_creator_8h" ],
     [ "ListTextListViewCreator.cpp", "_list_text_list_view_creator_8cpp.html", null ],
-    [ "ListTextListViewCreator.h", "_list_text_list_view_creator_8h.html", [
-      [ "ListTextListViewCreator", "classgui__framework_1_1utility_1_1_list_text_list_view_creator.html", "classgui__framework_1_1utility_1_1_list_text_list_view_creator" ]
-    ] ],
+    [ "ListTextListViewCreator.h", "_list_text_list_view_creator_8h.html", "_list_text_list_view_creator_8h" ],
     [ "TextIconListViewCreator.cpp", "_text_icon_list_view_creator_8cpp.html", null ],
-    [ "TextIconListViewCreator.h", "_text_icon_list_view_creator_8h.html", [
-      [ "TextIconListViewCreator", "classgui__framework_1_1utility_1_1_text_icon_list_view_creator.html", "classgui__framework_1_1utility_1_1_text_icon_list_view_creator" ]
-    ] ],
+    [ "TextIconListViewCreator.h", "_text_icon_list_view_creator_8h.html", "_text_icon_list_view_creator_8h" ],
     [ "TextListViewCreator.cpp", "_text_list_view_creator_8cpp.html", null ],
-    [ "TextListViewCreator.h", "_text_list_view_creator_8h.html", [
-      [ "TextListViewCreator", "classgui__framework_1_1utility_1_1_text_list_view_creator.html", "classgui__framework_1_1utility_1_1_text_list_view_creator" ]
-    ] ]
+    [ "TextListViewCreator.h", "_text_list_view_creator_8h.html", "_text_list_view_creator_8h" ]
 ];

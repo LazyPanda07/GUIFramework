@@ -11,7 +11,7 @@ var classgui__framework_1_1_menu =
     [ "getName", "classgui__framework_1_1_menu.html#a3d20a6a3f347b9428af100ff0fe4ff4a", null ],
     [ "getStructure", "classgui__framework_1_1_menu.html#a6daf4796d2759b96ae7c323e2ec0d8db", null ],
     [ "handleMessage", "classgui__framework_1_1_menu.html#a1bf1253fb6905ab2d5514cac98907ae5", null ],
-    [ "operator=", "classgui__framework_1_1_menu.html#a438acbe858735ef5e8ebfc0e49cdd824", null ],
+    [ "operator=", "classgui__framework_1_1_menu.html#ae23725a0d29bcd68b1b07814c0a05874", null ],
     [ "operator=", "classgui__framework_1_1_menu.html#a0d1d17252a36abae06db1d484de90a33", null ],
     [ "removeMenuItem", "classgui__framework_1_1_menu.html#a9806ef1779049ef3f77b5bd48f8055d5", null ],
     [ "updateMenu", "classgui__framework_1_1_menu.html#a146f33f09e4fc45ccc30f75f1b7e200f", null ]

@@ -1,4 +1,4 @@
 var _i_iterable_8h =
 [
-    [ "requires", "_i_iterable_8h.html#a3e711f70b54b918d68b091e17035c674", null ]
+    [ "gui_framework::interfaces::IIterable< T, TForwardIterator, TConstForwardIterator >", "classgui__framework_1_1interfaces_1_1_i_iterable.html", "classgui__framework_1_1interfaces_1_1_i_iterable" ]
 ];

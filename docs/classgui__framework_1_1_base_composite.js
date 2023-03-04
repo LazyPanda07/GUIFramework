@@ -13,7 +13,7 @@ var classgui__framework_1_1_base_composite =
     [ "compositeWindowMessagesHandle", "classgui__framework_1_1_base_composite.html#a52c78dcf2326abc5fb672827f0dc7c3d", null ],
     [ "createMainMenu", "classgui__framework_1_1_base_composite.html#a8216f6857b3a6d857c34633f67892e2f", null ],
     [ "end", "classgui__framework_1_1_base_composite.html#a2ff0b555146c09b8a1bdfb8cc950bb8d", null ],
-    [ "findChild", "classgui__framework_1_1_base_composite.html#a5f0b695f29f3e4872a7d7540d5f1c724", null ],
+    [ "findChild", "classgui__framework_1_1_base_composite.html#a3f0eecc3e3cbf2879f5860f4a671dc15", null ],
     [ "findChild", "classgui__framework_1_1_base_composite.html#a0c0813ec9b1b261bd5042196c5549a76", null ],
     [ "findChildren", "classgui__framework_1_1_base_composite.html#ad87df4d0c6682aaa0678572be2fbba5e", null ],
     [ "getChildren", "classgui__framework_1_1_base_composite.html#ab2f5936a5cf89ae97d32a4198082783b", null ],

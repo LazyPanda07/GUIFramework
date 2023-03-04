@@ -7,19 +7,11 @@ var dir_207a032f0a90b270c77a660f4dd3aafc =
     [ "ScrollBars", "dir_6f8227c0420f7df5c9efba67525dda6e.html", "dir_6f8227c0420f7df5c9efba67525dda6e" ],
     [ "Trackbars", "dir_c06294cd1700763bbcb280aea7097db4.html", "dir_c06294cd1700763bbcb280aea7097db4" ],
     [ "DefaultRichEditStyles.cpp", "_default_rich_edit_styles_8cpp.html", null ],
-    [ "DefaultRichEditStyles.h", "_default_rich_edit_styles_8h.html", [
-      [ "DefaultRichEditStyles", "classgui__framework_1_1styles_1_1_default_rich_edit_styles.html", "classgui__framework_1_1styles_1_1_default_rich_edit_styles" ]
-    ] ],
+    [ "DefaultRichEditStyles.h", "_default_rich_edit_styles_8h.html", "_default_rich_edit_styles_8h" ],
     [ "EditControlStyles.cpp", "_edit_control_styles_8cpp.html", null ],
-    [ "EditControlStyles.h", "_edit_control_styles_8h.html", [
-      [ "EditControlStyles", "classgui__framework_1_1styles_1_1_edit_control_styles.html", "classgui__framework_1_1styles_1_1_edit_control_styles" ]
-    ] ],
+    [ "EditControlStyles.h", "_edit_control_styles_8h.html", "_edit_control_styles_8h" ],
     [ "InfiniteProgressBarStyles.cpp", "_infinite_progress_bar_styles_8cpp.html", null ],
-    [ "InfiniteProgressBarStyles.h", "_infinite_progress_bar_styles_8h.html", [
-      [ "InfiniteProgressBarStyles", "classgui__framework_1_1styles_1_1_infinite_progress_bar_styles.html", "classgui__framework_1_1styles_1_1_infinite_progress_bar_styles" ]
-    ] ],
+    [ "InfiniteProgressBarStyles.h", "_infinite_progress_bar_styles_8h.html", "_infinite_progress_bar_styles_8h" ],
     [ "StaticControlStyles.cpp", "_static_control_styles_8cpp.html", null ],
-    [ "StaticControlStyles.h", "_static_control_styles_8h.html", [
-      [ "StaticControlStyles", "classgui__framework_1_1styles_1_1_static_control_styles.html", "classgui__framework_1_1styles_1_1_static_control_styles" ]
-    ] ]
+    [ "StaticControlStyles.h", "_static_control_styles_8h.html", "_static_control_styles_8h" ]
 ];

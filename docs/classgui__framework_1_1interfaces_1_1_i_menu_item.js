@@ -3,7 +3,7 @@ var classgui__framework_1_1interfaces_1_1_i_menu_item =
     [ "IMenuItem", "classgui__framework_1_1interfaces_1_1_i_menu_item.html#acf19118b0ecec45f4a66dcb67ef4b5ce", null ],
     [ "~IMenuItem", "classgui__framework_1_1interfaces_1_1_i_menu_item.html#a2dc53e1815a296c8e3b07507d31b5433", null ],
     [ "createMenuItem", "classgui__framework_1_1interfaces_1_1_i_menu_item.html#a1411d1a638071c2c188fb7709dd5159d", null ],
-    [ "getCreationData", "classgui__framework_1_1interfaces_1_1_i_menu_item.html#a86914dc8a7f0d9e282361bd80e9b49ae", null ],
+    [ "getCreationData", "classgui__framework_1_1interfaces_1_1_i_menu_item.html#a286838a4f379d605ee721a438ae3fda6", null ],
     [ "getStructure", "classgui__framework_1_1interfaces_1_1_i_menu_item.html#a11725b99f241c64c8767738fcb88c823", null ],
     [ "getText", "classgui__framework_1_1interfaces_1_1_i_menu_item.html#a8ace5ab5ad8317f293de0f1d9a76b32e", null ],
     [ "getType", "classgui__framework_1_1interfaces_1_1_i_menu_item.html#a1cdbcd0935ec86ed7c57489bc5759cb0", null ],

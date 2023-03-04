@@ -8,22 +8,13 @@ var dir_e26a3f9e84f4c910235ed176785f491f =
     [ "BaseComboBox.cpp", "_base_combo_box_8cpp.html", null ],
     [ "BaseComboBox.h", "_base_combo_box_8h.html", "_base_combo_box_8h" ],
     [ "BaseEditControl.cpp", "_base_edit_control_8cpp.html", null ],
-    [ "BaseEditControl.h", "_base_edit_control_8h.html", [
-      [ "BaseEditControl", "classgui__framework_1_1_base_edit_control.html", "classgui__framework_1_1_base_edit_control" ]
-    ] ],
+    [ "BaseEditControl.h", "_base_edit_control_8h.html", "_base_edit_control_8h" ],
     [ "BaseRichEdit.cpp", "_base_rich_edit_8cpp.html", null ],
     [ "BaseRichEdit.h", "_base_rich_edit_8h.html", "_base_rich_edit_8h" ],
     [ "BaseStaticControl.cpp", "_base_static_control_8cpp.html", null ],
-    [ "BaseStaticControl.h", "_base_static_control_8h.html", [
-      [ "BaseStaticControl", "classgui__framework_1_1_base_static_control.html", "classgui__framework_1_1_base_static_control" ]
-    ] ],
+    [ "BaseStaticControl.h", "_base_static_control_8h.html", "_base_static_control_8h" ],
     [ "BaseTabControl.cpp", "_base_tab_control_8cpp.html", "_base_tab_control_8cpp" ],
-    [ "BaseTabControl.h", "_base_tab_control_8h.html", [
-      [ "BaseTabControl", "classgui__framework_1_1_base_tab_control.html", "classgui__framework_1_1_base_tab_control" ],
-      [ "tabData", "structgui__framework_1_1_base_tab_control_1_1tab_data.html", "structgui__framework_1_1_base_tab_control_1_1tab_data" ]
-    ] ],
+    [ "BaseTabControl.h", "_base_tab_control_8h.html", "_base_tab_control_8h" ],
     [ "BaseTrackbarControl.cpp", "_base_trackbar_control_8cpp.html", null ],
-    [ "BaseTrackbarControl.h", "_base_trackbar_control_8h.html", [
-      [ "BaseTrackbarControl", "classgui__framework_1_1_base_trackbar_control.html", "classgui__framework_1_1_base_trackbar_control" ]
-    ] ]
+    [ "BaseTrackbarControl.h", "_base_trackbar_control_8h.html", "_base_trackbar_control_8h" ]
 ];

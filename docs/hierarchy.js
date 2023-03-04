@@ -94,9 +94,11 @@ var hierarchy =
     [ "gui_framework::interfaces::IBaseConstForwardIterator< BaseComponent, composite_const_forward_iterator >", "classgui__framework_1_1interfaces_1_1_i_base_const_forward_iterator.html", [
       [ "gui_framework::iterators::composite_const_forward_iterator", "classgui__framework_1_1iterators_1_1composite__const__forward__iterator.html", null ]
     ] ],
+    [ "gui_framework::interfaces::IBaseConstForwardIterator< BaseComponent, composite_forward_iterator >", "classgui__framework_1_1interfaces_1_1_i_base_const_forward_iterator.html", null ],
     [ "gui_framework::interfaces::IBaseConstForwardIterator< std::filesystem::path, loadable_const_forward_iterator >", "classgui__framework_1_1interfaces_1_1_i_base_const_forward_iterator.html", [
       [ "gui_framework::iterators::loadable_const_forward_iterator", "classgui__framework_1_1iterators_1_1loadable__const__forward__iterator.html", null ]
     ] ],
+    [ "gui_framework::interfaces::IBaseConstForwardIterator< std::filesystem::path, loadable_forward_iterator >", "classgui__framework_1_1interfaces_1_1_i_base_const_forward_iterator.html", null ],
     [ "gui_framework::interfaces::IBaseListViewOperations", "classgui__framework_1_1interfaces_1_1_i_base_list_view_operations.html", [
       [ "gui_framework::interfaces::IIconListView", "classgui__framework_1_1interfaces_1_1_i_icon_list_view.html", [
         [ "gui_framework::BaseIconListView", "classgui__framework_1_1_base_icon_list_view.html", [
@@ -167,12 +169,15 @@ var hierarchy =
       [ "gui_framework::deserializers::TextListViewDeserializer", "classgui__framework_1_1deserializers_1_1_text_list_view_deserializer.html", null ],
       [ "gui_framework::deserializers::VerticalTrackbarControlDeserializer", "classgui__framework_1_1deserializers_1_1_vertical_trackbar_control_deserializer.html", null ]
     ] ],
-    [ "interfaces::IIterable", null, [
+    [ "gui_framework::interfaces::IIterable< T, TForwardIterator, TConstForwardIterator >", "classgui__framework_1_1interfaces_1_1_i_iterable.html", null ],
+    [ "gui_framework::interfaces::IIterable< BaseComponent, iterators::composite_forward_iterator, iterators::composite_const_forward_iterator >", "classgui__framework_1_1interfaces_1_1_i_iterable.html", [
       [ "gui_framework::BaseComposite", "classgui__framework_1_1_base_composite.html", [
         [ "gui_framework::BaseDialogBox", "classgui__framework_1_1_base_dialog_box.html", null ],
         [ "gui_framework::BaseWindow", "classgui__framework_1_1_base_window.html", null ],
         [ "gui_framework::GroupBox", "classgui__framework_1_1_group_box.html", null ]
-      ] ],
+      ] ]
+    ] ],
+    [ "gui_framework::interfaces::IIterable< std::filesystem::path, iterators::loadable_forward_iterator, iterators::loadable_const_forward_iterator >", "classgui__framework_1_1interfaces_1_1_i_iterable.html", [
       [ "gui_framework::utility::BaseLoadableHolder", "classgui__framework_1_1utility_1_1_base_loadable_holder.html", [
         [ "gui_framework::utility::CursorsHolder", "classgui__framework_1_1utility_1_1_cursors_holder.html", null ],
         [ "gui_framework::utility::IconsHolder", "classgui__framework_1_1utility_1_1_icons_holder.html", null ],

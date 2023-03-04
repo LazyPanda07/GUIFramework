@@ -167,7 +167,7 @@ namespace gui_framework
 
 		string getGUIFrameworkVersion()
 		{
-			return "1.0";
+			return "1.0.1";
 		}
 	}
 
