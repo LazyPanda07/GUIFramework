@@ -2,7 +2,6 @@
 
 /// @file BaseComboBox.h
 
-#include "headers.h"
 #include "BaseComponents/BaseComponent.h"
 #include "Interfaces/Components/IResizableComponent.h"
 #include "Styles/Components/ComboBoxes/ComboBoxStyles.h"
@@ -39,7 +38,7 @@ namespace gui_framework
 		};
 
 	public:
-		BaseComboBox(const std::wstring& comboBoxName, const utility::ComponentSettings& settings, const styles::ComboBoxStyles& styles, BaseComponent* parent);
+		BaseComboBox(const std::wstring& comboBoxName, const utility::ComponentSettings& settings, const styles::ComboBoxStyles& styles, BaseComposite* parent);
 
 		/// @brief 
 		/// @param value 

@@ -7,19 +7,11 @@ var dir_b731c78a09c099631450de914efccb25 =
     [ "ProgressBars", "dir_2009a52abfdfb2c99423d21e79541038.html", "dir_2009a52abfdfb2c99423d21e79541038" ],
     [ "Trackbars", "dir_84eaa6aaf1ebd43627b3071d42db084c.html", "dir_84eaa6aaf1ebd43627b3071d42db084c" ],
     [ "EditControl.cpp", "_edit_control_8cpp.html", null ],
-    [ "EditControl.h", "_edit_control_8h.html", [
-      [ "EditControl", "classgui__framework_1_1_edit_control.html", "classgui__framework_1_1_edit_control" ]
-    ] ],
+    [ "EditControl.h", "_edit_control_8h.html", "_edit_control_8h" ],
     [ "RichEdit.cpp", "_rich_edit_8cpp.html", null ],
-    [ "RichEdit.h", "_rich_edit_8h.html", [
-      [ "RichEdit", "classgui__framework_1_1_rich_edit.html", "classgui__framework_1_1_rich_edit" ]
-    ] ],
+    [ "RichEdit.h", "_rich_edit_8h.html", "_rich_edit_8h" ],
     [ "StaticControl.cpp", "_static_control_8cpp.html", null ],
-    [ "StaticControl.h", "_static_control_8h.html", [
-      [ "StaticControl", "classgui__framework_1_1_static_control.html", "classgui__framework_1_1_static_control" ]
-    ] ],
+    [ "StaticControl.h", "_static_control_8h.html", "_static_control_8h" ],
     [ "TabControl.cpp", "_tab_control_8cpp.html", null ],
-    [ "TabControl.h", "_tab_control_8h.html", [
-      [ "TabControl", "classgui__framework_1_1_tab_control.html", "classgui__framework_1_1_tab_control" ]
-    ] ]
+    [ "TabControl.h", "_tab_control_8h.html", "_tab_control_8h" ]
 ];

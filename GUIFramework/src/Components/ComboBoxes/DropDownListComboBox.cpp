@@ -1,4 +1,3 @@
-#include "headers.h"
 #include "DropDownListComboBox.h"
 
 #include "Styles/Components/ComboBoxes/DropDownListComboBoxStyles.h"
@@ -7,7 +6,7 @@ using namespace std;
 
 namespace gui_framework
 {
-	DropDownListComboBox::DropDownListComboBox(const wstring& comboBoxName, const utility::ComponentSettings& settings, BaseComponent* parent) :
+	DropDownListComboBox::DropDownListComboBox(const wstring& comboBoxName, const utility::ComponentSettings& settings, BaseComposite* parent) :
 		BaseComboBox
 		(
 			comboBoxName,

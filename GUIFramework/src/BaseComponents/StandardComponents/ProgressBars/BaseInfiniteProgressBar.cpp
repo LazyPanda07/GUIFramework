@@ -1,4 +1,3 @@
-#include "headers.h"
 #include "BaseInfiniteProgressBar.h"
 
 #include "Styles/Components/InfiniteProgressBarStyles.h"
@@ -8,7 +7,7 @@ using namespace std;
 
 namespace gui_framework
 {
-	BaseInfiniteProgressBar::BaseInfiniteProgressBar(const wstring& progressBarName, const utility::ComponentSettings& settings, BaseComponent* parent, int animationPeriod) :
+	BaseInfiniteProgressBar::BaseInfiniteProgressBar(const wstring& progressBarName, const utility::ComponentSettings& settings, BaseComposite* parent, int animationPeriod) :
 		BaseComponent
 		(
 			standard_classes::progressBar,

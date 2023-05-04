@@ -1,4 +1,3 @@
-#include "headers.h"
 #include "BaseComponent.h"
 
 #include "BaseComposites/BaseComposite.h"
@@ -73,7 +72,7 @@ namespace gui_framework
 		}
 	}
 
-	BaseComponent::BaseComponent(const wstring& className, const wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent, const string& windowFunctionName, const string& moduleName, uint16_t smallIconResource, uint16_t largeIconResources) :
+	BaseComponent::BaseComponent(const wstring& className, const wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComposite* parent, const string& windowFunctionName, const string& moduleName, uint16_t smallIconResource, uint16_t largeIconResources) :
 		parent(parent),
 		className(className),
 		windowName(windowName),
@@ -173,10 +172,9 @@ namespace gui_framework
 		}
 		else
 		{
-			BaseComposite* composite = static_cast<BaseComposite*>(parent);
 			BaseComponent* topLevelWindow = parent;
 
-			composite->addChild(this);
+			parent->addChild(this);
 
 			while (topLevelWindow->getParent())
 			{
@@ -196,11 +194,6 @@ namespace gui_framework
 		}
 	}
 
-	bool BaseComponent::isComposite() const
-	{
-		return false;
-	}
-
 	LRESULT BaseComponent::handleMessages(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
 	{
 		LRESULT result = this->preWindowMessagesHandle(handle, message, wparam, lparam, isUsed);
@@ -217,11 +210,12 @@ namespace gui_framework
 	{
 		bool result = DestroyWindow(handle);
 
-		if (result && parent && parent->isComposite())
+		if (result && parent)
 		{
-			BaseComposite* parentComposite = static_cast<BaseComposite*>(parent);
-
-			parentComposite->removeChild(this);
+			if (BaseComposite* parentComposite = dynamic_cast<BaseComposite*>(parent))
+			{
+				parentComposite->removeChild(this);
+			}
 		}
 
 		return result;
@@ -231,14 +225,25 @@ namespace gui_framework
 	{
 		bool result = PostMessageW(handle, WM_CLOSE, NULL, NULL);
 
-		if (result && parent && parent->isComposite())
+		if (result && parent)
 		{
-			BaseComposite* parentComposite = static_cast<BaseComposite*>(parent);
-
-			parentComposite->removeChild(this);
+			if (BaseComposite* parentComposite = dynamic_cast<BaseComposite*>(parent))
+			{
+				parentComposite->removeChild(this);
+			}
 		}
 
 		return result;
+	}
+
+	bool BaseComponent::enable()
+	{
+		return EnableWindow(handle, true);
+	}
+
+	bool BaseComponent::disable()
+	{
+		return EnableWindow(handle, false);
 	}
 
 	void BaseComponent::setDesiredWidth(uint16_t desiredWidth)
@@ -387,7 +392,7 @@ namespace gui_framework
 		appendArray(static_cast<int64_t>(GetBValue(textColor)), textColorJSON);
 
 		structure.data.push_back({ "className"s, utility::to_string(className, codepage) });
-		
+
 		structure.data.push_back({ "hash"s, this->getHash() });
 
 		structure.data.push_back({ "desiredX"s, desiredX });

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "headers.h"
 #include "BaseListView.h"
 #include "Styles/Components/ListViews/ListListViewStyles.h"
 
@@ -10,7 +9,7 @@ namespace gui_framework
 	class GUI_FRAMEWORK_API BaseListListView : public BaseListView
 	{
 	public:
-		BaseListListView(const std::wstring& listViewName, const utility::ComponentSettings& settings, const styles::ListListViewStyles& styles, BaseComponent* parent);
+		BaseListListView(const std::wstring& listViewName, const utility::ComponentSettings& settings, const styles::ListListViewStyles& styles, BaseComposite* parent);
 
 		/// @brief Used as key in creators
 		/// @return typeid().hash_code()

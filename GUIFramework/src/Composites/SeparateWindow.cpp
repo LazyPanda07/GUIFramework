@@ -1,4 +1,3 @@
-#include "headers.h"
 #include "SeparateWindow.h"
 
 using namespace std;

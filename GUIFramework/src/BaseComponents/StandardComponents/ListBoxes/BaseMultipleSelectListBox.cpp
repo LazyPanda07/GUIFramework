@@ -1,4 +1,3 @@
-#include "headers.h"
 #include "BaseMultipleSelectListBox.h"
 
 #include "Styles/Components/ListBoxes/MultipleSelectListBoxStyles.h"
@@ -11,7 +10,7 @@ using namespace std;
 
 namespace gui_framework
 {
-	BaseMultipleSelectListBox::BaseMultipleSelectListBox(const wstring& listBoxName, const utility::ComponentSettings& settings, BaseComponent* parent) :
+	BaseMultipleSelectListBox::BaseMultipleSelectListBox(const wstring& listBoxName, const utility::ComponentSettings& settings, BaseComposite* parent) :
 		BaseListBox
 		(
 			listBoxName, 

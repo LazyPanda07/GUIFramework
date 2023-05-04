@@ -1,6 +1,5 @@
 #pragma once
 
-#include "headers.h"
 #include "Styles/DefaultStyles.h"
 
 namespace gui_framework

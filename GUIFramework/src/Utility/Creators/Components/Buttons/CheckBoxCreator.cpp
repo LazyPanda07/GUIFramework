@@ -1,4 +1,3 @@
-#include "headers.h"
 #include "CheckBoxCreator.h"
 
 #include "Components/Buttons/CheckBox.h"
@@ -9,7 +8,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		BaseComponent* CheckBoxCreator::create(const wstring& windowName, const utility::ComponentSettings& settings, const any& additionalData, BaseComponent* parent)
+		BaseComponent* CheckBoxCreator::create(const wstring& windowName, const utility::ComponentSettings& settings, const any& additionalData, BaseComposite* parent)
 		{
 			auto [text, onCheck, onClear, onClick, onCheckFunctionName, onCheckFunctionModule, onClearFunctionName, onClearFunctionModule, onClickFunctionName, onClickFunctionModule] =
 				any_cast<tuple<wstring, function<void()>, function<void()>, function<void()>, string, string, string, string, string, string>>(additionalData);

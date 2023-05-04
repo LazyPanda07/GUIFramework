@@ -4,43 +4,23 @@ var dir_5510490186bb7b5cd77096ce3d630327 =
     [ "ListViews", "dir_8baf1d9b7138d5ff178d3e29858636e8.html", "dir_8baf1d9b7138d5ff178d3e29858636e8" ],
     [ "ProgressBars", "dir_e3263459f7c3eae656d4536fa1e7aa9e.html", "dir_e3263459f7c3eae656d4536fa1e7aa9e" ],
     [ "BaseComponentParser.cpp", "_base_component_parser_8cpp.html", null ],
-    [ "BaseComponentParser.h", "_base_component_parser_8h.html", [
-      [ "BaseComponentParser", "structgui__framework_1_1parsers_1_1_base_component_parser.html", "structgui__framework_1_1parsers_1_1_base_component_parser" ]
-    ] ],
+    [ "BaseComponentParser.h", "_base_component_parser_8h.html", "_base_component_parser_8h" ],
     [ "BaseCompositeParser.cpp", "_base_composite_parser_8cpp.html", null ],
-    [ "BaseCompositeParser.h", "_base_composite_parser_8h.html", [
-      [ "BaseCompositeParser", "structgui__framework_1_1parsers_1_1_base_composite_parser.html", "structgui__framework_1_1parsers_1_1_base_composite_parser" ]
-    ] ],
+    [ "BaseCompositeParser.h", "_base_composite_parser_8h.html", "_base_composite_parser_8h" ],
     [ "ComboBoxParser.cpp", "_combo_box_parser_8cpp.html", null ],
-    [ "ComboBoxParser.h", "_combo_box_parser_8h.html", [
-      [ "ComboBoxParser", "structgui__framework_1_1parsers_1_1_combo_box_parser.html", "structgui__framework_1_1parsers_1_1_combo_box_parser" ]
-    ] ],
+    [ "ComboBoxParser.h", "_combo_box_parser_8h.html", "_combo_box_parser_8h" ],
     [ "GroupBoxParser.cpp", "_group_box_parser_8cpp.html", null ],
-    [ "GroupBoxParser.h", "_group_box_parser_8h.html", [
-      [ "GroupBoxParser", "structgui__framework_1_1parsers_1_1_group_box_parser.html", "structgui__framework_1_1parsers_1_1_group_box_parser" ]
-    ] ],
+    [ "GroupBoxParser.h", "_group_box_parser_8h.html", "_group_box_parser_8h" ],
     [ "ListBoxParser.cpp", "_list_box_parser_8cpp.html", null ],
-    [ "ListBoxParser.h", "_list_box_parser_8h.html", [
-      [ "ListBoxParser", "structgui__framework_1_1parsers_1_1_list_box_parser.html", "structgui__framework_1_1parsers_1_1_list_box_parser" ]
-    ] ],
+    [ "ListBoxParser.h", "_list_box_parser_8h.html", "_list_box_parser_8h" ],
     [ "MenuParser.cpp", "_menu_parser_8cpp.html", null ],
-    [ "MenuParser.h", "_menu_parser_8h.html", [
-      [ "MenuParser", "structgui__framework_1_1parsers_1_1_menu_parser.html", "structgui__framework_1_1parsers_1_1_menu_parser" ]
-    ] ],
+    [ "MenuParser.h", "_menu_parser_8h.html", "_menu_parser_8h" ],
     [ "RichEditParser.cpp", "_rich_edit_parser_8cpp.html", null ],
-    [ "RichEditParser.h", "_rich_edit_parser_8h.html", [
-      [ "RichEditParser", "structgui__framework_1_1parsers_1_1_rich_edit_parser.html", "structgui__framework_1_1parsers_1_1_rich_edit_parser" ]
-    ] ],
+    [ "RichEditParser.h", "_rich_edit_parser_8h.html", "_rich_edit_parser_8h" ],
     [ "SeparateWindowParser.cpp", "_separate_window_parser_8cpp.html", null ],
-    [ "SeparateWindowParser.h", "_separate_window_parser_8h.html", [
-      [ "SeparateWindowParser", "structgui__framework_1_1parsers_1_1_separate_window_parser.html", "structgui__framework_1_1parsers_1_1_separate_window_parser" ]
-    ] ],
+    [ "SeparateWindowParser.h", "_separate_window_parser_8h.html", "_separate_window_parser_8h" ],
     [ "TabControlParser.cpp", "_tab_control_parser_8cpp.html", null ],
-    [ "TabControlParser.h", "_tab_control_parser_8h.html", [
-      [ "TabControlParser", "structgui__framework_1_1parsers_1_1_tab_control_parser.html", "structgui__framework_1_1parsers_1_1_tab_control_parser" ]
-    ] ],
+    [ "TabControlParser.h", "_tab_control_parser_8h.html", "_tab_control_parser_8h" ],
     [ "TrackbarControlParser.cpp", "_trackbar_control_parser_8cpp.html", null ],
-    [ "TrackbarControlParser.h", "_trackbar_control_parser_8h.html", [
-      [ "TrackbarControlParser", "structgui__framework_1_1parsers_1_1_trackbar_control_parser.html", "structgui__framework_1_1parsers_1_1_trackbar_control_parser" ]
-    ] ]
+    [ "TrackbarControlParser.h", "_trackbar_control_parser_8h.html", "_trackbar_control_parser_8h" ]
 ];

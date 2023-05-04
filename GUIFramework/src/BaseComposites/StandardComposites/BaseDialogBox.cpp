@@ -1,4 +1,3 @@
-#include "headers.h"
 #include "BaseDialogBox.h"
 
 #include "GUIFramework.h"
@@ -9,7 +8,7 @@ using namespace std;
 
 namespace gui_framework
 {
-	BaseDialogBox::messageBoxResponse BaseDialogBox::createMessageBox(const wstring& text, const wstring& title, messageBoxType type, BaseComponent* parent, bool helpButton)
+	BaseDialogBox::messageBoxResponse BaseDialogBox::createMessageBox(const wstring& text, const wstring& title, messageBoxType type, BaseComposite* parent, bool helpButton)
 	{
 		return static_cast<messageBoxResponse>(MessageBoxW(parent ? parent->getHandle() : nullptr, text.data(), title.data(), static_cast<UINT>(type) | (helpButton ? MB_HELP : NULL)));
 	}

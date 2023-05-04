@@ -1,4 +1,3 @@
-#include "headers.h"
 #include "BaseTextIconListView.h"
 
 #include "Styles/Components/ListViews/IconListViewStyles.h"
@@ -14,7 +13,7 @@ namespace gui_framework
 		ITextIconListView::changeTextIconItem(localizedText, pathToIcon, index);
 	}
 
-	BaseTextIconListView::BaseTextIconListView(const wstring& listViewName, const utility::ComponentSettings& settings, BaseComponent* parent, utility::iconListViewType type, uint16_t iconsWidth, uint16_t iconsHeight, size_t count) :
+	BaseTextIconListView::BaseTextIconListView(const wstring& listViewName, const utility::ComponentSettings& settings, BaseComposite* parent, utility::iconListViewType type, uint16_t iconsWidth, uint16_t iconsHeight, size_t count) :
 		BaseListView
 		(
 			listViewName,

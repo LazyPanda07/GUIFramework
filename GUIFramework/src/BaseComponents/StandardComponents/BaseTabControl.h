@@ -1,6 +1,5 @@
 #pragma once
 
-#include "headers.h"
 #include "BaseComponents/BaseComponent.h"
 #include "Utility/Holders/LoadableHolders/ImagesHolder.h"
 
@@ -44,7 +43,7 @@ namespace gui_framework
 		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
 
 	public:
-		BaseTabControl(const std::wstring& tabControlName, const utility::ComponentSettings& settings, uint16_t imagesWidth, uint16_t imagesHeight, BaseComponent* parent);
+		BaseTabControl(const std::wstring& tabControlName, const utility::ComponentSettings& settings, uint16_t imagesWidth, uint16_t imagesHeight, BaseComposite* parent);
 
 		virtual LRESULT appendText(const std::wstring& text, const std::function<void()>& onClick) final;
 

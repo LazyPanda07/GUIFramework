@@ -6,6 +6,7 @@
 #include <cstdint>
 #include <memory>
 
+#include <CommCtrl.h>
 #include <Richedit.h>
 
 namespace gui_framework
@@ -115,5 +116,4 @@ using smartPointerType = std::shared_ptr<T>;
 /// @brief Compatible smart pointer type
 template<typename T>
 using smartPointerType = std::unique_ptr<T>;
-
 #endif // GUI_FRAMEWORK_DLL

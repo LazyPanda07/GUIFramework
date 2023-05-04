@@ -1,4 +1,3 @@
-#include "headers.h"
 #include "TextListViewStyles.h"
 
 using namespace std;

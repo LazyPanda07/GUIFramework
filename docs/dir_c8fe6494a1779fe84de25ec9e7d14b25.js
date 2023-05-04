@@ -7,19 +7,11 @@ var dir_c8fe6494a1779fe84de25ec9e7d14b25 =
     [ "ProgressBars", "dir_4c0d4747b1588e55a03ae03923faf3bb.html", "dir_4c0d4747b1588e55a03ae03923faf3bb" ],
     [ "Trackbars", "dir_50f47503de11287ddb0d4aa5d5c11391.html", "dir_50f47503de11287ddb0d4aa5d5c11391" ],
     [ "EditControlCreator.cpp", "_edit_control_creator_8cpp.html", null ],
-    [ "EditControlCreator.h", "_edit_control_creator_8h.html", [
-      [ "EditControlCreator", "classgui__framework_1_1utility_1_1_edit_control_creator.html", "classgui__framework_1_1utility_1_1_edit_control_creator" ]
-    ] ],
+    [ "EditControlCreator.h", "_edit_control_creator_8h.html", "_edit_control_creator_8h" ],
     [ "RichEditCreator.cpp", "_rich_edit_creator_8cpp.html", null ],
-    [ "RichEditCreator.h", "_rich_edit_creator_8h.html", [
-      [ "RichEditCreator", "classgui__framework_1_1utility_1_1_rich_edit_creator.html", "classgui__framework_1_1utility_1_1_rich_edit_creator" ]
-    ] ],
+    [ "RichEditCreator.h", "_rich_edit_creator_8h.html", "_rich_edit_creator_8h" ],
     [ "StaticControlCreator.cpp", "_static_control_creator_8cpp.html", null ],
-    [ "StaticControlCreator.h", "_static_control_creator_8h.html", [
-      [ "StaticControlCreator", "classgui__framework_1_1utility_1_1_static_control_creator.html", "classgui__framework_1_1utility_1_1_static_control_creator" ]
-    ] ],
+    [ "StaticControlCreator.h", "_static_control_creator_8h.html", "_static_control_creator_8h" ],
     [ "TabControlCreator.cpp", "_tab_control_creator_8cpp.html", null ],
-    [ "TabControlCreator.h", "_tab_control_creator_8h.html", [
-      [ "TabControlCreator", "classgui__framework_1_1utility_1_1_tab_control_creator.html", "classgui__framework_1_1utility_1_1_tab_control_creator" ]
-    ] ]
+    [ "TabControlCreator.h", "_tab_control_creator_8h.html", "_tab_control_creator_8h" ]
 ];

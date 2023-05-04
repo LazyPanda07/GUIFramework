@@ -1,4 +1,3 @@
-#include "headers.h"
 #include "TextIconListViewCreator.h"
 
 #include "Components/ListViews/TextIconListView.h"
@@ -9,7 +8,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		BaseComponent* TextIconListViewCreator::create(const wstring& windowName, const utility::ComponentSettings& settings, const any& additionalData, BaseComponent* parent)
+		BaseComponent* TextIconListViewCreator::create(const wstring& windowName, const utility::ComponentSettings& settings, const any& additionalData, BaseComposite* parent)
 		{
 			auto [type, data] = any_cast<tuple<utility::iconListViewType, vector<pair<wstring, filesystem::path>>>>(additionalData);
 

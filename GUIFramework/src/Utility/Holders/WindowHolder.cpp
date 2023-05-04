@@ -1,4 +1,3 @@
-#include "headers.h"
 #include "WindowHolder.h"
 
 #include "GUIFramework.h"

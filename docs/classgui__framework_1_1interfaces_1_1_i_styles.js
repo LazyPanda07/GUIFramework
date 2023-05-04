@@ -10,8 +10,8 @@ var classgui__framework_1_1interfaces_1_1_i_styles =
     [ "getExtendedStyles", "classgui__framework_1_1interfaces_1_1_i_styles.html#a2a957275e32294d32cb93e98e37c8c4f", null ],
     [ "getStyles", "classgui__framework_1_1interfaces_1_1_i_styles.html#a09fee929287ca83f487c112c1c49f366", null ],
     [ "operator<<", "classgui__framework_1_1interfaces_1_1_i_styles.html#a8b7ab610c372fe5068fd3be3850820cb", null ],
-    [ "operator=", "classgui__framework_1_1interfaces_1_1_i_styles.html#a2c68c3b6cc4bcbd5fb6685790749b176", null ],
-    [ "operator=", "classgui__framework_1_1interfaces_1_1_i_styles.html#a2131ba32c22d175800298eaeaf9738ce", null ],
+    [ "operator=", "classgui__framework_1_1interfaces_1_1_i_styles.html#a4be25bcbb0c443fd3432ee34980fc9e6", null ],
+    [ "operator=", "classgui__framework_1_1interfaces_1_1_i_styles.html#adb18de12d981b44d85a3220a8832e0e0", null ],
     [ "operator==", "classgui__framework_1_1interfaces_1_1_i_styles.html#a2d68aff3104bd6a765b52da299d82508", null ],
     [ "operator>>", "classgui__framework_1_1interfaces_1_1_i_styles.html#ab54a543049a27d93d8793058391ecf02", null ]
 ];

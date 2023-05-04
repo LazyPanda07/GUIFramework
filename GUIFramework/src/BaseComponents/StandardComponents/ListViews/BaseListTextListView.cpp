@@ -1,4 +1,3 @@
-#include "headers.h"
 #include "BaseListTextListView.h"
 
 #include "Styles/Components/ListViews/ListTextListViewStyles.h"
@@ -12,7 +11,7 @@ namespace gui_framework
 		ITextListView::changeTextItem(localizedText, index);
 	}
 
-	BaseListTextListView::BaseListTextListView(const wstring& listViewName, const utility::ComponentSettings& settings, BaseComponent* parent) :
+	BaseListTextListView::BaseListTextListView(const wstring& listViewName, const utility::ComponentSettings& settings, BaseComposite* parent) :
 		BaseListListView
 		(
 			listViewName,

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "headers.h"
 #include "BaseListView.h"
 #include "Interfaces/Components/ListViews/ITextIconListView.h"
 #include "Interfaces/Localization/IMultipleTextLocalized.h"
@@ -20,7 +19,7 @@ namespace gui_framework
 		utility::IconsHolder icons;
 
 	public:
-		BaseTextIconListView(const std::wstring& listViewName, const utility::ComponentSettings& settings, BaseComponent* parent, utility::iconListViewType type, uint16_t iconsWidth, uint16_t iconsHeight, size_t count = standard_sizes::defaultImagesCount);
+		BaseTextIconListView(const std::wstring& listViewName, const utility::ComponentSettings& settings, BaseComposite* parent, utility::iconListViewType type, uint16_t iconsWidth, uint16_t iconsHeight, size_t count = standard_sizes::defaultImagesCount);
 
 		/// @brief Used as key in creators
 		/// @return typeid().hash_code()

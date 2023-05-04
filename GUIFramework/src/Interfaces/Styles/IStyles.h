@@ -1,6 +1,6 @@
 #pragma once
 
-#include "headers.h"
+#include "Core.h"
 
 namespace gui_framework
 {
@@ -26,11 +26,11 @@ namespace gui_framework
 
 			IStyles& operator = (IStyles&&) noexcept = default;
 
-			/// @brief Add new WinAPI style
+			/// @brief Append new WinAPI style
 			/// @param style 
 			void appendStyle(LONG_PTR style);
 
-			/// @brief Add new WinAPI extended style
+			/// @brief Append new WinAPI extended style
 			/// @param extendedStyle 
 			void appendExtendedStyle(LONG_PTR extendedStyle);
 

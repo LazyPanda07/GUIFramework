@@ -1,6 +1,5 @@
 #pragma once
 
-#include "headers.h"
 #include "Utility/Creators/BaseComponentCreator.h"
 #include "Interfaces/Utility/IDeserializer.h"
 
@@ -107,10 +106,12 @@ namespace gui_framework
 		/// @brief Singleton instance access
 		/// @return Singleton instance
 		/// @exception json::exceptions::CantFindValueException Unable to find setting in gui_framework.json on first GUIFramework::get() call
+		/// @excepiton std::runtime_error Can't find gui_framework.json
 		static GUIFramework& get();
 
 		/// @brief Must be called in main function before all other functions
 		/// @exception json::exceptions::CantFindValueException Unable to find setting in gui_framework.json on first GUIFramework::get() call
+		/// @excepiton std::runtime_error Can't find gui_framework.json
 		static void initUIThreadId();
 
 		/// @brief Run function in UI thread. Functions processed only when window in main UI thread has focus

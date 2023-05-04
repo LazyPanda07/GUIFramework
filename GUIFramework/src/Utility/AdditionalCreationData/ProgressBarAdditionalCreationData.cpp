@@ -1,4 +1,3 @@
-#include "headers.h"
 #include "ProgressBarAdditionalCreationData.h"
 
 using namespace std;

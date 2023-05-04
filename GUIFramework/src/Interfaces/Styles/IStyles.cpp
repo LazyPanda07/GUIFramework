@@ -1,4 +1,3 @@
-#include "headers.h"
 #include "IStyles.h"
 
 using namespace std;
@@ -30,7 +29,7 @@ namespace gui_framework
 		{
 			extendedStyles |= extendedStyle;
 		}
-
+		
 		LONG_PTR IStyles::getStyles() const
 		{
 			return styles;

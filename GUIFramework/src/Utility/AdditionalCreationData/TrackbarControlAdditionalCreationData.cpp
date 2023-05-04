@@ -1,4 +1,3 @@
-#include "headers.h"
 #include "TrackbarControlAdditionalCreationData.h"
 
 using namespace std;

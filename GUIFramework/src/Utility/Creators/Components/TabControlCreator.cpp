@@ -1,4 +1,3 @@
-#include "headers.h"
 #include "TabControlCreator.h"
 
 #include "Components/TabControl.h"
@@ -9,7 +8,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		BaseComponent* TabControlCreator::create(const wstring& windowName, const utility::ComponentSettings& settings, const any& additionalData, BaseComponent* parent)
+		BaseComponent* TabControlCreator::create(const wstring& windowName, const utility::ComponentSettings& settings, const any& additionalData, BaseComposite* parent)
 		{
 			auto [data, imagesWidth, imagesHeight] = any_cast<tuple<vector<TabControl::tabData>, uint16_t, uint16_t>>(additionalData);
 

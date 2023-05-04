@@ -1,4 +1,3 @@
-#include "headers.h"
 #include "GroupBoxCreator.h"
 
 #include "Composites/GroupBox.h"
@@ -9,7 +8,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		BaseComponent* GroupBoxCreator::create(const wstring& windowName, const utility::ComponentSettings& settings, const any& additionalData, BaseComponent* parent)
+		BaseComponent* GroupBoxCreator::create(const wstring& windowName, const utility::ComponentSettings& settings, const any& additionalData, BaseComposite* parent)
 		{
 			auto [groupBoxClassName, groupBoxFunctionName, data] = any_cast<tuple<wstring, string, vector<GroupBox::radioButtonData>>>(additionalData);
 

@@ -1,4 +1,3 @@
-#include "headers.h"
 #include "BaseEditControl.h"
 
 #include "Styles/Components/EditControlStyles.h"
@@ -13,7 +12,7 @@ namespace gui_framework
 		this->setPlaceholder(localizedText);
 	}
 
-	BaseEditControl::BaseEditControl(const std::wstring& editControlName, const utility::ComponentSettings& settings, BaseComponent* parent, bool isMultiLine) :
+	BaseEditControl::BaseEditControl(const std::wstring& editControlName, const utility::ComponentSettings& settings, BaseComposite* parent, bool isMultiLine) :
 		BaseComponent
 		(
 			standard_classes::editControl,

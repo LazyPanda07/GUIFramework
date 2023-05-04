@@ -247,7 +247,7 @@
     <ClInclude Include="src\Menu\Menu.h" />
     <ClInclude Include="src\MenuItems\DropDownMenuItem.h" />
     <ClInclude Include="src\Menu\MenuItems\BaseMenuItem.h" />
-    <ClInclude Include="src\headers.h" />
+    <ClInclude Include="src\Core.h" />
     <ClInclude Include="src\BaseComposites\StandardComposites\BaseSeparateWindow.h" />
     <ClInclude Include="src\Utility\ComponentSettings.h" />
     <ClInclude Include="src\Utility\Holders\LoadableHolders\Iterators\loadable_const_forward_iterator.h" />
@@ -470,7 +470,7 @@
     <ClCompile Include="src\Menu\Menu.cpp" />
     <ClCompile Include="src\MenuItems\DropDownMenuItem.cpp" />
     <ClCompile Include="src\Menu\MenuItems\BaseMenuItem.cpp" />
-    <ClCompile Include="src\headers.cpp" />
+    <ClCompile Include="src\Core.cpp" />
     <ClCompile Include="src\BaseComposites\StandardComposites\BaseSeparateWindow.cpp" />
     <ClCompile Include="src\Utility\ComponentSettings.cpp" />
     <ClCompile Include="src\Utility\Holders\LoadableHolders\Iterators\loadable_const_forward_iterator.cpp" />
@@ -616,7 +616,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\PrecompiledHeaders\pch.pch</PrecompiledHeaderOutputFile>
@@ -645,7 +645,7 @@ copy /Y $(SolutionDir)Localization\assets\LocalizationUtils.exe $(SolutionDir)bu
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);GUI_FRAMEWORK_DLL</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\PrecompiledHeaders\pch.pch</PrecompiledHeaderOutputFile>
@@ -676,7 +676,7 @@ copy /Y $(SolutionDir)Localization\assets\LocalizationUtils.exe $(SolutionDir)bu
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\PrecompiledHeaders\pch.pch</PrecompiledHeaderOutputFile>
@@ -709,7 +709,7 @@ copy /Y $(SolutionDir)Localization\assets\LocalizationUtils.exe $(SolutionDir)bu
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);GUI_FRAMEWORK_DLL</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\PrecompiledHeaders\pch.pch</PrecompiledHeaderOutputFile>
@@ -742,7 +742,7 @@ copy /Y $(SolutionDir)Localization\assets\LocalizationUtils.exe $(SolutionDir)bu
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
       <DebugInformationFormat>None</DebugInformationFormat>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -775,7 +775,7 @@ copy /Y $(SolutionDir)Localization\assets\LocalizationUtils.exe $(SolutionDir)bu
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);GUI_FRAMEWORK_DLL</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
       <DebugInformationFormat>None</DebugInformationFormat>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>

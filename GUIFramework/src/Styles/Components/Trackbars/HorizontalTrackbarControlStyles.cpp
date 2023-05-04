@@ -1,4 +1,3 @@
-#include "headers.h"
 #include "HorizontalTrackbarControlStyles.h"
 
 using namespace std;

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "headers.h"
 #include "BaseComponents/BaseComponent.h"
 #include "Interfaces/Components/ITextOperations.h"
 #include "Interfaces/Localization/ISingleTextLocalized.h"
@@ -29,12 +28,12 @@ namespace gui_framework
 		virtual void updateLocalization(const std::wstring& localizedText) override;
 
 	public:
-		BaseButton(const std::wstring& buttonName, const std::wstring& buttonText, const utility::ComponentSettings& settings, const styles::ButtonStyles& styles, BaseComponent* parent, const std::function<void()>& onClick = nullptr);
+		BaseButton(const std::wstring& buttonName, const std::wstring& buttonText, const utility::ComponentSettings& settings, const styles::ButtonStyles& styles, BaseComposite* parent, const std::function<void()>& onClick = nullptr);
 
 		/// @brief 
 		/// @exception CantFindFunctionFromModuleException 
 		/// @exception std::out_of_range Can't find moduleName in loaded modules
-		BaseButton(const std::wstring& buttonName, const std::wstring& buttonText, const utility::ComponentSettings& settings, const styles::ButtonStyles& styles, BaseComponent* parent, const std::string& functionName, const std::string& moduleName);
+		BaseButton(const std::wstring& buttonName, const std::wstring& buttonText, const utility::ComponentSettings& settings, const styles::ButtonStyles& styles, BaseComposite* parent, const std::string& functionName, const std::string& moduleName);
 
 		/// @brief Can't serialize
 		/// @param onClick 

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "headers.h"
 #include "AdditionalCreationData.h"
 #include "Composites/SeparateWindow.h"
 

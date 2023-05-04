@@ -1,4 +1,3 @@
-#include "headers.h"
 #include "StaticControlCreator.h"
 
 #include "Components/StaticControl.h"
@@ -9,7 +8,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		BaseComponent* StaticControlCreator::create(const wstring& windowName, const utility::ComponentSettings& settings, const any& additionalData, BaseComponent* parent)
+		BaseComponent* StaticControlCreator::create(const wstring& windowName, const utility::ComponentSettings& settings, const any& additionalData, BaseComposite* parent)
 		{
 			return new StaticControl(windowName, any_cast<wstring>(additionalData), settings, parent);
 		}

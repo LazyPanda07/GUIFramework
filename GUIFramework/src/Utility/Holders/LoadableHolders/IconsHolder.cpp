@@ -1,4 +1,3 @@
-#include "headers.h"
 #include "IconsHolder.h"
 
 using namespace std;

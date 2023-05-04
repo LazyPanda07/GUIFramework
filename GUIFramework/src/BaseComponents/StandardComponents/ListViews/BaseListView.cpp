@@ -1,11 +1,10 @@
-#include "headers.h"
 #include "BaseListView.h"
 
 using namespace std;
 
 namespace gui_framework
 {
-	BaseListView::BaseListView(const wstring& listViewName, const utility::ComponentSettings& settings, const styles::ListViewStyles& styles, BaseComponent* parent) :
+	BaseListView::BaseListView(const wstring& listViewName, const utility::ComponentSettings& settings, const styles::ListViewStyles& styles, BaseComposite* parent) :
 		BaseComponent
 		(
 			standard_classes::listView,

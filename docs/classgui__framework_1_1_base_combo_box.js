@@ -4,7 +4,7 @@ var classgui__framework_1_1_base_combo_box =
       [ "forAllItems", "classgui__framework_1_1_base_combo_box.html#a148ff392d7d0af526dafcb102b98513aab6afdce5bd50d3af19ec1c4caf37eae6", null ],
       [ "selectionFieldItem", "classgui__framework_1_1_base_combo_box.html#a148ff392d7d0af526dafcb102b98513aa647c2f2946dee4dd8800b92c2f241081", null ]
     ] ],
-    [ "BaseComboBox", "classgui__framework_1_1_base_combo_box.html#adc88028d23860780cc92733304b75815", null ],
+    [ "BaseComboBox", "classgui__framework_1_1_base_combo_box.html#a94372dc7764ad65569b55247a27df990", null ],
     [ "~BaseComboBox", "classgui__framework_1_1_base_combo_box.html#aa0e1148b03af791fdf1239fc3fb1fe1f", null ],
     [ "addValue", "classgui__framework_1_1_base_combo_box.html#a2fe8db201557a9b6c99b0f7d6cec0a16", null ],
     [ "changeValue", "classgui__framework_1_1_base_combo_box.html#a8764b2c833e30d2b06d5522d8ca52c0f", null ],

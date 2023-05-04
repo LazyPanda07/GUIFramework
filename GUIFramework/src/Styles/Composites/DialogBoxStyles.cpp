@@ -1,4 +1,3 @@
-#include "headers.h"
 #include "DialogBoxStyles.h"
 
 using namespace std;

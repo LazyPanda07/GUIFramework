@@ -1,4 +1,3 @@
-#include "headers.h"
 #include "HorizontalScrollBarStyles.h"
 
 using namespace std;

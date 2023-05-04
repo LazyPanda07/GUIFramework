@@ -1,6 +1,5 @@
 #pragma once
 
-#include "headers.h"
 #include "BaseComponents/StandardComponents/BaseEditControl.h"
 #include "Interfaces/Components/IResizableComponent.h"
 
@@ -12,7 +11,7 @@ namespace gui_framework
 		public interfaces::IResizableComponent
 	{
 	public:
-		EditControl(const std::wstring& editControlName, const utility::ComponentSettings& settings, BaseComponent* parent, bool isMultiLine = false);
+		EditControl(const std::wstring& editControlName, const utility::ComponentSettings& settings, BaseComposite* parent, bool isMultiLine = false);
 
 		size_t getHash() const override;
 

@@ -1,4 +1,3 @@
-#include "headers.h"
 #include "Utility.h"
 
 #include "BaseComposites/StandardComposites/BaseSeparateWindow.h"
@@ -14,12 +13,12 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		GUI_FRAMEWORK_API_FUNCTION void unregisterClass(const wstring& className)
+		void unregisterClass(const wstring& className)
 		{
 			UnregisterClassW(className.data(), GetModuleHandleW(nullptr));
 		}
 
-		GUI_FRAMEWORK_API_FUNCTION void appendStyle(HWND handle, LONG_PTR newStyle)
+		void appendStyle(HWND handle, LONG_PTR newStyle)
 		{
 			SetWindowLongPtrW
 			(
@@ -29,7 +28,7 @@ namespace gui_framework
 			);
 		}
 
-		GUI_FRAMEWORK_API_FUNCTION void removeStyle(HWND handle, LONG_PTR styleToRemove)
+		void removeStyle(HWND handle, LONG_PTR styleToRemove)
 		{
 			SetWindowLongPtrW
 			(
@@ -39,7 +38,7 @@ namespace gui_framework
 			);
 		}
 
-		GUI_FRAMEWORK_API_FUNCTION string to_string(const wstring& stringToConvert, uint32_t codepage)
+		string to_string(const wstring& stringToConvert, uint32_t codepage)
 		{
 			string result;
 
@@ -80,7 +79,7 @@ namespace gui_framework
 			return result;
 		}
 
-		GUI_FRAMEWORK_API_FUNCTION wstring to_wstring(const string& stringToConvert, uint32_t codepage)
+		wstring to_wstring(const string& stringToConvert, uint32_t codepage)
 		{
 			wstring result;
 
@@ -117,12 +116,12 @@ namespace gui_framework
 			return result;
 		}
 
-		GUI_FRAMEWORK_API_FUNCTION HMODULE getCurrentModule()
+		HMODULE getCurrentModule()
 		{
 			return GetModuleHandleW(nullptr);
 		}
 
-		GUI_FRAMEWORK_API_FUNCTION string getStringFromRawPath(const filesystem::path& pathFromRawString)
+		string getStringFromRawPath(const filesystem::path& pathFromRawString)
 		{
 			ostringstream fixRawString;
 			string fixedPath;
@@ -136,7 +135,7 @@ namespace gui_framework
 			return fixedPath;
 		}
 
-		GUI_FRAMEWORK_API_FUNCTION void loadFunctionFromModule(function<void()>& onClick, const string& functionName, const string& moduleName)
+		void loadFunctionFromModule(function<void()>& onClick, const string& functionName, const string& moduleName)
 		{
 			GUIFramework& instance = GUIFramework::get();
 			const HMODULE& module = instance.getModules().at(moduleName);
@@ -151,7 +150,7 @@ namespace gui_framework
 			onClick = tem;
 		}
 
-		GUI_FRAMEWORK_API_FUNCTION void loadEventCallbackFromModule(function<void(const wstring&)>& eventCallback, const string& functionName, const string& moduleName)
+		void loadEventCallbackFromModule(function<void(const wstring&)>& eventCallback, const string& functionName, const string& moduleName)
 		{
 			GUIFramework& instance = GUIFramework::get();
 			const HMODULE& module = instance.getModules().at(moduleName);
@@ -166,15 +165,15 @@ namespace gui_framework
 			eventCallback = tem;
 		}
 
-		GUI_FRAMEWORK_API_FUNCTION string getGUIFrameworkVersion()
+		string getGUIFrameworkVersion()
 		{
-			return "0.9-beta"s;
+			return "1.0.1";
 		}
 	}
 
 	namespace __utility
 	{
-		GUI_FRAMEWORK_API_FUNCTION void throwNotImplementedException(string_view methodName, string_view className)
+		void throwNotImplementedException(string_view methodName, string_view className)
 		{
 			try
 			{
@@ -189,7 +188,7 @@ namespace gui_framework
 			}
 		}
 
-		GUI_FRAMEWORK_API_FUNCTION string extendedException(const string& exceptionMessage, string_view fileName, string_view methodName, int line)
+		string extendedException(const string& exceptionMessage, string_view fileName, string_view methodName, int line)
 		{
 			try
 			{
@@ -206,7 +205,7 @@ namespace gui_framework
 			return exceptionMessage;
 		}
 
-		GUI_FRAMEWORK_API_FUNCTION bool useOnClose(any topLevelWindow)
+		bool useOnClose(any topLevelWindow)
 		{
 			interfaces::ICloseable* tem = dynamic_cast<interfaces::ICloseable*>(any_cast<BaseComposite*>(topLevelWindow));
 			

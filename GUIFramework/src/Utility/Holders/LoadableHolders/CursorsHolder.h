@@ -1,6 +1,5 @@
 #pragma once
 
-#include "headers.h"
 #include "BaseLoadableHolder.h"
 
 namespace gui_framework

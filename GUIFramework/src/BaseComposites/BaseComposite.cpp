@@ -1,4 +1,3 @@
-#include "headers.h"
 #include "BaseComposite.h"
 
 #include "Interfaces/Components/IResizableComponent.h"
@@ -91,9 +90,7 @@ namespace gui_framework
 
 		if (message == WM_SIZE)
 		{
-			BaseComponent* component = GUIFramework::get().findComponent(handle);
-
-			if (component && component->isComposite())
+			if (BaseComponent* component = dynamic_cast<BaseComposite*>(GUIFramework::get().findComponent(handle)))
 			{
 				interfaces::IResizableComponent* resizableComposite = dynamic_cast<interfaces::IResizableComponent*>(component);
 
@@ -154,7 +151,7 @@ namespace gui_framework
 		this->exitCode = exitCode;
 	}
 
-	BaseComposite::BaseComposite(const wstring& className, const wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent, const string& windowFunctionName, const string& moduleName, uint16_t smallIconResource, uint16_t largeIconResource) :
+	BaseComposite::BaseComposite(const wstring& className, const wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComposite* parent, const string& windowFunctionName, const string& moduleName, uint16_t smallIconResource, uint16_t largeIconResource) :
 		BaseComponent
 		(
 			className,
@@ -197,71 +194,59 @@ namespace gui_framework
 
 	BaseComponent* BaseComposite::findChild(const wstring& windowName) const
 	{
-		BaseComponent* result = nullptr;
-
-		for (const auto& i : children)
+		for (const unique_ptr<BaseComponent>& component : children)
 		{
-			if (i->getWindowName() == windowName)
+			if (component->getWindowName() == windowName)
 			{
-				result = i.get();
-
-				break;
+				return component.get();
 			}
-			else if (i->isComposite())
+			else if (BaseComposite* composite = dynamic_cast<BaseComposite*>(component.get()))
 			{
-				result = static_cast<BaseComposite*>(i.get())->findChild(windowName);
-
-				if (result)
+				if (BaseComponent* result = composite->findChild(windowName))
 				{
-					break;
+					return result;
 				}
 			}
 		}
 
-		return result;
+		return nullptr;
 	}
 
 	BaseComponent* BaseComposite::findChild(HWND handle) const
 	{
-		BaseComponent* result = nullptr;
-
-		for (const auto& i : children)
+		for (const unique_ptr<BaseComponent>& component : children)
 		{
-			if (i->getHandle() == handle)
+			if (component->getHandle() == handle)
 			{
-				result = i.get();
-
-				break;
+				return component.get();
 			}
-			else if (i->isComposite())
+			else if (BaseComposite* composite = dynamic_cast<BaseComposite*>(component.get()))
 			{
-				result = static_cast<BaseComposite*>(i.get())->findChild(handle);
-
-				if (result)
+				if (BaseComponent* result = composite->findChild(handle))
 				{
-					break;
+					result;
 				}
 			}
 		}
 
-		return result;
+		return nullptr;
 	}
 
 	vector<BaseComponent*> BaseComposite::findChildren(const wstring& windowName) const
 	{
 		vector<BaseComponent*> result;
 
-		for (const auto& i : children)
+		for (const unique_ptr<BaseComponent>& component : children)
 		{
-			if (i->getWindowName() == windowName)
+			if (component->getWindowName() == windowName)
 			{
-				result.push_back(i.get());
+				result.push_back(component.get());
 			}
-			else if (i->isComposite())
+			else if (BaseComposite* composite = dynamic_cast<BaseComposite*>(component.get()))
 			{
-				vector<BaseComponent*> subChildren = static_cast<BaseComposite*>(i.get())->findChildren(windowName);
+				vector<BaseComponent*> subChildren = composite->findChildren(windowName);
 
-				copy(subChildren.begin(), subChildren.end(), back_inserter(result));
+				ranges::copy(subChildren, back_inserter(result));
 			}
 		}
 
@@ -302,11 +287,6 @@ namespace gui_framework
 		{
 			popupMenus.erase(i);
 		}
-	}
-
-	bool BaseComposite::isComposite() const
-	{
-		return true;
 	}
 
 	void BaseComposite::setExitMode(exitMode mode)

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "headers.h"
 #include "BaseComponents/BaseComponent.h"
 #include "Interfaces/Components/ITextOperations.h"
 #include "Interfaces/Localization/ISingleTextLocalized.h"
@@ -21,13 +20,19 @@ namespace gui_framework
 		virtual void updateLocalization(const std::wstring& localizedText) override;
 
 	public:
-		BaseStaticControl(const std::wstring& staticControlName, const std::wstring& staticControlText, const utility::ComponentSettings& settings, BaseComponent* parent);
+		BaseStaticControl(const std::wstring& staticControlName, const std::wstring& staticControlText, const utility::ComponentSettings& settings, BaseComposite* parent);
+
+		/// @brief Add border
+		void addBorder();
+
+		/// @brief Remove border
+		void removeBorder();
+
+		virtual void setText(const std::string& localizationKey) final override;
 
 		/// @brief Used as key in creators
 		/// @return typeid().hash_code()
 		virtual size_t getHash() const override = 0;
-
-		virtual void setText(const std::string& localizationKey) final override;
 
 		virtual ~BaseStaticControl() = default;
 

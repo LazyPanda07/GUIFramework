@@ -1,4 +1,3 @@
-#include "headers.h"
 #include "BaseTrackbarControl.h"
 
 #include "Styles/DefaultStyles.h"
@@ -8,7 +7,7 @@ using namespace std;
 
 namespace gui_framework
 {
-	BaseTrackbarControl::BaseTrackbarControl(const wstring& trackbarName, const utility::ComponentSettings& settings, const styles::TrackbarControlStyles& styles, BaseComponent* parent) :
+	BaseTrackbarControl::BaseTrackbarControl(const wstring& trackbarName, const utility::ComponentSettings& settings, const styles::TrackbarControlStyles& styles, BaseComposite* parent) :
 		BaseComponent
 		(
 			standard_classes::trackbarControl,

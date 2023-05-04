@@ -1,4 +1,3 @@
-#include "headers.h"
 #include "DefaultStyles.h"
 
 using namespace std;

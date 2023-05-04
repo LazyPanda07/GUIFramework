@@ -1,6 +1,5 @@
 #pragma once
 
-#include "headers.h"
 #include "BaseComposites/StandardComposites/BaseChildWindow.h"
 #include "Interfaces/Components/IResizableComponent.h"
 
@@ -12,7 +11,7 @@ namespace gui_framework
 		public interfaces::IResizableComponent	
 	{
 	public:
-		ChildWindow(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, BaseComponent* parent, const std::string& windowFunctionName = "");
+		ChildWindow(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, BaseComposite* parent, const std::string& windowFunctionName = "");
 
 		/// @brief Not implemented
 		/// @exception NotImplemented ChildWindow can't contain menus

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "headers.h"
 #include "BaseComponents/BaseComponent.h"
 #include "Interfaces/Components/ITextOperations.h"
 #include "Interfaces/Localization/ISingleTextLocalized.h"
@@ -24,7 +23,7 @@ namespace gui_framework
 		virtual void updateLocalization(const std::wstring& localizedText) override;
 
 	public:
-		BaseEditControl(const std::wstring& editControlName, const utility::ComponentSettings& settings, BaseComponent* parent, bool isMultiLine = false);
+		BaseEditControl(const std::wstring& editControlName, const utility::ComponentSettings& settings, BaseComposite* parent, bool isMultiLine = false);
 
 		/// @brief Set placeholder to single line edit control
 		/// @param placeholder 

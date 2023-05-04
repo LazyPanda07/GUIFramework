@@ -1,7 +1,7 @@
 var classgui__framework_1_1_group_box =
 [
     [ "radioButtonData", "structgui__framework_1_1_group_box_1_1radio_button_data.html", "structgui__framework_1_1_group_box_1_1radio_button_data" ],
-    [ "GroupBox", "classgui__framework_1_1_group_box.html#a790eb7975f6bc808b8dfcb1efb674e6e", null ],
+    [ "GroupBox", "classgui__framework_1_1_group_box.html#a3e9feb0a9b1850f50d99fb028978decd", null ],
     [ "~GroupBox", "classgui__framework_1_1_group_box.html#ac9ebc34969db2083694b303c27f5e37a", null ],
     [ "addPopupMenu", "classgui__framework_1_1_group_box.html#ab75fe903d8c73ba06e3b08d785a6a0e7", null ],
     [ "addRadioButton", "classgui__framework_1_1_group_box.html#a2c2e62ff45b0fd50f0182ece830c5a1b", null ],

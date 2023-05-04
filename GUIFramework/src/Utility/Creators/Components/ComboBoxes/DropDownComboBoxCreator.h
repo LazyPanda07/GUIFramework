@@ -1,6 +1,5 @@
 #pragma once
 
-#include "headers.h"
 #include "Utility/Creators/BaseComponentCreator.h"
 
 namespace gui_framework
@@ -13,7 +12,7 @@ namespace gui_framework
 		public:
 			DropDownComboBoxCreator() = default;
 
-			BaseComponent* create(const std::wstring& windowName, const utility::ComponentSettings& settings, const std::any& additionalData, BaseComponent* parent) override;
+			BaseComponent* create(const std::wstring& windowName, const utility::ComponentSettings& settings, const std::any& additionalData, BaseComposite* parent) override;
 
 			~DropDownComboBoxCreator() = default;
 		};

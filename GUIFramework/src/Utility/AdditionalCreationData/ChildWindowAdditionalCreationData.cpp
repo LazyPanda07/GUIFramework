@@ -1,4 +1,3 @@
-#include "headers.h"
 #include "ChildWindowAdditionalCreationData.h"
 
 using namespace std;

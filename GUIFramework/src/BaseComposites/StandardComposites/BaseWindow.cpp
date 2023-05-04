@@ -1,4 +1,3 @@
-#include "headers.h"
 #include "BaseWindow.h"
 
 #include "Exceptions/FileDoesNotExist.h"
@@ -34,7 +33,7 @@ namespace gui_framework
 		coordinates.erase(index);
 	}
 
-	BaseWindow::BaseWindow(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComponent* parent, const string& windowFunctionName, const string& moduleName, uint16_t smallIconResource, uint16_t largeIconResource) :
+	BaseWindow::BaseWindow(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComposite* parent, const string& windowFunctionName, const string& moduleName, uint16_t smallIconResource, uint16_t largeIconResource) :
 		BaseComposite
 		(
 			className,

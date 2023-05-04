@@ -1,9 +1,11 @@
 var classgui__framework_1_1_base_component =
 [
-    [ "BaseComponent", "classgui__framework_1_1_base_component.html#a5e962868a5b9fbce0854fea8bfb57f89", null ],
+    [ "BaseComponent", "classgui__framework_1_1_base_component.html#a756d98f6a3acf4b1f9bd188320f67179", null ],
     [ "~BaseComponent", "classgui__framework_1_1_base_component.html#a274274f6f28b2e93f73544634b640d56", null ],
     [ "asyncDestroyComponent", "classgui__framework_1_1_base_component.html#a3fea4a3cd5c46a1b39182c6455622735", null ],
     [ "destroyComponent", "classgui__framework_1_1_base_component.html#ad130cbb1227608acd3e365945a97655f", null ],
+    [ "disable", "classgui__framework_1_1_base_component.html#acdbbd520609bf5ad17d0a29d046fc01c", null ],
+    [ "enable", "classgui__framework_1_1_base_component.html#a95fb0d26b051e0bef0f9cde1d9fb0797", null ],
     [ "getActualCoordinates", "classgui__framework_1_1_base_component.html#ab6cc36f73171b9af0289c10c80ae3a5a", null ],
     [ "getActualHeight", "classgui__framework_1_1_base_component.html#aacc520e6bcb92c54e6bc3ca5d975efae", null ],
     [ "getActualWidth", "classgui__framework_1_1_base_component.html#ae368503c1556d8bde038dd4ec11d3ec1", null ],
@@ -22,7 +24,6 @@ var classgui__framework_1_1_base_component =
     [ "getTextColor", "classgui__framework_1_1_base_component.html#a8225811e6bd582bae7f119ab7f10dcdd", null ],
     [ "getWindowName", "classgui__framework_1_1_base_component.html#af3b5bcf9a85838959ffa71b87e82daa5", null ],
     [ "handleMessages", "classgui__framework_1_1_base_component.html#a9a7908e5bf628b5b1c85abb749f52c5f", null ],
-    [ "isComposite", "classgui__framework_1_1_base_component.html#a80afd36bdaaa52f7137371ec9c8cdac5", null ],
     [ "preWindowMessagesHandle", "classgui__framework_1_1_base_component.html#aa271d9c3ad5e9a9374c7d3a334327cdc", null ],
     [ "setBackgroundColor", "classgui__framework_1_1_base_component.html#ae2f1b329acc98ad498e18f4d5330f027", null ],
     [ "setDesiredHeight", "classgui__framework_1_1_base_component.html#a0da935c556b32ffd9ddcbd4c67a9a060", null ],
@@ -41,7 +42,7 @@ var classgui__framework_1_1_base_component =
     [ "desiredY", "classgui__framework_1_1_base_component.html#a3d15724eb33a896f282d5199f825d03b", null ],
     [ "handle", "classgui__framework_1_1_base_component.html#abff4f6befd00a3e67037b12fa9d9613a", null ],
     [ "id", "classgui__framework_1_1_base_component.html#a24a743c99e4ca9bd6a5e1ea2fbd3aea7", null ],
-    [ "parent", "classgui__framework_1_1_base_component.html#a1576375d22cf283d598e22f4a11aca2f", null ],
+    [ "parent", "classgui__framework_1_1_base_component.html#abec3fc0503318daf9a924b3c843ba9b4", null ],
     [ "styles", "classgui__framework_1_1_base_component.html#aec8d3af6711b0c012f2f7f90cc7d4141", null ],
     [ "textColor", "classgui__framework_1_1_base_component.html#aa6bedc9892f3eb8ae57193275bab2242", null ],
     [ "windowName", "classgui__framework_1_1_base_component.html#ab927f5791c7605446203f7f7f6e0bb83", null ]

@@ -1,4 +1,3 @@
-#include "headers.h"
 #include "BaseStaticControl.h"
 
 #include "Styles/Components/StaticControlStyles.h"
@@ -12,7 +11,7 @@ namespace gui_framework
 		ITextOperations::setText(localizedText);
 	}
 
-	BaseStaticControl::BaseStaticControl(const wstring& staticControlName, const wstring& staticControlText, const utility::ComponentSettings& settings, BaseComponent* parent) :
+	BaseStaticControl::BaseStaticControl(const wstring& staticControlName, const wstring& staticControlText, const utility::ComponentSettings& settings, BaseComposite* parent) :
 		BaseComponent
 		(
 			standard_classes::staticControl,
@@ -21,9 +20,19 @@ namespace gui_framework
 			styles::StaticControlStyles(),
 			parent
 		),
-		ITextOperations(handle)
+		ITextOperations(handle, staticControlText)
 	{
-		ITextOperations::setText(staticControlText);
+		this->removeBorder();
+	}
+
+	void BaseStaticControl::addBorder()
+	{
+		gui_framework::utility::appendStyle(handle, WS_BORDER);
+	}
+
+	void BaseStaticControl::removeBorder()
+	{
+		gui_framework::utility::removeStyle(handle, WS_BORDER);
 	}
 
 	void BaseStaticControl::setText(const string& localizationKey)

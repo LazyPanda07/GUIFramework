@@ -1,6 +1,5 @@
 #pragma once
 
-#include "headers.h"
 #include "BaseComponents/BaseComponent.h"
 #include "Interfaces/Iterators/IBaseForwardIterator.h"
 

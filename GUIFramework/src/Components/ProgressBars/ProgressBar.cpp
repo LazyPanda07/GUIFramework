@@ -1,11 +1,12 @@
-#include "headers.h"
 #include "ProgressBar.h"
+
+#include "BaseComposites/BaseComposite.h"
 
 using namespace std;
 
 namespace gui_framework
 {
-	ProgressBar::ProgressBar(const wstring& progressBarName, const utility::ComponentSettings& settings, BaseComponent* parent, int minRange, int maxRange, int updateStep) :
+	ProgressBar::ProgressBar(const wstring& progressBarName, const utility::ComponentSettings& settings, BaseComposite* parent, int minRange, int maxRange, int updateStep) :
 		BaseProgressBar
 		(
 			progressBarName,

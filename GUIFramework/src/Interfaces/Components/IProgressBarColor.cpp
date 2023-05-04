@@ -1,4 +1,3 @@
-#include "headers.h"
 #include "IProgressBarColor.h"
 
 using namespace std;

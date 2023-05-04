@@ -1,6 +1,5 @@
 #pragma once
 
-#include "headers.h"
 #include "BaseComponents/BaseComponent.h"
 #include "Interfaces/Components/IResizableComponent.h"
 #include "Styles/Components/ListBoxes/ListBoxStyles.h"
@@ -22,7 +21,7 @@ namespace gui_framework
 		virtual void updateLocalization(size_t index, const std::wstring& localizedText) override;
 
 	public:
-		BaseListBox(const std::wstring& listBoxName, const utility::ComponentSettings& settings, const styles::ListBoxStyles& styles, BaseComponent* parent);
+		BaseListBox(const std::wstring& listBoxName, const utility::ComponentSettings& settings, const styles::ListBoxStyles& styles, BaseComposite* parent);
 
 		/// @brief 
 		/// @param value 

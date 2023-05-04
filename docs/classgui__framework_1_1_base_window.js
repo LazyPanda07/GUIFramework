@@ -1,6 +1,6 @@
 var classgui__framework_1_1_base_window =
 [
-    [ "BaseWindow", "classgui__framework_1_1_base_window.html#a2e1a91d8d445d2b8d1bf2f2b0c7a05c1", null ],
+    [ "BaseWindow", "classgui__framework_1_1_base_window.html#add3c1cb83759b746c69cecbccda20b75", null ],
     [ "~BaseWindow", "classgui__framework_1_1_base_window.html#a9e7ef6f954af0c728a81afa2f1e29222", null ],
     [ "addImage", "classgui__framework_1_1_base_window.html#a66dedcbb95bdcc0e7727403f7f4f7ac8", null ],
     [ "drawAllImages", "classgui__framework_1_1_base_window.html#a6a73ed8d9f9668400bac07318481f905", null ],

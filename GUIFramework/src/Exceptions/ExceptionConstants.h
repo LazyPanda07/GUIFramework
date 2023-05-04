@@ -1,6 +1,5 @@
 #pragma once
 
-#include "headers.h"
 #include <string>
 
 namespace gui_framework

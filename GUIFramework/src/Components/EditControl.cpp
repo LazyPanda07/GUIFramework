@@ -1,11 +1,12 @@
-#include "headers.h"
 #include "EditControl.h"
+
+#include "BaseComposites/BaseComposite.h"
 
 using namespace std;
 
 namespace gui_framework
 {
-	EditControl::EditControl(const wstring& editControlName, const utility::ComponentSettings& settings, BaseComponent* parent, bool isMultiLine) :
+	EditControl::EditControl(const wstring& editControlName, const utility::ComponentSettings& settings, BaseComposite* parent, bool isMultiLine) :
 		BaseEditControl
 		(
 			editControlName,

@@ -1,11 +1,10 @@
-#include "headers.h"
 #include "ListTextListView.h"
 
 using namespace std;
 
 namespace gui_framework
 {
-	ListTextListView::ListTextListView(const wstring& listViewName, const utility::ComponentSettings& settings, BaseComponent* parent) :
+	ListTextListView::ListTextListView(const wstring& listViewName, const utility::ComponentSettings& settings, BaseComposite* parent) :
 		BaseListTextListView
 		(
 			listViewName,

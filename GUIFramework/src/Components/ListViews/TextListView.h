@@ -1,6 +1,5 @@
 #pragma once
 
-#include "headers.h"
 #include "BaseComponents/StandardComponents/ListViews/BaseTextListView.h"
 
 namespace gui_framework
@@ -9,7 +8,7 @@ namespace gui_framework
 	class GUI_FRAMEWORK_API TextListView : public BaseTextListView
 	{
 	public:
-		TextListView(const std::wstring& listViewName, const utility::ComponentSettings& settings, BaseComponent* parent);
+		TextListView(const std::wstring& listViewName, const utility::ComponentSettings& settings, BaseComposite* parent);
 
 		size_t getHash() const override;
 

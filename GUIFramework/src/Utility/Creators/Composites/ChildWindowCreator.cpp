@@ -1,4 +1,3 @@
-#include "headers.h"
 #include "ChildWindowCreator.h"
 
 #include "Composites/ChildWindow.h"
@@ -9,7 +8,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		BaseComponent* ChildWindowCreator::create(const wstring& windowName, const utility::ComponentSettings& settings, const any& additionalData, BaseComponent* parent)
+		BaseComponent* ChildWindowCreator::create(const wstring& windowName, const utility::ComponentSettings& settings, const any& additionalData, BaseComposite* parent)
 		{
 			auto [className, functionName] = any_cast<tuple<wstring, string>>(additionalData);
 

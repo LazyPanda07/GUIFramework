@@ -1,4 +1,3 @@
-#include "headers.h"
 #include "GUIFramework.h"
 
 #include "Exceptions/GetLastErrorException.h"
@@ -389,11 +388,17 @@ namespace gui_framework
 	}
 
 	GUIFramework::GUIFramework() :
-		jsonSettings(ifstream(json_settings::settingsJSONFile.data())),
 		nextId(1),
 		modulesNeedToLoad(1),
 		currentLoadedModules(modulesNeedToLoad)
 	{
+		if (!filesystem::exists(json_settings::settingsJSONFile))
+		{
+			throw runtime_error(format(R"(File "{}" does not exist)"sv, json_settings::settingsJSONFile));
+		}
+
+		jsonSettings = ifstream(json_settings::settingsJSONFile.data());
+
 		try
 		{
 			int64_t threadsCount = jsonSettings.getInt(json_settings::threadsCountSetting);
@@ -447,7 +452,7 @@ namespace gui_framework
 
 		try
 		{
-			auto& jsonModules = settingsObject.getArray(json_settings::modulesSetting);
+			const vector<json::utility::jsonObject>& jsonModules = settingsObject.getArray(json_settings::modulesSetting);
 
 			modulesNeedToLoad += static_cast<int>(jsonModules.size());
 

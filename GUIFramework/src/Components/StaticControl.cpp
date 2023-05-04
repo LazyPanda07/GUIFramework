@@ -1,11 +1,12 @@
-#include "headers.h"
 #include "StaticControl.h"
+
+#include "BaseComposites/BaseComposite.h"
 
 using namespace std;
 
 namespace gui_framework
 {
-	StaticControl::StaticControl(const wstring& staticControlName, const wstring& editControlText, const utility::ComponentSettings& settings, BaseComponent* parent) :
+	StaticControl::StaticControl(const wstring& staticControlName, const wstring& editControlText, const utility::ComponentSettings& settings, BaseComposite* parent) :
 		BaseStaticControl
 		(
 			staticControlName,
