@@ -584,7 +584,7 @@ namespace gui_framework
 	void GUIFramework::runOnUIThread(const function<void()>& function)
 	{
 		GUIFramework& instance = GUIFramework::get();
-		lock_guard<recursive_mutex> runOnUIThreadLock(instance.runOnUIThreadMutex);
+		unique_lock<recursive_mutex> runOnUIThreadLock(instance.runOnUIThreadMutex);
 
 		instance.runOnUIFunctions.push(function);
 	}
@@ -592,7 +592,7 @@ namespace gui_framework
 	void GUIFramework::runOnUIThread(function<void()>&& function)
 	{
 		GUIFramework& instance = GUIFramework::get();
-		lock_guard<recursive_mutex> runOnUIThreadLock(instance.runOnUIThreadMutex);
+		unique_lock<recursive_mutex> runOnUIThreadLock(instance.runOnUIThreadMutex);
 
 		instance.runOnUIFunctions.push(move(function));
 	}
@@ -654,7 +654,7 @@ namespace gui_framework
 		threadPool->addTask(move(task), callback);
 	}
 
-	size_t GUIFramework::registerHotkey(uint32_t key, const function<void()>& onClick, const vector<hotkeys::additionalKeys>& additionalKeys)
+	size_t GUIFramework::registerHotkey(hotkeys::keys key, const function<void()>& onClick, const vector<hotkeys::additionalKeys>& additionalKeys)
 	{
 		set<uint32_t> hotkey = makeHotkey(key, additionalKeys);
 		size_t id = hash<set<uint32_t>>()(hotkey);
@@ -670,7 +670,7 @@ namespace gui_framework
 		return id;
 	}
 
-	size_t GUIFramework::registerHotkey(uint32_t key, const string& functionName, const string& moduleName, const vector<hotkeys::additionalKeys>& additionalKeys)
+	size_t GUIFramework::registerHotkey(hotkeys::keys key, const string& functionName, const string& moduleName, const vector<hotkeys::additionalKeys>& additionalKeys)
 	{
 		onClickSignature tem = nullptr;
 
@@ -859,7 +859,7 @@ namespace gui_framework
 		{
 			const jsonObject& hotkey = std::get<jsonObject>(i.data.front().second);
 
-			uint32_t key = static_cast<uint32_t>(hotkey.getUnsignedInt("key"));
+			hotkeys::keys key = static_cast<hotkeys::keys>(hotkey.getUnsignedInt("key"));
 			const string& functionName = hotkey.getString("functionName");
 			const string& moduleName = hotkey.getString("moduleName");
 			vector<uint64_t> tem = json::utility::JSONArrayWrapper(hotkey.getArray("additionalKeys")).getAsUInt64_tArray();

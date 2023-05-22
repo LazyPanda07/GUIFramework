@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">GUIFramework<span id="projectnumber">&#160;1.0.1</span>
+   <div id="projectname">GUIFramework<span id="projectnumber">&#160;1.0.2</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -98,15 +98,182 @@ $(document).ready(function(){initNavTree('namespacegui__framework_1_1hotkeys.htm
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:af7004d43e2976ef86b2bcc7e46959e23"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1hotkeys.html#af7004d43e2976ef86b2bcc7e46959e23">additionalKeys</a> { <a class="el" href="namespacegui__framework_1_1hotkeys.html#af7004d43e2976ef86b2bcc7e46959e23a2ab64f4ee279e5baf7ab7059b15e6d12">shift</a> = VK_SHIFT
-, <a class="el" href="namespacegui__framework_1_1hotkeys.html#af7004d43e2976ef86b2bcc7e46959e23afc5364bf9dbfa34954526becad136d4b">control</a>
-, <a class="el" href="namespacegui__framework_1_1hotkeys.html#af7004d43e2976ef86b2bcc7e46959e23a34823136d0dd91d0f5d22db740f7679c">alt</a>
+<tr class="memitem:a08135ac9e160bc34494a6bb8051607fd"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fd">keys</a> : uint32_t { <br />
+&#160;&#160;<a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda928ee69e34cf4fd74f326df2dfa70a29">leftMouseButton</a> = VK_LBUTTON
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda18f9cc403ea9f7716fb77f457da7883f">rightMouseButton</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fdad77c7c4f755c2ce829ebe5440cf7e4aa">cancel</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda82fab2b161818ca4288faabb770e8b6f">middleMouseButton</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fdaa1306bb66b9f8d57826ede2ed23a8308">x1MouseButton</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fdae17205c2dfe29b1e1745bcceebab8b2b">x2MouseButton</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda9ab8ceabbadb31db224fd3b008593cdb">backspace</a> = VK_BACK
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fdadfb88f21cf4596de22d55a47032522af">tab</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda8c3c0e7846cd57e2a68c01517c47ef44">clear</a> = VK_CLEAR
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda210e1ac9bf3107b6af9826e7ba6d1467">enter</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda1d6bc11547e7dfc004f764bcdb08590c">shift</a> = VK_SHIFT
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda4d3aa4cf54178ccbfb47490aa9093b89">ctrl</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda7e206acd333133360496918fdd19a3a8">alt</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda998a45b0238a15312796de0bc28a851a">pause</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda99f7a00dc0b5c76fe75af7116762c0bc">capsLock</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda0262860ba588428854cd12701c110821">spacebar</a> = VK_SPACE
+, <br />
+&#160;&#160;<a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fdacdde3d16a5e69ad9016efcf25bd32eab">pageUp</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fdab34dd552a8dcfa3baae12a6c5360f18b">pageDown</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda366a6b1984a7e8b783b8c85ce84e9b5e">end</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda5f1c312a9b4bf4797ee0fc8f6ce4ceaf">home</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda37529bf76eb2e61a9882b2120b024215">leftArrow</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda48c744fb86ff7dce80ddefa4ccea5148">upArrow</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda0d3296ce6ca2a8e419c4dc6d5a15bade">rightArrow</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda8687386cd71e7bb945d34fb512e9c26d">donwArrow</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda6f0aa02ddd930d77c377de2c1287e2e0">select</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fdabe60322a8df438248c47ac2595e53993">print</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda5b073306dfdb3fadc861ef7b430bf7ec">execute</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fdace4977efd677dc141c3cf87f6e0b73d9">printScreen</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda61b8cc83e21aeb3927aa8afae05d1c80">ins</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda1fd4252e4fe28d6eafd8589599b6de2c">del</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda67ba4161137e0d6bfcbbe07a2257b013">help</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda999ed6d8a5f6c9c28ccf7d685da7890c">zero</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda51317891075c42071cd8b4c5bee0d048">one</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda6db110cb48d5ebf7141811dbb8bb0496">two</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda764176f72bf1edc36f72d5cdd5207115">three</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fdaa51bd086053a91acbac6c2ea0c89a23b">four</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda4a828416f5e70f5623b70e3478d26d7c">five</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda20e96dafed4be557a4a3dcc1fbb3b69e">six</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda9c4d4941df7d155bf1e035a4a68b07db">seven</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda3fb5844ac7129fab99ab14460dcf8fe0">eight</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda327d9d80deccd722566e72f660cd98df">nine</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fdaa31d52c8533c927acc41ba966de3d515">A</a> = 0x41
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda2a2a532b4bea75fac7519f47bb26c8e9">B</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fdab390e3fe477d72c2e8eff35ce452cf69">C</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda5647555aa3d7fdfb1694e3383a175ea6">D</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda99127a0b6c20be81e8aed45863061a4c">E</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda5b5fcf9069aba0503a11d5707a0e1f40">F</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda6aa4526553a45a3c9e8274d7335eae8c">G</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda8f6e9b3874b76472540d80f92cee154f">H</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda2400f90801f24e854943868eaee390a2">I</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fdaddf570bf46508d9ab02068f2f782924b">J</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda3dff017d0b36e4a98f64147b62864f68">K</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda92829bd565acac0e3a02bbf5a980e6f9">L</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fdaaa980f35b9c7199ce9f8dda244a75da9">M</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda265643479e31fa06990b445c2f5823fb">N</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda581904f6ae77261746e9a5ca04b2c82a">O</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda778fa4a9801c1c5e2cd6cf0ffce6c448">P</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda0d8944dbdec588149a19eab281b75aef">Q</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda35caaee767dd57bef6443c582ee7d574">R</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda2f5a1d621fd6bbcb549c84e04314837b">S</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda8f47fda64c64df4549a0c022a234db49">T</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda7e6b660695a83b9e9757d29db4c15c1b">U</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda6b3705b0c1ffcc9ca7e0be5fc1b59356">V</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fdabfb893b81e921c64c585b54ddee46716">W</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda577479be9610a4bb01e1c12bf3003f62">X</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda337ee470535d4124b83cbc1bee1f8e93">Y</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fdaee670fa5f8644d4569bd088225a9c894">Z</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fdae3873718454463b4d8b1fd7573720717">sleep</a> = VK_SLEEP
+, <br />
+&#160;&#160;<a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda133166d437068d98df8c9b4f473b4d84">zeroKeypad</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda17d8d0d28cead1ffe56e174f76258cef">oneKeypad</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda86cc61ab6f9743ba063912724e0da51d">twoKeypad</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fdad6a43c920f0329fd9f7c6261fa99ca49">threeKeypad</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fdaa917db61bebb8193bf4c264d315a4986">fourKeypad</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda7486ad7bada0daf52c49c73736a68619">fiveKeypad</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fdaa1e8c0d31d34d02673e4bd08d0139676">sixKeypad</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda99ea2def90a8ad015b758715942b09ff">sevenKeypad</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda45489aed47d8e13c2e61a647956056b1">eightKeypad</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda1e4abbcbcafff1f57f84cbac2840aee4">nineKeypad</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fdae837215b6356acfb1d783075039a0a90">multiply</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda8a67c9f5e56c1f9b35ea00527c493750">add</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fdaa473aa6f2428c6b9a0923ae187959ad1">separator</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fdaf803036e7d2abd9cfe2b7f8ad17c23eb">subtract</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda0b55e67aa9cf62ec53f7814237230234">decimal</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda6c8e6c795f770e6286e8d0e4556fa933">divide</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fdad1ac81b787c995a005a271af163e9bfd">F1</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda274700d97abecab2c1f8610094b8ae64">F2</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda2c3735a4eae13e25a4c46db17e8812cc">F3</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda0befc3fffe16175f06fed599897fb381">F4</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda064889f21e8a90c274154ef1e1eb8b2c">F5</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda4490edf86a8bc62c803fc3107bc41a6f">F6</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda0ad0df8762fc50dbc3f3ba2da686ef3b">F7</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda3d03a9bb08c1089ee40be53d1bae8bc7">F8</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda0f7bd6753bfc6a5fa14056542ddd75cb">F9</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda007b284a62577feed12ac48c467d3375">F10</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda1e2e7ebec1edb0e046d57cfac2668b18">F11</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda23ab672fe409c3badce1684788263fcc">F12</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda4db1105055196ce0172181fb4a00b4a1">F13</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fdaf553e5a5c6950e8cdda4e0aca386fd00">F14</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fdab3673361894d96c9269dd70aae135dd8">F15</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda7534336f6128a9b373e55e29decd356c">F16</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda7ea6c685604556dbc555fcd1f3237136">F17</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda988964138104e32ef60f5649da77128d">F18</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda210d3b6d485cf92003b2917ab157c051">F19</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fdac89aec3a24853d415a00e9d8fce88e7e">F20</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fdadf392b6f5ba2c1dbdd369cdbff0af4f3">F21</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda36c78c8c53eb4b7ea057f29eec6d48fc">F22</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda171e69b08d3d8ea90151404481fe7378">F23</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda75cdc6b6b7f317fc105a57435cf5b98b">F24</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fdac40c8aaceff56b56aa98832f77dd8666">numLock</a> = VK_NUMLOCK
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fdac78f6a5c807a7fe34fc6477aae98401e">scrollLock</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda5d6c20986a5fa2a9a260a91f83b71c62">leftShift</a> = VK_LSHIFT
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fdab51e2ccab30aedd7905ccc2100ed51f2">rightShift</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda2aafbc5e910bfa0a76f615eb9327bc25">leftCtrl</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda24e769deef75875b527c55c11417a452">rightCtrl</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda848fb7423734dfcf61066d50a8324699">leftAlt</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda71886f6596900ddb609f65e104c58320">rightAlt</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda741a6983143f1c249b7a503950e46660">volumeMute</a> = VK_VOLUME_MUTE
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda43417081281b29b36efba9a46e32022d">volumeDown</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda9af772d39256e70ef4d5bd21a3eb2039">volumeUp</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda4489e80d91088f226cfb23c2078bbc1a">nextTrack</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda5ac703bb6d93402d9a5625db757b5706">previousTrack</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda77e66029dedf702d96ece96d8122101e">stopMedia</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fdade736aa233b3c8ff19b1e397af77c06c">zoom</a> = VK_ZOOM
+<br />
  }</td></tr>
-<tr class="separator:af7004d43e2976ef86b2bcc7e46959e23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a08135ac9e160bc34494a6bb8051607fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae069859975d4127ec63d329343ea9364"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegui__framework_1_1hotkeys.html#ae069859975d4127ec63d329343ea9364">additionalKeys</a> : uint32_t { <br />
+&#160;&#160;<a class="el" href="namespacegui__framework_1_1hotkeys.html#ae069859975d4127ec63d329343ea9364a2ab64f4ee279e5baf7ab7059b15e6d12">shift</a> = keys::shift
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#ae069859975d4127ec63d329343ea9364afc5364bf9dbfa34954526becad136d4b">control</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#ae069859975d4127ec63d329343ea9364a34823136d0dd91d0f5d22db740f7679c">alt</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#ae069859975d4127ec63d329343ea9364a98db250f900ce3cb56c7443c8e551acf">leftShift</a> = keys::leftShift
+, <br />
+&#160;&#160;<a class="el" href="namespacegui__framework_1_1hotkeys.html#ae069859975d4127ec63d329343ea9364a0c0bc12d401652c550b80b27512b7adf">rightShift</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#ae069859975d4127ec63d329343ea9364a769cd744256030c4c66ae2791c2b9c7f">leftCtrl</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#ae069859975d4127ec63d329343ea9364a29d53db1a5d9c3d655ebb68f1a011420">rightCtrl</a>
+, <a class="el" href="namespacegui__framework_1_1hotkeys.html#ae069859975d4127ec63d329343ea9364a6d48226d32af430641eb3bfc76310a5c">leftAlt</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegui__framework_1_1hotkeys.html#ae069859975d4127ec63d329343ea9364a16ad622e3d5cb16a9a9254a5e0edc492">rightAlt</a>
+<br />
+ }</td></tr>
+<tr class="separator:ae069859975d4127ec63d329343ea9364"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="af7004d43e2976ef86b2bcc7e46959e23" name="af7004d43e2976ef86b2bcc7e46959e23"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af7004d43e2976ef86b2bcc7e46959e23">&#9670;&#160;</a></span>additionalKeys</h2>
+<a id="ae069859975d4127ec63d329343ea9364" name="ae069859975d4127ec63d329343ea9364"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae069859975d4127ec63d329343ea9364">&#9670;&#160;</a></span>additionalKeys</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -115,7 +282,7 @@ Enumerations</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">enum class <a class="el" href="namespacegui__framework_1_1hotkeys.html#af7004d43e2976ef86b2bcc7e46959e23">gui_framework::hotkeys::additionalKeys</a></td>
+          <td class="memname">enum class <a class="el" href="namespacegui__framework_1_1hotkeys.html#ae069859975d4127ec63d329343ea9364">gui_framework::hotkeys::additionalKeys</a> : uint32_t</td>
         </tr>
       </table>
   </td>
@@ -125,12 +292,159 @@ Enumerations</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="af7004d43e2976ef86b2bcc7e46959e23a2ab64f4ee279e5baf7ab7059b15e6d12" name="af7004d43e2976ef86b2bcc7e46959e23a2ab64f4ee279e5baf7ab7059b15e6d12"></a>shift&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="af7004d43e2976ef86b2bcc7e46959e23afc5364bf9dbfa34954526becad136d4b" name="af7004d43e2976ef86b2bcc7e46959e23afc5364bf9dbfa34954526becad136d4b"></a>control&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="af7004d43e2976ef86b2bcc7e46959e23a34823136d0dd91d0f5d22db740f7679c" name="af7004d43e2976ef86b2bcc7e46959e23a34823136d0dd91d0f5d22db740f7679c"></a>alt&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ae069859975d4127ec63d329343ea9364a2ab64f4ee279e5baf7ab7059b15e6d12" name="ae069859975d4127ec63d329343ea9364a2ab64f4ee279e5baf7ab7059b15e6d12"></a>shift&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae069859975d4127ec63d329343ea9364afc5364bf9dbfa34954526becad136d4b" name="ae069859975d4127ec63d329343ea9364afc5364bf9dbfa34954526becad136d4b"></a>control&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae069859975d4127ec63d329343ea9364a34823136d0dd91d0f5d22db740f7679c" name="ae069859975d4127ec63d329343ea9364a34823136d0dd91d0f5d22db740f7679c"></a>alt&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae069859975d4127ec63d329343ea9364a98db250f900ce3cb56c7443c8e551acf" name="ae069859975d4127ec63d329343ea9364a98db250f900ce3cb56c7443c8e551acf"></a>leftShift&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae069859975d4127ec63d329343ea9364a0c0bc12d401652c550b80b27512b7adf" name="ae069859975d4127ec63d329343ea9364a0c0bc12d401652c550b80b27512b7adf"></a>rightShift&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae069859975d4127ec63d329343ea9364a769cd744256030c4c66ae2791c2b9c7f" name="ae069859975d4127ec63d329343ea9364a769cd744256030c4c66ae2791c2b9c7f"></a>leftCtrl&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae069859975d4127ec63d329343ea9364a29d53db1a5d9c3d655ebb68f1a011420" name="ae069859975d4127ec63d329343ea9364a29d53db1a5d9c3d655ebb68f1a011420"></a>rightCtrl&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae069859975d4127ec63d329343ea9364a6d48226d32af430641eb3bfc76310a5c" name="ae069859975d4127ec63d329343ea9364a6d48226d32af430641eb3bfc76310a5c"></a>leftAlt&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae069859975d4127ec63d329343ea9364a16ad622e3d5cb16a9a9254a5e0edc492" name="ae069859975d4127ec63d329343ea9364a16ad622e3d5cb16a9a9254a5e0edc492"></a>rightAlt&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_framework_constants_8h_source.html#l00078">78</a> of file <a class="el" href="_g_u_i_framework_constants_8h_source.html">GUIFrameworkConstants.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_keys_8h_source.html#l00136">136</a> of file <a class="el" href="_keys_8h_source.html">Keys.h</a>.</p>
+
+</div>
+</div>
+<a id="a08135ac9e160bc34494a6bb8051607fd" name="a08135ac9e160bc34494a6bb8051607fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08135ac9e160bc34494a6bb8051607fd">&#9670;&#160;</a></span>keys</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fd">gui_framework::hotkeys::keys</a> : uint32_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda928ee69e34cf4fd74f326df2dfa70a29" name="a08135ac9e160bc34494a6bb8051607fda928ee69e34cf4fd74f326df2dfa70a29"></a>leftMouseButton&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda18f9cc403ea9f7716fb77f457da7883f" name="a08135ac9e160bc34494a6bb8051607fda18f9cc403ea9f7716fb77f457da7883f"></a>rightMouseButton&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fdad77c7c4f755c2ce829ebe5440cf7e4aa" name="a08135ac9e160bc34494a6bb8051607fdad77c7c4f755c2ce829ebe5440cf7e4aa"></a>cancel&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda82fab2b161818ca4288faabb770e8b6f" name="a08135ac9e160bc34494a6bb8051607fda82fab2b161818ca4288faabb770e8b6f"></a>middleMouseButton&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fdaa1306bb66b9f8d57826ede2ed23a8308" name="a08135ac9e160bc34494a6bb8051607fdaa1306bb66b9f8d57826ede2ed23a8308"></a>x1MouseButton&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fdae17205c2dfe29b1e1745bcceebab8b2b" name="a08135ac9e160bc34494a6bb8051607fdae17205c2dfe29b1e1745bcceebab8b2b"></a>x2MouseButton&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda9ab8ceabbadb31db224fd3b008593cdb" name="a08135ac9e160bc34494a6bb8051607fda9ab8ceabbadb31db224fd3b008593cdb"></a>backspace&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fdadfb88f21cf4596de22d55a47032522af" name="a08135ac9e160bc34494a6bb8051607fdadfb88f21cf4596de22d55a47032522af"></a>tab&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda8c3c0e7846cd57e2a68c01517c47ef44" name="a08135ac9e160bc34494a6bb8051607fda8c3c0e7846cd57e2a68c01517c47ef44"></a>clear&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda210e1ac9bf3107b6af9826e7ba6d1467" name="a08135ac9e160bc34494a6bb8051607fda210e1ac9bf3107b6af9826e7ba6d1467"></a>enter&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda1d6bc11547e7dfc004f764bcdb08590c" name="a08135ac9e160bc34494a6bb8051607fda1d6bc11547e7dfc004f764bcdb08590c"></a>shift&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda4d3aa4cf54178ccbfb47490aa9093b89" name="a08135ac9e160bc34494a6bb8051607fda4d3aa4cf54178ccbfb47490aa9093b89"></a>ctrl&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda7e206acd333133360496918fdd19a3a8" name="a08135ac9e160bc34494a6bb8051607fda7e206acd333133360496918fdd19a3a8"></a>alt&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda998a45b0238a15312796de0bc28a851a" name="a08135ac9e160bc34494a6bb8051607fda998a45b0238a15312796de0bc28a851a"></a>pause&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda99f7a00dc0b5c76fe75af7116762c0bc" name="a08135ac9e160bc34494a6bb8051607fda99f7a00dc0b5c76fe75af7116762c0bc"></a>capsLock&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda0262860ba588428854cd12701c110821" name="a08135ac9e160bc34494a6bb8051607fda0262860ba588428854cd12701c110821"></a>spacebar&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fdacdde3d16a5e69ad9016efcf25bd32eab" name="a08135ac9e160bc34494a6bb8051607fdacdde3d16a5e69ad9016efcf25bd32eab"></a>pageUp&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fdab34dd552a8dcfa3baae12a6c5360f18b" name="a08135ac9e160bc34494a6bb8051607fdab34dd552a8dcfa3baae12a6c5360f18b"></a>pageDown&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda366a6b1984a7e8b783b8c85ce84e9b5e" name="a08135ac9e160bc34494a6bb8051607fda366a6b1984a7e8b783b8c85ce84e9b5e"></a>end&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda5f1c312a9b4bf4797ee0fc8f6ce4ceaf" name="a08135ac9e160bc34494a6bb8051607fda5f1c312a9b4bf4797ee0fc8f6ce4ceaf"></a>home&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda37529bf76eb2e61a9882b2120b024215" name="a08135ac9e160bc34494a6bb8051607fda37529bf76eb2e61a9882b2120b024215"></a>leftArrow&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda48c744fb86ff7dce80ddefa4ccea5148" name="a08135ac9e160bc34494a6bb8051607fda48c744fb86ff7dce80ddefa4ccea5148"></a>upArrow&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda0d3296ce6ca2a8e419c4dc6d5a15bade" name="a08135ac9e160bc34494a6bb8051607fda0d3296ce6ca2a8e419c4dc6d5a15bade"></a>rightArrow&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda8687386cd71e7bb945d34fb512e9c26d" name="a08135ac9e160bc34494a6bb8051607fda8687386cd71e7bb945d34fb512e9c26d"></a>donwArrow&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda6f0aa02ddd930d77c377de2c1287e2e0" name="a08135ac9e160bc34494a6bb8051607fda6f0aa02ddd930d77c377de2c1287e2e0"></a>select&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fdabe60322a8df438248c47ac2595e53993" name="a08135ac9e160bc34494a6bb8051607fdabe60322a8df438248c47ac2595e53993"></a>print&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda5b073306dfdb3fadc861ef7b430bf7ec" name="a08135ac9e160bc34494a6bb8051607fda5b073306dfdb3fadc861ef7b430bf7ec"></a>execute&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fdace4977efd677dc141c3cf87f6e0b73d9" name="a08135ac9e160bc34494a6bb8051607fdace4977efd677dc141c3cf87f6e0b73d9"></a>printScreen&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda61b8cc83e21aeb3927aa8afae05d1c80" name="a08135ac9e160bc34494a6bb8051607fda61b8cc83e21aeb3927aa8afae05d1c80"></a>ins&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda1fd4252e4fe28d6eafd8589599b6de2c" name="a08135ac9e160bc34494a6bb8051607fda1fd4252e4fe28d6eafd8589599b6de2c"></a>del&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda67ba4161137e0d6bfcbbe07a2257b013" name="a08135ac9e160bc34494a6bb8051607fda67ba4161137e0d6bfcbbe07a2257b013"></a>help&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda999ed6d8a5f6c9c28ccf7d685da7890c" name="a08135ac9e160bc34494a6bb8051607fda999ed6d8a5f6c9c28ccf7d685da7890c"></a>zero&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda51317891075c42071cd8b4c5bee0d048" name="a08135ac9e160bc34494a6bb8051607fda51317891075c42071cd8b4c5bee0d048"></a>one&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda6db110cb48d5ebf7141811dbb8bb0496" name="a08135ac9e160bc34494a6bb8051607fda6db110cb48d5ebf7141811dbb8bb0496"></a>two&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda764176f72bf1edc36f72d5cdd5207115" name="a08135ac9e160bc34494a6bb8051607fda764176f72bf1edc36f72d5cdd5207115"></a>three&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fdaa51bd086053a91acbac6c2ea0c89a23b" name="a08135ac9e160bc34494a6bb8051607fdaa51bd086053a91acbac6c2ea0c89a23b"></a>four&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda4a828416f5e70f5623b70e3478d26d7c" name="a08135ac9e160bc34494a6bb8051607fda4a828416f5e70f5623b70e3478d26d7c"></a>five&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda20e96dafed4be557a4a3dcc1fbb3b69e" name="a08135ac9e160bc34494a6bb8051607fda20e96dafed4be557a4a3dcc1fbb3b69e"></a>six&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda9c4d4941df7d155bf1e035a4a68b07db" name="a08135ac9e160bc34494a6bb8051607fda9c4d4941df7d155bf1e035a4a68b07db"></a>seven&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda3fb5844ac7129fab99ab14460dcf8fe0" name="a08135ac9e160bc34494a6bb8051607fda3fb5844ac7129fab99ab14460dcf8fe0"></a>eight&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda327d9d80deccd722566e72f660cd98df" name="a08135ac9e160bc34494a6bb8051607fda327d9d80deccd722566e72f660cd98df"></a>nine&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fdaa31d52c8533c927acc41ba966de3d515" name="a08135ac9e160bc34494a6bb8051607fdaa31d52c8533c927acc41ba966de3d515"></a>A&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda2a2a532b4bea75fac7519f47bb26c8e9" name="a08135ac9e160bc34494a6bb8051607fda2a2a532b4bea75fac7519f47bb26c8e9"></a>B&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fdab390e3fe477d72c2e8eff35ce452cf69" name="a08135ac9e160bc34494a6bb8051607fdab390e3fe477d72c2e8eff35ce452cf69"></a>C&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda5647555aa3d7fdfb1694e3383a175ea6" name="a08135ac9e160bc34494a6bb8051607fda5647555aa3d7fdfb1694e3383a175ea6"></a>D&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda99127a0b6c20be81e8aed45863061a4c" name="a08135ac9e160bc34494a6bb8051607fda99127a0b6c20be81e8aed45863061a4c"></a>E&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda5b5fcf9069aba0503a11d5707a0e1f40" name="a08135ac9e160bc34494a6bb8051607fda5b5fcf9069aba0503a11d5707a0e1f40"></a>F&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda6aa4526553a45a3c9e8274d7335eae8c" name="a08135ac9e160bc34494a6bb8051607fda6aa4526553a45a3c9e8274d7335eae8c"></a>G&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda8f6e9b3874b76472540d80f92cee154f" name="a08135ac9e160bc34494a6bb8051607fda8f6e9b3874b76472540d80f92cee154f"></a>H&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda2400f90801f24e854943868eaee390a2" name="a08135ac9e160bc34494a6bb8051607fda2400f90801f24e854943868eaee390a2"></a>I&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fdaddf570bf46508d9ab02068f2f782924b" name="a08135ac9e160bc34494a6bb8051607fdaddf570bf46508d9ab02068f2f782924b"></a>J&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda3dff017d0b36e4a98f64147b62864f68" name="a08135ac9e160bc34494a6bb8051607fda3dff017d0b36e4a98f64147b62864f68"></a>K&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda92829bd565acac0e3a02bbf5a980e6f9" name="a08135ac9e160bc34494a6bb8051607fda92829bd565acac0e3a02bbf5a980e6f9"></a>L&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fdaaa980f35b9c7199ce9f8dda244a75da9" name="a08135ac9e160bc34494a6bb8051607fdaaa980f35b9c7199ce9f8dda244a75da9"></a>M&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda265643479e31fa06990b445c2f5823fb" name="a08135ac9e160bc34494a6bb8051607fda265643479e31fa06990b445c2f5823fb"></a>N&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda581904f6ae77261746e9a5ca04b2c82a" name="a08135ac9e160bc34494a6bb8051607fda581904f6ae77261746e9a5ca04b2c82a"></a>O&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda778fa4a9801c1c5e2cd6cf0ffce6c448" name="a08135ac9e160bc34494a6bb8051607fda778fa4a9801c1c5e2cd6cf0ffce6c448"></a>P&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda0d8944dbdec588149a19eab281b75aef" name="a08135ac9e160bc34494a6bb8051607fda0d8944dbdec588149a19eab281b75aef"></a>Q&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda35caaee767dd57bef6443c582ee7d574" name="a08135ac9e160bc34494a6bb8051607fda35caaee767dd57bef6443c582ee7d574"></a>R&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda2f5a1d621fd6bbcb549c84e04314837b" name="a08135ac9e160bc34494a6bb8051607fda2f5a1d621fd6bbcb549c84e04314837b"></a>S&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda8f47fda64c64df4549a0c022a234db49" name="a08135ac9e160bc34494a6bb8051607fda8f47fda64c64df4549a0c022a234db49"></a>T&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda7e6b660695a83b9e9757d29db4c15c1b" name="a08135ac9e160bc34494a6bb8051607fda7e6b660695a83b9e9757d29db4c15c1b"></a>U&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda6b3705b0c1ffcc9ca7e0be5fc1b59356" name="a08135ac9e160bc34494a6bb8051607fda6b3705b0c1ffcc9ca7e0be5fc1b59356"></a>V&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fdabfb893b81e921c64c585b54ddee46716" name="a08135ac9e160bc34494a6bb8051607fdabfb893b81e921c64c585b54ddee46716"></a>W&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda577479be9610a4bb01e1c12bf3003f62" name="a08135ac9e160bc34494a6bb8051607fda577479be9610a4bb01e1c12bf3003f62"></a>X&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda337ee470535d4124b83cbc1bee1f8e93" name="a08135ac9e160bc34494a6bb8051607fda337ee470535d4124b83cbc1bee1f8e93"></a>Y&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fdaee670fa5f8644d4569bd088225a9c894" name="a08135ac9e160bc34494a6bb8051607fdaee670fa5f8644d4569bd088225a9c894"></a>Z&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fdae3873718454463b4d8b1fd7573720717" name="a08135ac9e160bc34494a6bb8051607fdae3873718454463b4d8b1fd7573720717"></a>sleep&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda133166d437068d98df8c9b4f473b4d84" name="a08135ac9e160bc34494a6bb8051607fda133166d437068d98df8c9b4f473b4d84"></a>zeroKeypad&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda17d8d0d28cead1ffe56e174f76258cef" name="a08135ac9e160bc34494a6bb8051607fda17d8d0d28cead1ffe56e174f76258cef"></a>oneKeypad&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda86cc61ab6f9743ba063912724e0da51d" name="a08135ac9e160bc34494a6bb8051607fda86cc61ab6f9743ba063912724e0da51d"></a>twoKeypad&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fdad6a43c920f0329fd9f7c6261fa99ca49" name="a08135ac9e160bc34494a6bb8051607fdad6a43c920f0329fd9f7c6261fa99ca49"></a>threeKeypad&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fdaa917db61bebb8193bf4c264d315a4986" name="a08135ac9e160bc34494a6bb8051607fdaa917db61bebb8193bf4c264d315a4986"></a>fourKeypad&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda7486ad7bada0daf52c49c73736a68619" name="a08135ac9e160bc34494a6bb8051607fda7486ad7bada0daf52c49c73736a68619"></a>fiveKeypad&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fdaa1e8c0d31d34d02673e4bd08d0139676" name="a08135ac9e160bc34494a6bb8051607fdaa1e8c0d31d34d02673e4bd08d0139676"></a>sixKeypad&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda99ea2def90a8ad015b758715942b09ff" name="a08135ac9e160bc34494a6bb8051607fda99ea2def90a8ad015b758715942b09ff"></a>sevenKeypad&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda45489aed47d8e13c2e61a647956056b1" name="a08135ac9e160bc34494a6bb8051607fda45489aed47d8e13c2e61a647956056b1"></a>eightKeypad&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda1e4abbcbcafff1f57f84cbac2840aee4" name="a08135ac9e160bc34494a6bb8051607fda1e4abbcbcafff1f57f84cbac2840aee4"></a>nineKeypad&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fdae837215b6356acfb1d783075039a0a90" name="a08135ac9e160bc34494a6bb8051607fdae837215b6356acfb1d783075039a0a90"></a>multiply&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda8a67c9f5e56c1f9b35ea00527c493750" name="a08135ac9e160bc34494a6bb8051607fda8a67c9f5e56c1f9b35ea00527c493750"></a>add&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fdaa473aa6f2428c6b9a0923ae187959ad1" name="a08135ac9e160bc34494a6bb8051607fdaa473aa6f2428c6b9a0923ae187959ad1"></a>separator&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fdaf803036e7d2abd9cfe2b7f8ad17c23eb" name="a08135ac9e160bc34494a6bb8051607fdaf803036e7d2abd9cfe2b7f8ad17c23eb"></a>subtract&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda0b55e67aa9cf62ec53f7814237230234" name="a08135ac9e160bc34494a6bb8051607fda0b55e67aa9cf62ec53f7814237230234"></a>decimal&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda6c8e6c795f770e6286e8d0e4556fa933" name="a08135ac9e160bc34494a6bb8051607fda6c8e6c795f770e6286e8d0e4556fa933"></a>divide&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fdad1ac81b787c995a005a271af163e9bfd" name="a08135ac9e160bc34494a6bb8051607fdad1ac81b787c995a005a271af163e9bfd"></a>F1&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda274700d97abecab2c1f8610094b8ae64" name="a08135ac9e160bc34494a6bb8051607fda274700d97abecab2c1f8610094b8ae64"></a>F2&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda2c3735a4eae13e25a4c46db17e8812cc" name="a08135ac9e160bc34494a6bb8051607fda2c3735a4eae13e25a4c46db17e8812cc"></a>F3&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda0befc3fffe16175f06fed599897fb381" name="a08135ac9e160bc34494a6bb8051607fda0befc3fffe16175f06fed599897fb381"></a>F4&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda064889f21e8a90c274154ef1e1eb8b2c" name="a08135ac9e160bc34494a6bb8051607fda064889f21e8a90c274154ef1e1eb8b2c"></a>F5&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda4490edf86a8bc62c803fc3107bc41a6f" name="a08135ac9e160bc34494a6bb8051607fda4490edf86a8bc62c803fc3107bc41a6f"></a>F6&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda0ad0df8762fc50dbc3f3ba2da686ef3b" name="a08135ac9e160bc34494a6bb8051607fda0ad0df8762fc50dbc3f3ba2da686ef3b"></a>F7&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda3d03a9bb08c1089ee40be53d1bae8bc7" name="a08135ac9e160bc34494a6bb8051607fda3d03a9bb08c1089ee40be53d1bae8bc7"></a>F8&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda0f7bd6753bfc6a5fa14056542ddd75cb" name="a08135ac9e160bc34494a6bb8051607fda0f7bd6753bfc6a5fa14056542ddd75cb"></a>F9&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda007b284a62577feed12ac48c467d3375" name="a08135ac9e160bc34494a6bb8051607fda007b284a62577feed12ac48c467d3375"></a>F10&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda1e2e7ebec1edb0e046d57cfac2668b18" name="a08135ac9e160bc34494a6bb8051607fda1e2e7ebec1edb0e046d57cfac2668b18"></a>F11&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda23ab672fe409c3badce1684788263fcc" name="a08135ac9e160bc34494a6bb8051607fda23ab672fe409c3badce1684788263fcc"></a>F12&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda4db1105055196ce0172181fb4a00b4a1" name="a08135ac9e160bc34494a6bb8051607fda4db1105055196ce0172181fb4a00b4a1"></a>F13&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fdaf553e5a5c6950e8cdda4e0aca386fd00" name="a08135ac9e160bc34494a6bb8051607fdaf553e5a5c6950e8cdda4e0aca386fd00"></a>F14&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fdab3673361894d96c9269dd70aae135dd8" name="a08135ac9e160bc34494a6bb8051607fdab3673361894d96c9269dd70aae135dd8"></a>F15&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda7534336f6128a9b373e55e29decd356c" name="a08135ac9e160bc34494a6bb8051607fda7534336f6128a9b373e55e29decd356c"></a>F16&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda7ea6c685604556dbc555fcd1f3237136" name="a08135ac9e160bc34494a6bb8051607fda7ea6c685604556dbc555fcd1f3237136"></a>F17&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda988964138104e32ef60f5649da77128d" name="a08135ac9e160bc34494a6bb8051607fda988964138104e32ef60f5649da77128d"></a>F18&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda210d3b6d485cf92003b2917ab157c051" name="a08135ac9e160bc34494a6bb8051607fda210d3b6d485cf92003b2917ab157c051"></a>F19&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fdac89aec3a24853d415a00e9d8fce88e7e" name="a08135ac9e160bc34494a6bb8051607fdac89aec3a24853d415a00e9d8fce88e7e"></a>F20&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fdadf392b6f5ba2c1dbdd369cdbff0af4f3" name="a08135ac9e160bc34494a6bb8051607fdadf392b6f5ba2c1dbdd369cdbff0af4f3"></a>F21&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda36c78c8c53eb4b7ea057f29eec6d48fc" name="a08135ac9e160bc34494a6bb8051607fda36c78c8c53eb4b7ea057f29eec6d48fc"></a>F22&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda171e69b08d3d8ea90151404481fe7378" name="a08135ac9e160bc34494a6bb8051607fda171e69b08d3d8ea90151404481fe7378"></a>F23&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda75cdc6b6b7f317fc105a57435cf5b98b" name="a08135ac9e160bc34494a6bb8051607fda75cdc6b6b7f317fc105a57435cf5b98b"></a>F24&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fdac40c8aaceff56b56aa98832f77dd8666" name="a08135ac9e160bc34494a6bb8051607fdac40c8aaceff56b56aa98832f77dd8666"></a>numLock&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fdac78f6a5c807a7fe34fc6477aae98401e" name="a08135ac9e160bc34494a6bb8051607fdac78f6a5c807a7fe34fc6477aae98401e"></a>scrollLock&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda5d6c20986a5fa2a9a260a91f83b71c62" name="a08135ac9e160bc34494a6bb8051607fda5d6c20986a5fa2a9a260a91f83b71c62"></a>leftShift&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fdab51e2ccab30aedd7905ccc2100ed51f2" name="a08135ac9e160bc34494a6bb8051607fdab51e2ccab30aedd7905ccc2100ed51f2"></a>rightShift&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda2aafbc5e910bfa0a76f615eb9327bc25" name="a08135ac9e160bc34494a6bb8051607fda2aafbc5e910bfa0a76f615eb9327bc25"></a>leftCtrl&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda24e769deef75875b527c55c11417a452" name="a08135ac9e160bc34494a6bb8051607fda24e769deef75875b527c55c11417a452"></a>rightCtrl&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda848fb7423734dfcf61066d50a8324699" name="a08135ac9e160bc34494a6bb8051607fda848fb7423734dfcf61066d50a8324699"></a>leftAlt&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda71886f6596900ddb609f65e104c58320" name="a08135ac9e160bc34494a6bb8051607fda71886f6596900ddb609f65e104c58320"></a>rightAlt&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda741a6983143f1c249b7a503950e46660" name="a08135ac9e160bc34494a6bb8051607fda741a6983143f1c249b7a503950e46660"></a>volumeMute&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda43417081281b29b36efba9a46e32022d" name="a08135ac9e160bc34494a6bb8051607fda43417081281b29b36efba9a46e32022d"></a>volumeDown&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda9af772d39256e70ef4d5bd21a3eb2039" name="a08135ac9e160bc34494a6bb8051607fda9af772d39256e70ef4d5bd21a3eb2039"></a>volumeUp&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda4489e80d91088f226cfb23c2078bbc1a" name="a08135ac9e160bc34494a6bb8051607fda4489e80d91088f226cfb23c2078bbc1a"></a>nextTrack&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda5ac703bb6d93402d9a5625db757b5706" name="a08135ac9e160bc34494a6bb8051607fda5ac703bb6d93402d9a5625db757b5706"></a>previousTrack&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fda77e66029dedf702d96ece96d8122101e" name="a08135ac9e160bc34494a6bb8051607fda77e66029dedf702d96ece96d8122101e"></a>stopMedia&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a08135ac9e160bc34494a6bb8051607fdade736aa233b3c8ff19b1e397af77c06c" name="a08135ac9e160bc34494a6bb8051607fdade736aa233b3c8ff19b1e397af77c06c"></a>zoom&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="_keys_8h_source.html#l00009">9</a> of file <a class="el" href="_keys_8h_source.html">Keys.h</a>.</p>
 
 </div>
 </div>

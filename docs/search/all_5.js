@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['editcontrol_0',['EditControl',['../classgui__framework_1_1_edit_control.html#acd5ee55811b511eacb00a188336e77cb',1,'gui_framework::EditControl']]],
+  ['e_0',['E',['../namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda99127a0b6c20be81e8aed45863061a4c',1,'gui_framework::hotkeys']]],
   ['editcontrol_1',['editControl',['../namespacegui__framework_1_1standard__classes.html#a1d0ecb983243bb5de6f719aacebcc492',1,'gui_framework::standard_classes']]],
-  ['editcontrol_2',['EditControl',['../classgui__framework_1_1_edit_control.html',1,'gui_framework']]],
+  ['editcontrol_2',['EditControl',['../classgui__framework_1_1_edit_control.html#acd5ee55811b511eacb00a188336e77cb',1,'gui_framework::EditControl::EditControl()'],['../classgui__framework_1_1_edit_control.html',1,'gui_framework::EditControl']]],
   ['editcontrol_2ecpp_3',['EditControl.cpp',['../_edit_control_8cpp.html',1,'']]],
   ['editcontrol_2eh_4',['EditControl.h',['../_edit_control_8h.html',1,'']]],
   ['editcontroladditionalcreationdata_2ecpp_5',['EditControlAdditionalCreationData.cpp',['../_edit_control_additional_creation_data_8cpp.html',1,'']]],
@@ -18,11 +18,15 @@ var searchData=
   ['editcontrolstyles_2ecpp_15',['EditControlStyles.cpp',['../_edit_control_styles_8cpp.html',1,'']]],
   ['editcontrolstyles_2eh_16',['EditControlStyles.h',['../_edit_control_styles_8h.html',1,'']]],
   ['editcontrolwidth_17',['editControlWidth',['../classgui__framework_1_1_base_edit_control.html#a4264d95ccec510a700bf3d9c37553218',1,'gui_framework::BaseEditControl']]],
-  ['enable_18',['enable',['../classgui__framework_1_1_base_component.html#a95fb0d26b051e0bef0f9cde1d9fb0797',1,'gui_framework::BaseComponent']]],
-  ['enableresize_19',['enableResize',['../classgui__framework_1_1_base_separate_window.html#a1ff76c35c116e9d191d9026da7cb4d2f',1,'gui_framework::BaseSeparateWindow']]],
-  ['end_20',['end',['../classgui__framework_1_1_base_composite.html#a2ff0b555146c09b8a1bdfb8cc950bb8d',1,'gui_framework::BaseComposite::end()'],['../classgui__framework_1_1interfaces_1_1_i_iterable.html#abb960166a8c56fffc233b26760c0b61c',1,'gui_framework::interfaces::IIterable::end()'],['../classgui__framework_1_1utility_1_1_base_loadable_holder.html#afd9bf42b37fac24224d616617bebf010',1,'gui_framework::utility::BaseLoadableHolder::end()']]],
-  ['exceptionconstants_2eh_21',['ExceptionConstants.h',['../_exception_constants_8h.html',1,'']]],
-  ['exitcode_22',['exitCode',['../classgui__framework_1_1_base_composite.html#a761a80a5f66a0c2a06deb356d34de4e5',1,'gui_framework::BaseComposite']]],
-  ['exitmode_23',['exitMode',['../classgui__framework_1_1_base_composite.html#a438c1f5c9ef171bc01b2ac420fee985c',1,'gui_framework::BaseComposite']]],
-  ['extendedexception_24',['extendedException',['../namespacegui__framework_1_1____utility.html#a4d6db79e277690e8e36feb4a21faf940',1,'gui_framework::__utility::extendedException(const string &amp;exceptionMessage, string_view fileName, string_view methodName, int line)'],['../namespacegui__framework_1_1____utility.html#a98d0fbb00bf3ff2fef162bafb2a5224d',1,'gui_framework::__utility::extendedException(const std::string &amp;exceptionMessage, std::string_view fileName, std::string_view methodName, int line)']]]
+  ['eight_18',['eight',['../namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda3fb5844ac7129fab99ab14460dcf8fe0',1,'gui_framework::hotkeys']]],
+  ['eightkeypad_19',['eightKeypad',['../namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda45489aed47d8e13c2e61a647956056b1',1,'gui_framework::hotkeys']]],
+  ['enable_20',['enable',['../classgui__framework_1_1_base_component.html#a95fb0d26b051e0bef0f9cde1d9fb0797',1,'gui_framework::BaseComponent']]],
+  ['enableresize_21',['enableResize',['../classgui__framework_1_1_base_separate_window.html#a1ff76c35c116e9d191d9026da7cb4d2f',1,'gui_framework::BaseSeparateWindow']]],
+  ['end_22',['end',['../classgui__framework_1_1_base_composite.html#a2ff0b555146c09b8a1bdfb8cc950bb8d',1,'gui_framework::BaseComposite::end()'],['../classgui__framework_1_1interfaces_1_1_i_iterable.html#abb960166a8c56fffc233b26760c0b61c',1,'gui_framework::interfaces::IIterable::end()'],['../classgui__framework_1_1utility_1_1_base_loadable_holder.html#afd9bf42b37fac24224d616617bebf010',1,'gui_framework::utility::BaseLoadableHolder::end()'],['../namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda366a6b1984a7e8b783b8c85ce84e9b5e',1,'gui_framework::hotkeys::end()']]],
+  ['enter_23',['enter',['../namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda210e1ac9bf3107b6af9826e7ba6d1467',1,'gui_framework::hotkeys']]],
+  ['exceptionconstants_2eh_24',['ExceptionConstants.h',['../_exception_constants_8h.html',1,'']]],
+  ['execute_25',['execute',['../namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda5b073306dfdb3fadc861ef7b430bf7ec',1,'gui_framework::hotkeys']]],
+  ['exitcode_26',['exitCode',['../classgui__framework_1_1_base_composite.html#a761a80a5f66a0c2a06deb356d34de4e5',1,'gui_framework::BaseComposite']]],
+  ['exitmode_27',['exitMode',['../classgui__framework_1_1_base_composite.html#a438c1f5c9ef171bc01b2ac420fee985c',1,'gui_framework::BaseComposite']]],
+  ['extendedexception_28',['extendedException',['../namespacegui__framework_1_1____utility.html#a4d6db79e277690e8e36feb4a21faf940',1,'gui_framework::__utility::extendedException(const string &amp;exceptionMessage, string_view fileName, string_view methodName, int line)'],['../namespacegui__framework_1_1____utility.html#a98d0fbb00bf3ff2fef162bafb2a5224d',1,'gui_framework::__utility::extendedException(const std::string &amp;exceptionMessage, std::string_view fileName, std::string_view methodName, int line)']]]
 ];

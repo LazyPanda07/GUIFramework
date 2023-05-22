@@ -2,6 +2,8 @@ var _utility_8h =
 [
     [ "appendStyle", "_utility_8h.html#ae97300d8014320696e57f502a858c570", null ],
     [ "extendedException", "_utility_8h.html#a98d0fbb00bf3ff2fef162bafb2a5224d", null ],
+    [ "getCenterX", "_utility_8h.html#a725fa6af9d0164c88dc523a0d555a29e", null ],
+    [ "getCenterY", "_utility_8h.html#a355c0375fc74a26c33b31aee61437efb", null ],
     [ "getCurrentModule", "_utility_8h.html#a1945ec50b055f688bbb3e7c6cae8de64", null ],
     [ "getGUIFrameworkVersion", "_utility_8h.html#ac6becb2cc50030cd8e2594243a70e780", null ],
     [ "getStringFromRawPath", "_utility_8h.html#a87517c2384e0f810d1779081e1c19f41", null ],

@@ -19,13 +19,14 @@ var classgui__framework_1_1_g_u_i_framework =
     [ "isExist", "classgui__framework_1_1_g_u_i_framework.html#a74d8f19bb4905f11dc952605fe2d4670", null ],
     [ "isModulesLoaded", "classgui__framework_1_1_g_u_i_framework.html#afa8edc0ebca623c3e29e33286a9a09f8", null ],
     [ "loadModule", "classgui__framework_1_1_g_u_i_framework.html#a09e3810ca0a3fff265409fcbb3da7a28", null ],
-    [ "registerHotkey", "classgui__framework_1_1_g_u_i_framework.html#a5e9ede6c7066387c321b14e70e4e6301", null ],
-    [ "registerHotkey", "classgui__framework_1_1_g_u_i_framework.html#a1b14cd703a31e7d212c70978201160c1", null ],
+    [ "registerHotkey", "classgui__framework_1_1_g_u_i_framework.html#a411cd66f401f704db2cbcf897ddea84f", null ],
+    [ "registerHotkey", "classgui__framework_1_1_g_u_i_framework.html#ad04a9e76b98a5d4aad3c638f63a0cdf2", null ],
     [ "serializeHotkeys", "classgui__framework_1_1_g_u_i_framework.html#a44f97bb37719b0b1de1d3b2c72caacdc", null ],
     [ "unloadModule", "classgui__framework_1_1_g_u_i_framework.html#a254bc3efdb734c69bd73f6810094cda5", null ],
     [ "unregisterHotkey", "classgui__framework_1_1_g_u_i_framework.html#ae544d7005539ef804472fcd646db60df", null ],
     [ "unregisterHotkey", "classgui__framework_1_1_g_u_i_framework.html#a291a346e3734f31d855f48fe40194bdb", null ],
     [ "BaseComponent", "classgui__framework_1_1_g_u_i_framework.html#ad89e05696f39a7a3b7908a11c22f82e0", null ],
     [ "BaseDialogBox", "classgui__framework_1_1_g_u_i_framework.html#a4d103ffcdcc4afce389bae3ba8228a8c", null ],
+    [ "BaseMainWindow", "classgui__framework_1_1_g_u_i_framework.html#abc9e4590e544976122282c07c4d20ba4", null ],
     [ "WindowHolder", "classgui__framework_1_1_g_u_i_framework.html#a36d9e0a53f695bf8e7ee1523eb406bfa", null ]
 ];

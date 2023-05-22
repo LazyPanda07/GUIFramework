@@ -10,8 +10,9 @@ var searchData=
   ['smallicon_7',['smallIcon',['../classgui__framework_1_1_base_separate_window.html#a1c47d6bae293d86464a8bc378256076b',1,'gui_framework::BaseSeparateWindow']]],
   ['smalliconheight_8',['smallIconHeight',['../namespacegui__framework_1_1standard__sizes.html#aa4bc732733510b8fcf873c8d199c0192',1,'gui_framework::standard_sizes']]],
   ['smalliconwidth_9',['smallIconWidth',['../namespacegui__framework_1_1standard__sizes.html#a63969dbd0eee9d560b7c588ede24efde',1,'gui_framework::standard_sizes']]],
-  ['staticcontrol_10',['staticControl',['../namespacegui__framework_1_1standard__classes.html#aaa416ce763f1ae730d8e9666f5d02775',1,'gui_framework::standard_classes']]],
-  ['staticcontrolheight_11',['staticControlHeight',['../classgui__framework_1_1_base_static_control.html#a4decb9b3de28b8151e469a072030524b',1,'gui_framework::BaseStaticControl']]],
-  ['staticcontrolwidth_12',['staticControlWidth',['../classgui__framework_1_1_base_static_control.html#a6a656f37eb1750de3544ba17c7a6e030',1,'gui_framework::BaseStaticControl']]],
-  ['styles_13',['styles',['../classgui__framework_1_1_base_component.html#aec8d3af6711b0c012f2f7f90cc7d4141',1,'gui_framework::BaseComponent::styles()'],['../structgui__framework_1_1utility_1_1_component_settings.html#a15c1307533669efd39e9f77230ef078c',1,'gui_framework::utility::ComponentSettings::styles()']]]
+  ['starttrayid_10',['startTrayId',['../namespacegui__framework_1_1custom__window__messages.html#a8d80941005cb92ac530993346a97a461',1,'gui_framework::custom_window_messages']]],
+  ['staticcontrol_11',['staticControl',['../namespacegui__framework_1_1standard__classes.html#aaa416ce763f1ae730d8e9666f5d02775',1,'gui_framework::standard_classes']]],
+  ['staticcontrolheight_12',['staticControlHeight',['../classgui__framework_1_1_base_static_control.html#a4decb9b3de28b8151e469a072030524b',1,'gui_framework::BaseStaticControl']]],
+  ['staticcontrolwidth_13',['staticControlWidth',['../classgui__framework_1_1_base_static_control.html#a6a656f37eb1750de3544ba17c7a6e030',1,'gui_framework::BaseStaticControl']]],
+  ['styles_14',['styles',['../classgui__framework_1_1_base_component.html#aec8d3af6711b0c012f2f7f90cc7d4141',1,'gui_framework::BaseComponent::styles()'],['../structgui__framework_1_1utility_1_1_component_settings.html#a15c1307533669efd39e9f77230ef078c',1,'gui_framework::utility::ComponentSettings::styles()']]]
 ];

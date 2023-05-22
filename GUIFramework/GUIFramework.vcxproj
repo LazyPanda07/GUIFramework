@@ -253,6 +253,7 @@
     <ClInclude Include="src\Utility\ComponentSettings.h" />
     <ClInclude Include="src\Utility\Holders\LoadableHolders\Iterators\loadable_const_forward_iterator.h" />
     <ClInclude Include="src\Utility\Holders\LoadableHolders\Iterators\loadable_forward_iterator.h" />
+    <ClInclude Include="src\Utility\Keys.h" />
     <ClInclude Include="src\Utility\Paint\Draw.h" />
     <ClInclude Include="src\Utility\Utility.h" />
     <ClInclude Include="src\Utility\Holders\WindowHolder.h" />

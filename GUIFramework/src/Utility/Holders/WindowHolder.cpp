@@ -56,7 +56,7 @@ namespace gui_framework
 
 			if (currentThreadId == instance.uiThreadId)
 			{
-				lock_guard<recursive_mutex> runOnUIThreadLock(instance.runOnUIThreadMutex);
+				unique_lock<recursive_mutex> runOnUIThreadLock(instance.runOnUIThreadMutex);
 				queue<function<void()>>& runOnUIFunctions = instance.runOnUIFunctions;
 
 				while (runOnUIFunctions.size())

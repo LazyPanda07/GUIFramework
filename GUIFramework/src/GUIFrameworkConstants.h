@@ -73,16 +73,6 @@ namespace gui_framework
 		inline constexpr std::wstring_view msftEditLibrary = L"MsftEdit.dll";
 	}
 
-	namespace hotkeys
-	{
-		enum class additionalKeys
-		{
-			shift = VK_SHIFT,
-			control,
-			alt
-		};
-	}
-
 	/// @brief Default on click signature
 	using onClickSignature = void(*)();
 

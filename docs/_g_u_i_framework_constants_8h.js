@@ -7,11 +7,6 @@ var _g_u_i_framework_constants_8h =
     [ "onCloseSignature", "_g_u_i_framework_constants_8h.html#a04962e85abffea22d24989bdd3e6f8f8", null ],
     [ "onDestroySignature", "_g_u_i_framework_constants_8h.html#a18efcfbf1849af342705442339a511cf", null ],
     [ "smartPointerType", "_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67", null ],
-    [ "additionalKeys", "_g_u_i_framework_constants_8h.html#af7004d43e2976ef86b2bcc7e46959e23", [
-      [ "shift", "_g_u_i_framework_constants_8h.html#af7004d43e2976ef86b2bcc7e46959e23a2ab64f4ee279e5baf7ab7059b15e6d12", null ],
-      [ "control", "_g_u_i_framework_constants_8h.html#af7004d43e2976ef86b2bcc7e46959e23afc5364bf9dbfa34954526becad136d4b", null ],
-      [ "alt", "_g_u_i_framework_constants_8h.html#af7004d43e2976ef86b2bcc7e46959e23a34823136d0dd91d0f5d22db740f7679c", null ]
-    ] ],
     [ "additionalListViewReportColumnWidth", "_g_u_i_framework_constants_8h.html#a411003476965ae5667265e2e56687220", null ],
     [ "button", "_g_u_i_framework_constants_8h.html#a91692a80ee64cd0fa57a997678eba3d6", null ],
     [ "comboBox", "_g_u_i_framework_constants_8h.html#a2b51b49907b5aff37bcf59ecc833dbca", null ],
