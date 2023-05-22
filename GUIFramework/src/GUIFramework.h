@@ -2,6 +2,7 @@
 
 #include "Utility/Creators/BaseComponentCreator.h"
 #include "Interfaces/Utility/IDeserializer.h"
+#include "Utility/Keys.h"
 
 #pragma comment (lib, "Comctl32.lib")
 #pragma comment (lib, "UxTheme.lib")
@@ -55,6 +56,7 @@ namespace gui_framework
 		std::queue<uint32_t> availableIds;
 		std::mutex idMutex;
 		uint32_t nextId;
+		std::atomic<uint32_t> nextTrayId;
 #pragma endregion
 #pragma region Hotkeys
 		std::unordered_map<size_t, std::function<void()>> hotkeys;
@@ -88,6 +90,8 @@ namespace gui_framework
 
 	private:
 		uint32_t generateId(const std::wstring& windowName);
+
+		uint32_t generateTrayId();
 
 		void removeIds(const std::wstring& windowName);
 
@@ -145,21 +149,21 @@ namespace gui_framework
 		void addTask(std::function<void()>&& task, const std::function<void()>& callback = nullptr);
 
 		/// @brief Only works in thread, that call runMainLoop from WindowHolder. Thread safe register hotkey
-		/// @param key Value from https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
+		/// @param key Value from keys enum or https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
 		/// @param onClick Function to call
 		/// @param additionalKeys 
 		/// @return Hotkey id
-		size_t registerHotkey(uint32_t key, const std::function<void()>& onClick, const std::vector<hotkeys::additionalKeys>& additionalKeys = {});
+		size_t registerHotkey(hotkeys::keys key, const std::function<void()>& onClick, const std::vector<hotkeys::additionalKeys>& additionalKeys = {});
 
 		/// @brief Only works in thread, that call runMainLoop from WindowHolder. Thread safe register hotkey
-		/// @param key Value from https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
+		/// @param key Value from keys enum or https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
 		/// @param functionName Name of function to call
 		/// @param moduleName Name of module where function store
 		/// @param additionalKeys 
 		/// @return Hotkey id
 		/// @exception CantFindFunctionFromModuleException 
 		/// @exception std::out_of_range Can't find moduleName in loaded modules
-		size_t registerHotkey(uint32_t key, const std::string& functionName, const std::string& moduleName, const std::vector<hotkeys::additionalKeys>& additionalKeys = {});
+		size_t registerHotkey(hotkeys::keys key, const std::string& functionName, const std::string& moduleName, const std::vector<hotkeys::additionalKeys>& additionalKeys = {});
 
 		/// @brief Thread safe unregister hotkey
 		/// @param hotkeyId Return value from registerHotkey
@@ -251,10 +255,9 @@ namespace gui_framework
 		void addDeserializer(Args&&... args);
 #pragma region FriendClasses
 		friend class BaseComponent;
-
 		friend class WindowHolder;
-
 		friend class BaseDialogBox;
+		friend class BaseMainWindow;
 #pragma endregion
 	};
 

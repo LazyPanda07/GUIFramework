@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['key_0',['key',['../structgui__framework_1_1_g_u_i_framework_1_1hotkey_data.html#af4de49672a99a5cac0334b901d79758c',1,'gui_framework::GUIFramework::hotkeyData']]]
+  ['j_0',['J',['../namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fdaddf570bf46508d9ab02068f2f782924b',1,'gui_framework::hotkeys']]]
 ];

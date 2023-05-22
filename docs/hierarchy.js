@@ -130,6 +130,7 @@ var hierarchy =
         [ "gui_framework::DialogBox", "classgui__framework_1_1_dialog_box.html", null ]
       ] ],
       [ "gui_framework::BaseSeparateWindow", "classgui__framework_1_1_base_separate_window.html", [
+        [ "gui_framework::BaseMainWindow", "classgui__framework_1_1_base_main_window.html", null ],
         [ "gui_framework::SeparateWindow", "classgui__framework_1_1_separate_window.html", null ]
       ] ]
     ] ],
@@ -211,13 +212,13 @@ var hierarchy =
       [ "gui_framework::BaseRichEdit", "classgui__framework_1_1_base_rich_edit.html", [
         [ "gui_framework::RichEdit", "classgui__framework_1_1_rich_edit.html", null ]
       ] ],
+      [ "gui_framework::BaseSeparateWindow", "classgui__framework_1_1_base_separate_window.html", null ],
       [ "gui_framework::Button", "classgui__framework_1_1_button.html", null ],
       [ "gui_framework::ChildWindow", "classgui__framework_1_1_child_window.html", null ],
       [ "gui_framework::EditControl", "classgui__framework_1_1_edit_control.html", null ],
       [ "gui_framework::ImageButton", "classgui__framework_1_1_image_button.html", null ],
       [ "gui_framework::InfiniteProgressBar", "classgui__framework_1_1_infinite_progress_bar.html", null ],
       [ "gui_framework::ProgressBar", "classgui__framework_1_1_progress_bar.html", null ],
-      [ "gui_framework::SeparateWindow", "classgui__framework_1_1_separate_window.html", null ],
       [ "gui_framework::StaticControl", "classgui__framework_1_1_static_control.html", null ],
       [ "gui_framework::TabControl", "classgui__framework_1_1_tab_control.html", null ]
     ] ],

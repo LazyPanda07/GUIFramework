@@ -200,6 +200,7 @@ var annotated_dup =
       [ "BaseListTextIconListView", "classgui__framework_1_1_base_list_text_icon_list_view.html", "classgui__framework_1_1_base_list_text_icon_list_view" ],
       [ "BaseListTextListView", "classgui__framework_1_1_base_list_text_list_view.html", "classgui__framework_1_1_base_list_text_list_view" ],
       [ "BaseListView", "classgui__framework_1_1_base_list_view.html", "classgui__framework_1_1_base_list_view" ],
+      [ "BaseMainWindow", "classgui__framework_1_1_base_main_window.html", "classgui__framework_1_1_base_main_window" ],
       [ "BaseMenuItem", "classgui__framework_1_1_base_menu_item.html", "classgui__framework_1_1_base_menu_item" ],
       [ "BaseMultipleSelectListBox", "classgui__framework_1_1_base_multiple_select_list_box.html", "classgui__framework_1_1_base_multiple_select_list_box" ],
       [ "BaseProgressBar", "classgui__framework_1_1_base_progress_bar.html", "classgui__framework_1_1_base_progress_bar" ],

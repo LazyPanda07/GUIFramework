@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['text_0',['text',['../classgui__framework_1_1_image_button.html#a33f6314ec376eb78a1b8131f98981073a1cb251ec0d568de6a929b520c4aed8d1',1,'gui_framework::ImageButton']]],
-  ['textandimage_1',['textAndImage',['../classgui__framework_1_1_image_button.html#a33f6314ec376eb78a1b8131f98981073ab407af669ebb1c27249aadf7865f75af',1,'gui_framework::ImageButton']]],
-  ['top_2',['top',['../classgui__framework_1_1_horizontal_trackbar_control.html#a40c44b65f9f2033859e569b4c7da3b33ab28354b543375bfa94dabaeda722927f',1,'gui_framework::HorizontalTrackbarControl']]],
-  ['tryagain_3',['tryAgain',['../classgui__framework_1_1_base_dialog_box.html#a66c5cb34004ac273196f855bf18afbfaa7b4b47c0f57e8890fef4690f44474dc5',1,'gui_framework::BaseDialogBox']]]
+  ['n_0',['N',['../namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda265643479e31fa06990b445c2f5823fb',1,'gui_framework::hotkeys']]],
+  ['nexttrack_1',['nextTrack',['../namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda4489e80d91088f226cfb23c2078bbc1a',1,'gui_framework::hotkeys']]],
+  ['nine_2',['nine',['../namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda327d9d80deccd722566e72f660cd98df',1,'gui_framework::hotkeys']]],
+  ['ninekeypad_3',['nineKeypad',['../namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda1e4abbcbcafff1f57f84cbac2840aee4',1,'gui_framework::hotkeys']]],
+  ['no_4',['no',['../classgui__framework_1_1_base_dialog_box.html#a66c5cb34004ac273196f855bf18afbfaa7fa3b767c460b54a2be4d49030b349c7',1,'gui_framework::BaseDialogBox']]],
+  ['numlock_5',['numLock',['../namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fdac40c8aaceff56b56aa98832f77dd8666',1,'gui_framework::hotkeys']]]
 ];

@@ -57,6 +57,16 @@ namespace gui_framework
 		/// @exception CantFindFunctionFromModuleException 
 		GUI_FRAMEWORK_API_FUNCTION void loadEventCallbackFromModule(std::function<void(const std::wstring&)>& eventCallback, const std::string& functionName, const std::string& moduleName);
 
+		/**
+		 * @brief Get center X coordinate
+		*/
+		GUI_FRAMEWORK_API_FUNCTION int getCenterX(int width);
+
+		/**
+		 * @brief Get center Y coordinate
+		*/
+		GUI_FRAMEWORK_API_FUNCTION int getCenterY(int height);
+
 		/// @brief Get current version of GUIFramework
 		/// @return 
 		GUI_FRAMEWORK_API_FUNCTION std::string getGUIFrameworkVersion();

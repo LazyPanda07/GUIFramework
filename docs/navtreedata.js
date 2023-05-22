@@ -28,11 +28,12 @@ var NAVTREE =
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
-        [ "All", "namespacemembers.html", null ],
+        [ "All", "namespacemembers.html", "namespacemembers_dup" ],
         [ "Functions", "namespacemembers_func.html", null ],
         [ "Variables", "namespacemembers_vars.html", null ],
         [ "Typedefs", "namespacemembers_type.html", null ],
-        [ "Enumerations", "namespacemembers_enum.html", null ]
+        [ "Enumerations", "namespacemembers_enum.html", null ],
+        [ "Enumerator", "namespacemembers_eval.html", null ]
       ] ]
     ] ],
     [ "Classes", "annotated.html", [
@@ -62,24 +63,25 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_additional_creation_data_8h.html",
-"_composites_header_8cpp.html",
+"_components_header_8cpp.html",
 "_i_non_resizable_component_8h.html",
-"_rich_edit_8cpp_source.html",
-"classgui__framework_1_1_base_button.html#a867f3cb369326b3457cc5ba4daf6544b",
-"classgui__framework_1_1_base_composite.html#a38cbd60cba872c43abbb25156c4daeb6",
-"classgui__framework_1_1_base_list_list_view.html",
-"classgui__framework_1_1_base_tab_control.html#a2d014829d24bbcdfbdc52839bad815c9",
-"classgui__framework_1_1_drop_down_menu_item.html",
-"classgui__framework_1_1_multiple_select_list_box.html#ab5803103b26a62d2dd93de1476239a87",
-"classgui__framework_1_1deserializers_1_1_list_text_list_view_deserializer.html#ac46940f13c4d00287d9eea5e3cc599ae",
-"classgui__framework_1_1interfaces_1_1_i_iterable.html#a20a07073ad62481f88e935cff286191b",
-"classgui__framework_1_1iterators_1_1composite__const__forward__iterator.html#a237418b3cb7777af818c069a5227a601",
-"classgui__framework_1_1styles_1_1_trackbar_control_styles.html#a05928f633db43aca385719a64fca2865",
-"classgui__framework_1_1utility_1_1_additional_creation_data_3_01_list_icon_list_view_01_4.html#a05875a5326a8a1418c9962625e784c95",
-"classgui__framework_1_1utility_1_1_base_loadable_holder.html#afd9bf42b37fac24224d616617bebf010",
-"dir_2009a52abfdfb2c99423d21e79541038.html",
-"namespacegui__framework_1_1utility.html#abbafc9708435f466d89c4f977dcd460d",
-"structgui__framework_1_1parsers_1_1_menu_parser.html#a4588a9b7ee41d396e8468aab871eeac7"
+"_list_box_8cpp_source.html",
+"_text_icon_list_view_additional_creation_data_8h_source.html",
+"classgui__framework_1_1_base_combo_box.html#aade08088d156f60fa7319c8f64e9b932",
+"classgui__framework_1_1_base_dialog_box.html#a97f95d472d9a95ceb1dae0297e7aec57",
+"classgui__framework_1_1_base_progress_bar.html#a432f72d0053391ce14f91b09ac7de18d",
+"classgui__framework_1_1_base_trackbar_control.html#a16c9f1a6690c50dab270ce60da00d5a6",
+"classgui__framework_1_1_horizontal_trackbar_control.html#a1bd8044a04dabd40ecbd511b1ca8f6db",
+"classgui__framework_1_1_vertical_trackbar_control.html#aa1a191d9b39ed0629ce6c11c71443e0ea7c4f29407893c334a6cb7a87bf045c0d",
+"classgui__framework_1_1exceptions_1_1_cant_find_function_from_module_exception.html",
+"classgui__framework_1_1interfaces_1_1_i_resizable_component.html#a54f030b9ff3cc12acfc57031a14938c9",
+"classgui__framework_1_1styles_1_1_default_button_styles.html",
+"classgui__framework_1_1utility_1_1_additional_creation_data_3_01_child_window_01_4.html#aff1ab8ff3a98fe6d9e2680e0b09f2eed",
+"classgui__framework_1_1utility_1_1_additional_creation_data_3_01_separate_window_01_4.html#ae334232e97289d25078ecae7cfef7b3b",
+"classgui__framework_1_1utility_1_1_icons_holder.html#afd4a0bd7f7fec4ec53a4be07c4b37136",
+"functions_func_~.html",
+"namespacegui__framework_1_1standard__classes.html#af0e29a2fba9b69e276cc9d3bceb41b7f",
+"structgui__framework_1_1parsers_1_1_group_box_parser.html#aae15d2948ef69e7f4f02ad2f48455f72"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

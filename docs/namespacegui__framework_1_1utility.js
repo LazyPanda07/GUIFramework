@@ -70,6 +70,8 @@ var namespacegui__framework_1_1utility =
       [ "smallIcon", "namespacegui__framework_1_1utility.html#a4bd7b1a1121bbfb16d0a1f9b4ba266dea82840ee69ba0e891fa382c7785fc0527", null ]
     ] ],
     [ "appendStyle", "namespacegui__framework_1_1utility.html#ae97300d8014320696e57f502a858c570", null ],
+    [ "getCenterX", "namespacegui__framework_1_1utility.html#a725fa6af9d0164c88dc523a0d555a29e", null ],
+    [ "getCenterY", "namespacegui__framework_1_1utility.html#a355c0375fc74a26c33b31aee61437efb", null ],
     [ "getCurrentModule", "namespacegui__framework_1_1utility.html#a1945ec50b055f688bbb3e7c6cae8de64", null ],
     [ "getGUIFrameworkVersion", "namespacegui__framework_1_1utility.html#ac6becb2cc50030cd8e2594243a70e780", null ],
     [ "getStringFromRawPath", "namespacegui__framework_1_1utility.html#a4a3eea7d16047ee0b0f626e04fa6686c", null ],

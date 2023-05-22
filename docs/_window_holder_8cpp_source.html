@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">GUIFramework<span id="projectnumber">&#160;1.0.1</span>
+   <div id="projectname">GUIFramework<span id="projectnumber">&#160;1.0.2</span>
    </div>
    <div id="projectbrief">Framework for desktop GUI applications in C++.</div>
   </td>
@@ -151,7 +151,7 @@ $(document).ready(function(){initNavTree('_window_holder_8cpp_source.html',''); 
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            <span class="keywordflow">if</span> (currentThreadId == instance.uiThreadId)</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            {</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                lock_guard&lt;recursive_mutex&gt; runOnUIThreadLock(instance.runOnUIThreadMutex);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                unique_lock&lt;recursive_mutex&gt; runOnUIThreadLock(instance.runOnUIThreadMutex);</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                queue&lt;function&lt;void()&gt;&gt;&amp; runOnUIFunctions = instance.runOnUIFunctions;</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                <span class="keywordflow">while</span> (runOnUIFunctions.size())</div>
@@ -198,8 +198,8 @@ $(document).ready(function(){initNavTree('_window_holder_8cpp_source.html',''); 
 <div class="ttc" id="a_get_last_error_exception_8h_html"><div class="ttname"><a href="_get_last_error_exception_8h.html">GetLastErrorException.h</a></div></div>
 <div class="ttc" id="a_window_holder_8h_html"><div class="ttname"><a href="_window_holder_8h.html">WindowHolder.h</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1_base_composite_html"><div class="ttname"><a href="classgui__framework_1_1_base_composite.html">gui_framework::BaseComposite</a></div><div class="ttdoc">Base class for all windows that has children windows.</div><div class="ttdef"><b>Definition:</b> <a href="_base_composite_8h_source.html#l00020">BaseComposite.h:23</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_g_u_i_framework_html"><div class="ttname"><a href="classgui__framework_1_1_g_u_i_framework.html">gui_framework::GUIFramework</a></div><div class="ttdoc">Singleton with GUIFramework settings and some functionality.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_8h_source.html#l00016">GUIFramework.h:17</a></div></div>
-<div class="ttc" id="aclassgui__framework_1_1_g_u_i_framework_html_ae544d7005539ef804472fcd646db60df"><div class="ttname"><a href="classgui__framework_1_1_g_u_i_framework.html#ae544d7005539ef804472fcd646db60df">gui_framework::GUIFramework::unregisterHotkey</a></div><div class="ttdeci">bool unregisterHotkey(size_t hotkeyId)</div><div class="ttdoc">Thread safe unregister hotkey.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_8cpp_source.html#l00691">GUIFramework.cpp:691</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_g_u_i_framework_html"><div class="ttname"><a href="classgui__framework_1_1_g_u_i_framework.html">gui_framework::GUIFramework</a></div><div class="ttdoc">Singleton with GUIFramework settings and some functionality.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_8h_source.html#l00017">GUIFramework.h:18</a></div></div>
+<div class="ttc" id="aclassgui__framework_1_1_g_u_i_framework_html_ae544d7005539ef804472fcd646db60df"><div class="ttname"><a href="classgui__framework_1_1_g_u_i_framework.html#ae544d7005539ef804472fcd646db60df">gui_framework::GUIFramework::unregisterHotkey</a></div><div class="ttdeci">bool unregisterHotkey(size_t hotkeyId)</div><div class="ttdoc">Thread safe unregister hotkey.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_framework_8cpp_source.html#l00702">GUIFramework.cpp:702</a></div></div>
 <div class="ttc" id="aclassgui__framework_1_1exceptions_1_1_get_last_error_exception_html"><div class="ttname"><a href="classgui__framework_1_1exceptions_1_1_get_last_error_exception.html">gui_framework::exceptions::GetLastErrorException</a></div><div class="ttdoc">Exception that receive error code from GetLastError function.</div><div class="ttdef"><b>Definition:</b> <a href="_get_last_error_exception_8h_source.html#l00010">GetLastErrorException.h:11</a></div></div>
 <div class="ttc" id="anamespacegui__framework_1_1utility_html_a9102f958e07350e5f2ab564c5c30d66c"><div class="ttname"><a href="namespacegui__framework_1_1utility.html#a9102f958e07350e5f2ab564c5c30d66c">gui_framework::utility::unregisterClass</a></div><div class="ttdeci">void unregisterClass(const wstring &amp;className)</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cpp_source.html#l00016">Utility.cpp:16</a></div></div>
 <div class="ttc" id="anamespacegui__framework_html"><div class="ttname"><a href="namespacegui__framework.html">gui_framework</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_component_8cpp_source.html#l00020">BaseComponent.cpp:21</a></div></div>
