@@ -24,6 +24,11 @@ namespace gui_framework
 			largeIconResource
 		),
 		ICloseable(handle),
+		IResizableComponent
+		(
+			handle,
+			nullptr
+		),
 		largeIcon(nullptr),
 		smallIcon(nullptr)
 	{

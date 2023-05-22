@@ -55,6 +55,7 @@ namespace gui_framework
 		std::queue<uint32_t> availableIds;
 		std::mutex idMutex;
 		uint32_t nextId;
+		std::atomic<uint32_t> nextTrayId;
 #pragma endregion
 #pragma region Hotkeys
 		std::unordered_map<size_t, std::function<void()>> hotkeys;
@@ -88,6 +89,8 @@ namespace gui_framework
 
 	private:
 		uint32_t generateId(const std::wstring& windowName);
+
+		uint32_t generateTrayId();
 
 		void removeIds(const std::wstring& windowName);
 
@@ -251,10 +254,9 @@ namespace gui_framework
 		void addDeserializer(Args&&... args);
 #pragma region FriendClasses
 		friend class BaseComponent;
-
 		friend class WindowHolder;
-
 		friend class BaseDialogBox;
+		friend class BaseMainWindow;
 #pragma endregion
 	};
 

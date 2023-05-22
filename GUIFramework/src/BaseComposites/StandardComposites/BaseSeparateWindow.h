@@ -2,13 +2,15 @@
 
 #include "BaseWindow.h"
 #include "Interfaces/Components/ICloseable.h"
+#include "Interfaces/Components/IResizableComponent.h"
 
 namespace gui_framework
 {
 	/// @brief Base class for separate windows
 	class GUI_FRAMEWORK_API BaseSeparateWindow :
 		public BaseWindow,
-		public interfaces::ICloseable
+		public interfaces::ICloseable,
+		public interfaces::IResizableComponent
 	{
 	protected:
 		HICON largeIcon;

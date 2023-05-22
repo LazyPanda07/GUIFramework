@@ -165,6 +165,16 @@ namespace gui_framework
 			eventCallback = tem;
 		}
 
+		int getCenterX(int width)
+		{
+			return (GetSystemMetrics(SM_CXSCREEN) - GetSystemMetrics(SM_CXBORDER) - width) / 2;
+		}
+
+		int getCenterY(int height)
+		{
+			return (GetSystemMetrics(SM_CYSCREEN) - GetSystemMetrics(SM_CYBORDER) - height) / 2;
+		}
+
 		string getGUIFrameworkVersion()
 		{
 			return "1.0.2";

@@ -28,6 +28,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\AdditionalCreationDataHeader.h" />
+    <ClInclude Include="src\BaseComposites\StandardComposites\BaseMainWindow.h" />
     <ClInclude Include="src\Deserialization\Deserializers\Components\Buttons\ButtonDeserializer.h" />
     <ClInclude Include="src\Deserialization\Deserializers\Components\Buttons\CheckBoxDeserializer.h" />
     <ClInclude Include="src\Deserialization\Deserializers\Components\Buttons\ImageButtonDeserializer.h" />
@@ -258,6 +259,7 @@
     <ClInclude Include="src\WindowMessages.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\BaseComposites\StandardComposites\BaseMainWindow.cpp" />
     <ClCompile Include="src\Deserialization\Deserializers\Components\Buttons\ButtonDeserializer.cpp" />
     <ClCompile Include="src\Deserialization\Deserializers\Components\Buttons\CheckBoxDeserializer.cpp" />
     <ClCompile Include="src\Deserialization\Deserializers\Components\Buttons\ImageButtonDeserializer.cpp" />

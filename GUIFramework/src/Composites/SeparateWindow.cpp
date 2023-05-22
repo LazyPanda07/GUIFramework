@@ -4,7 +4,7 @@ using namespace std;
 
 namespace gui_framework
 {
-	SeparateWindow::SeparateWindow(const std::wstring& className, const std::wstring& titleName, const utility::ComponentSettings& settings, const std::string& windowFunctionName, bool maximize, bool minimize, const string& moduleName, uint16_t smallIconResource, uint16_t largeIconResource) :
+	SeparateWindow::SeparateWindow(const wstring& className, const wstring& titleName, const utility::ComponentSettings& settings, const string& windowFunctionName, bool maximize, bool minimize, const string& moduleName, uint16_t smallIconResource, uint16_t largeIconResource) :
 		BaseSeparateWindow
 		(
 			className,
@@ -16,11 +16,6 @@ namespace gui_framework
 			moduleName,
 			smallIconResource,
 			largeIconResource
-		),
-		IResizableComponent
-		(
-			handle,
-			nullptr
 		)
 	{
 

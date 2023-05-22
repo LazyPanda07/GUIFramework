@@ -10,9 +10,14 @@ namespace gui_framework
 		/// @brief Set to nullptr topLevelWindow for recreating window with same window class name
 		inline constexpr uint32_t deinitTopLevelWindowPointer = initTopLevelWindowPointer + 1;
 
-		/// <summary>
-		/// WRAPAM contains std::function&lt;void()&gt;*
-		/// </summary>
+		/**
+		 * @brief WRAPAM contains std::function<void()>*
+		*/
 		inline constexpr uint32_t runOnUIThreadFunctions = deinitTopLevelWindowPointer + 1;
+
+		/**
+		 * @brief Used by GUIFramework and BaseMainWindow internally
+		*/
+		inline constexpr uint32_t startTrayId = runOnUIThreadFunctions + 1;
 	}
 }

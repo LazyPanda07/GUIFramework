@@ -1,14 +1,11 @@
 #pragma once
 
 #include "BaseComposites/StandardComposites/BaseSeparateWindow.h"
-#include "Interfaces/Components/IResizableComponent.h"
 
 namespace gui_framework
 {
 	/// @brief Standard separate window
-	class GUI_FRAMEWORK_API SeparateWindow :
-		public BaseSeparateWindow,
-		public interfaces::IResizableComponent
+	class GUI_FRAMEWORK_API SeparateWindow : public BaseSeparateWindow
 	{
 	public:
 		/// @brief 
