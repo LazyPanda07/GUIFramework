@@ -1,5 +1,7 @@
 #include "BaseMainWindow.h"
 
+#include <windowsx.h>
+
 #include "GUIFramework.h"
 
 using namespace std;
@@ -34,12 +36,28 @@ namespace gui_framework
 				break;
 
 			case WM_CONTEXTMENU:
-				// TODO: RMB menu
+				if (trayPopupMenu)
+				{
+					isUsed = true;
+
+					TrackPopupMenuEx(trayPopupMenu, TPM_CENTERALIGN, GET_X_LPARAM(wparam), GET_Y_LPARAM(wparam), this->getHandle(), nullptr);
+				}
 
 				break;
 
 			default:
 				break;
+			}
+		}
+		else if (message == WM_COMMAND && popupMenuItems.size())
+		{
+			uint32_t id = LOWORD(wparam);
+
+			if (auto it = ranges::find_if(popupMenuItems, [id](const pair<uint32_t, function<void()>>& item) { return item.first == id; }); it != popupMenuItems.end())
+			{
+				isUsed = true;
+
+				it->second();
 			}
 		}
 
@@ -59,41 +77,99 @@ namespace gui_framework
 			smallIconResource,
 			largeIconResource
 		),
-		clicks(0),
-		trayId(GUIFramework::get().generateTrayId())
+		tray(),
+		trayPopupMenu(nullptr),
+		trayId(0),
+		clicks(0)
 	{
-		tray.cbSize = sizeof(tray);
-		tray.hWnd = getHandle();
-		tray.uFlags = NIF_MESSAGE | NIF_ICON;
-		tray.uCallbackMessage = trayId;
-		tray.uVersion = NOTIFYICON_VERSION_4;
+		// TODO: serialization/deserialization
+		// TODO: localization
 
 		this->setExitMode(exitMode::quit);
 
-		this->setOnClose
-		(
-			[this]()
-			{
-				Shell_NotifyIconW(NIM_ADD, &tray);
-
-				Shell_NotifyIconW(NIM_SETVERSION, &tray);
-
-				hide();
-
-				return false;
-			}
-		);
-
-		this->setOnDestroy([this]() { Shell_NotifyIconW(NIM_DELETE, &tray); });
-
 		if (trayIconResource)
 		{
+			tray.cbSize = sizeof(tray);
+			tray.hWnd = getHandle();
+			tray.uFlags = NIF_MESSAGE | NIF_ICON;
+			tray.uCallbackMessage = trayId;
+			tray.uVersion = NOTIFYICON_VERSION_4;
+
+			trayId = GUIFramework::get().generateTrayId();
+			trayPopupMenu = CreatePopupMenu();
+
+			this->setOnClose
+			(
+				[this]()
+				{
+					Shell_NotifyIconW(NIM_ADD, &tray);
+
+					Shell_NotifyIconW(NIM_SETVERSION, &tray);
+
+					hide();
+
+					return false;
+				}
+			);
+
+			this->setOnDestroy
+			(
+				[this]()
+				{
+					Shell_NotifyIconW(NIM_DELETE, &tray);
+				}
+			);
+
 			LoadIconMetric(GetModuleHandleW(nullptr), MAKEINTRESOURCE(trayIconResource), _LI_METRIC::LIM_LARGE, &tray.hIcon);
 		}
+	}
+
+	bool BaseMainWindow::addTrayMenuItem(const wstring& text, const function<void()>& onClick)
+	{
+		return trayPopupMenu ?
+			AppendMenuW(trayPopupMenu, MF_STRING, popupMenuItems.emplace_back(GUIFramework::get().generateTrayId(), onClick).first, text.data()) :
+			false;
+	}
+
+	bool BaseMainWindow::removeTrayMenuItem(const wstring& text)
+	{
+		if (!trayPopupMenu)
+		{
+			return false;
+		}
+
+		for (size_t i = 0; i < popupMenuItems.size(); i++)
+		{
+			MENUITEMINFOW info = {};
+
+			info.cbSize = sizeof(info);
+			info.fMask = MIIM_STRING;
+
+			GetMenuItemInfoW(trayPopupMenu, static_cast<uint32_t>(i), true, &info);
+
+			if (info.dwTypeData && info.dwTypeData == text)
+			{
+				popupMenuItems.erase(popupMenuItems.begin() + i);
+
+				DeleteMenu(trayPopupMenu, static_cast<uint32_t>(i), MF_BYPOSITION);
+
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	size_t BaseMainWindow::getHash() const
 	{
 		return typeid(BaseMainWindow).hash_code();
+	}
+
+	BaseMainWindow::~BaseMainWindow()
+	{
+		if (trayPopupMenu)
+		{
+			DestroyMenu(trayPopupMenu);
+		}
 	}
 }

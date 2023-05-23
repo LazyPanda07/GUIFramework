@@ -11,7 +11,9 @@ namespace gui_framework
 	{
 	private:
 		NOTIFYICONDATAW tray;
+		HMENU trayPopupMenu;
 		uint32_t trayId;
+		std::vector<std::pair<uint32_t, std::function<void()>>> popupMenuItems;
 		int clicks;
 
 	protected:
@@ -26,8 +28,18 @@ namespace gui_framework
 		*/
 		BaseMainWindow(const std::wstring& className, const std::wstring& titleName, const utility::ComponentSettings& settings, const std::string& windowFunctionName, uint16_t trayIconResource, bool maximize = false, bool minimize = false, const std::string& moduleName = "", uint16_t smallIconResource = NULL, uint16_t largeIconResource = NULL);
 
+		/**
+		 * @brief Add tray menu text item. Works only if non NULL value passed in trayIconResource in contructor
+		*/
+		bool addTrayMenuItem(const std::wstring& text, const std::function<void()>& onClick);
+
+		/**
+		 * @brief Remove tray menu text item
+		*/
+		bool removeTrayMenuItem(const std::wstring& text);
+
 		virtual size_t getHash() const override;
 
-		virtual ~BaseMainWindow() = default;
+		virtual ~BaseMainWindow();
 	};
 }

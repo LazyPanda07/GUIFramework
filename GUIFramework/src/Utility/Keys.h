@@ -23,6 +23,7 @@ namespace gui_framework
 			alt,
 			pause,
 			capsLock,
+			escape = VK_ESCAPE,
 			spacebar = VK_SPACE,
 			pageUp,
 			pageDown,
