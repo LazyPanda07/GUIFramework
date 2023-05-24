@@ -31,7 +31,6 @@ namespace gui_framework
 		int clicks;
 		uint16_t trayIconResource;
 		bool alwaysShowTrayIcon;
-		bool isTrayCreated;
 
 	protected:
 		virtual void onDestroyEvent();

@@ -112,8 +112,7 @@ namespace gui_framework
 		tray(),
 		trayPopupMenu(nullptr),
 		trayId(0),
-		clicks(0),
-		isTrayCreated(false)
+		clicks(0)
 	{
 		// TODO: localization
 
@@ -145,13 +144,11 @@ namespace gui_framework
 		(
 			[this]()
 			{
-				if (!isTrayCreated)
+				if (!this->alwaysShowTrayIcon)
 				{
 					Shell_NotifyIconW(NIM_ADD, &tray);
 
 					Shell_NotifyIconW(NIM_SETVERSION, &tray);
-
-					isTrayCreated = true;
 				}
 
 				hide();
@@ -171,6 +168,15 @@ namespace gui_framework
 		);
 
 		LoadIconMetric(GetModuleHandleW(nullptr), MAKEINTRESOURCE(trayIconResource), _LI_METRIC::LIM_LARGE, &tray.hIcon);
+
+		if (alwaysShowTrayIcon)
+		{
+			Shell_NotifyIconW(NIM_DELETE, &tray);
+
+			Shell_NotifyIconW(NIM_ADD, &tray);
+
+			Shell_NotifyIconW(NIM_SETVERSION, &tray);
+		}
 	}
 
 	bool BaseMainWindow::addTrayMenuItem(const wstring& text, const function<void()>& onClick)
