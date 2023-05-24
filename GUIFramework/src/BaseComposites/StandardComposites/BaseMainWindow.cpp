@@ -32,6 +32,11 @@ namespace gui_framework
 		callable = tem;
 	}
 
+	void BaseMainWindow::onDestroyEvent()
+	{
+
+	}
+
 	LRESULT BaseMainWindow::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
 	{
 		LRESULT result = BaseSeparateWindow::windowMessagesHandle(handle, message, wparam, lparam, isUsed);
@@ -149,6 +154,8 @@ namespace gui_framework
 			[this]()
 			{
 				Shell_NotifyIconW(NIM_DELETE, &tray);
+
+				this->onDestroyEvent();
 			}
 		);
 
@@ -236,7 +243,7 @@ namespace gui_framework
 
 					GetMenuItemInfoW(trayPopupMenu, static_cast<uint32_t>(i), true, &info);
 
-					object.setString("text", utility::to_string(info.dwTypeData, interfaces::ISerializable::getCodepage()));
+					object.setString("text", info.dwTypeData ? utility::to_string(info.dwTypeData, interfaces::ISerializable::getCodepage()) : "");
 
 					object.setString("functionName"s, function.functionName);
 

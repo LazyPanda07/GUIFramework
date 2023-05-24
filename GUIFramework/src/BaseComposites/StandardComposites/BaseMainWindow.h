@@ -32,6 +32,8 @@ namespace gui_framework
 		uint16_t trayIconResource;
 
 	protected:
+		virtual void onDestroyEvent();
+
 		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
 
 	public:
