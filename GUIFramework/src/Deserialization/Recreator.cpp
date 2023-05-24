@@ -1,7 +1,5 @@
 #include "Recreator.h"
 
-#include "Deserializers/Composites/SeparateWindowDeserializer.h"
-
 using namespace std;
 
 namespace gui_framework
@@ -16,18 +14,5 @@ namespace gui_framework
 		windowedApplicationStructure(json)
 	{
 
-	}
-
-	unique_ptr<BaseComposite> Recreator::deserialize() const
-	{
-		const auto& [componentName, description] = *windowedApplicationStructure.begin();
-
-		return unique_ptr<BaseComposite>
-			(
-				static_cast<BaseComposite*>
-				(
-					deserializers::SeparateWindowDeserializer().deserialize(componentName, get<json::utility::jsonObject>(description))
-				)
-			);
 	}
 }

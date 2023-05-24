@@ -9,7 +9,7 @@ namespace gui_framework
 	*/
 	class GUI_FRAMEWORK_API BaseMainWindow : public BaseSeparateWindow
 	{
-	private:
+	public:
 		struct Function
 		{
 			std::function<void()> callable;
@@ -32,8 +32,6 @@ namespace gui_framework
 		uint16_t trayIconResource;
 
 	protected:
-		void initTray();
-
 		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
 
 	public:
@@ -44,6 +42,8 @@ namespace gui_framework
 		 * @param largeIconResource Integer value from auto generated Visual Studio resources
 		*/
 		BaseMainWindow(const std::wstring& className, const std::wstring& titleName, const utility::ComponentSettings& settings, const std::string& windowFunctionName, uint16_t trayIconResource, bool maximize = false, bool minimize = false, const std::string& moduleName = "", uint16_t smallIconResource = NULL, uint16_t largeIconResource = NULL);
+
+		void initTray(uint16_t trayIconResource);
 
 		/**
 		 * @brief Add tray menu text item. Works only if non NULL value passed in trayIconResource in contructor

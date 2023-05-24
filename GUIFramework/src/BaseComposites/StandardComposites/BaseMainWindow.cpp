@@ -32,45 +32,6 @@ namespace gui_framework
 		callable = tem;
 	}
 
-	void BaseMainWindow::initTray()
-	{
-		if (trayIconResource)
-		{
-			tray.cbSize = sizeof(tray);
-			tray.hWnd = getHandle();
-			tray.uFlags = NIF_MESSAGE | NIF_ICON;
-			tray.uCallbackMessage = trayId;
-			tray.uVersion = NOTIFYICON_VERSION_4;
-
-			trayId = GUIFramework::get().generateTrayId();
-			trayPopupMenu = CreatePopupMenu();
-
-			this->setOnClose
-			(
-				[this]()
-				{
-					Shell_NotifyIconW(NIM_ADD, &tray);
-
-					Shell_NotifyIconW(NIM_SETVERSION, &tray);
-
-					hide();
-
-					return false;
-				}
-			);
-
-			this->setOnDestroy
-			(
-				[this]()
-				{
-					Shell_NotifyIconW(NIM_DELETE, &tray);
-				}
-			);
-
-			LoadIconMetric(GetModuleHandleW(nullptr), MAKEINTRESOURCE(trayIconResource), _LI_METRIC::LIM_LARGE, &tray.hIcon);
-		}
-	}
-
 	LRESULT BaseMainWindow::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
 	{
 		LRESULT result = BaseSeparateWindow::windowMessagesHandle(handle, message, wparam, lparam, isUsed);
@@ -150,7 +111,48 @@ namespace gui_framework
 
 		this->setExitMode(exitMode::quit);
 
-		this->initTray();
+		this->initTray(trayIconResource);
+	}
+
+	void BaseMainWindow::initTray(uint16_t trayIconResource)
+	{
+		if (!trayIconResource)
+		{
+			return;
+		}
+
+		tray.cbSize = sizeof(tray);
+		tray.hWnd = getHandle();
+		tray.uFlags = NIF_MESSAGE | NIF_ICON;
+		tray.uCallbackMessage = trayId;
+		tray.uVersion = NOTIFYICON_VERSION_4;
+
+		trayId = GUIFramework::get().generateTrayId();
+		trayPopupMenu = CreatePopupMenu();
+
+		this->setOnClose
+		(
+			[this]()
+			{
+				Shell_NotifyIconW(NIM_ADD, &tray);
+
+				Shell_NotifyIconW(NIM_SETVERSION, &tray);
+
+				hide();
+
+				return false;
+			}
+		);
+
+		this->setOnDestroy
+		(
+			[this]()
+			{
+				Shell_NotifyIconW(NIM_DELETE, &tray);
+			}
+		);
+
+		LoadIconMetric(GetModuleHandleW(nullptr), MAKEINTRESOURCE(trayIconResource), _LI_METRIC::LIM_LARGE, &tray.hIcon);
 	}
 
 	bool BaseMainWindow::addTrayMenuItem(const wstring& text, const function<void()>& onClick)
@@ -219,11 +221,22 @@ namespace gui_framework
 
 			current.setInt("trayIconResource", trayIconResource);
 
-			for (const auto& [_, function] : popupMenuItems)
+			for (size_t i = 0; i < popupMenuItems.size(); i++)
 			{
+				const Function& function = popupMenuItems[i].second;
+
 				if (function.functionName.size())
 				{
 					jsonObject object;
+
+					MENUITEMINFOW info = {};
+
+					info.cbSize = sizeof(info);
+					info.fMask = MIIM_STRING;
+
+					GetMenuItemInfoW(trayPopupMenu, static_cast<uint32_t>(i), true, &info);
+
+					object.setString("text", utility::to_string(info.dwTypeData, interfaces::ISerializable::getCodepage()));
 
 					object.setString("functionName"s, function.functionName);
 

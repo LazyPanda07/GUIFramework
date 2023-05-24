@@ -53,6 +53,7 @@
     <ClInclude Include="src\Deserialization\Deserializers\Components\Trackbars\VerticalTrackbarControlDeserializer.h" />
     <ClInclude Include="src\Deserialization\Deserializers\Composites\ChildWindowDeserializer.h" />
     <ClInclude Include="src\Deserialization\Deserializers\Composites\GroupBoxDeserializer.h" />
+    <ClInclude Include="src\Deserialization\Deserializers\Composites\MainWindowDeserializer.h" />
     <ClInclude Include="src\Deserialization\Deserializers\DropDownMenuItemDeserializer.h" />
     <ClInclude Include="src\Deserialization\Parsers\BaseComponentParser.h" />
     <ClInclude Include="src\Deserialization\Parsers\BaseCompositeParser.h" />
@@ -65,6 +66,7 @@
     <ClInclude Include="src\Deserialization\Parsers\ListViews\IconListViewParser.h" />
     <ClInclude Include="src\Deserialization\Parsers\ListViews\TextIconListViewParser.h" />
     <ClInclude Include="src\Deserialization\Parsers\ListViews\TextListViewParser.h" />
+    <ClInclude Include="src\Deserialization\Parsers\MainWindowParser.h" />
     <ClInclude Include="src\Deserialization\Parsers\MenuParser.h" />
     <ClInclude Include="src\Deserialization\Parsers\ProgressBars\InfiniteProgressBarParser.h" />
     <ClInclude Include="src\Deserialization\Parsers\ProgressBars\ProgressBarParser.h" />
@@ -285,6 +287,7 @@
     <ClCompile Include="src\Deserialization\Deserializers\Components\Trackbars\VerticalTrackbarControlDeserializer.cpp" />
     <ClCompile Include="src\Deserialization\Deserializers\Composites\ChildWindowDeserializer.cpp" />
     <ClCompile Include="src\Deserialization\Deserializers\Composites\GroupBoxDeserializer.cpp" />
+    <ClCompile Include="src\Deserialization\Deserializers\Composites\MainWindowDeserializer.cpp" />
     <ClCompile Include="src\Deserialization\Deserializers\Composites\SeparateWindowDeserializer.cpp" />
     <ClCompile Include="src\BaseComponents\BaseComponent.cpp" />
     <ClCompile Include="src\Deserialization\Deserializers\DropDownMenuItemDeserializer.cpp" />
@@ -299,6 +302,7 @@
     <ClCompile Include="src\Deserialization\Parsers\ListViews\IconListViewParser.cpp" />
     <ClCompile Include="src\Deserialization\Parsers\ListViews\TextIconListViewParser.cpp" />
     <ClCompile Include="src\Deserialization\Parsers\ListViews\TextListViewParser.cpp" />
+    <ClCompile Include="src\Deserialization\Parsers\MainWindowParser.cpp" />
     <ClCompile Include="src\Deserialization\Parsers\MenuParser.cpp" />
     <ClCompile Include="src\Deserialization\Parsers\ProgressBars\InfiniteProgressBarParser.cpp" />
     <ClCompile Include="src\Deserialization\Parsers\ProgressBars\ProgressBarParser.cpp" />
