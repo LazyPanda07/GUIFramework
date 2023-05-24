@@ -3,11 +3,74 @@
 #include <windowsx.h>
 
 #include "GUIFramework.h"
+#include "Exceptions/CantFindFunctionFromModuleException.h"
 
 using namespace std;
 
 namespace gui_framework
 {
+	BaseMainWindow::Function::Function(const function<void()>& callable) :
+		callable(callable)
+	{
+
+	}
+
+	BaseMainWindow::Function::Function(const string& functionName, const string& moduleName) :
+		functionName(functionName),
+		moduleName(moduleName)
+	{
+		GUIFramework& instance = GUIFramework::get();
+		const HMODULE& module = instance.getModules().at(moduleName);
+
+		onClickSignature tem = reinterpret_cast<onClickSignature>(GetProcAddress(module, functionName.data()));
+
+		if (!tem)
+		{
+			throw exceptions::CantFindFunctionFromModuleException(functionName, moduleName, __FILE__, __FUNCTION__, __LINE__);
+		}
+
+		callable = tem;
+	}
+
+	void BaseMainWindow::initTray()
+	{
+		if (trayIconResource)
+		{
+			tray.cbSize = sizeof(tray);
+			tray.hWnd = getHandle();
+			tray.uFlags = NIF_MESSAGE | NIF_ICON;
+			tray.uCallbackMessage = trayId;
+			tray.uVersion = NOTIFYICON_VERSION_4;
+
+			trayId = GUIFramework::get().generateTrayId();
+			trayPopupMenu = CreatePopupMenu();
+
+			this->setOnClose
+			(
+				[this]()
+				{
+					Shell_NotifyIconW(NIM_ADD, &tray);
+
+					Shell_NotifyIconW(NIM_SETVERSION, &tray);
+
+					hide();
+
+					return false;
+				}
+			);
+
+			this->setOnDestroy
+			(
+				[this]()
+				{
+					Shell_NotifyIconW(NIM_DELETE, &tray);
+				}
+			);
+
+			LoadIconMetric(GetModuleHandleW(nullptr), MAKEINTRESOURCE(trayIconResource), _LI_METRIC::LIM_LARGE, &tray.hIcon);
+		}
+	}
+
 	LRESULT BaseMainWindow::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
 	{
 		LRESULT result = BaseSeparateWindow::windowMessagesHandle(handle, message, wparam, lparam, isUsed);
@@ -53,11 +116,11 @@ namespace gui_framework
 		{
 			uint32_t id = LOWORD(wparam);
 
-			if (auto it = ranges::find_if(popupMenuItems, [id](const pair<uint32_t, function<void()>>& item) { return item.first == id; }); it != popupMenuItems.end())
+			if (auto it = ranges::find_if(popupMenuItems, [id](const pair<uint32_t, Function>& item) { return item.first == id; }); it != popupMenuItems.end())
 			{
 				isUsed = true;
 
-				it->second();
+				it->second.callable();
 			}
 		}
 
@@ -80,48 +143,14 @@ namespace gui_framework
 		tray(),
 		trayPopupMenu(nullptr),
 		trayId(0),
-		clicks(0)
+		clicks(0),
+		trayIconResource(trayIconResource)
 	{
-		// TODO: serialization/deserialization
 		// TODO: localization
 
 		this->setExitMode(exitMode::quit);
 
-		if (trayIconResource)
-		{
-			tray.cbSize = sizeof(tray);
-			tray.hWnd = getHandle();
-			tray.uFlags = NIF_MESSAGE | NIF_ICON;
-			tray.uCallbackMessage = trayId;
-			tray.uVersion = NOTIFYICON_VERSION_4;
-
-			trayId = GUIFramework::get().generateTrayId();
-			trayPopupMenu = CreatePopupMenu();
-
-			this->setOnClose
-			(
-				[this]()
-				{
-					Shell_NotifyIconW(NIM_ADD, &tray);
-
-					Shell_NotifyIconW(NIM_SETVERSION, &tray);
-
-					hide();
-
-					return false;
-				}
-			);
-
-			this->setOnDestroy
-			(
-				[this]()
-				{
-					Shell_NotifyIconW(NIM_DELETE, &tray);
-				}
-			);
-
-			LoadIconMetric(GetModuleHandleW(nullptr), MAKEINTRESOURCE(trayIconResource), _LI_METRIC::LIM_LARGE, &tray.hIcon);
-		}
+		this->initTray();
 	}
 
 	bool BaseMainWindow::addTrayMenuItem(const wstring& text, const function<void()>& onClick)
@@ -129,6 +158,18 @@ namespace gui_framework
 		return trayPopupMenu ?
 			AppendMenuW(trayPopupMenu, MF_STRING, popupMenuItems.emplace_back(GUIFramework::get().generateTrayId(), onClick).first, text.data()) :
 			false;
+	}
+
+	bool BaseMainWindow::addTrayMenuItem(const wstring& text, const string& functionName, const string& moduleName)
+	{
+		if (!trayPopupMenu)
+		{
+			return false;
+		}
+
+		AppendMenuW(trayPopupMenu, MF_STRING, popupMenuItems.emplace_back(GUIFramework::get().generateTrayId(), Function(functionName, moduleName)).first, text.data());
+
+		return true;
 	}
 
 	bool BaseMainWindow::removeTrayMenuItem(const wstring& text)
@@ -163,6 +204,44 @@ namespace gui_framework
 	size_t BaseMainWindow::getHash() const
 	{
 		return typeid(BaseMainWindow).hash_code();
+	}
+
+	json::JSONBuilder BaseMainWindow::getStructure() const
+	{
+		using json::utility::jsonObject;
+
+		json::JSONBuilder builder = BaseSeparateWindow::getStructure();
+		jsonObject& current = get<jsonObject>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
+
+		if (trayIconResource)
+		{
+			vector<jsonObject> items;
+
+			current.setInt("trayIconResource", trayIconResource);
+
+			for (const auto& [_, function] : popupMenuItems)
+			{
+				if (function.functionName.size())
+				{
+					jsonObject object;
+
+					object.setString("functionName"s, function.functionName);
+
+					object.setString("moduleName"s, function.moduleName);
+
+					object.setString("pathToModule"s, GUIFramework::get().getModulesPaths().at(function.moduleName));
+
+					json::utility::appendArray(move(object), items);
+				}
+			}
+
+			if (items.size())
+			{
+				current.setArray("items", move(items));
+			}
+		}
+
+		return builder;
 	}
 
 	BaseMainWindow::~BaseMainWindow()

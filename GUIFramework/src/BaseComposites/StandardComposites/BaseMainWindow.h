@@ -10,13 +10,30 @@ namespace gui_framework
 	class GUI_FRAMEWORK_API BaseMainWindow : public BaseSeparateWindow
 	{
 	private:
+		struct Function
+		{
+			std::function<void()> callable;
+			std::string functionName;
+			std::string moduleName;
+
+			Function(const std::function<void()>& callable);
+
+			Function(const std::string& functionName, const std::string& moduleName);
+
+			~Function() = default;
+		};
+
+	private:
 		NOTIFYICONDATAW tray;
 		HMENU trayPopupMenu;
 		uint32_t trayId;
-		std::vector<std::pair<uint32_t, std::function<void()>>> popupMenuItems;
+		std::vector<std::pair<uint32_t, Function>> popupMenuItems;
 		int clicks;
+		uint16_t trayIconResource;
 
 	protected:
+		void initTray();
+
 		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
 
 	public:
@@ -34,11 +51,18 @@ namespace gui_framework
 		bool addTrayMenuItem(const std::wstring& text, const std::function<void()>& onClick);
 
 		/**
+		 * @brief Add tray menu text item. Works only if non NULL value passed in trayIconResource in contructor
+		*/
+		bool addTrayMenuItem(const std::wstring& text, const std::string& functionName, const std::string& moduleName);
+
+		/**
 		 * @brief Remove tray menu text item
 		*/
 		bool removeTrayMenuItem(const std::wstring& text);
 
 		virtual size_t getHash() const override;
+
+		virtual json::JSONBuilder getStructure() const override;
 
 		virtual ~BaseMainWindow();
 	};

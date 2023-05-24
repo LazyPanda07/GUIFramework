@@ -27,7 +27,7 @@ namespace gui_framework
 				static_cast<BaseComposite*>
 				(
 					deserializers::SeparateWindowDeserializer().deserialize(componentName, get<json::utility::jsonObject>(description))
-					)
-				);
+				)
+			);
 	}
 }

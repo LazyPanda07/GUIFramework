@@ -883,9 +883,7 @@ namespace gui_framework
 
 		for (const auto& component : components)
 		{
-			interfaces::ITextLocalized* localizable = dynamic_cast<interfaces::ITextLocalized*>(component);
-
-			if (localizable && localizable->getAutoUpdate())
+			if (interfaces::ITextLocalized* localizable = dynamic_cast<interfaces::ITextLocalized*>(component); localizable && localizable->getAutoUpdate())
 			{
 				localizable->updateLocalizationEvent();
 			}
