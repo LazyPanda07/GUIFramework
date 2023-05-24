@@ -77,7 +77,7 @@ namespace gui_framework
 
 			if (parser.trayIconResource)
 			{
-				mainWindow->initTray(parser.trayIconResource);
+				mainWindow->initTray(parser.trayIconResource, parser.alwaysShowTrayIcon);
 			}
 
 			for (const auto& [text, function] : parser.items)

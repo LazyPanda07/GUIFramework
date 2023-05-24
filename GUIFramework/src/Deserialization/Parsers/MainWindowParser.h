@@ -12,6 +12,7 @@ namespace gui_framework
 		{
 			uint16_t trayIconResource;
 			std::vector<std::pair<std::wstring, BaseMainWindow::Function>> items;
+			bool alwaysShowTrayIcon;
 
 		public:
 			MainWindowParser();

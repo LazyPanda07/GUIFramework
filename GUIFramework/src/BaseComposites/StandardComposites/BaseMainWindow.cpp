@@ -113,23 +113,24 @@ namespace gui_framework
 		trayPopupMenu(nullptr),
 		trayId(0),
 		clicks(0),
-		trayIconResource(trayIconResource),
-		alwaysShowTrayIcon(alwaysShowTrayIcon),
 		isTrayCreated(false)
 	{
 		// TODO: localization
 
 		this->setExitMode(exitMode::quit);
 
-		this->initTray(trayIconResource);
+		this->initTray(trayIconResource, alwaysShowTrayIcon);
 	}
 
-	void BaseMainWindow::initTray(uint16_t trayIconResource)
+	void BaseMainWindow::initTray(uint16_t trayIconResource, bool alwaysShowTrayIcon)
 	{
 		if (!trayIconResource)
 		{
 			return;
 		}
+
+		this->trayIconResource = trayIconResource;
+		this->alwaysShowTrayIcon = alwaysShowTrayIcon;
 
 		trayId = GUIFramework::get().generateTrayId();
 		trayPopupMenu = CreatePopupMenu();

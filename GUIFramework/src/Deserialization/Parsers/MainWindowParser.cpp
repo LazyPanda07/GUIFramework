@@ -7,7 +7,8 @@ namespace gui_framework
 	namespace parsers
 	{
 		MainWindowParser::MainWindowParser() :
-			trayIconResource(NULL)
+			trayIconResource(NULL),
+			alwaysShowTrayIcon(false)
 		{
 
 		}
@@ -16,11 +17,12 @@ namespace gui_framework
 		{
 			SeparateWindowParser::parse(description);
 
-			uint32_t codepage = interfaces::ISerializable::getCodepage();
-
 			if (description.contains("trayIconResource", json::utility::variantTypeEnum::jInt64_t))
 			{
+				uint32_t codepage = interfaces::ISerializable::getCodepage();
+
 				trayIconResource = static_cast<uint16_t>(description.getInt("trayIconResource"));
+				alwaysShowTrayIcon = description.getBool("alwaysShowTrayIcon");
 
 				if (description.contains("items", json::utility::variantTypeEnum::jJSONArray))
 				{
