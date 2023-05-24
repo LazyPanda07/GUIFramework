@@ -20,7 +20,7 @@ namespace gui_framework
 
 			if (description.contains("trayIconResource", json::utility::variantTypeEnum::jInt64_t))
 			{
-				trayIconResource = description.getInt("trayIconResource");
+				trayIconResource = static_cast<uint16_t>(description.getInt("trayIconResource"));
 
 				if (description.contains("items", json::utility::variantTypeEnum::jJSONArray))
 				{

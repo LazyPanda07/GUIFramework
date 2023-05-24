@@ -126,14 +126,14 @@ namespace gui_framework
 			return;
 		}
 
+		trayId = GUIFramework::get().generateTrayId();
+		trayPopupMenu = CreatePopupMenu();
+
 		tray.cbSize = sizeof(tray);
 		tray.hWnd = getHandle();
 		tray.uFlags = NIF_MESSAGE | NIF_ICON;
 		tray.uCallbackMessage = trayId;
 		tray.uVersion = NOTIFYICON_VERSION_4;
-
-		trayId = GUIFramework::get().generateTrayId();
-		trayPopupMenu = CreatePopupMenu();
 
 		this->setOnClose
 		(
