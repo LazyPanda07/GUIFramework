@@ -30,6 +30,8 @@ namespace gui_framework
 		std::vector<std::pair<uint32_t, Function>> popupMenuItems;
 		int clicks;
 		uint16_t trayIconResource;
+		bool alwaysShowTrayIcon;
+		bool isTrayCreated;
 
 	protected:
 		virtual void onDestroyEvent();
@@ -43,7 +45,7 @@ namespace gui_framework
 		 * @param smallIconResource Integer value from auto generated Visual Studio resources
 		 * @param largeIconResource Integer value from auto generated Visual Studio resources
 		*/
-		BaseMainWindow(const std::wstring& className, const std::wstring& titleName, const utility::ComponentSettings& settings, const std::string& windowFunctionName, uint16_t trayIconResource, bool maximize = false, bool minimize = false, const std::string& moduleName = "", uint16_t smallIconResource = NULL, uint16_t largeIconResource = NULL);
+		BaseMainWindow(const std::wstring& className, const std::wstring& titleName, const utility::ComponentSettings& settings, const std::string& windowFunctionName, uint16_t trayIconResource, bool alwaysShowTray = false, bool maximize = false, bool minimize = false, const std::string& moduleName = "", uint16_t smallIconResource = NULL, uint16_t largeIconResource = NULL);
 
 		void initTray(uint16_t trayIconResource);
 

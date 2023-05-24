@@ -55,7 +55,10 @@ namespace gui_framework
 
 				if (++clicks == 2)
 				{
-					Shell_NotifyIconW(NIM_DELETE, &tray);
+					if (!alwaysShowTrayIcon)
+					{
+						Shell_NotifyIconW(NIM_DELETE, &tray);
+					}
 
 					show();
 
@@ -93,7 +96,7 @@ namespace gui_framework
 		return -1;
 	}
 
-	BaseMainWindow::BaseMainWindow(const wstring& className, const wstring& titleName, const utility::ComponentSettings& settings, const string& windowFunctionName, uint16_t trayIconResource, bool maximize, bool minimize, const string& moduleName, uint16_t smallIconResource, uint16_t largeIconResource) :
+	BaseMainWindow::BaseMainWindow(const wstring& className, const wstring& titleName, const utility::ComponentSettings& settings, const string& windowFunctionName, uint16_t trayIconResource, bool alwaysShowTrayIcon, bool maximize, bool minimize, const string& moduleName, uint16_t smallIconResource, uint16_t largeIconResource) :
 		BaseSeparateWindow
 		(
 			className,
@@ -110,7 +113,9 @@ namespace gui_framework
 		trayPopupMenu(nullptr),
 		trayId(0),
 		clicks(0),
-		trayIconResource(trayIconResource)
+		trayIconResource(trayIconResource),
+		alwaysShowTrayIcon(alwaysShowTrayIcon),
+		isTrayCreated(false)
 	{
 		// TODO: localization
 
@@ -139,9 +144,14 @@ namespace gui_framework
 		(
 			[this]()
 			{
-				Shell_NotifyIconW(NIM_ADD, &tray);
+				if (!isTrayCreated)
+				{
+					Shell_NotifyIconW(NIM_ADD, &tray);
 
-				Shell_NotifyIconW(NIM_SETVERSION, &tray);
+					Shell_NotifyIconW(NIM_SETVERSION, &tray);
+
+					isTrayCreated = true;
+				}
 
 				hide();
 
@@ -227,6 +237,8 @@ namespace gui_framework
 			vector<jsonObject> items;
 
 			current.setInt("trayIconResource", trayIconResource);
+
+			current.setBool("alwaysShowTrayIcon", alwaysShowTrayIcon);
 
 			for (size_t i = 0; i < popupMenuItems.size(); i++)
 			{
