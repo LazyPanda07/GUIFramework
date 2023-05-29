@@ -271,6 +271,7 @@ namespace gui_framework
 
 		current.setUnsignedInt("drawingType"s, static_cast<uint64_t>(dType));
 		current.setUnsignedInt("imageType"s, static_cast<uint64_t>(iType));
+		current.setUnsignedInt("imageResource", imageResource);
 
 		return builder;
 	}

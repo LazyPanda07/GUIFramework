@@ -66,9 +66,12 @@ namespace gui_framework
 		protected:
 			std::wstring text;
 			std::filesystem::path pathToImage;
+			std::string resourceModuleName;
+			uint32_t imageResource;
 			uint16_t imageWidth;
 			uint16_t imageHeight;
-			ImageButton::drawingType type;
+			ImageButton::drawingType dType;
+			ImageButton::imageType iType;
 			std::function<void()> onClick;
 			std::string onClickFunctionName;
 			std::string onClickFunctionModule;
@@ -76,9 +79,13 @@ namespace gui_framework
 		public:
 			AdditionalCreationData() = default;
 
-			AdditionalCreationData(const std::wstring& text, const std::filesystem::path& pathToImage, uint16_t imageWidth, uint16_t imageHeight, ImageButton::drawingType type, const std::function<void()>& onClick);
+			AdditionalCreationData(const std::wstring& text, const std::filesystem::path& pathToImage, uint16_t imageWidth, uint16_t imageHeight, ImageButton::drawingType dType, ImageButton::imageType iType, const std::function<void()>& onClick);
 
-			AdditionalCreationData(const std::wstring& text, const std::filesystem::path& pathToImage, uint16_t imageWidth, uint16_t imageHeight, ImageButton::drawingType type, const std::string& onClickFunctionName, const std::string& onClickFunctionModule);
+			AdditionalCreationData(const std::wstring& text, const std::filesystem::path& pathToImage, uint16_t imageWidth, uint16_t imageHeight, ImageButton::drawingType dType, ImageButton::imageType iType, const std::string& onClickFunctionName, const std::string& onClickFunctionModule);
+
+			AdditionalCreationData(const std::wstring& text, uint32_t imageResource, const std::string& resourceModuleName, uint16_t imageWidth, uint16_t imageHeight, ImageButton::drawingType dType, ImageButton::imageType iType, const std::function<void()>& onClick);
+
+			AdditionalCreationData(const std::wstring& text, uint32_t imageResource, const std::string& resourceModuleName, uint16_t imageWidth, uint16_t imageHeight, ImageButton::drawingType dType, ImageButton::imageType iType, const std::string& onClickFunctionName, const std::string& onClickFunctionModule);
 
 			virtual std::any getData() const;
 

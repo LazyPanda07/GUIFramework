@@ -52,23 +52,54 @@ namespace gui_framework
 			return make_any<tuple<wstring, function<void()>, function<void()>, function<void()>, string, string, string, string, string, string>>(text, onCheck, onClear, onClick, onCheckFunctionName, onCheckFunctionModule, onClearFunctionName, onClearFunctionModule, onClickFunctionName, onClickFunctionModule);
 		}
 
-		AdditionalCreationData<ImageButton>::AdditionalCreationData(const wstring& text, const filesystem::path& pathToImage, uint16_t imageWidth, uint16_t imageHeight, ImageButton::drawingType type, const function<void()>& onClick) :
+		AdditionalCreationData<ImageButton>::AdditionalCreationData(const wstring& text, const filesystem::path& pathToImage, uint16_t imageWidth, uint16_t imageHeight, ImageButton::drawingType dType, ImageButton::imageType iType, const function<void()>& onClick) :
 			text(text),
 			pathToImage(pathToImage),
+			imageResource(NULL),
 			imageWidth(imageWidth),
 			imageHeight(imageHeight),
-			type(type),
+			dType(dType),
+			iType(iType),
 			onClick(onClick)
 		{
 
 		}
 
-		AdditionalCreationData<ImageButton>::AdditionalCreationData(const wstring& text, const filesystem::path& pathToImage, uint16_t imageWidth, uint16_t imageHeight, ImageButton::drawingType type, const string& onClickFunctionName, const string& onClickFunctionModule) :
+		AdditionalCreationData<ImageButton>::AdditionalCreationData(const wstring& text, const filesystem::path& pathToImage, uint16_t imageWidth, uint16_t imageHeight, ImageButton::drawingType dType, ImageButton::imageType iType, const string& onClickFunctionName, const string& onClickFunctionModule) :
 			text(text),
 			pathToImage(pathToImage),
+			imageResource(NULL),
 			imageWidth(imageWidth),
 			imageHeight(imageHeight),
-			type(type),
+			dType(dType),
+			iType(iType),
+			onClickFunctionName(onClickFunctionName),
+			onClickFunctionModule(onClickFunctionModule)
+		{
+
+		}
+
+		AdditionalCreationData<ImageButton>::AdditionalCreationData(const wstring& text, uint32_t imageResource, const string& resourceModuleName, uint16_t imageWidth, uint16_t imageHeight, ImageButton::drawingType dType, ImageButton::imageType iType, const function<void()>& onClick) :
+			text(text),
+			resourceModuleName(resourceModuleName),
+			imageResource(imageResource),
+			imageWidth(imageWidth),
+			imageHeight(imageHeight),
+			dType(dType),
+			iType(iType),
+			onClick(onClick)
+		{
+
+		}
+
+		AdditionalCreationData<ImageButton>::AdditionalCreationData(const wstring& text, uint32_t imageResource, const string& resourceModuleName, uint16_t imageWidth, uint16_t imageHeight, ImageButton::drawingType dType, ImageButton::imageType iType, const string& onClickFunctionName, const string& onClickFunctionModule) :
+			text(text),
+			resourceModuleName(resourceModuleName),
+			imageResource(imageResource),
+			imageWidth(imageWidth),
+			imageHeight(imageHeight),
+			dType(dType),
+			iType(iType),
 			onClickFunctionName(onClickFunctionName),
 			onClickFunctionModule(onClickFunctionModule)
 		{
@@ -77,7 +108,9 @@ namespace gui_framework
 
 		any AdditionalCreationData<ImageButton>::getData() const
 		{
-			return make_any<tuple<wstring, filesystem::path, uint16_t, uint16_t, ImageButton::drawingType, function<void()>, string, string>>(text, pathToImage, imageWidth, imageHeight, type, onClick, onClickFunctionName, onClickFunctionModule);
+			return make_any
+				<tuple<wstring, filesystem::path, uint32_t, string, uint16_t, uint16_t, ImageButton::drawingType, ImageButton::imageType, function<void()>, string, string>>
+				(text, pathToImage, imageResource, resourceModuleName, imageWidth, imageHeight, dType, iType, onClick, onClickFunctionName, onClickFunctionModule);
 		}
 	}
 }
