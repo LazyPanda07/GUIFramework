@@ -289,5 +289,12 @@ namespace gui_framework
 		{
 			DestroyMenu(trayPopupMenu);
 		}
+
+		if (tray.hIcon)
+		{
+			DeleteObject(tray.hIcon);
+
+			tray.hIcon = nullptr;
+		}
 	}
 }
