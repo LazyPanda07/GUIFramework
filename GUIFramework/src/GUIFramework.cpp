@@ -4,6 +4,7 @@
 #include "Exceptions/FileDoesNotExist.h"
 #include "Exceptions/CantLoadModuleException.h"
 #include "Exceptions/CantFindFunctionFromModuleException.h"
+#include "Exceptions/CantGetUIThreadId.h"
 
 #include "Utility/Creators/Components/Buttons/ButtonCreator.h"
 #include "Utility/Creators/Components/Buttons/CheckBoxCreator.h"
@@ -101,6 +102,8 @@
 
 #include "Interfaces/Localization/ITextLocalized.h"
 
+#include <TlHelp32.h>
+
 #pragma warning(disable: 6335)
 
 using namespace std;
@@ -111,10 +114,21 @@ struct hash<set<uint32_t>>
 	size_t operator () (const set<uint32_t>& data);
 };
 
+template<>
+struct less<FILETIME>
+{
+	bool operator()(const FILETIME& left, const FILETIME& right) const
+	{
+		return CompareFileTime(&left, &right) == -1;
+	}
+};
+
 static set<uint32_t> makeHotkey(uint32_t key, const vector<gui_framework::hotkeys::additionalKeys>& additionalKeys);
 
 namespace gui_framework
 {
+	unique_ptr<GUIFramework> GUIFramework::instance = nullptr;
+
 	GUIFramework::hotkeyData::hotkeyData() :
 		key(static_cast<uint32_t>(-1))
 	{
@@ -208,15 +222,15 @@ namespace gui_framework
 		deserializers.reserve(25);
 
 		this->addDeserializer<Button, deserializers::ButtonDeserializer>();
-		
+
 		this->addDeserializer<CheckBox, deserializers::CheckBoxDeserializer>();
-		
+
 		this->addDeserializer<ImageButton, deserializers::ImageButtonDeserializer>();
-		
+
 		this->addDeserializer<EditControl, deserializers::EditControlDeserializer>();
-		
+
 		this->addDeserializer<RichEdit, deserializers::RichEditDeserializer>();
-		
+
 		this->addDeserializer<StaticControl, deserializers::StaticControlDeserializer>();
 
 		this->addDeserializer<SeparateWindow, deserializers::SeparateWindowDeserializer>();
@@ -224,46 +238,46 @@ namespace gui_framework
 		this->addDeserializer<ChildWindow, deserializers::ChildWindowDeserializer>();
 
 		this->addDeserializer<TabControl, deserializers::TabControlDeserializer>();
-		
+
 		this->addDeserializer<GroupBox, deserializers::GroupBoxDeserializer>();
 
 #pragma region ProgressBars
 		this->addDeserializer<ProgressBar, deserializers::ProgressBarDeserializer>();
-		
+
 		this->addDeserializer<InfiniteProgressBar, deserializers::InfiniteProgressBarDeserializer>();
 #pragma endregion
 
 #pragma region ComboBoxes
 		this->addDeserializer<DropDownComboBox, deserializers::DropDownComboBoxDeserializer>();
-		
+
 		this->addDeserializer<DropDownListComboBox, deserializers::DropDownListComboBoxDeserializer>();
-		
+
 		this->addDeserializer<SimpleComboBox, deserializers::SimpleComboBoxDeserializer>();
 #pragma endregion
 
 #pragma region ListBoxes
 		this->addDeserializer<ListBox, deserializers::ListBoxDeserializer>();
-		
+
 		this->addDeserializer<MultipleSelectListBox, deserializers::MultipleSelectListBoxDeserializer>();
 #pragma endregion
 
 #pragma region ListViews
 		this->addDeserializer<IconListView, deserializers::IconListViewDeserializer>();
-		
+
 		this->addDeserializer<ListIconListView, deserializers::ListIconListViewDeserializer>();
-		
+
 		this->addDeserializer<TextListView, deserializers::TextListViewDeserializer>();
-		
+
 		this->addDeserializer<ListTextListView, deserializers::ListTextListViewDeserializer>();
-		
+
 		this->addDeserializer<TextIconListView, deserializers::TextIconListViewDeserializer>();
-		
+
 		this->addDeserializer<ListTextIconListView, deserializers::ListTextIconListViewDeserializer>();
 #pragma endregion
 
 #pragma region Trackbars
 		this->addDeserializer<HorizontalTrackbarControl, deserializers::HorizontalTrackbarControlDeserializer>();
-		
+
 		this->addDeserializer<VerticalTrackbarControl, deserializers::VerticalTrackbarControlDeserializer>();
 #pragma endregion
 	}
@@ -392,20 +406,160 @@ namespace gui_framework
 		}
 	}
 
+	void GUIFramework::initUIThreadId()
+	{
+		HANDLE handle = CreateToolhelp32Snapshot(TH32CS_SNAPTHREAD, NULL);
+		DWORD currentProcessId = GetCurrentProcessId();
+		map<FILETIME, DWORD> threadsCreationTime;
+		THREADENTRY32 threadEntry = {};
+
+		threadEntry.dwSize = sizeof(threadEntry);
+
+		if (Thread32First(handle, &threadEntry))
+		{
+			do 
+			{
+				if (threadEntry.th32OwnerProcessID == currentProcessId)
+				{
+					if (HANDLE threadHandle = OpenThread(THREAD_QUERY_INFORMATION, false, threadEntry.th32ThreadID))
+					{
+						FILETIME creationTime;
+						FILETIME exiteTime;
+						FILETIME kernelTime;
+						FILETIME userTime;
+
+						if (GetThreadTimes(threadHandle, &creationTime, &exiteTime, &kernelTime, &userTime))
+						{
+							threadsCreationTime.emplace(move(creationTime), threadEntry.th32ThreadID);
+						}
+					}
+					else
+					{
+						cout << "Can't open thread" << endl;
+					}
+				}
+			} while (Thread32Next(handle, &threadEntry));
+		}
+
+		CloseHandle(handle);
+
+		if (threadsCreationTime.empty())
+		{
+			throw exceptions::CantGetUIThreadId(__FILE__, __FUNCTION__, __LINE__);
+		}
+
+		uiThreadId = threadsCreationTime.begin()->second;
+	}
+
+	void GUIFramework::loadModule(const string& modulePath, const string& moduleName)
+	{
+		try
+		{
+			if (modulePath.empty())
+			{
+				if (!filesystem::exists(moduleName))
+				{
+					throw exceptions::FileDoesNotExist(moduleName, __FILE__, __FUNCTION__, __LINE__);
+				}
+			}
+			else
+			{
+				if (!filesystem::exists(modulePath))
+				{
+					throw exceptions::FileDoesNotExist(modulePath, __FILE__, __FUNCTION__, __LINE__);
+				}
+			}
+		}
+		catch (const exceptions::FileDoesNotExist& e)
+		{
+			unique_lock<mutex> lock(loadModulesMutex);
+
+			cantLoadedModules.push_back(e.what());
+
+			return;
+		}
+
+		HMODULE module = LoadLibraryA
+		(
+			modulePath.empty() ?
+			moduleName.data() :
+			modulePath.data()
+		);
+
+		unique_lock<mutex> lock(loadModulesMutex);
+
+		if (!module)
+		{
+			try
+			{
+				if (modulePath.empty())
+				{
+					throw exceptions::CantLoadModuleException(moduleName, __FILE__, __FUNCTION__, __LINE__);
+				}
+				else
+				{
+					throw exceptions::CantLoadModuleException(modulePath, __FILE__, __FUNCTION__, __LINE__);
+				}
+			}
+			catch (const exceptions::CantLoadModuleException& e)
+			{
+				cantLoadedModules.push_back(e.what());
+			}
+		}
+		else
+		{
+			modules[moduleName] = module;
+
+			modulesPaths[moduleName] = modulePath.empty() ? moduleName : modulePath;
+		}
+	}
+
+	void GUIFramework::loadModulesFromSettings(const json::utility::jsonObject& settingsObject)
+	{
+		const vector<json::utility::jsonObject>& jsonModules = settingsObject.getArray(json_settings::modulesSetting);
+
+		modules.reserve(jsonModules.size());
+
+		for (const json::utility::jsonObject& jsonModule : jsonModules)
+		{
+			const json::utility::jsonObject& moduleObject = std::get<json::utility::jsonObject>(jsonModule.data.front().second);
+			const string& moduleName = moduleObject.getString(json_settings::moduleNameSetting);
+			const string& modulePath = std::get<string>(ranges::find_if
+			(
+				moduleObject.data,
+				[](const pair<string, json::utility::jsonObject::variantType>& value) { return value.first == json_settings::pathToModuleSettings; }
+			)->second);
+
+			{
+				unique_lock<mutex> lock(loadModulesMutex);
+
+				modules.emplace(moduleName, nullptr);
+
+				modulesPaths.emplace(moduleName, "");
+			}
+
+			asyncModulesHandles.push_back
+			(
+				this->addTask
+				(
+					bind(static_cast<void(GUIFramework::*)(const string&, const string&)>(&GUIFramework::loadModule), this, modulePath, moduleName)
+				)
+			);
+		}
+	}
+
 	GUIFramework::GUIFramework() :
 		nextId(1),
-		nextTrayId(custom_window_messages::startTrayId),
-		modulesNeedToLoad(1),
-		currentLoadedModules(modulesNeedToLoad)
+		nextTrayId(custom_window_messages::startTrayId)
 	{
-		// TODO: remake async module
-
 		if (!filesystem::exists(json_settings::settingsJSONFile))
 		{
 			throw runtime_error(format(R"(File "{}" does not exist)"sv, json_settings::settingsJSONFile));
 		}
 
 		jsonSettings = ifstream(json_settings::settingsJSONFile.data());
+
+		this->initUIThreadId();
 
 		try
 		{
@@ -460,107 +614,7 @@ namespace gui_framework
 
 		try
 		{
-			const vector<json::utility::jsonObject>& jsonModules = settingsObject.getArray(json_settings::modulesSetting);
-
-			modulesNeedToLoad += static_cast<int>(jsonModules.size());
-
-			modules.reserve(modulesNeedToLoad);
-
-			for (const auto& i : jsonModules)
-			{
-				const auto& moduleObject = std::get<json::utility::jsonObject>(i.data.front().second);
-				const string& moduleName = moduleObject.getString(json_settings::moduleNameSetting);
-				const auto& modulePath = ranges::find_if
-				(
-					moduleObject.data,
-					[](const pair<string, json::utility::jsonObject::variantType>& value) { return value.first == json_settings::pathToModuleSettings; }
-				)->second;
-				string modulePathString;
-
-				if (modulePath.index() == static_cast<size_t>(json::utility::variantTypeEnum::jString))
-				{
-					modulePathString = std::get<string>(modulePath);
-				}
-
-				{
-					unique_lock<mutex> lock(loadModulesMutex);
-
-					modules.insert({ moduleName, nullptr });
-
-					modulesPaths.insert({ moduleName, ""s });
-				}
-
-				auto loadModule = [modulePathString, moduleName, this]()
-				{
-					try
-					{
-						if (modulePathString.empty())
-						{
-							if (!filesystem::exists(moduleName))
-							{
-								throw exceptions::FileDoesNotExist(moduleName, __FILE__, __FUNCTION__, __LINE__);
-							}
-						}
-						else
-						{
-							if (!filesystem::exists(modulePathString))
-							{
-								throw exceptions::FileDoesNotExist(modulePathString, __FILE__, __FUNCTION__, __LINE__);
-							}
-						}
-					}
-					catch (const exceptions::FileDoesNotExist& e)
-					{
-						unique_lock<mutex> lock(loadModulesMutex);
-
-						--modulesNeedToLoad;
-
-						cantLoadedModules.push_back(e.what());
-
-						return;
-					}
-
-					HMODULE module = LoadLibraryA
-					(
-						modulePathString.empty() ?
-						moduleName.data() :
-						modulePathString.data()
-					);
-
-					unique_lock<mutex> lock(loadModulesMutex);
-
-					if (!module)
-					{
-						try
-						{
-							if (modulePathString.empty())
-							{
-								throw exceptions::CantLoadModuleException(moduleName, __FILE__, __FUNCTION__, __LINE__);
-							}
-							else
-							{
-								throw exceptions::CantLoadModuleException(modulePathString, __FILE__, __FUNCTION__, __LINE__);
-							}
-						}
-						catch (const exceptions::CantLoadModuleException& e)
-						{
-							--modulesNeedToLoad;
-
-							cantLoadedModules.push_back(e.what());
-						}
-					}
-					else
-					{
-						modules[moduleName] = module;
-
-						modulesPaths[moduleName] = modulePathString.empty() ? moduleName : modulePathString;
-
-						++currentLoadedModules;
-					}
-				};
-
-				this->addTask(loadModule);
-			}
+			this->loadModulesFromSettings(settingsObject);
 		}
 		catch (const json::exceptions::CantFindValueException&)
 		{
@@ -576,9 +630,14 @@ namespace gui_framework
 		}
 	}
 
-	void GUIFramework::initUIThreadId()
+	GUIFramework& GUIFramework::GUIFramework::get()
 	{
-		GUIFramework::get().uiThreadId = GetCurrentThreadId();
+		if (!instance)
+		{
+			instance.reset(new GUIFramework());
+		}
+
+		return *instance;
 	}
 
 	void GUIFramework::runOnUIThread(const function<void()>& function)
@@ -634,24 +693,44 @@ namespace gui_framework
 		return GUIFramework::get().uiThreadId;
 	}
 
-	void GUIFramework::addTask(const function<void()>& task, const function<void()>& callback)
+	future<void> GUIFramework::addTask(const function<void()>& task, const function<void()>& callback)
 	{
 		if (!threadPool)
 		{
 			throw runtime_error("Can't find threadsCount setting in gui_framework.json");
 		}
 
-		threadPool->addTask(task, callback);
+		return threadPool->addTask(task, callback);
 	}
 
-	void GUIFramework::addTask(function<void()>&& task, const function<void()>& callback)
+	future<void> GUIFramework::addTask(const function<void()>& task, function<void()>&& callback)
 	{
 		if (!threadPool)
 		{
 			throw runtime_error("Can't find threadsCount setting in gui_framework.json");
 		}
 
-		threadPool->addTask(move(task), callback);
+		return threadPool->addTask(task, move(callback));
+	}
+
+	future<void> GUIFramework::addTask(function<void()>&& task, const function<void()>& callback)
+	{
+		if (!threadPool)
+		{
+			throw runtime_error("Can't find threadsCount setting in gui_framework.json");
+		}
+
+		return threadPool->addTask(move(task), callback);
+	}
+
+	future<void> GUIFramework::addTask(function<void()>&& task, function<void()>&& callback)
+	{
+		if (!threadPool)
+		{
+			throw runtime_error("Can't find threadsCount setting in gui_framework.json");
+		}
+
+		return threadPool->addTask(move(task), move(callback));
 	}
 
 	size_t GUIFramework::registerHotkey(hotkeys::keys key, const function<void()>& onClick, const vector<hotkeys::additionalKeys>& additionalKeys)
@@ -873,7 +952,7 @@ namespace gui_framework
 
 	bool GUIFramework::isModulesLoaded() const
 	{
-		return modulesNeedToLoad == currentLoadedModules;
+		return ranges::all_of(asyncModulesHandles, [](const future<void>& handle) { return handle.wait_for(1ns) == future_status::ready; });
 	}
 
 	void GUIFramework::changeLocalization(const string& language) const

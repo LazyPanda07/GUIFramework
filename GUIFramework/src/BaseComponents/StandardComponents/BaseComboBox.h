@@ -42,15 +42,23 @@ namespace gui_framework
 
 		/// @brief 
 		/// @param value 
-		/// @return
+		/// @return Index of added value
 		/// @exception SelectListException 
-		virtual LRESULT addValue(const std::wstring& value) final;
+		LRESULT addValue(const std::wstring& value);
+
+		/**
+		 * @brief 
+		 * @param values 
+		 * @return Last index of added values
+		 * @exception SelectListException
+		*/
+		LRESULT addValues(const std::vector<std::wstring>& values);
 
 		/// @brief 
 		/// @param index 
 		/// @return 
 		/// @exception SelectListException 
-		virtual LRESULT removeValue(size_t index) final;
+		LRESULT removeValue(size_t index);
 
 		/// @brief 
 		/// @param value 
@@ -70,77 +78,77 @@ namespace gui_framework
 		/// @param subStringToFind 
 		/// @return 
 		/// @exception SelectListException 
-		virtual LRESULT findSubstring(const std::wstring& substringToFind) final;
+		LRESULT findSubstring(const std::wstring& substringToFind);
 
 		/// @brief Find not case sensitive string
 		/// @param stringToFind 
 		/// @return 
 		/// @exception SelectListException 
-		virtual LRESULT findString(const std::wstring& stringToFind) final;
+		LRESULT findString(const std::wstring& stringToFind);
 
 		/// @brief 
 		/// @param index 
 		/// @return 
 		/// @exception SelectListException 
-		virtual std::wstring getValue(size_t index) const final;
+		std::wstring getValue(size_t index) const;
 		
 		/// @brief 
 		/// @return 
 		/// @exception SelectListException 
-		virtual LRESULT getCurrentSelectionIndex() const final;
+		LRESULT getCurrentSelectionIndex() const;
 
 		/// @brief 
 		/// @param index 
 		/// @return 
 		/// @exception SelectListException 
-		virtual LRESULT setCurrentSelection(LRESULT index) const final;
+		LRESULT setCurrentSelection(LRESULT index) const;
 
 		/// @brief 
 		/// @return 
 		/// @exception SelectListException 
-		virtual LRESULT size() const final;
+		LRESULT size() const;
 
 		/// @brief 
-		virtual void clear() final;
+		void clear();
 
 		/// @brief 
 		/// @param isSorting 
-		virtual void setSortingMode(bool isSorting) final;
+		void setSortingMode(bool isSorting);
 
 		/// @brief 
 		/// @param value 
 		/// @param height 
 		/// @return 
 		/// @exception SelectListException 
-		virtual LRESULT setItemHeight(itemHeightEnum value, uint16_t height) final;
+		LRESULT setItemHeight(itemHeightEnum value, uint16_t height);
 
 		/// @brief 
 		/// @param width 
 		/// @return 
 		/// @exception SelectListException 
-		virtual LRESULT setDroppedWidth(uint16_t width) final;
+		LRESULT setDroppedWidth(uint16_t width);
 
 		/// @brief Set callback function with on selection change event
 		/// @param onSelectionChange callback with reference to current BaseCombobox
-		virtual void setOnSelectionChange(const std::function<void(BaseComboBox&)>& onSelectionChange) final;
+		void setOnSelectionChange(const std::function<void(BaseComboBox&)>& onSelectionChange);
 
 		/// @brief Set serializable callback function with on selection change event
 		/// @param functionName Name of function with comboBoxCallbackSignature signature
 		/// @param moduleName 
 		/// @exception CantFindFunctionFromModuleException 
 		/// @exception std::out_of_range Can't find moduleName in loaded modules
-		virtual void setOnSelectionChange(const std::string& functionName, const std::string& moduleName) final;
+		void setOnSelectionChange(const std::string& functionName, const std::string& moduleName);
 
 		/// @brief 
 		/// @param value 
 		/// @return 
 		/// @exception SelectListException 
-		virtual LRESULT getItemHeight(itemHeightEnum value) const final;
+		LRESULT getItemHeight(itemHeightEnum value) const;
 
 		/// @brief 
 		/// @return 
 		/// @exception SelectListException 
-		virtual LRESULT getDroppedWidth() const final;
+		LRESULT getDroppedWidth() const;
 
 		/// @brief 
 		/// @param width 

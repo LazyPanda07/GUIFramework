@@ -97,6 +97,18 @@ namespace gui_framework
 		return result;
 	}
 
+	LRESULT BaseComboBox::addValues(const vector<wstring>& values)
+	{
+		LRESULT result = 0;
+
+		for (const wstring& value : values)
+		{
+			result = this->addValue(value);
+		}
+
+		return result;
+	}
+
 	LRESULT BaseComboBox::removeValue(size_t index)
 	{
 		LRESULT result = SendMessageW(handle, CB_DELETESTRING, index, NULL);

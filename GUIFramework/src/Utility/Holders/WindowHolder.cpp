@@ -39,8 +39,13 @@ namespace gui_framework
 		GUIFramework& instance = GUIFramework::get();
 		DWORD currentThreadId = GetCurrentThreadId();
 
-		while (code = GetMessageW(&message, nullptr, NULL, NULL) > 0)
+		while (code = GetMessageW(&message, nullptr, NULL, NULL))
 		{
+			if (code == -1)
+			{
+				break;
+			}
+
 			TranslateMessage(&message);
 
 			DispatchMessageW(&message);
@@ -78,7 +83,7 @@ namespace gui_framework
 			}
 		}
 
-		for (const auto& hotkeyId : registeredHotkeyIds)
+		for (uint32_t hotkeyId : registeredHotkeyIds)
 		{
 			instance.unregisterHotkey(hotkeyId);
 		}

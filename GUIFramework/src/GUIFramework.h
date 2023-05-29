@@ -1,5 +1,7 @@
 #pragma once
 
+#include <future>
+
 #include "Utility/Creators/BaseComponentCreator.h"
 #include "Interfaces/Utility/IDeserializer.h"
 #include "Utility/Keys.h"
@@ -43,6 +45,9 @@ namespace gui_framework
 		};
 
 	private:
+		static std::unique_ptr<GUIFramework> instance;
+
+	private:
 		json::JSONParser jsonSettings;
 		std::unique_ptr<threading::ThreadPool> threadPool;
 		INITCOMMONCONTROLSEX comm;
@@ -69,8 +74,7 @@ namespace gui_framework
 		std::recursive_mutex componentsMutex;
 #pragma endregion
 #pragma region Modules
-		int modulesNeedToLoad;
-		int currentLoadedModules;
+		std::vector<std::future<void>> asyncModulesHandles;
 		std::mutex loadModulesMutex;
 		std::vector<std::string> cantLoadedModules;
 #pragma endregion
@@ -101,6 +105,12 @@ namespace gui_framework
 
 		void processHotkeys() const;
 
+		void initUIThreadId();
+
+		void loadModule(const std::string& modulePath, const std::string& moduleName);
+
+		void loadModulesFromSettings(const json::utility::jsonObject& settingsObject);
+
 	private:
 		GUIFramework();
 
@@ -112,11 +122,6 @@ namespace gui_framework
 		/// @exception json::exceptions::CantFindValueException Unable to find setting in gui_framework.json on first GUIFramework::get() call
 		/// @excepiton std::runtime_error Can't find gui_framework.json
 		static GUIFramework& get();
-
-		/// @brief Must be called in main function before all other functions
-		/// @exception json::exceptions::CantFindValueException Unable to find setting in gui_framework.json on first GUIFramework::get() call
-		/// @excepiton std::runtime_error Can't find gui_framework.json
-		static void initUIThreadId();
 
 		/// @brief Run function in UI thread. Functions processed only when window in main UI thread has focus
 		/// @param function Function that will run in UI thread
@@ -140,13 +145,25 @@ namespace gui_framework
 		/// @param task Task function
 		/// @param callback After execution task callback function
 		/// @exception std::runtime_error Can't find threadsCount setting in gui_framework.json
-		void addTask(const std::function<void()>& task, const std::function<void()>& callback = nullptr);
+		std::future<void> addTask(const std::function<void()>& task, const std::function<void()>& callback = nullptr);
 
 		/// @brief Add task to thread pool. Thread safe method
 		/// @param task Task function
 		/// @param callback After execution task callback function
 		/// @exception std::runtime_error Can't find threadsCount setting in gui_framework.json
-		void addTask(std::function<void()>&& task, const std::function<void()>& callback = nullptr);
+		std::future<void> addTask(const std::function<void()>& task, std::function<void()>&& callback);
+
+		/// @brief Add task to thread pool. Thread safe method
+		/// @param task Task function
+		/// @param callback After execution task callback function
+		/// @exception std::runtime_error Can't find threadsCount setting in gui_framework.json
+		std::future<void> addTask(std::function<void()>&& task, const std::function<void()>& callback = nullptr);
+
+		/// @brief Add task to thread pool. Thread safe method
+		/// @param task Task function
+		/// @param callback After execution task callback function
+		/// @exception std::runtime_error Can't find threadsCount setting in gui_framework.json
+		std::future<void> addTask(std::function<void()>&& task, std::function<void()>&& callback);
 
 		/// @brief Only works in thread, that call runMainLoop from WindowHolder. Thread safe register hotkey
 		/// @param key Value from keys enum or https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
@@ -258,15 +275,9 @@ namespace gui_framework
 		friend class WindowHolder;
 		friend class BaseDialogBox;
 		friend class BaseMainWindow;
+		friend struct std::default_delete<GUIFramework>;
 #pragma endregion
 	};
-
-	inline GUIFramework& GUIFramework::get()
-	{
-		static GUIFramework instance;
-
-		return instance;
-	}
 
 	template<std::derived_from<BaseComponent> T, std::derived_from<utility::BaseComponentCreator> CreatorT, typename... Args>
 	void GUIFramework::addCreator(Args&&... args)
