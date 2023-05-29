@@ -17,21 +17,21 @@ namespace gui_framework
 	{
 		int resourceType;
 		HANDLE imageHandle;
-		HMODULE module = GetModuleHandleW(nullptr);
-		wstring imageName;
-		uint32_t flags = NULL;
+		function<HANDLE()> load;
 
 		if (!pathToImage.empty())
 		{
-			flags = LR_LOADFROMFILE;
-
-			imageName = pathToImage.wstring().data();
+			load = [this]()
+			{
+				return LoadImageW(nullptr, pathToImage.wstring().data(), static_cast<uint32_t>(iType), imageWidth, imageHeight, LR_LOADFROMFILE);
+			};
 		}
 		else if (imageResource)
 		{
-			module = GUIFramework::get()[resourceModuleName];
-
-			imageName = MAKEINTRESOURCE(imageResource);
+			load = [this]()
+			{
+				return LoadImageW(GUIFramework::get()[resourceModuleName], MAKEINTRESOURCE(imageResource), static_cast<uint32_t>(iType), imageWidth, imageHeight, NULL);
+			};
 		}
 		else
 		{
@@ -57,7 +57,7 @@ namespace gui_framework
 			break;
 		}
 
-		imageHandle = LoadImageW(module, imageName.data(), static_cast<uint32_t>(iType), imageWidth, imageHeight, flags);
+		imageHandle = load();
 
 		switch (iType)
 		{
