@@ -10,11 +10,15 @@ namespace gui_framework
 	{
 		BaseComponent* ImageButtonCreator::create(const wstring& windowName, const utility::ComponentSettings& settings, const any& additionalData, BaseComposite* parent)
 		{
+			// TODO: update creator
+
 			auto [text, pathToImage, imageWidth, imageHeight, type, onClick, onClickFunctionName, onClickFunctionModule] = any_cast<tuple<wstring, filesystem::path, uint16_t, uint16_t, ImageButton::drawingType, function<void()>, string, string>>(additionalData);
 			
-			return onClickFunctionName.empty() ?
-				new ImageButton(windowName, pathToImage, type, imageWidth, imageHeight, settings, parent, onClick) :
-				new ImageButton(windowName, pathToImage, type, imageWidth, imageHeight, settings, parent, onClickFunctionName, onClickFunctionModule);
+			return nullptr;
+
+			// return onClickFunctionName.empty() ?
+			// 	new ImageButton(windowName, pathToImage, type, imageWidth, imageHeight, settings, parent, onClick) :
+			// 	new ImageButton(windowName, pathToImage, type, imageWidth, imageHeight, settings, parent, onClickFunctionName, onClickFunctionModule);
 		}
 	}
 }

@@ -3,65 +3,102 @@
 #include "BaseComposites/BaseComposite.h"
 #include "Styles/Components/Buttons/DefaultButtonStyles.h"
 #include "Utility/Holders/LoadableHolders/BaseLoadableHolder.h"
+#include "GUIFramework.h"
+
+#pragma warning(disable: 6001)
 
 using namespace std;
 
 namespace gui_framework
 {
+	using imageType = utility::BaseLoadableHolder::imageType;
+
 	void ImageButton::drawImage()
 	{
+		int resourceType;
+		HANDLE imageHandle;
+		HMODULE module = GetModuleHandleW(nullptr);
+		wstring imageName;
+		uint32_t flags = NULL;
+
 		if (!pathToImage.empty())
 		{
-			int imageType;
-			HANDLE imageHandle;
+			flags = LR_LOADFROMFILE;
 
-			if (pathToImage.extension() == ".ico")
-			{
-				utility::appendStyle(handle, BS_ICON);
+			imageName = pathToImage.wstring().data();
+		}
+		else if (imageResource)
+		{
+			module = GUIFramework::get()[resourceModuleName];
 
-				imageHandle = LoadImageW(nullptr, pathToImage.wstring().data(), static_cast<uint32_t>(utility::BaseLoadableHolder::imageType::icon), imageWidth, imageHeight, LR_LOADFROMFILE);
+			imageName = MAKEINTRESOURCE(imageResource);
+		}
+		else
+		{
+			return;
+		}
 
-				image = static_cast<HICON>(imageHandle);
+		switch (iType)
+		{
+		case imageType::icon:
+			utility::appendStyle(handle, BS_ICON);
 
-				imageType = IMAGE_ICON;
-			}
-			else
-			{
-				utility::appendStyle(handle, BS_BITMAP);
+			resourceType = IMAGE_ICON;
 
-				imageHandle = LoadImageW(nullptr, pathToImage.wstring().data(), static_cast<uint32_t>(utility::BaseLoadableHolder::imageType::bitmap), imageWidth, imageHeight, LR_LOADFROMFILE);
+			break;
+		case imageType::bitmap:
+			utility::appendStyle(handle, BS_BITMAP);
 
-				image = static_cast<HBITMAP>(imageHandle);
+			resourceType = IMAGE_BITMAP;
 
-				imageType = IMAGE_BITMAP;
-			}
+			break;
 
-			switch (type)
-			{
-			case gui_framework::ImageButton::drawingType::image:
-				SendMessageW(handle, BM_SETIMAGE, imageType, reinterpret_cast<LPARAM>(imageHandle));
+		default:
+			break;
+		}
 
-				break;
+		imageHandle = LoadImageW(module, imageName.data(), static_cast<uint32_t>(iType), imageWidth, imageHeight, flags);
 
-			case gui_framework::ImageButton::drawingType::text:
-				utility::removeStyle(handle, imageType == IMAGE_ICON ? BS_ICON : BS_BITMAP);
+		switch (iType)
+		{
+		case imageType::icon:
+			image = static_cast<HICON>(imageHandle);
 
-				break;
+			break;
+		case imageType::bitmap:
+			image = static_cast<HBITMAP>(imageHandle);
 
-			case gui_framework::ImageButton::drawingType::textAndImage:
-				utility::removeStyle(handle, imageType == IMAGE_ICON ? BS_ICON : BS_BITMAP);
+			break;
 
-				SendMessageW(handle, BM_SETIMAGE, imageType, reinterpret_cast<LPARAM>(imageHandle));
+		default:
+			break;
+		}
 
-				break;
+		switch (dType)
+		{
+		case gui_framework::ImageButton::drawingType::image:
+			SendMessageW(handle, BM_SETIMAGE, resourceType, reinterpret_cast<LPARAM>(imageHandle));
 
-			default:
-				break;
-			}
+			break;
+
+		case gui_framework::ImageButton::drawingType::text:
+			utility::removeStyle(handle, resourceType == IMAGE_ICON ? BS_ICON : BS_BITMAP);
+
+			break;
+
+		case gui_framework::ImageButton::drawingType::textAndImage:
+			utility::removeStyle(handle, resourceType == IMAGE_ICON ? BS_ICON : BS_BITMAP);
+
+			SendMessageW(handle, BM_SETIMAGE, resourceType, reinterpret_cast<LPARAM>(imageHandle));
+
+			break;
+
+		default:
+			break;
 		}
 	}
 
-	ImageButton::ImageButton(const wstring& buttonName, const filesystem::path& pathToImage, drawingType type, uint16_t imageWidth, uint16_t imageHeight, const utility::ComponentSettings& settings, BaseComposite* parent, const function<void()>& onClick) :
+	ImageButton::ImageButton(const wstring& buttonName, const filesystem::path& pathToImage, drawingType dType, imageType iType, uint16_t imageWidth, uint16_t imageHeight, const utility::ComponentSettings& settings, BaseComposite* parent, const function<void()>& onClick) :
 		BaseButton
 		(
 			buttonName,
@@ -77,14 +114,15 @@ namespace gui_framework
 			parent->getHandle()
 		),
 		pathToImage(pathToImage),
+		dType(dType),
+		iType(iType),
 		imageWidth(imageWidth),
-		imageHeight(imageHeight),
-		type(type)
+		imageHeight(imageHeight)
 	{
 		this->drawImage();
 	}
 
-	ImageButton::ImageButton(const wstring& buttonName, const filesystem::path& pathToImage, drawingType type, uint16_t imageWidth, uint16_t imageHeight, const utility::ComponentSettings& settings, BaseComposite* parent, const string& functionName, const string& moduleName) :
+	ImageButton::ImageButton(const wstring& buttonName, const filesystem::path& pathToImage, drawingType dType, imageType iType, uint16_t imageWidth, uint16_t imageHeight, const utility::ComponentSettings& settings, BaseComposite* parent, const string& functionName, const string& moduleName) :
 		BaseButton
 		(
 			buttonName,
@@ -101,19 +139,89 @@ namespace gui_framework
 			parent->getHandle()
 		),
 		pathToImage(pathToImage),
+		dType(dType),
+		iType(iType),
 		imageWidth(imageWidth),
-		imageHeight(imageHeight),
-		type(type)
+		imageHeight(imageHeight)
 	{
 		this->drawImage();
 	}
 
-	void ImageButton::setImage(const filesystem::path& pathToImage, drawingType type, uint16_t imageWidth, uint16_t imageHeight)
+	ImageButton::ImageButton(const wstring& buttonName, uint32_t imageResources, drawingType dType, imageType iType, uint16_t imageWidth, uint16_t imageHeight, const utility::ComponentSettings& settings, BaseComposite* parent, const function<void()>& onClick, const string& resourceModuleName) :
+		BaseButton
+		(
+			buttonName,
+			L"",
+			settings,
+			styles::DefaultButtonStyles(),
+			parent,
+			onClick
+		),
+		IResizableComponent
+		(
+			handle,
+			parent->getHandle()
+		),
+		imageResource(imageResource),
+		resourceModuleName(resourceModuleName),
+		dType(dType),
+		iType(iType),
+		imageWidth(imageWidth),
+		imageHeight(imageHeight)
+	{
+		this->drawImage();
+	}
+
+	ImageButton::ImageButton(const wstring& buttonName, uint32_t imageResources, drawingType dType, imageType iType, uint16_t imageWidth, uint16_t imageHeight, const utility::ComponentSettings& settings, BaseComposite* parent, const string& functionName, const string& moduleName, const string& resourceModuleName) :
+		BaseButton
+		(
+			buttonName,
+			L"",
+			settings,
+			styles::DefaultButtonStyles(),
+			parent,
+			functionName,
+			moduleName
+		),
+		IResizableComponent
+		(
+			handle,
+			parent->getHandle()
+		),
+		imageResource(imageResource),
+		resourceModuleName(resourceModuleName),
+		dType(dType),
+		iType(iType),
+		imageWidth(imageWidth),
+		imageHeight(imageHeight)
+	{
+		this->drawImage();
+	}
+
+	void ImageButton::setImage(const filesystem::path& pathToImage, drawingType dType, imageType iType, uint16_t imageWidth, uint16_t imageHeight)
 	{
 		this->pathToImage = pathToImage;
-		this->type = type;
+		this->dType = dType;
+		this->iType = iType;
 		this->imageWidth = imageWidth;
 		this->imageHeight = imageHeight;
+
+		resourceModuleName.clear();
+		imageResource = NULL;
+
+		this->drawImage();
+	}
+
+	void ImageButton::setImage(uint32_t imageResource, drawingType dType, imageType iType, uint16_t imageWidth, uint16_t imageHeight, const string& resourceModuleName)
+	{
+		this->imageResource = imageResource;
+		this->resourceModuleName = resourceModuleName;
+		this->dType = dType;
+		this->iType = iType;
+		this->imageWidth = imageWidth;
+		this->imageHeight = imageHeight;
+
+		pathToImage.clear();
 
 		this->drawImage();
 	}
@@ -135,7 +243,12 @@ namespace gui_framework
 
 	ImageButton::drawingType ImageButton::getDrawingType() const
 	{
-		return type;
+		return dType;
+	}
+
+	ImageButton::imageType ImageButton::getImageType() const
+	{
+		return iType;
 	}
 
 	size_t ImageButton::getHash() const
@@ -150,12 +263,14 @@ namespace gui_framework
 		json::JSONBuilder builder = BaseButton::getStructure();
 		jsonObject& current = get<jsonObject>(builder[utility::to_string(windowName, ISerializable::getCodepage())]);
 
-		current.data.push_back({ "imageWidth"s, static_cast<uint64_t>(imageWidth) });
-		current.data.push_back({ "imageHeight"s, static_cast<uint64_t>(imageHeight) });
+		current.setUnsignedInt("imageWidth"s, static_cast<uint64_t>(imageWidth));
+		current.setUnsignedInt("imageHeight"s, static_cast<uint64_t>(imageHeight));
 
-		current.data.push_back({ "pathToImage"s, utility::getStringFromRawPath(pathToImage) });
+		current.setString("pathToImage", utility::getStringFromRawPath(pathToImage));
+		current.setString("resourceModuleName", resourceModuleName);
 
-		current.data.push_back({ "drawingType"s, static_cast<uint64_t>(type) });
+		current.setUnsignedInt("drawingType"s, static_cast<uint64_t>(dType));
+		current.setUnsignedInt("imageType"s, static_cast<uint64_t>(iType));
 
 		return builder;
 	}

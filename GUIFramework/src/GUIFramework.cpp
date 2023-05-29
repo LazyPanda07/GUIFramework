@@ -584,7 +584,8 @@ namespace gui_framework
 
 		InitCommonControlsEx(&comm);
 
-		modules.insert({ "MSFT"s, LoadLibraryW(libraries::msftEditLibrary.data()) });
+		modules.emplace("MSFT"s, LoadLibraryW(libraries::msftEditLibrary.data()));
+		modules.emplace("", GetModuleHandleW(nullptr));
 
 		const json::utility::jsonObject& settingsObject = jsonSettings.getObject(json_settings::settingsObject);
 
@@ -852,7 +853,7 @@ namespace gui_framework
 			throw exceptions::CantLoadModuleException(moduleName, __FILE__, __FUNCTION__, __LINE__);
 		}
 
-		modules.insert({ moduleName, module });
+		modules.emplace(moduleName, module);
 	}
 
 	void GUIFramework::unloadModule(const string& moduleName)
@@ -999,6 +1000,11 @@ namespace gui_framework
 		unique_lock<mutex> lock(loadModulesMutex);
 
 		return cantLoadedModules;
+	}
+
+	HMODULE GUIFramework::operator [](const string& moduleName) const
+	{
+		return modules.at(moduleName);
 	}
 }
 

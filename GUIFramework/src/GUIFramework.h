@@ -263,6 +263,14 @@ namespace gui_framework
 		/// @return 
 		std::vector<std::string> getCantLoadedModules();
 
+		/**
+		 * @brief Get handle to specific module
+		 * @param moduleName 
+		 * @return 
+		 * @exception std::out_of_range
+		*/
+		HMODULE operator [](const std::string& moduleName) const;
+
 		/// @brief Add derived from BaseComponentCreator creator
 		template<std::derived_from<BaseComponent> T, std::derived_from<utility::BaseComponentCreator> CreatorT, typename... Args>
 		void addCreator(Args&&... args);
