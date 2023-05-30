@@ -74,6 +74,15 @@ namespace gui_framework
 		/// @return 
 		bool disable();
 
+		/**
+		 * @brief SendMessage WinAPI wrapper
+		 * @param message 
+		 * @param wparam 
+		 * @param lparam 
+		 * @return 
+		*/
+		LRESULT sendRawMessage(UINT message, WPARAM wparam, LPARAM lparam);
+
 		void setDesiredWidth(uint16_t desiredWidth);
 
 		void setDesiredHeight(uint16_t desiredHeight);

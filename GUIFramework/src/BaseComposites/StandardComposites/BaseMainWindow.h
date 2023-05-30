@@ -51,17 +51,23 @@ namespace gui_framework
 		/**
 		 * @brief Add tray menu text item. Works only if non NULL value passed in trayIconResource in contructor
 		*/
-		bool addTrayMenuItem(const std::wstring& text, const std::function<void()>& onClick);
+		bool addTrayMenuItem(const std::wstring& text, const std::function<void()>& onClick, uint32_t* menuItemId = nullptr);
 
 		/**
 		 * @brief Add tray menu text item. Works only if non NULL value passed in trayIconResource in contructor
 		*/
-		bool addTrayMenuItem(const std::wstring& text, const std::string& functionName, const std::string& moduleName);
+		bool addTrayMenuItem(const std::wstring& text, const std::string& functionName, const std::string& moduleName, uint32_t* menuItemId = nullptr);
 
 		/**
 		 * @brief Remove tray menu text item
 		*/
 		bool removeTrayMenuItem(const std::wstring& text);
+
+		/**
+		 * @brief Process tray commands
+		 * @param id Value from addTrayMenuItem menuItemId
+		*/
+		void sendTrayMessage(uint32_t id);
 
 		virtual size_t getHash() const override;
 

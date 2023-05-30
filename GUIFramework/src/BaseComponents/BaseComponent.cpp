@@ -246,6 +246,11 @@ namespace gui_framework
 		return EnableWindow(handle, false);
 	}
 
+	LRESULT BaseComponent::sendRawMessage(UINT message, WPARAM wparam, LPARAM lparam)
+	{
+		return SendMessageW(handle, message, wparam, lparam);
+	}
+
 	void BaseComponent::setDesiredWidth(uint16_t desiredWidth)
 	{
 		this->desiredWidth = desiredWidth;

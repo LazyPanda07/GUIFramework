@@ -65,7 +65,7 @@ namespace gui_framework
 					clicks = 0;
 				}
 
-				break;
+				return 0;
 
 			case WM_CONTEXTMENU:
 				if (trayPopupMenu)
@@ -73,6 +73,8 @@ namespace gui_framework
 					isUsed = true;
 
 					TrackPopupMenuEx(trayPopupMenu, TPM_CENTERALIGN, GET_X_LPARAM(wparam), GET_Y_LPARAM(wparam), this->getHandle(), nullptr);
+
+					return 0;
 				}
 
 				break;
@@ -90,6 +92,8 @@ namespace gui_framework
 				isUsed = true;
 
 				it->second.callable();
+
+				return 0;
 			}
 		}
 
@@ -179,21 +183,40 @@ namespace gui_framework
 		}
 	}
 
-	bool BaseMainWindow::addTrayMenuItem(const wstring& text, const function<void()>& onClick)
-	{
-		return trayPopupMenu ?
-			AppendMenuW(trayPopupMenu, MF_STRING, popupMenuItems.emplace_back(GUIFramework::get().generateTrayId(), onClick).first, text.data()) :
-			false;
-	}
-
-	bool BaseMainWindow::addTrayMenuItem(const wstring& text, const string& functionName, const string& moduleName)
+	bool BaseMainWindow::addTrayMenuItem(const wstring& text, const function<void()>& onClick, uint32_t* menuItemId)
 	{
 		if (!trayPopupMenu)
 		{
 			return false;
 		}
 
-		AppendMenuW(trayPopupMenu, MF_STRING, popupMenuItems.emplace_back(GUIFramework::get().generateTrayId(), Function(functionName, moduleName)).first, text.data());
+		uint32_t id = popupMenuItems.emplace_back(GUIFramework::get().generateTrayId(), onClick).first;
+
+		if (menuItemId)
+		{
+			*menuItemId = id;
+		}
+
+		AppendMenuW(trayPopupMenu, MF_STRING, id, text.data());
+
+		return true;
+	}
+
+	bool BaseMainWindow::addTrayMenuItem(const wstring& text, const string& functionName, const string& moduleName, uint32_t* menuItemId)
+	{
+		if (!trayPopupMenu)
+		{
+			return false;
+		}
+
+		uint32_t id = popupMenuItems.emplace_back(GUIFramework::get().generateTrayId(), Function(functionName, moduleName)).first;
+
+		if (menuItemId)
+		{
+			*menuItemId = id;
+		}
+
+		AppendMenuW(trayPopupMenu, MF_STRING, id, text.data());
 
 		return true;
 	}
@@ -225,6 +248,11 @@ namespace gui_framework
 		}
 
 		return false;
+	}
+
+	void BaseMainWindow::sendTrayMessage(uint32_t id)
+	{
+		this->sendRawMessage(WM_COMMAND, MAKEWPARAM(id, NULL), NULL);
 	}
 
 	size_t BaseMainWindow::getHash() const
