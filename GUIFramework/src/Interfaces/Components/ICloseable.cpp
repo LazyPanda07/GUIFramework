@@ -1,6 +1,7 @@
 #include "ICloseable.h"
 
-#include "CompositesHeader.h"
+#include "BaseComposites/BaseComposite.h"
+#include "GUIFramework.h"
 #include "Exceptions/CantFindFunctionFromModuleException.h"
 
 using namespace std;

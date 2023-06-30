@@ -35,6 +35,8 @@ namespace gui_framework
 	protected:
 		virtual void onDestroyEvent();
 
+		virtual void createMarkup();
+
 		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
 
 	public:
@@ -74,5 +76,7 @@ namespace gui_framework
 		virtual json::JSONBuilder getStructure() const override;
 
 		virtual ~BaseMainWindow();
+
+		friend class WindowHolder;
 	};
 }

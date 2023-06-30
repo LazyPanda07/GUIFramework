@@ -37,6 +37,11 @@ namespace gui_framework
 
 	}
 
+	void BaseMainWindow::createMarkup()
+	{
+
+	}
+
 	LRESULT BaseMainWindow::windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed)
 	{
 		LRESULT result = BaseSeparateWindow::windowMessagesHandle(handle, message, wparam, lparam, isUsed);
@@ -123,6 +128,8 @@ namespace gui_framework
 		this->setExitMode(exitMode::quit);
 
 		this->initTray(trayIconResource, alwaysShowTrayIcon);
+
+		this->setBackgroundColor(240, 240, 240);
 	}
 
 	void BaseMainWindow::initTray(uint16_t trayIconResource, bool alwaysShowTrayIcon)

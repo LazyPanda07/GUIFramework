@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Utility/Holders/LoadableHolders/ImagesHolder.h"
-#include "Utility/Holders/LoadableHolders/IconsHolder.h"
+#include "Holders/LoadableHolders/ImagesHolder.h"
+#include "Holders/LoadableHolders/IconsHolder.h"
 #include "BaseComposites/StandardComposites/BaseWindow.h"
 
 namespace gui_framework

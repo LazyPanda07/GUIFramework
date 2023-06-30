@@ -2,7 +2,7 @@
 
 #include "BaseComposites/BaseComposite.h"
 #include "Styles/Components/Buttons/DefaultButtonStyles.h"
-#include "Utility/Holders/LoadableHolders/BaseLoadableHolder.h"
+#include "Holders/LoadableHolders/BaseLoadableHolder.h"
 #include "GUIFramework.h"
 
 #pragma warning(disable: 6001)

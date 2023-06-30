@@ -2,9 +2,9 @@
 
 #include "Exceptions/FileDoesNotExist.h"
 
-#include "Utility/Holders/LoadableHolders/CursorsHolder.h"
-#include "Utility/Holders/LoadableHolders/ImagesHolder.h"
-#include "Utility/Holders/LoadableHolders/IconsHolder.h"
+#include "Holders/LoadableHolders/CursorsHolder.h"
+#include "Holders/LoadableHolders/ImagesHolder.h"
+#include "Holders/LoadableHolders/IconsHolder.h"
 
 using namespace std;
 

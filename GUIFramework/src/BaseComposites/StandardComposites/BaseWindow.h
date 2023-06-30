@@ -1,7 +1,7 @@
 #pragma once
 
 #include "BaseComposites/BaseComposite.h"
-#include "Utility/Holders/LoadableHolders/BaseLoadableHolder.h"
+#include "Holders/LoadableHolders/BaseLoadableHolder.h"
 #include "Interfaces/Components/IComponentVisibility.h"
 
 namespace gui_framework

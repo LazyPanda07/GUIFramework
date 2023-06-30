@@ -240,7 +240,7 @@
     <ClInclude Include="src\Utility\Creators\Components\TabControlCreator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Utility\Holders\WindowHolder.h">
+    <ClInclude Include="src\Holders\WindowHolder.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Exceptions\NotImplemented.h">
@@ -249,7 +249,7 @@
     <ClInclude Include="src\BaseComponents\StandardComponents\ListViews\BaseListView.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Utility\Holders\LoadableHolders\ImagesHolder.h">
+    <ClInclude Include="src\Holders\LoadableHolders\ImagesHolder.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\BaseComponents\StandardComponents\ListViews\BaseTextListView.h">
@@ -285,13 +285,13 @@
     <ClInclude Include="src\BaseComponents\StandardComponents\ListViews\BaseListTextIconListView.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Utility\Holders\LoadableHolders\BaseLoadableHolder.h">
+    <ClInclude Include="src\Holders\LoadableHolders\BaseLoadableHolder.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Utility\Holders\LoadableHolders\IconsHolder.h">
+    <ClInclude Include="src\Holders\LoadableHolders\IconsHolder.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Utility\Holders\LoadableHolders\CursorsHolder.h">
+    <ClInclude Include="src\Holders\LoadableHolders\CursorsHolder.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Components\ListViews\IconListView.h">
@@ -486,10 +486,10 @@
     <ClInclude Include="src\Interfaces\Utility\ISerializable.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Utility\Holders\LoadableHolders\Iterators\loadable_const_forward_iterator.h">
+    <ClInclude Include="src\Holders\LoadableHolders\Iterators\loadable_const_forward_iterator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="src\Utility\Holders\LoadableHolders\Iterators\loadable_forward_iterator.h">
+    <ClInclude Include="src\Holders\LoadableHolders\Iterators\loadable_forward_iterator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Styles\Components\EditControlStyles.h">
@@ -508,12 +508,6 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Utility\Creators\Components\Buttons\ImageButtonCreator.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ComponentsHeader.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="src\CompositesHeader.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\Deserialization\Recreator.h">
@@ -920,7 +914,7 @@
     <ClCompile Include="src\Utility\Creators\Components\TabControlCreator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Utility\Holders\WindowHolder.cpp">
+    <ClCompile Include="src\Holders\WindowHolder.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Exceptions\NotImplemented.cpp">
@@ -929,7 +923,7 @@
     <ClCompile Include="src\BaseComponents\StandardComponents\ListViews\BaseListView.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Utility\Holders\LoadableHolders\ImagesHolder.cpp">
+    <ClCompile Include="src\Holders\LoadableHolders\ImagesHolder.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\BaseComponents\StandardComponents\ListViews\BaseTextListView.cpp">
@@ -965,13 +959,13 @@
     <ClCompile Include="src\BaseComponents\StandardComponents\ListViews\BaseListTextIconListView.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Utility\Holders\LoadableHolders\BaseLoadableHolder.cpp">
+    <ClCompile Include="src\Holders\LoadableHolders\BaseLoadableHolder.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Utility\Holders\LoadableHolders\IconsHolder.cpp">
+    <ClCompile Include="src\Holders\LoadableHolders\IconsHolder.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Utility\Holders\LoadableHolders\CursorsHolder.cpp">
+    <ClCompile Include="src\Holders\LoadableHolders\CursorsHolder.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Components\ListViews\IconListView.cpp">
@@ -1166,10 +1160,10 @@
     <ClCompile Include="src\Interfaces\Utility\ISerializable.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Utility\Holders\LoadableHolders\Iterators\loadable_const_forward_iterator.cpp">
+    <ClCompile Include="src\Holders\LoadableHolders\Iterators\loadable_const_forward_iterator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Utility\Holders\LoadableHolders\Iterators\loadable_forward_iterator.cpp">
+    <ClCompile Include="src\Holders\LoadableHolders\Iterators\loadable_forward_iterator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Styles\Components\EditControlStyles.cpp">
@@ -1188,12 +1182,6 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Utility\Creators\Components\Buttons\ImageButtonCreator.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ComponentsHeader.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="src\CompositesHeader.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\Deserialization\Recreator.cpp">

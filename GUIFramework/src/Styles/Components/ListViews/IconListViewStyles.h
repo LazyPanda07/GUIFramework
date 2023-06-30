@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Styles/Components/ListViews/ListViewStyles.h"
-#include "Utility/Holders/LoadableHolders/BaseLoadableHolder.h"
+#include "Holders/LoadableHolders/BaseLoadableHolder.h"
 
 namespace gui_framework
 {

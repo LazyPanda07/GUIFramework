@@ -2,7 +2,7 @@
 
 #include "GUIFramework.h"
 #include "Styles/Composites/DialogBoxStyles.h"
-#include "Utility//Holders/WindowHolder.h"
+#include "Holders/WindowHolder.h"
 
 using namespace std;
 

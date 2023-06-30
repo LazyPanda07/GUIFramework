@@ -1,8 +1,8 @@
 #include "WindowHolder.h"
 
 #include "GUIFramework.h"
-
 #include "Exceptions/GetLastErrorException.h"
+#include "BaseComposites/StandardComposites/BaseMainWindow.h"
 
 using namespace std;
 
@@ -19,7 +19,10 @@ namespace gui_framework
 		compositeWindow(move(compositeWindow)),
 		unregisterClass(unregisterClass)
 	{
-
+		if (BaseMainWindow* mainWindow = dynamic_cast<BaseMainWindow*>(this->compositeWindow.get()))
+		{
+			mainWindow->createMarkup();
+		}
 	}
 
 	BaseComposite* WindowHolder::get()
