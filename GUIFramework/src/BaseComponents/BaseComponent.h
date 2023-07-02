@@ -66,13 +66,13 @@ namespace gui_framework
 
 		bool asyncDestroyComponent();
 
-		/// @brief If the window was previously disabled, the return value is true.
-		/// @return 
 		bool enable();
 
-		/// @brief If the window was not previously disabled, the return value is false.
-		/// @return 
 		bool disable();
+
+		bool isEnabled() const;
+
+		bool isDisabled() const;
 
 		/**
 		 * @brief SendMessage WinAPI wrapper

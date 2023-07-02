@@ -236,14 +236,24 @@ namespace gui_framework
 		return result;
 	}
 
-	bool BaseComponent::enable()
+	void BaseComponent::enable()
 	{
-		return EnableWindow(handle, true);
+		EnableWindow(handle, true);
 	}
 
-	bool BaseComponent::disable()
+	void BaseComponent::disable()
 	{
-		return EnableWindow(handle, false);
+		EnableWindow(handle, false);
+	}
+
+	bool BaseComponent::isEnabled() const
+	{
+		return IsWindowEnabled(handle);
+	}
+
+	bool BaseComponent::isDisabled() const
+	{
+		return IsWindowEnabled(handle);
 	}
 
 	LRESULT BaseComponent::sendRawMessage(UINT message, WPARAM wparam, LPARAM lparam)
