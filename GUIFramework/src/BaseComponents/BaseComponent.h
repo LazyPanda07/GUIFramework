@@ -66,9 +66,9 @@ namespace gui_framework
 
 		bool asyncDestroyComponent();
 
-		bool enable();
+		void enable();
 
-		bool disable();
+		void disable();
 
 		bool isEnabled() const;
 
