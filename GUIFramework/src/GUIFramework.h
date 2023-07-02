@@ -299,7 +299,7 @@ namespace gui_framework
 
 		auto it = std::ranges::find_if(components, [&handle](BaseComponent* component) { return component->getHandle() == handle; });
 
-		return it == components.end() ? nullptr : dynamic_cast<T>(*it);
+		return it == components.end() ? nullptr : dynamic_cast<T*>(*it);
 	}
 
 	template<typename T>
@@ -309,7 +309,7 @@ namespace gui_framework
 
 		auto it = std::ranges::find_if(components, [&componentName](BaseComponent* component) { return component->getWindowName() == componentName; });
 
-		return it == components.end() ? nullptr : dynamic_cast<T>(*it);
+		return it == components.end() ? nullptr : dynamic_cast<T*>(*it);
 	}
 
 	template<std::derived_from<BaseComponent> T, std::derived_from<utility::BaseComponentCreator> CreatorT, typename... Args>
