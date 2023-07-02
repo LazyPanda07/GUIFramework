@@ -1,6 +1,9 @@
 #pragma once
 
 #include <future>
+#include <shared_mutex>
+#include <mutex>
+#include <algorithm>
 
 #include "Utility/Creators/BaseComponentCreator.h"
 #include "Interfaces/Utility/IDeserializer.h"
@@ -208,16 +211,6 @@ namespace gui_framework
 		/// @param moduleName Name of module to unload
 		void unloadModule(const std::string& moduleName);
 
-		/// @brief Thread safe 
-		/// @param handle 
-		/// @return Found component or nullptr
-		BaseComponent* findComponent(HWND handle);
-
-		/// @brief Thread safe
-		/// @param componentName 
-		/// @return Found component or nullptr
-		BaseComponent* findComponent(const std::wstring& componentName);
-
 		/// @brief Check if component created. If component destroyed after you call findComponent, you may have not valid pointer
 		/// @param component Value from 
 		/// @return true if exist, false otherwise
@@ -271,6 +264,18 @@ namespace gui_framework
 		*/
 		HMODULE operator [](const std::string& moduleName) const;
 
+		/// @brief Thread safe 
+		/// @param handle 
+		/// @return Found component or nullptr
+		template<typename T = BaseComponent>
+		T* findComponent(HWND handle);
+
+		/// @brief Thread safe
+		/// @param componentName 
+		/// @return Found component or nullptr
+		template<typename T = BaseComponent>
+		T* findComponent(const std::wstring& componentName);
+
 		/// @brief Add derived from BaseComponentCreator creator
 		template<std::derived_from<BaseComponent> T, std::derived_from<utility::BaseComponentCreator> CreatorT, typename... Args>
 		void addCreator(Args&&... args);
@@ -286,6 +291,26 @@ namespace gui_framework
 		friend struct std::default_delete<GUIFramework>;
 #pragma endregion
 	};
+
+	template<typename T>
+	T* GUIFramework::findComponent(HWND handle)
+	{
+		std::unique_lock<std::recursive_mutex> lock(componentsMutex);
+
+		auto it = std::ranges::find_if(components, [&handle](BaseComponent* component) { return component->getHandle() == handle; });
+
+		return it == components.end() ? nullptr : dynamic_cast<T>(*it);
+	}
+
+	template<typename T>
+	T* GUIFramework::findComponent(const std::wstring& componentName)
+	{
+		std::unique_lock<std::recursive_mutex> lock(componentsMutex);
+
+		auto it = std::ranges::find_if(components, [&componentName](BaseComponent* component) { return component->getWindowName() == componentName; });
+
+		return it == components.end() ? nullptr : dynamic_cast<T>(*it);
+	}
 
 	template<std::derived_from<BaseComponent> T, std::derived_from<utility::BaseComponentCreator> CreatorT, typename... Args>
 	void GUIFramework::addCreator(Args&&... args)

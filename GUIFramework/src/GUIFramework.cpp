@@ -870,24 +870,6 @@ namespace gui_framework
 		modules.erase(it);
 	}
 
-	BaseComponent* GUIFramework::findComponent(HWND handle)
-	{
-		unique_lock<recursive_mutex> lock(componentsMutex);
-
-		auto it = ranges::find_if(components, [&handle](BaseComponent* component) { return component->getHandle() == handle; });
-
-		return it == components.end() ? nullptr : *it;
-	}
-
-	BaseComponent* GUIFramework::findComponent(const wstring& componentName)
-	{
-		unique_lock<recursive_mutex> lock(componentsMutex);
-
-		auto it = ranges::find_if(components, [&componentName](BaseComponent* component) { return component->getWindowName() == componentName; });
-
-		return it == components.end() ? nullptr : *it;
-	}
-
 	bool GUIFramework::isExist(BaseComponent* component)
 	{
 		return ranges::find(components, component) != components.end();
