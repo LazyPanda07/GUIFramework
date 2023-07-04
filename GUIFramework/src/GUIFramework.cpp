@@ -633,8 +633,12 @@ namespace gui_framework
 
 	GUIFramework& GUIFramework::GUIFramework::get()
 	{
+		static mutex getInstanceMutex;
+
 		if (!instance)
 		{
+			unique_lock<mutex> lock(getInstanceMutex);
+
 			instance.reset(new GUIFramework());
 		}
 
