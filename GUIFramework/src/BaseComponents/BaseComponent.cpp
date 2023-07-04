@@ -253,7 +253,7 @@ namespace gui_framework
 
 	bool BaseComponent::isDisabled() const
 	{
-		return IsWindowEnabled(handle);
+		return !this->isEnabled();
 	}
 
 	LRESULT BaseComponent::sendRawMessage(UINT message, WPARAM wparam, LPARAM lparam)
