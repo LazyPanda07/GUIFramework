@@ -77,7 +77,7 @@ namespace gui_framework
 		std::recursive_mutex componentsMutex;
 #pragma endregion
 #pragma region Modules
-		std::vector<std::future<void>> asyncModulesHandles;
+		std::vector<std::unique_ptr<threading::Future>> asyncModulesHandles;
 		std::mutex loadModulesMutex;
 		std::vector<std::string> cantLoadedModules;
 #pragma endregion
@@ -148,25 +148,25 @@ namespace gui_framework
 		/// @param task Task function
 		/// @param callback After execution task callback function
 		/// @exception std::runtime_error Can't find threadsCount setting in gui_framework.json
-		std::future<void> addTask(const std::function<void()>& task, const std::function<void()>& callback = nullptr);
+		std::unique_ptr<threading::Future> addTask(const std::function<void()>& task, const std::function<void()>& callback = nullptr);
 
 		/// @brief Add task to thread pool. Thread safe method
 		/// @param task Task function
 		/// @param callback After execution task callback function
 		/// @exception std::runtime_error Can't find threadsCount setting in gui_framework.json
-		std::future<void> addTask(const std::function<void()>& task, std::function<void()>&& callback);
+		std::unique_ptr<threading::Future> addTask(const std::function<void()>& task, std::function<void()>&& callback);
 
 		/// @brief Add task to thread pool. Thread safe method
 		/// @param task Task function
 		/// @param callback After execution task callback function
 		/// @exception std::runtime_error Can't find threadsCount setting in gui_framework.json
-		std::future<void> addTask(std::function<void()>&& task, const std::function<void()>& callback = nullptr);
+		std::unique_ptr<threading::Future> addTask(std::function<void()>&& task, const std::function<void()>& callback = nullptr);
 
 		/// @brief Add task to thread pool. Thread safe method
 		/// @param task Task function
 		/// @param callback After execution task callback function
 		/// @exception std::runtime_error Can't find threadsCount setting in gui_framework.json
-		std::future<void> addTask(std::function<void()>&& task, std::function<void()>&& callback);
+		std::unique_ptr<threading::Future> addTask(std::function<void()>&& task, std::function<void()>&& callback);
 
 		/// @brief Only works in thread, that call runMainLoop from WindowHolder. Thread safe register hotkey
 		/// @param key Value from keys enum or https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes

@@ -698,7 +698,7 @@ namespace gui_framework
 		return GUIFramework::get().uiThreadId;
 	}
 
-	future<void> GUIFramework::addTask(const function<void()>& task, const function<void()>& callback)
+	unique_ptr<threading::Future> GUIFramework::addTask(const function<void()>& task, const function<void()>& callback)
 	{
 		if (!threadPool)
 		{
@@ -708,7 +708,7 @@ namespace gui_framework
 		return threadPool->addTask(task, callback);
 	}
 
-	future<void> GUIFramework::addTask(const function<void()>& task, function<void()>&& callback)
+	unique_ptr<threading::Future> GUIFramework::addTask(const function<void()>& task, function<void()>&& callback)
 	{
 		if (!threadPool)
 		{
@@ -718,7 +718,7 @@ namespace gui_framework
 		return threadPool->addTask(task, move(callback));
 	}
 
-	future<void> GUIFramework::addTask(function<void()>&& task, const function<void()>& callback)
+	unique_ptr<threading::Future> GUIFramework::addTask(function<void()>&& task, const function<void()>& callback)
 	{
 		if (!threadPool)
 		{
@@ -728,7 +728,7 @@ namespace gui_framework
 		return threadPool->addTask(move(task), callback);
 	}
 
-	future<void> GUIFramework::addTask(function<void()>&& task, function<void()>&& callback)
+	unique_ptr<threading::Future> GUIFramework::addTask(function<void()>&& task, function<void()>&& callback)
 	{
 		if (!threadPool)
 		{
@@ -939,7 +939,9 @@ namespace gui_framework
 
 	bool GUIFramework::isModulesLoaded() const
 	{
-		return ranges::all_of(asyncModulesHandles, [](const future<void>& handle) { return handle.wait_for(1ns) == future_status::ready; });
+		// TODO: load check
+
+		return true;
 	}
 
 	void GUIFramework::changeLocalization(const string& language) const
