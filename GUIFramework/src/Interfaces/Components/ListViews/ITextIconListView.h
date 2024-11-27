@@ -13,7 +13,7 @@ namespace gui_framework
 		private:
 			void onRemove(size_t index) final override;
 
-			LVITEMW makeItem(const std::wstring& text, const std::filesystem::path& pathToIcon, size_t index);
+			LVITEMW makeItem(std::wstring_view text, const std::filesystem::path& pathToIcon, size_t index);
 
 		private:
 			utility::IconsHolder& icons;
@@ -22,17 +22,17 @@ namespace gui_framework
 		public:
 			ITextIconListView(HWND handle, utility::IconsHolder& icons);
 
-			virtual LRESULT addTextIconItem(const std::wstring& text, const std::filesystem::path& pathToIcon);
+			virtual LRESULT addTextIconItem(std::wstring_view text, const std::filesystem::path& pathToIcon);
 
-			virtual LRESULT addTextIconItem(const std::string& localizationKey, const std::filesystem::path& pathToIcon);
+			virtual LRESULT addTextIconItem(std::string_view localizationKey, const std::filesystem::path& pathToIcon);
 
-			virtual LRESULT insertTextIconItem(const std::wstring& text, const std::filesystem::path& pathToIcon, size_t index);
+			virtual LRESULT insertTextIconItem(std::wstring_view text, const std::filesystem::path& pathToIcon, size_t index);
 
-			virtual LRESULT insertTextIconItem(const std::string& localizationKey, const std::filesystem::path& pathToIcon, size_t index);
+			virtual LRESULT insertTextIconItem(std::string_view localizationKey, const std::filesystem::path& pathToIcon, size_t index);
 
-			virtual LRESULT changeTextIconItem(const std::wstring& text, const std::filesystem::path& pathToIcon, size_t index);
+			virtual LRESULT changeTextIconItem(std::wstring_view text, const std::filesystem::path& pathToIcon, size_t index);
 
-			virtual LRESULT changeTextIconItem(const std::string& localizationKey, const std::filesystem::path& pathToIcon, size_t index);
+			virtual LRESULT changeTextIconItem(std::string_view localizationKey, const std::filesystem::path& pathToIcon, size_t index);
 
 			/// @brief 
 			/// @param index 

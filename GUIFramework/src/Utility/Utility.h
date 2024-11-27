@@ -8,7 +8,7 @@ namespace gui_framework
 	{
 		/// @brief Unregister class that is used in SeparateWindow, ChildWindow, DialogBox, GroupBox
 		/// @param className 
-		GUI_FRAMEWORK_API_FUNCTION void unregisterClass(const std::wstring& className);
+		GUI_FRAMEWORK_API_FUNCTION void unregisterClass(std::wstring_view className);
 
 		/// @brief Append WinAPI style
 		/// @param handle 
@@ -25,7 +25,7 @@ namespace gui_framework
 		/// @param codepage stringToConvert codepage
 		/// @return stringToConvert data as std::string
 		/// @exception json::exceptions::WrongEncodingException 
-		GUI_FRAMEWORK_API_FUNCTION std::string to_string(const std::wstring& stringToConvert, uint32_t codepage);
+		GUI_FRAMEWORK_API_FUNCTION std::string to_string(std::wstring_view stringToConvert, uint32_t codepage);
 
 		/// @brief Convert std::string to std::wstring
 		/// @param stringToConvert 

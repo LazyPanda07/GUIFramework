@@ -6,7 +6,7 @@ using namespace std;
 
 namespace gui_framework
 {
-	void BaseStaticControl::updateLocalization(const wstring& localizedText)
+	void BaseStaticControl::updateLocalization(wstring_view localizedText)
 	{
 		ITextOperations::setText(localizedText);
 	}
@@ -35,7 +35,7 @@ namespace gui_framework
 		gui_framework::utility::removeStyle(handle, WS_BORDER);
 	}
 
-	void BaseStaticControl::setText(const string& localizationKey)
+	void BaseStaticControl::setText(string_view localizationKey)
 	{
 		this->setLocalizationKey(localizationKey);
 

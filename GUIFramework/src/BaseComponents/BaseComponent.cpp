@@ -65,14 +65,14 @@ namespace gui_framework
 		}
 		else if (interfaces::IMultipleTextLocalized* multi = dynamic_cast<interfaces::IMultipleTextLocalized*>(localized))
 		{
-			for (const string& localizationKey : localizationKeys)
+			for (string_view localizationKey : localizationKeys)
 			{
 				multi->addLocalizationKey(localizationKey);
 			}
 		}
 	}
 
-	BaseComponent::BaseComponent(const wstring& className, const wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComposite* parent, const string& windowFunctionName, const string& moduleName, uint16_t smallIconResource, uint16_t largeIconResources) :
+	BaseComponent::BaseComponent(wstring_view className, wstring_view windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComposite* parent, string_view windowFunctionName, string_view moduleName, uint16_t smallIconResource, uint16_t largeIconResources) :
 		parent(parent),
 		className(className),
 		windowName(windowName),
@@ -87,7 +87,7 @@ namespace gui_framework
 	{
 		WNDCLASSEXW classStruct = {};
 		interfaces::ITextLocalized* localized = dynamic_cast<interfaces::ITextLocalized*>(this);
-		const unordered_map<string, HMODULE>& modules = GUIFramework::get().getModules();
+		const unordered_map<string, HMODULE, localization::utility::StringViewHash, localization::utility::StringViewEqual>& modules = GUIFramework::get().getModules();
 		const HMODULE* findedModule = nullptr;
 
 		for (const auto& [moduleName, module] : modules)
@@ -104,11 +104,11 @@ namespace gui_framework
 		{
 			if (windowFunctionName.size())
 			{
-				WNDPROC windowFunction = reinterpret_cast<WNDPROC>(GetProcAddress(nullptr, (windowFunctionName + "WindowFunction").data()));
+				WNDPROC windowFunction = reinterpret_cast<WNDPROC>(GetProcAddress(nullptr, format("{}WindowFunction", windowFunctionName).data()));
 
 				if (!windowFunction)
 				{
-					throw exceptions::CantFindCompositeFunctionException(windowFunctionName + "WindowFunction", __FILE__, __FUNCTION__, __LINE__);
+					throw exceptions::CantFindCompositeFunctionException(format("{}WindowFunction", windowFunctionName), __FILE__, __FUNCTION__, __LINE__);
 				}
 
 				classStruct.cbSize = sizeof(WNDCLASSEXW);
@@ -122,7 +122,14 @@ namespace gui_framework
 				{
 					if (moduleName.size())
 					{
-						classStruct.hIconSm = static_cast<HICON>(LoadImageW(modules.at(moduleName), MAKEINTRESOURCEW(largeIconResources), IMAGE_ICON, standard_sizes::smallIconWidth, standard_sizes::smallIconHeight, NULL));
+						if (auto it = modules.find(moduleName); it != modules.end())
+						{
+							classStruct.hIconSm = static_cast<HICON>(LoadImageW(it->second, MAKEINTRESOURCEW(largeIconResources), IMAGE_ICON, standard_sizes::smallIconWidth, standard_sizes::smallIconHeight, NULL));
+						}
+						else
+						{
+							throw runtime_error(format("Can't load small icon resource for {}", moduleName));
+						}
 					}
 					else
 					{
@@ -134,7 +141,14 @@ namespace gui_framework
 				{
 					if (moduleName.size())
 					{
-						classStruct.hIcon = static_cast<HICON>(LoadImageW(modules.at(moduleName), MAKEINTRESOURCEW(largeIconResources), IMAGE_ICON, standard_sizes::largeIconWidth, standard_sizes::largeIconHeight, NULL));
+						if (auto it = modules.find(moduleName); it != modules.end())
+						{
+							classStruct.hIcon = static_cast<HICON>(LoadImageW(it->second, MAKEINTRESOURCEW(largeIconResources), IMAGE_ICON, standard_sizes::largeIconWidth, standard_sizes::largeIconHeight, NULL));
+						}
+						else
+						{
+							throw runtime_error(format("Can't load large icon resource for {}", moduleName));
+						}
 					}
 					else
 					{
@@ -305,12 +319,12 @@ namespace gui_framework
 		return handle;
 	}
 
-	const wstring& BaseComponent::getWindowName() const
+	wstring_view BaseComponent::getWindowName() const
 	{
 		return windowName;
 	}
 
-	const wstring& BaseComponent::getClassName() const
+	wstring_view BaseComponent::getClassName() const
 	{
 		return className;
 	}

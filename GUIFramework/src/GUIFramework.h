@@ -8,6 +8,7 @@
 #include "Utility/Creators/BaseComponentCreator.h"
 #include "Interfaces/Utility/IDeserializer.h"
 #include "Utility/Keys.h"
+#include "StringViewUtils.h"
 
 #pragma comment (lib, "Comctl32.lib")
 #pragma comment (lib, "UxTheme.lib")
@@ -54,7 +55,7 @@ namespace gui_framework
 		json::JSONParser jsonSettings;
 		std::unique_ptr<threading::ThreadPool> threadPool;
 		INITCOMMONCONTROLSEX comm;
-		std::unordered_map<std::string, HMODULE> modules;
+		std::unordered_map<std::string, HMODULE, localization::utility::StringViewHash, localization::utility::StringViewEqual> modules;
 		std::unordered_map<std::string, std::string> modulesPaths;
 		std::unordered_map<size_t, smartPointerType<utility::BaseComponentCreator>> creators;
 		std::unordered_map<size_t, smartPointerType<interfaces::IDeserializer>> deserializers;
@@ -96,7 +97,7 @@ namespace gui_framework
 		void removeComponent(BaseComponent* component);
 
 	private:
-		uint32_t generateId(const std::wstring& windowName);
+		uint32_t generateId(std::wstring_view windowName);
 
 		uint32_t generateTrayId();
 
@@ -246,7 +247,7 @@ namespace gui_framework
 
 		/// @brief Get all loaded modules
 		/// @return 
-		const std::unordered_map<std::string, HMODULE>& getModules() const;
+		const std::unordered_map<std::string, HMODULE, localization::utility::StringViewHash, localization::utility::StringViewEqual>& getModules() const;
 
 		/// @brief Get all loaded modules paths
 		/// @return 

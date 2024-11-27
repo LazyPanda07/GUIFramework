@@ -20,14 +20,14 @@ namespace gui_framework
 		std::wstring placeholder;
 
 	protected:
-		virtual void updateLocalization(const std::wstring& localizedText) override;
+		virtual void updateLocalization(std::wstring_view localizedText) override;
 
 	public:
 		BaseEditControl(const std::wstring& editControlName, const utility::ComponentSettings& settings, BaseComposite* parent, bool isMultiLine = false);
 
 		/// @brief Set placeholder to single line edit control
 		/// @param placeholder 
-		virtual bool setPlaceholder(const std::wstring& placeholder) final;
+		virtual bool setPlaceholder(std::wstring_view placeholder) final;
 
 		virtual const std::wstring& getPlaceholder() const final;
 
@@ -37,7 +37,7 @@ namespace gui_framework
 
 		virtual json::JSONBuilder getStructure() const override;
 
-		virtual void setText(const std::string& localizationKey) final override;
+		virtual void setText(std::string_view localizationKey) final override;
 
 		virtual ~BaseEditControl() = default;
 

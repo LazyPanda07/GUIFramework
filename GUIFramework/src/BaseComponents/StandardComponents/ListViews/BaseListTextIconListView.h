@@ -16,7 +16,7 @@ namespace gui_framework
 		utility::IconsHolder icons;
 
 	protected:
-		virtual void updateLocalization(size_t index, const std::wstring& localizedText) override;
+		virtual void updateLocalization(size_t index, std::wstring_view localizedText) override;
 
 	public:
 		BaseListTextIconListView(const std::wstring& listViewName, const utility::ComponentSettings& settings, BaseComposite* parent, utility::iconListViewType type, uint16_t iconsWidth, uint16_t iconsHeight, size_t count = standard_sizes::defaultImagesCount);
@@ -27,11 +27,11 @@ namespace gui_framework
 
 		virtual json::JSONBuilder getStructure() const override;
 
-		virtual LRESULT addTextIconItem(const std::string& localizationKey, const std::filesystem::path& pathToIcon) final override;
+		virtual LRESULT addTextIconItem(std::string_view localizationKey, const std::filesystem::path& pathToIcon) final override;
 
-		virtual LRESULT insertTextIconItem(const std::string& localizationKey, const std::filesystem::path& pathToIcon, size_t index) final override;
+		virtual LRESULT insertTextIconItem(std::string_view localizationKey, const std::filesystem::path& pathToIcon, size_t index) final override;
 
-		virtual LRESULT changeTextIconItem(const std::string& localizationKey, const std::filesystem::path& pathToIcon, size_t index) final override;
+		virtual LRESULT changeTextIconItem(std::string_view localizationKey, const std::filesystem::path& pathToIcon, size_t index) final override;
 
 		virtual ~BaseListTextIconListView() = default;
 

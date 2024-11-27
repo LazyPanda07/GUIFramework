@@ -296,7 +296,7 @@ namespace gui_framework
 		erase(components, component);
 	}
 
-	uint32_t GUIFramework::generateId(const wstring& windowName)
+	uint32_t GUIFramework::generateId(wstring_view windowName)
 	{
 		unique_lock<mutex> lock(idMutex);
 
@@ -432,10 +432,6 @@ namespace gui_framework
 						{
 							threadsCreationTime.emplace(move(creationTime), threadEntry.th32ThreadID);
 						}
-					}
-					else
-					{
-						cout << "Can't open thread" << endl;
 					}
 				}
 			} while (Thread32Next(handle, &threadEntry));
@@ -973,7 +969,7 @@ namespace gui_framework
 		return jsonSettings;
 	}
 
-	const unordered_map<string, HMODULE>& GUIFramework::getModules() const
+	const unordered_map<string, HMODULE, localization::utility::StringViewHash, localization::utility::StringViewEqual>& GUIFramework::getModules() const
 	{
 		return modules;
 	}

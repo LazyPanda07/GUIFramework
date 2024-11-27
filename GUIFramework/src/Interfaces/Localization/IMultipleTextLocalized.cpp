@@ -12,24 +12,14 @@ namespace gui_framework
 
 		}
 
-		void IMultipleTextLocalized::addLocalizationKey(const string& localizationKey)
+		void IMultipleTextLocalized::addLocalizationKey(string_view localizationKey)
 		{
 			if (ranges::find(localizationKeys, localizationKey) != localizationKeys.end())
 			{
 				return;
 			}
 
-			localizationKeys.push_back(localizationKey);
-		}
-
-		void IMultipleTextLocalized::addLocalizationKey(string&& localizationKey) noexcept
-		{
-			if (ranges::find(localizationKeys, localizationKey) != localizationKeys.end())
-			{
-				return;
-			}
-
-			localizationKeys.push_back(move(localizationKey));
+			localizationKeys.emplace_back(localizationKey);
 		}
 
 		void IMultipleTextLocalized::insertLocalizationKey(size_t index, const string& localizationKey)
@@ -57,7 +47,7 @@ namespace gui_framework
 			localizationKeys.erase(localizationKeys.begin() + index);
 		}
 
-		void IMultipleTextLocalized::removeLocalizationKey(const string& localizationKey)
+		void IMultipleTextLocalized::removeLocalizationKey(string_view localizationKey)
 		{
 			erase(localizationKeys, localizationKey);
 		}

@@ -13,12 +13,12 @@ namespace gui_framework
 			std::string localizationKey;
 
 		protected:
-			virtual void updateLocalization(const std::wstring& localizedText) = 0;
+			virtual void updateLocalization(std::wstring_view localizedText) = 0;
 
 		public:
 			ISingleTextLocalized(bool autoUpdate = true);
 
-			virtual void setLocalizationKey(const std::string& localizationKey) final;
+			virtual void setLocalizationKey(std::string_view localizationKey) final;
 
 			virtual void setLocalizationKey(std::string&& localizationKey) noexcept final;
 

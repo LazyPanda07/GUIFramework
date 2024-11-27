@@ -18,23 +18,23 @@ namespace gui_framework
 		uint8_t columnsWidth;
 
 	protected:
-		virtual void updateLocalization(size_t index, const std::wstring& localizedText) override;
+		virtual void updateLocalization(size_t index, std::wstring_view localizedText) override;
 
 	public:
-		BaseListBox(const std::wstring& listBoxName, const utility::ComponentSettings& settings, const styles::ListBoxStyles& styles, BaseComposite* parent);
+		BaseListBox(std::wstring_view listBoxName, const utility::ComponentSettings& settings, const styles::ListBoxStyles& styles, BaseComposite* parent);
 
 		/// @brief 
 		/// @param value 
 		/// @return
 		/// @exception SelectListException 
-		LRESULT addValue(const std::wstring& value);
+		LRESULT addValue(std::wstring_view value);
 
 		/// @brief 
 		/// @param localizationKey 
 		/// @return
 		/// @exception SelectListException 
 		/// @exception std::runtime_error
-		LRESULT addValue(const std::string& localizationKey);
+		LRESULT addValue(std::string_view localizationKey);
 
 		/// @brief 
 		/// @param index 
@@ -47,40 +47,40 @@ namespace gui_framework
 		/// @param index 
 		/// @return 
 		/// @exception SelectListException 
-		virtual LRESULT insertValue(const std::wstring& value, LRESULT index);
+		virtual LRESULT insertValue(std::wstring_view value, LRESULT index);
 
 		/// @brief 
 		/// @param localizationKey 
 		/// @param index 
 		/// @return 
 		/// @exception SelectListException 
-		LRESULT insertValue(const std::string& localizationKey, LRESULT index);
+		LRESULT insertValue(std::string_view localizationKey, LRESULT index);
 
 		/// @brief 
 		/// @param newValue 
 		/// @param index 
 		/// @return 
 		/// @exception SelectListException 
-		virtual LRESULT changeValue(const std::wstring& newValue, LRESULT index);
+		virtual LRESULT changeValue(std::wstring_view newValue, LRESULT index);
 
 		/// @brief 
 		/// @param localizationKey 
 		/// @param index 
 		/// @return 
 		/// @exception SelectListException 
-		LRESULT changeValue(const std::string& localizationKey, LRESULT index);
+		LRESULT changeValue(std::string_view localizationKey, LRESULT index);
 
 		/// @brief 
 		/// @param subStringToFind 
 		/// @return 
 		/// @exception SelectListException 
-		LRESULT findSubstring(const std::wstring& subStringToFind);
+		LRESULT findSubstring(std::wstring_view subStringToFind);
 
 		/// @brief 
 		/// @param stringToFind 
 		/// @return 
 		/// @exception SelectListException 
-		LRESULT findString(const std::wstring& stringToFind);
+		LRESULT findString(std::wstring_view stringToFind);
 
 		/// @brief 
 		/// @param index 

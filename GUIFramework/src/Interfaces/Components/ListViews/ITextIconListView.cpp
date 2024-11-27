@@ -11,7 +11,7 @@ namespace gui_framework
 			textData.erase(index);
 		}
 
-		LVITEMW ITextIconListView::makeItem(const std::wstring& text, const std::filesystem::path& pathToIcon, size_t index)
+		LVITEMW ITextIconListView::makeItem(std::wstring_view text, const std::filesystem::path& pathToIcon, size_t index)
 		{
 			LVITEMW item = {};
 			
@@ -36,17 +36,17 @@ namespace gui_framework
 
 		}
 
-		LRESULT ITextIconListView::addTextIconItem(const wstring& text, const filesystem::path& pathToIcon)
+		LRESULT ITextIconListView::addTextIconItem(wstring_view text, const filesystem::path& pathToIcon)
 		{
 			return this->insertTextIconItem(text, pathToIcon, this->size());
 		}
 
-		LRESULT ITextIconListView::addTextIconItem(const string& localizationKey, const filesystem::path& pathToIcon)
+		LRESULT ITextIconListView::addTextIconItem(string_view localizationKey, const filesystem::path& pathToIcon)
 		{
 			return this->addTextIconItem(localization::WTextLocalization::get()[localizationKey], pathToIcon);
 		}
 
-		LRESULT ITextIconListView::insertTextIconItem(const wstring& text, const filesystem::path& pathToIcon, size_t index)
+		LRESULT ITextIconListView::insertTextIconItem(wstring_view text, const filesystem::path& pathToIcon, size_t index)
 		{
 			LRESULT result = this->addItem(this->makeItem(text, pathToIcon, index));
 
@@ -58,12 +58,12 @@ namespace gui_framework
 			return result;
 		}
 
-		LRESULT ITextIconListView::insertTextIconItem(const string& localizationKey, const filesystem::path& pathToIcon, size_t index)
+		LRESULT ITextIconListView::insertTextIconItem(string_view localizationKey, const filesystem::path& pathToIcon, size_t index)
 		{
 			return this->insertTextIconItem(localization::WTextLocalization::get()[localizationKey], pathToIcon, index);
 		}
 
-		LRESULT ITextIconListView::changeTextIconItem(const wstring& text, const filesystem::path& pathToIcon, size_t index)
+		LRESULT ITextIconListView::changeTextIconItem(wstring_view text, const filesystem::path& pathToIcon, size_t index)
 		{
 			LRESULT result = this->setItem(this->makeItem(text, pathToIcon, index));
 
@@ -75,7 +75,7 @@ namespace gui_framework
 			return result;
 		}
 
-		LRESULT ITextIconListView::changeTextIconItem(const string& localizationKey, const filesystem::path& pathToIcon, size_t index)
+		LRESULT ITextIconListView::changeTextIconItem(string_view localizationKey, const filesystem::path& pathToIcon, size_t index)
 		{
 			return this->changeTextIconItem(localization::WTextLocalization::get()[localizationKey], pathToIcon, index);
 		}

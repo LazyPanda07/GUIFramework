@@ -7,7 +7,7 @@ using namespace std;
 
 namespace gui_framework
 {
-	void BaseEditControl::updateLocalization(const wstring& localizedText)
+	void BaseEditControl::updateLocalization(wstring_view localizedText)
 	{
 		this->setPlaceholder(localizedText);
 	}
@@ -26,7 +26,7 @@ namespace gui_framework
 		ITextOperations::setText(L"");
 	}
 
-	bool BaseEditControl::setPlaceholder(const std::wstring& placeholder)
+	bool BaseEditControl::setPlaceholder(std::wstring_view placeholder)
 	{
 		bool result = SendMessageW(handle, EM_SETCUEBANNER, false, reinterpret_cast<LPARAM>(placeholder.data()));
 
@@ -55,7 +55,7 @@ namespace gui_framework
 		return builder;
 	}
 
-	void BaseEditControl::setText(const string& localizationKey)
+	void BaseEditControl::setText(string_view localizationKey)
 	{
 		this->setLocalizationKey(localizationKey);
 

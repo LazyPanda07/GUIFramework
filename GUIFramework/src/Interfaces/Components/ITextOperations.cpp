@@ -19,12 +19,12 @@ namespace gui_framework
 			this->setText(localizationKey);
 		}
 
-		void ITextOperations::setText(const wstring& text)
+		void ITextOperations::setText(wstring_view text)
 		{
 			SetWindowTextW(textHandle, text.data());
 		}
 
-		void ITextOperations::setText(const string& localizationKey)
+		void ITextOperations::setText(string_view localizationKey)
 		{
 			this->setText(localization::WTextLocalization::get()[localizationKey]);
 		}

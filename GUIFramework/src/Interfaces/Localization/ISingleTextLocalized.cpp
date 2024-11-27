@@ -12,7 +12,7 @@ namespace gui_framework
 
 		}
 
-		void ISingleTextLocalized::setLocalizationKey(const string& localizationKey)
+		void ISingleTextLocalized::setLocalizationKey(string_view localizationKey)
 		{
 			this->localizationKey = localizationKey;
 		}

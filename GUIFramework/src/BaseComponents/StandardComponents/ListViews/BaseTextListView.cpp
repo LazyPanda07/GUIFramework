@@ -6,7 +6,7 @@ using namespace std;
 
 namespace gui_framework
 {
-	void BaseTextListView::updateLocalization(size_t index, const wstring& localizedText)
+	void BaseTextListView::updateLocalization(size_t index, wstring_view localizedText)
 	{
 		ITextListView::changeTextItem(localizedText, index);
 	}
@@ -47,21 +47,21 @@ namespace gui_framework
 		return builder;
 	}
 
-	LRESULT BaseTextListView::addTextItem(const string& localizationKey)
+	LRESULT BaseTextListView::addTextItem(string_view localizationKey)
 	{
 		this->addLocalizationKey(localizationKey);
 
 		return ITextListView::addTextItem(localizationKey);
 	}
 
-	LRESULT BaseTextListView::insertTextItem(const string& localizationKey, size_t index)
+	LRESULT BaseTextListView::insertTextItem(string_view localizationKey, size_t index)
 	{
 		this->addLocalizationKey(localizationKey);
 
 		return ITextListView::insertTextItem(localizationKey, index);
 	}
 
-	LRESULT BaseTextListView::changeTextItem(const string& localizationKey, size_t index)
+	LRESULT BaseTextListView::changeTextItem(string_view localizationKey, size_t index)
 	{
 		this->addLocalizationKey(localizationKey);
 

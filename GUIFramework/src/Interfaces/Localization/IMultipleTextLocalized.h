@@ -13,24 +13,22 @@ namespace gui_framework
 			std::vector<std::string> localizationKeys;
 
 		protected:
-			virtual void updateLocalization(size_t index, const std::wstring& localizedText) = 0;
+			virtual void updateLocalization(size_t index, std::wstring_view localizedText) = 0;
 
 		public:
 			IMultipleTextLocalized(bool autoUpdate = true);
 
-			virtual void addLocalizationKey(const std::string& localizationKey) final;
+			void addLocalizationKey(std::string_view localizationKey);
 
-			virtual void addLocalizationKey(std::string&& localizationKey) noexcept final;
+			void insertLocalizationKey(size_t index, const std::string& localizationKey);
 
-			virtual void insertLocalizationKey(size_t index, const std::string& localizationKey) final;
+			void insertLocalizationKey(size_t index, std::string&& localizationKey) noexcept;
 
-			virtual void insertLocalizationKey(size_t index, std::string&& localizationKey) noexcept final;
+			void removeLocalizationKey(size_t index);
 
-			virtual void removeLocalizationKey(size_t index) final;
+			void removeLocalizationKey(std::string_view localizationKey);
 
-			virtual void removeLocalizationKey(const std::string& localizationKey) final;
-
-			virtual const std::vector<std::string>& getLocalizationKeys() const final;
+			const std::vector<std::string>& getLocalizationKeys() const;
 
 			virtual bool updateLocalizationEvent() final override;
 

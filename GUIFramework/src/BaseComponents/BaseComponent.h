@@ -58,7 +58,7 @@ namespace gui_framework
 		/// @param moduleName Name of loaded resource module with icons
 		/// @param smallIconResource Integer value from auto generated Visual Studio resources
 		/// @param largeIconResource Integer value from auto generated Visual Studio resources
-		BaseComponent(const std::wstring& className, const std::wstring& windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComposite* parent = nullptr, const std::string& windowFunctionName = "", const std::string& moduleName = "", uint16_t smallIconResource = NULL, uint16_t largeIconResource = NULL);
+		BaseComponent(std::wstring_view className, std::wstring_view windowName, const utility::ComponentSettings& settings, const interfaces::IStyles& styles, BaseComposite* parent = nullptr, std::string_view windowFunctionName = "", std::string_view moduleName = "", uint16_t smallIconResource = NULL, uint16_t largeIconResource = NULL);
 
 		LRESULT handleMessages(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed);
 
@@ -99,9 +99,9 @@ namespace gui_framework
 
 		HWND getHandle() const;
 
-		const std::wstring& getWindowName() const;
+		std::wstring_view getWindowName() const;
 
-		const std::wstring& getClassName() const;
+		std::wstring_view getClassName() const;
 
 		uint16_t getDesiredWidth() const;
 

@@ -25,7 +25,7 @@ namespace gui_framework
 	protected:
 		virtual LRESULT windowMessagesHandle(HWND handle, UINT message, WPARAM wparam, LPARAM lparam, bool& isUsed) override;
 
-		virtual void updateLocalization(const std::wstring& localizedText) override;
+		virtual void updateLocalization(std::wstring_view localizedText) override;
 
 	public:
 		BaseButton(const std::wstring& buttonName, const std::wstring& buttonText, const utility::ComponentSettings& settings, const styles::ButtonStyles& styles, BaseComposite* parent, const std::function<void()>& onClick = nullptr);
@@ -69,7 +69,7 @@ namespace gui_framework
 
 		virtual json::JSONBuilder getStructure() const override;
 
-		virtual void setText(const std::string& localizationKey) final override;
+		virtual void setText(std::string_view localizationKey) final override;
 
 		virtual ~BaseButton() = default;
 

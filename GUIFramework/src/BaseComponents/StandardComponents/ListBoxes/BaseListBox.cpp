@@ -13,12 +13,12 @@ using namespace std;
 
 namespace gui_framework
 {
-	void BaseListBox::updateLocalization(size_t index, const wstring& localizedText)
+	void BaseListBox::updateLocalization(size_t index, wstring_view localizedText)
 	{
 		this->changeValue(localizedText, index);
 	}
 
-	BaseListBox::BaseListBox(const wstring& listBoxName, const utility::ComponentSettings& settings, const styles::ListBoxStyles& styles, BaseComposite* parent) :
+	BaseListBox::BaseListBox(wstring_view listBoxName, const utility::ComponentSettings& settings, const styles::ListBoxStyles& styles, BaseComposite* parent) :
 		BaseComponent
 		(
 			standard_classes::listBox,
@@ -39,7 +39,7 @@ namespace gui_framework
 
 	}
 
-	LRESULT BaseListBox::addValue(const wstring& value)
+	LRESULT BaseListBox::addValue(wstring_view value)
 	{
 		LRESULT result = SendMessageW(handle, LB_ADDSTRING, NULL, reinterpret_cast<LPARAM>(value.data()));
 
@@ -57,7 +57,7 @@ namespace gui_framework
 		return result;
 	}
 
-	LRESULT BaseListBox::addValue(const string& localizationKey)
+	LRESULT BaseListBox::addValue(string_view localizationKey)
 	{
 		this->addLocalizationKey(localizationKey);
 
@@ -80,7 +80,7 @@ namespace gui_framework
 		return result;
 	}
 
-	LRESULT BaseListBox::insertValue(const wstring& value, LRESULT index)
+	LRESULT BaseListBox::insertValue(wstring_view value, LRESULT index)
 	{
 		LRESULT result = SendMessageW(handle, LB_INSERTSTRING, index, reinterpret_cast<LPARAM>(value.data()));
 
@@ -98,14 +98,14 @@ namespace gui_framework
 		return result;
 	}
 
-	LRESULT BaseListBox::insertValue(const string& localizationKey, LRESULT index)
+	LRESULT BaseListBox::insertValue(string_view localizationKey, LRESULT index)
 	{
 		this->addLocalizationKey(localizationKey);
 
 		return this->insertValue(localization::WTextLocalization::get()[localizationKey], index);
 	}
 
-	LRESULT BaseListBox::changeValue(const wstring& newValue, LRESULT index)
+	LRESULT BaseListBox::changeValue(wstring_view newValue, LRESULT index)
 	{
 		LRESULT result = SendMessageW(handle, LB_SETITEMDATA, index, reinterpret_cast<LPARAM>(newValue.data()));
 
@@ -119,14 +119,14 @@ namespace gui_framework
 		return result;
 	}
 
-	LRESULT BaseListBox::changeValue(const string& localizationKey, LRESULT index)
+	LRESULT BaseListBox::changeValue(string_view localizationKey, LRESULT index)
 	{
 		this->addLocalizationKey(localizationKey);
 
 		return this->changeValue(localization::WTextLocalization::get()[localizationKey], index);
 	}
 
-	LRESULT BaseListBox::findSubstring(const wstring& subStringToFind)
+	LRESULT BaseListBox::findSubstring(wstring_view subStringToFind)
 	{
 		LRESULT findedIndex = SendMessageW(handle, LB_FINDSTRING, 0, reinterpret_cast<LPARAM>(subStringToFind.data()));
 
@@ -138,7 +138,7 @@ namespace gui_framework
 		return findedIndex;
 	}
 
-	LRESULT BaseListBox::findString(const wstring& stringToFind)
+	LRESULT BaseListBox::findString(wstring_view stringToFind)
 	{
 		LRESULT findedIndex = SendMessageW(handle, LB_FINDSTRINGEXACT, 0, reinterpret_cast<LPARAM>(stringToFind.data()));
 

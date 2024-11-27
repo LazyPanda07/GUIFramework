@@ -13,7 +13,7 @@ namespace gui_framework
 		public interfaces::ITextIconListView
 	{
 	protected:
-		virtual void updateLocalization(size_t index, const std::wstring& localizedText) override;
+		virtual void updateLocalization(size_t index, std::wstring_view localizedText) override;
 
 	protected:
 		utility::IconsHolder icons;
@@ -27,11 +27,11 @@ namespace gui_framework
 
 		virtual json::JSONBuilder getStructure() const override;
 
-		virtual LRESULT addTextIconItem(const std::string& localizationKey, const std::filesystem::path& pathToIcon) override final;
+		virtual LRESULT addTextIconItem(std::string_view localizationKey, const std::filesystem::path& pathToIcon) override final;
 
-		virtual LRESULT insertTextIconItem(const std::string& localizationKey, const std::filesystem::path& pathToIcon, size_t index) override final;
+		virtual LRESULT insertTextIconItem(std::string_view localizationKey, const std::filesystem::path& pathToIcon, size_t index) override final;
 
-		virtual LRESULT changeTextIconItem(const std::string& localizationKey, const std::filesystem::path& pathToIcon, size_t index) override final;
+		virtual LRESULT changeTextIconItem(std::string_view localizationKey, const std::filesystem::path& pathToIcon, size_t index) override final;
 
 		virtual ~BaseTextIconListView() = default;
 

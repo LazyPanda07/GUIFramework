@@ -1,0 +1,61 @@
+name: "Continuous Integration"
+
+
+on:
+  push:
+    branches: [master, dev]
+  workflow_dispatch:
+
+
+jobs:
+  windows-build:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        configuration: [Debug, DebugDLL, Release, ReleaseDLL, ProductionRelease, ProductionReleaseDLL]
+  
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: recursive
+
+    - name: Add msbuild to PATH
+      uses: microsoft/setup-msbuild@v2
+
+    - name: Build
+      run: msbuild GUIFramework.sln -property:Configuration=${{ matrix.configuration }}
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: ${{ matrix.configuration }}
+        path: bin/${{ matrix.configuration }}-x64
+        
+  publish:
+    needs: windows-build
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: recursive
+
+    - name: Get current branch
+      uses : LazyPanda07/extract-current-branch@master
+    
+    # - name: Setup release version variable
+      # shell: pwsh
+      # run: echo "VERSION=$($($($(Select-String -Path .\WebFramework\src\Import\WebFramework.cpp -Pattern version) -split '( = )')[3].TrimEnd(';')).Trim('\"'))" >> $Env:GITHUB_ENV
+
+    - name: Download artifacts
+      if: ${{ env.CURRENT_BRANCH == 'master' }}
+      uses: actions/download-artifact@v4
+      
+    - name: Publish
+      if: ${{ env.CURRENT_BRANCH == 'master' }}
+      uses: svenstaro/upload-release-action@2.9.0
+      with:
+        tag: v${{ env.VERSION }}
+        release_name: v${{ env.VERSION }}
+        file_glob: true
+        file: "*.zip"

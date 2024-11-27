@@ -29,7 +29,7 @@ namespace gui_framework
 		return -1;
 	}
 
-	void BaseButton::updateLocalization(const wstring& localizedText)
+	void BaseButton::updateLocalization(wstring_view localizedText)
 	{
 		ITextOperations::setText(localizedText);
 	}
@@ -132,7 +132,7 @@ namespace gui_framework
 		return builder;
 	}
 
-	void BaseButton::setText(const string& localizationKey)
+	void BaseButton::setText(string_view localizationKey)
 	{
 		this->setLocalizationKey(localizationKey);
 

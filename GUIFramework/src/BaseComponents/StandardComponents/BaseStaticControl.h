@@ -17,7 +17,7 @@ namespace gui_framework
 		inline static constexpr uint16_t staticControlHeight = 40;
 
 	protected:
-		virtual void updateLocalization(const std::wstring& localizedText) override;
+		virtual void updateLocalization(std::wstring_view localizedText) override;
 
 	public:
 		BaseStaticControl(const std::wstring& staticControlName, const std::wstring& staticControlText, const utility::ComponentSettings& settings, BaseComposite* parent);
@@ -28,7 +28,7 @@ namespace gui_framework
 		/// @brief Remove border
 		void removeBorder();
 
-		virtual void setText(const std::string& localizationKey) final override;
+		virtual void setText(std::string_view localizationKey) final override;
 
 		/// @brief Used as key in creators
 		/// @return typeid().hash_code()

@@ -13,7 +13,7 @@ namespace gui_framework
 {
 	namespace utility
 	{
-		void unregisterClass(const wstring& className)
+		void unregisterClass(wstring_view className)
 		{
 			UnregisterClassW(className.data(), GetModuleHandleW(nullptr));
 		}
@@ -38,7 +38,7 @@ namespace gui_framework
 			);
 		}
 
-		string to_string(const wstring& stringToConvert, uint32_t codepage)
+		string to_string(wstring_view stringToConvert, uint32_t codepage)
 		{
 			string result;
 

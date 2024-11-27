@@ -11,7 +11,7 @@ namespace gui_framework
 			textData.erase(index);
 		}
 
-		LVITEMW ITextListView::makeItem(const wstring& text, size_t index)
+		LVITEMW ITextListView::makeItem(wstring_view text, size_t index)
 		{
 			LVITEMW item = {};
 
@@ -34,12 +34,12 @@ namespace gui_framework
 			return this->insertTextItem(text, this->size());
 		}
 
-		LRESULT ITextListView::addTextItem(const string& localizationKey)
+		LRESULT ITextListView::addTextItem(string_view localizationKey)
 		{
 			return this->insertTextItem(localization::WTextLocalization::get()[localizationKey], this->size());
 		}
 
-		LRESULT ITextListView::insertTextItem(const wstring& text, size_t index)
+		LRESULT ITextListView::insertTextItem(wstring_view text, size_t index)
 		{	
 			LRESULT result = this->addItem(this->makeItem(text, index));
 
@@ -51,17 +51,17 @@ namespace gui_framework
 			return result;
 		}
 
-		LRESULT ITextListView::insertTextItem(const string& localizationKey, size_t index)
+		LRESULT ITextListView::insertTextItem(string_view localizationKey, size_t index)
 		{
 			return this->insertTextItem(localization::WTextLocalization::get()[localizationKey], this->size());
 		}
 
-		LRESULT ITextListView::changeTextItem(const wstring& text, size_t index)
+		LRESULT ITextListView::changeTextItem(wstring_view text, size_t index)
 		{
 			return this->setItem(this->makeItem(text, index));
 		}
 
-		LRESULT ITextListView::changeTextItem(const string& localizationKey, size_t index)
+		LRESULT ITextListView::changeTextItem(string_view localizationKey, size_t index)
 		{
 			return this->changeTextItem(localization::WTextLocalization::get()[localizationKey], index);
 		}
