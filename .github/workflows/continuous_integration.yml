@@ -25,11 +25,15 @@ jobs:
     - name: Build
       run: msbuild GUIFramework.sln -property:Configuration=${{ matrix.configuration }}
 
+    - name: Remove intermediate
+      shell: bash
+      run: rm -rf bin/int
+
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
       with:
         name: ${{ matrix.configuration }}
-        path: bin/${{ matrix.configuration }}-x64
+        path: bin
         
   publish:
     needs: windows-build
@@ -51,9 +55,12 @@ jobs:
       run: echo "VERSION=$($($($(Select-String -Path .\GUIFramework\src\GUIFramework.cpp -Pattern version) -split '( = )')[3].TrimEnd(';')).Trim('\"'))" >> $Env:GITHUB_ENV
 
     - name: Download artifacts
-      if: ${{ env.CURRENT_BRANCH == 'master' }}
+      # if: ${{ env.CURRENT_BRANCH == 'master' }}
       uses: actions/download-artifact@v4
-      
+
+    - name: Current directory
+      run: ls
+
     - name: Publish
       if: ${{ env.CURRENT_BRANCH == 'master' }}
       uses: svenstaro/upload-release-action@2.9.0
