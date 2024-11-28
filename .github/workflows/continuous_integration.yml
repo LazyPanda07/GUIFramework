@@ -55,16 +55,13 @@ jobs:
       run: echo "VERSION=$($($($(Select-String -Path .\GUIFramework\src\GUIFramework.cpp -Pattern version) -split '( = )')[3].TrimEnd(';')).Trim('\"'))" >> $Env:GITHUB_ENV
 
     - name: Download artifacts
-      # if: ${{ env.CURRENT_BRANCH == 'master' }}
+      if: ${{ env.CURRENT_BRANCH == 'master' }}
       uses: actions/download-artifact@v4
-
-    - name: Current directory
-      run: ls
-
+      
     - name: Publish
       if: ${{ env.CURRENT_BRANCH == 'master' }}
       uses: svenstaro/upload-release-action@2.9.0
       with:
         tag: v${{ env.VERSION }}
         release_name: v${{ env.VERSION }}
-        file: ${{ matrix.configuration }}-x64
+        file: ${{ matrix.configuration }}
