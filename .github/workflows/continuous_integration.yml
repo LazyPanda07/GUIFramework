@@ -64,4 +64,5 @@ jobs:
       with:
         tag: v${{ env.VERSION }}
         release_name: v${{ env.VERSION }}
-        file: ${{ matrix.configuration }}
+        file_glob: true
+        file: ${{ matrix.configuration }}/*
