@@ -27,6 +27,7 @@ var _keys_8h =
       [ "alt", "_keys_8h.html#a08135ac9e160bc34494a6bb8051607fda7e206acd333133360496918fdd19a3a8", null ],
       [ "pause", "_keys_8h.html#a08135ac9e160bc34494a6bb8051607fda998a45b0238a15312796de0bc28a851a", null ],
       [ "capsLock", "_keys_8h.html#a08135ac9e160bc34494a6bb8051607fda99f7a00dc0b5c76fe75af7116762c0bc", null ],
+      [ "escape", "_keys_8h.html#a08135ac9e160bc34494a6bb8051607fda0cdd063eca496a1341e92ad7a31a3db7", null ],
       [ "spacebar", "_keys_8h.html#a08135ac9e160bc34494a6bb8051607fda0262860ba588428854cd12701c110821", null ],
       [ "pageUp", "_keys_8h.html#a08135ac9e160bc34494a6bb8051607fdacdde3d16a5e69ad9016efcf25bd32eab", null ],
       [ "pageDown", "_keys_8h.html#a08135ac9e160bc34494a6bb8051607fdab34dd552a8dcfa3baae12a6c5360f18b", null ],

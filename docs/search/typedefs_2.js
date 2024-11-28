@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['onclicksignature_0',['onClickSignature',['../namespacegui__framework.html#a5c2c0a8327422f8318f9c225fa2bf27d',1,'gui_framework']]],
-  ['onclosesignature_1',['onCloseSignature',['../namespacegui__framework.html#a04962e85abffea22d24989bdd3e6f8f8',1,'gui_framework']]],
-  ['ondestroysignature_2',['onDestroySignature',['../namespacegui__framework.html#a18efcfbf1849af342705442339a511cf',1,'gui_framework']]]
+  ['imagetype_0',['imageType',['../classgui__framework_1_1_image_button.html#a3637895b49ee4621c75c8b1bf4276d73',1,'gui_framework::ImageButton::imageType'],['../namespacegui__framework.html#a613b47642dad22e024149ee6b7ea5dc1',1,'gui_framework::imageType']]]
 ];

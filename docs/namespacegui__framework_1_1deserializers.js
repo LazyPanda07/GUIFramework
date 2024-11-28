@@ -16,6 +16,7 @@ var namespacegui__framework_1_1deserializers =
     [ "ListIconListViewDeserializer", "classgui__framework_1_1deserializers_1_1_list_icon_list_view_deserializer.html", "classgui__framework_1_1deserializers_1_1_list_icon_list_view_deserializer" ],
     [ "ListTextIconListViewDeserializer", "classgui__framework_1_1deserializers_1_1_list_text_icon_list_view_deserializer.html", "classgui__framework_1_1deserializers_1_1_list_text_icon_list_view_deserializer" ],
     [ "ListTextListViewDeserializer", "classgui__framework_1_1deserializers_1_1_list_text_list_view_deserializer.html", "classgui__framework_1_1deserializers_1_1_list_text_list_view_deserializer" ],
+    [ "MainWindowDeserializer", "classgui__framework_1_1deserializers_1_1_main_window_deserializer.html", "classgui__framework_1_1deserializers_1_1_main_window_deserializer" ],
     [ "MultipleSelectListBoxDeserializer", "classgui__framework_1_1deserializers_1_1_multiple_select_list_box_deserializer.html", "classgui__framework_1_1deserializers_1_1_multiple_select_list_box_deserializer" ],
     [ "ProgressBarDeserializer", "classgui__framework_1_1deserializers_1_1_progress_bar_deserializer.html", "classgui__framework_1_1deserializers_1_1_progress_bar_deserializer" ],
     [ "RichEditDeserializer", "classgui__framework_1_1deserializers_1_1_rich_edit_deserializer.html", "classgui__framework_1_1deserializers_1_1_rich_edit_deserializer" ],

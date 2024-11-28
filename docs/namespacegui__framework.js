@@ -49,6 +49,7 @@ var namespacegui__framework =
         [ "alt", "namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda7e206acd333133360496918fdd19a3a8", null ],
         [ "pause", "namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda998a45b0238a15312796de0bc28a851a", null ],
         [ "capsLock", "namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda99f7a00dc0b5c76fe75af7116762c0bc", null ],
+        [ "escape", "namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda0cdd063eca496a1341e92ad7a31a3db7", null ],
         [ "spacebar", "namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda0262860ba588428854cd12701c110821", null ],
         [ "pageUp", "namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fdacdde3d16a5e69ad9016efcf25bd32eab", null ],
         [ "pageDown", "namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fdab34dd552a8dcfa3baae12a6c5360f18b", null ],
@@ -272,11 +273,12 @@ var namespacegui__framework =
     [ "TextListView", "classgui__framework_1_1_text_list_view.html", "classgui__framework_1_1_text_list_view" ],
     [ "VerticalTrackbarControl", "classgui__framework_1_1_vertical_trackbar_control.html", "classgui__framework_1_1_vertical_trackbar_control" ],
     [ "WindowHolder", "classgui__framework_1_1_window_holder.html", "classgui__framework_1_1_window_holder" ],
-    [ "comboBoxCallbackSignature", "namespacegui__framework.html#a324f0f932298033cc393d93ec69d544a", null ],
-    [ "DialogBoxBuilder", "namespacegui__framework.html#af525ce6f1696446fe552abd946818aee", null ],
-    [ "onClickSignature", "namespacegui__framework.html#a5c2c0a8327422f8318f9c225fa2bf27d", null ],
-    [ "onCloseSignature", "namespacegui__framework.html#a04962e85abffea22d24989bdd3e6f8f8", null ],
-    [ "onDestroySignature", "namespacegui__framework.html#a18efcfbf1849af342705442339a511cf", null ],
-    [ "richEditCallbackSignature", "namespacegui__framework.html#ae93e197b03ab535325f85dbd87c4cf7c", null ],
-    [ "tabData", "namespacegui__framework.html#ae3e66f06336365b0dc8c0dac9f239f63", null ]
+    [ "comboBoxCallbackSignature", "namespacegui__framework.html#aa33690adddd46ac70358cc0c5987d4af", null ],
+    [ "DialogBoxBuilder", "namespacegui__framework.html#aa42b4f836bb614fe4066308d40f28719", null ],
+    [ "imageType", "namespacegui__framework.html#a613b47642dad22e024149ee6b7ea5dc1", null ],
+    [ "onClickSignature", "namespacegui__framework.html#a1a0312755f724e90ab1851a2e91a1c67", null ],
+    [ "onCloseSignature", "namespacegui__framework.html#a32a5ea59a50ff149e5d07a7e0add270b", null ],
+    [ "onDestroySignature", "namespacegui__framework.html#ac3918fc0b57abb5206ef93c56e78488d", null ],
+    [ "richEditCallbackSignature", "namespacegui__framework.html#a2c0d64b2d115f28febca239ca95f4dc8", null ],
+    [ "tabData", "namespacegui__framework.html#ae5e7c55d62fd13b762daefcadbb7d7d5", null ]
 ];

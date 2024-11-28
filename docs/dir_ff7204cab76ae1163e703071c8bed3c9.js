@@ -7,6 +7,8 @@ var dir_ff7204cab76ae1163e703071c8bed3c9 =
     [ "CantFindCompositeFunctionException.h", "_cant_find_composite_function_exception_8h.html", "_cant_find_composite_function_exception_8h" ],
     [ "CantFindFunctionFromModuleException.cpp", "_cant_find_function_from_module_exception_8cpp.html", null ],
     [ "CantFindFunctionFromModuleException.h", "_cant_find_function_from_module_exception_8h.html", "_cant_find_function_from_module_exception_8h" ],
+    [ "CantGetUIThreadId.cpp", "_cant_get_u_i_thread_id_8cpp.html", null ],
+    [ "CantGetUIThreadId.h", "_cant_get_u_i_thread_id_8h.html", "_cant_get_u_i_thread_id_8h" ],
     [ "CantLoadModuleException.cpp", "_cant_load_module_exception_8cpp.html", null ],
     [ "CantLoadModuleException.h", "_cant_load_module_exception_8h.html", "_cant_load_module_exception_8h" ],
     [ "ExceptionConstants.h", "_exception_constants_8h.html", "_exception_constants_8h" ],

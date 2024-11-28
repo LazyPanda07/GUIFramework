@@ -13,6 +13,8 @@ var dir_5510490186bb7b5cd77096ce3d630327 =
     [ "GroupBoxParser.h", "_group_box_parser_8h.html", "_group_box_parser_8h" ],
     [ "ListBoxParser.cpp", "_list_box_parser_8cpp.html", null ],
     [ "ListBoxParser.h", "_list_box_parser_8h.html", "_list_box_parser_8h" ],
+    [ "MainWindowParser.cpp", "_main_window_parser_8cpp.html", null ],
+    [ "MainWindowParser.h", "_main_window_parser_8h.html", "_main_window_parser_8h" ],
     [ "MenuParser.cpp", "_menu_parser_8cpp.html", null ],
     [ "MenuParser.h", "_menu_parser_8h.html", "_menu_parser_8h" ],
     [ "RichEditParser.cpp", "_rich_edit_parser_8cpp.html", null ],

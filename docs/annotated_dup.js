@@ -18,6 +18,7 @@ var annotated_dup =
         [ "ListIconListViewDeserializer", "classgui__framework_1_1deserializers_1_1_list_icon_list_view_deserializer.html", "classgui__framework_1_1deserializers_1_1_list_icon_list_view_deserializer" ],
         [ "ListTextIconListViewDeserializer", "classgui__framework_1_1deserializers_1_1_list_text_icon_list_view_deserializer.html", "classgui__framework_1_1deserializers_1_1_list_text_icon_list_view_deserializer" ],
         [ "ListTextListViewDeserializer", "classgui__framework_1_1deserializers_1_1_list_text_list_view_deserializer.html", "classgui__framework_1_1deserializers_1_1_list_text_list_view_deserializer" ],
+        [ "MainWindowDeserializer", "classgui__framework_1_1deserializers_1_1_main_window_deserializer.html", "classgui__framework_1_1deserializers_1_1_main_window_deserializer" ],
         [ "MultipleSelectListBoxDeserializer", "classgui__framework_1_1deserializers_1_1_multiple_select_list_box_deserializer.html", "classgui__framework_1_1deserializers_1_1_multiple_select_list_box_deserializer" ],
         [ "ProgressBarDeserializer", "classgui__framework_1_1deserializers_1_1_progress_bar_deserializer.html", "classgui__framework_1_1deserializers_1_1_progress_bar_deserializer" ],
         [ "RichEditDeserializer", "classgui__framework_1_1deserializers_1_1_rich_edit_deserializer.html", "classgui__framework_1_1deserializers_1_1_rich_edit_deserializer" ],
@@ -37,6 +38,7 @@ var annotated_dup =
         [ "BaseGUIFrameworkException", "classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception.html", "classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception" ],
         [ "CantFindCompositeFunctionException", "classgui__framework_1_1exceptions_1_1_cant_find_composite_function_exception.html", "classgui__framework_1_1exceptions_1_1_cant_find_composite_function_exception" ],
         [ "CantFindFunctionFromModuleException", "classgui__framework_1_1exceptions_1_1_cant_find_function_from_module_exception.html", "classgui__framework_1_1exceptions_1_1_cant_find_function_from_module_exception" ],
+        [ "CantGetUIThreadId", "classgui__framework_1_1exceptions_1_1_cant_get_u_i_thread_id.html", "classgui__framework_1_1exceptions_1_1_cant_get_u_i_thread_id" ],
         [ "CantLoadModuleException", "classgui__framework_1_1exceptions_1_1_cant_load_module_exception.html", "classgui__framework_1_1exceptions_1_1_cant_load_module_exception" ],
         [ "FileDoesNotExist", "classgui__framework_1_1exceptions_1_1_file_does_not_exist.html", "classgui__framework_1_1exceptions_1_1_file_does_not_exist" ],
         [ "GetLastErrorException", "classgui__framework_1_1exceptions_1_1_get_last_error_exception.html", "classgui__framework_1_1exceptions_1_1_get_last_error_exception" ],
@@ -82,6 +84,7 @@ var annotated_dup =
         [ "ImageButtonParser", "structgui__framework_1_1parsers_1_1_image_button_parser.html", "structgui__framework_1_1parsers_1_1_image_button_parser" ],
         [ "InfiniteProgressBarParser", "structgui__framework_1_1parsers_1_1_infinite_progress_bar_parser.html", "structgui__framework_1_1parsers_1_1_infinite_progress_bar_parser" ],
         [ "ListBoxParser", "structgui__framework_1_1parsers_1_1_list_box_parser.html", "structgui__framework_1_1parsers_1_1_list_box_parser" ],
+        [ "MainWindowParser", "structgui__framework_1_1parsers_1_1_main_window_parser.html", "structgui__framework_1_1parsers_1_1_main_window_parser" ],
         [ "MenuParser", "structgui__framework_1_1parsers_1_1_menu_parser.html", "structgui__framework_1_1parsers_1_1_menu_parser" ],
         [ "ProgressBarParser", "structgui__framework_1_1parsers_1_1_progress_bar_parser.html", "structgui__framework_1_1parsers_1_1_progress_bar_parser" ],
         [ "RichEditParser", "structgui__framework_1_1parsers_1_1_rich_edit_parser.html", "structgui__framework_1_1parsers_1_1_rich_edit_parser" ],
@@ -248,5 +251,6 @@ var annotated_dup =
       [ "VerticalTrackbarControl", "classgui__framework_1_1_vertical_trackbar_control.html", "classgui__framework_1_1_vertical_trackbar_control" ],
       [ "WindowHolder", "classgui__framework_1_1_window_holder.html", "classgui__framework_1_1_window_holder" ]
     ] ],
-    [ "hash< set< uint32_t > >", "structhash_3_01set_3_01uint32__t_01_4_01_4.html", "structhash_3_01set_3_01uint32__t_01_4_01_4" ]
+    [ "hash< set< uint32_t > >", "structhash_3_01set_3_01uint32__t_01_4_01_4.html", "structhash_3_01set_3_01uint32__t_01_4_01_4" ],
+    [ "less< FILETIME >", "structless_3_01_f_i_l_e_t_i_m_e_01_4.html", "structless_3_01_f_i_l_e_t_i_m_e_01_4" ]
 ];

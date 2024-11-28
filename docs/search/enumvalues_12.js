@@ -8,7 +8,7 @@ var searchData=
   ['setcursor_5',['setCursor',['../classgui__framework_1_1_base_rich_edit.html#abf55c644c6c2640d8c662dd7179ab1f3a5a69f9315e4bb59223621009e87cbc8d',1,'gui_framework::BaseRichEdit']]],
   ['seven_6',['seven',['../namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda9c4d4941df7d155bf1e035a4a68b07db',1,'gui_framework::hotkeys']]],
   ['sevenkeypad_7',['sevenKeypad',['../namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda99ea2def90a8ad015b758715942b09ff',1,'gui_framework::hotkeys']]],
-  ['shift_8',['shift',['../namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda1d6bc11547e7dfc004f764bcdb08590c',1,'gui_framework::hotkeys::shift()'],['../namespacegui__framework_1_1hotkeys.html#ae069859975d4127ec63d329343ea9364a2ab64f4ee279e5baf7ab7059b15e6d12',1,'gui_framework::hotkeys::shift()']]],
+  ['shift_8',['shift',['../namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda1d6bc11547e7dfc004f764bcdb08590c',1,'gui_framework::hotkeys::shift'],['../namespacegui__framework_1_1hotkeys.html#ae069859975d4127ec63d329343ea9364a2ab64f4ee279e5baf7ab7059b15e6d12',1,'gui_framework::hotkeys::shift']]],
   ['six_9',['six',['../namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fda20e96dafed4be557a4a3dcc1fbb3b69e',1,'gui_framework::hotkeys']]],
   ['sixkeypad_10',['sixKeypad',['../namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fdaa1e8c0d31d34d02673e4bd08d0139676',1,'gui_framework::hotkeys']]],
   ['sleep_11',['sleep',['../namespacegui__framework_1_1hotkeys.html#a08135ac9e160bc34494a6bb8051607fdae3873718454463b4d8b1fd7573720717',1,'gui_framework::hotkeys']]],

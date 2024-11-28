@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['smartpointertype_0',['smartPointerType',['../_g_u_i_framework_constants_8h.html#aaeb2028aa1fe1f81b8bc210cbf2d0b67',1,'GUIFrameworkConstants.h']]]
+  ['richeditcallbacksignature_0',['richEditCallbackSignature',['../namespacegui__framework.html#a2c0d64b2d115f28febca239ca95f4dc8',1,'gui_framework']]]
 ];

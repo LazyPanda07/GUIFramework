@@ -144,6 +144,12 @@ namespace gui_framework
 		/// @return uiThreadId
 		static DWORD getUIThreadId();
 
+		/**
+		 * @brief Get current GUIFramework version
+		 * @return Current version GUIFramework version
+		 */
+		static std::string getGUIFrameworkVersion();
+
 	public:
 		/// @brief Add task to thread pool. Thread safe method
 		/// @param task Task function

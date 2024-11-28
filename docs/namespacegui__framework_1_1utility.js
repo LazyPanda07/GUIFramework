@@ -83,10 +83,10 @@ var namespacegui__framework_1_1utility =
     [ "loadFunctionFromModule", "namespacegui__framework_1_1utility.html#abaa32eed8803341ab2881228c12e0fad", null ],
     [ "make_smart_pointer", "namespacegui__framework_1_1utility.html#a60d17f3aed2f6fbe1b6e77907e237ff0", null ],
     [ "removeStyle", "namespacegui__framework_1_1utility.html#a746d8e6e6277a08c83bd0bfd523d2e04", null ],
-    [ "to_string", "namespacegui__framework_1_1utility.html#acfc6bead05acb26a7a347dea0e5fc169", null ],
-    [ "to_string", "namespacegui__framework_1_1utility.html#abbafc9708435f466d89c4f977dcd460d", null ],
+    [ "to_string", "namespacegui__framework_1_1utility.html#a122f55c7cef43f50f6eadf9ff445a6f6", null ],
+    [ "to_string", "namespacegui__framework_1_1utility.html#afb7e04e151088af391652bb2711e3ba9", null ],
     [ "to_wstring", "namespacegui__framework_1_1utility.html#a13969865263548210d327e830b12b4bc", null ],
     [ "to_wstring", "namespacegui__framework_1_1utility.html#a14e878f929340a06b7a3c1e370c623af", null ],
-    [ "unregisterClass", "namespacegui__framework_1_1utility.html#abd212ea6354db1d1ef3a3658fa9b8b4f", null ],
-    [ "unregisterClass", "namespacegui__framework_1_1utility.html#a9102f958e07350e5f2ab564c5c30d66c", null ]
+    [ "unregisterClass", "namespacegui__framework_1_1utility.html#a9e7ec202539d73d7e428e8768b0bc489", null ],
+    [ "unregisterClass", "namespacegui__framework_1_1utility.html#a7def76b304ccfba71f8dd32c7a1b242c", null ]
 ];

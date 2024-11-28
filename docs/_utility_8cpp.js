@@ -11,8 +11,8 @@ var _utility_8cpp =
     [ "loadFunctionFromModule", "_utility_8cpp.html#a29ce005e8c05ed9ed4bc66f6a0944dcb", null ],
     [ "removeStyle", "_utility_8cpp.html#a746d8e6e6277a08c83bd0bfd523d2e04", null ],
     [ "throwNotImplementedException", "_utility_8cpp.html#a507e18dca45c7f28f80c8f824d660da2", null ],
-    [ "to_string", "_utility_8cpp.html#abbafc9708435f466d89c4f977dcd460d", null ],
+    [ "to_string", "_utility_8cpp.html#afb7e04e151088af391652bb2711e3ba9", null ],
     [ "to_wstring", "_utility_8cpp.html#a14e878f929340a06b7a3c1e370c623af", null ],
-    [ "unregisterClass", "_utility_8cpp.html#a9102f958e07350e5f2ab564c5c30d66c", null ],
+    [ "unregisterClass", "_utility_8cpp.html#a7def76b304ccfba71f8dd32c7a1b242c", null ],
     [ "useOnClose", "_utility_8cpp.html#a06d3e096bea64d05cce6be2454101265", null ]
 ];

@@ -34,6 +34,9 @@ jobs:
   publish:
     needs: windows-build
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        configuration: [Debug, DebugDLL, Release, ReleaseDLL, ProductionRelease, ProductionReleaseDLL]
 
     steps:
     - uses: actions/checkout@v4
@@ -43,9 +46,9 @@ jobs:
     - name: Get current branch
       uses : LazyPanda07/extract-current-branch@master
     
-    # - name: Setup release version variable
-      # shell: pwsh
-      # run: echo "VERSION=$($($($(Select-String -Path .\WebFramework\src\Import\WebFramework.cpp -Pattern version) -split '( = )')[3].TrimEnd(';')).Trim('\"'))" >> $Env:GITHUB_ENV
+    - name: Setup release version variable
+      shell: pwsh
+      run: echo "VERSION=$($($($(Select-String -Path .\GUIFramework\src\GUIFramework.cpp -Pattern version) -split '( = )')[3].TrimEnd(';')).Trim('\"'))" >> $Env:GITHUB_ENV
 
     - name: Download artifacts
       if: ${{ env.CURRENT_BRANCH == 'master' }}
@@ -57,5 +60,4 @@ jobs:
       with:
         tag: v${{ env.VERSION }}
         release_name: v${{ env.VERSION }}
-        file_glob: true
-        file: "*.zip"
+        file: ${{ matrix.configuration }}-x64

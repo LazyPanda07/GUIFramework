@@ -56,7 +56,9 @@ var hierarchy =
     [ "gui_framework::parsers::BaseComponentParser", "structgui__framework_1_1parsers_1_1_base_component_parser.html", [
       [ "gui_framework::parsers::BaseCompositeParser", "structgui__framework_1_1parsers_1_1_base_composite_parser.html", [
         [ "gui_framework::parsers::GroupBoxParser", "structgui__framework_1_1parsers_1_1_group_box_parser.html", null ],
-        [ "gui_framework::parsers::SeparateWindowParser", "structgui__framework_1_1parsers_1_1_separate_window_parser.html", null ]
+        [ "gui_framework::parsers::SeparateWindowParser", "structgui__framework_1_1parsers_1_1_separate_window_parser.html", [
+          [ "gui_framework::parsers::MainWindowParser", "structgui__framework_1_1parsers_1_1_main_window_parser.html", null ]
+        ] ]
       ] ],
       [ "gui_framework::parsers::ButtonParser", "structgui__framework_1_1parsers_1_1_button_parser.html", [
         [ "gui_framework::parsers::CheckBoxParser", "structgui__framework_1_1parsers_1_1_check_box_parser.html", null ],
@@ -79,26 +81,29 @@ var hierarchy =
     [ "gui_framework::utility::ComponentSettings", "structgui__framework_1_1utility_1_1_component_settings.html", null ],
     [ "gui_framework::DialogBox::DialogBoxBuilder", "classgui__framework_1_1_dialog_box_1_1_dialog_box_builder.html", null ],
     [ "gui_framework::deserializers::DropDownMenuItemDeserializer", "classgui__framework_1_1deserializers_1_1_drop_down_menu_item_deserializer.html", null ],
+    [ "gui_framework::BaseMainWindow::Function", "structgui__framework_1_1_base_main_window_1_1_function.html", null ],
     [ "gui_framework::GUIFramework", "classgui__framework_1_1_g_u_i_framework.html", null ],
     [ "hash< set< uint32_t > >", "structhash_3_01set_3_01uint32__t_01_4_01_4.html", null ],
     [ "gui_framework::GUIFramework::hotkeyData", "structgui__framework_1_1_g_u_i_framework_1_1hotkey_data.html", null ],
     [ "gui_framework::interfaces::IBaseConstForwardIterator< T, IBaseConstIteratorSubclass >", "classgui__framework_1_1interfaces_1_1_i_base_const_forward_iterator.html", [
-      [ "gui_framework::interfaces::IBaseForwardIterator< BaseComponent, composite_forward_iterator >", "classgui__framework_1_1interfaces_1_1_i_base_forward_iterator.html", [
-        [ "gui_framework::iterators::composite_forward_iterator", "classgui__framework_1_1iterators_1_1composite__forward__iterator.html", null ]
-      ] ],
-      [ "gui_framework::interfaces::IBaseForwardIterator< std::filesystem::path, loadable_forward_iterator >", "classgui__framework_1_1interfaces_1_1_i_base_forward_iterator.html", [
-        [ "gui_framework::iterators::loadable_forward_iterator", "classgui__framework_1_1iterators_1_1loadable__forward__iterator.html", null ]
-      ] ],
       [ "gui_framework::interfaces::IBaseForwardIterator< T, IBaseConstIteratorSubclass >", "classgui__framework_1_1interfaces_1_1_i_base_forward_iterator.html", null ]
     ] ],
     [ "gui_framework::interfaces::IBaseConstForwardIterator< BaseComponent, composite_const_forward_iterator >", "classgui__framework_1_1interfaces_1_1_i_base_const_forward_iterator.html", [
       [ "gui_framework::iterators::composite_const_forward_iterator", "classgui__framework_1_1iterators_1_1composite__const__forward__iterator.html", null ]
     ] ],
-    [ "gui_framework::interfaces::IBaseConstForwardIterator< BaseComponent, composite_forward_iterator >", "classgui__framework_1_1interfaces_1_1_i_base_const_forward_iterator.html", null ],
+    [ "gui_framework::interfaces::IBaseConstForwardIterator< BaseComponent, composite_forward_iterator >", "classgui__framework_1_1interfaces_1_1_i_base_const_forward_iterator.html", [
+      [ "gui_framework::interfaces::IBaseForwardIterator< BaseComponent, composite_forward_iterator >", "classgui__framework_1_1interfaces_1_1_i_base_forward_iterator.html", [
+        [ "gui_framework::iterators::composite_forward_iterator", "classgui__framework_1_1iterators_1_1composite__forward__iterator.html", null ]
+      ] ]
+    ] ],
     [ "gui_framework::interfaces::IBaseConstForwardIterator< std::filesystem::path, loadable_const_forward_iterator >", "classgui__framework_1_1interfaces_1_1_i_base_const_forward_iterator.html", [
       [ "gui_framework::iterators::loadable_const_forward_iterator", "classgui__framework_1_1iterators_1_1loadable__const__forward__iterator.html", null ]
     ] ],
-    [ "gui_framework::interfaces::IBaseConstForwardIterator< std::filesystem::path, loadable_forward_iterator >", "classgui__framework_1_1interfaces_1_1_i_base_const_forward_iterator.html", null ],
+    [ "gui_framework::interfaces::IBaseConstForwardIterator< std::filesystem::path, loadable_forward_iterator >", "classgui__framework_1_1interfaces_1_1_i_base_const_forward_iterator.html", [
+      [ "gui_framework::interfaces::IBaseForwardIterator< std::filesystem::path, loadable_forward_iterator >", "classgui__framework_1_1interfaces_1_1_i_base_forward_iterator.html", [
+        [ "gui_framework::iterators::loadable_forward_iterator", "classgui__framework_1_1iterators_1_1loadable__forward__iterator.html", null ]
+      ] ]
+    ] ],
     [ "gui_framework::interfaces::IBaseListViewOperations", "classgui__framework_1_1interfaces_1_1_i_base_list_view_operations.html", [
       [ "gui_framework::interfaces::IIconListView", "classgui__framework_1_1interfaces_1_1_i_icon_list_view.html", [
         [ "gui_framework::BaseIconListView", "classgui__framework_1_1_base_icon_list_view.html", [
@@ -339,6 +344,8 @@ var hierarchy =
       [ "gui_framework::BaseRichEdit", "classgui__framework_1_1_base_rich_edit.html", null ],
       [ "gui_framework::BaseStaticControl", "classgui__framework_1_1_base_static_control.html", null ]
     ] ],
+    [ "less< FILETIME >", "structless_3_01_f_i_l_e_t_i_m_e_01_4.html", null ],
+    [ "gui_framework::deserializers::MainWindowDeserializer", "classgui__framework_1_1deserializers_1_1_main_window_deserializer.html", null ],
     [ "gui_framework::parsers::MenuParser", "structgui__framework_1_1parsers_1_1_menu_parser.html", null ],
     [ "gui_framework::GroupBox::radioButtonData", "structgui__framework_1_1_group_box_1_1radio_button_data.html", null ],
     [ "gui_framework::Recreator", "classgui__framework_1_1_recreator.html", null ],
@@ -346,6 +353,7 @@ var hierarchy =
       [ "gui_framework::exceptions::BaseGUIFrameworkException", "classgui__framework_1_1exceptions_1_1_base_g_u_i_framework_exception.html", [
         [ "gui_framework::exceptions::CantFindCompositeFunctionException", "classgui__framework_1_1exceptions_1_1_cant_find_composite_function_exception.html", null ],
         [ "gui_framework::exceptions::CantFindFunctionFromModuleException", "classgui__framework_1_1exceptions_1_1_cant_find_function_from_module_exception.html", null ],
+        [ "gui_framework::exceptions::CantGetUIThreadId", "classgui__framework_1_1exceptions_1_1_cant_get_u_i_thread_id.html", null ],
         [ "gui_framework::exceptions::CantLoadModuleException", "classgui__framework_1_1exceptions_1_1_cant_load_module_exception.html", null ],
         [ "gui_framework::exceptions::FileDoesNotExist", "classgui__framework_1_1exceptions_1_1_file_does_not_exist.html", null ],
         [ "gui_framework::exceptions::GetLastErrorException", "classgui__framework_1_1exceptions_1_1_get_last_error_exception.html", null ],

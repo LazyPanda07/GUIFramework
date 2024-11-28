@@ -694,6 +694,13 @@ namespace gui_framework
 		return GUIFramework::get().uiThreadId;
 	}
 
+	string GUIFramework::getGUIFrameworkVersion()
+	{
+		string version = "1.1.0";
+
+		return version;
+	}
+
 	unique_ptr<threading::Future> GUIFramework::addTask(const function<void()>& task, const function<void()>& callback)
 	{
 		if (!threadPool)
