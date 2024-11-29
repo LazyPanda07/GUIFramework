@@ -38,9 +38,6 @@ jobs:
   publish:
     needs: windows-build
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        configuration: [Debug, DebugDLL, Release, ReleaseDLL, ProductionRelease, ProductionReleaseDLL]
 
     steps:
     - uses: actions/checkout@v4
@@ -57,6 +54,9 @@ jobs:
     - name: Download artifacts
       if: ${{ env.CURRENT_BRANCH == 'master' }}
       uses: actions/download-artifact@v4
+
+    - name: Zip files
+      run: zip GUIFramework.zip Debug DebugDLL ProductionRelease ProductionReleaseDLL
       
     - name: Publish
       if: ${{ env.CURRENT_BRANCH == 'master' }}
@@ -64,5 +64,4 @@ jobs:
       with:
         tag: v${{ env.VERSION }}
         release_name: v${{ env.VERSION }}
-        file_glob: true
-        file: ${{ matrix.configuration }}/*
+        file: GUIFramework.zip
